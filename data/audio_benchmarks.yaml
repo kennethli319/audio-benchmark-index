@@ -385,6 +385,42 @@ benchmarks:
       - https://huggingface.co/datasets/facebook/voxpopuli
       - https://aclanthology.org/2021.acl-long.80/
 
+  - id: mtedx
+    name: mTEDx
+    full_name: "The Multilingual TEDx Corpus for Speech Recognition and Translation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_to_text_translation
+    tasks:
+      - multilingual_asr
+      - speech_to_text_translation
+      - speech_translation
+      - sentence_level_alignment
+    official:
+      openslr: https://www.openslr.org/100
+      paper: https://arxiv.org/abs/2102.01757
+      interspeech_paper: https://www.isca-archive.org/interspeech_2021/salesky21_interspeech.html
+      iwslt_2021: https://iwslt.org/2021/
+    download:
+      primary:
+        - https://www.openslr.org/100
+        - https://openslr.trmal.net/resources/100/mtedx_iwslt2021.tgz
+        - https://openslr.trmal.net/resources/100/MTEDx-french-talks-gender-annotation.csv
+      examples:
+        - 'scripts/download/mtedx.sh'
+        - 'MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS=mtedx_iwslt2021.tgz scripts/download/mtedx.sh'
+        - 'MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS="mtedx_es-en.tgz mtedx_fr-en.tgz" scripts/download/mtedx.sh'
+      notes: OpenSLR SLR100 hosts ASR-only language archives, speech-translation language-pair archives, IWSLT 2021 test sets, and a small French talk gender annotation CSV. Archives are multi-GiB, so the helper downloads only the OpenSLR page and small CSV by default and requires MTEDX_DOWNLOAD_ARCHIVES=1 for archive downloads.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_specified
+      notes: OpenSLR SLR100 lists CC BY-NC-ND 4.0. The corpus is derived from TEDx Talks; respect TED/TEDx source terms as well as the corpus license.
+    sources:
+      - https://www.openslr.org/100
+      - https://arxiv.org/abs/2102.01757
+      - https://www.isca-archive.org/interspeech_2021/salesky21_interspeech.html
+
   - id: gigaspeech
     name: GigaSpeech
     full_name: "GigaSpeech: An Evolving, Multi-domain ASR Corpus with 10,000 Hours of Transcribed Audio"

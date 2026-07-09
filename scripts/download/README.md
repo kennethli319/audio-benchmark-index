@@ -36,6 +36,7 @@ scripts/download/wildspeech_bench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
 scripts/download/mls.sh
+scripts/download/mtedx.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
@@ -104,6 +105,11 @@ AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOA
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
 VOXPOPULI_CONFIG=en_accented VOXPOPULI_SPLITS=test scripts/download/voxpopuli.sh
+
+# mTEDx downloads the OpenSLR page and small annotation CSV by default. Archives are large and opt-in.
+MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS=mtedx_iwslt2021.tgz scripts/download/mtedx.sh
+MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS="mtedx_es-en.tgz mtedx_fr-en.tgz" scripts/download/mtedx.sh
+MTEDX_OPENSLR_BASE_URL=https://openslr.elda.org/resources/100 scripts/download/mtedx.sh
 
 # GigaSpeech is gated on Hugging Face and defaults to the dev config.
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
