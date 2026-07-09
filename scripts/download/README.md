@@ -40,6 +40,7 @@ scripts/download/esc_50.sh
 scripts/download/audioset.sh
 scripts/download/speech_commands.sh
 scripts/download/ami.sh
+scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 ```
@@ -102,6 +103,10 @@ SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
 # AMI downloads official annotation ZIPs by default. Audio/HF mirrors are large.
 AMI_DOWNLOAD_OPENSLR_AUDIO=1 AMI_OPENSLR_PARTS="headset.tar.gz" scripts/download/ami.sh
 AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
+
+# CHiME-6 downloads transcriptions/floorplans by default. Audio archives are large.
+CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
+CHIME6_OPENSLR_BASE_URL=https://openslr.elda.org/resources/150 scripts/download/chime_6.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh

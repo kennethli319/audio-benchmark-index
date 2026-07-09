@@ -722,3 +722,43 @@ benchmarks:
       - https://github.com/cdjkim/audiocaps/blob/master/dataset/README.md
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
+
+  - id: chime_6
+    name: CHiME-6
+    full_name: "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+    tasks:
+      - distant_speech_recognition
+      - multi_speaker_asr
+      - speaker_diarization
+      - speech_separation
+    official:
+      homepage: https://www.chimechallenge.org/datasets/chime6
+      challenge_site: https://chimechallenge.github.io/chime6/
+      openslr: https://www.openslr.org/150/
+      paper: https://arxiv.org/abs/2004.09249
+      chime5_paper: https://arxiv.org/abs/1803.10609
+    download:
+      primary:
+        - https://www.openslr.org/150/
+        - https://openslr.trmal.net/resources/150/CHiME6_transcriptions.tar.gz
+        - https://openslr.trmal.net/resources/150/CHiME6_floorplans.tar.gz
+        - https://openslr.trmal.net/resources/150/LICENSE.txt
+        - https://openslr.trmal.net/resources/150/CHiME6_dev.tar.gz
+        - https://openslr.trmal.net/resources/150/CHiME6_eval.tar.gz
+        - https://openslr.trmal.net/resources/150/CHiME6_train.tar.gz
+      examples:
+        - 'scripts/download/chime_6.sh'
+        - 'CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh'
+      notes: The helper downloads OpenSLR transcriptions, floorplans, and license by default. Audio archives are large, about 97 GiB train, 11 GiB dev, and 12 GiB eval, so they are explicit opt-ins.
+    license:
+      data: cc-by-sa-4.0
+      code: not_applicable
+      notes: OpenSLR SLR150 lists CC BY-SA 4.0. CHiME says CHiME-6 is a corrected-alignment version of CHiME-5 and recommends CHiME-6 for new work.
+    sources:
+      - https://www.chimechallenge.org/datasets/chime6
+      - https://www.openslr.org/150/
+      - https://arxiv.org/abs/2004.09249
