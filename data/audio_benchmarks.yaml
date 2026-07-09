@@ -1871,3 +1871,45 @@ benchmarks:
       - http://wham.whisper.ai/WHAMR_README.html
       - https://arxiv.org/abs/1907.01160
       - https://arxiv.org/abs/1910.10279
+
+  - id: voicebank_demand
+    name: VoiceBank-DEMAND
+    full_name: "Noisy speech database for training speech enhancement algorithms and TTS models"
+    qwen_cited_as: null
+    qwen_bucket: speech_enhancement
+    tasks:
+      - speech_enhancement
+      - speech_denoising
+      - noise_robust_tts
+      - clean_noisy_parallel_speech
+    official:
+      datashare_record: https://datashare.ed.ac.uk/handle/10283/2791
+      datashare_api: https://datashare.ed.ac.uk/server/api/core/items/6ed35425-bf14-4d2b-93a1-0a4984952757
+      doi: https://doi.org/10.7488/ds/2117
+      interspeech_paper: https://doi.org/10.21437/Interspeech.2016-159
+      ieee_paper: https://doi.org/10.1109/TASLP.2018.2828980
+      vctk_source: https://doi.org/10.7488/ds/1994
+      demand_source: http://parole.loria.fr/DEMAND/
+    download:
+      primary:
+        - https://datashare.ed.ac.uk/handle/10283/2791
+        - https://datashare.ed.ac.uk/server/api/core/bundles/bdb21ae9-97ad-46dc-89b6-c1884783df6a/bitstreams?size=100
+        - https://datashare.ed.ac.uk/server/api/core/bitstreams/dec213d3-bf57-4777-9663-c24bdce92d5e/content
+        - https://datashare.ed.ac.uk/server/api/core/bitstreams/13c1bfbf-14a6-41db-9b41-8f7310f01ad5/content
+      examples:
+        - 'scripts/download/voicebank_demand.sh'
+        - 'VOICEBANK_DEMAND_DOWNLOAD_TEXT=1 scripts/download/voicebank_demand.sh'
+        - 'VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS="clean_test noisy_test" scripts/download/voicebank_demand.sh'
+      notes: The DataShare record exposes paired clean/noisy train and test ZIPs plus text/log files. The helper saves public metadata and license by default; text files and multi-GB audio archives are explicit opt-ins.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: Edinburgh DataShare metadata lists Creative Commons Attribution 4.0 International Public License. The corpus derives clean speech from VCTK and noises from DEMAND plus speech-shaped/babble sources; re-check component/source terms before redistribution.
+    sources:
+      - https://datashare.ed.ac.uk/handle/10283/2791
+      - https://datashare.ed.ac.uk/server/api/core/items/6ed35425-bf14-4d2b-93a1-0a4984952757
+      - https://doi.org/10.7488/ds/2117
+      - https://doi.org/10.21437/Interspeech.2016-159
+      - https://doi.org/10.1109/TASLP.2018.2828980
+      - https://doi.org/10.7488/ds/1994
+      - http://parole.loria.fr/DEMAND/

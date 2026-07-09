@@ -70,6 +70,7 @@ scripts/download/maestro.sh
 scripts/download/musdb18.sh
 scripts/download/librimix.sh
 scripts/download/wham_whamr.sh
+scripts/download/voicebank_demand.sh
 scripts/download/vctk.sh
 ```
 
@@ -221,6 +222,11 @@ CHIME6_OPENSLR_BASE_URL=https://openslr.elda.org/resources/150 scripts/download/
 WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh
 WHAM_DOWNLOAD_48KHZ=1 scripts/download/wham_whamr.sh
 WHAM_DOWNLOAD_SCRIPTS=0 scripts/download/wham_whamr.sh
+
+# VoiceBank-DEMAND downloads DataShare metadata/license by default. Text and audio archives are opt-in.
+VOICEBANK_DEMAND_DOWNLOAD_TEXT=1 scripts/download/voicebank_demand.sh
+VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS="clean_test noisy_test" scripts/download/voicebank_demand.sh
+VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS=all scripts/download/voicebank_demand.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
