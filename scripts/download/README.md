@@ -35,6 +35,7 @@ scripts/download/wildspeech_bench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
 scripts/download/mir_1k_vocal.sh
+scripts/download/esc_50.sh
 ```
 
 ## Manual Or Gated
@@ -73,4 +74,7 @@ SPEECHROLE_DATA=0 scripts/download/speechrole.sh
 
 # MIR-1K defaults to the Figshare mirror because the MIR Lab archive currently 404s.
 MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh
+
+# ESC-50 defaults to the official GitHub archive.
+ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
 ```

@@ -448,3 +448,32 @@ benchmarks:
       - http://mirlab.org/dataset/public/
       - https://figshare.com/articles/dataset/MIR-1K_rar/5802891
       - https://zenodo.org/records/3532216
+
+  - id: esc_50
+    name: ESC-50
+    full_name: "ESC-50: Dataset for Environmental Sound Classification"
+    qwen_cited_as: null
+    qwen_bucket: environmental_sound_classification
+    tasks:
+      - environmental_sound_classification
+      - audio_tagging
+    official:
+      repo: https://github.com/karolpiczak/ESC-50
+      paper: https://doi.org/10.1145/2733373.2806390
+      paper_pdf: https://www.karolpiczak.com/papers/Piczak2015-ESC-Dataset.pdf
+      direct_archive: https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip
+    download:
+      primary:
+        - https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip
+        - https://github.com/karolpiczak/ESC-50
+      examples:
+        - 'curl -L -o data/ESC-50-master.zip https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip'
+        - 'git clone https://github.com/karolpiczak/ESC-50.git'
+    license:
+      data: cc-by-nc-3.0
+      code: not_specified
+      notes: ESC-10 subset clips are CC BY; ESC-50 as a whole is Creative Commons Attribution-NonCommercial. Per-clip Freesound attributions are in the repository LICENSE file.
+    sources:
+      - https://github.com/karolpiczak/ESC-50
+      - https://github.com/karolpiczak/ESC-50/blob/master/LICENSE
+      - https://doi.org/10.1145/2733373.2806390
