@@ -7,7 +7,8 @@ the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, speech translation,
 speech synthesis, speech dialogue, audio understanding, environmental sound,
 sound event detection, keyword spotting, speaker recognition, emotion,
-captioning, music tagging, music transcription, and music synthesis.
+captioning, music tagging, music genre classification, music transcription,
+and music synthesis.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -16,7 +17,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 47 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 48 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -44,6 +45,7 @@ Current coverage includes:
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
 | [SongFormBench](https://huggingface.co/datasets/ASLP-lab/SongFormBench) | Audio understanding | `load_dataset("ASLP-lab/SongFormBench")` | HF card and SongFormer repo list CC BY 4.0 |
 | [MagnaTagATune](https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset) | Music tagging | Official MIRG-hosted metadata, annotations, comparisons, optional Echo Nest features, and optional MP3 split archives | CC BY-NC-SA 3.0 for data; GPLv3 for scripts; Magnatune audio excerpts are non-commercial research redistribution |
+| [FMA](https://github.com/mdeff/fma) | Music information retrieval | Official README/license by default; optional [metadata archive](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip) and opt-in FMA audio subsets from small through full | Metadata is CC BY 4.0 and code is MIT; audio uses each artist's chosen license, so check per-track terms |
 | [NSynth](https://magenta.withgoogle.com/datasets/nsynth) | Music synthesis | Official Magenta TFRecord or JSON/WAV split archives; helper saves the page by default and downloads archives only with opt-in | CC BY 4.0 for data; Magenta code is Apache-2.0 |
 | [MAESTRO](https://magenta.withgoogle.com/datasets/maestro) | Music transcription and synthesis | Official Magenta v3.0.0 CSV/JSON metadata by default, optional MIDI-only archive, and opt-in 101 GiB WAV+MIDI archive | CC BY-NC-SA 4.0 |
 | [MUSDB18](https://sigsep.github.io/datasets/musdb.html) | Music source separation | Official SigSep page plus Zenodo [MUSDB18](https://zenodo.org/records/1117372) and [MUSDB18-HQ](https://zenodo.org/records/3338373) archives; helper saves pages by default and requires acknowledgement before large archives | Zenodo lists Other (Non-Commercial); official pages state educational/academic use only, with mixed upstream track sources |
@@ -235,6 +237,9 @@ Music tagging:
 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_DOWNLOAD_AUDIO=1 scripts/download/magnatagatune.sh
+scripts/download/fma.sh
+FMA_DOWNLOAD_METADATA=1 scripts/download/fma.sh
+FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS=small scripts/download/fma.sh
 ```
 
 Music synthesis:
@@ -320,6 +325,7 @@ scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
+scripts/download/fma.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/ljspeech.sh

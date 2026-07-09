@@ -1515,6 +1515,49 @@ benchmarks:
       - http://ismir2009.ismir.net/proceedings/OS5-5.pdf
       - http://www.cs.cmu.edu/~elaw/papers/tagatune.pdf
 
+  - id: fma
+    name: FMA
+    full_name: "FMA: A Dataset For Music Analysis"
+    qwen_cited_as: null
+    qwen_bucket: music_information_retrieval
+    tasks:
+      - music_genre_classification
+      - music_auto_tagging
+      - music_recommendation
+      - artist_identification
+      - music_year_prediction
+      - music_clustering
+    official:
+      repo: https://github.com/mdeff/fma
+      paper: https://arxiv.org/abs/1612.01840
+      ismir_paper_pdf: https://archives.ismir.net/ismir2017/paper/000075.pdf
+      uci_record: https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
+      metadata_archive: https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
+      small_archive: https://os.unil.cloud.switch.ch/fma/fma_small.zip
+    download:
+      primary:
+        - https://github.com/mdeff/fma
+        - https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
+        - https://os.unil.cloud.switch.ch/fma/fma_small.zip
+        - https://os.unil.cloud.switch.ch/fma/fma_medium.zip
+        - https://os.unil.cloud.switch.ch/fma/fma_large.zip
+        - https://os.unil.cloud.switch.ch/fma/fma_full.zip
+      examples:
+        - 'scripts/download/fma.sh'
+        - 'FMA_DOWNLOAD_METADATA=1 scripts/download/fma.sh'
+        - 'FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS=small scripts/download/fma.sh'
+      notes: The helper downloads official README/license files by default. Metadata is 342 MiB; audio archives range from 7.2 GiB for fma_small to 879 GiB for fma_full, so metadata and audio are explicit opt-ins.
+    license:
+      data: mixed
+      code: MIT
+      notes: Official GitHub README says metadata is CC BY 4.0, code is MIT, and audio is distributed under the license chosen by each artist because the dataset maintainers do not hold audio copyright. UCI lists the dataset record as CC BY 4.0, but per-track audio licenses should be checked before redistribution or commercial use.
+    sources:
+      - https://github.com/mdeff/fma
+      - https://raw.githubusercontent.com/mdeff/fma/master/README.md
+      - https://raw.githubusercontent.com/mdeff/fma/master/LICENSE.txt
+      - https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
+      - https://arxiv.org/abs/1612.01840
+
   - id: chime_6
     name: CHiME-6
     full_name: "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings"

@@ -59,6 +59,7 @@ scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
+scripts/download/fma.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
@@ -205,6 +206,11 @@ AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
 MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_DOWNLOAD_AUDIO=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/download/magnatagatune.sh
+
+# FMA downloads official README/license by default. Metadata/audio are opt-in.
+FMA_DOWNLOAD_METADATA=1 scripts/download/fma.sh
+FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS=small scripts/download/fma.sh
+FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS="small medium" scripts/download/fma.sh
 
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
