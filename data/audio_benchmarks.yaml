@@ -2144,6 +2144,44 @@ benchmarks:
       - https://www.openslr.org/150/
       - https://arxiv.org/abs/2004.09249
 
+  - id: alimeeting
+    name: AliMeeting
+    full_name: "AliMeeting: A Free Mandarin Multi-channel Meeting Speech Corpus"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+    tasks:
+      - meeting_transcription
+      - multi_channel_asr
+      - multi_speaker_asr
+      - speaker_diarization
+      - mandarin_speech_recognition
+    official:
+      openslr: https://www.openslr.org/119/
+      challenge_intro_paper: https://arxiv.org/abs/2110.07393
+      challenge_summary_paper: https://arxiv.org/abs/2202.03647
+    download:
+      primary:
+        - https://www.openslr.org/119/
+        - https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/AliMeeting/openlr/Train_Ali_far.tar.gz
+        - https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/AliMeeting/openlr/Train_Ali_near.tar.gz
+        - https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/AliMeeting/openlr/Eval_Ali.tar.gz
+        - https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/AliMeeting/openlr/Test_Ali.tar.gz
+      examples:
+        - 'scripts/download/alimeeting.sh'
+        - 'ALIMEETING_DOWNLOAD_ARCHIVES=1 ALIMEETING_PARTS="Eval_Ali.tar.gz Test_Ali.tar.gz" scripts/download/alimeeting.sh'
+      notes: The helper downloads small OpenSLR metadata by default. Corpus archives are large, about 73.24 GiB far-field train, 22.85 GiB near-field train, 3.42 GiB eval, and 8.90 GiB test, so they are explicit opt-ins.
+    license:
+      data: cc-by-sa-4.0
+      code: not_applicable
+      notes: OpenSLR SLR119 lists AliMeeting under CC BY-SA 4.0. The corpus contains real Mandarin meetings with far-field microphone-array and near-field headset recordings; check challenge rules for benchmark submissions.
+    sources:
+      - https://www.openslr.org/119/
+      - https://www.openslr.org/resources/119/about.html
+      - https://arxiv.org/abs/2110.07393
+      - https://arxiv.org/abs/2202.03647
+
   - id: librimix
     name: LibriMix
     full_name: "LibriMix: An Open-Source Dataset for Generalizable Speech Separation"

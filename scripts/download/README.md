@@ -67,6 +67,7 @@ scripts/download/crema_d.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
+scripts/download/alimeeting.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/macs.sh
@@ -257,6 +258,9 @@ AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
 # CHiME-6 downloads transcriptions/floorplans by default. Audio archives are large.
 CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
 CHIME6_OPENSLR_BASE_URL=https://openslr.elda.org/resources/150 scripts/download/chime_6.sh
+
+# AliMeeting downloads OpenSLR metadata by default. Corpus archives are large.
+ALIMEETING_DOWNLOAD_ARCHIVES=1 ALIMEETING_PARTS="Eval_Ali.tar.gz Test_Ali.tar.gz" scripts/download/alimeeting.sh
 
 # WHAM!/WHAMR! downloads the page and small generation scripts by default. Noise archives are large.
 WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh
