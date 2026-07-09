@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
+scripts/download/hear.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/voicebench.sh
@@ -164,6 +165,10 @@ SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS="real synth" scripts/download/slurp.sh
 
 # SUPERB downloads official S3PRL benchmark docs/license by default.
 SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh
+
+# HEAR downloads Zenodo metadata/license and eval-kit docs by default. Task archives are large and opt-in.
+HEAR_DOWNLOAD_TASKS=1 HEAR_TASKS=hear2021-mridangam_tonic-v1.5-full-48000.tar.gz scripts/download/hear.sh
+HEAR_CLONE_EVAL_KIT=1 scripts/download/hear.sh
 
 # MIR-1K defaults to the Figshare mirror because the MIR Lab archive currently 404s.
 MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh

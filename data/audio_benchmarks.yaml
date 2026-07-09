@@ -175,6 +175,46 @@ benchmarks:
       - https://aclanthology.org/2020.emnlp-main.588/
       - https://arxiv.org/abs/2011.13205
 
+  - id: hear
+    name: HEAR
+    full_name: "HEAR: Holistic Evaluation of Audio Representations"
+    qwen_cited_as: null
+    qwen_bucket: speech_audio_music_representation_benchmark
+    tasks:
+      - audio_representation_evaluation
+      - speech_classification
+      - environmental_sound_classification
+      - music_classification
+      - event_based_audio_prediction
+    official:
+      homepage: https://hearbenchmark.com/
+      tasks: https://hearbenchmark.com/hear-tasks.html
+      repo: https://github.com/hearbenchmark/hear-eval-kit
+      preprocess_repo: https://github.com/hearbenchmark/hear-preprocess
+      paper: https://arxiv.org/abs/2203.03022
+      pmlr: https://proceedings.mlr.press/v166/
+      zenodo: https://zenodo.org/records/5885750
+    download:
+      primary:
+        - https://zenodo.org/records/5885750
+        - https://zenodo.org/api/records/5885750/files/LICENSE.txt/content
+        - https://github.com/hearbenchmark/hear-eval-kit
+      examples:
+        - 'scripts/download/hear.sh'
+        - 'HEAR_DOWNLOAD_TASKS=1 HEAR_TASKS=hear2021-mridangam_tonic-v1.5-full-48000.tar.gz scripts/download/hear.sh'
+        - 'HEAR_CLONE_EVAL_KIT=1 scripts/download/hear.sh'
+      notes: The helper downloads the Zenodo record metadata and LICENSE.txt by default. Individual task archives are large and opt-in; the Zenodo record notes that TFDS-derived crema-d, GTZAN genre, and GTZAN music/speech tasks in this release were retracted because of a preprocessing bug.
+    license:
+      data: mixed
+      code: Apache-2.0
+      notes: Zenodo record lists CC BY 4.0 but explicitly says component datasets have different open licenses and to inspect each dataset's LICENSE.txt; eval kit repo is Apache-2.0.
+    sources:
+      - https://hearbenchmark.com/
+      - https://hearbenchmark.com/hear-tasks.html
+      - https://github.com/hearbenchmark/hear-eval-kit
+      - https://zenodo.org/records/5885750
+      - https://arxiv.org/abs/2203.03022
+
   - id: rul_muchomusic
     name: RUL-MuchoMusic
     full_name: "RUL-MuchoMusic from RUListening / Are You Really Listening?"
