@@ -38,6 +38,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/audioset.sh
 scripts/download/clotho.sh
+scripts/download/audiocaps.sh
 ```
 
 ## Manual Or Gated
@@ -85,4 +86,7 @@ AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
+
+# AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
+AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
 ```

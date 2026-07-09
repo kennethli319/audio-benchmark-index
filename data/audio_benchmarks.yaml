@@ -542,3 +542,39 @@ benchmarks:
       - https://github.com/audio-captioning/clotho-dataset
       - https://dcase.community/challenge2022/task-automatic-audio-captioning
       - https://arxiv.org/abs/1910.09387
+
+  - id: audiocaps
+    name: AudioCaps
+    full_name: "AudioCaps: Generating Captions for Audios in The Wild"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - audio_captioning
+      - audio_language_modeling
+    official:
+      homepage: https://audiocaps.github.io/
+      repo: https://github.com/cdjkim/audiocaps
+      paper: https://aclanthology.org/N19-1011/
+      dataset_readme: https://github.com/cdjkim/audiocaps/blob/master/dataset/README.md
+      dataset2_readme: https://github.com/cdjkim/audiocaps/blob/master/dataset2.0/README.md
+      hf_mirror: https://huggingface.co/datasets/d0rj/audiocaps
+    download:
+      primary:
+        - https://github.com/cdjkim/audiocaps/tree/master/dataset
+        - https://github.com/cdjkim/audiocaps/tree/master/dataset2.0
+        - https://huggingface.co/datasets/d0rj/audiocaps
+      examples:
+        - 'scripts/download/audiocaps.sh'
+        - 'AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("d0rj/audiocaps")'
+      notes: Official CSVs contain captions, YouTube ids, and segment start times. Raw audio/video download requires the upstream form and is subject to AudioSet/YouTube availability and terms.
+    license:
+      data: academic_only
+      code: MIT
+      notes: GitHub README says the code and dataset are free to use for academic purposes only. The repository has an MIT license, but the README adds the academic-use condition for repository material; re-check before redistribution or commercial use.
+    sources:
+      - https://audiocaps.github.io/
+      - https://github.com/cdjkim/audiocaps
+      - https://github.com/cdjkim/audiocaps/blob/master/dataset/README.md
+      - https://aclanthology.org/N19-1011/
+      - https://huggingface.co/datasets/d0rj/audiocaps
