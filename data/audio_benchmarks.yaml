@@ -2109,6 +2109,47 @@ benchmarks:
       - https://doi.org/10.7488/ds/1994
       - http://parole.loria.fr/DEMAND/
 
+  - id: dns_challenge
+    name: DNS Challenge
+    full_name: "Deep Noise Suppression Challenge"
+    qwen_cited_as: null
+    qwen_bucket: speech_enhancement
+    tasks:
+      - speech_enhancement
+      - speech_denoising
+      - dereverberation
+      - personalized_speech_enhancement
+      - speech_quality_evaluation
+    official:
+      homepage: https://aka.ms/dns-challenge
+      challenge_2023: https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/
+      repo: https://github.com/microsoft/DNS-Challenge
+      paper_2023: https://github.com/microsoft/DNS-Challenge/blob/master/docs/ICASSP2023_5th_DNS_Challenge.pdf
+      paper_2022: https://arxiv.org/abs/2202.13288
+    download:
+      primary:
+        - https://github.com/microsoft/DNS-Challenge
+        - https://raw.githubusercontent.com/microsoft/DNS-Challenge/master/README.md
+        - https://raw.githubusercontent.com/microsoft/DNS-Challenge/master/download-dns5-dev-testset.sh
+        - https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_dev_testset.zip
+        - https://dnschallengepublic.blob.core.windows.net/dns5archive/V5_BlindTestSet.zip
+      examples:
+        - 'scripts/download/dns_challenge.sh'
+        - 'DNS_CHALLENGE_DOWNLOAD_DEV_TESTSET=1 scripts/download/dns_challenge.sh'
+        - 'DNS_CHALLENGE_DOWNLOAD_BLIND_TESTSET=1 scripts/download/dns_challenge.sh'
+      notes: DNS5 development and blind test sets are multi-GB archives; the full training resources are hundreds of GB compressed and about 1 TB unpacked. The helper saves official README/license/downloader-script files by default and makes data archives explicit opt-ins.
+    license:
+      data: mixed
+      code: MIT
+      notes: The repository legal notice says documentation/content are CC BY 4.0 and code is MIT. DNS training data includes component sources such as AudioSet, Freesound, VCTK, VocalSet, and multilingual speech, so component/source-media terms should be re-checked before redistribution or commercial use.
+    sources:
+      - https://github.com/microsoft/DNS-Challenge
+      - https://raw.githubusercontent.com/microsoft/DNS-Challenge/master/README.md
+      - https://raw.githubusercontent.com/microsoft/DNS-Challenge/master/LICENSE
+      - https://raw.githubusercontent.com/microsoft/DNS-Challenge/master/LICENSE-CODE
+      - https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/
+      - https://arxiv.org/abs/2202.13288
+
   - id: asvspoof_2019
     name: ASVspoof 2019
     full_name: "ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database"

@@ -77,6 +77,7 @@ scripts/download/musdb18.sh
 scripts/download/librimix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
+scripts/download/dns_challenge.sh
 scripts/download/vctk.sh
 ```
 
@@ -248,6 +249,11 @@ WHAM_DOWNLOAD_SCRIPTS=0 scripts/download/wham_whamr.sh
 VOICEBANK_DEMAND_DOWNLOAD_TEXT=1 scripts/download/voicebank_demand.sh
 VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS="clean_test noisy_test" scripts/download/voicebank_demand.sh
 VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS=all scripts/download/voicebank_demand.sh
+
+# DNS Challenge downloads official metadata/license/downloader scripts by default.
+DNS_CHALLENGE_DOWNLOAD_DEV_TESTSET=1 scripts/download/dns_challenge.sh
+DNS_CHALLENGE_DOWNLOAD_BLIND_TESTSET=1 scripts/download/dns_challenge.sh
+DNS_CHALLENGE_CLONE_REPO=1 scripts/download/dns_challenge.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
