@@ -545,6 +545,39 @@ benchmarks:
       - https://github.com/karolpiczak/ESC-50/blob/master/LICENSE
       - https://doi.org/10.1145/2733373.2806390
 
+  - id: urbansound8k
+    name: UrbanSound8K
+    full_name: "UrbanSound8K: A Dataset and Taxonomy for Urban Sound Research"
+    qwen_cited_as: null
+    qwen_bucket: environmental_sound_classification
+    tasks:
+      - urban_sound_classification
+      - environmental_sound_classification
+      - audio_tagging
+    official:
+      homepage: https://urbansounddataset.weebly.com/urbansound8k.html
+      download_page: https://urbansounddataset.weebly.com/download-urbansound8k.html
+      zenodo_record: https://zenodo.org/records/1203745
+      paper_pdf: https://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf
+      doi: https://doi.org/10.5281/zenodo.1203745
+    download:
+      primary:
+        - https://zenodo.org/records/1203745/files/UrbanSound8K.tar.gz?download=1
+        - https://urbansounddataset.weebly.com/download-urbansound8k.html
+      examples:
+        - 'URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh'
+        - 'curl -L -o UrbanSound8K.tar.gz "https://zenodo.org/records/1203745/files/UrbanSound8K.tar.gz?download=1"'
+      notes: The archive is about 6 GiB and contains 8732 WAV clips pre-sorted into 10 official folds. The helper downloads citation/license metadata by default and requires URBANSOUND8K_DOWNLOAD_AUDIO=1 for the full archive.
+    license:
+      data: cc-by-nc
+      code: not_applicable
+      notes: Zenodo lists CC BY-NC 4.0. The official Urban Sound site says UrbanSound/UrbanSound8K are free for non-commercial use under Creative Commons BY-NC 3.0; Freesound attributions are included in the dataset.
+    sources:
+      - https://urbansounddataset.weebly.com/urbansound8k.html
+      - https://urbansounddataset.weebly.com/
+      - https://zenodo.org/records/1203745
+      - https://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf
+
   - id: audioset
     name: AudioSet
     full_name: "Audio Set: An ontology and human-labeled dataset for audio events"

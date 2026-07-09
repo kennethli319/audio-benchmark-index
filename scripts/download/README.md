@@ -37,6 +37,7 @@ scripts/download/librispeech.sh
 scripts/download/voxpopuli.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
+scripts/download/urbansound8k.sh
 scripts/download/audioset.sh
 scripts/download/speech_commands.sh
 scripts/download/ami.sh
@@ -93,6 +94,10 @@ MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh
 
 # ESC-50 defaults to the official GitHub archive.
 ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
+
+# UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
+URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
+URBANSOUND8K_EXTRACT=1 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
 
 # AudioSet downloads CSV metadata by default. Features are about 2.4 GiB.
 AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
