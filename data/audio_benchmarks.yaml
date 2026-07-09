@@ -279,6 +279,40 @@ benchmarks:
       - https://huggingface.co/datasets/google/fleurs
       - https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/
 
+  - id: voxpopuli
+    name: VoxPopuli
+    full_name: "VoxPopuli: A Large-Scale Multilingual Speech Corpus for Representation Learning, Semi-Supervised Learning and Interpretation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_to_text_translation
+    tasks:
+      - multilingual_asr
+      - speech_to_text_translation
+      - self_supervised_speech_representation_learning
+      - accented_speech_recognition
+    official:
+      repo: https://github.com/facebookresearch/voxpopuli
+      hf_dataset: https://huggingface.co/datasets/facebook/voxpopuli
+      paper: https://aclanthology.org/2021.acl-long.80/
+      arxiv: https://arxiv.org/abs/2101.00390
+    download:
+      primary:
+        - https://huggingface.co/datasets/facebook/voxpopuli
+        - https://github.com/facebookresearch/voxpopuli
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("facebook/voxpopuli", "en", split="validation")'
+        - 'VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh'
+      notes: HF hosts converted Parquet shards and is about 673 GiB total; select a language/config and split before downloading.
+    license:
+      data: cc0-1.0
+      code: cc-by-nc-4.0
+      notes: Official repo lists VoxPopuli data as CC0 and points users to the European Parliament legal notice for raw data; code and pretrained models are CC BY-NC 4.0.
+    sources:
+      - https://github.com/facebookresearch/voxpopuli
+      - https://huggingface.co/datasets/facebook/voxpopuli
+      - https://aclanthology.org/2021.acl-long.80/
+
   - id: common_voice
     name: Common Voice
     full_name: Mozilla Common Voice

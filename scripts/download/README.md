@@ -34,6 +34,7 @@ scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
+scripts/download/voxpopuli.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/audioset.sh
@@ -65,6 +66,10 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech defaults to dev/test splits. Add large training splits explicitly.
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+
+# VoxPopuli defaults to the English test split. Use another config/split explicitly.
+VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
+VOXPOPULI_CONFIG=en_accented VOXPOPULI_SPLITS=test scripts/download/voxpopuli.sh
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
