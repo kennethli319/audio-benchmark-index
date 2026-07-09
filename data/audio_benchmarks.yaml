@@ -1486,6 +1486,42 @@ benchmarks:
       - https://huggingface.co/datasets/google/speech_commands
       - https://arxiv.org/abs/1804.03209
 
+  - id: audio_mnist
+    name: AudioMNIST
+    full_name: "AudioMNIST: Exploring Explainable Artificial Intelligence for audio analysis on a simple benchmark"
+    qwen_cited_as: null
+    qwen_bucket: spoken_digit_classification
+    tasks:
+      - spoken_digit_classification
+      - audio_classification
+      - speaker_metadata_analysis
+      - explainable_audio_ai
+    official:
+      repo: https://github.com/soerenab/AudioMNIST
+      paper: https://www.sciencedirect.com/science/article/pii/S0016003223007536
+      arxiv: https://arxiv.org/abs/1807.03418
+      license_file: https://raw.githubusercontent.com/soerenab/AudioMNIST/master/LICENSE
+      readme: https://raw.githubusercontent.com/soerenab/AudioMNIST/master/README.md
+    download:
+      primary:
+        - https://github.com/soerenab/AudioMNIST
+        - https://github.com/soerenab/AudioMNIST/archive/refs/heads/master.zip
+      examples:
+        - 'scripts/download/audio_mnist.sh'
+        - 'AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh'
+      notes: The repository contains about 30,000 spoken-digit WAV files from 60 speakers plus speaker metadata and Caffe examples. Because the GitHub repository is large, the helper downloads README/LICENSE metadata by default and requires AUDIO_MNIST_DOWNLOAD_REPO=1 before cloning the full repository.
+    license:
+      data: MIT
+      code: MIT
+      notes: The repository-level LICENSE is MIT and GitHub API reports MIT. Confirm whether downstream use of recorded voices raises consent/privacy obligations beyond the code/data license.
+    sources:
+      - https://github.com/soerenab/AudioMNIST
+      - https://raw.githubusercontent.com/soerenab/AudioMNIST/master/README.md
+      - https://raw.githubusercontent.com/soerenab/AudioMNIST/master/LICENSE
+      - https://api.github.com/repos/soerenab/AudioMNIST
+      - https://www.sciencedirect.com/science/article/pii/S0016003223007536
+      - https://arxiv.org/abs/1807.03418
+
   - id: ravdess
     name: RAVDESS
     full_name: "The Ryerson Audio-Visual Database of Emotional Speech and Song"

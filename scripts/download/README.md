@@ -58,6 +58,7 @@ scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
+scripts/download/audio_mnist.sh
 scripts/download/ravdess.sh
 scripts/download/crema_d.sh
 scripts/download/musan.sh
@@ -214,6 +215,9 @@ VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+
+# AudioMNIST downloads README/LICENSE/speaker metadata by default. Full repo clone is opt-in.
+AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
 
 # RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
 RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh

@@ -9,8 +9,8 @@ speech synthesis, speech dialogue, audio understanding, environmental sound,
 sound event detection, keyword spotting, speaker recognition, spoken language
 identification, emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
-verification anti-spoofing, speaker diarization, and
-music synthesis.
+verification anti-spoofing, speaker diarization, music synthesis, and spoken
+digit classification.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -19,7 +19,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 64 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 65 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -92,6 +92,7 @@ Current coverage includes:
 | [ASVspoof 2019](https://datashare.ed.ac.uk/handle/10283/3336) | Speaker verification anti-spoofing | Edinburgh DataShare record with README, license, evaluation plan, paper PDF, and opt-in LA/PA archives | Open Data Commons Attribution License on the DataShare record; derived from VCTK, so component terms should be re-checked |
 | [VoxLingua107](https://huggingface.co/datasets/TalTechNLP/VoxLingua107) | Spoken language identification | TalTechNLP [Hugging Face mirror](https://huggingface.co/datasets/TalTechNLP/VoxLingua107); helper downloads metadata by default and requires opt-in for the larger snapshot | HF card lists CC BY-NC 4.0; YouTube-derived source media availability and platform terms still apply |
 | [Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands) | Keyword spotting | Official TensorFlow archives: [v0.02](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), [v0.01](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz), or [google/speech_commands](https://huggingface.co/datasets/google/speech_commands) | CC BY 4.0; HF card asks users not to try to identify speakers |
+| [AudioMNIST](https://github.com/soerenab/AudioMNIST) | Spoken digit classification | Official GitHub repository with 30,000 spoken-digit WAV files and speaker metadata; helper downloads README/LICENSE/metadata by default and clones the repository only with opt-in | Repository-level LICENSE is MIT; recorded-voice consent/privacy obligations should still be considered for downstream use |
 | [RAVDESS](https://zenodo.org/records/1188976) | Speech emotion recognition | [Zenodo record](https://zenodo.org/records/1188976); helper saves metadata by default and downloads audio-only speech/song ZIPs with opt-in | CC BY-NC-SA 4.0; commercial licenses are separate |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |
 | [IEMOCAP](https://sail.usc.edu/iemocap/) | Speech emotion recognition | Official [release page](https://sail.usc.edu/iemocap/iemocap_release.htm) after reading the [USC/SAIL data release form](https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf) and submitting the request form | Custom USC/SAIL data release terms; access is manual/form-gated |
@@ -222,6 +223,8 @@ Keyword spotting:
 ```bash
 SPEECH_COMMANDS_VERSION=v0.02 scripts/download/speech_commands.sh
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+scripts/download/audio_mnist.sh
+AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
 ```
 
 Speech emotion recognition:
