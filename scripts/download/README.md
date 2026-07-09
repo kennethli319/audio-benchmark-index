@@ -51,6 +51,7 @@ scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
+scripts/download/nsynth.sh
 ```
 
 ## Manual Or Gated
@@ -155,4 +156,8 @@ AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
 MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_DOWNLOAD_AUDIO=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/download/magnatagatune.sh
+
+# NSynth downloads the official page by default. Archives are large and opt-in.
+NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
+NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS="valid test" NSYNTH_FORMAT=tfrecord scripts/download/nsynth.sh
 ```

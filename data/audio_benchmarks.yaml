@@ -143,6 +143,41 @@ benchmarks:
       - https://huggingface.co/datasets/ASLP-lab/SongFormBench
       - https://github.com/ASLP-lab/SongFormer
 
+  - id: nsynth
+    name: NSynth
+    full_name: "NSynth: Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders"
+    qwen_cited_as: null
+    qwen_bucket: music_synthesis
+    tasks:
+      - audio_synthesis
+      - music_synthesis
+      - musical_instrument_modeling
+      - timbre_modeling
+    official:
+      homepage: https://magenta.withgoogle.com/datasets/nsynth
+      paper: https://arxiv.org/abs/1704.01279
+      pmlr_paper: https://proceedings.mlr.press/v70/engel17a.html
+      tfds: https://www.tensorflow.org/datasets/catalog/nsynth
+    download:
+      primary:
+        - https://magenta.withgoogle.com/datasets/nsynth
+        - https://storage.googleapis.com/download.magenta.tensorflow.org/datasets/nsynth/nsynth-test.jsonwav.tar.gz
+        - https://storage.googleapis.com/download.magenta.tensorflow.org/datasets/nsynth/nsynth-test.tfrecord
+      examples:
+        - 'scripts/download/nsynth.sh'
+        - 'NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh'
+        - 'python -c "import tensorflow_datasets as tfds; tfds.load(\"nsynth\", split=\"test\")"'
+      notes: The full TFDS download is about 73 GiB. The helper saves the official dataset page by default and requires NSYNTH_DOWNLOAD_ARCHIVES=1 before downloading split archives.
+    license:
+      data: cc-by-4.0
+      code: Apache-2.0
+      notes: Official Magenta dataset page lists the dataset under CC BY 4.0; Magenta code is Apache-2.0.
+    sources:
+      - https://magenta.withgoogle.com/datasets/nsynth
+      - https://www.tensorflow.org/datasets/catalog/nsynth
+      - https://arxiv.org/abs/1704.01279
+      - https://proceedings.mlr.press/v70/engel17a.html
+
   - id: voicebench
     name: VoiceBench
     full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"
