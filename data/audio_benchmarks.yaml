@@ -435,6 +435,38 @@ benchmarks:
       - https://www.openslr.org/60/
       - https://arxiv.org/abs/1904.02882
 
+  - id: ljspeech
+    name: LJSpeech
+    full_name: The LJ Speech Dataset
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - text_to_speech
+      - speech_synthesis
+      - single_speaker_speech_synthesis
+      - asr
+    official:
+      homepage: https://keithito.com/LJ-Speech-Dataset/
+      hf_dataset: https://huggingface.co/datasets/keithito/lj_speech
+      direct_archive: https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2
+    download:
+      primary:
+        - https://keithito.com/LJ-Speech-Dataset/
+        - https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2
+        - https://huggingface.co/datasets/keithito/lj_speech
+      examples:
+        - 'scripts/download/ljspeech.sh'
+        - 'LJSPEECH_DOWNLOAD_ARCHIVE=1 scripts/download/ljspeech.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("keithito/lj_speech", trust_remote_code=True)'
+      notes: The official archive is about 2.6 GiB. The helper saves the official dataset page by default and requires LJSPEECH_DOWNLOAD_ARCHIVE=1 before downloading the archive.
+    license:
+      data: public_domain
+      code: not_applicable
+      notes: Official page says text, audio, and annotations are public domain; the HF mirror lists unlicense.
+    sources:
+      - https://keithito.com/LJ-Speech-Dataset/
+      - https://huggingface.co/datasets/keithito/lj_speech
+
   - id: wenetspeech
     name: WenetSpeech
     full_name: WenetSpeech
