@@ -215,6 +215,46 @@ benchmarks:
       - https://zenodo.org/records/5885750
       - https://arxiv.org/abs/2203.03022
 
+  - id: dynamic_superb
+    name: Dynamic-SUPERB
+    full_name: "Dynamic-SUPERB: A dynamic, collaborative, and comprehensive instruction-tuning benchmark for speech"
+    qwen_cited_as: null
+    qwen_bucket: speech_instruction_benchmark
+    tasks:
+      - spoken_language_model_evaluation
+      - instruction_following
+      - speech_understanding
+      - audio_understanding
+      - music_understanding
+      - classification
+      - regression
+      - sequence_generation
+    official:
+      repo: https://github.com/dynamic-superb/dynamic-superb
+      leaderboard: https://huggingface.co/spaces/DynamicSuperb/leaderboard
+      phase1_paper: https://arxiv.org/abs/2309.09510
+      phase2_paper: https://arxiv.org/abs/2411.05361
+    download:
+      primary:
+        - https://github.com/dynamic-superb/dynamic-superb
+        - https://raw.githubusercontent.com/dynamic-superb/dynamic-superb/main/README.md
+        - https://raw.githubusercontent.com/dynamic-superb/dynamic-superb/main/docs/leaderboard_gpt_evaluation.md
+        - https://huggingface.co/spaces/DynamicSuperb/leaderboard
+      examples:
+        - 'scripts/download/dynamic_superb.sh'
+        - 'DYNAMIC_SUPERB_CLONE_REPO=1 scripts/download/dynamic_superb.sh'
+      notes: The helper downloads the official README and leaderboard documentation by default and clones the benchmark repository only with DYNAMIC_SUPERB_CLONE_REPO=1. The benchmark is collaborative and spans many speech, music, and general sound tasks, so underlying task data should be checked through each component source before use.
+    license:
+      data: mixed
+      code: not_specified
+      notes: GitHub API reported no repository license on 2026-07-09. The benchmark aggregates tasks from many component datasets; use the official task metadata and each upstream corpus license before redistribution, training, or commercial use.
+    sources:
+      - https://github.com/dynamic-superb/dynamic-superb
+      - https://raw.githubusercontent.com/dynamic-superb/dynamic-superb/main/README.md
+      - https://huggingface.co/spaces/DynamicSuperb/leaderboard
+      - https://arxiv.org/abs/2309.09510
+      - https://arxiv.org/abs/2411.05361
+
   - id: rul_muchomusic
     name: RUL-MuchoMusic
     full_name: "RUL-MuchoMusic from RUListening / Are You Really Listening?"
