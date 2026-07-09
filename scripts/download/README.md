@@ -42,6 +42,7 @@ scripts/download/audioset.sh
 scripts/download/fsd50k.sh
 scripts/download/voxceleb.sh
 scripts/download/speech_commands.sh
+scripts/download/ravdess.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
@@ -113,6 +114,9 @@ VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+
+# RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
+RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh
 
 # MUSAN downloads the OpenSLR page by default. The corpus archive is about 11 GiB.
 MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh

@@ -727,6 +727,41 @@ benchmarks:
       - https://huggingface.co/datasets/google/speech_commands
       - https://arxiv.org/abs/1804.03209
 
+  - id: ravdess
+    name: RAVDESS
+    full_name: "The Ryerson Audio-Visual Database of Emotional Speech and Song"
+    qwen_cited_as: null
+    qwen_bucket: speech_emotion_recognition
+    tasks:
+      - speech_emotion_recognition
+      - audio_visual_emotion_recognition
+      - acted_emotional_speech
+      - emotional_song_recognition
+    official:
+      zenodo_record: https://zenodo.org/records/1188976
+      doi: https://doi.org/10.5281/zenodo.1188976
+      lab_page: https://affectivedatascience.com/datasets.html#ravdess
+      paper: https://doi.org/10.1371/journal.pone.0196391
+      plos_paper: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391
+    download:
+      primary:
+        - https://zenodo.org/records/1188976
+        - https://zenodo.org/api/records/1188976/files/Audio_Speech_Actors_01-24.zip/content
+        - https://zenodo.org/api/records/1188976/files/Audio_Song_Actors_01-24.zip/content
+      examples:
+        - 'scripts/download/ravdess.sh'
+        - 'RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh'
+        - 'curl -L -o Audio_Speech_Actors_01-24.zip https://zenodo.org/api/records/1188976/files/Audio_Speech_Actors_01-24.zip/content'
+      notes: The helper downloads the Zenodo metadata JSON by default. The audio-only speech and song ZIPs are about 215 MB and 198 MB respectively; video archives are much larger and are not downloaded by default.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: not_applicable
+      notes: Zenodo lists CC BY-NC-SA 4.0 for the dataset and says commercial licenses are available separately. The linked PLOS ONE paper itself is CC BY, but that article license is not the dataset license.
+    sources:
+      - https://zenodo.org/records/1188976
+      - https://doi.org/10.1371/journal.pone.0196391
+      - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391
+
   - id: musan
     name: MUSAN
     full_name: "MUSAN: A Music, Speech, and Noise Corpus"
