@@ -18,7 +18,7 @@ python3 -m pip install -U "huggingface_hub[cli]"
 huggingface-cli login
 ```
 
-- `git` for WenetSpeech, because its official downloader lives in its repo.
+- `git` for WenetSpeech, LibriMix, and other helpers that use official repos.
 
 ## CLI Supported
 
@@ -63,6 +63,7 @@ scripts/download/fma.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
+scripts/download/librimix.sh
 scripts/download/vctk.sh
 ```
 
@@ -224,6 +225,9 @@ MAESTRO_BASE_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.
 # MUSDB18 saves official pages by default. Large archives require terms acknowledgement and opt-in.
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
+
+# LibriMix clones the official generator/metadata repo by default. Generation is very large.
+LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
 
 # VCTK downloads the official README and license by default. The corpus ZIP is large and opt-in.
 VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh

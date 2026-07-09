@@ -7,8 +7,8 @@ the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, speech translation,
 speech synthesis, speech dialogue, audio understanding, environmental sound,
 sound event detection, keyword spotting, speaker recognition, emotion,
-captioning, music tagging, music genre classification, music transcription,
-and music synthesis.
+captioning, speech separation, music tagging, music genre classification,
+music transcription, and music synthesis.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -17,7 +17,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 48 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 49 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -32,6 +32,7 @@ Current coverage includes:
 - Core speech benchmarks for ASR, speech-to-text translation, meeting ASR, and singing voice.
 - Speech generation benchmarks for TTS and voice quality research.
 - Non-speech audio benchmarks for events, scenes, sound event detection, captioning, and music.
+- Speech and music source separation benchmarks with realistic access constraints.
 - Human-centered speech tasks such as speaker recognition, keyword spotting, and emotion recognition.
 
 ## Benchmark Table
@@ -84,6 +85,7 @@ Current coverage includes:
 | [MUSAN](https://www.openslr.org/17/) | Speech/music/noise classification | [OpenSLR SLR17](https://www.openslr.org/17/) corpus archive; helper downloads the OpenSLR page by default and requires opt-in for the 11 GiB archive | CC BY 4.0 |
 | [AMI](https://groups.inf.ed.ac.uk/ami/corpus/) | Meeting ASR | Official [annotation ZIPs](https://groups.inf.ed.ac.uk/ami/download/), optional [OpenSLR SLR16](https://www.openslr.org/16/) acoustic archives, or [edinburghcstr/ami](https://huggingface.co/datasets/edinburghcstr/ami) | Official AMI pages list CC BY 4.0; OpenSLR mirror still shows an older modified CC BY-NC-SA v2.0 notice |
 | [CHiME-6](https://www.chimechallenge.org/datasets/chime6) | Meeting ASR / diarization | [OpenSLR SLR150](https://www.openslr.org/150/) transcriptions/floorplans by default; large train/dev/eval audio archives are opt-in | CC BY-SA 4.0 |
+| [LibriMix](https://github.com/JorisCos/LibriMix) | Speech separation | Official generator/metadata repo; helper clones it by default and runs generation only with `LIBRIMIX_RUN_GENERATION=1` plus a large storage directory | Code/scripts are MIT; generated data is derived from LibriSpeech CC BY 4.0 plus WHAM noise, so re-check component terms |
 | [Clotho](https://zenodo.org/records/4783391) | Audio captioning | [Zenodo v2.1 record](https://zenodo.org/records/4783391); captions/metadata are small, audio archives are about 7.1 GiB | Mixed terms: audio clips keep per-file Freesound licenses; captions use the Tampere University license, mainly non-commercial with attribution |
 | [AudioCaps](https://audiocaps.github.io/) | Audio captioning | Official [CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset) and [AudioCaps 2.0 CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset2.0); raw audio/video requires the upstream form | README says code and dataset are free for academic purposes only; repo license is MIT, but raw clips inherit AudioSet/YouTube availability and terms |
 
@@ -222,6 +224,13 @@ scripts/download/chime_6.sh
 CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
 ```
 
+Speech separation:
+
+```bash
+scripts/download/librimix.sh
+LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
+```
+
 Audio captioning:
 
 ```bash
@@ -326,6 +335,7 @@ scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/fma.sh
+scripts/download/librimix.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/ljspeech.sh

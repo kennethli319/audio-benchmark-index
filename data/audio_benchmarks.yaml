@@ -1597,3 +1597,39 @@ benchmarks:
       - https://www.chimechallenge.org/datasets/chime6
       - https://www.openslr.org/150/
       - https://arxiv.org/abs/2004.09249
+
+  - id: librimix
+    name: LibriMix
+    full_name: "LibriMix: An Open-Source Dataset for Generalizable Speech Separation"
+    qwen_cited_as: null
+    qwen_bucket: speech_separation
+    tasks:
+      - speech_separation
+      - speech_enhancement
+      - noisy_speech_separation
+      - source_separation
+    official:
+      repo: https://github.com/JorisCos/LibriMix
+      paper: https://arxiv.org/abs/2005.11262
+      generator_script: https://github.com/JorisCos/LibriMix/blob/master/generate_librimix.sh
+      librispeech: https://www.openslr.org/12/
+      wham_homepage: http://wham.whisper.ai/
+    download:
+      primary:
+        - https://github.com/JorisCos/LibriMix
+        - https://raw.githubusercontent.com/JorisCos/LibriMix/master/generate_librimix.sh
+      examples:
+        - 'scripts/download/librimix.sh'
+        - 'LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/path/to/storage scripts/download/librimix.sh'
+        - 'git clone https://github.com/JorisCos/LibriMix && cd LibriMix && ./generate_librimix.sh storage_dir'
+      notes: The helper clones the official generator/metadata repository by default. Running generation downloads LibriSpeech clean subsets and WHAM noise, then creates many mixtures; the upstream README estimates about 430 GiB for Libri2Mix plus 332 GiB for Libri3Mix, with additional source storage, so generation requires an explicit opt-in and an external storage directory.
+    license:
+      data: mixed_derived
+      code: MIT
+      notes: The LibriMix repository license is MIT for code/scripts. Generated data is derived from LibriSpeech, which OpenSLR lists as CC BY 4.0, plus WHAM noise; re-check WHAM terms and cite all upstream components before redistribution or commercial use.
+    sources:
+      - https://github.com/JorisCos/LibriMix
+      - https://raw.githubusercontent.com/JorisCos/LibriMix/master/README.md
+      - https://raw.githubusercontent.com/JorisCos/LibriMix/master/LICENSE
+      - https://arxiv.org/abs/2005.11262
+      - https://www.openslr.org/12/
