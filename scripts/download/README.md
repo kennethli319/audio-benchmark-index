@@ -39,6 +39,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/audioset.sh
 scripts/download/speech_commands.sh
+scripts/download/ami.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 ```
@@ -97,6 +98,10 @@ AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+
+# AMI downloads official annotation ZIPs by default. Audio/HF mirrors are large.
+AMI_DOWNLOAD_OPENSLR_AUDIO=1 AMI_OPENSLR_PARTS="headset.tar.gz" scripts/download/ami.sh
+AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh

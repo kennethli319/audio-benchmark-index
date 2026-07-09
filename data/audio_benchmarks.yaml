@@ -615,6 +615,48 @@ benchmarks:
       - https://huggingface.co/datasets/google/speech_commands
       - https://arxiv.org/abs/1804.03209
 
+  - id: ami
+    name: AMI
+    full_name: AMI Meeting Corpus
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+    tasks:
+      - meeting_speech_recognition
+      - multi_speaker_asr
+      - distant_speech_recognition
+      - meeting_understanding
+    official:
+      homepage: https://groups.inf.ed.ac.uk/ami/corpus/
+      download_page: https://groups.inf.ed.ac.uk/ami/download/
+      license_page: https://groups.inf.ed.ac.uk/ami/corpus/license.shtml
+      openslr: https://www.openslr.org/16/
+      hf_dataset: https://huggingface.co/datasets/edinburghcstr/ami
+      paper: https://link.springer.com/article/10.1007/s10579-007-9042-3
+      asru_paper: https://www.cstr.ed.ac.uk/downloads/publications/2007/renals-asru-2007.pdf
+    download:
+      primary:
+        - https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip
+        - https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_auto_1.5.1.zip
+        - https://www.openslr.org/16/
+        - https://huggingface.co/datasets/edinburghcstr/ami
+      examples:
+        - 'scripts/download/ami.sh'
+        - 'AMI_DOWNLOAD_OPENSLR_AUDIO=1 AMI_OPENSLR_PARTS="headset.tar.gz" scripts/download/ami.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("edinburghcstr/ami", "ihm")'
+      notes: The helper downloads official annotation ZIPs by default. OpenSLR acoustic archives and the HF converted dataset are large, so audio downloads are explicit opt-ins.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: Official AMI pages say the corpus, signals, transcription, and some annotations are CC BY 4.0. OpenSLR SLR16 still lists an older modified CC BY-NC-SA v2.0 notice, so prefer the official AMI license page for current terms and re-check before redistribution.
+    sources:
+      - https://groups.inf.ed.ac.uk/ami/corpus/
+      - https://groups.inf.ed.ac.uk/ami/download/
+      - https://groups.inf.ed.ac.uk/ami/corpus/license.shtml
+      - https://www.openslr.org/16/
+      - https://huggingface.co/datasets/edinburghcstr/ami
+
   - id: clotho
     name: Clotho
     full_name: "Clotho: An Audio Captioning Dataset"
