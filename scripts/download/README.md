@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
+scripts/download/slurp.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/voicebench.sh
@@ -105,6 +106,10 @@ RUL_DOWNLOAD_UPSTREAM_MUCHOMUSIC=1 scripts/download/rul_muchomusic.sh
 
 # SpeechRole downloads both eval and data by default.
 SPEECHROLE_DATA=0 scripts/download/speechrole.sh
+
+# SLURP clones the annotation/code repo and Zenodo license by default.
+SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS=real scripts/download/slurp.sh
+SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS="real synth" scripts/download/slurp.sh
 
 # MIR-1K defaults to the Figshare mirror because the MIR Lab archive currently 404s.
 MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh

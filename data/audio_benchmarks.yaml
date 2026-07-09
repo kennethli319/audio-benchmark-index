@@ -89,6 +89,43 @@ benchmarks:
       - https://github.com/dingdongwang/MMSU
       - https://huggingface.co/datasets/ddwang2000/MMSU
 
+  - id: slurp
+    name: SLURP
+    full_name: "SLURP: A Spoken Language Understanding Resource Package"
+    qwen_cited_as: null
+    qwen_bucket: spoken_language_understanding
+    tasks:
+      - spoken_language_understanding
+      - intent_classification
+      - slot_filling
+      - semantic_entity_labeling
+    official:
+      repo: https://github.com/pswietojanski/slurp
+      paper: https://aclanthology.org/2020.emnlp-main.588/
+      zenodo: https://zenodo.org/records/4274930
+      arxiv: https://arxiv.org/abs/2011.13205
+    download:
+      primary:
+        - https://github.com/pswietojanski/slurp
+        - https://zenodo.org/records/4274930
+        - https://zenodo.org/api/records/4274930/files/LICENSE.txt/content
+        - https://zenodo.org/api/records/4274930/files/slurp_real.tar.gz/content
+        - https://zenodo.org/api/records/4274930/files/slurp_synth.tar.gz/content
+      examples:
+        - 'scripts/download/slurp.sh'
+        - 'SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS=real scripts/download/slurp.sh'
+        - 'SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS="real synth" scripts/download/slurp.sh'
+      notes: The helper clones or updates the official annotation/code repository by default and downloads Zenodo LICENSE.txt. Audio archives are about 3.9 GiB real plus 2.8 GiB synthetic, so audio download is an explicit opt-in.
+    license:
+      data: "Textual annotations are CC BY 4.0; Zenodo-hosted audio is non-commercial (Zenodo license id other-nc; GitHub README states CC BY-NC 4.0)."
+      code: not_specified
+      notes: GitHub README separates textual data and audio licensing and says a less-strict audio license may be available by contacting the dataset owner. No standalone code license file was found in the repo via raw GitHub on 2026-07-09.
+    sources:
+      - https://github.com/pswietojanski/slurp
+      - https://zenodo.org/records/4274930
+      - https://aclanthology.org/2020.emnlp-main.588/
+      - https://arxiv.org/abs/2011.13205
+
   - id: rul_muchomusic
     name: RUL-MuchoMusic
     full_name: "RUL-MuchoMusic from RUListening / Are You Really Listening?"
