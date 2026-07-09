@@ -46,6 +46,7 @@ scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
 scripts/download/audioset.sh
 scripts/download/fsd50k.sh
+scripts/download/desed.sh
 scripts/download/voxceleb.sh
 scripts/download/speech_commands.sh
 scripts/download/ravdess.sh
@@ -148,6 +149,10 @@ AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 
 # FSD50K downloads docs, labels, and metadata by default. Audio is about 31 GiB.
 FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
+
+# DESED clones the official repo and downloads small metadata/JAMS by default. Audio is opt-in.
+DESED_DOWNLOAD_REAL_AUDIO=1 scripts/download/desed.sh
+DESED_DOWNLOAD_SYNTHETIC_AUDIO=1 DESED_SYNTHETIC_PARTS="DESED_synth_eval_dcase2019.tar.gz" scripts/download/desed.sh
 
 # VoxCeleb downloads small OpenSLR metadata/trial lists only.
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh

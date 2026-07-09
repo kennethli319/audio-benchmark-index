@@ -962,6 +962,47 @@ benchmarks:
       - https://arxiv.org/abs/2010.00475
       - https://ieeexplore.ieee.org/document/9645159
 
+  - id: desed
+    name: DESED
+    full_name: "Domestic Environment Sound Event Detection Dataset"
+    qwen_cited_as: null
+    qwen_bucket: sound_event_detection
+    tasks:
+      - sound_event_detection
+      - audio_tagging
+      - weakly_supervised_sound_event_detection
+      - synthetic_soundscape_generation
+    official:
+      homepage: https://project.inria.fr/desed/
+      repo: https://github.com/turpaultn/DESED
+      dcase_2024_task: https://dcase.community/challenge2024/task-sound-event-detection-with-heterogeneous-training-dataset-and-potentially-missing-labels
+      zenodo_real: https://zenodo.org/records/3588179
+      zenodo_synthetic: https://zenodo.org/records/6026841
+      paper: https://hal.inria.fr/hal-02160855
+      synthetic_paper: https://hal.inria.fr/hal-02355573
+    download:
+      primary:
+        - https://github.com/turpaultn/DESED
+        - https://zenodo.org/records/3588179
+        - https://zenodo.org/records/6026841
+      examples:
+        - 'scripts/download/desed.sh'
+        - 'DESED_DOWNLOAD_REAL_AUDIO=1 scripts/download/desed.sh'
+        - 'DESED_DOWNLOAD_SYNTHETIC_AUDIO=1 DESED_SYNTHETIC_PARTS="DESED_synth_eval_dcase2019.tar.gz" scripts/download/desed.sh'
+      notes: The helper downloads the official repo plus Zenodo record JSON and small metadata/JAMS files by default. Real and synthetic audio archives are multi-GB and require explicit opt-in flags.
+    license:
+      data: cc-by-4.0
+      code: MIT
+      notes: Zenodo records for DESED real and synthetic list CC BY 4.0. The GitHub README says the Python code is MIT and that component datasets include license files at their roots; source media comes from AudioSet/YouTube, Freesound, MUSAN, SINS, and related sources, so re-check component terms before redistribution.
+    sources:
+      - https://project.inria.fr/desed/
+      - https://github.com/turpaultn/DESED
+      - https://dcase.community/challenge2024/task-sound-event-detection-with-heterogeneous-training-dataset-and-potentially-missing-labels
+      - https://zenodo.org/records/3588179
+      - https://zenodo.org/records/6026841
+      - https://hal.inria.fr/hal-02160855
+      - https://hal.inria.fr/hal-02355573
+
   - id: voxceleb
     name: VoxCeleb
     full_name: VoxCeleb speaker recognition datasets
