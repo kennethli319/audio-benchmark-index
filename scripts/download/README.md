@@ -41,6 +41,7 @@ scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
 scripts/download/voxpopuli.sh
+scripts/download/covost2.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
@@ -107,6 +108,11 @@ AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOA
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
 VOXPOPULI_CONFIG=en_accented VOXPOPULI_SPLITS=test scripts/download/voxpopuli.sh
+
+# CoVoST 2 downloads official translation TSV archives only; get Common Voice 4 audio separately.
+COVOST2_DIRECTIONS="en_de fr_en" scripts/download/covost2.sh
+COVOST2_DIRECTIONS=all scripts/download/covost2.sh
+COVOST2_DIRECTIONS=none scripts/download/covost2.sh
 
 # mTEDx downloads the OpenSLR page and small annotation CSV by default. Archives are large and opt-in.
 MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS=mtedx_iwslt2021.tgz scripts/download/mtedx.sh

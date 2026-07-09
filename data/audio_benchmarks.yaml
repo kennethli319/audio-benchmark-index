@@ -421,6 +421,47 @@ benchmarks:
       - https://arxiv.org/abs/2102.01757
       - https://www.isca-archive.org/interspeech_2021/salesky21_interspeech.html
 
+  - id: covost2
+    name: CoVoST 2
+    full_name: "CoVoST 2: Massively Multilingual Speech-to-Text Translation Corpus"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_to_text_translation
+      - automatic_speech_recognition
+    tasks:
+      - speech_to_text_translation
+      - speech_translation
+      - multilingual_asr
+      - machine_translation
+    official:
+      homepage: https://ai.meta.com/tools/covost/
+      repo: https://github.com/facebookresearch/covost
+      hf_dataset: https://huggingface.co/datasets/facebook/covost2
+      paper: https://arxiv.org/abs/2007.10310
+      interspeech_paper: https://www.isca-archive.org/interspeech_2021/wang21s_interspeech.html
+    download:
+      primary:
+        - https://github.com/facebookresearch/covost
+        - https://huggingface.co/datasets/facebook/covost2
+        - https://dl.fbaipublicfiles.com/covost/covost_v2.en_de.tsv.tar.gz
+        - https://dl.fbaipublicfiles.com/covost/covost_v2.fr_en.tsv.tar.gz
+      examples:
+        - 'scripts/download/covost2.sh'
+        - 'COVOST2_DIRECTIONS="en_de fr_en" scripts/download/covost2.sh'
+        - 'COVOST2_DIRECTIONS=all scripts/download/covost2.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("facebook/covost2", "en_de", split="test", trust_remote_code=True)'
+      notes: The helper downloads the official CoVoST 2 translation TSV archives and split-generation script. CoVoST 2 rows match Common Voice 4 validated.tsv entries, so users must obtain Common Voice audio separately under the applicable upstream terms.
+    license:
+      data: "Meta/GitHub list CoVoST data as CC0; the current Hugging Face card lists CC BY-NC 4.0, and current Mozilla Data Collective packages for CoVoST 2/Common Voice segments may be CC BY-NC 4.0."
+      code: cc-by-nc-4.0
+      notes: Treat packaged mirrors conservatively and re-check the active source before redistribution. The GitHub license table also says Tatoeba evaluation sentences are CC BY 2.0 FR and Tatoeba speech has per-row licenses.
+    sources:
+      - https://ai.meta.com/tools/covost/
+      - https://github.com/facebookresearch/covost
+      - https://huggingface.co/datasets/facebook/covost2
+      - https://arxiv.org/abs/2007.10310
+      - https://www.isca-archive.org/interspeech_2021/wang21s_interspeech.html
+
   - id: gigaspeech
     name: GigaSpeech
     full_name: "GigaSpeech: An Evolving, Multi-domain ASR Corpus with 10,000 Hours of Transcribed Audio"
