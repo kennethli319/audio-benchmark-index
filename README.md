@@ -1,21 +1,41 @@
 # Audio Benchmark Index
 
-A living index of audio benchmarks, starting from the Audio -> Text evaluation
-benchmarks cited in the Qwen3.5-Omni technical report, section 5.1.
+A living index of speech, audio, music, and multimodal audio benchmarks.
+
+The initial seed list came from the Audio -> Text evaluation benchmarks cited in
+the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
+into a broader map of the audio evaluation landscape: ASR, speech translation,
+speech synthesis, speech dialogue, audio understanding, environmental sound,
+sound event detection, keyword spotting, speaker recognition, emotion,
+captioning, music tagging, and music synthesis.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
-how to get the data, and the upstream license or access terms. This repository
-does not mirror datasets or grant rights to use any upstream data.
-
-Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
-Audio -> Text evaluation block.
+how to get the data, and the upstream license or access terms. When practical,
+the repo also includes a small helper script that fetches metadata or safe
+non-gated files while making large archives and restricted datasets explicit
+opt-ins. This repository does not mirror datasets or grant rights to use any
+upstream data.
 
 Last checked: 2026-07-09. Current index size: 43 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
-## Benchmarks
+Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
+Audio -> Text evaluation block. The Qwen report remains useful provenance, but
+the repository is no longer limited to that paper's benchmark list.
 
-| Benchmark | Qwen bucket | Download pointer | Upstream license / terms |
+## Coverage
+
+Current coverage includes:
+
+- Audio understanding and speech dialogue benchmarks from recent omni/audio LLM reports.
+- Core speech benchmarks for ASR, speech-to-text translation, meeting ASR, and singing voice.
+- Speech generation benchmarks for TTS and voice quality research.
+- Non-speech audio benchmarks for events, scenes, sound event detection, captioning, and music.
+- Human-centered speech tasks such as speaker recognition, keyword spotting, and emotion recognition.
+
+## Benchmark Table
+
+| Benchmark | Task area | Download pointer | Upstream license / terms |
 | --- | --- | --- | --- |
 | [MMAU](https://github.com/Sakshi113/MMAU) | Audio understanding | [MMAU-test-mini](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini), [MMAU-test](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test) | HF cards list `cc-by-nc-4.0` for test-mini and `mit` for test; code repo is Apache-2.0 |
 | [MMAR](https://github.com/ddlBoJack/MMAR) | Audio understanding | [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) | HF card lists `cc-by-nc-4.0`; code repo had no detected license |
@@ -229,6 +249,26 @@ Form/password gated datasets:
 
 The editable source of truth is [data/audio_benchmarks.yaml](data/audio_benchmarks.yaml).
 Use it for scripts, sorting, or future additions.
+
+## Updating The Index
+
+This index is meant to keep growing as audio model reports, benchmark papers,
+and dataset hosting pages change. Updates should preserve three things for each
+entry:
+
+- **Official provenance:** link the project page, paper, repository, dataset
+  card, or archive that a practitioner should cite or trust first.
+- **Access reality:** say whether data is public, gated, form-based,
+  password-based, split across mirrors, or only available as metadata.
+- **License caution:** record the upstream license or terms as seen at the time
+  of review, and note conflicts between mirrors instead of flattening them.
+
+Good future additions include benchmarks cited by new audio/omni model technical
+reports, widely used task leaderboards, DCASE-style challenge datasets, and
+production-relevant speech/audio datasets with clear access paths. For large,
+restricted, or expensive datasets, helper scripts should default to metadata,
+checksums, landing pages, or dry-run instructions, with archive downloads behind
+explicit environment-variable opt-ins.
 
 ## Download Scripts
 
