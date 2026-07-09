@@ -39,6 +39,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
 scripts/download/audioset.sh
+scripts/download/fsd50k.sh
 scripts/download/speech_commands.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
@@ -101,6 +102,9 @@ URBANSOUND8K_EXTRACT=1 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound
 
 # AudioSet downloads CSV metadata by default. Features are about 2.4 GiB.
 AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
+
+# FSD50K downloads docs, labels, and metadata by default. Audio is about 31 GiB.
+FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh

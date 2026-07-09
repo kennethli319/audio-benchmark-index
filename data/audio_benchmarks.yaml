@@ -613,6 +613,43 @@ benchmarks:
       - https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/
       - https://github.com/audioset/ontology
 
+  - id: fsd50k
+    name: FSD50K
+    full_name: "FSD50K: An Open Dataset of Human-Labeled Sound Events"
+    qwen_cited_as: null
+    qwen_bucket: audio_event_classification
+    tasks:
+      - sound_event_classification
+      - sound_event_tagging
+      - audio_tagging
+      - machine_listening
+    official:
+      homepage: https://fsannotator.upf.edu/fsd/release/FSD50K/
+      zenodo_record: https://zenodo.org/records/4060432
+      doi: https://doi.org/10.5281/zenodo.4060432
+      paper: https://arxiv.org/abs/2010.00475
+      taslp_paper: https://ieeexplore.ieee.org/document/9645159
+      baseline_repo: https://github.com/edufonseca/FSD50K_baseline
+    download:
+      primary:
+        - https://zenodo.org/records/4060432
+        - https://zenodo.org/api/records/4060432/files/FSD50K.ground_truth.zip/content
+        - https://zenodo.org/api/records/4060432/files/FSD50K.metadata.zip/content
+        - https://zenodo.org/api/records/4060432/files/FSD50K.doc.zip/content
+      examples:
+        - 'scripts/download/fsd50k.sh'
+        - 'FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh'
+      notes: The helper downloads the small documentation, ground-truth, and metadata ZIPs by default. Audio is split across about 24.7 GiB of dev archives plus about 6.2 GiB of eval archives, so audio download is an explicit opt-in.
+    license:
+      data: mixed_creative_commons
+      code: not_specified
+      notes: Zenodo says individual Freesound clips keep per-clip CC0, CC-BY, CC-BY-NC, or CC Sampling+ licenses, with clip-level license mappings in the metadata JSON files. FSD50K as a curated dataset is additionally released under CC BY, but the maintainers warn that a single global license is not straightforward because items have different licenses.
+    sources:
+      - https://fsannotator.upf.edu/fsd/release/FSD50K/
+      - https://zenodo.org/records/4060432
+      - https://arxiv.org/abs/2010.00475
+      - https://ieeexplore.ieee.org/document/9645159
+
   - id: speech_commands
     name: Speech Commands
     full_name: "Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition"
