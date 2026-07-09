@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
+scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
@@ -157,6 +158,9 @@ SPEECHROLE_DATA=0 scripts/download/speechrole.sh
 # SLURP clones the annotation/code repo and Zenodo license by default.
 SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS=real scripts/download/slurp.sh
 SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS="real synth" scripts/download/slurp.sh
+
+# SUPERB downloads official S3PRL benchmark docs/license by default.
+SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh
 
 # MIR-1K defaults to the Figshare mirror because the MIR Lab archive currently 404s.
 MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh

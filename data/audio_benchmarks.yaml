@@ -89,6 +89,55 @@ benchmarks:
       - https://github.com/dingdongwang/MMSU
       - https://huggingface.co/datasets/ddwang2000/MMSU
 
+  - id: superb
+    name: SUPERB
+    full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: speech_representation_benchmark
+    tasks:
+      - speech_representation_evaluation
+      - phoneme_recognition
+      - automatic_speech_recognition
+      - keyword_spotting
+      - query_by_example_spoken_term_detection
+      - speaker_identification
+      - automatic_speaker_verification
+      - speaker_diarization
+      - emotion_recognition
+      - intent_classification
+      - slot_filling
+      - speech_translation
+      - speech_enhancement
+      - speech_separation
+      - voice_conversion
+    official:
+      homepage: https://superbbenchmark.org/
+      repo: https://github.com/s3prl/s3prl
+      docs: https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md
+      paper: https://arxiv.org/abs/2105.01051
+      interspeech: https://www.isca-archive.org/interspeech_2021/yang21c_interspeech.html
+      superb_sg_paper: https://arxiv.org/abs/2203.06849
+    download:
+      primary:
+        - https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md
+        - https://github.com/s3prl/s3prl
+        - https://superbbenchmark.org/
+      examples:
+        - 'scripts/download/superb.sh'
+        - 'SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh'
+      notes: SUPERB is a benchmark suite over multiple upstream corpora. The helper downloads official documentation/license files by default and only clones the S3PRL toolkit with SUPERB_CLONE_TOOLKIT=1; underlying corpora such as LibriSpeech, Speech Commands, VoxCeleb, and IEMOCAP keep their own access paths and licenses.
+    license:
+      data: mixed
+      code: Apache-2.0
+      notes: S3PRL is mostly Apache-2.0, with repository notes indicating some Facebook-authored files are CC BY-NC. SUPERB tasks use multiple external datasets, so each component corpus must be downloaded and licensed through its own official source.
+    sources:
+      - https://superbbenchmark.org/
+      - https://github.com/s3prl/s3prl
+      - https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md
+      - https://arxiv.org/abs/2105.01051
+      - https://www.isca-archive.org/interspeech_2021/yang21c_interspeech.html
+      - https://arxiv.org/abs/2203.06849
+
   - id: slurp
     name: SLURP
     full_name: "SLURP: A Spoken Language Understanding Resource Package"

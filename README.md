@@ -19,7 +19,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 61 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 62 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -35,7 +35,7 @@ Current coverage includes:
 - Speech generation benchmarks for TTS and voice quality research.
 - Non-speech audio benchmarks for events, scenes, sound event detection, captioning, and music.
 - Speech and music source separation benchmarks with realistic access constraints.
-- Human-centered speech tasks such as speaker recognition, spoken language identification, keyword spotting, and emotion recognition.
+- Human-centered speech tasks such as speaker recognition, spoken language identification, keyword spotting, emotion recognition, and speech representation evaluation.
 
 ## Benchmark Table
 
@@ -44,6 +44,7 @@ Current coverage includes:
 | [MMAU](https://github.com/Sakshi113/MMAU) | Audio understanding | [MMAU-test-mini](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini), [MMAU-test](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test) | HF cards list `cc-by-nc-4.0` for test-mini and `mit` for test; code repo is Apache-2.0 |
 | [MMAR](https://github.com/ddlBoJack/MMAR) | Audio understanding | [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) | HF card lists `cc-by-nc-4.0`; code repo had no detected license |
 | [MMSU](https://github.com/dingdongwang/MMSU) | Audio understanding | [ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU) | HF card lists `mit`; code repo had no detected license |
+| [SUPERB](https://superbbenchmark.org/) | Speech representation evaluation | Official [S3PRL SUPERB docs](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md) and toolkit; helper downloads docs/license by default and can clone the toolkit with opt-in | Benchmark suite uses multiple external corpora with mixed terms; S3PRL toolkit is mostly Apache-2.0, with noted CC BY-NC files |
 | [SLURP](https://github.com/pswietojanski/slurp) | Spoken language understanding | Official GitHub annotation/code repository plus [Zenodo audio archives](https://zenodo.org/records/4274930); helper clones annotations and makes multi-GB audio opt-in | Textual annotations are CC BY 4.0; Zenodo-hosted audio is non-commercial, with GitHub README stating CC BY-NC 4.0 |
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
 | [SongFormBench](https://huggingface.co/datasets/ASLP-lab/SongFormBench) | Audio understanding | `load_dataset("ASLP-lab/SongFormBench")` | HF card and SongFormer repo list CC BY 4.0 |
@@ -119,6 +120,8 @@ fleurs_en = load_dataset("google/fleurs", "en_us")
 Spoken language understanding:
 
 ```bash
+scripts/download/superb.sh
+SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh
 scripts/download/slurp.sh
 SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS=real scripts/download/slurp.sh
 ```
@@ -394,6 +397,7 @@ scripts/download/voicebank_demand.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/ljspeech.sh
+scripts/download/superb.sh
 ```
 
 Some datasets require manual upstream access first. Their helper scripts print
