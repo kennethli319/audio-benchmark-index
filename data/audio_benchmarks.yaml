@@ -1438,6 +1438,42 @@ benchmarks:
       - https://doi.org/10.1371/journal.pone.0196391
       - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391
 
+  - id: crema_d
+    name: CREMA-D
+    full_name: "CREMA-D: Crowd-sourced Emotional Multimodal Actors Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speech_emotion_recognition
+    tasks:
+      - speech_emotion_recognition
+      - audio_visual_emotion_recognition
+      - acted_emotional_speech
+      - crowd_sourced_emotion_annotation
+    official:
+      repo: https://github.com/CheyneyComputerScience/CREMA-D
+      gitlab_mirror: https://gitlab.com/cs-cooper-lab/crema-d-mirror
+      paper: https://doi.org/10.1109/TAFFC.2014.2336244
+      pubmed_central: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4313618/
+      access_form: https://docs.google.com/forms/d/e/1FAIpQLSdvOR994_Hsx7OkBU3oCzluXcmxw2P1nr-zBxcPgVBNLdD9Eg/viewform?usp=sf_link
+    download:
+      primary:
+        - https://github.com/CheyneyComputerScience/CREMA-D
+        - https://gitlab.com/cs-cooper-lab/crema-d-mirror
+        - https://raw.githubusercontent.com/CheyneyComputerScience/CREMA-D/master/processedResults/tabulatedVotes.csv
+      examples:
+        - 'scripts/download/crema_d.sh'
+        - 'CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh'
+        - 'git clone https://gitlab.com/cs-cooper-lab/crema-d-mirror.git'
+      notes: The helper downloads small README/license/CSV metadata by default. Full audio and video live in Git LFS and require about 7.55 GiB for a complete clone; upstream asks repository users to fill out the access/community form.
+    license:
+      data: odbl-1.0
+      code: not_specified
+      notes: The official README/LICENSE say the database is under the Open Database License 1.0 and individual contents are under the Database Contents License 1.0. GitHub reports license as NOASSERTION, so keep the explicit upstream text as authority.
+    sources:
+      - https://github.com/CheyneyComputerScience/CREMA-D
+      - https://gitlab.com/cs-cooper-lab/crema-d-mirror
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4313618/
+      - https://doi.org/10.1109/TAFFC.2014.2336244
+
   - id: iemocap
     name: IEMOCAP
     full_name: "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database"

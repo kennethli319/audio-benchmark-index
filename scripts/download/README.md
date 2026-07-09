@@ -56,6 +56,7 @@ scripts/download/voxceleb.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/ravdess.sh
+scripts/download/crema_d.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
@@ -199,6 +200,10 @@ SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
 
 # RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
 RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh
+
+# CREMA-D saves README/license/CSV metadata by default. Full media needs Git LFS and is opt-in.
+CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh
+CREMAD_REPO_URL=https://github.com/CheyneyComputerScience/CREMA-D.git CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh
