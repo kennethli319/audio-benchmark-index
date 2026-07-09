@@ -32,7 +32,7 @@ or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 | [WenetSpeech](https://github.com/wenet-e2e/WenetSpeech) | ASR | Apply for password on the [official site](https://wenet-e2e.github.io/WenetSpeech/), then use repo scripts | Non-commercial use under CC BY 4.0; original audio copyrights remain with owners |
 | [KeSpeech](https://github.com/tzyll/KeSpeech) | ASR | Baidu Pan link in repo, password `b6fy` | Custom terms: non-commercial, no adaptations, no third-party distribution |
 | [Opencpop-test](https://github.com/wenet-e2e/opencpop) | ASR / singing voice | Apply via the [official download page](https://wenet-e2e.github.io/opencpop/download/) and use the test split | CC BY-NC-ND 4.0 |
-| [MIR-1K vocal](http://mirlab.org/dataset/public/) | ASR / singing voice | Official MIR Lab archive: `MIR-1K.rar` | Official page does not state a license; a Figshare mirror lists CC BY 4.0 |
+| [MIR-1K vocal](http://mirlab.org/dataset/public/) | ASR / singing voice | [Figshare mirror](https://figshare.com/articles/dataset/MIR-1K_rar/5802891); official MIR Lab archive currently returns 404 | Official page does not state a license; Figshare mirror lists CC BY 4.0 |
 
 ## Download Examples
 
@@ -70,6 +70,22 @@ Form/password gated datasets:
 
 The editable source of truth is [data/audio_benchmarks.yaml](data/audio_benchmarks.yaml).
 Use it for scripts, sorting, or future additions.
+
+## Download Scripts
+
+Per-benchmark CLI helpers live in [scripts/download](scripts/download).
+They download into `data/raw/<benchmark-id>/` by default, which is ignored by git.
+For example:
+
+```bash
+scripts/download/mmar.sh
+FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
+LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+```
+
+Some datasets require manual upstream access first. Their helper scripts print
+the required form, password, or generated URL step instead of pretending there is
+a public one-command download.
 
 ## License Notes
 

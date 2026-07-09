@@ -6,9 +6,10 @@ This repository is meant to stay easy to update.
 
 1. Add or update an entry in `data/audio_benchmarks.yaml`.
 2. Add a row to the table in `README.md` if it belongs in the main visible list.
-3. Prefer official sources: project homepage, paper, GitHub repo, Hugging Face dataset card, OpenSLR page, Zenodo/Figshare record, or the dataset owner's download page.
-4. Record the access path precisely: direct archive, Hugging Face ID, form/password workflow, API, or request process.
-5. Be conservative about licenses. If the official page does not clearly say a license, write `not_specified` and include a note.
+3. Add `scripts/download/<benchmark-id>.sh` when the dataset has a CLI path. If access is gated, add a helper that prints the required manual step and accepts a generated URL/password through environment variables.
+4. Prefer official sources: project homepage, paper, GitHub repo, Hugging Face dataset card, OpenSLR page, Zenodo/Figshare record, or the dataset owner's download page.
+5. Record the access path precisely: direct archive, Hugging Face ID, form/password workflow, API, or request process.
+6. Be conservative about licenses. If the official page does not clearly say a license, write `not_specified` and include a note.
 
 ## Suggested Entry Fields
 

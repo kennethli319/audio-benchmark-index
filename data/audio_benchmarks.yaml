@@ -427,20 +427,23 @@ benchmarks:
     official:
       homepage: http://mirlab.org/dataset/public/
       direct_archive: http://mirlab.org/dataset/public/MIR-1K.rar
+      direct_archive_status: returned_404_on_2026_07_09
       figshare_mirror: https://figshare.com/articles/dataset/MIR-1K_rar/5802891
+      figshare_direct_file: https://ndownloader.figshare.com/files/10256751
       zenodo_record: https://zenodo.org/records/3532216
       paper: https://doi.org/10.1109/TASL.2009.2038816
     download:
       primary:
-        - http://mirlab.org/dataset/public/MIR-1K.rar
         - https://figshare.com/articles/dataset/MIR-1K_rar/5802891
+        - https://ndownloader.figshare.com/files/10256751
+        - http://mirlab.org/dataset/public/MIR-1K.rar
       examples:
-        - 'wget -P data/MIR-1K http://mirlab.org/dataset/public/MIR-1K.rar'
+        - 'curl -L -o data/MIR-1K/MIR-1K.rar https://ndownloader.figshare.com/files/10256751'
         - "For vocal-only evaluation, extract the singing-voice channel from the stereo clips after download."
     license:
       data: not_specified_on_official_page
       code: not_applicable
-      notes: Official MIR Lab page has direct downloads but no visible license statement; Figshare mirror lists CC BY 4.0.
+      notes: Official MIR Lab page has direct downloads but no visible license statement; its MIR-1K.rar URL returned 404 on 2026-07-09. Figshare mirror lists CC BY 4.0.
     sources:
       - http://mirlab.org/dataset/public/
       - https://figshare.com/articles/dataset/MIR-1K_rar/5802891
