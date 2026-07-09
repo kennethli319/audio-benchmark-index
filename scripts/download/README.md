@@ -51,6 +51,7 @@ scripts/download/vggsound.sh
 scripts/download/fsd50k.sh
 scripts/download/desed.sh
 scripts/download/voxceleb.sh
+scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/ravdess.sh
 scripts/download/musan.sh
@@ -177,6 +178,9 @@ DESED_DOWNLOAD_SYNTHETIC_AUDIO=1 DESED_SYNTHETIC_PARTS="DESED_synth_eval_dcase20
 
 # VoxCeleb downloads small OpenSLR metadata/trial lists only.
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
+
+# VoxLingua107 downloads HF metadata by default. The mirrored dataset snapshot is opt-in.
+VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh

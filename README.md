@@ -6,8 +6,8 @@ The initial seed list came from the Audio -> Text evaluation benchmarks cited in
 the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, speech translation,
 speech synthesis, speech dialogue, audio understanding, environmental sound,
-sound event detection, keyword spotting, speaker recognition, emotion,
-captioning, speech separation, music tagging, music genre classification,
+sound event detection, keyword spotting, speaker recognition, spoken language
+identification, emotion, captioning, speech separation, music tagging, music genre classification,
 music transcription, and music synthesis.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
@@ -17,7 +17,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 51 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 52 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -33,7 +33,7 @@ Current coverage includes:
 - Speech generation benchmarks for TTS and voice quality research.
 - Non-speech audio benchmarks for events, scenes, sound event detection, captioning, and music.
 - Speech and music source separation benchmarks with realistic access constraints.
-- Human-centered speech tasks such as speaker recognition, keyword spotting, and emotion recognition.
+- Human-centered speech tasks such as speaker recognition, spoken language identification, keyword spotting, and emotion recognition.
 
 ## Benchmark Table
 
@@ -80,6 +80,7 @@ Current coverage includes:
 | [FSD50K](https://fsannotator.upf.edu/fsd/release/FSD50K/) | Audio event classification | [Zenodo record](https://zenodo.org/records/4060432); helper downloads docs/labels/metadata by default and audio only with opt-in | Mixed Creative Commons: per-clip Freesound licenses include CC0, CC-BY, CC-BY-NC, and CC Sampling+; curated dataset is CC BY with upstream caveats |
 | [DESED](https://project.inria.fr/desed/) | Sound event detection | Official [DESED repo](https://github.com/turpaultn/DESED), [real metadata](https://zenodo.org/records/3588179), and [synthetic soundscape files](https://zenodo.org/records/6026841); helper downloads repo/metadata/JAMS by default and makes audio opt-in | Zenodo real and synthetic records list CC BY 4.0; Python code is MIT; component source-media terms still need checking |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
+| [VoxLingua107](https://huggingface.co/datasets/TalTechNLP/VoxLingua107) | Spoken language identification | TalTechNLP [Hugging Face mirror](https://huggingface.co/datasets/TalTechNLP/VoxLingua107); helper downloads metadata by default and requires opt-in for the larger snapshot | HF card lists CC BY-NC 4.0; YouTube-derived source media availability and platform terms still apply |
 | [Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands) | Keyword spotting | Official TensorFlow archives: [v0.02](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), [v0.01](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz), or [google/speech_commands](https://huggingface.co/datasets/google/speech_commands) | CC BY 4.0; HF card asks users not to try to identify speakers |
 | [RAVDESS](https://zenodo.org/records/1188976) | Speech emotion recognition | [Zenodo record](https://zenodo.org/records/1188976); helper saves metadata by default and downloads audio-only speech/song ZIPs with opt-in | CC BY-NC-SA 4.0; commercial licenses are separate |
 | [IEMOCAP](https://sail.usc.edu/iemocap/) | Speech emotion recognition | Official [release page](https://sail.usc.edu/iemocap/iemocap_release.htm) after reading the [USC/SAIL data release form](https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf) and submitting the request form | Custom USC/SAIL data release terms; access is manual/form-gated |
@@ -183,6 +184,13 @@ Speaker recognition metadata:
 ```bash
 scripts/download/voxceleb.sh
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
+```
+
+Spoken language identification:
+
+```bash
+scripts/download/voxlingua107.sh
+VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh
 ```
 
 Keyword spotting:
@@ -330,6 +338,7 @@ scripts/download/audioset.sh
 scripts/download/vggsound.sh
 scripts/download/fsd50k.sh
 scripts/download/voxceleb.sh
+scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/ravdess.sh
 scripts/download/iemocap.sh

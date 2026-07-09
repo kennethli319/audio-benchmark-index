@@ -1263,6 +1263,39 @@ benchmarks:
       - https://arxiv.org/abs/1706.08612
       - https://arxiv.org/abs/1806.05622
 
+  - id: voxlingua107
+    name: VoxLingua107
+    full_name: "VoxLingua107: a Dataset for Spoken Language Recognition"
+    qwen_cited_as: null
+    qwen_bucket: spoken_language_identification
+    tasks:
+      - spoken_language_identification
+      - language_recognition
+      - speech_classification
+    official:
+      homepage: https://cs.taltech.ee/staff/tanel.alumae/data/voxlingua107/
+      hf_dataset: https://huggingface.co/datasets/TalTechNLP/VoxLingua107
+      speechbrain_recipe: https://github.com/alumae/voxlingua107_sb
+      paper: https://arxiv.org/abs/2011.12998
+    download:
+      primary:
+        - https://huggingface.co/datasets/TalTechNLP/VoxLingua107
+        - https://cs.taltech.ee/staff/tanel.alumae/data/voxlingua107/
+      examples:
+        - 'scripts/download/voxlingua107.sh'
+        - 'VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("TalTechNLP/VoxLingua107", "en")'
+      notes: The paper reports 6628 hours across 107 languages plus a 1609-utterance verified evaluation set. The helper downloads small Hugging Face metadata files by default and requires VOXLINGUA107_DOWNLOAD_HF=1 before attempting the larger mirrored dataset snapshot. The original TalTech host was not reliably reachable during the 2026-07-09 check, so verify upstream availability before large downloads.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: The TalTechNLP Hugging Face dataset card lists cc-by-nc-4.0. The dataset is built from YouTube-derived speech segments, so source-media availability and platform terms still apply; the SpeechBrain recipe repository did not expose a detected license.
+    sources:
+      - https://arxiv.org/abs/2011.12998
+      - https://huggingface.co/datasets/TalTechNLP/VoxLingua107
+      - https://huggingface.co/api/datasets/TalTechNLP/VoxLingua107
+      - https://github.com/alumae/voxlingua107_sb
+
   - id: speech_commands
     name: Speech Commands
     full_name: "Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition"
