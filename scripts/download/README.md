@@ -61,6 +61,7 @@ scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/fma.sh
+scripts/download/openmic_2018.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
@@ -226,6 +227,9 @@ MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/do
 FMA_DOWNLOAD_METADATA=1 scripts/download/fma.sh
 FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS=small scripts/download/fma.sh
 FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS="small medium" scripts/download/fma.sh
+
+# OpenMIC-2018 downloads Zenodo metadata and the official README by default.
+OPENMIC_DOWNLOAD_ARCHIVE=1 scripts/download/openmic_2018.sh
 
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh

@@ -1621,6 +1621,41 @@ benchmarks:
       - https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
       - https://arxiv.org/abs/1612.01840
 
+  - id: openmic_2018
+    name: OpenMIC-2018
+    full_name: "OpenMIC-2018: An Open Dataset for Multiple Instrument Recognition"
+    qwen_cited_as: null
+    qwen_bucket: music_information_retrieval
+    tasks:
+      - musical_instrument_recognition
+      - music_auto_tagging
+      - multi_label_audio_classification
+      - music_information_retrieval
+    official:
+      repo: https://github.com/cosmir/openmic-2018
+      zenodo_record: https://zenodo.org/records/1432913
+      doi: https://doi.org/10.5281/zenodo.1432913
+      paper_pdf: https://brianmcfee.net/papers/ismir2018_openmic.pdf
+      direct_archive: https://zenodo.org/api/records/1432913/files/openmic-2018-v1.0.0.tgz/content
+    download:
+      primary:
+        - https://zenodo.org/records/1432913
+        - https://zenodo.org/api/records/1432913/files/openmic-2018-v1.0.0.tgz/content
+        - https://github.com/cosmir/openmic-2018
+      examples:
+        - 'scripts/download/openmic_2018.sh'
+        - 'OPENMIC_DOWNLOAD_ARCHIVE=1 scripts/download/openmic_2018.sh'
+      notes: The Zenodo archive is about 2.6 GiB and contains 10-second OGG clips, VGGish features, crowd-sourced labels, metadata with per-recording licenses, and train/test partitions. The helper saves the Zenodo record JSON and official README by default and requires OPENMIC_DOWNLOAD_ARCHIVE=1 before downloading the full archive.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: Zenodo says Spotify AB releases the dataset under CC BY 4.0 and includes full license terms in the archive. The included metadata contains licenses for each audio recording, so check per-track metadata before redistribution or commercial use.
+    sources:
+      - https://zenodo.org/records/1432913
+      - https://zenodo.org/api/records/1432913
+      - https://github.com/cosmir/openmic-2018
+      - https://brianmcfee.net/papers/ismir2018_openmic.pdf
+
   - id: chime_6
     name: CHiME-6
     full_name: "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings"
