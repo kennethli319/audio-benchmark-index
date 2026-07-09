@@ -1384,6 +1384,40 @@ benchmarks:
       - https://arxiv.org/abs/1706.08612
       - https://arxiv.org/abs/1806.05622
 
+  - id: voxconverse
+    name: VoxConverse
+    full_name: "VoxConverse: A Large Scale Audio-Visual Diarisation Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speaker_diarization
+    tasks:
+      - speaker_diarization
+      - audio_visual_diarization
+      - overlapping_speech_diarization
+    official:
+      homepage: https://www.robots.ox.ac.uk/~vgg/data/voxconverse/
+      repo: https://github.com/joonson/voxconverse
+      paper: https://arxiv.org/abs/2007.01216
+      interspeech: https://www.isca-archive.org/interspeech_2020/chung20b_interspeech.html
+    download:
+      primary:
+        - https://github.com/joonson/voxconverse
+        - https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_dev_wav.zip
+        - https://www.robots.ox.ac.uk/~vgg/data/voxconverse/data/voxconverse_test_wav.zip
+      examples:
+        - 'scripts/download/voxconverse.sh'
+        - 'VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS=dev scripts/download/voxconverse.sh'
+        - 'VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS="dev test" scripts/download/voxconverse.sh'
+      notes: The helper clones or updates the official annotation repository and saves the official page by default. The official page lists dev/test WAV ZIPs with MD5 checksums; audio downloads are explicit opt-ins because the dev ZIP is about 1.9 GiB and the test ZIP is also large.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: The official page and repository README say VoxConverse is available for research purposes under CC BY 4.0, while copyright remains with the original video owners. The GitHub repository does not expose a standalone license file through the API.
+    sources:
+      - https://www.robots.ox.ac.uk/~vgg/data/voxconverse/
+      - https://github.com/joonson/voxconverse
+      - https://raw.githubusercontent.com/joonson/voxconverse/master/README.md
+      - https://arxiv.org/abs/2007.01216
+
   - id: voxlingua107
     name: VoxLingua107
     full_name: "VoxLingua107: a Dataset for Spoken Language Recognition"
