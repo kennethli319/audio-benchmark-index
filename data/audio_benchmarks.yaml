@@ -607,6 +607,37 @@ benchmarks:
       - https://github.com/wenet-e2e/WenetSpeech
       - https://www.openslr.org/121/
 
+  - id: aishell_1
+    name: AISHELL-1
+    full_name: "AISHELL-1: An Open-Source Mandarin Speech Corpus and A Speech Recognition Baseline"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - mandarin_speech_recognition
+    official:
+      openslr: https://www.openslr.org/33/
+      paper: https://arxiv.org/abs/1709.05522
+      homepage: https://www.aishelltech.com/kysjcp
+    download:
+      primary:
+        - https://www.openslr.org/33/
+        - https://openslr.trmal.net/resources/33/data_aishell.tgz
+        - https://openslr.trmal.net/resources/33/resource_aishell.tgz
+      examples:
+        - 'scripts/download/aishell_1.sh'
+        - 'AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh'
+        - 'AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh'
+      notes: OpenSLR hosts a 15 GiB speech/transcript archive plus a small supplementary resource archive with lexicon and speaker info. The helper saves the OpenSLR page and supplementary archive by default; the large corpus archive is an explicit opt-in.
+    license:
+      data: Apache-2.0
+      code: not_applicable
+      notes: OpenSLR SLR33 lists Apache License v2.0 and also describes the data as free for academic use; re-check upstream terms before redistribution or commercial use.
+    sources:
+      - https://www.openslr.org/33/
+      - https://arxiv.org/abs/1709.05522
+      - https://www.aishelltech.com/kysjcp
+
   - id: kespeech
     name: KeSpeech
     full_name: "KeSpeech: An Open Source Speech Dataset of Mandarin and Its Eight Subdialects"
