@@ -58,6 +58,7 @@ scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/nsynth.sh
+scripts/download/maestro.sh
 scripts/download/vctk.sh
 ```
 
@@ -198,6 +199,11 @@ MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/do
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS="valid test" NSYNTH_FORMAT=tfrecord scripts/download/nsynth.sh
+
+# MAESTRO downloads v3.0.0 metadata by default. MIDI and audio archives are opt-in.
+MAESTRO_DOWNLOAD_MIDI=1 scripts/download/maestro.sh
+MAESTRO_DOWNLOAD_AUDIO=1 scripts/download/maestro.sh
+MAESTRO_BASE_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0 scripts/download/maestro.sh
 
 # VCTK downloads the official README and license by default. The corpus ZIP is large and opt-in.
 VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh

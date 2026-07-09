@@ -215,6 +215,42 @@ benchmarks:
       - https://arxiv.org/abs/1704.01279
       - https://proceedings.mlr.press/v70/engel17a.html
 
+  - id: maestro
+    name: MAESTRO
+    full_name: "MAESTRO: MIDI and Audio Edited for Synchronous TRacks and Organization"
+    qwen_cited_as: null
+    qwen_bucket: music_transcription
+    tasks:
+      - automatic_music_transcription
+      - piano_transcription
+      - music_synthesis
+      - symbolic_music_modeling
+    official:
+      homepage: https://magenta.withgoogle.com/datasets/maestro
+      blog: https://magenta.withgoogle.com/maestro-wave2midi2wave
+      paper: https://arxiv.org/abs/1810.12247
+      openreview: https://openreview.net/forum?id=r1lYRjC9F7
+    download:
+      primary:
+        - https://magenta.withgoogle.com/datasets/maestro
+        - https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0/maestro-v3.0.0.csv
+        - https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0/maestro-v3.0.0.json
+        - https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0/maestro-v3.0.0-midi.zip
+      examples:
+        - 'scripts/download/maestro.sh'
+        - 'MAESTRO_DOWNLOAD_MIDI=1 scripts/download/maestro.sh'
+        - 'MAESTRO_DOWNLOAD_AUDIO=1 scripts/download/maestro.sh'
+      notes: The helper downloads v3.0.0 CSV/JSON metadata by default. The MIDI-only archive is about 56 MiB and the full WAV+MIDI archive is about 101 GiB, so both are explicit opt-ins.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: not_applicable
+      notes: Official Magenta page says the dataset is made available by Google LLC under Creative Commons Attribution Non-Commercial Share-Alike 4.0.
+    sources:
+      - https://magenta.withgoogle.com/datasets/maestro
+      - https://magenta.withgoogle.com/maestro-wave2midi2wave
+      - https://arxiv.org/abs/1810.12247
+      - https://openreview.net/forum?id=r1lYRjC9F7
+
   - id: voicebench
     name: VoiceBench
     full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"
