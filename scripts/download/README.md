@@ -63,6 +63,7 @@ scripts/download/ami.sh
 scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
+scripts/download/macs.sh
 scripts/download/magnatagatune.sh
 scripts/download/mtg_jamendo.sh
 scripts/download/fma.sh
@@ -244,6 +245,9 @@ CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 
 # AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
+
+# MACS downloads annotations plus TAU 2019 docs/metadata by default. Audio shards are large.
+MACS_DOWNLOAD_TAU_AUDIO=1 scripts/download/macs.sh
 
 # GTZAN saves the HF dataset card by default. Full audio/data snapshot is opt-in.
 GTZAN_DOWNLOAD_HF=1 scripts/download/gtzan.sh

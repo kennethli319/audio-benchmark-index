@@ -1647,6 +1647,42 @@ benchmarks:
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
 
+  - id: macs
+    name: MACS
+    full_name: "MACS: Multi-Annotator Captioned Soundscapes"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - audio_captioning
+      - audio_tagging
+      - multi_annotator_audio_labeling
+      - acoustic_scene_captioning
+    official:
+      zenodo_record: https://zenodo.org/records/5114771
+      doi: https://doi.org/10.5281/zenodo.5114771
+      paper: https://arxiv.org/abs/2104.04214
+      upstream_audio: https://zenodo.org/records/2589280
+    download:
+      primary:
+        - https://zenodo.org/records/5114771
+        - https://zenodo.org/api/records/5114771/files/MACS.yaml/content
+        - https://zenodo.org/api/records/5114771/files/MACS_competence.csv/content
+        - https://zenodo.org/records/2589280
+      examples:
+        - 'scripts/download/macs.sh'
+        - 'MACS_DOWNLOAD_TAU_AUDIO=1 scripts/download/macs.sh'
+      notes: The helper downloads the MACS annotations, competence scores, license, and TAU Urban Acoustic Scenes 2019 docs/metadata by default. The upstream TAU 2019 audio shards are large, so audio download is an explicit opt-in.
+    license:
+      data: other-nc
+      code: not_applicable
+      notes: Zenodo lists MACS as Other (Non-Commercial), and LICENSE.txt grants experimental non-commercial use with attribution to Tampere University/Machine Listening Group. Audio files come from TAU Urban Acoustic Scenes 2019, whose Zenodo record also lists Other (Non-Commercial).
+    sources:
+      - https://zenodo.org/records/5114771
+      - https://zenodo.org/api/records/5114771
+      - https://zenodo.org/api/records/5114771/files/LICENSE.txt/content
+      - https://arxiv.org/abs/2104.04214
+      - https://zenodo.org/records/2589280
+
   - id: magnatagatune
     name: MagnaTagATune
     full_name: "MagnaTagATune: A Music Annotation Benchmark from the TagATune Game"

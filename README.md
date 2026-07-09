@@ -19,7 +19,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 60 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 61 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -101,6 +101,7 @@ Current coverage includes:
 | [VoiceBank-DEMAND](https://datashare.ed.ac.uk/handle/10283/2791) | Speech enhancement | Edinburgh DataShare record for paired clean/noisy train and test ZIPs; helper saves metadata/license by default and makes text/audio archives opt-in | CC BY 4.0 on the DataShare record; derived from VCTK speech and DEMAND plus other noise sources, so component/source terms should be re-checked |
 | [Clotho](https://zenodo.org/records/4783391) | Audio captioning | [Zenodo v2.1 record](https://zenodo.org/records/4783391); captions/metadata are small, audio archives are about 7.1 GiB | Mixed terms: audio clips keep per-file Freesound licenses; captions use the Tampere University license, mainly non-commercial with attribution |
 | [AudioCaps](https://audiocaps.github.io/) | Audio captioning | Official [CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset) and [AudioCaps 2.0 CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset2.0); raw audio/video requires the upstream form | README says code and dataset are free for academic purposes only; repo license is MIT, but raw clips inherit AudioSet/YouTube availability and terms |
+| [MACS](https://zenodo.org/records/5114771) | Audio captioning | [Zenodo MACS annotations](https://zenodo.org/records/5114771) plus upstream [TAU Urban Acoustic Scenes 2019](https://zenodo.org/records/2589280) audio; helper downloads annotations/docs by default and makes audio opt-in | Zenodo and LICENSE.txt use non-commercial terms for MACS; upstream TAU audio also lists Other (Non-Commercial) |
 
 ## Download Examples
 
@@ -276,6 +277,8 @@ scripts/download/clotho.sh
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
+scripts/download/macs.sh
+MACS_DOWNLOAD_TAU_AUDIO=1 scripts/download/macs.sh
 ```
 
 Music tagging:
@@ -378,6 +381,7 @@ scripts/download/crema_d.sh
 scripts/download/iemocap.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
+scripts/download/macs.sh
 scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
