@@ -49,6 +49,7 @@ scripts/download/tau_asc_2020_mobile.sh
 scripts/download/audioset.sh
 scripts/download/vggsound.sh
 scripts/download/fsd50k.sh
+scripts/download/fsdkaggle2018.sh
 scripts/download/desed.sh
 scripts/download/voxceleb.sh
 scripts/download/voxlingua107.sh
@@ -173,6 +174,9 @@ VGGSOUND_DOWNLOAD_MODELS=1 scripts/download/vggsound.sh
 
 # FSD50K downloads docs, labels, and metadata by default. Audio is about 31 GiB.
 FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
+
+# FSDKaggle2018 downloads Zenodo docs/metadata by default. Audio is about 4.6 GiB.
+FSDKAGGLE2018_DOWNLOAD_AUDIO=1 scripts/download/fsdkaggle2018.sh
 
 # DESED clones the official repo and downloads small metadata/JAMS by default. Audio is opt-in.
 DESED_DOWNLOAD_REAL_AUDIO=1 scripts/download/desed.sh

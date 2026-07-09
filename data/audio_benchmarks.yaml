@@ -1180,6 +1180,43 @@ benchmarks:
       - https://arxiv.org/abs/2010.00475
       - https://ieeexplore.ieee.org/document/9645159
 
+  - id: fsdkaggle2018
+    name: FSDKaggle2018
+    full_name: "FSDKaggle2018: Freesound General-Purpose Audio Tagging Challenge Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_event_classification
+    tasks:
+      - audio_tagging
+      - sound_event_classification
+      - general_purpose_audio_tagging
+    official:
+      zenodo_record: https://zenodo.org/records/2552860
+      doi: https://doi.org/10.5281/zenodo.2552860
+      dcase_task: https://dcase.community/challenge2018/task-general-purpose-audio-tagging
+      kaggle_competition: https://www.kaggle.com/c/freesound-audio-tagging
+      paper: https://arxiv.org/abs/1807.09902
+      baseline_repo: https://github.com/DCASE-REPO/dcase2018_baseline/tree/master/task2
+    download:
+      primary:
+        - https://zenodo.org/records/2552860
+        - https://zenodo.org/api/records/2552860/files/FSDKaggle2018.doc.zip/content
+        - https://zenodo.org/api/records/2552860/files/FSDKaggle2018.meta.zip/content
+        - https://zenodo.org/api/records/2552860/files/FSDKaggle2018.audio_test.zip/content
+        - https://zenodo.org/api/records/2552860/files/FSDKaggle2018.audio_train.zip/content
+      examples:
+        - 'scripts/download/fsdkaggle2018.sh'
+        - 'FSDKAGGLE2018_DOWNLOAD_AUDIO=1 scripts/download/fsdkaggle2018.sh'
+      notes: The helper downloads the Zenodo record JSON plus small documentation and metadata ZIPs by default. The audio archives are about 4.6 GiB combined, so audio download is an explicit opt-in.
+    license:
+      data: mixed_creative_commons
+      code: not_specified
+      notes: The Zenodo record license id is other-at. The record states FSDKaggle2018 as a curated dataset is CC BY, while individual Freesound clips retain per-clip Creative Commons licenses listed in train_post_competition.csv and test_post_competition_scoring_clips.csv. Kaggle competition rules and Freesound source terms should also be checked for challenge use.
+    sources:
+      - https://zenodo.org/records/2552860
+      - https://dcase.community/challenge2018/task-general-purpose-audio-tagging
+      - https://arxiv.org/abs/1807.09902
+      - https://github.com/MTG/freesound-datasets
+
   - id: desed
     name: DESED
     full_name: "Domestic Environment Sound Event Detection Dataset"
