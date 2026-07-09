@@ -40,6 +40,7 @@ scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
 scripts/download/audioset.sh
 scripts/download/fsd50k.sh
+scripts/download/voxceleb.sh
 scripts/download/speech_commands.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
@@ -105,6 +106,9 @@ AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 
 # FSD50K downloads docs, labels, and metadata by default. Audio is about 31 GiB.
 FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
+
+# VoxCeleb downloads small OpenSLR metadata/trial lists only.
+VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh

@@ -650,6 +650,48 @@ benchmarks:
       - https://arxiv.org/abs/2010.00475
       - https://ieeexplore.ieee.org/document/9645159
 
+  - id: voxceleb
+    name: VoxCeleb
+    full_name: VoxCeleb speaker recognition datasets
+    qwen_cited_as: null
+    qwen_bucket: speaker_recognition
+    tasks:
+      - speaker_identification
+      - speaker_verification
+      - speaker_recognition
+      - audio_visual_speaker_recognition
+    official:
+      homepage: https://www.robots.ox.ac.uk/~vgg/data/voxceleb/
+      voxceleb1_page: https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
+      voxceleb2_page: https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html
+      openslr_metadata: https://www.openslr.org/49/
+      voxceleb1_paper: https://arxiv.org/abs/1706.08612
+      voxceleb2_paper: https://arxiv.org/abs/1806.05622
+      journal_paper: https://www.robots.ox.ac.uk/~vgg/publications/2019/Nagrani19/nagrani19.pdf
+    download:
+      primary:
+        - https://www.openslr.org/49/
+        - https://openslr.trmal.net/resources/49/voxceleb1_test.txt
+        - https://openslr.trmal.net/resources/49/voxceleb1_test_v2.txt
+        - https://openslr.trmal.net/resources/49/voxceleb1_sitw_overlap.txt
+        - https://openslr.trmal.net/resources/49/vox1_meta.csv
+        - https://openslr.trmal.net/resources/49/vox2_meta.csv
+      examples:
+        - 'scripts/download/voxceleb.sh'
+        - 'VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh'
+      notes: Official VGG pages currently say VoxCeleb1 and VoxCeleb2 audio, URL/timestamp, and identifying metadata files are no longer available from that website. The helper downloads small OpenSLR speaker-recognition recipe metadata and trial lists only; it does not fetch the original audio/video.
+    license:
+      data: not_specified_for_original_media
+      code: not_applicable
+      notes: Official VGG pages say provided VoxCeleb/VoxCeleb2 metadata is CC BY-SA 4.0 and the corpora consist of YouTube URLs with timestamps; original media rights and privacy terms remain with upstream owners. OpenSLR SLR49 lists its small metadata resource as not copyrighted.
+    sources:
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html
+      - https://www.openslr.org/49/
+      - https://arxiv.org/abs/1706.08612
+      - https://arxiv.org/abs/1806.05622
+
   - id: speech_commands
     name: Speech Commands
     full_name: "Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition"
