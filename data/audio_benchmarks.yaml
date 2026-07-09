@@ -727,6 +727,38 @@ benchmarks:
       - https://huggingface.co/datasets/google/speech_commands
       - https://arxiv.org/abs/1804.03209
 
+  - id: musan
+    name: MUSAN
+    full_name: "MUSAN: A Music, Speech, and Noise Corpus"
+    qwen_cited_as: null
+    qwen_bucket: speech_music_noise_classification
+    tasks:
+      - voice_activity_detection
+      - music_speech_discrimination
+      - speech_music_noise_classification
+      - speaker_recognition_augmentation
+    official:
+      openslr: https://www.openslr.org/17/
+      paper: https://arxiv.org/abs/1510.08484
+      doi: https://doi.org/10.48550/arXiv.1510.08484
+      archive: https://openslr.trmal.net/resources/17/musan.tar.gz
+    download:
+      primary:
+        - https://www.openslr.org/17/
+        - https://openslr.trmal.net/resources/17/musan.tar.gz
+        - https://openslr.elda.org/resources/17/musan.tar.gz
+      examples:
+        - 'MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh'
+        - 'curl -L -o musan.tar.gz https://openslr.trmal.net/resources/17/musan.tar.gz'
+      notes: OpenSLR lists the corpus archive as 11 GiB. The helper downloads the OpenSLR landing page by default and requires MUSAN_DOWNLOAD_ARCHIVE=1 for the large archive.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: OpenSLR SLR17 lists Attribution 4.0 International (CC BY 4.0). The paper describes MUSAN as music, speech, and noise recordings released under a flexible Creative Commons license.
+    sources:
+      - https://www.openslr.org/17/
+      - https://arxiv.org/abs/1510.08484
+
   - id: ami
     name: AMI
     full_name: AMI Meeting Corpus

@@ -42,6 +42,7 @@ scripts/download/audioset.sh
 scripts/download/fsd50k.sh
 scripts/download/voxceleb.sh
 scripts/download/speech_commands.sh
+scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
 scripts/download/clotho.sh
@@ -112,6 +113,10 @@ VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+
+# MUSAN downloads the OpenSLR page by default. The corpus archive is about 11 GiB.
+MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh
+MUSAN_OPENSLR_BASE_URL=https://openslr.elda.org/resources/17 MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh
 
 # AMI downloads official annotation ZIPs by default. Audio/HF mirrors are large.
 AMI_DOWNLOAD_OPENSLR_AUDIO=1 AMI_OPENSLR_PARTS="headset.tar.gz" scripts/download/ami.sh
