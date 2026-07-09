@@ -1,0 +1,447 @@
+metadata:
+  repo_name: audio-benchmark-index
+  title: Audio Benchmark Index
+  seed_source:
+    name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
+    url: https://arxiv.org/html/2604.15804v1#S5
+  last_checked: 2026-07-09
+  scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1.
+  note: This index does not mirror datasets or grant rights to upstream data.
+
+benchmarks:
+  - id: mmau
+    name: MMAU
+    full_name: "MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark"
+    qwen_cited_as: MMAU
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_question_answering
+      - audio_reasoning
+    official:
+      homepage: https://sakshi113.github.io/mmau_homepage/
+      repo: https://github.com/Sakshi113/MMAU
+      paper: https://arxiv.org/abs/2410.19168
+    download:
+      primary:
+        - https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini
+        - https://huggingface.co/datasets/gamma-lab-umd/MMAU-test
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("gamma-lab-umd/MMAU-test-mini")'
+        - 'huggingface-cli download --repo-type dataset gamma-lab-umd/MMAU-test-mini --local-dir data/MMAU-test-mini'
+    license:
+      data: "HF cards: MMAU-test-mini is cc-by-nc-4.0; MMAU-test is mit"
+      code: Apache-2.0
+      notes: The two HF dataset cards list different licenses; re-check before redistribution.
+    sources:
+      - https://github.com/Sakshi113/MMAU
+      - https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini
+      - https://huggingface.co/datasets/gamma-lab-umd/MMAU-test
+
+  - id: mmar
+    name: MMAR
+    full_name: "MMAR: A Challenging Benchmark for Deep Reasoning in Speech, Audio, Music, and Their Mix"
+    qwen_cited_as: MMAR
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_question_answering
+      - audio_reasoning
+    official:
+      repo: https://github.com/ddlBoJack/MMAR
+      paper: https://arxiv.org/abs/2505.13032
+      challenge: https://audio-reasoning-challenge.github.io/
+    download:
+      primary:
+        - https://huggingface.co/datasets/BoJack/MMAR
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("BoJack/MMAR")'
+        - 'huggingface-cli download --repo-type dataset BoJack/MMAR --local-dir data/MMAR'
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: GitHub repo did not expose a detected license; HF dataset card lists cc-by-nc-4.0.
+    sources:
+      - https://github.com/ddlBoJack/MMAR
+      - https://huggingface.co/datasets/BoJack/MMAR
+
+  - id: mmsu
+    name: MMSU
+    full_name: "MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark"
+    qwen_cited_as: MMSU
+    qwen_bucket: audio_understanding
+    tasks:
+      - spoken_language_understanding
+      - speech_reasoning
+    official:
+      repo: https://github.com/dingdongwang/MMSU
+      paper: https://arxiv.org/abs/2506.04779
+      dataset: https://huggingface.co/datasets/ddwang2000/MMSU
+    download:
+      primary:
+        - https://huggingface.co/datasets/ddwang2000/MMSU
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("ddwang2000/MMSU")'
+        - 'huggingface-cli download --repo-type dataset ddwang2000/MMSU --local-dir data/MMSU'
+    license:
+      data: mit
+      code: not_specified
+      notes: HF dataset card lists MIT; GitHub code repo did not expose a detected license.
+    sources:
+      - https://github.com/dingdongwang/MMSU
+      - https://huggingface.co/datasets/ddwang2000/MMSU
+
+  - id: rul_muchomusic
+    name: RUL-MuchoMusic
+    full_name: "RUL-MuchoMusic from RUListening / Are You Really Listening?"
+    qwen_cited_as: RUL-MuchoMusic
+    qwen_bucket: audio_understanding
+    tasks:
+      - music_question_answering
+      - perceptual_music_understanding
+    official:
+      repo: https://github.com/yongyizang/AreYouReallyListening
+      paper: https://arxiv.org/abs/2504.00369
+      upstream_benchmark: https://github.com/mulab-mir/muchomusic
+    download:
+      primary:
+        - https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json
+        - https://huggingface.co/datasets/yongyizang/RUListening
+      examples:
+        - 'wget -P data/RUL-MuchoMusic https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json'
+        - 'huggingface-cli download --repo-type dataset yongyizang/RUListening --local-dir data/RUListening'
+    license:
+      data: "RUL repo/HF card: mit; upstream MuChoMusic dataset: CC BY-SA 4.0"
+      code: MIT
+      notes: RUL-MuchoMusic derives from MuChoMusic; check upstream audio/source terms too.
+    sources:
+      - https://github.com/yongyizang/AreYouReallyListening
+      - https://huggingface.co/datasets/yongyizang/RUListening
+      - https://github.com/mulab-mir/muchomusic
+      - https://zenodo.org/records/12709974
+
+  - id: songformbench
+    name: SongFormBench
+    full_name: SongFormBench
+    qwen_cited_as: SongFormBench
+    qwen_bucket: audio_understanding
+    tasks:
+      - music_structure_analysis
+    official:
+      repo: https://github.com/ASLP-lab/SongFormer
+      dataset: https://huggingface.co/datasets/ASLP-lab/SongFormBench
+      paper: https://arxiv.org/abs/2510.02797
+    download:
+      primary:
+        - https://huggingface.co/datasets/ASLP-lab/SongFormBench
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("ASLP-lab/SongFormBench")'
+        - 'huggingface-cli download --repo-type dataset ASLP-lab/SongFormBench --local-dir data/SongFormBench'
+    license:
+      data: cc-by-4.0
+      code: cc-by-4.0
+      notes: Dataset card lists CC BY 4.0. Audio reconstruction notes reference HarmonixSet and BigVGAN resources.
+    sources:
+      - https://huggingface.co/datasets/ASLP-lab/SongFormBench
+      - https://github.com/ASLP-lab/SongFormer
+
+  - id: voicebench
+    name: VoiceBench
+    full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"
+    qwen_cited_as: VoiceBench
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - voice_assistant_evaluation
+      - spoken_instruction_following
+    official:
+      repo: https://github.com/MatthewCYM/VoiceBench
+      leaderboard: https://matthewcym.github.io/VoiceBench/
+      dataset: https://huggingface.co/datasets/hlt-lab/voicebench
+      paper: https://arxiv.org/abs/2410.17196
+    download:
+      primary:
+        - https://huggingface.co/datasets/hlt-lab/voicebench
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("hlt-lab/voicebench", "alpacaeval")'
+        - 'huggingface-cli download --repo-type dataset hlt-lab/voicebench --local-dir data/voicebench'
+    license:
+      data: apache-2.0
+      code: Apache-2.0
+      notes: HF dataset card and GitHub repo both list Apache-2.0.
+    sources:
+      - https://github.com/MatthewCYM/VoiceBench
+      - https://huggingface.co/datasets/hlt-lab/voicebench
+
+  - id: uro_bench_pro
+    name: URO-Bench-pro
+    full_name: "URO-Bench: A Comprehensive Benchmark for End-to-End Spoken Dialogue Models"
+    qwen_cited_as: URO-Bench-pro
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - spoken_dialogue_model_evaluation
+      - speech_to_speech_evaluation
+    official:
+      repo: https://github.com/Ruiqi-Yan/URO-Bench
+      dataset: https://huggingface.co/datasets/Honggao/URO-Bench
+      paper: https://arxiv.org/abs/2502.17810
+    download:
+      primary:
+        - https://huggingface.co/datasets/Honggao/URO-Bench
+      examples:
+        - 'huggingface-cli download --repo-type dataset --resume-download Honggao/URO-Bench URO-Bench-data.zip --local-dir ./data/URO-Bench'
+        - 'from datasets import load_dataset; ds = load_dataset("Honggao/URO-Bench", "GenStyle-en")'
+    license:
+      data: mit
+      code: MIT
+      notes: Qwen uses the pro track. HF card and GitHub repo list MIT.
+    sources:
+      - https://github.com/Ruiqi-Yan/URO-Bench
+      - https://huggingface.co/datasets/Honggao/URO-Bench
+
+  - id: speechrole
+    name: SpeechRole
+    full_name: "SpeechRole: A Large-Scale Dataset and Benchmark for Evaluating Speech Role-Playing Agents"
+    qwen_cited_as: SpeechRole
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - speech_role_playing
+      - speech_dialogue_evaluation
+    official:
+      repo: https://github.com/yuhui1038/SpeechRole
+      eval_dataset: https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval
+      data_dataset: https://huggingface.co/datasets/yuhui1038/SpeechRole-Data
+      paper: https://arxiv.org/abs/2508.02013
+    download:
+      primary:
+        - https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval
+        - https://huggingface.co/datasets/yuhui1038/SpeechRole-Data
+      examples:
+        - 'huggingface-cli download --repo-type dataset yuhui1038/SpeechRole-Eval --local-dir data/SpeechRole-Eval'
+        - 'huggingface-cli download --repo-type dataset yuhui1038/SpeechRole-Data --local-dir data/SpeechRole-Data'
+    license:
+      data: mit
+      code: not_specified
+      notes: HF cards list MIT; GitHub repo has no separate detected license.
+    sources:
+      - https://github.com/yuhui1038/SpeechRole
+      - https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval
+      - https://huggingface.co/datasets/yuhui1038/SpeechRole-Data
+
+  - id: wildspeech_bench
+    name: WildSpeech-Bench
+    full_name: "WildSpeech-Bench: Benchmarking End-to-End SpeechLLMs in the Wild"
+    qwen_cited_as: WildSpeech-Bench
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - speech_to_speech_evaluation
+      - natural_speech_conversation
+    official:
+      repo: https://github.com/Tencent/WildSpeech-Bench
+      dataset: https://huggingface.co/datasets/tencent/WildSpeech-Bench
+      paper: https://arxiv.org/abs/2506.21875
+    download:
+      primary:
+        - https://huggingface.co/datasets/tencent/WildSpeech-Bench
+      examples:
+        - 'huggingface-cli download --repo-type dataset tencent/WildSpeech-Bench --local-dir data/WildSpeech-Bench'
+    license:
+      data: "CC BY 4.0, except third-party datasets with their own terms"
+      code: "CC BY 4.0, except third-party datasets with their own terms"
+      notes: License.txt says users must comply with original licenses for third-party datasets.
+    sources:
+      - https://github.com/Tencent/WildSpeech-Bench
+      - https://huggingface.co/datasets/tencent/WildSpeech-Bench
+
+  - id: fleurs
+    name: FLEURS
+    full_name: "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech"
+    qwen_cited_as: Fleurs
+    qwen_bucket:
+      - speech_to_text_translation
+      - automatic_speech_recognition
+    tasks:
+      - asr
+      - speech_translation
+      - language_identification
+    official:
+      google_research: https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/
+      dataset: https://huggingface.co/datasets/google/fleurs
+      paper: https://arxiv.org/abs/2205.12446
+    download:
+      primary:
+        - https://huggingface.co/datasets/google/fleurs
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("google/fleurs", "en_us")'
+        - 'from datasets import load_dataset; ds = load_dataset("google/fleurs", "all")'
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: HF dataset card lists CC BY 4.0.
+    sources:
+      - https://huggingface.co/datasets/google/fleurs
+      - https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/
+
+  - id: common_voice
+    name: Common Voice
+    full_name: Mozilla Common Voice
+    qwen_cited_as: Common Voice
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+    official:
+      project: https://commonvoice.mozilla.org/
+      dataset_hub: https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk
+      metadata_repo: https://github.com/common-voice/cv-dataset
+      paper: https://arxiv.org/abs/1912.06670
+    download:
+      primary:
+        - https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk
+      examples:
+        - "Download directly in browser from Mozilla Data Collective."
+        - "Use the Mozilla Data Collective API or Python SDK."
+      qwen_note: Qwen table reports CV15; select Common Voice 15.0 if reproducing those rows.
+    license:
+      data: CC0-1.0
+      code: MPL-2.0
+      notes: Common Voice data is CC0-1.0; cv-dataset metadata repo is MPL-2.0.
+    sources:
+      - https://github.com/common-voice/cv-dataset
+      - https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk
+
+  - id: librispeech
+    name: LibriSpeech
+    full_name: LibriSpeech ASR corpus
+    qwen_cited_as: LibriSpeech
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+    official:
+      openslr: https://www.openslr.org/12
+      hf_dataset: https://huggingface.co/datasets/openslr/librispeech_asr
+      paper: https://ieeexplore.ieee.org/document/7178964
+    download:
+      primary:
+        - https://www.openslr.org/12
+        - https://huggingface.co/datasets/openslr/librispeech_asr
+      examples:
+        - 'wget -P data/LibriSpeech https://www.openslr.org/resources/12/test-clean.tar.gz'
+        - 'from datasets import load_dataset; ds = load_dataset("openslr/librispeech_asr", "clean", split="test")'
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: OpenSLR SLR12 and HF dataset card list CC BY 4.0.
+    sources:
+      - https://www.openslr.org/12
+      - https://huggingface.co/datasets/openslr/librispeech_asr
+
+  - id: wenetspeech
+    name: WenetSpeech
+    full_name: WenetSpeech
+    qwen_cited_as: WenetSpeech
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - mandarin_asr
+    official:
+      homepage: https://wenet-e2e.github.io/WenetSpeech/
+      repo: https://github.com/wenet-e2e/WenetSpeech
+      openslr: https://www.openslr.org/121/
+      paper: https://arxiv.org/abs/2110.03370
+    download:
+      primary:
+        - https://wenet-e2e.github.io/WenetSpeech/
+        - https://github.com/wenet-e2e/WenetSpeech
+      examples:
+        - "Read the license, fill out the official form, and receive a password."
+        - "echo 'PASSWORD' > SAFEBOX/password"
+        - 'bash utils/download_wenetspeech.sh DOWNLOAD_DIR UNTAR_DIR'
+    license:
+      data: "non-commercial use under CC BY 4.0"
+      code: Apache-2.0
+      notes: Official site says WenetSpeech does not own audio copyright; original audio copyrights remain with owners.
+    sources:
+      - https://wenet-e2e.github.io/WenetSpeech/
+      - https://github.com/wenet-e2e/WenetSpeech
+      - https://www.openslr.org/121/
+
+  - id: kespeech
+    name: KeSpeech
+    full_name: "KeSpeech: An Open Source Speech Dataset of Mandarin and Its Eight Subdialects"
+    qwen_cited_as: KeSpeech
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - mandarin_asr
+      - dialect_asr
+    official:
+      repo: https://github.com/tzyll/KeSpeech
+      paper: https://openreview.net/forum?id=b3Zoeq2sCLq
+      license_file: https://github.com/tzyll/KeSpeech/blob/main/dataset_license.md
+    download:
+      primary:
+        - https://github.com/tzyll/KeSpeech
+      examples:
+        - "Use the Baidu Pan data link in the repository with password b6fy."
+    license:
+      data: custom_non_commercial_no_adaptations_no_distribution
+      code: not_specified
+      notes: Downloading data means accepting the custom license in dataset_license.md.
+    sources:
+      - https://github.com/tzyll/KeSpeech
+      - https://github.com/tzyll/KeSpeech/blob/main/dataset_license.md
+      - https://openreview.net/forum?id=b3Zoeq2sCLq
+
+  - id: opencpop_test
+    name: Opencpop-test
+    full_name: Opencpop
+    qwen_cited_as: Opencpop-test
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - singing_voice_transcription
+      - mandarin_singing_voice
+    official:
+      homepage: https://wenet-e2e.github.io/opencpop/
+      repo: https://github.com/wenet-e2e/opencpop
+      download_page: https://wenet-e2e.github.io/opencpop/download/
+      license_page: https://wenet-e2e.github.io/opencpop/liscense/
+      paper: https://arxiv.org/abs/2201.07429
+    download:
+      primary:
+        - https://wenet-e2e.github.io/opencpop/download/
+      examples:
+        - "Fill out the official Google Form and follow the email instructions."
+        - "Use the included test split after extracting the corpus."
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_specified
+      notes: License page is spelled /liscense/ on the official site.
+    sources:
+      - https://wenet-e2e.github.io/opencpop/
+      - https://wenet-e2e.github.io/opencpop/download/
+      - https://wenet-e2e.github.io/opencpop/liscense/
+
+  - id: mir_1k_vocal
+    name: MIR-1K vocal
+    full_name: MIR-1K
+    qwen_cited_as: "MIR-1K (vocal)"
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - singing_voice_transcription
+      - singing_voice_separation
+    official:
+      homepage: http://mirlab.org/dataset/public/
+      direct_archive: http://mirlab.org/dataset/public/MIR-1K.rar
+      figshare_mirror: https://figshare.com/articles/dataset/MIR-1K_rar/5802891
+      zenodo_record: https://zenodo.org/records/3532216
+      paper: https://doi.org/10.1109/TASL.2009.2038816
+    download:
+      primary:
+        - http://mirlab.org/dataset/public/MIR-1K.rar
+        - https://figshare.com/articles/dataset/MIR-1K_rar/5802891
+      examples:
+        - 'wget -P data/MIR-1K http://mirlab.org/dataset/public/MIR-1K.rar'
+        - "For vocal-only evaluation, extract the singing-voice channel from the stereo clips after download."
+    license:
+      data: not_specified_on_official_page
+      code: not_applicable
+      notes: Official MIR Lab page has direct downloads but no visible license statement; Figshare mirror lists CC BY 4.0.
+    sources:
+      - http://mirlab.org/dataset/public/
+      - https://figshare.com/articles/dataset/MIR-1K_rar/5802891
+      - https://zenodo.org/records/3532216
