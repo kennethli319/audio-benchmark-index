@@ -35,6 +35,7 @@ scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
+scripts/download/mls.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
@@ -83,6 +84,10 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech defaults to dev/test splits. Add large training splits explicitly.
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+
+# MLS downloads the OpenSLR page and checksums by default. Language archives are large and opt-in.
+MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS=polish MLS_FORMAT=opus scripts/download/mls.sh
+MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/download/mls.sh
 
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh

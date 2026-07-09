@@ -471,6 +471,40 @@ benchmarks:
       - https://www.openslr.org/12
       - https://huggingface.co/datasets/openslr/librispeech_asr
 
+  - id: mls
+    name: MLS
+    full_name: "MLS: A Large-Scale Multilingual Dataset for Speech Research"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - multilingual_asr
+      - asr
+      - language_modeling
+      - limited_supervision_asr
+    official:
+      openslr: https://www.openslr.org/94/
+      paper: https://arxiv.org/abs/2012.03411
+      interspeech: https://www.isca-archive.org/interspeech_2020/pratap20_interspeech.html
+    download:
+      primary:
+        - https://www.openslr.org/94/
+        - https://dl.fbaipublicfiles.com/mls/md5sum.txt
+        - https://dl.fbaipublicfiles.com/mls/mls_polish_opus.tar.gz
+        - https://dl.fbaipublicfiles.com/mls/mls_english_opus.tar.gz
+      examples:
+        - 'scripts/download/mls.sh'
+        - 'MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS=polish MLS_FORMAT=opus scripts/download/mls.sh'
+        - 'MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/download/mls.sh'
+      notes: OpenSLR links original FLAC and compressed OPUS archives for English, German, Dutch, French, Spanish, Italian, Portuguese, and Polish; archives range from about 1.6 GiB to multiple TiB, so the helper downloads only the page and checksums by default and requires MLS_DOWNLOAD_ARCHIVES=1 for audio.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: OpenSLR SLR94 lists CC BY 4.0. MLS is derived from LibriVox audiobooks and provides public-file-hosted archives plus MD5 checksums.
+    sources:
+      - https://www.openslr.org/94/
+      - https://arxiv.org/abs/2012.03411
+      - https://www.isca-archive.org/interspeech_2020/pratap20_interspeech.html
+
   - id: libritts
     name: LibriTTS
     full_name: "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"
