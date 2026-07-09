@@ -48,6 +48,7 @@ scripts/download/covost2.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
+scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
 scripts/download/audioset.sh
 scripts/download/vggsound.sh
@@ -183,6 +184,10 @@ ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
 URBANSOUND8K_EXTRACT=1 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
+
+# TAU ASC 2019 downloads doc/meta ZIPs by default. Audio is split across 21 large shards.
+TAU_ASC2019_DOWNLOAD_AUDIO=1 scripts/download/tau_asc_2019.sh
+TAU_ASC2019_DOWNLOAD_AUDIO=1 TAU_ASC2019_AUDIO_PARTS="1 2 21" scripts/download/tau_asc_2019.sh
 
 # TAU ASC 2020 Mobile downloads doc/meta ZIPs by default. Audio is split across large archives.
 TAU_ASC2020_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh

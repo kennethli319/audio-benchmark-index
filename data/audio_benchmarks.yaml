@@ -1164,6 +1164,41 @@ benchmarks:
       - https://zenodo.org/records/1203745
       - https://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf
 
+  - id: tau_asc_2019
+    name: TAU Urban Acoustic Scenes 2019
+    full_name: "TAU Urban Acoustic Scenes 2019 Development dataset"
+    qwen_cited_as: null
+    qwen_bucket: acoustic_scene_classification
+    tasks:
+      - acoustic_scene_classification
+      - multi_device_audio_classification
+      - low_complexity_audio_classification
+    official:
+      dcase_task: https://dcase.community/challenge2019/task-acoustic-scene-classification
+      development_record: https://zenodo.org/records/2589280
+      doi: https://doi.org/10.5281/zenodo.2589280
+      paper: https://arxiv.org/abs/1807.09840
+      baseline_repo: https://github.com/toni-heittola/dcase2019_task1_baseline
+    download:
+      primary:
+        - https://zenodo.org/records/2589280
+        - https://zenodo.org/api/records/2589280/files/TAU-urban-acoustic-scenes-2019-development.meta.zip/content
+        - https://zenodo.org/api/records/2589280/files/TAU-urban-acoustic-scenes-2019-development.doc.zip/content
+      examples:
+        - 'scripts/download/tau_asc_2019.sh'
+        - 'TAU_ASC2019_DOWNLOAD_AUDIO=1 scripts/download/tau_asc_2019.sh'
+        - 'TAU_ASC2019_DOWNLOAD_AUDIO=1 TAU_ASC2019_AUDIO_PARTS="1 2 21" scripts/download/tau_asc_2019.sh'
+      notes: The helper downloads the Zenodo record JSON plus small doc/meta ZIPs by default. The 40-hour audio release is split across 21 ZIP files of roughly 1.3-1.8 GiB each, so audio download is an explicit opt-in.
+    license:
+      data: other_non_commercial
+      code: not_applicable
+      notes: Zenodo record 2589280 lists license id "other-nc" without a more specific SPDX-style license. DCASE challenge and dataset terms should be checked before redistribution or commercial use.
+    sources:
+      - https://dcase.community/challenge2019/task-acoustic-scene-classification
+      - https://zenodo.org/records/2589280
+      - https://zenodo.org/api/records/2589280
+      - https://arxiv.org/abs/1807.09840
+
   - id: tau_asc_2020_mobile
     name: TAU Urban Acoustic Scenes 2020 Mobile
     full_name: "TAU Urban Acoustic Scenes 2020 Mobile: Development and Evaluation datasets"
