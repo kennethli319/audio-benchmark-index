@@ -762,6 +762,39 @@ benchmarks:
       - https://doi.org/10.1371/journal.pone.0196391
       - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391
 
+  - id: iemocap
+    name: IEMOCAP
+    full_name: "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database"
+    qwen_cited_as: null
+    qwen_bucket: speech_emotion_recognition
+    tasks:
+      - speech_emotion_recognition
+      - audio_visual_emotion_recognition
+      - multimodal_emotion_recognition
+      - dialogue_emotion_recognition
+    official:
+      homepage: https://sail.usc.edu/iemocap/
+      release_page: https://sail.usc.edu/iemocap/iemocap_release.htm
+      license_form: https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
+      request_form: https://docs.google.com/forms/d/e/1FAIpQLScBecgI2K5bFTrXi_-05IYSSwOcqL5mX7dh57xcJV1m_NoznA/viewform?usp=sf_link
+      paper: https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf
+    download:
+      primary:
+        - https://sail.usc.edu/iemocap/iemocap_release.htm
+        - https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
+      examples:
+        - 'scripts/download/iemocap.sh'
+      notes: IEMOCAP is released by request after reading the license and submitting the official electronic release form; there is no public one-command archive URL.
+    license:
+      data: custom_research_license
+      code: not_applicable
+      notes: The official release page links a USC/SAIL data release form and Google request form. Treat access as manual/form-gated and re-check the signed release terms before redistribution, commercial use, or sharing derived copies.
+    sources:
+      - https://sail.usc.edu/iemocap/
+      - https://sail.usc.edu/iemocap/iemocap_release.htm
+      - https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
+      - https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf
+
   - id: musan
     name: MUSAN
     full_name: "MUSAN: A Music, Speech, and Noise Corpus"

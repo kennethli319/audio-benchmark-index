@@ -61,6 +61,7 @@ GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
 WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
+scripts/download/iemocap.sh
 ```
 
 Without the required environment variables, they print the manual access steps
@@ -117,6 +118,9 @@ SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
 
 # RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
 RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh
+
+# IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
+scripts/download/iemocap.sh
 
 # MUSAN downloads the OpenSLR page by default. The corpus archive is about 11 GiB.
 MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh
