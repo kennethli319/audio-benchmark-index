@@ -64,6 +64,7 @@ scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
 scripts/download/librimix.sh
+scripts/download/wham_whamr.sh
 scripts/download/vctk.sh
 ```
 
@@ -200,6 +201,11 @@ AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
 # CHiME-6 downloads transcriptions/floorplans by default. Audio archives are large.
 CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
 CHIME6_OPENSLR_BASE_URL=https://openslr.elda.org/resources/150 scripts/download/chime_6.sh
+
+# WHAM!/WHAMR! downloads the page and small generation scripts by default. Noise archives are large.
+WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh
+WHAM_DOWNLOAD_48KHZ=1 scripts/download/wham_whamr.sh
+WHAM_DOWNLOAD_SCRIPTS=0 scripts/download/wham_whamr.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh

@@ -17,7 +17,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 50 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 51 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -87,6 +87,7 @@ Current coverage includes:
 | [AMI](https://groups.inf.ed.ac.uk/ami/corpus/) | Meeting ASR | Official [annotation ZIPs](https://groups.inf.ed.ac.uk/ami/download/), optional [OpenSLR SLR16](https://www.openslr.org/16/) acoustic archives, or [edinburghcstr/ami](https://huggingface.co/datasets/edinburghcstr/ami) | Official AMI pages list CC BY 4.0; OpenSLR mirror still shows an older modified CC BY-NC-SA v2.0 notice |
 | [CHiME-6](https://www.chimechallenge.org/datasets/chime6) | Meeting ASR / diarization | [OpenSLR SLR150](https://www.openslr.org/150/) transcriptions/floorplans by default; large train/dev/eval audio archives are opt-in | CC BY-SA 4.0 |
 | [LibriMix](https://github.com/JorisCos/LibriMix) | Speech separation | Official generator/metadata repo; helper clones it by default and runs generation only with `LIBRIMIX_RUN_GENERATION=1` plus a large storage directory | Code/scripts are MIT; generated data is derived from LibriSpeech CC BY 4.0 plus WHAM noise, so re-check component terms |
+| [WHAM! / WHAMR!](http://wham.whisper.ai/) | Noisy and reverberant speech separation | Official page and generation scripts by default; 17 GiB WHAM! noise and 68.1 GiB WHAM!48kHz archives are opt-in | WHAM noise datasets are CC BY-NC 4.0; generated mixtures also require separately licensed WSJ0/wsj0-2mix access |
 | [Clotho](https://zenodo.org/records/4783391) | Audio captioning | [Zenodo v2.1 record](https://zenodo.org/records/4783391); captions/metadata are small, audio archives are about 7.1 GiB | Mixed terms: audio clips keep per-file Freesound licenses; captions use the Tampere University license, mainly non-commercial with attribution |
 | [AudioCaps](https://audiocaps.github.io/) | Audio captioning | Official [CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset) and [AudioCaps 2.0 CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset2.0); raw audio/video requires the upstream form | README says code and dataset are free for academic purposes only; repo license is MIT, but raw clips inherit AudioSet/YouTube availability and terms |
 
@@ -230,6 +231,8 @@ Speech separation:
 ```bash
 scripts/download/librimix.sh
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
+scripts/download/wham_whamr.sh
+WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh
 ```
 
 Audio captioning:
@@ -338,6 +341,7 @@ scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/fma.sh
 scripts/download/librimix.sh
+scripts/download/wham_whamr.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/ljspeech.sh

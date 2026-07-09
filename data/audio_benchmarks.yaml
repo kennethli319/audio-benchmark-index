@@ -1663,3 +1663,41 @@ benchmarks:
       - https://raw.githubusercontent.com/JorisCos/LibriMix/master/LICENSE
       - https://arxiv.org/abs/2005.11262
       - https://www.openslr.org/12/
+
+  - id: wham_whamr
+    name: WHAM! / WHAMR!
+    full_name: "WSJ0 Hipster Ambient Mixtures and WHAMR!: Noisy and Reverberant Single-Channel Speech Separation"
+    qwen_cited_as: null
+    qwen_bucket: speech_separation
+    tasks:
+      - noisy_speech_separation
+      - speech_enhancement
+      - reverberant_speech_separation
+      - source_separation
+    official:
+      homepage: http://wham.whisper.ai/
+      wham_paper: https://arxiv.org/abs/1907.01160
+      whamr_paper: https://arxiv.org/abs/1910.10279
+      wsj0_2mix_reference: http://www.merl.com/demos/deep-clustering
+    download:
+      primary:
+        - http://wham.whisper.ai/
+        - https://my-bucket-a8b4b49c25c811ee9a7e8bba05fa24c7.s3.amazonaws.com/wham_scripts.tar.gz
+        - https://my-bucket-a8b4b49c25c811ee9a7e8bba05fa24c7.s3.amazonaws.com/whamr_scripts.tar.gz
+        - https://my-bucket-a8b4b49c25c811ee9a7e8bba05fa24c7.s3.amazonaws.com/wham_noise.zip
+        - https://my-bucket-a8b4b49c25c811ee9a7e8bba05fa24c7.s3.amazonaws.com/high_res_wham.zip
+      examples:
+        - 'scripts/download/wham_whamr.sh'
+        - 'WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh'
+        - 'WHAM_DOWNLOAD_48KHZ=1 scripts/download/wham_whamr.sh'
+      notes: The helper downloads the official landing page and small WHAM!/WHAMR! generation script archives by default. WHAM! noise is 17 GiB compressed and WHAM!48kHz is 68.1 GiB compressed, so those archives are explicit opt-ins. Building full WHAM!/WHAMR! mixtures also requires separately licensed WSJ0/wsj0-2mix access.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: The official WHAM page states the WHAM! and WHAM!48kHz noise datasets are CC BY-NC 4.0. Generated mixtures also depend on WSJ0/wsj0-2mix licensing, so redistribution or commercial use requires checking those upstream terms too.
+    sources:
+      - http://wham.whisper.ai/
+      - http://wham.whisper.ai/WHAM_README.html
+      - http://wham.whisper.ai/WHAMR_README.html
+      - https://arxiv.org/abs/1907.01160
+      - https://arxiv.org/abs/1910.10279
