@@ -580,6 +580,41 @@ benchmarks:
       - https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/
       - https://github.com/audioset/ontology
 
+  - id: speech_commands
+    name: Speech Commands
+    full_name: "Speech Commands: A Dataset for Limited-Vocabulary Speech Recognition"
+    qwen_cited_as: null
+    qwen_bucket: keyword_spotting
+    tasks:
+      - keyword_spotting
+      - limited_vocabulary_speech_recognition
+      - audio_classification
+    official:
+      tensorflow_datasets: https://www.tensorflow.org/datasets/catalog/speech_commands
+      google_research_blog: https://research.google/blog/launching-the-speech-commands-dataset/
+      hf_dataset: https://huggingface.co/datasets/google/speech_commands
+      paper: https://arxiv.org/abs/1804.03209
+      v2_archive: https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+      v1_archive: https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz
+    download:
+      primary:
+        - https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+        - https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz
+        - https://huggingface.co/datasets/google/speech_commands
+      examples:
+        - 'SPEECH_COMMANDS_VERSION=v0.02 scripts/download/speech_commands.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("google/speech_commands", "v0.02")'
+      notes: TensorFlow Datasets reports v0.02 as about 2.37 GiB download / 8.17 GiB extracted; avoid accidental full downloads in automated checks.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: Google Research blog and Hugging Face dataset card list Creative Commons BY 4.0; HF card also asks users not to try to identify speakers.
+    sources:
+      - https://www.tensorflow.org/datasets/catalog/speech_commands
+      - https://research.google/blog/launching-the-speech-commands-dataset/
+      - https://huggingface.co/datasets/google/speech_commands
+      - https://arxiv.org/abs/1804.03209
+
   - id: clotho
     name: Clotho
     full_name: "Clotho: An Audio Captioning Dataset"
