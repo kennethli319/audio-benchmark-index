@@ -16,7 +16,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 46 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 47 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -46,6 +46,7 @@ Current coverage includes:
 | [MagnaTagATune](https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset) | Music tagging | Official MIRG-hosted metadata, annotations, comparisons, optional Echo Nest features, and optional MP3 split archives | CC BY-NC-SA 3.0 for data; GPLv3 for scripts; Magnatune audio excerpts are non-commercial research redistribution |
 | [NSynth](https://magenta.withgoogle.com/datasets/nsynth) | Music synthesis | Official Magenta TFRecord or JSON/WAV split archives; helper saves the page by default and downloads archives only with opt-in | CC BY 4.0 for data; Magenta code is Apache-2.0 |
 | [MAESTRO](https://magenta.withgoogle.com/datasets/maestro) | Music transcription and synthesis | Official Magenta v3.0.0 CSV/JSON metadata by default, optional MIDI-only archive, and opt-in 101 GiB WAV+MIDI archive | CC BY-NC-SA 4.0 |
+| [MUSDB18](https://sigsep.github.io/datasets/musdb.html) | Music source separation | Official SigSep page plus Zenodo [MUSDB18](https://zenodo.org/records/1117372) and [MUSDB18-HQ](https://zenodo.org/records/3338373) archives; helper saves pages by default and requires acknowledgement before large archives | Zenodo lists Other (Non-Commercial); official pages state educational/academic use only, with mixed upstream track sources |
 | [VoiceBench](https://github.com/MatthewCYM/VoiceBench) | End-to-end speech dialogue | [hlt-lab/voicebench](https://huggingface.co/datasets/hlt-lab/voicebench) | Apache-2.0 |
 | [URO-Bench-pro](https://github.com/Ruiqi-Yan/URO-Bench) | End-to-end speech dialogue | [Honggao/URO-Bench](https://huggingface.co/datasets/Honggao/URO-Bench) | MIT |
 | [SpeechRole](https://github.com/yuhui1038/SpeechRole) | End-to-end speech dialogue | [SpeechRole-Eval](https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval), [SpeechRole-Data](https://huggingface.co/datasets/yuhui1038/SpeechRole-Data) | HF cards list MIT; repo has no separate detected license |
@@ -243,6 +244,13 @@ scripts/download/nsynth.sh
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
 scripts/download/maestro.sh
 MAESTRO_DOWNLOAD_MIDI=1 scripts/download/maestro.sh
+```
+
+Music source separation:
+
+```bash
+scripts/download/musdb18.sh
+MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh
 ```
 
 Form/password gated datasets:

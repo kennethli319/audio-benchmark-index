@@ -251,6 +251,44 @@ benchmarks:
       - https://arxiv.org/abs/1810.12247
       - https://openreview.net/forum?id=r1lYRjC9F7
 
+  - id: musdb18
+    name: MUSDB18
+    full_name: "MUSDB18: A Corpus for Music Separation"
+    qwen_cited_as: null
+    qwen_bucket: music_source_separation
+    tasks:
+      - music_source_separation
+      - singing_voice_separation
+      - audio_source_separation
+    official:
+      homepage: https://sigsep.github.io/datasets/musdb.html
+      zenodo: https://zenodo.org/records/1117372
+      hq_zenodo: https://zenodo.org/records/3338373
+      tools_repo: https://github.com/sigsep/sigsep-mus-db
+      paper: https://arxiv.org/abs/1804.06267
+    download:
+      primary:
+        - https://sigsep.github.io/datasets/musdb.html
+        - https://zenodo.org/records/1117372
+        - https://zenodo.org/records/1117372/files/musdb18.zip
+        - https://zenodo.org/records/3338373
+        - https://zenodo.org/records/3338373/files/musdb18hq.zip
+      examples:
+        - 'scripts/download/musdb18.sh'
+        - 'MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh'
+        - 'MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh'
+      notes: The helper saves the official SigSep and Zenodo pages by default. The 4.7 GiB compressed STEMS archive and 22.7 GiB uncompressed HQ archive require explicit terms acknowledgement and opt-in.
+    license:
+      data: other-non-commercial
+      code: MIT
+      notes: Zenodo lists "Other (Non-Commercial)" and the official pages state educational/academic use only, with commercial use requiring copyright-holder permission. Track sources include DSD100/Mixing Secrets, MedleyDB CC BY-NC-SA 4.0, Native Instruments stems, and Easton Ellises/Heise CC BY-NC-SA 3.0 material.
+    sources:
+      - https://sigsep.github.io/datasets/musdb.html
+      - https://zenodo.org/records/1117372
+      - https://zenodo.org/records/3338373
+      - https://github.com/sigsep/sigsep-mus-db
+      - https://arxiv.org/abs/1804.06267
+
   - id: voicebench
     name: VoiceBench
     full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"

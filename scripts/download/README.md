@@ -61,6 +61,7 @@ scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
+scripts/download/musdb18.sh
 scripts/download/vctk.sh
 ```
 
@@ -213,6 +214,10 @@ NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS="valid test" NSYNTH_FORMAT=tfrecord scr
 MAESTRO_DOWNLOAD_MIDI=1 scripts/download/maestro.sh
 MAESTRO_DOWNLOAD_AUDIO=1 scripts/download/maestro.sh
 MAESTRO_BASE_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0 scripts/download/maestro.sh
+
+# MUSDB18 saves official pages by default. Large archives require terms acknowledgement and opt-in.
+MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh
+MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
 
 # VCTK downloads the official README and license by default. The corpus ZIP is large and opt-in.
 VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh
