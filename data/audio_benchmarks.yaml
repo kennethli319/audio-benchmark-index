@@ -1040,6 +1040,41 @@ benchmarks:
       - https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/
       - https://github.com/audioset/ontology
 
+  - id: vggsound
+    name: VGGSound
+    full_name: "VGGSound: A Large-scale Audio-Visual Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_event_classification
+    tasks:
+      - audio_visual_event_classification
+      - audio_event_classification
+      - audio_tagging
+    official:
+      homepage: https://www.robots.ox.ac.uk/~vgg/data/vggsound/
+      repo: https://github.com/hche11/VGGSound
+      paper: https://arxiv.org/abs/2004.14368
+      icassp_paper: https://www.robots.ox.ac.uk/~vgg/publications/2020/Chen20/chen20.pdf
+      metadata_csv: https://raw.githubusercontent.com/hche11/VGGSound/master/data/vggsound.csv
+      license_file: https://raw.githubusercontent.com/hche11/VGGSound/master/LICENCE.txt
+    download:
+      primary:
+        - https://raw.githubusercontent.com/hche11/VGGSound/master/data/vggsound.csv
+        - https://raw.githubusercontent.com/hche11/VGGSound/master/LICENCE.txt
+        - https://github.com/hche11/VGGSound
+      examples:
+        - 'scripts/download/vggsound.sh'
+        - 'VGGSOUND_DOWNLOAD_MODELS=1 scripts/download/vggsound.sh'
+      notes: The official VGG page currently says the original dataset download links are no longer available from that website. The helper downloads the official CSV metadata, license, and optional pretrained model files only; it does not fetch or redistribute YouTube media.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: Official VGG page and repository license file list the dataset as CC BY 4.0 for commercial/research use, while copyright remains with original video owners. Re-check YouTube availability and upstream media terms before reconstructing clips.
+    sources:
+      - https://www.robots.ox.ac.uk/~vgg/data/vggsound/
+      - https://github.com/hche11/VGGSound
+      - https://raw.githubusercontent.com/hche11/VGGSound/master/LICENCE.txt
+      - https://arxiv.org/abs/2004.14368
+
   - id: fsd50k
     name: FSD50K
     full_name: "FSD50K: An Open Dataset of Human-Labeled Sound Events"

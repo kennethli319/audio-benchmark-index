@@ -47,6 +47,7 @@ scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2020_mobile.sh
 scripts/download/audioset.sh
+scripts/download/vggsound.sh
 scripts/download/fsd50k.sh
 scripts/download/desed.sh
 scripts/download/voxceleb.sh
@@ -158,6 +159,9 @@ TAU_ASC2020_DOWNLOAD_EVAL_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh
 
 # AudioSet downloads CSV metadata by default. Features are about 2.4 GiB.
 AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
+
+# VGGSound downloads official CSV metadata/license by default. Model files are opt-in.
+VGGSOUND_DOWNLOAD_MODELS=1 scripts/download/vggsound.sh
 
 # FSD50K downloads docs, labels, and metadata by default. Audio is about 31 GiB.
 FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
