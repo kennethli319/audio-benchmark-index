@@ -935,6 +935,45 @@ benchmarks:
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
 
+  - id: magnatagatune
+    name: MagnaTagATune
+    full_name: "MagnaTagATune: A Music Annotation Benchmark from the TagATune Game"
+    qwen_cited_as: null
+    qwen_bucket: music_tagging
+    tasks:
+      - music_auto_tagging
+      - music_annotation
+      - music_similarity
+    official:
+      homepage: https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset
+      original_details: https://tagatune.org/details.html
+      generator_repo: https://github.com/pichenettes/magnatagatune
+      paper: http://ismir2009.ismir.net/proceedings/OS5-5.pdf
+      chi_paper: http://www.cs.cmu.edu/~elaw/papers/tagatune.pdf
+    download:
+      primary:
+        - https://mirg.city.ac.uk/datasets/magnatagatune/clip_info_final.csv
+        - https://mirg.city.ac.uk/datasets/magnatagatune/annotations_final.csv
+        - https://mirg.city.ac.uk/datasets/magnatagatune/comparisons_final.csv
+        - https://mirg.city.ac.uk/datasets/magnatagatune/mp3_echonest_xml.zip
+        - https://mirg.city.ac.uk/datasets/magnatagatune/mp3.zip.001
+        - https://mirg.city.ac.uk/datasets/magnatagatune/mp3.zip.002
+        - https://mirg.city.ac.uk/datasets/magnatagatune/mp3.zip.003
+      examples:
+        - 'scripts/download/magnatagatune.sh'
+        - 'MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh'
+        - 'MAGNATAGATUNE_DOWNLOAD_AUDIO=1 scripts/download/magnatagatune.sh'
+      notes: City University MIRG hosts metadata, annotations, comparisons, Echo Nest features, and three 1 GiB MP3 split archives. The helper downloads CSV metadata by default and makes features/audio explicit opt-ins.
+    license:
+      data: cc-by-nc-sa-3.0
+      code: GPL-3.0
+      notes: The original TagATune details page says the data is CC BY-NC-SA 3.0 except scripts released under GPL v3, enabling non-commercial research redistribution. Audio clips are Magnatune excerpts with artist/album URLs for purchase or commercial licensing.
+    sources:
+      - https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset
+      - https://tagatune.org/details.html
+      - http://ismir2009.ismir.net/proceedings/OS5-5.pdf
+      - http://www.cs.cmu.edu/~elaw/papers/tagatune.pdf
+
   - id: chime_6
     name: CHiME-6
     full_name: "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings"

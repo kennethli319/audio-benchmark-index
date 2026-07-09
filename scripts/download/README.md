@@ -48,6 +48,7 @@ scripts/download/ami.sh
 scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
+scripts/download/magnatagatune.sh
 ```
 
 ## Manual Or Gated
@@ -139,4 +140,9 @@ CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 
 # AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
+
+# MagnaTagATune downloads CSV metadata by default. Features/audio are opt-in.
+MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh
+MAGNATAGATUNE_DOWNLOAD_AUDIO=1 scripts/download/magnatagatune.sh
+MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/download/magnatagatune.sh
 ```
