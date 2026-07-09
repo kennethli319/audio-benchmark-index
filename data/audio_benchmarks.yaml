@@ -399,6 +399,42 @@ benchmarks:
       - https://www.openslr.org/12
       - https://huggingface.co/datasets/openslr/librispeech_asr
 
+  - id: libritts
+    name: LibriTTS
+    full_name: "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - text_to_speech
+      - speech_synthesis
+      - voice_cloning
+      - multi_speaker_speech_synthesis
+    official:
+      openslr: https://www.openslr.org/60/
+      paper: https://arxiv.org/abs/1904.02882
+      doi: https://doi.org/10.48550/arXiv.1904.02882
+    download:
+      primary:
+        - https://www.openslr.org/60/
+        - https://openslr.trmal.net/resources/60/dev-clean.tar.gz
+        - https://openslr.trmal.net/resources/60/dev-other.tar.gz
+        - https://openslr.trmal.net/resources/60/test-clean.tar.gz
+        - https://openslr.trmal.net/resources/60/test-other.tar.gz
+        - https://openslr.trmal.net/resources/60/train-clean-100.tar.gz
+        - https://openslr.trmal.net/resources/60/train-clean-360.tar.gz
+        - https://openslr.trmal.net/resources/60/train-other-500.tar.gz
+      examples:
+        - 'scripts/download/libritts.sh'
+        - 'LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh'
+      notes: OpenSLR lists seven archives totaling tens of GiB; the helper saves the official OpenSLR page by default and requires LIBRITTS_DOWNLOAD_ARCHIVES=1 before downloading archives.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: OpenSLR SLR60 lists CC BY 4.0. LibriTTS is derived from LibriSpeech, which in turn derives from LibriVox audio and Project Gutenberg text.
+    sources:
+      - https://www.openslr.org/60/
+      - https://arxiv.org/abs/1904.02882
+
   - id: wenetspeech
     name: WenetSpeech
     full_name: WenetSpeech

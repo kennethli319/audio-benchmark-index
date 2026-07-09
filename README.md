@@ -10,7 +10,7 @@ does not mirror datasets or grant rights to use any upstream data.
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
 Audio -> Text evaluation block.
 
-Last checked: 2026-07-09. Current index size: 32 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 33 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 ## Benchmarks
@@ -32,6 +32,7 @@ or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 | [GigaSpeech](https://github.com/SpeechColab/GigaSpeech) | ASR | [speechcolab/gigaspeech](https://huggingface.co/datasets/speechcolab/gigaspeech) after access approval; default helper config is `dev` | HF terms restrict data to non-commercial research and educational use; code repo is Apache-2.0 |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
 | [LibriSpeech](https://www.openslr.org/12) | ASR | OpenSLR SLR12 tarballs or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr) | CC BY 4.0 |
+| [LibriTTS](https://www.openslr.org/60/) | Speech synthesis | OpenSLR SLR60 tarballs; helper downloads the landing page by default and archives only with opt-in | CC BY 4.0 |
 | [WenetSpeech](https://github.com/wenet-e2e/WenetSpeech) | ASR | Apply for password on the [official site](https://wenet-e2e.github.io/WenetSpeech/), then use repo scripts | Non-commercial use under CC BY 4.0; original audio copyrights remain with owners |
 | [KeSpeech](https://github.com/tzyll/KeSpeech) | ASR | Baidu Pan link in repo, password `b6fy` | Custom terms: non-commercial, no adaptations, no third-party distribution |
 | [Opencpop-test](https://github.com/wenet-e2e/opencpop) | ASR / singing voice | Apply via the [official download page](https://wenet-e2e.github.io/opencpop/download/) and use the test split | CC BY-NC-ND 4.0 |
@@ -133,6 +134,13 @@ scripts/download/musan.sh
 MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh
 ```
 
+Speech synthesis:
+
+```bash
+scripts/download/libritts.sh
+LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
+```
+
 Meeting ASR:
 
 ```bash
@@ -182,6 +190,7 @@ For example:
 scripts/download/mmar.sh
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+scripts/download/libritts.sh
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
 scripts/download/esc_50.sh

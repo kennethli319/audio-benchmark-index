@@ -34,6 +34,7 @@ scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
+scripts/download/libritts.sh
 scripts/download/voxpopuli.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
@@ -77,6 +78,10 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech defaults to dev/test splits. Add large training splits explicitly.
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+
+# LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
+LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
+LIBRITTS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/60 LIBRITTS_DOWNLOAD_ARCHIVES=1 scripts/download/libritts.sh
 
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
