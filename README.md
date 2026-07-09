@@ -10,7 +10,7 @@ does not mirror datasets or grant rights to use any upstream data.
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
 Audio -> Text evaluation block.
 
-Last checked: 2026-07-09. Current index size: 36 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 37 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 ## Benchmarks
@@ -36,6 +36,7 @@ or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 | [LibriSpeech](https://www.openslr.org/12) | ASR | OpenSLR SLR12 tarballs or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr) | CC BY 4.0 |
 | [LibriTTS](https://www.openslr.org/60/) | Speech synthesis | OpenSLR SLR60 tarballs; helper downloads the landing page by default and archives only with opt-in | CC BY 4.0 |
 | [LJSpeech](https://keithito.com/LJ-Speech-Dataset/) | Speech synthesis | Official 2.6 GiB archive or [keithito/lj_speech](https://huggingface.co/datasets/keithito/lj_speech); helper downloads the dataset page by default and archive only with opt-in | Public domain; HF mirror lists `unlicense` |
+| [VCTK](https://datashare.ed.ac.uk/handle/10283/3443) | Speech synthesis | Official DataShare README/license files by default; 10.94 GiB corpus ZIP is opt-in | CC BY 4.0 |
 | [WenetSpeech](https://github.com/wenet-e2e/WenetSpeech) | ASR | Apply for password on the [official site](https://wenet-e2e.github.io/WenetSpeech/), then use repo scripts | Non-commercial use under CC BY 4.0; original audio copyrights remain with owners |
 | [KeSpeech](https://github.com/tzyll/KeSpeech) | ASR | Baidu Pan link in repo, password `b6fy` | Custom terms: non-commercial, no adaptations, no third-party distribution |
 | [Opencpop-test](https://github.com/wenet-e2e/opencpop) | ASR / singing voice | Apply via the [official download page](https://wenet-e2e.github.io/opencpop/download/) and use the test split | CC BY-NC-ND 4.0 |
@@ -151,6 +152,8 @@ scripts/download/libritts.sh
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 LJSPEECH_DOWNLOAD_ARCHIVE=1 scripts/download/ljspeech.sh
+scripts/download/vctk.sh
+VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh
 ```
 
 Meeting ASR:
@@ -211,6 +214,7 @@ scripts/download/slurp.sh
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
 scripts/download/libritts.sh
+scripts/download/vctk.sh
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
 scripts/download/esc_50.sh

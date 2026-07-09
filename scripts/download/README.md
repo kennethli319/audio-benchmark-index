@@ -53,6 +53,7 @@ scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/nsynth.sh
+scripts/download/vctk.sh
 ```
 
 ## Manual Or Gated
@@ -165,4 +166,8 @@ MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/do
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS="valid test" NSYNTH_FORMAT=tfrecord scripts/download/nsynth.sh
+
+# VCTK downloads the official README and license by default. The corpus ZIP is large and opt-in.
+VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh
+VCTK_ARCHIVE_URL=https://datashare.ed.ac.uk/bitstreams/535f4286-e54c-4038-838c-a02285e32cb2/download scripts/download/vctk.sh
 ```

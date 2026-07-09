@@ -539,6 +539,45 @@ benchmarks:
       - https://keithito.com/LJ-Speech-Dataset/
       - https://huggingface.co/datasets/keithito/lj_speech
 
+  - id: vctk
+    name: VCTK
+    full_name: "CSTR VCTK Corpus: English Multi-speaker Corpus for CSTR Voice Cloning Toolkit"
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - text_to_speech
+      - speech_synthesis
+      - voice_cloning
+      - multi_speaker_speech_synthesis
+      - accented_speech_modeling
+    official:
+      datashare: https://datashare.ed.ac.uk/handle/10283/3443
+      doi: https://doi.org/10.7488/ds/2645
+      readme: https://datashare.ed.ac.uk/bitstreams/bb7edd96-5d96-4c0e-8989-1e45597e7b72/download
+      license_text: https://datashare.ed.ac.uk/bitstreams/956a1688-0b59-428c-8a2f-10837433dde3/download
+      direct_archive: https://datashare.ed.ac.uk/bitstreams/535f4286-e54c-4038-838c-a02285e32cb2/download
+      tfds: https://www.tensorflow.org/datasets/catalog/vctk
+    download:
+      primary:
+        - https://datashare.ed.ac.uk/handle/10283/3443
+        - https://datashare.ed.ac.uk/bitstreams/bb7edd96-5d96-4c0e-8989-1e45597e7b72/download
+        - https://datashare.ed.ac.uk/bitstreams/956a1688-0b59-428c-8a2f-10837433dde3/download
+        - https://datashare.ed.ac.uk/bitstreams/535f4286-e54c-4038-838c-a02285e32cb2/download
+      examples:
+        - 'scripts/download/vctk.sh'
+        - 'VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh'
+        - 'python -c "import tensorflow_datasets as tfds; tfds.load(\"vctk\", split=\"train\")"'
+      notes: The official DataShare ZIP is about 10.94 GiB. The helper saves the official README and license text by default and requires VCTK_DOWNLOAD_ARCHIVE=1 before downloading the archive.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: The official VCTK README and DataShare license_text identify Creative Commons Attribution 4.0 International. The newspaper text source was used with permission from Herald & Times Group.
+    sources:
+      - https://datashare.ed.ac.uk/handle/10283/3443
+      - https://doi.org/10.7488/ds/2645
+      - https://www.tensorflow.org/datasets/catalog/vctk
+      - https://doi.org/10.1109/ICSDA.2013.6709856
+
   - id: wenetspeech
     name: WenetSpeech
     full_name: WenetSpeech
