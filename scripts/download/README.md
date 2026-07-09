@@ -64,6 +64,7 @@ scripts/download/chime_6.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
+scripts/download/mtg_jamendo.sh
 scripts/download/fma.sh
 scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
@@ -251,6 +252,10 @@ GTZAN_DOWNLOAD_HF=1 scripts/download/gtzan.sh
 MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_DOWNLOAD_AUDIO=1 scripts/download/magnatagatune.sh
 MAGNATAGATUNE_BASE_URL=https://mirg.city.ac.uk/datasets/magnatagatune scripts/download/magnatagatune.sh
+
+# MTG-Jamendo clones metadata/scripts by default. The upstream media/features archives are large.
+MTG_JAMENDO_DOWNLOAD_ZENODO_DATA=1 scripts/download/mtg_jamendo.sh
+MTG_JAMENDO_DOWNLOAD_MEDIA=1 MTG_JAMENDO_DATASET=autotagging_moodtheme MTG_JAMENDO_TYPE=audio-low scripts/download/mtg_jamendo.sh
 
 # FMA downloads official README/license by default. Metadata/audio are opt-in.
 FMA_DOWNLOAD_METADATA=1 scripts/download/fma.sh

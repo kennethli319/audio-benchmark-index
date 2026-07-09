@@ -1686,6 +1686,46 @@ benchmarks:
       - http://ismir2009.ismir.net/proceedings/OS5-5.pdf
       - http://www.cs.cmu.edu/~elaw/papers/tagatune.pdf
 
+  - id: mtg_jamendo
+    name: MTG-Jamendo
+    full_name: "MTG-Jamendo Dataset for Automatic Music Tagging"
+    qwen_cited_as: null
+    qwen_bucket: music_tagging
+    tasks:
+      - music_auto_tagging
+      - music_genre_classification
+      - musical_instrument_recognition
+      - music_mood_theme_recognition
+      - multi_label_audio_classification
+    official:
+      homepage: https://mtg.github.io/mtg-jamendo-dataset/
+      repo: https://github.com/MTG/mtg-jamendo-dataset
+      zenodo_record: https://zenodo.org/records/3826813
+      doi: https://doi.org/10.5281/zenodo.3826813
+      paper_handle: https://repositori.upf.edu/handle/10230/42015
+    download:
+      primary:
+        - https://github.com/MTG/mtg-jamendo-dataset
+        - https://zenodo.org/api/records/3826813/files/data.zip/content
+        - https://raw.githubusercontent.com/MTG/mtg-jamendo-dataset/master/data/autotagging.tsv
+        - https://raw.githubusercontent.com/MTG/mtg-jamendo-dataset/master/data/download/raw_30s_audio-low_sha256_tars.txt
+      examples:
+        - 'scripts/download/mtg_jamendo.sh'
+        - 'MTG_JAMENDO_DOWNLOAD_ZENODO_DATA=1 scripts/download/mtg_jamendo.sh'
+        - 'MTG_JAMENDO_DOWNLOAD_MEDIA=1 MTG_JAMENDO_DATASET=autotagging_moodtheme MTG_JAMENDO_TYPE=audio-low scripts/download/mtg_jamendo.sh'
+      notes: "The helper clones or updates the official metadata/scripts repository by default and saves Zenodo record metadata. The upstream downloader can fetch very large archives: raw_30s audio is about 508 GiB, raw_30s audio-low is about 156 GiB, and autotagging_moodtheme audio-low is about 46 GiB, so media downloads require MTG_JAMENDO_DOWNLOAD_MEDIA=1."
+    license:
+      data: cc-by-nc-sa-4.0
+      code: Apache-2.0
+      notes: The GitHub README says repository metadata is CC BY-NC-SA 4.0, code is Apache-2.0, audio files keep individual Creative Commons licenses listed in audio_licenses.txt, and the dataset is made available solely for non-commercial research and academic use unless Jamendo grants separate authorization.
+    sources:
+      - https://mtg.github.io/mtg-jamendo-dataset/
+      - https://github.com/MTG/mtg-jamendo-dataset
+      - https://raw.githubusercontent.com/MTG/mtg-jamendo-dataset/master/README.md
+      - https://zenodo.org/records/3826813
+      - https://zenodo.org/api/records/3826813
+      - https://repositori.upf.edu/handle/10230/42015
+
   - id: fma
     name: FMA
     full_name: "FMA: A Dataset For Music Analysis"
