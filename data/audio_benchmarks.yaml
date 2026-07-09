@@ -313,6 +313,39 @@ benchmarks:
       - https://huggingface.co/datasets/facebook/voxpopuli
       - https://aclanthology.org/2021.acl-long.80/
 
+  - id: gigaspeech
+    name: GigaSpeech
+    full_name: "GigaSpeech: An Evolving, Multi-domain ASR Corpus with 10,000 Hours of Transcribed Audio"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - large_scale_speech_recognition
+      - text_to_speech
+    official:
+      repo: https://github.com/SpeechColab/GigaSpeech
+      hf_dataset: https://huggingface.co/datasets/speechcolab/gigaspeech
+      paper: https://arxiv.org/abs/2106.06909
+      interspeech_paper: https://www.isca-archive.org/interspeech_2021/chen21o_interspeech.html
+      access_form: https://forms.gle/UuGQAPyscGRrUMLq6
+    download:
+      primary:
+        - https://huggingface.co/datasets/speechcolab/gigaspeech
+        - https://github.com/SpeechColab/GigaSpeech
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("speechcolab/gigaspeech", "dev", token=True)'
+        - 'GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh'
+      notes: HF access is gated and the official repo also asks users to fill out the Google Form first; full HF dataset size is about 2.6 TB.
+    license:
+      data: gated_non_commercial_research_educational
+      code: Apache-2.0
+      notes: HF terms restrict the database to non-commercial research and educational purposes; the GitHub code repo is Apache-2.0.
+    sources:
+      - https://github.com/SpeechColab/GigaSpeech
+      - https://huggingface.co/datasets/speechcolab/gigaspeech
+      - https://arxiv.org/abs/2106.06909
+      - https://www.isca-archive.org/interspeech_2021/chen21o_interspeech.html
+
   - id: common_voice
     name: Common Voice
     full_name: Mozilla Common Voice

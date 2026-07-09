@@ -49,6 +49,7 @@ generated URL, or manual form step first:
 
 ```bash
 COMMON_VOICE_DOWNLOAD_URL='https://...' scripts/download/common_voice.sh
+GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
 WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
@@ -70,6 +71,10 @@ LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
 VOXPOPULI_CONFIG=en_accented VOXPOPULI_SPLITS=test scripts/download/voxpopuli.sh
+
+# GigaSpeech is gated on Hugging Face and defaults to the dev config.
+GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
+GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=xs scripts/download/gigaspeech.sh
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
