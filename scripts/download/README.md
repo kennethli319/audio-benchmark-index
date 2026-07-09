@@ -36,6 +36,7 @@ scripts/download/fleurs.sh
 scripts/download/librispeech.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
+scripts/download/audioset.sh
 ```
 
 ## Manual Or Gated
@@ -77,4 +78,7 @@ MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh
 
 # ESC-50 defaults to the official GitHub archive.
 ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
+
+# AudioSet downloads CSV metadata by default. Features are about 2.4 GiB.
+AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 ```

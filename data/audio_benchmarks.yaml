@@ -477,3 +477,38 @@ benchmarks:
       - https://github.com/karolpiczak/ESC-50
       - https://github.com/karolpiczak/ESC-50/blob/master/LICENSE
       - https://doi.org/10.1145/2733373.2806390
+
+  - id: audioset
+    name: AudioSet
+    full_name: "Audio Set: An ontology and human-labeled dataset for audio events"
+    qwen_cited_as: null
+    qwen_bucket: audio_event_classification
+    tasks:
+      - audio_event_classification
+      - audio_tagging
+      - sound_event_detection
+    official:
+      homepage: https://research.google.com/audioset/
+      download_page: https://research.google.com/audioset/download.html
+      ontology_repo: https://github.com/audioset/ontology
+      paper: https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/
+    download:
+      primary:
+        - https://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/eval_segments.csv
+        - https://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/balanced_train_segments.csv
+        - https://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/unbalanced_train_segments.csv
+        - https://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/class_labels_indices.csv
+        - https://storage.googleapis.com/us_audioset/youtube_corpus/v1/features/features.tar.gz
+      examples:
+        - 'curl -L -O https://storage.googleapis.com/us_audioset/youtube_corpus/v1/csv/eval_segments.csv'
+        - 'AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh'
+      notes: Official release provides segment CSVs and precomputed 128-dimensional audio features; it does not redistribute original YouTube audio.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: AudioSet dataset annotations/features are CC BY 4.0; the ontology is CC BY-SA 4.0. Original YouTube media remains subject to upstream availability and terms.
+    sources:
+      - https://research.google.com/audioset/
+      - https://research.google.com/audioset/download.html
+      - https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/
+      - https://github.com/audioset/ontology
