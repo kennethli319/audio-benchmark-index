@@ -51,6 +51,7 @@ scripts/download/vggsound.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
 scripts/download/desed.sh
+scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
@@ -181,6 +182,10 @@ FSDKAGGLE2018_DOWNLOAD_AUDIO=1 scripts/download/fsdkaggle2018.sh
 # DESED clones the official repo and downloads small metadata/JAMS by default. Audio is opt-in.
 DESED_DOWNLOAD_REAL_AUDIO=1 scripts/download/desed.sh
 DESED_DOWNLOAD_SYNTHETIC_AUDIO=1 DESED_SYNTHETIC_PARTS="DESED_synth_eval_dcase2019.tar.gz" scripts/download/desed.sh
+
+# SONYC-UST-V2 downloads annotations/taxonomy by default. Audio is split into 19 large shards.
+SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS="audio-0.tar.gz audio-18.tar.gz" scripts/download/sonyc_ust_v2.sh
+SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS=all scripts/download/sonyc_ust_v2.sh
 
 # VoxCeleb downloads small OpenSLR metadata/trial lists only.
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh

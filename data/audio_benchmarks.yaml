@@ -1258,6 +1258,41 @@ benchmarks:
       - https://hal.inria.fr/hal-02160855
       - https://hal.inria.fr/hal-02355573
 
+  - id: sonyc_ust_v2
+    name: SONYC-UST-V2
+    full_name: "SONYC-UST-V2: An Urban Sound Tagging Dataset with Spatiotemporal Context"
+    qwen_cited_as: null
+    qwen_bucket: urban_sound_tagging
+    tasks:
+      - audio_tagging
+      - urban_sound_tagging
+      - multilabel_sound_classification
+      - spatiotemporal_audio_classification
+    official:
+      zenodo_record: https://zenodo.org/records/3966543
+      doi: https://doi.org/10.5281/zenodo.3966543
+      dcase_task: https://dcase.community/challenge2020/task-urban-sound-tagging-with-spatiotemporal-context
+      paper: https://arxiv.org/abs/2009.05188
+    download:
+      primary:
+        - https://zenodo.org/records/3966543
+        - https://zenodo.org/api/records/3966543/files/README.md/content
+        - https://zenodo.org/api/records/3966543/files/annotations.csv/content
+        - https://zenodo.org/api/records/3966543/files/dcase-ust-taxonomy.yaml/content
+      examples:
+        - 'scripts/download/sonyc_ust_v2.sh'
+        - 'SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS="audio-0.tar.gz audio-18.tar.gz" scripts/download/sonyc_ust_v2.sh'
+        - 'SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS=all scripts/download/sonyc_ust_v2.sh'
+      notes: The helper downloads Zenodo record JSON plus README, annotations, taxonomy, and unpack script by default. Audio is split across 19 archive shards totaling about 12.8 GiB, so audio download is an explicit opt-in.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: Zenodo v2.3 lists CC BY 4.0 and the record README says the SONYC-UST dataset is offered under Creative Commons Attribution 4.0 International. Challenge rules also restrict private external data for reproducible task submissions.
+    sources:
+      - https://zenodo.org/records/3966543
+      - https://dcase.community/challenge2020/task-urban-sound-tagging-with-spatiotemporal-context
+      - https://arxiv.org/abs/2009.05188
+
   - id: voxceleb
     name: VoxCeleb
     full_name: VoxCeleb speaker recognition datasets
