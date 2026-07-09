@@ -1949,3 +1949,45 @@ benchmarks:
       - https://doi.org/10.1109/TASLP.2018.2828980
       - https://doi.org/10.7488/ds/1994
       - http://parole.loria.fr/DEMAND/
+
+  - id: asvspoof_2019
+    name: ASVspoof 2019
+    full_name: "ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speaker_verification_anti_spoofing
+      - presentation_attack_detection
+      - spoofed_speech_detection
+      - synthetic_speech_detection
+      - replay_attack_detection
+    official:
+      homepage: https://www.asvspoof.org/index2019.html
+      datashare_record: https://datashare.ed.ac.uk/handle/10283/3336
+      datashare_api: https://datashare.ed.ac.uk/server/api/core/items/31074a11-b6f6-4e92-a4ad-07093f8c0c45
+      doi: https://doi.org/10.7488/ds/2555
+      interspeech_paper: https://doi.org/10.21437/Interspeech.2019-2249
+      database_paper: https://arxiv.org/abs/1911.01601
+    download:
+      primary:
+        - https://datashare.ed.ac.uk/handle/10283/3336
+        - https://datashare.ed.ac.uk/server/api/core/bundles/d7e9ad8b-23c2-4a84-b9e7-0cd307dfec46/bitstreams?size=100
+        - https://datashare.ed.ac.uk/server/api/core/bitstreams/765597d6-633f-418a-96b0-39274a8d56c9/content
+        - https://datashare.ed.ac.uk/server/api/core/bitstreams/60c7de6d-37d3-45c1-b52e-9f18b0338e47/content
+        - https://datashare.ed.ac.uk/server/api/core/bitstreams/a9f87c35-f055-4015-80e2-2fdff0d46269/content
+        - https://datashare.ed.ac.uk/server/api/core/bitstreams/852ec9ad-fe51-48e7-93bd-5259b94e25d6/content
+      examples:
+        - 'scripts/download/asvspoof_2019.sh'
+        - 'ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh'
+        - 'ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asvspoof_2019.sh'
+      notes: The DataShare record exposes README, license, evaluation plan, paper PDF, and LA/PA archives. The helper downloads small documentation/license files by default; LA is about 7.6 GiB and PA is about 17.7 GiB, so archives are explicit opt-ins.
+    license:
+      data: odc-by-1.0
+      code: not_applicable
+      notes: Edinburgh DataShare metadata lists Open Data Commons Attribution License and ships the ODC Attribution license text. The license text itself cautions that database contents can have separate rights; ASVspoof 2019 is derived from VCTK, so re-check component terms before redistribution.
+    sources:
+      - https://datashare.ed.ac.uk/handle/10283/3336
+      - https://datashare.ed.ac.uk/server/api/core/items/31074a11-b6f6-4e92-a4ad-07093f8c0c45
+      - https://doi.org/10.7488/ds/2555
+      - https://doi.org/10.21437/Interspeech.2019-2249
+      - https://arxiv.org/abs/1911.01601

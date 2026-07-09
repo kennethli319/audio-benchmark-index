@@ -53,6 +53,7 @@ scripts/download/fsdkaggle2018.sh
 scripts/download/desed.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
+scripts/download/asvspoof_2019.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/ravdess.sh
@@ -191,6 +192,10 @@ SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS=all scripts/download/sony
 
 # VoxCeleb downloads small OpenSLR metadata/trial lists only.
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
+
+# ASVspoof 2019 downloads README/license/evaluation docs by default. LA/PA are large and opt-in.
+ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
+ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asvspoof_2019.sh
 
 # VoxLingua107 downloads HF metadata by default. The mirrored dataset snapshot is opt-in.
 VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh
