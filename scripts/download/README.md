@@ -37,6 +37,7 @@ scripts/download/librispeech.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/audioset.sh
+scripts/download/clotho.sh
 ```
 
 ## Manual Or Gated
@@ -81,4 +82,7 @@ ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
 
 # AudioSet downloads CSV metadata by default. Features are about 2.4 GiB.
 AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
+
+# Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
+CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 ```

@@ -512,3 +512,33 @@ benchmarks:
       - https://research.google.com/audioset/download.html
       - https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/
       - https://github.com/audioset/ontology
+
+  - id: clotho
+    name: Clotho
+    full_name: "Clotho: An Audio Captioning Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - audio_captioning
+      - language_based_audio_retrieval
+    official:
+      zenodo_record: https://zenodo.org/records/4783391
+      repo: https://github.com/audio-captioning/clotho-dataset
+      dcase_task: https://dcase.community/challenge2022/task-automatic-audio-captioning
+      paper: https://arxiv.org/abs/1910.09387
+    download:
+      primary:
+        - https://zenodo.org/records/4783391
+      examples:
+        - 'curl -L -o clotho_captions_development.csv "https://zenodo.org/records/4783391/files/clotho_captions_development.csv?download=1"'
+        - 'CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh'
+      notes: Clotho v2.1 audio archives total about 7.1 GiB; the helper downloads captions/metadata by default and makes audio opt-in.
+    license:
+      data: mixed
+      code: not_specified
+      notes: Zenodo lists rights as Other (Attribution). Audio clips keep their original Freesound licenses, mostly Creative Commons with attribution, recorded in metadata CSVs. Captions are under the Tampere University license, mainly non-commercial with attribution.
+    sources:
+      - https://zenodo.org/records/4783391
+      - https://github.com/audio-captioning/clotho-dataset
+      - https://dcase.community/challenge2022/task-automatic-audio-captioning
+      - https://arxiv.org/abs/1910.09387
