@@ -454,6 +454,38 @@ benchmarks:
       - https://arxiv.org/abs/2106.06909
       - https://www.isca-archive.org/interspeech_2021/chen21o_interspeech.html
 
+  - id: spgispeech
+    name: SPGISpeech
+    full_name: "SPGISpeech: 5,000 hours of transcribed financial audio for fully formatted end-to-end speech recognition"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - fully_formatted_transcription
+      - financial_speech_recognition
+    official:
+      hf_dataset: https://huggingface.co/datasets/kensho/spgispeech
+      paper: https://arxiv.org/abs/2104.02014
+      interspeech_paper: https://www.isca-archive.org/interspeech_2021/oneill21_interspeech.html
+      kensho_research: https://kensho.com/research-and-innovation
+    download:
+      primary:
+        - https://huggingface.co/datasets/kensho/spgispeech
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("kensho/spgispeech", "dev", token=True)'
+        - 'SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=dev scripts/download/spgispeech.sh'
+        - 'SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=test scripts/download/spgispeech.sh'
+      notes: Hugging Face access requires logging in and accepting Kensho terms. The HF card lists split sizes from 11 GiB for dev/test to 530 GiB for the L training subset; the helper refuses to download until SPGISPEECH_ACK_TERMS=1 is set.
+    license:
+      data: gated_academic_research_internal_use
+      code: not_specified
+      notes: HF terms say the content is for academic research purposes and internal use only, prohibit redistribution without prior written consent, and include additional restrictions on creating competing databases/products and identifying individuals.
+    sources:
+      - https://huggingface.co/datasets/kensho/spgispeech
+      - https://arxiv.org/abs/2104.02014
+      - https://www.isca-archive.org/interspeech_2021/oneill21_interspeech.html
+      - https://kensho.com/research-and-innovation
+
   - id: common_voice
     name: Common Voice
     full_name: Mozilla Common Voice
