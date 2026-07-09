@@ -175,6 +175,49 @@ benchmarks:
       - https://aclanthology.org/2020.emnlp-main.588/
       - https://arxiv.org/abs/2011.13205
 
+  - id: slue
+    name: SLUE
+    full_name: "SLUE: Spoken Language Understanding Evaluation"
+    qwen_cited_as: null
+    qwen_bucket: spoken_language_understanding
+    tasks:
+      - spoken_language_understanding
+      - automatic_speech_recognition
+      - named_entity_recognition
+      - named_entity_localization
+      - sentiment_analysis
+    official:
+      homepage: https://asappresearch.github.io/slue-toolkit/
+      repo: https://github.com/asappresearch/slue-toolkit
+      paper: https://arxiv.org/abs/2111.10367
+      dataset: https://huggingface.co/datasets/asapp/slue
+      phase_2_dataset: https://huggingface.co/datasets/asapp/slue-phase-2
+    download:
+      primary:
+        - https://huggingface.co/datasets/asapp/slue
+        - https://huggingface.co/datasets/asapp/slue-phase-2
+        - https://github.com/asappresearch/slue-toolkit
+        - https://papers-slue.awsdev.asapp.com/slue-voxpopuli_LICENSE
+        - https://papers-slue.awsdev.asapp.com/slue-voxceleb_LICENSE
+      examples:
+        - 'scripts/download/slue.sh'
+        - 'SLUE_DOWNLOAD_HF=1 scripts/download/slue.sh'
+        - 'SLUE_DOWNLOAD_HF=1 SLUE_DATASETS=slue-phase-2 scripts/download/slue.sh'
+        - 'SLUE_CLONE_TOOLKIT=1 scripts/download/slue.sh'
+      notes: The helper downloads official toolkit docs and component license files by default. Hugging Face dataset snapshots are opt-in because they contain audio-derived benchmark data; use SLUE_DATASETS to choose slue, slue-phase-2, or both.
+    license:
+      data: "SLUE-VoxPopuli is CC0; SLUE-VoxCeleb is CC BY 4.0; HF dataset metadata also advertises cc0-1.0 and cc-by-4.0 tags."
+      code: MIT
+      notes: SLUE redistributes curated subsets of VoxPopuli and VoxCeleb plus task annotations. The VoxCeleb license notice says original and cropped video copyrights remain with the original owners.
+    sources:
+      - https://asappresearch.github.io/slue-toolkit/
+      - https://github.com/asappresearch/slue-toolkit
+      - https://arxiv.org/abs/2111.10367
+      - https://huggingface.co/datasets/asapp/slue
+      - https://huggingface.co/datasets/asapp/slue-phase-2
+      - https://papers-slue.awsdev.asapp.com/slue-voxpopuli_LICENSE
+      - https://papers-slue.awsdev.asapp.com/slue-voxceleb_LICENSE
+
   - id: hear
     name: HEAR
     full_name: "HEAR: Holistic Evaluation of Audio Representations"

@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
+scripts/download/slue.sh
 scripts/download/hear.sh
 scripts/download/dynamic_superb.sh
 scripts/download/rul_muchomusic.sh
@@ -165,6 +166,11 @@ SPEECHROLE_DATA=0 scripts/download/speechrole.sh
 # SLURP clones the annotation/code repo and Zenodo license by default.
 SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS=real scripts/download/slurp.sh
 SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS="real synth" scripts/download/slurp.sh
+
+# SLUE downloads official docs/licenses by default. Hugging Face snapshots are opt-in.
+SLUE_DOWNLOAD_HF=1 scripts/download/slue.sh
+SLUE_DOWNLOAD_HF=1 SLUE_DATASETS=slue-phase-2 scripts/download/slue.sh
+SLUE_CLONE_TOOLKIT=1 scripts/download/slue.sh
 
 # SUPERB downloads official S3PRL benchmark docs/license by default.
 SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh
