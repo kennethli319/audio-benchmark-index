@@ -61,6 +61,7 @@ scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/fma.sh
+scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
@@ -217,6 +218,9 @@ CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 
 # AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
+
+# GTZAN saves the HF dataset card by default. Full audio/data snapshot is opt-in.
+GTZAN_DOWNLOAD_HF=1 scripts/download/gtzan.sh
 
 # MagnaTagATune downloads CSV metadata by default. Features/audio are opt-in.
 MAGNATAGATUNE_DOWNLOAD_FEATURES=1 scripts/download/magnatagatune.sh

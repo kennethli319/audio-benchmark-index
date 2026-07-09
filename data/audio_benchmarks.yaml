@@ -1621,6 +1621,36 @@ benchmarks:
       - https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
       - https://arxiv.org/abs/1612.01840
 
+  - id: gtzan
+    name: GTZAN
+    full_name: "GTZAN Genre Collection"
+    qwen_cited_as: null
+    qwen_bucket: music_genre_classification
+    tasks:
+      - music_genre_classification
+      - music_information_retrieval
+    official:
+      homepage: http://marsyas.info/downloads/datasets.html
+      paper: https://ismir2001.ismir.net/pdf/tzanetakis.pdf
+      hf_dataset: https://huggingface.co/datasets/marsyas/gtzan
+    download:
+      primary:
+        - https://huggingface.co/datasets/marsyas/gtzan
+        - http://marsyas.info/downloads/datasets.html
+      examples:
+        - 'scripts/download/gtzan.sh'
+        - 'GTZAN_DOWNLOAD_HF=1 scripts/download/gtzan.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("marsyas/gtzan")'
+      notes: The Hugging Face card describes 1,000 30-second mono WAV tracks across 10 genres and provides a reproducible datasets loader. The helper saves the HF dataset card by default and requires GTZAN_DOWNLOAD_HF=1 before downloading the audio snapshot.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: The reachable Hugging Face dataset card does not state a data license. Treat redistribution and commercial use as unclear until the Marsyas/original dataset terms are confirmed.
+    sources:
+      - https://huggingface.co/datasets/marsyas/gtzan
+      - https://huggingface.co/datasets/marsyas/gtzan/raw/main/README.md
+      - https://ismir2001.ismir.net/pdf/tzanetakis.pdf
+
   - id: openmic_2018
     name: OpenMIC-2018
     full_name: "OpenMIC-2018: An Open Dataset for Multiple Instrument Recognition"
