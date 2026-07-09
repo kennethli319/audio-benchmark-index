@@ -654,6 +654,36 @@ benchmarks:
       - https://www.openslr.org/12
       - https://huggingface.co/datasets/openslr/librispeech_asr
 
+  - id: timit
+    name: TIMIT
+    full_name: "TIMIT Acoustic-Phonetic Continuous Speech Corpus"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - phone_recognition
+      - acoustic_phonetic_analysis
+      - speaker_dialect_coverage
+    official:
+      ldc_catalog: https://catalog.ldc.upenn.edu/LDC93S1
+      ldc_ms_wav_catalog: https://catalog.ldc.upenn.edu/LDC93S1W
+      nist_documentation: https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4930.pdf
+    download:
+      primary:
+        - https://catalog.ldc.upenn.edu/LDC93S1
+        - https://catalog.ldc.upenn.edu/LDC93S1W
+      examples:
+        - 'scripts/download/timit.sh'
+      notes: LDC distributes TIMIT by web download after login/licensing. The helper only prints official access steps because the corpus is paid/licensed and not publicly script-downloadable.
+    license:
+      data: custom_ldc_license
+      code: not_applicable
+      notes: LDC catalog pages list licensing instructions for Subscription/Standard Members and Non-Members, web download media, and fee visibility after login. Portions are copyright 1993 Trustees of the University of Pennsylvania; consult the current LDC agreement before use or redistribution.
+    sources:
+      - https://catalog.ldc.upenn.edu/LDC93S1
+      - https://catalog.ldc.upenn.edu/LDC93S1W
+      - https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4930.pdf
+
   - id: mls
     name: MLS
     full_name: "MLS: A Large-Scale Multilingual Dataset for Speech Research"

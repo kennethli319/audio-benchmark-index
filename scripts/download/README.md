@@ -80,6 +80,7 @@ WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
+scripts/download/timit.sh
 ```
 
 Without the required environment variables, they print the manual access steps
@@ -184,6 +185,9 @@ RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh
+
+# TIMIT is paid/licensed through LDC. The helper prints official access steps.
+scripts/download/timit.sh
 
 # MUSAN downloads the OpenSLR page by default. The corpus archive is about 11 GiB.
 MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh
