@@ -967,6 +967,44 @@ benchmarks:
       - https://zenodo.org/records/1203745
       - https://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf
 
+  - id: tau_asc_2020_mobile
+    name: TAU Urban Acoustic Scenes 2020 Mobile
+    full_name: "TAU Urban Acoustic Scenes 2020 Mobile: Development and Evaluation datasets"
+    qwen_cited_as: null
+    qwen_bucket: acoustic_scene_classification
+    tasks:
+      - acoustic_scene_classification
+      - device_robust_audio_classification
+      - low_complexity_audio_classification
+    official:
+      dcase_task: https://dcase.community/challenge2020/task-acoustic-scene-classification
+      development_record: https://zenodo.org/records/3670167
+      evaluation_record: https://zenodo.org/records/3685828
+      paper: https://arxiv.org/abs/2005.14623
+      dataset_paper_pdf: https://dcase.community/documents/workshop2018/proceedings/DCASE2018Workshop_Mesaros_8.pdf
+    download:
+      primary:
+        - https://zenodo.org/records/3670167
+        - https://zenodo.org/records/3685828
+        - https://zenodo.org/api/records/3670167/files/TAU-urban-acoustic-scenes-2020-mobile-development.meta.zip/content
+        - https://zenodo.org/api/records/3670167/files/TAU-urban-acoustic-scenes-2020-mobile-development.doc.zip/content
+        - https://zenodo.org/api/records/3685828/files/TAU-urban-acoustic-scenes-2020-mobile-evaluation.meta.zip/content
+        - https://zenodo.org/api/records/3685828/files/TAU-urban-acoustic-scenes-2020-mobile-evaluation.doc.zip/content
+      examples:
+        - 'scripts/download/tau_asc_2020_mobile.sh'
+        - 'TAU_ASC2020_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh'
+        - 'TAU_ASC2020_DOWNLOAD_EVAL_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh'
+      notes: The helper downloads Zenodo record JSON plus small doc/meta ZIPs by default. Development audio is split across 16 ZIP files totaling about 27.4 GiB; evaluation audio is split across 8 ZIP files totaling about 13.1 GiB, so both are explicit opt-ins.
+    license:
+      data: other_non_commercial
+      code: not_applicable
+      notes: Both Zenodo development and evaluation records list "Other (Non-Commercial)" without a more specific SPDX-style license. DCASE challenge terms should be checked before redistribution or commercial use.
+    sources:
+      - https://dcase.community/challenge2020/task-acoustic-scene-classification
+      - https://zenodo.org/records/3670167
+      - https://zenodo.org/records/3685828
+      - https://arxiv.org/abs/2005.14623
+
   - id: audioset
     name: AudioSet
     full_name: "Audio Set: An ontology and human-labeled dataset for audio events"
