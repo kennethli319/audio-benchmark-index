@@ -103,6 +103,7 @@ KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
 scripts/download/timit.sh
+scripts/download/dihard_iii.sh
 ```
 
 Without the required environment variables, they print the manual access steps

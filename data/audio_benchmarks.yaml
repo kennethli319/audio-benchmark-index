@@ -1634,6 +1634,41 @@ benchmarks:
       - https://raw.githubusercontent.com/joonson/voxconverse/master/README.md
       - https://arxiv.org/abs/2007.01216
 
+  - id: dihard_iii
+    name: DIHARD III
+    full_name: "The Third DIHARD Speech Diarization Challenge"
+    qwen_cited_as: null
+    qwen_bucket: speaker_diarization
+    tasks:
+      - speaker_diarization
+      - speech_activity_detection
+      - overlapping_speech_diarization
+      - multisource_speech_diarization
+    official:
+      homepage: https://dihardchallenge.github.io/dihard3/
+      evaluation_plan: https://dihardchallenge.github.io/dihard3/docs/third_dihard_eval_plan_v1.2.pdf
+      paper: https://arxiv.org/abs/2012.01477
+      development_catalog: https://catalog.ldc.upenn.edu/LDC2022S12
+      evaluation_catalog: https://catalog.ldc.upenn.edu/LDC2022S14
+    download:
+      primary:
+        - https://catalog.ldc.upenn.edu/LDC2022S12
+        - https://catalog.ldc.upenn.edu/LDC2022S14
+        - https://dihardchallenge.github.io/dihard3/docs/third_dihard_eval_plan_v1.2.pdf
+      examples:
+        - 'scripts/download/dihard_iii.sh'
+      notes: The LDC catalog records list web-download development and evaluation releases with user-agreement access. The helper only prints official access steps; it does not download LDC-controlled data.
+    license:
+      data: ldc_user_agreement
+      code: not_applicable
+      notes: LDC2022S12 and LDC2022S14 list the LDC User Agreement for Non-Members and are available through LDC membership/non-member access. Re-check active LDC terms and component source restrictions before use or redistribution.
+    sources:
+      - https://dihardchallenge.github.io/dihard3/
+      - https://dihardchallenge.github.io/dihard3/docs/third_dihard_eval_plan_v1.2.pdf
+      - https://catalog.ldc.upenn.edu/LDC2022S12
+      - https://catalog.ldc.upenn.edu/LDC2022S14
+      - https://arxiv.org/abs/2012.01477
+
   - id: voxlingua107
     name: VoxLingua107
     full_name: "VoxLingua107: a Dataset for Spoken Language Recognition"

@@ -19,7 +19,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 72 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 73 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -95,6 +95,7 @@ Current coverage includes:
 | [SONYC-UST-V2](https://zenodo.org/records/3966543) | Urban sound tagging | [Zenodo v2.3 record](https://zenodo.org/records/3966543) for annotations, taxonomy, README, and 19 audio shards; helper downloads metadata by default and makes audio opt-in | CC BY 4.0; DCASE task rules restrict private external data for reproducible challenge submissions |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
 | [VoxConverse](https://www.robots.ox.ac.uk/~vgg/data/voxconverse/) | Speaker diarization | Official [annotation repository](https://github.com/joonson/voxconverse) plus dev/test WAV ZIPs on the VGG page; helper clones annotations by default and makes audio opt-in | CC BY 4.0 for research use; original video copyrights remain with upstream owners |
+| [DIHARD III](https://dihardchallenge.github.io/dihard3/) | Speaker diarization | LDC [development](https://catalog.ldc.upenn.edu/LDC2022S12) and [evaluation](https://catalog.ldc.upenn.edu/LDC2022S14) web-download releases after LDC access; helper prints official access steps | LDC user agreement access; development/evaluation data require LDC membership or non-member licensing |
 | [ASVspoof 2019](https://datashare.ed.ac.uk/handle/10283/3336) | Speaker verification anti-spoofing | Edinburgh DataShare record with README, license, evaluation plan, paper PDF, and opt-in LA/PA archives | Open Data Commons Attribution License on the DataShare record; derived from VCTK, so component terms should be re-checked |
 | [VoxLingua107](https://huggingface.co/datasets/TalTechNLP/VoxLingua107) | Spoken language identification | TalTechNLP [Hugging Face mirror](https://huggingface.co/datasets/TalTechNLP/VoxLingua107); helper downloads metadata by default and requires opt-in for the larger snapshot | HF card lists CC BY-NC 4.0; YouTube-derived source media availability and platform terms still apply |
 | [Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands) | Keyword spotting | Official TensorFlow archives: [v0.02](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), [v0.01](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz), or [google/speech_commands](https://huggingface.co/datasets/google/speech_commands) | CC BY 4.0; HF card asks users not to try to identify speakers |
@@ -226,6 +227,7 @@ scripts/download/voxceleb.sh
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
 scripts/download/voxconverse.sh
 VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS=dev scripts/download/voxconverse.sh
+scripts/download/dihard_iii.sh
 scripts/download/asvspoof_2019.sh
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
 ```
