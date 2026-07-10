@@ -50,6 +50,7 @@ scripts/download/aishell_1.sh
 scripts/download/aishell_3.sh
 scripts/download/hifitts.sh
 scripts/download/magicdata_mandarin.sh
+scripts/download/primewords_chinese.sh
 scripts/download/golos.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
@@ -159,6 +160,10 @@ AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOA
 # MAGICDATA downloads the OpenSLR page and metadata by default. The speech archives are large and opt-in.
 MAGICDATA_DOWNLOAD_ARCHIVES=1 MAGICDATA_PARTS="dev test" scripts/download/magicdata_mandarin.sh
 MAGICDATA_OPENSLR_BASE_URL=https://openslr.elda.org/resources/68 MAGICDATA_DOWNLOAD_ARCHIVES=1 scripts/download/magicdata_mandarin.sh
+
+# Primewords Chinese saves the OpenSLR page by default. The 9.0 GiB archive is opt-in.
+PRIMEWORDS_DOWNLOAD_ARCHIVE=1 scripts/download/primewords_chinese.sh
+PRIMEWORDS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/47 PRIMEWORDS_DOWNLOAD_ARCHIVE=1 scripts/download/primewords_chinese.sh
 
 # Golos downloads OpenSLR/GitHub metadata, checksums, and license PDFs by default.
 GOLOS_DOWNLOAD_OPUS=1 scripts/download/golos.sh
