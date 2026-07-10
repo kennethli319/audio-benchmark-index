@@ -566,6 +566,55 @@ benchmarks:
       - https://github.com/sigsep/sigsep-mus-db
       - https://arxiv.org/abs/1804.06267
 
+  - id: medleydb
+    name: MedleyDB
+    full_name: "MedleyDB: A Multitrack Dataset for Annotation-Intensive MIR Research"
+    qwen_cited_as: null
+    qwen_bucket: music_multitrack_benchmark
+    tasks:
+      - music_information_retrieval
+      - melody_extraction
+      - music_source_separation
+      - instrument_recognition
+      - automatic_mixing
+    official:
+      homepage: https://medleydb.weebly.com/
+      description: https://medleydb.weebly.com/description.html
+      downloads: https://medleydb.weebly.com/downloads.html
+      repo: https://github.com/marl/medleydb
+      sample_archive: https://zenodo.org/record/1438309/files/MedleyDB_Sample.tar.gz?download=1
+      medleydb_audio: https://zenodo.org/record/1649325
+      medleydb_2_audio: https://zenodo.org/record/1715175
+      paper: https://rachelbittner.weebly.com/uploads/3/2/1/8/32182799/bittner_ismir_2014.pdf
+      medleydb_2_paper: https://wp.nyu.edu/ismir2016/wp-content/uploads/sites/2294/2016/08/bittner-medleydb.pdf
+    download:
+      primary:
+        - https://medleydb.weebly.com/downloads.html
+        - https://github.com/marl/medleydb/tree/master/medleydb/data/Annotations
+        - https://github.com/marl/medleydb/tree/master/medleydb/data/Metadata
+        - https://zenodo.org/record/1438309/files/MedleyDB_Sample.tar.gz?download=1
+        - https://zenodo.org/record/1649325
+        - https://zenodo.org/record/1715175
+      examples:
+        - 'scripts/download/medleydb.sh'
+        - 'MEDLEYDB_CHECK_ZENODO=1 scripts/download/medleydb.sh'
+        - 'MEDLEYDB_DOWNLOAD_SAMPLE=1 scripts/download/medleydb.sh'
+        - 'MEDLEYDB_CLONE_REPO=1 scripts/download/medleydb.sh'
+      notes: The helper saves official pages and repository license/README by default. It checks the Zenodo request records only with MEDLEYDB_CHECK_ZENODO=1, downloads the public sample archive only with MEDLEYDB_DOWNLOAD_SAMPLE=1, and clones the annotation/metadata/tooling repo only with MEDLEYDB_CLONE_REPO=1. Full MedleyDB and MedleyDB 2.0 audio require requesting access through the official Zenodo records.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: MIT
+      notes: The official downloads page says MedleyDB is free for non-commercial research use only and identifies the dataset as Creative Commons Attribution-NonCommercial-ShareAlike 4.0. It also asks users not to republish the dataset in full or in part without consent, even though redistribution is technically allowed under the license. The GitHub tooling repository is MIT.
+    sources:
+      - https://medleydb.weebly.com/
+      - https://medleydb.weebly.com/description.html
+      - https://medleydb.weebly.com/downloads.html
+      - https://github.com/marl/medleydb
+      - https://raw.githubusercontent.com/marl/medleydb/master/README.md
+      - https://raw.githubusercontent.com/marl/medleydb/master/LICENSE
+      - https://rachelbittner.weebly.com/uploads/3/2/1/8/32182799/bittner_ismir_2014.pdf
+      - https://wp.nyu.edu/ismir2016/wp-content/uploads/sites/2294/2016/08/bittner-medleydb.pdf
+
   - id: voicebench
     name: VoiceBench
     full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"

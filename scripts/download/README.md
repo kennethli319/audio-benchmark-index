@@ -101,6 +101,7 @@ scripts/download/musicnet.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
+scripts/download/medleydb.sh
 scripts/download/librimix.sh
 scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
@@ -251,6 +252,11 @@ RUL_DOWNLOAD_UPSTREAM_MUCHOMUSIC=1 scripts/download/rul_muchomusic.sh
 # MusicNet downloads Zenodo metadata by default. MIDI and the large audio/label archive are opt-in.
 MUSICNET_DOWNLOAD_MIDIS=1 scripts/download/musicnet.sh
 MUSICNET_DOWNLOAD_AUDIO=1 scripts/download/musicnet.sh
+
+# MedleyDB downloads official pages and repo docs by default. Zenodo checks, sample archive, and repo clone are opt-in; full audio is request gated.
+MEDLEYDB_CHECK_ZENODO=1 scripts/download/medleydb.sh
+MEDLEYDB_DOWNLOAD_SAMPLE=1 scripts/download/medleydb.sh
+MEDLEYDB_CLONE_REPO=1 scripts/download/medleydb.sh
 
 # SpeechRole downloads both eval and data by default.
 SPEECHROLE_DATA=0 scripts/download/speechrole.sh
