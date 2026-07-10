@@ -10,8 +10,8 @@ sound event detection, keyword spotting, speaker recognition, spoken language
 identification, speech instruction following, self-supervised speech representation,
 emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
-verification anti-spoofing, speaker diarization, music synthesis, and spoken
-digit classification.
+verification anti-spoofing, speaker diarization, music synthesis, speech quality
+assessment, and spoken digit classification.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -20,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 87 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 88 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -37,6 +37,7 @@ Current coverage includes:
 - Non-speech audio benchmarks for events, scenes, sound event detection, captioning, and music.
 - Speech and music source separation benchmarks with realistic access constraints.
 - Human-centered speech tasks such as speaker recognition, spoken language identification, keyword spotting, emotion recognition, instruction following, and speech/audio/music representation evaluation.
+- Speech quality and MOS prediction benchmarks with explicit source-license caveats.
 
 ## Benchmark Table
 
@@ -125,6 +126,7 @@ Current coverage includes:
 | [WHAM! / WHAMR!](http://wham.whisper.ai/) | Noisy and reverberant speech separation | Official page and generation scripts by default; 17 GiB WHAM! noise and 68.1 GiB WHAM!48kHz archives are opt-in | WHAM noise datasets are CC BY-NC 4.0; generated mixtures also require separately licensed WSJ0/wsj0-2mix access |
 | [VoiceBank-DEMAND](https://datashare.ed.ac.uk/handle/10283/2791) | Speech enhancement | Edinburgh DataShare record for paired clean/noisy train and test ZIPs; helper saves metadata/license by default and makes text/audio archives opt-in | CC BY 4.0 on the DataShare record; derived from VCTK speech and DEMAND plus other noise sources, so component/source terms should be re-checked |
 | [DNS Challenge](https://github.com/microsoft/DNS-Challenge) | Speech enhancement | Official DNS Challenge repo and Microsoft Research challenge page; helper saves README/license/downloader scripts by default and makes multi-GB DNS5 test archives opt-in | Repository content/docs are CC BY 4.0 and code is MIT; training data combines multiple upstream sources, so component terms still need checking |
+| [NISQA](https://github.com/gabrielmittag/NISQA) | Speech quality assessment | Official NISQA repo/wiki and [Zenodo corpus mirror](https://zenodo.org/records/4728081); helper saves docs/licenses/record metadata by default and makes the 15.9 GiB corpus opt-in | Corpus uses mixed original source speech/noise terms; Zenodo reports `other-at`; code is MIT and model weights are CC BY-NC-SA 4.0 |
 | [Clotho](https://zenodo.org/records/4783391) | Audio captioning | [Zenodo v2.1 record](https://zenodo.org/records/4783391); captions/metadata are small, audio archives are about 7.1 GiB | Mixed terms: audio clips keep per-file Freesound licenses; captions use the Tampere University license, mainly non-commercial with attribution |
 | [AudioCaps](https://audiocaps.github.io/) | Audio captioning | Official [CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset) and [AudioCaps 2.0 CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset2.0); raw audio/video requires the upstream form | README says code and dataset are free for academic purposes only; repo license is MIT, but raw clips inherit AudioSet/YouTube availability and terms |
 | [WavCaps](https://github.com/XinhaoMei/WavCaps) | Audio captioning | [cvssp/WavCaps](https://huggingface.co/datasets/cvssp/WavCaps) JSON metadata and waveform ZIPs; helper downloads README/JSON metadata by default and makes large ZIP archives source-selective opt-ins | Academic use only for dataset audio; HF metadata advertises CC BY 4.0 but the card also requires checking FreeSound, BBC Sound Effects, SoundBible, and AudioSet source terms |

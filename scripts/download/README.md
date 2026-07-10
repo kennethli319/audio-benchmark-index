@@ -97,6 +97,7 @@ scripts/download/librimix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
 scripts/download/dns_challenge.sh
+scripts/download/nisqa.sh
 scripts/download/vctk.sh
 ```
 
@@ -354,6 +355,9 @@ VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS=all scripts/download/vo
 DNS_CHALLENGE_DOWNLOAD_DEV_TESTSET=1 scripts/download/dns_challenge.sh
 DNS_CHALLENGE_DOWNLOAD_BLIND_TESTSET=1 scripts/download/dns_challenge.sh
 DNS_CHALLENGE_CLONE_REPO=1 scripts/download/dns_challenge.sh
+
+# NISQA downloads official docs/license files and Zenodo metadata by default.
+NISQA_DOWNLOAD_CORPUS=1 scripts/download/nisqa.sh
 
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh

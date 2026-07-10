@@ -2985,6 +2985,48 @@ benchmarks:
       - https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/
       - https://arxiv.org/abs/2202.13288
 
+  - id: nisqa
+    name: NISQA
+    full_name: "NISQA Speech Quality Corpus"
+    qwen_cited_as: null
+    qwen_bucket: speech_quality_assessment
+    tasks:
+      - speech_quality_assessment
+      - mean_opinion_score_prediction
+      - non_intrusive_speech_quality
+      - multidimensional_speech_quality
+      - tts_naturalness_assessment
+    official:
+      repo: https://github.com/gabrielmittag/NISQA
+      corpus_wiki: https://github.com/gabrielmittag/NISQA/wiki/NISQA-Corpus
+      zenodo_record: https://zenodo.org/records/4728081
+      doi: https://doi.org/10.14279/depositonce-11807.5
+      interspeech_paper: https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html
+      arxiv: https://arxiv.org/abs/2104.09494
+      direct_corpus: https://zenodo.org/records/4728081/files/NISQA_Corpus.zip
+    download:
+      primary:
+        - https://github.com/gabrielmittag/NISQA
+        - https://raw.githubusercontent.com/gabrielmittag/NISQA/master/README.md
+        - https://raw.githubusercontent.com/wiki/gabrielmittag/NISQA/NISQA-Corpus.md
+        - https://zenodo.org/api/records/4728081
+        - https://zenodo.org/records/4728081/files/NISQA_Corpus.zip
+      examples:
+        - 'scripts/download/nisqa.sh'
+        - 'NISQA_DOWNLOAD_CORPUS=1 scripts/download/nisqa.sh'
+      notes: The helper downloads the official README, corpus wiki markdown, model-weight license, and Zenodo record JSON by default. The full NISQA_Corpus.zip archive is about 15.9 GB and requires NISQA_DOWNLOAD_CORPUS=1.
+    license:
+      data: mixed
+      code: MIT
+      notes: The GitHub README says the corpus is provided under the original terms of the source speech and noise samples, generally non-commercial research with some subsets permitting commercial use; individual README/license files inside the archive should be checked. The Zenodo record reports license id other-at, and model weights are CC BY-NC-SA 4.0.
+    sources:
+      - https://github.com/gabrielmittag/NISQA
+      - https://github.com/gabrielmittag/NISQA/wiki/NISQA-Corpus
+      - https://zenodo.org/api/records/4728081
+      - https://zenodo.org/records/4728081
+      - https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html
+      - https://arxiv.org/abs/2104.09494
+
   - id: asvspoof_2019
     name: ASVspoof 2019
     full_name: "ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database"
