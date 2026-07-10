@@ -74,6 +74,7 @@ scripts/download/voxceleb.sh
 scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
+scripts/download/asvspoof_2021.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/audio_mnist.sh
@@ -318,6 +319,10 @@ VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS="dev test" scripts/downloa
 # ASVspoof 2019 downloads README/license/evaluation docs by default. LA/PA are large and opt-in.
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asvspoof_2019.sh
+
+# ASVspoof 2021 downloads evaluation plan and keys/metadata by default. LA/PA/DF speech archives are large and opt-in.
+ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
+ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS="PA DF" ASVSPOOF2021_PA_PARTS="00 01" ASVSPOOF2021_DF_PARTS="00" scripts/download/asvspoof_2021.sh
 
 # VoxLingua107 downloads HF metadata by default. The mirrored dataset snapshot is opt-in.
 VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh

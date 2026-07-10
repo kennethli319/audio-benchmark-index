@@ -3290,3 +3290,62 @@ benchmarks:
       - https://doi.org/10.7488/ds/2555
       - https://doi.org/10.21437/Interspeech.2019-2249
       - https://arxiv.org/abs/1911.01601
+
+  - id: asvspoof_2021
+    name: ASVspoof 2021
+    full_name: "ASVspoof 2021: Logical Access, Physical Access, and Speech Deepfake Challenge databases"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speaker_verification_anti_spoofing
+      - presentation_attack_detection
+      - spoofed_speech_detection
+      - synthetic_speech_detection
+      - replay_attack_detection
+      - deepfake_speech_detection
+    official:
+      homepage: https://www.asvspoof.org/index2021.html
+      repo: https://github.com/asvspoof-challenge/2021
+      la_zenodo: https://zenodo.org/record/4837263
+      pa_zenodo: https://zenodo.org/record/4834716
+      df_zenodo: https://zenodo.org/record/4835108
+      overview_paper: https://arxiv.org/abs/2210.02437
+      results_summary: https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
+      evaluation_plan: https://www.asvspoof.org/asvspoof2021/asvspoof2021_evaluation_plan.pdf
+    download:
+      primary:
+        - https://zenodo.org/api/records/4837263/files/ASVspoof2021_LA_eval.tar.gz/content
+        - https://zenodo.org/api/records/4834716/files/ASVspoof2021_PA_eval_part00.tar.gz/content
+        - https://zenodo.org/api/records/4835108/files/ASVspoof2021_DF_eval_part00.tar.gz/content
+        - https://www.asvspoof.org/asvspoof2021/LA-keys-full.tar.gz
+        - https://www.asvspoof.org/asvspoof2021/PA-keys-full.tar.gz
+        - https://www.asvspoof.org/asvspoof2021/DF-keys-full.tar.gz
+        - https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz
+      examples:
+        - 'scripts/download/asvspoof_2021.sh'
+        - 'ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh'
+        - 'ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS="LA PA DF" ASVSPOOF2021_PA_PARTS="00 01" ASVSPOOF2021_DF_PARTS="00" scripts/download/asvspoof_2021.sh'
+      notes: >-
+        The helper downloads the evaluation plan, LA/PA/DF keys and metadata,
+        Zenodo record metadata, and file-map metadata by default. Evaluation
+        speech archives are large: LA is about 7.8 GB, PA is split into seven
+        parts totaling about 47 GB, and DF is split into four parts totaling
+        about 34.5 GB, so speech archives are explicit opt-ins.
+    license:
+      data: mixed
+      code: not_specified
+      notes: >-
+        The official ASVspoof 2021 page says the databases are available under
+        an Open Data Commons Attribution Licence. Zenodo currently lists ODC-BY
+        for LA and PA, and ODC-ODbL for DF; re-check active Zenodo metadata and
+        component-source terms before redistribution. The GitHub baseline
+        repository did not expose a detected license via the GitHub API on
+        2026-07-10.
+    sources:
+      - https://www.asvspoof.org/index2021.html
+      - https://github.com/asvspoof-challenge/2021
+      - https://zenodo.org/api/records/4837263
+      - https://zenodo.org/api/records/4834716
+      - https://zenodo.org/api/records/4835108
+      - https://arxiv.org/abs/2210.02437
+      - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
