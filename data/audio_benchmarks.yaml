@@ -290,6 +290,39 @@ benchmarks:
       - https://huggingface.co/datasets/PolyAI/minds14/raw/main/README.md
       - https://arxiv.org/abs/2104.08524
 
+  - id: fluent_speech_commands
+    name: Fluent Speech Commands
+    full_name: "Fluent Speech Commands: A dataset for spoken language understanding research"
+    qwen_cited_as: null
+    qwen_bucket: spoken_language_understanding
+    tasks:
+      - spoken_language_understanding
+      - intent_classification
+      - slot_filling
+      - smart_home_voice_commands
+    official:
+      homepage: https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/
+      access_group: https://groups.google.com/a/fluent.ai/forum/#!forum/fluent-speech-commands
+      paper: https://arxiv.org/abs/1904.03670
+      license_pdf: https://fluent.ai/wp-content/uploads/2021/04/Fluent_Speech_Commands_Public_License.pdf
+    download:
+      primary:
+        - https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/
+        - https://groups.google.com/a/fluent.ai/forum/#!forum/fluent-speech-commands
+        - https://fluent.ai/wp-content/uploads/2021/04/Fluent_Speech_Commands_Public_License.pdf
+      examples:
+        - 'scripts/download/fluent_speech_commands.sh'
+      notes: The helper downloads the public dataset page and license PDF, then prints the manual Google Groups access path. The official page says the corpus contains 30,043 single-channel 16 kHz WAV utterances from 97 speakers with action, object, and location slot labels; do not commit granted links or downloaded audio.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_specified
+      notes: Official Fluent.ai page says the dataset is released strictly for academic research only under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International, and not authorized for commercial use. No current public code repository was identified.
+    sources:
+      - https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/
+      - https://groups.google.com/a/fluent.ai/forum/#!forum/fluent-speech-commands
+      - https://fluent.ai/wp-content/uploads/2021/04/Fluent_Speech_Commands_Public_License.pdf
+      - https://arxiv.org/abs/1904.03670
+
   - id: hear
     name: HEAR
     full_name: "HEAR: Holistic Evaluation of Audio Representations"
