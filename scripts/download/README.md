@@ -102,6 +102,7 @@ scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
 scripts/download/medleydb.sh
+scripts/download/slakh2100.sh
 scripts/download/librimix.sh
 scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
@@ -453,6 +454,11 @@ MAESTRO_BASE_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.
 # MUSDB18 saves official pages by default. Large archives require terms acknowledgement and opt-in.
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
+
+# Slakh2100 downloads the official page and slakh-utils README/LICENSE by default.
+SLAKH_CHECK_ZENODO=1 scripts/download/slakh2100.sh
+SLAKH_CLONE_UTILS=1 scripts/download/slakh2100.sh
+SLAKH_CLONE_GENERATION=1 scripts/download/slakh2100.sh
 
 # LibriMix clones the official generator/metadata repo by default. Generation is very large.
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh

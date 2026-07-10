@@ -615,6 +615,47 @@ benchmarks:
       - https://rachelbittner.weebly.com/uploads/3/2/1/8/32182799/bittner_ismir_2014.pdf
       - https://wp.nyu.edu/ismir2016/wp-content/uploads/sites/2294/2016/08/bittner-medleydb.pdf
 
+  - id: slakh2100
+    name: Slakh2100
+    full_name: "Slakh2100: The Synthesized Lakh Dataset"
+    qwen_cited_as: null
+    qwen_bucket: music_source_separation
+    tasks:
+      - music_source_separation
+      - multi_instrument_automatic_transcription
+      - music_information_retrieval
+      - synthetic_multitrack_music
+    official:
+      homepage: http://www.slakh.com/
+      zenodo: https://zenodo.org/record/4599666
+      tiny_zenodo: https://zenodo.org/record/4603870
+      utils_repo: https://github.com/ethman/slakh-utils
+      generation_repo: https://github.com/ethman/slakh_generation_scripts
+      paper: https://ieeexplore.ieee.org/document/8937164
+    download:
+      primary:
+        - http://www.slakh.com/
+        - https://zenodo.org/record/4599666
+        - https://zenodo.org/record/4603870
+        - https://github.com/ethman/slakh-utils
+      examples:
+        - 'scripts/download/slakh2100.sh'
+        - 'SLAKH_CHECK_ZENODO=1 scripts/download/slakh2100.sh'
+        - 'SLAKH_CLONE_UTILS=1 scripts/download/slakh2100.sh'
+      notes: The helper downloads the official Slakh page and utility README/LICENSE by default. Zenodo currently hosts the full Slakh2100 record plus a tiny prototyping subset; the helper can save the Zenodo landing pages with SLAKH_CHECK_ZENODO=1, but archive file selection should be made from the live Zenodo records because the full corpus is large.
+    license:
+      data: cc-by-4.0
+      code: MIT
+      notes: The official Slakh page states that Slakh2100 and Flakh2100 are licensed under Creative Commons Attribution 4.0 International. The slakh-utils repository is MIT. Slakh is synthesized from Lakh MIDI Dataset v0.1, so keep source MIDI attribution/provenance in downstream use.
+    sources:
+      - http://www.slakh.com/
+      - https://github.com/ethman/slakh-utils
+      - https://github.com/ethman/slakh-utils/blob/master/LICENSE
+      - https://github.com/ethman/slakh_generation_scripts
+      - https://zenodo.org/record/4599666
+      - https://zenodo.org/record/4603870
+      - https://ieeexplore.ieee.org/document/8937164
+
   - id: voicebench
     name: VoiceBench
     full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"

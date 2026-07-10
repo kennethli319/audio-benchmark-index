@@ -23,7 +23,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-10. Current index size: 99 distinct benchmarks
+Last checked: 2026-07-10. Current index size: 100 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -69,6 +69,7 @@ Current coverage includes:
 | [MAESTRO](https://magenta.withgoogle.com/datasets/maestro) | Music transcription and synthesis | Official Magenta v3.0.0 CSV/JSON metadata by default, optional MIDI-only archive, and opt-in 101 GiB WAV+MIDI archive | CC BY-NC-SA 4.0 |
 | [MUSDB18](https://sigsep.github.io/datasets/musdb.html) | Music source separation | Official SigSep page plus Zenodo [MUSDB18](https://zenodo.org/records/1117372) and [MUSDB18-HQ](https://zenodo.org/records/3338373) archives; helper saves pages by default and requires acknowledgement before large archives | Zenodo lists Other (Non-Commercial); official pages state educational/academic use only, with mixed upstream track sources |
 | [MedleyDB](https://medleydb.weebly.com/) | Music multitrack MIR | Official [downloads page](https://medleydb.weebly.com/downloads.html), public sample archive, GitHub annotation/metadata/tooling repo, and Zenodo request records for full MedleyDB and MedleyDB 2.0 audio | Dataset is CC BY-NC-SA 4.0 for non-commercial research use; official page asks users not to republish without consent; tooling repo is MIT |
+| [Slakh2100](http://www.slakh.com/) | Music source separation and transcription | Official Slakh page, [Slakh2100 Zenodo record](https://zenodo.org/record/4599666), [tiny prototyping subset](https://zenodo.org/record/4603870), and [slakh-utils](https://github.com/ethman/slakh-utils); helper downloads docs by default and can save Zenodo landing pages or clone utilities with opt-in | CC BY 4.0 for Slakh2100/Flakh2100; slakh-utils code is MIT; synthesized from Lakh MIDI Dataset v0.1, so keep source MIDI attribution/provenance |
 | [VoiceBench](https://github.com/MatthewCYM/VoiceBench) | End-to-end speech dialogue | [hlt-lab/voicebench](https://huggingface.co/datasets/hlt-lab/voicebench) | Apache-2.0 |
 | [URO-Bench-pro](https://github.com/Ruiqi-Yan/URO-Bench) | End-to-end speech dialogue | [Honggao/URO-Bench](https://huggingface.co/datasets/Honggao/URO-Bench) | MIT |
 | [SpeechRole](https://github.com/yuhui1038/SpeechRole) | End-to-end speech dialogue | [SpeechRole-Eval](https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval), [SpeechRole-Data](https://huggingface.co/datasets/yuhui1038/SpeechRole-Data) | HF cards list MIT; repo has no separate detected license |
@@ -438,6 +439,9 @@ scripts/download/medleydb.sh
 MEDLEYDB_CHECK_ZENODO=1 scripts/download/medleydb.sh
 MEDLEYDB_DOWNLOAD_SAMPLE=1 scripts/download/medleydb.sh
 MEDLEYDB_CLONE_REPO=1 scripts/download/medleydb.sh
+scripts/download/slakh2100.sh
+SLAKH_CHECK_ZENODO=1 scripts/download/slakh2100.sh
+SLAKH_CLONE_UTILS=1 scripts/download/slakh2100.sh
 ```
 
 Form/password gated datasets:
