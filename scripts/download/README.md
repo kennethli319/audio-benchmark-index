@@ -71,6 +71,7 @@ scripts/download/vggsound.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
+scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
@@ -325,6 +326,10 @@ FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
 
 # FSDKaggle2018 downloads Zenodo docs/metadata by default. Audio is about 4.6 GiB.
 FSDKAGGLE2018_DOWNLOAD_AUDIO=1 scripts/download/fsdkaggle2018.sh
+
+# FSDKaggle2019 downloads Zenodo docs/metadata by default. Audio is about 25 GiB.
+FSDKAGGLE2019_DOWNLOAD_AUDIO=1 FSDKAGGLE2019_AUDIO_PARTS="curated test" scripts/download/fsdkaggle2019.sh
+FSDKAGGLE2019_DOWNLOAD_AUDIO=1 FSDKAGGLE2019_AUDIO_PARTS=noisy scripts/download/fsdkaggle2019.sh
 
 # DESED clones the official repo and downloads small metadata/JAMS by default. Audio is opt-in.
 DESED_DOWNLOAD_REAL_AUDIO=1 scripts/download/desed.sh

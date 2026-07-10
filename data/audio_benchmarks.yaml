@@ -2214,6 +2214,48 @@ benchmarks:
       - https://arxiv.org/abs/1807.09902
       - https://github.com/MTG/freesound-datasets
 
+  - id: fsdkaggle2019
+    name: FSDKaggle2019
+    full_name: "FSDKaggle2019: Freesound Audio Tagging 2019 / Audio Tagging with Noisy Labels and Minimal Supervision"
+    qwen_cited_as: null
+    qwen_bucket: audio_event_classification
+    tasks:
+      - audio_tagging
+      - sound_event_classification
+      - noisy_label_learning
+      - weakly_labeled_audio_classification
+      - domain_mismatch_evaluation
+    official:
+      zenodo_record: https://zenodo.org/records/3612637
+      doi: https://doi.org/10.5281/zenodo.3612637
+      dcase_task: https://dcase.community/challenge2019/task-audio-tagging
+      kaggle_competition: https://www.kaggle.com/c/freesound-audio-tagging-2019
+      paper: https://arxiv.org/abs/1906.02975
+      baseline_repo: https://github.com/DCASE-REPO/dcase2019_task2_baseline
+    download:
+      primary:
+        - https://zenodo.org/records/3612637
+        - https://zenodo.org/api/records/3612637/files/FSDKaggle2019.doc.zip/content
+        - https://zenodo.org/api/records/3612637/files/FSDKaggle2019.meta.zip/content
+        - https://zenodo.org/api/records/3612637/files/FSDKaggle2019.audio_train_curated.zip/content
+        - https://zenodo.org/api/records/3612637/files/FSDKaggle2019.audio_test.zip/content
+        - https://zenodo.org/api/records/3612637/files/FSDKaggle2019.audio_train_noisy.zip/content
+      examples:
+        - 'scripts/download/fsdkaggle2019.sh'
+        - 'FSDKAGGLE2019_DOWNLOAD_AUDIO=1 scripts/download/fsdkaggle2019.sh'
+        - 'FSDKAGGLE2019_DOWNLOAD_AUDIO=1 FSDKAGGLE2019_AUDIO_PARTS="curated test" scripts/download/fsdkaggle2019.sh'
+      notes: The helper downloads the Zenodo record JSON plus small documentation and metadata ZIPs by default. Full audio is about 25 GiB and includes a split noisy-train archive, so audio download is an explicit opt-in with part selection.
+    license:
+      data: mixed_creative_commons
+      code: MIT
+      notes: Zenodo reports license id other-at. The record says FSDKaggle2019 as a curated dataset is CC BY, while individual Freesound clips keep per-clip CC0, CC-BY, CC-BY-NC, or CC Sampling+ licenses and Flickr/YFCC noisy-train clips keep CC-BY or CC BY-SA licenses recorded in metadata CSVs. Kaggle/DCASE challenge rules and source media terms should also be checked for challenge or redistribution use.
+    sources:
+      - https://zenodo.org/records/3612637
+      - https://dcase.community/challenge2019/task-audio-tagging
+      - https://arxiv.org/abs/1906.02975
+      - https://github.com/DCASE-REPO/dcase2019_task2_baseline
+      - https://www.kaggle.com/c/freesound-audio-tagging-2019
+
   - id: desed
     name: DESED
     full_name: "Domestic Environment Sound Event Detection Dataset"
