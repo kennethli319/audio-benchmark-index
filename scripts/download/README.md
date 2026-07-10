@@ -27,6 +27,7 @@ scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/air_bench.sh
+scripts/download/music_avqa.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
@@ -242,6 +243,9 @@ MMAU_TEST=0 scripts/download/mmau.sh
 # AIR-Bench downloads official docs by default. The HF audio snapshot is large and opt-in.
 AIR_BENCH_DOWNLOAD_HF=1 scripts/download/air_bench.sh
 AIR_BENCH_CLONE_REPO=1 scripts/download/air_bench.sh
+
+# MUSIC-AVQA downloads official docs and JSON annotations by default. Raw videos are manual/large.
+MUSIC_AVQA_CLONE_REPO=1 scripts/download/music_avqa.sh
 
 # HI-MIA downloads the OpenSLR page and filename mapping by default. Archives are large and opt-in.
 HIMIA_DOWNLOAD_ARCHIVES=1 HIMIA_PARTS="dev test_v2" scripts/download/hi_mia.sh

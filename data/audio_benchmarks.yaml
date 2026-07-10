@@ -129,6 +129,44 @@ benchmarks:
       - https://aclanthology.org/2024.acl-long.109/
       - https://arxiv.org/abs/2402.07729
 
+  - id: music_avqa
+    name: MUSIC-AVQA
+    full_name: "MUSIC-AVQA: Learning to Answer Questions in Dynamic Audio-Visual Scenarios"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_question_answering
+    tasks:
+      - audio_visual_question_answering
+      - multimodal_scene_understanding
+      - spatiotemporal_reasoning
+      - music_understanding
+    official:
+      homepage: https://gewu-lab.github.io/MUSIC-AVQA/
+      repo: https://github.com/GeWu-Lab/MUSIC-AVQA
+      paper: https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
+      arxiv: https://arxiv.org/abs/2203.14072
+      cvpr_openaccess: https://openaccess.thecvf.com/content/CVPR2022/html/Li_Learning_To_Answer_Questions_in_Dynamic_Audio-Visual_Scenarios_CVPR_2022_paper.html
+    download:
+      primary:
+        - https://github.com/GeWu-Lab/MUSIC-AVQA/tree/main/data/json
+        - https://drive.google.com/drive/folders/1WAryZZE0srLIZG8VHl22uZ3tpbGHtsrQ?usp=sharing
+        - https://gewu-lab.github.io/MUSIC-AVQA/
+      examples:
+        - 'scripts/download/music_avqa.sh'
+        - 'MUSIC_AVQA_CLONE_REPO=1 scripts/download/music_avqa.sh'
+      notes: The helper downloads the official project page, README/LICENSE, and public JSON QA annotations by default. Raw videos and large feature files are hosted through Google Drive and Baidu Drive links on the project page/README; they are not downloaded automatically.
+    license:
+      data: not_specified
+      code: "conflicting: GitHub API/LICENSE file reports MIT, while the README License section mentions GPLv3"
+      notes: No standalone dataset license was found on the official page or README on 2026-07-10. Raw musical-performance videos and extracted features should be treated as upstream media with terms to verify before redistribution or commercial use.
+    sources:
+      - https://gewu-lab.github.io/MUSIC-AVQA/
+      - https://github.com/GeWu-Lab/MUSIC-AVQA
+      - https://raw.githubusercontent.com/GeWu-Lab/MUSIC-AVQA/main/README.md
+      - https://raw.githubusercontent.com/GeWu-Lab/MUSIC-AVQA/main/LICENSE
+      - https://api.github.com/repos/GeWu-Lab/MUSIC-AVQA/license
+      - https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
+      - https://arxiv.org/abs/2203.14072
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"
