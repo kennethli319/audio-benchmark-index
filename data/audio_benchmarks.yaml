@@ -3059,6 +3059,41 @@ benchmarks:
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
 
+  - id: musiccaps
+    name: MusicCaps
+    full_name: "MusicCaps: A Dataset of Music Captions"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - music_captioning
+      - text_to_music_evaluation
+      - music_understanding
+      - audio_language_modeling
+    official:
+      kaggle_dataset: https://www.kaggle.com/datasets/googleai/musiccaps
+      hf_dataset: https://huggingface.co/datasets/google/MusicCaps
+      paper: https://arxiv.org/abs/2301.11325
+    download:
+      primary:
+        - https://huggingface.co/datasets/google/MusicCaps
+        - https://huggingface.co/datasets/google/MusicCaps/resolve/main/musiccaps-public.csv
+        - https://www.kaggle.com/datasets/googleai/musiccaps
+      examples:
+        - 'scripts/download/musiccaps.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("google/MusicCaps", split="train")'
+        - 'huggingface-cli download --repo-type dataset google/MusicCaps musiccaps-public.csv --local-dir data/raw/musiccaps'
+      notes: The public release is a CSV of 5,521 music-text pairs with YouTube IDs, segment timestamps, AudioSet labels, aspect lists, and musician-written captions. Raw audio is not mirrored by the dataset and must be reconstructed from YouTube/AudioSet subject to upstream availability and terms.
+    license:
+      data: cc-by-sa-4.0
+      code: not_applicable
+      notes: The Hugging Face card and Kaggle-converted metadata list CC BY-SA 4.0 for the annotation CSV. The referenced media are 10-second clips from AudioSet/YouTube, so original media copyright, platform terms, and availability still apply.
+    sources:
+      - https://huggingface.co/datasets/google/MusicCaps
+      - https://huggingface.co/api/datasets/google/MusicCaps
+      - https://huggingface.co/datasets/google/MusicCaps/raw/main/README.md
+      - https://www.kaggle.com/datasets/googleai/musiccaps
+      - https://arxiv.org/abs/2301.11325
+
   - id: wavcaps
     name: WavCaps
     full_name: "WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research"

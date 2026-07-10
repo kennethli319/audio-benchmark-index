@@ -95,6 +95,7 @@ scripts/download/chime_6.sh
 scripts/download/alimeeting.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
+scripts/download/musiccaps.sh
 scripts/download/wavcaps.sh
 scripts/download/macs.sh
 scripts/download/magnatagatune.sh
@@ -444,6 +445,9 @@ CLOTHO_AQA_DOWNLOAD_AUDIO=1 scripts/download/clotho_aqa.sh
 
 # AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
+
+# MusicCaps downloads the HF dataset card and public CSV annotations by default.
+MUSICCAPS_DOWNLOAD_HF=1 scripts/download/musiccaps.sh
 
 # WavCaps downloads README and JSON metadata by default. Select waveform ZIP sources explicitly.
 WAVCAPS_DOWNLOAD_ZIPS=1 WAVCAPS_ZIP_SOURCES=SoundBible scripts/download/wavcaps.sh
