@@ -2,6 +2,9 @@
 
 A living index of speech, audio, music, and multimodal audio benchmarks.
 
+**Browse the public, searchable index:**
+[kennethli319.github.io/audio-benchmark-index](https://kennethli319.github.io/audio-benchmark-index/)
+
 The initial seed list came from the Audio -> Text evaluation benchmarks cited in
 the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, speech translation,
@@ -445,6 +448,20 @@ Form/password gated datasets:
 
 The editable source of truth is [data/audio_benchmarks.yaml](data/audio_benchmarks.yaml).
 Use it for scripts, sorting, or future additions.
+
+## Public Website
+
+The public page is generated from the YAML source of truth, including benchmark
+cards, search metadata, access guidance, license cautions, and helper commands:
+
+```bash
+ruby scripts/build_site.rb
+ruby scripts/build_site.rb --check
+```
+
+Generated artifacts live under `docs/` and are mirrored to the personal GitHub
+Pages repository at `audio-benchmark-index/`. Edit the YAML or site template,
+then regenerate instead of hand-editing `docs/index.html`.
 
 ## Updating The Index
 

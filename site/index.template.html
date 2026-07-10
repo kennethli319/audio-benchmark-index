@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
+  <meta name="description" content="Search {{BENCHMARK_COUNT}} speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Audio Benchmark Index">
+  <meta property="og:description" content="Find the right speech, audio, or music benchmark—and the safest official path to start using it.">
+  <meta property="og:url" content="https://kennethli319.github.io/audio-benchmark-index/">
+  <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Audio Benchmark Index">
+  <meta name="twitter:description" content="{{BENCHMARK_COUNT}} benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
+  <style>
+    :root {
+      --ink: #172026;
+      --muted: #596673;
+      --line: #d7dee6;
+      --bg: #f3f6f8;
+      --panel: #ffffff;
+      --accent: #1859a9;
+      --accent-dark: #10437f;
+      --accent-soft: #eaf2fb;
+      --good: #087a55;
+      --good-soft: #e7f5ef;
+      --warn: #985b00;
+      --warn-soft: #fff3df;
+      --shadow: 0 14px 36px rgba(23, 32, 38, .08);
+    }
+    * { box-sizing: border-box; }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+    body, button, input, select { font: inherit; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    button, select, input { color: inherit; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid #79aee5; outline-offset: 3px; }
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      border-radius: 8px;
+      background: var(--ink);
+      color: #ffffff;
+      padding: 9px 12px;
+    }
+    .skip-link:focus { top: 12px; }
+    .site-nav {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+    }
+    .site-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+    }
+    .brand {
+      color: var(--ink);
+      font-weight: 850;
+      letter-spacing: -.02em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px; }
+    .nav-links a {
+      border-radius: 8px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 10px;
+      text-decoration: none;
+    }
+    .nav-links a:hover { background: var(--accent-soft); color: var(--accent); }
+    .nav-links .repo-link { border: 1px solid var(--line); }
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 88% 12%, rgba(24, 89, 169, .12), transparent 31%),
+        linear-gradient(180deg, #ffffff, #f9fbfd);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(270px, .55fr);
+      gap: 48px;
+      align-items: end;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 58px 24px 46px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 860px;
+      margin: 8px 0 14px;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.02;
+      letter-spacing: -.045em;
+    }
+    .lede { max-width: 72ch; margin: 0; color: #394957; font-size: clamp(17px, 2vw, 20px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .button,
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--panel);
+      color: var(--ink);
+      font-weight: 800;
+      padding: 9px 13px;
+      text-decoration: none;
+    }
+    .button.primary,
+    .card-action.primary { border-color: var(--accent); background: var(--accent); color: #ffffff; }
+    .button:hover,
+    .card-action:hover { border-color: #8bb7e8; background: var(--accent-soft); color: var(--accent-dark); }
+    .button.primary:hover,
+    .card-action.primary:hover { border-color: var(--accent-dark); background: var(--accent-dark); color: #ffffff; }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+    .hero-stat { min-width: 0; background: rgba(255, 255, 255, .96); padding: 16px; }
+    .hero-stat span { display: block; color: var(--muted); font-size: 12px; }
+    .hero-stat strong { display: block; margin-top: 3px; font-size: 24px; line-height: 1.2; }
+    main { max-width: 1200px; margin: 0 auto; padding: 30px 24px 70px; }
+    section { scroll-margin-top: 18px; }
+    .scope-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 13px;
+      align-items: start;
+      border: 1px solid #b8cadb;
+      border-radius: 14px;
+      background: #edf3f8;
+      padding: 18px 20px;
+    }
+    .scope-mark {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 900;
+    }
+    .scope-note h2 { margin: 0 0 4px; font-size: 19px; }
+    .scope-note p { margin: 0; color: #40505e; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin: 44px 0 16px; }
+    .section-heading h2 { margin: 5px 0 0; font-size: clamp(26px, 4vw, 36px); letter-spacing: -.025em; }
+    .section-heading p { max-width: 66ch; margin: 0; color: var(--muted); }
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .family-tile {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 5px 12px;
+      min-height: 138px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      padding: 17px;
+      text-align: left;
+      cursor: pointer;
+    }
+    .family-tile:hover { border-color: #8bb7e8; background: #f8fbff; transform: translateY(-1px); }
+    .family-tile span { font-weight: 850; line-height: 1.3; }
+    .family-tile strong { color: var(--accent); font-size: 21px; line-height: 1; }
+    .family-tile small { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+    .filter-panel {
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .primary-filters {
+      display: grid;
+      grid-template-columns: minmax(280px, 2fr) repeat(2, minmax(185px, .8fr));
+      gap: 10px;
+    }
+    .field { display: grid; gap: 5px; min-width: 0; }
+    .field label { color: var(--muted); font-size: 12px; font-weight: 750; }
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid #cfd7df;
+      border-radius: 9px;
+      background: #ffffff;
+      padding: 9px 11px;
+    }
+    .advanced-filters { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+    .advanced-filters summary { cursor: pointer; color: var(--accent); font-weight: 800; }
+    .advanced-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+    .results-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 18px 0 12px;
+    }
+    .results-bar p { margin: 0; font-weight: 800; }
+    .clear-button,
+    .copy-button,
+    .command-block button {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--accent);
+      font-weight: 800;
+      padding: 7px 11px;
+      cursor: pointer;
+    }
+    .benchmark-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .benchmark-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      padding: 20px;
+    }
+    .benchmark-card:target { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(24, 89, 169, .13); }
+    .card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+    .card-heading h3 { margin: 3px 0 0; font-size: 24px; line-height: 1.15; letter-spacing: -.02em; }
+    .benchmark-full-name { max-width: 54ch; margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+    .access-badge { flex: 0 0 auto; border-radius: 999px; font-size: 11px; font-weight: 850; padding: 5px 8px; white-space: nowrap; }
+    .access-badge.helper { background: var(--good-soft); color: var(--good); }
+    .access-badge.manual { background: var(--warn-soft); color: var(--warn); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 15px 0; }
+    .tag { border-radius: 999px; background: var(--accent-soft); color: #21466d; font-size: 11px; padding: 4px 7px; }
+    .tag-more { background: #eef1f4; color: var(--muted); }
+    .card-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
+    .card-facts div { min-width: 0; background: #fbfcfd; padding: 10px 11px; }
+    .card-facts span { display: block; color: var(--muted); font-size: 11px; }
+    .card-facts strong { display: block; margin-top: 2px; font-size: 13px; }
+    .access-copy { margin: 14px 0; color: #40505e; font-size: 14px; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .card-action { min-height: 38px; font-size: 13px; padding: 7px 10px; }
+    .benchmark-details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .benchmark-details > summary { cursor: pointer; color: var(--accent); font-weight: 800; }
+    .details-body { display: grid; gap: 14px; padding-top: 13px; }
+    .terms-list { display: grid; gap: 1px; overflow: hidden; margin: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
+    .terms-list div { background: #fbfcfd; padding: 10px 11px; }
+    .terms-list dt { color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+    .terms-list dd { margin: 3px 0 0; font-size: 13px; }
+    .command-block { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 10px; background: #172026; color: #f7f9fb; padding: 11px 12px; }
+    .command-block div { min-width: 0; }
+    .command-block span { display: block; color: #aebdca; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; }
+    .command-block code { display: block; overflow-wrap: anywhere; margin-top: 3px; font-size: 12px; }
+    .command-block button { flex: 0 0 auto; border-color: #53616e; background: #27333c; color: #ffffff; }
+    .detail-links h4 { margin: 0 0 5px; font-size: 13px; }
+    .detail-links ul { display: flex; flex-wrap: wrap; gap: 5px 14px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+    .no-results { border: 1px dashed #9eb1c2; border-radius: 14px; background: #f8fbfd; padding: 32px; text-align: center; }
+    .no-results h3 { margin: 0 0 6px; }
+    .no-results p { margin: 0 0 14px; color: var(--muted); }
+    .workflow-panel {
+      margin-top: 54px;
+      border: 1px solid #8bb7e8;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #f7fbff, #eaf3fc);
+      padding: 26px;
+    }
+    .workflow-panel h2 { margin: 5px 0 8px; font-size: clamp(26px, 4vw, 36px); }
+    .workflow-panel > p { max-width: 78ch; margin: 0; color: #40505e; }
+    .workflow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+    .workflow-step { border: 1px solid rgba(24, 89, 169, .2); border-radius: 12px; background: rgba(255,255,255,.8); padding: 14px; }
+    .workflow-step span { color: var(--accent); font-size: 12px; font-weight: 900; }
+    .workflow-step h3 { margin: 4px 0; font-size: 16px; }
+    .workflow-step p { margin: 0; color: var(--muted); font-size: 13px; }
+    .workflow-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    footer { border-top: 1px solid var(--line); background: var(--panel); }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 26px 24px 34px; }
+    .footer-inner p { margin: 0; color: var(--muted); }
+    .footer-inner strong { color: var(--ink); }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 15px; }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .hero-stats { max-width: 620px; }
+      .family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .primary-filters { grid-template-columns: 1fr 1fr; }
+      .primary-filters .search-field { grid-column: 1 / -1; }
+      .benchmark-grid { grid-template-columns: 1fr; }
+      .workflow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 720px) {
+      .site-nav-inner { align-items: flex-start; flex-direction: column; gap: 8px; padding: 10px 16px; }
+      .nav-links { justify-content: flex-start; }
+      .hero-inner { padding: 38px 18px 34px; }
+      main { padding: 22px 12px 48px; }
+      .scope-note { grid-template-columns: 1fr; }
+      .scope-mark { width: 26px; height: 26px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 7px; margin-top: 38px; }
+      .family-grid { grid-template-columns: 1fr; }
+      .family-tile { min-height: 112px; }
+      .primary-filters,
+      .advanced-grid { grid-template-columns: 1fr; }
+      .primary-filters .search-field { grid-column: auto; }
+      .results-bar { align-items: flex-start; }
+      .benchmark-card { padding: 16px; }
+      .card-heading { flex-direction: column; gap: 9px; }
+      .access-badge { align-self: flex-start; }
+      .card-facts { grid-template-columns: 1fr; }
+      .card-action { flex: 1 1 130px; }
+      .command-block { align-items: stretch; flex-direction: column; }
+      .command-block button { align-self: flex-start; }
+      .workflow-panel { padding: 20px 16px; }
+      .workflow-steps { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; padding: 22px 16px 30px; }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to benchmark index</a>
+  <nav class="site-nav" aria-label="Audio Benchmark Index">
+    <div class="site-nav-inner">
+      <a class="brand" href="./">Audio Benchmark Index</a>
+      <div class="nav-links">
+        <a href="#browse">Browse benchmarks</a>
+        <a href="#workflow">Reuse the workflow</a>
+        <a href="../open-audio-judge/">Open Audio Judge</a>
+        <a class="repo-link" href="https://github.com/kennethli319/audio-benchmark-index">GitHub repository</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Living benchmark directory</span>
+        <h1>Find the right benchmark for speech, audio, and music</h1>
+        <p class="lede">Search {{BENCHMARK_COUNT}} benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#browse">Browse all benchmarks</a>
+          <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="Index summary">
+        <div class="hero-stat"><span>Benchmarks</span><strong>{{BENCHMARK_COUNT}}</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>{{HELPER_COUNT}}</strong></div>
+        <div class="hero-stat"><span>Manual or gated</span><strong>{{MANUAL_COUNT}}</strong></div>
+        <div class="hero-stat"><span>Last checked</span><strong><time datetime="{{LAST_CHECKED_ISO}}">{{LAST_CHECKED}}</time></strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="scope-note" aria-labelledby="scope-heading">
+      <span class="scope-mark" aria-hidden="true">i</span>
+      <div>
+        <h2 id="scope-heading">A starting point—not a ranking or rights grant</h2>
+        <p>This index does not mirror datasets or endorse one benchmark over another. Upstream licenses and access terms control; re-check them before training, redistribution, commercial use, or publishing results. Helpers default to documentation or metadata when large or restricted files require an explicit opt-in.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="families-heading">
+      <div class="section-heading">
+        <div><span class="eyebrow">Start with the task</span><h2 id="families-heading">What are you evaluating?</h2></div>
+        <p>Choose a broad family to narrow the catalog. Detailed task tags remain searchable inside every benchmark record.</p>
+      </div>
+      <div class="family-grid">
+        {{FAMILY_TILES}}
+      </div>
+    </section>
+
+    <section id="browse" aria-labelledby="browse-heading">
+      <div class="section-heading">
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all {{BENCHMARK_COUNT}} benchmarks</h2></div>
+        <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
+      </div>
+
+      <form class="filter-panel" id="benchmark-filters" role="search">
+        <div class="primary-filters">
+          <div class="field search-field">
+            <label for="benchmark-search">Search the index</label>
+            <input id="benchmark-search" name="q" type="search" placeholder="Try ASR, emotion, CC BY, diarization…" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="family-filter">Task family</label>
+            <select id="family-filter" name="family">
+              <option value="">All task families</option>
+              {{FAMILY_OPTIONS}}
+            </select>
+          </div>
+          <div class="field">
+            <label for="access-filter">Access</label>
+            <select id="access-filter" name="access">
+              <option value="">All access paths</option>
+              <option value="helper">Safe-first helper</option>
+              <option value="manual">Manual or gated</option>
+            </select>
+          </div>
+        </div>
+        <details class="advanced-filters">
+          <summary>More filters and sorting</summary>
+          <div class="advanced-grid">
+            <div class="field">
+              <label for="host-filter">Primary data host</label>
+              <select id="host-filter" name="host">
+                <option value="">All hosts</option>
+                <option value="hugging-face">Hugging Face</option>
+                <option value="openslr">OpenSLR</option>
+                <option value="zenodo">Zenodo</option>
+                <option value="ldc">LDC / licensed</option>
+                <option value="official">Official / other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="terms-filter">Upstream terms signal</label>
+              <select id="terms-filter" name="terms">
+                <option value="">All terms</option>
+                <option value="open">Open / attribution signals</option>
+                <option value="noncommercial">Non-commercial / research terms</option>
+                <option value="mixed">Mixed / custom — review</option>
+                <option value="unspecified">Not specified</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sort-filter">Sort</label>
+              <select id="sort-filter" name="sort">
+                <option value="az">Name A–Z</option>
+                <option value="za">Name Z–A</option>
+              </select>
+            </div>
+          </div>
+        </details>
+      </form>
+
+      <div class="results-bar">
+        <p id="result-status" role="status" aria-live="polite">Showing {{BENCHMARK_COUNT}} of {{BENCHMARK_COUNT}} benchmarks.</p>
+        <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
+      </div>
+
+      <div class="benchmark-grid" id="benchmark-list">
+        {{BENCHMARK_CARDS}}
+      </div>
+      <div class="no-results" id="no-results" hidden>
+        <h3>No benchmarks match those filters</h3>
+        <p>Try a broader task family or remove a search term.</p>
+        <button class="clear-button" type="button" data-clear-filters>Clear all filters</button>
+      </div>
+    </section>
+
+    <section class="workflow-panel" id="workflow" aria-labelledby="workflow-heading">
+      <span class="eyebrow">From catalog to evidence</span>
+      <h2 id="workflow-heading">Use a benchmark to make a model decision</h2>
+      <p>Choose a compatible benchmark here, turn examples into evaluation cases, and make small task-specific changes to the adapter and scoring rubric. Open Audio Judge’s ASR and TTS demos show the same case-to-report workflow end to end.</p>
+      <div class="workflow-steps">
+        <article class="workflow-step"><span>01</span><h3>Choose a benchmark</h3><p>Match the task, data access, and upstream terms to your use case.</p></article>
+        <article class="workflow-step"><span>02</span><h3>Prepare cases</h3><p>Map benchmark examples into references, audio inputs, and metadata.</p></article>
+        <article class="workflow-step"><span>03</span><h3>Adapt the rubric</h3><p>Keep the workflow; adjust the adapter and scoring criteria for the task.</p></article>
+        <article class="workflow-step"><span>04</span><h3>Compare &amp; inspect</h3><p>Run candidate models, summarize slices, and open case-level evidence.</p></article>
+      </div>
+      <div class="workflow-links">
+        <a class="button primary" href="../open-audio-judge/">Open Audio Judge</a>
+        <a class="button" href="../open-audio-judge/asr-leaderboard-demo.html">See the ASR workflow</a>
+        <a class="button" href="../open-audio-judge/tts-leaderboard-demo.html">See the TTS workflow</a>
+        <a class="button" href="https://github.com/kennethli319/open-audio-judge">Open Audio Judge repository</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p><strong>Audio Benchmark Index</strong><br>Living catalog · last checked <time datetime="{{LAST_CHECKED_ISO}}">{{LAST_CHECKED}}</time></p>
+      <nav class="footer-links" aria-label="Related links">
+        <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/CONTRIBUTING.md">Contribute</a>
+        <a href="https://github.com/kennethli319/audio-benchmark-index">GitHub repository</a>
+        <a href="../open-audio-judge/">Open Audio Judge</a>
+        <a href="../">Kenneth Li</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const cards = Array.from(document.querySelectorAll(".benchmark-card"));
+      const list = document.querySelector("#benchmark-list");
+      const form = document.querySelector("#benchmark-filters");
+      const search = document.querySelector("#benchmark-search");
+      const family = document.querySelector("#family-filter");
+      const access = document.querySelector("#access-filter");
+      const host = document.querySelector("#host-filter");
+      const terms = document.querySelector("#terms-filter");
+      const sort = document.querySelector("#sort-filter");
+      const status = document.querySelector("#result-status");
+      const noResults = document.querySelector("#no-results");
+      const controls = [search, family, access, host, terms, sort];
+
+      function normalized(value) {
+        return value.trim().toLowerCase();
+      }
+
+      function matches(card) {
+        const query = normalized(search.value);
+        const selectedFamily = family.value;
+        return (!query || card.dataset.search.includes(query))
+          && (!selectedFamily || card.dataset.families.split(" ").includes(selectedFamily))
+          && (!access.value || card.dataset.access === access.value)
+          && (!host.value || card.dataset.host === host.value)
+          && (!terms.value || card.dataset.terms === terms.value);
+      }
+
+      function updateUrl() {
+        const params = new URLSearchParams();
+        controls.forEach((control) => {
+          if (control.value && !(control === sort && control.value === "az")) {
+            params.set(control.name, control.value);
+          }
+        });
+        const next = `${location.pathname}${params.size ? `?${params}` : ""}${location.hash}`;
+        history.replaceState(null, "", next);
+      }
+
+      function applyFilters() {
+        const ordered = [...cards].sort((a, b) => {
+          const direction = sort.value === "za" ? -1 : 1;
+          return direction * a.dataset.name.localeCompare(b.dataset.name);
+        });
+        let visible = 0;
+        ordered.forEach((card) => {
+          const show = matches(card);
+          card.hidden = !show;
+          if (show) visible += 1;
+          list.appendChild(card);
+        });
+        status.textContent = `Showing ${visible} of ${cards.length} benchmarks.`;
+        noResults.hidden = visible !== 0;
+        updateUrl();
+      }
+
+      function clearFilters() {
+        form.reset();
+        applyFilters();
+        search.focus();
+      }
+
+      function hydrateFromUrl() {
+        const params = new URLSearchParams(location.search);
+        controls.forEach((control) => {
+          const value = params.get(control.name);
+          if (value !== null) control.value = value;
+        });
+      }
+
+      let searchTimer;
+      search.addEventListener("input", () => {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(applyFilters, 120);
+      });
+      [family, access, host, terms, sort].forEach((control) => control.addEventListener("change", applyFilters));
+      form.addEventListener("submit", (event) => event.preventDefault());
+      document.querySelector("#clear-filters").addEventListener("click", clearFilters);
+      document.querySelectorAll("[data-clear-filters]").forEach((button) => button.addEventListener("click", clearFilters));
+      document.querySelectorAll("[data-family-choice]").forEach((button) => {
+        button.addEventListener("click", () => {
+          family.value = button.dataset.familyChoice;
+          applyFilters();
+          document.querySelector("#browse").scrollIntoView({ behavior: "smooth" });
+        });
+      });
+      document.addEventListener("click", async (event) => {
+        const button = event.target.closest("[data-copy]");
+        if (!button) return;
+        const original = button.textContent;
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          button.textContent = "Copied";
+        } catch (_error) {
+          button.textContent = "Select command";
+        }
+        setTimeout(() => { button.textContent = original; }, 1400);
+      });
+
+      hydrateFromUrl();
+      applyFilters();
+    })();
+  </script>
+</body>
+</html>
