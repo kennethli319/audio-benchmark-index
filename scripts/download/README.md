@@ -82,6 +82,7 @@ scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/audio_mnist.sh
 scripts/download/vocalsound.sh
+scripts/download/vocalset.sh
 scripts/download/emov_db.sh
 scripts/download/ravdess.sh
 scripts/download/crema_d.sh
@@ -359,6 +360,9 @@ AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
 # VocalSound downloads official README/repo metadata by default. Archives are 1.7 GiB or 4.5 GiB and opt-in.
 VOCALSOUND_DOWNLOAD_ARCHIVE=1 VOCALSOUND_SAMPLE_RATE=16k scripts/download/vocalsound.sh
 VOCALSOUND_DOWNLOAD_ARCHIVE=1 VOCALSOUND_SAMPLE_RATE=44k scripts/download/vocalsound.sh
+
+# VocalSet saves Zenodo metadata by default. The 2.1 GiB singing voice archive is opt-in.
+VOCALSET_DOWNLOAD_ARCHIVE=1 scripts/download/vocalset.sh
 
 # EmoV-DB downloads OpenSLR/GitHub docs by default. Speech archives are opt-in.
 EMOV_DB_DOWNLOAD_ARCHIVES=1 EMOV_DB_PARTS="bea_Neutral.tar.gz sam_Neutral.tar.gz" scripts/download/emov_db.sh

@@ -2577,6 +2577,40 @@ benchmarks:
       - https://doi.org/10.1109/ICASSP43922.2022.9746828
       - https://paperswithcode.com/dataset/vocalsound
 
+  - id: vocalset
+    name: VocalSet
+    full_name: "VocalSet: A Singing Voice Dataset"
+    qwen_cited_as: null
+    qwen_bucket: singing_voice_dataset
+    tasks:
+      - singing_voice_analysis
+      - vocal_technique_classification
+      - vowel_classification
+      - singing_voice_synthesis
+      - music_information_retrieval
+    official:
+      zenodo: https://zenodo.org/records/1193957
+      doi: https://doi.org/10.5281/zenodo.1193957
+      paper: https://archives.ismir.net/ismir2018/paper/000105.pdf
+      ismir: https://ismir2018.ircam.fr/pages/events-lbd.html
+    download:
+      primary:
+        - https://zenodo.org/records/1193957
+        - https://zenodo.org/api/records/1193957/files/VocalSet.zip/content
+      examples:
+        - 'scripts/download/vocalset.sh'
+        - 'VOCALSET_DOWNLOAD_ARCHIVE=1 scripts/download/vocalset.sh'
+      notes: Zenodo hosts a single VocalSet.zip archive of about 2.1 GB with 10.1 hours of monophonic professional singing from 20 singers, covering all five vowels across standard and extended vocal techniques. The helper saves the Zenodo record metadata by default and requires VOCALSET_DOWNLOAD_ARCHIVE=1 before downloading the full archive.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: The Zenodo record lists CC BY 4.0 and open access. Re-check subject-consent and attribution expectations before redistributing derivative voice data.
+    sources:
+      - https://zenodo.org/records/1193957
+      - https://zenodo.org/api/records/1193957
+      - https://doi.org/10.5281/zenodo.1193957
+      - https://archives.ismir.net/ismir2018/paper/000105.pdf
+
   - id: emov_db
     name: EmoV-DB
     full_name: "The Emotional Voices Database: Towards Controlling the Emotional Expressiveness in Voice Generation Systems"
