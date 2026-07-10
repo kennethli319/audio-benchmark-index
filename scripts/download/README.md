@@ -29,6 +29,7 @@ scripts/download/mmsu.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
+scripts/download/minds14.sh
 scripts/download/hear.sh
 scripts/download/dynamic_superb.sh
 scripts/download/rul_muchomusic.sh
@@ -183,6 +184,10 @@ SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS="real synth" scripts/download/slurp.sh
 SLUE_DOWNLOAD_HF=1 scripts/download/slue.sh
 SLUE_DOWNLOAD_HF=1 SLUE_DATASETS=slue-phase-2 scripts/download/slue.sh
 SLUE_CLONE_TOOLKIT=1 scripts/download/slue.sh
+
+# MInDS-14 saves the HF dataset card by default. Audio snapshots are opt-in.
+MINDS14_DOWNLOAD_HF=1 MINDS14_CONFIG=en-US scripts/download/minds14.sh
+MINDS14_DOWNLOAD_HF=1 MINDS14_CONFIG=all scripts/download/minds14.sh
 
 # SUPERB downloads official S3PRL benchmark docs/license by default.
 SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh

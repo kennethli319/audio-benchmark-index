@@ -218,6 +218,38 @@ benchmarks:
       - https://papers-slue.awsdev.asapp.com/slue-voxpopuli_LICENSE
       - https://papers-slue.awsdev.asapp.com/slue-voxceleb_LICENSE
 
+  - id: minds14
+    name: MInDS-14
+    full_name: "MInDS-14: Multilingual and Cross-Lingual Intent Detection from Spoken Data"
+    qwen_cited_as: null
+    qwen_bucket: spoken_language_understanding
+    tasks:
+      - spoken_language_understanding
+      - intent_classification
+      - automatic_speech_recognition
+      - multilingual_speech_understanding
+    official:
+      dataset: https://huggingface.co/datasets/PolyAI/minds14
+      paper: https://arxiv.org/abs/2104.08524
+    download:
+      primary:
+        - https://huggingface.co/datasets/PolyAI/minds14
+        - https://huggingface.co/datasets/PolyAI/minds14/raw/main/README.md
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("PolyAI/minds14", "en-US", split="train")'
+        - 'scripts/download/minds14.sh'
+        - 'MINDS14_DOWNLOAD_HF=1 MINDS14_CONFIG=en-US scripts/download/minds14.sh'
+        - 'MINDS14_DOWNLOAD_HF=1 MINDS14_CONFIG=all scripts/download/minds14.sh'
+      notes: The helper downloads the Hugging Face dataset card by default. Dataset snapshots include audio and are opt-in; choose one locale such as en-US or all with MINDS14_CONFIG.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: Hugging Face dataset card lists CC BY 4.0 and exposes 14 spoken e-banking intents across 14 language varieties. No separate code license was identified for the dataset card.
+    sources:
+      - https://huggingface.co/datasets/PolyAI/minds14
+      - https://huggingface.co/datasets/PolyAI/minds14/raw/main/README.md
+      - https://arxiv.org/abs/2104.08524
+
   - id: hear
     name: HEAR
     full_name: "HEAR: Holistic Evaluation of Audio Representations"

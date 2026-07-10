@@ -19,7 +19,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 74 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 75 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -47,6 +47,7 @@ Current coverage includes:
 | [SUPERB](https://superbbenchmark.org/) | Speech representation evaluation | Official [S3PRL SUPERB docs](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md) and toolkit; helper downloads docs/license by default and can clone the toolkit with opt-in | Benchmark suite uses multiple external corpora with mixed terms; S3PRL toolkit is mostly Apache-2.0, with noted CC BY-NC files |
 | [SLURP](https://github.com/pswietojanski/slurp) | Spoken language understanding | Official GitHub annotation/code repository plus [Zenodo audio archives](https://zenodo.org/records/4274930); helper clones annotations and makes multi-GB audio opt-in | Textual annotations are CC BY 4.0; Zenodo-hosted audio is non-commercial, with GitHub README stating CC BY-NC 4.0 |
 | [SLUE](https://asappresearch.github.io/slue-toolkit/) | Spoken language understanding | Official [SLUE toolkit](https://github.com/asappresearch/slue-toolkit), [asapp/slue](https://huggingface.co/datasets/asapp/slue), and [asapp/slue-phase-2](https://huggingface.co/datasets/asapp/slue-phase-2); helper downloads docs/licenses by default and makes HF snapshots opt-in | SLUE-VoxPopuli is CC0; SLUE-VoxCeleb is CC BY 4.0; toolkit code is MIT |
+| [MInDS-14](https://huggingface.co/datasets/PolyAI/minds14) | Spoken language understanding | [PolyAI/minds14](https://huggingface.co/datasets/PolyAI/minds14); helper saves the dataset card by default and snapshots a selected locale only with opt-in | HF dataset card lists CC BY 4.0 |
 | [HEAR](https://hearbenchmark.com/) | Speech/audio/music representation evaluation | Official [HEAR eval kit](https://github.com/hearbenchmark/hear-eval-kit) and [Zenodo HEAR 2021 task archive](https://zenodo.org/records/5885750); helper downloads record metadata/license by default and makes task archives opt-in | Mixed component dataset terms; Zenodo lists CC BY 4.0 but says each task has its own LICENSE.txt; eval kit is Apache-2.0 |
 | [Dynamic-SUPERB](https://github.com/dynamic-superb/dynamic-superb) | Speech instruction benchmark | Official Dynamic-SUPERB repository, [leaderboard](https://huggingface.co/spaces/DynamicSuperb/leaderboard), and docs; helper downloads docs by default and can clone the repo with opt-in | Mixed component dataset terms; GitHub API reported no repository license, so check each task source before use |
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
@@ -138,6 +139,8 @@ scripts/download/slurp.sh
 SLURP_DOWNLOAD_AUDIO=1 SLURP_AUDIO_PARTS=real scripts/download/slurp.sh
 scripts/download/slue.sh
 SLUE_DOWNLOAD_HF=1 SLUE_DATASETS=slue-phase-2 scripts/download/slue.sh
+scripts/download/minds14.sh
+MINDS14_DOWNLOAD_HF=1 MINDS14_CONFIG=en-US scripts/download/minds14.sh
 scripts/download/hear.sh
 HEAR_DOWNLOAD_TASKS=1 HEAR_TASKS=hear2021-mridangam_tonic-v1.5-full-48000.tar.gz scripts/download/hear.sh
 scripts/download/dynamic_superb.sh
@@ -394,6 +397,7 @@ For example:
 ```bash
 scripts/download/mmar.sh
 scripts/download/slurp.sh
+scripts/download/minds14.sh
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
 scripts/download/libritts.sh
