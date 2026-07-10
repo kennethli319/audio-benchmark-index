@@ -20,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 88 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 89 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -46,6 +46,7 @@ Current coverage includes:
 | [MMAU](https://github.com/Sakshi113/MMAU) | Audio understanding | [MMAU-test-mini](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini), [MMAU-test](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test) | HF cards list `cc-by-nc-4.0` for test-mini and `mit` for test; code repo is Apache-2.0 |
 | [MMAR](https://github.com/ddlBoJack/MMAR) | Audio understanding | [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) | HF card lists `cc-by-nc-4.0`; code repo had no detected license |
 | [MMSU](https://github.com/dingdongwang/MMSU) | Audio understanding | [ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU) | HF card lists `mit`; code repo had no detected license |
+| [AIR-Bench](https://github.com/OFA-Sys/AIR-Bench) | Audio-language model evaluation | Official [ACL paper](https://aclanthology.org/2024.acl-long.109/), [evaluation repo](https://github.com/OFA-Sys/AIR-Bench), and [qyang1021/AIR-Bench-Dataset](https://huggingface.co/datasets/qyang1021/AIR-Bench-Dataset); helper downloads docs by default and makes the large HF snapshot opt-in | HF dataset card lists CC BY-NC 4.0 and mixed component-source terms; evaluation code is Apache-2.0 |
 | [SUPERB](https://superbbenchmark.org/) | Speech representation evaluation | Official [S3PRL SUPERB docs](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md) and toolkit; helper downloads docs/license by default and can clone the toolkit with opt-in | Benchmark suite uses multiple external corpora with mixed terms; S3PRL toolkit is mostly Apache-2.0, with noted CC BY-NC files |
 | [SLURP](https://github.com/pswietojanski/slurp) | Spoken language understanding | Official GitHub annotation/code repository plus [Zenodo audio archives](https://zenodo.org/records/4274930); helper clones annotations and makes multi-GB audio opt-in | Textual annotations are CC BY 4.0; Zenodo-hosted audio is non-commercial, with GitHub README stating CC BY-NC 4.0 |
 | [SLUE](https://asappresearch.github.io/slue-toolkit/) | Spoken language understanding | Official [SLUE toolkit](https://github.com/asappresearch/slue-toolkit), [asapp/slue](https://huggingface.co/datasets/asapp/slue), and [asapp/slue-phase-2](https://huggingface.co/datasets/asapp/slue-phase-2); helper downloads docs/licenses by default and makes HF snapshots opt-in | SLUE-VoxPopuli is CC0; SLUE-VoxCeleb is CC BY 4.0; toolkit code is MIT |
@@ -143,6 +144,14 @@ mmau_mini = load_dataset("gamma-lab-umd/MMAU-test-mini")
 mmar = load_dataset("BoJack/MMAR")
 mmsu = load_dataset("ddwang2000/MMSU")
 fleurs_en = load_dataset("google/fleurs", "en_us")
+```
+
+Audio-language model benchmarks:
+
+```bash
+scripts/download/air_bench.sh
+AIR_BENCH_DOWNLOAD_HF=1 scripts/download/air_bench.sh
+AIR_BENCH_CLONE_REPO=1 scripts/download/air_bench.sh
 ```
 
 Spoken language understanding:

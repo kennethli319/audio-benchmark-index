@@ -89,6 +89,46 @@ benchmarks:
       - https://github.com/dingdongwang/MMSU
       - https://huggingface.co/datasets/ddwang2000/MMSU
 
+  - id: air_bench
+    name: AIR-Bench
+    full_name: "AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - audio_question_answering
+      - audio_instruction_following
+      - audio_language_model_evaluation
+      - speech_understanding
+      - sound_understanding
+      - music_understanding
+    official:
+      repo: https://github.com/OFA-Sys/AIR-Bench
+      paper: https://aclanthology.org/2024.acl-long.109/
+      arxiv: https://arxiv.org/abs/2402.07729
+      dataset: https://huggingface.co/datasets/qyang1021/AIR-Bench-Dataset
+      release_issue: https://github.com/OFA-Sys/AIR-Bench/issues/1
+    download:
+      primary:
+        - https://huggingface.co/datasets/qyang1021/AIR-Bench-Dataset
+        - https://github.com/OFA-Sys/AIR-Bench
+        - https://github.com/OFA-Sys/AIR-Bench/issues/1
+      examples:
+        - 'scripts/download/air_bench.sh'
+        - 'AIR_BENCH_DOWNLOAD_HF=1 scripts/download/air_bench.sh'
+        - 'AIR_BENCH_CLONE_REPO=1 scripts/download/air_bench.sh'
+      notes: The helper downloads the official GitHub README and Hugging Face dataset card by default. The full HF audio snapshot is about 45.9 GB, so it requires AIR_BENCH_DOWNLOAD_HF=1; cloning the evaluation repo is also opt-in.
+    license:
+      data: cc-by-nc-4.0
+      code: Apache-2.0
+      notes: The HF dataset card lists CC BY-NC 4.0 and enumerates component sources with mixed upstream licenses, including MusicCaps, Clotho, Fisher, SpokenWOZ, Common Voice, IEMOCAP, acoustic-scene datasets, MUSIC-AVQA, FMA, MTG-Jamendo, NSynth, SLURP, VoxCeleb, LibriSpeech, CoVoST 2, Fake-or-Real, and VocalSound. Re-check component terms before redistribution or commercial use.
+    sources:
+      - https://github.com/OFA-Sys/AIR-Bench
+      - https://github.com/OFA-Sys/AIR-Bench/issues/1
+      - https://huggingface.co/datasets/qyang1021/AIR-Bench-Dataset
+      - https://huggingface.co/datasets/qyang1021/AIR-Bench-Dataset/raw/main/README.md
+      - https://aclanthology.org/2024.acl-long.109/
+      - https://arxiv.org/abs/2402.07729
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"

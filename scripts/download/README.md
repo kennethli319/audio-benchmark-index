@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
+scripts/download/air_bench.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
@@ -209,6 +210,10 @@ EARNINGS22_SPARSE_CHECKOUT=1 EARNINGS22_LFS_PULL=1 scripts/download/earnings_22.
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
+
+# AIR-Bench downloads official docs by default. The HF audio snapshot is large and opt-in.
+AIR_BENCH_DOWNLOAD_HF=1 scripts/download/air_bench.sh
+AIR_BENCH_CLONE_REPO=1 scripts/download/air_bench.sh
 
 # HI-MIA downloads the OpenSLR page and filename mapping by default. Archives are large and opt-in.
 HIMIA_DOWNLOAD_ARCHIVES=1 HIMIA_PARTS="dev test_v2" scripts/download/hi_mia.sh
