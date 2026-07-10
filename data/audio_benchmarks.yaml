@@ -1474,6 +1474,38 @@ benchmarks:
       - https://www.openslr.org/68/
       - http://www.imagicdatatech.com/index.php/home/dataopensource/data_info/id/101
 
+  - id: thchs_30
+    name: THCHS-30
+    full_name: "THCHS-30: A Free Chinese Speech Corpus"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - mandarin_speech_recognition
+      - noisy_speech_recognition
+    official:
+      openslr: https://www.openslr.org/18/
+      paper: https://arxiv.org/abs/1512.01882
+    download:
+      primary:
+        - https://www.openslr.org/18/
+        - https://openslr.trmal.net/resources/18/data_thchs30.tgz
+        - https://openslr.trmal.net/resources/18/test-noise.tgz
+        - https://openslr.trmal.net/resources/18/resource.tgz
+      examples:
+        - 'scripts/download/thchs_30.sh'
+        - 'THCHS30_DOWNLOAD_PARTS=resource scripts/download/thchs_30.sh'
+        - 'THCHS30_DOWNLOAD_PARTS="data test_noise resource" scripts/download/thchs_30.sh'
+        - 'THCHS30_OPENSLR_BASE_URL=https://openslr.elda.org/resources/18 THCHS30_DOWNLOAD_PARTS=data scripts/download/thchs_30.sh'
+      notes: OpenSLR SLR18 hosts a 6.4 GiB speech/transcript archive, a 1.9 GiB 0 dB noisy test archive, and a 24 MiB supplementary resource archive with lexicon/noise samples. The helper saves the OpenSLR page by default and only downloads selected archives through THCHS30_DOWNLOAD_PARTS.
+    license:
+      data: Apache-2.0
+      code: not_applicable
+      notes: OpenSLR lists Apache License v2.0 and the resource description says the database is free to academic users. The original CSLT URL linked from OpenSLR returned 404 when checked, so use the current OpenSLR page and paper for access/provenance.
+    sources:
+      - https://www.openslr.org/18/
+      - https://arxiv.org/abs/1512.01882
+
   - id: golos
     name: Golos
     full_name: "Golos: Russian Dataset for Speech Research"
