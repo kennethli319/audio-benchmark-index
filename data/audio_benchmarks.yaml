@@ -882,6 +882,36 @@ benchmarks:
       - https://catalog.ldc.upenn.edu/LDC93S1W
       - https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4930.pdf
 
+  - id: switchboard
+    name: Switchboard
+    full_name: "Switchboard-1 Release 2 conversational telephone speech corpus"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - conversational_speech_recognition
+      - telephone_speech_recognition
+      - speaker_recognition
+    official:
+      ldc_catalog: https://catalog.ldc.upenn.edu/LDC97S62
+      hub5_eval_speech: https://catalog.ldc.upenn.edu/LDC2002S09
+      paper: https://aclanthology.org/H92-1045/
+    download:
+      primary:
+        - https://catalog.ldc.upenn.edu/LDC97S62
+        - https://catalog.ldc.upenn.edu/LDC2002S09
+      examples:
+        - 'scripts/download/switchboard.sh'
+      notes: Switchboard-1 Release 2 and the 2000 HUB5 English Evaluation Speech set are distributed by LDC after login/licensing. The helper only prints official access steps because the corpus and standard evaluation audio are not publicly script-downloadable.
+    license:
+      data: custom_ldc_license
+      code: not_applicable
+      notes: LDC catalog pages list membership/licensing terms and web-download access. Re-check the current LDC agreement before use or redistribution; do not treat benchmark recipes or transcripts as granting rights to the underlying audio.
+    sources:
+      - https://catalog.ldc.upenn.edu/LDC97S62
+      - https://catalog.ldc.upenn.edu/LDC2002S09
+      - https://aclanthology.org/H92-1045/
+
   - id: mls
     name: MLS
     full_name: "MLS: A Large-Scale Multilingual Dataset for Speech Research"
