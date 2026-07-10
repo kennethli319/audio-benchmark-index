@@ -44,6 +44,7 @@ scripts/download/mtedx.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
+scripts/download/magicdata_mandarin.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
 scripts/download/mir_1k_vocal.sh
@@ -131,6 +132,10 @@ LJSPEECH_ARCHIVE_URL=https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2 
 # AISHELL-1 downloads OpenSLR metadata/resources by default. The 15 GiB corpus is opt-in.
 AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh
 AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh
+
+# MAGICDATA downloads the OpenSLR page and metadata by default. The speech archives are large and opt-in.
+MAGICDATA_DOWNLOAD_ARCHIVES=1 MAGICDATA_PARTS="dev test" scripts/download/magicdata_mandarin.sh
+MAGICDATA_OPENSLR_BASE_URL=https://openslr.elda.org/resources/68 MAGICDATA_DOWNLOAD_ARCHIVES=1 scripts/download/magicdata_mandarin.sh
 
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
