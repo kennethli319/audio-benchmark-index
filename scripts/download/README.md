@@ -96,6 +96,7 @@ scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
 scripts/download/librimix.sh
+scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
 scripts/download/dns_challenge.sh
@@ -417,6 +418,10 @@ MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
 
 # LibriMix clones the official generator/metadata repo by default. Generation is very large.
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
+
+# WSJ0-2mix downloads MERL public pages/scripts by default. Actual mixture generation requires local licensed WSJ0 access.
+WSJ0_2MIX_CLONE_PYTHON_REPO=1 scripts/download/wsj0_2mix.sh
+WSJ0_2MIX_RUN_GENERATION=1 WSJ0_PATH=/path/to/wsj0 WSJ0_2MIX_OUTPUT=/large/storage/wsj0-mix scripts/download/wsj0_2mix.sh
 
 # VCTK downloads the official README and license by default. The corpus ZIP is large and opt-in.
 VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh

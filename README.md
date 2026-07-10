@@ -20,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 90 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 91 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -125,6 +125,7 @@ Current coverage includes:
 | [CHiME-6](https://www.chimechallenge.org/datasets/chime6) | Meeting ASR / diarization | [OpenSLR SLR150](https://www.openslr.org/150/) transcriptions/floorplans by default; large train/dev/eval audio archives are opt-in | CC BY-SA 4.0 |
 | [AliMeeting](https://www.openslr.org/119/) | Meeting ASR / diarization | [OpenSLR SLR119](https://www.openslr.org/119/) metadata by default; large Mandarin meeting archives are opt-in | CC BY-SA 4.0 |
 | [LibriMix](https://github.com/JorisCos/LibriMix) | Speech separation | Official generator/metadata repo; helper clones it by default and runs generation only with `LIBRIMIX_RUN_GENERATION=1` plus a large storage directory | Code/scripts are MIT; generated data is derived from LibriSpeech CC BY 4.0 plus WHAM noise, so re-check component terms |
+| [WSJ0-2mix / wsj0-mix](https://www.merl.com/research/highlights/deep-clustering) | Speech separation | Official MERL page and generation scripts by default; optional Python generator clone; mixture generation requires separately licensed local WSJ0 audio from LDC | Generated mixtures derive from LDC CSR-I WSJ0 and follow the active LDC agreement; pywsj0-mix code is MIT; MERL script license was not specified on the reachable page |
 | [WHAM! / WHAMR!](http://wham.whisper.ai/) | Noisy and reverberant speech separation | Official page and generation scripts by default; 17 GiB WHAM! noise and 68.1 GiB WHAM!48kHz archives are opt-in | WHAM noise datasets are CC BY-NC 4.0; generated mixtures also require separately licensed WSJ0/wsj0-2mix access |
 | [VoiceBank-DEMAND](https://datashare.ed.ac.uk/handle/10283/2791) | Speech enhancement | Edinburgh DataShare record for paired clean/noisy train and test ZIPs; helper saves metadata/license by default and makes text/audio archives opt-in | CC BY 4.0 on the DataShare record; derived from VCTK speech and DEMAND plus other noise sources, so component/source terms should be re-checked |
 | [DNS Challenge](https://github.com/microsoft/DNS-Challenge) | Speech enhancement | Official DNS Challenge repo and Microsoft Research challenge page; helper saves README/license/downloader scripts by default and makes multi-GB DNS5 test archives opt-in | Repository content/docs are CC BY 4.0 and code is MIT; training data combines multiple upstream sources, so component terms still need checking |
@@ -346,6 +347,9 @@ Speech separation:
 ```bash
 scripts/download/librimix.sh
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
+scripts/download/wsj0_2mix.sh
+WSJ0_2MIX_CLONE_PYTHON_REPO=1 scripts/download/wsj0_2mix.sh
+WSJ0_2MIX_RUN_GENERATION=1 WSJ0_PATH=/path/to/wsj0 WSJ0_2MIX_OUTPUT=/large/storage/wsj0-mix scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
 WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh
 ```

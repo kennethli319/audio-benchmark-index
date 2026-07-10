@@ -5,7 +5,7 @@ metadata:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
   last_checked: 2026-07-09
-  scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1.
+  scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
 benchmarks:
@@ -2939,6 +2939,50 @@ benchmarks:
       - https://raw.githubusercontent.com/JorisCos/LibriMix/master/LICENSE
       - https://arxiv.org/abs/2005.11262
       - https://www.openslr.org/12/
+
+  - id: wsj0_2mix
+    name: WSJ0-2mix / wsj0-mix
+    full_name: "wsj0-mix: Single-channel multi-speaker speech separation mixtures from WSJ0"
+    qwen_cited_as: null
+    qwen_bucket: speech_separation
+    tasks:
+      - speech_separation
+      - multi_speaker_speech_separation
+      - source_separation
+      - cocktail_party_speech_separation
+    official:
+      homepage: https://www.merl.com/research/highlights/deep-clustering
+      merl_legacy_url: http://www.merl.com/demos/deep-clustering
+      paper: https://www.merl.com/publications/TR2016-003
+      doi: https://doi.org/10.1109/ICASSP.2016.7471631
+      matlab_generation_scripts: https://www.merl.com/research/highlights/deep-clustering/create-speaker-mixtures.zip
+      spatialization_scripts: https://www.merl.com/research/highlights/deep-clustering/spatialize_wsj0-mix.zip
+      python_generation_repo: https://github.com/mpariente/pywsj0-mix
+      wsj0_source: https://catalog.ldc.upenn.edu/LDC93S6A
+    download:
+      primary:
+        - https://www.merl.com/research/highlights/deep-clustering
+        - https://www.merl.com/research/highlights/deep-clustering/create-speaker-mixtures.zip
+        - https://www.merl.com/research/highlights/deep-clustering/spatialize_wsj0-mix.zip
+        - https://github.com/mpariente/pywsj0-mix
+        - https://catalog.ldc.upenn.edu/LDC93S6A
+      examples:
+        - 'scripts/download/wsj0_2mix.sh'
+        - 'WSJ0_2MIX_CLONE_PYTHON_REPO=1 scripts/download/wsj0_2mix.sh'
+        - 'WSJ0_2MIX_RUN_GENERATION=1 WSJ0_PATH=/path/to/wsj0 WSJ0_2MIX_OUTPUT=/large/storage/wsj0-mix scripts/download/wsj0_2mix.sh'
+      notes: The helper downloads the official MERL page and generation scripts by default and can clone the MIT-licensed Python generator. It does not download WSJ0 audio; generation requires an already licensed local WSJ0 corpus from LDC and explicit WSJ0_2MIX_RUN_GENERATION=1.
+    license:
+      data: ldc_restricted_derived
+      code: "MERL script license not specified on the reachable page; pywsj0-mix is MIT."
+      notes: The generated mixtures derive from the LDC CSR-I WSJ0 corpus, so access, use, and redistribution must follow the active LDC agreement. The MERL page provides scripts but does not publish the audio mixtures or a standalone data license.
+    sources:
+      - https://www.merl.com/research/highlights/deep-clustering
+      - https://www.merl.com/publications/TR2016-003
+      - https://doi.org/10.1109/ICASSP.2016.7471631
+      - https://github.com/mpariente/pywsj0-mix
+      - https://raw.githubusercontent.com/mpariente/pywsj0-mix/master/README.md
+      - https://raw.githubusercontent.com/mpariente/pywsj0-mix/master/LICENSE
+      - https://catalog.ldc.upenn.edu/LDC93S6A
 
   - id: wham_whamr
     name: WHAM! / WHAMR!
