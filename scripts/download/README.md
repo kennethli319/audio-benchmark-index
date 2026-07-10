@@ -77,6 +77,7 @@ scripts/download/asvspoof_2019.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/audio_mnist.sh
+scripts/download/emov_db.sh
 scripts/download/ravdess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
@@ -326,6 +327,10 @@ SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
 
 # AudioMNIST downloads README/LICENSE/speaker metadata by default. Full repo clone is opt-in.
 AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
+
+# EmoV-DB downloads OpenSLR/GitHub docs by default. Speech archives are opt-in.
+EMOV_DB_DOWNLOAD_ARCHIVES=1 EMOV_DB_PARTS="bea_Neutral.tar.gz sam_Neutral.tar.gz" scripts/download/emov_db.sh
+EMOV_DB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/115 EMOV_DB_DOWNLOAD_ARCHIVES=1 scripts/download/emov_db.sh
 
 # RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
 RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh

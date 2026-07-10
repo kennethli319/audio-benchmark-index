@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-09
+  last_checked: 2026-07-10
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -2297,6 +2297,46 @@ benchmarks:
       - https://api.github.com/repos/soerenab/AudioMNIST
       - https://www.sciencedirect.com/science/article/pii/S0016003223007536
       - https://arxiv.org/abs/1807.03418
+
+  - id: emov_db
+    name: EmoV-DB
+    full_name: "The Emotional Voices Database: Towards Controlling the Emotional Expressiveness in Voice Generation Systems"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_synthesis
+      - speech_emotion_recognition
+    tasks:
+      - emotional_speech_synthesis
+      - expressive_tts
+      - speech_emotion_recognition
+      - voice_conversion
+    official:
+      repo: https://github.com/numediart/EmoV-DB
+      openslr: https://www.openslr.org/115/
+      paper: https://arxiv.org/abs/1806.09514
+      license_file: https://raw.githubusercontent.com/numediart/EmoV-DB/master/LICENSE.md
+      readme: https://raw.githubusercontent.com/numediart/EmoV-DB/master/README.md
+    download:
+      primary:
+        - https://www.openslr.org/115/
+        - https://openslr.trmal.net/resources/115/bea_Neutral.tar.gz
+        - https://openslr.trmal.net/resources/115/sam_Neutral.tar.gz
+        - https://github.com/numediart/EmoV-DB
+      examples:
+        - 'scripts/download/emov_db.sh'
+        - 'EMOV_DB_DOWNLOAD_ARCHIVES=1 EMOV_DB_PARTS="bea_Neutral.tar.gz sam_Neutral.tar.gz" scripts/download/emov_db.sh'
+      notes: OpenSLR SLR115 hosts per-speaker/per-emotion archives. The helper downloads OpenSLR/GitHub docs and license by default; speech archives are opt-in with EMOV_DB_DOWNLOAD_ARCHIVES=1.
+    license:
+      data: custom_non_commercial
+      code: not_specified
+      notes: The EmoV-DB license permits non-commercial research, teaching, scientific publication, and personal experimentation, and asks users to contact the dataset owner for commercial use. GitHub API reports license NOASSERTION/Other.
+    sources:
+      - https://www.openslr.org/115/
+      - https://github.com/numediart/EmoV-DB
+      - https://raw.githubusercontent.com/numediart/EmoV-DB/master/README.md
+      - https://raw.githubusercontent.com/numediart/EmoV-DB/master/LICENSE.md
+      - https://api.github.com/repos/numediart/EmoV-DB
+      - https://arxiv.org/abs/1806.09514
 
   - id: ravdess
     name: RAVDESS
