@@ -1064,6 +1064,40 @@ benchmarks:
       - https://catalog.ldc.upenn.edu/LDC2002S09
       - https://aclanthology.org/H92-1045/
 
+  - id: fisher_english
+    name: Fisher English
+    full_name: "Fisher English Training Speech and Transcripts"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - conversational_speech_recognition
+      - telephone_speech_recognition
+      - speech_transcription
+    official:
+      ldc_speech_part1: https://catalog.ldc.upenn.edu/LDC2004S13
+      ldc_transcripts_part1: https://catalog.ldc.upenn.edu/LDC2004T19
+      ldc_speech_part2: https://catalog.ldc.upenn.edu/LDC2005S13
+      ldc_transcripts_part2: https://catalog.ldc.upenn.edu/LDC2005T19
+    download:
+      primary:
+        - https://catalog.ldc.upenn.edu/LDC2004S13
+        - https://catalog.ldc.upenn.edu/LDC2004T19
+        - https://catalog.ldc.upenn.edu/LDC2005S13
+        - https://catalog.ldc.upenn.edu/LDC2005T19
+      examples:
+        - 'scripts/download/fisher_english.sh'
+      notes: Fisher English is distributed by LDC after login/licensing. The helper only prints official access steps because the speech and transcripts are paid/licensed catalog releases, not publicly script-downloadable archives.
+    license:
+      data: custom_ldc_license
+      code: not_applicable
+      notes: The LDC catalog pages list the LDC User Agreement for Non-Members and availability for Subscription/Standard Members and Non-Members. Re-check the current LDC agreement before use or redistribution.
+    sources:
+      - https://catalog.ldc.upenn.edu/LDC2004S13
+      - https://catalog.ldc.upenn.edu/LDC2004T19
+      - https://catalog.ldc.upenn.edu/LDC2005S13
+      - https://catalog.ldc.upenn.edu/LDC2005T19
+
   - id: mls
     name: MLS
     full_name: "MLS: A Large-Scale Multilingual Dataset for Speech Research"

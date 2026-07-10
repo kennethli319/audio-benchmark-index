@@ -111,6 +111,7 @@ OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
+scripts/download/fisher_english.sh
 scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
 ```
