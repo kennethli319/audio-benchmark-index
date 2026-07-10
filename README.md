@@ -23,7 +23,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-10. Current index size: 105 distinct benchmarks
+Last checked: 2026-07-10. Current index size: 106 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -127,6 +127,7 @@ Current coverage includes:
 | [ASVspoof 2021](https://www.asvspoof.org/index2021.html) | Speaker verification anti-spoofing and speech deepfake detection | Official ASVspoof page, [baseline repo](https://github.com/asvspoof-challenge/2021), [LA](https://zenodo.org/record/4837263), [PA](https://zenodo.org/record/4834716), and [DF](https://zenodo.org/record/4835108) Zenodo records; helper downloads eval plan and keys/metadata by default, with large speech archives opt-in | Official page says Open Data Commons Attribution Licence; Zenodo lists ODC-BY for LA/PA and ODC-ODbL for DF; baseline repo had no detected license |
 | [VoxLingua107](https://huggingface.co/datasets/TalTechNLP/VoxLingua107) | Spoken language identification | TalTechNLP [Hugging Face mirror](https://huggingface.co/datasets/TalTechNLP/VoxLingua107); helper downloads metadata by default and requires opt-in for the larger snapshot | HF card lists CC BY-NC 4.0; YouTube-derived source media availability and platform terms still apply |
 | [Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands) | Keyword spotting | Official TensorFlow archives: [v0.02](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), [v0.01](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz), or [google/speech_commands](https://huggingface.co/datasets/google/speech_commands) | CC BY 4.0; HF card asks users not to try to identify speakers |
+| [MSWC](https://mlcommons.org/datasets/multilingual-spoken-words/) | Multilingual keyword spotting and spoken term search | Official MLCommons page, [MLCommons/ml_spoken_words](https://huggingface.co/datasets/MLCommons/ml_spoken_words), and per-language MLCommons archive mirrors; helper saves docs by default and makes audio/splits/alignments opt-in | CC BY 4.0; derived from crowd-sourced sentence-level speech, so preserve attribution and re-check source terms |
 | [AudioMNIST](https://github.com/soerenab/AudioMNIST) | Spoken digit classification | Official GitHub repository with 30,000 spoken-digit WAV files and speaker metadata; helper downloads README/LICENSE/metadata by default and clones the repository only with opt-in | Repository-level LICENSE is MIT; recorded-voice consent/privacy obligations should still be considered for downstream use |
 | [VocalSound](https://github.com/YuanGongND/vocalsound) | Human vocal sound classification | Official GitHub README and direct Dropbox archives for 16 kHz and 44.1 kHz releases; helper saves docs by default and makes archives opt-in | Dataset README says CC BY-SA 4.0; GitHub API reports no repository-level license, so code license is not specified |
 | [VocalSet](https://zenodo.org/records/1193957) | Singing voice analysis | Official [Zenodo record](https://zenodo.org/records/1193957), DOI, and [ISMIR paper](https://archives.ismir.net/ismir2018/paper/000105.pdf); helper saves record metadata by default and makes the 2.1 GB archive opt-in | Zenodo lists CC BY 4.0; treat singer voice data with normal consent/attribution care |
@@ -322,6 +323,8 @@ Keyword spotting:
 ```bash
 SPEECH_COMMANDS_VERSION=v0.02 scripts/download/speech_commands.sh
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+scripts/download/mswc.sh
+MSWC_DOWNLOAD_ARCHIVES=1 MSWC_LANGS="ta vi" MSWC_PARTS="splits alignments" scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
 scripts/download/vocalsound.sh

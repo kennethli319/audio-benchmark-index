@@ -2502,6 +2502,50 @@ benchmarks:
       - https://huggingface.co/datasets/google/speech_commands
       - https://arxiv.org/abs/1804.03209
 
+  - id: mswc
+    name: MSWC
+    full_name: "Multilingual Spoken Words Corpus"
+    qwen_cited_as: null
+    qwen_bucket: keyword_spotting
+    tasks:
+      - keyword_spotting
+      - spoken_term_search
+      - multilingual_speech_classification
+      - forced_alignment
+    official:
+      homepage: https://mlcommons.org/datasets/multilingual-spoken-words/
+      legacy_homepage: https://mlcommons.org/en/multilingual-spoken-words/
+      repo: https://github.com/harvard-edge/multilingual_kws
+      hf_dataset: https://huggingface.co/datasets/MLCommons/ml_spoken_words
+      paper: https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/fe131d7f5a6b38b23cc967316c13dae2-Abstract-round2.html
+      paper_pdf: https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/fe131d7f5a6b38b23cc967316c13dae2-Paper-round2.pdf
+      openreview: https://openreview.net/forum?id=c20jiJ5K2H
+    download:
+      primary:
+        - https://huggingface.co/datasets/MLCommons/ml_spoken_words
+        - https://mlcommons.org/datasets/multilingual-spoken-words/
+        - https://mswc.mlcommons-storage.org/audio/en.tar.gz
+        - https://mswc.mlcommons-storage.org/splits/en.tar.gz
+        - https://mswc.mlcommons-storage.org/alignments/en.tar.gz
+      examples:
+        - 'scripts/download/mswc.sh'
+        - 'MSWC_DOWNLOAD_ARCHIVES=1 MSWC_LANGS="ta vi" MSWC_PARTS="splits alignments" scripts/download/mswc.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("MLCommons/ml_spoken_words", languages=["ar", "tt"], format="wav")'
+      notes: The official MLCommons page and HF card describe 50 languages, more than 340,000 keywords, 23.4 million 1-second examples, and over 6,000 hours. The helper saves official docs and the HF card by default; direct per-language audio, splits, and alignments are opt-in with MSWC_DOWNLOAD_ARCHIVES=1 because high-resource language audio archives can be many GiB.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: MLCommons and the HF card list CC BY 4.0. MSWC is derived from crowd-sourced sentence-level audio, including Common Voice, so preserve source attribution and re-check the active source terms for downstream redistribution.
+    sources:
+      - https://mlcommons.org/datasets/multilingual-spoken-words/
+      - https://huggingface.co/datasets/MLCommons/ml_spoken_words
+      - https://huggingface.co/datasets/MLCommons/ml_spoken_words/raw/main/README.md
+      - https://github.com/harvard-edge/multilingual_kws
+      - https://raw.githubusercontent.com/harvard-edge/multilingual_kws/main/README.md
+      - https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/fe131d7f5a6b38b23cc967316c13dae2-Abstract-round2.html
+      - https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/fe131d7f5a6b38b23cc967316c13dae2-Paper-round2.pdf
+      - https://openreview.net/forum?id=c20jiJ5K2H
+
   - id: audio_mnist
     name: AudioMNIST
     full_name: "AudioMNIST: Exploring Explainable Artificial Intelligence for audio analysis on a simple benchmark"

@@ -80,6 +80,7 @@ scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
+scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
@@ -353,6 +354,10 @@ VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh
 
 # Speech Commands defaults to the official v0.02 archive, about 2.37 GiB.
 SPEECH_COMMANDS_VERSION=v0.01 scripts/download/speech_commands.sh
+
+# MSWC saves official docs by default. Language archives are opt-in; audio can be many GiB.
+MSWC_DOWNLOAD_ARCHIVES=1 MSWC_LANGS="ta vi" MSWC_PARTS="splits alignments" scripts/download/mswc.sh
+MSWC_DOWNLOAD_ARCHIVES=1 MSWC_LANGS=ta MSWC_PARTS=audio scripts/download/mswc.sh
 
 # AudioMNIST downloads README/LICENSE/speaker metadata by default. Full repo clone is opt-in.
 AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
