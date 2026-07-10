@@ -41,6 +41,7 @@ scripts/download/fleurs.sh
 scripts/download/librispeech.sh
 scripts/download/mls.sh
 scripts/download/mtedx.sh
+scripts/download/tedx_spanish.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
@@ -150,6 +151,10 @@ COVOST2_DIRECTIONS=none scripts/download/covost2.sh
 MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS=mtedx_iwslt2021.tgz scripts/download/mtedx.sh
 MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS="mtedx_es-en.tgz mtedx_fr-en.tgz" scripts/download/mtedx.sh
 MTEDX_OPENSLR_BASE_URL=https://openslr.elda.org/resources/100 scripts/download/mtedx.sh
+
+# TEDx Spanish saves the OpenSLR page by default. The 2.3 GiB archive is opt-in.
+TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh
+TEDX_SPANISH_OPENSLR_BASE_URL=https://openslr.elda.org/resources/67 TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh
 
 # GigaSpeech is gated on Hugging Face and defaults to the dev config.
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh

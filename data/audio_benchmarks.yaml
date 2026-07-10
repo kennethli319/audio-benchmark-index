@@ -667,6 +667,32 @@ benchmarks:
       - https://arxiv.org/abs/2102.01757
       - https://www.isca-archive.org/interspeech_2021/salesky21_interspeech.html
 
+  - id: tedx_spanish
+    name: TEDx Spanish Corpus
+    full_name: "TEDx Spanish Corpus: Audio and Transcripts in Spanish Taken from TEDx Talks"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - spanish_asr
+      - spontaneous_speech_recognition
+      - speech_transcription
+    official:
+      openslr: https://www.openslr.org/67/
+    download:
+      primary:
+        - https://www.openslr.org/67/
+        - https://openslr.trmal.net/resources/67/tedx_spanish_corpus.tgz
+      examples:
+        - 'scripts/download/tedx_spanish.sh'
+        - 'TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh'
+      notes: OpenSLR SLR67 hosts a single 2.3 GiB archive with Spanish speech and transcripts from TEDx Talks. The helper saves the OpenSLR page by default and downloads the archive only with TEDX_SPANISH_DOWNLOAD_ARCHIVE=1.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_applicable
+      notes: OpenSLR lists CC BY-NC-ND 4.0. The corpus is derived from TEDx Talks, so downstream use should also respect TED/TEDx source terms.
+    sources:
+      - https://www.openslr.org/67/
+
   - id: covost2
     name: CoVoST 2
     full_name: "CoVoST 2: Massively Multilingual Speech-to-Text Translation Corpus"
