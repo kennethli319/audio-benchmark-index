@@ -89,6 +89,7 @@ scripts/download/mtg_jamendo.sh
 scripts/download/fma.sh
 scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
+scripts/download/musicnet.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
@@ -214,6 +215,10 @@ HIMIA_OPENSLR_BASE_URL=https://openslr.elda.org/resources/85 HIMIA_DOWNLOAD_ARCH
 
 # RUL-MuchoMusic can also pull the upstream MuChoMusic CSV.
 RUL_DOWNLOAD_UPSTREAM_MUCHOMUSIC=1 scripts/download/rul_muchomusic.sh
+
+# MusicNet downloads Zenodo metadata by default. MIDI and the large audio/label archive are opt-in.
+MUSICNET_DOWNLOAD_MIDIS=1 scripts/download/musicnet.sh
+MUSICNET_DOWNLOAD_AUDIO=1 scripts/download/musicnet.sh
 
 # SpeechRole downloads both eval and data by default.
 SPEECHROLE_DATA=0 scripts/download/speechrole.sh

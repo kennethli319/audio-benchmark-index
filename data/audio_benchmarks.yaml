@@ -2707,6 +2707,49 @@ benchmarks:
       - https://github.com/cosmir/openmic-2018
       - https://brianmcfee.net/papers/ismir2018_openmic.pdf
 
+  - id: musicnet
+    name: MusicNet
+    full_name: "MusicNet: A Dataset for Music Transcription and Multi-label Classification"
+    qwen_cited_as: null
+    qwen_bucket: music_transcription
+    tasks:
+      - music_transcription
+      - multi_label_music_classification
+      - note_onset_labeling
+      - musical_instrument_recognition
+      - music_information_retrieval
+    official:
+      zenodo_record: https://zenodo.org/records/5120004
+      doi: https://doi.org/10.5281/zenodo.5120004
+      dataset_paper: https://arxiv.org/abs/1611.09827
+      transcription_paper: https://arxiv.org/abs/1711.04845
+      pytorch_repo: https://github.com/jthickstun/pytorch_musicnet
+      inspector: https://musicnet-inspector.github.io/
+      direct_metadata: https://zenodo.org/api/records/5120004/files/musicnet_metadata.csv/content
+      direct_midis: https://zenodo.org/api/records/5120004/files/musicnet_midis.tar.gz/content
+      direct_archive: https://zenodo.org/api/records/5120004/files/musicnet.tar.gz/content
+    download:
+      primary:
+        - https://zenodo.org/records/5120004
+        - https://zenodo.org/api/records/5120004/files/musicnet_metadata.csv/content
+        - https://zenodo.org/api/records/5120004/files/musicnet_midis.tar.gz/content
+        - https://zenodo.org/api/records/5120004/files/musicnet.tar.gz/content
+      examples:
+        - 'scripts/download/musicnet.sh'
+        - 'MUSICNET_DOWNLOAD_MIDIS=1 scripts/download/musicnet.sh'
+        - 'MUSICNET_DOWNLOAD_AUDIO=1 scripts/download/musicnet.sh'
+      notes: The helper saves the Zenodo record JSON and 44 KiB metadata CSV by default. Reference MIDI files are a small opt-in download, while the full audio/label archive is about 10.3 GiB and requires MUSICNET_DOWNLOAD_AUDIO=1.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: Zenodo lists CC BY 4.0 for the MusicNet release. The record says audio recordings are Creative Commons licensed and Public Domain performances from the Isabella Stewart Gardner Museum, the European Archive Foundation, and Musopen, with per-recording provenance described in the metadata.
+    sources:
+      - https://zenodo.org/records/5120004
+      - https://zenodo.org/api/records/5120004
+      - https://arxiv.org/abs/1611.09827
+      - https://arxiv.org/abs/1711.04845
+      - https://github.com/jthickstun/pytorch_musicnet
+
   - id: chime_6
     name: CHiME-6
     full_name: "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings"

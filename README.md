@@ -20,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 86 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 87 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -58,6 +58,7 @@ Current coverage includes:
 | [FMA](https://github.com/mdeff/fma) | Music information retrieval | Official README/license by default; optional [metadata archive](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip) and opt-in FMA audio subsets from small through full | Metadata is CC BY 4.0 and code is MIT; audio uses each artist's chosen license, so check per-track terms |
 | [GTZAN](https://huggingface.co/datasets/marsyas/gtzan) | Music genre classification | Hugging Face `marsyas/gtzan`; helper saves the dataset card by default and downloads the full snapshot only with opt-in | License not specified on the reachable HF card; original Marsyas terms should be confirmed before redistribution or commercial use |
 | [OpenMIC-2018](https://zenodo.org/records/1432913) | Music information retrieval | Official Zenodo record and [OpenMIC archive](https://zenodo.org/api/records/1432913/files/openmic-2018-v1.0.0.tgz/content); helper saves metadata by default and makes the 2.6 GiB archive opt-in | Zenodo lists CC BY 4.0; included metadata contains per-recording licenses |
+| [MusicNet](https://zenodo.org/records/5120004) | Music transcription | Official Zenodo record, metadata CSV, reference MIDI archive, and opt-in 10.3 GiB audio/label archive | Zenodo lists CC BY 4.0; source recordings are Creative Commons licensed or public domain, with per-recording provenance in the metadata |
 | [NSynth](https://magenta.withgoogle.com/datasets/nsynth) | Music synthesis | Official Magenta TFRecord or JSON/WAV split archives; helper saves the page by default and downloads archives only with opt-in | CC BY 4.0 for data; Magenta code is Apache-2.0 |
 | [MAESTRO](https://magenta.withgoogle.com/datasets/maestro) | Music transcription and synthesis | Official Magenta v3.0.0 CSV/JSON metadata by default, optional MIDI-only archive, and opt-in 101 GiB WAV+MIDI archive | CC BY-NC-SA 4.0 |
 | [MUSDB18](https://sigsep.github.io/datasets/musdb.html) | Music source separation | Official SigSep page plus Zenodo [MUSDB18](https://zenodo.org/records/1117372) and [MUSDB18-HQ](https://zenodo.org/records/3338373) archives; helper saves pages by default and requires acknowledgement before large archives | Zenodo lists Other (Non-Commercial); official pages state educational/academic use only, with mixed upstream track sources |
@@ -368,6 +369,9 @@ scripts/download/gtzan.sh
 GTZAN_DOWNLOAD_HF=1 scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
 OPENMIC_DOWNLOAD_ARCHIVE=1 scripts/download/openmic_2018.sh
+scripts/download/musicnet.sh
+MUSICNET_DOWNLOAD_MIDIS=1 scripts/download/musicnet.sh
+MUSICNET_DOWNLOAD_AUDIO=1 scripts/download/musicnet.sh
 ```
 
 Music synthesis:
@@ -468,6 +472,7 @@ scripts/download/wavcaps.sh
 scripts/download/magnatagatune.sh
 scripts/download/fma.sh
 scripts/download/openmic_2018.sh
+scripts/download/musicnet.sh
 scripts/download/librimix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
