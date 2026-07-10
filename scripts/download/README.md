@@ -67,6 +67,7 @@ scripts/download/fsdkaggle2018.sh
 scripts/download/desed.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
+scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/voxlingua107.sh
@@ -205,6 +206,10 @@ EARNINGS22_SPARSE_CHECKOUT=1 EARNINGS22_LFS_PULL=1 scripts/download/earnings_22.
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
+
+# HI-MIA downloads the OpenSLR page and filename mapping by default. Archives are large and opt-in.
+HIMIA_DOWNLOAD_ARCHIVES=1 HIMIA_PARTS="dev test_v2" scripts/download/hi_mia.sh
+HIMIA_OPENSLR_BASE_URL=https://openslr.elda.org/resources/85 HIMIA_DOWNLOAD_ARCHIVES=1 scripts/download/hi_mia.sh
 
 # RUL-MuchoMusic can also pull the upstream MuChoMusic CSV.
 RUL_DOWNLOAD_UPSTREAM_MUCHOMUSIC=1 scripts/download/rul_muchomusic.sh

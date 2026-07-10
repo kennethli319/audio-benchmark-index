@@ -1954,6 +1954,39 @@ benchmarks:
       - https://arxiv.org/abs/1706.08612
       - https://arxiv.org/abs/1806.05622
 
+  - id: hi_mia
+    name: HI-MIA
+    full_name: "HI-MIA: A Far-field Text-Dependent Speaker Verification Database and the Baselines"
+    qwen_cited_as: null
+    qwen_bucket: speaker_recognition
+    tasks:
+      - text_dependent_speaker_verification
+      - far_field_speaker_verification
+      - wake_word_speaker_verification
+      - speaker_recognition
+    official:
+      openslr: https://www.openslr.org/85/
+      external_url: http://aishelltech.com/wakeup_data
+      paper: https://arxiv.org/abs/1912.01231
+    download:
+      primary:
+        - https://www.openslr.org/85/
+        - https://openslr.trmal.net/resources/85/filename_mapping.tar.gz
+        - https://openslr.trmal.net/resources/85/dev.tar.gz
+        - https://openslr.trmal.net/resources/85/test_v2.tar.gz
+        - https://openslr.trmal.net/resources/85/train.tar.gz
+      examples:
+        - 'scripts/download/hi_mia.sh'
+        - 'HIMIA_DOWNLOAD_ARCHIVES=1 HIMIA_PARTS="dev test_v2" scripts/download/hi_mia.sh'
+      notes: OpenSLR SLR85 hosts the AISHELL Speaker Verification Challenge 2019 far-field text-dependent speaker verification data. The helper downloads the official page and filename mapping by default; train/dev/test archives are multi-GB and require HIMIA_DOWNLOAD_ARCHIVES=1.
+    license:
+      data: apache-2.0
+      code: not_applicable
+      notes: OpenSLR SLR85 lists Apache License v2.0. The paper says HI-MIA contains recordings from 340 people in real-room far-field settings and is extracted from AISHELL-WakeUp-1.
+    sources:
+      - https://www.openslr.org/85/
+      - https://arxiv.org/abs/1912.01231
+
   - id: voxconverse
     name: VoxConverse
     full_name: "VoxConverse: A Large Scale Audio-Visual Diarisation Dataset"
