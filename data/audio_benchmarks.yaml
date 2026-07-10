@@ -2371,6 +2371,44 @@ benchmarks:
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
 
+  - id: wavcaps
+    name: WavCaps
+    full_name: "WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - audio_captioning
+      - audio_language_retrieval
+      - audio_language_modeling
+      - zero_shot_audio_classification
+    official:
+      repo: https://github.com/XinhaoMei/WavCaps
+      hf_dataset: https://huggingface.co/datasets/cvssp/WavCaps
+      paper: https://arxiv.org/abs/2303.17395
+      doi: https://doi.org/10.1109/TASLP.2024.3419446
+    download:
+      primary:
+        - https://huggingface.co/datasets/cvssp/WavCaps
+        - https://huggingface.co/datasets/cvssp/WavCaps/tree/main/json_files
+        - https://huggingface.co/datasets/cvssp/WavCaps/tree/main/Zip_files
+        - https://github.com/XinhaoMei/WavCaps
+      examples:
+        - 'scripts/download/wavcaps.sh'
+        - 'WAVCAPS_DOWNLOAD_ZIPS=1 WAVCAPS_ZIP_SOURCES=SoundBible scripts/download/wavcaps.sh'
+        - 'huggingface-cli download --repo-type dataset cvssp/WavCaps --include "json_files/*/*.json" --local-dir data/raw/wavcaps'
+      notes: The Hugging Face repository exposes JSON metadata and split FLAC waveform ZIPs for FreeSound, BBC Sound Effects, SoundBible, and AudioSet SL. The full repository is hundreds of GiB, so the helper downloads README/JSON metadata by default and requires WAVCAPS_DOWNLOAD_ZIPS=1 plus WAVCAPS_ZIP_SOURCES for waveform archives.
+    license:
+      data: academic_only
+      code: not_specified
+      notes: The GitHub README and Hugging Face card say only academic uses are allowed for WavCaps audio. The HF metadata advertises CC BY 4.0, but the dataset card also points users to component source terms for FreeSound, BBC Sound Effects, SoundBible, and AudioSet; re-check those source licenses before redistribution or commercial use. Provided models are described as non-commercial research under a UK data copyright exemption.
+    sources:
+      - https://github.com/XinhaoMei/WavCaps
+      - https://raw.githubusercontent.com/XinhaoMei/WavCaps/master/README.md
+      - https://huggingface.co/datasets/cvssp/WavCaps
+      - https://huggingface.co/api/datasets/cvssp/WavCaps
+      - https://arxiv.org/abs/2303.17395
+      - https://doi.org/10.1109/TASLP.2024.3419446
+
   - id: macs
     name: MACS
     full_name: "MACS: Multi-Annotator Captioned Soundscapes"

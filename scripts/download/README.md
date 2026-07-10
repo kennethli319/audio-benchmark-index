@@ -80,6 +80,7 @@ scripts/download/chime_6.sh
 scripts/download/alimeeting.sh
 scripts/download/clotho.sh
 scripts/download/audiocaps.sh
+scripts/download/wavcaps.sh
 scripts/download/macs.sh
 scripts/download/magnatagatune.sh
 scripts/download/mtg_jamendo.sh
@@ -343,6 +344,10 @@ CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 
 # AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
+
+# WavCaps downloads README and JSON metadata by default. Select waveform ZIP sources explicitly.
+WAVCAPS_DOWNLOAD_ZIPS=1 WAVCAPS_ZIP_SOURCES=SoundBible scripts/download/wavcaps.sh
+WAVCAPS_DOWNLOAD_ZIPS=1 WAVCAPS_ZIP_SOURCES="AudioSet_SL BBC_Sound_Effects" scripts/download/wavcaps.sh
 
 # MACS downloads annotations plus TAU 2019 docs/metadata by default. Audio shards are large.
 MACS_DOWNLOAD_TAU_AUDIO=1 scripts/download/macs.sh
