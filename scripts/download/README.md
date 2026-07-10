@@ -68,6 +68,7 @@ scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
 scripts/download/audioset.sh
 scripts/download/vggsound.sh
+scripts/download/ave.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
@@ -318,6 +319,9 @@ AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 
 # VGGSound downloads official CSV metadata/license by default. Model files are opt-in.
 VGGSOUND_DOWNLOAD_MODELS=1 scripts/download/vggsound.sh
+
+# AVE downloads official docs by default. Dataset/features are Google Drive files.
+AVE_CLONE_REPO=1 scripts/download/ave.sh
 
 # EPIC-SOUNDS downloads official docs and public annotation CSVs by default.
 EPIC_SOUNDS_CLONE_ANNOTATIONS=1 scripts/download/epic_sounds.sh

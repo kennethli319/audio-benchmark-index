@@ -2097,6 +2097,46 @@ benchmarks:
       - https://raw.githubusercontent.com/hche11/VGGSound/master/LICENCE.txt
       - https://arxiv.org/abs/2004.14368
 
+  - id: ave
+    name: AVE
+    full_name: "Audio-Visual Event Localization in Unconstrained Videos"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_event_localization
+    tasks:
+      - audio_visual_event_localization
+      - audio_visual_event_classification
+      - cross_modal_localization
+    official:
+      homepage: https://sites.google.com/view/audiovisualresearch
+      repo: https://github.com/YapengTian/AVE-ECCV18
+      paper: https://arxiv.org/abs/1803.08842
+      eccv_paper: https://openaccess.thecvf.com/content_ECCV_2018/html/Yapeng_Tian_Audio-Visual_Event_Localization_ECCV_2018_paper.html
+      dataset_drive: https://drive.google.com/open?id=1FjKwe79e0u96vdjIVwfRQ1V6SoDHe7kK
+      audio_feature_drive: https://drive.google.com/file/d/1F6p4BAOY-i0fDXUOhG7xHuw_fnO5exBS/view
+      visual_feature_drive: https://drive.google.com/file/d/1hQwbhutA3fQturduRnHMyfRqdrRHgmC9/view
+    download:
+      primary:
+        - https://github.com/YapengTian/AVE-ECCV18
+        - https://raw.githubusercontent.com/YapengTian/AVE-ECCV18/master/README.md
+        - https://drive.google.com/open?id=1FjKwe79e0u96vdjIVwfRQ1V6SoDHe7kK
+        - https://drive.google.com/file/d/1F6p4BAOY-i0fDXUOhG7xHuw_fnO5exBS/view
+        - https://drive.google.com/file/d/1hQwbhutA3fQturduRnHMyfRqdrRHgmC9/view
+      examples:
+        - 'scripts/download/ave.sh'
+        - 'AVE_CLONE_REPO=1 scripts/download/ave.sh'
+      notes: The helper downloads the project page and official README by default and can clone the code repository. The dataset, precomputed audio features, and visual features are linked from Google Drive; download those manually or with a user-selected Drive tool after reviewing terms.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: The official repository does not expose a detected GitHub license and the README does not state a standalone dataset license. AVE is built from unconstrained videos, so source-video copyright, platform terms, and redistribution rights should be checked before use.
+    sources:
+      - https://sites.google.com/view/audiovisualresearch
+      - https://github.com/YapengTian/AVE-ECCV18
+      - https://raw.githubusercontent.com/YapengTian/AVE-ECCV18/master/README.md
+      - https://api.github.com/repos/YapengTian/AVE-ECCV18
+      - https://arxiv.org/abs/1803.08842
+      - https://openaccess.thecvf.com/content_ECCV_2018/html/Yapeng_Tian_Audio-Visual_Event_Localization_ECCV_2018_paper.html
+
   - id: epic_sounds
     name: EPIC-SOUNDS
     full_name: "EPIC-SOUNDS: A Large-Scale Dataset of Actions that Sound"
