@@ -52,6 +52,7 @@ scripts/download/aishell_1.sh
 scripts/download/aishell_3.sh
 scripts/download/hifitts.sh
 scripts/download/magicdata_mandarin.sh
+scripts/download/st_cmds.sh
 scripts/download/thchs_30.sh
 scripts/download/primewords_chinese.sh
 scripts/download/golos.sh
@@ -170,6 +171,10 @@ AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOA
 # MAGICDATA downloads the OpenSLR page and metadata by default. The speech archives are large and opt-in.
 MAGICDATA_DOWNLOAD_ARCHIVES=1 MAGICDATA_PARTS="dev test" scripts/download/magicdata_mandarin.sh
 MAGICDATA_OPENSLR_BASE_URL=https://openslr.elda.org/resources/68 MAGICDATA_DOWNLOAD_ARCHIVES=1 scripts/download/magicdata_mandarin.sh
+
+# ST-CMDS saves the OpenSLR page by default. The 8.2 GiB archive is opt-in.
+ST_CMDS_DOWNLOAD_ARCHIVE=1 scripts/download/st_cmds.sh
+ST_CMDS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/38 ST_CMDS_DOWNLOAD_ARCHIVE=1 scripts/download/st_cmds.sh
 
 # THCHS-30 saves the OpenSLR page by default. The data/noisy-test/resource archives are opt-in.
 THCHS30_DOWNLOAD_PARTS=resource scripts/download/thchs_30.sh

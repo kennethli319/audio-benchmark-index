@@ -1474,6 +1474,36 @@ benchmarks:
       - https://www.openslr.org/68/
       - http://www.imagicdatatech.com/index.php/home/dataopensource/data_info/id/101
 
+  - id: st_cmds
+    name: ST-CMDS
+    full_name: "ST-CMDS-20170001_1: Free ST Chinese Mandarin Corpus"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - mandarin_speech_recognition
+    official:
+      openslr: https://www.openslr.org/38/
+      external_url: https://www.surfing.ai
+    download:
+      primary:
+        - https://www.openslr.org/38/
+        - https://openslr.trmal.net/resources/38/ST-CMDS-20170001_1-OS.tar.gz
+        - https://openslr.elda.org/resources/38/ST-CMDS-20170001_1-OS.tar.gz
+        - https://openslr.magicdatatech.com/resources/38/ST-CMDS-20170001_1-OS.tar.gz
+      examples:
+        - 'scripts/download/st_cmds.sh'
+        - 'ST_CMDS_DOWNLOAD_ARCHIVE=1 scripts/download/st_cmds.sh'
+        - 'ST_CMDS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/38 ST_CMDS_DOWNLOAD_ARCHIVE=1 scripts/download/st_cmds.sh'
+      notes: OpenSLR hosts an 8.2 GiB archive with cellphone-recorded Mandarin speech, transcriptions, and metadata from 855 speakers and 102,600 utterances. The helper saves the OpenSLR page by default and requires ST_CMDS_DOWNLOAD_ARCHIVE=1 for the large archive.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_applicable
+      notes: OpenSLR SLR38 lists Creative Commons BY-NC-ND 4.0 and asks users to cite the data as "ST-CMDS-20170001_1, Free ST Chinese Mandarin Corpus." Re-check upstream terms before redistribution or commercial use.
+    sources:
+      - https://www.openslr.org/38/
+      - https://www.surfing.ai
+
   - id: thchs_30
     name: THCHS-30
     full_name: "THCHS-30: A Free Chinese Speech Corpus"
