@@ -870,6 +870,41 @@ benchmarks:
       - https://arxiv.org/abs/2203.15591
       - https://czasopisma.uni.lodz.pl/research/article/view/21579
 
+  - id: l2_arctic
+    name: L2-ARCTIC
+    full_name: "L2-ARCTIC: A Non-native English Speech Corpus"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - accented_speech_recognition
+      - mispronunciation_detection
+      - accent_conversion
+      - voice_conversion
+      - computer_assisted_pronunciation_training
+    official:
+      homepage: https://psi.engr.tamu.edu/l2-arctic-corpus/
+      documentation: https://psi.engr.tamu.edu/l2-arctic-corpus-docs/
+      paper: https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.html
+      paper_pdf: https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.pdf
+      doi: https://doi.org/10.21437/Interspeech.2018-1110
+    download:
+      primary:
+        - https://psi.engr.tamu.edu/l2-arctic-corpus/
+        - https://psi.engr.tamu.edu/l2-arctic-corpus-docs/
+      examples:
+        - 'scripts/download/l2_arctic.sh'
+      notes: Official access requires reviewing the CC BY-NC 4.0 license terms and submitting the download form with name, email, and affiliation. The project sends a generated Google Drive link by email, so the helper prints manual access steps rather than storing or using private generated URLs.
+    license:
+      data: cc-by-nc-4.0
+      code: not_applicable
+      notes: Official homepage states the corpus is released under CC BY-NC 4.0; usage outside that license requires contacting the TAMU dataset owner. The current release covers 24 non-native English speakers plus suitcase-corpus material, while the Interspeech 2018 paper describes the initial v1.0 release.
+    sources:
+      - https://psi.engr.tamu.edu/l2-arctic-corpus/
+      - https://psi.engr.tamu.edu/l2-arctic-corpus-docs/
+      - https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.html
+      - https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.pdf
+
   - id: common_voice
     name: Common Voice
     full_name: Mozilla Common Voice

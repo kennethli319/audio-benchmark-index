@@ -20,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 80 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 81 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -73,6 +73,7 @@ Current coverage includes:
 | [GigaSpeech](https://github.com/SpeechColab/GigaSpeech) | ASR | [speechcolab/gigaspeech](https://huggingface.co/datasets/speechcolab/gigaspeech) after access approval; default helper config is `dev` | HF terms restrict data to non-commercial research and educational use; code repo is Apache-2.0 |
 | [SPGISpeech](https://huggingface.co/datasets/kensho/spgispeech) | ASR | [kensho/spgispeech](https://huggingface.co/datasets/kensho/spgispeech) after accepting Kensho/Hugging Face terms; helper defaults to `dev` | Gated terms allow academic research/internal use and prohibit redistribution without prior written consent |
 | [Earnings-22](https://github.com/revdotcom/speech-datasets/tree/main/earnings22) | ASR | Official Rev.com [speech-datasets](https://github.com/revdotcom/speech-datasets) repository; helper downloads README/license/metadata by default and makes sparse checkout plus Git LFS audio pull opt-in | Dataset README/LICENSE list CC BY-SA 4.0 for transcripts and associated text; repository has no detected top-level license, so re-check audio/LFS terms before redistribution |
+| [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/) | ASR and accented speech | Official TAMU corpus page and documentation; access requires accepting license terms and submitting the download form to receive a generated Google Drive link by email | CC BY-NC 4.0; current release has 24 non-native English speakers plus suitcase-corpus material, while the Interspeech 2018 paper describes v1.0 |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
 | [LibriSpeech](https://www.openslr.org/12) | ASR | OpenSLR SLR12 tarballs or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr) | CC BY 4.0 |
 | [Libri-Light](https://github.com/facebookresearch/libri-light) | ASR and self-supervised speech representation | Official repository docs and Meta public-file archives; helper downloads docs by default and makes 0.6 GiB finetuning, ABX, and 35 GiB to 3.05 TiB unlabeled archives opt-in | Code is MIT; reviewed docs do not state a standalone data license, and audio comes from open-source LibriVox audiobooks with source-term/attribution caution |
@@ -207,6 +208,7 @@ GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=xs scripts/download/gigaspeech.sh
 SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=dev scripts/download/spgispeech.sh
 scripts/download/earnings_22.sh
 EARNINGS22_SPARSE_CHECKOUT=1 scripts/download/earnings_22.sh
+scripts/download/l2_arctic.sh
 ```
 
 Direct archives:

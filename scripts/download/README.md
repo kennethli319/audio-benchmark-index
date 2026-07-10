@@ -111,6 +111,7 @@ scripts/download/iemocap.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
 scripts/download/dihard_iii.sh
+scripts/download/l2_arctic.sh
 ```
 
 Without the required environment variables, they print the manual access steps
