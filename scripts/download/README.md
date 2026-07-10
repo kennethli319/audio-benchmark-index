@@ -75,6 +75,7 @@ scripts/download/speech_commands.sh
 scripts/download/audio_mnist.sh
 scripts/download/ravdess.sh
 scripts/download/crema_d.sh
+scripts/download/meld.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
@@ -304,6 +305,11 @@ RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh
 # CREMA-D saves README/license/CSV metadata by default. Full media needs Git LFS and is opt-in.
 CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh
 CREMAD_REPO_URL=https://github.com/CheyneyComputerScience/CREMA-D.git CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh
+
+# MELD downloads official project metadata by default. Raw media and feature/model tarballs are opt-in.
+MELD_DOWNLOAD_RAW=1 scripts/download/meld.sh
+MELD_DOWNLOAD_FEATURES=1 scripts/download/meld.sh
+MELD_BASE_URL=https://huggingface.co/datasets/declare-lab/MELD/resolve/main scripts/download/meld.sh
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh

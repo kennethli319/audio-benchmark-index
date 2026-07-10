@@ -2231,6 +2231,48 @@ benchmarks:
       - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4313618/
       - https://doi.org/10.1109/TAFFC.2014.2336244
 
+  - id: meld
+    name: MELD
+    full_name: "MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversations"
+    qwen_cited_as: null
+    qwen_bucket: speech_emotion_recognition
+    tasks:
+      - speech_emotion_recognition
+      - multimodal_emotion_recognition
+      - dialogue_emotion_recognition
+      - sentiment_analysis
+      - audio_visual_emotion_recognition
+    official:
+      homepage: https://affective-meld.github.io/
+      repo: https://github.com/declare-lab/MELD
+      dataset: https://huggingface.co/datasets/declare-lab/MELD
+      paper: https://aclanthology.org/P19-1050/
+      arxiv: https://arxiv.org/abs/1810.02508
+    download:
+      primary:
+        - https://affective-meld.github.io/
+        - https://huggingface.co/datasets/declare-lab/MELD/resolve/main/MELD.Raw.tar.gz
+        - https://huggingface.co/datasets/declare-lab/MELD/resolve/main/MELD.Features.Models.tar.gz
+        - https://github.com/declare-lab/MELD/tree/master/data/MELD
+      examples:
+        - 'scripts/download/meld.sh'
+        - 'MELD_DOWNLOAD_RAW=1 scripts/download/meld.sh'
+        - 'MELD_DOWNLOAD_FEATURES=1 scripts/download/meld.sh'
+        - 'huggingface-cli download --repo-type dataset declare-lab/MELD --include "*.csv" --local-dir data/raw/meld/hf-metadata'
+      notes: The helper downloads official project, README, license, and dataset-card metadata by default. Raw audio/video tarballs and extracted feature/model tarballs are opt-in because they are larger and include TV-derived media clips.
+    license:
+      data: gpl-3.0
+      code: GPL-3.0
+      notes: GitHub and the Hugging Face dataset card list GPL-3.0. MELD clips are derived from the Friends TV series, so downstream users should re-check media rights and any fair-use/research assumptions before redistribution or commercial use.
+    sources:
+      - https://affective-meld.github.io/
+      - https://github.com/declare-lab/MELD
+      - https://raw.githubusercontent.com/declare-lab/MELD/master/README.md
+      - https://raw.githubusercontent.com/declare-lab/MELD/master/LICENSE
+      - https://huggingface.co/datasets/declare-lab/MELD
+      - https://aclanthology.org/P19-1050/
+      - https://arxiv.org/abs/1810.02508
+
   - id: iemocap
     name: IEMOCAP
     full_name: "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database"
