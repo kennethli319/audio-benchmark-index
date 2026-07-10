@@ -831,6 +831,45 @@ benchmarks:
       - https://www.isca-archive.org/interspeech_2021/oneill21_interspeech.html
       - https://kensho.com/research-and-innovation
 
+  - id: earnings_22
+    name: Earnings-22
+    full_name: "Earnings-22: A Practical Benchmark for Accents in the Wild"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - accented_speech_recognition
+      - long_form_speech_recognition
+      - financial_speech_recognition
+    official:
+      repo: https://github.com/revdotcom/speech-datasets
+      dataset_readme: https://github.com/revdotcom/speech-datasets/tree/main/earnings22
+      paper: https://arxiv.org/abs/2203.15591
+      journal_article: https://czasopisma.uni.lodz.pl/research/article/view/21579
+      doi: https://doi.org/10.18778/1731-7533.21.3.02
+    download:
+      primary:
+        - https://github.com/revdotcom/speech-datasets/tree/main/earnings22
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings22/README.md
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings22/LICENSE.md
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings22/metadata.csv
+      examples:
+        - 'scripts/download/earnings_22.sh'
+        - 'EARNINGS22_SPARSE_CHECKOUT=1 scripts/download/earnings_22.sh'
+        - 'EARNINGS22_SPARSE_CHECKOUT=1 EARNINGS22_LFS_PULL=1 scripts/download/earnings_22.sh'
+      notes: Earnings-22 contains 125 English-language earnings-call files totaling about 119 hours. The helper downloads README, license, and metadata by default; sparse checkout of transcripts/media is opt-in, and Git LFS audio pull is a second explicit opt-in.
+    license:
+      data: cc-by-sa-4.0
+      code: not_specified
+      notes: The earnings22 README shows a CC BY-SA 4.0 license badge, and LICENSE.md states that transcripts and associated text files are CC BY-SA 4.0. The top-level GitHub repository does not expose a detected repository license, and audio is stored through Git LFS, so re-check upstream terms before redistribution or commercial use.
+    sources:
+      - https://github.com/revdotcom/speech-datasets
+      - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/README.md
+      - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings22/README.md
+      - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings22/LICENSE.md
+      - https://arxiv.org/abs/2203.15591
+      - https://czasopisma.uni.lodz.pl/research/article/view/21579
+
   - id: common_voice
     name: Common Voice
     full_name: Mozilla Common Voice

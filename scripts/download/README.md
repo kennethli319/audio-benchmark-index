@@ -53,6 +53,7 @@ scripts/download/magicdata_mandarin.sh
 scripts/download/golos.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
+scripts/download/earnings_22.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/urbansound8k.sh
@@ -189,6 +190,10 @@ GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=xs scripts/download/gigaspeech.sh
 # SPGISpeech is gated on Hugging Face and defaults to the dev config.
 SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=dev scripts/download/spgispeech.sh
 SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=test scripts/download/spgispeech.sh
+
+# Earnings-22 downloads README, license, and metadata by default. Sparse checkout and Git LFS media pull are opt-in.
+EARNINGS22_SPARSE_CHECKOUT=1 scripts/download/earnings_22.sh
+EARNINGS22_SPARSE_CHECKOUT=1 EARNINGS22_LFS_PULL=1 scripts/download/earnings_22.sh
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
