@@ -429,6 +429,9 @@ NISQA_DOWNLOAD_CORPUS=1 scripts/download/nisqa.sh
 # Clotho downloads captions/metadata by default. Audio archives are about 7.1 GiB.
 CLOTHO_DOWNLOAD_AUDIO=1 scripts/download/clotho.sh
 
+# ClothoAQA downloads QA CSVs, metadata, and license by default. Audio is about 3.1 GiB.
+CLOTHO_AQA_DOWNLOAD_AUDIO=1 scripts/download/clotho_aqa.sh
+
 # AudioCaps downloads caption CSV metadata only. Use 2.0 for the larger 2025 CSV release.
 AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh
 

@@ -2901,6 +2901,42 @@ benchmarks:
       - https://dcase.community/challenge2022/task-automatic-audio-captioning
       - https://arxiv.org/abs/1910.09387
 
+  - id: clotho_aqa
+    name: ClothoAQA
+    full_name: "Clotho-AQA: A Crowdsourced Dataset for Audio Question Answering"
+    qwen_cited_as: null
+    qwen_bucket: audio_question_answering
+    tasks:
+      - audio_question_answering
+      - audio_language_understanding
+      - machine_listening
+    official:
+      zenodo_record: https://zenodo.org/records/6473207
+      doi: https://doi.org/10.5281/zenodo.6473207
+      paper: https://arxiv.org/abs/2204.09634
+      baseline_repo: https://github.com/partha2409/AquaNet
+    download:
+      primary:
+        - https://zenodo.org/records/6473207
+        - https://zenodo.org/records/6473207/files/clotho_aqa_train.csv?download=1
+        - https://zenodo.org/records/6473207/files/clotho_aqa_val.csv?download=1
+        - https://zenodo.org/records/6473207/files/clotho_aqa_test.csv?download=1
+        - https://zenodo.org/records/6473207/files/clotho_aqa_metadata.csv?download=1
+      examples:
+        - 'scripts/download/clotho_aqa.sh'
+        - 'CLOTHO_AQA_DOWNLOAD_AUDIO=1 scripts/download/clotho_aqa.sh'
+      notes: The helper downloads the QA split CSVs, metadata, and license by default. The 3.1 GiB audio_files.zip archive is opt-in because it contains Clotho/Freesound-derived audio.
+    license:
+      data: mixed
+      code: not_applicable
+      notes: Zenodo lists rights as Other (Attribution). The train/validation/test question-answer CSVs are MIT licensed by Tampere University. Audio files keep per-file Freesound licenses, mostly Creative Commons with attribution, recorded in clotho_aqa_metadata.csv.
+    sources:
+      - https://zenodo.org/records/6473207
+      - https://zenodo.org/api/records/6473207
+      - https://zenodo.org/api/records/6473207/files/LICENSE.txt/content
+      - https://zenodo.org/records/6473207/files/LICENSE.txt?download=1
+      - https://arxiv.org/abs/2204.09634
+
   - id: audiocaps
     name: AudioCaps
     full_name: "AudioCaps: Generating Captions for Audios in The Wild"
