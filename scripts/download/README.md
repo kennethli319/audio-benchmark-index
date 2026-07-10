@@ -110,6 +110,7 @@ scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
 scripts/download/dns_challenge.sh
+scripts/download/ms_snsd.sh
 scripts/download/nisqa.sh
 scripts/download/vctk.sh
 ```
@@ -413,6 +414,10 @@ VOICEBANK_DEMAND_DOWNLOAD_AUDIO=1 VOICEBANK_DEMAND_PARTS=all scripts/download/vo
 DNS_CHALLENGE_DOWNLOAD_DEV_TESTSET=1 scripts/download/dns_challenge.sh
 DNS_CHALLENGE_DOWNLOAD_BLIND_TESTSET=1 scripts/download/dns_challenge.sh
 DNS_CHALLENGE_CLONE_REPO=1 scripts/download/dns_challenge.sh
+
+# MS-SNSD downloads official metadata/generator files by default. The repo clone is large.
+MS_SNSD_CLONE_REPO=1 scripts/download/ms_snsd.sh
+MS_SNSD_RUN_SYNTHESIS=1 scripts/download/ms_snsd.sh
 
 # NISQA downloads official docs/license files and Zenodo metadata by default.
 NISQA_DOWNLOAD_CORPUS=1 scripts/download/nisqa.sh

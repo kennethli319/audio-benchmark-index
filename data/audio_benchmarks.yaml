@@ -3486,6 +3486,44 @@ benchmarks:
       - https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/
       - https://arxiv.org/abs/2202.13288
 
+  - id: ms_snsd
+    name: MS-SNSD
+    full_name: "Microsoft Scalable Noisy Speech Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speech_enhancement
+    tasks:
+      - speech_enhancement
+      - speech_denoising
+      - noisy_speech_synthesis
+      - subjective_speech_quality_evaluation
+    official:
+      repo: https://github.com/microsoft/MS-SNSD
+      paper: https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.html
+      pdf: https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.pdf
+      doi: https://doi.org/10.21437/Interspeech.2019-3087
+    download:
+      primary:
+        - https://github.com/microsoft/MS-SNSD
+        - https://raw.githubusercontent.com/microsoft/MS-SNSD/master/README.md
+        - https://raw.githubusercontent.com/microsoft/MS-SNSD/master/LICENSE
+        - https://raw.githubusercontent.com/microsoft/MS-SNSD/master/noisyspeech_synthesizer.py
+        - https://raw.githubusercontent.com/microsoft/MS-SNSD/master/noisyspeech_synthesizer.cfg
+      examples:
+        - 'scripts/download/ms_snsd.sh'
+        - 'MS_SNSD_CLONE_REPO=1 scripts/download/ms_snsd.sh'
+      notes: The official GitHub repository contains clean speech, noise, noisy test, and clean test directories plus scripts for generating noisy speech at configurable SNRs. The helper saves README/license/generator files by default; cloning the large repository is an explicit opt-in.
+    license:
+      data: mixed
+      code: MIT
+      notes: The README says Microsoft provides the datasets as-is under the original terms received. It lists PTDB-TUG under ODbL 1.0, Edinburgh/VoiceBank material under its DataShare license, selected Freesound noise as CC0, and DEMAND as CC BY-SA 3.0. Re-check component terms before redistribution or commercial use.
+    sources:
+      - https://github.com/microsoft/MS-SNSD
+      - https://raw.githubusercontent.com/microsoft/MS-SNSD/master/README.md
+      - https://raw.githubusercontent.com/microsoft/MS-SNSD/master/LICENSE
+      - https://api.github.com/repos/microsoft/MS-SNSD
+      - https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.html
+      - https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.pdf
+
   - id: nisqa
     name: NISQA
     full_name: "NISQA Speech Quality Corpus"
