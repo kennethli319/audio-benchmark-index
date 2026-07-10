@@ -20,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-10. Current index size: 96 distinct benchmarks
+Last checked: 2026-07-10. Current index size: 97 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -98,6 +98,7 @@ Current coverage includes:
 | [THCHS-30](https://www.openslr.org/18/) | ASR | [OpenSLR SLR18](https://www.openslr.org/18/) page by default; 6.4 GiB Mandarin speech/transcript, 1.9 GiB noisy test, and 24 MiB resource archives are opt-in | Apache License v2.0; OpenSLR description also says free to academic users |
 | [Golos](https://www.openslr.org/114/) | ASR | [OpenSLR SLR114](https://www.openslr.org/114/) page, SberDevices README/checksums/license PDFs by default; 18 GiB Opus speech archive and models are opt-in | Custom SberDevices Golos license PDFs; OpenSLR links the English/Russian license documents, so re-check before redistribution or commercial use |
 | [Primewords Chinese Corpus Set 1](https://www.openslr.org/47/) | ASR | [OpenSLR SLR47](https://www.openslr.org/47/) page by default; 9.0 GiB Mandarin speech/transcript archive is opt-in | CC BY-NC-ND 4.0; OpenSLR says the corpus is free for academic use |
+| [Pansori-TEDxKR](https://www.openslr.org/58/) | ASR | [OpenSLR SLR58](https://www.openslr.org/58/) metadata by default; 174 MB Korean TEDx speech/transcript archive is opt-in | CC BY-NC-ND 4.0; derived from TEDx talks, so source media terms still apply |
 | [KeSpeech](https://github.com/tzyll/KeSpeech) | ASR | Baidu Pan link in repo, password `b6fy` | Custom terms: non-commercial, no adaptations, no third-party distribution |
 | [Opencpop-test](https://github.com/wenet-e2e/opencpop) | ASR / singing voice | Apply via the [official download page](https://wenet-e2e.github.io/opencpop/download/) and use the test split | CC BY-NC-ND 4.0 |
 | [MIR-1K vocal](http://mirlab.org/dataset/public/) | ASR / singing voice | [Figshare mirror](https://figshare.com/articles/dataset/MIR-1K_rar/5802891); official MIR Lab archive currently returns 404 | Official page does not state a license; Figshare mirror lists CC BY 4.0 |
@@ -228,6 +229,8 @@ scripts/download/mtedx.sh
 MTEDX_DOWNLOAD_ARCHIVES=1 MTEDX_PARTS=mtedx_iwslt2021.tgz scripts/download/mtedx.sh
 scripts/download/tedx_spanish.sh
 TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh
+scripts/download/pansori_tedxkr.sh
+PANSORI_TEDXKR_DOWNLOAD_ARCHIVE=1 scripts/download/pansori_tedxkr.sh
 ```
 
 Parliamentary speech translation:

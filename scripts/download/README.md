@@ -55,6 +55,7 @@ scripts/download/magicdata_mandarin.sh
 scripts/download/st_cmds.sh
 scripts/download/thchs_30.sh
 scripts/download/primewords_chinese.sh
+scripts/download/pansori_tedxkr.sh
 scripts/download/golos.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
@@ -215,6 +216,10 @@ EUROPARL_ST_ARCHIVE_NAME=v1.0.tar.gz EUROPARL_ST_DOWNLOAD_ARCHIVE=1 scripts/down
 # TEDx Spanish saves the OpenSLR page by default. The 2.3 GiB archive is opt-in.
 TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh
 TEDX_SPANISH_OPENSLR_BASE_URL=https://openslr.elda.org/resources/67 TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh
+
+# Pansori-TEDxKR downloads the OpenSLR page, info, about page, and checksum by default.
+PANSORI_TEDXKR_DOWNLOAD_ARCHIVE=1 scripts/download/pansori_tedxkr.sh
+PANSORI_TEDXKR_OPENSLR_BASE_URL=https://openslr.elda.org/resources/58 PANSORI_TEDXKR_DOWNLOAD_ARCHIVE=1 scripts/download/pansori_tedxkr.sh
 
 # GigaSpeech is gated on Hugging Face and defaults to the dev config.
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh

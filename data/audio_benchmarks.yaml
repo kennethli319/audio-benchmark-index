@@ -798,6 +798,42 @@ benchmarks:
     sources:
       - https://www.openslr.org/67/
 
+  - id: pansori_tedxkr
+    name: Pansori-TEDxKR
+    full_name: "Pansori-TEDxKR: Korean Speech Corpus Generated from Korean Language TEDx Talks"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - korean_asr
+      - speech_transcription
+      - subtitle_aligned_speech_recognition
+    official:
+      openslr: https://www.openslr.org/58/
+      corpus_repo: https://github.com/yc9701/pansori-tedxkr-corpus
+      toolkit_repo: https://github.com/yc9701/pansori
+      paper_pdf: https://storage.googleapis.com/pansori/paper/pansori_asr_corpus_tool.pdf
+    download:
+      primary:
+        - https://www.openslr.org/58/
+        - https://openslr.trmal.net/resources/58/about.html
+        - https://openslr.trmal.net/resources/58/checksum.md5
+        - https://openslr.trmal.net/resources/58/info.txt
+        - https://openslr.trmal.net/resources/58/pansori-tedxkr-corpus-1.0.tar.gz
+      examples:
+        - 'scripts/download/pansori_tedxkr.sh'
+        - 'PANSORI_TEDXKR_DOWNLOAD_ARCHIVE=1 scripts/download/pansori_tedxkr.sh'
+      notes: OpenSLR SLR58 hosts about 3 hours of Korean TEDx speech from 41 speakers with subtitle-boundary segmentation and manual alignment checks. The helper downloads the OpenSLR page, about page, info, and checksum by default; the 174 MB corpus archive is opt-in.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_specified
+      notes: OpenSLR lists Creative Commons BY-NC-ND 4.0. The corpus is derived from TEDx talks, so downstream use should also respect TED/TEDx source terms and original media rights.
+    sources:
+      - https://www.openslr.org/58/
+      - https://www.openslr.org/resources/58/about.html
+      - https://github.com/yc9701/pansori-tedxkr-corpus
+      - https://github.com/yc9701/pansori
+      - https://storage.googleapis.com/pansori/paper/pansori_asr_corpus_tool.pdf
+
   - id: europarl_st
     name: Europarl-ST
     full_name: "Europarl-ST: A Multilingual Corpus for Speech Translation of Parliamentary Debates"
