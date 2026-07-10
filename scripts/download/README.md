@@ -40,6 +40,7 @@ scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
+scripts/download/libri_light.sh
 scripts/download/mls.sh
 scripts/download/mtedx.sh
 scripts/download/tedx_spanish.sh
@@ -123,6 +124,11 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech defaults to dev/test splits. Add large training splits explicitly.
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+
+# Libri-Light downloads official docs by default. Finetuning, ABX, and unlabeled archives are opt-in.
+LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh
+LIBRI_LIGHT_DOWNLOAD_ABX=1 scripts/download/libri_light.sh
+LIBRI_LIGHT_DOWNLOAD_UNLABELED=1 LIBRI_LIGHT_PARTS=small scripts/download/libri_light.sh
 
 # MLS downloads the OpenSLR page and checksums by default. Language archives are large and opt-in.
 MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS=polish MLS_FORMAT=opus scripts/download/mls.sh

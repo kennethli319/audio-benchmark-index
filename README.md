@@ -7,7 +7,8 @@ the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, speech translation,
 speech synthesis, speech dialogue, audio understanding, environmental sound,
 sound event detection, keyword spotting, speaker recognition, spoken language
-identification, speech instruction following, emotion, captioning, speech separation, speech enhancement, music tagging,
+identification, speech instruction following, self-supervised speech representation,
+emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
 verification anti-spoofing, speaker diarization, music synthesis, and spoken
 digit classification.
@@ -19,7 +20,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 78 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 79 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -73,6 +74,7 @@ Current coverage includes:
 | [SPGISpeech](https://huggingface.co/datasets/kensho/spgispeech) | ASR | [kensho/spgispeech](https://huggingface.co/datasets/kensho/spgispeech) after accepting Kensho/Hugging Face terms; helper defaults to `dev` | Gated terms allow academic research/internal use and prohibit redistribution without prior written consent |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
 | [LibriSpeech](https://www.openslr.org/12) | ASR | OpenSLR SLR12 tarballs or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr) | CC BY 4.0 |
+| [Libri-Light](https://github.com/facebookresearch/libri-light) | ASR and self-supervised speech representation | Official repository docs and Meta public-file archives; helper downloads docs by default and makes 0.6 GiB finetuning, ABX, and 35 GiB to 3.05 TiB unlabeled archives opt-in | Code is MIT; reviewed docs do not state a standalone data license, and audio comes from open-source LibriVox audiobooks with source-term/attribution caution |
 | [TIMIT](https://catalog.ldc.upenn.edu/LDC93S1) | ASR and phone recognition | LDC catalog [LDC93S1](https://catalog.ldc.upenn.edu/LDC93S1) or MS-WAV version [LDC93S1W](https://catalog.ldc.upenn.edu/LDC93S1W) after login/licensing; helper prints official access steps | Custom LDC license/paid access; portions copyright 1993 Trustees of the University of Pennsylvania |
 | [Switchboard](https://catalog.ldc.upenn.edu/LDC97S62) | Conversational telephone ASR | LDC catalog [LDC97S62](https://catalog.ldc.upenn.edu/LDC97S62) for Switchboard-1 Release 2 plus [LDC2002S09](https://catalog.ldc.upenn.edu/LDC2002S09) for 2000 HUB5 English Evaluation Speech; helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
 | [MLS](https://www.openslr.org/94/) | ASR | OpenSLR SLR94 links to Meta public-file archives for 8 LibriVox-derived languages; helper saves the page/checksums and downloads selected language archives only with opt-in | CC BY 4.0 |
@@ -161,6 +163,9 @@ OpenSLR:
 
 ```bash
 wget -P data/LibriSpeech https://www.openslr.org/resources/12/test-clean.tar.gz
+scripts/download/libri_light.sh
+LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh
+LIBRI_LIGHT_DOWNLOAD_UNLABELED=1 LIBRI_LIGHT_PARTS=small scripts/download/libri_light.sh
 scripts/download/aishell_1.sh
 AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh
 scripts/download/mls.sh
@@ -409,6 +414,7 @@ scripts/download/slurp.sh
 scripts/download/minds14.sh
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+scripts/download/libri_light.sh
 scripts/download/libritts.sh
 scripts/download/mls.sh
 scripts/download/vctk.sh

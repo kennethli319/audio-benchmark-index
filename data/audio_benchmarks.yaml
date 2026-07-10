@@ -884,6 +884,52 @@ benchmarks:
       - https://www.openslr.org/12
       - https://huggingface.co/datasets/openslr/librispeech_asr
 
+  - id: libri_light
+    name: Libri-Light
+    full_name: "Libri-Light: A Benchmark for ASR with Limited or No Supervision"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_representation_benchmark
+    tasks:
+      - automatic_speech_recognition
+      - self_supervised_speech_representation
+      - semi_supervised_asr
+      - unsupervised_speech_representation
+      - phone_recognition
+    official:
+      repo: https://github.com/facebookresearch/libri-light
+      data_preparation: https://github.com/facebookresearch/libri-light/blob/main/data_preparation/README.md
+      evaluation_docs: https://github.com/facebookresearch/libri-light/blob/main/eval/README.md
+      paper: https://arxiv.org/abs/1912.07875
+      icassp_paper: https://doi.org/10.1109/ICASSP40776.2020.9052942
+    download:
+      primary:
+        - https://github.com/facebookresearch/libri-light
+        - https://dl.fbaipublicfiles.com/librilight/data/librispeech_finetuning.tgz
+        - https://dl.fbaipublicfiles.com/librilight/data/ABX_data.tgz
+        - https://dl.fbaipublicfiles.com/librilight/data/small.tar
+        - https://dl.fbaipublicfiles.com/librilight/data/medium.tar
+        - https://dl.fbaipublicfiles.com/librilight/data/large.tar
+        - https://dl.fbaipublicfiles.com/librilight/data/duplicate.tar
+      examples:
+        - 'scripts/download/libri_light.sh'
+        - 'LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh'
+        - 'LIBRI_LIGHT_DOWNLOAD_ABX=1 scripts/download/libri_light.sh'
+        - 'LIBRI_LIGHT_DOWNLOAD_UNLABELED=1 LIBRI_LIGHT_PARTS=small scripts/download/libri_light.sh'
+      notes: The helper downloads official README/license/data-preparation/evaluation docs by default. Limited-supervision finetuning data is about 0.6 GiB, ABX item data is small, and unlabeled audio ranges from 35 GiB small to 321 GiB medium and 3.05 TiB large, so all data archives require explicit opt-in.
+    license:
+      data: not_specified
+      code: MIT
+      notes: The GitHub repository says Libri-Light code is MIT, but the reviewed README and data-preparation docs do not state a standalone data license. The paper describes the data as derived from open-source LibriVox audiobooks, so re-check per-source audiobook terms and attribution requirements before redistribution.
+    sources:
+      - https://github.com/facebookresearch/libri-light
+      - https://raw.githubusercontent.com/facebookresearch/libri-light/main/README.md
+      - https://raw.githubusercontent.com/facebookresearch/libri-light/main/data_preparation/README.md
+      - https://raw.githubusercontent.com/facebookresearch/libri-light/main/eval/README.md
+      - https://raw.githubusercontent.com/facebookresearch/libri-light/main/LICENSE
+      - https://arxiv.org/abs/1912.07875
+
   - id: timit
     name: TIMIT
     full_name: "TIMIT Acoustic-Phonetic Continuous Speech Corpus"
