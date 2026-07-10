@@ -765,6 +765,42 @@ benchmarks:
     sources:
       - https://www.openslr.org/67/
 
+  - id: europarl_st
+    name: Europarl-ST
+    full_name: "Europarl-ST: A Multilingual Corpus for Speech Translation of Parliamentary Debates"
+    qwen_cited_as: null
+    qwen_bucket: speech_to_text_translation
+    tasks:
+      - speech_to_text_translation
+      - speech_translation
+      - multilingual_asr
+      - parliamentary_speech_translation
+      - sentence_level_alignment
+    official:
+      homepage: https://www.mllp.upv.es/europarl-st/
+      paper: https://ieeexplore.ieee.org/document/9054626
+      arxiv: https://arxiv.org/abs/1911.03167
+      readme: https://www.mllp.upv.es/europarl-st/README.md
+    download:
+      primary:
+        - https://www.mllp.upv.es/europarl-st/
+        - https://www.mllp.upv.es/europarl-st/README.md
+        - https://www.mllp.upv.es/europarl-st/v1.1.tar.gz
+      examples:
+        - 'scripts/download/europarl_st.sh'
+        - 'EUROPARL_ST_DOWNLOAD_ARCHIVE=1 scripts/download/europarl_st.sh'
+      notes: The official page links release v1.1, which adds Romanian, Polish, and Dutch to German, English, Spanish, French, Italian, and Portuguese for 72 speech translation directions, plus a train-noisy set. The v1.1 archive is about 21 GB, so the helper downloads only the official page and README by default and requires EUROPARL_ST_DOWNLOAD_ARCHIVE=1 for the archive.
+    license:
+      data: cc-by-nc-4.0
+      code: not_applicable
+      notes: The official README says the work carried out to construct Europarl-ST is released under CC BY-NC 4.0, while all rights of the underlying data belong to the European Union and respective copyright holders. Re-check EU/European Parliament reuse terms before redistribution or commercial use.
+    sources:
+      - https://www.mllp.upv.es/europarl-st/
+      - https://www.mllp.upv.es/europarl-st/README.md
+      - https://www.mllp.upv.es/europarl-st/v1.1.tar.gz
+      - https://ieeexplore.ieee.org/document/9054626
+      - https://arxiv.org/abs/1911.03167
+
   - id: covost2
     name: CoVoST 2
     full_name: "CoVoST 2: Massively Multilingual Speech-to-Text Translation Corpus"
