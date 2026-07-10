@@ -1085,6 +1085,41 @@ benchmarks:
       - https://www.tensorflow.org/datasets/catalog/vctk
       - https://doi.org/10.1109/ICSDA.2013.6709856
 
+  - id: aishell_3
+    name: AISHELL-3
+    full_name: "AISHELL-3: A Multi-speaker Mandarin TTS Corpus and the Baselines"
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - text_to_speech
+      - speech_synthesis
+      - multi_speaker_speech_synthesis
+      - mandarin_speech_synthesis
+      - voice_cloning
+    official:
+      openslr: https://www.openslr.org/93/
+      external_url: http://www.aishelltech.com/aishell_3
+      baseline_page: https://sos1sos2sixteen.github.io/aishell3/
+      paper: https://arxiv.org/abs/2010.11567
+    download:
+      primary:
+        - https://www.openslr.org/93/
+        - https://openslr.trmal.net/resources/93/data_aishell3.tgz
+        - https://openslr.elda.org/resources/93/data_aishell3.tgz
+        - https://openslr.magicdatatech.com/resources/93/data_aishell3.tgz
+      examples:
+        - 'scripts/download/aishell_3.sh'
+        - 'AISHELL3_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_3.sh'
+      notes: OpenSLR lists one 19 GiB speech/transcript archive. The helper saves the official OpenSLR page by default and requires AISHELL3_DOWNLOAD_ARCHIVE=1 before downloading the archive.
+    license:
+      data: Apache-2.0
+      code: not_specified
+      notes: OpenSLR SLR93 lists Apache License v2.0 for the resource. The aishelltech external URL redirected but returned HTTP 429 during the 2026-07-09 check, so OpenSLR was used as the primary access page.
+    sources:
+      - https://www.openslr.org/93/
+      - https://arxiv.org/abs/2010.11567
+      - https://sos1sos2sixteen.github.io/aishell3/
+
   - id: wenetspeech
     name: WenetSpeech
     full_name: WenetSpeech

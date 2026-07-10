@@ -46,6 +46,7 @@ scripts/download/tedx_spanish.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
+scripts/download/aishell_3.sh
 scripts/download/magicdata_mandarin.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
@@ -132,6 +133,10 @@ LIBRITTS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/60 LIBRITTS_DOWNLOA
 # LJSpeech saves the dataset page by default. The 2.6 GiB archive is opt-in.
 LJSPEECH_DOWNLOAD_ARCHIVE=1 scripts/download/ljspeech.sh
 LJSPEECH_ARCHIVE_URL=https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2 scripts/download/ljspeech.sh
+
+# AISHELL-3 saves the OpenSLR page by default. The 19 GiB archive is opt-in.
+AISHELL3_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_3.sh
+AISHELL3_OPENSLR_BASE_URL=https://openslr.elda.org/resources/93 AISHELL3_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_3.sh
 
 # AISHELL-1 downloads OpenSLR metadata/resources by default. The 15 GiB corpus is opt-in.
 AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh
