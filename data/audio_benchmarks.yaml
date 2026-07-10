@@ -2367,6 +2367,45 @@ benchmarks:
       - https://www.sciencedirect.com/science/article/pii/S0016003223007536
       - https://arxiv.org/abs/1807.03418
 
+  - id: vocalsound
+    name: VocalSound
+    full_name: "VocalSound: A Dataset for Improving Human Vocal Sounds Recognition"
+    qwen_cited_as: null
+    qwen_bucket: human_vocal_sound_classification
+    tasks:
+      - human_vocal_sound_classification
+      - vocalization_recognition
+      - audio_classification
+      - demographic_bias_evaluation
+    official:
+      repo: https://github.com/YuanGongND/vocalsound
+      paper: https://arxiv.org/abs/2205.03433
+      ieee_paper: https://doi.org/10.1109/ICASSP43922.2022.9746828
+      readme: https://raw.githubusercontent.com/YuanGongND/vocalsound/main/README.md
+      colab: https://colab.research.google.com/github/YuanGongND/vocalsound/blob/main/colab/VocalSound.ipynb
+      papers_with_code: https://paperswithcode.com/dataset/vocalsound
+    download:
+      primary:
+        - https://www.dropbox.com/s/c5ace70qh1vbyzb/vs_release_16k.zip?dl=1
+        - https://www.dropbox.com/s/ybgaprezl8ubcce/vs_release_44k.zip?dl=1
+        - https://github.com/YuanGongND/vocalsound
+      examples:
+        - 'scripts/download/vocalsound.sh'
+        - 'VOCALSOUND_DOWNLOAD_ARCHIVE=1 VOCALSOUND_SAMPLE_RATE=16k scripts/download/vocalsound.sh'
+        - 'VOCALSOUND_DOWNLOAD_ARCHIVE=1 VOCALSOUND_SAMPLE_RATE=44k scripts/download/vocalsound.sh'
+      notes: The official README describes 21,024 crowdsourced recordings from 3,365 subjects covering laughter, sighs, coughs, throat clearing, sneezes, and sniffs, with speaker metadata such as age, gender, native language, country, and health condition. The helper saves official documentation by default and requires VOCALSOUND_DOWNLOAD_ARCHIVE=1 before downloading the 1.7 GiB 16 kHz or 4.5 GiB 44.1 kHz ZIP.
+    license:
+      data: cc-by-sa-4.0
+      code: not_specified
+      notes: The official README includes a Creative Commons BY-SA 4.0 notice for the VocalSound dataset. GitHub API reports no repository-level license, so the code/baseline license is not specified; re-check before redistributing code or derived data.
+    sources:
+      - https://github.com/YuanGongND/vocalsound
+      - https://raw.githubusercontent.com/YuanGongND/vocalsound/main/README.md
+      - https://api.github.com/repos/YuanGongND/vocalsound
+      - https://arxiv.org/abs/2205.03433
+      - https://doi.org/10.1109/ICASSP43922.2022.9746828
+      - https://paperswithcode.com/dataset/vocalsound
+
   - id: emov_db
     name: EmoV-DB
     full_name: "The Emotional Voices Database: Towards Controlling the Emotional Expressiveness in Voice Generation Systems"
