@@ -2097,6 +2097,49 @@ benchmarks:
       - https://raw.githubusercontent.com/hche11/VGGSound/master/LICENCE.txt
       - https://arxiv.org/abs/2004.14368
 
+  - id: epic_sounds
+    name: EPIC-SOUNDS
+    full_name: "EPIC-SOUNDS: A Large-Scale Dataset of Actions that Sound"
+    qwen_cited_as: null
+    qwen_bucket: audio_event_classification
+    tasks:
+      - egocentric_audio_event_recognition
+      - sound_event_detection
+      - audio_visual_understanding
+      - action_sound_recognition
+    official:
+      homepage: https://epic-kitchens.github.io/epic-sounds/site
+      dataset_landing: https://epic-kitchens.github.io/epic-sounds/
+      annotations_repo: https://github.com/epic-kitchens/epic-sounds-annotations
+      icassp_paper: https://ieeexplore.ieee.org/document/10096198
+      tpami_paper: https://ieeexplore.ieee.org/document/11084841
+      epic_kitchens_download_scripts: https://github.com/epic-kitchens/download-scripts-100
+      auditory_slowfast_repo: https://github.com/ekazakos/auditory-slow-fast
+    download:
+      primary:
+        - https://github.com/epic-kitchens/epic-sounds-annotations
+        - https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/EPIC_Sounds_train.csv
+        - https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/EPIC_Sounds_validation.csv
+        - https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/EPIC_Sounds_recognition_test_timestamps.csv
+        - https://github.com/epic-kitchens/download-scripts-100
+      examples:
+        - 'scripts/download/epic_sounds.sh'
+        - 'EPIC_SOUNDS_CLONE_ANNOTATIONS=1 scripts/download/epic_sounds.sh'
+      notes: The helper downloads official docs and public annotation CSV files by default. Raw audio is not redistributed separately; the official README says to download EPIC-KITCHENS-100 videos and extract audio, or email the maintainers for access to an existing HDF5 file.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: The annotation README states all dataset files are published under Creative Commons Attribution-NonCommercial 4.0 International. Raw audio is derived from EPIC-KITCHENS-100 video recordings, so original dataset access terms and any HDF5 access approval should be checked before redistribution or commercial use.
+    sources:
+      - https://epic-kitchens.github.io/epic-sounds/site
+      - https://github.com/epic-kitchens/epic-sounds-annotations
+      - https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/README.md
+      - https://api.github.com/repos/epic-kitchens/epic-sounds-annotations/contents/
+      - https://github.com/epic-kitchens/download-scripts-100
+      - https://github.com/ekazakos/auditory-slow-fast
+      - https://ieeexplore.ieee.org/document/10096198
+      - https://ieeexplore.ieee.org/document/11084841
+
   - id: fsd50k
     name: FSD50K
     full_name: "FSD50K: An Open Dataset of Human-Labeled Sound Events"

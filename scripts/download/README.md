@@ -68,6 +68,7 @@ scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
 scripts/download/audioset.sh
 scripts/download/vggsound.sh
+scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
 scripts/download/desed.sh
@@ -312,6 +313,9 @@ AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
 
 # VGGSound downloads official CSV metadata/license by default. Model files are opt-in.
 VGGSOUND_DOWNLOAD_MODELS=1 scripts/download/vggsound.sh
+
+# EPIC-SOUNDS downloads official docs and public annotation CSVs by default.
+EPIC_SOUNDS_CLONE_ANNOTATIONS=1 scripts/download/epic_sounds.sh
 
 # FSD50K downloads docs, labels, and metadata by default. Audio is about 31 GiB.
 FSD50K_DOWNLOAD_AUDIO=1 scripts/download/fsd50k.sh
