@@ -1212,6 +1212,47 @@ benchmarks:
       - https://www.openslr.org/68/
       - http://www.imagicdatatech.com/index.php/home/dataopensource/data_info/id/101
 
+  - id: golos
+    name: Golos
+    full_name: "Golos: Russian Dataset for Speech Research"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - russian_speech_recognition
+      - far_field_speech_recognition
+      - language_modeling
+    official:
+      openslr: https://www.openslr.org/114/
+      repo: https://github.com/sberdevices/golos
+      paper: https://arxiv.org/abs/2106.10161
+      license_en: https://github.com/sberdevices/golos/blob/master/license/en_us.pdf
+      license_ru: https://github.com/sberdevices/golos/blob/master/license/ru.pdf
+    download:
+      primary:
+        - https://www.openslr.org/114/
+        - https://openslr.trmal.net/resources/114/golos_opus.tar.gz
+        - https://openslr.trmal.net/resources/114/QuartzNet15x5_golos.nemo.gz
+        - https://openslr.trmal.net/resources/114/kenlms.tar.gz
+        - https://raw.githubusercontent.com/sberdevices/golos/master/md5sum.txt
+      examples:
+        - 'scripts/download/golos.sh'
+        - 'GOLOS_DOWNLOAD_OPUS=1 scripts/download/golos.sh'
+        - 'GOLOS_DOWNLOAD_MODEL=1 scripts/download/golos.sh'
+        - 'GOLOS_DOWNLOAD_LMS=1 scripts/download/golos.sh'
+      notes: OpenSLR SLR114 mirrors an 18 GiB Opus archive with Russian speech and transcripts, a 71 MiB QuartzNet acoustic model, and 4.7 GiB KenLM language models. The helper saves the OpenSLR page, README, checksums, and license PDFs by default and requires explicit opt-ins before downloading large archives.
+    license:
+      data: custom_golos_license
+      code: not_specified
+      notes: OpenSLR points to SberDevices' English and Russian PDF license files rather than an SPDX-style open license. Re-check those PDFs before redistribution, commercial use, or training release claims.
+    sources:
+      - https://www.openslr.org/114/
+      - https://github.com/sberdevices/golos
+      - https://raw.githubusercontent.com/sberdevices/golos/master/README.md
+      - https://raw.githubusercontent.com/sberdevices/golos/master/md5sum.txt
+      - https://github.com/sberdevices/golos/blob/master/license/en_us.pdf
+      - https://arxiv.org/abs/2106.10161
+
   - id: kespeech
     name: KeSpeech
     full_name: "KeSpeech: An Open Source Speech Dataset of Mandarin and Its Eight Subdialects"

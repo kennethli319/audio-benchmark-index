@@ -48,6 +48,7 @@ scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
 scripts/download/aishell_3.sh
 scripts/download/magicdata_mandarin.sh
+scripts/download/golos.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
 scripts/download/mir_1k_vocal.sh
@@ -145,6 +146,12 @@ AISHELL1_OPENSLR_BASE_URL=https://openslr.elda.org/resources/33 AISHELL1_DOWNLOA
 # MAGICDATA downloads the OpenSLR page and metadata by default. The speech archives are large and opt-in.
 MAGICDATA_DOWNLOAD_ARCHIVES=1 MAGICDATA_PARTS="dev test" scripts/download/magicdata_mandarin.sh
 MAGICDATA_OPENSLR_BASE_URL=https://openslr.elda.org/resources/68 MAGICDATA_DOWNLOAD_ARCHIVES=1 scripts/download/magicdata_mandarin.sh
+
+# Golos downloads OpenSLR/GitHub metadata, checksums, and license PDFs by default.
+GOLOS_DOWNLOAD_OPUS=1 scripts/download/golos.sh
+GOLOS_DOWNLOAD_MODEL=1 scripts/download/golos.sh
+GOLOS_DOWNLOAD_LMS=1 scripts/download/golos.sh
+GOLOS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/114 GOLOS_DOWNLOAD_MODEL=1 scripts/download/golos.sh
 
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh
