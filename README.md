@@ -19,7 +19,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-09. Current index size: 77 distinct benchmarks
+Last checked: 2026-07-09. Current index size: 78 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -80,6 +80,7 @@ Current coverage includes:
 | [LJSpeech](https://keithito.com/LJ-Speech-Dataset/) | Speech synthesis | Official 2.6 GiB archive or [keithito/lj_speech](https://huggingface.co/datasets/keithito/lj_speech); helper downloads the dataset page by default and archive only with opt-in | Public domain; HF mirror lists `unlicense` |
 | [VCTK](https://datashare.ed.ac.uk/handle/10283/3443) | Speech synthesis | Official DataShare README/license files by default; 10.94 GiB corpus ZIP is opt-in | CC BY 4.0 |
 | [AISHELL-3](https://www.openslr.org/93/) | Speech synthesis | [OpenSLR SLR93](https://www.openslr.org/93/) page by default; 19 GiB Mandarin multi-speaker TTS archive is opt-in | OpenSLR lists Apache License v2.0 |
+| [Hi-Fi TTS](https://www.openslr.org/109/) | Speech synthesis | [OpenSLR SLR109](https://www.openslr.org/109/) page by default; 39-41 GiB multi-speaker English TTS archive is opt-in | OpenSLR lists CC BY 4.0; derived from public-domain LibriVox audio and Project Gutenberg text |
 | [WenetSpeech](https://github.com/wenet-e2e/WenetSpeech) | ASR | Apply for password on the [official site](https://wenet-e2e.github.io/WenetSpeech/), then use repo scripts | Non-commercial use under CC BY 4.0; original audio copyrights remain with owners |
 | [AISHELL-1](https://www.openslr.org/33/) | ASR | [OpenSLR SLR33](https://www.openslr.org/33/) supplementary resources by default; 15 GiB Mandarin speech/transcript archive is opt-in | OpenSLR lists Apache License v2.0 and also says the data is free for academic use |
 | [MAGICDATA Mandarin](https://www.openslr.org/68/) | ASR and speaker recognition | [OpenSLR SLR68](https://www.openslr.org/68/) metadata by default; 52 GiB train, 1.0 GiB dev, and 2.2 GiB test archives are opt-in | CC BY-NC-ND 4.0; OpenSLR says freely published for non-commercial or academic use |
@@ -283,6 +284,8 @@ scripts/download/vctk.sh
 VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh
 scripts/download/aishell_3.sh
 AISHELL3_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_3.sh
+scripts/download/hifitts.sh
+HIFITTS_DOWNLOAD_ARCHIVE=1 scripts/download/hifitts.sh
 ```
 
 Meeting ASR:

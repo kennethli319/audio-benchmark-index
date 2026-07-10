@@ -47,6 +47,7 @@ scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
 scripts/download/aishell_3.sh
+scripts/download/hifitts.sh
 scripts/download/magicdata_mandarin.sh
 scripts/download/golos.sh
 scripts/download/voxpopuli.sh
@@ -138,6 +139,10 @@ LJSPEECH_ARCHIVE_URL=https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2 
 # AISHELL-3 saves the OpenSLR page by default. The 19 GiB archive is opt-in.
 AISHELL3_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_3.sh
 AISHELL3_OPENSLR_BASE_URL=https://openslr.elda.org/resources/93 AISHELL3_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_3.sh
+
+# Hi-Fi TTS saves the OpenSLR page by default. The 39-41 GiB archive is opt-in.
+HIFITTS_DOWNLOAD_ARCHIVE=1 scripts/download/hifitts.sh
+HIFITTS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/109 HIFITTS_DOWNLOAD_ARCHIVE=1 scripts/download/hifitts.sh
 
 # AISHELL-1 downloads OpenSLR metadata/resources by default. The 15 GiB corpus is opt-in.
 AISHELL1_DOWNLOAD_ARCHIVE=1 scripts/download/aishell_1.sh

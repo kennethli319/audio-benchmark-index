@@ -1120,6 +1120,38 @@ benchmarks:
       - https://arxiv.org/abs/2010.11567
       - https://sos1sos2sixteen.github.io/aishell3/
 
+  - id: hifitts
+    name: Hi-Fi TTS
+    full_name: "Hi-Fi Multi-Speaker English TTS Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - text_to_speech
+      - speech_synthesis
+      - multi_speaker_speech_synthesis
+      - high_fidelity_speech_synthesis
+      - voice_cloning
+    official:
+      openslr: https://www.openslr.org/109/
+      paper: https://arxiv.org/abs/2104.01497
+    download:
+      primary:
+        - https://www.openslr.org/109/
+        - https://openslr.trmal.net/resources/109/hi_fi_tts_v0.tar.gz
+        - https://openslr.elda.org/resources/109/hi_fi_tts_v0.tar.gz
+        - https://openslr.magicdatatech.com/resources/109/hi_fi_tts_v0.tar.gz
+      examples:
+        - 'scripts/download/hifitts.sh'
+        - 'HIFITTS_DOWNLOAD_ARCHIVE=1 scripts/download/hifitts.sh'
+      notes: OpenSLR lists one 39-41 GiB speech/text archive. The helper saves the official OpenSLR page by default and requires HIFITTS_DOWNLOAD_ARCHIVE=1 before downloading the archive.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: OpenSLR SLR109 lists CC BY 4.0. The corpus is based on public-domain LibriVox audiobooks and Project Gutenberg texts, but downstream users should still preserve attribution and check packaged metadata.
+    sources:
+      - https://www.openslr.org/109/
+      - https://arxiv.org/abs/2104.01497
+
   - id: wenetspeech
     name: WenetSpeech
     full_name: WenetSpeech
