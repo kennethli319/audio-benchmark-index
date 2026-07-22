@@ -183,6 +183,10 @@ TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_s
 AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh
 AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
 
+# Daily-Omni downloads docs and QA metadata by default; its approximately 3.9 GB media snapshot is opt-in.
+DAILY_OMNI_DOWNLOAD_HF=1 scripts/download/daily_omni.sh
+DAILY_OMNI_CLONE_REPO=1 scripts/download/daily_omni.sh
+
 # OmniGAIA downloads docs and test metadata by default; the approximately 9.9 GB media snapshot is opt-in.
 OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh
 OMNIGAIA_CLONE_REPO=1 scripts/download/omnigaia.sh

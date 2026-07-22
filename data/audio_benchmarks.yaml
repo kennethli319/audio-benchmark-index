@@ -199,6 +199,45 @@ benchmarks:
       - https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
       - https://arxiv.org/abs/2203.14072
 
+  - id: daily_omni
+    name: Daily-Omni
+    full_name: "Daily-Omni: Towards Audio-Visual Reasoning with Temporal Alignment across Modalities"
+    qwen_cited_as: DailyOmni
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - temporal_alignment
+      - cross_modal_reasoning
+      - audio_visual_event_reasoning
+    official:
+      homepage: https://lliar-liar.github.io/Daily-Omni/
+      repo: https://github.com/Lliar-liar/Daily-Omni
+      paper: https://arxiv.org/abs/2505.17862
+      dataset: https://huggingface.co/datasets/liarliar/Daily-Omni
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/liarliar/Daily-Omni
+        - https://github.com/Lliar-liar/Daily-Omni
+      examples:
+        - 'scripts/download/daily_omni.sh'
+        - 'DAILY_OMNI_DOWNLOAD_HF=1 scripts/download/daily_omni.sh'
+      notes: The public, ungated release contains 684 real-world videos and 1,197 English multiple-choice questions across six temporal audio-visual reasoning tasks. The helper downloads official documentation and qa.json by default; the Hugging Face API reports approximately 3.9 GB of storage, so Videos.tar requires DAILY_OMNI_DOWNLOAD_HF=1. Qwen3.5-Omni reports DailyOmni in section 5.1.4, Table 7.
+    license:
+      data: CC-BY-NC-SA-4.0
+      code: GPL-3.0
+      notes: The paper and Hugging Face card declare CC BY-NC-SA 4.0 for the benchmark, and GitHub reports GPL-3.0 for the repository. Videos are sampled from AudioSet, Video-MME, and FineVideo, so their upstream media rights and terms also require review.
+    sources:
+      - https://lliar-liar.github.io/Daily-Omni/
+      - https://github.com/Lliar-liar/Daily-Omni
+      - https://raw.githubusercontent.com/Lliar-liar/Daily-Omni/main/README.md
+      - https://api.github.com/repos/Lliar-liar/Daily-Omni
+      - https://huggingface.co/datasets/liarliar/Daily-Omni
+      - https://huggingface.co/datasets/liarliar/Daily-Omni/raw/main/README.md
+      - https://huggingface.co/api/datasets/liarliar/Daily-Omni
+      - https://arxiv.org/abs/2505.17862
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: av_speakerbench
     name: AV-SpeakerBench
     full_name: "See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models"
