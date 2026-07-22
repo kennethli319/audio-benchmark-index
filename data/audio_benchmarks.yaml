@@ -3294,6 +3294,43 @@ benchmarks:
       - https://zenodo.org/records/3685828
       - https://arxiv.org/abs/2005.14623
 
+  - id: tau_asc_2022_mobile
+    name: TAU Urban Acoustic Scenes 2022 Mobile
+    full_name: "TAU Urban Acoustic Scenes 2022 Mobile Development and 2025 Evaluation datasets"
+    qwen_cited_as: null
+    qwen_bucket: acoustic_scene_classification
+    tasks:
+      - acoustic_scene_classification
+      - device_robust_audio_classification
+      - low_complexity_audio_classification
+    official:
+      dcase2025_task: https://dcase.community/challenge2025/task-low-complexity-acoustic-scene-classification-with-device-information
+      development_record: https://zenodo.org/records/6337421
+      evaluation_record: https://zenodo.org/records/15517945
+      development_doi: https://doi.org/10.5281/zenodo.6337421
+      evaluation_doi: https://doi.org/10.5281/zenodo.15517945
+    download:
+      primary:
+        - https://zenodo.org/records/6337421
+        - https://zenodo.org/records/15517945
+        - https://zenodo.org/api/records/6337421/files/TAU-urban-acoustic-scenes-2022-mobile-development.meta.zip/content
+        - https://zenodo.org/api/records/15517945/files/TAU-urban-acoustic-scenes-2025-mobile-evaluation.meta.zip/content
+      examples:
+        - 'scripts/download/tau_asc_2022_mobile.sh'
+        - 'TAU_ASC2022_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2022_mobile.sh'
+        - 'TAU_ASC2022_DOWNLOAD_EVAL_AUDIO=1 scripts/download/tau_asc_2022_mobile.sh'
+      notes: The helper downloads both Zenodo record JSON files plus the small doc/meta ZIPs by default. The 64-hour development release contains about 25.6 GiB across 16 audio ZIPs; the DCASE 2025 evaluation release contains about 19.2 GiB across 12 audio ZIPs, so each audio collection is an explicit opt-in. DCASE 2025 Task 1 reuses a restricted subset of the 2022 development data with a new split and adds the 2025 evaluation release.
+    license:
+      data: other_non_commercial
+      code: not_applicable
+      notes: Both official Zenodo records list "Other (Non-Commercial)" without a more specific SPDX-style license. Review the record and DCASE task terms before redistribution or commercial use.
+    sources:
+      - https://dcase.community/challenge2025/task-low-complexity-acoustic-scene-classification-with-device-information
+      - https://zenodo.org/records/6337421
+      - https://zenodo.org/api/records/6337421
+      - https://zenodo.org/records/15517945
+      - https://zenodo.org/api/records/15517945
+
   - id: audioset
     name: AudioSet
     full_name: "Audio Set: An ontology and human-labeled dataset for audio events"

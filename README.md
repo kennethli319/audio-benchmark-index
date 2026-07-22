@@ -28,7 +28,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 159 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 160 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -171,6 +171,7 @@ Current coverage includes:
 | [UrbanSound8K](https://urbansounddataset.weebly.com/urbansound8k.html) | Environmental sound classification | [Zenodo archive](https://zenodo.org/records/1203745) or the official browser/Python download page | Zenodo lists CC BY-NC 4.0; official site says free for non-commercial use under Creative Commons BY-NC 3.0 |
 | [TAU Urban Acoustic Scenes 2019](https://dcase.community/challenge2019/task-acoustic-scene-classification) | Acoustic scene classification | [Development Zenodo record](https://zenodo.org/records/2589280); helper downloads doc/meta files by default and makes 21 audio shards opt-in | Zenodo record lists `Other (Non-Commercial)` without a more specific SPDX-style license |
 | [TAU Urban Acoustic Scenes 2020 Mobile](https://dcase.community/challenge2020/task-acoustic-scene-classification) | Acoustic scene classification | [Development](https://zenodo.org/records/3670167) and [evaluation](https://zenodo.org/records/3685828) Zenodo records; helper downloads doc/meta files by default and makes multi-GB audio archives opt-in | Zenodo records list `Other (Non-Commercial)` without a more specific SPDX-style license |
+| [TAU Urban Acoustic Scenes 2022 Mobile](https://dcase.community/challenge2025/task-low-complexity-acoustic-scene-classification-with-device-information) | Device-robust, low-complexity acoustic scene classification | Public [2022 development](https://zenodo.org/records/6337421) and [2025 evaluation](https://zenodo.org/records/15517945) releases used by DCASE 2025 Task 1; helper downloads docs/metadata by default while roughly 44.8 GiB of audio is opt-in | Both Zenodo records list `Other (Non-Commercial)` without a more specific SPDX-style license |
 | [AudioSet](https://research.google.com/audioset/) | Audio event classification | Official [CSV metadata](https://research.google.com/audioset/download.html) and optional precomputed features archive | Dataset annotations/features are CC BY 4.0; ontology is CC BY-SA 4.0; original YouTube media terms still apply |
 | [VGGSound](https://www.robots.ox.ac.uk/~vgg/data/vggsound/) | Audio-visual event classification | Official [CSV metadata](https://github.com/hche11/VGGSound/blob/master/data/vggsound.csv) with YouTube IDs, start times, labels, and split; helper fetches metadata/license only by default | CC BY 4.0 for the dataset metadata/release; original video copyright and YouTube availability/terms still apply |
 | [AVE](https://github.com/YapengTian/AVE-ECCV18) | Audio-visual event localization | Official [project page](https://sites.google.com/view/audiovisualresearch), [ECCV repo](https://github.com/YapengTian/AVE-ECCV18), and Google Drive dataset/features links; helper saves docs by default and can clone the repo | Dataset and code licenses are not specified in the official repo; unconstrained source videos and Drive-hosted features require upstream-term review |
@@ -366,6 +367,8 @@ scripts/download/tau_asc_2019.sh
 TAU_ASC2019_DOWNLOAD_AUDIO=1 TAU_ASC2019_AUDIO_PARTS="1 2 21" scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
 TAU_ASC2020_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh
+scripts/download/tau_asc_2022_mobile.sh
+TAU_ASC2022_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2022_mobile.sh
 ```
 
 Audio event metadata:

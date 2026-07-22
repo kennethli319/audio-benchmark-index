@@ -85,6 +85,7 @@ scripts/download/spuraudio.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
+scripts/download/tau_asc_2022_mobile.sh
 scripts/download/audioset.sh
 scripts/download/vggsound.sh
 scripts/download/ave.sh
@@ -480,6 +481,11 @@ TAU_ASC2019_DOWNLOAD_AUDIO=1 TAU_ASC2019_AUDIO_PARTS="1 2 21" scripts/download/t
 # TAU ASC 2020 Mobile downloads doc/meta ZIPs by default. Audio is split across large archives.
 TAU_ASC2020_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh
 TAU_ASC2020_DOWNLOAD_EVAL_AUDIO=1 scripts/download/tau_asc_2020_mobile.sh
+
+# TAU ASC 2022/2025 downloads record JSON plus doc/meta ZIPs by default.
+# Development (16 audio parts) and evaluation (12 parts) are separate opt-ins.
+TAU_ASC2022_DOWNLOAD_DEV_AUDIO=1 scripts/download/tau_asc_2022_mobile.sh
+TAU_ASC2022_DOWNLOAD_EVAL_AUDIO=1 scripts/download/tau_asc_2022_mobile.sh
 
 # AudioSet downloads CSV metadata by default. Features are about 2.4 GiB.
 AUDIOSET_DOWNLOAD_FEATURES=1 AUDIOSET_REGION=us scripts/download/audioset.sh
