@@ -83,6 +83,7 @@ scripts/download/starss22.sh
 scripts/download/starss23.sh
 scripts/download/locata.sh
 scripts/download/spatial_librispeech.sh
+scripts/download/tau_nigens_sse_2020.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
@@ -209,6 +210,10 @@ LOCATA_CLONE_TOOLS=1 scripts/download/locata.sh
 SPATIAL_LIBRISPEECH_DOWNLOAD_METADATA=1 scripts/download/spatial_librispeech.sh
 SPATIAL_LIBRISPEECH_SAMPLE_ID=0 scripts/download/spatial_librispeech.sh
 SPATIAL_LIBRISPEECH_SAMPLE_ID=0 SPATIAL_LIBRISPEECH_DOWNLOAD_NOISE_SAMPLE=1 scripts/download/spatial_librispeech.sh
+
+# TAU-NIGENS SSE 2020 downloads official docs by default. The small label
+# archives are opt-in; its approximately 14.0 GB audio release stays on Zenodo.
+TAU_NIGENS_SSE_2020_DOWNLOAD_METADATA=1 scripts/download/tau_nigens_sse_2020.sh
 
 # Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
 MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh
