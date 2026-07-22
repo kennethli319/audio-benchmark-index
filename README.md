@@ -14,7 +14,8 @@ identification, speech instruction following, self-supervised speech representat
 emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
 verification anti-spoofing, speaker diarization, music synthesis, speech quality
-assessment, spoken digit classification, instruction-based speech editing, and
+assessment, spatial audio localization, spoken digit classification,
+instruction-based speech editing, and
 few-shot robustness under foreground/background shifts.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
@@ -24,7 +25,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-21. Current index size: 126 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 127 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -154,6 +155,7 @@ Current coverage includes:
 | [AudioSet](https://research.google.com/audioset/) | Audio event classification | Official [CSV metadata](https://research.google.com/audioset/download.html) and optional precomputed features archive | Dataset annotations/features are CC BY 4.0; ontology is CC BY-SA 4.0; original YouTube media terms still apply |
 | [VGGSound](https://www.robots.ox.ac.uk/~vgg/data/vggsound/) | Audio-visual event classification | Official [CSV metadata](https://github.com/hche11/VGGSound/blob/master/data/vggsound.csv) with YouTube IDs, start times, labels, and split; helper fetches metadata/license only by default | CC BY 4.0 for the dataset metadata/release; original video copyright and YouTube availability/terms still apply |
 | [AVE](https://github.com/YapengTian/AVE-ECCV18) | Audio-visual event localization | Official [project page](https://sites.google.com/view/audiovisualresearch), [ECCV repo](https://github.com/YapengTian/AVE-ECCV18), and Google Drive dataset/features links; helper saves docs by default and can clone the repo | Dataset and code licenses are not specified in the official repo; unconstrained source videos and Drive-hosted features require upstream-term review |
+| [STARSS23](https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes) | Spatial sound-event localization and detection | Public [Zenodo v1.1.0](https://zenodo.org/records/7880637) development/evaluation release with 4-channel spatial audio, synchronized 360-degree video, and spatiotemporal labels; helper downloads official metadata only because the archive is 16.3 GB | DataCite lists MIT for the dataset; the audio-only baseline has no detected license while Sony's audiovisual baseline is MIT; DCASE says video participants consented and visible faces were blurred |
 | [EPIC-SOUNDS](https://epic-kitchens.github.io/epic-sounds/site) | Egocentric audio event recognition | Official [annotation repository](https://github.com/epic-kitchens/epic-sounds-annotations) with public train/validation/test timestamp CSVs; helper downloads docs/CSV annotations by default while raw audio follows EPIC-KITCHENS-100 access/extraction steps | Annotation README states CC BY-NC 4.0; raw audio derives from EPIC-KITCHENS-100 videos and may require separate access/HDF5 approval |
 | [FSD50K](https://fsannotator.upf.edu/fsd/release/FSD50K/) | Audio event classification | [Zenodo record](https://zenodo.org/records/4060432); helper downloads docs/labels/metadata by default and audio only with opt-in | Mixed Creative Commons: per-clip Freesound licenses include CC0, CC-BY, CC-BY-NC, and CC Sampling+; curated dataset is CC BY with upstream caveats |
 | [FSDKaggle2018](https://zenodo.org/records/2552860) | Audio event classification | [Zenodo record](https://zenodo.org/records/2552860) for docs, metadata, train audio, and test audio; helper downloads docs/metadata by default and audio only with opt-in | Zenodo license id is `other-at`; dataset curation is CC BY, while individual Freesound clips keep per-clip Creative Commons licenses in the metadata |

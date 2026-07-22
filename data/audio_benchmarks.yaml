@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-21
+  last_checked: 2026-07-22
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -4739,3 +4739,45 @@ benchmarks:
       - https://zenodo.org/api/records/4835108
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
+
+  - id: starss23
+    name: STARSS23
+    full_name: "STARSS23: Sony-TAu Realistic Spatial Soundscapes 2023"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_event_localization_and_detection
+      - sound_source_localization
+      - spatial_audio_understanding
+      - audio_visual_sound_event_localization
+      - acoustic_source_tracking
+      - source_distance_estimation
+    official:
+      dcase_task: https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes
+      zenodo_record: https://zenodo.org/records/7880637
+      doi: https://doi.org/10.5281/zenodo.7880637
+      paper: https://arxiv.org/abs/2306.09126
+      baseline_repo: https://github.com/sharathadavanne/seld-dcase2023
+      audiovisual_baseline_repo: https://github.com/sony/audio-visual-seld-dcase2023
+    download:
+      primary:
+        - https://zenodo.org/records/7880637
+        - https://doi.org/10.5281/zenodo.7880637
+        - https://api.datacite.org/dois/10.5281/zenodo.7880637
+        - https://github.com/sharathadavanne/seld-dcase2023
+      examples:
+        - 'scripts/download/starss23.sh'
+        - 'STARSS23_CLONE_BASELINE=1 scripts/download/starss23.sh'
+      notes: The public Zenodo v1.1.0 release contains the complete DCASE 2023 development and evaluation data (16.3 GB), with 4-channel FOA and tetrahedral-microphone audio, synchronized 360-degree video for all but 12 audio clips, and temporal, direction-of-arrival, and distance annotations. The helper downloads official task, DOI, paper, and baseline metadata only; use the Zenodo record for the large archive.
+    license:
+      data: MIT
+      code: mixed
+      notes: DataCite metadata for both Zenodo v1.0.0 and v1.1.0 identifies the dataset license as MIT. The audio-only baseline repository has no LICENSE file and the GitHub API reports no detected license; Sony's audiovisual baseline is MIT. DCASE says participants consented to the released 360-degree videos and visible faces were blurred, but the active record and privacy context should still be reviewed before sensitive visual use.
+    sources:
+      - https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes
+      - https://api.datacite.org/dois/10.5281/zenodo.7880637
+      - https://zenodo.org/records/7880637
+      - https://arxiv.org/abs/2306.09126
+      - https://github.com/sharathadavanne/seld-dcase2023
+      - https://api.github.com/repos/sharathadavanne/seld-dcase2023
+      - https://github.com/sony/audio-visual-seld-dcase2023
