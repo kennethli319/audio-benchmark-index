@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 155 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 156 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Audio Benchmark Index">
@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="155 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="156 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -378,15 +378,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 155 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 156 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>155</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>155</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>156</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>156</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>21</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-22">July 22, 2026</time></strong></div>
       </div>
@@ -410,7 +410,7 @@
       <div class="family-grid">
         <button class="family-tile" type="button" data-family-choice="speech-recognition">
   <span>Speech recognition</span>
-  <strong>35</strong>
+  <strong>36</strong>
   <small>ASR, meeting transcription, and accented speech</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-generation">
@@ -430,12 +430,12 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speaker-human">
   <span>Speaker, identity &amp; emotion</span>
-  <strong>36</strong>
+  <strong>37</strong>
   <small>Speaker recognition, diarization, anti-spoofing, and emotion</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality">
   <span>Enhancement, separation &amp; quality</span>
-  <strong>16</strong>
+  <strong>17</strong>
   <small>Denoising, source separation, and perceptual quality</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="representation">
@@ -458,7 +458,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 155 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 156 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -528,7 +528,7 @@
       </form>
 
       <div class="results-bar">
-        <p id="result-status" role="status" aria-live="polite">Showing 155 of 155 benchmarks.</p>
+        <p id="result-status" role="status" aria-live="polite">Showing 156 of 156 benchmarks.</p>
         <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
       </div>
 
@@ -6123,6 +6123,68 @@
                     <li><a href="https://zenodo.org/records/4728081">Source 4 · zenodo.org</a></li>
                     <li><a href="https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html">Source 5 · isca-archive.org</a></li>
                     <li><a href="https://arxiv.org/abs/2104.09494">Source 6 · arxiv.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-notsofar_1"
+  data-name="notsofar-1"
+  data-families="speech-recognition speaker-human restoration-quality"
+  data-access="helper"
+  data-host="hugging-face"
+  data-terms="mixed"
+  data-search="notsofar_1 notsofar-1 notsofar-1 challenge: new datasets, baseline, and tasks for distant meeting transcription meeting_transcription distant_automatic_speech_recognition speaker_attributed_automatic_speech_recognition speaker_diarization continuous_speech_separation meeting_transcription cc-by-4.0 mit microsoft applies cc by 4.0 to the released data and mit to the baseline repository. the repository notes that challenge-only dev-set-2 is not part of the current open release and is restricted to publications about systems developed during the challenge; use the current public subsets for new work. the public english recorded-meeting release currently documents 237 meetings averaging six minutes across 30 conference rooms, with 4-8 attendees and 35 speakers. it provides train, dev, an 80-meeting eval-small set matching the challenge evaluation set, and a 129-meeting eval-full set, with ground truth available for both evaluation releases. the original challenge and paper describe roughly 280 meetings; the post-challenge open release removes dev-set-2 for legal and quality reasons and adds eval-full, so benchmark versions must be reported. single-channel and known-geometry seven-channel tracks use speaker-attributed tcpwer for ranking. the helper downloads only official documentation and license files by default; use the repository&#39;s versioned download utilities for selected audio subsets. the hugging face repository has very large historical storage and must not be snapshotted wholesale. challenge https://www.chimechallenge.org/challenges/chime8/task2/index dataset https://huggingface.co/datasets/microsoft/notsofar repository https://github.com/microsoft/notsofar1-challenge paper https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html doi https://doi.org/10.21437/interspeech.2024-1788 https://www.chimechallenge.org/challenges/chime8/task2/index https://github.com/microsoft/notsofar1-challenge https://raw.githubusercontent.com/microsoft/notsofar1-challenge/main/readme.md https://raw.githubusercontent.com/microsoft/notsofar1-challenge/main/data_license https://raw.githubusercontent.com/microsoft/notsofar1-challenge/main/license https://huggingface.co/datasets/microsoft/notsofar https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html https://doi.org/10.21437/interspeech.2024-1788">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speech recognition</span>
+      <h3>NOTSOFAR-1</h3>
+      <p class="benchmark-full-name">NOTSOFAR-1 Challenge: New Datasets, Baseline, and Tasks for Distant Meeting Transcription</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Distant Automatic Speech Recognition</span>
+        <span class="tag">Speaker Attributed Automatic Speech Recognition</span>
+        <span class="tag">Speaker Diarization</span>
+        <span class="tag">Continuous Speech Separation</span>
+        <span class="tag tag-more">+1 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Hugging Face</strong></div>
+    <div><span>Upstream terms</span><strong>Mixed / custom — review</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <nav class="card-actions" aria-label="NOTSOFAR-1 links">
+    <a class="card-action primary" href="https://github.com/microsoft/NOTSOFAR1-Challenge">Get data</a>
+          <a class="card-action secondary" href="https://huggingface.co/datasets/microsoft/NOTSOFAR">Official source</a>
+          <a class="card-action secondary" href="https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html">Read the paper</a>
+  </nav>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>CC-BY-4.0</dd></div>
+        <div><dt>Code license</dt><dd>MIT</dd></div>
+        <div><dt>License caution</dt><dd>Microsoft applies CC BY 4.0 to the released data and MIT to the baseline repository. The repository notes that challenge-only Dev-set-2 is not part of the current open release and is restricted to publications about systems developed during the challenge; use the current public subsets for new work.</dd></div>
+        <div><dt>Download notes</dt><dd>The public English recorded-meeting release currently documents 237 meetings averaging six minutes across 30 conference rooms, with 4-8 attendees and 35 speakers. It provides train, dev, an 80-meeting eval-small set matching the challenge evaluation set, and a 129-meeting eval-full set, with ground truth available for both evaluation releases. The original challenge and paper describe roughly 280 meetings; the post-challenge open release removes Dev-set-2 for legal and quality reasons and adds eval-full, so benchmark versions must be reported. Single-channel and known-geometry seven-channel tracks use speaker-attributed tcpWER for ranking. The helper downloads only official documentation and license files by default; use the repository&#39;s versioned download utilities for selected audio subsets. The Hugging Face repository has very large historical storage and must not be snapshotted wholesale.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/notsofar_1.sh</code></div>
+        <button type="button" data-copy="scripts/download/notsofar_1.sh" aria-label="Copy NOTSOFAR-1 helper command">Copy</button>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.chimechallenge.org/challenges/chime8/task2/index">Challenge</a></li>
+                    <li><a href="https://huggingface.co/datasets/microsoft/NOTSOFAR">Dataset</a></li>
+                    <li><a href="https://github.com/microsoft/NOTSOFAR1-Challenge">Repository</a></li>
+                    <li><a href="https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html">Paper</a></li>
+                    <li><a href="https://doi.org/10.21437/Interspeech.2024-1788">DOI</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://www.chimechallenge.org/challenges/chime8/task2/index">Source 1 · chimechallenge.org</a></li>
+                    <li><a href="https://github.com/microsoft/NOTSOFAR1-Challenge">Source 2 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/microsoft/NOTSOFAR1-Challenge/main/README.md">Source 3 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/microsoft/NOTSOFAR1-Challenge/main/DATA_LICENSE">Source 4 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/microsoft/NOTSOFAR1-Challenge/main/LICENSE">Source 5 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://huggingface.co/datasets/microsoft/NOTSOFAR">Source 6 · huggingface.co</a></li>
+                    <li><a href="https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html">Source 7 · isca-archive.org</a></li>
+                    <li><a href="https://doi.org/10.21437/Interspeech.2024-1788">Source 8 · doi.org</a></li></ul></div>
     </div>
   </details>
 </article>

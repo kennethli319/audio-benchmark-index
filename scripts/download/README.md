@@ -578,6 +578,10 @@ AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
 CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
 CHIME6_OPENSLR_BASE_URL=https://openslr.elda.org/resources/150 scripts/download/chime_6.sh
 
+# NOTSOFAR-1 downloads official docs/licenses only. Clone the official baseline
+# to use its versioned subset downloader; never snapshot the full HF history.
+NOTSOFAR1_CLONE_REPO=1 scripts/download/notsofar_1.sh
+
 # AliMeeting downloads OpenSLR metadata by default. Corpus archives are large.
 ALIMEETING_DOWNLOAD_ARCHIVES=1 ALIMEETING_PARTS="Eval_Ali.tar.gz Test_Ali.tar.gz" scripts/download/alimeeting.sh
 

@@ -4983,6 +4983,59 @@ benchmarks:
       - https://www.openslr.org/150/
       - https://arxiv.org/abs/2004.09249
 
+  - id: notsofar_1
+    name: NOTSOFAR-1
+    full_name: "NOTSOFAR-1 Challenge: New Datasets, Baseline, and Tasks for Distant Meeting Transcription"
+    qwen_cited_as: null
+    qwen_bucket: meeting_transcription
+    tasks:
+      - distant_automatic_speech_recognition
+      - speaker_attributed_automatic_speech_recognition
+      - speaker_diarization
+      - continuous_speech_separation
+      - meeting_transcription
+    official:
+      challenge: https://www.chimechallenge.org/challenges/chime8/task2/index
+      dataset: https://huggingface.co/datasets/microsoft/NOTSOFAR
+      repo: https://github.com/microsoft/NOTSOFAR1-Challenge
+      paper: https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html
+      doi: https://doi.org/10.21437/Interspeech.2024-1788
+    download:
+      primary:
+        - https://github.com/microsoft/NOTSOFAR1-Challenge
+        - https://huggingface.co/datasets/microsoft/NOTSOFAR
+      examples:
+        - 'scripts/download/notsofar_1.sh'
+        - 'NOTSOFAR1_CLONE_REPO=1 scripts/download/notsofar_1.sh'
+      notes: >-
+        The public English recorded-meeting release currently documents 237
+        meetings averaging six minutes across 30 conference rooms, with 4-8
+        attendees and 35 speakers. It provides train, dev, an 80-meeting
+        eval-small set matching the challenge evaluation set, and a
+        129-meeting eval-full set, with ground truth available for both
+        evaluation releases. The original challenge and paper describe roughly
+        280 meetings; the post-challenge open release removes Dev-set-2 for
+        legal and quality reasons and adds eval-full, so benchmark versions
+        must be reported. Single-channel and known-geometry seven-channel
+        tracks use speaker-attributed tcpWER for ranking. The helper downloads
+        only official documentation and license files by default; use the
+        repository's versioned download utilities for selected audio subsets.
+        The Hugging Face repository has very large historical storage and must
+        not be snapshotted wholesale.
+    license:
+      data: CC-BY-4.0
+      code: MIT
+      notes: Microsoft applies CC BY 4.0 to the released data and MIT to the baseline repository. The repository notes that challenge-only Dev-set-2 is not part of the current open release and is restricted to publications about systems developed during the challenge; use the current public subsets for new work.
+    sources:
+      - https://www.chimechallenge.org/challenges/chime8/task2/index
+      - https://github.com/microsoft/NOTSOFAR1-Challenge
+      - https://raw.githubusercontent.com/microsoft/NOTSOFAR1-Challenge/main/README.md
+      - https://raw.githubusercontent.com/microsoft/NOTSOFAR1-Challenge/main/DATA_LICENSE
+      - https://raw.githubusercontent.com/microsoft/NOTSOFAR1-Challenge/main/LICENSE
+      - https://huggingface.co/datasets/microsoft/NOTSOFAR
+      - https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html
+      - https://doi.org/10.21437/Interspeech.2024-1788
+
   - id: alimeeting
     name: AliMeeting
     full_name: "AliMeeting: A Free Mandarin Multi-channel Meeting Speech Corpus"

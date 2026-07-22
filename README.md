@@ -27,7 +27,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 155 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 156 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -215,6 +215,7 @@ Current coverage includes:
 | [MUSAN](https://www.openslr.org/17/) | Speech/music/noise classification | [OpenSLR SLR17](https://www.openslr.org/17/) corpus archive; helper downloads the OpenSLR page by default and requires opt-in for the 11 GiB archive | CC BY 4.0 |
 | [AMI](https://groups.inf.ed.ac.uk/ami/corpus/) | Meeting ASR | Official [annotation ZIPs](https://groups.inf.ed.ac.uk/ami/download/), optional [OpenSLR SLR16](https://www.openslr.org/16/) acoustic archives, or [edinburghcstr/ami](https://huggingface.co/datasets/edinburghcstr/ami) | Official AMI pages list CC BY 4.0; OpenSLR mirror still shows an older modified CC BY-NC-SA v2.0 notice |
 | [CHiME-6](https://www.chimechallenge.org/datasets/chime6) | Meeting ASR / diarization | [OpenSLR SLR150](https://www.openslr.org/150/) transcriptions/floorplans by default; large train/dev/eval audio archives are opt-in | CC BY-SA 4.0 |
+| [NOTSOFAR-1](https://www.chimechallenge.org/challenges/chime8/task2/index) | Distant speaker-attributed meeting ASR and diarization | Public Microsoft open release documents 237 English meetings, including ground-truth 80-meeting eval-small and 129-meeting eval-full sets; the challenge/paper's roughly 280-meeting inventory differs because the current release removes restricted Dev-set-2 and adds eval-full; helper saves official docs and licenses only | Data is CC BY 4.0 and baseline code is MIT; challenge-only Dev-set-2 is not in the current open release and has separate publication restrictions |
 | [AliMeeting](https://www.openslr.org/119/) | Meeting ASR / diarization | [OpenSLR SLR119](https://www.openslr.org/119/) metadata by default; large Mandarin meeting archives are opt-in | CC BY-SA 4.0 |
 | [LibriMix](https://github.com/JorisCos/LibriMix) | Speech separation | Official generator/metadata repo; helper clones it by default and runs generation only with `LIBRIMIX_RUN_GENERATION=1` plus a large storage directory | Code/scripts are MIT; generated data is derived from LibriSpeech CC BY 4.0 plus WHAM noise, so re-check component terms |
 | [FUSS](https://zenodo.org/records/3694384) | Universal sound separation | Public train/validation/eval mixtures and source references on Zenodo; helper saves official docs, repository metadata, and the small license archive by default while multi-GB data archives require explicit part selection | FUSS is CC BY 4.0, input Freesound clips are CC0, and Google Research code is Apache-2.0; FSD50K labels used for source selection are not included |
