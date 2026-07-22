@@ -170,6 +170,7 @@ KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
 scripts/download/msp_podcast.sh
+scripts/download/chime_7_dasr.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
 scripts/download/fisher_english.sh
@@ -577,6 +578,10 @@ AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
 # CHiME-6 downloads transcriptions/floorplans by default. Audio archives are large.
 CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
 CHIME6_OPENSLR_BASE_URL=https://openslr.elda.org/resources/150 scripts/download/chime_6.sh
+
+# CHiME-7 DASR saves public task/baseline docs, then prints the separate
+# CHiME and LDC/Mixer 6 access steps required to assemble the benchmark.
+scripts/download/chime_7_dasr.sh
 
 # NOTSOFAR-1 downloads official docs/licenses only. Clone the official baseline
 # to use its versioned subset downloader; never snapshot the full HF history.

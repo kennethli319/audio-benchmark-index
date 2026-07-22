@@ -4983,6 +4983,54 @@ benchmarks:
       - https://www.openslr.org/150/
       - https://arxiv.org/abs/2004.09249
 
+  - id: chime_7_dasr
+    name: CHiME-7 DASR
+    full_name: "The CHiME-7 DASR Challenge: Distant Meeting Transcription with Multiple Devices in Diverse Scenarios"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+    tasks:
+      - distant_automatic_speech_recognition
+      - speaker_attributed_automatic_speech_recognition
+      - speaker_diarization
+      - meeting_transcription
+      - multi_device_speech_recognition
+    official:
+      challenge: https://www.chimechallenge.org/challenges/chime7/task1/index
+      data: https://www.chimechallenge.org/challenges/chime7/task1/data
+      baseline: https://www.chimechallenge.org/challenges/chime7/task1/baseline
+      baseline_repo: https://github.com/espnet/espnet/tree/master/egs2/chime7_task1
+      paper: https://arxiv.org/abs/2306.13734
+    download:
+      primary:
+        - https://www.chimechallenge.org/challenges/chime7/task1/data
+        - https://github.com/espnet/espnet/tree/master/egs2/chime7_task1
+      examples:
+        - 'scripts/download/chime_7_dasr.sh'
+      notes: >-
+        CHiME-7 DASR evaluates one system across revised CHiME-6, DiPCo, and
+        challenge-specific Mixer 6 Speech partitions, ranking submissions by
+        macro-averaged diarization-attributed WER across the three scenarios.
+        The official ESPnet recipe generates the task layout, but it can
+        automatically obtain only DiPCo. CHiME-5/CHiME-6 must be obtained
+        through the CHiME license path, and the task's Mixer 6 release requires
+        a separate LDC evaluation agreement; the challenge warns that this
+        Mixer 6 version differs from LDC2013S03. The helper saves only public
+        task, data, paper, and baseline documentation before printing the
+        manual access steps.
+    license:
+      data: mixed_manual_agreements
+      code: Apache-2.0
+      notes: The benchmark is a protocol over three separately controlled corpora, not a single uniformly licensed download. Retain the CHiME, DiPCo, and task-specific LDC/Mixer 6 terms independently. The official baseline is part of ESPnet, whose repository is Apache-2.0 licensed.
+    sources:
+      - https://www.chimechallenge.org/challenges/chime7/task1/index
+      - https://www.chimechallenge.org/challenges/chime7/task1/data
+      - https://www.chimechallenge.org/challenges/chime7/task1/baseline
+      - https://arxiv.org/abs/2306.13734
+      - https://github.com/espnet/espnet/tree/master/egs2/chime7_task1
+      - https://raw.githubusercontent.com/espnet/espnet/master/LICENSE
+
   - id: notsofar_1
     name: NOTSOFAR-1
     full_name: "NOTSOFAR-1 Challenge: New Datasets, Baseline, and Tasks for Distant Meeting Transcription"
