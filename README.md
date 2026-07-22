@@ -37,6 +37,13 @@ section 4.2.6 long-speech set is not a public benchmark: the report describes
 an internal set of 100 Chinese and English texts (200-2,000 words) and provides
 no release or download link.
 
+Qwen3.5-Omni section 5.2 is also inventoried in the source YAML. Its public
+speech-generation sets map to Seed-TTS Eval, TTS Multilingual Test Set, and
+CV3-Eval. The FLEURS-derived multilingual set used for nine additional
+languages and part of the custom-voice evaluation is explicitly internal and
+has no released row mapping or download; the public FLEURS corpus is indexed
+separately and must not be treated as that derived evaluation set.
+
 ## Coverage
 
 Current coverage includes:

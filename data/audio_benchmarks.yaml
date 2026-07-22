@@ -39,6 +39,26 @@ paper_audits:
         index_id: null
         status: internal_unreleased
         note: Section 4.2.6 describes 100 curated Chinese and English texts of 200 to 2,000 words; the report provides no public dataset or download link.
+  qwen3_5_omni_x_to_speech:
+    paper: https://arxiv.org/abs/2604.15804
+    sections: 5.2-5.2.4
+    evaluated_sets:
+      - cited_as: SEED-TTS test set
+        index_id: seed_tts_eval
+        status: public_objective_set
+        note: Section 5.2.1 reports WER on the public objective test-zh and test-en splits. The separate Seed-TTS subjective set remains unreleased.
+      - cited_as: TTS multilingual test set
+        index_id: tts_multilingual_test_set
+        status: public
+        note: Sections 5.2.2 and 5.2.4 use the official MiniMaxAI release for public benchmark languages; the report also mixes in a separate internal set for additional languages.
+      - cited_as: internal multilingual test set built on FLEURS
+        index_id: null
+        status: internal_unreleased
+        note: Sections 5.2.2 and 5.2.4 identify this as an internal FLEURS-derived set and provide no release or exact row mapping. FLEURS is public, but that does not make Qwen's derived evaluation set public.
+      - cited_as: CV3-Eval / Cross-Lingual benchmark
+        index_id: cv3_eval
+        status: public
+        note: Section 5.2.3 evaluates 12 source-target directions from the public CV3-Eval cross-lingual subset.
 
 benchmarks:
   - id: mmau
