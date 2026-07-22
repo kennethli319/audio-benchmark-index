@@ -166,6 +166,7 @@ scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
 scripts/download/qivd.sh
 scripts/download/avsd.sh
+scripts/download/avsbench.sh
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 ```
 

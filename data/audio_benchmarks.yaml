@@ -766,6 +766,45 @@ benchmarks:
       - https://raw.githubusercontent.com/yunzeliu/Omni-Retriever/main/README.md
       - https://api.github.com/repos/yunzeliu/Omni-Retriever
 
+  - id: avsbench
+    name: AVSBench
+    full_name: "AVSBench: Audio-Visual Segmentation Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_segmentation
+      - sounding_object_segmentation
+      - single_sound_source_segmentation
+      - multiple_sound_source_segmentation
+      - audio_visual_semantic_segmentation
+    official:
+      homepage: https://opennlplab.github.io/AVSBench/
+      repo: https://github.com/OpenNLPLab/AVSBench
+      paper: https://arxiv.org/abs/2207.05042
+      semantic_paper: https://arxiv.org/abs/2301.13190
+      download_page: http://www.avlbench.opennlplab.cn/download
+      legacy_object_download: https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT
+    download:
+      primary:
+        - http://www.avlbench.opennlplab.cn/download
+        - https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT
+        - https://github.com/OpenNLPLab/AVSBench
+      examples:
+        - 'scripts/download/avsbench.sh'
+      notes: The benchmark covers semi-supervised Single Sound Source Segmentation (S4), fully supervised Multiple Sound Source Segmentation (MS3), and the later semantic-label AVSS task. The official project page publicly links the original AVSBench-object video-ID CSV and segmentation maps on Google Drive, while processed video/audio requires an email request. The repository directs users to the official application page for the updated object and semantic datasets. The helper saves lightweight official documentation, repository metadata, and license text, then prints these manual access paths; it does not automate Drive, email, or source-video retrieval.
+    license:
+      data: cc-by-nc-4.0
+      code: Apache-2.0
+      notes: The official project page licenses the AVSBench dataset published there under CC BY-NC 4.0, and the repository licenses the project under Apache-2.0. Source videos were collected from public YouTube material, so uploader rights, platform terms, and current video availability still apply; confirm whether the updated semantic release carries any additional terms during application.
+    sources:
+      - https://opennlplab.github.io/AVSBench/
+      - https://github.com/OpenNLPLab/AVSBench
+      - https://raw.githubusercontent.com/OpenNLPLab/AVSBench/main/README.md
+      - https://raw.githubusercontent.com/OpenNLPLab/AVSBench/main/LICENSE
+      - https://api.github.com/repos/OpenNLPLab/AVSBench
+      - https://arxiv.org/abs/2207.05042
+      - https://arxiv.org/abs/2301.13190
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"
