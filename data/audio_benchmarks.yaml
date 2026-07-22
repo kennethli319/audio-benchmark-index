@@ -3153,6 +3153,63 @@ benchmarks:
       - https://arxiv.org/abs/2501.08587
       - https://github.com/DCASE2024-Task7-Sound-Scene-Synthesis/AudioLDM-training-finetuning
 
+  - id: dcase2024_lass
+    name: DCASE 2024 Task 9 LASS
+    full_name: "DCASE 2024 Task 9: Language-Queried Audio Source Separation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_source_separation
+    tasks:
+      - language_queried_audio_source_separation
+      - text_conditioned_audio_separation
+      - universal_sound_separation
+    official:
+      challenge: https://dcase.community/challenge2024/task-language-queried-audio-source-separation
+      results: https://dcase.community/challenge2024/task-language-queried-audio-source-separation-results
+      development_set: https://zenodo.org/records/10887496
+      validation_set: https://zenodo.org/records/10886481
+      evaluation_set: https://zenodo.org/records/11425256
+      baseline_repo: https://github.com/Audio-AGI/dcase2024_task9_baseline
+      method_paper: https://arxiv.org/abs/2308.05037
+    download:
+      primary:
+        - https://zenodo.org/records/10887496
+        - https://zenodo.org/records/10886481
+        - https://zenodo.org/records/11425256
+      examples:
+        - 'scripts/download/dcase2024_lass.sh'
+        - 'DCASE2024_LASS_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_lass.sh'
+      notes: >-
+        The development release contains GPT-4-generated captions for the
+        existing FSD50K development and evaluation clips; participants obtain
+        the source FSD50K and Clotho v2 audio separately. The public validation
+        release contains 3,000 synthetic mixtures built from 1,000 source clips
+        with three captions per source. The evaluation release contains 3,000
+        additional synthetic mixtures plus 100 real overlapping Freesound clips
+        annotated with two source queries each. Synthetic
+        examples are scored with SDR; the real set uses listening tests for
+        query relevance and overall quality. The helper downloads official task
+        documentation, record metadata, and lightweight JSON/CSV annotations by
+        default; approximately 1.14 GB of validation and evaluation audio is an
+        explicit opt-in.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: All three official Zenodo records declare CC BY 4.0. Development audio remains in FSD50K and Clotho v2 under their own mixed or upstream terms, while validation/evaluation audio derives from Freesound; retain record attribution and inspect packaged per-clip provenance. The baseline repository has no LICENSE file or detected GitHub license and is largely derived from AudioSep, so its code terms are unspecified.
+    sources:
+      - https://dcase.community/challenge2024/task-language-queried-audio-source-separation
+      - https://dcase.community/challenge2024/task-language-queried-audio-source-separation-results
+      - https://zenodo.org/records/10887496
+      - https://zenodo.org/api/records/10887496
+      - https://zenodo.org/records/10886481
+      - https://zenodo.org/api/records/10886481
+      - https://zenodo.org/records/11425256
+      - https://zenodo.org/api/records/11425256
+      - https://github.com/Audio-AGI/dcase2024_task9_baseline
+      - https://api.github.com/repos/Audio-AGI/dcase2024_task9_baseline
+      - https://arxiv.org/abs/2308.05037
+
   - id: dcase2025_audioqa
     name: DCASE 2025 Task 5 AudioQA
     full_name: "DCASE 2025 Task 5: Multi-Domain Audio Question Answering"

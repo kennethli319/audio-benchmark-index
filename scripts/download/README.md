@@ -82,6 +82,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
+scripts/download/dcase2024_lass.sh
 scripts/download/spuraudio.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
