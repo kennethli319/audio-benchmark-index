@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
+scripts/download/escucha.sh
 scripts/download/air_bench.sh
 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
@@ -209,6 +210,11 @@ AUDIOBENCH_CLONE_REPO=1 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
 scripts/download/clotho_aqa.sh
 scripts/download/fsd50k.sh
+
+# ESCUCHA downloads its public JSON/TSV annotations, README, and scorer only.
+# It does not download the URL-referenced source recordings.
+scripts/download/escucha.sh
+ESCUCHA_CLONE_REPO=1 scripts/download/escucha.sh
 
 # FLEURS defaults to en_us. Use another locale or all.
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh

@@ -233,6 +233,42 @@ benchmarks:
       - https://github.com/dingdongwang/MMSU
       - https://huggingface.co/datasets/ddwang2000/MMSU
 
+  - id: escucha
+    name: ESCUCHA
+    full_name: "ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - spanish_speech_understanding
+      - audio_question_answering
+      - audio_reasoning
+      - multi_audio_comparison
+      - audio_instruction_following
+      - pathological_speech_understanding
+      - long_audio_understanding
+    official:
+      repo: https://github.com/ferugit/ESCUCHA
+      paper: https://arxiv.org/abs/2607.17812
+      arxiv_html: https://arxiv.org/html/2607.17812v1
+    download:
+      primary:
+        - https://github.com/ferugit/ESCUCHA/tree/master/data/tsv
+      examples:
+        - 'scripts/download/escucha.sh'
+        - 'ESCUCHA_CLONE_REPO=1 scripts/download/escucha.sh'
+      notes: "The public repository releases 1,000 Spanish questions as JSON and TSV, including 900 multiple-choice and 100 audio-instruction-following items. The helper downloads those approximately 2.2 MB of annotations plus the README and scorer by default; cloning the repository is opt-in. Audio is not redistributed: the release provides source URLs and a yt-dlp script for reconstructing up to 162.9 hours from public recordings, so availability can drift and source-platform terms apply."
+    license:
+      data: not_specified
+      code: not_specified
+      notes: The GitHub repository has no license file or detected GitHub license. The paper is CC BY 4.0 on arXiv, but that does not license the annotations, code, or source recordings. Review the rights and platform terms for each linked recording before downloading, redistribution, or commercial use.
+    sources:
+      - https://github.com/ferugit/ESCUCHA
+      - https://raw.githubusercontent.com/ferugit/ESCUCHA/master/README.md
+      - https://api.github.com/repos/ferugit/ESCUCHA
+      - https://github.com/ferugit/ESCUCHA/tree/master/data/tsv
+      - https://arxiv.org/abs/2607.17812
+      - https://arxiv.org/html/2607.17812v1#S2
+
   - id: air_bench
     name: AIR-Bench
     full_name: "AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension"
