@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/air_bench.sh
 scripts/download/audiobench.sh
+scripts/download/af_reasoning_eval.sh
 scripts/download/music_avqa.sh
 scripts/download/llp.sh
 scripts/download/ava_active_speaker.sh
@@ -187,6 +188,12 @@ and exit with code `2`.
 # AudioBench downloads its official documentation and dataset inventory by default.
 # Cloning adds the evaluation toolkit, not its separately licensed upstream corpora.
 AUDIOBENCH_CLONE_REPO=1 scripts/download/audiobench.sh
+
+# AF-Reasoning-Eval downloads all lightweight annotations by default.
+# Obtain the referenced source audio through the separate upstream helpers.
+scripts/download/af_reasoning_eval.sh
+scripts/download/clotho_aqa.sh
+scripts/download/fsd50k.sh
 
 # FLEURS defaults to en_us. Use another locale or all.
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh

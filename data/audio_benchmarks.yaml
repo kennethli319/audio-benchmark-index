@@ -312,6 +312,41 @@ benchmarks:
       - https://aclanthology.org/2025.naacl-long.350/
       - https://arxiv.org/abs/2406.16020
 
+  - id: af_reasoning_eval
+    name: AF-Reasoning-Eval
+    full_name: "AF-Reasoning-Eval: Sound Reasoning Evaluation Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_question_answering
+      - audio_reasoning
+      - audio_classification
+      - commonsense_reasoning
+    official:
+      repo: https://github.com/NVIDIA/audio-flamingo/tree/soundCoT/AF_Reasoning_Eval
+      paper: https://arxiv.org/abs/2508.11818
+      source_repo: https://github.com/NVIDIA/audio-flamingo/tree/soundCoT
+    download:
+      primary:
+        - https://github.com/NVIDIA/audio-flamingo/tree/soundCoT/AF_Reasoning_Eval
+      examples:
+        - 'scripts/download/af_reasoning_eval.sh'
+        - 'scripts/download/clotho_aqa.sh'
+        - 'scripts/download/fsd50k.sh'
+      notes: The helper downloads all four official JSON annotation files, totaling about 2.1 MB, plus the Sound-CoT README. It does not duplicate source audio. The AQA subset points to Clotho-AQA filenames and the classification subset points to FSD50K evaluation filenames; use those benchmarks' separate helpers and terms to obtain audio.
+    license:
+      data: "CC BY 4.0 metadata with mixed upstream audio terms"
+      code: MIT
+      notes: NVIDIA releases AF-Reasoning-Eval metadata under CC BY 4.0 and repository code under MIT. The 150 AQA items derive from Clotho-AQA, whose question-answer CSVs are MIT while Freesound audio retains per-file Creative Commons terms. The 7,227-item classification set derives from FSD50K, whose clips retain per-file CC0, CC-BY, CC-BY-NC, or CC Sampling+ terms in addition to the curated dataset's CC BY release.
+    sources:
+      - https://github.com/NVIDIA/audio-flamingo/tree/soundCoT/AF_Reasoning_Eval
+      - https://raw.githubusercontent.com/NVIDIA/audio-flamingo/soundCoT/README.md
+      - https://api.github.com/repos/NVIDIA/audio-flamingo/contents/AF_Reasoning_Eval?ref=soundCoT
+      - https://arxiv.org/abs/2508.11818
+      - https://export.arxiv.org/api/query?id_list=2508.11818
+      - https://zenodo.org/records/6473207
+      - https://zenodo.org/records/4060432
+
   - id: music_avqa
     name: MUSIC-AVQA
     full_name: "MUSIC-AVQA: Learning to Answer Questions in Dynamic Audio-Visual Scenarios"
