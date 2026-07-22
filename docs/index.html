@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 112 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 113 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Audio Benchmark Index">
@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="112 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="113 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -378,15 +378,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 112 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 113 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>112</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>112</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>113</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>113</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>13</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-21">July 21, 2026</time></strong></div>
       </div>
@@ -415,7 +415,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-generation">
   <span>Speech generation</span>
-  <strong>10</strong>
+  <strong>11</strong>
   <small>TTS, singing voice, and controllable synthesis</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-understanding">
@@ -425,7 +425,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speaker-human">
   <span>Speaker, identity &amp; emotion</span>
-  <strong>28</strong>
+  <strong>29</strong>
   <small>Speaker recognition, diarization, anti-spoofing, and emotion</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality">
@@ -453,7 +453,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 112 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 113 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -522,7 +522,7 @@
       </form>
 
       <div class="results-bar">
-        <p id="result-status" role="status" aria-live="polite">Showing 112 of 112 benchmarks.</p>
+        <p id="result-status" role="status" aria-live="polite">Showing 113 of 113 benchmarks.</p>
         <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
       </div>
 
@@ -5847,6 +5847,69 @@
       <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://catalog.ldc.upenn.edu/LDC93S1">Source 1 · catalog.ldc.upenn.edu</a></li>
                     <li><a href="https://catalog.ldc.upenn.edu/LDC93S1W">Source 2 · catalog.ldc.upenn.edu</a></li>
                     <li><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir4930.pdf">Source 3 · nvlpubs.nist.gov</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-tts_multilingual_test_set"
+  data-name="tts multilingual test set"
+  data-families="speech-generation speaker-human"
+  data-access="helper"
+  data-host="hugging-face"
+  data-terms="mixed"
+  data-search="tts_multilingual_test_set tts multilingual test set minimaxai tts multilingual test set speech_synthesis multilingual_text_to_speech zero_shot_voice_cloning cross_lingual_voice_cloning speech_intelligibility_evaluation speaker_similarity_evaluation target_speaker_speech_generation cc-by-sa-4.0 not_applicable the official hugging face dataset card lists cc by-sa 4.0. its 48 speaker prompts are selected from mozilla common voice, whose data is cc0-1.0; retain benchmark attribution and share adaptations under the card&#39;s stated terms. the public, ungated hugging face repository contains 100 test sentences and two common voice-derived speaker prompts (one female and one male) for each of 24 languages. the helper downloads the official dataset card by default; the approximately 7.3 mb snapshot requires tts_multilingual_test_set_download_hf=1. qwen3-tts evaluates a 10-language subset for zero-shot multilingual and target-speaker generation, but the report does not identify the exact text rows used. dataset https://huggingface.co/datasets/minimaxai/tts-multilingual-test-set paper https://arxiv.org/abs/2505.07916 project page https://minimax-ai.github.io/tts_tech_report qwen3 tts multilingual evaluation https://arxiv.org/html/2601.15621v1#s4.ss2.sss2 qwen3 tts target speaker evaluation https://arxiv.org/html/2601.15621v1#s4.ss2.sss5 https://huggingface.co/datasets/minimaxai/tts-multilingual-test-set https://huggingface.co/datasets/minimaxai/tts-multilingual-test-set/raw/main/readme.md https://huggingface.co/api/datasets/minimaxai/tts-multilingual-test-set https://arxiv.org/abs/2505.07916 https://arxiv.org/html/2505.07916v1#s3.ss4 https://minimax-ai.github.io/tts_tech_report https://arxiv.org/abs/2601.15621 https://arxiv.org/html/2601.15621v1#s4.ss2.sss2 https://arxiv.org/html/2601.15621v1#s4.ss2.sss5">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speech generation</span>
+      <h3>TTS Multilingual Test Set</h3>
+      <p class="benchmark-full-name">MiniMaxAI TTS Multilingual Test Set</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Multilingual Text To Speech</span>
+        <span class="tag">Zero Shot Voice Cloning</span>
+        <span class="tag">Cross Lingual Voice Cloning</span>
+        <span class="tag">Speech Intelligibility Evaluation</span>
+        <span class="tag tag-more">+2 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Hugging Face</strong></div>
+    <div><span>Upstream terms</span><strong>Mixed / custom — review</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <nav class="card-actions" aria-label="TTS Multilingual Test Set links">
+    <a class="card-action primary" href="https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set">Get data</a>
+          <a class="card-action secondary" href="https://minimax-ai.github.io/tts_tech_report">Official source</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2505.07916">Read the paper</a>
+  </nav>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>cc-by-sa-4.0</dd></div>
+        <div><dt>Code license</dt><dd>not_applicable</dd></div>
+        <div><dt>License caution</dt><dd>The official Hugging Face dataset card lists CC BY-SA 4.0. Its 48 speaker prompts are selected from Mozilla Common Voice, whose data is CC0-1.0; retain benchmark attribution and share adaptations under the card&#39;s stated terms.</dd></div>
+        <div><dt>Download notes</dt><dd>The public, ungated Hugging Face repository contains 100 test sentences and two Common Voice-derived speaker prompts (one female and one male) for each of 24 languages. The helper downloads the official dataset card by default; the approximately 7.3 MB snapshot requires TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1. Qwen3-TTS evaluates a 10-language subset for zero-shot multilingual and target-speaker generation, but the report does not identify the exact text rows used.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/tts_multilingual_test_set.sh</code></div>
+        <button type="button" data-copy="scripts/download/tts_multilingual_test_set.sh" aria-label="Copy TTS Multilingual Test Set helper command">Copy</button>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set">Dataset</a></li>
+                    <li><a href="https://arxiv.org/abs/2505.07916">Paper</a></li>
+                    <li><a href="https://minimax-ai.github.io/tts_tech_report">Project page</a></li>
+                    <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2">Qwen3 Tts Multilingual Evaluation</a></li>
+                    <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5">Qwen3 Tts Target Speaker Evaluation</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set">Source 1 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set/raw/main/README.md">Source 2 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/MiniMaxAI/TTS-Multilingual-Test-Set">Source 3 · huggingface.co</a></li>
+                    <li><a href="https://arxiv.org/abs/2505.07916">Source 4 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2505.07916v1#S3.SS4">Source 5 · arxiv.org</a></li>
+                    <li><a href="https://minimax-ai.github.io/tts_tech_report">Source 6 · minimax-ai.github.io</a></li>
+                    <li><a href="https://arxiv.org/abs/2601.15621">Source 7 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2">Source 8 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5">Source 9 · arxiv.org</a></li></ul></div>
     </div>
   </details>
 </article>

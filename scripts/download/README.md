@@ -49,6 +49,7 @@ scripts/download/europarl_st.sh
 scripts/download/tedx_spanish.sh
 scripts/download/seed_tts_eval.sh
 scripts/download/instruct_tts_eval.sh
+scripts/download/tts_multilingual_test_set.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
@@ -171,6 +172,9 @@ INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
 # CV3-Eval downloads official docs by default. Its roughly 760 MiB repo with audio is opt-in.
 CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh
+
+# TTS Multilingual Test Set downloads its official card by default; the ~7.3 MB snapshot is opt-in.
+TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_set.sh
 
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh

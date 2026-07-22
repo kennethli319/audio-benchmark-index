@@ -1535,6 +1535,46 @@ benchmarks:
       - https://arxiv.org/abs/2601.15621
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS3
 
+  - id: tts_multilingual_test_set
+    name: TTS Multilingual Test Set
+    full_name: MiniMaxAI TTS Multilingual Test Set
+    qwen_cited_as: TTS multilingual test set
+    qwen_bucket: speech_synthesis
+    tasks:
+      - multilingual_text_to_speech
+      - zero_shot_voice_cloning
+      - cross_lingual_voice_cloning
+      - speech_intelligibility_evaluation
+      - speaker_similarity_evaluation
+      - target_speaker_speech_generation
+    official:
+      dataset: https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set
+      paper: https://arxiv.org/abs/2505.07916
+      project: https://minimax-ai.github.io/tts_tech_report
+      qwen3_tts_multilingual_evaluation: https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2
+      qwen3_tts_target_speaker_evaluation: https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5
+    download:
+      primary:
+        - https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set
+      examples:
+        - 'scripts/download/tts_multilingual_test_set.sh'
+        - 'TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_set.sh'
+      notes: The public, ungated Hugging Face repository contains 100 test sentences and two Common Voice-derived speaker prompts (one female and one male) for each of 24 languages. The helper downloads the official dataset card by default; the approximately 7.3 MB snapshot requires TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1. Qwen3-TTS evaluates a 10-language subset for zero-shot multilingual and target-speaker generation, but the report does not identify the exact text rows used.
+    license:
+      data: cc-by-sa-4.0
+      code: not_applicable
+      notes: The official Hugging Face dataset card lists CC BY-SA 4.0. Its 48 speaker prompts are selected from Mozilla Common Voice, whose data is CC0-1.0; retain benchmark attribution and share adaptations under the card's stated terms.
+    sources:
+      - https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set
+      - https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set/raw/main/README.md
+      - https://huggingface.co/api/datasets/MiniMaxAI/TTS-Multilingual-Test-Set
+      - https://arxiv.org/abs/2505.07916
+      - https://arxiv.org/html/2505.07916v1#S3.SS4
+      - https://minimax-ai.github.io/tts_tech_report
+      - https://arxiv.org/abs/2601.15621
+      - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2
+      - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5
+
   - id: libritts
     name: LibriTTS
     full_name: "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"
