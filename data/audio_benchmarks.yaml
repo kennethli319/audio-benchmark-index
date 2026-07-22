@@ -3102,6 +3102,51 @@ benchmarks:
       - https://zenodo.org/records/7879692
       - https://zenodo.org/api/records/7879692
 
+  - id: dcase2025_audioqa
+    name: DCASE 2025 Task 5 AudioQA
+    full_name: "DCASE 2025 Task 5: Multi-Domain Audio Question Answering"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_reasoning
+      - bioacoustics
+    tasks:
+      - audio_question_answering
+      - temporal_audio_reasoning
+      - bioacoustic_question_answering
+      - multiple_choice_question_answering
+    official:
+      challenge: https://dcase.community/challenge2025/task-audio-question-answering
+      results: https://dcase.community/challenge2025/task-audio-question-answering-results
+      dataset: https://huggingface.co/datasets/PeacefulData/2025_DCASE_AudioQA_Official
+      paper: https://arxiv.org/abs/2505.07365
+    download:
+      primary:
+        - https://huggingface.co/datasets/PeacefulData/2025_DCASE_AudioQA_Official
+      examples:
+        - 'scripts/download/dcase2025_audioqa.sh'
+        - 'huggingface-cli login'
+        - 'huggingface-cli download --repo-type dataset PeacefulData/2025_DCASE_AudioQA_Official --local-dir data/DCASE2025-AudioQA'
+      notes: >-
+        The official English multiple-choice benchmark combines Bioacoustics QA,
+        Temporal Soundscapes QA, and Complex QA (MMAU). The challenge page reports
+        approximately 8.1K training and 2.4K development question-answer pairs;
+        the released repository also includes the evaluation set. Access is
+        public but auto-approved gated: users must sign in and provide basic
+        identity and affiliation fields. The helper saves public challenge,
+        paper, and repository API metadata, then prints the manual acceptance and
+        authenticated download steps; it never downloads audio automatically.
+    license:
+      data: mit_on_hugging_face_card
+      code: unspecified
+      notes: The Hugging Face card metadata declares MIT, but the benchmark incorporates audio from Watkins Marine Mammal Sound Database, AudioSet, Mira, and other sources named by the organizers. Upstream audio and source-platform terms may be narrower and still apply; confirm them before redistribution or commercial use. No separate code license was found for the release scripts.
+    sources:
+      - https://dcase.community/challenge2025/task-audio-question-answering
+      - https://dcase.community/challenge2025/task-audio-question-answering-results
+      - https://huggingface.co/datasets/PeacefulData/2025_DCASE_AudioQA_Official
+      - https://huggingface.co/api/datasets/PeacefulData/2025_DCASE_AudioQA_Official
+      - https://arxiv.org/abs/2505.07365
+
   - id: spuraudio
     name: SpurAudio
     full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"

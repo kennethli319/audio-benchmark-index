@@ -178,6 +178,7 @@ scripts/download/fisher_english.sh
 scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
 scripts/download/qivd.sh
+scripts/download/dcase2025_audioqa.sh
 scripts/download/avsd.sh
 scripts/download/avqa.sh
 scripts/download/avsbench.sh
@@ -462,6 +463,10 @@ ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
 # DCASE 2024 Task 5 downloads record metadata, class maps, and annotation-only
 # archives by default. Development and evaluation waveforms total about 23.4 GiB.
 DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh
+
+# DCASE 2025 Task 5 AudioQA is auto-approved gated on Hugging Face. The helper
+# saves public metadata and prints the login/acceptance flow; it downloads no audio.
+scripts/download/dcase2025_audioqa.sh
 
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
