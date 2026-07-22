@@ -4521,6 +4521,73 @@ benchmarks:
       - https://www.sciencedirect.com/science/article/pii/S0016003223007536
       - https://arxiv.org/abs/1807.03418
 
+  - id: korean_speechlm_benchmarks
+    name: KVoiceBench / KOpenAudioBench / KMMAU
+    full_name: "KVoiceBench, KOpenAudioBench, and KMMAU: Agent-Driven Korean Speech Benchmarks for Evaluating SpeechLMs"
+    qwen_cited_as: null
+    qwen_bucket:
+      - korean_speech_benchmark
+      - audio_language_model_benchmark
+    tasks:
+      - korean_spoken_question_answering
+      - speech_instruction_following
+      - speech_reasoning
+      - speech_safety_evaluation
+      - audio_question_answering
+      - paralinguistic_speech_understanding
+      - speaker_attribute_recognition
+      - multi_speaker_understanding
+    official:
+      paper: https://arxiv.org/abs/2605.27984
+      arxiv_html: https://arxiv.org/html/2605.27984
+      kvoicebench_dataset: https://huggingface.co/datasets/KRAFTON/KVoiceBench
+      kopenaudiobench_dataset: https://huggingface.co/datasets/KRAFTON/KOpenAudioBench
+      kmmau_dataset: https://huggingface.co/datasets/KRAFTON/KMMAU
+      evaluation_repo: https://github.com/krafton-ai/Raon-Eval
+    download:
+      primary:
+        - https://huggingface.co/datasets/KRAFTON/KVoiceBench
+        - https://huggingface.co/datasets/KRAFTON/KOpenAudioBench
+        - https://huggingface.co/datasets/KRAFTON/KMMAU
+      examples:
+        - 'scripts/download/korean_speechlm_benchmarks.sh'
+        - 'KOREAN_SPEECHLM_BENCHMARKS_DOWNLOAD_HF=1 scripts/download/korean_speechlm_benchmarks.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("KRAFTON/KMMAU", "age", split="test")'
+      notes: >-
+        The three public, ungated Hugging Face releases contain 12,345 Korean
+        test samples: 7,306 KVoiceBench spoken-QA items transferred from
+        VoiceBench, 2,835 KOpenAudioBench items transferred from OpenAudioBench,
+        and 2,204 KMMAU audio-understanding items derived from KSS, KMSAV, and
+        Seoul Corpus. The helper downloads official cards, repository metadata,
+        and the paper page by default. Full snapshots require
+        KOREAN_SPEECHLM_BENCHMARKS_DOWNLOAD_HF=1 because Hugging Face reports
+        approximately 4.64 GB, 608 MB, and 4.49 GB of repository storage
+        respectively.
+    license:
+      data: mixed_Apache-2.0_and_CC-BY-NC-SA-4.0
+      code: Apache-2.0
+      notes: >-
+        The KVoiceBench and KOpenAudioBench cards declare Apache-2.0; KMMAU
+        declares CC BY-NC-SA 4.0. These benchmarks adapt prior benchmark content
+        or source speech corpora, so the declared repository licenses may not
+        replace upstream terms. Review VoiceBench/OpenAudioBench provenance and
+        the KSS, KMSAV, and Seoul Corpus conditions before redistribution or
+        commercial use. Raon-Eval code is Apache-2.0.
+    sources:
+      - https://arxiv.org/abs/2605.27984
+      - https://arxiv.org/html/2605.27984
+      - https://huggingface.co/datasets/KRAFTON/KVoiceBench
+      - https://huggingface.co/datasets/KRAFTON/KVoiceBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/KRAFTON/KVoiceBench
+      - https://huggingface.co/datasets/KRAFTON/KOpenAudioBench
+      - https://huggingface.co/datasets/KRAFTON/KOpenAudioBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/KRAFTON/KOpenAudioBench
+      - https://huggingface.co/datasets/KRAFTON/KMMAU
+      - https://huggingface.co/datasets/KRAFTON/KMMAU/raw/main/README.md
+      - https://huggingface.co/api/datasets/KRAFTON/KMMAU
+      - https://github.com/krafton-ai/Raon-Eval
+      - https://raw.githubusercontent.com/krafton-ai/Raon-Eval/main/LICENSE
+
   - id: parapair_audio_bench
     name: ParaPairAudioBench
     full_name: "ParaPairAudioBench: Paralinguistic Pairwise Audio Benchmark for LALM-as-a-Judge"

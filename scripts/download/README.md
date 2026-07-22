@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/escucha.sh
 scripts/download/msu_bench.sh
+scripts/download/korean_speechlm_benchmarks.sh
 scripts/download/air_bench.sh
 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
