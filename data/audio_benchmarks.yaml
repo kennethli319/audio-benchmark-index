@@ -5972,6 +5972,65 @@ benchmarks:
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
 
+  - id: asvspoof_5
+    name: ASVspoof 5
+    full_name: "ASVspoof 5: Crowdsourced Speech Data, Deepfakes, and Adversarial Attacks at Scale"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speaker_verification_anti_spoofing
+      - spoofed_speech_detection
+      - synthetic_speech_detection
+      - deepfake_speech_detection
+      - adversarial_attack_detection
+      - spoofing_robust_speaker_verification
+    official:
+      homepage: https://www.asvspoof.org/
+      zenodo_record: https://zenodo.org/records/14498691
+      doi: https://doi.org/10.5281/zenodo.14498691
+      baseline_repo: https://github.com/asvspoof-challenge/asvspoof5
+      database_paper: https://arxiv.org/abs/2502.08857
+      challenge_paper: https://doi.org/10.21437/ASVspoof.2024-1
+      evaluation_plan: https://www.asvspoof.org/file/ASVspoof5___Evaluation_Plan_Phase2.pdf
+    download:
+      primary:
+        - https://zenodo.org/records/14498691
+        - https://zenodo.org/api/records/14498691/files/ASVspoof5_protocols.tar.gz/content
+        - https://github.com/asvspoof-challenge/asvspoof5
+      examples:
+        - 'scripts/download/asvspoof_5.sh'
+        - 'ASVSPOOF5_DOWNLOAD_PROTOCOLS=1 scripts/download/asvspoof_5.sh'
+      notes: >-
+        The public release contains 182,357 training, 142,134 development, and
+        681,872 evaluation utterances at 16 kHz from crowdsourced speech by
+        roughly 2,000 speakers. It covers more than 20 spoofing attacks, seven
+        adversarial attacks, codec conditions, countermeasure evaluation, and
+        spoofing-robust speaker verification. The helper downloads official
+        metadata, README, license, evaluation plan, paper page, and baseline
+        README by default. The approximately 19.7 MiB protocol archive is a
+        separate opt-in; the complete approximately 142.3 GB audio release
+        remains on Zenodo and is not downloaded by the helper.
+    license:
+      data: odc-by-1.0_database_and_cc-by-4.0_bona-fide_audio
+      code: not_specified
+      notes: >-
+        The packaged license applies ODC Attribution 1.0 to the database and
+        CC BY 4.0 to bona fide data. ODC-BY explicitly does not grant every
+        right in individual contents; preserve Multilingual LibriSpeech
+        provenance and review privacy, personality, and generated-voice rights.
+        The baseline repository has no detected license.
+    sources:
+      - https://www.asvspoof.org/
+      - https://www.asvspoof.org/file/ASVspoof5___Evaluation_Plan_Phase2.pdf
+      - https://zenodo.org/records/14498691
+      - https://zenodo.org/api/records/14498691
+      - https://zenodo.org/api/records/14498691/files/README.txt/content
+      - https://zenodo.org/api/records/14498691/files/LICENSE.txt/content
+      - https://github.com/asvspoof-challenge/asvspoof5
+      - https://raw.githubusercontent.com/asvspoof-challenge/asvspoof5/main/README.md
+      - https://arxiv.org/abs/2502.08857
+      - https://doi.org/10.21437/ASVspoof.2024-1
+
   - id: voxenes_2026
     name: VoxENES 2026
     full_name: "VoxENES 2026: Benchmarking Generalization of Speech Spoofing Detectors Against LLM-Era TTS and Voice Conversion"

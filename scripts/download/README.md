@@ -117,6 +117,7 @@ scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
+scripts/download/asvspoof_5.sh
 scripts/download/voxenes_2026.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
