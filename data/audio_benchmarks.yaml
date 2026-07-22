@@ -3570,6 +3570,52 @@ benchmarks:
       - https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym/raw/main/README.md
       - https://huggingface.co/api/datasets/spuraudioNips/SpurAudio-neurips-anonym
 
+  - id: geo_atbench
+    name: Geo-ATBench
+    full_name: "Geo-ATBench: A Benchmark for Geospatial Audio Tagging with Geospatial Semantic Context"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - environmental_sound_classification
+      - geospatial_audio
+    tasks:
+      - multi_label_audio_tagging
+      - environmental_sound_classification
+      - audio_geospatial_context_fusion
+      - context_aware_audio_tagging
+    official:
+      repo: https://github.com/WuYanru2002/Geo-ATBench
+      dataset: https://zenodo.org/records/18980673
+      doi: https://doi.org/10.5281/zenodo.18980673
+      leaderboard: https://github.com/WuYanru2002/Geo-ATBench-Leaderboard
+      paper: https://arxiv.org/abs/2603.10623
+    download:
+      primary:
+        - https://zenodo.org/records/18980673
+        - https://zenodo.org/api/records/18980673/files/Geo-ATBench.zip/content
+      examples:
+        - 'scripts/download/geo_atbench.sh'
+        - 'GEO_ATBENCH_DOWNLOAD_DATA=1 scripts/download/geo_atbench.sh'
+      notes: >-
+        The public, ungated release contains 3,854 ten-second mono WAV clips
+        totaling 10.71 hours, 28 fine-grained sound-event labels, three coarse
+        event groups, and POI-derived geospatial semantic context over 11
+        OpenStreetMap feature categories. The helper downloads official
+        documentation and repository/Zenodo metadata by default; the
+        approximately 850 MB dataset archive is opt-in.
+    license:
+      data: cc-by-4.0_with_upstream_terms
+      code: MIT
+      notes: The Zenodo record declares CC BY 4.0 and the official repository is MIT. The paper says audio comes from Freesound and a prior geotagged-audio dataset, while contextual metadata derives from OpenStreetMap; preserve source attribution and review per-clip audio licenses and OSM attribution/database terms before redistribution.
+    sources:
+      - https://arxiv.org/abs/2603.10623
+      - https://arxiv.org/html/2603.10623v1
+      - https://github.com/WuYanru2002/Geo-ATBench
+      - https://raw.githubusercontent.com/WuYanru2002/Geo-ATBench/main/README.md
+      - https://api.github.com/repos/WuYanru2002/Geo-ATBench
+      - https://zenodo.org/records/18980673
+      - https://zenodo.org/api/records/18980673
+
   - id: urbansound8k
     name: UrbanSound8K
     full_name: "UrbanSound8K: A Dataset and Taxonomy for Urban Sound Research"

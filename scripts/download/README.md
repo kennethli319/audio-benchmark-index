@@ -90,6 +90,7 @@ scripts/download/dcase2026_task1_hac.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
 scripts/download/spuraudio.sh
+scripts/download/geo_atbench.sh
 scripts/download/soroll_ia.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
