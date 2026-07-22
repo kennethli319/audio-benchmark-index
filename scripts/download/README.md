@@ -151,6 +151,7 @@ scripts/download/fisher_english.sh
 scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
 scripts/download/qivd.sh
+IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 ```
 
 Without the required environment variables, they print the manual access steps
@@ -181,6 +182,9 @@ INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
 # ParaPairAudioBench downloads official docs by default. Cloning adds pair annotations/builders, not source audio.
 PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
+
+# IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
+IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 
 # Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
 MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh

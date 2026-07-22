@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 123 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 124 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Audio Benchmark Index">
@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="123 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="124 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -378,16 +378,16 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 123 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 124 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>123</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>123</strong></div>
-        <div class="hero-stat"><span>Manual or gated</span><strong>14</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>124</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>124</strong></div>
+        <div class="hero-stat"><span>Manual or gated</span><strong>15</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-21">July 21, 2026</time></strong></div>
       </div>
     </div>
@@ -420,7 +420,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-understanding">
   <span>Speech understanding &amp; dialogue</span>
-  <strong>20</strong>
+  <strong>21</strong>
   <small>Translation, instructions, dialogue, and spoken intent</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="speaker-human">
@@ -440,12 +440,12 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="audio-understanding">
   <span>Audio understanding &amp; events</span>
-  <strong>35</strong>
+  <strong>36</strong>
   <small>Audio reasoning, captioning, scenes, events, and urban sound</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="music">
   <span>Music</span>
-  <strong>20</strong>
+  <strong>21</strong>
   <small>Music tagging, MIR, transcription, synthesis, and genre</small>
 </button>
       </div>
@@ -453,7 +453,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 123 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 124 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -522,7 +522,7 @@
       </form>
 
       <div class="results-bar">
-        <p id="result-status" role="status" aria-live="polite">Showing 123 of 123 benchmarks.</p>
+        <p id="result-status" role="status" aria-live="polite">Showing 124 of 124 benchmarks.</p>
         <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
       </div>
 
@@ -3044,6 +3044,67 @@
                     <li><a href="https://sail.usc.edu/iemocap/iemocap_release.htm">Source 2 · sail.usc.edu</a></li>
                     <li><a href="https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf">Source 3 · sail.usc.edu</a></li>
                     <li><a href="https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf">Source 4 · sail.usc.edu</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-ifeval_audio"
+  data-name="ifeval-audio"
+  data-families="speech-understanding audio-understanding music"
+  data-access="manual"
+  data-host="hugging-face"
+  data-terms="open"
+  data-search="ifeval_audio ifeval-audio ifeval-audio: benchmarking instruction-following capability in audio-based large language models speech_instruction_benchmark audio_language_model_benchmark audio_instruction_following speech_instruction_following structured_output_adherence semantic_correctness_evaluation music_understanding environmental_audio_understanding apache-2.0_with_mixed_upstream_terms cc_by_nc_unspecified_version the hugging face card declares apache-2.0, while the paper says clips are used as-is from spoken squad (cc by-sa 4.0), ted-lium 3 (cc by-nc-nd 3.0), muchomusic (cc by-sa 4.0), wavcaps (academic use only), and audiobench sources with inherited licenses. the audiobench license says source code is creative commons noncommercial without naming a version. preserve the most restrictive source terms and verify per-clip provenance before redistribution or commercial use. the official release contains 280 english audio-instruction-answer triples spanning content, capitalization, symbol, list structure, length, and format requirements. it includes 240 speech triples and 40 music/environmental-sound triples, and reports instruction following rate, semantic correctness rate, and overall success rate. the helper downloads public hugging face api metadata and official benchmark documentation by default; the approximately 45 mb compressed hugging face snapshot is opt-in and requires logging in and accepting the repository&#39;s access conditions. dataset https://huggingface.co/datasets/yicheng170/audiollminstructionfollowing repository https://github.com/audiollms/audiobench/tree/main/ifeval-audio paper https://arxiv.org/abs/2505.16774 arxiv html https://arxiv.org/html/2505.16774v2 https://arxiv.org/abs/2505.16774 https://arxiv.org/html/2505.16774v2 https://github.com/audiollms/audiobench/tree/main/ifeval-audio https://raw.githubusercontent.com/audiollms/audiobench/main/ifeval-audio/readme.md https://raw.githubusercontent.com/audiollms/audiobench/main/license https://huggingface.co/datasets/yicheng170/audiollminstructionfollowing https://huggingface.co/datasets/yicheng170/audiollminstructionfollowing/raw/main/readme.md https://huggingface.co/api/datasets/yicheng170/audiollminstructionfollowing">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speech understanding &amp; dialogue</span>
+      <h3>IFEval-Audio</h3>
+      <p class="benchmark-full-name">IFEval-Audio: Benchmarking Instruction-Following Capability in Audio-based Large Language Models</p>
+    </div>
+    <span class="access-badge manual">Manual or gated</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Audio Instruction Following</span>
+        <span class="tag">Speech Instruction Following</span>
+        <span class="tag">Structured Output Adherence</span>
+        <span class="tag">Semantic Correctness Evaluation</span>
+        <span class="tag tag-more">+2 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Hugging Face</strong></div>
+    <div><span>Upstream terms</span><strong>Open / attribution signals</strong></div>
+  </div>
+  <p class="access-copy">Start with the helper: it prints the required form, password, license, or access-acknowledgement steps.</p>
+  <nav class="card-actions" aria-label="IFEval-Audio links">
+    <a class="card-action primary" href="https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing">Get data</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2505.16774">Read the paper</a>
+          <a class="card-action secondary" href="https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio">View code</a>
+  </nav>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>apache-2.0_with_mixed_upstream_terms</dd></div>
+        <div><dt>Code license</dt><dd>cc_by_nc_unspecified_version</dd></div>
+        <div><dt>License caution</dt><dd>The Hugging Face card declares Apache-2.0, while the paper says clips are used as-is from Spoken SQuAD (CC BY-SA 4.0), TED-LIUM 3 (CC BY-NC-ND 3.0), MuChoMusic (CC BY-SA 4.0), WavCaps (academic use only), and AudioBench sources with inherited licenses. The AudioBench LICENSE says source code is Creative Commons NonCommercial without naming a version. Preserve the most restrictive source terms and verify per-clip provenance before redistribution or commercial use.</dd></div>
+        <div><dt>Download notes</dt><dd>The official release contains 280 English audio-instruction-answer triples spanning Content, Capitalization, Symbol, List Structure, Length, and Format requirements. It includes 240 speech triples and 40 music/environmental-sound triples, and reports Instruction Following Rate, Semantic Correctness Rate, and Overall Success Rate. The helper downloads public Hugging Face API metadata and official benchmark documentation by default; the approximately 45 MB compressed Hugging Face snapshot is opt-in and requires logging in and accepting the repository&#39;s access conditions.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/ifeval_audio.sh</code></div>
+        <button type="button" data-copy="scripts/download/ifeval_audio.sh" aria-label="Copy IFEval-Audio helper command">Copy</button>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing">Dataset</a></li>
+                    <li><a href="https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio">Repository</a></li>
+                    <li><a href="https://arxiv.org/abs/2505.16774">Paper</a></li>
+                    <li><a href="https://arxiv.org/html/2505.16774v2">Arxiv Html</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://arxiv.org/abs/2505.16774">Source 1 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2505.16774v2">Source 2 · arxiv.org</a></li>
+                    <li><a href="https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio">Source 3 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/IFEval-Audio/README.md">Source 4 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/LICENSE">Source 5 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing">Source 6 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing/raw/main/README.md">Source 7 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/YichenG170/AudioLLMInstructionFollowing">Source 8 · huggingface.co</a></li></ul></div>
     </div>
   </details>
 </article>

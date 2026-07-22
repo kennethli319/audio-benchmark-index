@@ -3331,6 +3331,47 @@ benchmarks:
       - https://github.com/facebookresearch/textlesslib/tree/main/examples/expresso/dataset
       - https://www.openslr.org/60/
 
+  - id: ifeval_audio
+    name: IFEval-Audio
+    full_name: "IFEval-Audio: Benchmarking Instruction-Following Capability in Audio-based Large Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_instruction_benchmark
+      - audio_language_model_benchmark
+    tasks:
+      - audio_instruction_following
+      - speech_instruction_following
+      - structured_output_adherence
+      - semantic_correctness_evaluation
+      - music_understanding
+      - environmental_audio_understanding
+    official:
+      dataset: https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing
+      repo: https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio
+      paper: https://arxiv.org/abs/2505.16774
+      arxiv_html: https://arxiv.org/html/2505.16774v2
+    download:
+      primary:
+        - https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing
+        - https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio
+      examples:
+        - 'scripts/download/ifeval_audio.sh'
+        - 'IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh'
+      notes: The official release contains 280 English audio-instruction-answer triples spanning Content, Capitalization, Symbol, List Structure, Length, and Format requirements. It includes 240 speech triples and 40 music/environmental-sound triples, and reports Instruction Following Rate, Semantic Correctness Rate, and Overall Success Rate. The helper downloads public Hugging Face API metadata and official benchmark documentation by default; the approximately 45 MB compressed Hugging Face snapshot is opt-in and requires logging in and accepting the repository's access conditions.
+    license:
+      data: apache-2.0_with_mixed_upstream_terms
+      code: cc_by_nc_unspecified_version
+      notes: The Hugging Face card declares Apache-2.0, while the paper says clips are used as-is from Spoken SQuAD (CC BY-SA 4.0), TED-LIUM 3 (CC BY-NC-ND 3.0), MuChoMusic (CC BY-SA 4.0), WavCaps (academic use only), and AudioBench sources with inherited licenses. The AudioBench LICENSE says source code is Creative Commons NonCommercial without naming a version. Preserve the most restrictive source terms and verify per-clip provenance before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2505.16774
+      - https://arxiv.org/html/2505.16774v2
+      - https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio
+      - https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/IFEval-Audio/README.md
+      - https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/LICENSE
+      - https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing
+      - https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing/raw/main/README.md
+      - https://huggingface.co/api/datasets/YichenG170/AudioLLMInstructionFollowing
+
   - id: ming_freeform_audio_edit
     name: Ming-Freeform-Audio-Edit
     full_name: "Ming-Freeform-Audio-Edit: Free-form instruction-based speech editing benchmark"
