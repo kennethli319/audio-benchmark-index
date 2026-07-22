@@ -17,7 +17,7 @@ music genre classification, instrument recognition, music transcription, asynchr
 distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
 music synthesis, speech quality
-assessment, spatial audio localization, cross-modal audio-video-text retrieval,
+assessment, child-speech recognition, spatial audio localization, cross-modal audio-video-text retrieval,
 audio-visual segmentation, audio-visual speech recognition,
 spoken digit classification,
 instruction-based speech editing, and
@@ -34,7 +34,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 178 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 179 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -147,6 +147,7 @@ Current coverage includes:
 | [SPGISpeech](https://huggingface.co/datasets/kensho/spgispeech) | ASR | [kensho/spgispeech](https://huggingface.co/datasets/kensho/spgispeech) after accepting Kensho/Hugging Face terms; helper defaults to `dev` | Gated terms allow academic research/internal use and prohibit redistribution without prior written consent |
 | [Earnings-22](https://github.com/revdotcom/speech-datasets/tree/main/earnings22) | ASR | Official Rev.com [speech-datasets](https://github.com/revdotcom/speech-datasets) repository; helper downloads README/license/metadata by default and makes sparse checkout plus Git LFS audio pull opt-in | Dataset README/LICENSE list CC BY-SA 4.0 for transcripts and associated text; repository has no detected top-level license, so re-check audio/LFS terms before redistribution |
 | [Earnings-21](https://github.com/revdotcom/speech-datasets/tree/main/earnings21) | ASR and named-entity recognition | Official Rev.com release with 44 earnings calls (about 39 hours), a representative 10-hour Eval-10 subset, transcripts, entity annotations, and speaker/file metadata; helper fetches lightweight docs/metadata by default and makes the approximately 770 MB media tree opt-in | CC BY-SA 4.0 explicitly covers transcripts and associated alignment text; audio and repository code terms are not clearly specified, so confirm before redistribution or commercial use |
+| [CHILDES-Aligned](https://huggingface.co/datasets/MagicLuke/CHILDES-Aligned) | Child-speech ASR and timestamp alignment | Manually gated release with a 413.3-hour general-purpose English child-speech configuration and a quality-controlled 283-hour ASR configuration; helper prints access steps and requires explicit terms acknowledgement before downloading a selected config | HF card declares CC BY-NC-SA 4.0 plus non-commercial-research-only TalkBank terms, source-corpus citation requirements, manual review, and no audio redistribution; linked code repository was unavailable when checked |
 | [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/) | ASR and accented speech | Official TAMU corpus page and documentation; access requires accepting license terms and submitting the download form to receive a generated Google Drive link by email | CC BY-NC 4.0; current release has 24 non-native English speakers plus suitcase-corpus material, while the Interspeech 2018 paper describes v1.0 |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
 | [LibriSpeech](https://www.openslr.org/12) | ASR and speech-codec reconstruction | OpenSLR SLR12 metadata/checksums by default, opt-in archives, or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr); Qwen3-TTS §4.1.2 uses all 2,620 `test-clean` utterances | CC BY 4.0 |

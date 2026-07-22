@@ -2220,6 +2220,40 @@ benchmarks:
       - https://arxiv.org/abs/2104.11348
       - https://www.isca-archive.org/interspeech_2021/delrio21_interspeech.html
 
+  - id: childes_aligned
+    name: CHILDES-Aligned
+    full_name: "CHILDES-Aligned: A Curated Children's Speech Dataset via Multi-Model Timestamp Ensembling"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - child_speech_recognition
+      - long_form_speech_alignment
+      - forced_alignment
+      - timestamp_curation
+    official:
+      dataset: https://huggingface.co/datasets/MagicLuke/CHILDES-Aligned
+      paper: https://arxiv.org/abs/2607.03670
+      arxiv_html: https://arxiv.org/html/2607.03670v1
+      talkbank_terms: https://talkbank.org/share/rules.html
+    download:
+      primary:
+        - https://huggingface.co/datasets/MagicLuke/CHILDES-Aligned
+      examples:
+        - 'scripts/download/childes_aligned.sh'
+        - 'CHILDES_ALIGNED_ACK_TERMS=1 CHILDES_ALIGNED_CONFIG=asr scripts/download/childes_aligned.sh'
+      notes: The manually gated Hugging Face release contains a 413.3-hour general-purpose English child-speech configuration with corrected utterance timestamps and a quality-controlled 283-hour ASR-training configuration. The repository reports approximately 160.6 GB of storage. The helper prints the access steps by default and downloads a selected configuration only after the user has received access, authenticated with Hugging Face, and set CHILDES_ALIGNED_ACK_TERMS=1.
+    license:
+      data: cc-by-nc-sa-4.0_with_talkbank_terms
+      code: not_specified
+      notes: The Hugging Face card declares CC BY-NC-SA 4.0 and its access agreement additionally limits use to non-commercial research, requires citation of the BEACON paper and every source CHILDES corpus used, incorporates the TalkBank Ground Rules, and prohibits audio redistribution. Access is manually reviewed. The paper's linked BEACON GitHub repository was not publicly reachable when checked, so no code license is claimed.
+    sources:
+      - https://arxiv.org/abs/2607.03670
+      - https://arxiv.org/html/2607.03670v1#S4
+      - https://huggingface.co/datasets/MagicLuke/CHILDES-Aligned
+      - https://huggingface.co/api/datasets/MagicLuke/CHILDES-Aligned
+      - https://talkbank.org/share/rules.html
+
   - id: l2_arctic
     name: L2-ARCTIC
     full_name: "L2-ARCTIC: A Non-native English Speech Corpus"

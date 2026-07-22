@@ -196,6 +196,7 @@ scripts/download/timit.sh
 scripts/download/switchboard.sh
 scripts/download/fisher_english.sh
 scripts/download/dihard_iii.sh
+scripts/download/childes_aligned.sh
 scripts/download/l2_arctic.sh
 scripts/download/qivd.sh
 scripts/download/dcase2025_audioqa.sh
