@@ -40,6 +40,12 @@ FAMILIES = [
     pattern: /speech_to_text_translation|end_to_end_speech_dialogue|spoken_language_understanding|speech_instruction_benchmark|keyword_spotting|spoken_language_identification|spoken_digit_classification/,
   },
   {
+    slug: "audiovisual",
+    label: "Audiovisual & cross-modal",
+    description: "Audio-video reasoning, retrieval, speech, and localization",
+    pattern: /audio_visual|audiovisual|cross_modal.*retrieval/,
+  },
+  {
     slug: "speaker-human",
     label: "Speaker, identity & emotion",
     description: "Speaker recognition, diarization, anti-spoofing, and emotion",

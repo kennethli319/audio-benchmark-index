@@ -423,6 +423,11 @@
   <strong>21</strong>
   <small>Translation, instructions, dialogue, and spoken intent</small>
 </button>
+<button class="family-tile" type="button" data-family-choice="audiovisual">
+  <span>Audiovisual &amp; cross-modal</span>
+  <strong>27</strong>
+  <small>Audio-video reasoning, retrieval, speech, and localization</small>
+</button>
 <button class="family-tile" type="button" data-family-choice="speaker-human">
   <span>Speaker, identity &amp; emotion</span>
   <strong>32</strong>
@@ -435,7 +440,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="representation">
   <span>Representation &amp; general suites</span>
-  <strong>12</strong>
+  <strong>8</strong>
   <small>Cross-task representation and general-purpose evaluation</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audio-understanding">
@@ -470,6 +475,7 @@
               <option value="speech-recognition">Speech recognition</option>
               <option value="speech-generation">Speech generation</option>
               <option value="speech-understanding">Speech understanding &amp; dialogue</option>
+              <option value="audiovisual">Audiovisual &amp; cross-modal</option>
               <option value="speaker-human">Speaker, identity &amp; emotion</option>
               <option value="restoration-quality">Enhancement, separation &amp; quality</option>
               <option value="representation">Representation &amp; general suites</option>
@@ -1105,14 +1111,14 @@
 
 <article class="benchmark-card" id="benchmark-av_speakerbench"
   data-name="av-speakerbench"
-  data-families="speaker-human audio-understanding"
+  data-families="audiovisual speaker-human audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
   data-search="av_speakerbench av-speakerbench see, hear, and understand: benchmarking audiovisual human speech understanding in multimodal large language models audio_visual_understanding audio_visual_question_answering speaker_centric_audio_visual_reasoning audio_visual_temporal_grounding speech_understanding cc-by-nc-4.0 not_specified the official project page, github readme, and hugging face card prose state cc by-nc 4.0, while the hugging face card front matter incorrectly or inconsistently declares mit. use the more restrictive cc by-nc 4.0 terms and re-check upstream source-video rights before redistribution or commercial use. github reports no detected repository license. the public, ungated release contains 3,212 english multiple-choice questions plus aligned audio-only, visual-only, and audiovisual clips. the helper downloads official documentation by default; the hugging face api reports about 123 gb of repository storage, so the full snapshot requires av_speakerbench_download_hf=1. qwen3.5-omni reports the benchmark in section 5.1.4, table 7. homepage https://plnguyen2908.github.io/av-speakerbench-project-page/ repository https://github.com/plnguyen2908/av-speakerbench paper https://arxiv.org/abs/2512.02231 dataset https://huggingface.co/datasets/plnguyen2908/av-speakerbench qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://plnguyen2908.github.io/av-speakerbench-project-page/ https://github.com/plnguyen2908/av-speakerbench https://raw.githubusercontent.com/plnguyen2908/av-speakerbench/master/readme.md https://api.github.com/repos/plnguyen2908/av-speakerbench https://huggingface.co/datasets/plnguyen2908/av-speakerbench https://huggingface.co/datasets/plnguyen2908/av-speakerbench/raw/main/readme.md https://huggingface.co/api/datasets/plnguyen2908/av-speakerbench https://arxiv.org/abs/2512.02231 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>AV-SpeakerBench</h3>
       <p class="benchmark-full-name">See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models</p>
     </div>
@@ -1168,14 +1174,14 @@
 
 <article class="benchmark-card" id="benchmark-ava_active_speaker"
   data-name="ava active speaker"
-  data-families="speaker-human audio-understanding"
+  data-families="audiovisual speaker-human audio-understanding"
   data-access="helper"
   data-host="official"
   data-terms="open"
   data-search="ava_active_speaker ava active speaker ava active speaker: an audio-visual dataset for active speaker detection audio_visual_understanding active_speaker_detection audio_visual_speaker_localization speaking_activity_detection face_track_classification cc by 4.0 not_specified google&#39;s ava download page states that all datasets listed there are cc by 4.0. the github repository has no detected license, so that statement should not be assumed to license repository code. preserve attribution and review source-movie and hosting terms before redistributing media; video availability can change independently of the released annotations. the official v1.0 release associates visible face tracks with speaking_and_audible, speaking_but_not_audible, or not_speaking labels. google reports 3.65 million labeled frames across approximately 39,000 face tracks; the current download page says dense labels cover 160 ava movie clips that remained available on youtube. the helper downloads official documentation and the 2.5 kb video-name manifest by default. set ava_active_speaker_download_labels=1 for the approximately 23 mb train/validation annotation archives. it does not fetch the much larger source videos. homepage https://research.google.com/ava/ download https://research.google.com/ava/download.html#ava-active-speaker-download-v10 repository https://github.com/cvdfoundation/ava-dataset paper https://arxiv.org/abs/1901.01342 https://research.google.com/ava/ https://research.google.com/ava/download.html#ava-active-speaker-download-v10 https://github.com/cvdfoundation/ava-dataset https://raw.githubusercontent.com/cvdfoundation/ava-dataset/master/readme.md https://api.github.com/repos/cvdfoundation/ava-dataset https://arxiv.org/abs/1901.01342">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>AVA Active Speaker</h3>
       <p class="benchmark-full-name">AVA Active Speaker: An Audio-Visual Dataset for Active Speaker Detection</p>
     </div>
@@ -1227,14 +1233,14 @@
 
 <article class="benchmark-card" id="benchmark-ave"
   data-name="ave"
-  data-families="representation"
+  data-families="audiovisual"
   data-access="helper"
   data-host="official"
   data-terms="unspecified"
   data-search="ave ave audio-visual event localization in unconstrained videos audio_visual_event_localization audio_visual_event_localization audio_visual_event_classification cross_modal_localization not_specified not_specified the official repository does not expose a detected github license and the readme does not state a standalone dataset license. ave is built from unconstrained videos, so source-video copyright, platform terms, and redistribution rights should be checked before use. the helper downloads the project page and official readme by default and can clone the code repository. the dataset, precomputed audio features, and visual features are linked from google drive; download those manually or with a user-selected drive tool after reviewing terms. homepage https://sites.google.com/view/audiovisualresearch repository https://github.com/yapengtian/ave-eccv18 paper https://arxiv.org/abs/1803.08842 eccv paper https://openaccess.thecvf.com/content_eccv_2018/html/yapeng_tian_audio-visual_event_localization_eccv_2018_paper.html dataset drive https://drive.google.com/open?id=1fjkwe79e0u96vdjivwfrq1v6sodhe7kk audio feature drive https://drive.google.com/file/d/1f6p4baoy-i0fdxuohg7xhuw_fno5exbs/view visual feature drive https://drive.google.com/file/d/1hqwbhuta3fqturdurnhmyfrqdrrhgmc9/view https://sites.google.com/view/audiovisualresearch https://github.com/yapengtian/ave-eccv18 https://raw.githubusercontent.com/yapengtian/ave-eccv18/master/readme.md https://api.github.com/repos/yapengtian/ave-eccv18 https://arxiv.org/abs/1803.08842 https://openaccess.thecvf.com/content_eccv_2018/html/yapeng_tian_audio-visual_event_localization_eccv_2018_paper.html">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>AVE</h3>
       <p class="benchmark-full-name">Audio-Visual Event Localization in Unconstrained Videos</p>
     </div>
@@ -1287,14 +1293,14 @@
 
 <article class="benchmark-card" id="benchmark-avsbench"
   data-name="avsbench"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="manual"
   data-host="official"
   data-terms="noncommercial"
   data-search="avsbench avsbench avsbench: audio-visual segmentation benchmark audio_visual_understanding audio_visual_segmentation sounding_object_segmentation single_sound_source_segmentation multiple_sound_source_segmentation audio_visual_semantic_segmentation cc-by-nc-4.0 apache-2.0 the official project page licenses the avsbench dataset published there under cc by-nc 4.0, and the repository licenses the project under apache-2.0. source videos were collected from public youtube material, so uploader rights, platform terms, and current video availability still apply; confirm whether the updated semantic release carries any additional terms during application. the benchmark covers semi-supervised single sound source segmentation (s4), fully supervised multiple sound source segmentation (ms3), and the later semantic-label avss task. the official project page publicly links the original avsbench-object video-id csv and segmentation maps on google drive, while processed video/audio requires an email request. the repository directs users to the official application page for the updated object and semantic datasets. the helper saves lightweight official documentation, repository metadata, and license text, then prints these manual access paths; it does not automate drive, email, or source-video retrieval. homepage https://opennlplab.github.io/avsbench/ repository https://github.com/opennlplab/avsbench paper https://arxiv.org/abs/2207.05042 semantic paper https://arxiv.org/abs/2301.13190 download page http://www.avlbench.opennlplab.cn/download legacy object download https://drive.google.com/drive/folders/1wkfkymvyn6rnkne_7xv6bm-9pfcaikdt https://opennlplab.github.io/avsbench/ https://github.com/opennlplab/avsbench https://raw.githubusercontent.com/opennlplab/avsbench/main/readme.md https://raw.githubusercontent.com/opennlplab/avsbench/main/license https://api.github.com/repos/opennlplab/avsbench https://arxiv.org/abs/2207.05042 https://arxiv.org/abs/2301.13190">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>AVSBench</h3>
       <p class="benchmark-full-name">AVSBench: Audio-Visual Segmentation Benchmark</p>
     </div>
@@ -1350,14 +1356,14 @@
 
 <article class="benchmark-card" id="benchmark-avsd"
   data-name="avsd"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="manual"
   data-host="official"
   data-terms="mixed"
   data-search="avsd avsd audio visual scene-aware dialog dataset audio_visual_understanding audio_visual_dialogue video_question_answering multimodal_response_generation scene_understanding unclear mit the official repository is mit-licensed, but it does not separately state that the mit license covers the google drive dataset or underlying charades videos. treat dialog annotations and media rights conservatively, review any terms shown by the drive/charades access paths, and preserve source-video provenance before redistribution or commercial use. the cvpr paper introduces dialogs and final summaries for more than 11,000 charades videos. the official dstc7 repository reports 7,659 training, 1,787 validation, and 1,710 test dialogs and links the released challenge data through google drive. the helper saves the public repository documentation, license, and cvpr paper page, then prints the manual dataset and charades media paths; it does not automate google drive or raw-video retrieval. repository https://github.com/hudaalamri/dstc7-audio-visual-scene-aware-dialog-avsd-challenge paper https://openaccess.thecvf.com/content_cvpr_2019/html/alamri_audio_visual_scene-aware_dialog_cvpr_2019_paper.html dataset https://drive.google.com/drive/folders/1slztysjak_2timg5f8ivxcfol_owwd_q?usp=sharing charades https://prior.allenai.org/projects/charades https://github.com/hudaalamri/dstc7-audio-visual-scene-aware-dialog-avsd-challenge https://raw.githubusercontent.com/hudaalamri/dstc7-audio-visual-scene-aware-dialog-avsd-challenge/master/readme.md https://raw.githubusercontent.com/hudaalamri/dstc7-audio-visual-scene-aware-dialog-avsd-challenge/master/data/readme.md https://raw.githubusercontent.com/hudaalamri/dstc7-audio-visual-scene-aware-dialog-avsd-challenge/master/license https://openaccess.thecvf.com/content_cvpr_2019/html/alamri_audio_visual_scene-aware_dialog_cvpr_2019_paper.html https://openaccess.thecvf.com/content_cvpr_2019/papers/alamri_audio_visual_scene-aware_dialog_cvpr_2019_paper.pdf https://prior.allenai.org/projects/charades">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>AVSD</h3>
       <p class="benchmark-full-name">Audio Visual Scene-Aware Dialog Dataset</p>
     </div>
@@ -1409,14 +1415,14 @@
 
 <article class="benchmark-card" id="benchmark-avut"
   data-name="avut"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="unspecified"
   data-search="avut avut audio-centric video understanding benchmark without text shortcut audio_visual_understanding audio_visual_question_answering audio_content_understanding audio_visual_alignment audio_event_localization audio_visual_diarization not_specified not_specified neither the official repository nor hugging face card states a data or code license. the paper says avut contains only links to public youtube videos and does not host or distribute video copies, while the current hugging face repository appears to include video files; users should review youtube terms, source-video rights, and this discrepancy before downloading or redistributing media. the public, ungated release covers 2,662 english youtube videos across 18 domains and 11,609 question-answer pairs in av-human and av-gemini. the helper downloads official documentation and four lightweight annotation json files by default; the hugging face api reports about 24.0 gb of repository storage, so the full snapshot requires avut_download_hf=1. qwen3.5-omni reports avut in section 5.1.4, table 7. repository https://github.com/lark-png/avut paper https://arxiv.org/abs/2503.19951 dataset https://huggingface.co/datasets/tsinghua-ee/avutbenchmark qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://github.com/lark-png/avut https://raw.githubusercontent.com/lark-png/avut/main/readme.md https://api.github.com/repos/lark-png/avut https://huggingface.co/datasets/tsinghua-ee/avutbenchmark https://huggingface.co/datasets/tsinghua-ee/avutbenchmark/raw/main/readme.md https://huggingface.co/api/datasets/tsinghua-ee/avutbenchmark https://arxiv.org/abs/2503.19951 https://arxiv.org/html/2503.19951v3 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>AVUT</h3>
       <p class="benchmark-full-name">Audio-centric Video Understanding Benchmark without Text Shortcut</p>
     </div>
@@ -1745,14 +1751,14 @@
 
 <article class="benchmark-card" id="benchmark-crema_d"
   data-name="crema-d"
-  data-families="speaker-human"
+  data-families="audiovisual speaker-human"
   data-access="helper"
   data-host="official"
   data-terms="mixed"
   data-search="crema_d crema-d crema-d: crowd-sourced emotional multimodal actors dataset speech_emotion_recognition speech_emotion_recognition audio_visual_emotion_recognition acted_emotional_speech crowd_sourced_emotion_annotation odbl-1.0 not_specified the official readme/license say the database is under the open database license 1.0 and individual contents are under the database contents license 1.0. github reports license as noassertion, so keep the explicit upstream text as authority. the helper downloads small readme/license/csv metadata by default. full audio and video live in git lfs and require about 7.55 gib for a complete clone; upstream asks repository users to fill out the access/community form. repository https://github.com/cheyneycomputerscience/crema-d gitlab mirror https://gitlab.com/cs-cooper-lab/crema-d-mirror paper https://doi.org/10.1109/taffc.2014.2336244 pubmed central https://www.ncbi.nlm.nih.gov/pmc/articles/pmc4313618/ access form https://docs.google.com/forms/d/e/1faipqlsdvor994_hsx7okbu3oczluxcmxw2p1nr-zbxcpgvbnldd9eg/viewform?usp=sf_link https://github.com/cheyneycomputerscience/crema-d https://gitlab.com/cs-cooper-lab/crema-d-mirror https://www.ncbi.nlm.nih.gov/pmc/articles/pmc4313618/ https://doi.org/10.1109/taffc.2014.2336244">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>CREMA-D</h3>
       <p class="benchmark-full-name">CREMA-D: Crowd-sourced Emotional Multimodal Actors Dataset</p>
     </div>
@@ -1860,14 +1866,14 @@
 
 <article class="benchmark-card" id="benchmark-daily_omni"
   data-name="daily-omni"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
   data-search="daily_omni daily-omni daily-omni: towards audio-visual reasoning with temporal alignment across modalities audio_visual_understanding audio_visual_question_answering temporal_alignment cross_modal_reasoning audio_visual_event_reasoning cc-by-nc-sa-4.0 gpl-3.0 the paper and hugging face card declare cc by-nc-sa 4.0 for the benchmark, and github reports gpl-3.0 for the repository. videos are sampled from audioset, video-mme, and finevideo, so their upstream media rights and terms also require review. the public, ungated release contains 684 real-world videos and 1,197 english multiple-choice questions across six temporal audio-visual reasoning tasks. the helper downloads official documentation and qa.json by default; the hugging face api reports approximately 3.9 gb of storage, so videos.tar requires daily_omni_download_hf=1. qwen3.5-omni reports dailyomni in section 5.1.4, table 7. homepage https://lliar-liar.github.io/daily-omni/ repository https://github.com/lliar-liar/daily-omni paper https://arxiv.org/abs/2505.17862 dataset https://huggingface.co/datasets/liarliar/daily-omni qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://lliar-liar.github.io/daily-omni/ https://github.com/lliar-liar/daily-omni https://raw.githubusercontent.com/lliar-liar/daily-omni/main/readme.md https://api.github.com/repos/lliar-liar/daily-omni https://huggingface.co/datasets/liarliar/daily-omni https://huggingface.co/datasets/liarliar/daily-omni/raw/main/readme.md https://huggingface.co/api/datasets/liarliar/daily-omni https://arxiv.org/abs/2505.17862 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>Daily-Omni</h3>
       <p class="benchmark-full-name">Daily-Omni: Towards Audio-Visual Reasoning with Temporal Alignment across Modalities</p>
     </div>
@@ -1923,14 +1929,14 @@
 
 <article class="benchmark-card" id="benchmark-dcase2025_stereo_seld"
   data-name="dcase2025 task 3 stereo seld dataset"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="zenodo"
   data-terms="open"
   data-search="dcase2025_stereo_seld dcase2025 task 3 stereo seld dataset dcase2025 task 3 stereo sound event localization and detection dataset spatial_audio sound_event_localization_and_detection stereo_sound_source_localization audio_visual_sound_event_localization source_distance_estimation onscreen_offscreen_sound_classification acoustic_source_tracking mit mixed zenodo metadata and the included license identify the dataset as mit. sony&#39;s data-generator repository is mit. the official baseline repository has no detected github license or license file, so its code terms are not specified. because the release is derived from starss23 recordings of people and rooms, review the original privacy/provenance context before sensitive visual use. the public zenodo v1.1.0 release contains 30,000 labeled development clips (41.7 hours) and 10,000 unlabeled evaluation clips (13.9 hours), each five seconds long, with 24 khz stereo audio and aligned perspective video. it is derived from starss23 by sampling and converting its foa audio and 360-degree video, and adds folded azimuth, source-distance, and onscreen/offscreen labels. the helper downloads official pages, record metadata, readme, license, paper page, and generator documentation by default; the approximately 15.2 mb label archive is opt-in, while the approximately 27.6 gb audio/video release remains on zenodo. dcase task https://dcase.community/challenge2025/task-stereo-sound-event-localization-and-detection-in-regular-video-content zenodo record https://zenodo.org/records/15559774 doi https://doi.org/10.5281/zenodo.15559774 paper https://arxiv.org/abs/2507.12042 data generator repo https://github.com/sonyresearch/dcase2025_stereo_seld_data_generator baseline repo https://github.com/partha2409/dcase2025_seld_baseline https://dcase.community/challenge2025/task-stereo-sound-event-localization-and-detection-in-regular-video-content https://zenodo.org/api/records/15559774 https://zenodo.org/records/15559774 https://zenodo.org/api/records/15559774/files/license/content https://arxiv.org/abs/2507.12042 https://github.com/sonyresearch/dcase2025_stereo_seld_data_generator https://api.github.com/repos/sonyresearch/dcase2025_stereo_seld_data_generator https://github.com/partha2409/dcase2025_seld_baseline https://api.github.com/repos/partha2409/dcase2025_seld_baseline">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>DCASE2025 Task 3 Stereo SELD Dataset</h3>
       <p class="benchmark-full-name">DCASE2025 Task 3 Stereo Sound Event Localization and Detection Dataset</p>
     </div>
@@ -2340,14 +2346,14 @@
 
 <article class="benchmark-card" id="benchmark-epic_sounds"
   data-name="epic-sounds"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="official"
   data-terms="noncommercial"
   data-search="epic_sounds epic-sounds epic-sounds: a large-scale dataset of actions that sound audio_event_classification egocentric_audio_event_recognition sound_event_detection audio_visual_understanding action_sound_recognition cc-by-nc-4.0 not_specified the annotation readme states all dataset files are published under creative commons attribution-noncommercial 4.0 international. raw audio is derived from epic-kitchens-100 video recordings, so original dataset access terms and any hdf5 access approval should be checked before redistribution or commercial use. the helper downloads official docs and public annotation csv files by default. raw audio is not redistributed separately; the official readme says to download epic-kitchens-100 videos and extract audio, or email the maintainers for access to an existing hdf5 file. homepage https://epic-kitchens.github.io/epic-sounds/site dataset landing https://epic-kitchens.github.io/epic-sounds/ annotations repo https://github.com/epic-kitchens/epic-sounds-annotations icassp paper https://ieeexplore.ieee.org/document/10096198 tpami paper https://ieeexplore.ieee.org/document/11084841 epic kitchens download scripts https://github.com/epic-kitchens/download-scripts-100 auditory slowfast repo https://github.com/ekazakos/auditory-slow-fast https://epic-kitchens.github.io/epic-sounds/site https://github.com/epic-kitchens/epic-sounds-annotations https://raw.githubusercontent.com/epic-kitchens/epic-sounds-annotations/main/readme.md https://api.github.com/repos/epic-kitchens/epic-sounds-annotations/contents/ https://github.com/epic-kitchens/download-scripts-100 https://github.com/ekazakos/auditory-slow-fast https://ieeexplore.ieee.org/document/10096198 https://ieeexplore.ieee.org/document/11084841">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>EPIC-SOUNDS</h3>
       <p class="benchmark-full-name">EPIC-SOUNDS: A Large-Scale Dataset of Actions that Sound</p>
     </div>
@@ -3237,14 +3243,14 @@
 
 <article class="benchmark-card" id="benchmark-iemocap"
   data-name="iemocap"
-  data-families="speaker-human"
+  data-families="audiovisual speaker-human"
   data-access="manual"
   data-host="official"
   data-terms="mixed"
   data-search="iemocap iemocap iemocap: interactive emotional dyadic motion capture database speech_emotion_recognition speech_emotion_recognition audio_visual_emotion_recognition multimodal_emotion_recognition dialogue_emotion_recognition custom_research_license not_applicable the official release page links a usc/sail data release form and google request form. treat access as manual/form-gated and re-check the signed release terms before redistribution, commercial use, or sharing derived copies. iemocap is released by request after reading the license and submitting the official electronic release form; there is no public one-command archive url. homepage https://sail.usc.edu/iemocap/ release page https://sail.usc.edu/iemocap/iemocap_release.htm license form https://sail.usc.edu/iemocap/data_release_form_iemocap.pdf request form https://docs.google.com/forms/d/e/1faipqlscbecgi2k5bftrxi_-05iysswocql5mx7dh57xcjv1m_nozna/viewform?usp=sf_link paper https://sail.usc.edu/iemocap/busso_2008_iemocap.pdf https://sail.usc.edu/iemocap/ https://sail.usc.edu/iemocap/iemocap_release.htm https://sail.usc.edu/iemocap/data_release_form_iemocap.pdf https://sail.usc.edu/iemocap/busso_2008_iemocap.pdf">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>IEMOCAP</h3>
       <p class="benchmark-full-name">IEMOCAP: Interactive Emotional Dyadic Motion Capture Database</p>
     </div>
@@ -3932,14 +3938,14 @@
 
 <article class="benchmark-card" id="benchmark-llp"
   data-name="llp"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="official"
   data-terms="unspecified"
   data-search="llp llp look, listen, and parse: audio-visual video parsing dataset audio_visual_understanding audio_visual_video_parsing temporal_event_localization audio_event_detection visual_event_detection weakly_supervised_multimodal_learning not_specified unclear the official repository does not contain a license file and github reports no detected license. its readme says gplv3 but links to a gplv3 license in an unrelated repository, so neither that statement nor the linked file establishes clear terms for llp annotations or code. obtain clarification before redistribution or commercial use; source videos also retain their original rights and youtube terms. the official repository releases lightweight weak-label train/validation/test csvs and dense audio and visual event annotations for validation and test. the full csv contains 11,849 ten-second youtube segment references; the published split files contain 10,000 train, 649 validation, and 1,200 test rows. the helper downloads documentation and all annotation csvs by default. extracted vggish, resnet-152, and r(2+1)d features remain a manual google drive download, while raw videos must be reconstructed from referenced youtube segments subject to availability and platform terms. repository https://github.com/yapengtian/avvp-eccv20 paper https://arxiv.org/abs/2007.10558 doi https://doi.org/10.1007/978-3-030-58580-8_26 https://github.com/yapengtian/avvp-eccv20 https://raw.githubusercontent.com/yapengtian/avvp-eccv20/master/readme.md https://api.github.com/repos/yapengtian/avvp-eccv20 https://github.com/yapengtian/avvp-eccv20/tree/master/data https://arxiv.org/abs/2007.10558 https://doi.org/10.1007/978-3-030-58580-8_26">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>LLP</h3>
       <p class="benchmark-full-name">Look, Listen, and Parse: Audio-Visual Video Parsing Dataset</p>
     </div>
@@ -4056,14 +4062,14 @@
 
 <article class="benchmark-card" id="benchmark-lrs2"
   data-name="lrs2-bbc"
-  data-families="representation"
+  data-families="audiovisual"
   data-access="manual"
   data-host="official"
   data-terms="noncommercial"
   data-search="lrs2 lrs2-bbc the oxford-bbc lip reading sentences 2 dataset audio_visual_speech audio_visual_speech_recognition visual_speech_recognition lip_reading non-commercial_academic_access_agreement not_applicable bbc r&amp;d restricts lrs2 to non-commercial research by universities, reputable academic institutions, and relevant public organizations; companies and independent researchers are not eligible. the signed agreement controls use, and the bbc asks researchers to obtain approval before publishing sample images. review the current agreement and bbc broadcast-content rights before use. the official vgg page describes 144,482 pre-train/train/validation/test utterances from bbc television, with date-disjoint validation and test broadcasts, and links a password-protected 50 gb package plus public split file links. access requires submitting the bbc lrs2 data sharing agreement from an official academic address; approved researchers receive a countersigned agreement and password. the helper saves the official pages, agreement, and paper metadata only and does not request credentials or download the corpus. homepage https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs2.html access page https://www.bbc.co.uk/rd/projects/lip-reading-datasets paper https://arxiv.org/abs/1809.02108 cvpr paper https://www.robots.ox.ac.uk/~vgg/publications/2017/chung17/chung17.pdf agreement https://downloads.bbc.co.uk/rd/datasets/content-analysis/lrs2-lip%20reading%20sentences%20permission%20form-.docx https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs2.html https://www.bbc.co.uk/rd/projects/lip-reading-datasets https://downloads.bbc.co.uk/rd/datasets/content-analysis/lrs2-lip%20reading%20sentences%20permission%20form-.docx https://arxiv.org/abs/1809.02108 https://export.arxiv.org/api/query?id_list=1809.02108 https://www.robots.ox.ac.uk/~vgg/publications/2017/chung17/chung17.pdf">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>LRS2-BBC</h3>
       <p class="benchmark-full-name">The Oxford-BBC Lip Reading Sentences 2 Dataset</p>
     </div>
@@ -4114,14 +4120,14 @@
 
 <article class="benchmark-card" id="benchmark-lrs3"
   data-name="lrs3-ted"
-  data-families="representation"
+  data-families="audiovisual"
   data-access="manual"
   data-host="official"
   data-terms="mixed"
   data-search="lrs3 lrs3-ted lrs3-ted: a large-scale dataset for visual speech recognition audio_visual_speech audio_visual_speech_recognition visual_speech_recognition lip_reading unspecified not_applicable no lrs3 data license is stated on the currently accessible official landing page or paper record. ted/tedx source-video rights remain with their owners; obtain the official terms before use and do not infer reuse rights from third-party mirrors. the paper introduces more than 400 hours of aligned face tracks, audio, subtitles, and word boundaries from ted and tedx for visual and audio-visual speech recognition. the official vgg landing page still identifies lrs3 and links its dataset page, but that linked page returned http 404 when checked on 2026-07-22. the helper preserves the live official landing page and paper metadata and reports the unavailable official download route; it does not substitute an unofficial mirror. homepage https://www.robots.ox.ac.uk/~vgg/data/lip_reading/ paper https://arxiv.org/abs/1809.00496 download page https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html https://www.robots.ox.ac.uk/~vgg/data/lip_reading/ https://arxiv.org/abs/1809.00496 https://export.arxiv.org/api/query?id_list=1809.00496">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>LRS3-TED</h3>
       <p class="benchmark-full-name">LRS3-TED: A Large-Scale Dataset for Visual Speech Recognition</p>
     </div>
@@ -4449,14 +4455,14 @@
 
 <article class="benchmark-card" id="benchmark-meld"
   data-name="meld"
-  data-families="speaker-human"
+  data-families="audiovisual speaker-human"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="meld meld meld: a multimodal multi-party dataset for emotion recognition in conversations speech_emotion_recognition speech_emotion_recognition multimodal_emotion_recognition dialogue_emotion_recognition sentiment_analysis audio_visual_emotion_recognition gpl-3.0 gpl-3.0 github and the hugging face dataset card list gpl-3.0. meld clips are derived from the friends tv series, so downstream users should re-check media rights and any fair-use/research assumptions before redistribution or commercial use. the helper downloads official project, readme, license, and dataset-card metadata by default. raw audio/video tarballs and extracted feature/model tarballs are opt-in because they are larger and include tv-derived media clips. homepage https://affective-meld.github.io/ repository https://github.com/declare-lab/meld dataset https://huggingface.co/datasets/declare-lab/meld paper https://aclanthology.org/p19-1050/ arxiv https://arxiv.org/abs/1810.02508 https://affective-meld.github.io/ https://github.com/declare-lab/meld https://raw.githubusercontent.com/declare-lab/meld/master/readme.md https://raw.githubusercontent.com/declare-lab/meld/master/license https://huggingface.co/datasets/declare-lab/meld https://aclanthology.org/p19-1050/ https://arxiv.org/abs/1810.02508">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>MELD</h3>
       <p class="benchmark-full-name">MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversations</p>
     </div>
@@ -5235,14 +5241,14 @@
 
 <article class="benchmark-card" id="benchmark-music_avqa"
   data-name="music-avqa"
-  data-families="audio-understanding music"
+  data-families="audiovisual audio-understanding music"
   data-access="helper"
   data-host="official"
   data-terms="unspecified"
   data-search="music_avqa music-avqa music-avqa: learning to answer questions in dynamic audio-visual scenarios audio_visual_question_answering audio_visual_question_answering multimodal_scene_understanding spatiotemporal_reasoning music_understanding not_specified conflicting: github api/license file reports mit, while the readme license section mentions gplv3 no standalone dataset license was found on the official page or readme on 2026-07-10. raw musical-performance videos and extracted features should be treated as upstream media with terms to verify before redistribution or commercial use. the helper downloads the official project page, readme/license, and public json qa annotations by default. raw videos and large feature files are hosted through google drive and baidu drive links on the project page/readme; they are not downloaded automatically. homepage https://gewu-lab.github.io/music-avqa/ repository https://github.com/gewu-lab/music-avqa paper https://gewu-lab.github.io/music-avqa/static/files/music-avqa.pdf arxiv https://arxiv.org/abs/2203.14072 cvpr openaccess https://openaccess.thecvf.com/content/cvpr2022/html/li_learning_to_answer_questions_in_dynamic_audio-visual_scenarios_cvpr_2022_paper.html https://gewu-lab.github.io/music-avqa/ https://github.com/gewu-lab/music-avqa https://raw.githubusercontent.com/gewu-lab/music-avqa/main/readme.md https://raw.githubusercontent.com/gewu-lab/music-avqa/main/license https://api.github.com/repos/gewu-lab/music-avqa/license https://gewu-lab.github.io/music-avqa/static/files/music-avqa.pdf https://arxiv.org/abs/2203.14072">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>MUSIC-AVQA</h3>
       <p class="benchmark-full-name">MUSIC-AVQA: Learning to Answer Questions in Dynamic Audio-Visual Scenarios</p>
     </div>
@@ -5529,14 +5535,14 @@
 
 <article class="benchmark-card" id="benchmark-omni_cloze"
   data-name="omni-cloze"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="unspecified"
   data-search="omni_cloze omni-cloze omni-cloze: omni detailed captioning benchmark audio_visual_captioning detailed_audio_captioning detailed_visual_captioning detailed_audio_visual_captioning cloze_question_answering fine_grained_multimodal_perception not_specified not_specified neither the official hugging face card nor the github repository states a data or code license, and github reports no detected license. the release includes video files without documented source-media provenance or reuse terms; obtain clarification and review media rights before redistribution or commercial use. the public, ungated release contains 2,320 audio-visual files across nine main domains and 47 subcategories, with approximately 70,000 fine-grained cloze blanks. the helper downloads official documentation and evaluation scripts by default; the 25.1 mb jsonl metadata and hugging face snapshot are separate opt-ins. the current repository files total about 6.1 gb, while the hugging face api reports about 11.3 gb of repository storage including history. qwen3.5-omni evaluates detailed audio-visual captioning on omni-cloze in section 5.1.4, table 7. repository https://github.com/ddlbojack/omni-captioner paper https://arxiv.org/abs/2510.12720 dataset https://huggingface.co/datasets/bojack/omni-cloze qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://github.com/ddlbojack/omni-captioner https://raw.githubusercontent.com/ddlbojack/omni-captioner/main/readme.md https://api.github.com/repos/ddlbojack/omni-captioner https://huggingface.co/datasets/bojack/omni-cloze https://huggingface.co/datasets/bojack/omni-cloze/raw/main/readme.md https://huggingface.co/api/datasets/bojack/omni-cloze https://arxiv.org/abs/2510.12720 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>Omni-Cloze</h3>
       <p class="benchmark-full-name">Omni-Cloze: Omni Detailed Captioning Benchmark</p>
     </div>
@@ -5590,14 +5596,14 @@
 
 <article class="benchmark-card" id="benchmark-omnigaia"
   data-name="omnigaia"
-  data-families="representation"
+  data-families="audiovisual"
   data-access="helper"
   data-host="hugging-face"
   data-terms="open"
   data-search="omnigaia omnigaia omnigaia: towards native omni-modal ai agents audio_visual_agent_tool_use omni_modal_question_answering audio_visual_reasoning multi_hop_reasoning tool_use web_search code_execution apache-2.0 mit the hugging face card declares apache-2.0 and the github repository declares mit. the benchmark curates media from finevideo, longvideobench, longvideo-reason, coco 2017, and other hugging face sources; verify component media rights and attribution requirements before redistribution or commercial use. the public, ungated release contains 360 english test tasks with audio, image, and video inputs across nine domains. the helper downloads official documentation and the lightweight test metadata json by default; the hugging face api reports about 9.9 gb of repository storage, so the full media snapshot requires omnigaia_download_hf=1. qwen3.5-omni reports omnigaia without a thinking prompt or answer-tag formatting in section 5.1.4, table 7. repository https://github.com/ruc-nlpir/omnigaia paper https://arxiv.org/abs/2602.22897 dataset https://huggingface.co/datasets/ruc-nlpir/omnigaia leaderboard https://huggingface.co/spaces/ruc-nlpir/omnigaia-leaderboard qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://github.com/ruc-nlpir/omnigaia https://raw.githubusercontent.com/ruc-nlpir/omnigaia/main/readme.md https://api.github.com/repos/ruc-nlpir/omnigaia https://huggingface.co/datasets/ruc-nlpir/omnigaia https://huggingface.co/datasets/ruc-nlpir/omnigaia/raw/main/readme.md https://huggingface.co/api/datasets/ruc-nlpir/omnigaia https://arxiv.org/abs/2602.22897 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>OmniGAIA</h3>
       <p class="benchmark-full-name">OmniGAIA: Towards Native Omni-Modal AI Agents</p>
     </div>
@@ -5652,14 +5658,14 @@
 
 <article class="benchmark-card" id="benchmark-omniretriever_bench"
   data-name="omniretriever-bench"
-  data-families="representation audio-understanding"
+  data-families="audiovisual representation audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="omniretriever_bench omniretriever-bench omniretriever-bench: 12-direction audio-video-text retrieval benchmark audio_visual_understanding audio_text_retrieval audio_video_retrieval audio_video_text_retrieval cross_modal_retrieval multimodal_representation_evaluation custom_research_use not_specified the hugging face card labels the annotations apache-2.0 but adds a biometric-identification, profiling, and surveillance prohibition, while the paper calls the release a custom research-use license. treat the additional restriction as nonstandard and controlling pending a standalone license file. underlying tiktok media remains owned by its uploaders and governed by platform terms. the evaluator repository has no detected license. the public, ungated release contains a 923,982-byte csv with 3,782 held-out english-captioned audio-video-text triples and evaluates six single-modal plus six dual-modal retrieval directions. the helper downloads the official dataset card, csv annotations, evaluator readme, and paper page. media is not redistributed; each row contains a tiktok source url and clip interval, so availability depends on the source platform and users must obtain media themselves under applicable platform and uploader terms. homepage https://yunzeliu.github.io/omniretriever/ repository https://github.com/yunzeliu/omni-retriever paper https://arxiv.org/abs/2605.26641 dataset https://huggingface.co/datasets/yunzeliu/omniretriever-bench https://yunzeliu.github.io/omniretriever/ https://arxiv.org/abs/2605.26641 https://arxiv.org/html/2605.26641#s4.ss4 https://arxiv.org/html/2605.26641#a6 https://huggingface.co/datasets/yunzeliu/omniretriever-bench https://huggingface.co/datasets/yunzeliu/omniretriever-bench/raw/main/readme.md https://huggingface.co/api/datasets/yunzeliu/omniretriever-bench https://github.com/yunzeliu/omni-retriever https://raw.githubusercontent.com/yunzeliu/omni-retriever/main/readme.md https://api.github.com/repos/yunzeliu/omni-retriever">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>OmniRetriever-Bench</h3>
       <p class="benchmark-full-name">OmniRetriever-Bench: 12-Direction Audio-Video-Text Retrieval Benchmark</p>
     </div>
@@ -5991,14 +5997,14 @@
 
 <article class="benchmark-card" id="benchmark-qivd"
   data-name="qivd"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="manual"
   data-host="official"
   data-terms="mixed"
   data-search="qivd qivd qualcomm interactive video dataset: can vision-language models answer face to face questions in the real-world? audio_visual_interaction situated_audio_visual_question_answering real_time_audio_visual_understanding spoken_query_understanding when_to_answer_prediction temporal_reasoning not_publicly_specified_account_terms_apply not_applicable no public dataset license text was found on the official landing page or in the paper on 2026-07-21. the paper says crowd contributors signed consent permitting research and commercial use of their video and audio, but that consent statement is not itself a downstream dataset license. review and retain any terms shown in qualcomm&#39;s account/download flow before use or redistribution. the official qualcomm release page describes 2,900 short english video files across 13 semantic categories. each clip contains raw audio with a spoken question, an annotated transcription, a text answer, and a timestamp indicating when enough context is available to answer. the helper saves the public landing page, then prints the manual qualcomm account/download path because the release flow is javascript-driven and may present account-specific terms. qwen3.5-omni calls it qualcomm ivd and evaluates audio-query interaction in section 5.1.4, table 7. homepage https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd paper https://arxiv.org/abs/2503.19356 qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd https://arxiv.org/abs/2503.19356 https://arxiv.org/html/2503.19356v3#s3 https://arxiv.org/html/2503.19356v3#a1.ss2 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>QIVD</h3>
       <p class="benchmark-full-name">Qualcomm Interactive Video Dataset: Can Vision-Language Models Answer Face to Face Questions in the Real-World?</p>
     </div>
@@ -6047,14 +6053,14 @@
 
 <article class="benchmark-card" id="benchmark-ravdess"
   data-name="ravdess"
-  data-families="speaker-human"
+  data-families="audiovisual speaker-human"
   data-access="helper"
   data-host="zenodo"
   data-terms="noncommercial"
   data-search="ravdess ravdess the ryerson audio-visual database of emotional speech and song speech_emotion_recognition speech_emotion_recognition audio_visual_emotion_recognition acted_emotional_speech emotional_song_recognition cc-by-nc-sa-4.0 not_applicable zenodo lists cc by-nc-sa 4.0 for the dataset and says commercial licenses are available separately. the linked plos one paper itself is cc by, but that article license is not the dataset license. the helper downloads the zenodo metadata json by default. the audio-only speech and song zips are about 215 mb and 198 mb respectively; video archives are much larger and are not downloaded by default. zenodo record https://zenodo.org/records/1188976 doi https://doi.org/10.5281/zenodo.1188976 lab page https://affectivedatascience.com/datasets.html#ravdess paper https://doi.org/10.1371/journal.pone.0196391 plos paper https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391 https://zenodo.org/records/1188976 https://doi.org/10.1371/journal.pone.0196391 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>RAVDESS</h3>
       <p class="benchmark-full-name">The Ryerson Audio-Visual Database of Emotional Speech and Song</p>
     </div>
@@ -6950,14 +6956,14 @@
 
 <article class="benchmark-card" id="benchmark-starss23"
   data-name="starss23"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="zenodo"
   data-terms="open"
   data-search="starss23 starss23 starss23: sony-tau realistic spatial soundscapes 2023 spatial_audio sound_event_localization_and_detection sound_source_localization spatial_audio_understanding audio_visual_sound_event_localization acoustic_source_tracking source_distance_estimation mit mixed datacite metadata for both zenodo v1.0.0 and v1.1.0 identifies the dataset license as mit. the audio-only baseline repository has no license file and the github api reports no detected license; sony&#39;s audiovisual baseline is mit. dcase says participants consented to the released 360-degree videos and visible faces were blurred, but the active record and privacy context should still be reviewed before sensitive visual use. the public zenodo v1.1.0 release contains the complete dcase 2023 development and evaluation data (16.3 gb), with 4-channel foa and tetrahedral-microphone audio, synchronized 360-degree video for all but 12 audio clips, and temporal, direction-of-arrival, and distance annotations. dcase 2024 task 3 explicitly reuses starss23 rather than releasing a starss24 dataset, adding source-distance estimation to its audio-only and audiovisual evaluation protocol. the helper downloads both official task pages, doi, paper, and baseline metadata only; use the zenodo record for the large archive. dcase task https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes dcase2024 distance task https://dcase.community/challenge2024/task-audio-and-audiovisual-sound-event-localization-and-detection-with-source-distance-estimation zenodo record https://zenodo.org/records/7880637 doi https://doi.org/10.5281/zenodo.7880637 paper https://arxiv.org/abs/2306.09126 baseline repo https://github.com/sharathadavanne/seld-dcase2023 audiovisual baseline repo https://github.com/sony/audio-visual-seld-dcase2023 https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes https://dcase.community/challenge2024/task-audio-and-audiovisual-sound-event-localization-and-detection-with-source-distance-estimation https://api.datacite.org/dois/10.5281/zenodo.7880637 https://zenodo.org/records/7880637 https://arxiv.org/abs/2306.09126 https://github.com/sharathadavanne/seld-dcase2023 https://api.github.com/repos/sharathadavanne/seld-dcase2023 https://github.com/sony/audio-visual-seld-dcase2023">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>STARSS23</h3>
       <p class="benchmark-full-name">STARSS23: Sony-TAu Realistic Spatial Soundscapes 2023</p>
     </div>
@@ -7802,14 +7808,14 @@
 
 <article class="benchmark-card" id="benchmark-vggsound"
   data-name="vggsound"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="official"
   data-terms="mixed"
   data-search="vggsound vggsound vggsound: a large-scale audio-visual dataset audio_event_classification audio_visual_event_classification audio_event_classification audio_tagging cc-by-4.0 not_specified official vgg page and repository license file list the dataset as cc by 4.0 for commercial/research use, while copyright remains with original video owners. re-check youtube availability and upstream media terms before reconstructing clips. the official vgg page currently says the original dataset download links are no longer available from that website. the helper downloads the official csv metadata, license, and optional pretrained model files only; it does not fetch or redistribute youtube media. homepage https://www.robots.ox.ac.uk/~vgg/data/vggsound/ repository https://github.com/hche11/vggsound paper https://arxiv.org/abs/2004.14368 icassp paper https://www.robots.ox.ac.uk/~vgg/publications/2020/chen20/chen20.pdf metadata csv https://raw.githubusercontent.com/hche11/vggsound/master/data/vggsound.csv license file https://raw.githubusercontent.com/hche11/vggsound/master/licence.txt https://www.robots.ox.ac.uk/~vgg/data/vggsound/ https://github.com/hche11/vggsound https://raw.githubusercontent.com/hche11/vggsound/master/licence.txt https://arxiv.org/abs/2004.14368">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>VGGSound</h3>
       <p class="benchmark-full-name">VGGSound: A Large-scale Audio-Visual Dataset</p>
     </div>
@@ -7860,14 +7866,14 @@
 
 <article class="benchmark-card" id="benchmark-video_mme"
   data-name="video-mme"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
   data-search="video_mme video-mme video-mme: the first-ever comprehensive evaluation benchmark of multi-modal llms in video analysis audio_visual_understanding audio_visual_question_answering long_video_understanding multimodal_reasoning audio_enabled_video_understanding custom_academic_research_only not_specified the official readme prohibits commercial use and, without prior approval, distribution, publication, copying, dissemination, or modification of video-mme in whole or in part. video copyrights remain with their owners. the github repository has no detected license; obtain approval and re-check source-video rights before reuse beyond the stated academic evaluation context. the public, ungated release contains 900 videos totaling 254 hours and 2,700 human-annotated question-answer pairs, with audio and subtitles available as evaluation modalities. the helper downloads only official documentation by default. the hugging face api reports about 389 gb of repository storage, so the media snapshot requires both video_mme_ack_terms=1 and video_mme_download_hf=1. qwen3.5-omni evaluates video-mme with use_audio_in_video=true in section 5.1.4, table 7. homepage https://video-mme.github.io/ repository https://github.com/mme-benchmarks/video-mme paper https://arxiv.org/abs/2405.21075 dataset https://huggingface.co/datasets/lmms-lab/video-mme qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://video-mme.github.io/ https://github.com/mme-benchmarks/video-mme https://raw.githubusercontent.com/mme-benchmarks/video-mme/main/readme.md https://api.github.com/repos/mme-benchmarks/video-mme https://huggingface.co/datasets/lmms-lab/video-mme https://huggingface.co/datasets/lmms-lab/video-mme/raw/main/readme.md https://huggingface.co/api/datasets/lmms-lab/video-mme https://arxiv.org/abs/2405.21075 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>Video-MME</h3>
       <p class="benchmark-full-name">Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis</p>
     </div>
@@ -8152,14 +8158,14 @@
 
 <article class="benchmark-card" id="benchmark-voxceleb"
   data-name="voxceleb"
-  data-families="speaker-human"
+  data-families="audiovisual speaker-human"
   data-access="helper"
   data-host="openslr"
   data-terms="unspecified"
   data-search="voxceleb voxceleb voxceleb speaker recognition datasets speaker_recognition speaker_identification speaker_verification speaker_recognition audio_visual_speaker_recognition not_specified_for_original_media not_applicable official vgg pages say provided voxceleb/voxceleb2 metadata is cc by-sa 4.0 and the corpora consist of youtube urls with timestamps; original media rights and privacy terms remain with upstream owners. openslr slr49 lists its small metadata resource as not copyrighted. official vgg pages currently say voxceleb1 and voxceleb2 audio, url/timestamp, and identifying metadata files are no longer available from that website. the helper downloads small openslr speaker-recognition recipe metadata and trial lists only; it does not fetch the original audio/video. homepage https://www.robots.ox.ac.uk/~vgg/data/voxceleb/ voxceleb1 page https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html voxceleb2 page https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html openslr metadata https://www.openslr.org/49/ voxceleb1 paper https://arxiv.org/abs/1706.08612 voxceleb2 paper https://arxiv.org/abs/1806.05622 journal paper https://www.robots.ox.ac.uk/~vgg/publications/2019/nagrani19/nagrani19.pdf https://www.robots.ox.ac.uk/~vgg/data/voxceleb/ https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html https://www.openslr.org/49/ https://arxiv.org/abs/1706.08612 https://arxiv.org/abs/1806.05622">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>VoxCeleb</h3>
       <p class="benchmark-full-name">VoxCeleb speaker recognition datasets</p>
     </div>
@@ -8212,14 +8218,14 @@
 
 <article class="benchmark-card" id="benchmark-voxconverse"
   data-name="voxconverse"
-  data-families="speaker-human"
+  data-families="audiovisual speaker-human"
   data-access="helper"
   data-host="official"
   data-terms="mixed"
   data-search="voxconverse voxconverse voxconverse: a large scale audio-visual diarisation dataset speaker_diarization speaker_diarization audio_visual_diarization overlapping_speech_diarization cc-by-4.0 not_specified the official page and repository readme say voxconverse is available for research purposes under cc by 4.0, while copyright remains with the original video owners. the github repository does not expose a standalone license file through the api. the helper clones or updates the official annotation repository and saves the official page by default. the official page lists dev/test wav zips with md5 checksums; audio downloads are explicit opt-ins because the dev zip is about 1.9 gib and the test zip is also large. homepage https://www.robots.ox.ac.uk/~vgg/data/voxconverse/ repository https://github.com/joonson/voxconverse paper https://arxiv.org/abs/2007.01216 interspeech paper https://www.isca-archive.org/interspeech_2020/chung20b_interspeech.html https://www.robots.ox.ac.uk/~vgg/data/voxconverse/ https://github.com/joonson/voxconverse https://raw.githubusercontent.com/joonson/voxconverse/master/readme.md https://arxiv.org/abs/2007.01216">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>VoxConverse</h3>
       <p class="benchmark-full-name">VoxConverse: A Large Scale Audio-Visual Diarisation Dataset</p>
     </div>
@@ -8593,14 +8599,14 @@
 
 <article class="benchmark-card" id="benchmark-worldsense"
   data-name="worldsense"
-  data-families="audio-understanding"
+  data-families="audiovisual audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="worldsense worldsense worldsense: evaluating real-world omnimodal understanding for multimodal llms audio_visual_understanding audio_visual_question_answering omni_modal_video_understanding cross_modal_reasoning audio_visual_perception conflicting_cc_by_nc_sa_4_0_and_cc_by_4_0 not_specified the worldsense paper v3 appendix g states cc by-nc-sa 4.0, while the official repository readme and hugging face card state cc by 4.0. apply the more restrictive cc by-nc-sa 4.0 interpretation until the maintainers resolve the conflict. videos are sourced primarily from finevideo with selected music-avqa material, so component-media terms and rights also require review. github reports no detected repository license. the public, ungated release contains 1,662 synchronized audio-visual videos and 3,172 multiple-choice question-answer pairs across 26 tasks. the helper downloads official documentation and the approximately 4.3 mb qa json by default; the hugging face api reports approximately 18.1 gb of repository storage, so video and subtitle archives require worldsense_download_hf=1. qwen3.5-omni reports worldsense in section 5.1.4, table 7. homepage https://jaaackhongggg.github.io/worldsense/ repository https://github.com/jaaackhongggg/worldsense paper https://arxiv.org/abs/2502.04326 dataset https://huggingface.co/datasets/honglyhly/worldsense leaderboard https://jaaackhongggg.github.io/worldsense/#leaderboard qwen3 5 omni report https://arxiv.org/html/2604.15804v1#s5.ss1.sss4 https://jaaackhongggg.github.io/worldsense/ https://github.com/jaaackhongggg/worldsense https://raw.githubusercontent.com/jaaackhongggg/worldsense/main/readme.md https://api.github.com/repos/jaaackhongggg/worldsense https://huggingface.co/datasets/honglyhly/worldsense https://huggingface.co/datasets/honglyhly/worldsense/raw/main/readme.md https://huggingface.co/api/datasets/honglyhly/worldsense https://arxiv.org/abs/2502.04326 https://arxiv.org/html/2502.04326v3#a7 https://arxiv.org/html/2604.15804v1#s5.ss1.sss4">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audiovisual &amp; cross-modal</span>
       <h3>WorldSense</h3>
       <p class="benchmark-full-name">WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs</p>
     </div>
