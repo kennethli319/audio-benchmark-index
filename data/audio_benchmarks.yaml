@@ -4822,3 +4822,49 @@ benchmarks:
       - https://github.com/sharathadavanne/seld-dcase2023
       - https://api.github.com/repos/sharathadavanne/seld-dcase2023
       - https://github.com/sony/audio-visual-seld-dcase2023
+
+  - id: locata
+    name: LOCATA
+    full_name: "LOCATA: IEEE-AASP Challenge on Acoustic Source Localization and Tracking"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_source_localization
+      - acoustic_source_tracking
+      - multi_source_localization
+      - moving_source_localization
+      - moving_microphone_array_localization
+    official:
+      homepage: https://www.locata.lms.tf.fau.de/
+      corpus: https://www.locata.lms.tf.fau.de/corpus/
+      dataset: https://www.locata.lms.tf.fau.de/datasets/
+      zenodo_record: https://zenodo.org/records/3630471
+      doi: https://doi.org/10.5281/zenodo.3630471
+      paper: https://doi.org/10.1109/TASLP.2020.2990485
+      io_repo: https://github.com/cevers/sap_locata_io
+      evaluation_repo: https://github.com/cevers/sap_locata_eval
+    download:
+      primary:
+        - https://zenodo.org/records/3630471
+        - https://doi.org/10.5281/zenodo.3630471
+        - https://zenodo.org/api/records/3630471
+        - https://github.com/cevers/sap_locata_io
+        - https://github.com/cevers/sap_locata_eval
+      examples:
+        - 'scripts/download/locata.sh'
+        - 'LOCATA_CLONE_TOOLS=1 scripts/download/locata.sh'
+      notes: The open final release contains corrected development and evaluation datasets with close-talking speech, distant multichannel recordings from four microphone-array configurations, and OptiTrack ground truth for sources and microphones. Its six tasks span static and moving, single- and multi-source scenarios with static or moving arrays. The dev.zip and eval.zip archives total about 19.3 GB, so the helper downloads only official pages, documentation, Zenodo metadata, and tool metadata by default.
+    license:
+      data: ODC-By-1.0
+      code: not_specified
+      notes: Zenodo identifies the final dataset release as Open Data Commons Attribution, and the official corpus page says both LOCATA and its VCTK speech material use Open Data Commons terms. Neither official MATLAB repository exposes a LICENSE file or a GitHub-detected license, so clarify software terms before redistribution.
+    sources:
+      - https://www.locata.lms.tf.fau.de/corpus/
+      - https://www.locata.lms.tf.fau.de/datasets/
+      - https://www.locata.lms.tf.fau.de/tasks/
+      - https://zenodo.org/api/records/3630471
+      - https://doi.org/10.1109/TASLP.2020.2990485
+      - https://github.com/cevers/sap_locata_io
+      - https://api.github.com/repos/cevers/sap_locata_io
+      - https://github.com/cevers/sap_locata_eval
+      - https://api.github.com/repos/cevers/sap_locata_eval

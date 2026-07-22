@@ -81,6 +81,7 @@ scripts/download/vggsound.sh
 scripts/download/ave.sh
 scripts/download/starss22.sh
 scripts/download/starss23.sh
+scripts/download/locata.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
@@ -197,6 +198,10 @@ SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# LOCATA downloads official pages, docs, Zenodo metadata, and tool READMEs by default.
+# The public corpus archives total about 19.3 GB and remain on the official Zenodo record.
+LOCATA_CLONE_TOOLS=1 scripts/download/locata.sh
 
 # Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
 MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh
