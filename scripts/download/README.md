@@ -43,6 +43,7 @@ scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/superb.sh
 scripts/download/codec_superb.sh
+scripts/download/emo_superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
 scripts/download/minds14.sh
@@ -575,6 +576,9 @@ MSWC_DOWNLOAD_ARCHIVES=1 MSWC_LANGS=ta MSWC_PARTS=audio scripts/download/mswc.sh
 
 # AudioMNIST downloads README/LICENSE/speaker metadata by default. Full repo clone is opt-in.
 AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
+
+# EMO-SUPERB downloads official benchmark docs by default. The evaluation repository clone is opt-in; component corpus audio remains manual/EULA-gated.
+EMO_SUPERB_CLONE_REPO=1 scripts/download/emo_superb.sh
 
 # VocalSound downloads official README/repo metadata by default. Archives are 1.7 GiB or 4.5 GiB and opt-in.
 VOCALSOUND_DOWNLOAD_ARCHIVE=1 VOCALSOUND_SAMPLE_RATE=16k scripts/download/vocalsound.sh

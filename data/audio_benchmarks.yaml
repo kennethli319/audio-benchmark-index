@@ -1142,6 +1142,43 @@ benchmarks:
       - https://huggingface.co/datasets/voidful/codec-superb-tiny/raw/main/README.md
       - https://huggingface.co/api/datasets/voidful/codec-superb-tiny
 
+  - id: emo_superb
+    name: EMO-SUPERB
+    full_name: "EMO-SUPERB: An In-depth Look at Speech Emotion Recognition"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - speech_representation_evaluation
+    tasks:
+      - speech_emotion_recognition
+      - speech_representation_evaluation
+      - speaker_independent_cross_validation
+      - standardized_dataset_partitioning
+    official:
+      homepage: https://emosuperb.github.io/
+      repo: https://github.com/EMOsuperb/EMO-SUPERB-submission
+      paper: https://arxiv.org/abs/2402.13018
+      standard_partitions: https://emosuperb.github.io/standardization.html
+    download:
+      primary:
+        - https://github.com/EMOsuperb/EMO-SUPERB-submission
+        - https://emosuperb.github.io/standardization.html
+      examples:
+        - 'scripts/download/emo_superb.sh'
+        - 'EMO_SUPERB_CLONE_REPO=1 scripts/download/emo_superb.sh'
+      notes: The public repository provides the evaluation implementation, corpus adapters, and standardized speaker-independent partitions for IEMOCAP, CREMA-D, MSP-IMPROV, and BIIC-NNIME. EMO-SUPERB evaluates six corpora in total, also including MSP-Podcast and BIIC-Podcast, with separate primary/secondary-emotion settings for some corpora. The helper downloads official documentation by default and makes the approximately 23 MB GitHub repository clone opt-in. It does not fetch corpus audio; users must obtain each component through its official EULA, form, or repository path.
+    license:
+      data: mixed_component_terms
+      code: not_specified
+      notes: The official repository has no LICENSE file and GitHub reports no detected license, so the evaluation code and released partition/label files have unspecified terms. Each of the six underlying speech corpora retains its own access agreement or license; a public benchmark repository does not make their audio freely redistributable.
+    sources:
+      - https://emosuperb.github.io/
+      - https://emosuperb.github.io/standardization.html
+      - https://github.com/EMOsuperb/EMO-SUPERB-submission
+      - https://raw.githubusercontent.com/EMOsuperb/EMO-SUPERB-submission/main/README.md
+      - https://api.github.com/repos/EMOsuperb/EMO-SUPERB-submission
+      - https://arxiv.org/abs/2402.13018
+
   - id: slurp
     name: SLURP
     full_name: "SLURP: A Spoken Language Understanding Resource Package"
