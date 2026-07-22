@@ -81,6 +81,7 @@ scripts/download/vggsound.sh
 scripts/download/ave.sh
 scripts/download/starss22.sh
 scripts/download/starss23.sh
+scripts/download/dcase2025_stereo_seld.sh
 scripts/download/locata.sh
 scripts/download/spatial_librispeech.sh
 scripts/download/l3das21.sh

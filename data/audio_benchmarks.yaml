@@ -4823,6 +4823,50 @@ benchmarks:
       - https://api.github.com/repos/sharathadavanne/seld-dcase2023
       - https://github.com/sony/audio-visual-seld-dcase2023
 
+  - id: dcase2025_stereo_seld
+    name: DCASE2025 Task 3 Stereo SELD Dataset
+    full_name: "DCASE2025 Task 3 Stereo Sound Event Localization and Detection Dataset"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_event_localization_and_detection
+      - stereo_sound_source_localization
+      - audio_visual_sound_event_localization
+      - source_distance_estimation
+      - onscreen_offscreen_sound_classification
+      - acoustic_source_tracking
+    official:
+      dcase_task: https://dcase.community/challenge2025/task-stereo-sound-event-localization-and-detection-in-regular-video-content
+      zenodo_record: https://zenodo.org/records/15559774
+      doi: https://doi.org/10.5281/zenodo.15559774
+      paper: https://arxiv.org/abs/2507.12042
+      data_generator_repo: https://github.com/SonyResearch/dcase2025_stereo_seld_data_generator
+      baseline_repo: https://github.com/partha2409/DCASE2025_seld_baseline
+    download:
+      primary:
+        - https://zenodo.org/records/15559774
+        - https://doi.org/10.5281/zenodo.15559774
+        - https://zenodo.org/api/records/15559774/files/metadata_dev.zip/content
+        - https://github.com/SonyResearch/dcase2025_stereo_seld_data_generator
+      examples:
+        - 'scripts/download/dcase2025_stereo_seld.sh'
+        - 'DCASE2025_STEREO_SELD_DOWNLOAD_METADATA=1 scripts/download/dcase2025_stereo_seld.sh'
+      notes: The public Zenodo v1.1.0 release contains 30,000 labeled development clips (41.7 hours) and 10,000 unlabeled evaluation clips (13.9 hours), each five seconds long, with 24 kHz stereo audio and aligned perspective video. It is derived from STARSS23 by sampling and converting its FOA audio and 360-degree video, and adds folded azimuth, source-distance, and onscreen/offscreen labels. The helper downloads official pages, record metadata, README, license, paper page, and generator documentation by default; the approximately 15.2 MB label archive is opt-in, while the approximately 27.6 GB audio/video release remains on Zenodo.
+    license:
+      data: MIT
+      code: mixed
+      notes: Zenodo metadata and the included LICENSE identify the dataset as MIT. Sony's data-generator repository is MIT. The official baseline repository has no detected GitHub license or LICENSE file, so its code terms are not specified. Because the release is derived from STARSS23 recordings of people and rooms, review the original privacy/provenance context before sensitive visual use.
+    sources:
+      - https://dcase.community/challenge2025/task-stereo-sound-event-localization-and-detection-in-regular-video-content
+      - https://zenodo.org/api/records/15559774
+      - https://zenodo.org/records/15559774
+      - https://zenodo.org/api/records/15559774/files/LICENSE/content
+      - https://arxiv.org/abs/2507.12042
+      - https://github.com/SonyResearch/dcase2025_stereo_seld_data_generator
+      - https://api.github.com/repos/SonyResearch/dcase2025_stereo_seld_data_generator
+      - https://github.com/partha2409/DCASE2025_seld_baseline
+      - https://api.github.com/repos/partha2409/DCASE2025_seld_baseline
+
   - id: locata
     name: LOCATA
     full_name: "LOCATA: IEEE-AASP Challenge on Acoustic Source Localization and Tracking"
