@@ -311,6 +311,41 @@ benchmarks:
       - https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
       - https://arxiv.org/abs/2203.14072
 
+  - id: llp
+    name: LLP
+    full_name: "Look, Listen, and Parse: Audio-Visual Video Parsing Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_video_parsing
+      - temporal_event_localization
+      - audio_event_detection
+      - visual_event_detection
+      - weakly_supervised_multimodal_learning
+    official:
+      repo: https://github.com/YapengTian/AVVP-ECCV20
+      paper: https://arxiv.org/abs/2007.10558
+      doi: https://doi.org/10.1007/978-3-030-58580-8_26
+    download:
+      primary:
+        - https://github.com/YapengTian/AVVP-ECCV20/tree/master/data
+        - https://github.com/YapengTian/AVVP-ECCV20
+      examples:
+        - 'scripts/download/llp.sh'
+        - 'LLP_CLONE_REPO=1 scripts/download/llp.sh'
+      notes: The official repository releases lightweight weak-label train/validation/test CSVs and dense audio and visual event annotations for validation and test. The full CSV contains 11,849 ten-second YouTube segment references; the published split files contain 10,000 train, 649 validation, and 1,200 test rows. The helper downloads documentation and all annotation CSVs by default. Extracted VGGish, ResNet-152, and R(2+1)D features remain a manual Google Drive download, while raw videos must be reconstructed from referenced YouTube segments subject to availability and platform terms.
+    license:
+      data: not_specified
+      code: unclear
+      notes: The official repository does not contain a license file and GitHub reports no detected license. Its README says GPLv3 but links to a GPLv3 license in an unrelated repository, so neither that statement nor the linked file establishes clear terms for LLP annotations or code. Obtain clarification before redistribution or commercial use; source videos also retain their original rights and YouTube terms.
+    sources:
+      - https://github.com/YapengTian/AVVP-ECCV20
+      - https://raw.githubusercontent.com/YapengTian/AVVP-ECCV20/master/README.md
+      - https://api.github.com/repos/YapengTian/AVVP-ECCV20
+      - https://github.com/YapengTian/AVVP-ECCV20/tree/master/data
+      - https://arxiv.org/abs/2007.10558
+      - https://doi.org/10.1007/978-3-030-58580-8_26
+
   - id: daily_omni
     name: Daily-Omni
     full_name: "Daily-Omni: Towards Audio-Visual Reasoning with Temporal Alignment across Modalities"

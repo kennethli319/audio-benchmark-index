@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/air_bench.sh
 scripts/download/music_avqa.sh
+scripts/download/llp.sh
 scripts/download/daily_omni.sh
 scripts/download/worldsense.sh
 scripts/download/av_speakerbench.sh
@@ -364,6 +365,9 @@ AIR_BENCH_CLONE_REPO=1 scripts/download/air_bench.sh
 
 # MUSIC-AVQA downloads official docs and JSON annotations by default. Raw videos are manual/large.
 MUSIC_AVQA_CLONE_REPO=1 scripts/download/music_avqa.sh
+
+# LLP downloads official docs and all annotation CSVs by default. Features are a manual Drive download.
+LLP_CLONE_REPO=1 scripts/download/llp.sh
 
 # HI-MIA downloads the OpenSLR page and filename mapping by default. Archives are large and opt-in.
 HIMIA_DOWNLOAD_ARCHIVES=1 HIMIA_PARTS="dev test_v2" scripts/download/hi_mia.sh
