@@ -104,6 +104,10 @@ def humanize(value)
   value.to_s.tr("_", " ").split.map(&:capitalize).join(" ")
 end
 
+def normalize_search(value)
+  value.to_s.downcase.gsub(/[^a-z0-9]+/, " ").strip
+end
+
 def family_matches(benchmark)
   terms = (Array(benchmark["qwen_bucket"]) + Array(benchmark["tasks"])).join(" ")
   matches = FAMILIES.select { |family| terms.match?(family[:pattern]) }
@@ -203,7 +207,7 @@ def render_card(benchmark, manual_ids)
     task_tags << %(<span class="tag tag-more">+#{tasks.length - 4} more</span>)
   end
 
-  searchable = [
+  searchable = normalize_search([
     id,
     name,
     full_name,
@@ -215,7 +219,7 @@ def render_card(benchmark, manual_ids)
     download_notes,
     official.flatten,
     sources,
-  ].flatten.compact.join(" ").downcase
+  ].flatten.compact.join(" "))
 
   action_html = actions.map do |label, url, style|
     %(<a class="card-action #{style}" href="#{escape(url)}">#{escape(label)}</a>)

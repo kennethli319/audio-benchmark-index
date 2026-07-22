@@ -537,7 +537,7 @@
       const controls = [search, family, access, host, terms, sort];
 
       function normalized(value) {
-        return value.trim().toLowerCase();
+        return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
       }
 
       function matches(card) {
