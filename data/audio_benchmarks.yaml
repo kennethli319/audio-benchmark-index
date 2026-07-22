@@ -2545,6 +2545,47 @@ benchmarks:
       - https://github.com/karolpiczak/ESC-50/blob/master/LICENSE
       - https://doi.org/10.1145/2733373.2806390
 
+  - id: spuraudio
+    name: SpurAudio
+    full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"
+    qwen_cited_as: null
+    qwen_bucket:
+      - environmental_sound_classification
+      - audio_robustness
+    tasks:
+      - few_shot_audio_classification
+      - environmental_sound_classification
+      - shortcut_learning_evaluation
+      - background_shift_robustness
+      - iid_ood_evaluation
+    official:
+      repo: https://github.com/Jerryaa98/SpurAudio
+      dataset: https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym
+      paper: https://arxiv.org/abs/2605.13672
+      arxiv_html: https://arxiv.org/html/2605.13672
+    download:
+      primary:
+        - https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym
+        - https://github.com/Jerryaa98/SpurAudio
+      examples:
+        - 'scripts/download/spuraudio.sh'
+        - 'SPURAUDIO_DOWNLOAD_HF=1 scripts/download/spuraudio.sh'
+        - 'SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh'
+      notes: The public, ungated Hugging Face release contains 16,381 WAV files in train, validation, and test splits and reports approximately 7.69 GB of repository storage. It mixes foreground events from ESC-50, UrbanSound8K, VocalSound, WILD DESED, and USM with unrelated background textures to measure IID-versus-OOD shortcut reliance in 1-shot and 5-shot classification. The helper downloads official documentation and repository metadata by default; the audio snapshot is opt-in.
+    license:
+      data: cc-by-4.0_with_mixed_upstream_terms
+      code: MIT
+      notes: The Hugging Face card declares CC BY 4.0 for the released mixtures, but the benchmark derives audio from five upstream datasets with separate terms. In particular, ESC-50 and UrbanSound8K include non-commercial restrictions; review all component licenses before redistribution or commercial use. The evaluation repository is MIT.
+    sources:
+      - https://arxiv.org/abs/2605.13672
+      - https://arxiv.org/html/2605.13672
+      - https://github.com/Jerryaa98/SpurAudio
+      - https://raw.githubusercontent.com/Jerryaa98/SpurAudio/main/README.md
+      - https://api.github.com/repos/Jerryaa98/SpurAudio
+      - https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym
+      - https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym/raw/main/README.md
+      - https://huggingface.co/api/datasets/spuraudioNips/SpurAudio-neurips-anonym
+
   - id: urbansound8k
     name: UrbanSound8K
     full_name: "UrbanSound8K: A Dataset and Taxonomy for Urban Sound Research"

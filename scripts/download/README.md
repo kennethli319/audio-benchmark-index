@@ -72,6 +72,7 @@ scripts/download/covost2.sh
 scripts/download/earnings_22.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
+scripts/download/spuraudio.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
@@ -185,6 +186,10 @@ PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
+
+# SpurAudio downloads official docs/metadata by default; the approximately 7.69 GB snapshot is opt-in.
+SPURAUDIO_DOWNLOAD_HF=1 scripts/download/spuraudio.sh
+SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh
 
 # Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
 MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh

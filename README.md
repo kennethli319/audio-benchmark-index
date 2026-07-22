@@ -14,7 +14,8 @@ identification, speech instruction following, self-supervised speech representat
 emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
 verification anti-spoofing, speaker diarization, music synthesis, speech quality
-assessment, spoken digit classification, and instruction-based speech editing.
+assessment, spoken digit classification, instruction-based speech editing, and
+few-shot robustness under foreground/background shifts.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -23,7 +24,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-21. Current index size: 124 distinct benchmarks
+Last checked: 2026-07-21. Current index size: 125 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -172,6 +173,7 @@ Current coverage includes:
 | [ParaPairAudioBench](https://github.com/jsujeon/ParaPairAudioBench) | Paralinguistic pairwise evaluation of audio-language-model judges | Official repository with 5,175 pair definitions across style, rate, emphasis, age, and gender; rate/emphasis/style annotations are ready to use, while age and part of gender require SVC access; helper downloads docs by default and makes the small metadata/code clone opt-in | Mixed upstream terms: SVC is non-commercial academic research, EARS/Expresso are CC BY-NC 4.0, and LibriTTS is CC BY 4.0; the benchmark repo itself has no stated data or code license |
 | [IFEval-Audio](https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing) | Audio and speech instruction following | Gated Hugging Face release with 280 audio-instruction-answer triples; helper downloads official docs/metadata by default and makes the approximately 45 MB snapshot opt-in after accepting access conditions | HF card lists Apache-2.0, but source clips retain mixed terms including CC BY-SA, CC BY-NC-ND, academic-only WavCaps, and inherited AudioBench-source licenses; evaluation code says Creative Commons NonCommercial without a version |
 | [Ming-Freeform-Audio-Edit](https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark) | Instruction-based semantic and acoustic speech editing | Public, ungated bilingual benchmark for deletion, insertion, substitution, emotion/dialect conversion, and speed/pitch/volume alteration; helper downloads official docs by default and makes the approximately 1.07 GB Hugging Face snapshot opt-in | HF card lists Apache-2.0, but source-audio terms still apply: Seed-TTS Eval has no stated data license, LibriTTS is CC BY 4.0, and GigaSpeech has separate agreement/access conditions; evaluation-repo code license is unspecified |
+| [SpurAudio](https://github.com/Jerryaa98/SpurAudio) | Few-shot audio classification robustness | Public, ungated [spuraudioNips/SpurAudio-neurips-anonym](https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym) with 16,381 WAV files; helper downloads docs/metadata by default and makes the approximately 7.69 GB snapshot opt-in | HF card lists CC BY 4.0, but mixtures derive from five datasets with separate terms, including non-commercial ESC-50 and UrbanSound8K restrictions; code is MIT |
 | [VocalSound](https://github.com/YuanGongND/vocalsound) | Human vocal sound classification | Official GitHub README and direct Dropbox archives for 16 kHz and 44.1 kHz releases; helper saves docs by default and makes archives opt-in | Dataset README says CC BY-SA 4.0; GitHub API reports no repository-level license, so code license is not specified |
 | [VocalSet](https://zenodo.org/records/1193957) | Singing voice analysis | Official [Zenodo record](https://zenodo.org/records/1193957), DOI, and [ISMIR paper](https://archives.ismir.net/ismir2018/paper/000105.pdf); helper saves record metadata by default and makes the 2.1 GB archive opt-in | Zenodo lists CC BY 4.0; treat singer voice data with normal consent/attribution care |
 | [EmoV-DB](https://github.com/numediart/EmoV-DB) | Emotional speech synthesis and speech emotion | [OpenSLR SLR115](https://www.openslr.org/115/) per-speaker/per-emotion archives; helper saves docs/license by default and downloads selected archives only with opt-in | Custom non-commercial terms for research, teaching, scientific publication, and personal experimentation; commercial use requires contacting the owner |
