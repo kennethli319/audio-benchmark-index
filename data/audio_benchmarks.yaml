@@ -8,6 +8,38 @@ metadata:
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
+paper_audits:
+  qwen3_tts_technical_report:
+    paper: https://arxiv.org/abs/2601.15621
+    sections: 4.1-4.2
+    evaluated_sets:
+      - cited_as: CommonVoice
+        index_id: common_voice
+        status: public
+      - cited_as: Fleurs
+        index_id: fleurs
+        status: public
+      - cited_as: LibriSpeech test-clean
+        index_id: librispeech
+        status: public
+      - cited_as: Seed-TTS test set
+        index_id: seed_tts_eval
+        status: public_objective_set
+        note: The Seed-TTS paper says its separate subjective set is unreleased because of copyright restrictions.
+      - cited_as: TTS multilingual test set
+        index_id: tts_multilingual_test_set
+        status: public
+      - cited_as: Cross-Lingual benchmark
+        index_id: cv3_eval
+        status: public
+      - cited_as: InstructTTSEval
+        index_id: instruct_tts_eval
+        status: public
+      - cited_as: long speech test set
+        index_id: null
+        status: internal_unreleased
+        note: Section 4.2.6 describes 100 curated Chinese and English texts of 200 to 2,000 words; the report provides no public dataset or download link.
+
 benchmarks:
   - id: mmau
     name: MMAU

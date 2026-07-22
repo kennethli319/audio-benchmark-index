@@ -30,6 +30,13 @@ Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1
 Audio -> Text evaluation block. The Qwen report remains useful provenance, but
 the repository is no longer limited to that paper's benchmark list.
 
+Qwen3-TTS sections 4.1-4.2 are fully inventoried in the source YAML. Its named
+public evaluation sets map to Common Voice, FLEURS, LibriSpeech `test-clean`,
+Seed-TTS Eval, TTS Multilingual Test Set, CV3-Eval, and InstructTTSEval. The
+section 4.2.6 long-speech set is not a public benchmark: the report describes
+an internal set of 100 Chinese and English texts (200-2,000 words) and provides
+no release or download link.
+
 ## Coverage
 
 Current coverage includes:
