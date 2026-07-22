@@ -4902,6 +4902,48 @@ benchmarks:
       - https://arxiv.org/abs/2005.11262
       - https://www.openslr.org/12/
 
+  - id: fuss
+    name: FUSS
+    full_name: "FUSS: Free Universal Sound Separation Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_source_separation
+    tasks:
+      - universal_sound_separation
+      - arbitrary_sound_separation
+      - reverberant_source_separation
+      - sound_event_separation
+    official:
+      repo: https://github.com/google-research/sound-separation/tree/master/datasets/fuss
+      zenodo_record: https://zenodo.org/records/3694384
+      doi: https://doi.org/10.5281/zenodo.3694384
+      challenge: https://dcase.community/challenge2020/task-sound-event-detection-and-separation-in-domestic-environments
+      paper: https://arxiv.org/abs/2011.00803
+    download:
+      primary:
+        - https://zenodo.org/records/3694384
+        - https://zenodo.org/api/records/3694384/files/FUSS_license_doc.tar.gz/content
+        - https://zenodo.org/api/records/3694384/files/FUSS_ssdata_reverb.tar.gz/content
+        - https://zenodo.org/api/records/3694384/files/FUSS_ssdata.tar.gz/content
+        - https://zenodo.org/api/records/3694384/files/FUSS_rir_data.tar.gz/content
+        - https://zenodo.org/api/records/3694384/files/FUSS_fsd_data.tar.gz/content
+      examples:
+        - 'scripts/download/fuss.sh'
+        - 'FUSS_DOWNLOAD_ARCHIVES=1 FUSS_PARTS="ssdata_reverb" scripts/download/fuss.sh'
+      notes: The public Zenodo release provides train, validation, and eval mixtures containing one to four arbitrary sound sources, with dry and reverberant references, simulated room responses, and CC0 source clips. The helper saves official documentation, repository metadata, and the small license archive by default. Data archives are about 1.9 to 8.9 GB each and require explicit selection with FUSS_DOWNLOAD_ARCHIVES=1.
+    license:
+      data: cc-by-4.0
+      code: Apache-2.0
+      notes: The official license document and Zenodo record release FUSS as a whole under CC BY 4.0. Its input audio clips are CC0 Freesound files selected using prerelease FSD50K labels; those labels are not distributed with FUSS. Google Research's sound-separation code repository is Apache-2.0.
+    sources:
+      - https://zenodo.org/records/3694384
+      - https://zenodo.org/api/records/3694384
+      - https://github.com/google-research/sound-separation/tree/master/datasets/fuss
+      - https://raw.githubusercontent.com/google-research/sound-separation/master/datasets/fuss/README.md
+      - https://raw.githubusercontent.com/google-research/sound-separation/master/datasets/fuss/FUSS_license_doc/README.md
+      - https://dcase.community/challenge2020/task-sound-event-detection-and-separation-in-domestic-environments
+      - https://arxiv.org/abs/2011.00803
+      - https://doi.org/10.1109/ICASSP39728.2021.9414774
+
   - id: wsj0_2mix
     name: WSJ0-2mix / wsj0-mix
     full_name: "wsj0-mix: Single-channel multi-speaker speech separation mixtures from WSJ0"

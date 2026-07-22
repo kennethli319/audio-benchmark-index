@@ -55,7 +55,7 @@ FAMILIES = [
     slug: "restoration-quality",
     label: "Enhancement, separation & quality",
     description: "Denoising, source separation, and perceptual quality",
-    pattern: /speech_separation|speech_enhancement|speech_quality_assessment|music_source_separation/,
+    pattern: /speech_separation|audio_source_separation|universal_sound_separation|speech_enhancement|speech_quality_assessment|music_source_separation/,
   },
   {
     slug: "representation",

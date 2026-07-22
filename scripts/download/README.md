@@ -141,6 +141,7 @@ scripts/download/musdb18.sh
 scripts/download/medleydb.sh
 scripts/download/slakh2100.sh
 scripts/download/librimix.sh
+scripts/download/fuss.sh
 scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
@@ -648,6 +649,10 @@ SLAKH_CLONE_GENERATION=1 scripts/download/slakh2100.sh
 
 # LibriMix clones the official generator/metadata repo by default. Generation is very large.
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
+
+# FUSS saves official docs and its small license archive by default. Select multi-GB archives explicitly.
+FUSS_DOWNLOAD_ARCHIVES=1 FUSS_PARTS="ssdata_reverb" scripts/download/fuss.sh
+FUSS_DOWNLOAD_ARCHIVES=1 FUSS_PARTS="ssdata rir_data" scripts/download/fuss.sh
 
 # WSJ0-2mix downloads MERL public pages/scripts by default. Actual mixture generation requires local licensed WSJ0 access.
 WSJ0_2MIX_CLONE_PYTHON_REPO=1 scripts/download/wsj0_2mix.sh
