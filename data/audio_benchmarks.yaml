@@ -319,6 +319,45 @@ benchmarks:
       - https://arxiv.org/abs/2512.02231
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: avut
+    name: AVUT
+    full_name: "Audio-centric Video Understanding Benchmark without Text Shortcut"
+    qwen_cited_as: AVUT
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - audio_content_understanding
+      - audio_visual_alignment
+      - audio_event_localization
+      - audio_visual_diarization
+    official:
+      repo: https://github.com/lark-png/AVUT
+      paper: https://arxiv.org/abs/2503.19951
+      dataset: https://huggingface.co/datasets/tsinghua-ee/AVUTBenchmark
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/tsinghua-ee/AVUTBenchmark
+        - https://github.com/lark-png/AVUT
+      examples:
+        - 'scripts/download/avut.sh'
+        - 'AVUT_DOWNLOAD_HF=1 scripts/download/avut.sh'
+      notes: The public, ungated release covers 2,662 English YouTube videos across 18 domains and 11,609 question-answer pairs in AV-Human and AV-Gemini. The helper downloads official documentation and four lightweight annotation JSON files by default; the Hugging Face API reports about 24.0 GB of repository storage, so the full snapshot requires AVUT_DOWNLOAD_HF=1. Qwen3.5-Omni reports AVUT in section 5.1.4, Table 7.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: Neither the official repository nor Hugging Face card states a data or code license. The paper says AVUT contains only links to public YouTube videos and does not host or distribute video copies, while the current Hugging Face repository appears to include video files; users should review YouTube terms, source-video rights, and this discrepancy before downloading or redistributing media.
+    sources:
+      - https://github.com/lark-png/AVUT
+      - https://raw.githubusercontent.com/lark-png/AVUT/main/README.md
+      - https://api.github.com/repos/lark-png/AVUT
+      - https://huggingface.co/datasets/tsinghua-ee/AVUTBenchmark
+      - https://huggingface.co/datasets/tsinghua-ee/AVUTBenchmark/raw/main/README.md
+      - https://huggingface.co/api/datasets/tsinghua-ee/AVUTBenchmark
+      - https://arxiv.org/abs/2503.19951
+      - https://arxiv.org/html/2503.19951v3
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: omnigaia
     name: OmniGAIA
     full_name: "OmniGAIA: Towards Native Omni-Modal AI Agents"

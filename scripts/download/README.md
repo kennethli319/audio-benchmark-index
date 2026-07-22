@@ -31,6 +31,7 @@ scripts/download/music_avqa.sh
 scripts/download/daily_omni.sh
 scripts/download/worldsense.sh
 scripts/download/av_speakerbench.sh
+scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/video_mme.sh
 scripts/download/superb.sh
@@ -184,6 +185,9 @@ TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_s
 # AV-SpeakerBench downloads official docs by default; the approximately 123 GB HF snapshot is opt-in.
 AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh
 AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
+
+# AVUT downloads docs and annotation JSON by default; its approximately 24.0 GB HF snapshot is opt-in.
+AVUT_DOWNLOAD_HF=1 scripts/download/avut.sh
 
 # Daily-Omni downloads docs and QA metadata by default; its approximately 3.9 GB media snapshot is opt-in.
 DAILY_OMNI_DOWNLOAD_HF=1 scripts/download/daily_omni.sh
