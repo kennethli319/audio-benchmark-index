@@ -153,8 +153,8 @@ and exit with code `2`.
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 FLEURS_CONFIG=all scripts/download/fleurs.sh
 
-# LibriSpeech defaults to dev/test splits. Add large training splits explicitly.
-LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
+# LibriSpeech downloads official metadata/checksums by default. Archives are opt-in.
+LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh
 
 # Libri-Light downloads official docs by default. Finetuning, ABX, and unlabeled archives are opt-in.
 LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh

@@ -3153,7 +3153,7 @@
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
-  data-search="librispeech librispeech librispeech asr corpus automatic_speech_recognition asr cc-by-4.0 not_applicable openslr slr12 and hf dataset card list cc by 4.0.  openslr https://www.openslr.org/12 hf dataset https://huggingface.co/datasets/openslr/librispeech_asr paper https://ieeexplore.ieee.org/document/7178964 https://www.openslr.org/12 https://huggingface.co/datasets/openslr/librispeech_asr">
+  data-search="librispeech librispeech librispeech asr corpus automatic_speech_recognition speech_codec_evaluation asr speech_reconstruction cc-by-4.0 not_applicable openslr slr12 and hf dataset card list cc by 4.0. the helper downloads the openslr landing page and checksums by default; corpus archives require librispeech_download_archives=1. qwen3-tts section 4.1.2 evaluates tokenizer reconstruction on all 2,620 utterances in test-clean with pesq, stoi, utmos, and wavlm-based speaker similarity. openslr https://www.openslr.org/12 hf dataset https://huggingface.co/datasets/openslr/librispeech_asr paper https://ieeexplore.ieee.org/document/7178964 qwen3 tts report https://arxiv.org/html/2601.15621v1#s4.ss1.sss2 https://www.openslr.org/12 https://huggingface.co/datasets/openslr/librispeech_asr https://huggingface.co/datasets/openslr/librispeech_asr/raw/main/readme.md https://arxiv.org/html/2601.15621v1#s4.ss1.sss2">
   <div class="card-heading">
     <div>
       <span class="eyebrow">Speech recognition</span>
@@ -3164,6 +3164,7 @@
   </div>
   <div class="tag-list" aria-label="Tasks">
     <span class="tag">Asr</span>
+        <span class="tag">Speech Reconstruction</span>
   </div>
   <div class="card-facts">
     <div><span>Access path</span><strong>Hugging Face</strong></div>
@@ -3181,7 +3182,7 @@
         <div><dt>Data license / terms</dt><dd>cc-by-4.0</dd></div>
         <div><dt>Code license</dt><dd>not_applicable</dd></div>
         <div><dt>License caution</dt><dd>OpenSLR SLR12 and HF dataset card list CC BY 4.0.</dd></div>
-
+        <div><dt>Download notes</dt><dd>The helper downloads the OpenSLR landing page and checksums by default; corpus archives require LIBRISPEECH_DOWNLOAD_ARCHIVES=1. Qwen3-TTS section 4.1.2 evaluates tokenizer reconstruction on all 2,620 utterances in test-clean with PESQ, STOI, UTMOS, and WavLM-based speaker similarity.</dd></div>
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/librispeech.sh</code></div>
@@ -3189,9 +3190,12 @@
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/12">OpenSLR</a></li>
                     <li><a href="https://huggingface.co/datasets/openslr/librispeech_asr">Hf Dataset</a></li>
-                    <li><a href="https://ieeexplore.ieee.org/document/7178964">Paper</a></li></ul></div>
+                    <li><a href="https://ieeexplore.ieee.org/document/7178964">Paper</a></li>
+                    <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2">Qwen3 Tts Report</a></li></ul></div>
       <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://www.openslr.org/12">Source 1 · openslr.org</a></li>
-                    <li><a href="https://huggingface.co/datasets/openslr/librispeech_asr">Source 2 · huggingface.co</a></li></ul></div>
+                    <li><a href="https://huggingface.co/datasets/openslr/librispeech_asr">Source 2 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/openslr/librispeech_asr/raw/main/README.md">Source 3 · huggingface.co</a></li>
+                    <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2">Source 4 · arxiv.org</a></li></ul></div>
     </div>
   </details>
 </article>

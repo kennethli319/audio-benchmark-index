@@ -1208,21 +1208,27 @@ benchmarks:
   - id: librispeech
     name: LibriSpeech
     full_name: LibriSpeech ASR corpus
-    qwen_cited_as: LibriSpeech
-    qwen_bucket: automatic_speech_recognition
+    qwen_cited_as: LibriSpeech test-clean
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_codec_evaluation
     tasks:
       - asr
+      - speech_reconstruction
     official:
       openslr: https://www.openslr.org/12
       hf_dataset: https://huggingface.co/datasets/openslr/librispeech_asr
       paper: https://ieeexplore.ieee.org/document/7178964
+      qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
     download:
       primary:
         - https://www.openslr.org/12
         - https://huggingface.co/datasets/openslr/librispeech_asr
       examples:
-        - 'wget -P data/LibriSpeech https://www.openslr.org/resources/12/test-clean.tar.gz'
+        - 'scripts/download/librispeech.sh'
+        - 'LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh'
         - 'from datasets import load_dataset; ds = load_dataset("openslr/librispeech_asr", "clean", split="test")'
+      notes: The helper downloads the OpenSLR landing page and checksums by default; corpus archives require LIBRISPEECH_DOWNLOAD_ARCHIVES=1. Qwen3-TTS section 4.1.2 evaluates tokenizer reconstruction on all 2,620 utterances in test-clean with PESQ, STOI, UTMOS, and WavLM-based speaker similarity.
     license:
       data: cc-by-4.0
       code: not_applicable
@@ -1230,6 +1236,8 @@ benchmarks:
     sources:
       - https://www.openslr.org/12
       - https://huggingface.co/datasets/openslr/librispeech_asr
+      - https://huggingface.co/datasets/openslr/librispeech_asr/raw/main/README.md
+      - https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
 
   - id: libri_light
     name: Libri-Light
