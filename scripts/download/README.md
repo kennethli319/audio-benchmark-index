@@ -117,6 +117,7 @@ scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
+scripts/download/voxenes_2026.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/mswc.sh
@@ -557,6 +558,9 @@ ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asv
 # ASVspoof 2021 downloads evaluation plan and keys/metadata by default. LA/PA/DF speech archives are large and opt-in.
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS="PA DF" ASVSPOOF2021_PA_PARTS="00 01" ASVSPOOF2021_DF_PARTS="00" scripts/download/asvspoof_2021.sh
+
+# VoxENES 2026 downloads official Kaggle metadata and the paper page by default. The approximately 23.3 GB dataset is opt-in.
+VOXENES2026_DOWNLOAD_DATA=1 scripts/download/voxenes_2026.sh
 
 # VoxLingua107 downloads HF metadata by default. The mirrored dataset snapshot is opt-in.
 VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh

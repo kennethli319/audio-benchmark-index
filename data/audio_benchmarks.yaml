@@ -5972,6 +5972,40 @@ benchmarks:
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
 
+  - id: voxenes_2026
+    name: VoxENES 2026
+    full_name: "VoxENES 2026: Benchmarking Generalization of Speech Spoofing Detectors Against LLM-Era TTS and Voice Conversion"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speech_spoofing_detection
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - voice_conversion_detection
+      - cross_lingual_robustness
+      - post_processing_robustness
+    official:
+      dataset: https://www.kaggle.com/datasets/interspeech2712/voxenes-2026
+      paper: https://arxiv.org/abs/2607.11706
+      paper_html: https://arxiv.org/html/2607.11706v1
+    download:
+      primary:
+        - https://www.kaggle.com/datasets/interspeech2712/voxenes-2026
+        - https://www.kaggle.com/api/v1/datasets/view/interspeech2712/voxenes-2026
+      examples:
+        - 'scripts/download/voxenes_2026.sh'
+        - 'VOXENES2026_DOWNLOAD_DATA=1 scripts/download/voxenes_2026.sh'
+      notes: The public Kaggle release contains 53,628 standardized 16 kHz mono WAV samples across English and Spanish, including 3,028 bona fide samples, 4,600 original synthetic samples from seven TTS and three voice-conversion systems, and 46,000 post-processed variants. The helper downloads Kaggle metadata by default; the approximately 23.3 GB dataset requires explicit opt-in and an authenticated Kaggle CLI.
+    license:
+      data: cc-by-4.0-with-upstream-terms
+      code: not_applicable
+      notes: Kaggle declares CC BY 4.0 for the release. Bona fide speech derives from LibriSpeech and VoxPopuli, and synthetic samples incorporate source speech, speaker references, and outputs from multiple TTS/VC systems; review those upstream terms, voice-data rights, and model-output policies before redistribution or commercial use. The paper's CC BY 4.0 license applies to the paper, not by itself to every incorporated recording.
+    sources:
+      - https://arxiv.org/abs/2607.11706
+      - https://arxiv.org/html/2607.11706v1
+      - https://www.kaggle.com/datasets/interspeech2712/voxenes-2026
+      - https://www.kaggle.com/api/v1/datasets/view/interspeech2712/voxenes-2026
+
   - id: starss22
     name: STARSS22
     full_name: "STARSS22: Sony-TAu Realistic Spatial Soundscapes 2022"

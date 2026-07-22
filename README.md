@@ -20,8 +20,9 @@ audio-visual segmentation, audio-visual speech recognition,
 spoken digit classification,
 instruction-based speech editing, and
 few-shot robustness under foreground/background shifts, few-shot bioacoustic
-event detection, multi-domain audio question answering, and Spanish speech
-reasoning under heterogeneous acoustic conditions.
+event detection, multi-domain audio question answering, Spanish speech
+reasoning under heterogeneous acoustic conditions, and bilingual robustness
+evaluation for modern speech deepfake detectors.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -30,7 +31,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 166 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 167 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -207,6 +208,7 @@ Current coverage includes:
 | [DIHARD III](https://dihardchallenge.github.io/dihard3/) | Speaker diarization | LDC [development](https://catalog.ldc.upenn.edu/LDC2022S12) and [evaluation](https://catalog.ldc.upenn.edu/LDC2022S14) web-download releases after LDC access; helper prints official access steps | LDC user agreement access; development/evaluation data require LDC membership or non-member licensing |
 | [ASVspoof 2019](https://datashare.ed.ac.uk/handle/10283/3336) | Speaker verification anti-spoofing | Edinburgh DataShare record with README, license, evaluation plan, paper PDF, and opt-in LA/PA archives | Open Data Commons Attribution License on the DataShare record; derived from VCTK, so component terms should be re-checked |
 | [ASVspoof 2021](https://www.asvspoof.org/index2021.html) | Speaker verification anti-spoofing and speech deepfake detection | Official ASVspoof page, [baseline repo](https://github.com/asvspoof-challenge/2021), [LA](https://zenodo.org/record/4837263), [PA](https://zenodo.org/record/4834716), and [DF](https://zenodo.org/record/4835108) Zenodo records; helper downloads eval plan and keys/metadata by default, with large speech archives opt-in | Official page says Open Data Commons Attribution Licence; Zenodo lists ODC-BY for LA/PA and ODC-ODbL for DF; baseline repo had no detected license |
+| [VoxENES 2026](https://www.kaggle.com/datasets/interspeech2712/voxenes-2026) | Bilingual speech spoofing and audio deepfake detection robustness | Public Kaggle release with 53,628 English/Spanish bona fide, TTS, voice-conversion, and post-processed samples; helper downloads metadata by default and makes the approximately 23.3 GB dataset opt-in | Kaggle declares CC BY 4.0; LibriSpeech, VoxPopuli, voice-data, and synthesis-system source/output terms still require review |
 | [VoxLingua107](https://huggingface.co/datasets/TalTechNLP/VoxLingua107) | Spoken language identification | TalTechNLP [Hugging Face mirror](https://huggingface.co/datasets/TalTechNLP/VoxLingua107); helper downloads metadata by default and requires opt-in for the larger snapshot | HF card lists CC BY-NC 4.0; YouTube-derived source media availability and platform terms still apply |
 | [Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands) | Keyword spotting | Official TensorFlow archives: [v0.02](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), [v0.01](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz), or [google/speech_commands](https://huggingface.co/datasets/google/speech_commands) | CC BY 4.0; HF card asks users not to try to identify speakers |
 | [MSWC](https://mlcommons.org/datasets/multilingual-spoken-words/) | Multilingual keyword spotting and spoken term search | Official MLCommons page, [MLCommons/ml_spoken_words](https://huggingface.co/datasets/MLCommons/ml_spoken_words), and per-language MLCommons archive mirrors; helper saves docs by default and makes audio/splits/alignments opt-in | CC BY 4.0; derived from crowd-sourced sentence-level speech, so preserve attribution and re-check source terms |
@@ -416,6 +418,8 @@ scripts/download/asvspoof_2019.sh
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
+scripts/download/voxenes_2026.sh
+VOXENES2026_DOWNLOAD_DATA=1 scripts/download/voxenes_2026.sh
 ```
 
 Spoken language identification:
@@ -659,6 +663,7 @@ scripts/download/fsd50k.sh
 scripts/download/voxceleb.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
+scripts/download/voxenes_2026.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/emov_db.sh
