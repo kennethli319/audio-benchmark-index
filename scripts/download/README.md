@@ -47,6 +47,7 @@ scripts/download/mls.sh
 scripts/download/mtedx.sh
 scripts/download/europarl_st.sh
 scripts/download/tedx_spanish.sh
+scripts/download/seed_tts_eval.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh

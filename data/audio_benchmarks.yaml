@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-10
+  last_checked: 2026-07-21
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -1404,6 +1404,44 @@ benchmarks:
       - https://www.openslr.org/94/
       - https://arxiv.org/abs/2012.03411
       - https://www.isca-archive.org/interspeech_2020/pratap20_interspeech.html
+
+  - id: seed_tts_eval
+    name: Seed-TTS Eval
+    full_name: "Seed-TTS objective zero-shot speech generation evaluation set"
+    qwen_cited_as: Seed-TTS test set
+    qwen_bucket: speech_synthesis
+    tasks:
+      - zero_shot_text_to_speech
+      - voice_cloning
+      - zero_shot_voice_conversion
+      - speech_intelligibility_evaluation
+      - speaker_similarity_evaluation
+    official:
+      repo: https://github.com/BytedanceSpeech/seed-tts-eval
+      paper: https://arxiv.org/abs/2406.02430
+      project: https://bytedancespeech.github.io/seedtts_tech_report
+      qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2
+    download:
+      primary:
+        - https://github.com/BytedanceSpeech/seed-tts-eval
+        - https://drive.google.com/file/d/1GlSjVfSHkW3-leKKBlfrjuuTGqQ_xaLP/edit
+        - https://raw.githubusercontent.com/BytedanceSpeech/seed-tts-eval/main/README.md
+      examples:
+        - 'scripts/download/seed_tts_eval.sh'
+        - 'SEED_TTS_EVAL_CLONE_REPO=1 scripts/download/seed_tts_eval.sh'
+      notes: The helper downloads the official README and lightweight evaluation scripts by default; cloning the evaluation repository is opt-in. The public objective EN/ZH test set is linked through Google Drive and must be downloaded manually. The Seed-TTS paper states that the 100-sample-per-language subjective set is not released because of copyright restrictions.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: The official repository has no LICENSE file and GitHub reports no detected license. The objective set selects 1,000 English samples from Common Voice and 2,000 Mandarin samples from DiDiSpeech-2, so verify both component-source terms before redistribution or commercial use. Public access does not imply an open license.
+    sources:
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://raw.githubusercontent.com/BytedanceSpeech/seed-tts-eval/main/README.md
+      - https://api.github.com/repos/BytedanceSpeech/seed-tts-eval
+      - https://arxiv.org/abs/2406.02430
+      - https://arxiv.org/html/2406.02430v1#S3.SS1
+      - https://arxiv.org/abs/2601.15621
+      - https://arxiv.org/html/2601.15621v1#S4.SS2
 
   - id: libritts
     name: LibriTTS

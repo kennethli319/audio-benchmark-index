@@ -23,7 +23,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-10. Current index size: 109 distinct benchmarks
+Last checked: 2026-07-21. Current index size: 110 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -92,6 +92,7 @@ Current coverage includes:
 | [Switchboard](https://catalog.ldc.upenn.edu/LDC97S62) | Conversational telephone ASR | LDC catalog [LDC97S62](https://catalog.ldc.upenn.edu/LDC97S62) for Switchboard-1 Release 2 plus [LDC2002S09](https://catalog.ldc.upenn.edu/LDC2002S09) for 2000 HUB5 English Evaluation Speech; helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
 | [Fisher English](https://catalog.ldc.upenn.edu/LDC2004S13) | Conversational telephone ASR | LDC catalogs for [speech part 1](https://catalog.ldc.upenn.edu/LDC2004S13), [transcripts part 1](https://catalog.ldc.upenn.edu/LDC2004T19), [speech part 2](https://catalog.ldc.upenn.edu/LDC2005S13), and [transcripts part 2](https://catalog.ldc.upenn.edu/LDC2005T19); helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
 | [MLS](https://www.openslr.org/94/) | ASR | OpenSLR SLR94 links to Meta public-file archives for 8 LibriVox-derived languages; helper saves the page/checksums and downloads selected language archives only with opt-in | CC BY 4.0 |
+| [Seed-TTS Eval](https://github.com/BytedanceSpeech/seed-tts-eval) | Zero-shot speech synthesis and voice cloning | Official ByteDance repository and public objective EN/ZH set on Google Drive; helper downloads evaluation docs/code by default while the dataset remains a manual Drive download | No data or code license specified; objective data selects Common Voice and DiDiSpeech-2 samples, and the subjective set is explicitly unreleased |
 | [LibriTTS](https://www.openslr.org/60/) | Speech synthesis | OpenSLR SLR60 tarballs; helper downloads the landing page by default and archives only with opt-in | CC BY 4.0 |
 | [LJSpeech](https://keithito.com/LJ-Speech-Dataset/) | Speech synthesis | Official 2.6 GiB archive or [keithito/lj_speech](https://huggingface.co/datasets/keithito/lj_speech); helper downloads the dataset page by default and archive only with opt-in | Public domain; HF mirror lists `unlicense` |
 | [VCTK](https://datashare.ed.ac.uk/handle/10283/3443) | Speech synthesis | Official DataShare README/license files by default; 10.94 GiB corpus ZIP is opt-in | CC BY 4.0 |
@@ -364,6 +365,8 @@ MUSAN_DOWNLOAD_ARCHIVE=1 scripts/download/musan.sh
 Speech synthesis:
 
 ```bash
+scripts/download/seed_tts_eval.sh
+SEED_TTS_EVAL_CLONE_REPO=1 scripts/download/seed_tts_eval.sh
 scripts/download/libritts.sh
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
 scripts/download/ljspeech.sh
