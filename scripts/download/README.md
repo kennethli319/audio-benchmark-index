@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
+scripts/download/mmau_pro.sh
 scripts/download/escucha.sh
 scripts/download/msu_bench.sh
 scripts/download/korean_speechlm_benchmarks.sh
@@ -432,6 +433,9 @@ EARNINGS21_SPARSE_CHECKOUT=1 scripts/download/earnings_21.sh
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
+
+# MMAU-Pro downloads official docs, evaluator, and metadata by default. The approximately 47.5 GB HF snapshot is opt-in.
+MMAU_PRO_DOWNLOAD_HF=1 scripts/download/mmau_pro.sh
 
 # AIR-Bench downloads official docs by default. The HF audio snapshot is large and opt-in.
 AIR_BENCH_DOWNLOAD_HF=1 scripts/download/air_bench.sh

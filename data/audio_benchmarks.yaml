@@ -233,6 +233,48 @@ benchmarks:
       - https://github.com/dingdongwang/MMSU
       - https://huggingface.co/datasets/ddwang2000/MMSU
 
+  - id: mmau_pro
+    name: MMAU-Pro
+    full_name: "MMAU-Pro: A Challenging and Comprehensive Benchmark for Holistic Evaluation of Audio General Intelligence"
+    qwen_cited_as: null
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_question_answering
+      - audio_reasoning
+      - long_audio_understanding
+      - multi_audio_reasoning
+      - spatial_audio_reasoning
+      - speech_understanding
+      - sound_understanding
+      - music_understanding
+      - audio_instruction_following
+    official:
+      homepage: https://sonalkum.github.io/mmau-pro/
+      repo: https://github.com/sonalkum/MMAUPro
+      paper: https://arxiv.org/abs/2508.13992
+      dataset: https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro
+    download:
+      primary:
+        - https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro
+        - https://github.com/sonalkum/MMAUPro
+      examples:
+        - 'scripts/download/mmau_pro.sh'
+        - 'MMAU_PRO_DOWNLOAD_HF=1 scripts/download/mmau_pro.sh'
+      notes: The public, ungated release contains 5,305 expert-authored multiple-choice and open-ended QA instances spanning 49 skills across speech, environmental sound, music, and their mixtures. It includes multiple-audio, spatial, instruction-following, and up-to-10-minute long-form cases. The helper downloads official documentation, repository metadata, the evaluator, and Hugging Face metadata by default; the Hugging Face API reports approximately 47.5 GB of repository storage, so the audio and test snapshot requires MMAU_PRO_DOWNLOAD_HF=1.
+    license:
+      data: CC-BY-NC-4.0_with_upstream_terms
+      code: not_specified
+      notes: The Hugging Face card declares CC BY-NC 4.0, but the paper says almost all audio was sourced from in-the-wild recordings and the spatial subset reuses EasyCom. Review source-media and EasyCom terms before redistribution or commercial use. The official GitHub repository has no license file or detected license, so evaluator code terms are unspecified.
+    sources:
+      - https://arxiv.org/abs/2508.13992
+      - https://arxiv.org/html/2508.13992v1#Sx3
+      - https://github.com/sonalkum/MMAUPro
+      - https://raw.githubusercontent.com/sonalkum/MMAUPro/main/README.md
+      - https://api.github.com/repos/sonalkum/MMAUPro
+      - https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro
+      - https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro/raw/main/README.md
+      - https://huggingface.co/api/datasets/gamma-lab-umd/MMAU-Pro
+
   - id: escucha
     name: ESCUCHA
     full_name: "ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions"
