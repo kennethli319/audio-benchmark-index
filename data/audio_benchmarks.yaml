@@ -4155,6 +4155,49 @@ benchmarks:
       - https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
       - https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf
 
+  - id: msp_podcast
+    name: MSP-Podcast
+    full_name: "MSP-Podcast: A Large Naturalistic Speech Emotional Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speech_emotion_recognition
+    tasks:
+      - speech_emotion_recognition
+      - dimensional_emotion_recognition
+      - categorical_emotion_recognition
+      - speaker_independent_emotion_recognition
+      - paralinguistic_speech_analysis
+    official:
+      homepage: https://lab-msp.com/MSP/MSP-Podcast.html
+      academic_license: https://lab-msp.com/MSP/publications/Busso-FDPDTUA-MSP-Podcast-v4.pdf
+      paper: https://lab-msp.com/MSP/publications/Busso_202x.pdf
+      arxiv: https://arxiv.org/abs/2509.09791
+      test3_evaluation: https://lab-msp.com/MSP-Podcast_Competition/SERB/
+    download:
+      primary:
+        - https://lab-msp.com/MSP/MSP-Podcast.html
+        - https://lab-msp.com/MSP/publications/Busso-FDPDTUA-MSP-Podcast-v4.pdf
+      examples:
+        - 'scripts/download/msp_podcast.sh'
+      notes: >-
+        Version 2.0 contains 264,705 naturalistic podcast speaking turns totaling
+        409 hours, with speaker-independent train, development, and three test
+        partitions. It provides categorical emotion and activation, dominance,
+        and valence labels; Test3 releases audio but withholds labels, speaker
+        information, transcripts, and alignments for web-based evaluation.
+        Access is free but institution/form-gated: an authorized institutional
+        representative must sign the official academic agreement and send it to
+        the corpus owner. There is no public archive URL.
+    license:
+      data: custom_academic_license
+      code: not_applicable
+      notes: The owner page currently calls the release an Academic License and requires an institution-signed FDP data-transfer agreement. Although the page says source podcasts were chosen under permissive licenses, the signed corpus agreement controls access and reuse; review it directly before commercial use, redistribution, or sharing copies.
+    sources:
+      - https://lab-msp.com/MSP/MSP-Podcast.html
+      - https://lab-msp.com/MSP/publications/Busso-FDPDTUA-MSP-Podcast-v4.pdf
+      - https://lab-msp.com/MSP/publications/Busso_202x.pdf
+      - https://arxiv.org/abs/2509.09791
+      - https://lab-msp.com/MSP-Podcast_Competition/SERB/
+
   - id: musan
     name: MUSAN
     full_name: "MUSAN: A Music, Speech, and Noise Corpus"

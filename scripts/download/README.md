@@ -163,6 +163,7 @@ WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
+scripts/download/msp_podcast.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
 scripts/download/fisher_english.sh
@@ -534,6 +535,9 @@ MELD_BASE_URL=https://huggingface.co/datasets/declare-lab/MELD/resolve/main scri
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh
+
+# MSP-Podcast is institution/form-gated. The helper prints the official academic access steps.
+scripts/download/msp_podcast.sh
 
 # TIMIT is paid/licensed through LDC. The helper prints official access steps.
 scripts/download/timit.sh
