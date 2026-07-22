@@ -473,6 +473,10 @@ DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh
 # default. The approximately 2.43 GiB development audio archive is opt-in.
 MAESTRO_REAL_DOWNLOAD_AUDIO=1 scripts/download/maestro_real.sh
 
+# TUT Sound Events 2017 downloads both releases' docs and annotations by
+# default. The approximately 1.55 GiB of development/evaluation audio is opt-in.
+TUT_SOUND_EVENTS_2017_DOWNLOAD_AUDIO=1 scripts/download/tut_sound_events_2017.sh
+
 # DCASE 2025 Task 5 AudioQA is auto-approved gated on Hugging Face. The helper
 # saves public metadata and prints the login/acceptance flow; it downloads no audio.
 scripts/download/dcase2025_audioqa.sh

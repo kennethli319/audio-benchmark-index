@@ -3749,6 +3749,54 @@ benchmarks:
       - https://hal.inria.fr/hal-02160855
       - https://hal.inria.fr/hal-02355573
 
+  - id: tut_sound_events_2017
+    name: TUT Sound Events 2017
+    full_name: "TUT Sound Events 2017: Sound Event Detection in Real-Life Audio"
+    qwen_cited_as: null
+    qwen_bucket: sound_event_detection
+    tasks:
+      - sound_event_detection
+      - polyphonic_sound_event_detection
+      - temporal_audio_event_localization
+      - street_sound_event_detection
+    official:
+      challenge: https://dcase.community/challenge2017/task-sound-event-detection-in-real-life-audio
+      development_dataset: https://zenodo.org/records/814831
+      development_doi: https://doi.org/10.5281/zenodo.814831
+      evaluation_dataset: https://zenodo.org/records/1040179
+      evaluation_doi: https://doi.org/10.5281/zenodo.1040179
+      challenge_paper: https://doi.org/10.1109/AASPAA.2017.8288194
+    download:
+      primary:
+        - https://zenodo.org/records/814831
+        - https://zenodo.org/records/1040179
+        - https://zenodo.org/api/records/814831/files/TUT-sound-events-2017-development.meta.zip/content
+        - https://zenodo.org/api/records/1040179/files/TUT-sound-events-2017-evaluation.meta.zip/content
+      examples:
+        - 'scripts/download/tut_sound_events_2017.sh'
+        - 'TUT_SOUND_EVENTS_2017_DOWNLOAD_AUDIO=1 scripts/download/tut_sound_events_2017.sh'
+      notes: >-
+        The public version-2 development release contains 24 street recordings
+        totaling 1:32:08 with verified strong annotations for six overlapping
+        event classes and an official four-fold cross-validation setup. The
+        public evaluation release contains eight recordings totaling 29:09 and
+        now includes reference metadata. DCASE 2017 Task 3 ranks systems by
+        one-second segment-based error rate. The helper downloads Zenodo record
+        JSON, documentation, and small annotation archives by default; the
+        approximately 1.55 GiB of 24-bit, 44.1 kHz audio requires explicit
+        opt-in.
+    license:
+      data: custom_noncommercial
+      code: not_applicable
+      notes: Zenodo labels both releases Other (Non-Commercial), and each documentation archive contains a controlling EULA. Review that packaged agreement before use or redistribution; the generic Zenodo label is not a permissive Creative Commons grant.
+    sources:
+      - https://dcase.community/challenge2017/task-sound-event-detection-in-real-life-audio
+      - https://zenodo.org/records/814831
+      - https://zenodo.org/api/records/814831
+      - https://zenodo.org/records/1040179
+      - https://zenodo.org/api/records/1040179
+      - https://doi.org/10.1109/AASPAA.2017.8288194
+
   - id: maestro_real
     name: MAESTRO Real
     full_name: "MAESTRO Real: Multi-Annotator Estimated Strong Labels"
