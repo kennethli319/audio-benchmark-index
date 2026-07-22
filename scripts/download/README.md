@@ -80,6 +80,7 @@ scripts/download/earnings_22.sh
 scripts/download/earnings_21.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
+scripts/download/dcase2024_task5.sh
 scripts/download/spuraudio.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
@@ -457,6 +458,10 @@ MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh
 
 # ESC-50 defaults to the official GitHub archive.
 ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
+
+# DCASE 2024 Task 5 downloads record metadata, class maps, and annotation-only
+# archives by default. Development and evaluation waveforms total about 23.4 GiB.
+DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh
 
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh

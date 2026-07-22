@@ -18,7 +18,8 @@ assessment, spatial audio localization, cross-modal audio-video-text retrieval,
 audio-visual segmentation, audio-visual speech recognition,
 spoken digit classification,
 instruction-based speech editing, and
-few-shot robustness under foreground/background shifts.
+few-shot robustness under foreground/background shifts, and few-shot
+bioacoustic event detection.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -27,7 +28,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 157 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 158 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -165,6 +166,7 @@ Current coverage includes:
 | [Opencpop-test](https://github.com/wenet-e2e/opencpop) | ASR / singing voice | Apply via the [official download page](https://wenet-e2e.github.io/opencpop/download/) and use the test split | CC BY-NC-ND 4.0 |
 | [MIR-1K vocal](http://mirlab.org/dataset/public/) | ASR / singing voice | [Figshare mirror](https://figshare.com/articles/dataset/MIR-1K_rar/5802891); official MIR Lab archive currently returns 404 | Official page does not state a license; Figshare mirror lists CC BY 4.0 |
 | [ESC-50](https://github.com/karolpiczak/ESC-50) | Environmental sound classification | [GitHub archive](https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip) or `git clone https://github.com/karolpiczak/ESC-50.git` | ESC-50 is CC BY-NC 3.0; ESC-10 subset clips are CC BY |
+| [DCASE 2024 Task 5](https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection) | Five-shot bioacoustic event detection | Public CC BY 4.0 [development set](https://zenodo.org/records/10829604) and reused [2023 evaluation set](https://zenodo.org/records/7879692); helper downloads official metadata, class maps, and annotation-only archives by default while approximately 23.4 GiB of audio is opt-in | Both official Zenodo records state CC BY 4.0; retain release attribution and review source-specific wildlife-recording constraints |
 | [UrbanSound8K](https://urbansounddataset.weebly.com/urbansound8k.html) | Environmental sound classification | [Zenodo archive](https://zenodo.org/records/1203745) or the official browser/Python download page | Zenodo lists CC BY-NC 4.0; official site says free for non-commercial use under Creative Commons BY-NC 3.0 |
 | [TAU Urban Acoustic Scenes 2019](https://dcase.community/challenge2019/task-acoustic-scene-classification) | Acoustic scene classification | [Development Zenodo record](https://zenodo.org/records/2589280); helper downloads doc/meta files by default and makes 21 audio shards opt-in | Zenodo record lists `Other (Non-Commercial)` without a more specific SPDX-style license |
 | [TAU Urban Acoustic Scenes 2020 Mobile](https://dcase.community/challenge2020/task-acoustic-scene-classification) | Acoustic scene classification | [Development](https://zenodo.org/records/3670167) and [evaluation](https://zenodo.org/records/3685828) Zenodo records; helper downloads doc/meta files by default and makes multi-GB audio archives opt-in | Zenodo records list `Other (Non-Commercial)` without a more specific SPDX-style license |
@@ -355,6 +357,8 @@ Direct archives:
 
 ```bash
 scripts/download/esc_50.sh
+scripts/download/dcase2024_task5.sh
+DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
 TAU_ASC2019_DOWNLOAD_AUDIO=1 TAU_ASC2019_AUDIO_PARTS="1 2 21" scripts/download/tau_asc_2019.sh

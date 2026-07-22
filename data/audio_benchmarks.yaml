@@ -3053,6 +3053,55 @@ benchmarks:
       - https://github.com/karolpiczak/ESC-50/blob/master/LICENSE
       - https://doi.org/10.1145/2733373.2806390
 
+  - id: dcase2024_task5
+    name: DCASE 2024 Task 5
+    full_name: "DCASE 2024 Task 5: Few-shot Bioacoustic Event Detection"
+    qwen_cited_as: null
+    qwen_bucket:
+      - sound_event_detection
+      - bioacoustics
+    tasks:
+      - few_shot_bioacoustic_event_detection
+      - sound_event_detection
+      - animal_vocalization_detection
+      - five_shot_learning
+    official:
+      challenge: https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection
+      results: https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection-results
+      development_set: https://zenodo.org/records/10829604
+      evaluation_set: https://zenodo.org/records/7879692
+      development_doi: https://doi.org/10.5281/zenodo.10829604
+      evaluation_doi: https://doi.org/10.5281/zenodo.7879692
+    download:
+      primary:
+        - https://zenodo.org/records/10829604
+        - https://zenodo.org/records/7879692
+      examples:
+        - 'scripts/download/dcase2024_task5.sh'
+        - 'DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh'
+      notes: >-
+        The official five-shot protocol provides the first five positive target
+        events in each recording, then scores detection after the fifth event.
+        The 2024 development release has 217 recordings: 174 training files
+        covering 47 classes and 43 validation files covering seven classes.
+        The official challenge reuses the 2023 evaluation release, which has 66
+        recordings across eight subsets. The helper downloads record metadata,
+        class maps, and annotation-only archives by default. The current Zenodo
+        files total approximately 20.4 GiB for development audio and 3.0 GiB for
+        evaluation audio, so waveform archives require
+        DCASE2024_TASK5_DOWNLOAD_AUDIO=1.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: Both official Zenodo records declare Creative Commons Attribution 4.0 International. The benchmark combines multiple bioacoustic sources; retain the release attribution and review source-specific ethical or wildlife-recording constraints for downstream use.
+    sources:
+      - https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection
+      - https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection-results
+      - https://zenodo.org/records/10829604
+      - https://zenodo.org/api/records/10829604
+      - https://zenodo.org/records/7879692
+      - https://zenodo.org/api/records/7879692
+
   - id: spuraudio
     name: SpurAudio
     full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"
