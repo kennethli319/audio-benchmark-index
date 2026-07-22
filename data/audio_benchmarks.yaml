@@ -1584,6 +1584,41 @@ benchmarks:
       - https://zenodo.org/record/4603870
       - https://ieeexplore.ieee.org/document/8937164
 
+  - id: moisesdb
+    name: MoisesDB
+    full_name: "MoisesDB: A Dataset for Source Separation Beyond 4-Stems"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_source_separation
+      - music_information_retrieval
+    tasks:
+      - music_source_separation
+      - multi_stem_source_separation
+      - instrument_source_separation
+      - singing_voice_separation
+    official:
+      homepage: https://music.ai/research/
+      repo: https://github.com/moises-ai/moises-db
+      paper: https://arxiv.org/abs/2307.15913
+    download:
+      primary:
+        - https://music.ai/research/
+        - https://github.com/moises-ai/moises-db
+      examples:
+        - 'scripts/download/moisesdb.sh'
+        - 'MOISESDB_CLONE_REPO=1 scripts/download/moisesdb.sh'
+      notes: The official Music AI research page provides the dataset through its browser download flow. The release contains 240 songs by 47 artists across 12 high-level genres, totaling 14 hours, 24 minutes, and 46 seconds, with mixtures and a hierarchical stem/source taxonomy extending beyond the common four-stem setup. The helper saves the official page plus repository README and license by default; it does not fetch the large audio archive, and cloning the loader/evaluation repository is opt-in.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: cc-by-nc-sa-4.0
+      notes: The official repository applies CC BY-NC-SA 4.0 to MoisesDB and its packaged loader/evaluation materials, and the Music AI page limits the dataset to non-commercial research use. Attribution and ShareAlike obligations apply; commercial use is not permitted by this release.
+    sources:
+      - https://music.ai/research/
+      - https://github.com/moises-ai/moises-db
+      - https://raw.githubusercontent.com/moises-ai/moises-db/main/README.md
+      - https://raw.githubusercontent.com/moises-ai/moises-db/main/LICENSE
+      - https://arxiv.org/abs/2307.15913
+
   - id: voicebench
     name: VoiceBench
     full_name: "VoiceBench: Benchmarking LLM-Based Voice Assistants"

@@ -142,6 +142,7 @@ scripts/download/maestro.sh
 scripts/download/musdb18.sh
 scripts/download/medleydb.sh
 scripts/download/slakh2100.sh
+scripts/download/moisesdb.sh
 scripts/download/librimix.sh
 scripts/download/fuss.sh
 scripts/download/wsj0_2mix.sh
@@ -657,6 +658,9 @@ MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
 SLAKH_CHECK_ZENODO=1 scripts/download/slakh2100.sh
 SLAKH_CLONE_UTILS=1 scripts/download/slakh2100.sh
 SLAKH_CLONE_GENERATION=1 scripts/download/slakh2100.sh
+
+# MoisesDB saves the official release page and repository docs by default. Audio uses the official browser download flow.
+MOISESDB_CLONE_REPO=1 scripts/download/moisesdb.sh
 
 # LibriMix clones the official generator/metadata repo by default. Generation is very large.
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
