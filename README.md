@@ -44,6 +44,12 @@ languages and part of the custom-voice evaluation is explicitly internal and
 has no released row mapping or download; the public FLEURS corpus is indexed
 separately and must not be treated as that derived evaluation set.
 
+Qwen3.5-Omni section 5.1's Audio-to-Text evaluation is fully inventoried in
+the source YAML across audio understanding, end-to-end dialogue, S2TT, and
+ASR. The audit records Table 5's exact dataset variants and protocols,
+including the SongForm-HX-8Class prompt, URO-Bench pro track, FLEURS top-59
+S2TT/top-60 ASR sets, Common Voice 15 languages, and vocal-only MIR-1K.
+
 Qwen3.5-Omni section 5.1.4's complete audiovisual-to-text evaluation is
 inventoried in the source YAML: DailyOmni, WorldSense, AVUT, AV-SpeakerBench,
 audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes

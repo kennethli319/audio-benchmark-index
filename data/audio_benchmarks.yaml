@@ -59,6 +59,67 @@ paper_audits:
         index_id: cv3_eval
         status: public
         note: Section 5.2.3 evaluates 12 source-target directions from the public CV3-Eval cross-lingual subset.
+  qwen3_5_omni_audio_to_text:
+    paper: https://arxiv.org/abs/2604.15804
+    sections: 5.1 Audio -> Text and 5.1.2
+    evaluated_sets:
+      - cited_as: MMAU
+        index_id: mmau
+        status: public
+      - cited_as: MMAR
+        index_id: mmar
+        status: public
+      - cited_as: MMSU
+        index_id: mmsu
+        status: public
+      - cited_as: RUL-MuchoMusic
+        index_id: rul_muchomusic
+        status: public
+      - cited_as: SongFormBench-HarmonixSet / SongFormBench-CN
+        index_id: songformbench
+        status: public
+        note: Table 5 uses the SongForm-HX-8Class closed vocabulary and a unified prompt requiring SRT-like timestamps.
+      - cited_as: VoiceBench
+        index_id: voicebench
+        status: public
+      - cited_as: URO-Bench-pro
+        index_id: uro_bench_pro
+        status: public
+        note: Table 5 uses the pro track and GenStyle-en, GenStyle-zh, and Multilingual tasks for its oral-conversation dimension.
+      - cited_as: SpeechRole
+        index_id: speechrole
+        status: public
+      - cited_as: WildSpeech-Bench
+        index_id: wildspeech_bench
+        status: public
+      - cited_as: Fleurs S2TT top59
+        index_id: fleurs
+        status: public
+        note: Table 5 reports translation between each of 59 languages and English or Chinese; Afrikaans is excluded because the report says its S2TT test set does not cover it.
+      - cited_as: Fleurs ASR top60
+        index_id: fleurs
+        status: public
+      - cited_as: CV15 (zh / yue / zh-tw / en)
+        index_id: common_voice
+        status: public
+        note: Table 5 identifies Common Voice release 15 and reports separate Mandarin, Cantonese, Taiwan Mandarin, and English WER.
+      - cited_as: Librispeech (clean / other)
+        index_id: librispeech
+        status: public
+      - cited_as: Weneetspeech (net / meeting)
+        index_id: wenetspeech
+        status: public
+        note: The table spells the benchmark Weneetspeech; this maps to the official WenetSpeech corpus and its test_net and test_meeting subsets.
+      - cited_as: Kespeech
+        index_id: kespeech
+        status: public_restricted_terms
+      - cited_as: MIR-1K (vocal-only)
+        index_id: mir_1k_vocal
+        status: public
+        note: The report evaluates vocal-only singing transcription and converts the transcription into Simplified Chinese.
+      - cited_as: Opencpop
+        index_id: opencpop_test
+        status: public_application_required
   qwen3_5_omni_audio_visual_to_text:
     paper: https://arxiv.org/abs/2604.15804
     sections: 5.1.4
