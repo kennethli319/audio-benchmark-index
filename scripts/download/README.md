@@ -29,6 +29,7 @@ scripts/download/mmsu.sh
 scripts/download/air_bench.sh
 scripts/download/music_avqa.sh
 scripts/download/av_speakerbench.sh
+scripts/download/omnigaia.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
@@ -180,6 +181,10 @@ TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_s
 # AV-SpeakerBench downloads official docs by default; the approximately 123 GB HF snapshot is opt-in.
 AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh
 AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
+
+# OmniGAIA downloads docs and test metadata by default; the approximately 9.9 GB media snapshot is opt-in.
+OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh
+OMNIGAIA_CLONE_REPO=1 scripts/download/omnigaia.sh
 
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh

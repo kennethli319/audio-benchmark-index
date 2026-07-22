@@ -207,6 +207,47 @@ benchmarks:
       - https://arxiv.org/abs/2512.02231
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: omnigaia
+    name: OmniGAIA
+    full_name: "OmniGAIA: Towards Native Omni-Modal AI Agents"
+    qwen_cited_as: OmniGAIA
+    qwen_bucket: audio_visual_agent_tool_use
+    tasks:
+      - omni_modal_question_answering
+      - audio_visual_reasoning
+      - multi_hop_reasoning
+      - tool_use
+      - web_search
+      - code_execution
+    official:
+      repo: https://github.com/RUC-NLPIR/OmniGAIA
+      paper: https://arxiv.org/abs/2602.22897
+      dataset: https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA
+      leaderboard: https://huggingface.co/spaces/RUC-NLPIR/OmniGAIA-Leaderboard
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA
+        - https://github.com/RUC-NLPIR/OmniGAIA
+      examples:
+        - 'scripts/download/omnigaia.sh'
+        - 'OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("RUC-NLPIR/OmniGAIA", split="test")'
+      notes: The public, ungated release contains 360 English test tasks with audio, image, and video inputs across nine domains. The helper downloads official documentation and the lightweight test metadata JSON by default; the Hugging Face API reports about 9.9 GB of repository storage, so the full media snapshot requires OMNIGAIA_DOWNLOAD_HF=1. Qwen3.5-Omni reports OmniGAIA without a thinking prompt or answer-tag formatting in section 5.1.4, Table 7.
+    license:
+      data: apache-2.0
+      code: MIT
+      notes: The Hugging Face card declares Apache-2.0 and the GitHub repository declares MIT. The benchmark curates media from FineVideo, LongVideoBench, LongVideo-Reason, COCO 2017, and other Hugging Face sources; verify component media rights and attribution requirements before redistribution or commercial use.
+    sources:
+      - https://github.com/RUC-NLPIR/OmniGAIA
+      - https://raw.githubusercontent.com/RUC-NLPIR/OmniGAIA/main/README.md
+      - https://api.github.com/repos/RUC-NLPIR/OmniGAIA
+      - https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA
+      - https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA/raw/main/README.md
+      - https://huggingface.co/api/datasets/RUC-NLPIR/OmniGAIA
+      - https://arxiv.org/abs/2602.22897
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"
