@@ -4868,3 +4868,42 @@ benchmarks:
       - https://api.github.com/repos/cevers/sap_locata_io
       - https://github.com/cevers/sap_locata_eval
       - https://api.github.com/repos/cevers/sap_locata_eval
+
+  - id: spatial_librispeech
+    name: Spatial LibriSpeech
+    full_name: "Spatial LibriSpeech: An Augmented Dataset for Spatial Audio Learning"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_source_localization
+      - source_distance_estimation
+      - room_acoustics_estimation
+      - direct_to_reverberant_ratio_estimation
+      - reverberation_time_estimation
+      - spatial_audio_understanding
+    official:
+      repo: https://github.com/apple/ml-spatial-librispeech
+      paper: https://arxiv.org/abs/2308.09514
+      proceedings: https://doi.org/10.21437/Interspeech.2023-2117
+      dataset_schema: https://github.com/apple/ml-spatial-librispeech/blob/main/DATASET_SCHEMA.md
+      metadata: https://docs-assets.developer.apple.com/ml-research/datasets/spatial-librispeech/v1/metadata.parquet
+    download:
+      primary:
+        - https://docs-assets.developer.apple.com/ml-research/datasets/spatial-librispeech/v1/metadata.parquet
+        - https://github.com/apple/ml-spatial-librispeech
+      examples:
+        - 'scripts/download/spatial_librispeech.sh'
+        - 'SPATIAL_LIBRISPEECH_DOWNLOAD_METADATA=1 scripts/download/spatial_librispeech.sh'
+        - 'SPATIAL_LIBRISPEECH_SAMPLE_ID=0 scripts/download/spatial_librispeech.sh'
+      notes: The public Apple release provides more than 650 hours of 16 kHz first-order ambisonic speech and optional distractor noise, synthesized from LibriSpeech across more than 200,000 acoustic conditions and 8,000 synthetic rooms. Labels cover 3D source position and speaking direction, room geometry, C50, DRR, EDT, T20, and T30. The helper downloads official documentation by default; the approximately 365 MiB metadata Parquet file and individual FLAC samples are explicit opt-ins. The README still describes raw 19-channel audio as forthcoming and directs users to contact Apple rather than exposing a public download.
+    license:
+      data: CC-BY-4.0
+      code: not_applicable
+      notes: Apple's copyrights in the dataset are CC BY 4.0. Its license preserves upstream terms for LibriSpeech, Microsoft DNS noise, AudioSet, and CC0 Freesound material and says Apple makes no representations about those upstream rights; review component provenance before redistribution.
+    sources:
+      - https://github.com/apple/ml-spatial-librispeech
+      - https://raw.githubusercontent.com/apple/ml-spatial-librispeech/main/README.md
+      - https://raw.githubusercontent.com/apple/ml-spatial-librispeech/main/DATASET_SCHEMA.md
+      - https://raw.githubusercontent.com/apple/ml-spatial-librispeech/main/LICENSE
+      - https://arxiv.org/abs/2308.09514
+      - https://doi.org/10.21437/Interspeech.2023-2117

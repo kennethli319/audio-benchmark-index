@@ -82,6 +82,7 @@ scripts/download/ave.sh
 scripts/download/starss22.sh
 scripts/download/starss23.sh
 scripts/download/locata.sh
+scripts/download/spatial_librispeech.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
@@ -202,6 +203,12 @@ REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
 # LOCATA downloads official pages, docs, Zenodo metadata, and tool READMEs by default.
 # The public corpus archives total about 19.3 GB and remain on the official Zenodo record.
 LOCATA_CLONE_TOOLS=1 scripts/download/locata.sh
+
+# Spatial LibriSpeech downloads official docs by default. Its ~365 MiB metadata
+# and individual ambisonic speech/noise samples are separate opt-ins.
+SPATIAL_LIBRISPEECH_DOWNLOAD_METADATA=1 scripts/download/spatial_librispeech.sh
+SPATIAL_LIBRISPEECH_SAMPLE_ID=0 scripts/download/spatial_librispeech.sh
+SPATIAL_LIBRISPEECH_SAMPLE_ID=0 SPATIAL_LIBRISPEECH_DOWNLOAD_NOISE_SAMPLE=1 scripts/download/spatial_librispeech.sh
 
 # Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
 MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh
