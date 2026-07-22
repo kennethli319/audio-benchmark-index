@@ -1915,6 +1915,43 @@ benchmarks:
       - https://arxiv.org/abs/2203.15591
       - https://czasopisma.uni.lodz.pl/research/article/view/21579
 
+  - id: earnings_21
+    name: Earnings-21
+    full_name: "Earnings-21: A Practical Benchmark for ASR in the Wild"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - named_entity_recognition
+      - long_form_speech_recognition
+      - financial_speech_recognition
+    official:
+      repo: https://github.com/revdotcom/speech-datasets
+      dataset_readme: https://github.com/revdotcom/speech-datasets/tree/main/earnings21
+      paper: https://arxiv.org/abs/2104.11348
+      interspeech_paper: https://www.isca-archive.org/interspeech_2021/delrio21_interspeech.html
+    download:
+      primary:
+        - https://github.com/revdotcom/speech-datasets/tree/main/earnings21
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings21/README.md
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings21/LICENSE.md
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings21/earnings21-file-metadata.csv
+        - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings21/eval10-file-metadata.csv
+      examples:
+        - 'scripts/download/earnings_21.sh'
+        - 'EARNINGS21_SPARSE_CHECKOUT=1 scripts/download/earnings_21.sh'
+      notes: Earnings-21 contains 44 English-language earnings calls totaling about 39 hours, plus a representative 10-hour Eval-10 subset. The helper downloads official documentation and lightweight file/speaker metadata by default; sparse checkout of the approximately 770 MB media tree, transcripts, RTTMs, and bias lists is opt-in.
+    license:
+      data: cc-by-sa-4.0_text
+      code: not_specified
+      notes: The dataset README shows a CC BY-SA 4.0 badge, but LICENSE.md expressly covers only transcripts and associated text files used for alignment. The repository has no detected top-level license, so confirm audio rights before redistribution or commercial use.
+    sources:
+      - https://github.com/revdotcom/speech-datasets
+      - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings21/README.md
+      - https://raw.githubusercontent.com/revdotcom/speech-datasets/main/earnings21/LICENSE.md
+      - https://arxiv.org/abs/2104.11348
+      - https://www.isca-archive.org/interspeech_2021/delrio21_interspeech.html
+
   - id: l2_arctic
     name: L2-ARCTIC
     full_name: "L2-ARCTIC: A Non-native English Speech Corpus"
