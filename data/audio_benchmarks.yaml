@@ -152,6 +152,29 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  rw_voice_eq_bench:
+    paper: https://arxiv.org/abs/2607.14846
+    sections: 2 and 4-7
+    status: audited_not_indexed
+    public_interfaces:
+      - https://huggingface.co/spaces/HumeAI/rw-voice-eq
+      - https://huggingface.co/spaces/HumeAI/asr-leaderboard
+    evaluated_domains:
+      - domain: text_to_speech
+        protocol: 30 evaluations across seven dimensions, with up to 120 prompts per category
+        data_status: no_public_item_release_found
+      - domain: speech_to_speech
+        protocol: Five task families using fixed user audio, prerecorded prompts, and matched audio-only/transcript-only conditions where applicable
+        data_status: no_public_item_release_found
+      - domain: speech_understanding
+        protocol: Six emotion, speaker-matching, and synthetic-speech-detection evaluations
+        data_status: no_public_item_release_found
+      - domain: automatic_speech_recognition
+        protocol: Four English robustness sets for accented, emotional, background-audio, and conversational speech
+        data_status: private_unreleased
+        note: Section 7.2 explicitly calls all four ASR sets private. They total roughly 17 hours; public online video and Hume-DaiKon are source descriptions, not public benchmark downloads.
+    note: The public Hugging Face Spaces expose leaderboards and application code, not benchmark audio or item files. RW-Voice-EQ is therefore recorded as an audited protocol rather than a downloadable benchmark family; no data link should be inferred from the public leaderboards.
+
 benchmarks:
   - id: mmau
     name: MMAU

@@ -70,6 +70,14 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 RW-Voice-EQ paper has also been audited across sections 2 and
+4-7. Its public [voice-system](https://huggingface.co/spaces/HumeAI/rw-voice-eq)
+and [ASR](https://huggingface.co/spaces/HumeAI/asr-leaderboard) leaderboards do
+not release benchmark item files. The paper explicitly describes its four ASR
+robustness sets as private, while no public item release was found for its TTS,
+speech-to-speech, or speech-understanding protocols, so RW-Voice-EQ is recorded
+in the YAML audit rather than counted as a downloadable benchmark family.
+
 ## Coverage
 
 Current coverage includes:
