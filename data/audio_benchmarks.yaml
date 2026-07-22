@@ -3603,6 +3603,52 @@ benchmarks:
       - https://zenodo.org/records/1203745
       - https://www.justinsalamon.com/uploads/4/3/9/4/4394963/salamon_urbansound_acmmm14.pdf
 
+  - id: soroll_ia
+    name: Soroll-IA
+    full_name: "Soroll-IA: A Weakly Labeled Audio Dataset for Real-World Industrial Port Monitoring"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - environmental_sound_classification
+    tasks:
+      - multi_label_audio_tagging
+      - weakly_supervised_sound_event_classification
+      - industrial_sound_monitoring
+      - real_world_environmental_audio_classification
+    official:
+      dataset: https://www.kaggle.com/datasets/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring
+      benchmark_repo: https://github.com/anp-iti/sorollia_baseline
+      paper: https://arxiv.org/abs/2606.26195
+      arxiv_html: https://arxiv.org/html/2606.26195
+    download:
+      primary:
+        - https://www.kaggle.com/datasets/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring
+        - https://www.kaggle.com/api/v1/datasets/view/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring
+      examples:
+        - 'scripts/download/soroll_ia.sh'
+        - 'SOROLL_IA_DOWNLOAD_DATA=1 scripts/download/soroll_ia.sh'
+      notes: >-
+        The public Kaggle release contains 7,396 FLAC clips (approximately 22
+        hours and 2.17 GB) recorded by two fixed sensing nodes in the Port of
+        Valencia, with 26 weakly labeled industrial sound classes. It provides
+        two ground-truth variants: a permissive non-cross-validated annotation
+        set and a conservative set requiring agreement from at least two-thirds
+        of annotators, plus five-fold assignments. The helper downloads official
+        metadata, paper, and benchmark documentation by default; the audio and
+        annotations require explicit opt-in and an authenticated Kaggle CLI.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: Kaggle and the official benchmark README declare CC BY-NC 4.0, which prohibits commercial use and requires attribution. The benchmark repository has no LICENSE file or GitHub-detected license, so its code terms are unspecified.
+    sources:
+      - https://arxiv.org/abs/2606.26195
+      - https://arxiv.org/html/2606.26195
+      - https://www.kaggle.com/datasets/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring
+      - https://www.kaggle.com/api/v1/datasets/view/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring
+      - https://github.com/anp-iti/sorollia_baseline
+      - https://raw.githubusercontent.com/anp-iti/sorollia_baseline/main/README.md
+      - https://api.github.com/repos/anp-iti/sorollia_baseline
+
   - id: tau_asc_2019
     name: TAU Urban Acoustic Scenes 2019
     full_name: "TAU Urban Acoustic Scenes 2019 Development dataset"

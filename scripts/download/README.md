@@ -90,6 +90,7 @@ scripts/download/dcase2026_task1_hac.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
 scripts/download/spuraudio.sh
+scripts/download/soroll_ia.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
 scripts/download/tau_asc_2020_mobile.sh
@@ -576,6 +577,10 @@ ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS="PA DF" ASVSPOOF2021_PA_PART
 
 # VoxENES 2026 downloads official Kaggle metadata and the paper page by default. The approximately 23.3 GB dataset is opt-in.
 VOXENES2026_DOWNLOAD_DATA=1 scripts/download/voxenes_2026.sh
+
+# Soroll-IA downloads official metadata, the paper, and benchmark docs by default.
+# The approximately 2.17 GB CC BY-NC 4.0 Kaggle dataset is opt-in.
+SOROLL_IA_DOWNLOAD_DATA=1 scripts/download/soroll_ia.sh
 
 # VoxLingua107 downloads HF metadata by default. The mirrored dataset snapshot is opt-in.
 VOXLINGUA107_DOWNLOAD_HF=1 scripts/download/voxlingua107.sh
