@@ -1841,6 +1841,46 @@ benchmarks:
       - https://github.com/Tencent/WildSpeech-Bench
       - https://huggingface.co/datasets/tencent/WildSpeech-Bench
 
+  - id: spearbench
+    name: SPEARBench
+    full_name: "SPEARBench: A Benchmark for Naturalness Evaluation in Streaming Speech-to-Speech Language Models"
+    qwen_cited_as: null
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - streaming_speech_to_speech_evaluation
+      - conversational_naturalness_evaluation
+      - response_latency_evaluation
+      - interruption_evaluation
+      - turn_taking_evaluation
+      - emotional_naturalness_evaluation
+      - interpersonal_stance_evaluation
+      - language_and_dialect_consistency
+    official:
+      project: https://thomasthebaud.github.io/SPEAR-benchmark-website/
+      repo: https://github.com/thomasthebaud/SPEAR-benchmark-website
+      paper: https://arxiv.org/abs/2607.05365
+      dataset: https://livejohnshopkins-my.sharepoint.com/:u:/g/personal/tthebau1_jh_edu/IQCfUdAu2DwCSIvxsLV2XO2wAU9aTaFzvM-7gPqVsKhTfZw?e=qzKPey
+    download:
+      primary:
+        - https://thomasthebaud.github.io/SPEAR-benchmark-website/#add-your-model
+        - https://livejohnshopkins-my.sharepoint.com/:u:/g/personal/tthebau1_jh_edu/IQCfUdAu2DwCSIvxsLV2XO2wAU9aTaFzvM-7gPqVsKhTfZw?e=qzKPey
+        - https://github.com/thomasthebaud/SPEAR-benchmark-website/tree/main/inference_help_code
+      examples:
+        - 'scripts/download/spearbench.sh'
+      notes: The public project page links a SharePoint package containing 5,419 selected English question-answer dialogues from the Seamless Interaction development and test sets (37.33 hours including contexts, questions, and human answers). The helper downloads only official documentation, leaderboard metadata, an example submission CSV, and inference instructions; obtain the audio package manually from the project page and keep its directory structure intact.
+    license:
+      data: not_specified_derived_from_seamless_interaction
+      code: MIT
+      notes: The GitHub repository's MIT license covers the website and helper code. Neither the paper nor project page states a separate license for the downloadable benchmark audio, which is extracted from Seamless Interaction; public access does not establish redistribution or commercial-use rights, so verify the source corpus and package terms before reuse.
+    sources:
+      - https://arxiv.org/abs/2607.05365
+      - https://arxiv.org/html/2607.05365v1#S3.SS1
+      - https://thomasthebaud.github.io/SPEAR-benchmark-website/
+      - https://github.com/thomasthebaud/SPEAR-benchmark-website
+      - https://raw.githubusercontent.com/thomasthebaud/SPEAR-benchmark-website/main/README.md
+      - https://raw.githubusercontent.com/thomasthebaud/SPEAR-benchmark-website/main/LICENSE
+      - https://api.github.com/repos/thomasthebaud/SPEAR-benchmark-website
+
   - id: fleurs
     name: FLEURS
     full_name: "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech"
