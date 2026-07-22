@@ -148,6 +148,7 @@ scripts/download/switchboard.sh
 scripts/download/fisher_english.sh
 scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
+scripts/download/qivd.sh
 ```
 
 Without the required environment variables, they print the manual access steps

@@ -358,6 +358,38 @@ benchmarks:
       - https://arxiv.org/html/2503.19951v3
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: qivd
+    name: QIVD
+    full_name: "Qualcomm Interactive Video Dataset: Can Vision-Language Models Answer Face to Face Questions in the Real-World?"
+    qwen_cited_as: Qualcomm IVD
+    qwen_bucket: audio_visual_interaction
+    tasks:
+      - situated_audio_visual_question_answering
+      - real_time_audio_visual_understanding
+      - spoken_query_understanding
+      - when_to_answer_prediction
+      - temporal_reasoning
+    official:
+      homepage: https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd
+      paper: https://arxiv.org/abs/2503.19356
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd
+      examples:
+        - 'scripts/download/qivd.sh'
+      notes: The official Qualcomm release page describes 2,900 short English video files across 13 semantic categories. Each clip contains raw audio with a spoken question, an annotated transcription, a text answer, and a timestamp indicating when enough context is available to answer. The helper saves the public landing page, then prints the manual Qualcomm account/download path because the release flow is JavaScript-driven and may present account-specific terms. Qwen3.5-Omni calls it Qualcomm IVD and evaluates audio-query interaction in section 5.1.4, Table 7.
+    license:
+      data: not_publicly_specified_account_terms_apply
+      code: not_applicable
+      notes: No public dataset license text was found on the official landing page or in the paper on 2026-07-21. The paper says crowd contributors signed consent permitting research and commercial use of their video and audio, but that consent statement is not itself a downstream dataset license. Review and retain any terms shown in Qualcomm's account/download flow before use or redistribution.
+    sources:
+      - https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd
+      - https://arxiv.org/abs/2503.19356
+      - https://arxiv.org/html/2503.19356v3#S3
+      - https://arxiv.org/html/2503.19356v3#A1.SS2
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: omnigaia
     name: OmniGAIA
     full_name: "OmniGAIA: Towards Native Omni-Modal AI Agents"
