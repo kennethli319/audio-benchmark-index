@@ -115,6 +115,7 @@ scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/parapair_audio_bench.sh
 scripts/download/ming_freeform_audio_edit.sh
+scripts/download/mcr_bench.sh
 scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
 scripts/download/emov_db.sh

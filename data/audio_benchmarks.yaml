@@ -4049,6 +4049,43 @@ benchmarks:
       - https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark/raw/main/README.md
       - https://huggingface.co/api/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark
 
+  - id: mcr_bench
+    name: MCR-Bench
+    full_name: "MCR-Bench: Modal Conflict Resolution Benchmark for Large Audio-Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - cross_modal_audio_text_robustness
+    tasks:
+      - cross_modal_conflict_resolution
+      - audio_text_robustness
+      - audio_question_answering
+      - speech_emotion_recognition
+      - human_vocal_sound_classification
+    official:
+      repo: https://github.com/WangCheng0116/MCR-BENCH
+      paper: https://arxiv.org/abs/2508.15407
+      arxiv_html: https://arxiv.org/html/2508.15407v1
+    download:
+      primary:
+        - https://drive.google.com/file/d/1nXJCx8Neqdm0WMfe9Uq6sX2bvk_3FWUG/view
+        - https://github.com/WangCheng0116/MCR-BENCH
+      examples:
+        - 'scripts/download/mcr_bench.sh'
+        - 'MCR_BENCH_CLONE_REPO=1 scripts/download/mcr_bench.sh'
+      notes: The public Google Drive release contains approximately 3,000 English samples across audio question answering, speech emotion recognition, and vocal-sound classification. Each audio item is paired with faithful, adversarial, irrelevant, and neutral text conditions to measure whether an audio-language model follows contradictory text instead of audio evidence. The benchmark derives its task audio from ClothoAQA, MELD, and VocalSound. The helper downloads official documentation and repository metadata by default and prints the manual Drive path; cloning the documentation-only repository is opt-in.
+    license:
+      data: mixed_upstream_terms
+      code: apache-2.0
+      notes: The repository contains an Apache-2.0 LICENSE, although its README badge says MIT. Neither statement clearly relicenses the released benchmark archive or embedded source audio. ClothoAQA/Clotho, MELD's copyrighted Friends clips, and VocalSound retain their own terms, so verify item-level provenance and upstream permissions before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2508.15407
+      - https://arxiv.org/html/2508.15407v1#S3
+      - https://github.com/WangCheng0116/MCR-BENCH
+      - https://raw.githubusercontent.com/WangCheng0116/MCR-BENCH/main/README.md
+      - https://raw.githubusercontent.com/WangCheng0116/MCR-BENCH/main/LICENSE.txt
+      - https://api.github.com/repos/WangCheng0116/MCR-BENCH
+
   - id: vocalsound
     name: VocalSound
     full_name: "VocalSound: A Dataset for Improving Human Vocal Sounds Recognition"
