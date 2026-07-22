@@ -166,6 +166,7 @@ scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
 scripts/download/qivd.sh
 scripts/download/avsd.sh
+scripts/download/avqa.sh
 scripts/download/avsbench.sh
 scripts/download/lrs2.sh
 scripts/download/lrs3.sh

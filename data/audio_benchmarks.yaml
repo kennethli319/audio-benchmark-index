@@ -311,6 +311,38 @@ benchmarks:
       - https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
       - https://arxiv.org/abs/2203.14072
 
+  - id: avqa
+    name: AVQA
+    full_name: "AVQA: A Dataset for Audio-Visual Question Answering on Videos"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_question_answering
+    tasks:
+      - audio_visual_question_answering
+      - multimodal_scene_understanding
+      - cross_modal_reasoning
+    official:
+      homepage: https://mn.cs.tsinghua.edu.cn/avqa
+      repo: https://github.com/AlyssaYoung/AVQA
+      paper: https://dl.acm.org/doi/10.1145/3503161.3548291
+      doi: https://doi.org/10.1145/3503161.3548291
+    download:
+      primary:
+        - https://mn.cs.tsinghua.edu.cn/avqa
+        - https://github.com/AlyssaYoung/AVQA
+      examples:
+        - 'scripts/download/avqa.sh'
+      notes: The helper saves the official project page, repository README, and GitHub metadata, then prints the official OneDrive/Baidu download paths. It does not automate the combined archive or source-video retrieval. The public release provides QA annotations, a VGGSound-derived video manifest, raw-video access pointers, and large pre-extracted features.
+    license:
+      data: noncommercial_or_permission_required
+      code: not_specified
+      notes: The official page permits personal or classroom copying without fee only when it is not for profit or commercial advantage, and requires permission for broader copying, reposting, or redistribution. The repository has no license file or GitHub-detected license. Raw clips derive from VGGSound/YouTube, so source-media rights and availability also apply.
+    sources:
+      - https://mn.cs.tsinghua.edu.cn/avqa
+      - https://github.com/AlyssaYoung/AVQA
+      - https://raw.githubusercontent.com/AlyssaYoung/AVQA/main/README.md
+      - https://api.github.com/repos/AlyssaYoung/AVQA
+      - https://dl.acm.org/doi/10.1145/3503161.3548291
+
   - id: llp
     name: LLP
     full_name: "Look, Listen, and Parse: Audio-Visual Video Parsing Dataset"
