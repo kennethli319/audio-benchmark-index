@@ -280,6 +280,45 @@ benchmarks:
       - https://arxiv.org/abs/2602.22897
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: video_mme
+    name: Video-MME
+    full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"
+    qwen_cited_as: VideoMME w/ audio
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - long_video_understanding
+      - multimodal_reasoning
+      - audio_enabled_video_understanding
+    official:
+      homepage: https://video-mme.github.io/
+      repo: https://github.com/MME-Benchmarks/Video-MME
+      paper: https://arxiv.org/abs/2405.21075
+      dataset: https://huggingface.co/datasets/lmms-lab/Video-MME
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/lmms-lab/Video-MME
+        - https://github.com/MME-Benchmarks/Video-MME
+      examples:
+        - 'scripts/download/video_mme.sh'
+        - 'VIDEO_MME_ACK_TERMS=1 VIDEO_MME_DOWNLOAD_HF=1 scripts/download/video_mme.sh'
+      notes: The public, ungated release contains 900 videos totaling 254 hours and 2,700 human-annotated question-answer pairs, with audio and subtitles available as evaluation modalities. The helper downloads only official documentation by default. The Hugging Face API reports about 389 GB of repository storage, so the media snapshot requires both VIDEO_MME_ACK_TERMS=1 and VIDEO_MME_DOWNLOAD_HF=1. Qwen3.5-Omni evaluates Video-MME with use_audio_in_video=True in section 5.1.4, Table 7.
+    license:
+      data: custom_academic_research_only
+      code: not_specified
+      notes: The official README prohibits commercial use and, without prior approval, distribution, publication, copying, dissemination, or modification of Video-MME in whole or in part. Video copyrights remain with their owners. The GitHub repository has no detected license; obtain approval and re-check source-video rights before reuse beyond the stated academic evaluation context.
+    sources:
+      - https://video-mme.github.io/
+      - https://github.com/MME-Benchmarks/Video-MME
+      - https://raw.githubusercontent.com/MME-Benchmarks/Video-MME/main/README.md
+      - https://api.github.com/repos/MME-Benchmarks/Video-MME
+      - https://huggingface.co/datasets/lmms-lab/Video-MME
+      - https://huggingface.co/datasets/lmms-lab/Video-MME/raw/main/README.md
+      - https://huggingface.co/api/datasets/lmms-lab/Video-MME
+      - https://arxiv.org/abs/2405.21075
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"

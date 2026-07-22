@@ -30,6 +30,7 @@ scripts/download/air_bench.sh
 scripts/download/music_avqa.sh
 scripts/download/av_speakerbench.sh
 scripts/download/omnigaia.sh
+scripts/download/video_mme.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
@@ -185,6 +186,10 @@ AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
 # OmniGAIA downloads docs and test metadata by default; the approximately 9.9 GB media snapshot is opt-in.
 OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh
 OMNIGAIA_CLONE_REPO=1 scripts/download/omnigaia.sh
+
+# Video-MME downloads docs by default. Its approximately 389 GB snapshot requires acknowledgment and opt-in.
+VIDEO_MME_ACK_TERMS=1 VIDEO_MME_DOWNLOAD_HF=1 scripts/download/video_mme.sh
+VIDEO_MME_CLONE_REPO=1 scripts/download/video_mme.sh
 
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
