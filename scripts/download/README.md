@@ -202,6 +202,10 @@ WORLDSENSE_CLONE_REPO=1 scripts/download/worldsense.sh
 OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh
 OMNIGAIA_CLONE_REPO=1 scripts/download/omnigaia.sh
 
+# Omni-Cloze downloads docs/evaluation scripts by default. Metadata and the multi-GB snapshot are separate opt-ins.
+OMNI_CLOZE_DOWNLOAD_METADATA=1 scripts/download/omni_cloze.sh
+OMNI_CLOZE_DOWNLOAD_HF=1 scripts/download/omni_cloze.sh
+
 # Video-MME downloads docs by default. Its approximately 389 GB snapshot requires acknowledgment and opt-in.
 VIDEO_MME_ACK_TERMS=1 VIDEO_MME_DOWNLOAD_HF=1 scripts/download/video_mme.sh
 VIDEO_MME_CLONE_REPO=1 scripts/download/video_mme.sh

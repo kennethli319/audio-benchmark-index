@@ -431,6 +431,45 @@ benchmarks:
       - https://arxiv.org/abs/2602.22897
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: omni_cloze
+    name: Omni-Cloze
+    full_name: "Omni-Cloze: Omni Detailed Captioning Benchmark"
+    qwen_cited_as: Omni-Cloze
+    qwen_bucket: audio_visual_captioning
+    tasks:
+      - detailed_audio_captioning
+      - detailed_visual_captioning
+      - detailed_audio_visual_captioning
+      - cloze_question_answering
+      - fine_grained_multimodal_perception
+    official:
+      repo: https://github.com/ddlBoJack/Omni-Captioner
+      paper: https://arxiv.org/abs/2510.12720
+      dataset: https://huggingface.co/datasets/BoJack/Omni-Cloze
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/BoJack/Omni-Cloze
+        - https://github.com/ddlBoJack/Omni-Captioner
+      examples:
+        - 'scripts/download/omni_cloze.sh'
+        - 'OMNI_CLOZE_DOWNLOAD_METADATA=1 scripts/download/omni_cloze.sh'
+        - 'OMNI_CLOZE_DOWNLOAD_HF=1 scripts/download/omni_cloze.sh'
+      notes: The public, ungated release contains 2,320 audio-visual files across nine main domains and 47 subcategories, with approximately 70,000 fine-grained cloze blanks. The helper downloads official documentation and evaluation scripts by default; the 25.1 MB JSONL metadata and Hugging Face snapshot are separate opt-ins. The current repository files total about 6.1 GB, while the Hugging Face API reports about 11.3 GB of repository storage including history. Qwen3.5-Omni evaluates detailed audio-visual captioning on Omni-Cloze in section 5.1.4, Table 7.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: Neither the official Hugging Face card nor the GitHub repository states a data or code license, and GitHub reports no detected license. The release includes video files without documented source-media provenance or reuse terms; obtain clarification and review media rights before redistribution or commercial use.
+    sources:
+      - https://github.com/ddlBoJack/Omni-Captioner
+      - https://raw.githubusercontent.com/ddlBoJack/Omni-Captioner/main/README.md
+      - https://api.github.com/repos/ddlBoJack/Omni-Captioner
+      - https://huggingface.co/datasets/BoJack/Omni-Cloze
+      - https://huggingface.co/datasets/BoJack/Omni-Cloze/raw/main/README.md
+      - https://huggingface.co/api/datasets/BoJack/Omni-Cloze
+      - https://arxiv.org/abs/2510.12720
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: video_mme
     name: Video-MME
     full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"
