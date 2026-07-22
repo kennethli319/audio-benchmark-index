@@ -169,6 +169,9 @@ MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/d
 INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
 INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
+# CV3-Eval downloads official docs by default. Its roughly 760 MiB repo with audio is opt-in.
+CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh
+
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
 LIBRITTS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/60 LIBRITTS_DOWNLOAD_ARCHIVES=1 scripts/download/libritts.sh
