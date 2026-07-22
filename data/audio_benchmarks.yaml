@@ -3283,6 +3283,62 @@ benchmarks:
       - https://github.com/nttcslab/dcase2025_task2_evaluator
       - https://api.github.com/repos/nttcslab/dcase2025_task2_evaluator
 
+  - id: dcase2026_task1_hac
+    name: DCASE 2026 Task 1 HAC
+    full_name: "DCASE 2026 Task 1: Heterogeneous Audio Classification"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    tasks:
+      - heterogeneous_audio_classification
+      - hierarchical_audio_classification
+      - multimodal_audio_classification
+      - domain_generalization
+    official:
+      challenge: https://dcase.community/challenge2026/task-heterogeneous-audio-classification
+      results: https://dcase.community/challenge2026/task-heterogeneous-audio-classification-results
+      bsd10k: https://zenodo.org/records/17233904
+      bsd35k_cs: https://zenodo.org/records/19187100
+      evaluation_set: https://zenodo.org/records/20442928
+      baseline_repo: https://github.com/MTG/dcase2026_task1_baseline
+    download:
+      primary:
+        - https://zenodo.org/records/17233904
+        - https://zenodo.org/records/19187100
+        - https://zenodo.org/records/20442928
+      examples:
+        - 'scripts/download/dcase2026_task1_hac.sh'
+        - 'DCASE2026_TASK1_DOWNLOAD_FEATURES=1 scripts/download/dcase2026_task1_hac.sh'
+        - 'DCASE2026_TASK1_DOWNLOAD_AUDIO=1 scripts/download/dcase2026_task1_hac.sh'
+      notes: >-
+        The task predicts 23 second-level Broad Sound Taxonomy categories and
+        scores macro-averaged hierarchical F-score. Development uses the
+        curated BSD10k-v1.2 release (about 11,000 sounds and 35 hours) and the
+        noisier crowd-sourced BSD35k-CS release (about 35,000 sounds and 150
+        hours), both with text metadata and Freesound provenance. The public
+        evaluation archive contains audio and metadata but intentionally omits
+        labels. The helper downloads official pages, Zenodo records, READMEs,
+        and approximately 7 MB of development metadata by default. Roughly
+        200 MB of CLAP features and 47 GB of audio/evaluation archives require
+        separate explicit opt-ins.
+    license:
+      data: cc-by-4.0_with_upstream_terms
+      code: not_specified
+      notes: All three official Zenodo records declare CC BY 4.0. The releases include per-sound Freesound license and uploader provenance, so users must also honor each source recording's terms. The official baseline repository has no detected license or LICENSE file; its code terms are unspecified.
+    sources:
+      - https://dcase.community/challenge2026/task-heterogeneous-audio-classification
+      - https://dcase.community/challenge2026/task-heterogeneous-audio-classification-results
+      - https://zenodo.org/api/records/17233904
+      - https://zenodo.org/api/records/19868804
+      - https://doi.org/10.5281/zenodo.17233904
+      - https://zenodo.org/api/records/19187100
+      - https://doi.org/10.5281/zenodo.19187100
+      - https://zenodo.org/api/records/20442928
+      - https://doi.org/10.5281/zenodo.20442928
+      - https://github.com/MTG/dcase2026_task1_baseline
+      - https://api.github.com/repos/MTG/dcase2026_task1_baseline
+
   - id: dcase2024_lass
     name: DCASE 2024 Task 9 LASS
     full_name: "DCASE 2024 Task 9: Language-Queried Audio Source Separation"

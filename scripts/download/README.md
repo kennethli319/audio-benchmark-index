@@ -84,6 +84,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
 scripts/download/dcase2025_task2_asd.sh
+scripts/download/dcase2026_task1_hac.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
 scripts/download/spuraudio.sh
@@ -205,6 +206,11 @@ and exit with code `2`.
 ## Useful Options
 
 ```bash
+# DCASE 2026 Task 1 downloads official docs and development metadata by default.
+# Precomputed CLAP features and roughly 47 GB of audio/evaluation data are opt-in.
+DCASE2026_TASK1_DOWNLOAD_FEATURES=1 scripts/download/dcase2026_task1_hac.sh
+DCASE2026_TASK1_DOWNLOAD_AUDIO=1 scripts/download/dcase2026_task1_hac.sh
+
 # AudioBench downloads its official documentation and dataset inventory by default.
 # Cloning adds the evaluation toolkit, not its separately licensed upstream corpora.
 AUDIOBENCH_CLONE_REPO=1 scripts/download/audiobench.sh
