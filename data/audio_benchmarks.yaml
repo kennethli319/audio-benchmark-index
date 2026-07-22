@@ -4293,6 +4293,46 @@ benchmarks:
       - https://arxiv.org/abs/2303.17395
       - https://doi.org/10.1109/TASLP.2024.3419446
 
+  - id: audiosetcaps
+    name: AudioSetCaps
+    full_name: "AudioSetCaps: An Enriched Audio-Caption Dataset using Automated Generation Pipeline with Large Audio and Language Models"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - audio_captioning
+      - audio_text_retrieval
+      - audio_language_pretraining
+      - synthetic_audio_question_answering
+    official:
+      homepage: https://jishengbai.github.io/AudioSetCaps-webpage/
+      repo: https://github.com/JishengBai/AudioSetCaps
+      hf_dataset: https://huggingface.co/datasets/baijs/AudioSetCaps
+      paper: https://arxiv.org/abs/2411.18953
+      workshop_paper: https://openreview.net/forum?id=uez4PMZwzP
+    download:
+      primary:
+        - https://huggingface.co/datasets/baijs/AudioSetCaps
+        - https://huggingface.co/datasets/baijs/AudioSetCaps/tree/main/Dataset
+        - https://github.com/JishengBai/AudioSetCaps
+      examples:
+        - 'scripts/download/audiosetcaps.sh'
+        - 'AUDIOSETCAPS_DOWNLOAD_METADATA=1 scripts/download/audiosetcaps.sh'
+        - 'huggingface-cli download --repo-type dataset baijs/AudioSetCaps --include README.md --local-dir data/raw/audiosetcaps'
+      notes: The public, ungated release provides synthetic captions for 6,117,099 ten-second clips sourced from AudioSet, YouTube-8M, and VGGSound, plus 18,414,789 intermediate question-answer pairs. The Hugging Face repository contains caption/Q&A CSVs rather than the full source audio and currently reports about 20.2 GB of storage. The helper downloads only official documentation and repository metadata by default; the large CSV files require AUDIOSETCAPS_DOWNLOAD_METADATA=1. The maintainers warn that AudioCaps and VGGSound evaluation examples overlap the release and should be filtered before training.
+    license:
+      data: academic_research_only
+      code: not_specified
+      notes: The Hugging Face card metadata labels the release CC BY 4.0, but the same official card explicitly allows only academic and research use. Apply the stricter research-only statement pending clarification. The GitHub repository has no detected license, and AudioSet, YouTube-8M, and VGGSound source-media rights and platform terms still apply.
+    sources:
+      - https://github.com/JishengBai/AudioSetCaps
+      - https://raw.githubusercontent.com/JishengBai/AudioSetCaps/main/README.md
+      - https://api.github.com/repos/JishengBai/AudioSetCaps
+      - https://huggingface.co/datasets/baijs/AudioSetCaps
+      - https://huggingface.co/datasets/baijs/AudioSetCaps/raw/main/README.md
+      - https://huggingface.co/api/datasets/baijs/AudioSetCaps
+      - https://arxiv.org/abs/2411.18953
+      - https://openreview.net/forum?id=uez4PMZwzP
+
   - id: macs
     name: MACS
     full_name: "MACS: Multi-Annotator Captioned Soundscapes"

@@ -27,7 +27,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 144 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 145 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -219,6 +219,7 @@ Current coverage includes:
 | [AudioCaps](https://audiocaps.github.io/) | Audio captioning | Official [CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset) and [AudioCaps 2.0 CSV metadata](https://github.com/cdjkim/audiocaps/tree/master/dataset2.0); raw audio/video requires the upstream form | README says code and dataset are free for academic purposes only; repo license is MIT, but raw clips inherit AudioSet/YouTube availability and terms |
 | [MusicCaps](https://huggingface.co/datasets/google/MusicCaps) | Music captioning | Official Google/Kaggle release mirrored at [google/MusicCaps](https://huggingface.co/datasets/google/MusicCaps); helper downloads the public CSV metadata by default | Annotation CSV is CC BY-SA 4.0; raw clips are AudioSet/YouTube-derived and remain subject to upstream media availability and terms |
 | [WavCaps](https://github.com/XinhaoMei/WavCaps) | Audio captioning | [cvssp/WavCaps](https://huggingface.co/datasets/cvssp/WavCaps) JSON metadata and waveform ZIPs; helper downloads README/JSON metadata by default and makes large ZIP archives source-selective opt-ins | Academic use only for dataset audio; HF metadata advertises CC BY 4.0 but the card also requires checking FreeSound, BBC Sound Effects, SoundBible, and AudioSet source terms |
+| [AudioSetCaps](https://jishengbai.github.io/AudioSetCaps-webpage/) | Large-scale synthetic audio captioning and audio-text retrieval | Public [baijs/AudioSetCaps](https://huggingface.co/datasets/baijs/AudioSetCaps) caption/Q&A metadata for more than 6.1 million source clips; helper downloads docs by default and makes the approximately 20.2 GB CSV release opt-in | Official HF metadata says CC BY 4.0, but its card also restricts use to academic research; apply the stricter terms and review AudioSet, YouTube-8M, and VGGSound source-media rights |
 | [MACS](https://zenodo.org/records/5114771) | Audio captioning | [Zenodo MACS annotations](https://zenodo.org/records/5114771) plus upstream [TAU Urban Acoustic Scenes 2019](https://zenodo.org/records/2589280) audio; helper downloads annotations/docs by default and makes audio opt-in | Zenodo and LICENSE.txt use non-commercial terms for MACS; upstream TAU audio also lists Other (Non-Commercial) |
 
 ## Download Examples

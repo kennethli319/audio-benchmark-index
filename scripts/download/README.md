@@ -123,6 +123,7 @@ scripts/download/clotho.sh
 scripts/download/audiocaps.sh
 scripts/download/musiccaps.sh
 scripts/download/wavcaps.sh
+scripts/download/audiosetcaps.sh
 scripts/download/macs.sh
 scripts/download/magnatagatune.sh
 scripts/download/mtg_jamendo.sh
