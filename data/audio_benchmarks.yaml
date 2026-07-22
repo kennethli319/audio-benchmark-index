@@ -346,6 +346,41 @@ benchmarks:
       - https://arxiv.org/abs/2007.10558
       - https://doi.org/10.1007/978-3-030-58580-8_26
 
+  - id: avsd
+    name: AVSD
+    full_name: "Audio Visual Scene-Aware Dialog Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_dialogue
+      - video_question_answering
+      - multimodal_response_generation
+      - scene_understanding
+    official:
+      repo: https://github.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge
+      paper: https://openaccess.thecvf.com/content_CVPR_2019/html/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.html
+      dataset: https://drive.google.com/drive/folders/1SlZTySJAk_2tiMG5F8ivxCfOl_OWwd_Q?usp=sharing
+      charades: https://prior.allenai.org/projects/charades
+    download:
+      primary:
+        - https://drive.google.com/drive/folders/1SlZTySJAk_2tiMG5F8ivxCfOl_OWwd_Q?usp=sharing
+        - https://github.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge
+      examples:
+        - 'scripts/download/avsd.sh'
+      notes: The CVPR paper introduces dialogs and final summaries for more than 11,000 Charades videos. The official DSTC7 repository reports 7,659 training, 1,787 validation, and 1,710 test dialogs and links the released challenge data through Google Drive. The helper saves the public repository documentation, license, and CVPR paper page, then prints the manual dataset and Charades media paths; it does not automate Google Drive or raw-video retrieval.
+    license:
+      data: unclear
+      code: MIT
+      notes: The official repository is MIT-licensed, but it does not separately state that the MIT license covers the Google Drive dataset or underlying Charades videos. Treat dialog annotations and media rights conservatively, review any terms shown by the Drive/Charades access paths, and preserve source-video provenance before redistribution or commercial use.
+    sources:
+      - https://github.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge
+      - https://raw.githubusercontent.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge/master/README.md
+      - https://raw.githubusercontent.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge/master/Data/README.md
+      - https://raw.githubusercontent.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge/master/LICENSE
+      - https://openaccess.thecvf.com/content_CVPR_2019/html/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.html
+      - https://openaccess.thecvf.com/content_CVPR_2019/papers/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.pdf
+      - https://prior.allenai.org/projects/charades
+
   - id: daily_omni
     name: Daily-Omni
     full_name: "Daily-Omni: Towards Audio-Visual Reasoning with Temporal Alignment across Modalities"

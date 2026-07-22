@@ -163,6 +163,7 @@ scripts/download/fisher_english.sh
 scripts/download/dihard_iii.sh
 scripts/download/l2_arctic.sh
 scripts/download/qivd.sh
+scripts/download/avsd.sh
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 ```
 
