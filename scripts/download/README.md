@@ -81,6 +81,7 @@ scripts/download/earnings_21.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
+scripts/download/dcase2025_task2_asd.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
 scripts/download/spuraudio.sh
@@ -214,6 +215,9 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech downloads official metadata/checksums by default. Archives are opt-in.
 LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh
+
+# DCASE 2025 Task 2 ASD downloads official metadata by default. Select archive groups explicitly.
+DCASE2025_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2025_TASK2_PARTS="dev eval" scripts/download/dcase2025_task2_asd.sh
 
 # Libri-Light downloads official docs by default. Finetuning, ABX, and unlabeled archives are opt-in.
 LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh
