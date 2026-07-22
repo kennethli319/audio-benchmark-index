@@ -3102,6 +3102,57 @@ benchmarks:
       - https://zenodo.org/records/7879692
       - https://zenodo.org/api/records/7879692
 
+  - id: dcase2024_sound_scene_synthesis
+    name: DCASE 2024 Task 7 Sound Scene Synthesis
+    full_name: "DCASE 2024 Task 7: Sound Scene Synthesis"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_generation
+      - environmental_sound_generation
+    tasks:
+      - text_to_audio_generation
+      - environmental_sound_scene_synthesis
+      - compositional_audio_generation
+      - audio_generation_quality_evaluation
+    official:
+      challenge: https://dcase.community/challenge2024/task-sound-scene-synthesis
+      results: https://dcase.community/challenge2024/task-sound-scene-synthesis-results
+      dataset: https://zenodo.org/records/15630417
+      doi: https://doi.org/10.5281/zenodo.15630417
+      protocol_paper: https://arxiv.org/abs/2410.17589
+      results_paper: https://arxiv.org/abs/2501.08587
+      baseline_repo: https://github.com/DCASE2024-Task7-Sound-Scene-Synthesis/AudioLDM-training-finetuning
+    download:
+      primary:
+        - https://zenodo.org/records/15630417
+        - https://zenodo.org/api/records/15630417/files/DCASE-TASK7-2024-Open-Source.zip/content
+      examples:
+        - 'scripts/download/dcase2024_sound_scene_synthesis.sh'
+        - 'DCASE2024_TASK7_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_sound_scene_synthesis.sh'
+      notes: >-
+        The public open-source release contains 310 manually composed four-second
+        environmental sound scenes and corresponding structured text prompts. It
+        uses only Freesound source audio and excludes the proprietary/private
+        libraries present in the challenge reference data. The original protocol
+        evaluates Fréchet Audio Distance with PANNs CNN14 Wavegram-Logmel
+        embeddings plus listening tests for foreground fit, background fit, and
+        audio quality. The challenge's 250 evaluation prompts and reference
+        audios remain secret. The helper downloads official metadata and task
+        documentation by default; the approximately 140 MiB public archive is an
+        explicit opt-in.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: Zenodo declares CC BY 4.0 for the open-source dataset. The record says its audio is sourced from Freesound, so retain packaged source attribution and review per-clip provenance. The baseline repository has no LICENSE file and the task page states that it is mostly derived from the upstream AudioLDM repository; treat code terms as unspecified pending clarification.
+    sources:
+      - https://dcase.community/challenge2024/task-sound-scene-synthesis
+      - https://dcase.community/challenge2024/task-sound-scene-synthesis-results
+      - https://zenodo.org/records/15630417
+      - https://zenodo.org/api/records/15630417
+      - https://arxiv.org/abs/2410.17589
+      - https://arxiv.org/abs/2501.08587
+      - https://github.com/DCASE2024-Task7-Sound-Scene-Synthesis/AudioLDM-training-finetuning
+
   - id: dcase2025_audioqa
     name: DCASE 2025 Task 5 AudioQA
     full_name: "DCASE 2025 Task 5: Multi-Domain Audio Question Answering"
