@@ -273,6 +273,45 @@ benchmarks:
       - https://aclanthology.org/2024.acl-long.109/
       - https://arxiv.org/abs/2402.07729
 
+  - id: audiobench
+    name: AudioBench
+    full_name: "AudioBench: A Universal Benchmark for Audio Large Language Models"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - audio_language_model_evaluation
+      - automatic_speech_recognition
+      - speech_translation
+      - spoken_question_answering
+      - speech_instruction_following
+      - audio_question_answering
+      - audio_captioning
+      - paralinguistic_understanding
+    official:
+      repo: https://github.com/AudioLLMs/AudioBench
+      paper: https://aclanthology.org/2025.naacl-long.350/
+      arxiv: https://arxiv.org/abs/2406.16020
+      leaderboard: https://huggingface.co/spaces/AudioLLMs/AudioBench-Leaderboard-Extend
+    download:
+      primary:
+        - https://github.com/AudioLLMs/AudioBench
+      examples:
+        - 'scripts/download/audiobench.sh'
+        - 'AUDIOBENCH_CLONE_REPO=1 scripts/download/audiobench.sh'
+      notes: The helper downloads the official README, supported-dataset inventory, repository metadata, and license notice by default. Cloning the evaluation toolkit is opt-in because the repository is about 64 MB before Git history. It does not download the many upstream audio corpora, whose separate access paths and terms still apply.
+    license:
+      data: mixed_upstream_terms
+      code: custom_noncommercial_unspecified_version
+      notes: The paper introduces a suite of 8 tasks and 26 datasets, including 7 newly adapted or collected sets, while the maintained repository now supports more than 50 dataset configurations. The repository license file only says "Creative Commons NonCommercial" without a version, and its README states that each dataset remains under its respective license. Review every selected corpus and derived evaluation set before redistribution or commercial use.
+    sources:
+      - https://github.com/AudioLLMs/AudioBench
+      - https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/README.md
+      - https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/examples/supported_datasets.md
+      - https://raw.githubusercontent.com/AudioLLMs/AudioBench/main/LICENSE
+      - https://api.github.com/repos/AudioLLMs/AudioBench
+      - https://aclanthology.org/2025.naacl-long.350/
+      - https://arxiv.org/abs/2406.16020
+
   - id: music_avqa
     name: MUSIC-AVQA
     full_name: "MUSIC-AVQA: Learning to Answer Questions in Dynamic Audio-Visual Scenarios"

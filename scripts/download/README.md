@@ -27,6 +27,7 @@ scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/air_bench.sh
+scripts/download/audiobench.sh
 scripts/download/music_avqa.sh
 scripts/download/llp.sh
 scripts/download/ava_active_speaker.sh
@@ -180,6 +181,10 @@ and exit with code `2`.
 ## Useful Options
 
 ```bash
+# AudioBench downloads its official documentation and dataset inventory by default.
+# Cloning adds the evaluation toolkit, not its separately licensed upstream corpora.
+AUDIOBENCH_CLONE_REPO=1 scripts/download/audiobench.sh
+
 # FLEURS defaults to en_us. Use another locale or all.
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 FLEURS_CONFIG=all scripts/download/fleurs.sh
