@@ -805,6 +805,35 @@ benchmarks:
       - https://arxiv.org/abs/2207.05042
       - https://arxiv.org/abs/2301.13190
 
+  - id: lrs3
+    name: LRS3-TED
+    full_name: "LRS3-TED: A Large-Scale Dataset for Visual Speech Recognition"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_speech
+    tasks:
+      - audio_visual_speech_recognition
+      - visual_speech_recognition
+      - lip_reading
+    official:
+      homepage: https://www.robots.ox.ac.uk/~vgg/data/lip_reading/
+      paper: https://arxiv.org/abs/1809.00496
+      download_page: https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html
+    download:
+      primary:
+        - https://www.robots.ox.ac.uk/~vgg/data/lip_reading/
+        - https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html
+      examples:
+        - 'scripts/download/lrs3.sh'
+      notes: The paper introduces more than 400 hours of aligned face tracks, audio, subtitles, and word boundaries from TED and TEDx for visual and audio-visual speech recognition. The official VGG landing page still identifies LRS3 and links its dataset page, but that linked page returned HTTP 404 when checked on 2026-07-22. The helper preserves the live official landing page and paper metadata and reports the unavailable official download route; it does not substitute an unofficial mirror.
+    license:
+      data: unspecified
+      code: not_applicable
+      notes: No LRS3 data license is stated on the currently accessible official landing page or paper record. TED/TEDx source-video rights remain with their owners; obtain the official terms before use and do not infer reuse rights from third-party mirrors.
+    sources:
+      - https://www.robots.ox.ac.uk/~vgg/data/lip_reading/
+      - https://arxiv.org/abs/1809.00496
+      - https://export.arxiv.org/api/query?id_list=1809.00496
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"

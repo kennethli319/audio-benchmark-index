@@ -15,7 +15,7 @@ emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
 verification anti-spoofing, speaker diarization, music synthesis, speech quality
 assessment, spatial audio localization, cross-modal audio-video-text retrieval,
-audio-visual segmentation,
+audio-visual segmentation, audio-visual speech recognition,
 spoken digit classification,
 instruction-based speech editing, and
 few-shot robustness under foreground/background shifts.
@@ -27,7 +27,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 141 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 142 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -94,6 +94,7 @@ Current coverage includes:
 | [Video-MME](https://video-mme.github.io/) | Audio-enabled video question answering and long-video understanding | Public, ungated [lmms-lab/Video-MME](https://huggingface.co/datasets/lmms-lab/Video-MME) with 900 videos and 2,700 QA pairs; Qwen3.5-Omni evaluates it with audio enabled; helper downloads docs by default and requires explicit terms acknowledgment before the approximately 389 GB snapshot | Custom academic-research-only terms prohibit commercial use and, without approval, redistribution, publication, copying, dissemination, or modification; video rights remain with owners |
 | [OmniRetriever-Bench](https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench) | 12-direction audio-video-text retrieval | Public, ungated CSV with 3,782 held-out triples, source URLs, clip intervals, and human-corrected English captions; helper downloads the sub-1 MB annotations and official docs, while users obtain source media separately | HF card labels annotations Apache-2.0 but adds a biometric-identification/profiling/surveillance prohibition and the paper calls it custom research-use; TikTok media stays under uploader/platform terms; evaluator code has no stated license |
 | [AVSBench](https://opennlplab.github.io/AVSBench/) | Audio-visual segmentation and sounding-object localization | Official project/repository for S4, MS3, and semantic AVSS evaluation; original object annotations are publicly linked on Google Drive, while processed media and the updated object/semantic release require the official email/application path; helper downloads docs only | Project page licenses its published dataset under CC BY-NC 4.0 and repository code is Apache-2.0; underlying YouTube videos retain uploader/platform terms, and applicants should review any additional updated-release conditions |
+| [LRS3-TED](https://www.robots.ox.ac.uk/~vgg/data/lip_reading/) | Visual and audio-visual speech recognition | Official VGG landing page and primary paper describe more than 400 hours of TED/TEDx face tracks with audio, subtitles, and word alignments; helper saves live official metadata, but the linked LRS3 download page returned HTTP 404 on 2026-07-22 | No current official data license was found; obtain official terms before use and review TED/TEDx source-media rights rather than relying on third-party mirror claims |
 | [SUPERB](https://superbbenchmark.org/) | Speech representation evaluation | Official [S3PRL SUPERB docs](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md) and toolkit; helper downloads docs/license by default and can clone the toolkit with opt-in | Benchmark suite uses multiple external corpora with mixed terms; S3PRL toolkit is mostly Apache-2.0, with noted CC BY-NC files |
 | [SLURP](https://github.com/pswietojanski/slurp) | Spoken language understanding | Official GitHub annotation/code repository plus [Zenodo audio archives](https://zenodo.org/records/4274930); helper clones annotations and makes multi-GB audio opt-in | Textual annotations are CC BY 4.0; Zenodo-hosted audio is non-commercial, with GitHub README stating CC BY-NC 4.0 |
 | [SLUE](https://asappresearch.github.io/slue-toolkit/) | Spoken language understanding | Official [SLUE toolkit](https://github.com/asappresearch/slue-toolkit), [asapp/slue](https://huggingface.co/datasets/asapp/slue), and [asapp/slue-phase-2](https://huggingface.co/datasets/asapp/slue-phase-2); helper downloads docs/licenses by default and makes HF snapshots opt-in | SLUE-VoxPopuli is CC0; SLUE-VoxCeleb is CC BY 4.0; toolkit code is MIT |
