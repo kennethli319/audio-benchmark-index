@@ -14,7 +14,8 @@ identification, speech instruction following, self-supervised speech representat
 emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, speaker
 verification anti-spoofing, speaker diarization, music synthesis, speech quality
-assessment, spatial audio localization, spoken digit classification,
+assessment, spatial audio localization, cross-modal audio-video-text retrieval,
+spoken digit classification,
 instruction-based speech editing, and
 few-shot robustness under foreground/background shifts.
 
@@ -25,7 +26,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 138 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 139 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -89,6 +90,7 @@ Current coverage includes:
 | [OmniGAIA](https://github.com/RUC-NLPIR/OmniGAIA) | Omni-modal agent reasoning and tool use | Public, ungated [RUC-NLPIR/OmniGAIA](https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA) with 360 audio/image/video tasks; helper downloads docs and lightweight test metadata by default and makes the approximately 9.9 GB media snapshot opt-in | HF card declares Apache-2.0 and code is MIT; verify terms for component media curated from multiple upstream datasets |
 | [Omni-Cloze](https://github.com/ddlBoJack/Omni-Captioner) | Detailed audio, visual, and audio-visual captioning | Public, ungated [BoJack/Omni-Cloze](https://huggingface.co/datasets/BoJack/Omni-Cloze) with 2,320 audio-visual items and about 70,000 cloze blanks; helper downloads docs and evaluation scripts by default, with metadata and the multi-GB media snapshot as separate opt-ins | No data or code license is stated; source-media provenance and reuse terms are undocumented, so clarify rights before redistribution or commercial use |
 | [Video-MME](https://video-mme.github.io/) | Audio-enabled video question answering and long-video understanding | Public, ungated [lmms-lab/Video-MME](https://huggingface.co/datasets/lmms-lab/Video-MME) with 900 videos and 2,700 QA pairs; Qwen3.5-Omni evaluates it with audio enabled; helper downloads docs by default and requires explicit terms acknowledgment before the approximately 389 GB snapshot | Custom academic-research-only terms prohibit commercial use and, without approval, redistribution, publication, copying, dissemination, or modification; video rights remain with owners |
+| [OmniRetriever-Bench](https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench) | 12-direction audio-video-text retrieval | Public, ungated CSV with 3,782 held-out triples, source URLs, clip intervals, and human-corrected English captions; helper downloads the sub-1 MB annotations and official docs, while users obtain source media separately | HF card labels annotations Apache-2.0 but adds a biometric-identification/profiling/surveillance prohibition and the paper calls it custom research-use; TikTok media stays under uploader/platform terms; evaluator code has no stated license |
 | [SUPERB](https://superbbenchmark.org/) | Speech representation evaluation | Official [S3PRL SUPERB docs](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md) and toolkit; helper downloads docs/license by default and can clone the toolkit with opt-in | Benchmark suite uses multiple external corpora with mixed terms; S3PRL toolkit is mostly Apache-2.0, with noted CC BY-NC files |
 | [SLURP](https://github.com/pswietojanski/slurp) | Spoken language understanding | Official GitHub annotation/code repository plus [Zenodo audio archives](https://zenodo.org/records/4274930); helper clones annotations and makes multi-GB audio opt-in | Textual annotations are CC BY 4.0; Zenodo-hosted audio is non-commercial, with GitHub README stating CC BY-NC 4.0 |
 | [SLUE](https://asappresearch.github.io/slue-toolkit/) | Spoken language understanding | Official [SLUE toolkit](https://github.com/asappresearch/slue-toolkit), [asapp/slue](https://huggingface.co/datasets/asapp/slue), and [asapp/slue-phase-2](https://huggingface.co/datasets/asapp/slue-phase-2); helper downloads docs/licenses by default and makes HF snapshots opt-in | SLUE-VoxPopuli is CC0; SLUE-VoxCeleb is CC BY 4.0; toolkit code is MIT |

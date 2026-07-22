@@ -691,6 +691,45 @@ benchmarks:
       - https://arxiv.org/abs/2405.21075
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: omniretriever_bench
+    name: OmniRetriever-Bench
+    full_name: "OmniRetriever-Bench: 12-Direction Audio-Video-Text Retrieval Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_text_retrieval
+      - audio_video_retrieval
+      - audio_video_text_retrieval
+      - cross_modal_retrieval
+      - multimodal_representation_evaluation
+    official:
+      homepage: https://yunzeliu.github.io/OmniRetriever/
+      repo: https://github.com/yunzeliu/Omni-Retriever
+      paper: https://arxiv.org/abs/2605.26641
+      dataset: https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench
+    download:
+      primary:
+        - https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench
+        - https://github.com/yunzeliu/Omni-Retriever
+      examples:
+        - 'scripts/download/omniretriever_bench.sh'
+      notes: The public, ungated release contains a 923,982-byte CSV with 3,782 held-out English-captioned audio-video-text triples and evaluates six single-modal plus six dual-modal retrieval directions. The helper downloads the official dataset card, CSV annotations, evaluator README, and paper page. Media is not redistributed; each row contains a TikTok source URL and clip interval, so availability depends on the source platform and users must obtain media themselves under applicable platform and uploader terms.
+    license:
+      data: custom_research_use
+      code: not_specified
+      notes: The Hugging Face card labels the annotations Apache-2.0 but adds a biometric-identification, profiling, and surveillance prohibition, while the paper calls the release a custom research-use license. Treat the additional restriction as nonstandard and controlling pending a standalone license file. Underlying TikTok media remains owned by its uploaders and governed by platform terms. The evaluator repository has no detected license.
+    sources:
+      - https://yunzeliu.github.io/OmniRetriever/
+      - https://arxiv.org/abs/2605.26641
+      - https://arxiv.org/html/2605.26641#S4.SS4
+      - https://arxiv.org/html/2605.26641#A6
+      - https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench
+      - https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/YunzeLiu/OmniRetriever-Bench
+      - https://github.com/yunzeliu/Omni-Retriever
+      - https://raw.githubusercontent.com/yunzeliu/Omni-Retriever/main/README.md
+      - https://api.github.com/repos/yunzeliu/Omni-Retriever
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"

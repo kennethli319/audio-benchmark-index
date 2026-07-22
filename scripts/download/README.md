@@ -35,6 +35,7 @@ scripts/download/av_speakerbench.sh
 scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/video_mme.sh
+scripts/download/omniretriever_bench.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
