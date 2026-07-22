@@ -59,6 +59,37 @@ paper_audits:
         index_id: cv3_eval
         status: public
         note: Section 5.2.3 evaluates 12 source-target directions from the public CV3-Eval cross-lingual subset.
+  qwen3_5_omni_audio_visual_to_text:
+    paper: https://arxiv.org/abs/2604.15804
+    sections: 5.1.4
+    evaluated_sets:
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: public
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: public
+      - cited_as: AVUT
+        index_id: avut
+        status: public
+      - cited_as: AV-SpeakerBench
+        index_id: av_speakerbench
+        status: public
+      - cited_as: VideoMME w/ audio
+        index_id: video_mme
+        status: public_restricted_terms
+        note: Table 7 evaluates Video-MME with use_audio_in_video=True; the official release is public but carries academic-research-only terms.
+      - cited_as: Qualcomm IVD
+        index_id: qivd
+        status: public_manual_download
+        note: The official Qualcomm release requires its account/download flow; no public dataset license text was found on the landing page.
+      - cited_as: OmniCloze
+        index_id: omni_cloze
+        status: public
+      - cited_as: OmniGAIA
+        index_id: omnigaia
+        status: public
+        note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
 benchmarks:
   - id: mmau

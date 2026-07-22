@@ -44,6 +44,12 @@ languages and part of the custom-voice evaluation is explicitly internal and
 has no released row mapping or download; the public FLEURS corpus is indexed
 separately and must not be treated as that derived evaluation set.
 
+Qwen3.5-Omni section 5.1.4's complete audiovisual-to-text evaluation is
+inventoried in the source YAML: DailyOmni, WorldSense, AVUT, AV-SpeakerBench,
+audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
+preserve the report's audio-enabled Video-MME setting and its OmniGAIA
+prompt/judge configuration.
+
 ## Coverage
 
 Current coverage includes:
