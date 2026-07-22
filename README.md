@@ -27,6 +27,8 @@ reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
 and multimodal speaker-segment emotion recognition.
+The index also covers likelihood-based acoustic consistency and semantic-acoustic
+alignment evaluation for speech language models.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -35,7 +37,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 183 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 184 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -229,6 +231,7 @@ Current coverage includes:
 | [Speech Commands](https://www.tensorflow.org/datasets/catalog/speech_commands) | Keyword spotting | Official TensorFlow archives: [v0.02](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.02.tar.gz), [v0.01](https://storage.googleapis.com/download.tensorflow.org/data/speech_commands_v0.01.tar.gz), or [google/speech_commands](https://huggingface.co/datasets/google/speech_commands) | CC BY 4.0; HF card asks users not to try to identify speakers |
 | [MSWC](https://mlcommons.org/datasets/multilingual-spoken-words/) | Multilingual keyword spotting and spoken term search | Official MLCommons page, [MLCommons/ml_spoken_words](https://huggingface.co/datasets/MLCommons/ml_spoken_words), and per-language MLCommons archive mirrors; helper saves docs by default and makes audio/splits/alignments opt-in | CC BY 4.0; derived from crowd-sourced sentence-level speech, so preserve attribution and re-check source terms |
 | [AudioMNIST](https://github.com/soerenab/AudioMNIST) | Spoken digit classification | Official GitHub repository with 30,000 spoken-digit WAV files and speaker metadata; helper downloads README/LICENSE/metadata by default and clones the repository only with opt-in | Repository-level LICENSE is MIT; recorded-voice consent/privacy obligations should still be considered for downstream use |
+| [SALMon](https://pages.cs.huji.ac.il/adiyoss-lab/salmon/) | Acoustic consistency and semantic-acoustic alignment for speech language models | Public, ungated [slprl/SALMon](https://huggingface.co/datasets/slprl/SALMon) with 1,600 likelihood-ranking pairs across eight configurations; helper downloads official docs/metadata by default and makes the approximately 562 MB snapshot opt-in | Dataset is CC BY-NC 4.0 and derives components from Expresso, VCTK, LJSpeech, FSD50K, EchoThief, and Azure TTS; evaluation-repository code terms are unspecified |
 | [ParaPairAudioBench](https://github.com/jsujeon/ParaPairAudioBench) | Paralinguistic pairwise evaluation of audio-language-model judges | Official repository with 5,175 pair definitions across style, rate, emphasis, age, and gender; rate/emphasis/style annotations are ready to use, while age and part of gender require SVC access; helper downloads docs by default and makes the small metadata/code clone opt-in | Mixed upstream terms: SVC is non-commercial academic research, EARS/Expresso are CC BY-NC 4.0, and LibriTTS is CC BY 4.0; the benchmark repo itself has no stated data or code license |
 | [IFEval-Audio](https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing) | Audio and speech instruction following | Gated Hugging Face release with 280 audio-instruction-answer triples; helper downloads official docs/metadata by default and makes the approximately 45 MB snapshot opt-in after accepting access conditions | HF card lists Apache-2.0, but source clips retain mixed terms including CC BY-SA, CC BY-NC-ND, academic-only WavCaps, and inherited AudioBench-source licenses; evaluation code says Creative Commons NonCommercial without a version |
 | [Ming-Freeform-Audio-Edit](https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark) | Instruction-based semantic and acoustic speech editing | Public, ungated bilingual benchmark for deletion, insertion, substitution, emotion/dialect conversion, and speed/pitch/volume alteration; helper downloads official docs by default and makes the approximately 1.07 GB Hugging Face snapshot opt-in | HF card lists Apache-2.0, but source-audio terms still apply: Seed-TTS Eval has no stated data license, LibriTTS is CC BY 4.0, and GigaSpeech has separate agreement/access conditions; evaluation-repo code license is unspecified |

@@ -30,6 +30,7 @@ scripts/download/mmau_pro.sh
 scripts/download/escucha.sh
 scripts/download/msu_bench.sh
 scripts/download/korean_speechlm_benchmarks.sh
+scripts/download/salmon.sh
 scripts/download/air_bench.sh
 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
@@ -267,6 +268,9 @@ INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
 # ParaPairAudioBench downloads official docs by default. Cloning adds pair annotations/builders, not source audio.
 PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
+
+# SALMon downloads official docs/metadata by default; the approximately 562 MB snapshot is opt-in.
+SALMON_DOWNLOAD_HF=1 scripts/download/salmon.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh

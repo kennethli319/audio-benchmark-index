@@ -4896,6 +4896,69 @@ benchmarks:
       - https://github.com/krafton-ai/Raon-Eval
       - https://raw.githubusercontent.com/krafton-ai/Raon-Eval/main/LICENSE
 
+  - id: salmon
+    name: SALMon
+    full_name: "SALMon: A Suite for Acoustic Language Model Evaluation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - paralinguistic_speech_evaluation
+    tasks:
+      - acoustic_consistency_evaluation
+      - acoustic_semantic_alignment
+      - speaker_consistency
+      - speaker_gender_consistency
+      - speech_sentiment_consistency
+      - background_sound_consistency
+      - room_acoustics_consistency
+      - speech_sentiment_alignment
+      - background_sound_semantic_alignment
+    official:
+      homepage: https://pages.cs.huji.ac.il/adiyoss-lab/salmon/
+      dataset: https://huggingface.co/datasets/slprl/SALMon
+      repo: https://github.com/slp-rl/salmon
+      paper: https://arxiv.org/abs/2409.07437
+      arxiv_html: https://arxiv.org/html/2409.07437
+      doi: https://doi.org/10.1109/ICASSP49660.2025.10888561
+    download:
+      primary:
+        - https://huggingface.co/datasets/slprl/SALMon
+        - https://drive.google.com/drive/folders/1pVv6iMmP_VXH6Goxwnmpy-5h3jPAoJ0t
+      examples:
+        - 'scripts/download/salmon.sh'
+        - 'SALMON_DOWNLOAD_HF=1 scripts/download/salmon.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("slprl/SALMon", "all", split="train")'
+      notes: >-
+        The public, ungated release contains 1,600 positive/negative audio pairs
+        across eight configurations for acoustic consistency and
+        acoustic-semantic alignment. It covers speaker identity, speaker gender,
+        sentiment, background sound, and room impulse response, using a
+        likelihood-ranking protocol for speech language models. The helper saves
+        official documentation and repository metadata by default; set
+        SALMON_DOWNLOAD_HF=1 for the approximately 562 MB Hugging Face snapshot.
+        Google Drive provides the same benchmark as raw WAV files.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: >-
+        The official repository and Hugging Face card license the SALMon dataset
+        under CC BY-NC 4.0 because some source datasets are non-commercial. The
+        release derives speech or acoustics from Expresso, VCTK, LJSpeech,
+        FSD50K, and EchoThief and also includes Azure TTS output, so preserve
+        component provenance and review upstream terms. The evaluation repository
+        has no standalone license file and GitHub reports no detected code license.
+    sources:
+      - https://pages.cs.huji.ac.il/adiyoss-lab/salmon/
+      - https://arxiv.org/abs/2409.07437
+      - https://arxiv.org/html/2409.07437
+      - https://huggingface.co/datasets/slprl/SALMon
+      - https://huggingface.co/datasets/slprl/SALMon/raw/main/README.md
+      - https://huggingface.co/api/datasets/slprl/SALMon
+      - https://github.com/slp-rl/salmon
+      - https://raw.githubusercontent.com/slp-rl/salmon/main/README.md
+      - https://api.github.com/repos/slp-rl/salmon
+      - https://doi.org/10.1109/ICASSP49660.2025.10888561
+
   - id: parapair_audio_bench
     name: ParaPairAudioBench
     full_name: "ParaPairAudioBench: Paralinguistic Pairwise Audio Benchmark for LALM-as-a-Judge"
