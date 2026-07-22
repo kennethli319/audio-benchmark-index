@@ -3108,6 +3108,56 @@ benchmarks:
       - https://wenet-e2e.github.io/opencpop/download/
       - https://wenet-e2e.github.io/opencpop/liscense/
 
+  - id: mmgenre
+    name: MMGenre
+    full_name: "MMGenre: Benchmarking Singing Voice Synthesis across Multiple Musical Genres"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_synthesis
+      - music_generation
+      - singing_voice
+    tasks:
+      - singing_voice_synthesis
+      - genre_conditioned_singing_voice_synthesis
+      - singing_voice_genre_alignment
+      - score_conditioned_singing_voice_synthesis
+    official:
+      homepage: https://fengjin1117.github.io/mmgenre-web/
+      repo: https://github.com/FengJin1117/mmgenre
+      dataset: https://huggingface.co/datasets/Leaky-ReLU/MMGenre
+      paper: https://arxiv.org/abs/2607.06986
+    download:
+      primary:
+        - https://huggingface.co/datasets/Leaky-ReLU/MMGenre
+        - https://github.com/FengJin1117/mmgenre
+      examples:
+        - 'scripts/download/mmgenre.sh'
+        - 'MMGENRE_CLONE_REPO=1 scripts/download/mmgenre.sh'
+        - 'MMGENRE_DOWNLOAD_HF=1 scripts/download/mmgenre.sh'
+      notes: >-
+        The public, ungated Hugging Face release contains 3,152 aligned Chinese
+        singing-voice and symbolic-score segments from 148 generated songs,
+        totaling about 4.36 hours across 10 major genres and 26 subgenres. The
+        paper body says 27 subgenres, but the dataset card identifies this as a
+        counting error and treats the released 26-subgenre taxonomy as
+        authoritative. The helper downloads official documentation and API
+        metadata by default, can clone the lightweight score/code repository,
+        and requires explicit opt-in for the approximately 5.54 GB Hugging Face
+        snapshot.
+    license:
+      data: cc-by-4.0_with_generated_source_caveat
+      code: cc-by-4.0
+      notes: The dataset card, dataset LICENSE, and repository LICENSE declare CC BY 4.0. The benchmark was derived from music generated with Suno V4.5 and then source-separated and automatically aligned; the release license does not independently resolve any terms or rights attached to the generation service or generated source content, so review those conditions for downstream use.
+    sources:
+      - https://arxiv.org/abs/2607.06986
+      - https://arxiv.org/html/2607.06986v1
+      - https://fengjin1117.github.io/mmgenre-web/
+      - https://github.com/FengJin1117/mmgenre
+      - https://raw.githubusercontent.com/FengJin1117/mmgenre/main/README.md
+      - https://huggingface.co/datasets/Leaky-ReLU/MMGenre
+      - https://huggingface.co/datasets/Leaky-ReLU/MMGenre/raw/main/README.md
+      - https://huggingface.co/api/datasets/Leaky-ReLU/MMGenre
+
   - id: mir_1k_vocal
     name: MIR-1K vocal
     full_name: MIR-1K
