@@ -48,6 +48,7 @@ scripts/download/mtedx.sh
 scripts/download/europarl_st.sh
 scripts/download/tedx_spanish.sh
 scripts/download/seed_tts_eval.sh
+scripts/download/instruct_tts_eval.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
 scripts/download/aishell_1.sh
@@ -163,6 +164,10 @@ LIBRI_LIGHT_DOWNLOAD_UNLABELED=1 LIBRI_LIGHT_PARTS=small scripts/download/libri_
 # MLS downloads the OpenSLR page and checksums by default. Language archives are large and opt-in.
 MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS=polish MLS_FORMAT=opus scripts/download/mls.sh
 MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/download/mls.sh
+
+# InstructTTSEval downloads official docs by default. The ~1.8 GB HF audio snapshot is opt-in.
+INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
+INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh

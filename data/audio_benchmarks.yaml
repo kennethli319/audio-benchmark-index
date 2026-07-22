@@ -1443,6 +1443,48 @@ benchmarks:
       - https://arxiv.org/abs/2601.15621
       - https://arxiv.org/html/2601.15621v1#S4.SS2
 
+  - id: instruct_tts_eval
+    name: InstructTTSEval
+    full_name: "InstructTTSEval: Benchmarking Complex Natural-Language Instruction Following in Text-to-Speech Systems"
+    qwen_cited_as: InstructTTSEval
+    qwen_bucket: speech_synthesis
+    tasks:
+      - controllable_text_to_speech
+      - speech_instruction_following
+      - acoustic_parameter_control
+      - descriptive_style_control
+      - role_play_speech_generation
+    official:
+      repo: https://github.com/KexinHUANG19/InstructTTSEval
+      paper: https://arxiv.org/abs/2506.16381
+      dataset: https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval
+      qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval
+        - https://github.com/KexinHUANG19/InstructTTSEval
+      examples:
+        - 'scripts/download/instruct_tts_eval.sh'
+        - 'INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh'
+        - 'INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh'
+        - 'from datasets import load_dataset; en = load_dataset("CaasiHUANG/InstructTTSEval", split="en")'
+      notes: The helper downloads the official GitHub README and Hugging Face dataset card by default. The public, ungated Hugging Face snapshot contains English and Chinese Parquet splits with embedded reference audio and uses about 1.8 GB, so data download requires INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1; cloning the evaluation repository is separately opt-in.
+    license:
+      data: mit
+      code: not_specified
+      notes: The Hugging Face dataset card lists MIT, while the GitHub repository has no detected license. The paper says reference audio was curated from NCSSD plus movies, TV dramas, variety shows, and other film/television sources; it also says the dataset is solely for academic and research use. Treat the card license as insufficient to clear third-party media rights, and verify source terms before redistribution or commercial use.
+    sources:
+      - https://github.com/KexinHUANG19/InstructTTSEval
+      - https://raw.githubusercontent.com/KexinHUANG19/InstructTTSEval/main/README.md
+      - https://api.github.com/repos/KexinHUANG19/InstructTTSEval
+      - https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval
+      - https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval/raw/main/README.md
+      - https://arxiv.org/abs/2506.16381
+      - https://arxiv.org/html/2506.16381v1#S3.SS2.SSS1
+      - https://arxiv.org/html/2506.16381v1#Sx2
+      - https://arxiv.org/abs/2601.15621
+      - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS4
+
   - id: libritts
     name: LibriTTS
     full_name: "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"
