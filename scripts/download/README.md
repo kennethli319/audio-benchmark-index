@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/air_bench.sh
 scripts/download/music_avqa.sh
+scripts/download/av_speakerbench.sh
 scripts/download/superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
@@ -175,6 +176,10 @@ CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh
 
 # TTS Multilingual Test Set downloads its official card by default; the ~7.3 MB snapshot is opt-in.
 TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_set.sh
+
+# AV-SpeakerBench downloads official docs by default; the approximately 123 GB HF snapshot is opt-in.
+AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh
+AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
 
 # LibriTTS saves the OpenSLR page by default. Archives are large and opt-in.
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh

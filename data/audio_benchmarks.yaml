@@ -167,6 +167,46 @@ benchmarks:
       - https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
       - https://arxiv.org/abs/2203.14072
 
+  - id: av_speakerbench
+    name: AV-SpeakerBench
+    full_name: "See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models"
+    qwen_cited_as: AV-SpeakerBench
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - speaker_centric_audio_visual_reasoning
+      - audio_visual_temporal_grounding
+      - speech_understanding
+    official:
+      homepage: https://plnguyen2908.github.io/AV-SpeakerBench-project-page/
+      repo: https://github.com/plnguyen2908/AV-SpeakerBench
+      paper: https://arxiv.org/abs/2512.02231
+      dataset: https://huggingface.co/datasets/plnguyen2908/AV-SpeakerBench
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/plnguyen2908/AV-SpeakerBench
+        - https://github.com/plnguyen2908/AV-SpeakerBench
+      examples:
+        - 'scripts/download/av_speakerbench.sh'
+        - 'AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("plnguyen2908/AV-SpeakerBench", split="test")'
+      notes: The public, ungated release contains 3,212 English multiple-choice questions plus aligned audio-only, visual-only, and audiovisual clips. The helper downloads official documentation by default; the Hugging Face API reports about 123 GB of repository storage, so the full snapshot requires AV_SPEAKERBENCH_DOWNLOAD_HF=1. Qwen3.5-Omni reports the benchmark in section 5.1.4, Table 7.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: The official project page, GitHub README, and Hugging Face card prose state CC BY-NC 4.0, while the Hugging Face card front matter incorrectly or inconsistently declares MIT. Use the more restrictive CC BY-NC 4.0 terms and re-check upstream source-video rights before redistribution or commercial use. GitHub reports no detected repository license.
+    sources:
+      - https://plnguyen2908.github.io/AV-SpeakerBench-project-page/
+      - https://github.com/plnguyen2908/AV-SpeakerBench
+      - https://raw.githubusercontent.com/plnguyen2908/AV-SpeakerBench/master/README.md
+      - https://api.github.com/repos/plnguyen2908/AV-SpeakerBench
+      - https://huggingface.co/datasets/plnguyen2908/AV-SpeakerBench
+      - https://huggingface.co/datasets/plnguyen2908/AV-SpeakerBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/plnguyen2908/AV-SpeakerBench
+      - https://arxiv.org/abs/2512.02231
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"

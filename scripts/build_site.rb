@@ -61,7 +61,7 @@ FAMILIES = [
     slug: "audio-understanding",
     label: "Audio understanding & events",
     description: "Audio reasoning, captioning, scenes, events, and urban sound",
-    pattern: /audio_understanding|audio_language_model_benchmark|audio_captioning|audio_event_classification|acoustic_scene_classification|environmental_sound_classification|sound_event_detection|urban_sound_tagging|speech_music_noise_classification/,
+    pattern: /audio_understanding|audio_visual_understanding|audio_visual_question_answering|audio_language_model_benchmark|audio_captioning|audio_event_classification|acoustic_scene_classification|environmental_sound_classification|sound_event_detection|urban_sound_tagging|speech_music_noise_classification/,
   },
   {
     slug: "music",
