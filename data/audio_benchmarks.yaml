@@ -5878,6 +5878,46 @@ benchmarks:
       - https://arxiv.org/abs/2005.11262
       - https://www.openslr.org/12/
 
+  - id: real_tse
+    name: REAL-TSE Challenge
+    full_name: "SLT 2026 REAL-TSE Challenge: Real-world Target Speaker Extraction from Conversational Recordings"
+    qwen_cited_as: null
+    qwen_bucket:
+      - target_speaker_extraction
+      - speech_separation
+    tasks:
+      - target_speaker_extraction
+      - online_target_speaker_extraction
+      - offline_target_speaker_extraction
+      - real_conversational_speech_separation
+      - target_speaker_activity_detection
+    official:
+      challenge: https://real-tse.github.io/challenge/
+      repo: https://github.com/REAL-TSE/REAL-TSE-Challenge
+      baseline_repo: https://github.com/REAL-TSE/wesep-real-tse
+      paper: https://arxiv.org/abs/2607.15198
+      arxiv_html: https://arxiv.org/html/2607.15198
+    download:
+      primary:
+        - https://real-tse.github.io/challenge/#data
+        - https://github.com/REAL-TSE/REAL-TSE-Challenge
+      examples:
+        - 'scripts/download/real_tse.sh'
+      notes: The challenge reports 6,991 Mandarin/English mixture-enrollment trials over 2,309 real conversational mixtures and 11.3 hours of mixture audio. DEV has 1,991 REAL-T-derived pairs; EVAL-1 and EVAL-2 contain 2,000 seen and 3,000 unseen pairs without public references. The public helper saves official pages and repository metadata only. Organizers distributed password-protected data by email exclusively to registered teams, registration closed on May 31, 2026, and no public dataset URL is currently provided.
+    license:
+      data: access_restricted_terms_not_publicly_specified
+      code: MIT
+      notes: The official evaluation repository is MIT, but that code license does not license the challenge audio. The public challenge page restricts DEV/EVAL use to validation or final evaluation, forbids training and fine-tuning, and says access was limited to registered teams; it does not state a standalone dataset license. DEV and EVAL-1 derive from AISHELL-4, AliMeeting, AMI, DiPCo, and CHiME-6, whose upstream terms also remain applicable.
+    sources:
+      - https://real-tse.github.io/challenge/
+      - https://github.com/REAL-TSE/REAL-TSE-Challenge
+      - https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main/README.md
+      - https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main/LICENSE
+      - https://api.github.com/repos/REAL-TSE/REAL-TSE-Challenge
+      - https://github.com/REAL-TSE/wesep-real-tse
+      - https://arxiv.org/abs/2607.15198
+      - https://arxiv.org/html/2607.15198
+
   - id: fuss
     name: FUSS
     full_name: "FUSS: Free Universal Sound Separation Dataset"

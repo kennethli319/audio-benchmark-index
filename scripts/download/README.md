@@ -188,6 +188,7 @@ OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
 scripts/download/msp_podcast.sh
 scripts/download/chime_7_dasr.sh
+scripts/download/real_tse.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
 scripts/download/fisher_english.sh
