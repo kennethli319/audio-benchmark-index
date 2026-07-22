@@ -27,7 +27,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 147 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 148 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -185,6 +185,7 @@ Current coverage includes:
 | [RealDESED](https://zenodo.org/records/20056072) | Real-world domestic sound event detection | Public Zenodo train, validation, and test archives with temporal annotations and recording metadata; helper saves official metadata/docs by default and makes the approximately 8.74 GB audio release opt-in | Audio and corresponding metadata use per-file CC0 or CC BY terms recorded in `metadata.csv`; remaining metadata and annotations are CC BY 4.0; baseline code is MIT |
 | [SONYC-UST-V2](https://zenodo.org/records/3966543) | Urban sound tagging | [Zenodo v2.3 record](https://zenodo.org/records/3966543) for annotations, taxonomy, README, and 19 audio shards; helper downloads metadata by default and makes audio opt-in | CC BY 4.0; DCASE task rules restrict private external data for reproducible challenge submissions |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
+| [VoxBlink2](https://voxblink2.github.io/) | Speaker verification and open-set speaker identification | Official annotation/evaluation [repository](https://github.com/VoxBlink2/ScriptsForVoxBlink2) plus a manual Google Drive resource bundle; helper downloads docs/license by default and makes the repository clone opt-in, while source YouTube media is never redistributed | Annotation data is CC BY-NC-SA 4.0; code is not separately licensed, and YouTube media rights, platform terms, privacy, and local law remain separate |
 | [HI-MIA](https://www.openslr.org/85/) | Far-field text-dependent speaker verification | [OpenSLR SLR85](https://www.openslr.org/85/) page and filename mapping by default; train/dev/test archives are opt-in because they are multi-GB | Apache License v2.0 |
 | [VoxConverse](https://www.robots.ox.ac.uk/~vgg/data/voxconverse/) | Speaker diarization | Official [annotation repository](https://github.com/joonson/voxconverse) plus dev/test WAV ZIPs on the VGG page; helper clones annotations by default and makes audio opt-in | CC BY 4.0 for research use; original video copyrights remain with upstream owners |
 | [DIHARD III](https://dihardchallenge.github.io/dihard3/) | Speaker diarization | LDC [development](https://catalog.ldc.upenn.edu/LDC2022S12) and [evaluation](https://catalog.ldc.upenn.edu/LDC2022S14) web-download releases after LDC access; helper prints official access steps | LDC user agreement access; development/evaluation data require LDC membership or non-member licensing |

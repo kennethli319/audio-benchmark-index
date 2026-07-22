@@ -101,6 +101,7 @@ scripts/download/desed.sh
 scripts/download/realdesed.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
+scripts/download/voxblink2.sh
 scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
@@ -478,6 +479,10 @@ SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS=all scripts/download/sony
 
 # VoxCeleb downloads small OpenSLR metadata/trial lists only.
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
+
+# VoxBlink2 downloads official docs/license only. The Drive resource bundle is manual;
+# repository code and evaluation protocols can be cloned explicitly without source media.
+VOXBLINK2_CLONE_REPO=1 scripts/download/voxblink2.sh
 
 # VoxConverse clones official RTTM annotations by default. WAV ZIPs are large and opt-in.
 VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS=dev scripts/download/voxconverse.sh

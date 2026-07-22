@@ -3476,6 +3476,41 @@ benchmarks:
       - https://arxiv.org/abs/1706.08612
       - https://arxiv.org/abs/1806.05622
 
+  - id: voxblink2
+    name: VoxBlink2
+    full_name: "VoxBlink2: A 100K+ Speaker Recognition Corpus and the Open-Set Speaker-Identification Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: speaker_recognition
+    tasks:
+      - speaker_verification
+      - open_set_speaker_identification
+      - speaker_recognition
+      - audio_visual_speaker_recognition
+    official:
+      homepage: https://voxblink2.github.io/
+      repo: https://github.com/VoxBlink2/ScriptsForVoxBlink2
+      paper: https://arxiv.org/abs/2407.11510
+      interspeech: https://www.isca-archive.org/interspeech_2024/lin24j_interspeech.html
+    download:
+      primary:
+        - https://github.com/VoxBlink2/ScriptsForVoxBlink2
+        - https://drive.google.com/drive/folders/1lzumPsnl5yEaMP9g2bFbSKINLZ-QRJVP
+      examples:
+        - 'scripts/download/voxblink2.sh'
+        - 'VOXBLINK2_CLONE_REPO=1 scripts/download/voxblink2.sh'
+      notes: The official release provides annotations, YouTube links, timestamps, speaker labels, ASR outputs, speaker metadata, and evaluation protocols rather than redistributing audio or video. The corpus describes approximately 10 million segments, more than 110,000 speakers, and 16,000 hours across more than 15 language families. The helper downloads official documentation and license text by default; the Google Drive resource bundle remains a manual download, and cloning evaluation/data-construction code is opt-in. Source media must be obtained separately and may be unavailable or removed.
+    license:
+      data: CC-BY-NC-SA-4.0
+      code: not_specified
+      notes: The repository states that released annotation data is CC BY-NC-SA 4.0, but does not separately license its software. YouTube source-media rights, platform terms, privacy considerations, and local law remain separate and are not granted by the annotation license.
+    sources:
+      - https://voxblink2.github.io/
+      - https://github.com/VoxBlink2/ScriptsForVoxBlink2
+      - https://raw.githubusercontent.com/VoxBlink2/ScriptsForVoxBlink2/main/README.md
+      - https://raw.githubusercontent.com/VoxBlink2/ScriptsForVoxBlink2/main/LICENSE
+      - https://arxiv.org/abs/2407.11510
+      - https://www.isca-archive.org/interspeech_2024/lin24j_interspeech.html
+
   - id: hi_mia
     name: HI-MIA
     full_name: "HI-MIA: A Far-field Text-Dependent Speaker Verification Database and the Baselines"
