@@ -141,6 +141,7 @@ scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
 scripts/download/alimeeting.sh
+scripts/download/libriwasn.sh
 scripts/download/clotho.sh
 scripts/download/clotho_aqa.sh
 scripts/download/audiocaps.sh

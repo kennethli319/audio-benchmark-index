@@ -5842,6 +5842,63 @@ benchmarks:
       - https://arxiv.org/abs/2110.07393
       - https://arxiv.org/abs/2202.03647
 
+  - id: libriwasn
+    name: LibriWASN
+    full_name: "LibriWASN: A Data Set for Meeting Separation, Diarization, and Recognition with Asynchronous Recording Devices"
+    qwen_cited_as: null
+    qwen_bucket:
+      - meeting_transcription
+      - speech_separation
+      - spatial_audio
+    tasks:
+      - meeting_transcription
+      - continuous_speech_separation
+      - speaker_diarization
+      - multi_channel_asr
+      - distributed_microphone_array_processing
+      - sampling_clock_synchronization
+    official:
+      dataset: https://zenodo.org/records/10952434
+      doi: https://doi.org/10.5281/zenodo.10952434
+      repo: https://github.com/fgnt/libriwasn
+      paper: https://arxiv.org/abs/2308.10682
+    download:
+      primary:
+        - https://zenodo.org/records/10952434
+        - https://zenodo.org/api/records/10952434
+        - https://github.com/fgnt/libriwasn
+      examples:
+        - 'scripts/download/libriwasn.sh'
+        - 'LIBRIWASN_DOWNLOAD_ARCHIVES=1 LIBRIWASN_PARTS="LibriWASN_200_0S.zip" scripts/download/libriwasn.sh'
+      notes: >-
+        The public release contains 20 hours of meeting-like recordings in two
+        rooms with approximately 200 ms and 800 ms reverberation times. Five
+        smartphones and four microphone arrays provide 29 asynchronous audio
+        channels, with 0%-40% overlap conditions and ground-truth diarization.
+        The same LibriSpeech sentences and speakers as LibriCSS were replayed.
+        The helper downloads official metadata, README/license files, paper
+        page, and repository documentation by default. Twelve per-room and
+        per-overlap ZIP archives total about 55.8 GB and require explicit
+        opt-in; the official repository's full downloader also fetches
+        LibriCSS as a transcription/reference dependency.
+    license:
+      data: CC-BY-4.0
+      code: MIT
+      notes: >-
+        Zenodo declares the LibriWASN release CC BY 4.0 and includes the
+        license text; the official tools repository is MIT. The recordings
+        replay LibriSpeech/LibriCSS material, so preserve that provenance and
+        review upstream speech-data terms when redistributing derived data.
+    sources:
+      - https://zenodo.org/api/records/10952434
+      - https://zenodo.org/records/10952434
+      - https://zenodo.org/api/records/10952434/files/readme.txt/content
+      - https://zenodo.org/api/records/10952434/files/ccby4.txt/content
+      - https://github.com/fgnt/libriwasn
+      - https://raw.githubusercontent.com/fgnt/libriwasn/main/README.md
+      - https://raw.githubusercontent.com/fgnt/libriwasn/main/LICENSE
+      - https://arxiv.org/abs/2308.10682
+
   - id: librimix
     name: LibriMix
     full_name: "LibriMix: An Open-Source Dataset for Generalizable Speech Separation"
