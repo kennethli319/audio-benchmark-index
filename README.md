@@ -31,7 +31,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 169 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 170 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -176,6 +176,7 @@ Current coverage includes:
 | [DCASE 2024 Task 7 Sound Scene Synthesis](https://dcase.community/challenge2024/task-sound-scene-synthesis) | Text-to-audio environmental sound-scene synthesis | Public CC BY 4.0 [open-source release](https://zenodo.org/records/15630417) with 310 four-second prompt/audio pairs; helper downloads official metadata by default and makes the approximately 140 MiB archive opt-in; the original 250-item challenge evaluation set remains secret | Zenodo declares CC BY 4.0; retain packaged Freesound attribution and review per-clip provenance; baseline code terms are unspecified |
 | [DCASE 2024 Task 9 LASS](https://dcase.community/challenge2024/task-language-queried-audio-source-separation) | Language-queried audio source separation | Public CC BY 4.0 [development](https://zenodo.org/records/10887496), [validation](https://zenodo.org/records/10886481), and [evaluation](https://zenodo.org/records/11425256) releases; helper downloads official docs and lightweight captions/annotations by default while approximately 1.14 GB of validation/evaluation audio is opt-in | Zenodo records declare CC BY 4.0; retain Freesound per-clip provenance and separately review FSD50K/Clotho source terms; baseline code terms are unspecified |
 | [DCASE 2025 Task 5 AudioQA](https://dcase.community/challenge2025/task-audio-question-answering) | Multi-domain audio question answering and temporal reasoning | Official auto-approved gated [Hugging Face release](https://huggingface.co/datasets/PeacefulData/2025_DCASE_AudioQA_Official) with Bioacoustics QA, Temporal Soundscapes QA, and Complex QA; helper saves public metadata and prints authenticated access steps without downloading audio | HF card metadata declares MIT, but upstream Watkins, AudioSet, Mira, and other source-audio terms may still apply; release-script code license is unspecified |
+| [ADQA-Bench](https://dcase.community/challenge2026/task-audio-dependent-question-answering) | Audio-dependent question answering and shortcut-resistant audio reasoning | Public, ungated [Harland/ADQA-Bench](https://huggingface.co/datasets/Harland/ADQA-Bench) with 3,000 questions and WAV files; the current challenge release omits answers; helper downloads docs and the lightweight no-answer JSONL by default and makes the approximately 2.94 GB snapshot opt-in | HF card declares Apache-2.0, but incorporated MMAU, MMAR, MMSU, and other source recordings retain their own terms and media rights |
 | [UrbanSound8K](https://urbansounddataset.weebly.com/urbansound8k.html) | Environmental sound classification | [Zenodo archive](https://zenodo.org/records/1203745) or the official browser/Python download page | Zenodo lists CC BY-NC 4.0; official site says free for non-commercial use under Creative Commons BY-NC 3.0 |
 | [TAU Urban Acoustic Scenes 2019](https://dcase.community/challenge2019/task-acoustic-scene-classification) | Acoustic scene classification | [Development Zenodo record](https://zenodo.org/records/2589280); helper downloads doc/meta files by default and makes 21 audio shards opt-in | Zenodo record lists `Other (Non-Commercial)` without a more specific SPDX-style license |
 | [TAU Urban Acoustic Scenes 2020 Mobile](https://dcase.community/challenge2020/task-acoustic-scene-classification) | Acoustic scene classification | [Development](https://zenodo.org/records/3670167) and [evaluation](https://zenodo.org/records/3685828) Zenodo records; helper downloads doc/meta files by default and makes multi-GB audio archives opt-in | Zenodo records list `Other (Non-Commercial)` without a more specific SPDX-style license |
@@ -374,6 +375,7 @@ scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
 DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh
 scripts/download/dcase2025_audioqa.sh
+scripts/download/adqa_bench.sh
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
 TAU_ASC2019_DOWNLOAD_AUDIO=1 TAU_ASC2019_AUDIO_PARTS="1 2 21" scripts/download/tau_asc_2019.sh

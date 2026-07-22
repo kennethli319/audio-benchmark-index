@@ -3385,6 +3385,52 @@ benchmarks:
       - https://huggingface.co/api/datasets/PeacefulData/2025_DCASE_AudioQA_Official
       - https://arxiv.org/abs/2505.07365
 
+  - id: adqa_bench
+    name: ADQA-Bench
+    full_name: "ADQA-Bench: Audio-Dependent Question Answering Evaluation Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_reasoning
+    tasks:
+      - audio_question_answering
+      - audio_dependent_reasoning
+      - multiple_choice_question_answering
+      - shortcut_robustness
+    official:
+      challenge: https://dcase.community/challenge2026/task-audio-dependent-question-answering
+      results: https://dcase.community/challenge2026/task-audio-dependent-question-answering-results
+      dataset: https://huggingface.co/datasets/Harland/ADQA-Bench
+      paper: https://arxiv.org/abs/2509.21060
+    download:
+      primary:
+        - https://huggingface.co/datasets/Harland/ADQA-Bench
+      examples:
+        - 'scripts/download/adqa_bench.sh'
+        - 'ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh'
+      notes: >-
+        The public, ungated DCASE 2026 Task 5 evaluation release contains 3,000
+        English multiple-choice questions with 3,000 WAV files spanning speech,
+        music, and general sound understanding. Every item passed the organizers'
+        four-stage Audio-Dependency Filtering process to reduce silent-audio and
+        text-only shortcuts. The current release provides questions and choices
+        without answers for challenge evaluation; the dataset card says answers
+        will be released after the competition. The helper downloads official
+        pages, the dataset card, API metadata, and the lightweight no-answer
+        JSONL by default; the Hugging Face API reports approximately 2.94 GB of
+        repository storage, so the audio snapshot requires explicit opt-in.
+    license:
+      data: Apache-2.0_with_upstream_terms
+      code: not_applicable
+      notes: The Hugging Face card declares Apache-2.0 for the release, but the dataset incorporates a portion of MMAU, MMAR, and MMSU plus newly annotated questions over other audio. Those component datasets and source recordings retain their own terms; review provenance and upstream media rights before redistribution or commercial use.
+    sources:
+      - https://dcase.community/challenge2026/task-audio-dependent-question-answering
+      - https://dcase.community/challenge2026/task-audio-dependent-question-answering-results
+      - https://huggingface.co/datasets/Harland/ADQA-Bench
+      - https://huggingface.co/datasets/Harland/ADQA-Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/Harland/ADQA-Bench
+      - https://arxiv.org/abs/2509.21060
+
   - id: spuraudio
     name: SpurAudio
     full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"

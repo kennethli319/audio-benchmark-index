@@ -165,6 +165,7 @@ scripts/download/dns_challenge.sh
 scripts/download/ms_snsd.sh
 scripts/download/nisqa.sh
 scripts/download/vctk.sh
+scripts/download/adqa_bench.sh
 ```
 
 ## Manual Or Gated
@@ -494,6 +495,10 @@ TUT_SOUND_EVENTS_2017_DOWNLOAD_AUDIO=1 scripts/download/tut_sound_events_2017.sh
 # DCASE 2025 Task 5 AudioQA is auto-approved gated on Hugging Face. The helper
 # saves public metadata and prints the login/acceptance flow; it downloads no audio.
 scripts/download/dcase2025_audioqa.sh
+
+# ADQA-Bench downloads official docs and the no-answer JSONL by default. The
+# approximately 2.94 GB Hugging Face audio snapshot is opt-in.
+ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh
 
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh
