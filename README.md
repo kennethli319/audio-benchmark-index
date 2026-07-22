@@ -78,6 +78,15 @@ robustness sets as private, while no public item release was found for its TTS,
 speech-to-speech, or speech-understanding protocols, so RW-Voice-EQ is recorded
 in the YAML audit rather than counted as a downloadable benchmark family.
 
+The July 2026 MeetingToM paper is likewise recorded as an announced protocol,
+not a downloadable family. It describes 1,800 synchronized audiovisual AMI
+meeting clips for mental-state, referential, and consensus reasoning, but its
+official [GitHub repository](https://github.com/oliviaziyi/MeetingToM) still
+promises benchmark files and evaluation code "Coming Soon," and its official
+[Hugging Face repository](https://huggingface.co/datasets/OliviaWang1101/MeetingToM)
+contains only a README. AMI's public source corpus does not make MeetingToM's
+unreleased annotations, splits, or derived clips public.
+
 ## Coverage
 
 Current coverage includes:

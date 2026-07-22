@@ -175,6 +175,32 @@ paper_audits:
         note: Section 7.2 explicitly calls all four ASR sets private. They total roughly 17 hours; public online video and Hume-DaiKon are source descriptions, not public benchmark downloads.
     note: The public Hugging Face Spaces expose leaderboards and application code, not benchmark audio or item files. RW-Voice-EQ is therefore recorded as an audited protocol rather than a downloadable benchmark family; no data link should be inferred from the public leaderboards.
 
+  meetingtom:
+    paper: https://arxiv.org/abs/2607.19235
+    sections: 3 and appendices B and G
+    status: audited_not_indexed
+    public_interfaces:
+      - https://oliviaziyi.github.io/MeetingToM-Project-Page/
+      - https://github.com/oliviaziyi/MeetingToM
+      - https://huggingface.co/datasets/OliviaWang1101/MeetingToM
+    evaluated_domains:
+      - domain: audiovisual_social_reasoning
+        protocol: 1,800 English AMI Meeting Corpus clips from 60 sessions, split evenly across subject-level mental-state prediction, dyadic referential reasoning, and group-level consensus reasoning
+        data_status: announced_unreleased
+        note: The paper describes synchronized 5-second and approximately 50-second video, audio, and transcript inputs, but the official repositories currently contain no benchmark annotations, splits, clips, or evaluation code.
+    license:
+      paper: CC BY-NC-SA 4.0
+      benchmark_data: not_specified_unreleased
+      upstream: AMI Meeting Corpus terms apply to the source recordings
+    sources:
+      - https://arxiv.org/html/2607.19235v1#S3
+      - https://arxiv.org/html/2607.19235v1#A2
+      - https://raw.githubusercontent.com/oliviaziyi/MeetingToM/main/README.md
+      - https://api.github.com/repos/oliviaziyi/MeetingToM
+      - https://huggingface.co/datasets/OliviaWang1101/MeetingToM/raw/main/README.md
+      - https://huggingface.co/api/datasets/OliviaWang1101/MeetingToM
+    note: The official GitHub README promises code, benchmark files, evaluation scripts, and documentation "Coming Soon," while the Hugging Face repository contains only a README and zero bytes of dataset storage. MeetingToM is therefore an audited announced protocol, not a downloadable benchmark family. Recheck the official repositories before adding an indexed dataset or download helper.
+
 benchmarks:
   - id: mmau
     name: MMAU
