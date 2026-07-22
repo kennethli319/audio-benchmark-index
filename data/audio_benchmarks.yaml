@@ -1063,6 +1063,49 @@ benchmarks:
       - https://www.isca-archive.org/interspeech_2021/yang21c_interspeech.html
       - https://arxiv.org/abs/2203.06849
 
+  - id: codec_superb
+    name: Codec-SUPERB
+    full_name: "Codec-SUPERB: An In-Depth Analysis of Sound Codec Models"
+    qwen_cited_as: null
+    qwen_bucket: codec_representation_benchmark
+    tasks:
+      - neural_audio_codec_evaluation
+      - speech_reconstruction
+      - audio_reconstruction
+      - music_reconstruction
+      - content_preservation
+      - speaker_preservation
+      - paralinguistic_preservation
+    official:
+      homepage: https://eric-lam.com/Codec-SUPERB/
+      repo: https://github.com/voidful/Codec-SUPERB
+      paper: https://aclanthology.org/2024.findings-acl.616/
+      arxiv: https://arxiv.org/abs/2402.13071
+      dataset: https://huggingface.co/datasets/voidful/codec-superb-tiny
+    download:
+      primary:
+        - https://github.com/voidful/Codec-SUPERB
+        - https://huggingface.co/datasets/voidful/codec-superb-tiny
+        - https://aclanthology.org/2024.findings-acl.616/
+      examples:
+        - 'scripts/download/codec_superb.sh'
+        - 'CODEC_SUPERB_DOWNLOAD_HF=1 scripts/download/codec_superb.sh'
+        - 'CODEC_SUPERB_CLONE_REPO=1 scripts/download/codec_superb.sh'
+      notes: "The benchmark evaluates whether neural codecs preserve content, paralinguistics, speaker identity, and general audio information through downstream and signal-level metrics. The current official repository uses the public, ungated codec-superb-tiny release for regression runs: 6,000 rows split evenly across speech, audio, and music, with approximately 3.2 GB of downloads. The helper downloads official documentation by default; the dataset snapshot and repository clone are separate opt-ins."
+    license:
+      data: not_specified
+      code: not_specified
+      notes: The Hugging Face card has no license field or provenance/rights statement. The repository README and badge call the project MIT, but the linked LICENSE file is absent and the GitHub API detects no license. Treat both data and code terms as unspecified until the maintainers publish authoritative license text, and verify the source field and upstream audio rights before reuse.
+    sources:
+      - https://aclanthology.org/2024.findings-acl.616/
+      - https://doi.org/10.18653/v1/2024.findings-acl.616
+      - https://github.com/voidful/Codec-SUPERB
+      - https://raw.githubusercontent.com/voidful/Codec-SUPERB/main/README.md
+      - https://api.github.com/repos/voidful/Codec-SUPERB
+      - https://huggingface.co/datasets/voidful/codec-superb-tiny
+      - https://huggingface.co/datasets/voidful/codec-superb-tiny/raw/main/README.md
+      - https://huggingface.co/api/datasets/voidful/codec-superb-tiny
+
   - id: slurp
     name: SLURP
     full_name: "SLURP: A Spoken Language Understanding Resource Package"

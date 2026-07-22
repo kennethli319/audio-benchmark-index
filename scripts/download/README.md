@@ -41,6 +41,7 @@ scripts/download/omnigaia.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/superb.sh
+scripts/download/codec_superb.sh
 scripts/download/slurp.sh
 scripts/download/slue.sh
 scripts/download/minds14.sh
@@ -435,6 +436,11 @@ MINDS14_DOWNLOAD_HF=1 MINDS14_CONFIG=all scripts/download/minds14.sh
 
 # SUPERB downloads official S3PRL benchmark docs/license by default.
 SUPERB_CLONE_TOOLKIT=1 scripts/download/superb.sh
+
+# Codec-SUPERB downloads official docs by default. Its approximately 3.2 GB
+# public tiny snapshot and the evaluation repository are separate opt-ins.
+CODEC_SUPERB_DOWNLOAD_HF=1 scripts/download/codec_superb.sh
+CODEC_SUPERB_CLONE_REPO=1 scripts/download/codec_superb.sh
 
 # HEAR downloads Zenodo metadata/license and eval-kit docs by default. Task archives are large and opt-in.
 HEAR_DOWNLOAD_TASKS=1 HEAR_TASKS=hear2021-mridangam_tonic-v1.5-full-48000.tar.gz scripts/download/hear.sh
