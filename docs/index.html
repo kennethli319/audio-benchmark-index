@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 132 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 133 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Audio Benchmark Index">
@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="132 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="133 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -378,15 +378,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 132 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 133 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>132</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>132</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>133</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>133</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>15</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-22">July 22, 2026</time></strong></div>
       </div>
@@ -430,7 +430,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality">
   <span>Enhancement, separation &amp; quality</span>
-  <strong>12</strong>
+  <strong>13</strong>
   <small>Denoising, source separation, and perceptual quality</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="representation">
@@ -440,7 +440,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="audio-understanding">
   <span>Audio understanding &amp; events</span>
-  <strong>44</strong>
+  <strong>45</strong>
   <small>Audio reasoning, captioning, scenes, events, and urban sound</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="music">
@@ -453,7 +453,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 132 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 133 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -522,7 +522,7 @@
       </form>
 
       <div class="results-bar">
-        <p id="result-status" role="status" aria-live="polite">Showing 132 of 132 benchmarks.</p>
+        <p id="result-status" role="status" aria-live="polite">Showing 133 of 133 benchmarks.</p>
         <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
       </div>
 
@@ -3276,6 +3276,73 @@
                     <li><a href="https://psi.engr.tamu.edu/l2-arctic-corpus-docs/">Source 2 · psi.engr.tamu.edu</a></li>
                     <li><a href="https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.html">Source 3 · isca-archive.org</a></li>
                     <li><a href="https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.pdf">Source 4 · isca-archive.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-l3das22"
+  data-name="l3das22"
+  data-families="restoration-quality audio-understanding"
+  data-access="helper"
+  data-host="official"
+  data-terms="mixed"
+  data-search="l3das22 l3das22 l3das22 challenge: learning 3d audio sources in a real office environment spatial_audio three_dimensional_speech_enhancement speech_enhancement sound_event_localization_and_detection sound_source_localization sound_event_detection spatial_audio_understanding cc-by-4.0_with_upstream_terms not_specified kaggle&#39;s official api lists cc by 4.0 for l3das22. the generated mixtures incorporate librispeech speech and fsd50k sound events; preserve librispeech attribution and check fsd50k&#39;s per-clip creative commons licenses, including non-commercial clips. the official github repository exposes no license file or github-detected license, so clarify code terms before redistribution. the public kaggle release contains 105,757,713,362 bytes of multi-source, multi-perspective b-format ambisonics audio. task 1 has more than 40,000 spatial speech mixtures totaling nearly 90 hours at 16 khz, with up to three overlapping background noises and clean monaural speech targets. task 2 has 900 30-second soundscapes totaling 7.5 hours at 32 khz, with 14 office-relevant event classes, up to three overlaps, and 100 ms activity and cartesian-location targets. both tasks provide one- and two-microphone tracks using one or two first-order ambisonics microphones. the helper downloads official pages, repository metadata, the paper, documentation, and kaggle api metadata by default; cloning the code and downloading the 105.8 gb dataset are separate opt-ins. full data download requires the kaggle cli and account credentials. homepage https://www.l3das.com/icassp2022/ dataset https://www.l3das.com/icassp2022/dataset.html kaggle https://www.kaggle.com/datasets/l3dasteam/l3das22 repository https://github.com/l3das/l3das22 paper https://arxiv.org/abs/2202.10372 doi https://doi.org/10.1109/icassp43922.2022.9746872 documentation https://www.l3das.com/assets/file/l3das22_icassp_documentation.pdf https://www.l3das.com/icassp2022/ https://www.l3das.com/icassp2022/dataset.html https://www.l3das.com/icassp2022/task1.html https://www.l3das.com/icassp2022/task2.html https://www.kaggle.com/api/v1/datasets/view/l3dasteam/l3das22 https://github.com/l3das/l3das22 https://raw.githubusercontent.com/l3das/l3das22/main/readme.md https://api.github.com/repos/l3das/l3das22 https://arxiv.org/abs/2202.10372 https://doi.org/10.1109/icassp43922.2022.9746872">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
+      <h3>L3DAS22</h3>
+      <p class="benchmark-full-name">L3DAS22 Challenge: Learning 3D Audio Sources in a Real Office Environment</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Three Dimensional Speech Enhancement</span>
+        <span class="tag">Speech Enhancement</span>
+        <span class="tag">Sound Event Localization And Detection</span>
+        <span class="tag">Sound Source Localization</span>
+        <span class="tag tag-more">+2 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Official / other</strong></div>
+    <div><span>Upstream terms</span><strong>Mixed / custom — review</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <nav class="card-actions" aria-label="L3DAS22 links">
+    <a class="card-action primary" href="https://www.kaggle.com/datasets/l3dasteam/l3das22">Get data</a>
+          <a class="card-action secondary" href="https://www.l3das.com/icassp2022/">Official source</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2202.10372">Read the paper</a>
+          <a class="card-action secondary" href="https://github.com/l3das/L3DAS22">View code</a>
+  </nav>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>CC-BY-4.0_with_upstream_terms</dd></div>
+        <div><dt>Code license</dt><dd>not_specified</dd></div>
+        <div><dt>License caution</dt><dd>Kaggle&#39;s official API lists CC BY 4.0 for L3DAS22. The generated mixtures incorporate LibriSpeech speech and FSD50K sound events; preserve LibriSpeech attribution and check FSD50K&#39;s per-clip Creative Commons licenses, including non-commercial clips. The official GitHub repository exposes no LICENSE file or GitHub-detected license, so clarify code terms before redistribution.</dd></div>
+        <div><dt>Download notes</dt><dd>The public Kaggle release contains 105,757,713,362 bytes of multi-source, multi-perspective B-format Ambisonics audio. Task 1 has more than 40,000 spatial speech mixtures totaling nearly 90 hours at 16 kHz, with up to three overlapping background noises and clean monaural speech targets. Task 2 has 900 30-second soundscapes totaling 7.5 hours at 32 kHz, with 14 office-relevant event classes, up to three overlaps, and 100 ms activity and Cartesian-location targets. Both tasks provide one- and two-microphone tracks using one or two first-order Ambisonics microphones. The helper downloads official pages, repository metadata, the paper, documentation, and Kaggle API metadata by default; cloning the code and downloading the 105.8 GB dataset are separate opt-ins. Full data download requires the Kaggle CLI and account credentials.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/l3das22.sh</code></div>
+        <button type="button" data-copy="scripts/download/l3das22.sh" aria-label="Copy L3DAS22 helper command">Copy</button>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.l3das.com/icassp2022/">Homepage</a></li>
+                    <li><a href="https://www.l3das.com/icassp2022/dataset.html">Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/l3dasteam/l3das22">Kaggle</a></li>
+                    <li><a href="https://github.com/l3das/L3DAS22">Repository</a></li>
+                    <li><a href="https://arxiv.org/abs/2202.10372">Paper</a></li>
+                    <li><a href="https://doi.org/10.1109/ICASSP43922.2022.9746872">DOI</a></li>
+                    <li><a href="https://www.l3das.com/assets/file/L3DAS22_ICASSP_documentation.pdf">Documentation</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://www.l3das.com/icassp2022/">Source 1 · l3das.com</a></li>
+                    <li><a href="https://www.l3das.com/icassp2022/dataset.html">Source 2 · l3das.com</a></li>
+                    <li><a href="https://www.l3das.com/icassp2022/task1.html">Source 3 · l3das.com</a></li>
+                    <li><a href="https://www.l3das.com/icassp2022/task2.html">Source 4 · l3das.com</a></li>
+                    <li><a href="https://www.kaggle.com/api/v1/datasets/view/l3dasteam/l3das22">Source 5 · kaggle.com</a></li>
+                    <li><a href="https://github.com/l3das/L3DAS22">Source 6 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/l3das/L3DAS22/main/README.md">Source 7 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://api.github.com/repos/l3das/L3DAS22">Source 8 · api.github.com</a></li>
+                    <li><a href="https://arxiv.org/abs/2202.10372">Source 9 · arxiv.org</a></li>
+                    <li><a href="https://doi.org/10.1109/ICASSP43922.2022.9746872">Source 10 · doi.org</a></li></ul></div>
     </div>
   </details>
 </article>

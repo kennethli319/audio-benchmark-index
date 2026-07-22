@@ -83,6 +83,7 @@ scripts/download/starss22.sh
 scripts/download/starss23.sh
 scripts/download/locata.sh
 scripts/download/spatial_librispeech.sh
+scripts/download/l3das22.sh
 scripts/download/tau_nigens_sse_2020.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
@@ -210,6 +211,12 @@ LOCATA_CLONE_TOOLS=1 scripts/download/locata.sh
 SPATIAL_LIBRISPEECH_DOWNLOAD_METADATA=1 scripts/download/spatial_librispeech.sh
 SPATIAL_LIBRISPEECH_SAMPLE_ID=0 scripts/download/spatial_librispeech.sh
 SPATIAL_LIBRISPEECH_SAMPLE_ID=0 SPATIAL_LIBRISPEECH_DOWNLOAD_NOISE_SAMPLE=1 scripts/download/spatial_librispeech.sh
+
+# L3DAS22 downloads official docs and metadata by default. The 105.8 GB Kaggle
+# dataset and the challenge repository are separate opt-ins; data requires an
+# authenticated Kaggle CLI installation.
+L3DAS22_CLONE_REPO=1 scripts/download/l3das22.sh
+L3DAS22_DOWNLOAD_DATA=1 scripts/download/l3das22.sh
 
 # TAU-NIGENS SSE 2020 downloads official docs by default. The small label
 # archives are opt-in; its approximately 14.0 GB audio release stays on Zenodo.

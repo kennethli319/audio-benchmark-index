@@ -4908,6 +4908,65 @@ benchmarks:
       - https://arxiv.org/abs/2308.09514
       - https://doi.org/10.21437/Interspeech.2023-2117
 
+  - id: l3das22
+    name: L3DAS22
+    full_name: "L3DAS22 Challenge: Learning 3D Audio Sources in a Real Office Environment"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - three_dimensional_speech_enhancement
+      - speech_enhancement
+      - sound_event_localization_and_detection
+      - sound_source_localization
+      - sound_event_detection
+      - spatial_audio_understanding
+    official:
+      homepage: https://www.l3das.com/icassp2022/
+      dataset: https://www.l3das.com/icassp2022/dataset.html
+      kaggle: https://www.kaggle.com/datasets/l3dasteam/l3das22
+      repo: https://github.com/l3das/L3DAS22
+      paper: https://arxiv.org/abs/2202.10372
+      doi: https://doi.org/10.1109/ICASSP43922.2022.9746872
+      documentation: https://www.l3das.com/assets/file/L3DAS22_ICASSP_documentation.pdf
+    download:
+      primary:
+        - https://www.kaggle.com/datasets/l3dasteam/l3das22
+        - https://www.kaggle.com/api/v1/datasets/view/l3dasteam/l3das22
+        - https://github.com/l3das/L3DAS22
+      examples:
+        - 'scripts/download/l3das22.sh'
+        - 'L3DAS22_CLONE_REPO=1 scripts/download/l3das22.sh'
+        - 'L3DAS22_DOWNLOAD_DATA=1 scripts/download/l3das22.sh'
+      notes: >-
+        The public Kaggle release contains 105,757,713,362 bytes of
+        multi-source, multi-perspective B-format Ambisonics audio. Task 1 has
+        more than 40,000 spatial speech mixtures totaling nearly 90 hours at
+        16 kHz, with up to three overlapping background noises and clean
+        monaural speech targets. Task 2 has 900 30-second soundscapes totaling
+        7.5 hours at 32 kHz, with 14 office-relevant event classes, up to three
+        overlaps, and 100 ms activity and Cartesian-location targets. Both
+        tasks provide one- and two-microphone tracks using one or two
+        first-order Ambisonics microphones. The helper downloads official
+        pages, repository metadata, the paper, documentation, and Kaggle API
+        metadata by default; cloning the code and downloading the 105.8 GB
+        dataset are separate opt-ins. Full data download requires the Kaggle
+        CLI and account credentials.
+    license:
+      data: CC-BY-4.0_with_upstream_terms
+      code: not_specified
+      notes: Kaggle's official API lists CC BY 4.0 for L3DAS22. The generated mixtures incorporate LibriSpeech speech and FSD50K sound events; preserve LibriSpeech attribution and check FSD50K's per-clip Creative Commons licenses, including non-commercial clips. The official GitHub repository exposes no LICENSE file or GitHub-detected license, so clarify code terms before redistribution.
+    sources:
+      - https://www.l3das.com/icassp2022/
+      - https://www.l3das.com/icassp2022/dataset.html
+      - https://www.l3das.com/icassp2022/task1.html
+      - https://www.l3das.com/icassp2022/task2.html
+      - https://www.kaggle.com/api/v1/datasets/view/l3dasteam/l3das22
+      - https://github.com/l3das/L3DAS22
+      - https://raw.githubusercontent.com/l3das/L3DAS22/main/README.md
+      - https://api.github.com/repos/l3das/L3DAS22
+      - https://arxiv.org/abs/2202.10372
+      - https://doi.org/10.1109/ICASSP43922.2022.9746872
+
   - id: tau_nigens_sse_2020
     name: TAU-NIGENS Spatial Sound Events 2020
     full_name: "TAU-NIGENS Spatial Sound Events 2020"
