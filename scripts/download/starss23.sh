@@ -5,12 +5,14 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/lib/common.sh"
 
 out="$(dataset_dir starss23)"
 dcase_url="${STARSS23_DCASE_URL:-https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes}"
+dcase2024_url="${STARSS23_DCASE2024_URL:-https://dcase.community/challenge2024/task-audio-and-audiovisual-sound-event-localization-and-detection-with-source-distance-estimation}"
 datacite_url="${STARSS23_DATACITE_URL:-https://api.datacite.org/dois/10.5281/zenodo.7880637}"
 paper_url="${STARSS23_PAPER_URL:-https://arxiv.org/abs/2306.09126}"
 raw_base_url="${STARSS23_RAW_BASE_URL:-https://raw.githubusercontent.com/sharathadavanne/seld-dcase2023/master}"
 repo_url="${STARSS23_REPO_URL:-https://github.com/sharathadavanne/seld-dcase2023.git}"
 
 download_url "$dcase_url" "$out/dcase-2023-task-3.html"
+download_url "$dcase2024_url" "$out/dcase-2024-task-3.html"
 download_url "$datacite_url" "$out/datacite-zenodo-7880637.json"
 download_url "$paper_url" "$out/arxiv-2306.09126.html"
 download_url "$raw_base_url/README.md" "$out/baseline-README.md"
@@ -24,8 +26,9 @@ fi
 cat <<MSG
 STARSS23 metadata download complete: $out
 
-The complete public development/evaluation release is 16.3 GB. This helper does
-not download that large archive. Review the MIT dataset license and retrieve the
-files from the official record:
+The complete public development/evaluation release is 16.3 GB. DCASE 2024 Task
+3 reuses STARSS23 and adds source-distance estimation; there is no separate
+STARSS24 dataset. This helper does not download the large archive. Review the
+MIT dataset license and retrieve the files from the official record:
 https://zenodo.org/records/7880637
 MSG
