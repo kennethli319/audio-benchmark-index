@@ -83,6 +83,7 @@ scripts/download/starss22.sh
 scripts/download/starss23.sh
 scripts/download/locata.sh
 scripts/download/spatial_librispeech.sh
+scripts/download/l3das21.sh
 scripts/download/l3das22.sh
 scripts/download/tau_nigens_sse_2020.sh
 scripts/download/epic_sounds.sh
@@ -178,6 +179,10 @@ LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/
 # Libri-Light downloads official docs by default. Finetuning, ABX, and unlabeled archives are opt-in.
 LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh
 LIBRI_LIGHT_DOWNLOAD_ABX=1 scripts/download/libri_light.sh
+
+# L3DAS21 downloads official docs/metadata by default. Select large Zenodo archives explicitly.
+L3DAS21_DOWNLOAD_DATA=1 L3DAS21_PARTS=Task1_dev scripts/download/l3das21.sh
+L3DAS21_DOWNLOAD_DATA=1 L3DAS21_PARTS='Task2_train Task2_dev' scripts/download/l3das21.sh
 LIBRI_LIGHT_DOWNLOAD_UNLABELED=1 LIBRI_LIGHT_PARTS=small scripts/download/libri_light.sh
 
 # MLS downloads the OpenSLR page and checksums by default. Language archives are large and opt-in.

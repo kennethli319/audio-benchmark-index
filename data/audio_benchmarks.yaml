@@ -4908,6 +4908,62 @@ benchmarks:
       - https://arxiv.org/abs/2308.09514
       - https://doi.org/10.21437/Interspeech.2023-2117
 
+  - id: l3das21
+    name: L3DAS21
+    full_name: "L3DAS21 Challenge: Machine Learning for 3D Audio Signal Processing"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - three_dimensional_speech_enhancement
+      - speech_enhancement
+      - sound_event_localization_and_detection
+      - sound_source_localization
+      - sound_event_detection
+      - spatial_audio_understanding
+    official:
+      homepage: https://www.l3das.com/mlsp2021/index.html
+      dataset: https://www.l3das.com/mlsp2021/dataset.html
+      zenodo: https://zenodo.org/records/4642005
+      repo: https://github.com/l3das/L3DAS21
+      paper: https://arxiv.org/abs/2104.05499
+      doi: https://doi.org/10.1109/MLSP52302.2021.9596248
+    download:
+      primary:
+        - https://zenodo.org/records/4642005
+        - https://github.com/l3das/L3DAS21
+      examples:
+        - 'scripts/download/l3das21.sh'
+        - 'L3DAS21_CLONE_REPO=1 scripts/download/l3das21.sh'
+        - 'L3DAS21_DOWNLOAD_DATA=1 L3DAS21_PARTS=Task1_dev scripts/download/l3das21.sh'
+      notes: >-
+        The public Zenodo V1 release is a 65-hour corpus of multi-source,
+        multi-perspective B-format Ambisonics audio generated from impulse
+        responses measured at 252 positions with two first-order Ambisonics
+        microphones. Task 1 contains more than 30,000 spatial speech mixtures
+        for 3D speech enhancement, with clean monaural speech targets. Task 2
+        contains 900 one-minute soundscapes for sound-event localization and
+        detection, with up to three simultaneous events and 100 ms activity,
+        class, and Cartesian-location targets. Both tasks have one- and
+        two-microphone tracks. The helper downloads official pages, repository
+        metadata, DataCite metadata, and the paper by default; cloning the code
+        and downloading selected large archives are separate opt-ins.
+    license:
+      data: CC-BY-4.0_with_upstream_terms
+      code: not_specified
+      notes: DataCite lists CC BY 4.0 for the Zenodo dataset. The generated mixtures incorporate LibriSpeech speech and FSD50K sound events, so preserve LibriSpeech attribution and review FSD50K's per-clip Creative Commons terms, including non-commercial clips. The official GitHub repository exposes no LICENSE file or GitHub-detected license, so clarify code terms before reuse or redistribution.
+    sources:
+      - https://www.l3das.com/mlsp2021/index.html
+      - https://www.l3das.com/mlsp2021/dataset.html
+      - https://www.l3das.com/mlsp2021/task1.html
+      - https://www.l3das.com/mlsp2021/task2.html
+      - https://api.datacite.org/dois/10.5281/zenodo.4642005
+      - https://github.com/l3das/L3DAS21
+      - https://raw.githubusercontent.com/l3das/L3DAS21/main/README.md
+      - https://raw.githubusercontent.com/l3das/L3DAS21/main/download_dataset.py
+      - https://api.github.com/repos/l3das/L3DAS21
+      - https://arxiv.org/abs/2104.05499
+      - https://doi.org/10.1109/MLSP52302.2021.9596248
+
   - id: l3das22
     name: L3DAS22
     full_name: "L3DAS22 Challenge: Learning 3D Audio Sources in a Real Office Environment"
