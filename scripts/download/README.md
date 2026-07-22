@@ -27,6 +27,7 @@ scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/escucha.sh
+scripts/download/msu_bench.sh
 scripts/download/air_bench.sh
 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh

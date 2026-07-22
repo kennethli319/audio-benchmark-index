@@ -22,7 +22,8 @@ instruction-based speech editing, and
 few-shot robustness under foreground/background shifts, few-shot bioacoustic
 event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
-evaluation for modern speech deepfake detectors.
+evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
+over bilingual multi-speaker conversations.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -31,7 +32,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 171 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 172 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -84,6 +85,7 @@ Current coverage includes:
 | [MMAR](https://github.com/ddlBoJack/MMAR) | Audio understanding | [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) | HF card lists `cc-by-nc-4.0`; code repo had no detected license |
 | [MMSU](https://github.com/dingdongwang/MMSU) | Audio understanding | [ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU) | HF card lists `mit`; code repo had no detected license |
 | [ESCUCHA](https://github.com/ferugit/ESCUCHA) | Spanish speech understanding and reasoning | Public JSON/TSV annotations for 1,000 questions spanning MCQA, multi-audio comparison, spoken questions, and audio instruction following; helper downloads the approximately 2.2 MB annotations/docs/scorer while source audio remains URL-based and is not redistributed | No data or code license is specified; arXiv's CC BY 4.0 covers the paper, not the release or source recordings, whose rights and platform terms still apply |
+| [MSU-Bench](https://github.com/ASLP-lab/MSU-Bench) | Speaker-centric multi-speaker conversational understanding | Public, ungated [ASLP-lab/MSU-Benchmark](https://huggingface.co/datasets/ASLP-lab/MSU-Benchmark) with 2,847 bilingual QA items over 241 clips; helper downloads official docs and the approximately 5.8 MB test JSONL by default while the approximately 2.5 GB audio/annotation snapshot is opt-in | HF card declares CC BY-NC 4.0 and non-commercial academic-research use; third-party film/TV, telephone, meeting, and podcast media terms remain controlling; code is MIT |
 | [AIR-Bench](https://github.com/OFA-Sys/AIR-Bench) | Audio-language model evaluation | Official [ACL paper](https://aclanthology.org/2024.acl-long.109/), [evaluation repo](https://github.com/OFA-Sys/AIR-Bench), and [qyang1021/AIR-Bench-Dataset](https://huggingface.co/datasets/qyang1021/AIR-Bench-Dataset); helper downloads docs by default and makes the large HF snapshot opt-in | HF dataset card lists CC BY-NC 4.0 and mixed component-source terms; evaluation code is Apache-2.0 |
 | [AudioBench](https://github.com/AudioLLMs/AudioBench) | Universal audio-language model evaluation | Public evaluation toolkit, supported-dataset inventory, and [NAACL 2025 paper](https://aclanthology.org/2025.naacl-long.350/); helper downloads lightweight official metadata by default and makes the toolkit clone opt-in without fetching upstream corpora | Each component dataset retains its own terms; the toolkit license only says Creative Commons NonCommercial without naming a version |
 | [AF-Reasoning-Eval](https://github.com/NVIDIA/audio-flamingo/tree/soundCoT/AF_Reasoning_Eval) | Sound question answering, classification, and common-sense reasoning | Public NVIDIA release with 150 Clotho-AQA-derived questions and 7,227 FSD50K-derived classification items (plus a 300-item mini subset); helper downloads all four annotation JSONs while source audio remains with Clotho-AQA and FSD50K | Benchmark metadata is CC BY 4.0 and code is MIT; upstream audio retains mixed per-file Freesound/FSD50K Creative Commons terms |

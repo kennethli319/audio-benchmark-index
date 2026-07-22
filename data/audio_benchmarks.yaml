@@ -269,6 +269,48 @@ benchmarks:
       - https://arxiv.org/abs/2607.17812
       - https://arxiv.org/html/2607.17812v1#S2
 
+  - id: msu_bench
+    name: MSU-Bench
+    full_name: "MSU-Bench: Towards Speaker-Centric Understanding in Conversational Multi-Speaker Scenarios"
+    qwen_cited_as: null
+    qwen_bucket: spoken_language_understanding
+    tasks:
+      - multi_speaker_conversation_understanding
+      - speaker_identification
+      - speaker_attribute_recognition
+      - speaker_verification
+      - dialogue_scene_reasoning
+      - dialogue_structure_analysis
+      - dialogue_contextual_reasoning
+      - audio_question_answering
+    official:
+      homepage: https://aslp-lab.github.io/msu-bench.github.io/
+      repo: https://github.com/ASLP-lab/MSU-Bench
+      paper: https://arxiv.org/abs/2606.22868
+      dataset: https://huggingface.co/datasets/ASLP-lab/MSU-Benchmark
+    download:
+      primary:
+        - https://huggingface.co/datasets/ASLP-lab/MSU-Benchmark
+        - https://github.com/ASLP-lab/MSU-Bench
+      examples:
+        - 'scripts/download/msu_bench.sh'
+        - 'MSU_BENCH_DOWNLOAD_HF=1 scripts/download/msu_bench.sh'
+      notes: The public, ungated release contains 2,847 English and Chinese four-choice QA items over 241 multi-speaker audio clips, including 2,223 human-verified items across 16 tasks. The helper downloads official documentation, repository metadata, and the approximately 5.8 MB test JSONL by default; the Hugging Face API reports approximately 2.5 GB of repository storage, so the audio and annotations snapshot requires MSU_BENCH_DOWNLOAD_HF=1.
+    license:
+      data: CC-BY-NC-4.0_with_upstream_terms
+      code: MIT
+      notes: The Hugging Face card declares CC BY-NC 4.0 and limits the release to non-commercial academic research because audio derives from third-party film/TV, telephone, meeting, and podcast sources. The repository LICENSE applies MIT only to code and explicitly gives the benchmark data separate non-commercial academic-research terms; review each source corpus and media right before redistribution. The paper reports approximately 731 hours of source corpora, not 731 released hours.
+    sources:
+      - https://arxiv.org/abs/2606.22868
+      - https://arxiv.org/html/2606.22868v1#S2
+      - https://github.com/ASLP-lab/MSU-Bench
+      - https://raw.githubusercontent.com/ASLP-lab/MSU-Bench/main/README.md
+      - https://raw.githubusercontent.com/ASLP-lab/MSU-Bench/main/LICENSE
+      - https://api.github.com/repos/ASLP-lab/MSU-Bench
+      - https://huggingface.co/datasets/ASLP-lab/MSU-Benchmark
+      - https://huggingface.co/datasets/ASLP-lab/MSU-Benchmark/raw/main/README.md
+      - https://huggingface.co/api/datasets/ASLP-lab/MSU-Benchmark
+
   - id: air_bench
     name: AIR-Bench
     full_name: "AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension"
