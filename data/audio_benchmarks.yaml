@@ -5023,6 +5023,59 @@ benchmarks:
       - https://arxiv.org/abs/2202.10372
       - https://doi.org/10.1109/ICASSP43922.2022.9746872
 
+  - id: tau_spatial_sound_events_2019
+    name: TAU Spatial Sound Events 2019
+    full_name: "TAU Spatial Sound Events 2019: Ambisonic and Microphone Array"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_event_localization_and_detection
+      - sound_source_localization
+      - sound_event_detection
+      - spatial_audio_understanding
+    official:
+      dcase_task: https://dcase.community/challenge2019/task-sound-event-localization-and-detection
+      development_record: https://zenodo.org/records/2599196
+      evaluation_record: https://zenodo.org/records/3377088
+      development_doi: https://doi.org/10.5281/zenodo.2599196
+      evaluation_doi: https://doi.org/10.5281/zenodo.3377088
+      paper: https://arxiv.org/abs/1905.08546
+      baseline_repo: https://github.com/sharathadavanne/seld-dcase2019
+    download:
+      primary:
+        - https://zenodo.org/records/2599196
+        - https://zenodo.org/records/3377088
+        - https://github.com/sharathadavanne/seld-dcase2019
+      examples:
+        - 'scripts/download/tau_spatial_sound_events_2019.sh'
+        - 'TAU_SSE_2019_DOWNLOAD_METADATA=1 scripts/download/tau_spatial_sound_events_2019.sh'
+      notes: >-
+        The public DCASE 2019 Task 3 release has 400 development and 100
+        evaluation scenes of one minute each at 48 kHz, in matching 4-channel
+        first-order Ambisonic and tetrahedral-microphone formats. Scenes use
+        stationary sources from 11 classes, real impulse responses measured at
+        504 azimuth-elevation-distance combinations across five indoor
+        locations, natural ambient noise, and zero or up to two overlapping
+        events. Version 2 includes temporal and azimuth/elevation labels for
+        both development and evaluation audio. The helper downloads official
+        pages, papers, record metadata, READMEs, and license files by default;
+        the approximately 10.1 GB audio release remains on Zenodo, while the
+        roughly 490 KB label archives are an explicit opt-in.
+    license:
+      data: custom_TAU_noncommercial
+      code: custom_TAU_noncommercial
+      notes: Both Zenodo records use a custom Tampere University license permitting experimental non-commercial use with attribution and prohibiting commercial use. The source events derive from the DCASE 2016 Task 2 isolated-event dataset, so preserve that provenance. The baseline repository applies closely matching custom experimental/non-commercial terms to its code.
+    sources:
+      - https://dcase.community/challenge2019/task-sound-event-localization-and-detection
+      - https://zenodo.org/api/records/2599196
+      - https://zenodo.org/api/records/3377088
+      - https://doi.org/10.5281/zenodo.2599196
+      - https://doi.org/10.5281/zenodo.3377088
+      - https://arxiv.org/abs/1905.08546
+      - https://github.com/sharathadavanne/seld-dcase2019
+      - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2019/master/README.md
+      - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2019/master/LICENSE.md
+
   - id: tau_nigens_sse_2020
     name: TAU-NIGENS Spatial Sound Events 2020
     full_name: "TAU-NIGENS Spatial Sound Events 2020"

@@ -85,6 +85,7 @@ scripts/download/locata.sh
 scripts/download/spatial_librispeech.sh
 scripts/download/l3das21.sh
 scripts/download/l3das22.sh
+scripts/download/tau_spatial_sound_events_2019.sh
 scripts/download/tau_nigens_sse_2020.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
@@ -222,6 +223,10 @@ SPATIAL_LIBRISPEECH_SAMPLE_ID=0 SPATIAL_LIBRISPEECH_DOWNLOAD_NOISE_SAMPLE=1 scri
 # authenticated Kaggle CLI installation.
 L3DAS22_CLONE_REPO=1 scripts/download/l3das22.sh
 L3DAS22_DOWNLOAD_DATA=1 scripts/download/l3das22.sh
+
+# TAU Spatial Sound Events 2019 downloads official docs and record metadata by
+# default. The small development/evaluation labels are opt-in; audio stays on Zenodo.
+TAU_SSE_2019_DOWNLOAD_METADATA=1 scripts/download/tau_spatial_sound_events_2019.sh
 
 # TAU-NIGENS SSE 2020 downloads official docs by default. The small label
 # archives are opt-in; its approximately 14.0 GB audio release stays on Zenodo.
