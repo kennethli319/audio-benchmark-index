@@ -32,6 +32,7 @@ scripts/download/af_reasoning_eval.sh
 scripts/download/music_avqa.sh
 scripts/download/llp.sh
 scripts/download/ava_active_speaker.sh
+scripts/download/dave.sh
 scripts/download/daily_omni.sh
 scripts/download/worldsense.sh
 scripts/download/av_speakerbench.sh
@@ -278,6 +279,10 @@ AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
 
 # AVUT downloads docs and annotation JSON by default; its approximately 24.0 GB HF snapshot is opt-in.
 AVUT_DOWNLOAD_HF=1 scripts/download/avut.sh
+
+# DAVE downloads its cards, loader, and ~9 MB JSON annotations by default.
+# The full ~113.3 GB HF snapshot is opt-in and retains upstream media terms.
+DAVE_DOWNLOAD_HF=1 scripts/download/dave.sh
 
 # Daily-Omni downloads docs and QA metadata by default; its approximately 3.9 GB media snapshot is opt-in.
 DAILY_OMNI_DOWNLOAD_HF=1 scripts/download/daily_omni.sh

@@ -523,6 +523,46 @@ benchmarks:
       - https://api.github.com/repos/cvdfoundation/ava-dataset
       - https://arxiv.org/abs/1901.01342
 
+  - id: dave
+    name: DAVE
+    full_name: "DAVE: Diagnostic Benchmark for Audio Visual Evaluation"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_alignment
+      - multimodal_synchronization
+      - sound_absence_detection
+      - sound_discrimination
+      - temporal_ordering
+      - audio_classification
+      - action_recognition
+    official:
+      repo: https://github.com/gorjanradevski/dave
+      paper: https://openreview.net/forum?id=4ZAX1NT0ms
+      arxiv: https://arxiv.org/abs/2503.09321
+      dataset: https://huggingface.co/datasets/gorjanradevski/dave
+    download:
+      primary:
+        - https://huggingface.co/datasets/gorjanradevski/dave
+        - https://github.com/gorjanradevski/dave
+      examples:
+        - 'scripts/download/dave.sh'
+        - 'DAVE_DOWNLOAD_HF=1 scripts/download/dave.sh'
+      notes: The public, ungated Hugging Face release has EPIC-KITCHENS- and Ego4D-derived splits with seven diagnostic task views. The helper downloads the official cards, loader, and approximately 9 MB of JSON annotations by default. Media archives are excluded because the Hugging Face API reports about 113.3 GB of repository storage; DAVE_DOWNLOAD_HF=1 explicitly opts into the full snapshot.
+    license:
+      data: "MIT label with upstream dataset terms"
+      code: "MIT stated in README; no repository LICENSE file"
+      notes: The Hugging Face card labels DAVE as MIT and the repository README says everything is MIT, but the GitHub repository has no LICENSE file. DAVE is built on EPIC-KITCHENS and Ego4D, and its card says it inherits their risks; verify both upstream datasets' access and media terms before redistribution or commercial use.
+    sources:
+      - https://github.com/gorjanradevski/dave
+      - https://raw.githubusercontent.com/gorjanradevski/dave/main/README.md
+      - https://api.github.com/repos/gorjanradevski/dave
+      - https://huggingface.co/datasets/gorjanradevski/dave
+      - https://huggingface.co/datasets/gorjanradevski/dave/raw/main/README.md
+      - https://huggingface.co/api/datasets/gorjanradevski/dave
+      - https://openreview.net/forum?id=4ZAX1NT0ms
+      - https://arxiv.org/abs/2503.09321
+
   - id: daily_omni
     name: Daily-Omni
     full_name: "Daily-Omni: Towards Audio-Visual Reasoning with Temporal Alignment across Modalities"
