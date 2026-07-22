@@ -3331,6 +3331,57 @@ benchmarks:
       - https://github.com/facebookresearch/textlesslib/tree/main/examples/expresso/dataset
       - https://www.openslr.org/60/
 
+  - id: ming_freeform_audio_edit
+    name: Ming-Freeform-Audio-Edit
+    full_name: "Ming-Freeform-Audio-Edit: Free-form instruction-based speech editing benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_editing
+      - controllable_speech_generation
+    tasks:
+      - instruction_based_speech_editing
+      - semantic_speech_editing
+      - speech_content_deletion
+      - speech_content_insertion
+      - speech_content_substitution
+      - speech_emotion_conversion
+      - speech_dialect_conversion
+      - speech_speed_alteration
+      - speech_pitch_alteration
+      - speech_volume_alteration
+    official:
+      dataset: https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark
+      repo: https://github.com/inclusionAI/Ming-Freeform-Audio-Edit
+      model_repo: https://github.com/inclusionAI/Ming-UniAudio
+      paper: https://arxiv.org/abs/2511.05516
+      arxiv_html: https://arxiv.org/html/2511.05516v1#S6.SS3
+      modelscope: https://modelscope.cn/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark/files
+    download:
+      primary:
+        - https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark
+        - https://modelscope.cn/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark/files
+        - https://github.com/inclusionAI/Ming-Freeform-Audio-Edit
+      examples:
+        - 'scripts/download/ming_freeform_audio_edit.sh'
+        - 'MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh'
+        - 'MING_FREEFORM_AUDIO_EDIT_CLONE_REPO=1 scripts/download/ming_freeform_audio_edit.sh'
+      notes: The public, ungated release contains Chinese and English source speech, natural-language editing instructions, and metadata for semantic deletion, insertion, and substitution plus acoustic emotion, dialect, speed, pitch, and volume changes. The paper's section 6.3 constructs the semantic set from 896 Chinese and 655 English Seed-TTS test samples and reports separate basic and full instruction versions; its acoustic sets also use Seed-TTS audio. The current dataset card additionally names LibriTTS and GigaSpeech as source corpora. The helper downloads official documentation and repository metadata by default; the Hugging Face API reports approximately 1.07 GB of repository storage, so audio and annotations require explicit opt-in.
+    license:
+      data: apache-2.0_with_upstream_terms
+      code: not_specified
+      notes: The Hugging Face dataset card declares Apache-2.0, but the released audio is derived from multiple upstream corpora whose terms still apply. Seed-TTS Eval states no data license, LibriTTS is CC BY 4.0, and GigaSpeech uses its own agreement/access conditions. The evaluation repository has no license file or detected GitHub license; review each source corpus and clarify annotation/code rights before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2511.05516
+      - https://arxiv.org/html/2511.05516v1#S6.SS3
+      - https://github.com/inclusionAI/Ming-UniAudio
+      - https://raw.githubusercontent.com/inclusionAI/Ming-UniAudio/main/README.md
+      - https://github.com/inclusionAI/Ming-Freeform-Audio-Edit
+      - https://raw.githubusercontent.com/inclusionAI/Ming-Freeform-Audio-Edit/main/README.md
+      - https://api.github.com/repos/inclusionAI/Ming-Freeform-Audio-Edit
+      - https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark
+      - https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark/raw/main/README.md
+      - https://huggingface.co/api/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark
+
   - id: vocalsound
     name: VocalSound
     full_name: "VocalSound: A Dataset for Improving Human Vocal Sounds Recognition"

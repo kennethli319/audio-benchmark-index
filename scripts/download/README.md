@@ -94,6 +94,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/parapair_audio_bench.sh
+scripts/download/ming_freeform_audio_edit.sh
 scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
 scripts/download/emov_db.sh
@@ -180,6 +181,10 @@ INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
 # ParaPairAudioBench downloads official docs by default. Cloning adds pair annotations/builders, not source audio.
 PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
+
+# Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
+MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh
+MING_FREEFORM_AUDIO_EDIT_CLONE_REPO=1 scripts/download/ming_freeform_audio_edit.sh
 
 # CV3-Eval downloads official docs by default. Its roughly 760 MiB repo with audio is opt-in.
 CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh
