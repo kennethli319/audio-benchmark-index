@@ -101,6 +101,7 @@ scripts/download/l3das21.sh
 scripts/download/l3das22.sh
 scripts/download/tau_spatial_sound_events_2019.sh
 scripts/download/tau_nigens_sse_2020.sh
+scripts/download/tau_nigens_sse_2021.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
