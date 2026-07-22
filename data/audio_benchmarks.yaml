@@ -4958,3 +4958,55 @@ benchmarks:
       - https://github.com/sharathadavanne/seld-dcase2020
       - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2020/master/README.md
       - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2020/master/LICENSE.md
+
+  - id: tau_nigens_sse_2021
+    name: TAU-NIGENS Spatial Sound Events 2021
+    full_name: "TAU-NIGENS Spatial Sound Events 2021"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_event_localization_and_detection
+      - sound_source_localization
+      - acoustic_source_tracking
+      - sound_event_detection
+      - spatial_audio_understanding
+    official:
+      dcase_task: https://dcase.community/challenge2021/task-sound-event-localization-and-detection
+      zenodo_record: https://zenodo.org/records/4844825
+      doi: https://doi.org/10.5281/zenodo.4844825
+      paper: https://arxiv.org/abs/2106.06999
+      proceedings: https://dcase.community/documents/workshop2021/proceedings/DCASE2021Workshop_Politis_43.pdf
+      baseline_repo: https://github.com/sharathadavanne/seld-dcase2021
+    download:
+      primary:
+        - https://zenodo.org/records/4844825
+        - https://zenodo.org/api/records/4844825
+        - https://github.com/sharathadavanne/seld-dcase2021
+      examples:
+        - 'scripts/download/tau_nigens_sse_2021.sh'
+        - 'TAU_NIGENS_SSE_2021_DOWNLOAD_METADATA=1 scripts/download/tau_nigens_sse_2021.sh'
+      notes: >-
+        The public v1.1.0 release is the complete DCASE 2021 Task 3
+        development and evaluation corpus: 600 development and 200 evaluation
+        sound scenes of one minute each, in 4-channel FOA and
+        tetrahedral-microphone formats at 24 kHz. It adds directional
+        non-target interferers, permits overlapping instances of the same
+        target class, and supplies direction-of-arrival trajectories plus
+        onset/offset labels for the development set. The helper downloads
+        official pages, paper, record metadata, and the 23 KB dataset README
+        by default; the approximately 14.2 GiB audio archives remain on
+        Zenodo, while the roughly 1.8 MiB development labels are an explicit
+        opt-in. The 200-file evaluation set intentionally has no public labels.
+    license:
+      data: CC-BY-NC-4.0
+      code: custom_TAU_License
+      notes: Zenodo lists the dataset as CC BY-NC 4.0. Source events come from the separately released NIGENS database, so preserve its provenance and review its active terms. The baseline license allows experimental non-commercial use and prohibits commercial use.
+    sources:
+      - https://zenodo.org/api/records/4844825
+      - https://doi.org/10.5281/zenodo.4844825
+      - https://dcase.community/challenge2021/task-sound-event-localization-and-detection
+      - https://arxiv.org/abs/2106.06999
+      - https://dcase.community/documents/workshop2021/proceedings/DCASE2021Workshop_Politis_43.pdf
+      - https://github.com/sharathadavanne/seld-dcase2021
+      - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2021/master/README.md
+      - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2021/master/LICENSE.md

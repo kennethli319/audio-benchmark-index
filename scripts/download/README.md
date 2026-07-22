@@ -215,6 +215,10 @@ SPATIAL_LIBRISPEECH_SAMPLE_ID=0 SPATIAL_LIBRISPEECH_DOWNLOAD_NOISE_SAMPLE=1 scri
 # archives are opt-in; its approximately 14.0 GB audio release stays on Zenodo.
 TAU_NIGENS_SSE_2020_DOWNLOAD_METADATA=1 scripts/download/tau_nigens_sse_2020.sh
 
+# TAU-NIGENS SSE 2021 downloads official docs by default. The small development
+# labels are opt-in; its approximately 14.2 GiB audio release stays on Zenodo.
+TAU_NIGENS_SSE_2021_DOWNLOAD_METADATA=1 scripts/download/tau_nigens_sse_2021.sh
+
 # Ming-Freeform-Audio-Edit downloads official docs by default; the ~1.07 GB HF snapshot is opt-in.
 MING_FREEFORM_AUDIO_EDIT_DOWNLOAD_HF=1 scripts/download/ming_freeform_audio_edit.sh
 MING_FREEFORM_AUDIO_EDIT_CLONE_REPO=1 scripts/download/ming_freeform_audio_edit.sh
