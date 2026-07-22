@@ -25,7 +25,7 @@ few-shot robustness under foreground/background shifts, few-shot bioacoustic
 event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
-over bilingual multi-speaker conversations.
+over bilingual multi-speaker conversations, and reverberant-room ASR robustness.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -34,7 +34,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 180 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 181 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -152,6 +152,7 @@ Current coverage includes:
 | [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/) | ASR and accented speech | Official TAMU corpus page and documentation; access requires accepting license terms and submitting the download form to receive a generated Google Drive link by email | CC BY-NC 4.0; current release has 24 non-native English speakers plus suitcase-corpus material, while the Interspeech 2018 paper describes v1.0 |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
 | [LibriSpeech](https://www.openslr.org/12) | ASR and speech-codec reconstruction | OpenSLR SLR12 metadata/checksums by default, opt-in archives, or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr); Qwen3-TTS §4.1.2 uses all 2,620 `test-clean` utterances | CC BY 4.0 |
+| [Whisper-RIR-Mega](https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench) | Paired clean/reverberant ASR robustness | Public, ungated 2,000-pair English benchmark with 400 validation and 1,600 test pairs; helper downloads docs and lightweight leaderboard metadata by default and makes the approximately 1.13 GB snapshot opt-in | Dataset card says CC BY 4.0, but the RIR-Mega source audio is CC BY-NC 4.0, so apply the stricter non-commercial upstream terms; cited code repository was unavailable when checked |
 | [Libri-Light](https://github.com/facebookresearch/libri-light) | ASR and self-supervised speech representation | Official repository docs and Meta public-file archives; helper downloads docs by default and makes 0.6 GiB finetuning, ABX, and 35 GiB to 3.05 TiB unlabeled archives opt-in | Code is MIT; reviewed docs do not state a standalone data license, and audio comes from open-source LibriVox audiobooks with source-term/attribution caution |
 | [TIMIT](https://catalog.ldc.upenn.edu/LDC93S1) | ASR and phone recognition | LDC catalog [LDC93S1](https://catalog.ldc.upenn.edu/LDC93S1) or MS-WAV version [LDC93S1W](https://catalog.ldc.upenn.edu/LDC93S1W) after login/licensing; helper prints official access steps | Custom LDC license/paid access; portions copyright 1993 Trustees of the University of Pennsylvania |
 | [Switchboard](https://catalog.ldc.upenn.edu/LDC97S62) | Conversational telephone ASR | LDC catalog [LDC97S62](https://catalog.ldc.upenn.edu/LDC97S62) for Switchboard-1 Release 2 plus [LDC2002S09](https://catalog.ldc.upenn.edu/LDC2002S09) for 2000 HUB5 English Evaluation Speech; helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |

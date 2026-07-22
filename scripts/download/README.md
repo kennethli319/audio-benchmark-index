@@ -60,6 +60,7 @@ scripts/download/wildspeech_bench.sh
 scripts/download/spearbench.sh
 scripts/download/fleurs.sh
 scripts/download/librispeech.sh
+scripts/download/whisper_rirmega.sh
 scripts/download/libri_light.sh
 scripts/download/mls.sh
 scripts/download/mtedx.sh

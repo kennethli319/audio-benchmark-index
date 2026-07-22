@@ -2392,6 +2392,56 @@ benchmarks:
       - https://huggingface.co/datasets/openslr/librispeech_asr/raw/main/README.md
       - https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
 
+  - id: whisper_rirmega
+    name: Whisper-RIR-Mega
+    full_name: "Whisper-RIR-Mega: A Paired Clean-Reverberant Speech Benchmark for ASR Robustness to Room Acoustics"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - reverberant_speech_recognition
+      - asr_robustness
+      - room_acoustics_robustness
+    official:
+      dataset: https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench
+      paper: https://arxiv.org/abs/2603.02252
+      leaderboard: https://huggingface.co/spaces/mandipgoswami/whisper-rirmega-benchmark
+      repo: https://github.com/mandipgoswami/Whisper_RIRMega
+    download:
+      primary:
+        - https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench
+      examples:
+        - 'scripts/download/whisper_rirmega.sh'
+        - 'WHISPER_RIRMEGA_DOWNLOAD_HF=1 scripts/download/whisper_rirmega.sh'
+        - 'from huggingface_hub import snapshot_download; path = snapshot_download("mandipgoswami/whisper-rirmega-bench", repo_type="dataset")'
+      notes: >-
+        The public, ungated release contains 2,000 English LibriSpeech
+        test-clean utterances, each paired with a 16 kHz reverberant version
+        made using one RIR-Mega room impulse response. Its deterministic,
+        acoustically stratified split has 400 validation and 1,600 test pairs;
+        evaluation reports clean/reverberant WER and CER plus the reverb
+        penalty, with RT60 and DRR metadata when available. The helper saves
+        the dataset card, API metadata, paper, and small leaderboard files by
+        default. The Hugging Face API reports about 1.13 GB of repository
+        storage, so the complete audio and Arrow snapshot requires
+        WHISPER_RIRMEGA_DOWNLOAD_HF=1. The paper's cited GitHub code repository
+        returned HTTP 404 when checked on 2026-07-22.
+    license:
+      data: CC-BY-4.0_with_CC-BY-NC-4.0_upstream_terms
+      code: not_specified_currently_unavailable
+      notes: The benchmark dataset card declares CC BY 4.0 and identifies LibriSpeech as CC BY 4.0, but the current RIR-Mega v2 card declares CC BY-NC 4.0 for its RIR audio. Apply the stricter non-commercial upstream terms to the derived reverberant audio unless the owner clarifies otherwise. The benchmark card says its curation repository is MIT, but the linked repository was unavailable, so that code license could not be independently verified.
+    sources:
+      - https://arxiv.org/abs/2603.02252
+      - https://arxiv.org/html/2603.02252
+      - https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench
+      - https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/mandipgoswami/whisper-rirmega-bench
+      - https://huggingface.co/datasets/mandipgoswami/rirmega
+      - https://huggingface.co/datasets/mandipgoswami/rirmega/raw/main/README.md
+      - https://huggingface.co/api/datasets/mandipgoswami/rirmega
+      - https://huggingface.co/spaces/mandipgoswami/whisper-rirmega-benchmark
+      - https://github.com/mandipgoswami/Whisper_RIRMega
+
   - id: libri_light
     name: Libri-Light
     full_name: "Libri-Light: A Benchmark for ASR with Limited or No Supervision"
