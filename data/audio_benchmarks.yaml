@@ -805,6 +805,40 @@ benchmarks:
       - https://arxiv.org/abs/2207.05042
       - https://arxiv.org/abs/2301.13190
 
+  - id: lrs2
+    name: LRS2-BBC
+    full_name: "The Oxford-BBC Lip Reading Sentences 2 Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_speech
+    tasks:
+      - audio_visual_speech_recognition
+      - visual_speech_recognition
+      - lip_reading
+    official:
+      homepage: https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs2.html
+      access_page: https://www.bbc.co.uk/rd/projects/lip-reading-datasets
+      paper: https://arxiv.org/abs/1809.02108
+      cvpr_paper: https://www.robots.ox.ac.uk/~vgg/publications/2017/Chung17/chung17.pdf
+      agreement: https://downloads.bbc.co.uk/rd/datasets/content-analysis/LRS2-Lip%20Reading%20Sentences%20Permission%20Form-.docx
+    download:
+      primary:
+        - https://www.bbc.co.uk/rd/projects/lip-reading-datasets
+        - https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs2.html
+      examples:
+        - 'scripts/download/lrs2.sh'
+      notes: The official VGG page describes 144,482 pre-train/train/validation/test utterances from BBC television, with date-disjoint validation and test broadcasts, and links a password-protected 50 GB package plus public split file links. Access requires submitting the BBC LRS2 Data Sharing Agreement from an official academic address; approved researchers receive a countersigned agreement and password. The helper saves the official pages, agreement, and paper metadata only and does not request credentials or download the corpus.
+    license:
+      data: non-commercial_academic_access_agreement
+      code: not_applicable
+      notes: BBC R&D restricts LRS2 to non-commercial research by universities, reputable academic institutions, and relevant public organizations; companies and independent researchers are not eligible. The signed agreement controls use, and the BBC asks researchers to obtain approval before publishing sample images. Review the current agreement and BBC broadcast-content rights before use.
+    sources:
+      - https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs2.html
+      - https://www.bbc.co.uk/rd/projects/lip-reading-datasets
+      - https://downloads.bbc.co.uk/rd/datasets/content-analysis/LRS2-Lip%20Reading%20Sentences%20Permission%20Form-.docx
+      - https://arxiv.org/abs/1809.02108
+      - https://export.arxiv.org/api/query?id_list=1809.02108
+      - https://www.robots.ox.ac.uk/~vgg/publications/2017/Chung17/chung17.pdf
+
   - id: lrs3
     name: LRS3-TED
     full_name: "LRS3-TED: A Large-Scale Dataset for Visual Speech Recognition"
