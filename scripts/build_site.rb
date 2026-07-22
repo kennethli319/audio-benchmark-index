@@ -108,6 +108,7 @@ def terms_group(benchmark)
   license = benchmark.fetch("license", {})
   data_terms = license["data"].to_s.strip.downcase
   return ["unspecified", "Not specified"] if data_terms.empty? || data_terms.match?(/not[_ ]specified|unknown|not stated/)
+  return ["mixed", "Mixed / custom — review"] if data_terms.match?(/mixed|with[_ ](?:mixed[_ ])?upstream[_ ]terms/)
   return ["noncommercial", "Non-commercial / research terms"] if data_terms.match?(/non[- ]commercial|\bnc\b|by-nc|academic|research only/)
   return ["open", "Open / attribution signals"] if data_terms.match?(/\bcc0\b|public domain|\bmit\b|apache|cc[- ]?by(?:\s|$)|cc by(?:\s|$)/)
 

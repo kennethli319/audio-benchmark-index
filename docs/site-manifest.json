@@ -5,7 +5,7 @@
   "generated_from": "data/audio_benchmarks.yaml",
   "source_sha256": "b8b93ca4a5f58e9622a9af995911db79fc20edb870b46eda5c93386dc94ec300",
   "template_sha256": "03212e6c022bc2fa3f162fc80fe69a7319aac6d4ca9e1fc6aaeec70f1da6e926",
-  "output_sha256": "72e4194cb5717673854618a7be003ced84215d9abc2e89e4aeedae0619a4da2e",
+  "output_sha256": "81ade3c0edda446742dc813cca91273684e21523007fe52bdca6ff895ea7f791",
   "social_image": "docs/og.png",
   "social_image_sha256": "0c97557dc10355ba7c1d83d71c7a16c72d31d0ce86f508f77086621b1cb28752",
   "benchmark_count": 124,
