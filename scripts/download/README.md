@@ -79,6 +79,7 @@ scripts/download/tau_asc_2020_mobile.sh
 scripts/download/audioset.sh
 scripts/download/vggsound.sh
 scripts/download/ave.sh
+scripts/download/starss22.sh
 scripts/download/starss23.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh

@@ -4740,6 +4740,45 @@ benchmarks:
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
 
+  - id: starss22
+    name: STARSS22
+    full_name: "STARSS22: Sony-TAu Realistic Spatial Soundscapes 2022"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_event_localization_and_detection
+      - sound_source_localization
+      - spatial_audio_understanding
+      - acoustic_source_tracking
+    official:
+      dcase_task: https://dcase.community/challenge2022/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes
+      zenodo_record: https://zenodo.org/records/6600531
+      doi: https://doi.org/10.5281/zenodo.6600531
+      paper: https://dcase.community/documents/workshop2022/proceedings/DCASE2022Workshop_Politis_51.pdf
+      baseline_repo: https://github.com/sharathadavanne/seld-dcase2022
+    download:
+      primary:
+        - https://zenodo.org/records/6600531
+        - https://doi.org/10.5281/zenodo.6600531
+        - https://api.datacite.org/dois/10.5281/zenodo.6600531
+        - https://github.com/sharathadavanne/seld-dcase2022
+      examples:
+        - 'scripts/download/starss22.sh'
+        - 'STARSS22_CLONE_BASELINE=1 scripts/download/starss22.sh'
+      notes: The public Zenodo v1.1.0 release contains the complete DCASE 2022 development and evaluation data (6.0 GB), with 121 labeled development recordings and 52 unlabeled evaluation recordings in 4-channel FOA and tetrahedral-microphone formats. The helper downloads official task, DOI, paper, and baseline metadata only; use the Zenodo record for the large audio archives.
+    license:
+      data: MIT
+      code: not_specified
+      notes: DataCite identifies the Zenodo dataset license as MIT. The baseline README says the repository and its contents use MIT, but the repository has no LICENSE file and the GitHub API reports no detected license; clarify code terms before redistribution.
+    sources:
+      - https://dcase.community/challenge2022/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes
+      - https://api.datacite.org/dois/10.5281/zenodo.6600531
+      - https://zenodo.org/records/6600531
+      - https://dcase.community/documents/workshop2022/proceedings/DCASE2022Workshop_Politis_51.pdf
+      - https://github.com/sharathadavanne/seld-dcase2022
+      - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2022/main/README.md
+      - https://api.github.com/repos/sharathadavanne/seld-dcase2022
+
   - id: starss23
     name: STARSS23
     full_name: "STARSS23: Sony-TAu Realistic Spatial Soundscapes 2023"
