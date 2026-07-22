@@ -128,6 +128,7 @@ scripts/download/ami.sh
 scripts/download/chime_6.sh
 scripts/download/alimeeting.sh
 scripts/download/clotho.sh
+scripts/download/clotho_aqa.sh
 scripts/download/audiocaps.sh
 scripts/download/musiccaps.sh
 scripts/download/wavcaps.sh
