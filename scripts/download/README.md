@@ -105,6 +105,7 @@ scripts/download/fsd50k.sh
 scripts/download/fsdkaggle2018.sh
 scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
+scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
@@ -467,6 +468,10 @@ ESC50_ARCHIVE_URL='https://...' scripts/download/esc_50.sh
 # DCASE 2024 Task 5 downloads record metadata, class maps, and annotation-only
 # archives by default. Development and evaluation waveforms total about 23.4 GiB.
 DCASE2024_TASK5_DOWNLOAD_AUDIO=1 scripts/download/dcase2024_task5.sh
+
+# MAESTRO Real downloads official docs/license and soft-label annotations by
+# default. The approximately 2.43 GiB development audio archive is opt-in.
+MAESTRO_REAL_DOWNLOAD_AUDIO=1 scripts/download/maestro_real.sh
 
 # DCASE 2025 Task 5 AudioQA is auto-approved gated on Hugging Face. The helper
 # saves public metadata and prints the login/acceptance flow; it downloads no audio.
