@@ -24,7 +24,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-21. Current index size: 125 distinct benchmarks
+Last checked: 2026-07-21. Current index size: 126 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -159,6 +159,7 @@ Current coverage includes:
 | [FSDKaggle2018](https://zenodo.org/records/2552860) | Audio event classification | [Zenodo record](https://zenodo.org/records/2552860) for docs, metadata, train audio, and test audio; helper downloads docs/metadata by default and audio only with opt-in | Zenodo license id is `other-at`; dataset curation is CC BY, while individual Freesound clips keep per-clip Creative Commons licenses in the metadata |
 | [FSDKaggle2019](https://zenodo.org/records/3612637) | Audio event classification | [Zenodo record](https://zenodo.org/records/3612637) for docs, metadata, curated/noisy train audio, and test audio; helper downloads docs/metadata by default and audio only with opt-in | Zenodo license id is `other-at`; dataset curation is CC BY, while Freesound/Flickr clips keep per-clip Creative Commons licenses in the metadata |
 | [DESED](https://project.inria.fr/desed/) | Sound event detection | Official [DESED repo](https://github.com/turpaultn/DESED), [real metadata](https://zenodo.org/records/3588179), and [synthetic soundscape files](https://zenodo.org/records/6026841); helper downloads repo/metadata/JAMS by default and makes audio opt-in | Zenodo real and synthetic records list CC BY 4.0; Python code is MIT; component source-media terms still need checking |
+| [RealDESED](https://zenodo.org/records/20056072) | Real-world domestic sound event detection | Public Zenodo train, validation, and test archives with temporal annotations and recording metadata; helper saves official metadata/docs by default and makes the approximately 8.74 GB audio release opt-in | Audio and corresponding metadata use per-file CC0 or CC BY terms recorded in `metadata.csv`; remaining metadata and annotations are CC BY 4.0; baseline code is MIT |
 | [SONYC-UST-V2](https://zenodo.org/records/3966543) | Urban sound tagging | [Zenodo v2.3 record](https://zenodo.org/records/3966543) for annotations, taxonomy, README, and 19 audio shards; helper downloads metadata by default and makes audio opt-in | CC BY 4.0; DCASE task rules restrict private external data for reproducible challenge submissions |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
 | [HI-MIA](https://www.openslr.org/85/) | Far-field text-dependent speaker verification | [OpenSLR SLR85](https://www.openslr.org/85/) page and filename mapping by default; train/dev/test archives are opt-in because they are multi-GB | Apache License v2.0 |

@@ -3002,6 +3002,48 @@ benchmarks:
       - https://hal.inria.fr/hal-02160855
       - https://hal.inria.fr/hal-02355573
 
+  - id: realdesed
+    name: RealDESED
+    full_name: "RealDESED: A Real-World Domestic Sound Event Detection Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: sound_event_detection
+    tasks:
+      - sound_event_detection
+      - domestic_sound_event_detection
+      - temporal_audio_event_localization
+      - multi_annotator_label_aggregation
+      - real_world_robustness
+    official:
+      dataset: https://zenodo.org/records/20056072
+      zenodo: https://zenodo.org/records/20056072
+      repo: https://github.com/fschmid56/RealDESED
+      paper: https://arxiv.org/abs/2607.16736
+      arxiv_html: https://arxiv.org/html/2607.16736v1
+    download:
+      primary:
+        - https://zenodo.org/records/20056072
+        - https://zenodo.org/api/records/20056072/files/train.zip/content
+        - https://zenodo.org/api/records/20056072/files/validation.zip/content
+        - https://zenodo.org/api/records/20056072/files/test.zip/content
+      examples:
+        - 'scripts/download/realdesed.sh'
+        - 'REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh'
+        - 'REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh'
+      notes: The public release contains 5,710 real-home recordings (37.85 hours) from 652 participants, with 64,430 temporal annotations across 15 domestic event classes. Multiple annotators label each recording, validation and test annotations receive additional review, and metadata covers recording devices, placement, environments, and scene descriptions. The helper saves official Zenodo/GitHub metadata and documentation by default; the train, validation, and test archives total approximately 8.74 GB and require explicit opt-in.
+    license:
+      data: cc0_or_cc-by_per_audio_file_and_cc-by-4.0_annotations
+      code: MIT
+      notes: The Zenodo record is open and lists CC BY 4.0 at record level, but its description and official repository clarify that each audio recording and corresponding metadata row uses the per-file license recorded in metadata.csv, either CC0 or CC BY; remaining metadata and annotations are CC BY 4.0. Preserve creator attribution for CC BY recordings and consult metadata.csv before redistribution. The baseline repository is MIT.
+    sources:
+      - https://zenodo.org/records/20056072
+      - https://zenodo.org/api/records/20056072
+      - https://github.com/fschmid56/RealDESED
+      - https://raw.githubusercontent.com/fschmid56/RealDESED/main/README.md
+      - https://raw.githubusercontent.com/fschmid56/RealDESED/main/LICENSE
+      - https://api.github.com/repos/fschmid56/RealDESED
+      - https://arxiv.org/abs/2607.16736
+      - https://arxiv.org/html/2607.16736v1
+
   - id: sonyc_ust_v2
     name: SONYC-UST-V2
     full_name: "SONYC-UST-V2: An Urban Sound Tagging Dataset with Spatiotemporal Context"
