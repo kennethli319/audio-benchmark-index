@@ -93,6 +93,7 @@ scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
+scripts/download/parapair_audio_bench.sh
 scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
 scripts/download/emov_db.sh
@@ -176,6 +177,9 @@ MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/d
 # InstructTTSEval downloads official docs by default. The ~1.8 GB HF audio snapshot is opt-in.
 INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
 INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
+
+# ParaPairAudioBench downloads official docs by default. Cloning adds pair annotations/builders, not source audio.
+PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
 
 # CV3-Eval downloads official docs by default. Its roughly 760 MiB repo with audio is opt-in.
 CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh

@@ -3288,6 +3288,49 @@ benchmarks:
       - https://www.sciencedirect.com/science/article/pii/S0016003223007536
       - https://arxiv.org/abs/1807.03418
 
+  - id: parapair_audio_bench
+    name: ParaPairAudioBench
+    full_name: "ParaPairAudioBench: Paralinguistic Pairwise Audio Benchmark for LALM-as-a-Judge"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - audio_language_model_benchmark
+    tasks:
+      - paralinguistic_pairwise_judgment
+      - audio_language_model_judge_evaluation
+      - speaking_style_comparison
+      - speech_rate_comparison
+      - emphasis_detection
+      - speaker_age_comparison
+      - speaker_gender_comparison
+      - position_bias_evaluation
+    official:
+      repo: https://github.com/jsujeon/ParaPairAudioBench
+      paper: https://arxiv.org/abs/2606.24648
+      arxiv_html: https://arxiv.org/html/2606.24648
+    download:
+      primary:
+        - https://github.com/jsujeon/ParaPairAudioBench
+        - https://github.com/jsujeon/ParaPairAudioBench/tree/master/data/benchmarks
+      examples:
+        - 'scripts/download/parapair_audio_bench.sh'
+        - 'PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh'
+      notes: The official repository releases pairwise JSON annotations and swapped-order variants for speech rate, emphasis, and style, plus source-pair metadata and builders for age and gender. The paper reports 5,175 pairs across five criteria, including tie and same-/cross-transcript conditions. The helper downloads official documentation and repository metadata by default; cloning the approximately 6 MB repository is opt-in and does not fetch underlying audio. Age and part of gender require manually approved SVC access; the remaining source audio comes from EARS, Expresso, and LibriTTS under their own download terms.
+    license:
+      data: mixed_non_commercial_and_gated
+      code: not_specified
+      notes: The benchmark repository has no license file or detected GitHub license. Its README lists SVC as non-commercial academic research, EARS and Expresso as CC BY-NC 4.0, and LibriTTS as CC BY 4.0. Treat the pair annotations and builder code as rights-unspecified, obtain SVC approval for the affected age/gender rows, and preserve each source corpus's terms.
+    sources:
+      - https://arxiv.org/abs/2606.24648
+      - https://arxiv.org/html/2606.24648
+      - https://github.com/jsujeon/ParaPairAudioBench
+      - https://raw.githubusercontent.com/jsujeon/ParaPairAudioBench/master/README.md
+      - https://api.github.com/repos/jsujeon/ParaPairAudioBench
+      - https://github.com/sonos/svc-demographic-bias-assessment
+      - https://github.com/facebookresearch/ears_dataset
+      - https://github.com/facebookresearch/textlesslib/tree/main/examples/expresso/dataset
+      - https://www.openslr.org/60/
+
   - id: vocalsound
     name: VocalSound
     full_name: "VocalSound: A Dataset for Improving Human Vocal Sounds Recognition"
