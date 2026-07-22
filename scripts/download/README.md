@@ -192,6 +192,7 @@ WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/iemocap.sh
+scripts/download/spemoc.sh
 scripts/download/msp_podcast.sh
 scripts/download/chime_7_dasr.sh
 scripts/download/real_tse.sh

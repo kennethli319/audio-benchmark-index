@@ -5294,6 +5294,61 @@ benchmarks:
       - https://aclanthology.org/P19-1050/
       - https://arxiv.org/abs/1810.02508
 
+  - id: spemoc
+    name: SpEmoC
+    full_name: "SpEmoC: A Balanced Speaker-Segment Multimodal Emotion Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+    tasks:
+      - speech_emotion_recognition
+      - audio_visual_emotion_recognition
+      - multimodal_emotion_recognition
+      - cross_dataset_emotion_generalization
+    official:
+      homepage: https://skvipparthi.com/spemoc.html
+      repo: https://github.com/saniajmi/SpEmoC-ECCV2026
+      access_agreement: https://skvipparthi.com/spemoc/spemoc_eula.pdf
+      paper: https://arxiv.org/abs/2607.18109
+      arxiv_html: https://arxiv.org/html/2607.18109v1
+    download:
+      primary:
+        - https://skvipparthi.com/spemoc.html
+        - https://skvipparthi.com/spemoc/spemoc_eula.pdf
+        - https://github.com/saniajmi/SpEmoC-ECCV2026
+      examples:
+        - 'scripts/download/spemoc.sh'
+      notes: >-
+        The benchmark contains 30,000 refined clips curated from 306,544 raw
+        speaking segments across 3,100 English-language movies and television
+        series, with aligned audio, visual, and text modalities and a
+        near-balanced seven-emotion label distribution. The official project
+        says the full dataset is available
+        only after a requestor and faculty advisor or principal investigator
+        sign the access agreement and submit it from an institutional email
+        address. The helper saves public project, paper, repository, and
+        agreement metadata, then prints the manual application steps; it never
+        downloads restricted media.
+    license:
+      data: custom_non_commercial_academic_eula
+      code: not_specified
+      notes: >-
+        The official agreement limits use to academic research, education,
+        scientific publication, and other non-commercial research; prohibits
+        redistribution and sharing download links; and leaves copyright in the
+        source movie and television clips with their respective owners. The
+        public benchmark repository has no LICENSE file or detected GitHub
+        license, so code and public split/metadata terms remain unspecified.
+    sources:
+      - https://arxiv.org/abs/2607.18109
+      - https://arxiv.org/html/2607.18109v1
+      - https://skvipparthi.com/spemoc.html
+      - https://skvipparthi.com/spemoc/spemoc_eula.pdf
+      - https://github.com/saniajmi/SpEmoC-ECCV2026
+      - https://raw.githubusercontent.com/saniajmi/SpEmoC-ECCV2026/main/README.md
+      - https://api.github.com/repos/saniajmi/SpEmoC-ECCV2026
+
   - id: iemocap
     name: IEMOCAP
     full_name: "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database"
