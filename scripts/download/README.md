@@ -29,6 +29,7 @@ scripts/download/mmsu.sh
 scripts/download/air_bench.sh
 scripts/download/music_avqa.sh
 scripts/download/llp.sh
+scripts/download/ava_active_speaker.sh
 scripts/download/daily_omni.sh
 scripts/download/worldsense.sh
 scripts/download/av_speakerbench.sh

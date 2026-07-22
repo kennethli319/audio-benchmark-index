@@ -381,6 +381,42 @@ benchmarks:
       - https://openaccess.thecvf.com/content_CVPR_2019/papers/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.pdf
       - https://prior.allenai.org/projects/charades
 
+  - id: ava_active_speaker
+    name: AVA Active Speaker
+    full_name: "AVA Active Speaker: An Audio-Visual Dataset for Active Speaker Detection"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - active_speaker_detection
+      - audio_visual_speaker_localization
+      - speaking_activity_detection
+      - face_track_classification
+    official:
+      homepage: https://research.google.com/ava/
+      download: https://research.google.com/ava/download.html#ava-active-speaker-download-v10
+      repo: https://github.com/cvdfoundation/ava-dataset
+      paper: https://arxiv.org/abs/1901.01342
+    download:
+      primary:
+        - https://s3.amazonaws.com/ava-dataset/annotations/ava_activespeaker_train_v1.0.tar.bz2
+        - https://s3.amazonaws.com/ava-dataset/annotations/ava_activespeaker_val_v1.0.tar.bz2
+        - https://s3.amazonaws.com/ava-dataset/annotations/ava_speech_file_names_v1.txt
+      examples:
+        - 'scripts/download/ava_active_speaker.sh'
+        - 'AVA_ACTIVE_SPEAKER_DOWNLOAD_LABELS=1 scripts/download/ava_active_speaker.sh'
+      notes: The official v1.0 release associates visible face tracks with SPEAKING_AND_AUDIBLE, SPEAKING_BUT_NOT_AUDIBLE, or NOT_SPEAKING labels. Google reports 3.65 million labeled frames across approximately 39,000 face tracks; the current download page says dense labels cover 160 AVA movie clips that remained available on YouTube. The helper downloads official documentation and the 2.5 KB video-name manifest by default. Set AVA_ACTIVE_SPEAKER_DOWNLOAD_LABELS=1 for the approximately 23 MB train/validation annotation archives. It does not fetch the much larger source videos.
+    license:
+      data: CC BY 4.0
+      code: not_specified
+      notes: Google's AVA download page states that all datasets listed there are CC BY 4.0. The GitHub repository has no detected license, so that statement should not be assumed to license repository code. Preserve attribution and review source-movie and hosting terms before redistributing media; video availability can change independently of the released annotations.
+    sources:
+      - https://research.google.com/ava/
+      - https://research.google.com/ava/download.html#ava-active-speaker-download-v10
+      - https://github.com/cvdfoundation/ava-dataset
+      - https://raw.githubusercontent.com/cvdfoundation/ava-dataset/master/README.md
+      - https://api.github.com/repos/cvdfoundation/ava-dataset
+      - https://arxiv.org/abs/1901.01342
+
   - id: daily_omni
     name: Daily-Omni
     full_name: "Daily-Omni: Towards Audio-Visual Reasoning with Temporal Alignment across Modalities"
