@@ -87,6 +87,13 @@ promises benchmark files and evaluation code "Coming Soon," and its official
 contains only a README. AMI's public source corpus does not make MeetingToM's
 unreleased annotations, splits, or derived clips public.
 
+The March 2026 DEAF paper is also recorded as an audited protocol rather than a
+downloadable family. It describes 2,756 acoustic-semantic conflict stimuli for
+emotion, background sound, and speaker identity, but v2 provides no official
+project, repository, dataset card, archive, or download URL. Public source
+components such as DEMAND do not make DEAF's derived stimuli, prompts, labels,
+or evaluation code public.
+
 ## Coverage
 
 Current coverage includes:

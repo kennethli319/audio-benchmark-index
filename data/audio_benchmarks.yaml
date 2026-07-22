@@ -201,6 +201,27 @@ paper_audits:
       - https://huggingface.co/api/datasets/OliviaWang1101/MeetingToM
     note: The official GitHub README promises code, benchmark files, evaluation scripts, and documentation "Coming Soon," while the Hugging Face repository contains only a README and zero bytes of dataset storage. MeetingToM is therefore an audited announced protocol, not a downloadable benchmark family. Recheck the official repositories before adding an indexed dataset or download helper.
 
+  deaf:
+    paper: https://arxiv.org/abs/2603.18048
+    sections: 2 and appendix A.2-A.5
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: acoustic_semantic_conflict
+        protocol: 2,756 English stimuli across emotion-semantic, background-sound-semantic, and speaker-identity-semantic conflicts, evaluated at three levels of increasing textual interference
+        data_status: no_public_release_found
+        note: The paper reports 1,248 emotion, 1,260 background-sound, and 248 speaker-identity clips. Levels 2 and 3 reuse the same audio with misleading prompts rather than adding clips.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unreleased
+      upstream: EMIS, DEMAND, ElevenLabs model, and generated-content terms would apply to any future release
+    sources:
+      - https://arxiv.org/html/2603.18048v2#S2
+      - https://arxiv.org/html/2603.18048v2#A1.SS2
+      - https://arxiv.org/html/2603.18048v2#A1.SS3
+      - https://arxiv.org/html/2603.18048v2#A1.SS5
+    note: The v2 paper contains no project, repository, dataset-card, archive, or download URL. Its detailed construction recipe and public DEMAND source do not make the derived stimuli, scripts, prompts, labels, or evaluation code public, so DEAF is recorded as an audited protocol rather than a downloadable benchmark family.
+
 benchmarks:
   - id: mmau
     name: MMAU
