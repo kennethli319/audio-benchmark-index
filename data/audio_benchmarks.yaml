@@ -238,6 +238,47 @@ benchmarks:
       - https://arxiv.org/abs/2505.17862
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: worldsense
+    name: WorldSense
+    full_name: "WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs"
+    qwen_cited_as: WorldSense
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - omni_modal_video_understanding
+      - cross_modal_reasoning
+      - audio_visual_perception
+    official:
+      homepage: https://jaaackhongggg.github.io/WorldSense/
+      repo: https://github.com/JaaackHongggg/WorldSense
+      paper: https://arxiv.org/abs/2502.04326
+      dataset: https://huggingface.co/datasets/honglyhly/WorldSense
+      leaderboard: https://jaaackhongggg.github.io/WorldSense/#leaderboard
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/honglyhly/WorldSense
+        - https://github.com/JaaackHongggg/WorldSense
+      examples:
+        - 'scripts/download/worldsense.sh'
+        - 'WORLDSENSE_DOWNLOAD_HF=1 scripts/download/worldsense.sh'
+      notes: The public, ungated release contains 1,662 synchronized audio-visual videos and 3,172 multiple-choice question-answer pairs across 26 tasks. The helper downloads official documentation and the approximately 4.3 MB QA JSON by default; the Hugging Face API reports approximately 18.1 GB of repository storage, so video and subtitle archives require WORLDSENSE_DOWNLOAD_HF=1. Qwen3.5-Omni reports WorldSense in section 5.1.4, Table 7.
+    license:
+      data: conflicting_cc_by_nc_sa_4_0_and_cc_by_4_0
+      code: not_specified
+      notes: The WorldSense paper v3 Appendix G states CC BY-NC-SA 4.0, while the official repository README and Hugging Face card state CC BY 4.0. Apply the more restrictive CC BY-NC-SA 4.0 interpretation until the maintainers resolve the conflict. Videos are sourced primarily from FineVideo with selected MUSIC-AVQA material, so component-media terms and rights also require review. GitHub reports no detected repository license.
+    sources:
+      - https://jaaackhongggg.github.io/WorldSense/
+      - https://github.com/JaaackHongggg/WorldSense
+      - https://raw.githubusercontent.com/JaaackHongggg/WorldSense/main/README.md
+      - https://api.github.com/repos/JaaackHongggg/WorldSense
+      - https://huggingface.co/datasets/honglyhly/WorldSense
+      - https://huggingface.co/datasets/honglyhly/WorldSense/raw/main/README.md
+      - https://huggingface.co/api/datasets/honglyhly/WorldSense
+      - https://arxiv.org/abs/2502.04326
+      - https://arxiv.org/html/2502.04326v3#A7
+      - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
   - id: av_speakerbench
     name: AV-SpeakerBench
     full_name: "See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models"

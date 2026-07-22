@@ -28,6 +28,8 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/air_bench.sh
 scripts/download/music_avqa.sh
+scripts/download/daily_omni.sh
+scripts/download/worldsense.sh
 scripts/download/av_speakerbench.sh
 scripts/download/omnigaia.sh
 scripts/download/video_mme.sh
@@ -186,6 +188,10 @@ AV_SPEAKERBENCH_CLONE_REPO=1 scripts/download/av_speakerbench.sh
 # Daily-Omni downloads docs and QA metadata by default; its approximately 3.9 GB media snapshot is opt-in.
 DAILY_OMNI_DOWNLOAD_HF=1 scripts/download/daily_omni.sh
 DAILY_OMNI_CLONE_REPO=1 scripts/download/daily_omni.sh
+
+# WorldSense downloads docs and QA metadata by default; its approximately 18.1 GB archive snapshot is opt-in.
+WORLDSENSE_DOWNLOAD_HF=1 scripts/download/worldsense.sh
+WORLDSENSE_CLONE_REPO=1 scripts/download/worldsense.sh
 
 # OmniGAIA downloads docs and test metadata by default; the approximately 9.9 GB media snapshot is opt-in.
 OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh
