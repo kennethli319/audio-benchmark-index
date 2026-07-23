@@ -26,7 +26,8 @@ event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
-and multimodal speaker-segment emotion recognition.
+and multimodal speaker-segment emotion recognition, as well as multi-turn voice-agent
+tool use, grounding, state tracking, and conversational memory.
 The index also covers likelihood-based acoustic consistency and semantic-acoustic
 alignment evaluation for speech language models, plus closed-vocabulary live
 tracking and captioning of sung scripture.
@@ -38,7 +39,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 187 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 188 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -189,6 +190,7 @@ Current coverage includes:
 | [Slakh2100](http://www.slakh.com/) | Music source separation and transcription | Official Slakh page, [Slakh2100 Zenodo record](https://zenodo.org/record/4599666), [tiny prototyping subset](https://zenodo.org/record/4603870), and [slakh-utils](https://github.com/ethman/slakh-utils); helper downloads docs by default and can save Zenodo landing pages or clone utilities with opt-in | CC BY 4.0 for Slakh2100/Flakh2100; slakh-utils code is MIT; synthesized from Lakh MIDI Dataset v0.1, so keep source MIDI attribution/provenance |
 | [MoisesDB](https://music.ai/research/) | Music source separation beyond four stems | Public 240-song, 14.4-hour multitrack research dataset from Music AI with a hierarchical stem/source taxonomy; helper saves official docs and license by default, leaves audio to the official browser download flow, and makes the loader/evaluation repo clone opt-in | CC BY-NC-SA 4.0 for non-commercial research; attribution and ShareAlike apply to data and repository materials |
 | [VoiceBench](https://github.com/MatthewCYM/VoiceBench) | End-to-end speech dialogue | [hlt-lab/voicebench](https://huggingface.co/datasets/hlt-lab/voicebench) | Apache-2.0 |
+| [Audio Agent Bench Suite](https://huggingface.co/datasets/arcada-labs/audio-agent-bench-suite) | Multi-turn voice-agent dialogue, tool use, grounding, state tracking, and memory | Six public, ungated English domain releases totaling 221 scripted turns with human-recorded user audio; helper downloads official cards/API metadata by default and makes the approximately 209 MB combined snapshots opt-in | Suite card declares CC BY 4.0 while all six component cards declare MIT; no separate license file or code license is linked, so confirm intended terms |
 | [URO-Bench-pro](https://github.com/Ruiqi-Yan/URO-Bench) | End-to-end speech dialogue | [Honggao/URO-Bench](https://huggingface.co/datasets/Honggao/URO-Bench) | MIT |
 | [SpeechRole](https://github.com/yuhui1038/SpeechRole) | End-to-end speech dialogue | [SpeechRole-Eval](https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval), [SpeechRole-Data](https://huggingface.co/datasets/yuhui1038/SpeechRole-Data) | HF cards list MIT; repo has no separate detected license |
 | [WildSpeech-Bench](https://github.com/Tencent/WildSpeech-Bench) | End-to-end speech dialogue | [tencent/WildSpeech-Bench](https://huggingface.co/datasets/tencent/WildSpeech-Bench) | License.txt says CC BY 4.0 except third-party datasets with their own terms |

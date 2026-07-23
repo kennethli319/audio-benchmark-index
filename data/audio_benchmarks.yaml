@@ -7606,3 +7606,60 @@ benchmarks:
       - https://raw.githubusercontent.com/karanbirsingh/live-gurbani-captioning-benchmark-v1/main/README.md
       - https://raw.githubusercontent.com/karanbirsingh/live-gurbani-captioning-benchmark-v1/main/LICENSE
       - https://api.github.com/repos/karanbirsingh/live-gurbani-captioning-benchmark-v1
+
+  - id: audio_agent_bench_suite
+    name: Audio Agent Bench Suite
+    full_name: "AudioAgentBench: Evaluating Multi-Turn Voice Agents on Real-World Tasks"
+    qwen_cited_as: null
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - end_to_end_speech_dialogue
+      - spoken_question_answering
+      - audio_agent_tool_use
+      - multi_turn_state_tracking
+      - long_range_conversation_memory
+      - knowledge_base_grounding
+    official:
+      dataset: https://huggingface.co/datasets/arcada-labs/audio-agent-bench-suite
+    download:
+      primary:
+        - https://huggingface.co/datasets/arcada-labs/conversation-bench
+        - https://huggingface.co/datasets/arcada-labs/product-bench
+        - https://huggingface.co/datasets/arcada-labs/grocery-bench
+        - https://huggingface.co/datasets/arcada-labs/appointment-bench
+        - https://huggingface.co/datasets/arcada-labs/event-bench
+        - https://huggingface.co/datasets/arcada-labs/assistant-bench
+      examples:
+        - 'scripts/download/audio_agent_bench_suite.sh'
+        - 'AUDIO_AGENT_BENCH_DOWNLOAD_HF=1 scripts/download/audio_agent_bench_suite.sh'
+      notes: >-
+        The official public suite comprises six English, multi-turn domains:
+        conference assistance (75 turns), laptop sales (31), grocery ordering
+        (30), dental appointments (25), event planning (29), and personal
+        assistance (31), for 221 scripted turns total. Each domain releases
+        user audio, transcripts, reference responses, knowledge-base context,
+        tool schemas, expected function calls, and scoring labels. The card
+        says two consenting voice actors recorded the inputs. The helper saves
+        the suite and component cards plus API metadata by default; downloading
+        all six snapshots (about 209 MB of current repository storage) requires
+        AUDIO_AGENT_BENCH_DOWNLOAD_HF=1.
+    license:
+      data: mixed_CC-BY-4.0_and_MIT_metadata
+      code: not_specified
+      notes: >-
+        The suite-level card declares CC BY 4.0, while each of the six component
+        dataset cards currently declares MIT. No separate license file or
+        evaluation-code repository is linked. Treat this metadata conflict as
+        unresolved and confirm the intended terms with Arcada Labs before
+        redistribution or commercial reuse.
+    sources:
+      - https://huggingface.co/datasets/arcada-labs/audio-agent-bench-suite
+      - https://huggingface.co/datasets/arcada-labs/audio-agent-bench-suite/raw/main/README.md
+      - https://huggingface.co/api/datasets/arcada-labs/audio-agent-bench-suite
+      - https://huggingface.co/datasets/arcada-labs/conversation-bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/arcada-labs/conversation-bench
+      - https://huggingface.co/api/datasets/arcada-labs/product-bench
+      - https://huggingface.co/api/datasets/arcada-labs/grocery-bench
+      - https://huggingface.co/api/datasets/arcada-labs/appointment-bench
+      - https://huggingface.co/api/datasets/arcada-labs/event-bench
+      - https://huggingface.co/api/datasets/arcada-labs/assistant-bench

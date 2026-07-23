@@ -275,6 +275,9 @@ PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
 # SALMon downloads official docs/metadata by default; the approximately 562 MB snapshot is opt-in.
 SALMON_DOWNLOAD_HF=1 scripts/download/salmon.sh
 
+# Audio Agent Bench Suite downloads six component cards/API records by default; the ~209 MB snapshots are opt-in.
+AUDIO_AGENT_BENCH_DOWNLOAD_HF=1 scripts/download/audio_agent_bench_suite.sh
+
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 
