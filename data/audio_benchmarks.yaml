@@ -1888,6 +1888,39 @@ benchmarks:
       - https://huggingface.co/datasets/ASLP-lab/SongFormBench
       - https://github.com/ASLP-lab/SongFormer
 
+  - id: rubato
+    name: RUBATO
+    full_name: "RUBATO: A Multi-Version Benchmark for Robust Music Transcription and Analysis"
+    qwen_cited_as: null
+    qwen_bucket: music_transcription
+    tasks:
+      - automatic_music_transcription
+      - beat_tracking
+      - downbeat_and_measure_tracking
+      - local_key_estimation
+      - music_structure_analysis
+      - audio_score_alignment
+    official:
+      zenodo: https://zenodo.org/records/21407832
+      doi: https://doi.org/10.5281/zenodo.21407831
+    download:
+      primary:
+        - https://zenodo.org/api/records/21407832/files/metadata_versions.csv/content
+        - https://zenodo.org/api/records/21407832/files/rubato.zip/content
+      examples:
+        - 'scripts/download/rubato.sh'
+        - 'RUBATO_DOWNLOAD_ARCHIVE=1 scripts/download/rubato.sh'
+      notes: The open Zenodo v0.3 release contains 566 versions of 15 musical works (about 42.9 hours), including 22.05 kHz mono audio, aligned score MIDI/MuseScore/PDF/images, performance video, note/beat/measure/local-key/structure annotations, and audio-to-score warping paths. The helper downloads the 83 KB version metadata and Zenodo API record by default; the approximately 6.26 GB archive requires RUBATO_DOWNLOAD_ARCHIVE=1.
+    license:
+      data: mixed_creative_commons
+      code: not_separately_specified
+      notes: Zenodo labels the deposition CC BY 3.0, but metadata_versions.csv assigns per-recording terms that include CC0, CC BY, CC BY-SA, CC BY-ND, CC BY-NC, CC BY-NC-SA, CC BY-NC-ND, ambiguous "CC"/"CC0?", and EEF. Treat the per-recording field as controlling and review it before redistribution or commercial use; scripts inside the archive have no separate license statement.
+    sources:
+      - https://zenodo.org/records/21407832
+      - https://zenodo.org/api/records/21407832
+      - https://doi.org/10.5281/zenodo.21407831
+      - https://zenodo.org/api/records/21407832/files/metadata_versions.csv/content
+
   - id: nsynth
     name: NSynth
     full_name: "NSynth: Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders"

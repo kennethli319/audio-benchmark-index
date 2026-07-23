@@ -59,6 +59,7 @@ scripts/download/hear.sh
 scripts/download/dynamic_superb.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
+scripts/download/rubato.sh
 scripts/download/voicebench.sh
 scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh
@@ -757,6 +758,9 @@ FMA_DOWNLOAD_AUDIO=1 FMA_AUDIO_PARTS="small medium" scripts/download/fma.sh
 
 # OpenMIC-2018 downloads Zenodo metadata and the official README by default.
 OPENMIC_DOWNLOAD_ARCHIVE=1 scripts/download/openmic_2018.sh
+
+# RUBATO downloads the Zenodo record and 83 KB version metadata by default.
+RUBATO_DOWNLOAD_ARCHIVE=1 scripts/download/rubato.sh
 
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
