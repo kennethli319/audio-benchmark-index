@@ -119,6 +119,14 @@ dataset is explicitly proprietary. The five random 8:1:1 evaluation splits are
 not published, and the paper's demo streams only selected segments from its
 five-song subjective study rather than a reusable benchmark package.
 
+The July 2026 CaReCoS paper is recorded as an audited medical-acoustic
+spectrogram reasoning protocol rather than a downloadable family. It derives
+explicit and inferred question-answer pairs from seven named public cardiac,
+respiratory, and cough datasets, but v1 provides no official project,
+repository, dataset card, item manifest, generated spectrograms, questions,
+answers, split definitions, or benchmark license. The public source corpora do
+not themselves release CaReCoS's derived evaluation package.
+
 The June 2026 Preference-ASR paper is also recorded as an audited protocol,
 not a downloadable family. It describes 3,210 English preference-aware ASR
 triples plus 335 standard items across normalization, entities, disfluencies,

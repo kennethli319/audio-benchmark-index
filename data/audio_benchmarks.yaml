@@ -199,6 +199,29 @@ paper_audits:
       - https://lyracobar.y.qq.com/singvoicedataset_en.html
     note: SongSQA's public Lyra-SA component maps to the indexed application-based release. Its proprietary expert-rated corpus and small subjective study are recorded only as unreleased protocols; the demo's selected audio examples must not be treated as a dataset release.
 
+  carecos:
+    paper: https://arxiv.org/abs/2607.03356
+    sections: 3-4
+    status: audited_not_indexed
+    evaluated_domains:
+      - domain: medical_acoustic_spectrogram_reasoning
+        protocol: Mel-spectrogram question answering over cardiac, respiratory, and cough recordings, with two metadata-grounded explicit questions and two inferred clinical-reasoning questions generated per recording
+        data_status: benchmark_questions_spectrograms_and_splits_not_released
+        note: The paper derives CaReCoS from seven named public medical-audio datasets—ICBHI 2017, KAUH, SPRSound, CirCor, ZCH, Coswara, and the EPFL Multimodal Cough Detection dataset—but provides no item manifest, generated question-answer file, spectrogram archive, split definition, or official download interface.
+      - domain: raw_audio_medical_reasoning
+        protocol: Raw-audio ablation for Qwen2.5-Omni-7B, Gemini 2.5 Flash, and Gemini 2.5 Pro
+        data_status: evaluation_inputs_and_outputs_not_released
+        note: Section 4 reports the ablation against the same medical sources, but does not release the exact evaluated rows, prompts, model outputs, or judge records.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unreleased
+      upstream: Each of the seven source datasets retains its own access, consent, and reuse terms
+    sources:
+      - https://arxiv.org/abs/2607.03356
+      - https://arxiv.org/html/2607.03356v1#S3
+      - https://arxiv.org/html/2607.03356v1#S4
+    note: CaReCoS is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper has no project page, repository, dataset card, archive, code link, or benchmark-license statement. Public availability of the seven source corpora does not release the paper's derived spectrograms, questions, answers, inferred clinical labels, evaluation selections, or splits, and the paper's CC BY 4.0 license applies to the article rather than absent benchmark files.
+
   preference_asr:
     paper: https://arxiv.org/abs/2606.29534
     sections: 2-3 and appendix
