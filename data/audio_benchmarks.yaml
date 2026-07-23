@@ -1830,6 +1830,56 @@ benchmarks:
       - https://huggingface.co/datasets/NJU-LINK/AVE-Compass/raw/main/README.md
       - https://huggingface.co/api/datasets/NJU-LINK/AVE-Compass
 
+  - id: friend_bench
+    name: Friend Bench
+    full_name: "Friend Bench: Social relationship recognition from thin-slice dyadic interactions"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_social_understanding
+    tasks:
+      - audio_visual_social_reasoning
+      - social_relationship_recognition
+      - familiar_stranger_classification
+      - multimodal_human_behavior_understanding
+      - paralinguistic_understanding
+    official:
+      dataset: https://huggingface.co/datasets/fluid-concepts/friend-bench
+      source_dataset: https://huggingface.co/datasets/facebook/seamless-interaction
+    download:
+      primary:
+        - https://huggingface.co/datasets/fluid-concepts/friend-bench
+      examples:
+        - 'scripts/download/friend_bench.sh'
+        - 'FRIEND_BENCH_DOWNLOAD_METADATA=1 scripts/download/friend_bench.sh'
+        - 'FRIEND_BENCH_DOWNLOAD_HF=1 scripts/download/friend_bench.sh'
+      notes: >-
+        The public, ungated validation release contains 96 approximately
+        20-second dyadic clips, balanced across familiar/stranger and
+        early/late conditions. Every item provides mixed audio, side-by-side
+        video, a turn-level transcript, and labels for binary familiarity and
+        six-way relationship type. It also releases anonymized human judgments
+        under audio-, video-, and text-only conditions. The helper downloads
+        the official card and API metadata by default. Set
+        FRIEND_BENCH_DOWNLOAD_METADATA=1 for the two lightweight JSONL tables,
+        or FRIEND_BENCH_DOWNLOAD_HF=1 for the complete approximately 433 MB
+        snapshot. The card says a label-held-out test split is planned but not
+        yet released, and currently provides no paper or citation.
+    license:
+      data: cc-by-nc-4.0
+      code: not_applicable
+      notes: >-
+        The dataset card declares CC BY-NC 4.0 and says the benchmark inherits
+        that license from Seamless Interaction. The release includes recorded
+        human interactions, transcripts, relationship labels, and anonymized
+        rater responses with bucketed demographic fields; users should retain
+        attribution, limit use to non-commercial purposes, and review the
+        source corpus's privacy, consent, biometric, and responsible-use terms.
+    sources:
+      - https://huggingface.co/datasets/fluid-concepts/friend-bench
+      - https://huggingface.co/datasets/fluid-concepts/friend-bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/fluid-concepts/friend-bench
+      - https://huggingface.co/datasets/facebook/seamless-interaction
+      - https://huggingface.co/datasets/facebook/seamless-interaction/raw/main/README.md
+
   - id: video_mme
     name: Video-MME
     full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"

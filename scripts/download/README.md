@@ -51,6 +51,7 @@ scripts/download/omnigaia.sh
 scripts/download/avscapbench.sh
 scripts/download/syncbench.sh
 scripts/download/ave_compass.sh
+scripts/download/friend_bench.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/lvomnibench.sh
@@ -363,6 +364,11 @@ SYNCBENCH_CLONE_REPO=1 scripts/download/syncbench.sh
 # annotations and the approximately 442 MB full snapshot are separate opt-ins.
 AVE_COMPASS_DOWNLOAD_METADATA=1 scripts/download/ave_compass.sh
 AVE_COMPASS_DOWNLOAD_HF=1 scripts/download/ave_compass.sh
+
+# Friend Bench downloads official docs/API metadata by default. The two JSONL
+# tables and approximately 433 MB full snapshot are separate opt-ins.
+FRIEND_BENCH_DOWNLOAD_METADATA=1 scripts/download/friend_bench.sh
+FRIEND_BENCH_DOWNLOAD_HF=1 scripts/download/friend_bench.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
