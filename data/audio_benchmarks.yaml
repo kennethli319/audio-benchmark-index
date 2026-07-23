@@ -1246,6 +1246,60 @@ benchmarks:
       - https://huggingface.co/datasets/NJU-LINK/AVSCapBench/raw/main/README.md
       - https://huggingface.co/api/datasets/NJU-LINK/AVSCapBench
 
+  - id: syncbench
+    name: SyncBench
+    full_name: "SyncBench: Causal-Semantic Audio-Visual Synchronization Evaluation for Generative Models"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_generation_evaluation
+    tasks:
+      - audio_visual_synchronization_evaluation
+      - audio_visual_generation_evaluation
+      - video_to_audio_evaluation
+      - causal_semantic_alignment
+    official:
+      homepage: https://chenhaoqcdyq.github.io/BeyondTimeShifts/
+      repo: https://github.com/chenhaoqcdyq/BeyondTimeShifts
+      dataset: https://huggingface.co/datasets/qianyijie/SyncBench
+      paper: https://arxiv.org/abs/2607.09091
+      arxiv_html: https://arxiv.org/html/2607.09091v1#S4.SS4
+    download:
+      primary:
+        - https://huggingface.co/datasets/qianyijie/SyncBench
+        - https://github.com/chenhaoqcdyq/BeyondTimeShifts
+      examples:
+        - 'scripts/download/syncbench.sh'
+        - 'SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh'
+        - 'SYNCBENCH_CLONE_REPO=1 scripts/download/syncbench.sh'
+      notes: >-
+        The public, ungated Hugging Face repository contains 1,185 generated
+        MP4s across six model directories plus two small evaluator-score JSON
+        files, and reports approximately 12.9 GB of repository storage. The
+        paper's section 4.4 defines SyncBench as 185 curated prompts across five
+        audio-visual domains, while the current release has up to 200 numbered
+        clips per model and does not include a dataset card or prompt manifest.
+        The helper downloads official documentation, repository metadata,
+        Hugging Face metadata, and the two lightweight score files by default;
+        all videos require SYNCBENCH_DOWNLOAD_HF=1.
+    license:
+      data: not_specified
+      code: MIT
+      notes: >-
+        The official code repository is MIT, but the Hugging Face dataset has
+        no card, license tag, or license file. The paper is CC BY 4.0, which
+        does not license the released generated videos or prompts. Model-output
+        provider terms and any rights in prompt/source content may also apply;
+        obtain clarification before redistribution or commercial use.
+    sources:
+      - https://chenhaoqcdyq.github.io/BeyondTimeShifts/
+      - https://arxiv.org/abs/2607.09091
+      - https://arxiv.org/html/2607.09091v1#S4.SS4
+      - https://github.com/chenhaoqcdyq/BeyondTimeShifts
+      - https://raw.githubusercontent.com/chenhaoqcdyq/BeyondTimeShifts/main/README.md
+      - https://raw.githubusercontent.com/chenhaoqcdyq/BeyondTimeShifts/main/LICENSE
+      - https://api.github.com/repos/chenhaoqcdyq/BeyondTimeShifts
+      - https://huggingface.co/datasets/qianyijie/SyncBench
+      - https://huggingface.co/api/datasets/qianyijie/SyncBench
+
   - id: video_mme
     name: Video-MME
     full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"

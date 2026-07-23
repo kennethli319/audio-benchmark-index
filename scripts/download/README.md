@@ -46,6 +46,7 @@ scripts/download/av_speakerbench.sh
 scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/avscapbench.sh
+scripts/download/syncbench.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/superb.sh
@@ -287,6 +288,10 @@ SALMON_DOWNLOAD_HF=1 scripts/download/salmon.sh
 
 # Audio Agent Bench Suite downloads six component cards/API records by default; the ~209 MB snapshots are opt-in.
 AUDIO_AGENT_BENCH_DOWNLOAD_HF=1 scripts/download/audio_agent_bench_suite.sh
+
+# SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
+SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh
+SYNCBENCH_CLONE_REPO=1 scripts/download/syncbench.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh

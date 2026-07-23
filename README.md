@@ -19,6 +19,7 @@ verification anti-spoofing, speaker diarization, target-speaker extraction,
 music synthesis, speech quality
 assessment, child-speech recognition, spatial audio localization, cross-modal audio-video-text retrieval,
 audio-visual segmentation, audio-visual speech recognition,
+causal-semantic audio-visual synchronization evaluation,
 spoken digit classification,
 instruction-based speech editing, human-preference evaluation of synthesized speech, and
 few-shot robustness under foreground/background shifts, few-shot bioacoustic
@@ -39,7 +40,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 192 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 193 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -163,6 +164,7 @@ Current coverage includes:
 | [OmniGAIA](https://github.com/RUC-NLPIR/OmniGAIA) | Omni-modal agent reasoning and tool use | Public, ungated [RUC-NLPIR/OmniGAIA](https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA) with 360 audio/image/video tasks; helper downloads docs and lightweight test metadata by default and makes the approximately 9.9 GB media snapshot opt-in | HF card declares Apache-2.0 and code is MIT; verify terms for component media curated from multiple upstream datasets |
 | [Omni-Cloze](https://github.com/ddlBoJack/Omni-Captioner) | Detailed audio, visual, and audio-visual captioning | Public, ungated [BoJack/Omni-Cloze](https://huggingface.co/datasets/BoJack/Omni-Cloze) with 2,320 audio-visual items and about 70,000 cloze blanks; helper downloads docs and evaluation scripts by default, with metadata and the multi-GB media snapshot as separate opt-ins | No data or code license is stated; source-media provenance and reuse terms are undocumented, so clarify rights before redistribution or commercial use |
 | [AVSCapBench](https://nju-link.github.io/AVSCap/) | Omni-modal audio-visual video captioning and event binding | Public, ungated [NJU-LINK/AVSCapBench](https://huggingface.co/datasets/NJU-LINK/AVSCapBench) with 1,226 clips, dense captions, and visual, speech, music, SFX, and synergy events; helper downloads docs by default and makes the approximately 19.6 GB snapshot opt-in | Card/README declare CC BY-NC-SA 4.0, while the paper describes academic-research-only use; source YouTube, TikTok, and Video-MME media rights still apply |
+| [SyncBench](https://chenhaoqcdyq.github.io/BeyondTimeShifts/) | Causal-semantic audio-visual synchronization evaluation for generative models | Public, ungated [qianyijie/SyncBench](https://huggingface.co/datasets/qianyijie/SyncBench) with 1,185 generated clips and evaluator scores; helper fetches docs, metadata, and small score JSONs by default while the approximately 12.9 GB media snapshot is opt-in | Dataset license is unspecified; the paper's CC BY 4.0 and repository's MIT license do not establish rights for generated videos or prompts |
 | [Video-MME](https://video-mme.github.io/) | Audio-enabled video question answering and long-video understanding | Public, ungated [lmms-lab/Video-MME](https://huggingface.co/datasets/lmms-lab/Video-MME) with 900 videos and 2,700 QA pairs; Qwen3.5-Omni evaluates it with audio enabled; helper downloads docs by default and requires explicit terms acknowledgment before the approximately 389 GB snapshot | Custom academic-research-only terms prohibit commercial use and, without approval, redistribution, publication, copying, dissemination, or modification; video rights remain with owners |
 | [OmniRetriever-Bench](https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench) | 12-direction audio-video-text retrieval | Public, ungated CSV with 3,782 held-out triples, source URLs, clip intervals, and human-corrected English captions; helper downloads the sub-1 MB annotations and official docs, while users obtain source media separately | HF card labels annotations Apache-2.0 but adds a biometric-identification/profiling/surveillance prohibition and the paper calls it custom research-use; TikTok media stays under uploader/platform terms; evaluator code has no stated license |
 | [AVSBench](https://opennlplab.github.io/AVSBench/) | Audio-visual segmentation and sounding-object localization | Official project/repository for S4, MS3, and semantic AVSS evaluation; original object annotations are publicly linked on Google Drive, while processed media and the updated object/semantic release require the official email/application path; helper downloads docs only | Project page licenses its published dataset under CC BY-NC 4.0 and repository code is Apache-2.0; underlying YouTube videos retain uploader/platform terms, and applicants should review any additional updated-release conditions |
