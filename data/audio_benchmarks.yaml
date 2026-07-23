@@ -9068,3 +9068,65 @@ benchmarks:
       - https://huggingface.co/datasets/ayj111/openstbench-paired-set
       - https://huggingface.co/datasets/ayj111/openstbench-paired-set/raw/main/README.md
       - https://huggingface.co/api/datasets/ayj111/openstbench-paired-set
+
+  - id: halas
+    name: HALAS
+    full_name: "HALAS: A Human-Annotated Dataset of Hallucinations of Modern ASR Systems"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - asr_hallucination_detection
+      - asr_error_analysis
+      - span_level_error_detection
+      - reference_transcript_correction
+    official:
+      paper: https://arxiv.org/abs/2606.23048
+      repo: https://github.com/DSP-AGH/HALAS
+      dataset: https://huggingface.co/datasets/MatBar99/HALAS
+      source_audio: https://github.com/revdotcom/speech-datasets/tree/main/earnings22
+    download:
+      primary:
+        - https://github.com/DSP-AGH/HALAS
+        - https://huggingface.co/datasets/MatBar99/HALAS
+      examples:
+        - 'scripts/download/halas.sh'
+        - 'HALAS_DOWNLOAD_TEST=1 scripts/download/halas.sh'
+        - 'HALAS_DOWNLOAD_HF=1 scripts/download/halas.sh'
+      notes: >-
+        The public, ungated release contains human-reviewed predictions from
+        seven ASR systems for 3,611 English Earnings-22 segments, with
+        utterance labels and character-span annotations for hallucination,
+        looping, and hallucinated looping. Meeting-disjoint stratified splits
+        contain 2,866 train and 745 test segments; the test split has a 22.6%
+        hallucination rate and excludes audio at or below one second or below
+        three words. The release contains annotations, predictions, corrected
+        references, and source identifiers rather than redistributed audio;
+        audio must be obtained separately from Earnings-22. The helper
+        downloads official documentation, prompts, and repository metadata by
+        default. The approximately 0.86 MB test CSV is opt-in, while the full
+        approximately 7.2 MB Hugging Face snapshot requires
+        HALAS_DOWNLOAD_HF=1.
+    license:
+      data: unknown_with_cc-by-sa-4.0_upstream
+      code: not_specified
+      notes: >-
+        The Hugging Face card's machine-readable license field is "unknown,"
+        and neither the GitHub nor Hugging Face release includes a standalone
+        license file. The card says HALAS derives from CC BY-SA 4.0
+        Earnings-22 and describes the authors' annotations as intended for the
+        same license unless otherwise specified, but it also tells users to
+        consult the repository for authoritative terms. Treat annotation and
+        code rights as unspecified pending an explicit license; Earnings-22
+        source terms continue to apply to separately obtained audio.
+    sources:
+      - https://arxiv.org/abs/2606.23048
+      - https://arxiv.org/html/2606.23048v1#S3
+      - https://github.com/DSP-AGH/HALAS
+      - https://raw.githubusercontent.com/DSP-AGH/HALAS/main/README.md
+      - https://api.github.com/repos/DSP-AGH/HALAS
+      - https://api.github.com/repos/DSP-AGH/HALAS/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/MatBar99/HALAS
+      - https://huggingface.co/datasets/MatBar99/HALAS/raw/main/README.md
+      - https://huggingface.co/api/datasets/MatBar99/HALAS
+      - https://github.com/revdotcom/speech-datasets/tree/main/earnings22

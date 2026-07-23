@@ -102,6 +102,7 @@ scripts/download/covost2.sh
 scripts/download/openstbench.sh
 scripts/download/earnings_22.sh
 scripts/download/earnings_21.sh
+scripts/download/halas.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
