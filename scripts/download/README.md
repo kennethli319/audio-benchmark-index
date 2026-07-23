@@ -27,6 +27,7 @@ scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/mmau_pro.sh
+scripts/download/mugen.sh
 scripts/download/escucha.sh
 scripts/download/msu_bench.sh
 scripts/download/korean_speechlm_benchmarks.sh

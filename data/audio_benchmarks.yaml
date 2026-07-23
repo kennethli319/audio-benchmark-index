@@ -416,6 +416,49 @@ benchmarks:
       - https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro/raw/main/README.md
       - https://huggingface.co/api/datasets/gamma-lab-umd/MMAU-Pro
 
+  - id: mugen
+    name: MUGEN
+    full_name: "MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - multi_audio_understanding
+      - audio_grounding
+      - speech_understanding
+      - speaker_and_demographic_understanding
+      - paralinguistic_understanding
+      - temporal_audio_reasoning
+      - acoustic_scene_and_event_analysis
+      - music_understanding
+      - compositional_audio_reasoning
+    official:
+      repo: https://github.com/danielqwer/MUGEN
+      paper: https://arxiv.org/abs/2603.09714
+      dataset_collection: https://huggingface.co/MUGEN-Benchmark
+    download:
+      primary:
+        - https://huggingface.co/MUGEN-Benchmark
+        - https://github.com/danielqwer/MUGEN
+      examples:
+        - 'scripts/download/mugen.sh'
+        - 'MUGEN_DOWNLOAD_TASK=Keyword_Spotting scripts/download/mugen.sh'
+      notes: The public, ungated release provides 35 separate Hugging Face task repositories with 1,750 five-way audio-grounding problems and 9,250 audio clips across seven dimensions. Ten tasks add a reference clip, producing six concurrent audio inputs. The helper downloads official documentation, repository metadata, the license, and the Hugging Face collection inventory by default; set MUGEN_DOWNLOAD_TASK to one of the documented task names to explicitly download that task. The current cards report about 10.7 GB of compressed files across all task repositories and also expose reduced-candidate splits for input-scaling analysis.
+    license:
+      data: not_specified_with_mixed_upstream_terms
+      code: MIT
+      notes: The 35 Hugging Face dataset cards do not declare a data license. The repository's MIT license identifies its subject as software and associated documentation, so it should not be assumed to relicense embedded audio. The paper describes public corpora, specialized academic corpora, Mozilla Data Collective speech, and synthesized speech as sources; review each task's upstream corpus and generation terms before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2603.09714
+      - https://arxiv.org/html/2603.09714v1#S2
+      - https://github.com/danielqwer/MUGEN
+      - https://raw.githubusercontent.com/danielqwer/MUGEN/main/README.md
+      - https://raw.githubusercontent.com/danielqwer/MUGEN/main/data/README.md
+      - https://raw.githubusercontent.com/danielqwer/MUGEN/main/evaluation/README.md
+      - https://raw.githubusercontent.com/danielqwer/MUGEN/main/LICENSE
+      - https://api.github.com/repos/danielqwer/MUGEN
+      - https://huggingface.co/MUGEN-Benchmark
+      - https://huggingface.co/api/datasets?author=MUGEN-Benchmark&limit=100&full=true
+
   - id: escucha
     name: ESCUCHA
     full_name: "ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions"
