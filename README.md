@@ -93,6 +93,18 @@ robustness sets as private, while no public item release was found for its TTS,
 speech-to-speech, or speech-understanding protocols, so RW-Voice-EQ is recorded
 in the YAML audit rather than counted as a downloadable benchmark family.
 
+The June 2026 Preference-ASR paper is also recorded as an audited protocol,
+not a downloadable family. It describes 3,210 English preference-aware ASR
+triples plus 335 standard items across normalization, entities, disfluencies,
+and case. The official
+[companion repository](https://github.com/nithinraok/preference-asr-bench)
+contains evaluation and source-corpus reconstruction code but no benchmark
+JSONL or audio, while its linked
+[Hugging Face dataset](https://huggingface.co/datasets/nvidia/preference-asr-bench)
+currently returns HTTP 401 to unauthenticated requests. The repository states
+CC BY-SA 4.0 for author-created annotations and Apache-2.0 for code, but the
+seven source corpora retain mixed open, gated, and research-only terms.
+
 The July 2026 MeetingToM paper is likewise recorded as an announced protocol,
 not a downloadable family. It describes 1,800 synchronized audiovisual AMI
 meeting clips for mental-state, referential, and consensus reasoning, but its

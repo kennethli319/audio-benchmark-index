@@ -175,6 +175,34 @@ paper_audits:
         note: Section 7.2 explicitly calls all four ASR sets private. They total roughly 17 hours; public online video and Hume-DaiKon are source descriptions, not public benchmark downloads.
     note: The public Hugging Face Spaces expose leaderboards and application code, not benchmark audio or item files. RW-Voice-EQ is therefore recorded as an audited protocol rather than a downloadable benchmark family; no data link should be inferred from the public leaderboards.
 
+  preference_asr:
+    paper: https://arxiv.org/abs/2606.29534
+    sections: 2-3 and appendix
+    status: audited_not_indexed
+    public_interfaces:
+      - https://github.com/nithinraok/preference-asr-bench
+      - https://huggingface.co/datasets/nvidia/preference-asr-bench
+    evaluated_domains:
+      - domain: preference_aware_automatic_speech_recognition
+        protocol: 3,210 English audio-instruction-reference triples plus 335 standard baseline items, derived from seven source corpora and covering normalization, entities, disfluencies, and case
+        data_status: official_dataset_endpoint_unavailable
+        note: The paper reports a two-stage LLM-assisted construction pipeline followed by human verification. Its official Hugging Face dataset endpoint currently returns HTTP 401 to unauthenticated requests, while the public companion repository contains evaluation and audio-reconstruction code but no benchmark JSONL or audio.
+    license:
+      paper: CC BY 4.0
+      annotations: CC BY-SA 4.0 according to the companion repository license
+      code: Apache-2.0
+      upstream: LibriSpeech and AMI are CC BY 4.0; Common Voice and VoxPopuli are CC0; Earnings-22 is CC BY-SA 4.0; GigaSpeech requires its agreement; SPGISpeech is gated for academic research and internal use
+    sources:
+      - https://arxiv.org/html/2606.29534#S2
+      - https://arxiv.org/html/2606.29534#S3
+      - https://github.com/nithinraok/preference-asr-bench
+      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/README.md
+      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/LICENSE
+      - https://api.github.com/repos/nithinraok/preference-asr-bench
+      - https://api.github.com/repos/nithinraok/preference-asr-bench/git/trees/master?recursive=1
+      - https://huggingface.co/datasets/nvidia/preference-asr-bench
+    note: Preference-ASR is recorded as an audited protocol rather than a downloadable benchmark family. The paper and repository describe a public Hugging Face release, but that endpoint is currently inaccessible without credentials and exposes no verifiable public dataset card or files. The GitHub repository licenses author-created annotations and provides code to reconstruct audio from seven upstream corpora, but its current tree does not include the referenced data/preference_asr_testset.jsonl. Recheck the official dataset endpoint before adding an indexed family or helper.
+
   meetingtom:
     paper: https://arxiv.org/abs/2607.19235
     sections: 3 and appendices B and G
