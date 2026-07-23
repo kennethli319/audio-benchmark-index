@@ -167,6 +167,17 @@ but v1 provides no official project, repository, dataset card, archive, item
 file, or evaluation-code link. The paper's CC BY 4.0 license does not release
 its prompts, reference assets, metric routing, judge prompts, or implementation.
 
+The July 2026 PC-Mix paper is recorded as an audited partial-component audio
+spoofing benchmark rather than a downloadable family. It describes 126,586
+mixed-audio recordings (140.65 hours) with speech and environmental-sound
+authenticity labels and five evaluation conditions, but its sole official
+[anonymous repository](https://anonymous.4open.science/r/PC-Mix-3AFE/)
+currently redirects to an API response of HTTP 401 `not_connected`. No files,
+manifest, license, or alternative official release can be verified, so the
+paper's claim of a public code/data release is not treated as a usable download.
+The mixed source corpora and generated components would also retain their own
+terms if the release becomes available.
+
 ## Coverage
 
 Current coverage includes:

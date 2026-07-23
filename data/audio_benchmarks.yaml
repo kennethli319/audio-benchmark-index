@@ -393,6 +393,30 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2604.10580
     note: The v1 paper says that CAST, its evaluation framework, construction pipeline, and synthetic training corpus are released, but it provides no project page, repository, dataset card, archive, item file, or code URL. Searches of the official GitHub repository API and Hugging Face dataset API by the canonical title and benchmark name found no release on 2026-07-22. CAST is therefore recorded as an audited protocol rather than a downloadable benchmark family; the paper's CC BY 4.0 license does not establish terms for absent benchmark or corpus files.
 
+  pc_mix:
+    paper: https://arxiv.org/abs/2607.10345
+    sections: 2-4
+    status: audited_not_indexed
+    public_interfaces:
+      - https://anonymous.4open.science/r/PC-Mix-3AFE/
+    evaluated_domains:
+      - domain: partial_component_audio_spoofing_detection
+        protocol: 126,586 16 kHz mixed-audio recordings totaling 140.65 hours, with utterance- and frame-level authenticity labels for speech and environmental-sound components, an original-versus-constructed-mix label, and five in-domain and domain-shift evaluation subsets
+        data_status: claimed_public_endpoint_unavailable
+        note: The paper reports 37,535 training and 89,051 evaluation recordings. Evaluation subsets E0-E4 cover in-domain conditions plus generator, fusion, background, and noise shifts; segment labels are described at 40, 80, 160, 320, and 640 ms resolutions.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unavailable
+      code: not_specified_unavailable
+      upstream: PartialSpoof, VGGSound, Santa Barbara Corpus, SONYC, UrbanSound8K, FSD50K, DEMAND, and WHAM! terms apply to source recordings; AudioLDM 2 and AudioGen output and model terms also require review
+    sources:
+      - https://arxiv.org/html/2607.10345v1#S2
+      - https://arxiv.org/html/2607.10345v1#S3
+      - https://arxiv.org/html/2607.10345v1#S4
+      - https://anonymous.4open.science/r/PC-Mix-3AFE/
+      - https://export.arxiv.org/api/query?id_list=2607.10345
+    note: The v1 paper says that the source code and dataset are publicly released through an anonymous 4open.science repository, but on 2026-07-23 that official URL redirects to its repository API and returns HTTP 401 with "not_connected." No files, manifest, README, license, or alternative official release can therefore be verified. PC-Mix is recorded as an audited announced benchmark rather than a downloadable family; recheck the official endpoint after deanonymization or restoration before adding an indexed entry or helper.
+
 benchmarks:
   - id: mmau
     name: MMAU
