@@ -6085,6 +6085,59 @@ benchmarks:
       - https://raw.githubusercontent.com/saniajmi/SpEmoC-ECCV2026/main/README.md
       - https://api.github.com/repos/saniajmi/SpEmoC-ECCV2026
 
+  - id: incaremo
+    name: InCarEmo
+    full_name: "InCarEmo: A Multimodal Dataset for In-Cabin Emotion Recognition and Driver State Monitoring"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+    tasks:
+      - speech_emotion_recognition
+      - multimodal_emotion_recognition
+      - fatigue_detection
+      - driver_distraction_monitoring
+      - cross_lingual_emotion_recognition
+    official:
+      repo: https://github.com/zkw52/InCarEmo
+      dataset: https://drive.google.com/drive/folders/1YlwzDLG45BA3oIrOrjdCaIV9dHOPKtL5
+      paper: https://arxiv.org/abs/2607.14683
+      arxiv_html: https://arxiv.org/html/2607.14683v1
+    download:
+      primary:
+        - https://github.com/zkw52/InCarEmo
+        - https://drive.google.com/drive/folders/1YlwzDLG45BA3oIrOrjdCaIV9dHOPKtL5
+      examples:
+        - 'scripts/download/incaremo.sh'
+      notes: >-
+        The paper describes synchronized Chinese RGB and infrared video,
+        in-cabin audio, and dialogue text from 25 participants, with six
+        emotion classes plus fatigue and distraction labels. It also defines
+        an auxiliary English setting using translated text and synthesized
+        English speech. Because of participant privacy, the official repository
+        releases the dataset only as feature-level data through a public Google
+        Drive folder, not as raw audio or video. The helper saves the public
+        repository and paper metadata, then prints the manual Drive step; it
+        does not download participant data.
+    license:
+      data: custom_non_commercial_academic_research
+      code: not_specified
+      notes: >-
+        The paper states that InCarEmo is licensed for non-commercial academic
+        research and use, but neither the official repository nor linked Drive
+        landing page provides a full license text. The repository contains no
+        LICENSE file and no released code at the time checked. ArXiv's CC BY
+        4.0 license covers the paper, not the feature data.
+    sources:
+      - https://arxiv.org/abs/2607.14683
+      - https://arxiv.org/html/2607.14683v1#S3
+      - https://arxiv.org/html/2607.14683v1#S4
+      - https://arxiv.org/html/2607.14683v1#Sx1
+      - https://github.com/zkw52/InCarEmo
+      - https://raw.githubusercontent.com/zkw52/InCarEmo/main/readme
+      - https://api.github.com/repos/zkw52/InCarEmo
+      - https://drive.google.com/drive/folders/1YlwzDLG45BA3oIrOrjdCaIV9dHOPKtL5
+
   - id: emoprefer
     name: EmoPrefer
     full_name: "EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?"

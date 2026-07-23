@@ -28,7 +28,7 @@ event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
-and multimodal speaker-segment emotion recognition, as well as multi-turn voice-agent
+and multimodal speaker-segment and in-cabin driver emotion recognition, as well as multi-turn voice-agent
 tool use, grounding, state tracking, conversational memory, and context-aware
 turn-taking decisions.
 The index also covers likelihood-based acoustic consistency and semantic-acoustic
@@ -42,7 +42,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-22. Current index size: 202 distinct benchmarks
+Last checked: 2026-07-22. Current index size: 203 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
