@@ -103,6 +103,14 @@ evaluation code and dataset will be released soon, while the official
 contains only README metadata and no dataset files. Its MIT card tag therefore
 does not establish reuse rights for the unreleased benchmark or source videos.
 
+The July 2026 MultiRef-Compass paper is also recorded as an audited protocol,
+not a downloadable family. It defines 350 multi-reference audio-video
+generation samples and a 14-sub-metric evaluation across basic quality,
+reference consistency, audio-visual consistency, and instruction following,
+but v1 provides no official project, repository, dataset card, archive, item
+file, or evaluation-code link. The paper's CC BY 4.0 license does not release
+its prompts, reference assets, metric routing, judge prompts, or implementation.
+
 ## Coverage
 
 Current coverage includes:

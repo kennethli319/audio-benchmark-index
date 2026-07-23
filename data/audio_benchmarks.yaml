@@ -250,6 +250,27 @@ paper_audits:
       - https://huggingface.co/api/datasets/coming245/AV-SyncBench
     note: The paper and project page say that code and data are available, but the official GitHub README says they "will be released soon" and the public Hugging Face repository contains only README metadata with zero bytes of dataset storage. AV-SyncBench is therefore recorded as an audited announced protocol rather than a downloadable benchmark family; the card's MIT tag must not be treated as licensing unreleased or third-party source videos.
 
+  multiref_compass:
+    paper: https://arxiv.org/abs/2607.14189
+    sections: abstract, 1, 3, and appendix B
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: multi_reference_audio_video_generation
+        protocol: 350 curated samples across multi-view subject preservation, heterogeneous reference composition, multi-entity binding, and audio-video reference-input challenges, scored with 14 sub-metrics under four evaluation dimensions
+        data_status: no_public_release_found
+        note: The benchmark uses image, video, and audio references plus text instructions and combines automatic metrics with a rejudging-enhanced MLLM-as-a-Judge protocol, but the paper provides no project, repository, dataset card, archive, item file, or evaluation-code link.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unreleased
+      upstream: The paper describes Pexels and Freesound assets plus generated images and voices; their source-specific terms would remain relevant to any future release
+    sources:
+      - https://arxiv.org/html/2607.14189v1
+      - https://arxiv.org/html/2607.14189v1#Sx3
+      - https://arxiv.org/html/2607.14189v1#A2
+      - https://export.arxiv.org/api/query?id_list=2607.14189
+    note: MultiRef-Compass is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper and arXiv metadata expose no official data or code interface, so its 350 prompts, reference assets, metric routing, judge prompts, and evaluation implementation must not be inferred to be public from the paper's CC BY 4.0 license or its descriptions of permissively licensed source assets.
+
 benchmarks:
   - id: mmau
     name: MMAU
