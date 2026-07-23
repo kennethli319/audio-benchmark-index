@@ -495,6 +495,54 @@ benchmarks:
       - https://arxiv.org/abs/2607.17812
       - https://arxiv.org/html/2607.17812v1#S2
 
+  - id: ghana_speech_eval
+    name: Ghana Speech Eval
+    full_name: "Ghana Speech Eval: ASR Evaluation for 10 Ghanaian Languages"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - multilingual_speech_recognition
+      - low_resource_speech_recognition
+      - african_language_speech_recognition
+    official:
+      dataset: https://huggingface.co/datasets/ghananlpcommunity/ghana-speech-eval
+      source_dataset: https://huggingface.co/datasets/AfriSpeech/african-speech-public_v1
+    download:
+      primary:
+        - https://huggingface.co/datasets/ghananlpcommunity/ghana-speech-eval
+      examples:
+        - 'scripts/download/ghana_speech_eval.sh'
+        - 'GHANA_SPEECH_EVAL_DOWNLOAD_HF=1 scripts/download/ghana_speech_eval.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("ghananlpcommunity/ghana-speech-eval", "twi_twi", split="train")'
+      notes: >-
+        The public, ungated release contains 9,967 read-speech clips with
+        verbatim transcripts across Ahanta, Dagaare, Dangme, Ewe, Fante,
+        Frafra/Gurene, Ga, Nzema, Sehwi, and Twi. It samples up to 1,000
+        clips per language from AfriSpeech's public African speech corpus,
+        merges the source splits into one evaluation split, and filters clips
+        to 3-15 seconds. The card explicitly reserves the fixed set for ASR
+        evaluation rather than training. The helper downloads official cards
+        and API metadata by default; the approximately 594 MB compressed
+        benchmark snapshot requires GHANA_SPEECH_EVAL_DOWNLOAD_HF=1.
+    license:
+      data: CC-BY-4.0_claim_with_unresolved_upstream_terms
+      code: not_applicable
+      notes: >-
+        The Ghana Speech Eval card declares CC BY 4.0 and says this follows
+        the source dataset. However, the current AfriSpeech public-v1 card and
+        API metadata do not state a repository-level license. Preserve
+        attribution, review the original collection and speaker-consent terms,
+        and confirm upstream reuse rights before redistribution or commercial
+        use.
+    sources:
+      - https://huggingface.co/datasets/ghananlpcommunity/ghana-speech-eval
+      - https://huggingface.co/datasets/ghananlpcommunity/ghana-speech-eval/raw/main/README.md
+      - https://huggingface.co/api/datasets/ghananlpcommunity/ghana-speech-eval
+      - https://huggingface.co/datasets/AfriSpeech/african-speech-public_v1
+      - https://huggingface.co/datasets/AfriSpeech/african-speech-public_v1/raw/main/README.md
+      - https://huggingface.co/api/datasets/AfriSpeech/african-speech-public_v1
+
   - id: msu_bench
     name: MSU-Bench
     full_name: "MSU-Bench: Towards Speaker-Centric Understanding in Conversational Multi-Speaker Scenarios"

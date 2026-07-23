@@ -29,6 +29,7 @@ scripts/download/mmsu.sh
 scripts/download/mmau_pro.sh
 scripts/download/mugen.sh
 scripts/download/escucha.sh
+scripts/download/ghana_speech_eval.sh
 scripts/download/msu_bench.sh
 scripts/download/korean_speechlm_benchmarks.sh
 scripts/download/salmon.sh
@@ -243,6 +244,10 @@ scripts/download/fsd50k.sh
 # It does not download the URL-referenced source recordings.
 scripts/download/escucha.sh
 ESCUCHA_CLONE_REPO=1 scripts/download/escucha.sh
+
+# Ghana Speech Eval downloads official cards and API metadata by default.
+# The approximately 594 MB compressed benchmark snapshot is opt-in.
+GHANA_SPEECH_EVAL_DOWNLOAD_HF=1 scripts/download/ghana_speech_eval.sh
 
 # FLEURS defaults to en_us. Use another locale or all.
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
