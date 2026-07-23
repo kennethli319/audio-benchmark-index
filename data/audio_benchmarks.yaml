@@ -2890,6 +2890,36 @@ benchmarks:
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5
 
+  - id: rapidata_tts_preference
+    name: Text to Audio Human Preference Benchmark
+    full_name: Rapidata Text to Audio Human Preference Benchmark
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - text_to_speech_evaluation
+      - human_preference_evaluation
+      - speech_naturalness_evaluation
+      - speech_friendliness_evaluation
+    official:
+      dataset: https://huggingface.co/datasets/Rapidata/text-2-audio-human-preference-benchmark
+      leaderboard: https://app.rapidata.ai/mri/benchmarks/68ebcd86bd00d9b672b98995
+    download:
+      primary:
+        - https://huggingface.co/datasets/Rapidata/text-2-audio-human-preference-benchmark
+      examples:
+        - 'scripts/download/rapidata_tts_preference.sh'
+        - 'RAPIDATA_TTS_PREFERENCE_DOWNLOAD_HF=1 scripts/download/rapidata_tts_preference.sh'
+      notes: The public, ungated release contains 4,269 pairwise comparison rows and about 32,000 human responses judging generated voices for friendliness and naturalness. It stores audio references as strings rather than embedding audio. The helper downloads the dataset card and API metadata by default; the approximately 0.8 MB repository snapshot is opt-in.
+    license:
+      data: not_specified
+      code: not_applicable
+      notes: The official dataset card and Hugging Face API declare no license. The rows include model labels, aggregate scores, individual votes, and annotator demographic fields; public access does not imply permission to redistribute or reuse those records, audio references, or generated outputs.
+    sources:
+      - https://huggingface.co/datasets/Rapidata/text-2-audio-human-preference-benchmark
+      - https://huggingface.co/datasets/Rapidata/text-2-audio-human-preference-benchmark/raw/main/README.md
+      - https://huggingface.co/api/datasets/Rapidata/text-2-audio-human-preference-benchmark
+      - https://app.rapidata.ai/mri/benchmarks/68ebcd86bd00d9b672b98995
+
   - id: libritts
     name: LibriTTS
     full_name: "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"

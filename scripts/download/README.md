@@ -71,6 +71,7 @@ scripts/download/tedx_spanish.sh
 scripts/download/seed_tts_eval.sh
 scripts/download/instruct_tts_eval.sh
 scripts/download/tts_multilingual_test_set.sh
+scripts/download/rapidata_tts_preference.sh
 scripts/download/mmgenre.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
