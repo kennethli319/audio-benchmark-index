@@ -3347,6 +3347,41 @@ benchmarks:
       - https://catalog.ldc.upenn.edu/LDC2005S13
       - https://catalog.ldc.upenn.edu/LDC2005T19
 
+  - id: jasmin_cgn
+    name: JASMIN-CGN
+    full_name: "JASMIN-CGN: Extension of the Spoken Dutch Corpus with Speech of Elderly People, Children and Non-Natives"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - child_speech_recognition
+      - accented_speech_recognition
+      - non_native_speech_recognition
+      - elderly_speech_recognition
+      - demographic_robustness
+      - human_machine_dialogue
+    official:
+      dataset: https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
+      persistent_id: http://hdl.handle.net/10032/tm-a2-j7
+      paper: https://repository.ubn.ru.nl/bitstream/handle/2066/42432/42432.pdf
+      recent_evaluation: https://arxiv.org/abs/2607.19049
+    download:
+      primary:
+        - https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
+      examples:
+        - 'scripts/download/jasmin_cgn.sh'
+      notes: The Dutch Language Institute distributes the approximately 115-hour Dutch/Flemish speech corpus after account login and a signed license agreement. Its official page says the corpus contains read speech and human-machine dialogues from adolescents, non-native speakers, and seniors, with WAV audio plus TXT and TextGrid annotations. The helper prints the official access steps only; it does not bypass login or download corpus audio. The 2026 evaluation paper selects 120 human-machine-interaction test utterances from children, older adults, and Flemish speakers and also reports ASR results on the full corresponding test sets.
+    license:
+      data: custom_signed_license_noncommercial
+      code: not_applicable
+      notes: The official non-commercial product is free but requires a signed license and account login; the owner page directs commercial users to a separate commercial product. Review the current agreement before use or redistribution.
+    sources:
+      - https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
+      - http://hdl.handle.net/10032/tm-a2-j7
+      - https://repository.ubn.ru.nl/bitstream/handle/2066/42432/42432.pdf
+      - https://arxiv.org/html/2607.19049v1#S2.SS1
+      - https://arxiv.org/html/2607.19049v1#S3.SS5
+
   - id: mls
     name: MLS
     full_name: "MLS: A Large-Scale Multilingual Dataset for Speech Research"

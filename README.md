@@ -43,7 +43,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 206 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 207 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -265,6 +265,7 @@ Current coverage includes:
 | [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/) | ASR and accented speech | Official TAMU corpus page and documentation; access requires accepting license terms and submitting the download form to receive a generated Google Drive link by email | CC BY-NC 4.0; current release has 24 non-native English speakers plus suitcase-corpus material, while the Interspeech 2018 paper describes v1.0 |
 | [GigaSpeechBench](https://github.com/SpeechColab/GigaSpeechBench) | Multilingual in-the-wild ASR, speech translation, accents, dialects, terminology, and age variation | Public, ungated [speechcolab/GigaSpeechBench](https://huggingface.co/datasets/speechcolab/GigaSpeechBench); the current ~86.3 GB release exposes low-resource-language, Chinese-dialect/English-accent, and vertical-domain modules, while the paper-described age module is not yet visible; helper downloads docs/metadata by default and makes the full snapshot opt-in | No data or code license is declared; public access does not establish redistribution or commercial-use rights |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
+| [JASMIN-CGN](https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/) | Diverse Dutch/Flemish ASR and demographic robustness | Official Dutch Language Institute release with approximately 115 hours of read speech and human-machine dialogues from adolescents, non-native speakers, and seniors; free non-commercial access requires login and a signed license, and the helper prints the official steps only | Custom signed non-commercial license; commercial users are directed to a separate product, so review the current agreement before use or redistribution |
 | [LibriSpeech](https://www.openslr.org/12) | ASR and speech-codec reconstruction | OpenSLR SLR12 metadata/checksums by default, opt-in archives, or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr); Qwen3-TTS §4.1.2 uses all 2,620 `test-clean` utterances | CC BY 4.0 |
 | [Whisper-RIR-Mega](https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench) | Paired clean/reverberant ASR robustness | Public, ungated 2,000-pair English benchmark with 400 validation and 1,600 test pairs; helper downloads docs and lightweight leaderboard metadata by default and makes the approximately 1.13 GB snapshot opt-in | Dataset card says CC BY 4.0, but the RIR-Mega source audio is CC BY-NC 4.0, so apply the stricter non-commercial upstream terms; cited code repository was unavailable when checked |
 | [Libri-Light](https://github.com/facebookresearch/libri-light) | ASR and self-supervised speech representation | Official repository docs and Meta public-file archives; helper downloads docs by default and makes 0.6 GiB finetuning, ABX, and 35 GiB to 3.05 TiB unlabeled archives opt-in | Code is MIT; reviewed docs do not state a standalone data license, and audio comes from open-source LibriVox audiobooks with source-term/attribution caution |
@@ -731,6 +732,7 @@ Form/password gated datasets:
 - MSP-Podcast: have an authorized institutional representative sign the official academic data-transfer agreement and send it to Prof. Carlos Busso as directed on the owner page.
 - TIMIT: license the corpus through LDC catalog LDC93S1 or LDC93S1W, then use the LDC web download flow; the helper prints official access pointers only.
 - Fisher English: license the four LDC catalog releases for speech/transcripts parts 1 and 2, then use the LDC web download flow; the helper prints official access pointers only.
+- JASMIN-CGN: create an account on the Dutch Language Institute product page, download and sign the supplied non-commercial license, and follow its ordering instructions; the helper prints official access pointers only.
 
 ## Data File
 
