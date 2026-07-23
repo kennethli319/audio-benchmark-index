@@ -301,6 +301,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.00726
     sections: 2.1-2.3
     status: audited_not_indexed
+    last_verified: 2026-07-23
     public_interfaces:
       - https://fgt7t6g.github.io/AV-SyncBench/
       - https://github.com/fgt7t6g/AV-SyncBench
@@ -321,9 +322,11 @@ paper_audits:
       - https://fgt7t6g.github.io/AV-SyncBench/
       - https://raw.githubusercontent.com/fgt7t6g/AV-SyncBench/main/README.md
       - https://api.github.com/repos/fgt7t6g/AV-SyncBench
+      - https://api.github.com/repos/fgt7t6g/AV-SyncBench/git/trees/main?recursive=1
       - https://huggingface.co/datasets/coming245/AV-SyncBench/raw/main/README.md
       - https://huggingface.co/api/datasets/coming245/AV-SyncBench
-    note: The paper and project page say that code and data are available, but the official GitHub README says they "will be released soon" and the public Hugging Face repository contains only README metadata with zero bytes of dataset storage. AV-SyncBench is therefore recorded as an audited announced protocol rather than a downloadable benchmark family; the card's MIT tag must not be treated as licensing unreleased or third-party source videos.
+      - https://modelscope.cn/datasets/coming245/AVSyncBench
+    note: The paper and project page say that code and data are available, but the official GitHub README says they "will be released soon." The GitHub tree currently contains only the project website assets and README, while the public Hugging Face repository at revision 23329259e882f92acdfb8c0133e46b3a1c70cd0c contains only README metadata and reports zero bytes of dataset storage. The official ModelScope landing page likewise provides no verifiable benchmark archive or item manifest. AV-SyncBench is therefore recorded as an audited announced protocol rather than a downloadable benchmark family; the card's MIT tag must not be treated as licensing unreleased or third-party source videos.
 
   multiref_compass:
     paper: https://arxiv.org/abs/2607.14189
