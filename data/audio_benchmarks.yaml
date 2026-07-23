@@ -175,6 +175,30 @@ paper_audits:
         note: Section 7.2 explicitly calls all four ASR sets private. They total roughly 17 hours; public online video and Hume-DaiKon are source descriptions, not public benchmark downloads.
     note: The public Hugging Face Spaces expose leaderboards and application code, not benchmark audio or item files. RW-Voice-EQ is therefore recorded as an audited protocol rather than a downloadable benchmark family; no data link should be inferred from the public leaderboards.
 
+  song_sqa:
+    paper: https://arxiv.org/abs/2607.16599
+    sections: 4.1 and 4.5
+    status: audited_mixed_public_and_internal
+    evaluated_sets:
+      - cited_as: Lyra-SA Dataset
+        index_id: lyra_sa
+        status: public_application_required
+        note: The official Tencent Music release is indexed separately. The paper evaluates five independent random 8:1:1 splits but does not publish split manifests or random seeds.
+      - cited_as: Internal Dataset
+        index_id: null
+        status: proprietary_unreleased
+        note: Section 4.1 describes 2,035 recordings from 1,250 singers covering 1,284 songs, with isolated vocals and expert overall and attribute ratings. The paper explicitly calls the dataset proprietary and provides no public data source.
+      - cited_as: subjective evaluation set
+        index_id: null
+        status: selected_samples_only
+        note: Section 4.5 uses five test-set songs and 60 pairwise judgments. The public demo streams selected segments, but no complete item manifest, listener-level ratings, or reusable benchmark package is provided.
+    sources:
+      - https://arxiv.org/html/2607.16599v1#S4.SS1
+      - https://arxiv.org/html/2607.16599v1#S4.SS5
+      - https://anon-music.github.io/audio-eval-demo/
+      - https://lyracobar.y.qq.com/singvoicedataset_en.html
+    note: SongSQA's public Lyra-SA component maps to the indexed application-based release. Its proprietary expert-rated corpus and small subjective study are recorded only as unreleased protocols; the demo's selected audio examples must not be treated as a dataset release.
+
   preference_asr:
     paper: https://arxiv.org/abs/2606.29534
     sections: 2-3 and appendix
