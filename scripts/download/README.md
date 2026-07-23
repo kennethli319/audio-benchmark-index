@@ -142,6 +142,7 @@ scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
+scripts/download/pazabench.sh
 scripts/download/live_gurbani_captioning_v1.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
@@ -371,6 +372,10 @@ scripts/download/urban_beehive.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# PazaBench downloads official leaderboard documentation and metadata only.
+# Obtain each evaluation corpus separately under its upstream provider terms.
+scripts/download/pazabench.sh
 
 # Live Gurbani Captioning v1 downloads official docs/metadata by default; clone the small annotation/scorer repo explicitly.
 LIVE_GURBANI_CAPTIONING_CLONE_REPO=1 scripts/download/live_gurbani_captioning_v1.sh

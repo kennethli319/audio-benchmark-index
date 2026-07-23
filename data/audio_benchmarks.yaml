@@ -9855,3 +9855,55 @@ benchmarks:
       - https://github.com/shigabeev/vits2-emotional
       - https://raw.githubusercontent.com/shigabeev/vits2-emotional/main/LICENSE
       - https://api.github.com/repos/shigabeev/vits2-emotional
+
+  - id: pazabench
+    name: PazaBench
+    full_name: "PazaBench: A Benchmark for Automatic Speech Recognition on Low Resource Languages"
+    qwen_cited_as: null
+    qwen_bucket: asr
+    tasks:
+      - automatic_speech_recognition
+      - low_resource_asr
+      - multilingual_asr
+      - asr_efficiency
+    official:
+      leaderboard: https://huggingface.co/spaces/microsoft/paza-bench
+      announcement: https://www.microsoft.com/en-us/research/blog/paza-introducing-automatic-speech-recognition-benchmarks-and-models-for-low-resource-languages/
+      collection: https://huggingface.co/collections/microsoft/paza
+    download:
+      primary:
+        - https://huggingface.co/spaces/microsoft/paza-bench
+        - https://www.microsoft.com/en-us/research/blog/paza-introducing-automatic-speech-recognition-benchmarks-and-models-for-low-resource-languages/
+      examples:
+        - 'scripts/download/pazabench.sh'
+      notes: >-
+        The public Microsoft Research Africa leaderboard currently reports WER,
+        CER, and inverse real-time factor across 61 African languages and 53
+        ASR/language models. It evaluates 16 kHz mono speech from 11 named
+        public or community dataset groups, including African Next Voices,
+        ALFFA, FLEURS, Common Voice 23.0, WAXAL, Naija Voices, and TWB Voice.
+        The public Space exposes the leaderboard, submission interface, dataset
+        inventory, and implementation, but its repository does not contain a
+        standalone unified audio snapshot, frozen item manifest, or result CSV;
+        obtain evaluation audio from each named upstream provider under that
+        provider's access terms. The helper saves official documentation,
+        Space metadata, implementation metadata, and the dataset inventory
+        only; it does not download source corpora or model weights.
+    license:
+      leaderboard_code: MIT_declared_in_space_metadata
+      benchmark_data: mixed_upstream_terms
+      notes: >-
+        The Hugging Face Space card declares MIT, although its visible tree has
+        no standalone LICENSE file. That declaration does not relicense the 11
+        source dataset groups: their displayed terms range from CC0 and CC BY
+        to CC BY-SA, CC BY-NC-SA, gated CC BY-NC, Apache-2.0, and mixed terms.
+        Review each upstream dataset card and access agreement before use,
+        redistribution, or commercial deployment.
+    sources:
+      - https://www.microsoft.com/en-us/research/blog/paza-introducing-automatic-speech-recognition-benchmarks-and-models-for-low-resource-languages/
+      - https://huggingface.co/spaces/microsoft/paza-bench
+      - https://huggingface.co/spaces/microsoft/paza-bench/raw/main/README.md
+      - https://huggingface.co/spaces/microsoft/paza-bench/raw/main/src/about.py
+      - https://huggingface.co/spaces/microsoft/paza-bench/raw/main/src/data/dataset_group_metadata.json
+      - https://huggingface.co/api/spaces/microsoft/paza-bench
+      - https://arxiv.org/abs/2607.18912
