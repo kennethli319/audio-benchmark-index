@@ -2501,6 +2501,44 @@ benchmarks:
       - https://doi.org/10.5281/zenodo.21407831
       - https://zenodo.org/api/records/21407832/files/metadata_versions.csv/content
 
+  - id: multtipop
+    name: MulTTiPop
+    full_name: "MulTTiPop: A Multitrack Transcription Dataset for Pop Music"
+    qwen_cited_as: null
+    qwen_bucket: music_transcription
+    tasks:
+      - automatic_music_transcription
+      - multitrack_music_transcription
+      - audio_midi_alignment
+      - music_information_retrieval
+    official:
+      homepage: https://gclef-cmu.org/multtipop
+      dataset: https://huggingface.co/datasets/gclef-cmu/multtipop
+      paper: https://arxiv.org/abs/2607.08756
+    download:
+      primary:
+        - https://huggingface.co/datasets/gclef-cmu/multtipop
+        - https://huggingface.co/datasets/gclef-cmu/multtipop/resolve/main/dev.json
+        - https://huggingface.co/datasets/gclef-cmu/multtipop/resolve/main/test.json
+        - https://huggingface.co/datasets/gclef-cmu/multtipop/resolve/main/metadata.json
+      examples:
+        - 'scripts/download/multtipop.sh'
+        - 'MULTTIPOP_DOWNLOAD_HF=1 scripts/download/multtipop.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("gclef-cmu/multtipop")'
+      notes: The public, ungated release contains aligned multitrack MIDI and metadata for 572 commercial-pop segments (about 3.5 hours), divided into artist-disjoint development and test splits. It does not redistribute source audio; metadata provides YouTube video identifiers and segment timestamps. The helper downloads the dataset card, API metadata, and lightweight split manifests by default, while the full MIDI/metadata snapshot requires MULTTIPOP_DOWNLOAD_HF=1.
+    license:
+      data: cc-by-4.0_for_released_midi_and_metadata
+      code: not_applicable
+      notes: The dataset card declares CC BY 4.0 and says its aligned MIDI is adapted from the CC BY 4.0 Lakh MIDI Dataset. Source audio is not licensed or redistributed; users are instructed to obtain only the referenced segments and use MulTTiPop for evaluation rather than training. YouTube availability, platform terms, and commercial-song rights remain applicable.
+    sources:
+      - https://arxiv.org/abs/2607.08756
+      - https://arxiv.org/html/2607.08756v1
+      - https://gclef-cmu.org/multtipop
+      - https://huggingface.co/datasets/gclef-cmu/multtipop
+      - https://huggingface.co/datasets/gclef-cmu/multtipop/raw/main/README.md
+      - https://huggingface.co/api/datasets/gclef-cmu/multtipop
+      - https://colinraffel.com/projects/lmd/
+
   - id: ai_cover_song_diagnostics
     name: AI-Generated Cover Song Diagnostics
     full_name: "A Diagnostic Evaluation Framework for AI-Generated Cover Songs Using Music-Theoretic and Acoustic Features"

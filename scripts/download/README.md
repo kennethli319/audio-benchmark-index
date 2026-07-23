@@ -66,6 +66,7 @@ scripts/download/dynamic_superb.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
+scripts/download/multtipop.sh
 scripts/download/songeval.sh
 scripts/download/cmi_rewardbench.sh
 scripts/download/musica_metabench.sh
@@ -877,6 +878,10 @@ OPENMIC_DOWNLOAD_ARCHIVE=1 scripts/download/openmic_2018.sh
 
 # RUBATO downloads the Zenodo record and 83 KB version metadata by default.
 RUBATO_DOWNLOAD_ARCHIVE=1 scripts/download/rubato.sh
+
+# MulTTiPop downloads docs and lightweight dev/test manifests by default.
+# Its released snapshot contains MIDI/metadata, not the referenced source audio.
+MULTTIPOP_DOWNLOAD_HF=1 scripts/download/multtipop.sh
 
 # AI-Generated Cover Song Diagnostics downloads its public score, manifest,
 # feature tables, README, and MIT license. Raw cover audio is not released.
