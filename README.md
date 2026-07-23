@@ -29,7 +29,7 @@ reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
 and multimodal speaker-segment and in-cabin driver emotion recognition, exact structured-token
-recovery in workplace ASR, as well as multi-turn voice-agent
+recovery in workplace ASR, in-the-wild neurological Spanish ASR, as well as multi-turn voice-agent
 tool use, grounding, state tracking, conversational memory, and context-aware
 turn-taking decisions.
 The index also covers likelihood-based acoustic consistency and semantic-acoustic
@@ -43,7 +43,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 205 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 206 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -239,6 +239,7 @@ Current coverage includes:
 | [SPEARBench](https://thomasthebaud.github.io/SPEAR-benchmark-website/) | Streaming speech-to-speech conversational naturalness | Public SharePoint package with 5,419 Seamless Interaction-derived question-answer dialogues (37.33 hours); helper downloads official docs, leaderboard metadata, and submission examples only | Website/helper code is MIT; the downloadable derived audio has no separately stated license, so verify Seamless Interaction and package terms before reuse |
 | [FLEURS](https://huggingface.co/datasets/google/fleurs) | S2TT and ASR | `load_dataset("google/fleurs", "en_us")` or another locale | CC BY 4.0 |
 | [VoiceCodeBench](https://huggingface.co/datasets/besimple-ai/voice-code-bench) | Exact structured-token and entity recovery in workplace ASR | Public, ungated test-only release with 300 human-recorded English segments, 1,482 targets across 26 entity types, and released baseline predictions/scoring; helper downloads docs, paper, license, and the 1.1 MB annotations by default while the approximately 1.83 GiB snapshot is opt-in | Repository and card declare MIT; the card documents contributor consent but excludes model training, speaker identification, biometric modeling, voice cloning, and demographic profiling from intended use |
+| [S-DiverSe](https://github.com/ferugit/s-diverse) | In-the-wild neurological Spanish ASR | Public TSV annotations for 444 segments (3.2 hours, 22 speakers) across ALS, Parkinson's disease, and post-stroke speech; audio is not redistributed and must be reconstructed from timestamped public-video links; helper downloads annotations/docs/code only | No data or code license is specified; arXiv's CC BY 4.0 covers the paper, not the release or linked recordings; review health-data privacy, consent, ethics, source rights, and platform terms |
 | [VoxPopuli](https://github.com/facebookresearch/voxpopuli) | ASR and S2TT | [facebook/voxpopuli](https://huggingface.co/datasets/facebook/voxpopuli); select a language/config and split before downloading the large HF repository | Data is CC0-1.0; code and pretrained models are CC BY-NC 4.0; raw data also points to European Parliament legal notice |
 | [mTEDx](https://www.openslr.org/100) | ASR and S2TT | [OpenSLR SLR100](https://www.openslr.org/100) ASR language archives, speech-translation language-pair archives, IWSLT 2021 test sets, and small metadata; archives are opt-in in the helper | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
 | [TEDx Spanish Corpus](https://www.openslr.org/67/) | ASR | [OpenSLR SLR67](https://www.openslr.org/67/) Spanish speech/transcript archive; helper saves the page by default and makes the 2.3 GiB archive opt-in | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |

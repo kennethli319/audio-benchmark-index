@@ -2549,6 +2549,60 @@ benchmarks:
       - https://huggingface.co/datasets/besimple-ai/voice-code-bench/blob/main/paper/voice-code-bench.pdf
       - https://huggingface.co/api/datasets/besimple-ai/voice-code-bench
 
+  - id: s_diverse
+    name: S-DiverSe
+    full_name: "S-DiverSe: Spanish Diverse Speech"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - pathological_speech_recognition
+      - spanish_speech_recognition
+      - asr_robustness
+      - subgroup_robustness_evaluation
+    official:
+      repo: https://github.com/ferugit/s-diverse
+      paper: https://arxiv.org/abs/2607.03207
+      annotations: https://github.com/ferugit/s-diverse/blob/master/data/s-diverse.tsv
+    download:
+      primary:
+        - https://github.com/ferugit/s-diverse
+        - https://github.com/ferugit/s-diverse/blob/master/data/s-diverse.tsv
+      examples:
+        - 'scripts/download/s_diverse.sh'
+        - 'S_DIVERSE_CLONE_REPO=1 scripts/download/s_diverse.sh'
+      notes: >-
+        The public repository releases a TSV manifest for 444 manually
+        transcribed Spanish segments totaling 3.2 hours from 22 speakers with
+        amyotrophic lateral sclerosis, Parkinson's disease, or post-stroke
+        effects. Metadata includes speaker ID, sex, condition, intelligibility,
+        source URL, timestamp, and duration. Audio is not redistributed; the
+        repository provides a yt-dlp/ffmpeg reconstruction script for public
+        video sources, whose availability and platform terms can change. The
+        paper evaluates corpus-level and condition-specific WER after
+        lowercasing, punctuation removal, digit expansion, and retention of
+        filled pauses. The helper downloads annotations, documentation, and
+        reconstruction code only; cloning the repository is opt-in.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The official repository has no license file or detected GitHub
+        license. The paper is CC BY 4.0 on arXiv, but that does not license the
+        annotations, reconstruction code, or linked source recordings. The
+        manifest includes health-condition metadata and potentially
+        identifiable speech/transcripts; review consent, privacy, research
+        ethics, source rights, and platform terms before use or redistribution.
+    sources:
+      - https://arxiv.org/abs/2607.03207
+      - https://arxiv.org/html/2607.03207v1#S2
+      - https://arxiv.org/html/2607.03207v1#S3.SS5
+      - https://github.com/ferugit/s-diverse
+      - https://raw.githubusercontent.com/ferugit/s-diverse/master/README.md
+      - https://raw.githubusercontent.com/ferugit/s-diverse/master/data/s-diverse.tsv
+      - https://raw.githubusercontent.com/ferugit/s-diverse/master/src/download_audio.py
+      - https://api.github.com/repos/ferugit/s-diverse
+
   - id: voxpopuli
     name: VoxPopuli
     full_name: "VoxPopuli: A Large-Scale Multilingual Speech Corpus for Representation Learning, Semi-Supervised Learning and Interpretation"

@@ -70,6 +70,7 @@ scripts/download/wildspeech_bench.sh
 scripts/download/spearbench.sh
 scripts/download/fleurs.sh
 scripts/download/voicecodebench.sh
+scripts/download/s_diverse.sh
 scripts/download/librispeech.sh
 scripts/download/whisper_rirmega.sh
 scripts/download/libri_light.sh
