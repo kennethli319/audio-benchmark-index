@@ -29,7 +29,8 @@ causal-semantic audio-visual synchronization evaluation,
 diagnostic evaluation of AI-generated cover songs,
 spoken digit classification,
 instruction-based multi-attribute speech editing, human-preference evaluation of synthesized speech, and
-multi-turn spoken-dialogue emotional-intelligence evaluation,
+multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
+Russian conversational speech synthesis,
 few-shot robustness under foreground/background shifts, few-shot bioacoustic
 event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
@@ -51,7 +52,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 221 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 222 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -335,6 +336,7 @@ Current coverage includes:
 | [MLS](https://www.openslr.org/94/) | ASR | OpenSLR SLR94 links to Meta public-file archives for 8 LibriVox-derived languages; helper saves the page/checksums and downloads selected language archives only with opt-in | CC BY 4.0 |
 | [Seed-TTS Eval](https://github.com/BytedanceSpeech/seed-tts-eval) | Zero-shot speech synthesis and voice cloning | Official ByteDance repository and public objective EN/ZH set on Google Drive; helper downloads evaluation docs/code by default while the dataset remains a manual Drive download | No data or code license specified; objective data selects Common Voice and DiDiSpeech-2 samples, and the subjective set is explicitly unreleased |
 | [InstructTTSEval](https://github.com/KexinHUANG19/InstructTTSEval) | Controllable speech synthesis and instruction following | Official evaluation repo and public, ungated [CaasiHUANG/InstructTTSEval](https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval); helper downloads docs by default and makes the ~1.8 GB embedded-audio snapshot opt-in | HF card lists MIT, but paper limits the dataset to academic/research use and describes film/TV-derived audio; code license is unspecified and source-media rights require review |
+| [Dialogs](https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations) | Expressive conversational Russian TTS, ASR, and emotion classification | Public, ungated 20.6-hour studio corpus with 11,796 utterances, three professional performers, 12 style/emotion labels, and fixed train/dev/test splits; helper downloads docs and lightweight dev/test tables by default while the 29.3 MB preview and 5.56 GB full snapshot are separate opt-ins | Custom OpenRAIL responsible-use license permits commercial use subject to use-based restrictions; the paper/card state performers consented to public and commercial release; baseline code is MIT |
 | [SILMA Open-source Arabic TTS Benchmark](https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark) | MSA, Egyptian, and Saudi Arabic speech synthesis listening evaluation | Public fixed prompts and generated outputs for direct auditory comparison across open-source Arabic TTS systems; helper downloads docs and prompt CSVs by default while the approximately 29.6 MB Space clone with audio is opt-in | Space metadata declares Apache-2.0, but no separate license file or prompt provenance is provided and evaluated-model output terms may still apply |
 | [CV3-Eval](https://github.com/FunAudioLLM/CV3-Eval) | In-the-wild zero-shot and cross-lingual speech synthesis | Official CosyVoice 3 repository with multilingual, cross-lingual, emotion, expressive, continuation, and Chinese-accent subsets; Qwen3.5-Omni §5.2.3 calls its public cross-lingual subset the “Cross-Lingual benchmark” and reports 12 Chinese/English/Japanese/Korean directions; helper downloads docs by default and makes the roughly 760 MiB repository opt-in | Repository is Apache-2.0, but reference audio includes Common Voice, FLEURS, EmoBox, and web-crawled sources whose component rights require review |
 | [TTS Multilingual Test Set](https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set) | Multilingual and target-speaker speech synthesis | Public MiniMaxAI set with 100 texts and two Common Voice-derived speaker prompts for each of 24 languages; Qwen3-TTS uses a 10-language subset in §4.2.2 and §4.2.5; helper keeps the approximately 7.3 MB snapshot opt-in | Dataset card lists CC BY-SA 4.0; speaker prompts derive from CC0-1.0 Common Voice |

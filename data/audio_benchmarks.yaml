@@ -9603,3 +9603,61 @@ benchmarks:
       - https://arxiv.org/html/2607.04848v1#S6
       - https://ofspectrum.com/news/synsfx
       - https://ofspectrum.com/api/backend/storage/datasets/synsfx/download
+
+  - id: dialogs_ru
+    name: Dialogs
+    full_name: "Dialogs: A Studio-Quality Expressive Conversational Russian Speech Corpus for Dialog Assistants"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - speech_emotion_recognition
+      - conversational_speech
+    tasks:
+      - expressive_text_to_speech
+      - conversational_text_to_speech
+      - speech_emotion_classification
+      - automatic_speech_recognition
+      - speech_quality_evaluation
+    official:
+      paper: https://arxiv.org/abs/2607.14310
+      dataset: https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations
+      baseline_repo: https://github.com/shigabeev/vits2-emotional
+    download:
+      primary:
+        - https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations
+      examples:
+        - 'scripts/download/dialogs_ru.sh'
+        - 'DIALOGS_RU_DOWNLOAD_PREVIEW=1 scripts/download/dialogs_ru.sh'
+        - 'DIALOGS_RU_DOWNLOAD_HF=1 scripts/download/dialogs_ru.sh'
+      notes: >-
+        The public, ungated release contains 20.6 hours and 11,796 Russian
+        utterances from face-to-face acted dialogues recorded in a studio by
+        three professional performers. It provides transcripts, stress-marked
+        text, speaker identifiers, and 12 style/emotion labels, with fixed
+        11,428/180/188 train, validation, and test splits. The paper evaluates
+        the 188-item stratified test subset with six human-rated quality
+        dimensions and trains a VITS2 expressive-TTS baseline. The helper
+        downloads official documentation, API metadata, and the lightweight
+        validation/test tables by default. The approximately 29.3 MB embedded-
+        audio preview and 5.56 GB full Hugging Face snapshot are separate
+        opt-ins.
+    license:
+      data: OpenRAIL
+      code: MIT
+      notes: >-
+        The dataset card links a custom OpenRAIL responsible-use license that
+        permits use, modification, redistribution, and commercial use subject
+        to its use-based restrictions. The paper and card state that performers
+        gave written informed consent for public and commercial use. Review the
+        complete LICENSE.md rather than treating OpenRAIL as an unrestricted
+        permissive license. The linked VITS2 baseline repository is MIT.
+    sources:
+      - https://arxiv.org/abs/2607.14310
+      - https://arxiv.org/html/2607.14310v1#S3
+      - https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations
+      - https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations/raw/main/README.md
+      - https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations/raw/main/LICENSE.md
+      - https://huggingface.co/api/datasets/langswap/dialogs-ru-emotional-conversations
+      - https://github.com/shigabeev/vits2-emotional
+      - https://raw.githubusercontent.com/shigabeev/vits2-emotional/main/LICENSE
+      - https://api.github.com/repos/shigabeev/vits2-emotional
