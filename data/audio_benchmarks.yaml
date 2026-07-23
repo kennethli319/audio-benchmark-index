@@ -9519,6 +9519,68 @@ benchmarks:
       - https://huggingface.co/api/datasets/NJU-LINK/OmniVideoBench
       - https://arxiv.org/abs/2607.19339
 
+  - id: lvomnibench
+    name: LVOmniBench
+    full_name: "LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - long_form_audio_visual_reasoning
+    tasks:
+      - audio_visual_question_answering
+      - long_video_understanding
+      - cross_modal_reasoning
+      - temporal_localization
+      - fine_grained_audio_visual_understanding
+      - multimodal_perception
+    official:
+      project: https://kd-tao.github.io/LVOmniBench/
+      paper: https://arxiv.org/abs/2603.19217
+      repo: https://github.com/KD-TAO/LVOmniBench
+      dataset: https://huggingface.co/datasets/KD-TAO/LVOmniBench
+      recent_evaluation: https://arxiv.org/abs/2607.19339
+    download:
+      primary:
+        - https://huggingface.co/datasets/KD-TAO/LVOmniBench
+        - https://github.com/KD-TAO/LVOmniBench
+      examples:
+        - 'scripts/download/lvomnibench.sh'
+        - 'LVOMNIBENCH_DOWNLOAD_HF=1 scripts/download/lvomnibench.sh'
+      notes: >-
+        The gated Hugging Face release contains 275 English Creative
+        Commons-licensed YouTube videos totaling 140 hours, with durations
+        from 10 to 90 minutes, plus 1,014 manually authored four-option
+        question-answer pairs. Questions span nine categories and require
+        joint reasoning over speech, music, or sound with visual evidence.
+        The helper downloads public repository documentation and API metadata
+        by default. The Hugging Face API reports approximately 187.4 GB of
+        repository storage, so the complete snapshot requires approval,
+        authentication, and LVOMNIBENCH_DOWNLOAD_HF=1. OmniReasoner evaluates
+        LVOmniBench in its main audio-visual table and reports duration-wise
+        tool-use behavior on the benchmark.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The paper says every source video carries a Creative Commons license,
+        but neither the official dataset card nor repository states a
+        benchmark-level license or records each video's exact Creative Commons
+        variant in public documentation. The GitHub repository has no LICENSE
+        file or detected license. Review the access form, per-video rights,
+        attribution requirements, and YouTube terms before reuse or
+        redistribution; the paper's CC BY 4.0 license covers the article, not
+        automatically the dataset or evaluation code.
+    sources:
+      - https://kd-tao.github.io/LVOmniBench/
+      - https://arxiv.org/abs/2603.19217
+      - https://arxiv.org/html/2603.19217v1#S3
+      - https://github.com/KD-TAO/LVOmniBench
+      - https://raw.githubusercontent.com/KD-TAO/LVOmniBench/main/README.md
+      - https://api.github.com/repos/KD-TAO/LVOmniBench
+      - https://huggingface.co/datasets/KD-TAO/LVOmniBench
+      - https://huggingface.co/api/datasets/KD-TAO/LVOmniBench
+      - https://arxiv.org/abs/2607.19339
+
   - id: chartgeneval
     name: ChartGenEval
     full_name: "ChartGenEval: Corruption-Tested Multi-Dimensional Feedback for Rhythm-Game Chart Generation"
