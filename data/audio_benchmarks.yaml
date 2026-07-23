@@ -529,6 +529,32 @@ paper_audits:
       - https://api.github.com/repos/D1gits0/fretiq/git/trees/main?recursive=1
     note: The public repository provides feature extraction, training, ablation, held-out evaluation code, and trained model weights, but both README.md and REPRODUCE.md explicitly say that the gitignored data directory and training recordings are not included. The same omission covers the paper's three 322,215-frame development sessions and its approximately 103,000-frame held-out free-play session. Fretiq is therefore recorded as an audited model-specific protocol rather than a downloadable benchmark family. The repository README labels the project MIT, but the repository exposes no LICENSE file and GitHub detects no license; do not infer terms for either code or absent recordings.
 
+  auemochat_ncssd_emcap:
+    paper: https://arxiv.org/abs/2607.15755
+    sections: abstract and 5.1
+    status: audited_not_indexed
+    public_interfaces:
+      - https://github.com/AI-S2-Lab/Chain-Talker
+    evaluated_domains:
+      - domain: conversational_emotional_speech_synthesis
+        protocol: NCSSD-EmCap train, validation, and test split at an 8:1:1 ratio, with naturalness, emotion-consistency, intelligibility, acoustic-fidelity, speaker-similarity, and emotion-classification evaluation
+        data_status: derived_dataset_not_released
+        note: AuEmoChat describes NCSSD-EmCap as approximately 384 hours, 18,580 dialogues, 245,984 utterances, and 25 speakers aggregated from DailyTalk, NCSSD, and MultiDialog. Neither the exact derived rows, emotion captions, split manifests, nor evaluation audio are exposed by the cited public repository.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      repository: Apache-2.0
+    sources:
+      - https://arxiv.org/abs/2607.15755
+      - https://arxiv.org/html/2607.15755v1#S5.SS1
+      - https://aclanthology.org/2025.findings-acl.101/
+      - https://github.com/AI-S2-Lab/Chain-Talker
+      - https://raw.githubusercontent.com/AI-S2-Lab/Chain-Talker/main/README.md
+      - https://raw.githubusercontent.com/AI-S2-Lab/Chain-Talker/main/LICENSE
+      - https://api.github.com/repos/AI-S2-Lab/Chain-Talker
+      - https://api.github.com/repos/AI-S2-Lab/Chain-Talker/git/trees/main?recursive=1
+    note: Section 5.1 calls NCSSD-EmCap open-source and cites Chain-Talker, but the official Chain-Talker repository contains only README.md and LICENSE and publishes no code, release assets, dataset card, audio, annotations, captions, or split manifests. The AuEmoChat abstract announces https://github.com/anonymous-css/AuEmoChat, which returned HTTP 404 on 2026-07-23. Apache-2.0 covers the two-file Chain-Talker repository, not absent derived speech data or its upstream corpora. NCSSD-EmCap is therefore recorded as an audited unreleased evaluation dataset rather than an indexed benchmark family; recheck both repositories after a public release.
+
 benchmarks:
   - id: mmau
     name: MMAU
