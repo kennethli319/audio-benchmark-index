@@ -269,6 +269,9 @@ MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/d
 INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
 INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
+# SILMA Arabic TTS downloads prompts/docs by default; generated comparison audio is opt-in.
+SILMA_ARABIC_TTS_CLONE_SPACE=1 scripts/download/silma_open_source_arabic_tts.sh
+
 # ParaPairAudioBench downloads official docs by default. Cloning adds pair annotations/builders, not source audio.
 PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
 

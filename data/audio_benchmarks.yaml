@@ -7663,3 +7663,55 @@ benchmarks:
       - https://huggingface.co/api/datasets/arcada-labs/appointment-bench
       - https://huggingface.co/api/datasets/arcada-labs/event-bench
       - https://huggingface.co/api/datasets/arcada-labs/assistant-bench
+
+  - id: silma_open_source_arabic_tts
+    name: SILMA Open-source Arabic TTS Benchmark
+    full_name: "Open-source Arabic TTS Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: speech_generation
+    tasks:
+      - speech_synthesis
+      - text_to_speech
+      - arabic_speech_synthesis
+      - dialectal_speech_synthesis
+      - human_auditory_evaluation
+    official:
+      benchmark: https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark
+      organization: https://silma.ai/
+    download:
+      primary:
+        - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/tree/main/results
+      examples:
+        - 'scripts/download/silma_open_source_arabic_tts.sh'
+        - 'SILMA_ARABIC_TTS_CLONE_SPACE=1 scripts/download/silma_open_source_arabic_tts.sh'
+      notes: >-
+        SILMA's public, ungated Hugging Face Space provides fixed prompts and
+        generated model audio for direct listening comparisons in Modern
+        Standard Arabic, Egyptian Arabic, and Saudi Arabic. The current release
+        has 10 MSA prompts across four systems, five Egyptian prompts across
+        five systems, and five Saudi prompts across three systems. SILMA says
+        this release deliberately prioritizes auditory assessment because WER,
+        CER, speaker similarity, and UTMOS do not fully capture Arabic speech
+        nuances; it does not publish aggregate human ratings or a formal
+        automatic scoring protocol. The helper downloads the official README,
+        application source, three prompt CSVs, and Space API metadata by
+        default. Cloning the approximately 29.6 MB Space, including generated
+        evaluation audio, requires SILMA_ARABIC_TTS_CLONE_SPACE=1.
+    license:
+      data: Apache-2.0_declared_at_space_level
+      code: Apache-2.0_declared_at_space_level
+      notes: >-
+        The Space metadata declares Apache-2.0, but the repository contains no
+        separate license file and does not document the provenance or reuse
+        terms of its Arabic prompts. Generated clips may also remain subject to
+        the licenses and acceptable-use terms of the evaluated TTS models.
+        Treat the Space-level declaration as insufficient to resolve all prompt,
+        voice, and model-output rights before redistribution or commercial use.
+    sources:
+      - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark
+      - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/raw/main/README.md
+      - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/raw/main/app.py
+      - https://huggingface.co/api/spaces/silma-ai/opensource-arabic-tts-benchmark
+      - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/blob/main/results/msa/Ar_msa_TTS_benchmark.csv
+      - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/blob/main/results/egy/Ar_egy_TTS_benchmark.csv
+      - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/blob/main/results/ksa/Ar_ksa_TTS_benchmark.csv
