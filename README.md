@@ -190,6 +190,17 @@ selected items, or evaluation manifests. The parent repository is Apache-2.0,
 but that code license does not license the absent evaluation data or its
 upstream datasets.
 
+ChronosAudio is recorded as an audited long-audio protocol rather than a
+downloadable family. The paper describes 36,000 English test instances over
+6,000 synthetic clips and more than 200 hours, with dictation, localization,
+transcription, multispeaker, comprehension, and summary tasks spanning 30
+seconds to 20 minutes. Its only official code/data link is an anonymous
+[4open.science repository](https://anonymous.4open.science/r/ChronosAudio-D49A)
+that currently returns HTTP 401 `not_connected`, so no files, exact manifest,
+or benchmark-data license can be verified. The paper is CC BY 4.0 and attributes
+its source text to SQuAD/Wikipedia under CC BY-SA 4.0, but those statements do
+not establish rights for the unavailable annotations or generated audio.
+
 ## Coverage
 
 Current coverage includes:

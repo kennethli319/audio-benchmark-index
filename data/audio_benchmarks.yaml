@@ -451,6 +451,29 @@ paper_audits:
       - https://github.com/OpenBMB/UltraEval-Audio
     note: The public ECoM Reasoning release contains training and inference code, data-construction utilities, and placeholder dataset registries, not the paper's spoken benchmark package. Its data README explicitly requires users to supply their own JSONL paths. Because the exact STITCH-derived synthesized audio, selected items, and ECoM evaluation manifests cannot be verified through an official release, this protocol is audited but not indexed as a downloadable benchmark family.
 
+  chronos_audio:
+    paper: https://arxiv.org/abs/2601.04876
+    sections: 3 and appendices 2-3
+    status: audited_not_indexed
+    public_interfaces:
+      - https://anonymous.4open.science/r/ChronosAudio-D49A
+    evaluated_domains:
+      - domain: long_audio_understanding
+        protocol: 36,000 English test instances over 6,000 synthetic clips and more than 200 hours, stratified into short (30 seconds to 5 minutes), middle (5 to 10 minutes), and long (10 to 20 minutes) durations
+        data_status: claimed_public_release_currently_unavailable
+        note: The six tasks are dictation, localization, transcription, multispeaker understanding, comprehension, and summary. The paper constructs them from SQuAD text and F5-TTS-generated speech, but its sole official data/code URL currently exposes no files or manifest.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unavailable
+      upstream: The paper attributes source text to SQuAD and Wikipedia under CC BY-SA 4.0; generated-audio and benchmark-annotation terms are not separately stated
+    sources:
+      - https://arxiv.org/html/2601.04876v2#S3
+      - https://arxiv.org/html/2601.04876v2#S2a
+      - https://arxiv.org/html/2601.04876v2#S3a
+      - https://anonymous.4open.science/r/ChronosAudio-D49A
+      - https://export.arxiv.org/api/query?id_list=2601.04876
+    note: The paper says its code and dataset are available at an anonymous 4open.science repository. On 2026-07-23, that official URL redirects to the repository file API and returns HTTP 401 with "not_connected"; no README, code, audio, annotations, split manifest, or data license can be inspected. ChronosAudio is therefore recorded as an audited announced benchmark rather than a downloadable family. Recheck the official endpoint after restoration or deanonymization before adding an indexed entry or helper.
+
 benchmarks:
   - id: mmau
     name: MMAU
