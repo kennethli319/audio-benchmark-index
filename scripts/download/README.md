@@ -129,6 +129,7 @@ scripts/download/tau_nigens_sse_2020.sh
 scripts/download/tau_nigens_sse_2021.sh
 scripts/download/epic_sounds.sh
 scripts/download/fsd50k.sh
+scripts/download/doppelganger.sh
 scripts/download/fsdkaggle2018.sh
 scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh

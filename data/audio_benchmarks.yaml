@@ -5009,6 +5009,47 @@ benchmarks:
       - https://arxiv.org/abs/2010.00475
       - https://ieeexplore.ieee.org/document/9645159
 
+  - id: doppelganger
+    name: Doppelganger
+    full_name: "Doppelganger: Sound Effects and Their Synthetic Twins"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    tasks:
+      - synthetic_real_sound_effect_retrieval
+      - audio_instance_matching
+      - audio_representation_evaluation
+      - synthetic_audio_detection
+    official:
+      repo: https://github.com/elliottash/doppelganger
+      dataset: https://huggingface.co/datasets/elliottash/doppelganger
+      paper: https://arxiv.org/abs/2607.04337
+    download:
+      primary:
+        - https://github.com/elliottash/doppelganger
+        - https://huggingface.co/datasets/elliottash/doppelganger
+      examples:
+        - 'scripts/download/doppelganger.sh'
+        - 'DOPPELGANGER_CLONE_REPO=1 scripts/download/doppelganger.sh'
+        - 'DOPPELGANGER_DOWNLOAD_HF=1 scripts/download/doppelganger.sh'
+      notes: The public, ungated release pairs 10,420 verified real sound-effect references across 34 Universal Category System events with Stable Audio Open synthetic twins, plus a controlled seven-class DCASE 2023 Task 7 corpus and text-only ElevenLabs controls. Real recordings are referenced by source ID and are not redistributed in bulk. The helper downloads official documentation and repository metadata by default; cloning the roughly 10 MB code/manifests repository or downloading the approximately 8.48 GB Hugging Face release requires separate opt-ins.
+    license:
+      data: mixed
+      code: MIT
+      notes: The Hugging Face card's MIT tag covers manifests, embeddings, and generation logs, not every audio asset. Stable Audio Open twins use the Stability AI Community License; ElevenLabs twins are redistributed under the author's ElevenLabs license; real audio retains FSD50K, UrbanSound8K, Freesound, or DCASE 2023 Task 7 source terms, and restricted real sources remain reference-by-ID only.
+    sources:
+      - https://arxiv.org/abs/2607.04337
+      - https://arxiv.org/html/2607.04337v1
+      - https://github.com/elliottash/doppelganger
+      - https://raw.githubusercontent.com/elliottash/doppelganger/main/README.md
+      - https://raw.githubusercontent.com/elliottash/doppelganger/main/paper/DATASHEET.md
+      - https://raw.githubusercontent.com/elliottash/doppelganger/main/LICENSE
+      - https://api.github.com/repos/elliottash/doppelganger
+      - https://huggingface.co/datasets/elliottash/doppelganger
+      - https://huggingface.co/datasets/elliottash/doppelganger/raw/main/README.md
+      - https://huggingface.co/api/datasets/elliottash/doppelganger
+
   - id: fsdkaggle2018
     name: FSDKaggle2018
     full_name: "FSDKaggle2018: Freesound General-Purpose Audio Tagging Challenge Dataset"
