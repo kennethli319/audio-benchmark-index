@@ -365,6 +365,35 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.12290
     note: The v1 paper provides no official project, repository, dataset card, archive, derived query or MCQ files, concept annotations, prompts, or evaluation code. Public AudioCaps and Clotho source datasets do not make NegEval-Audio's generated and verified annotations public, so it is recorded as an audited protocol rather than a downloadable benchmark family.
 
+  production_oriented_sfx_evaluation:
+    paper: https://arxiv.org/abs/2607.09973
+    sections: 3.3, 4, and appendix B
+    status: audited_not_indexed
+    public_interfaces:
+      - https://melodiedesbos.github.io/A-PRODUCTION-ORIENTED-FRAMEWORK-FOR-EVALUATION-OF-SFX-GENERATION/
+    evaluated_domains:
+      - domain: reference_guided_sound_effect_variation
+        protocol: ESC-50 folds 1-3 for adaptation, fold 4 for validation, and fold 5 for testing; five systems each generate 10 variants for 400 test references, producing 4,000 outputs per system
+        data_status: source_corpus_public_derived_evaluation_artifacts_unreleased
+        note: The shared audio-to-audio protocol reports quality, reference identity, diversity, temporal structure, perceptual fidelity, inference cost, and production-readiness diagnostics. The paper also samples 100 reference-variation pairs per method for a five-point listening test.
+      - domain: sound_effect_editing_diagnostics
+        protocol: Method-specific SFX morphing, inpainting, temporal alignment, and targeted-editing analyses
+        data_status: selected_project_page_demos_only
+        note: The official page streams a small set of qualitative examples, but does not provide the complete generated-output set, reference list, random seeds, masks, instructions, per-item metrics, listener trial manifest, or ratings.
+    license:
+      paper: CC BY 4.0
+      evaluation_artifacts: not_specified_unreleased
+      project_page_samples: no_separate_license_found
+      upstream: ESC-50 is CC BY-NC 3.0, with its ESC-10 subset under CC BY; baseline checkpoint and evaluator terms also apply
+    sources:
+      - https://arxiv.org/html/2607.09973v1#S3.SS3
+      - https://arxiv.org/html/2607.09973v1#S4
+      - https://arxiv.org/html/2607.09973v1#S6.SS2
+      - https://melodiedesbos.github.io/A-PRODUCTION-ORIENTED-FRAMEWORK-FOR-EVALUATION-OF-SFX-GENERATION/
+      - https://github.com/karolpiczak/ESC-50
+      - https://raw.githubusercontent.com/karolpiczak/ESC-50/master/README.md
+    note: ESC-50 itself is already indexed as a public source dataset. This paper defines a new derived evaluation protocol rather than releasing a separate benchmark package. Its official page provides selected listening demos and aggregate results but no repository, dataset card, archive, complete output corpus, evaluation implementation, or data-license statement, so the protocol is audited without adding a duplicate benchmark family or download helper.
+
   multimodal_speaker_verification_anonymization:
     paper: https://arxiv.org/abs/2607.19636
     sections: 4.1-4.3

@@ -188,6 +188,18 @@ provides no official project, repository, dataset card, item files, prompts,
 or evaluation code. The public source datasets do not make NegEval-Audio's
 generated queries, options, concept annotations, or verified labels public.
 
+The July 2026 *Production-Oriented Framework for Evaluation of SFX
+Generation* paper is likewise recorded as an audited protocol rather than a
+new downloadable family. It adapts five systems on ESC-50 folds 1-3, validates
+on fold 4, and generates 4,000 variants per system from the 400 fold-5
+references. Its official
+[project page](https://melodiedesbos.github.io/A-PRODUCTION-ORIENTED-FRAMEWORK-FOR-EVALUATION-OF-SFX-GENERATION/)
+streams selected demonstrations and aggregate results, but provides no
+repository, complete generated-output set, trial manifest, listener ratings,
+evaluation code, or artifact license. Public CC BY-NC 3.0 ESC-50 data
+therefore makes the source protocol reproducible only in part; it does not
+constitute a released derived benchmark.
+
 The July 2026 *Multimodal Speaker Verification as a Threat to Speaker
 Anonymization* paper is also recorded as an audited protocol. It evaluates
 speaker-disjoint Fisher English trials using up to five original or
