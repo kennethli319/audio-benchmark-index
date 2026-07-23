@@ -146,6 +146,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/parapair_audio_bench.sh
+scripts/download/speech_edit_bench.sh
 scripts/download/ming_freeform_audio_edit.sh
 scripts/download/mcr_bench.sh
 scripts/download/vocalsound.sh
@@ -288,6 +289,10 @@ SILMA_ARABIC_TTS_CLONE_SPACE=1 scripts/download/silma_open_source_arabic_tts.sh
 
 # ParaPairAudioBench downloads official docs by default. Cloning adds pair annotations/builders, not source audio.
 PARAPAIR_AUDIO_BENCH_CLONE_REPO=1 scripts/download/parapair_audio_bench.sh
+
+# SpeechEditBench downloads docs and sample JSONL files by default; the approximately 3.75 GB audio release is opt-in.
+SPEECH_EDIT_BENCH_DOWNLOAD_HF=1 scripts/download/speech_edit_bench.sh
+SPEECH_EDIT_BENCH_CLONE_REPO=1 scripts/download/speech_edit_bench.sh
 
 # SALMon downloads official docs/metadata by default; the approximately 562 MB snapshot is opt-in.
 SALMON_DOWNLOAD_HF=1 scripts/download/salmon.sh

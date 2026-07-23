@@ -5587,6 +5587,69 @@ benchmarks:
       - https://github.com/facebookresearch/textlesslib/tree/main/examples/expresso/dataset
       - https://www.openslr.org/60/
 
+  - id: speech_edit_bench
+    name: SpeechEditBench
+    full_name: "SpeechEditBench: A Bilingual Multi-Attribute Benchmark for Instruction-Guided Speech Editing"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - speech_editing
+    tasks:
+      - instruction_guided_speech_editing
+      - content_editing
+      - speaker_editing
+      - emotion_editing
+      - speaking_style_editing
+      - prosody_editing
+      - paralinguistic_editing
+      - acoustic_editing
+      - compositional_editing
+    official:
+      paper: https://arxiv.org/abs/2606.01804
+      arxiv_html: https://arxiv.org/html/2606.01804
+      repo: https://github.com/daxintan-cuhk/SpeechEditBench
+      dataset: https://huggingface.co/datasets/DiscreteSpeech/SpeechEditBench
+    download:
+      primary:
+        - https://huggingface.co/datasets/DiscreteSpeech/SpeechEditBench
+        - https://github.com/daxintan-cuhk/SpeechEditBench
+      examples:
+        - 'scripts/download/speech_edit_bench.sh'
+        - 'SPEECH_EDIT_BENCH_DOWNLOAD_HF=1 scripts/download/speech_edit_bench.sh'
+        - 'SPEECH_EDIT_BENCH_CLONE_REPO=1 scripts/download/speech_edit_bench.sh'
+      notes: >-
+        The public, ungated v1.1 release contains 4,700 English and Chinese
+        source-instruction pairs and 5,400 audio files across seven atomic
+        editing tasks and a compositional split. Evaluation separately measures
+        target success, lexical-content preservation, and joint success. The
+        helper downloads official documentation, release metadata, and the
+        eight sample JSONL files by default. The Hugging Face API reports
+        approximately 3.75 GB of repository storage, so audio requires
+        SPEECH_EDIT_BENCH_DOWNLOAD_HF=1; cloning the roughly 3.2 MB evaluation
+        repository is a separate opt-in.
+    license:
+      data: Apache-2.0_with_upstream_terms
+      code: Apache-2.0
+      notes: >-
+        The repository and Hugging Face card release contributor-authored code,
+        documentation, metadata, and benchmark assets under Apache-2.0, while
+        requiring compliance with source-corpus terms. The paper's appendix
+        identifies mixed upstream conditions: CC BY sources, Apache-2.0
+        sources, CC BY-NC and CC BY-NC-SA sources, StoryTTS research-only
+        restrictions, MagicData-RAMC custom terms, and the IEMOCAP access
+        agreement. Apply those component restrictions to affected rows and
+        audio rather than treating the aggregate label as overriding them.
+    sources:
+      - https://arxiv.org/abs/2606.01804
+      - https://arxiv.org/html/2606.01804
+      - https://github.com/daxintan-cuhk/SpeechEditBench
+      - https://raw.githubusercontent.com/daxintan-cuhk/SpeechEditBench/master/README.md
+      - https://raw.githubusercontent.com/daxintan-cuhk/SpeechEditBench/master/LICENSE
+      - https://api.github.com/repos/daxintan-cuhk/SpeechEditBench
+      - https://huggingface.co/datasets/DiscreteSpeech/SpeechEditBench
+      - https://huggingface.co/datasets/DiscreteSpeech/SpeechEditBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/DiscreteSpeech/SpeechEditBench
+
   - id: ifeval_audio
     name: IFEval-Audio
     full_name: "IFEval-Audio: Benchmarking Instruction-Following Capability in Audio-based Large Language Models"
