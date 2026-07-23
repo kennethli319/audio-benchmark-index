@@ -200,6 +200,7 @@ scripts/download/ms_snsd.sh
 scripts/download/nisqa.sh
 scripts/download/vctk.sh
 scripts/download/adqa_bench.sh
+scripts/download/clotho_moment.sh
 ```
 
 ## Manual Or Gated
@@ -603,6 +604,10 @@ scripts/download/dcase2025_audioqa.sh
 # summary papers, and the no-answer JSONL by default. The approximately 2.94 GB
 # Hugging Face audio snapshot is opt-in.
 ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh
+
+# Clotho-Moment downloads project, dataset, paper, and license metadata by
+# default. The large 51,240-recording WebDataset snapshot is opt-in.
+CLOTHO_MOMENT_DOWNLOAD_HF=1 scripts/download/clotho_moment.sh
 
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh

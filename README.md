@@ -22,6 +22,7 @@ preference evaluation, full-song singing-quality assessment, and
 rhythm-game chart-generation evaluation, speech quality
 assessment, child-speech recognition, spatial audio localization, cross-modal audio-video-text retrieval,
 spatio-temporal and multi-audio reasoning,
+language-based moment retrieval and temporal grounding in long audio,
 audio-visual segmentation, audio-visual speech recognition,
 causal-semantic audio-visual synchronization evaluation,
 diagnostic evaluation of AI-generated cover songs,
@@ -47,7 +48,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 215 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 216 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -348,6 +349,7 @@ Current coverage includes:
 | [Soroll-IA](https://www.kaggle.com/datasets/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring) | Weakly labeled industrial-port audio tagging | Public 7,396-clip, 22-hour Kaggle release with 26 classes, two annotator-agreement protocols, and five-fold assignments; helper downloads official metadata/docs by default and makes the approximately 2.17 GB dataset opt-in | Dataset is CC BY-NC 4.0; benchmark repository has no stated code license |
 | [DCASE 2025 Task 5 AudioQA](https://dcase.community/challenge2025/task-audio-question-answering) | Multi-domain audio question answering and temporal reasoning | Official auto-approved gated [Hugging Face release](https://huggingface.co/datasets/PeacefulData/2025_DCASE_AudioQA_Official) with Bioacoustics QA, Temporal Soundscapes QA, and Complex QA; helper saves public metadata and prints authenticated access steps without downloading audio | HF card metadata declares MIT, but upstream Watkins, AudioSet, Mira, and other source-audio terms may still apply; release-script code license is unspecified |
 | [ADQA-Bench](https://dcase.community/challenge2026/task-audio-dependent-question-answering) | Audio-dependent question answering and shortcut-resistant audio reasoning | Public, ungated [Harland/ADQA-Bench](https://huggingface.co/datasets/Harland/ADQA-Bench) with 3,000 questions and WAV files; the [DCASE 2026 task summary](https://arxiv.org/abs/2607.18718) reports the finalized hidden-evaluation protocol and 36 submissions; the current release omits answers; helper downloads docs and the lightweight no-answer JSONL by default and makes the approximately 2.94 GB snapshot opt-in | HF card declares Apache-2.0, but incorporated MMAU, MMAR, MMSU, and other source recordings retain their own terms and media rights |
+| [Clotho-Moment](https://h-munakata.github.io/Language-based-Audio-Moment-Retrieval/) | Language-based audio moment retrieval and temporal grounding in long audio | Public, ungated [51,240-item WebDataset](https://huggingface.co/datasets/lighthouse-emnlp2024/Clotho-Moment) used as DCASE 2026 Task 6 development data; helper downloads docs/metadata by default and makes the large audio snapshot opt-in | HF card and Lighthouse code declare Apache-2.0, but generated mixtures retain Clotho/Freesound and Walking Tours/YouTube component terms |
 | [UrbanSound8K](https://urbansounddataset.weebly.com/urbansound8k.html) | Environmental sound classification | [Zenodo archive](https://zenodo.org/records/1203745) or the official browser/Python download page | Zenodo lists CC BY-NC 4.0; official site says free for non-commercial use under Creative Commons BY-NC 3.0 |
 | [TAU Urban Acoustic Scenes 2019](https://dcase.community/challenge2019/task-acoustic-scene-classification) | Acoustic scene classification | [Development Zenodo record](https://zenodo.org/records/2589280); helper downloads doc/meta files by default and makes 21 audio shards opt-in | Zenodo record lists `Other (Non-Commercial)` without a more specific SPDX-style license |
 | [TAU Urban Acoustic Scenes 2020 Mobile](https://dcase.community/challenge2020/task-acoustic-scene-classification) | Acoustic scene classification | [Development](https://zenodo.org/records/3670167) and [evaluation](https://zenodo.org/records/3685828) Zenodo records; helper downloads doc/meta files by default and makes multi-GB audio archives opt-in | Zenodo records list `Other (Non-Commercial)` without a more specific SPDX-style license |

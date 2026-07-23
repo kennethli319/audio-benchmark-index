@@ -4667,6 +4667,58 @@ benchmarks:
       - https://arxiv.org/abs/2607.18718
       - https://arxiv.org/html/2607.18718v1#S2
 
+  - id: clotho_moment
+    name: Clotho-Moment
+    full_name: "Clotho-Moment: Simulated Long-Audio Dataset for Language-Based Audio Moment Retrieval"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_retrieval
+      - long_form_audio
+    tasks:
+      - language_based_audio_moment_retrieval
+      - temporal_audio_grounding
+      - long_audio_retrieval
+      - audio_text_retrieval
+    official:
+      project_page: https://h-munakata.github.io/Language-based-Audio-Moment-Retrieval/
+      dataset: https://huggingface.co/datasets/lighthouse-emnlp2024/Clotho-Moment
+      paper: https://arxiv.org/abs/2409.15672
+      code: https://github.com/line/lighthouse
+      dcase2026_task: https://dcase.community/challenge2026/task-audio-moment-retrieval-from-long-audio
+    download:
+      primary:
+        - https://huggingface.co/datasets/lighthouse-emnlp2024/Clotho-Moment
+      examples:
+        - 'scripts/download/clotho_moment.sh'
+        - 'CLOTHO_MOMENT_DOWNLOAD_HF=1 scripts/download/clotho_moment.sh'
+      notes: >-
+        The public, ungated release contains 51,240 one-minute synthetic English
+        recordings split into 37,930 training, 5,741 validation, and 7,569 test
+        samples. Each sample pairs a text query with a temporal boundary for a
+        Clotho foreground event overlaid at a random interval on Walking Tours
+        background audio. DCASE 2026 Task 6 uses it as a development dataset
+        and advertises a 16.1 GB download. The helper downloads official
+        documentation, license, and repository metadata by default; the audio
+        WebDataset snapshot requires explicit opt-in. Hugging Face currently
+        reports approximately 213 GB of repository storage including history,
+        so users should verify available disk space and select only needed
+        splits or shards.
+    license:
+      data: Apache-2.0_on_hugging_face_card_with_upstream_terms
+      code: Apache-2.0
+      notes: The Hugging Face card declares Apache-2.0 and the Lighthouse repository includes an Apache-2.0 license. The generated audio incorporates Clotho/Freesound foreground clips and Walking Tours/YouTube background audio, so the card does not erase component recording licenses, attribution requirements, or source-platform terms; review packaged provenance before redistribution or commercial use.
+    sources:
+      - https://h-munakata.github.io/Language-based-Audio-Moment-Retrieval/
+      - https://huggingface.co/datasets/lighthouse-emnlp2024/Clotho-Moment
+      - https://huggingface.co/datasets/lighthouse-emnlp2024/Clotho-Moment/raw/main/README.md
+      - https://huggingface.co/api/datasets/lighthouse-emnlp2024/Clotho-Moment
+      - https://arxiv.org/abs/2409.15672
+      - https://arxiv.org/html/2409.15672v3#S3.SS1
+      - https://github.com/line/lighthouse
+      - https://raw.githubusercontent.com/line/lighthouse/main/LICENSE
+      - https://dcase.community/challenge2026/task-audio-moment-retrieval-from-long-audio
+
   - id: spuraudio
     name: SpurAudio
     full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"
