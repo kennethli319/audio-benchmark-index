@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-22
+  last_checked: 2026-07-23
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -2517,6 +2517,37 @@ benchmarks:
     sources:
       - https://huggingface.co/datasets/google/fleurs
       - https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/
+
+  - id: voicecodebench
+    name: VoiceCodeBench
+    full_name: "VoiceCodeBench: Evaluating Exact Structured-Token Recovery in Automatic Speech Recognition"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - asr
+      - structured_token_recovery
+      - entity_recovery
+      - workplace_speech_recognition
+    official:
+      dataset: https://huggingface.co/datasets/besimple-ai/voice-code-bench
+      paper: https://huggingface.co/datasets/besimple-ai/voice-code-bench/blob/main/paper/voice-code-bench.pdf
+    download:
+      primary:
+        - https://huggingface.co/datasets/besimple-ai/voice-code-bench
+      examples:
+        - 'scripts/download/voicecodebench.sh'
+        - 'VOICECODEBENCH_DOWNLOAD_HF=1 scripts/download/voicecodebench.sh'
+      notes: The public, ungated test-only release contains 300 human-recorded English workplace-speech segments totaling 5.587 hours, with 85 anonymized speakers and 1,482 audited targets across 26 structured entity types. Its primary Canonical Token/Entity Match and Task Success Rate metrics test exact recovery of values such as email addresses, phone numbers, URLs, command-line flags, file paths, identifiers, dates, and measurements. The helper downloads official documentation, license, paper, API metadata, and the approximately 1.1 MB annotation JSONL by default. The complete Hugging Face repository is approximately 1.83 GiB and requires VOICECODEBENCH_DOWNLOAD_HF=1.
+    license:
+      data_and_code: MIT
+      notes: The repository and dataset card declare MIT. The card says paid contributors consented to dataset use and release, but the audio contains identifiable voice characteristics and its stated intended-use guidance excludes speaker identification, biometric modeling, voice cloning, demographic profiling, and model training or post-training.
+    sources:
+      - https://huggingface.co/datasets/besimple-ai/voice-code-bench
+      - https://huggingface.co/datasets/besimple-ai/voice-code-bench/raw/main/README.md
+      - https://huggingface.co/datasets/besimple-ai/voice-code-bench/raw/main/DATASET_CARD.md
+      - https://huggingface.co/datasets/besimple-ai/voice-code-bench/raw/main/LICENSE
+      - https://huggingface.co/datasets/besimple-ai/voice-code-bench/blob/main/paper/voice-code-bench.pdf
+      - https://huggingface.co/api/datasets/besimple-ai/voice-code-bench
 
   - id: voxpopuli
     name: VoxPopuli
