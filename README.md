@@ -94,6 +94,15 @@ project, repository, dataset card, archive, or download URL. Public source
 components such as DEMAND do not make DEAF's derived stimuli, prompts, labels,
 or evaluation code public.
 
+The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
+synchronization protocol, not a downloadable family. It describes 3,269
+in-the-wild videos and 38,390 temporal and semantic challenge samples, but the
+official [GitHub repository](https://github.com/fgt7t6g/AV-SyncBench) says the
+evaluation code and dataset will be released soon, while the official
+[Hugging Face repository](https://huggingface.co/datasets/coming245/AV-SyncBench)
+contains only README metadata and no dataset files. Its MIT card tag therefore
+does not establish reuse rights for the unreleased benchmark or source videos.
+
 ## Coverage
 
 Current coverage includes:

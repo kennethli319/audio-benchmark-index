@@ -222,6 +222,34 @@ paper_audits:
       - https://arxiv.org/html/2603.18048v2#A1.SS5
     note: The v2 paper contains no project, repository, dataset-card, archive, or download URL. Its detailed construction recipe and public DEMAND source do not make the derived stimuli, scripts, prompts, labels, or evaluation code public, so DEAF is recorded as an audited protocol rather than a downloadable benchmark family.
 
+  av_syncbench:
+    paper: https://arxiv.org/abs/2607.00726
+    sections: 2.1-2.3
+    status: audited_not_indexed
+    public_interfaces:
+      - https://fgt7t6g.github.io/AV-SyncBench/
+      - https://github.com/fgt7t6g/AV-SyncBench
+      - https://huggingface.co/datasets/coming245/AV-SyncBench
+      - https://modelscope.cn/datasets/coming245/AVSyncBench
+    evaluated_domains:
+      - domain: audio_visual_synchronization
+        protocol: 3,269 in-the-wild videos expanded into 38,390 samples across voice, music, and sound, with global-offset, local-jitter, global-speed-change, timbre-replacement, and sound-source-replacement challenges
+        data_status: announced_unreleased
+        note: The paper reports 10 scenarios and binary original-versus-perturbed accuracy on non-overlapping 0.64-second chunks, but the official repositories currently contain no videos, annotations, benchmark samples, or evaluation code.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      placeholder_card: MIT metadata tag only; no released benchmark files are present
+      upstream: Rights and reuse terms for the public-online-platform source videos are unspecified
+    sources:
+      - https://arxiv.org/html/2607.00726v1#S2.SS2
+      - https://fgt7t6g.github.io/AV-SyncBench/
+      - https://raw.githubusercontent.com/fgt7t6g/AV-SyncBench/main/README.md
+      - https://api.github.com/repos/fgt7t6g/AV-SyncBench
+      - https://huggingface.co/datasets/coming245/AV-SyncBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/coming245/AV-SyncBench
+    note: The paper and project page say that code and data are available, but the official GitHub README says they "will be released soon" and the public Hugging Face repository contains only README metadata with zero bytes of dataset storage. AV-SyncBench is therefore recorded as an audited announced protocol rather than a downloadable benchmark family; the card's MIT tag must not be treated as licensing unreleased or third-party source videos.
+
 benchmarks:
   - id: mmau
     name: MMAU
