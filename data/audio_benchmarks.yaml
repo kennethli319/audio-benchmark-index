@@ -2942,7 +2942,7 @@ benchmarks:
   - id: cv3_eval
     name: CV3-Eval
     full_name: "CV3-Eval: CosyVoice 3 in-the-wild zero-shot speech synthesis benchmark"
-    qwen_cited_as: CV3-Eval
+    qwen_cited_as: CV3-Eval / Cross-Lingual benchmark
     qwen_bucket: speech_synthesis
     tasks:
       - zero_shot_text_to_speech
@@ -2959,6 +2959,7 @@ benchmarks:
       repo: https://github.com/FunAudioLLM/CV3-Eval
       paper: https://arxiv.org/abs/2505.17589
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2.SSS3
+      qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS2.SSS3
     download:
       primary:
         - https://github.com/FunAudioLLM/CV3-Eval
@@ -2966,7 +2967,7 @@ benchmarks:
       examples:
         - 'scripts/download/cv3_eval.sh'
         - 'CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh'
-      notes: The official repository includes objective multilingual, cross-lingual, and emotion-cloning subsets plus subjective expressive, continuation, and Chinese-accent subsets. The helper downloads the README and Apache-2.0 license by default; cloning the roughly 760 MiB repository, including evaluation audio and bundled scoring utilities/models, requires CV3_EVAL_CLONE_REPO=1.
+      notes: The official repository includes objective multilingual, cross-lingual, and emotion-cloning subsets plus subjective expressive, continuation, and Chinese-accent subsets. Qwen3.5-Omni section 5.2.3 calls the public cross-lingual subset both CV3-Eval and the Cross-Lingual benchmark, and reports mixed error rate over 12 source-target directions among Chinese, English, Japanese, and Korean. The helper downloads the README and Apache-2.0 license by default; cloning the roughly 760 MiB repository, including evaluation audio and bundled scoring utilities/models, requires CV3_EVAL_CLONE_REPO=1.
     license:
       data: "Apache-2.0 repository license; mixed upstream media rights"
       code: Apache-2.0
@@ -2980,6 +2981,8 @@ benchmarks:
       - https://arxiv.org/abs/2505.17589
       - https://arxiv.org/abs/2601.15621
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS3
+      - https://arxiv.org/abs/2604.15804
+      - https://arxiv.org/html/2604.15804v1#S5.SS2.SSS3
 
   - id: tts_multilingual_test_set
     name: TTS Multilingual Test Set
