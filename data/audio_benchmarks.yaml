@@ -6635,6 +6635,69 @@ benchmarks:
       - https://raw.githubusercontent.com/jiabingyang01/EmoPrefer-Audit/main/data/README.md
       - https://raw.githubusercontent.com/jiabingyang01/EmoPrefer-Audit/main/LICENSE
 
+  - id: ov_merd
+    name: OV-MERD
+    full_name: "OV-MERD: Open-Vocabulary Multimodal Emotion Recognition Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+      - paralinguistic_speech_evaluation
+    tasks:
+      - open_vocabulary_multimodal_emotion_recognition
+      - audio_visual_emotion_understanding
+      - acoustic_emotion_cue_reasoning
+      - free_form_multi_label_emotion_prediction
+      - multimodal_emotion_captioning
+    official:
+      paper: https://arxiv.org/abs/2410.01495
+      openreview: https://openreview.net/forum?id=Y8lfuSoqQz
+      repo: https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER
+      dataset: https://huggingface.co/datasets/MERChallenge/MER2025
+    download:
+      primary:
+        - https://huggingface.co/datasets/MERChallenge/MER2025
+        - https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER
+      examples:
+        - 'scripts/download/ov_merd.sh'
+      notes: >-
+        OV-MERD extends a consented subset of MER2023 movie and television
+        clips with human-checked acoustic and visual clues, merged multimodal
+        descriptions, and open-vocabulary emotion labels. The paper reports
+        236 emotion categories, one to nine labels per sample (most have two
+        to four), and clips that are mostly one to four seconds long. The
+        current official repository points to the gated MER2025 release, which
+        bundles OV-MERD label and description tables with audio, video,
+        subtitles, and face features for the broader challenge corpus. The
+        Hugging Face API reports approximately 442 GB of repository storage.
+        The helper downloads only public official documentation, repository
+        metadata, the paper landing page, and the Hugging Face API response;
+        users must request access and download any benchmark files manually.
+    license:
+      data: CC-BY-NC-4.0_with_additional_gated_terms
+      code: Apache-2.0_with_noncommercial_notice
+      notes: >-
+        The paper and Hugging Face card identify OV-MERD as CC BY-NC 4.0.
+        MER2025's gated terms further limit use to academic research and
+        non-commercial purposes, prohibit distribution of the dataset or
+        derivative annotation/label files to third parties, and prohibit
+        modification without prior written consent. The OV-MER repository
+        includes Apache-2.0 code terms but also calls the service a
+        non-commercial research preview. Source clips derive from MER2023
+        movie and television media, so underlying media rights remain
+        separate.
+    sources:
+      - https://arxiv.org/abs/2410.01495
+      - https://arxiv.org/html/2410.01495v3#S2
+      - https://arxiv.org/html/2410.01495v3#S5
+      - https://openreview.net/forum?id=Y8lfuSoqQz
+      - https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER
+      - https://raw.githubusercontent.com/zeroQiaoba/AffectGPT/master/OV-MER/README.md
+      - https://raw.githubusercontent.com/zeroQiaoba/AffectGPT/master/OV-MER/LICENSE
+      - https://api.github.com/repos/zeroQiaoba/AffectGPT
+      - https://huggingface.co/datasets/MERChallenge/MER2025
+      - https://huggingface.co/api/datasets/MERChallenge/MER2025
+
   - id: iemocap
     name: IEMOCAP
     full_name: "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database"

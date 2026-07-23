@@ -35,7 +35,8 @@ event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
-and multimodal speaker-segment and in-cabin driver emotion recognition, exact structured-token
+and multimodal speaker-segment, open-vocabulary audio-visual, and in-cabin
+driver emotion recognition, exact structured-token
 recovery in workplace ASR, in-the-wild neurological Spanish ASR, as well as multi-turn voice-agent
 tool use, grounding, state tracking, conversational memory, and context-aware
 turn-taking decisions.
@@ -50,7 +51,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 220 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 221 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -426,6 +427,7 @@ Current coverage includes:
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
 | [SpEmoC](https://skvipparthi.com/spemoc.html) | Multimodal speaker-segment emotion recognition | Official project and paper document 30,000 refined clips from 306,544 raw segments across 3,100 English-language movies and TV series; full media access requires a signed requestor and faculty/PI agreement sent from an institutional address, and the helper only saves public documentation | Custom non-commercial academic agreement prohibits redistribution; source movie/TV copyrights remain with their owners; public repository code and split/metadata terms are unspecified |
 | [EmoPrefer](https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer) | Multimodal emotion-description preference evaluation | Public original/V2 pairwise annotation tables (574 unanimous pairs and 2,096 individual-annotator pairs) plus reverse-order and generator-name audit variants; source audio/video remains separately gated through MER2025, while the helper downloads only public annotations/docs | Official subdirectory is Apache-2.0 but says non-commercial research only; gated MER2025 adds CC BY-NC 4.0, academic-only, no-redistribution/no-modification terms; audit code is MIT |
+| [OV-MERD](https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER) | Open-vocabulary multimodal emotion recognition | Official gated [MER2025 release](https://huggingface.co/datasets/MERChallenge/MER2025) with acoustic/visual clues, descriptions, and free-form labels spanning 236 emotion categories; helper saves public docs/metadata only and leaves the approximately 442 GB repository manual | CC BY-NC 4.0 plus academic-only, non-commercial, no-redistribution, and no-modification gated terms; repository code is Apache-2.0 with a non-commercial research-preview notice, and source movie/TV rights remain separate |
 | [IEMOCAP](https://sail.usc.edu/iemocap/) | Speech emotion recognition | Official [release page](https://sail.usc.edu/iemocap/iemocap_release.htm) after reading the [USC/SAIL data release form](https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf) and submitting the request form | Custom USC/SAIL data release terms; access is manual/form-gated |
 | [MSP-Podcast](https://lab-msp.com/MSP/MSP-Podcast.html) | Naturalistic speech emotion recognition | Free academic access after an authorized institutional representative signs the official data-transfer agreement; Test3 audio is released without labels for web-based evaluation | Custom institution-signed academic license; permissive source-podcast licenses do not replace the controlling corpus agreement |
 | [MUSAN](https://www.openslr.org/17/) | Speech/music/noise classification | [OpenSLR SLR17](https://www.openslr.org/17/) corpus archive; helper downloads the OpenSLR page by default and requires opt-in for the 11 GiB archive | CC BY 4.0 |

@@ -221,6 +221,7 @@ KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/lyra_sa.sh
 scripts/download/iemocap.sh
+scripts/download/ov_merd.sh
 scripts/download/spemoc.sh
 scripts/download/incaremo.sh
 scripts/download/msp_podcast.sh
