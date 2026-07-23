@@ -86,6 +86,15 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The January 2026 SYAUDIO paper is recorded as an audited protocol rather than
+a downloadable family. It describes 4,319 audio questions for testing
+audio-language-model sycophancy across perception, reasoning, mathematics, and
+ethics, including 1,319 GSM8K and 1,000 MMLU moral questions converted to
+speech. The paper provides no official project, repository, dataset card,
+archive, item manifest, generated audio, evaluation code, or data-license
+statement. Public upstream MMAU, MMAR, GSM8K, and MMLU resources do not release
+SYAUDIO's selected rows, speech, prompts, or acoustic perturbations.
+
 The April 2026 CAST paper is recorded as an audited speech-generation protocol,
 not a downloadable family. It defines 113 contrastive context pairs (226
 textual items) for testing whether TTS systems realize discourse-conditioned

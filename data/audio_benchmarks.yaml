@@ -555,6 +555,28 @@ paper_audits:
       - https://api.github.com/repos/AI-S2-Lab/Chain-Talker/git/trees/main?recursive=1
     note: Section 5.1 calls NCSSD-EmCap open-source and cites Chain-Talker, but the official Chain-Talker repository contains only README.md and LICENSE and publishes no code, release assets, dataset card, audio, annotations, captions, or split manifests. The AuEmoChat abstract announces https://github.com/anonymous-css/AuEmoChat, which returned HTTP 404 on 2026-07-23. Apache-2.0 covers the two-file Chain-Talker repository, not absent derived speech data or its upstream corpora. NCSSD-EmCap is therefore recorded as an audited unreleased evaluation dataset rather than an indexed benchmark family; recheck both repositories after a public release.
 
+  syaudio:
+    paper: https://arxiv.org/abs/2601.23149
+    sections: 3.1-3.3 and appendix F
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: audio_language_model_sycophancy
+        protocol: 4,319 audio questions spanning perception, reasoning, mathematics, and ethics, evaluated under bias-feedback, answer-revision, confidence-challenge, and mimicry prompts
+        data_status: derived_benchmark_not_released
+        note: The perception and reasoning items come from MMAU and MMAR. The paper additionally converts 1,319 GSM8K problems and 1,000 MMLU moral scenarios to speech with GPT-4o-mini-TTS, then tests background-noise and speaking-rate variants. It provides no item manifest, generated audio, prompts, split files, or evaluation code.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      upstream: MMAU and MMAR retain their own mixed terms; GSM8K and MMLU source terms do not establish redistribution rights for the paper's generated speech or derived annotations
+    sources:
+      - https://arxiv.org/abs/2601.23149
+      - https://arxiv.org/html/2601.23149v1#S3.SS1
+      - https://arxiv.org/html/2601.23149v1#S3.SS2
+      - https://arxiv.org/html/2601.23149v1#S3.SS3
+      - https://arxiv.org/html/2601.23149v1#A6
+    note: The paper introduces SYAUDIO as a 4,319-question benchmark but supplies no official project, repository, dataset card, archive, download URL, data-license statement, or code link. Public MMAU, MMAR, GSM8K, and MMLU sources do not make the paper's selected rows, generated speech, sycophancy prompts, acoustic perturbations, or evaluation manifests public. SYAUDIO is therefore recorded as an audited protocol rather than a downloadable benchmark family; do not confuse unrelated repositories with similar names for an official release.
+
 benchmarks:
   - id: mmau
     name: MMAU
