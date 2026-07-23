@@ -9966,3 +9966,60 @@ benchmarks:
       - https://huggingface.co/spaces/microsoft/paza-bench/raw/main/src/data/dataset_group_metadata.json
       - https://huggingface.co/api/spaces/microsoft/paza-bench
       - https://arxiv.org/abs/2607.18912
+
+  - id: indic_context_eval
+    name: IndicContextEval
+    full_name: "IndicContextEval: A Benchmark for Evaluating Context Utilisation in Audio Large Language Models Across 8 Indic Languages"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - robustness_evaluation
+    tasks:
+      - contextual_asr
+      - multilingual_asr
+      - named_entity_recognition
+      - context_utilisation
+      - adversarial_context_robustness
+    official:
+      paper: https://arxiv.org/abs/2606.19157
+      repo: https://github.com/AI4Bharat/IndicContextEval
+      dataset: https://huggingface.co/datasets/AI4Bharat/IndicContextEval
+    download:
+      primary:
+        - https://huggingface.co/datasets/AI4Bharat/IndicContextEval
+        - https://github.com/AI4Bharat/IndicContextEval
+      examples:
+        - 'scripts/download/indic_context_eval.sh'
+        - 'INDIC_CONTEXT_EVAL_DOWNLOAD_HF=1 scripts/download/indic_context_eval.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("AI4Bharat/IndicContextEval", split="Hindi")'
+      notes: >-
+        The public, ungated release contains 16,884 natural-speech utterances
+        totaling 55.93 hours from 555 speakers across Bengali, Gujarati, Hindi,
+        Malayalam, Marathi, Odia, Telugu, and Urdu. It covers 23 professional
+        domains and supplies seven controlled prompt levels: no context,
+        language, structured metadata, natural-language description, English-
+        script entities, native-script entities, and incorrect-domain entities.
+        The helper downloads official documentation, repository metadata, the
+        small published results table, and prompt-taxonomy supplements by
+        default. The Hugging Face card reports a 6.48 GB current download and
+        its API reports approximately 19.64 GB of repository storage including
+        history, so embedded audio requires INDIC_CONTEXT_EVAL_DOWNLOAD_HF=1.
+    license:
+      data: cc-by-4.0
+      code: not_specified
+      notes: >-
+        The Hugging Face card and official repository README declare the
+        benchmark CC BY 4.0. The GitHub repository has no LICENSE file and
+        GitHub detects no repository license, so do not assume that its
+        evaluation outputs or forthcoming evaluation code use the same terms
+        without clarification.
+    sources:
+      - https://arxiv.org/abs/2606.19157
+      - https://arxiv.org/html/2606.19157v2#S3
+      - https://github.com/AI4Bharat/IndicContextEval
+      - https://raw.githubusercontent.com/AI4Bharat/IndicContextEval/main/README.md
+      - https://api.github.com/repos/AI4Bharat/IndicContextEval
+      - https://api.github.com/repos/AI4Bharat/IndicContextEval/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/AI4Bharat/IndicContextEval
+      - https://huggingface.co/datasets/AI4Bharat/IndicContextEval/raw/main/README.md
+      - https://huggingface.co/api/datasets/AI4Bharat/IndicContextEval

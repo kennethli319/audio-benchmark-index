@@ -100,6 +100,7 @@ scripts/download/primewords_chinese.sh
 scripts/download/pansori_tedxkr.sh
 scripts/download/golos.sh
 scripts/download/gigaspeechbench.sh
+scripts/download/indic_context_eval.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
 scripts/download/openstbench.sh
