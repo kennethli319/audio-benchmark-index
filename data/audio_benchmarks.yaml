@@ -9425,3 +9425,59 @@ benchmarks:
       - https://api.github.com/repos/mileskuo42/AudioMarkBench/git/trees/main?recursive=1
       - https://drive.google.com/drive/folders/1037mBf4LoGq0CDxe6hYx5fNNv56AY_9e
       - https://arxiv.org/abs/2607.17592
+
+  - id: speecheq
+    name: SpeechEQ
+    full_name: "SpeechEQ: Benchmarking Emotional Intelligence Quotient in Socially Aware Voice Conversational Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - end_to_end_speech_dialogue
+      - paralinguistic_speech_evaluation
+    tasks:
+      - spoken_dialogue_emotional_intelligence
+      - paralinguistic_reasoning
+      - multi_turn_speech_understanding
+      - acoustic_multiple_choice
+      - context_aware_response_selection
+    official:
+      paper: https://arxiv.org/abs/2606.25990
+      project: https://binomial14.github.io/speecheq-demo/
+      repo: https://github.com/binomial14/SpeechEQ
+      dataset: https://huggingface.co/datasets/SpeechEQ/SpeechEQ
+    download:
+      primary:
+        - https://huggingface.co/datasets/SpeechEQ/SpeechEQ
+        - https://github.com/binomial14/SpeechEQ
+      examples:
+        - 'scripts/download/speecheq.sh'
+        - 'SPEECHEQ_DOWNLOAD_HF=1 scripts/download/speecheq.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("SpeechEQ/SpeechEQ", split="test")'
+      notes: >-
+        The public, ungated English release contains 2,265 six-turn dialogues
+        totaling 42 hours 23 minutes across 15 EQ-i 2.0 subscales. Evaluation
+        selects between high- and low-EQ acoustic renditions of identical text
+        at turns four and six, testing pitch, energy, rate, pauses, and
+        sustained conversational context. The helper downloads official
+        documentation and repository metadata by default. The five Parquet
+        shards contain embedded audio and total approximately 2.45 GB, so the
+        full Hugging Face snapshot requires SPEECHEQ_DOWNLOAD_HF=1.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The Hugging Face card has no license field, and neither the dataset
+        repository nor the official code repository exposes a license file.
+        The paper itself is CC BY-NC-SA 4.0, but that publication license must
+        not be assumed to license the released benchmark audio, annotations,
+        or code. Obtain clarification before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2606.25990
+      - https://arxiv.org/html/2606.25990v1#S2
+      - https://binomial14.github.io/speecheq-demo/
+      - https://github.com/binomial14/SpeechEQ
+      - https://raw.githubusercontent.com/binomial14/SpeechEQ/main/README.md
+      - https://api.github.com/repos/binomial14/SpeechEQ
+      - https://api.github.com/repos/binomial14/SpeechEQ/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/SpeechEQ/SpeechEQ
+      - https://huggingface.co/datasets/SpeechEQ/SpeechEQ/raw/main/README.md
+      - https://huggingface.co/api/datasets/SpeechEQ/SpeechEQ
