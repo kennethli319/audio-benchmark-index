@@ -123,6 +123,7 @@ scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
+scripts/download/live_gurbani_captioning_v1.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
 scripts/download/voxblink2.sh
@@ -284,6 +285,9 @@ SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# Live Gurbani Captioning v1 downloads official docs/metadata by default; clone the small annotation/scorer repo explicitly.
+LIVE_GURBANI_CAPTIONING_CLONE_REPO=1 scripts/download/live_gurbani_captioning_v1.sh
 
 # LOCATA downloads official pages, docs, Zenodo metadata, and tool READMEs by default.
 # The public corpus archives total about 19.3 GB and remain on the official Zenodo record.

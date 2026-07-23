@@ -7527,3 +7527,60 @@ benchmarks:
       - https://github.com/sharathadavanne/seld-dcase2021
       - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2021/master/README.md
       - https://raw.githubusercontent.com/sharathadavanne/seld-dcase2021/master/LICENSE.md
+
+  - id: live_gurbani_captioning_v1
+    name: Live Gurbani Captioning Benchmark v1
+    full_name: "Live Gurbani Tracking: A Benchmark and Reference System for Captioning Sikh Kirtan"
+    qwen_cited_as: null
+    qwen_bucket: singing_voice_dataset
+    tasks:
+      - closed_vocabulary_singing_captioning
+      - live_audio_tracking
+      - lyrics_alignment
+      - sung_scripture_identification
+      - low_resource_speech_recognition
+    official:
+      project: https://karanbirsingh.github.io/live-gurbani-captioning-benchmark-v1/
+      repo: https://github.com/karanbirsingh/live-gurbani-captioning-benchmark-v1
+      paper: https://arxiv.org/abs/2607.13457
+      arxiv_html: https://arxiv.org/html/2607.13457v1
+    download:
+      primary:
+        - https://github.com/karanbirsingh/live-gurbani-captioning-benchmark-v1
+        - https://github.com/karanbirsingh/live-gurbani-captioning-benchmark-v1/tree/main/test
+      examples:
+        - 'scripts/download/live_gurbani_captioning_v1.sh'
+        - 'LIVE_GURBANI_CAPTIONING_CLONE_REPO=1 scripts/download/live_gurbani_captioning_v1.sh'
+      notes: >-
+        The public v1 repository contains ground-truth timelines for four
+        hand-reviewed Sikh Kirtan recordings, each evaluated from 0%, 33%,
+        and 66% start offsets, giving 12 cases and approximately 57 minutes
+        of scored audio. It also releases a standard-library Python scorer,
+        visualization and annotation tools, and empty, shifted, and perfect
+        baselines. The primary metric is one-second frame accuracy with a
+        one-second boundary collar. The helper downloads official
+        documentation and repository metadata by default; cloning the small
+        repository with annotations and evaluation code is opt-in. Audio is
+        not redistributed: the official README identifies four YouTube video
+        IDs and provides yt-dlp/ffmpeg preparation commands, so availability
+        and source-media rights must be checked separately.
+    license:
+      data: CC-BY-4.0_annotations
+      code: MIT
+      notes: >-
+        The repository LICENSE applies CC BY 4.0 to ground-truth annotations
+        in test/ and the committed baselines, and MIT to the software and
+        documentation. The four underlying Kirtan recordings are referenced
+        by YouTube ID rather than bundled; the repository license does not
+        grant rights to those recordings, and platform terms, uploader rights,
+        performer rights, and local cultural or legal considerations remain
+        separate.
+    sources:
+      - https://arxiv.org/abs/2607.13457
+      - https://arxiv.org/html/2607.13457v1#S4
+      - https://arxiv.org/html/2607.13457v1#S10
+      - https://karanbirsingh.github.io/live-gurbani-captioning-benchmark-v1/
+      - https://github.com/karanbirsingh/live-gurbani-captioning-benchmark-v1
+      - https://raw.githubusercontent.com/karanbirsingh/live-gurbani-captioning-benchmark-v1/main/README.md
+      - https://raw.githubusercontent.com/karanbirsingh/live-gurbani-captioning-benchmark-v1/main/LICENSE
+      - https://api.github.com/repos/karanbirsingh/live-gurbani-captioning-benchmark-v1
