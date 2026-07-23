@@ -3947,6 +3947,7 @@ benchmarks:
       results: https://dcase.community/challenge2026/task-audio-dependent-question-answering-results
       dataset: https://huggingface.co/datasets/Harland/ADQA-Bench
       paper: https://arxiv.org/abs/2509.21060
+      summary_paper: https://arxiv.org/abs/2607.18718
     download:
       primary:
         - https://huggingface.co/datasets/Harland/ADQA-Bench
@@ -3958,7 +3959,11 @@ benchmarks:
         English multiple-choice questions with 3,000 WAV files spanning speech,
         music, and general sound understanding. Every item passed the organizers'
         four-stage Audio-Dependency Filtering process to reduce silent-audio and
-        text-only shortcuts. The current release provides questions and choices
+        text-only shortcuts. The DCASE 2026 task-summary paper reports 1,607
+        development items, 14 participating teams, 36 ranked submissions, and
+        two parameter-count tracks; its team results use the hidden 3,000-item
+        evaluation set rather than the development set used for organizer
+        baselines. The current release provides questions and choices
         without answers for challenge evaluation; the dataset card says answers
         will be released after the competition. The helper downloads official
         pages, the dataset card, API metadata, and the lightweight no-answer
@@ -3975,6 +3980,8 @@ benchmarks:
       - https://huggingface.co/datasets/Harland/ADQA-Bench/raw/main/README.md
       - https://huggingface.co/api/datasets/Harland/ADQA-Bench
       - https://arxiv.org/abs/2509.21060
+      - https://arxiv.org/abs/2607.18718
+      - https://arxiv.org/html/2607.18718v1#S2
 
   - id: spuraudio
     name: SpurAudio

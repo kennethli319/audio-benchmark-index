@@ -533,8 +533,9 @@ TUT_SOUND_EVENTS_2017_DOWNLOAD_AUDIO=1 scripts/download/tut_sound_events_2017.sh
 # saves public metadata and prints the login/acceptance flow; it downloads no audio.
 scripts/download/dcase2025_audioqa.sh
 
-# ADQA-Bench downloads official docs and the no-answer JSONL by default. The
-# approximately 2.94 GB Hugging Face audio snapshot is opt-in.
+# ADQA-Bench downloads official docs, both the benchmark and DCASE 2026 task-
+# summary papers, and the no-answer JSONL by default. The approximately 2.94 GB
+# Hugging Face audio snapshot is opt-in.
 ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh
 
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
