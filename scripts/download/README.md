@@ -50,6 +50,7 @@ scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/avscapbench.sh
 scripts/download/syncbench.sh
+scripts/download/ave_compass.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/lvomnibench.sh
@@ -357,6 +358,11 @@ MUSICA_METABENCH_CLONE_REPO=1 scripts/download/musica_metabench.sh
 # SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
 SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh
 SYNCBENCH_CLONE_REPO=1 scripts/download/syncbench.sh
+
+# AVE-Compass downloads official docs/API metadata by default. Benchmark
+# annotations and the approximately 442 MB full snapshot are separate opt-ins.
+AVE_COMPASS_DOWNLOAD_METADATA=1 scripts/download/ave_compass.sh
+AVE_COMPASS_DOWNLOAD_HF=1 scripts/download/ave_compass.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh

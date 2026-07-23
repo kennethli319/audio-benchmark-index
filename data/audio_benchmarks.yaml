@@ -1774,6 +1774,62 @@ benchmarks:
       - https://huggingface.co/datasets/qianyijie/SyncBench
       - https://huggingface.co/api/datasets/qianyijie/SyncBench
 
+  - id: ave_compass
+    name: AVE-Compass
+    full_name: "AVE-Compass: Towards Holistic Evaluation for Audio-Video Editing Abilities"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_generation_evaluation
+    tasks:
+      - instruction_based_audio_video_editing
+      - joint_audio_visual_editing
+      - speech_editing
+      - audio_only_editing
+      - video_only_editing
+      - audio_visual_generation_evaluation
+    official:
+      homepage: https://ave-compass.github.io/
+      repo: https://github.com/NJU-LINK/AVE-Compass
+      dataset: https://huggingface.co/datasets/NJU-LINK/AVE-Compass
+    download:
+      primary:
+        - https://huggingface.co/datasets/NJU-LINK/AVE-Compass
+        - https://github.com/NJU-LINK/AVE-Compass
+      examples:
+        - 'scripts/download/ave_compass.sh'
+        - 'AVE_COMPASS_DOWNLOAD_METADATA=1 scripts/download/ave_compass.sh'
+        - 'AVE_COMPASS_DOWNLOAD_HF=1 scripts/download/ave_compass.sh'
+      notes: >-
+        The public, ungated release contains 145 curated source videos, 196
+        human-verified English editing instructions, 196 checklist JSON files
+        with 2,688 fine-grained items, and 28 editing operation types across
+        joint, speech, video-only, and audio-only branches. The helper downloads
+        official documentation and repository metadata by default. Set
+        AVE_COMPASS_DOWNLOAD_METADATA=1 for the lightweight instruction,
+        checklist, and Dataset Viewer metadata files, or
+        AVE_COMPASS_DOWNLOAD_HF=1 for the complete approximately 442 MB
+        Hugging Face snapshot. The official project currently provides a
+        citation but no public paper URL.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0 for the benchmark release.
+        The evaluation repository has no LICENSE file or GitHub-detected
+        license. Source-video filenames identify a mixture that includes
+        web-video-derived clips, so users should retain attribution and review
+        uploader, platform, privacy, and underlying media rights before
+        redistribution or derivative use.
+    sources:
+      - https://ave-compass.github.io/
+      - https://github.com/AVE-Compass/AVE-Compass.github.io
+      - https://raw.githubusercontent.com/AVE-Compass/AVE-Compass.github.io/main/README.md
+      - https://github.com/NJU-LINK/AVE-Compass
+      - https://raw.githubusercontent.com/NJU-LINK/AVE-Compass/main/README.md
+      - https://api.github.com/repos/NJU-LINK/AVE-Compass
+      - https://huggingface.co/datasets/NJU-LINK/AVE-Compass
+      - https://huggingface.co/datasets/NJU-LINK/AVE-Compass/raw/main/README.md
+      - https://huggingface.co/api/datasets/NJU-LINK/AVE-Compass
+
   - id: video_mme
     name: Video-MME
     full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"
