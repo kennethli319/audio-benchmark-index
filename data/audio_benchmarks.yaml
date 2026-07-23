@@ -2788,6 +2788,50 @@ benchmarks:
       - https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.html
       - https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.pdf
 
+  - id: gigaspeechbench
+    name: GigaSpeechBench
+    full_name: "GigaSpeechBench: A Real-World Multilingual Speech-to-Text Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_to_text_translation
+    tasks:
+      - automatic_speech_recognition
+      - speech_to_text_translation
+      - multilingual_speech_recognition
+      - dialectal_speech_recognition
+      - accented_speech_recognition
+      - domain_specific_speech_recognition
+      - child_speech_recognition
+      - older_adult_speech_recognition
+      - contextual_biasing
+      - asr_robustness
+    official:
+      repo: https://github.com/SpeechColab/GigaSpeechBench
+      dataset: https://huggingface.co/datasets/speechcolab/GigaSpeechBench
+      paper: https://arxiv.org/abs/2606.28884
+    download:
+      primary:
+        - https://huggingface.co/datasets/speechcolab/GigaSpeechBench
+        - https://github.com/SpeechColab/GigaSpeechBench
+      examples:
+        - 'scripts/download/gigaspeechbench.sh'
+        - 'GIGASPEECHBENCH_DOWNLOAD_HF=1 scripts/download/gigaspeechbench.sh'
+        - 'huggingface-cli download --repo-type dataset speechcolab/GigaSpeechBench --local-dir data/GigaSpeechBench'
+      notes: The paper defines a 680-hour in-the-wild benchmark with five modules covering 14 low-resource language/region sets, six Chinese dialects, six English accents, 12 Chinese and English terminology domains, and child/older-adult speech; it also reports Chinese and English translation references for 11 languages. The current public, ungated Hugging Face repository contains the Low-Resource-Languages, CH-EN-Dialects, and Vertical-Domain modules, including audio archives and JSON metadata, but no separate age-group module was visible when checked. Translation result files are public, while the exact release coverage of translation references should be verified per metadata file. The helper downloads official documentation and repository/API metadata by default; the Hugging Face API reports approximately 86.3 GB of repository storage, so the dataset snapshot requires GIGASPEECHBENCH_DOWNLOAD_HF=1.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: Neither the Hugging Face repository metadata nor the official GitHub repository declares a license, and the GitHub repository has no LICENSE file. Do not infer reuse or redistribution rights from public, ungated access; obtain clarification from SpeechColab before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2606.28884
+      - https://arxiv.org/html/2606.28884v3
+      - https://github.com/SpeechColab/GigaSpeechBench
+      - https://raw.githubusercontent.com/SpeechColab/GigaSpeechBench/main/README.md
+      - https://api.github.com/repos/SpeechColab/GigaSpeechBench
+      - https://huggingface.co/datasets/speechcolab/GigaSpeechBench
+      - https://huggingface.co/api/datasets/speechcolab/GigaSpeechBench
+
   - id: common_voice
     name: Common Voice
     full_name: Mozilla Common Voice
