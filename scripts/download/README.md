@@ -68,6 +68,7 @@ scripts/download/songformbench.sh
 scripts/download/rubato.sh
 scripts/download/multtipop.sh
 scripts/download/songeval.sh
+scripts/download/song_describer.sh
 scripts/download/cmi_rewardbench.sh
 scripts/download/musica_metabench.sh
 scripts/download/chartgeneval.sh

@@ -53,7 +53,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 231 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 232 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -85,6 +85,13 @@ inventoried in the source YAML: DailyOmni, WorldSense, AVUT, AV-SpeakerBench,
 audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
+
+Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
+bilingual text-to-music, two cover-song reference, and bilingual rendering
+sets are internal and unreleased. The public exception is the
+[Song Describer Dataset](https://zenodo.org/records/10072001): section 4.2.2
+uses all 546 tracks in its validated subset for codec-reconstruction
+evaluation. The index does not infer download links for Qwen's internal sets.
 
 The January 2026 SYAUDIO paper is recorded as an audited protocol rather than
 a downloadable family. It describes 4,319 audio questions for testing
@@ -323,6 +330,7 @@ Current coverage includes:
 | [RUBATO](https://zenodo.org/records/21407832) | Robust music transcription and analysis across multiple versions of the same works | Public Zenodo v0.3 release with 566 versions of 15 works (about 42.9 hours), aligned audio/score/video representations, and note, beat, measure, local-key, structure, and warping-path annotations; helper downloads the 83 KB metadata by default while the approximately 6.26 GB archive is opt-in | Zenodo labels the deposit CC BY 3.0, but per-recording metadata includes CC0, attribution, ShareAlike, NoDerivatives, non-commercial, ambiguous, and EEF terms; review each recording before reuse |
 | [MulTTiPop](https://gclef-cmu.org/multtipop) | Multitrack pop-music transcription and audio-MIDI alignment | Public, ungated [gclef-cmu/multtipop](https://huggingface.co/datasets/gclef-cmu/multtipop) with aligned MIDI and metadata for 572 commercial-pop segments (about 3.5 hours) in artist-disjoint dev/test splits; helper downloads docs and lightweight manifests by default and makes the full MIDI/metadata snapshot opt-in; source audio is not redistributed | Released MIDI and metadata are CC BY 4.0, with MIDI adapted from the CC BY 4.0 Lakh MIDI Dataset; referenced YouTube/commercial audio retains platform and music rights, and the authors recommend evaluation-only use |
 | [SongEval](https://huggingface.co/datasets/ASLP-lab/SongEval) | Full-song aesthetics and music-generation quality assessment | Public, ungated 2,399-song English/Chinese release with about 140 hours and expert ratings for coherence, memorability, vocal naturalness, structural clarity, and musicality; helper downloads docs and the approximately 1.27 MB rating JSONL by default while the approximately 16.1 GB MP3 snapshot is opt-in | Dataset card declares CC BY-NC-SA 4.0 and toolkit is Apache-2.0, but songs include commercial-generator outputs and real/bad-case samples without per-item provenance, so generated-output, service, and underlying music rights require review |
+| [Song Describer Dataset](https://zenodo.org/records/10072001) | Music captioning, retrieval, text-to-music, and codec-reconstruction evaluation | Public, ungated 706-track MTG-Jamendo release with 1,106 captions and a human-validated 546-track/746-caption evaluation subset; Qwen-Music §4.2.2 uses all 546 validated tracks; helper downloads annotations, licenses, metadata, and docs by default while the approximately 3.09 GiB audio archive is opt-in | Dataset is CC BY-SA 4.0 and code is MIT; audio retains per-track Creative Commons licenses listed in the release, so preserve attribution and apply each track's terms |
 | [CMI-RewardBench / CMI-Pref](https://github.com/Haiwen-Xia/CMI-RewardBench) | Music reward-model, preference, quality, and compositional multimodal alignment evaluation | Public, ungated [CMI-Pref](https://huggingface.co/datasets/HaiwenXia/cmi-pref) with 4,027 human votes, a balanced 500-vote test split, and 133.8 hours; helper downloads docs and lightweight test manifests by default while the approximately 15.0 GB audio snapshot is opt-in | CMI-Pref is CC BY-NC-SA 4.0 and toolkit code is Apache-2.0; commercial-generator service/output terms and the separate PAM, MusicEval, and Music Arena subset rights still apply |
 | [MusICA-MetaBench](https://github.com/tomsouri/MusICA-MetaBench-preprint) | Programmatic music-perception QA across audio, symbolic notation, and sheet images | Public pipeline plus two released 300-item benchmark instances derived from ChoraleBricks and ChoralSynth; helper downloads docs, licenses, configs, and the sub-500 KB TSVs by default while the approximately 49 MB repository clone is opt-in; source media is obtained separately | Code/templates/configs are GPL-3.0-or-later; ChoraleBricks-derived instances are CC BY 4.0 and ChoralSynth-derived instances are CC BY-SA 4.0; model outputs/logs have no separate license, and source media retains upstream terms |
 | [Lyra-SA](https://lyracobar.y.qq.com/singvoicedataset_en.html) | Full-song singing-quality assessment and score prediction | Official Tencent Music Lyra Lab release with 1,000 complete mobile-karaoke recordings, listener scores, timed lyrics, and reference MIDI; access requires the official application and an emailed download link, so the helper saves documentation and prints the manual path only | Official page states CC BY-NC 4.0 for non-commercial use with attribution, reserves Tencent Music copyright, and requires separate commercial permission; rely on the official authorization/application terms for WeSing performances and song rights |

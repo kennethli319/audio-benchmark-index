@@ -152,6 +152,31 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  qwen_music_technical_report:
+    paper: https://arxiv.org/abs/2607.11699
+    sections: 4.1-4.2
+    evaluated_sets:
+      - cited_as: bilingual text-to-music test set
+        index_id: null
+        status: internal_unreleased
+        note: Section 4.1.1 describes 300 Chinese and 300 English prompts with AI-generated lyrics and tags, but provides no item manifest or download.
+      - cited_as: AI-generated reference-melody set
+        index_id: null
+        status: internal_unreleased
+        note: Section 4.1.2 describes 100 Chinese and 100 English examples derived from Suno V5.5 and Mureka V8, but does not release the references, lyrics, tags, or outputs.
+      - cited_as: real-world popular-song reference-melody set
+        index_id: null
+        status: internal_unreleased
+        note: Section 4.1.2 describes 100 Chinese and 100 English examples without identifying or releasing the songs; music rights would also require review.
+      - cited_as: bilingual EN/ZH rendering set
+        index_id: null
+        status: internal_unreleased
+        note: Section 4.2.1 reports 100 samples per language but provides no public set or row mapping.
+      - cited_as: Song Describer Dataset
+        index_id: song_describer
+        status: public
+        note: Section 4.2.2 evaluates acoustic reconstruction on all 546 tracks in the validated subset of the official public release.
+
   rw_voice_eq_bench:
     paper: https://arxiv.org/abs/2607.14846
     sections: 2 and 4-7
@@ -9420,6 +9445,62 @@ benchmarks:
       - https://api.github.com/repos/ASLP-lab/SongEval
       - https://arxiv.org/abs/2607.20253
       - https://arxiv.org/html/2607.20253v1#S3.SS2
+
+  - id: song_describer
+    name: Song Describer Dataset
+    full_name: "The Song Describer Dataset: A Corpus of Audio Captions for Music-and-Language Evaluation"
+    qwen_cited_as: Song Describer Dataset
+    qwen_bucket:
+      - music_generation
+      - audio_captioning
+      - audio_quality_assessment
+    tasks:
+      - music_captioning
+      - text_to_music_generation_evaluation
+      - music_text_retrieval
+      - music_codec_reconstruction
+    official:
+      paper: https://arxiv.org/abs/2311.10057
+      repo: https://github.com/mulab-mir/song-describer-dataset
+      dataset: https://zenodo.org/records/10072001
+      qwen_music_report: https://arxiv.org/html/2607.11699v1#S4.SS2.SSS2
+    download:
+      primary:
+        - https://zenodo.org/records/10072001
+        - https://github.com/mulab-mir/song-describer-dataset
+      examples:
+        - 'scripts/download/song_describer.sh'
+        - 'SONG_DESCRIBER_DOWNLOAD_AUDIO=1 scripts/download/song_describer.sh'
+      notes: >-
+        The public, ungated release contains 706 approximately two-minute
+        MTG-Jamendo tracks with 1,106 crowdsourced English captions. Its
+        human-validated evaluation subset contains 546 tracks and 746 captions.
+        The helper downloads the official annotations, per-track audio-license
+        list, metadata, dataset documentation, and Zenodo record by default;
+        the approximately 3.09 GiB audio archive requires explicit opt-in.
+        Qwen-Music section 4.2.2 evaluates codec reconstruction on all 546
+        validated tracks.
+    license:
+      data: CC-BY-SA-4.0
+      code: MIT
+      notes: >-
+        Zenodo and the repository declare CC BY-SA 4.0 for the dataset and MIT
+        for code. The audio originates from MTG-Jamendo and retains per-track
+        Creative Commons licenses recorded in audio_licenses.txt; preserve
+        attribution and apply each track's terms in addition to the dataset
+        license.
+    sources:
+      - https://arxiv.org/abs/2311.10057
+      - https://arxiv.org/html/2311.10057
+      - https://github.com/mulab-mir/song-describer-dataset
+      - https://raw.githubusercontent.com/mulab-mir/song-describer-dataset/main/README.md
+      - https://raw.githubusercontent.com/mulab-mir/song-describer-dataset/main/LICENSE
+      - https://raw.githubusercontent.com/mulab-mir/song-describer-dataset/main/docs/datacard.md
+      - https://api.github.com/repos/mulab-mir/song-describer-dataset
+      - https://zenodo.org/records/10072001
+      - https://zenodo.org/api/records/10072001
+      - https://arxiv.org/abs/2607.11699
+      - https://arxiv.org/html/2607.11699v1#S4.SS2.SSS2
 
   - id: cmi_rewardbench
     name: CMI-RewardBench / CMI-Pref
