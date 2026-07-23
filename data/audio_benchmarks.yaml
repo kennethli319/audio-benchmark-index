@@ -8858,6 +8858,72 @@ benchmarks:
       - https://arxiv.org/abs/2607.20253
       - https://arxiv.org/html/2607.20253v1#S3.SS2
 
+  - id: cmi_rewardbench
+    name: CMI-RewardBench / CMI-Pref
+    full_name: "CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_generation
+      - audio_quality_assessment
+    tasks:
+      - music_reward_model_evaluation
+      - music_preference_prediction
+      - music_quality_assessment
+      - text_music_alignment
+      - reference_audio_music_alignment
+      - compositional_instruction_alignment
+    official:
+      paper: https://arxiv.org/abs/2603.00610
+      repo: https://github.com/Haiwen-Xia/CMI-RewardBench
+      dataset: https://huggingface.co/datasets/HaiwenXia/cmi-pref
+      recent_evaluation: https://arxiv.org/abs/2607.20253
+    download:
+      primary:
+        - https://github.com/Haiwen-Xia/CMI-RewardBench
+        - https://huggingface.co/datasets/HaiwenXia/cmi-pref
+      examples:
+        - 'scripts/download/cmi_rewardbench.sh'
+        - 'CMI_REWARDBENCH_DOWNLOAD_HF=1 scripts/download/cmi_rewardbench.sh'
+      notes: >-
+        The public, ungated CMI-Pref release contains 4,027 individual human
+        preference votes over generated music, including a balanced 500-vote
+        test split, 133.8 hours of English/Chinese material, and text, lyrics,
+        reference-audio, musicality, alignment, confidence, and anonymized
+        listener fields. CMI-RewardBench combines that test split with PAM,
+        MusicEval, and Music Arena for music reward-model evaluation. The helper
+        downloads the official cards, repository docs/configuration, the
+        approximately 620 KB CMI-Pref test JSONL, and the approximately 4.8 MB
+        composite test manifest by default. The Hugging Face API reports
+        approximately 15.0 GB of repository storage, so all MP3 assets require
+        explicit opt-in. A July 2026 full-song generation report uses
+        CMI-Reward as one evaluator on its separate 500-example multilingual
+        test set; that paper does not release those 500 evaluation inputs.
+    license:
+      data: CC-BY-NC-SA-4.0
+      code: Apache-2.0
+      notes: >-
+        The CMI-Pref card and paper declare CC BY-NC-SA 4.0, and the evaluation
+        repository contains Apache-2.0 code. The paper says some audio was
+        generated through commercial APIs and describes a terms-aware release
+        mechanism; generated-output and service terms may still apply. The
+        composite CMI-RewardBench also incorporates PAM, MusicEval, and Music
+        Arena, so their source licenses and music rights remain controlling for
+        those subsets.
+    sources:
+      - https://arxiv.org/abs/2603.00610
+      - https://arxiv.org/html/2603.00610v3#S3
+      - https://arxiv.org/html/2603.00610v3#Sx3
+      - https://github.com/Haiwen-Xia/CMI-RewardBench
+      - https://raw.githubusercontent.com/Haiwen-Xia/CMI-RewardBench/main/README.md
+      - https://raw.githubusercontent.com/Haiwen-Xia/CMI-RewardBench/main/LICENSE
+      - https://raw.githubusercontent.com/Haiwen-Xia/CMI-RewardBench/main/config/eval_benchmark.yaml
+      - https://api.github.com/repos/Haiwen-Xia/CMI-RewardBench
+      - https://huggingface.co/datasets/HaiwenXia/cmi-pref
+      - https://huggingface.co/datasets/HaiwenXia/cmi-pref/raw/main/README.md
+      - https://huggingface.co/api/datasets/HaiwenXia/cmi-pref
+      - https://arxiv.org/abs/2607.20253
+      - https://arxiv.org/html/2607.20253v1#S3.SS2
+
   - id: lyra_sa
     name: Lyra-SA
     full_name: "Lyra Lab Singing Assessment Dataset"

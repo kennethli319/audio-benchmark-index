@@ -64,6 +64,7 @@ scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
 scripts/download/songeval.sh
+scripts/download/cmi_rewardbench.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/uro_bench_pro.sh
@@ -319,6 +320,10 @@ AUDIO_AGENT_BENCH_DOWNLOAD_HF=1 scripts/download/audio_agent_bench_suite.sh
 # CoDeTT downloads official docs/metadata by default; the approximately 51.1 GB archive is opt-in.
 CODETT_DOWNLOAD_HF=1 scripts/download/codett.sh
 CODETT_CLONE_REPO=1 scripts/download/codett.sh
+
+# CMI-RewardBench downloads official docs plus the lightweight CMI-Pref and
+# composite test manifests; the approximately 15.0 GB HF snapshot is opt-in.
+CMI_REWARDBENCH_DOWNLOAD_HF=1 scripts/download/cmi_rewardbench.sh
 
 # SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
 SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh
