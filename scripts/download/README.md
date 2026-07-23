@@ -205,6 +205,7 @@ scripts/download/nisqa.sh
 scripts/download/vctk.sh
 scripts/download/adqa_bench.sh
 scripts/download/clotho_moment.sh
+scripts/download/castella.sh
 ```
 
 ## Manual Or Gated
@@ -629,6 +630,12 @@ ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh
 # Clotho-Moment downloads project, dataset, paper, and license metadata by
 # default. The large 51,240-recording WebDataset snapshot is opt-in.
 CLOTHO_MOMENT_DOWNLOAD_HF=1 scripts/download/clotho_moment.sh
+
+# CASTELLA downloads the six lightweight English/Japanese annotation JSONs and
+# official metadata by default. CLAP features (~2.78 GB on HF) and the
+# unlicensed raw-media reconstruction tools are separate opt-ins.
+CASTELLA_DOWNLOAD_FEATURES=1 scripts/download/castella.sh
+CASTELLA_CLONE_AUDIO_TOOLS=1 scripts/download/castella.sh
 
 # UrbanSound8K is a 6 GiB archive. The helper downloads it only when opted in.
 URBANSOUND8K_DOWNLOAD_AUDIO=1 scripts/download/urbansound8k.sh

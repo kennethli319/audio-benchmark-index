@@ -4747,6 +4747,78 @@ benchmarks:
       - https://raw.githubusercontent.com/line/lighthouse/main/LICENSE
       - https://dcase.community/challenge2026/task-audio-moment-retrieval-from-long-audio
 
+  - id: castella
+    name: CASTELLA
+    full_name: "CASTELLA: Long Audio Dataset with Captions and Temporal Boundaries"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_retrieval
+      - long_form_audio
+      - audio_captioning
+    tasks:
+      - audio_moment_retrieval
+      - temporal_audio_grounding
+      - long_audio_retrieval
+      - audio_captioning
+    official:
+      project_page: https://h-munakata.github.io/CASTELLA-demo/
+      paper: https://arxiv.org/abs/2511.15131
+      dataset: https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA
+      annotations_repo: https://github.com/line/CASTELLA
+      audio_tools: https://github.com/h-munakata/CASTELLA-audio
+      features: https://zenodo.org/records/17412176
+    download:
+      primary:
+        - https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA
+        - https://github.com/line/CASTELLA
+      examples:
+        - 'scripts/download/castella.sh'
+        - 'CASTELLA_DOWNLOAD_FEATURES=1 scripts/download/castella.sh'
+        - 'CASTELLA_CLONE_AUDIO_TOOLS=1 scripts/download/castella.sh'
+      notes: >-
+        The public, ungated annotation release describes 1,862 real-world
+        YouTube recordings split into 1,009 training, 213 validation, and 640
+        test items, with 3,925 human-written local captions and 11,308 temporal
+        boundaries in English and Japanese. The Hugging Face mirror contains
+        only the six lightweight annotation JSON files, not raw audio. The
+        helper downloads those annotations plus official documentation and
+        metadata by default. Precomputed MS-CLAP audio/text features are an
+        approximately 2.78 GB Hugging Face opt-in (the Zenodo release is about
+        1.33 GB). Raw media must be reconstructed from YouTube IDs with the
+        separate official downloader, subject to current availability and
+        source-platform and recording rights; the helper only clones those
+        tools when explicitly requested.
+    license:
+      data: CC-BY-4.0_for_annotations_and_released_features
+      code: not_specified_for_audio_downloader
+      notes: >-
+        The annotation repository, its Hugging Face card, and the Zenodo
+        feature record declare CC BY 4.0. That license covers the released
+        annotations/features, not the underlying YouTube recordings. The
+        separate raw-audio downloader repository has no detected license, and
+        raw media remains governed by its owners and YouTube terms; verify
+        availability and rights before downloading, redistribution, or
+        commercial use.
+    sources:
+      - https://arxiv.org/abs/2511.15131
+      - https://arxiv.org/html/2511.15131v2#S3
+      - https://h-munakata.github.io/CASTELLA-demo/
+      - https://github.com/line/CASTELLA
+      - https://raw.githubusercontent.com/line/CASTELLA/main/README.md
+      - https://raw.githubusercontent.com/line/CASTELLA/main/LICENSE.md
+      - https://api.github.com/repos/line/CASTELLA
+      - https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA
+      - https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA/raw/main/README.md
+      - https://huggingface.co/api/datasets/lighthouse-emnlp2024/CASTELLA
+      - https://github.com/h-munakata/CASTELLA-audio
+      - https://raw.githubusercontent.com/h-munakata/CASTELLA-audio/main/README.md
+      - https://api.github.com/repos/h-munakata/CASTELLA-audio
+      - https://zenodo.org/records/17412176
+      - https://zenodo.org/api/records/17412176
+      - https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA_CLAP_features
+      - https://huggingface.co/api/datasets/lighthouse-emnlp2024/CASTELLA_CLAP_features
+
   - id: spuraudio
     name: SpurAudio
     full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"
