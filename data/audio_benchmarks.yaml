@@ -451,6 +451,34 @@ paper_audits:
       - https://github.com/OpenBMB/UltraEval-Audio
     note: The public ECoM Reasoning release contains training and inference code, data-construction utilities, and placeholder dataset registries, not the paper's spoken benchmark package. Its data README explicitly requires users to supply their own JSONL paths. Because the exact STITCH-derived synthesized audio, selected items, and ECoM evaluation manifests cannot be verified through an official release, this protocol is audited but not indexed as a downloadable benchmark family.
 
+  hifi_full_song_generation:
+    paper: https://arxiv.org/abs/2607.20253
+    sections: 3.1-3.2
+    status: audited_not_indexed
+    public_interfaces:
+      - https://hifi-song-generation.github.io/
+    evaluated_domains:
+      - domain: multilingual_full_song_generation
+        protocol: 500 test examples balanced across eight major genres and Chinese, English, Japanese, Korean, and Spanish, evaluated with SongBench, SongEval, AudioBox-Aesthetic, and CMI-Reward
+        data_status: test_prompts_and_generated_comparison_set_not_released
+        note: Section 3.2 reports six systems on the same 500 cases, but neither the paper nor project page releases the complete prompt set, per-item outputs, score records, or exact genre allocation. SongEval and CMI-RewardBench are public evaluator families indexed separately; their availability does not make this paper's test set public.
+      - domain: full_song_codec_reconstruction_and_rendering
+        protocol: 200 held-out songs for clean and synthetically corrupted ground-truth-codec reconstruction, 200 fixed LM-generated-codec samples, and blinded pairwise listening on 100 songs with five expert raters
+        data_status: held_out_songs_codec_inputs_and_ratings_not_released
+        note: Section 3.1 specifies ViSQOL, log-mel L1, multi-resolution STFT distance, AudioBox-Aesthetic Production Quality, and non-tied win rate, but does not identify or release the held-out songs, codec tokens, corruption manifest, generated sample set, seeds, or listener ratings.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      evaluation_data: not_specified_unreleased
+      project_page_samples: no_separate_license_found
+      upstream: Evaluator code/model terms and all rights in commercial-system outputs, prompts, lyrics, recordings, and generated songs require separate review
+    sources:
+      - https://arxiv.org/html/2607.20253v1#S3.SS1
+      - https://arxiv.org/html/2607.20253v1#S3.SS2
+      - https://hifi-song-generation.github.io/
+      - https://artificialanalysis.ai/music/methodology
+      - https://artificialanalysis.ai/music/leaderboard/vocals
+    note: The official project page publicly streams selected qualitative examples and comparison tracks, but it is not a benchmark release and provides no repository, dataset card, archive, complete evaluation manifest, or data-license statement. The paper's independent Artificial Analysis leaderboard result is an external service evaluation, not a downloadable dataset. This report is therefore recorded as an audited protocol rather than a benchmark family.
+
   chronos_audio:
     paper: https://arxiv.org/abs/2601.04876
     sections: 3 and appendices 2-3

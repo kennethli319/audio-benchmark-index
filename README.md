@@ -193,6 +193,18 @@ selected items, or evaluation manifests. The parent repository is Apache-2.0,
 but that code license does not license the absent evaluation data or its
 upstream datasets.
 
+The July 2026 full-song generation report is also recorded as an audited
+protocol rather than a downloadable family. Section 3.2 reports a 500-case
+test set balanced across eight genres and five languages, evaluated with
+SongBench, SongEval, AudioBox-Aesthetic, and CMI-Reward, while section 3.1 uses
+separate 200-song codec-ablation sets and a 100-song expert listening study.
+The official [project page](https://hifi-song-generation.github.io/) streams
+selected qualitative and comparison examples but does not release the complete
+prompts, held-out songs, codec inputs, per-item outputs, scores, ratings, or a
+data license. Public SongEval and CMI-RewardBench releases are indexed
+separately and must not be mistaken for the report's unreleased evaluation
+sets.
+
 ChronosAudio is recorded as an audited long-audio protocol rather than a
 downloadable family. The paper describes 36,000 English test instances over
 6,000 synthetic clips and more than 200 hours, with dictation, localization,
