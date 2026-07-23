@@ -9562,6 +9562,65 @@ benchmarks:
       - https://huggingface.co/datasets/ayj111/openstbench-paired-set/raw/main/README.md
       - https://huggingface.co/api/datasets/ayj111/openstbench-paired-set
 
+  - id: realsi
+    name: RealSI
+    full_name: "RealSI: Open Benchmark for Simultaneous Interpretation in Real-world Scenarios"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_translation
+      - long_form_audio
+    tasks:
+      - simultaneous_speech_to_text_translation
+      - simultaneous_speech_to_speech_translation
+      - long_form_speech_translation
+      - streaming_latency_evaluation
+      - chinese_english_speech_translation
+    official:
+      repo: https://github.com/byteresearchcla/RealSI
+      project: https://byteresearchcla.github.io/clasi
+      paper: https://arxiv.org/abs/2407.21646
+      citing_paper: https://arxiv.org/abs/2607.19810
+    download:
+      primary:
+        - https://github.com/byteresearchcla/RealSI
+      examples:
+        - 'scripts/download/realsi.sh'
+        - 'REALSI_CLONE_REPO=1 scripts/download/realsi.sh'
+      notes: >-
+        The official public repository contains timestamped Chinese-English and
+        English-Chinese transcripts and translations for 20 natural,
+        approximately 3-8 minute recordings across ten domains. The release
+        totals 95 minutes 29 seconds and 778 utterance segments (431 En-to-Zh
+        and 347 Zh-to-En), and its current tree also includes 20 WAV files.
+        SimulS2ST-Omni section 4.1 and appendix D.3 reuse RealSI for
+        sentence-level and long-form streaming S2TT/S2ST evaluation. The helper
+        downloads official documentation, repository metadata, and all 20
+        lightweight JSON annotation files by default. The repository's WAV
+        payload is about 351 MiB, so cloning the repository requires
+        REALSI_CLONE_REPO=1.
+    license:
+      annotations: CC-BY-4.0
+      audio: third_party_source_rights_apply
+      code: CC-BY-4.0_repository_license
+      notes: >-
+        The repository declares the dataset CC BY 4.0, but its README also says
+        the authors do not own the copyright in the source videos and describes
+        the release as annotations plus public video links for educational and
+        informational use. The current repository additionally contains WAV
+        derivatives. Treat CC BY 4.0 as covering author-created annotations,
+        and independently review source-video copyright, platform terms, and
+        the README disclaimer before using or redistributing audio.
+    sources:
+      - https://arxiv.org/abs/2407.21646
+      - https://arxiv.org/html/2407.21646v1#S4.SS2
+      - https://arxiv.org/html/2607.19810v1#S4.SS1
+      - https://arxiv.org/html/2607.19810v1#A4.SS3
+      - https://github.com/byteresearchcla/RealSI
+      - https://raw.githubusercontent.com/byteresearchcla/RealSI/main/README.md
+      - https://raw.githubusercontent.com/byteresearchcla/RealSI/main/LICENSE
+      - https://api.github.com/repos/byteresearchcla/RealSI
+      - https://api.github.com/repos/byteresearchcla/RealSI/git/trees/main?recursive=1
+
   - id: halas
     name: HALAS
     full_name: "HALAS: A Human-Annotated Dataset of Hallucinations of Modern ASR Systems"

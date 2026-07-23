@@ -3,13 +3,13 @@
   "canonical_url": "https://kennethli319.github.io/audio-benchmark-index/",
   "repository_url": "https://github.com/kennethli319/audio-benchmark-index",
   "generated_from": "data/audio_benchmarks.yaml",
-  "source_sha256": "2d0ad66e4ec7ab24993a96b0fe2e830928937e90381aa394264ee712c380eef3",
+  "source_sha256": "d2663ea348c907bedb41947b2b08c932a20322e9e7a935aebfe52e83e233b568",
   "template_sha256": "7acd632f0981ae5f023be419cdf10d4b84f7e023f4c47c612c2cc9f637fe8ed3",
-  "output_sha256": "78bccb6275e0132cc9f21899cdf4260fabf68a391c101cd50a8881fdfe0454e0",
+  "output_sha256": "ce17fdba9bd3638b65652ab840ce18698352e654baf51d6b8c0f0e31bac75ed9",
   "social_image": "docs/og.png",
   "social_image_sha256": "0c97557dc10355ba7c1d83d71c7a16c72d31d0ce86f508f77086621b1cb28752",
-  "benchmark_count": 224,
-  "download_helper_count": 224,
+  "benchmark_count": 225,
+  "download_helper_count": 225,
   "manual_or_gated_count": 32,
   "last_checked": "2026-07-23"
 }
