@@ -223,6 +223,7 @@ scripts/download/avsbench.sh
 scripts/download/lrs2.sh
 scripts/download/lrs3.sh
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
+OMNIVIDEOBENCH_DOWNLOAD_HF=1 scripts/download/omnivideobench.sh
 ```
 
 Without the required environment variables, they print the manual access steps
@@ -300,6 +301,11 @@ SYNCBENCH_CLONE_REPO=1 scripts/download/syncbench.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
+
+# OmniVideoBench downloads public docs/API metadata by default. Apply for gated
+# HF access before opting into the approximately 114 GB snapshot.
+OMNIVIDEOBENCH_DOWNLOAD_HF=1 scripts/download/omnivideobench.sh
+OMNIVIDEOBENCH_CLONE_REPO=1 scripts/download/omnivideobench.sh
 
 # SpurAudio downloads official docs/metadata by default; the approximately 7.69 GB snapshot is opt-in.
 SPURAUDIO_DOWNLOAD_HF=1 scripts/download/spuraudio.sh

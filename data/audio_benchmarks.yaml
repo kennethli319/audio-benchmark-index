@@ -8245,3 +8245,62 @@ benchmarks:
       - https://api.github.com/repos/ASLP-lab/SongEval
       - https://arxiv.org/abs/2607.20253
       - https://arxiv.org/html/2607.20253v1#S3.SS2
+
+  - id: omnivideobench
+    name: OmniVideoBench
+    full_name: "OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - long_form_audio_visual_reasoning
+    tasks:
+      - audio_visual_question_answering
+      - audio_visual_reasoning
+      - long_video_understanding
+      - temporal_reasoning
+      - causal_reasoning
+      - multimodal_chain_of_thought
+    official:
+      project: https://omnivideobench.github.io/omnivideobench_home/
+      paper: https://arxiv.org/abs/2510.10689
+      repo: https://github.com/NJU-LINK/OmniVideoBench
+      dataset: https://huggingface.co/datasets/NJU-LINK/OmniVideoBench
+      recent_evaluation: https://arxiv.org/abs/2607.19339
+    download:
+      primary:
+        - https://huggingface.co/datasets/NJU-LINK/OmniVideoBench
+        - https://github.com/NJU-LINK/OmniVideoBench
+      examples:
+        - 'scripts/download/omnivideobench.sh'
+        - 'OMNIVIDEOBENCH_DOWNLOAD_HF=1 scripts/download/omnivideobench.sh'
+      notes: >-
+        The gated Hugging Face release contains 628 English videos lasting from
+        several seconds to 30 minutes and 1,000 manually verified question-answer
+        pairs. Every question requires complementary audio and visual evidence
+        and includes atomic step-by-step reasoning annotations; the paper reports
+        762 speech, 147 sound, and 91 music questions across 13 reasoning types.
+        The helper downloads public repository documentation and API metadata by
+        default. The Hugging Face API reports approximately 114 GB of repository
+        storage, so the complete snapshot requires approval through the dataset
+        questionnaire, authentication, and OMNIVIDEOBENCH_DOWNLOAD_HF=1.
+        OmniReasoner evaluates OmniVideoBench in its main audio-visual benchmark
+        table and reports duration- and audio-type-specific results.
+    license:
+      data: conflicting_CC-BY-NC-SA-4.0_and_CC-BY-NC-ND-4.0
+      code: not_specified
+      notes: >-
+        The official GitHub README says CC BY-NC-SA 4.0, while the Hugging Face
+        card metadata declares CC BY-NC-ND 4.0 and the access form additionally
+        requires non-commercial research use and no redistribution without
+        permission. Apply the stricter gated terms pending clarification. The
+        authors explicitly do not own the raw-video copyrights, so source-media
+        rights remain separate; the GitHub repository has no detected license
+        for its evaluation code.
+    sources:
+      - https://arxiv.org/abs/2510.10689
+      - https://github.com/NJU-LINK/OmniVideoBench
+      - https://raw.githubusercontent.com/NJU-LINK/OmniVideoBench/main/README.md
+      - https://api.github.com/repos/NJU-LINK/OmniVideoBench
+      - https://huggingface.co/datasets/NJU-LINK/OmniVideoBench
+      - https://huggingface.co/api/datasets/NJU-LINK/OmniVideoBench
+      - https://arxiv.org/abs/2607.19339
