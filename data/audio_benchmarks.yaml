@@ -8693,6 +8693,56 @@ benchmarks:
       - https://arxiv.org/abs/2607.20253
       - https://arxiv.org/html/2607.20253v1#S3.SS2
 
+  - id: lyra_sa
+    name: Lyra-SA
+    full_name: "Lyra Lab Singing Assessment Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - singing_voice_dataset
+      - audio_quality_assessment
+    tasks:
+      - singing_quality_assessment
+      - full_song_singing_assessment
+      - singing_score_prediction
+    official:
+      homepage: https://lyracobar.y.qq.com/singvoicedataset_en.html
+      application_form: https://wj.qq.com/s2/11839505/8cf1/
+      recent_evaluation: https://arxiv.org/abs/2607.16599
+    download:
+      primary:
+        - https://lyracobar.y.qq.com/singvoicedataset_en.html
+        - https://wj.qq.com/s2/11839505/8cf1/
+      examples:
+        - 'scripts/download/lyra_sa.sh'
+      notes: >-
+        The official Tencent Music Lyra Lab page describes 1,000 complete
+        mobile-karaoke recordings: 100 user covers for each of 10 Chinese
+        songs, with no repeated singer. The release includes 44.1 kHz
+        16-bit mono WAV audio, listener-provided overall singing scores,
+        rough singer labels, timed lyrics, and reference MIDI. Access is
+        application-based: users must complete the official form and accept
+        its terms, after which Lyra Lab says it emails a download link within
+        three days. The helper saves official documentation and the recent
+        SongSQA paper, then prints the manual application path; it never
+        guesses or bypasses an emailed archive URL.
+    license:
+      data: CC-BY-NC-4.0
+      code: not_applicable
+      notes: >-
+        The official page states CC BY-NC 4.0 for non-commercial use, requires
+        attribution to the source page and notice, reserves copyright to
+        Tencent Music Entertainment Group, and requires separate permission
+        for commercial use. The recordings are WeSing user performances of
+        copyrighted songs; rely on the official authorization and application
+        terms rather than inferring broader music or performance rights from
+        the Creative Commons label.
+    sources:
+      - https://lyracobar.y.qq.com/singvoicedataset_en.html
+      - https://lyracobar.y.qq.com/singvoicedataset.html
+      - https://wj.qq.com/s2/11839505/8cf1/
+      - https://arxiv.org/abs/2607.16599
+      - https://arxiv.org/html/2607.16599v1#S4.SS1
+
   - id: omnivideobench
     name: OmniVideoBench
     full_name: "OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs"
