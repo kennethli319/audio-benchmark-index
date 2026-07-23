@@ -8026,6 +8026,70 @@ benchmarks:
       - https://arxiv.org/abs/2308.09514
       - https://doi.org/10.21437/Interspeech.2023-2117
 
+  - id: star_bench
+    name: STAR-Bench
+    full_name: "STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - spatial_audio
+    tasks:
+      - foundational_acoustic_perception
+      - pitch_perception
+      - loudness_perception
+      - duration_perception
+      - sound_source_localization
+      - source_distance_estimation
+      - temporal_audio_reasoning
+      - spatial_audio_reasoning
+      - multi_audio_reasoning
+      - dynamic_trajectory_tracking
+    official:
+      homepage: https://internlm.github.io/StarBench/
+      dataset: https://huggingface.co/datasets/internlm/STAR-Bench
+      repo: https://github.com/InternLM/StarBench
+      paper: https://arxiv.org/abs/2510.24693
+      arxiv_html: https://arxiv.org/html/2510.24693
+    download:
+      primary:
+        - https://huggingface.co/datasets/internlm/STAR-Bench
+        - https://github.com/InternLM/StarBench
+      examples:
+        - 'scripts/download/star_bench.sh'
+        - 'STAR_BENCH_DOWNLOAD_HF=1 scripts/download/star_bench.sh'
+        - 'STAR_BENCH_CLONE_REPO=1 scripts/download/star_bench.sh'
+      notes: >-
+        The public, ungated v1.0 release contains 2,353 English multiple-choice
+        questions: 951 for foundational perception, 900 for temporal reasoning,
+        and 502 for spatial reasoning. Its current metadata revises the v0.5
+        questions reported in the paper. Foundational audio is synthesized;
+        temporal tasks draw on Clotho and FSD50K, while spatial tasks use
+        STARSS23 and in-the-wild audio. The helper downloads official
+        documentation, repository metadata, and the approximately 2 MB of JSON
+        question metadata by default. The 2.74 GB audio archive and evaluation
+        repository are separate opt-ins.
+    license:
+      data: CC-BY-NC-4.0
+      code: conflicting_MIT_and_Apache-2.0_signals
+      notes: >-
+        The Hugging Face card declares the dataset CC BY-NC 4.0 and labels use
+        as research-only. Preserve the terms and provenance of Clotho, FSD50K,
+        STARSS23, and internet-sourced audio. The repository's LICENSE file is
+        MIT, but its README badge says Apache-2.0 and describes both data and
+        code as research-only; clarify the intended software terms before
+        redistribution or commercial use.
+    sources:
+      - https://internlm.github.io/StarBench/
+      - https://arxiv.org/abs/2510.24693
+      - https://arxiv.org/html/2510.24693
+      - https://github.com/InternLM/StarBench
+      - https://raw.githubusercontent.com/InternLM/StarBench/main/README.md
+      - https://raw.githubusercontent.com/InternLM/StarBench/main/LICENSE
+      - https://api.github.com/repos/InternLM/StarBench
+      - https://huggingface.co/datasets/internlm/STAR-Bench
+      - https://huggingface.co/datasets/internlm/STAR-Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/internlm/STAR-Bench
+
   - id: l3das21
     name: L3DAS21
     full_name: "L3DAS21 Challenge: Machine Learning for 3D Audio Signal Processing"
