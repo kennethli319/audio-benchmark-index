@@ -292,6 +292,8 @@
     .command-block div { min-width: 0; }
     .command-block span { display: block; color: #aebdca; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; }
     .command-block code { display: block; overflow-wrap: anywhere; margin-top: 3px; font-size: 12px; }
+    .helper-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+    .helper-actions a { color: #d7eaff; font-size: 12px; font-weight: 800; white-space: nowrap; }
     .command-block button { flex: 0 0 auto; border-color: #53616e; background: #27333c; color: #ffffff; }
     .detail-links h4 { margin: 0 0 5px; font-size: 13px; }
     .detail-links ul { display: flex; flex-wrap: wrap; gap: 5px 14px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
@@ -347,7 +349,7 @@
       .card-facts { grid-template-columns: 1fr; }
       .card-action { flex: 1 1 130px; }
       .command-block { align-items: stretch; flex-direction: column; }
-      .command-block button { align-self: flex-start; }
+      .helper-actions { align-self: flex-start; flex-wrap: wrap; }
       .workflow-panel { padding: 20px 16px; }
       .workflow-steps { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; padding: 22px 16px 30px; }
@@ -574,7 +576,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/adqa_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/adqa_bench.sh" aria-label="Copy ADQA-Bench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/adqa_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/adqa_bench.sh" aria-label="Copy ADQA-Bench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2026/task-audio-dependent-question-answering">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2026/task-audio-dependent-question-answering-results">Results</a></li>
@@ -634,7 +639,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/af_reasoning_eval.sh</code></div>
-        <button type="button" data-copy="scripts/download/af_reasoning_eval.sh" aria-label="Copy AF-Reasoning-Eval helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/af_reasoning_eval.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/af_reasoning_eval.sh" aria-label="Copy AF-Reasoning-Eval helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/NVIDIA/audio-flamingo/tree/soundCoT/AF_Reasoning_Eval">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2508.11818">Paper</a></li>
@@ -691,7 +699,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ai_cover_song_diagnostics.sh</code></div>
-        <button type="button" data-copy="scripts/download/ai_cover_song_diagnostics.sh" aria-label="Copy AI-Generated Cover Song Diagnostics helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ai_cover_song_diagnostics.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ai_cover_song_diagnostics.sh" aria-label="Copy AI-Generated Cover Song Diagnostics helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/TiaaL/songecho-cover-metrics">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2607.19688">Paper</a></li></ul></div>
@@ -751,7 +762,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/air_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/air_bench.sh" aria-label="Copy AIR-Bench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/air_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/air_bench.sh" aria-label="Copy AIR-Bench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/OFA-Sys/AIR-Bench">Repository</a></li>
                     <li><a href="https://aclanthology.org/2024.acl-long.109/">Paper</a></li>
@@ -808,7 +822,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/aishell_1.sh</code></div>
-        <button type="button" data-copy="scripts/download/aishell_1.sh" aria-label="Copy AISHELL-1 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/aishell_1.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/aishell_1.sh" aria-label="Copy AISHELL-1 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/33/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/1709.05522">Paper</a></li>
@@ -862,7 +879,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/aishell_3.sh</code></div>
-        <button type="button" data-copy="scripts/download/aishell_3.sh" aria-label="Copy AISHELL-3 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/aishell_3.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/aishell_3.sh" aria-label="Copy AISHELL-3 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/93/">OpenSLR</a></li>
                     <li><a href="http://www.aishelltech.com/aishell_3">External Url</a></li>
@@ -916,7 +936,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/alimeeting.sh</code></div>
-        <button type="button" data-copy="scripts/download/alimeeting.sh" aria-label="Copy AliMeeting helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/alimeeting.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/alimeeting.sh" aria-label="Copy AliMeeting helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/119/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/2110.07393">Challenge Intro Paper</a></li>
@@ -971,7 +994,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ami.sh</code></div>
-        <button type="button" data-copy="scripts/download/ami.sh" aria-label="Copy AMI helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ami.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ami.sh" aria-label="Copy AMI helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://groups.inf.ed.ac.uk/ami/corpus/">Homepage</a></li>
                     <li><a href="https://groups.inf.ed.ac.uk/ami/download/">Download Page</a></li>
@@ -1032,7 +1058,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/asvspoof_2019.sh</code></div>
-        <button type="button" data-copy="scripts/download/asvspoof_2019.sh" aria-label="Copy ASVspoof 2019 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/asvspoof_2019.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/asvspoof_2019.sh" aria-label="Copy ASVspoof 2019 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.asvspoof.org/index2019.html">Homepage</a></li>
                     <li><a href="https://datashare.ed.ac.uk/handle/10283/3336">Datashare Record</a></li>
@@ -1092,7 +1121,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/asvspoof_2021.sh</code></div>
-        <button type="button" data-copy="scripts/download/asvspoof_2021.sh" aria-label="Copy ASVspoof 2021 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/asvspoof_2021.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/asvspoof_2021.sh" aria-label="Copy ASVspoof 2021 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.asvspoof.org/index2021.html">Homepage</a></li>
                     <li><a href="https://github.com/asvspoof-challenge/2021">Repository</a></li>
@@ -1156,7 +1188,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/asvspoof_5.sh</code></div>
-        <button type="button" data-copy="scripts/download/asvspoof_5.sh" aria-label="Copy ASVspoof 5 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/asvspoof_5.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/asvspoof_5.sh" aria-label="Copy ASVspoof 5 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.asvspoof.org/">Homepage</a></li>
                     <li><a href="https://zenodo.org/records/14498691">Zenodo Record</a></li>
@@ -1221,7 +1256,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/audio_agent_bench_suite.sh</code></div>
-        <button type="button" data-copy="scripts/download/audio_agent_bench_suite.sh" aria-label="Copy Audio Agent Bench Suite helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/audio_agent_bench_suite.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/audio_agent_bench_suite.sh" aria-label="Copy Audio Agent Bench Suite helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/arcada-labs/audio-agent-bench-suite">Dataset</a></li></ul></div>
       <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://huggingface.co/datasets/arcada-labs/audio-agent-bench-suite">Source 1 · huggingface.co</a></li>
@@ -1281,7 +1319,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/audiobench.sh</code></div>
-        <button type="button" data-copy="scripts/download/audiobench.sh" aria-label="Copy AudioBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/audiobench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/audiobench.sh" aria-label="Copy AudioBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/AudioLLMs/AudioBench">Repository</a></li>
                     <li><a href="https://aclanthology.org/2025.naacl-long.350/">Paper</a></li>
@@ -1339,7 +1380,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/audiocaps.sh</code></div>
-        <button type="button" data-copy="scripts/download/audiocaps.sh" aria-label="Copy AudioCaps helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/audiocaps.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/audiocaps.sh" aria-label="Copy AudioCaps helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://audiocaps.github.io/">Homepage</a></li>
                     <li><a href="https://github.com/cdjkim/audiocaps">Repository</a></li>
@@ -1397,7 +1441,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/audio_mnist.sh</code></div>
-        <button type="button" data-copy="scripts/download/audio_mnist.sh" aria-label="Copy AudioMNIST helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/audio_mnist.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/audio_mnist.sh" aria-label="Copy AudioMNIST helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/soerenab/AudioMNIST">Repository</a></li>
                     <li><a href="https://www.sciencedirect.com/science/article/pii/S0016003223007536">Paper</a></li>
@@ -1455,7 +1502,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/audioset.sh</code></div>
-        <button type="button" data-copy="scripts/download/audioset.sh" aria-label="Copy AudioSet helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/audioset.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/audioset.sh" aria-label="Copy AudioSet helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://research.google.com/audioset/">Homepage</a></li>
                     <li><a href="https://research.google.com/audioset/download.html">Download Page</a></li>
@@ -1512,7 +1562,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/audiosetcaps.sh</code></div>
-        <button type="button" data-copy="scripts/download/audiosetcaps.sh" aria-label="Copy AudioSetCaps helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/audiosetcaps.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/audiosetcaps.sh" aria-label="Copy AudioSetCaps helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://jishengbai.github.io/AudioSetCaps-webpage/">Homepage</a></li>
                     <li><a href="https://github.com/JishengBai/AudioSetCaps">Repository</a></li>
@@ -1574,7 +1627,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/av_speakerbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/av_speakerbench.sh" aria-label="Copy AV-SpeakerBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/av_speakerbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/av_speakerbench.sh" aria-label="Copy AV-SpeakerBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://plnguyen2908.github.io/AV-SpeakerBench-project-page/">Homepage</a></li>
                     <li><a href="https://github.com/plnguyen2908/AV-SpeakerBench">Repository</a></li>
@@ -1637,7 +1693,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ava_active_speaker.sh</code></div>
-        <button type="button" data-copy="scripts/download/ava_active_speaker.sh" aria-label="Copy AVA Active Speaker helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ava_active_speaker.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ava_active_speaker.sh" aria-label="Copy AVA Active Speaker helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://research.google.com/ava/">Homepage</a></li>
                     <li><a href="https://research.google.com/ava/download.html#ava-active-speaker-download-v10">Download</a></li>
@@ -1694,7 +1753,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ave.sh</code></div>
-        <button type="button" data-copy="scripts/download/ave.sh" aria-label="Copy AVE helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ave.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ave.sh" aria-label="Copy AVE helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://sites.google.com/view/audiovisualresearch">Homepage</a></li>
                     <li><a href="https://github.com/YapengTian/AVE-ECCV18">Repository</a></li>
@@ -1754,7 +1816,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/avqa.sh</code></div>
-        <button type="button" data-copy="scripts/download/avqa.sh" aria-label="Copy AVQA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/avqa.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/avqa.sh" aria-label="Copy AVQA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://mn.cs.tsinghua.edu.cn/avqa">Homepage</a></li>
                     <li><a href="https://github.com/AlyssaYoung/AVQA">Repository</a></li>
@@ -1813,7 +1878,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/avsbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/avsbench.sh" aria-label="Copy AVSBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/avsbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/avsbench.sh" aria-label="Copy AVSBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://opennlplab.github.io/AVSBench/">Homepage</a></li>
                     <li><a href="https://github.com/OpenNLPLab/AVSBench">Repository</a></li>
@@ -1876,7 +1944,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/avscapbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/avscapbench.sh" aria-label="Copy AVSCapBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/avscapbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/avscapbench.sh" aria-label="Copy AVSCapBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://nju-link.github.io/AVSCap/">Homepage</a></li>
                     <li><a href="https://github.com/NJU-LINK/AVSCap">Repository</a></li>
@@ -1940,7 +2011,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/avsd.sh</code></div>
-        <button type="button" data-copy="scripts/download/avsd.sh" aria-label="Copy AVSD helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/avsd.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/avsd.sh" aria-label="Copy AVSD helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge">Repository</a></li>
                     <li><a href="https://openaccess.thecvf.com/content_CVPR_2019/html/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.html">Paper</a></li>
@@ -2000,7 +2074,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/avut.sh</code></div>
-        <button type="button" data-copy="scripts/download/avut.sh" aria-label="Copy AVUT helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/avut.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/avut.sh" aria-label="Copy AVUT helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/lark-png/AVUT">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2503.19951">Paper</a></li>
@@ -2061,7 +2138,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/childes_aligned.sh</code></div>
-        <button type="button" data-copy="scripts/download/childes_aligned.sh" aria-label="Copy CHILDES-Aligned helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/childes_aligned.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/childes_aligned.sh" aria-label="Copy CHILDES-Aligned helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/MagicLuke/CHILDES-Aligned">Dataset</a></li>
                     <li><a href="https://arxiv.org/abs/2607.03670">Paper</a></li>
@@ -2118,7 +2198,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/chime_6.sh</code></div>
-        <button type="button" data-copy="scripts/download/chime_6.sh" aria-label="Copy CHiME-6 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/chime_6.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/chime_6.sh" aria-label="Copy CHiME-6 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.chimechallenge.org/datasets/chime6">Homepage</a></li>
                     <li><a href="https://chimechallenge.github.io/chime6/">Challenge Site</a></li>
@@ -2175,7 +2258,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/chime_7_dasr.sh</code></div>
-        <button type="button" data-copy="scripts/download/chime_7_dasr.sh" aria-label="Copy CHiME-7 DASR helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/chime_7_dasr.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/chime_7_dasr.sh" aria-label="Copy CHiME-7 DASR helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.chimechallenge.org/challenges/chime7/task1/index">Challenge</a></li>
                     <li><a href="https://www.chimechallenge.org/challenges/chime7/task1/data">Data</a></li>
@@ -2232,7 +2318,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/clotho.sh</code></div>
-        <button type="button" data-copy="scripts/download/clotho.sh" aria-label="Copy Clotho helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/clotho.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/clotho.sh" aria-label="Copy Clotho helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/4783391">Zenodo Record</a></li>
                     <li><a href="https://github.com/audio-captioning/clotho-dataset">Repository</a></li>
@@ -2286,7 +2375,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/clotho_aqa.sh</code></div>
-        <button type="button" data-copy="scripts/download/clotho_aqa.sh" aria-label="Copy ClothoAQA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/clotho_aqa.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/clotho_aqa.sh" aria-label="Copy ClothoAQA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/6473207">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.6473207">DOI</a></li>
@@ -2344,7 +2436,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/codec_superb.sh</code></div>
-        <button type="button" data-copy="scripts/download/codec_superb.sh" aria-label="Copy Codec-SUPERB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/codec_superb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/codec_superb.sh" aria-label="Copy Codec-SUPERB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://eric-lam.com/Codec-SUPERB/">Homepage</a></li>
                     <li><a href="https://github.com/voidful/Codec-SUPERB">Repository</a></li>
@@ -2402,7 +2497,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/common_voice.sh</code></div>
-        <button type="button" data-copy="scripts/download/common_voice.sh" aria-label="Copy Common Voice helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/common_voice.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/common_voice.sh" aria-label="Copy Common Voice helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://commonvoice.mozilla.org/">Project page</a></li>
                     <li><a href="https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk">Dataset Hub</a></li>
@@ -2456,7 +2554,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/covost2.sh</code></div>
-        <button type="button" data-copy="scripts/download/covost2.sh" aria-label="Copy CoVoST 2 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/covost2.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/covost2.sh" aria-label="Copy CoVoST 2 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://ai.meta.com/tools/covost/">Homepage</a></li>
                     <li><a href="https://github.com/facebookresearch/covost">Repository</a></li>
@@ -2513,7 +2614,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/crema_d.sh</code></div>
-        <button type="button" data-copy="scripts/download/crema_d.sh" aria-label="Copy CREMA-D helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/crema_d.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/crema_d.sh" aria-label="Copy CREMA-D helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/CheyneyComputerScience/CREMA-D">Repository</a></li>
                     <li><a href="https://gitlab.com/cs-cooper-lab/crema-d-mirror">Gitlab Mirror</a></li>
@@ -2570,7 +2674,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/cv3_eval.sh</code></div>
-        <button type="button" data-copy="scripts/download/cv3_eval.sh" aria-label="Copy CV3-Eval helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/cv3_eval.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/cv3_eval.sh" aria-label="Copy CV3-Eval helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/FunAudioLLM/CV3-Eval">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2505.17589">Paper</a></li>
@@ -2633,7 +2740,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/daily_omni.sh</code></div>
-        <button type="button" data-copy="scripts/download/daily_omni.sh" aria-label="Copy Daily-Omni helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/daily_omni.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/daily_omni.sh" aria-label="Copy Daily-Omni helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://lliar-liar.github.io/Daily-Omni/">Homepage</a></li>
                     <li><a href="https://github.com/Lliar-liar/Daily-Omni">Repository</a></li>
@@ -2696,7 +2806,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dave.sh</code></div>
-        <button type="button" data-copy="scripts/download/dave.sh" aria-label="Copy DAVE helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dave.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dave.sh" aria-label="Copy DAVE helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/gorjanradevski/dave">Repository</a></li>
                     <li><a href="https://openreview.net/forum?id=4ZAX1NT0ms">Paper</a></li>
@@ -2755,7 +2868,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2024_task5.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2024_task5.sh" aria-label="Copy DCASE 2024 Task 5 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2024_task5.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2024_task5.sh" aria-label="Copy DCASE 2024 Task 5 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection-results">Results</a></li>
@@ -2814,7 +2930,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2024_sound_scene_synthesis.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2024_sound_scene_synthesis.sh" aria-label="Copy DCASE 2024 Task 7 Sound Scene Synthesis helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2024_sound_scene_synthesis.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2024_sound_scene_synthesis.sh" aria-label="Copy DCASE 2024 Task 7 Sound Scene Synthesis helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2024/task-sound-scene-synthesis">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2024/task-sound-scene-synthesis-results">Results</a></li>
@@ -2874,7 +2993,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2024_lass.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2024_lass.sh" aria-label="Copy DCASE 2024 Task 9 LASS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2024_lass.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2024_lass.sh" aria-label="Copy DCASE 2024 Task 9 LASS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2024/task-language-queried-audio-source-separation">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2024/task-language-queried-audio-source-separation-results">Results</a></li>
@@ -2939,7 +3061,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2025_task2_asd.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2025_task2_asd.sh" aria-label="Copy DCASE 2025 Task 2 ASD helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2025_task2_asd.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2025_task2_asd.sh" aria-label="Copy DCASE 2025 Task 2 ASD helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2025/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2025/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results">Results</a></li>
@@ -3002,7 +3127,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2025_audioqa.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2025_audioqa.sh" aria-label="Copy DCASE 2025 Task 5 AudioQA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2025_audioqa.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2025_audioqa.sh" aria-label="Copy DCASE 2025 Task 5 AudioQA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2025/task-audio-question-answering">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2025/task-audio-question-answering-results">Results</a></li>
@@ -3058,7 +3186,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2026_task1_hac.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2026_task1_hac.sh" aria-label="Copy DCASE 2026 Task 1 HAC helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2026_task1_hac.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2026_task1_hac.sh" aria-label="Copy DCASE 2026 Task 1 HAC helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2026/task-heterogeneous-audio-classification">Challenge</a></li>
                     <li><a href="https://dcase.community/challenge2026/task-heterogeneous-audio-classification-results">Results</a></li>
@@ -3123,7 +3254,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dcase2025_stereo_seld.sh</code></div>
-        <button type="button" data-copy="scripts/download/dcase2025_stereo_seld.sh" aria-label="Copy DCASE2025 Task 3 Stereo SELD Dataset helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dcase2025_stereo_seld.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dcase2025_stereo_seld.sh" aria-label="Copy DCASE2025 Task 3 Stereo SELD Dataset helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2025/task-stereo-sound-event-localization-and-detection-in-regular-video-content">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/15559774">Zenodo Record</a></li>
@@ -3186,7 +3320,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/desed.sh</code></div>
-        <button type="button" data-copy="scripts/download/desed.sh" aria-label="Copy DESED helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/desed.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/desed.sh" aria-label="Copy DESED helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://project.inria.fr/desed/">Homepage</a></li>
                     <li><a href="https://github.com/turpaultn/DESED">Repository</a></li>
@@ -3248,7 +3385,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dihard_iii.sh</code></div>
-        <button type="button" data-copy="scripts/download/dihard_iii.sh" aria-label="Copy DIHARD III helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dihard_iii.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dihard_iii.sh" aria-label="Copy DIHARD III helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dihardchallenge.github.io/dihard3/">Homepage</a></li>
                     <li><a href="https://dihardchallenge.github.io/dihard3/docs/third_dihard_eval_plan_v1.2.pdf">Evaluation Plan</a></li>
@@ -3306,7 +3446,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dns_challenge.sh</code></div>
-        <button type="button" data-copy="scripts/download/dns_challenge.sh" aria-label="Copy DNS Challenge helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dns_challenge.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dns_challenge.sh" aria-label="Copy DNS Challenge helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://aka.ms/dns-challenge">Homepage</a></li>
                     <li><a href="https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/">Challenge 2023</a></li>
@@ -3365,7 +3508,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/dynamic_superb.sh</code></div>
-        <button type="button" data-copy="scripts/download/dynamic_superb.sh" aria-label="Copy Dynamic-SUPERB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/dynamic_superb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/dynamic_superb.sh" aria-label="Copy Dynamic-SUPERB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/dynamic-superb/dynamic-superb">Repository</a></li>
                     <li><a href="https://huggingface.co/spaces/DynamicSuperb/leaderboard">Leaderboard</a></li>
@@ -3422,7 +3568,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/earnings_21.sh</code></div>
-        <button type="button" data-copy="scripts/download/earnings_21.sh" aria-label="Copy Earnings-21 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/earnings_21.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/earnings_21.sh" aria-label="Copy Earnings-21 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/revdotcom/speech-datasets">Repository</a></li>
                     <li><a href="https://github.com/revdotcom/speech-datasets/tree/main/earnings21">Dataset Readme</a></li>
@@ -3479,7 +3628,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/earnings_22.sh</code></div>
-        <button type="button" data-copy="scripts/download/earnings_22.sh" aria-label="Copy Earnings-22 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/earnings_22.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/earnings_22.sh" aria-label="Copy Earnings-22 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/revdotcom/speech-datasets">Repository</a></li>
                     <li><a href="https://github.com/revdotcom/speech-datasets/tree/main/earnings22">Dataset Readme</a></li>
@@ -3538,7 +3690,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/emo_superb.sh</code></div>
-        <button type="button" data-copy="scripts/download/emo_superb.sh" aria-label="Copy EMO-SUPERB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/emo_superb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/emo_superb.sh" aria-label="Copy EMO-SUPERB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://emosuperb.github.io/">Homepage</a></li>
                     <li><a href="https://github.com/EMOsuperb/EMO-SUPERB-submission">Repository</a></li>
@@ -3597,7 +3752,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/emoprefer.sh</code></div>
-        <button type="button" data-copy="scripts/download/emoprefer.sh" aria-label="Copy EmoPrefer helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/emoprefer.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/emoprefer.sh" aria-label="Copy EmoPrefer helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2507.04278">Paper</a></li>
@@ -3662,7 +3820,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/emov_db.sh</code></div>
-        <button type="button" data-copy="scripts/download/emov_db.sh" aria-label="Copy EmoV-DB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/emov_db.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/emov_db.sh" aria-label="Copy EmoV-DB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/numediart/EmoV-DB">Repository</a></li>
                     <li><a href="https://www.openslr.org/115/">OpenSLR</a></li>
@@ -3720,7 +3881,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/epic_sounds.sh</code></div>
-        <button type="button" data-copy="scripts/download/epic_sounds.sh" aria-label="Copy EPIC-SOUNDS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/epic_sounds.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/epic_sounds.sh" aria-label="Copy EPIC-SOUNDS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://epic-kitchens.github.io/epic-sounds/site">Homepage</a></li>
                     <li><a href="https://epic-kitchens.github.io/epic-sounds/">Dataset Landing</a></li>
@@ -3781,7 +3945,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/esc_50.sh</code></div>
-        <button type="button" data-copy="scripts/download/esc_50.sh" aria-label="Copy ESC-50 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/esc_50.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/esc_50.sh" aria-label="Copy ESC-50 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/karolpiczak/ESC-50">Repository</a></li>
                     <li><a href="https://doi.org/10.1145/2733373.2806390">Paper</a></li>
@@ -3837,7 +4004,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/escucha.sh</code></div>
-        <button type="button" data-copy="scripts/download/escucha.sh" aria-label="Copy ESCUCHA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/escucha.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/escucha.sh" aria-label="Copy ESCUCHA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/ferugit/ESCUCHA">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2607.17812">Paper</a></li>
@@ -3894,7 +4064,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/europarl_st.sh</code></div>
-        <button type="button" data-copy="scripts/download/europarl_st.sh" aria-label="Copy Europarl-ST helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/europarl_st.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/europarl_st.sh" aria-label="Copy Europarl-ST helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.mllp.upv.es/europarl-st/">Homepage</a></li>
                     <li><a href="https://ieeexplore.ieee.org/document/9054626">Paper</a></li>
@@ -3949,7 +4122,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fisher_english.sh</code></div>
-        <button type="button" data-copy="scripts/download/fisher_english.sh" aria-label="Copy Fisher English helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fisher_english.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fisher_english.sh" aria-label="Copy Fisher English helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://catalog.ldc.upenn.edu/LDC2004S13">Ldc Speech Part1</a></li>
                     <li><a href="https://catalog.ldc.upenn.edu/LDC2004T19">Ldc Transcripts Part1</a></li>
@@ -4003,7 +4179,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fleurs.sh</code></div>
-        <button type="button" data-copy="scripts/download/fleurs.sh" aria-label="Copy FLEURS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fleurs.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fleurs.sh" aria-label="Copy FLEURS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/">Google Research</a></li>
                     <li><a href="https://huggingface.co/datasets/google/fleurs">Dataset</a></li>
@@ -4055,7 +4234,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fluent_speech_commands.sh</code></div>
-        <button type="button" data-copy="scripts/download/fluent_speech_commands.sh" aria-label="Copy Fluent Speech Commands helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fluent_speech_commands.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fluent_speech_commands.sh" aria-label="Copy Fluent Speech Commands helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/">Homepage</a></li>
                     <li><a href="https://groups.google.com/a/fluent.ai/forum/#!forum/fluent-speech-commands">Access Group</a></li>
@@ -4111,7 +4293,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fma.sh</code></div>
-        <button type="button" data-copy="scripts/download/fma.sh" aria-label="Copy FMA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fma.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fma.sh" aria-label="Copy FMA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/mdeff/fma">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/1612.01840">Paper</a></li>
@@ -4170,7 +4355,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fsd50k.sh</code></div>
-        <button type="button" data-copy="scripts/download/fsd50k.sh" aria-label="Copy FSD50K helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fsd50k.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fsd50k.sh" aria-label="Copy FSD50K helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://fsannotator.upf.edu/fsd/release/FSD50K/">Homepage</a></li>
                     <li><a href="https://zenodo.org/records/4060432">Zenodo Record</a></li>
@@ -4226,7 +4414,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fsdkaggle2018.sh</code></div>
-        <button type="button" data-copy="scripts/download/fsdkaggle2018.sh" aria-label="Copy FSDKaggle2018 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fsdkaggle2018.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fsdkaggle2018.sh" aria-label="Copy FSDKaggle2018 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/2552860">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.2552860">DOI</a></li>
@@ -4284,7 +4475,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fsdkaggle2019.sh</code></div>
-        <button type="button" data-copy="scripts/download/fsdkaggle2019.sh" aria-label="Copy FSDKaggle2019 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fsdkaggle2019.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fsdkaggle2019.sh" aria-label="Copy FSDKaggle2019 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/3612637">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.3612637">DOI</a></li>
@@ -4344,7 +4538,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/fuss.sh</code></div>
-        <button type="button" data-copy="scripts/download/fuss.sh" aria-label="Copy FUSS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/fuss.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/fuss.sh" aria-label="Copy FUSS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/google-research/sound-separation/tree/master/datasets/fuss">Repository</a></li>
                     <li><a href="https://zenodo.org/records/3694384">Zenodo Record</a></li>
@@ -4405,7 +4602,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/geo_atbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/geo_atbench.sh" aria-label="Copy Geo-ATBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/geo_atbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/geo_atbench.sh" aria-label="Copy Geo-ATBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/WuYanru2002/Geo-ATBench">Repository</a></li>
                     <li><a href="https://zenodo.org/records/18980673">Dataset</a></li>
@@ -4463,7 +4663,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ghana_speech_eval.sh</code></div>
-        <button type="button" data-copy="scripts/download/ghana_speech_eval.sh" aria-label="Copy Ghana Speech Eval helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ghana_speech_eval.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ghana_speech_eval.sh" aria-label="Copy Ghana Speech Eval helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/ghananlpcommunity/ghana-speech-eval">Dataset</a></li>
                     <li><a href="https://huggingface.co/datasets/AfriSpeech/african-speech-public_v1">Source Dataset</a></li></ul></div>
@@ -4518,7 +4721,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/gigaspeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/gigaspeech.sh" aria-label="Copy GigaSpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/gigaspeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/gigaspeech.sh" aria-label="Copy GigaSpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/SpeechColab/GigaSpeech">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/speechcolab/gigaspeech">Hf Dataset</a></li>
@@ -4576,7 +4782,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/gigaspeechbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/gigaspeechbench.sh" aria-label="Copy GigaSpeechBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/gigaspeechbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/gigaspeechbench.sh" aria-label="Copy GigaSpeechBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/SpeechColab/GigaSpeechBench">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/speechcolab/GigaSpeechBench">Dataset</a></li>
@@ -4634,7 +4843,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/golos.sh</code></div>
-        <button type="button" data-copy="scripts/download/golos.sh" aria-label="Copy Golos helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/golos.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/golos.sh" aria-label="Copy Golos helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/114/">OpenSLR</a></li>
                     <li><a href="https://github.com/sberdevices/golos">Repository</a></li>
@@ -4691,7 +4903,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/gtzan.sh</code></div>
-        <button type="button" data-copy="scripts/download/gtzan.sh" aria-label="Copy GTZAN helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/gtzan.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/gtzan.sh" aria-label="Copy GTZAN helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="http://marsyas.info/downloads/datasets.html">Homepage</a></li>
                     <li><a href="https://ismir2001.ismir.net/pdf/tzanetakis.pdf">Paper</a></li>
@@ -4747,7 +4962,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/hear.sh</code></div>
-        <button type="button" data-copy="scripts/download/hear.sh" aria-label="Copy HEAR helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/hear.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/hear.sh" aria-label="Copy HEAR helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://hearbenchmark.com/">Homepage</a></li>
                     <li><a href="https://hearbenchmark.com/hear-tasks.html">Tasks</a></li>
@@ -4807,7 +5025,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/hifitts.sh</code></div>
-        <button type="button" data-copy="scripts/download/hifitts.sh" aria-label="Copy Hi-Fi TTS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/hifitts.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/hifitts.sh" aria-label="Copy Hi-Fi TTS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/109/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/2104.01497">Paper</a></li></ul></div>
@@ -4858,7 +5079,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/hi_mia.sh</code></div>
-        <button type="button" data-copy="scripts/download/hi_mia.sh" aria-label="Copy HI-MIA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/hi_mia.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/hi_mia.sh" aria-label="Copy HI-MIA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/85/">OpenSLR</a></li>
                     <li><a href="http://aishelltech.com/wakeup_data">External Url</a></li>
@@ -4911,7 +5135,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/iemocap.sh</code></div>
-        <button type="button" data-copy="scripts/download/iemocap.sh" aria-label="Copy IEMOCAP helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/iemocap.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/iemocap.sh" aria-label="Copy IEMOCAP helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://sail.usc.edu/iemocap/">Homepage</a></li>
                     <li><a href="https://sail.usc.edu/iemocap/iemocap_release.htm">Release Page</a></li>
@@ -4969,7 +5196,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ifeval_audio.sh</code></div>
-        <button type="button" data-copy="scripts/download/ifeval_audio.sh" aria-label="Copy IFEval-Audio helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ifeval_audio.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ifeval_audio.sh" aria-label="Copy IFEval-Audio helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing">Dataset</a></li>
                     <li><a href="https://github.com/AudioLLMs/AudioBench/tree/main/IFEval-Audio">Repository</a></li>
@@ -5030,7 +5260,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/instruct_tts_eval.sh</code></div>
-        <button type="button" data-copy="scripts/download/instruct_tts_eval.sh" aria-label="Copy InstructTTSEval helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/instruct_tts_eval.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/instruct_tts_eval.sh" aria-label="Copy InstructTTSEval helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/KexinHUANG19/InstructTTSEval">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2506.16381">Paper</a></li>
@@ -5089,7 +5322,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/kespeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/kespeech.sh" aria-label="Copy KeSpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/kespeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/kespeech.sh" aria-label="Copy KeSpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/tzyll/KeSpeech">Repository</a></li>
                     <li><a href="https://openreview.net/forum?id=b3Zoeq2sCLq">Paper</a></li>
@@ -5143,7 +5379,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/korean_speechlm_benchmarks.sh</code></div>
-        <button type="button" data-copy="scripts/download/korean_speechlm_benchmarks.sh" aria-label="Copy KVoiceBench / KOpenAudioBench / KMMAU helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/korean_speechlm_benchmarks.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/korean_speechlm_benchmarks.sh" aria-label="Copy KVoiceBench / KOpenAudioBench / KMMAU helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://arxiv.org/abs/2605.27984">Paper</a></li>
                     <li><a href="https://arxiv.org/html/2605.27984">Arxiv Html</a></li>
@@ -5210,7 +5449,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/l2_arctic.sh</code></div>
-        <button type="button" data-copy="scripts/download/l2_arctic.sh" aria-label="Copy L2-ARCTIC helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/l2_arctic.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/l2_arctic.sh" aria-label="Copy L2-ARCTIC helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://psi.engr.tamu.edu/l2-arctic-corpus/">Homepage</a></li>
                     <li><a href="https://psi.engr.tamu.edu/l2-arctic-corpus-docs/">Documentation</a></li>
@@ -5269,7 +5511,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/l3das21.sh</code></div>
-        <button type="button" data-copy="scripts/download/l3das21.sh" aria-label="Copy L3DAS21 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/l3das21.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/l3das21.sh" aria-label="Copy L3DAS21 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.l3das.com/mlsp2021/index.html">Homepage</a></li>
                     <li><a href="https://www.l3das.com/mlsp2021/dataset.html">Dataset</a></li>
@@ -5336,7 +5581,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/l3das22.sh</code></div>
-        <button type="button" data-copy="scripts/download/l3das22.sh" aria-label="Copy L3DAS22 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/l3das22.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/l3das22.sh" aria-label="Copy L3DAS22 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.l3das.com/icassp2022/">Homepage</a></li>
                     <li><a href="https://www.l3das.com/icassp2022/dataset.html">Dataset</a></li>
@@ -5401,7 +5649,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/libri_light.sh</code></div>
-        <button type="button" data-copy="scripts/download/libri_light.sh" aria-label="Copy Libri-Light helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/libri_light.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/libri_light.sh" aria-label="Copy Libri-Light helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/facebookresearch/libri-light">Repository</a></li>
                     <li><a href="https://github.com/facebookresearch/libri-light/blob/main/data_preparation/README.md">Data Preparation</a></li>
@@ -5459,7 +5710,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/librimix.sh</code></div>
-        <button type="button" data-copy="scripts/download/librimix.sh" aria-label="Copy LibriMix helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/librimix.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/librimix.sh" aria-label="Copy LibriMix helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/JorisCos/LibriMix">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2005.11262">Paper</a></li>
@@ -5514,7 +5768,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/librispeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/librispeech.sh" aria-label="Copy LibriSpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/librispeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/librispeech.sh" aria-label="Copy LibriSpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/12">OpenSLR</a></li>
                     <li><a href="https://huggingface.co/datasets/openslr/librispeech_asr">Hf Dataset</a></li>
@@ -5569,7 +5826,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/libritts.sh</code></div>
-        <button type="button" data-copy="scripts/download/libritts.sh" aria-label="Copy LibriTTS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/libritts.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/libritts.sh" aria-label="Copy LibriTTS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/60/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/1904.02882">Paper</a></li>
@@ -5623,7 +5883,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/libriwasn.sh</code></div>
-        <button type="button" data-copy="scripts/download/libriwasn.sh" aria-label="Copy LibriWASN helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/libriwasn.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/libriwasn.sh" aria-label="Copy LibriWASN helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/10952434">Dataset</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.10952434">DOI</a></li>
@@ -5684,7 +5947,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/live_gurbani_captioning_v1.sh</code></div>
-        <button type="button" data-copy="scripts/download/live_gurbani_captioning_v1.sh" aria-label="Copy Live Gurbani Captioning Benchmark v1 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/live_gurbani_captioning_v1.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/live_gurbani_captioning_v1.sh" aria-label="Copy Live Gurbani Captioning Benchmark v1 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://karanbirsingh.github.io/live-gurbani-captioning-benchmark-v1/">Project page</a></li>
                     <li><a href="https://github.com/karanbirsingh/live-gurbani-captioning-benchmark-v1">Repository</a></li>
@@ -5742,7 +6008,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ljspeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/ljspeech.sh" aria-label="Copy LJSpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ljspeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ljspeech.sh" aria-label="Copy LJSpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://keithito.com/LJ-Speech-Dataset/">Homepage</a></li>
                     <li><a href="https://huggingface.co/datasets/keithito/lj_speech">Hf Dataset</a></li>
@@ -5796,7 +6065,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/llp.sh</code></div>
-        <button type="button" data-copy="scripts/download/llp.sh" aria-label="Copy LLP helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/llp.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/llp.sh" aria-label="Copy LLP helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/YapengTian/AVVP-ECCV20">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2007.10558">Paper</a></li>
@@ -5854,7 +6126,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/locata.sh</code></div>
-        <button type="button" data-copy="scripts/download/locata.sh" aria-label="Copy LOCATA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/locata.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/locata.sh" aria-label="Copy LOCATA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.locata.lms.tf.fau.de/">Homepage</a></li>
                     <li><a href="https://www.locata.lms.tf.fau.de/corpus/">Corpus</a></li>
@@ -5918,7 +6193,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/lrs2.sh</code></div>
-        <button type="button" data-copy="scripts/download/lrs2.sh" aria-label="Copy LRS2-BBC helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/lrs2.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/lrs2.sh" aria-label="Copy LRS2-BBC helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs2.html">Homepage</a></li>
                     <li><a href="https://www.bbc.co.uk/rd/projects/lip-reading-datasets">Access Page</a></li>
@@ -5975,7 +6253,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/lrs3.sh</code></div>
-        <button type="button" data-copy="scripts/download/lrs3.sh" aria-label="Copy LRS3-TED helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/lrs3.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/lrs3.sh" aria-label="Copy LRS3-TED helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/">Homepage</a></li>
                     <li><a href="https://arxiv.org/abs/1809.00496">Paper</a></li>
@@ -6028,7 +6309,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/macs.sh</code></div>
-        <button type="button" data-copy="scripts/download/macs.sh" aria-label="Copy MACS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/macs.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/macs.sh" aria-label="Copy MACS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/5114771">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.5114771">DOI</a></li>
@@ -6084,7 +6368,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/maestro.sh</code></div>
-        <button type="button" data-copy="scripts/download/maestro.sh" aria-label="Copy MAESTRO helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/maestro.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/maestro.sh" aria-label="Copy MAESTRO helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://magenta.withgoogle.com/datasets/maestro">Homepage</a></li>
                     <li><a href="https://magenta.withgoogle.com/maestro-wave2midi2wave">Blog</a></li>
@@ -6139,7 +6426,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/maestro_real.sh</code></div>
-        <button type="button" data-copy="scripts/download/maestro_real.sh" aria-label="Copy MAESTRO Real helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/maestro_real.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/maestro_real.sh" aria-label="Copy MAESTRO Real helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/7244360">Dataset</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.7244360">DOI</a></li>
@@ -6192,7 +6482,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/magicdata_mandarin.sh</code></div>
-        <button type="button" data-copy="scripts/download/magicdata_mandarin.sh" aria-label="Copy MAGICDATA Mandarin Chinese Read Speech Corpus helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/magicdata_mandarin.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/magicdata_mandarin.sh" aria-label="Copy MAGICDATA Mandarin Chinese Read Speech Corpus helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/68/">OpenSLR</a></li>
                     <li><a href="http://www.imagicdatatech.com/index.php/home/dataopensource/data_info/id/101">External Url</a></li></ul></div>
@@ -6243,7 +6536,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/magnatagatune.sh</code></div>
-        <button type="button" data-copy="scripts/download/magnatagatune.sh" aria-label="Copy MagnaTagATune helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/magnatagatune.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/magnatagatune.sh" aria-label="Copy MagnaTagATune helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset">Homepage</a></li>
                     <li><a href="https://tagatune.org/details.html">Original Details</a></li>
@@ -6301,7 +6597,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mcr_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/mcr_bench.sh" aria-label="Copy MCR-Bench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mcr_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mcr_bench.sh" aria-label="Copy MCR-Bench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/WangCheng0116/MCR-BENCH">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2508.15407">Paper</a></li>
@@ -6360,7 +6659,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/medleydb.sh</code></div>
-        <button type="button" data-copy="scripts/download/medleydb.sh" aria-label="Copy MedleyDB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/medleydb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/medleydb.sh" aria-label="Copy MedleyDB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://medleydb.weebly.com/">Homepage</a></li>
                     <li><a href="https://medleydb.weebly.com/description.html">Description</a></li>
@@ -6426,7 +6728,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/meld.sh</code></div>
-        <button type="button" data-copy="scripts/download/meld.sh" aria-label="Copy MELD helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/meld.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/meld.sh" aria-label="Copy MELD helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://affective-meld.github.io/">Homepage</a></li>
                     <li><a href="https://github.com/declare-lab/MELD">Repository</a></li>
@@ -6485,7 +6790,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/minds14.sh</code></div>
-        <button type="button" data-copy="scripts/download/minds14.sh" aria-label="Copy MInDS-14 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/minds14.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/minds14.sh" aria-label="Copy MInDS-14 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/PolyAI/minds14">Dataset</a></li>
                     <li><a href="https://arxiv.org/abs/2104.08524">Paper</a></li></ul></div>
@@ -6539,7 +6847,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ming_freeform_audio_edit.sh</code></div>
-        <button type="button" data-copy="scripts/download/ming_freeform_audio_edit.sh" aria-label="Copy Ming-Freeform-Audio-Edit helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ming_freeform_audio_edit.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ming_freeform_audio_edit.sh" aria-label="Copy Ming-Freeform-Audio-Edit helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark">Dataset</a></li>
                     <li><a href="https://github.com/inclusionAI/Ming-Freeform-Audio-Edit">Repository</a></li>
@@ -6601,7 +6912,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mir_1k_vocal.sh</code></div>
-        <button type="button" data-copy="scripts/download/mir_1k_vocal.sh" aria-label="Copy MIR-1K vocal helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mir_1k_vocal.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mir_1k_vocal.sh" aria-label="Copy MIR-1K vocal helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="http://mirlab.org/dataset/public/">Homepage</a></li>
                     <li><a href="http://mirlab.org/dataset/public/MIR-1K.rar">Direct Archive</a></li>
@@ -6657,7 +6971,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mls.sh</code></div>
-        <button type="button" data-copy="scripts/download/mls.sh" aria-label="Copy MLS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mls.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mls.sh" aria-label="Copy MLS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/94/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/2012.03411">Paper</a></li>
@@ -6710,7 +7027,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mmar.sh</code></div>
-        <button type="button" data-copy="scripts/download/mmar.sh" aria-label="Copy MMAR helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mmar.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mmar.sh" aria-label="Copy MMAR helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/ddlBoJack/MMAR">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2505.13032">Paper</a></li>
@@ -6762,7 +7082,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mmau.sh</code></div>
-        <button type="button" data-copy="scripts/download/mmau.sh" aria-label="Copy MMAU helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mmau.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mmau.sh" aria-label="Copy MMAU helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://sakshi113.github.io/mmau_homepage/">Homepage</a></li>
                     <li><a href="https://github.com/Sakshi113/MMAU">Repository</a></li>
@@ -6818,7 +7141,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mmau_pro.sh</code></div>
-        <button type="button" data-copy="scripts/download/mmau_pro.sh" aria-label="Copy MMAU-Pro helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mmau_pro.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mmau_pro.sh" aria-label="Copy MMAU-Pro helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://sonalkum.github.io/mmau-pro/">Homepage</a></li>
                     <li><a href="https://github.com/sonalkum/MMAUPro">Repository</a></li>
@@ -6879,7 +7205,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mmgenre.sh</code></div>
-        <button type="button" data-copy="scripts/download/mmgenre.sh" aria-label="Copy MMGenre helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mmgenre.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mmgenre.sh" aria-label="Copy MMGenre helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://fengjin1117.github.io/mmgenre-web/">Homepage</a></li>
                     <li><a href="https://github.com/FengJin1117/mmgenre">Repository</a></li>
@@ -6937,7 +7266,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mmsu.sh</code></div>
-        <button type="button" data-copy="scripts/download/mmsu.sh" aria-label="Copy MMSU helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mmsu.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mmsu.sh" aria-label="Copy MMSU helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/dingdongwang/MMSU">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2506.04779">Paper</a></li>
@@ -6990,7 +7322,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/moisesdb.sh</code></div>
-        <button type="button" data-copy="scripts/download/moisesdb.sh" aria-label="Copy MoisesDB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/moisesdb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/moisesdb.sh" aria-label="Copy MoisesDB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://music.ai/research/">Homepage</a></li>
                     <li><a href="https://github.com/moises-ai/moises-db">Repository</a></li>
@@ -7045,7 +7380,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ms_snsd.sh</code></div>
-        <button type="button" data-copy="scripts/download/ms_snsd.sh" aria-label="Copy MS-SNSD helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ms_snsd.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ms_snsd.sh" aria-label="Copy MS-SNSD helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/microsoft/MS-SNSD">Repository</a></li>
                     <li><a href="https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.html">Paper</a></li>
@@ -7103,7 +7441,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/msp_podcast.sh</code></div>
-        <button type="button" data-copy="scripts/download/msp_podcast.sh" aria-label="Copy MSP-Podcast helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/msp_podcast.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/msp_podcast.sh" aria-label="Copy MSP-Podcast helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://lab-msp.com/MSP/MSP-Podcast.html">Homepage</a></li>
                     <li><a href="https://lab-msp.com/MSP/publications/Busso-FDPDTUA-MSP-Podcast-v4.pdf">Academic License</a></li>
@@ -7163,7 +7504,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/msu_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/msu_bench.sh" aria-label="Copy MSU-Bench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/msu_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/msu_bench.sh" aria-label="Copy MSU-Bench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://aslp-lab.github.io/msu-bench.github.io/">Homepage</a></li>
                     <li><a href="https://github.com/ASLP-lab/MSU-Bench">Repository</a></li>
@@ -7225,7 +7569,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mswc.sh</code></div>
-        <button type="button" data-copy="scripts/download/mswc.sh" aria-label="Copy MSWC helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mswc.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mswc.sh" aria-label="Copy MSWC helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://mlcommons.org/datasets/multilingual-spoken-words/">Homepage</a></li>
                     <li><a href="https://mlcommons.org/en/multilingual-spoken-words/">Legacy Homepage</a></li>
@@ -7287,7 +7634,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mtedx.sh</code></div>
-        <button type="button" data-copy="scripts/download/mtedx.sh" aria-label="Copy mTEDx helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mtedx.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mtedx.sh" aria-label="Copy mTEDx helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/100">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/2102.01757">Paper</a></li>
@@ -7343,7 +7693,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mtg_jamendo.sh</code></div>
-        <button type="button" data-copy="scripts/download/mtg_jamendo.sh" aria-label="Copy MTG-Jamendo helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mtg_jamendo.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mtg_jamendo.sh" aria-label="Copy MTG-Jamendo helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://mtg.github.io/mtg-jamendo-dataset/">Homepage</a></li>
                     <li><a href="https://github.com/MTG/mtg-jamendo-dataset">Repository</a></li>
@@ -7403,7 +7756,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/mugen.sh</code></div>
-        <button type="button" data-copy="scripts/download/mugen.sh" aria-label="Copy MUGEN helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/mugen.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/mugen.sh" aria-label="Copy MUGEN helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/danielqwer/MUGEN">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2603.09714">Paper</a></li>
@@ -7463,7 +7819,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/musan.sh</code></div>
-        <button type="button" data-copy="scripts/download/musan.sh" aria-label="Copy MUSAN helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/musan.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/musan.sh" aria-label="Copy MUSAN helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/17/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/1510.08484">Paper</a></li>
@@ -7515,7 +7874,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/musdb18.sh</code></div>
-        <button type="button" data-copy="scripts/download/musdb18.sh" aria-label="Copy MUSDB18 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/musdb18.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/musdb18.sh" aria-label="Copy MUSDB18 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://sigsep.github.io/datasets/musdb.html">Homepage</a></li>
                     <li><a href="https://zenodo.org/records/1117372">Zenodo</a></li>
@@ -7574,7 +7936,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/music_avqa.sh</code></div>
-        <button type="button" data-copy="scripts/download/music_avqa.sh" aria-label="Copy MUSIC-AVQA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/music_avqa.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/music_avqa.sh" aria-label="Copy MUSIC-AVQA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://gewu-lab.github.io/MUSIC-AVQA/">Homepage</a></li>
                     <li><a href="https://github.com/GeWu-Lab/MUSIC-AVQA">Repository</a></li>
@@ -7633,7 +7998,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/musiccaps.sh</code></div>
-        <button type="button" data-copy="scripts/download/musiccaps.sh" aria-label="Copy MusicCaps helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/musiccaps.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/musiccaps.sh" aria-label="Copy MusicCaps helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.kaggle.com/datasets/googleai/musiccaps">Kaggle Dataset</a></li>
                     <li><a href="https://huggingface.co/datasets/google/MusicCaps">Hf Dataset</a></li>
@@ -7689,7 +8057,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/musicnet.sh</code></div>
-        <button type="button" data-copy="scripts/download/musicnet.sh" aria-label="Copy MusicNet helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/musicnet.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/musicnet.sh" aria-label="Copy MusicNet helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/5120004">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.5120004">DOI</a></li>
@@ -7751,7 +8122,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/nisqa.sh</code></div>
-        <button type="button" data-copy="scripts/download/nisqa.sh" aria-label="Copy NISQA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/nisqa.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/nisqa.sh" aria-label="Copy NISQA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/gabrielmittag/NISQA">Repository</a></li>
                     <li><a href="https://github.com/gabrielmittag/NISQA/wiki/NISQA-Corpus">Corpus Wiki</a></li>
@@ -7813,7 +8187,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/notsofar_1.sh</code></div>
-        <button type="button" data-copy="scripts/download/notsofar_1.sh" aria-label="Copy NOTSOFAR-1 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/notsofar_1.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/notsofar_1.sh" aria-label="Copy NOTSOFAR-1 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.chimechallenge.org/challenges/chime8/task2/index">Challenge</a></li>
                     <li><a href="https://huggingface.co/datasets/microsoft/NOTSOFAR">Dataset</a></li>
@@ -7873,7 +8250,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/nsynth.sh</code></div>
-        <button type="button" data-copy="scripts/download/nsynth.sh" aria-label="Copy NSynth helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/nsynth.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/nsynth.sh" aria-label="Copy NSynth helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://magenta.withgoogle.com/datasets/nsynth">Homepage</a></li>
                     <li><a href="https://arxiv.org/abs/1704.01279">Paper</a></li>
@@ -7930,7 +8310,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/omni_cloze.sh</code></div>
-        <button type="button" data-copy="scripts/download/omni_cloze.sh" aria-label="Copy Omni-Cloze helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/omni_cloze.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/omni_cloze.sh" aria-label="Copy Omni-Cloze helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/ddlBoJack/Omni-Captioner">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2510.12720">Paper</a></li>
@@ -7991,7 +8374,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/omnigaia.sh</code></div>
-        <button type="button" data-copy="scripts/download/omnigaia.sh" aria-label="Copy OmniGAIA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/omnigaia.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/omnigaia.sh" aria-label="Copy OmniGAIA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/RUC-NLPIR/OmniGAIA">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2602.22897">Paper</a></li>
@@ -8054,7 +8440,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/omniretriever_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/omniretriever_bench.sh" aria-label="Copy OmniRetriever-Bench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/omniretriever_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/omniretriever_bench.sh" aria-label="Copy OmniRetriever-Bench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://yunzeliu.github.io/OmniRetriever/">Homepage</a></li>
                     <li><a href="https://github.com/yunzeliu/Omni-Retriever">Repository</a></li>
@@ -8115,7 +8504,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/opencpop_test.sh</code></div>
-        <button type="button" data-copy="scripts/download/opencpop_test.sh" aria-label="Copy Opencpop-test helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/opencpop_test.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/opencpop_test.sh" aria-label="Copy Opencpop-test helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://wenet-e2e.github.io/opencpop/">Homepage</a></li>
                     <li><a href="https://github.com/wenet-e2e/opencpop">Repository</a></li>
@@ -8171,7 +8563,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/openmic_2018.sh</code></div>
-        <button type="button" data-copy="scripts/download/openmic_2018.sh" aria-label="Copy OpenMIC-2018 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/openmic_2018.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/openmic_2018.sh" aria-label="Copy OpenMIC-2018 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/cosmir/openmic-2018">Repository</a></li>
                     <li><a href="https://zenodo.org/records/1432913">Zenodo Record</a></li>
@@ -8225,7 +8620,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/pansori_tedxkr.sh</code></div>
-        <button type="button" data-copy="scripts/download/pansori_tedxkr.sh" aria-label="Copy Pansori-TEDxKR helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/pansori_tedxkr.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/pansori_tedxkr.sh" aria-label="Copy Pansori-TEDxKR helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/58/">OpenSLR</a></li>
                     <li><a href="https://github.com/yc9701/pansori-tedxkr-corpus">Corpus Repo</a></li>
@@ -8282,7 +8680,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/parapair_audio_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/parapair_audio_bench.sh" aria-label="Copy ParaPairAudioBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/parapair_audio_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/parapair_audio_bench.sh" aria-label="Copy ParaPairAudioBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/jsujeon/ParaPairAudioBench">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2606.24648">Paper</a></li>
@@ -8339,7 +8740,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/primewords_chinese.sh</code></div>
-        <button type="button" data-copy="scripts/download/primewords_chinese.sh" aria-label="Copy Primewords Chinese Corpus Set 1 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/primewords_chinese.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/primewords_chinese.sh" aria-label="Copy Primewords Chinese Corpus Set 1 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/47/">OpenSLR</a></li>
                     <li><a href="https://www.primewords.cn">Homepage</a></li></ul></div>
@@ -8391,7 +8795,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/qivd.sh</code></div>
-        <button type="button" data-copy="scripts/download/qivd.sh" aria-label="Copy QIVD helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/qivd.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/qivd.sh" aria-label="Copy QIVD helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd">Homepage</a></li>
                     <li><a href="https://arxiv.org/abs/2503.19356">Paper</a></li>
@@ -8446,7 +8853,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/ravdess.sh</code></div>
-        <button type="button" data-copy="scripts/download/ravdess.sh" aria-label="Copy RAVDESS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/ravdess.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/ravdess.sh" aria-label="Copy RAVDESS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/1188976">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.1188976">DOI</a></li>
@@ -8504,7 +8914,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/real_tse.sh</code></div>
-        <button type="button" data-copy="scripts/download/real_tse.sh" aria-label="Copy REAL-TSE Challenge helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/real_tse.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/real_tse.sh" aria-label="Copy REAL-TSE Challenge helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://real-tse.github.io/challenge/">Challenge</a></li>
                     <li><a href="https://github.com/REAL-TSE/REAL-TSE-Challenge">Repository</a></li>
@@ -8566,7 +8979,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/realdesed.sh</code></div>
-        <button type="button" data-copy="scripts/download/realdesed.sh" aria-label="Copy RealDESED helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/realdesed.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/realdesed.sh" aria-label="Copy RealDESED helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/20056072">Dataset</a></li>
                     <li><a href="https://zenodo.org/records/20056072">Zenodo</a></li>
@@ -8628,7 +9044,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/rubato.sh</code></div>
-        <button type="button" data-copy="scripts/download/rubato.sh" aria-label="Copy RUBATO helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/rubato.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/rubato.sh" aria-label="Copy RUBATO helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/21407832">Zenodo</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.21407831">DOI</a></li></ul></div>
@@ -8680,7 +9099,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/rul_muchomusic.sh</code></div>
-        <button type="button" data-copy="scripts/download/rul_muchomusic.sh" aria-label="Copy RUL-MuchoMusic helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/rul_muchomusic.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/rul_muchomusic.sh" aria-label="Copy RUL-MuchoMusic helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/yongyizang/AreYouReallyListening">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2504.00369">Paper</a></li>
@@ -8737,7 +9159,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/salmon.sh</code></div>
-        <button type="button" data-copy="scripts/download/salmon.sh" aria-label="Copy SALMon helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/salmon.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/salmon.sh" aria-label="Copy SALMon helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://pages.cs.huji.ac.il/adiyoss-lab/salmon/">Homepage</a></li>
                     <li><a href="https://huggingface.co/datasets/slprl/SALMon">Dataset</a></li>
@@ -8802,7 +9227,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/seed_tts_eval.sh</code></div>
-        <button type="button" data-copy="scripts/download/seed_tts_eval.sh" aria-label="Copy Seed-TTS Eval helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/seed_tts_eval.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/seed_tts_eval.sh" aria-label="Copy Seed-TTS Eval helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/BytedanceSpeech/seed-tts-eval">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2406.02430">Paper</a></li>
@@ -8860,7 +9288,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/silma_open_source_arabic_tts.sh</code></div>
-        <button type="button" data-copy="scripts/download/silma_open_source_arabic_tts.sh" aria-label="Copy SILMA Open-source Arabic TTS Benchmark helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/silma_open_source_arabic_tts.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/silma_open_source_arabic_tts.sh" aria-label="Copy SILMA Open-source Arabic TTS Benchmark helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark">Benchmark</a></li>
                     <li><a href="https://silma.ai/">Organization</a></li></ul></div>
@@ -8916,7 +9347,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/slakh2100.sh</code></div>
-        <button type="button" data-copy="scripts/download/slakh2100.sh" aria-label="Copy Slakh2100 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/slakh2100.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/slakh2100.sh" aria-label="Copy Slakh2100 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="http://www.slakh.com/">Homepage</a></li>
                     <li><a href="https://zenodo.org/record/4599666">Zenodo</a></li>
@@ -8979,7 +9413,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/slue.sh</code></div>
-        <button type="button" data-copy="scripts/download/slue.sh" aria-label="Copy SLUE helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/slue.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/slue.sh" aria-label="Copy SLUE helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://asappresearch.github.io/slue-toolkit/">Homepage</a></li>
                     <li><a href="https://github.com/asappresearch/slue-toolkit">Repository</a></li>
@@ -9039,7 +9476,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/slurp.sh</code></div>
-        <button type="button" data-copy="scripts/download/slurp.sh" aria-label="Copy SLURP helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/slurp.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/slurp.sh" aria-label="Copy SLURP helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/pswietojanski/slurp">Repository</a></li>
                     <li><a href="https://aclanthology.org/2020.emnlp-main.588/">Paper</a></li>
@@ -9092,7 +9532,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/songformbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/songformbench.sh" aria-label="Copy SongFormBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/songformbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/songformbench.sh" aria-label="Copy SongFormBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/ASLP-lab/SongFormer">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/ASLP-lab/SongFormBench">Dataset</a></li>
@@ -9144,7 +9587,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/sonyc_ust_v2.sh</code></div>
-        <button type="button" data-copy="scripts/download/sonyc_ust_v2.sh" aria-label="Copy SONYC-UST-V2 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/sonyc_ust_v2.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/sonyc_ust_v2.sh" aria-label="Copy SONYC-UST-V2 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/3966543">Zenodo Record</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.3966543">DOI</a></li>
@@ -9198,7 +9644,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/soroll_ia.sh</code></div>
-        <button type="button" data-copy="scripts/download/soroll_ia.sh" aria-label="Copy Soroll-IA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/soroll_ia.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/soroll_ia.sh" aria-label="Copy Soroll-IA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.kaggle.com/datasets/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring">Dataset</a></li>
                     <li><a href="https://github.com/anp-iti/sorollia_baseline">Benchmark Repo</a></li>
@@ -9258,7 +9707,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/spatial_librispeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/spatial_librispeech.sh" aria-label="Copy Spatial LibriSpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/spatial_librispeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/spatial_librispeech.sh" aria-label="Copy Spatial LibriSpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/apple/ml-spatial-librispeech">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2308.09514">Paper</a></li>
@@ -9319,7 +9771,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/spearbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/spearbench.sh" aria-label="Copy SPEARBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/spearbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/spearbench.sh" aria-label="Copy SPEARBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://thomasthebaud.github.io/SPEAR-benchmark-website/">Project page</a></li>
                     <li><a href="https://github.com/thomasthebaud/SPEAR-benchmark-website">Repository</a></li>
@@ -9376,7 +9831,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/speech_commands.sh</code></div>
-        <button type="button" data-copy="scripts/download/speech_commands.sh" aria-label="Copy Speech Commands helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/speech_commands.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/speech_commands.sh" aria-label="Copy Speech Commands helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.tensorflow.org/datasets/catalog/speech_commands">Tensorflow Datasets</a></li>
                     <li><a href="https://research.google/blog/launching-the-speech-commands-dataset/">Google Research Blog</a></li>
@@ -9432,7 +9890,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/speechrole.sh</code></div>
-        <button type="button" data-copy="scripts/download/speechrole.sh" aria-label="Copy SpeechRole helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/speechrole.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/speechrole.sh" aria-label="Copy SpeechRole helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/yuhui1038/SpeechRole">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/yuhui1038/SpeechRole-Eval">Eval Dataset</a></li>
@@ -9487,7 +9948,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/spemoc.sh</code></div>
-        <button type="button" data-copy="scripts/download/spemoc.sh" aria-label="Copy SpEmoC helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/spemoc.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/spemoc.sh" aria-label="Copy SpEmoC helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://skvipparthi.com/spemoc.html">Homepage</a></li>
                     <li><a href="https://github.com/saniajmi/SpEmoC-ECCV2026">Repository</a></li>
@@ -9545,7 +10009,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/spgispeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/spgispeech.sh" aria-label="Copy SPGISpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/spgispeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/spgispeech.sh" aria-label="Copy SPGISpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/kensho/spgispeech">Hf Dataset</a></li>
                     <li><a href="https://arxiv.org/abs/2104.02014">Paper</a></li>
@@ -9602,7 +10069,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/spuraudio.sh</code></div>
-        <button type="button" data-copy="scripts/download/spuraudio.sh" aria-label="Copy SpurAudio helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/spuraudio.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/spuraudio.sh" aria-label="Copy SpurAudio helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/Jerryaa98/SpurAudio">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym">Dataset</a></li>
@@ -9658,7 +10128,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/st_cmds.sh</code></div>
-        <button type="button" data-copy="scripts/download/st_cmds.sh" aria-label="Copy ST-CMDS helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/st_cmds.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/st_cmds.sh" aria-label="Copy ST-CMDS helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/38/">OpenSLR</a></li>
                     <li><a href="https://www.surfing.ai">External Url</a></li></ul></div>
@@ -9709,7 +10182,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/starss22.sh</code></div>
-        <button type="button" data-copy="scripts/download/starss22.sh" aria-label="Copy STARSS22 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/starss22.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/starss22.sh" aria-label="Copy STARSS22 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2022/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/6600531">Zenodo Record</a></li>
@@ -9769,7 +10245,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/starss23.sh</code></div>
-        <button type="button" data-copy="scripts/download/starss23.sh" aria-label="Copy STARSS23 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/starss23.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/starss23.sh" aria-label="Copy STARSS23 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2023/task-sound-event-localization-and-detection-evaluated-in-real-spatial-sound-scenes">Dcase Task</a></li>
                     <li><a href="https://dcase.community/challenge2024/task-audio-and-audiovisual-sound-event-localization-and-detection-with-source-distance-estimation">Dcase2024 Distance Task</a></li>
@@ -9834,7 +10313,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/superb.sh</code></div>
-        <button type="button" data-copy="scripts/download/superb.sh" aria-label="Copy SUPERB helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/superb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/superb.sh" aria-label="Copy SUPERB helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://superbbenchmark.org/">Homepage</a></li>
                     <li><a href="https://github.com/s3prl/s3prl">Repository</a></li>
@@ -9893,7 +10375,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/switchboard.sh</code></div>
-        <button type="button" data-copy="scripts/download/switchboard.sh" aria-label="Copy Switchboard helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/switchboard.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/switchboard.sh" aria-label="Copy Switchboard helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://catalog.ldc.upenn.edu/LDC97S62">Ldc Catalog</a></li>
                     <li><a href="https://catalog.ldc.upenn.edu/LDC2002S09">Hub5 Eval Speech</a></li>
@@ -9948,7 +10433,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/syncbench.sh</code></div>
-        <button type="button" data-copy="scripts/download/syncbench.sh" aria-label="Copy SyncBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/syncbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/syncbench.sh" aria-label="Copy SyncBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://chenhaoqcdyq.github.io/BeyondTimeShifts/">Homepage</a></li>
                     <li><a href="https://github.com/chenhaoqcdyq/BeyondTimeShifts">Repository</a></li>
@@ -10009,7 +10497,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tau_spatial_sound_events_2019.sh</code></div>
-        <button type="button" data-copy="scripts/download/tau_spatial_sound_events_2019.sh" aria-label="Copy TAU Spatial Sound Events 2019 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tau_spatial_sound_events_2019.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tau_spatial_sound_events_2019.sh" aria-label="Copy TAU Spatial Sound Events 2019 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2019/task-sound-event-localization-and-detection">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/2599196">Development Record</a></li>
@@ -10071,7 +10562,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tau_asc_2019.sh</code></div>
-        <button type="button" data-copy="scripts/download/tau_asc_2019.sh" aria-label="Copy TAU Urban Acoustic Scenes 2019 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tau_asc_2019.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tau_asc_2019.sh" aria-label="Copy TAU Urban Acoustic Scenes 2019 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2019/task-acoustic-scene-classification">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/2589280">Development Record</a></li>
@@ -10126,7 +10620,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tau_asc_2020_mobile.sh</code></div>
-        <button type="button" data-copy="scripts/download/tau_asc_2020_mobile.sh" aria-label="Copy TAU Urban Acoustic Scenes 2020 Mobile helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tau_asc_2020_mobile.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tau_asc_2020_mobile.sh" aria-label="Copy TAU Urban Acoustic Scenes 2020 Mobile helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2020/task-acoustic-scene-classification">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/3670167">Development Record</a></li>
@@ -10180,7 +10677,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tau_asc_2022_mobile.sh</code></div>
-        <button type="button" data-copy="scripts/download/tau_asc_2022_mobile.sh" aria-label="Copy TAU Urban Acoustic Scenes 2022 Mobile helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tau_asc_2022_mobile.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tau_asc_2022_mobile.sh" aria-label="Copy TAU Urban Acoustic Scenes 2022 Mobile helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2025/task-low-complexity-acoustic-scene-classification-with-device-information">Dcase2025 Task</a></li>
                     <li><a href="https://zenodo.org/records/6337421">Development Record</a></li>
@@ -10238,7 +10738,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tau_nigens_sse_2020.sh</code></div>
-        <button type="button" data-copy="scripts/download/tau_nigens_sse_2020.sh" aria-label="Copy TAU-NIGENS Spatial Sound Events 2020 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tau_nigens_sse_2020.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tau_nigens_sse_2020.sh" aria-label="Copy TAU-NIGENS Spatial Sound Events 2020 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2020/task-sound-event-localization-and-detection">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/4064792">Zenodo Record</a></li>
@@ -10300,7 +10803,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tau_nigens_sse_2021.sh</code></div>
-        <button type="button" data-copy="scripts/download/tau_nigens_sse_2021.sh" aria-label="Copy TAU-NIGENS Spatial Sound Events 2021 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tau_nigens_sse_2021.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tau_nigens_sse_2021.sh" aria-label="Copy TAU-NIGENS Spatial Sound Events 2021 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2021/task-sound-event-localization-and-detection">Dcase Task</a></li>
                     <li><a href="https://zenodo.org/records/4844825">Zenodo Record</a></li>
@@ -10359,7 +10865,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tedx_spanish.sh</code></div>
-        <button type="button" data-copy="scripts/download/tedx_spanish.sh" aria-label="Copy TEDx Spanish Corpus helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tedx_spanish.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tedx_spanish.sh" aria-label="Copy TEDx Spanish Corpus helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/67/">OpenSLR</a></li></ul></div>
       <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://www.openslr.org/67/">Source 1 · openslr.org</a></li></ul></div>
@@ -10407,7 +10916,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/rapidata_tts_preference.sh</code></div>
-        <button type="button" data-copy="scripts/download/rapidata_tts_preference.sh" aria-label="Copy Text to Audio Human Preference Benchmark helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/rapidata_tts_preference.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/rapidata_tts_preference.sh" aria-label="Copy Text to Audio Human Preference Benchmark helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/Rapidata/text-2-audio-human-preference-benchmark">Dataset</a></li>
                     <li><a href="https://app.rapidata.ai/mri/benchmarks/68ebcd86bd00d9b672b98995">Leaderboard</a></li></ul></div>
@@ -10459,7 +10971,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/thchs_30.sh</code></div>
-        <button type="button" data-copy="scripts/download/thchs_30.sh" aria-label="Copy THCHS-30 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/thchs_30.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/thchs_30.sh" aria-label="Copy THCHS-30 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.openslr.org/18/">OpenSLR</a></li>
                     <li><a href="https://arxiv.org/abs/1512.01882">Paper</a></li></ul></div>
@@ -10509,7 +11024,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/timit.sh</code></div>
-        <button type="button" data-copy="scripts/download/timit.sh" aria-label="Copy TIMIT helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/timit.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/timit.sh" aria-label="Copy TIMIT helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://catalog.ldc.upenn.edu/LDC93S1">Ldc Catalog</a></li>
                     <li><a href="https://catalog.ldc.upenn.edu/LDC93S1W">Ldc Ms Wav Catalog</a></li>
@@ -10564,7 +11082,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/trea.sh</code></div>
-        <button type="button" data-copy="scripts/download/trea.sh" aria-label="Copy TREA helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/trea.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/trea.sh" aria-label="Copy TREA helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2505.13115">Paper</a></li></ul></div>
@@ -10624,7 +11145,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tts_multilingual_test_set.sh</code></div>
-        <button type="button" data-copy="scripts/download/tts_multilingual_test_set.sh" aria-label="Copy TTS Multilingual Test Set helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tts_multilingual_test_set.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tts_multilingual_test_set.sh" aria-label="Copy TTS Multilingual Test Set helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set">Dataset</a></li>
                     <li><a href="https://arxiv.org/abs/2505.07916">Paper</a></li>
@@ -10685,7 +11209,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/tut_sound_events_2017.sh</code></div>
-        <button type="button" data-copy="scripts/download/tut_sound_events_2017.sh" aria-label="Copy TUT Sound Events 2017 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/tut_sound_events_2017.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/tut_sound_events_2017.sh" aria-label="Copy TUT Sound Events 2017 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://dcase.community/challenge2017/task-sound-event-detection-in-real-life-audio">Challenge</a></li>
                     <li><a href="https://zenodo.org/records/814831">Development Dataset</a></li>
@@ -10747,7 +11274,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/urban_beehive.sh</code></div>
-        <button type="button" data-copy="scripts/download/urban_beehive.sh" aria-label="Copy UrBAN helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/urban_beehive.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/urban_beehive.sh" aria-label="Copy UrBAN helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://doi.org/10.20383/103.0972">Dataset</a></li>
                     <li><a href="https://doi.org/10.1038/s41597-025-04869-1">Paper</a></li>
@@ -10805,7 +11335,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/urbansound8k.sh</code></div>
-        <button type="button" data-copy="scripts/download/urbansound8k.sh" aria-label="Copy UrbanSound8K helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/urbansound8k.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/urbansound8k.sh" aria-label="Copy UrbanSound8K helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://urbansounddataset.weebly.com/urbansound8k.html">Homepage</a></li>
                     <li><a href="https://urbansounddataset.weebly.com/download-urbansound8k.html">Download Page</a></li>
@@ -10860,7 +11393,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/uro_bench_pro.sh</code></div>
-        <button type="button" data-copy="scripts/download/uro_bench_pro.sh" aria-label="Copy URO-Bench-pro helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/uro_bench_pro.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/uro_bench_pro.sh" aria-label="Copy URO-Bench-pro helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/Ruiqi-Yan/URO-Bench">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/Honggao/URO-Bench">Dataset</a></li>
@@ -10913,7 +11449,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/vctk.sh</code></div>
-        <button type="button" data-copy="scripts/download/vctk.sh" aria-label="Copy VCTK helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/vctk.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/vctk.sh" aria-label="Copy VCTK helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://datashare.ed.ac.uk/handle/10283/3443">Datashare</a></li>
                     <li><a href="https://doi.org/10.7488/ds/2645">DOI</a></li>
@@ -10971,7 +11510,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/vggsound.sh</code></div>
-        <button type="button" data-copy="scripts/download/vggsound.sh" aria-label="Copy VGGSound helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/vggsound.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/vggsound.sh" aria-label="Copy VGGSound helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.robots.ox.ac.uk/~vgg/data/vggsound/">Homepage</a></li>
                     <li><a href="https://github.com/hche11/VGGSound">Repository</a></li>
@@ -11030,7 +11572,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/video_mme.sh</code></div>
-        <button type="button" data-copy="scripts/download/video_mme.sh" aria-label="Copy Video-MME helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/video_mme.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/video_mme.sh" aria-label="Copy Video-MME helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://video-mme.github.io/">Homepage</a></li>
                     <li><a href="https://github.com/MME-Benchmarks/Video-MME">Repository</a></li>
@@ -11092,7 +11637,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/vocalset.sh</code></div>
-        <button type="button" data-copy="scripts/download/vocalset.sh" aria-label="Copy VocalSet helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/vocalset.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/vocalset.sh" aria-label="Copy VocalSet helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://zenodo.org/records/1193957">Zenodo</a></li>
                     <li><a href="https://doi.org/10.5281/zenodo.1193957">DOI</a></li>
@@ -11148,7 +11696,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/vocalsound.sh</code></div>
-        <button type="button" data-copy="scripts/download/vocalsound.sh" aria-label="Copy VocalSound helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/vocalsound.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/vocalsound.sh" aria-label="Copy VocalSound helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/YuanGongND/vocalsound">Repository</a></li>
                     <li><a href="https://arxiv.org/abs/2205.03433">Paper</a></li>
@@ -11207,7 +11758,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voicebank_demand.sh</code></div>
-        <button type="button" data-copy="scripts/download/voicebank_demand.sh" aria-label="Copy VoiceBank-DEMAND helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voicebank_demand.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voicebank_demand.sh" aria-label="Copy VoiceBank-DEMAND helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://datashare.ed.ac.uk/handle/10283/2791">Datashare Record</a></li>
                     <li><a href="https://datashare.ed.ac.uk/server/api/core/items/6ed35425-bf14-4d2b-93a1-0a4984952757">Datashare Api</a></li>
@@ -11267,7 +11821,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voicebench.sh</code></div>
-        <button type="button" data-copy="scripts/download/voicebench.sh" aria-label="Copy VoiceBench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voicebench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voicebench.sh" aria-label="Copy VoiceBench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/MatthewCYM/VoiceBench">Repository</a></li>
                     <li><a href="https://matthewcym.github.io/VoiceBench/">Leaderboard</a></li>
@@ -11321,7 +11878,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voxblink2.sh</code></div>
-        <button type="button" data-copy="scripts/download/voxblink2.sh" aria-label="Copy VoxBlink2 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voxblink2.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voxblink2.sh" aria-label="Copy VoxBlink2 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://voxblink2.github.io/">Homepage</a></li>
                     <li><a href="https://github.com/VoxBlink2/ScriptsForVoxBlink2">Repository</a></li>
@@ -11378,7 +11938,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voxceleb.sh</code></div>
-        <button type="button" data-copy="scripts/download/voxceleb.sh" aria-label="Copy VoxCeleb helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voxceleb.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voxceleb.sh" aria-label="Copy VoxCeleb helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.robots.ox.ac.uk/~vgg/data/voxceleb/">Homepage</a></li>
                     <li><a href="https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html">Voxceleb1 Page</a></li>
@@ -11438,7 +12001,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voxconverse.sh</code></div>
-        <button type="button" data-copy="scripts/download/voxconverse.sh" aria-label="Copy VoxConverse helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voxconverse.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voxconverse.sh" aria-label="Copy VoxConverse helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.robots.ox.ac.uk/~vgg/data/voxconverse/">Homepage</a></li>
                     <li><a href="https://github.com/joonson/voxconverse">Repository</a></li>
@@ -11494,7 +12060,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voxenes_2026.sh</code></div>
-        <button type="button" data-copy="scripts/download/voxenes_2026.sh" aria-label="Copy VoxENES 2026 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voxenes_2026.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voxenes_2026.sh" aria-label="Copy VoxENES 2026 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.kaggle.com/datasets/interspeech2712/voxenes-2026">Dataset</a></li>
                     <li><a href="https://arxiv.org/abs/2607.11706">Paper</a></li>
@@ -11548,7 +12117,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voxlingua107.sh</code></div>
-        <button type="button" data-copy="scripts/download/voxlingua107.sh" aria-label="Copy VoxLingua107 helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voxlingua107.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voxlingua107.sh" aria-label="Copy VoxLingua107 helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://cs.taltech.ee/staff/tanel.alumae/data/voxlingua107/">Homepage</a></li>
                     <li><a href="https://huggingface.co/datasets/TalTechNLP/VoxLingua107">Hf Dataset</a></li>
@@ -11604,7 +12176,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/voxpopuli.sh</code></div>
-        <button type="button" data-copy="scripts/download/voxpopuli.sh" aria-label="Copy VoxPopuli helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/voxpopuli.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/voxpopuli.sh" aria-label="Copy VoxPopuli helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/facebookresearch/voxpopuli">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/facebook/voxpopuli">Hf Dataset</a></li>
@@ -11659,7 +12234,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/wavcaps.sh</code></div>
-        <button type="button" data-copy="scripts/download/wavcaps.sh" aria-label="Copy WavCaps helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/wavcaps.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/wavcaps.sh" aria-label="Copy WavCaps helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/XinhaoMei/WavCaps">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/cvssp/WavCaps">Hf Dataset</a></li>
@@ -11714,7 +12292,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/wenetspeech.sh</code></div>
-        <button type="button" data-copy="scripts/download/wenetspeech.sh" aria-label="Copy WenetSpeech helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/wenetspeech.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/wenetspeech.sh" aria-label="Copy WenetSpeech helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://wenet-e2e.github.io/WenetSpeech/">Homepage</a></li>
                     <li><a href="https://github.com/wenet-e2e/WenetSpeech">Repository</a></li>
@@ -11767,7 +12348,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/wham_whamr.sh</code></div>
-        <button type="button" data-copy="scripts/download/wham_whamr.sh" aria-label="Copy WHAM! / WHAMR! helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/wham_whamr.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/wham_whamr.sh" aria-label="Copy WHAM! / WHAMR! helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="http://wham.whisper.ai/">Homepage</a></li>
                     <li><a href="https://arxiv.org/abs/1907.01160">Wham Paper</a></li>
@@ -11824,7 +12408,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/whisper_rirmega.sh</code></div>
-        <button type="button" data-copy="scripts/download/whisper_rirmega.sh" aria-label="Copy Whisper-RIR-Mega helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/whisper_rirmega.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/whisper_rirmega.sh" aria-label="Copy Whisper-RIR-Mega helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench">Dataset</a></li>
                     <li><a href="https://arxiv.org/abs/2603.02252">Paper</a></li>
@@ -11884,7 +12471,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/wildspeech_bench.sh</code></div>
-        <button type="button" data-copy="scripts/download/wildspeech_bench.sh" aria-label="Copy WildSpeech-Bench helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/wildspeech_bench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/wildspeech_bench.sh" aria-label="Copy WildSpeech-Bench helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/Tencent/WildSpeech-Bench">Repository</a></li>
                     <li><a href="https://huggingface.co/datasets/tencent/WildSpeech-Bench">Dataset</a></li>
@@ -11938,7 +12528,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/worldsense.sh</code></div>
-        <button type="button" data-copy="scripts/download/worldsense.sh" aria-label="Copy WorldSense helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/worldsense.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/worldsense.sh" aria-label="Copy WorldSense helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://jaaackhongggg.github.io/WorldSense/">Homepage</a></li>
                     <li><a href="https://github.com/JaaackHongggg/WorldSense">Repository</a></li>
@@ -12001,7 +12594,10 @@
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/wsj0_2mix.sh</code></div>
-        <button type="button" data-copy="scripts/download/wsj0_2mix.sh" aria-label="Copy WSJ0-2mix / wsj0-mix helper command">Copy</button>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/wsj0_2mix.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/wsj0_2mix.sh" aria-label="Copy WSJ0-2mix / wsj0-mix helper path">Copy path</button>
+        </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.merl.com/research/highlights/deep-clustering">Homepage</a></li>
                     <li><a href="http://www.merl.com/demos/deep-clustering">Merl Legacy Url</a></li>

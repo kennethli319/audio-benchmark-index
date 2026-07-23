@@ -283,7 +283,10 @@ def render_card(benchmark, manual_ids)
           </dl>
           <div class="command-block">
             <div><span>Safe-first helper</span><code>#{escape(helper)}</code></div>
-            <button type="button" data-copy="#{escape(helper)}" aria-label="Copy #{escape(name)} helper command">Copy</button>
+            <div class="helper-actions">
+              <a href="#{REPOSITORY_URL}/blob/main/#{escape(helper)}">View helper</a>
+              <button type="button" data-copy="#{escape(helper)}" aria-label="Copy #{escape(name)} helper path">Copy path</button>
+            </div>
           </div>
           #{official_html.empty? ? "" : %(<div class="detail-links"><h4>Official links</h4><ul>#{official_html}</ul></div>)}
           #{source_html.empty? ? "" : %(<div class="detail-links"><h4>Reviewed sources</h4><ul>#{source_html}</ul></div>)}

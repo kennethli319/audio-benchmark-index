@@ -292,6 +292,8 @@
     .command-block div { min-width: 0; }
     .command-block span { display: block; color: #aebdca; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; }
     .command-block code { display: block; overflow-wrap: anywhere; margin-top: 3px; font-size: 12px; }
+    .helper-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+    .helper-actions a { color: #d7eaff; font-size: 12px; font-weight: 800; white-space: nowrap; }
     .command-block button { flex: 0 0 auto; border-color: #53616e; background: #27333c; color: #ffffff; }
     .detail-links h4 { margin: 0 0 5px; font-size: 13px; }
     .detail-links ul { display: flex; flex-wrap: wrap; gap: 5px 14px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
@@ -347,7 +349,7 @@
       .card-facts { grid-template-columns: 1fr; }
       .card-action { flex: 1 1 130px; }
       .command-block { align-items: stretch; flex-direction: column; }
-      .command-block button { align-self: flex-start; }
+      .helper-actions { align-self: flex-start; flex-wrap: wrap; }
       .workflow-panel { padding: 20px 16px; }
       .workflow-steps { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; padding: 22px 16px 30px; }
