@@ -114,6 +114,17 @@ provides no official project, repository, dataset card, item files, prompts,
 or evaluation code. The public source datasets do not make NegEval-Audio's
 generated queries, options, concept annotations, or verified labels public.
 
+The July 2026 *Multimodal Speaker Verification as a Threat to Speaker
+Anonymization* paper is also recorded as an audited protocol. It evaluates
+speaker-disjoint Fisher English trials using up to five original or
+Stream-Voice-Anon-anonymized utterances and acoustic, linguistic, and prosodic
+representations. Its official
+[repository](https://github.com/Ashigarg123/multimodal-speaker-verification)
+currently contains only a README promising code and pretrained models; it does
+not release the custom speaker splits, trial lists, anonymized derivatives, or
+evaluation implementation. Licensed access to Fisher English therefore does
+not reproduce the paper's protocol.
+
 The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
 synchronization protocol, not a downloadable family. It describes 3,269
 in-the-wild videos and 38,390 temporal and semantic challenge samples, but the

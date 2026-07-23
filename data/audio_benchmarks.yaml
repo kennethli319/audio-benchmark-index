@@ -243,6 +243,32 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.12290
     note: The v1 paper provides no official project, repository, dataset card, archive, derived query or MCQ files, concept annotations, prompts, or evaluation code. Public AudioCaps and Clotho source datasets do not make NegEval-Audio's generated and verified annotations public, so it is recorded as an audited protocol rather than a downloadable benchmark family.
 
+  multimodal_speaker_verification_anonymization:
+    paper: https://arxiv.org/abs/2607.19636
+    sections: 4.1-4.3
+    status: audited_not_indexed
+    public_interfaces:
+      - https://github.com/Ashigarg123/multimodal-speaker-verification
+    evaluated_domains:
+      - domain: multi_utterance_speaker_verification_under_anonymization
+        protocol: Speaker-disjoint Fisher English trials compare original and Stream-Voice-Anon-anonymized speech under lazy-informed and semi-informed attackers, aggregating up to five utterances with acoustic, linguistic, and prosodic representations
+        data_status: no_public_trial_release_found
+        note: The paper reports 5,712 training, 250 validation, and 1,753 evaluation speakers and a fixed validation list with 100 target and 100 non-target trials per speaker, but it does not release speaker splits, trial lists, derived anonymized audio, or preprocessing metadata.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      upstream: Fisher English requires the applicable LDC licenses; Stream-Voice-Anon and LibriSpeech terms also apply to the anonymization pipeline and target-speaker audio
+    sources:
+      - https://arxiv.org/html/2607.19636v1#S4.SS1
+      - https://arxiv.org/html/2607.19636v1#S4.SS2
+      - https://arxiv.org/html/2607.19636v1#S4.SS3
+      - https://raw.githubusercontent.com/Ashigarg123/multimodal-speaker-verification/main/README.md
+      - https://api.github.com/repos/Ashigarg123/multimodal-speaker-verification
+      - https://api.github.com/repos/Ashigarg123/multimodal-speaker-verification/git/trees/main?recursive=1
+      - https://catalog.ldc.upenn.edu/LDC2004S13
+      - https://catalog.ldc.upenn.edu/LDC2005S13
+    note: The official repository currently contains only a README promising code and pretrained models; it does not release the custom Fisher speaker partitions, validation or evaluation trials, anonymized derivatives, or evaluation implementation. The licensed Fisher source corpus is indexed separately, but access to it does not reproduce this paper's benchmark protocol. This evaluation is therefore recorded as an audited protocol rather than a downloadable benchmark family.
+
   av_syncbench:
     paper: https://arxiv.org/abs/2607.00726
     sections: 2.1-2.3
