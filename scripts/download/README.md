@@ -226,6 +226,7 @@ scripts/download/incaremo.sh
 scripts/download/msp_podcast.sh
 scripts/download/chime_7_dasr.sh
 scripts/download/real_tse.sh
+SYNSFX_ACK_RESEARCH_ONLY=1 SYNSFX_DOWNLOAD_ARCHIVE=1 scripts/download/synsfx.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
 scripts/download/fisher_english.sh

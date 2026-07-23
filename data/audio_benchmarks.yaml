@@ -9481,3 +9481,62 @@ benchmarks:
       - https://huggingface.co/datasets/SpeechEQ/SpeechEQ
       - https://huggingface.co/datasets/SpeechEQ/SpeechEQ/raw/main/README.md
       - https://huggingface.co/api/datasets/SpeechEQ/SpeechEQ
+
+  - id: synsfx
+    name: SynSFX
+    full_name: "SynSFX: Multi-Model Sound Effects Synthesis Dataset for Deepfake Detection and Evaluation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_deepfake_detection
+      - environmental_audio
+      - robustness_evaluation
+    tasks:
+      - non_speech_audio_deepfake_detection
+      - synthetic_sound_effect_detection
+      - unseen_generator_robustness
+      - cross_domain_audio_forensics
+      - generator_attribution_analysis
+    official:
+      paper: https://arxiv.org/abs/2607.04848
+      project: https://ofspectrum.com/news/synsfx
+      dataset: https://ofspectrum.com/api/backend/storage/datasets/synsfx/download
+    download:
+      primary:
+        - https://ofspectrum.com/news/synsfx
+        - https://ofspectrum.com/api/backend/storage/datasets/synsfx/download
+      examples:
+        - 'scripts/download/synsfx.sh'
+        - 'SYNSFX_ACK_RESEARCH_ONLY=1 SYNSFX_DOWNLOAD_ARCHIVE=1 scripts/download/synsfx.sh'
+      notes: >-
+        The official release page provides a direct private-storage download
+        route for the academic-research-only corpus. The paper reports 43,374
+        clips totaling 178 hours: 16,922 authentic clips from AudioCaps,
+        Clotho, ESC-50, TACoS, and WavCaps, plus 26,452 clips synthesized by
+        seven text-to-audio systems. It also defines a 1,890-prompt controlled
+        subset shared across all seven generators and train, validation,
+        in-domain test, and unseen-generator test protocols. The official page
+        rounds the duration to approximately 180 hours and inconsistently lists
+        26,460 synthetic clips, despite retaining the 43,374 total; this entry
+        uses the internally consistent paper counts. The helper saves the
+        official page and paper by default. Because the uncompressed-WAV archive
+        is large and the publisher states research-only access, downloading it
+        requires both SYNSFX_ACK_RESEARCH_ONLY=1 and
+        SYNSFX_DOWNLOAD_ARCHIVE=1.
+    license:
+      data: academic_research_only
+      code: not_released
+      notes: >-
+        The official release page labels SynSFX "Academic research only" but
+        does not publish a full standalone dataset license or redistribution
+        terms. The authentic partition incorporates AudioCaps, Clotho, ESC-50,
+        TACoS, and WavCaps material, so their source-media and per-clip terms
+        remain applicable. The arXiv paper uses arXiv's perpetual
+        non-exclusive publication license, which does not license the dataset.
+        No official evaluation-code release was linked when checked.
+    sources:
+      - https://arxiv.org/abs/2607.04848
+      - https://arxiv.org/html/2607.04848v1#S3
+      - https://arxiv.org/html/2607.04848v1#S4
+      - https://arxiv.org/html/2607.04848v1#S6
+      - https://ofspectrum.com/news/synsfx
+      - https://ofspectrum.com/api/backend/storage/datasets/synsfx/download
