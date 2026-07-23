@@ -75,6 +75,15 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The April 2026 CAST paper is recorded as an audited speech-generation protocol,
+not a downloadable family. It defines 113 contrastive context pairs (226
+textual items) for testing whether TTS systems realize discourse-conditioned
+word-level stress, plus a separate approximately 10,000-sample synthetic
+training corpus. Although the paper says the benchmark, framework, pipeline,
+and corpus are released, v1 provides no project, repository, dataset card,
+archive, item file, code link, or data-license statement. The paper's CC BY
+4.0 license does not license absent benchmark or corpus files.
+
 The July 2026 RW-Voice-EQ paper has also been audited across sections 2 and
 4-7. Its public [voice-system](https://huggingface.co/spaces/HumeAI/rw-voice-eq)
 and [ASR](https://huggingface.co/spaces/HumeAI/asr-leaderboard) leaderboards do
