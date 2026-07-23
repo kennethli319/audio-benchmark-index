@@ -65,6 +65,7 @@ scripts/download/songformbench.sh
 scripts/download/rubato.sh
 scripts/download/songeval.sh
 scripts/download/cmi_rewardbench.sh
+scripts/download/musica_metabench.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/uro_bench_pro.sh
@@ -325,6 +326,10 @@ CODETT_CLONE_REPO=1 scripts/download/codett.sh
 # CMI-RewardBench downloads official docs plus the lightweight CMI-Pref and
 # composite test manifests; the approximately 15.0 GB HF snapshot is opt-in.
 CMI_REWARDBENCH_DOWNLOAD_HF=1 scripts/download/cmi_rewardbench.sh
+
+# MusICA-MetaBench downloads documentation, component licenses, configs, and
+# two 300-item benchmark TSVs by default. The repository clone is opt-in.
+MUSICA_METABENCH_CLONE_REPO=1 scripts/download/musica_metabench.sh
 
 # SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
 SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh

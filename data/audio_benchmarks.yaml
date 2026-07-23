@@ -8976,6 +8976,73 @@ benchmarks:
       - https://arxiv.org/abs/2607.20253
       - https://arxiv.org/html/2607.20253v1#S3.SS2
 
+  - id: musica_metabench
+    name: MusICA-MetaBench
+    full_name: "Music I Care About: Automated Multimodal Benchmarking of LLM Music Perception Skills on (Almost) Any Music"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - audio_understanding
+      - multimodal_understanding
+    tasks:
+      - music_perception_question_answering
+      - audio_music_understanding
+      - symbolic_music_understanding
+      - sheet_music_understanding
+      - cross_modal_music_evaluation
+      - programmatic_benchmark_generation
+    official:
+      paper: https://arxiv.org/abs/2607.06015
+      repo: https://github.com/tomsouri/MusICA-MetaBench-preprint
+      chorale_bricks: https://audiolabs-erlangen.de/resources/MIR/2025-ChoraleBricks
+      chorale_synth: https://zenodo.org/records/10161065
+    download:
+      primary:
+        - https://github.com/tomsouri/MusICA-MetaBench-preprint
+      examples:
+        - 'scripts/download/musica_metabench.sh'
+        - 'MUSICA_METABENCH_CLONE_REPO=1 scripts/download/musica_metabench.sh'
+      notes: >-
+        The public repository releases the evaluation and benchmark-generation
+        pipeline, question templates, ontology, configurations, inference logs,
+        and pre-generated benchmark instances. The paper's main ChoraleBricks
+        instance and its ChoralSynth validation instance each contain 300
+        five-option questions balanced across audio, symbolic, and sheet-image
+        modalities; 20% use "none of the other options" as the correct answer.
+        Items test pitch, rhythm, and harmony perception. The helper downloads
+        official documentation, licenses, configs, and both sub-500 KB TSV
+        instances by default. Cloning the approximately 49 MB GitHub repository
+        is opt-in. Source audio and scores are not stored in that repository
+        and must be obtained from ChoraleBricks or ChoralSynth under their
+        respective terms.
+    license:
+      data: mixed_CC-BY-4.0_and_CC-BY-SA-4.0_by_source
+      code: GPL-3.0-or-later
+      notes: >-
+        ChoraleBricks-derived benchmark instances are CC BY 4.0, while
+        ChoralSynth-derived instances are CC BY-SA 4.0. Original code,
+        question templates, ontology, and configurations are GPL-3.0-or-later.
+        Model outputs and inference logs are provided without a separate
+        license. Source recordings and scores are downloaded separately and
+        retain the upstream dataset terms; select the license by each
+        benchmark file's documented source rather than treating the repository
+        as uniformly licensed.
+    sources:
+      - https://arxiv.org/abs/2607.06015
+      - https://arxiv.org/html/2607.06015v1#S3
+      - https://arxiv.org/html/2607.06015v1#S4
+      - https://github.com/tomsouri/MusICA-MetaBench-preprint
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/README.md
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/benchmarks/README.md
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/benchmarks/qs_per_subcat_20/seed_52.tsv
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/benchmarks/choralsynth.size20.seed_52.tsv
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/LICENSE
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/LICENSE-DATA-CHORALEBRICKS
+      - https://raw.githubusercontent.com/tomsouri/MusICA-MetaBench-preprint/main/LICENSE-DATA-CHORALSYNTH
+      - https://api.github.com/repos/tomsouri/MusICA-MetaBench-preprint
+      - https://audiolabs-erlangen.de/resources/MIR/2025-ChoraleBricks
+      - https://zenodo.org/records/10161065
+
   - id: lyra_sa
     name: Lyra-SA
     full_name: "Lyra Lab Singing Assessment Dataset"
