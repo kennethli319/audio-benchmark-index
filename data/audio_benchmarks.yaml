@@ -271,6 +271,28 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.14189
     note: MultiRef-Compass is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper and arXiv metadata expose no official data or code interface, so its 350 prompts, reference assets, metric routing, judge prompts, and evaluation implementation must not be inferred to be public from the paper's CC BY 4.0 license or its descriptions of permissively licensed source assets.
 
+  scenebind:
+    paper: https://arxiv.org/abs/2607.15265
+    sections: 4.1-4.3 and appendix B
+    status: audited_not_indexed
+    public_interfaces:
+      - https://scenebind.github.io/
+    evaluated_domains:
+      - domain: semantic_spatial_audio_visual_retrieval_and_grounding
+        protocol: Human-verified Binaural benchmark with 1,066 two-second clips, plus a 97-clip Sphere360 hard benchmark, for six-direction audio-image-text retrieval, spatial retrieval, and object grounding
+        data_status: no_public_item_release_found
+        note: The paper reports 1,040 audio-visual, 325 audio-text, and 757 visual-text scene queries, 1,386 audio-relevant grounding targets, and 2,682 visual-relevant targets. The public project page exposes selected qualitative examples rather than benchmark item files, splits, or evaluation code.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      upstream: The Binaural corpus is derived from public-platform videos and Sphere360 from OmniAudio source videos; source-media and annotation rights are not stated for a public benchmark release
+    sources:
+      - https://arxiv.org/html/2607.15265v1#S4.SS1
+      - https://arxiv.org/html/2607.15265v1#A2
+      - https://arxiv.org/html/2607.15265v1#A2.SS4
+      - https://scenebind.github.io/
+    note: The paper describes its 38,430-clip Binaural training split as released, but neither the paper nor the official project page provides a dataset archive, repository, dataset card, item manifest, license, or evaluation-code link. The page hosts a selected qualitative viewer only. SceneBind is therefore recorded as an audited protocol rather than a downloadable benchmark family; recheck the official page before adding an indexed dataset or helper.
+
 benchmarks:
   - id: mmau
     name: MMAU

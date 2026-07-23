@@ -88,6 +88,14 @@ promises benchmark files and evaluation code "Coming Soon," and its official
 contains only a README. AMI's public source corpus does not make MeetingToM's
 unreleased annotations, splits, or derived clips public.
 
+The July 2026 SceneBind paper is recorded as an audited protocol rather than a
+downloadable family. It reports a human-verified 1,066-clip Binaural benchmark
+and a 97-clip Sphere360 hard benchmark for semantic-spatial retrieval and
+grounding, but the official [project page](https://scenebind.github.io/) exposes
+only selected qualitative examples. No benchmark archive, item manifest,
+repository, dataset card, license, or evaluation-code link is currently
+provided, despite the paper describing its training split as released.
+
 The March 2026 DEAF paper is also recorded as an audited protocol rather than a
 downloadable family. It describes 2,756 acoustic-semantic conflict stimuli for
 emotion, background sound, and speaker identity, but v2 provides no official
