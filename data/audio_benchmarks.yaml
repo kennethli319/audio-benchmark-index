@@ -459,6 +459,44 @@ benchmarks:
       - https://huggingface.co/MUGEN-Benchmark
       - https://huggingface.co/api/datasets?author=MUGEN-Benchmark&limit=100&full=true
 
+  - id: trea
+    name: TREA
+    full_name: "Temporal Reasoning Evaluation of Audio"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - audio_question_answering
+      - temporal_audio_reasoning
+      - audio_event_ordering
+      - audio_event_counting
+      - audio_event_duration_reasoning
+      - confidence_and_uncertainty_evaluation
+    official:
+      repo: https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty
+      paper: https://arxiv.org/abs/2505.13115
+    download:
+      primary:
+        - https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty/tree/main/TREA_dataset
+        - https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty/tree/main/TREA_dataset_open_text
+      examples:
+        - 'scripts/download/trea.sh'
+        - 'TREA_CLONE_REPO=1 scripts/download/trea.sh'
+      notes: TREA is a public, ungated 600-item temporal-reasoning benchmark derived by combining ESC-50 clips. Its TREA-O, TREA-C, and TREA-D subsets each contain 200 ordering, counting, or duration questions. The July 2026 Audio-Zero paper evaluates both Qwen2-Audio-7B-Instruct and Qwen2.5-Omni-7B on TREA alongside MMAU Test-mini and MMAR. The repository releases both four-option multiple-choice and open-text answer formats, audio, metadata, evaluation code, and uncertainty perturbation scripts. The helper downloads official documentation, repository metadata, license, paper page, and the lightweight CSV annotations by default; set TREA_CLONE_REPO=1 to clone the approximately 688 MiB GitHub repository and its audio.
+    license:
+      data: CC0-1.0_repository_with_ESC-50_upstream_terms
+      code: CC0-1.0
+      notes: The repository applies a CC0-1.0 LICENSE and GitHub detects CC0-1.0, but the paper states that every TREA audio file combines recordings from ESC-50, whose dataset is CC BY-NC 3.0 and whose ESC-10 subset clips are CC BY. Treat the restrictive upstream terms and clip attribution as surviving the derived release rather than assuming the repository-level CC0 waiver clears all source-audio rights.
+    sources:
+      - https://arxiv.org/abs/2505.13115
+      - https://arxiv.org/html/2505.13115v1#S3
+      - https://arxiv.org/abs/2607.20166
+      - https://arxiv.org/html/2607.20166v1#S1
+      - https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty
+      - https://raw.githubusercontent.com/iiscleap/Audio-LLM-benchmarking-uncertainty/main/README.md
+      - https://raw.githubusercontent.com/iiscleap/Audio-LLM-benchmarking-uncertainty/main/LICENSE
+      - https://api.github.com/repos/iiscleap/Audio-LLM-benchmarking-uncertainty
+      - https://github.com/karolpiczak/ESC-50
+
   - id: escucha
     name: ESCUCHA
     full_name: "ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions"
