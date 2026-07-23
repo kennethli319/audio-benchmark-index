@@ -417,6 +417,40 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.10345
     note: The v1 paper says that the source code and dataset are publicly released through an anonymous 4open.science repository, but on 2026-07-23 that official URL redirects to its repository API and returns HTTP 401 with "not_connected." No files, manifest, README, license, or alternative official release can therefore be verified. PC-Mix is recorded as an audited announced benchmark rather than a downloadable family; recheck the official endpoint after deanonymization or restoration before adding an indexed entry or helper.
 
+  ecom_reasoning_spoken_math:
+    paper: https://arxiv.org/abs/2607.19932
+    sections: 4.1 and appendix C
+    status: audited_not_indexed
+    public_interfaces:
+      - https://funaudiollm.github.io/FunResearch/ECoM-Reasoning/
+      - https://github.com/FunAudioLLM/FunResearch/tree/main/ECoM-Reasoning
+    evaluated_domains:
+      - domain: spoken_mathematical_question_answering
+        protocol: Complete STITCH synthesized-speech evaluation set derived from AddSub, SingleEq, MultiArith, and SVAMP, scored for answer accuracy, generated text-token count, token efficiency, WER, and UTMOS
+        data_status: evaluation_audio_and_items_not_released
+        note: Section 4.1 says ECoM Reasoning uses the same complete evaluation set and synthesized speech items as STITCH, but neither paper identifies a public archive or exact item manifest. The ECoM repository only provides placeholder YAML paths that users must point at their own JSONL files.
+      - domain: non_reasoning_spoken_question_answering
+        protocol: Llama Questions subset selected through UltraEval-Audio
+        data_status: upstream_framework_public_exact_ecom_subset_not_released
+        note: UltraEval-Audio publicly provides a Llama Questions registry and acquisition framework, but ECoM does not publish its selected rows, generated inputs, or evaluation manifest.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      code: Apache-2.0 at the parent FunResearch repository
+      evaluation_data: not_specified_unreleased
+      upstream: AddSub, SingleEq, MultiArith, SVAMP, STITCH, Llama Questions, and UltraEval-Audio terms require separate review
+    sources:
+      - https://arxiv.org/html/2607.19932v1#S4.SS1
+      - https://arxiv.org/html/2607.19932v1#A3
+      - https://funaudiollm.github.io/FunResearch/ECoM-Reasoning/
+      - https://github.com/FunAudioLLM/FunResearch/tree/main/ECoM-Reasoning
+      - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/ECoM-Reasoning/README.md
+      - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/ECoM-Reasoning/data/README.md
+      - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/ECoM-Reasoning/data/test_math_dataset.yaml
+      - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/LICENSE
+      - https://d223302.github.io/STITCH/
+      - https://github.com/OpenBMB/UltraEval-Audio
+    note: The public ECoM Reasoning release contains training and inference code, data-construction utilities, and placeholder dataset registries, not the paper's spoken benchmark package. Its data README explicitly requires users to supply their own JSONL paths. Because the exact STITCH-derived synthesized audio, selected items, and ECoM evaluation manifests cannot be verified through an official release, this protocol is audited but not indexed as a downloadable benchmark family.
+
 benchmarks:
   - id: mmau
     name: MMAU

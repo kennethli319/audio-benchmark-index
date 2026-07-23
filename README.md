@@ -178,6 +178,17 @@ paper's claim of a public code/data release is not treated as a usable download.
 The mixed source corpora and generated components would also retain their own
 terms if the release becomes available.
 
+The July 2026 ECoM Reasoning paper is likewise recorded as an audited spoken
+math protocol rather than a downloadable family. Section 4.1 evaluates the
+complete STITCH synthesized-speech set derived from AddSub, SingleEq,
+MultiArith, and SVAMP, plus a Llama Questions subset through UltraEval-Audio.
+The official [ECoM code release](https://github.com/FunAudioLLM/FunResearch/tree/main/ECoM-Reasoning)
+contains data-construction utilities and placeholder manifests that require
+user-supplied JSONL paths; it does not release the exact synthesized audio,
+selected items, or evaluation manifests. The parent repository is Apache-2.0,
+but that code license does not license the absent evaluation data or its
+upstream datasets.
+
 ## Coverage
 
 Current coverage includes:
