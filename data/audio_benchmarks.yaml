@@ -700,6 +700,28 @@ paper_audits:
       - https://arxiv.org/html/2601.23149v1#A6
     note: The paper introduces SYAUDIO as a 4,319-question benchmark but supplies no official project, repository, dataset card, archive, download URL, data-license statement, or code link. Public MMAU, MMAR, GSM8K, and MMLU sources do not make the paper's selected rows, generated speech, sycophancy prompts, acoustic perturbations, or evaluation manifests public. SYAUDIO is therefore recorded as an audited protocol rather than a downloadable benchmark family; do not confuse unrelated repositories with similar names for an official release.
 
+  diverse_speech_human_asr_comparison:
+    paper: https://arxiv.org/abs/2607.19049
+    sections: 2 and 3.5
+    status: audited_existing_source_corpus
+    public_interfaces:
+      - https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
+    evaluated_domains:
+      - domain: human_and_machine_diverse_speech_recognition
+        protocol: 120 human-machine-interaction utterances selected from the JASMIN-CGN test data, with 40 each for Dutch children, Dutch older adults, and Flemish teenagers or older adults; human listeners and three ASR systems are compared by word error rate
+        data_status: source_corpus_restricted_exact_selection_and_listener_responses_unreleased
+        note: Section 2.1 describes demographic and utterance-length balancing, but supplies no utterance identifiers, selection script, normalized-audio manifest, listener transcription rows, or ASR hypotheses. Section 3.5 separately reports the three ASR systems on the full JASMIN-CGN child, older-adult, and Flemish test sets.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      evaluation_artifacts: not_specified_unreleased
+      upstream: JASMIN-CGN is free for non-commercial use only after account registration and a signed Dutch Language Institute license; commercial access is handled separately
+    sources:
+      - https://arxiv.org/abs/2607.19049
+      - https://arxiv.org/html/2607.19049v1#S2.SS1
+      - https://arxiv.org/html/2607.19049v1#S3.SS5
+      - https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
+    note: The primary JASMIN-CGN family and its manual licensed-access path are already indexed. This paper defines a new 120-utterance human-versus-ASR study protocol but provides no project page, repository, supplementary archive, exact row mapping, participant-response data, model hypotheses, or evaluation code. It is therefore recorded as a coverage audit rather than a duplicate benchmark family or helper. Access to the full licensed corpus does not reproduce the paper's balanced selection or listening experiment.
+
 benchmarks:
   - id: mmau
     name: MMAU

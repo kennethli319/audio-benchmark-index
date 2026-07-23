@@ -262,6 +262,16 @@ data license. Public SongEval and CMI-RewardBench releases are indexed
 separately and must not be mistaken for the report's unreleased evaluation
 sets.
 
+The July 2026 human-versus-ASR diverse-speech study is recorded as a coverage
+audit of the existing JASMIN-CGN family. It selects 120 human-machine-dialogue
+utterances—40 each for Dutch children, Dutch older adults, and Flemish
+teenagers or older adults—and separately reports three ASR systems on the full
+group test sets. The paper does not publish the selected utterance identifiers,
+normalization or selection scripts, listener transcriptions, ASR hypotheses,
+or evaluation code. JASMIN-CGN's official signed-license access path remains
+indexed, but access to that corpus does not reconstruct this listening-study
+protocol, so no duplicate family or download helper is added.
+
 ChronosAudio is recorded as an audited long-audio protocol rather than a
 downloadable family. The paper describes 36,000 English test instances over
 6,000 synthetic clips and more than 200 hours, with dictation, localization,
