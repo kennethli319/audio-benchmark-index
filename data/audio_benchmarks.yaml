@@ -8885,3 +8885,59 @@ benchmarks:
       - https://huggingface.co/datasets/NJU-LINK/OmniVideoBench
       - https://huggingface.co/api/datasets/NJU-LINK/OmniVideoBench
       - https://arxiv.org/abs/2607.19339
+
+  - id: chartgeneval
+    name: ChartGenEval
+    full_name: "ChartGenEval: Corruption-Tested Multi-Dimensional Feedback for Rhythm-Game Chart Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_generation_evaluation
+      - rhythm_game_chart_generation
+    tasks:
+      - music_generation_evaluation
+      - rhythm_game_chart_generation
+      - chart_audio_alignment
+      - chart_structure_evaluation
+      - corruption_robustness_evaluation
+    official:
+      paper: https://arxiv.org/abs/2607.12857
+      repo: https://github.com/JacobLinCool/ChartGenEval
+    download:
+      primary:
+        - https://github.com/JacobLinCool/ChartGenEval
+      examples:
+        - 'scripts/download/chartgeneval.sh'
+        - 'CHARTGENEVAL_CLONE_REPO=1 scripts/download/chartgeneval.sh'
+      notes: >-
+        The public repository releases the NumPy-based evaluation toolkit,
+        calibration artifact, corruption probes, plotting and reproduction
+        scripts, and metric-only evaluation records. The paper validates seven
+        output axes with nine held-out controlled-corruption tests across
+        timing, audio response, structure, grammar, and human-reference gap
+        measurements. The helper downloads official documentation and repository
+        metadata by default; cloning the approximately 44 MB current file tree
+        requires CHARTGENEVAL_CLONE_REPO=1. The underlying 3,880-chart
+        calibration corpus and its audio are explicitly not distributed because
+        they may contain copyrighted community and commercial material, so the
+        released artifacts support verification of reported results but not
+        full corpus-dependent reproduction.
+    license:
+      data: MIT_released_artifacts_corpus_not_released
+      code_and_released_artifacts: MIT
+      benchmark_corpus: not_released
+      notes: >-
+        The repository-level MIT license covers the released software and
+        bundled artifacts. It does not grant rights to the absent chart/audio
+        corpus; the README says potentially copyrighted community and commercial
+        content is intentionally not redistributed. Users reproducing
+        corpus-dependent experiments must supply a rights-compatible equivalent
+        snapshot and review its chart, recording, and game-content terms.
+    sources:
+      - https://arxiv.org/abs/2607.12857
+      - https://arxiv.org/html/2607.12857v1#S4
+      - https://arxiv.org/html/2607.12857v1#A4
+      - https://github.com/JacobLinCool/ChartGenEval
+      - https://raw.githubusercontent.com/JacobLinCool/ChartGenEval/main/README.md
+      - https://raw.githubusercontent.com/JacobLinCool/ChartGenEval/main/LICENSE
+      - https://api.github.com/repos/JacobLinCool/ChartGenEval
+      - https://api.github.com/repos/JacobLinCool/ChartGenEval/git/trees/main?recursive=1

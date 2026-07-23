@@ -64,6 +64,7 @@ scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
 scripts/download/songeval.sh
+scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh

@@ -16,7 +16,8 @@ emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, asynchronous
 distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
-music synthesis, song-aesthetics and full-song singing-quality assessment, speech quality
+music synthesis, song-aesthetics, full-song singing-quality assessment, and
+rhythm-game chart-generation evaluation, speech quality
 assessment, child-speech recognition, spatial audio localization, cross-modal audio-video-text retrieval,
 spatio-temporal and multi-audio reasoning,
 audio-visual segmentation, audio-visual speech recognition,
@@ -44,7 +45,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 211 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 212 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -232,6 +233,7 @@ Current coverage includes:
 | [RUBATO](https://zenodo.org/records/21407832) | Robust music transcription and analysis across multiple versions of the same works | Public Zenodo v0.3 release with 566 versions of 15 works (about 42.9 hours), aligned audio/score/video representations, and note, beat, measure, local-key, structure, and warping-path annotations; helper downloads the 83 KB metadata by default while the approximately 6.26 GB archive is opt-in | Zenodo labels the deposit CC BY 3.0, but per-recording metadata includes CC0, attribution, ShareAlike, NoDerivatives, non-commercial, ambiguous, and EEF terms; review each recording before reuse |
 | [SongEval](https://huggingface.co/datasets/ASLP-lab/SongEval) | Full-song aesthetics and music-generation quality assessment | Public, ungated 2,399-song English/Chinese release with about 140 hours and expert ratings for coherence, memorability, vocal naturalness, structural clarity, and musicality; helper downloads docs and the approximately 1.27 MB rating JSONL by default while the approximately 16.1 GB MP3 snapshot is opt-in | Dataset card declares CC BY-NC-SA 4.0 and toolkit is Apache-2.0, but songs include commercial-generator outputs and real/bad-case samples without per-item provenance, so generated-output, service, and underlying music rights require review |
 | [Lyra-SA](https://lyracobar.y.qq.com/singvoicedataset_en.html) | Full-song singing-quality assessment and score prediction | Official Tencent Music Lyra Lab release with 1,000 complete mobile-karaoke recordings, listener scores, timed lyrics, and reference MIDI; access requires the official application and an emailed download link, so the helper saves documentation and prints the manual path only | Official page states CC BY-NC 4.0 for non-commercial use with attribution, reserves Tencent Music copyright, and requires separate commercial permission; rely on the official authorization/application terms for WeSing performances and song rights |
+| [ChartGenEval](https://github.com/JacobLinCool/ChartGenEval) | Rhythm-game chart-generation evaluation | Public MIT evaluation toolkit, calibration, corruption probes, and metric-only records for timing, audio response, structure, grammar, and human-reference gap measurements; helper downloads docs by default and makes the approximately 44 MB repository clone opt-in; the 3,880-chart calibration corpus and audio are explicitly not distributed | MIT covers released code and artifacts, not the absent potentially copyrighted community/commercial chart and audio corpus; full corpus-dependent reproduction requires a separately sourced rights-compatible snapshot |
 | [AI-Generated Cover Song Diagnostics](https://github.com/TiaaL/songecho-cover-metrics) | Diagnostic evaluation of cover-song generation across melody, harmony, key, style, and production | Public score table, anonymized 30-sample manifest, nine extracted features, and analysis pipeline; helper downloads all lightweight released tables/docs by default, but the paper explicitly withholds copyrighted source and generated audio | Released repository tables/code are MIT; the license does not grant rights to absent source songs or generated covers, and rerunning audio analysis requires locally authorized files |
 | [MagnaTagATune](https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset) | Music tagging | Official MIRG-hosted metadata, annotations, comparisons, optional Echo Nest features, and optional MP3 split archives | CC BY-NC-SA 3.0 for data; GPLv3 for scripts; Magnatune audio excerpts are non-commercial research redistribution |
 | [MTG-Jamendo](https://mtg.github.io/mtg-jamendo-dataset/) | Music tagging | Official [metadata/scripts repo](https://github.com/MTG/mtg-jamendo-dataset), [Zenodo metadata archive](https://zenodo.org/records/3826813), and upstream downloader for large audio/features with opt-in | Metadata is CC BY-NC-SA 4.0; code is Apache-2.0; audio keeps per-track Creative Commons licenses and is limited to non-commercial research/academic use unless Jamendo authorizes otherwise |
