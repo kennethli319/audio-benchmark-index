@@ -505,6 +505,30 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2601.04876
     note: The paper says its code and dataset are available at an anonymous 4open.science repository. On 2026-07-23, that official URL redirects to the repository file API and returns HTTP 401 with "not_connected"; no README, code, audio, annotations, split manifest, or data license can be inspected. ChronosAudio is therefore recorded as an audited announced benchmark rather than a downloadable family. Recheck the official endpoint after restoration or deanonymization before adding an indexed entry or helper.
 
+  fretiq:
+    paper: https://arxiv.org/abs/2607.18303
+    sections: 5.3, 6.3, and 8
+    status: audited_not_indexed
+    public_interfaces:
+      - https://github.com/D1gits0/fretiq
+    evaluated_domains:
+      - domain: electric_guitar_string_classification
+        protocol: Approximately 103,000 labeled frames from a separate 15-minute free-play recording, evaluated across the six standard electric-guitar strings after training and hyperparameter selection were complete
+        data_status: evaluation_frames_not_released
+        note: The held-out session uses the same guitar, player, and clean amplifier preset as training. The paper reports 87.8% overall accuracy, but the official repository excludes the JSON recording needed to reproduce the per-string results and confusion matrix.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      code: README_claims_MIT_without_license_file
+    sources:
+      - https://arxiv.org/abs/2607.18303
+      - https://github.com/D1gits0/fretiq
+      - https://raw.githubusercontent.com/D1gits0/fretiq/main/README.md
+      - https://raw.githubusercontent.com/D1gits0/fretiq/main/REPRODUCE.md
+      - https://api.github.com/repos/D1gits0/fretiq
+      - https://api.github.com/repos/D1gits0/fretiq/git/trees/main?recursive=1
+    note: The public repository provides feature extraction, training, ablation, held-out evaluation code, and trained model weights, but both README.md and REPRODUCE.md explicitly say that the gitignored data directory and training recordings are not included. The same omission covers the paper's three 322,215-frame development sessions and its approximately 103,000-frame held-out free-play session. Fretiq is therefore recorded as an audited model-specific protocol rather than a downloadable benchmark family. The repository README labels the project MIT, but the repository exposes no LICENSE file and GitHub detects no license; do not infer terms for either code or absent recordings.
+
 benchmarks:
   - id: mmau
     name: MMAU
