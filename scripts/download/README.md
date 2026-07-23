@@ -44,6 +44,7 @@ scripts/download/ava_active_speaker.sh
 scripts/download/dave.sh
 scripts/download/daily_omni.sh
 scripts/download/worldsense.sh
+scripts/download/mmou.sh
 scripts/download/av_speakerbench.sh
 scripts/download/avut.sh
 scripts/download/omnigaia.sh
@@ -399,6 +400,11 @@ DAILY_OMNI_CLONE_REPO=1 scripts/download/daily_omni.sh
 # WorldSense downloads docs and QA metadata by default; its approximately 18.1 GB archive snapshot is opt-in.
 WORLDSENSE_DOWNLOAD_HF=1 scripts/download/worldsense.sh
 WORLDSENSE_CLONE_REPO=1 scripts/download/worldsense.sh
+
+# MMOU downloads official cards and API metadata by default. The approximately
+# 48 MB annotation release and 322.8 GB community-hosted videos are separate opt-ins.
+MMOU_DOWNLOAD_ANNOTATIONS=1 scripts/download/mmou.sh
+MMOU_DOWNLOAD_VIDEOS=1 scripts/download/mmou.sh
 
 # OmniGAIA downloads docs and test metadata by default; the approximately 9.9 GB media snapshot is opt-in.
 OMNIGAIA_DOWNLOAD_HF=1 scripts/download/omnigaia.sh

@@ -1173,6 +1173,49 @@ benchmarks:
       - https://arxiv.org/html/2502.04326v3#A7
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: mmou
+    name: MMOU
+    full_name: "MMOU: A Massive Multi-Task Omni Understanding and Reasoning Benchmark for Long and Complex Real-World Videos"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - long_video_understanding
+      - cross_modal_reasoning
+      - temporal_grounding
+      - omni_modal_reasoning
+    official:
+      homepage: https://mmou.pages.dev/
+      paper: https://arxiv.org/abs/2603.14145
+      dataset: https://huggingface.co/datasets/nvidia/MMOU
+      evaluator: https://huggingface.co/spaces/nvidia/MMOU-Eval
+      video_release: https://huggingface.co/datasets/sonalkum/MMOU-Videos
+      audio_visual_flamingo_report: https://arxiv.org/abs/2607.16107
+    download:
+      primary:
+        - https://huggingface.co/datasets/nvidia/MMOU
+        - https://huggingface.co/datasets/sonalkum/MMOU-Videos
+      examples:
+        - 'scripts/download/mmou.sh'
+        - 'MMOU_DOWNLOAD_ANNOTATIONS=1 scripts/download/mmou.sh'
+        - 'MMOU_DOWNLOAD_VIDEOS=1 scripts/download/mmou.sh'
+        - 'from datasets import load_dataset; mini = load_dataset("nvidia/MMOU", "test", split="test")'
+      notes: The public, ungated NVIDIA release contains 20,000 English questions over 11,877 long-form web videos. The 5,000-item Test Mini split includes labels for local evaluation; answers for the main 15,000-item split are withheld for evaluator submission. The helper downloads official cards and API metadata by default, makes the approximately 48 MB question files opt-in, and requires a separate opt-in for the approximately 322.8 GB community-hosted video snapshot. Audio-Visual Flamingo evaluates MMOU as an omni-modal benchmark.
+    license:
+      data: "Apache-2.0 metadata label; non-commercial research restriction in paper"
+      code: not_applicable
+      notes: Both Hugging Face cards declare Apache-2.0, but the MMOU paper says the dataset is released solely for non-commercial research. Apply the stricter non-commercial restriction pending clarification. Videos were collected from public web platforms including YouTube, so source copyright, platform terms, availability, and any per-video rights also apply.
+    sources:
+      - https://mmou.pages.dev/
+      - https://huggingface.co/datasets/nvidia/MMOU
+      - https://huggingface.co/datasets/nvidia/MMOU/raw/main/README.md
+      - https://huggingface.co/api/datasets/nvidia/MMOU
+      - https://huggingface.co/datasets/sonalkum/MMOU-Videos
+      - https://huggingface.co/api/datasets/sonalkum/MMOU-Videos
+      - https://arxiv.org/abs/2603.14145
+      - https://arxiv.org/html/2603.14145v2#A10
+      - https://arxiv.org/abs/2607.16107
+
   - id: av_speakerbench
     name: AV-SpeakerBench
     full_name: "See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models"
