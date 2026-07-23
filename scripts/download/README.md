@@ -29,6 +29,7 @@ scripts/download/mmsu.sh
 scripts/download/mmau_pro.sh
 scripts/download/mugen.sh
 scripts/download/trea.sh
+scripts/download/lat_bench.sh
 scripts/download/escucha.sh
 scripts/download/ghana_speech_eval.sh
 scripts/download/msu_bench.sh

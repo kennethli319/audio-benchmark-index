@@ -569,6 +569,46 @@ benchmarks:
       - https://api.github.com/repos/iiscleap/Audio-LLM-benchmarking-uncertainty
       - https://github.com/karolpiczak/ESC-50
 
+  - id: lat_bench
+    name: LAT-Bench
+    full_name: "LAT-Bench: Long-form Audio Temporal Awareness Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - long_form_audio_understanding
+      - temporal_audio_reasoning
+      - dense_audio_captioning
+      - temporal_audio_grounding
+      - targeted_audio_captioning
+    official:
+      repo: https://github.com/alanshaoTT/LAT-Audio-Repo
+      paper: https://arxiv.org/abs/2604.22245
+      dataset: https://huggingface.co/datasets/mcshao/LAT-Bench
+      collection: https://huggingface.co/collections/mcshao/lat-audio
+    download:
+      primary:
+        - https://huggingface.co/datasets/mcshao/LAT-Bench
+        - https://github.com/alanshaoTT/LAT-Audio-Repo
+      examples:
+        - 'scripts/download/lat_bench.sh'
+        - 'LAT_BENCH_CLONE_REPO=1 scripts/download/lat_bench.sh'
+      notes: The public, ungated release provides Chinese and English metadata plus task JSONL files for a human-verified 40-hour benchmark, with 25 hours of Chinese and 15 hours of English audio up to 30 minutes long. Dense Audio Captioning, Temporal Audio Grounding, and Targeted Audio Captioning annotations are included. Audio is not bundled; the metadata records source URLs, so availability can drift and source-platform terms apply. The helper downloads the approximately 2.6 MB annotations, official documentation, and repository metadata by default; cloning the evaluation repository is opt-in.
+    license:
+      data: CC-BY-NC-4.0_claim_with_upstream_media_terms
+      code: Apache-2.0
+      notes: The Hugging Face card declares CC BY-NC 4.0 for LAT-Bench, while the GitHub repository is Apache-2.0. The release references externally hosted source audio rather than relicensing or redistributing it; review each recording's rights and platform terms before retrieval, redistribution, or commercial use.
+    sources:
+      - https://arxiv.org/abs/2604.22245
+      - https://arxiv.org/html/2604.22245v1#S4
+      - https://arxiv.org/html/2604.22245v1#S4.SS3
+      - https://github.com/alanshaoTT/LAT-Audio-Repo
+      - https://raw.githubusercontent.com/alanshaoTT/LAT-Audio-Repo/main/README.md
+      - https://raw.githubusercontent.com/alanshaoTT/LAT-Audio-Repo/main/LICENSE
+      - https://api.github.com/repos/alanshaoTT/LAT-Audio-Repo
+      - https://huggingface.co/datasets/mcshao/LAT-Bench
+      - https://huggingface.co/datasets/mcshao/LAT-Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/mcshao/LAT-Bench
+
   - id: escucha
     name: ESCUCHA
     full_name: "ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions"
