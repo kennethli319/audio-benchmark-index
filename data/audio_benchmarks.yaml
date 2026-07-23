@@ -1073,6 +1073,66 @@ benchmarks:
       - https://arxiv.org/abs/2510.12720
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: avscapbench
+    name: AVSCapBench
+    full_name: "AVSCapBench: Fine-Grained Audio-Visual Synergy Evaluation for Omni-Modal Video Captioning"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_captioning
+    tasks:
+      - omni_modal_video_captioning
+      - audio_visual_captioning
+      - audio_event_captioning
+      - audio_visual_event_binding
+      - speech_music_sound_effect_captioning
+      - event_recall_evaluation
+    official:
+      homepage: https://nju-link.github.io/AVSCap/
+      repo: https://github.com/NJU-LINK/AVSCap
+      dataset: https://huggingface.co/datasets/NJU-LINK/AVSCapBench
+      paper: https://arxiv.org/abs/2607.12820
+      arxiv_html: https://arxiv.org/html/2607.12820v1#S3.SS3
+    download:
+      primary:
+        - https://huggingface.co/datasets/NJU-LINK/AVSCapBench
+        - https://github.com/NJU-LINK/AVSCap
+      examples:
+        - 'scripts/download/avscapbench.sh'
+        - 'AVSCAPBENCH_DOWNLOAD_HF=1 scripts/download/avscapbench.sh'
+        - 'huggingface-cli download --repo-type dataset NJU-LINK/AVSCapBench --local-dir data/AVSCapBench'
+      notes: >-
+        The public, ungated release contains 1,226 English video clips lasting
+        30 to 120 seconds, dense omni-modal captions, visual events, audio
+        events separated into speech, music, and sound effects, and synergistic
+        audio-visual events. The evaluation repository implements LLM-judged
+        event recall. The helper downloads official documentation and repository
+        metadata by default; set AVSCAPBENCH_DOWNLOAD_HF=1 for the approximately
+        19.6 GB Hugging Face snapshot.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: not_specified
+      notes: >-
+        The Hugging Face card and repository README declare CC BY-NC-SA 4.0,
+        while the paper describes an academic-research-only restrictive release.
+        The paper says clips come from YouTube, TikTok, and Video-MME, invokes
+        fair use, and says only public URLs and timestamps are distributed, but
+        the current Hugging Face repository lists 1,226 MP4 files. Treat the
+        stricter academic/non-commercial interpretation as controlling and
+        review source-platform, uploader, Video-MME, privacy, and copyright
+        terms before downloading, redistributing, or publishing clips. The
+        evaluation repository has no detected license.
+    sources:
+      - https://nju-link.github.io/AVSCap/
+      - https://arxiv.org/abs/2607.12820
+      - https://arxiv.org/html/2607.12820v1#S3.SS3
+      - https://arxiv.org/html/2607.12820v1#Sx2
+      - https://arxiv.org/html/2607.12820v1#A9.SS3
+      - https://github.com/NJU-LINK/AVSCap
+      - https://raw.githubusercontent.com/NJU-LINK/AVSCap/main/README.md
+      - https://api.github.com/repos/NJU-LINK/AVSCap
+      - https://huggingface.co/datasets/NJU-LINK/AVSCapBench
+      - https://huggingface.co/datasets/NJU-LINK/AVSCapBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/NJU-LINK/AVSCapBench
+
   - id: video_mme
     name: Video-MME
     full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"
