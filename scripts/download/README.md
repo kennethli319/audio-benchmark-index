@@ -87,6 +87,7 @@ scripts/download/instruct_tts_eval.sh
 scripts/download/dialogs_ru.sh
 scripts/download/tts_multilingual_test_set.sh
 scripts/download/rapidata_tts_preference.sh
+scripts/download/audio_alpaca.sh
 scripts/download/mmgenre.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh

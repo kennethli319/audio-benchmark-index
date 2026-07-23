@@ -3907,6 +3907,66 @@ benchmarks:
       - https://huggingface.co/api/datasets/Rapidata/text-2-audio-human-preference-benchmark
       - https://app.rapidata.ai/mri/benchmarks/68ebcd86bd00d9b672b98995
 
+  - id: audio_alpaca
+    name: Audio-Alpaca
+    full_name: "Audio-Alpaca: A Preference Dataset for Aligning Text-to-Audio Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_generation
+      - audio_quality_assessment
+    tasks:
+      - text_to_audio_preference_modeling
+      - direct_preference_optimization
+      - text_audio_alignment
+      - temporal_event_alignment
+      - audio_generation_quality_alignment
+    official:
+      paper: https://arxiv.org/abs/2404.09956
+      repo: https://github.com/declare-lab/tango
+      dataset: https://huggingface.co/datasets/declare-lab/audio-alpaca
+      project: https://tango2-web.github.io/
+      recent_reuse: https://arxiv.org/abs/2607.20166
+    download:
+      primary:
+        - https://huggingface.co/datasets/declare-lab/audio-alpaca
+      examples:
+        - 'scripts/download/audio_alpaca.sh'
+        - 'AUDIO_ALPACA_DOWNLOAD_HF=1 scripts/download/audio_alpaca.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("declare-lab/audio-alpaca", split="train")'
+      notes: >-
+        The public, ungated release contains 15,025 English prompt, chosen-audio,
+        rejected-audio triplets across four construction strategies. Tango 2
+        generates candidate audio from AudioCaps training captions, perturbed
+        prompts, and varied inference settings, then filters pairs with two CLAP
+        models. Audio-Zero section 3.1 samples and filters 2,000 pairs for
+        post-training but does not release its exact selection. The helper
+        downloads official documentation and API metadata by default; the
+        Hugging Face API reports approximately 9.71 GB of repository storage,
+        so the audio snapshot requires AUDIO_ALPACA_DOWNLOAD_HF=1.
+    license:
+      data: conflicting_apache-2.0_and_cc-by-nc-nd-4.0
+      code: cc-by-nc-nd-4.0
+      notes: >-
+        The Hugging Face dataset card declares Apache-2.0, while the linked
+        official Tango repository applies CC BY-NC-ND 4.0 and does not explain
+        whether that license excludes the dataset. Apply the more restrictive
+        interpretation until the authors clarify scope. AudioCaps-derived
+        captions, generated-audio/model terms, and any source-video rights also
+        require separate review; neither license signal should be assumed to
+        clear all upstream material.
+    sources:
+      - https://arxiv.org/abs/2404.09956
+      - https://arxiv.org/html/2404.09956v1#S4.SS1
+      - https://github.com/declare-lab/tango
+      - https://raw.githubusercontent.com/declare-lab/tango/master/README.md
+      - https://raw.githubusercontent.com/declare-lab/tango/master/LICENSE.md
+      - https://api.github.com/repos/declare-lab/tango
+      - https://huggingface.co/datasets/declare-lab/audio-alpaca
+      - https://huggingface.co/datasets/declare-lab/audio-alpaca/raw/main/README.md
+      - https://huggingface.co/api/datasets/declare-lab/audio-alpaca
+      - https://arxiv.org/abs/2607.20166
+      - https://arxiv.org/html/2607.20166v1#S3.SS1
+
   - id: libritts
     name: LibriTTS
     full_name: "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"
