@@ -173,6 +173,15 @@ only selected qualitative examples. No benchmark archive, item manifest,
 repository, dataset card, license, or evaluation-code link is currently
 provided, despite the paper describing its training split as released.
 
+The July 2026 RIME paper is recorded as an audited agentic music
+post-production protocol rather than a downloadable family. Its evaluation
+uses approximately 3,000 input, edited-audio, and instruction triples derived
+from 297 MTG-Jamendo tracks, plus 300 artifact-removal triples. The paper and
+its arXiv source package provide no official project, repository, dataset card,
+archive, source-track manifest, recipes, prompts, processed audio, evaluation
+records, code link, or derived-data license. Public access to the indexed
+MTG-Jamendo source corpus therefore does not reproduce or release RIME.
+
 The March 2026 DEAF paper is also recorded as an audited protocol rather than a
 downloadable family. It describes 2,756 acoustic-semantic conflict stimuli for
 emotion, background sound, and speaker identity, but v2 provides no official

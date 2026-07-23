@@ -722,6 +722,33 @@ paper_audits:
       - https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
     note: The primary JASMIN-CGN family and its manual licensed-access path are already indexed. This paper defines a new 120-utterance human-versus-ASR study protocol but provides no project page, repository, supplementary archive, exact row mapping, participant-response data, model hypotheses, or evaluation code. It is therefore recorded as a coverage audit rather than a duplicate benchmark family or helper. Access to the full licensed corpus does not reproduce the paper's balanced selection or listening experiment.
 
+  rime_agentic_post_production:
+    paper: https://arxiv.org/abs/2607.19605
+    sections: 4-6
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: agentic_music_post_production
+        protocol: Approximately 3,000 input-audio, edited-audio, and natural-language-instruction triples generated from 297 MTG-Jamendo source tracks, with prompts at three abstraction levels and evaluation by FAD, KAD, directional edit similarity, and edit-graph F1
+        data_status: derived_evaluation_audio_instructions_plans_and_split_unreleased
+        note: The paper constructs disjoint training and evaluation source pools, retains tracks tagged as containing vocals and drums, and reports 2,922 valid ground-truth evaluation edits. It does not release source-track identifiers, sampled plans, prompts, edit graphs, processed audio, agent outputs, or per-item scores.
+      - domain: music_artifact_removal
+        protocol: 300 additional triples for artifact-removal tasks including mains hum, low-end rumble, and vocal sibilance
+        data_status: derived_evaluation_artifacts_unreleased
+        note: The paper describes this additional benchmark component but provides no downloadable item manifest, audio, processing parameters, or annotations.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      evaluation_data: not_specified_unreleased
+      code: not_specified_unreleased
+      upstream: MTG-Jamendo source audio is Creative Commons licensed on a per-track basis; the existing indexed family records its access and mixed-license caveats
+    sources:
+      - https://arxiv.org/abs/2607.19605
+      - https://arxiv.org/html/2607.19605v1#S4
+      - https://arxiv.org/html/2607.19605v1#S5
+      - https://arxiv.org/html/2607.19605v1#S6
+      - https://export.arxiv.org/api/query?id_list=2607.19605
+    note: RIME is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper and its arXiv source package provide no official project page, repository, dataset card, archive, item file, code link, or license for the derived benchmark. Public availability of the indexed MTG-Jamendo source corpus does not release RIME's selected rows, stem-separation results, recipes, prompts, processed audio, graphs, model outputs, or evaluation records.
+
 benchmarks:
   - id: mmau
     name: MMAU
