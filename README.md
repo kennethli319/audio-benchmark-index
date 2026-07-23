@@ -105,6 +105,14 @@ project, repository, dataset card, archive, or download URL. Public source
 components such as DEMAND do not make DEAF's derived stimuli, prompts, labels,
 or evaluation code public.
 
+The July 2026 NegEval-Audio paper is recorded as an audited protocol rather
+than a downloadable family. It derives negation-aware retrieval and
+multiple-choice tasks from AudioCaps and Clotho and reports a 96.7% human
+agreement audit over 460 automatically verified negative concepts, but v1
+provides no official project, repository, dataset card, item files, prompts,
+or evaluation code. The public source datasets do not make NegEval-Audio's
+generated queries, options, concept annotations, or verified labels public.
+
 The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
 synchronization protocol, not a downloadable family. It describes 3,269
 in-the-wild videos and 38,390 temporal and semantic challenge samples, but the

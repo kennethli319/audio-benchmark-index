@@ -222,6 +222,27 @@ paper_audits:
       - https://arxiv.org/html/2603.18048v2#A1.SS5
     note: The v2 paper contains no project, repository, dataset-card, archive, or download URL. Its detailed construction recipe and public DEMAND source do not make the derived stimuli, scripts, prompts, labels, or evaluation code public, so DEAF is recorded as an audited protocol rather than a downloadable benchmark family.
 
+  negeval_audio:
+    paper: https://arxiv.org/abs/2607.12290
+    sections: 3, 5, and 6.4
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: audio_language_negation_understanding
+        protocol: Retrieval-Neg and four-option MCQ-Neg evaluations derived from the AudioCaps test split and Clotho evaluation split, with affirmation, negation, and hybrid MCQ conditions
+        data_status: no_public_release_found
+        note: The construction pipeline extracts present sound concepts, proposes contextually plausible absent concepts, verifies absence with Qwen2.5-Omni-7B, and uses Claude Opus 4.8 for text generation. A human audit of 460 automatically verified negative concepts across 200 sampled clips found 96.7% agreement.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      upstream: AudioCaps and Clotho data, caption, and source-media terms would apply to any future derived release
+    sources:
+      - https://arxiv.org/html/2607.12290v1#S3
+      - https://arxiv.org/html/2607.12290v1#S5
+      - https://arxiv.org/html/2607.12290v1#S6.SS4
+      - https://export.arxiv.org/api/query?id_list=2607.12290
+    note: The v1 paper provides no official project, repository, dataset card, archive, derived query or MCQ files, concept annotations, prompts, or evaluation code. Public AudioCaps and Clotho source datasets do not make NegEval-Audio's generated and verified annotations public, so it is recorded as an audited protocol rather than a downloadable benchmark family.
+
   av_syncbench:
     paper: https://arxiv.org/abs/2607.00726
     sections: 2.1-2.3
