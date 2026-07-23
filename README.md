@@ -148,6 +148,16 @@ promises benchmark files and evaluation code "Coming Soon," and its official
 contains only a README. AMI's public source corpus does not make MeetingToM's
 unreleased annotations, splits, or derived clips public.
 
+The July 2026 VIP-MINGLE paper is also recorded as an announced multimodal
+conversation corpus rather than a downloadable family. It describes roughly
+59 hours of paired in-person and Zoom sessions from 32 groups, with raw
+audio/video, diarized speech, transcripts, psychometrics, facial features, and
+time-resolved ratings. Its official
+[Zenodo record](https://doi.org/10.5281/zenodo.20670131) currently contains
+only a README and explicitly says the full dataset will be released upon
+publication. The record's CC BY-NC-ND 4.0 tag therefore applies only to the
+placeholder release currently available, not absent media or code.
+
 The July 2026 SceneBind paper is recorded as an audited protocol rather than a
 downloadable family. It reports a human-verified 1,066-clip Binaural benchmark
 and a 97-clip Sphere360 hard benchmark for semantic-spatial retrieval and

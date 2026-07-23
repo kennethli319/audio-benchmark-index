@@ -276,6 +276,28 @@ paper_audits:
       - https://huggingface.co/api/datasets/OliviaWang1101/MeetingToM
     note: The official GitHub README promises code, benchmark files, evaluation scripts, and documentation "Coming Soon," while the Hugging Face repository contains only a README and zero bytes of dataset storage. MeetingToM is therefore an audited announced protocol, not a downloadable benchmark family. Recheck the official repositories before adding an indexed dataset or download helper.
 
+  vip_mingle:
+    paper: https://arxiv.org/abs/2607.13614
+    sections: 2-3
+    status: audited_not_indexed
+    public_interfaces:
+      - https://doi.org/10.5281/zenodo.20670131
+    evaluated_domains:
+      - domain: cross_setting_multiparty_conversation
+        protocol: Paired within-subject in-person and Zoom sessions for 32 English-speaking groups, with raw audio/video, diarized speech, transcripts, psychometrics, facial features, and time-resolved ratings
+        data_status: announced_unreleased
+        note: The paper reports approximately 59 hours from 105 participants and 7,077 annotated segments. The placeholder README says the intended public media subset will cover 28 groups and 93 participants because four groups did not consent to public sharing.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: CC BY-NC-ND 4.0_declared_on_placeholder_record
+      code: not_specified_unreleased
+    sources:
+      - https://arxiv.org/html/2607.13614v1#S2
+      - https://arxiv.org/html/2607.13614v1#S3
+      - https://zenodo.org/api/records/20670131
+      - https://zenodo.org/api/records/20670132/files/README.md/content
+    note: The paper says the scripts and dataset are available at the Zenodo DOI, but the current record contains only a README and explicitly says the full dataset will be released upon publication. That README still contains placeholders for the final dataset DOI, citation, license, ethics statement, and contact. Its detailed intended inventory is not evidence that the recordings, processed features, annotations, or code are downloadable. VIP-MINGLE is therefore recorded as an announced corpus rather than an indexed benchmark family; recheck the DOI after the Interspeech 2026 publication.
+
   deaf:
     paper: https://arxiv.org/abs/2603.18048
     sections: 2 and appendix A.2-A.5
