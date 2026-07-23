@@ -1980,6 +1980,43 @@ benchmarks:
       - https://doi.org/10.5281/zenodo.21407831
       - https://zenodo.org/api/records/21407832/files/metadata_versions.csv/content
 
+  - id: ai_cover_song_diagnostics
+    name: AI-Generated Cover Song Diagnostics
+    full_name: "A Diagnostic Evaluation Framework for AI-Generated Cover Songs Using Music-Theoretic and Acoustic Features"
+    qwen_cited_as: null
+    qwen_bucket: music_generation
+    tasks:
+      - cover_song_generation_evaluation
+      - music_quality_assessment
+      - music_error_diagnosis
+      - music_feature_analysis
+    official:
+      repo: https://github.com/TiaaL/songecho-cover-metrics
+      paper: https://arxiv.org/abs/2607.19688
+    download:
+      primary:
+        - https://github.com/TiaaL/songecho-cover-metrics
+        - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/data/annotations/evaluation_scores.csv
+        - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/features/extracted_features.csv
+      examples:
+        - 'scripts/download/ai_cover_song_diagnostics.sh'
+        - 'AI_COVER_SONG_DIAGNOSTICS_CLONE_REPO=1 scripts/download/ai_cover_song_diagnostics.sh'
+      notes: The public release covers 30 generated covers from five source songs and six systems. It includes anonymized source-song identifiers, system/file mappings, expert scores for melody, harmony, key, style, and arrangement/production, nine extracted features, and the analysis pipeline. The helper downloads these lightweight tables and official documentation by default. The paper and repository explicitly withhold raw audio because of source-song copyright and commercial-API licensing constraints; cloning the small repository does not provide audio.
+    license:
+      data: MIT_for_released_tables_no_audio
+      code: MIT
+      notes: The repository's MIT license covers its software and associated documentation, including the released score, manifest, and feature tables. It does not grant rights to the absent source songs or generated cover audio. No raw audio is publicly released, and users must supply locally authorized files to rerun audio feature extraction.
+    sources:
+      - https://arxiv.org/abs/2607.19688
+      - https://arxiv.org/html/2607.19688v1
+      - https://github.com/TiaaL/songecho-cover-metrics
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/README.md
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/LICENSE
+      - https://api.github.com/repos/TiaaL/songecho-cover-metrics
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/data/annotations/evaluation_scores.csv
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/data/sample_list.csv
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/features/extracted_features.csv
+
   - id: nsynth
     name: NSynth
     full_name: "NSynth: Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders"

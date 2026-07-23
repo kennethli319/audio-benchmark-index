@@ -769,6 +769,11 @@ OPENMIC_DOWNLOAD_ARCHIVE=1 scripts/download/openmic_2018.sh
 # RUBATO downloads the Zenodo record and 83 KB version metadata by default.
 RUBATO_DOWNLOAD_ARCHIVE=1 scripts/download/rubato.sh
 
+# AI-Generated Cover Song Diagnostics downloads its public score, manifest,
+# feature tables, README, and MIT license. Raw cover audio is not released.
+scripts/download/ai_cover_song_diagnostics.sh
+AI_COVER_SONG_DIAGNOSTICS_CLONE_REPO=1 scripts/download/ai_cover_song_diagnostics.sh
+
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS="valid test" NSYNTH_FORMAT=tfrecord scripts/download/nsynth.sh
