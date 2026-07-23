@@ -5696,6 +5696,70 @@ benchmarks:
       - https://raw.githubusercontent.com/saniajmi/SpEmoC-ECCV2026/main/README.md
       - https://api.github.com/repos/saniajmi/SpEmoC-ECCV2026
 
+  - id: emoprefer
+    name: EmoPrefer
+    full_name: "EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+    tasks:
+      - multimodal_emotion_preference_prediction
+      - audio_visual_emotion_understanding
+      - pairwise_emotion_description_evaluation
+      - multimodal_judge_evaluation
+      - evaluation_shortcut_auditing
+    official:
+      repo: https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer
+      paper: https://arxiv.org/abs/2507.04278
+      audit_paper: https://arxiv.org/abs/2607.18508
+      audit_repo: https://github.com/jiabingyang01/EmoPrefer-Audit
+      source_media: https://huggingface.co/datasets/MERChallenge/MER2025
+    download:
+      primary:
+        - https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer/dataset
+        - https://huggingface.co/datasets/MERChallenge/MER2025
+      examples:
+        - 'scripts/download/emoprefer.sh'
+      notes: >-
+        The official repository publicly releases six small annotation tables:
+        the original 574-pair EmoPrefer set, its V2 extension with 2,096
+        individual-annotator pairs, reverse-order variants for swap-consistency
+        analysis, and variants exposing the two description-generator names
+        for score calculation and shortcut auditing. The paired English
+        audio/video comes from the separately gated MER2025 release and is not
+        redistributed by the repository. The helper downloads the annotations,
+        official documentation, licenses, and repository metadata only; users
+        must accept the MER2025 access conditions themselves to obtain media.
+        The 2026 audit paper and code provide reproducible content-blind,
+        counterfactual, audio-visual judge, and ODIN-style diagnostics but
+        intentionally distribute no private data, model weights, predictions,
+        or checkpoints.
+    license:
+      data: custom_non_commercial_research_terms
+      code: Apache-2.0_official_and_MIT_audit
+      notes: >-
+        The official EmoPrefer subdirectory includes Apache-2.0 but its README
+        also calls the service a non-commercial research preview. The gated
+        MER2025 card declares CC BY-NC 4.0 plus stricter academic-only,
+        no-redistribution, and no-modification conditions that control the
+        source media and annotations obtained there. The 2026 audit repository
+        is MIT. Treat the narrower access terms as controlling where they
+        conflict, and do not infer media rights from the public CSV release.
+    sources:
+      - https://arxiv.org/abs/2507.04278
+      - https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer
+      - https://raw.githubusercontent.com/zeroQiaoba/AffectGPT/master/EmoPrefer/README.md
+      - https://raw.githubusercontent.com/zeroQiaoba/AffectGPT/master/EmoPrefer/LICENSE
+      - https://api.github.com/repos/zeroQiaoba/AffectGPT
+      - https://huggingface.co/datasets/MERChallenge/MER2025
+      - https://huggingface.co/api/datasets/MERChallenge/MER2025
+      - https://arxiv.org/abs/2607.18508
+      - https://github.com/jiabingyang01/EmoPrefer-Audit
+      - https://raw.githubusercontent.com/jiabingyang01/EmoPrefer-Audit/main/README.md
+      - https://raw.githubusercontent.com/jiabingyang01/EmoPrefer-Audit/main/data/README.md
+      - https://raw.githubusercontent.com/jiabingyang01/EmoPrefer-Audit/main/LICENSE
+
   - id: iemocap
     name: IEMOCAP
     full_name: "IEMOCAP: Interactive Emotional Dyadic Motion Capture Database"

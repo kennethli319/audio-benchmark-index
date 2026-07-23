@@ -147,6 +147,7 @@ scripts/download/emov_db.sh
 scripts/download/ravdess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
+scripts/download/emoprefer.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
 scripts/download/chime_6.sh
