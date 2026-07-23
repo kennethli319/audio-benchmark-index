@@ -7967,3 +7967,57 @@ benchmarks:
       - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/blob/main/results/msa/Ar_msa_TTS_benchmark.csv
       - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/blob/main/results/egy/Ar_egy_TTS_benchmark.csv
       - https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark/blob/main/results/ksa/Ar_ksa_TTS_benchmark.csv
+
+  - id: urban_beehive
+    name: UrBAN
+    full_name: "UrBAN: Urban Beehive Acoustics and PheNotyping Dataset"
+    qwen_cited_as: null
+    qwen_bucket: environmental_audio
+    tasks:
+      - environmental_sound_classification
+      - beehive_acoustic_monitoring
+      - colony_strength_regression
+      - hive_health_monitoring
+      - acoustic_phenotyping
+    official:
+      dataset: https://doi.org/10.20383/103.0972
+      paper: https://doi.org/10.1038/s41597-025-04869-1
+      repo: https://github.com/mahsa-abdollahi/UrBAN
+      recent_evaluation: https://arxiv.org/abs/2607.20386
+    download:
+      primary:
+        - https://www.frdr-dfdr.ca/repo/dataset/487f5583-250a-464b-bb71-f2da85410b13
+        - https://github.com/mahsa-abdollahi/UrBAN
+      examples:
+        - 'scripts/download/urban_beehive.sh'
+      notes: >-
+        The public FRDR release contains longitudinal 2021-2022 raw 16 kHz
+        beehive audio plus inspection, temperature, humidity, and weather
+        metadata from a ten-hive Montréal rooftop apiary. The Scientific Data
+        descriptor reports more than 3,000 hours, while the older FRDR record
+        and repository README say more than 2,000 hours; the current FRDR
+        landing page reports approximately 1.265 TB of files. Its benchmark
+        protocols include random-split and hive-independent colony-strength
+        regression. A 2026 follow-up evaluates modulation-tensorgram models on
+        nine hives and emphasizes cross-hive generalization. The helper saves
+        official landing pages, repository documentation, and API metadata
+        only. Full data transfer remains a manual FRDR Globus workflow because
+        of the corpus size and may require a Globus account and client.
+    license:
+      data: CC-BY-4.0
+      code: not_specified
+      paper: CC-BY-NC-ND-4.0
+      notes: >-
+        The FRDR dataset record explicitly lists CC BY 4.0. The GitHub
+        repository has no detected license, so the analysis notebooks and
+        scripts should not be assumed to use the dataset license. The
+        Scientific Data article itself is CC BY-NC-ND 4.0, distinct from the
+        dataset terms.
+    sources:
+      - https://doi.org/10.20383/103.0972
+      - https://www.frdr-dfdr.ca/repo/dataset/487f5583-250a-464b-bb71-f2da85410b13
+      - https://doi.org/10.1038/s41597-025-04869-1
+      - https://github.com/mahsa-abdollahi/UrBAN
+      - https://raw.githubusercontent.com/mahsa-abdollahi/UrBAN/main/README.md
+      - https://api.github.com/repos/mahsa-abdollahi/UrBAN
+      - https://arxiv.org/abs/2607.20386

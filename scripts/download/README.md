@@ -102,6 +102,7 @@ scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
 scripts/download/spuraudio.sh
 scripts/download/geo_atbench.sh
+scripts/download/urban_beehive.sh
 scripts/download/soroll_ia.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
@@ -300,6 +301,10 @@ IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 # SpurAudio downloads official docs/metadata by default; the approximately 7.69 GB snapshot is opt-in.
 SPURAUDIO_DOWNLOAD_HF=1 scripts/download/spuraudio.sh
 SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh
+
+# UrBAN downloads official docs/metadata only. Transfer the approximately
+# 1.265 TB corpus manually from FRDR using its Globus workflow.
+scripts/download/urban_beehive.sh
 
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
