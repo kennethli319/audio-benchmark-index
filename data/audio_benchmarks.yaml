@@ -8188,6 +8188,60 @@ benchmarks:
       - https://api.github.com/repos/mahsa-abdollahi/UrBAN
       - https://arxiv.org/abs/2607.20386
 
+  - id: codett
+    name: CoDeTT
+    full_name: "CoDeTT: A Context-Aware Decision Benchmark for Turn-Taking Evaluation"
+    qwen_cited_as: null
+    qwen_bucket: speech_dialogue
+    tasks:
+      - turn_taking
+      - full_duplex_dialogue
+      - context_aware_turn_decision
+      - spoken_dialogue_intent_classification
+    official:
+      homepage: https://yingaowang-casia.github.io/CoDeTT.github.io/
+      paper: https://arxiv.org/abs/2603.25434
+      repo: https://github.com/YingaoWang-casia/CoDeTT.github.io
+      dataset: https://huggingface.co/datasets/YingaoWang-casia/CoDeTT
+      modelscope: https://www.modelscope.cn/datasets/wyawya/CoDeTT
+    download:
+      primary:
+        - https://huggingface.co/datasets/YingaoWang-casia/CoDeTT
+        - https://www.modelscope.cn/datasets/wyawya/CoDeTT
+      examples:
+        - 'scripts/download/codett.sh'
+        - 'CODETT_DOWNLOAD_HF=1 scripts/download/codett.sh'
+        - 'CODETT_CLONE_REPO=1 scripts/download/codett.sh'
+      notes: >-
+        The public, ungated release contains more than 300 hours of English and
+        Chinese multi-turn dialogue for four turn-taking actions and 14
+        fine-grained intent scenarios across system-speaking and system-idle
+        states. It mixes synthetic material with real conversational samples
+        derived from Candor and MagicData-RAMC. The helper downloads official
+        documentation and API metadata by default. The Hugging Face API reports
+        approximately 51.1 GB of repository storage, so the single CoDeTT.lz4
+        archive requires CODETT_DOWNLOAD_HF=1.
+    license:
+      data: Apache-2.0
+      code: not_specified
+      notes: >-
+        The Hugging Face card declares Apache-2.0 for the dataset, but the
+        GitHub repository has no LICENSE file or detected license. The paper
+        says real samples come from Candor and MagicData-RAMC and synthetic
+        speech uses references from KeSpeech and Emilia; verify those upstream
+        corpus and voice-data terms before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2603.25434
+      - https://arxiv.org/html/2603.25434
+      - https://yingaowang-casia.github.io/CoDeTT.github.io/
+      - https://github.com/YingaoWang-casia/CoDeTT.github.io
+      - https://raw.githubusercontent.com/YingaoWang-casia/CoDeTT.github.io/main/README_EN.md
+      - https://api.github.com/repos/YingaoWang-casia/CoDeTT.github.io
+      - https://huggingface.co/datasets/YingaoWang-casia/CoDeTT
+      - https://huggingface.co/datasets/YingaoWang-casia/CoDeTT/raw/main/README.md
+      - https://huggingface.co/api/datasets/YingaoWang-casia/CoDeTT
+      - https://www.modelscope.cn/datasets/wyawya/CoDeTT
+
   - id: songeval
     name: SongEval
     full_name: "SongEval: A Benchmark Dataset for Song Aesthetics Evaluation"
