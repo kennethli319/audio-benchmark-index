@@ -7,7 +7,8 @@ A living index of speech, audio, music, and multimodal audio benchmarks.
 
 The initial seed list came from the Audio -> Text evaluation benchmarks cited in
 the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
-into a broader map of the audio evaluation landscape: ASR, speech translation,
+into a broader map of the audio evaluation landscape: ASR, multidimensional
+offline and streaming speech-translation evaluation,
 speech synthesis, speech dialogue, audio understanding, environmental sound,
 text-to-audio environmental sound-scene synthesis, synthetic-to-real sound-effect retrieval,
 sound event detection, keyword spotting, speaker recognition, spoken language
@@ -45,7 +46,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 212 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 213 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -281,6 +282,7 @@ Current coverage includes:
 | [S-DiverSe](https://github.com/ferugit/s-diverse) | In-the-wild neurological Spanish ASR | Public TSV annotations for 444 segments (3.2 hours, 22 speakers) across ALS, Parkinson's disease, and post-stroke speech; audio is not redistributed and must be reconstructed from timestamped public-video links; helper downloads annotations/docs/code only | No data or code license is specified; arXiv's CC BY 4.0 covers the paper, not the release or linked recordings; review health-data privacy, consent, ethics, source rights, and platform terms |
 | [VoxPopuli](https://github.com/facebookresearch/voxpopuli) | ASR and S2TT | [facebook/voxpopuli](https://huggingface.co/datasets/facebook/voxpopuli); select a language/config and split before downloading the large HF repository | Data is CC0-1.0; code and pretrained models are CC BY-NC 4.0; raw data also points to European Parliament legal notice |
 | [mTEDx](https://www.openslr.org/100) | ASR and S2TT | [OpenSLR SLR100](https://www.openslr.org/100) ASR language archives, speech-translation language-pair archives, IWSLT 2021 test sets, and small metadata; archives are opt-in in the helper | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
+| [OpenSTBench](https://github.com/sjtuayj/OpenSTBench) | Multidimensional offline and streaming speech-translation evaluation | Public evaluation toolkit plus an ungated [300-sample LibriTTS-based paired-speaker set](https://huggingface.co/datasets/ayj111/openstbench-paired-set); helper downloads docs/metadata by default, while the approximately 511 MiB paired set and toolkit clone are separate opt-ins | Paired-set card declares `other` and preserves upstream/synthesis terms; original code is MIT, adapted SimulEval components are CC BY-SA 4.0, and each component evaluation corpus retains its own terms |
 | [TEDx Spanish Corpus](https://www.openslr.org/67/) | ASR | [OpenSLR SLR67](https://www.openslr.org/67/) Spanish speech/transcript archive; helper saves the page by default and makes the 2.3 GiB archive opt-in | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
 | [Europarl-ST](https://www.mllp.upv.es/europarl-st/) | S2TT | Official [Europarl-ST page](https://www.mllp.upv.es/europarl-st/), [README](https://www.mllp.upv.es/europarl-st/README.md), and v1.1 archive; helper saves docs by default and makes the ~21 GB corpus opt-in | Corpus construction work is CC BY-NC 4.0; underlying debate data rights remain with the European Union and respective copyright holders |
 | [CoVoST 2](https://github.com/facebookresearch/covost) | S2TT and ASR | Official CoVoST 2 translation TSV archives from Meta plus Common Voice 4 audio/transcripts obtained separately; [facebook/covost2](https://huggingface.co/datasets/facebook/covost2) also exists | Meta/GitHub list CoVoST data as CC0; current HF and Mozilla packaged views may list CC BY-NC 4.0, so re-check active source terms |
@@ -519,6 +521,13 @@ Parliamentary speech translation:
 ```bash
 scripts/download/europarl_st.sh
 EUROPARL_ST_DOWNLOAD_ARCHIVE=1 scripts/download/europarl_st.sh
+```
+
+Multidimensional speech-translation evaluation:
+
+```bash
+scripts/download/openstbench.sh
+OPENSTBENCH_DOWNLOAD_PAIRED_SET=1 scripts/download/openstbench.sh
 ```
 
 Large or gated ASR:

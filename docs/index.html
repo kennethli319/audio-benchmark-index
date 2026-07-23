@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 212 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 213 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Audio Benchmark Index">
@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="212 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="213 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -380,15 +380,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 212 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 213 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>212</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>212</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>213</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>213</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>30</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-23">July 23, 2026</time></strong></div>
       </div>
@@ -422,7 +422,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-understanding">
   <span>Speech understanding &amp; dialogue</span>
-  <strong>25</strong>
+  <strong>26</strong>
   <small>Translation, instructions, dialogue, and spoken intent</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audiovisual">
@@ -432,7 +432,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speaker-human">
   <span>Speaker, identity &amp; emotion</span>
-  <strong>51</strong>
+  <strong>52</strong>
   <small>Speaker recognition, diarization, anti-spoofing, and emotion</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality">
@@ -460,7 +460,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 212 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 213 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -530,7 +530,7 @@
       </form>
 
       <div class="results-bar">
-        <p id="result-status" role="status" aria-live="polite">Showing 212 of 212 benchmarks.</p>
+        <p id="result-status" role="status" aria-live="polite">Showing 213 of 213 benchmarks.</p>
         <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
       </div>
 
@@ -9147,6 +9147,71 @@
                     <li><a href="https://zenodo.org/api/records/1432913">Source 2 · zenodo.org</a></li>
                     <li><a href="https://github.com/cosmir/openmic-2018">Source 3 · github.com</a></li>
                     <li><a href="https://brianmcfee.net/papers/ismir2018_openmic.pdf">Source 4 · brianmcfee.net</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-openstbench"
+  data-name="openstbench"
+  data-families="speech-understanding speaker-human"
+  data-access="helper"
+  data-host="hugging-face"
+  data-terms="mixed"
+  data-search="openstbench openstbench openstbench beyond semantic evaluation for speech translation speech translation speech generation evaluation speech to text translation evaluation speech to speech translation evaluation streaming speech translation evaluation translation quality evaluation speech quality evaluation speaker preservation evaluation emotion preservation evaluation paralinguistic fidelity evaluation temporal consistency evaluation latency evaluation other mit with cc by sa 4 0 adapted components the paired set card marks the dataset license as other and says users must comply with the original data and synthesis component terms libritts is cc by 4 0 but neither the repository s mit license nor the paper s cc by nc sa 4 0 license establishes standalone reuse terms for all translated metadata or qwen3 tts generated reference audio openstbench s original code is mit while adapted simuleval latency components are cc by sa 4 0 mslt ravdess mcae spps nonverbaltts and synparaspeech retain their own access and license terms openstbench provides a public evaluation package for offline and streaming speech to text and speech to speech translation the paper s section 4 2 evaluates separate public source datasets for translation speech quality emotion paralinguistics temporal consistency and latency and constructs a 300 sample 35 speaker libritts based paired set for speaker preservation that paired set is public and ungated on hugging face and includes original and prompt libritts audio translated text and qwen3 tts synthesized reference speech the helper downloads the paper repository documentation license notices dataset card and hugging face api metadata by default cloning the evaluation toolkit is opt in and downloading the approximately 511 mib paired set snapshot requires openstbench download paired set 1 the helper does not fetch the other component datasets repository https github com sjtuayj openstbench paper https arxiv org abs 2605 30792 paired speaker dataset https huggingface co datasets ayj111 openstbench paired set pypi https pypi org project openstbench https arxiv org abs 2605 30792 https arxiv org html 2605 30792v1 s4 ss2 https github com sjtuayj openstbench https raw githubusercontent com sjtuayj openstbench main readme md https raw githubusercontent com sjtuayj openstbench main license https raw githubusercontent com sjtuayj openstbench main third party notices md https api github com repos sjtuayj openstbench https huggingface co datasets ayj111 openstbench paired set https huggingface co datasets ayj111 openstbench paired set raw main readme md https huggingface co api datasets ayj111 openstbench paired set">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speech understanding &amp; dialogue</span>
+      <h3>OpenSTBench</h3>
+      <p class="benchmark-full-name">OpenSTBench: Beyond Semantic Evaluation for Speech Translation</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Speech To Text Translation Evaluation</span>
+        <span class="tag">Speech To Speech Translation Evaluation</span>
+        <span class="tag">Streaming Speech Translation Evaluation</span>
+        <span class="tag">Translation Quality Evaluation</span>
+        <span class="tag tag-more">+6 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Hugging Face</strong></div>
+    <div><span>Upstream terms</span><strong>Mixed / custom — review</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <nav class="card-actions" aria-label="OpenSTBench links">
+    <a class="card-action primary" href="https://github.com/sjtuayj/OpenSTBench">Get data</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2605.30792">Read the paper</a>
+  </nav>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>other</dd></div>
+        <div><dt>Code license</dt><dd>MIT_with_CC-BY-SA-4.0_adapted_components</dd></div>
+        <div><dt>License caution</dt><dd>The paired-set card marks the dataset license as &quot;other&quot; and says users must comply with the original data and synthesis-component terms. LibriTTS is CC BY 4.0, but neither the repository&#39;s MIT license nor the paper&#39;s CC BY-NC-SA 4.0 license establishes standalone reuse terms for all translated metadata or Qwen3-TTS-generated reference audio. OpenSTBench&#39;s original code is MIT, while adapted SimulEval latency components are CC BY-SA 4.0. MSLT, RAVDESS, MCAE-SPPS, NonverbalTTS, and SynParaSpeech retain their own access and license terms.</dd></div>
+        <div><dt>Download notes</dt><dd>OpenSTBench provides a public evaluation package for offline and streaming speech-to-text and speech-to-speech translation. The paper&#39;s section 4.2 evaluates separate public source datasets for translation, speech quality, emotion, paralinguistics, temporal consistency, and latency, and constructs a 300-sample, 35-speaker LibriTTS-based paired set for speaker preservation. That paired set is public and ungated on Hugging Face and includes original and prompt LibriTTS audio, translated text, and Qwen3-TTS-synthesized reference speech. The helper downloads the paper, repository documentation, license notices, dataset card, and Hugging Face API metadata by default. Cloning the evaluation toolkit is opt-in, and downloading the approximately 511 MiB paired-set snapshot requires OPENSTBENCH_DOWNLOAD_PAIRED_SET=1. The helper does not fetch the other component datasets.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/openstbench.sh</code></div>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/openstbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/openstbench.sh" aria-label="Copy OpenSTBench helper path">Copy path</button>
+        </div>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://github.com/sjtuayj/OpenSTBench">Repository</a></li>
+                    <li><a href="https://arxiv.org/abs/2605.30792">Paper</a></li>
+                    <li><a href="https://huggingface.co/datasets/ayj111/openstbench-paired-set">Paired Speaker Dataset</a></li>
+                    <li><a href="https://pypi.org/project/OpenSTBench/">Pypi</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://arxiv.org/abs/2605.30792">Source 1 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2605.30792v1#S4.SS2">Source 2 · arxiv.org</a></li>
+                    <li><a href="https://github.com/sjtuayj/OpenSTBench">Source 3 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/sjtuayj/OpenSTBench/main/README.md">Source 4 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/sjtuayj/OpenSTBench/main/LICENSE">Source 5 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/sjtuayj/OpenSTBench/main/THIRD_PARTY_NOTICES.md">Source 6 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://api.github.com/repos/sjtuayj/OpenSTBench">Source 7 · api.github.com</a></li>
+                    <li><a href="https://huggingface.co/datasets/ayj111/openstbench-paired-set">Source 8 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/ayj111/openstbench-paired-set/raw/main/README.md">Source 9 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/ayj111/openstbench-paired-set">Source 10 · huggingface.co</a></li></ul></div>
     </div>
   </details>
 </article>

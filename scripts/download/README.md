@@ -99,6 +99,7 @@ scripts/download/golos.sh
 scripts/download/gigaspeechbench.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
+scripts/download/openstbench.sh
 scripts/download/earnings_22.sh
 scripts/download/earnings_21.sh
 scripts/download/mir_1k_vocal.sh
@@ -479,6 +480,10 @@ MTEDX_OPENSLR_BASE_URL=https://openslr.elda.org/resources/100 scripts/download/m
 # Europarl-ST downloads the official page and README by default. The v1.1 archive is about 21 GB.
 EUROPARL_ST_DOWNLOAD_ARCHIVE=1 scripts/download/europarl_st.sh
 EUROPARL_ST_ARCHIVE_NAME=v1.0.tar.gz EUROPARL_ST_DOWNLOAD_ARCHIVE=1 scripts/download/europarl_st.sh
+
+# OpenSTBench downloads docs and paired-set metadata by default. The toolkit and approximately 511 MiB paired set are separate opt-ins.
+OPENSTBENCH_CLONE_REPO=1 scripts/download/openstbench.sh
+OPENSTBENCH_DOWNLOAD_PAIRED_SET=1 scripts/download/openstbench.sh
 
 # TEDx Spanish saves the OpenSLR page by default. The 2.3 GiB archive is opt-in.
 TEDX_SPANISH_DOWNLOAD_ARCHIVE=1 scripts/download/tedx_spanish.sh

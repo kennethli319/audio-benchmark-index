@@ -8999,3 +8999,72 @@ benchmarks:
       - https://raw.githubusercontent.com/JacobLinCool/ChartGenEval/main/LICENSE
       - https://api.github.com/repos/JacobLinCool/ChartGenEval
       - https://api.github.com/repos/JacobLinCool/ChartGenEval/git/trees/main?recursive=1
+
+  - id: openstbench
+    name: OpenSTBench
+    full_name: "OpenSTBench: Beyond Semantic Evaluation for Speech Translation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_translation
+      - speech_generation_evaluation
+    tasks:
+      - speech_to_text_translation_evaluation
+      - speech_to_speech_translation_evaluation
+      - streaming_speech_translation_evaluation
+      - translation_quality_evaluation
+      - speech_quality_evaluation
+      - speaker_preservation_evaluation
+      - emotion_preservation_evaluation
+      - paralinguistic_fidelity_evaluation
+      - temporal_consistency_evaluation
+      - latency_evaluation
+    official:
+      repo: https://github.com/sjtuayj/OpenSTBench
+      paper: https://arxiv.org/abs/2605.30792
+      paired_speaker_dataset: https://huggingface.co/datasets/ayj111/openstbench-paired-set
+      pypi: https://pypi.org/project/OpenSTBench/
+    download:
+      primary:
+        - https://github.com/sjtuayj/OpenSTBench
+        - https://huggingface.co/datasets/ayj111/openstbench-paired-set
+      examples:
+        - 'scripts/download/openstbench.sh'
+        - 'OPENSTBENCH_CLONE_REPO=1 scripts/download/openstbench.sh'
+        - 'OPENSTBENCH_DOWNLOAD_PAIRED_SET=1 scripts/download/openstbench.sh'
+      notes: >-
+        OpenSTBench provides a public evaluation package for offline and
+        streaming speech-to-text and speech-to-speech translation. The paper's
+        section 4.2 evaluates separate public source datasets for translation,
+        speech quality, emotion, paralinguistics, temporal consistency, and
+        latency, and constructs a 300-sample, 35-speaker LibriTTS-based paired
+        set for speaker preservation. That paired set is public and ungated on
+        Hugging Face and includes original and prompt LibriTTS audio, translated
+        text, and Qwen3-TTS-synthesized reference speech. The helper downloads
+        the paper, repository documentation, license notices, dataset card, and
+        Hugging Face API metadata by default. Cloning the evaluation toolkit is
+        opt-in, and downloading the approximately 511 MiB paired-set snapshot
+        requires OPENSTBENCH_DOWNLOAD_PAIRED_SET=1. The helper does not fetch
+        the other component datasets.
+    license:
+      data: other
+      code: MIT_with_CC-BY-SA-4.0_adapted_components
+      notes: >-
+        The paired-set card marks the dataset license as "other" and says users
+        must comply with the original data and synthesis-component terms.
+        LibriTTS is CC BY 4.0, but neither the repository's MIT license nor the
+        paper's CC BY-NC-SA 4.0 license establishes standalone reuse terms for
+        all translated metadata or Qwen3-TTS-generated reference audio.
+        OpenSTBench's original code is MIT, while adapted SimulEval latency
+        components are CC BY-SA 4.0. MSLT, RAVDESS, MCAE-SPPS, NonverbalTTS,
+        and SynParaSpeech retain their own access and license terms.
+    sources:
+      - https://arxiv.org/abs/2605.30792
+      - https://arxiv.org/html/2605.30792v1#S4.SS2
+      - https://github.com/sjtuayj/OpenSTBench
+      - https://raw.githubusercontent.com/sjtuayj/OpenSTBench/main/README.md
+      - https://raw.githubusercontent.com/sjtuayj/OpenSTBench/main/LICENSE
+      - https://raw.githubusercontent.com/sjtuayj/OpenSTBench/main/THIRD_PARTY_NOTICES.md
+      - https://api.github.com/repos/sjtuayj/OpenSTBench
+      - https://huggingface.co/datasets/ayj111/openstbench-paired-set
+      - https://huggingface.co/datasets/ayj111/openstbench-paired-set/raw/main/README.md
+      - https://huggingface.co/api/datasets/ayj111/openstbench-paired-set
