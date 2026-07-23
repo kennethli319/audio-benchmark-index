@@ -150,6 +150,7 @@ scripts/download/voxconverse.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
 scripts/download/asvspoof_5.sh
+scripts/download/audiomarkbench.sh
 scripts/download/voxenes_2026.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
@@ -256,6 +257,10 @@ DCASE2026_TASK1_DOWNLOAD_AUDIO=1 scripts/download/dcase2026_task1_hac.sh
 # AudioBench downloads its official documentation and dataset inventory by default.
 # Cloning adds the evaluation toolkit, not its separately licensed upstream corpora.
 AUDIOBENCH_CLONE_REPO=1 scripts/download/audiobench.sh
+
+# AudioMarkBench downloads official docs and repository metadata by default.
+# Cloning is opt-in; released audio is a manual Drive download with upstream terms.
+AUDIOMARKBENCH_CLONE_REPO=1 scripts/download/audiomarkbench.sh
 
 # AF-Reasoning-Eval downloads all lightweight annotations by default.
 # Obtain the referenced source audio through the separate upstream helpers.

@@ -9338,3 +9338,62 @@ benchmarks:
       - https://huggingface.co/datasets/MatBar99/HALAS/raw/main/README.md
       - https://huggingface.co/api/datasets/MatBar99/HALAS
       - https://github.com/revdotcom/speech-datasets/tree/main/earnings22
+
+  - id: audiomarkbench
+    name: AudioMarkBench
+    full_name: "AudioMarkBench: Benchmarking Robustness of Audio Watermarking"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_watermarking
+      - robustness_evaluation
+    tasks:
+      - audio_watermarking_robustness
+      - watermark_removal_detection
+      - watermark_forgery_detection
+      - adversarial_audio_robustness
+      - watermark_fairness_analysis
+    official:
+      paper: https://arxiv.org/abs/2406.06979
+      repo: https://github.com/mileskuo42/AudioMarkBench
+      dataset: https://drive.google.com/drive/folders/1037mBf4LoGq0CDxe6hYx5fNNv56AY_9e
+    download:
+      primary:
+        - https://github.com/mileskuo42/AudioMarkBench
+        - https://drive.google.com/drive/folders/1037mBf4LoGq0CDxe6hYx5fNNv56AY_9e
+      examples:
+        - 'scripts/download/audiomarkbench.sh'
+        - 'AUDIOMARKBENCH_CLONE_REPO=1 scripts/download/audiomarkbench.sh'
+      notes: >-
+        The public release evaluates AudioSeal/AudioSeal-B, Timbre, and WavMark
+        against 12 no-box perturbation categories plus black-box and white-box
+        adversarial attacks. AudioMarkData contains 20,000 five-second,
+        16 kHz Common Voice samples balanced for 25 languages, two reported
+        biological-sex groups, and four age groups; the paper also samples
+        20,000 clips from LibriSpeech. The Drive folder releases original,
+        watermarked, and perturbed audio, while the GitHub repository releases
+        attack and evaluation code. The helper downloads official documentation,
+        license text, repository metadata, and the paper by default; cloning the
+        approximately 3.1 MB GitHub repository requires
+        AUDIOMARKBENCH_CLONE_REPO=1. Google Drive audio remains a manual
+        download so users can inspect its contents and upstream terms.
+    license:
+      data: mixed_upstream_terms_not_separately_specified
+      code: MPL-2.0
+      notes: >-
+        The repository's MPL-2.0 license covers its source code, but neither the
+        README nor paper states a separate license for the released original,
+        watermarked, or perturbed audio. AudioMarkData derives from Common Voice
+        and the second corpus derives from CC BY 4.0 LibriSpeech; applicable
+        Common Voice release terms, attribution requirements, speaker/privacy
+        considerations, and rights in generated derivatives must be reviewed
+        before reuse or redistribution.
+    sources:
+      - https://arxiv.org/abs/2406.06979
+      - https://arxiv.org/html/2406.06979v2#S4
+      - https://github.com/mileskuo42/AudioMarkBench
+      - https://raw.githubusercontent.com/mileskuo42/AudioMarkBench/main/README.md
+      - https://raw.githubusercontent.com/mileskuo42/AudioMarkBench/main/LICENSE
+      - https://api.github.com/repos/mileskuo42/AudioMarkBench
+      - https://api.github.com/repos/mileskuo42/AudioMarkBench/git/trees/main?recursive=1
+      - https://drive.google.com/drive/folders/1037mBf4LoGq0CDxe6hYx5fNNv56AY_9e
+      - https://arxiv.org/abs/2607.17592

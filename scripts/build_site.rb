@@ -48,8 +48,8 @@ FAMILIES = [
   {
     slug: "speaker-human",
     label: "Speaker, identity & emotion",
-    description: "Speaker recognition, diarization, anti-spoofing, and emotion",
-    pattern: /speaker_|speech_emotion_recognition/,
+    description: "Speaker recognition, diarization, anti-spoofing, watermarking, and emotion",
+    pattern: /speaker_|speech_emotion_recognition|audio_watermark/,
   },
   {
     slug: "restoration-quality",
