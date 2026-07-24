@@ -216,6 +216,41 @@ paper_audits:
       - https://huggingface.co/datasets/amphion/Emilia-Dataset
       - https://huggingface.co/api/datasets/amphion/Emilia-Dataset
 
+  artifact_specific_speech_deepfake_detection:
+    paper: https://arxiv.org/abs/2607.21127
+    sections: 4.1 and 5.1-5.5
+    status: audited_existing_and_new_public_coverage
+    evaluated_sets:
+      - cited_as: ASVspoof 2015
+        index_id: asvspoof_2015
+        status: public
+        note: Section 4.1 uses selected S3 and S10 attacks for calibration.
+      - cited_as: ASVspoof 2019
+        index_id: asvspoof_2019
+        status: public
+        note: The paper uses training attacks for calibration and development/evaluation TTS attacks for testing.
+      - cited_as: ASVspoof 5
+        index_id: asvspoof_5
+        status: public
+        note: The evaluation excludes post-processed samples and balances each TTS attack to 7,760 samples.
+      - cited_as: SpoofCeleb
+        index_id: spoofceleb
+        status: public_gated
+        note: The evaluation balances each TTS attack to 7,963 samples across all splits.
+    protocol_note: >-
+      The report trains five artifact experts on balanced real-speech subsets
+      drawn from ASVspoof 2019, ASVspoof 5, and SpoofCeleb, then creates
+      pseudo-fake examples on the fly. It reports no reusable row manifest for
+      its 24,526-sample training and 6,242-sample validation selections, no
+      clipped evaluation-row lists, and no code or derived-data release.
+      Those paper-specific selections are therefore not presented as a
+      separately downloadable benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.21127
+      - https://arxiv.org/html/2607.21127v1#S4.SS1
+      - https://arxiv.org/html/2607.21127v1#S5.SS1
+      - https://arxiv.org/html/2607.21127v1#S5.SS4
+
   vibevoice_asr_bitnet_technical_report:
     paper: https://arxiv.org/abs/2607.21075
     sections: 3.1 and 3.3
@@ -9711,6 +9746,58 @@ benchmarks:
       - https://zenodo.org/records/4728081
       - https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html
       - https://arxiv.org/abs/2104.09494
+
+  - id: asvspoof_2015
+    name: ASVspoof 2015
+    full_name: "Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2015) Database"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speaker_verification_anti_spoofing
+      - spoofed_speech_detection
+      - synthetic_speech_detection
+      - unseen_attack_generalization
+    official:
+      homepage: https://www.asvspoof.org/index2015.html
+      datashare_record: https://datashare.ed.ac.uk/handle/10283/853
+      datashare_api: https://datashare.ed.ac.uk/server/api/core/items/a714c9b8-4acd-43a2-ac45-68eebcd070de
+      doi: https://doi.org/10.7488/ds/298
+      summary_paper: https://www.asvspoof.org/is2015_asvspoof.pdf
+      recent_evaluation: https://arxiv.org/abs/2607.21127
+    download:
+      primary:
+        - https://datashare.ed.ac.uk/handle/10283/853
+        - https://datashare.ed.ac.uk/server/api/core/bundles/a8516720-46e8-48bd-bf7c-9f3ce5f4526f/bitstreams?size=100
+      examples:
+        - 'scripts/download/asvspoof_2015.sh'
+        - 'ASVSPOOF2015_DOWNLOAD_PROTOCOLS=1 scripts/download/asvspoof_2015.sh'
+        - 'ASVSPOOF2015_DOWNLOAD_AUDIO=1 scripts/download/asvspoof_2015.sh'
+      notes: >-
+        The public Edinburgh DataShare release contains genuine speech from
+        106 speakers and synthetic speech from ten known and unknown
+        text-to-speech and voice-conversion attacks, partitioned into training,
+        development, and evaluation sets. The helper downloads official
+        metadata, README, evaluation plan, summary paper, file descriptions,
+        and extraction instructions by default. The approximately 2.1 MB
+        protocol archive is a separate opt-in, and the three-part
+        approximately 24.1 GB WAV archive requires
+        ASVSPOOF2015_DOWNLOAD_AUDIO=1. Section 4.1 of arXiv:2607.21127 uses
+        attacks S3 and S10 for expert calibration.
+    license:
+      data: cc-by-4.0
+      code: not_applicable
+      notes: >-
+        Edinburgh DataShare metadata declares Creative Commons Attribution
+        4.0 International. Retain attribution and review the packaged license
+        and source-speech provenance before redistribution or commercial use.
+    sources:
+      - https://www.asvspoof.org/index2015.html
+      - https://datashare.ed.ac.uk/handle/10283/853
+      - https://datashare.ed.ac.uk/server/api/core/items/a714c9b8-4acd-43a2-ac45-68eebcd070de
+      - https://datashare.ed.ac.uk/server/api/core/bundles/a8516720-46e8-48bd-bf7c-9f3ce5f4526f/bitstreams?size=100
+      - https://doi.org/10.7488/ds/298
+      - https://arxiv.org/abs/2607.21127
+      - https://arxiv.org/html/2607.21127v1#S4.SS1
 
   - id: asvspoof_2019
     name: ASVspoof 2019

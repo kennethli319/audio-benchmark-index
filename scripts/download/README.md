@@ -166,6 +166,7 @@ scripts/download/voxceleb.sh
 scripts/download/voxblink2.sh
 scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
+scripts/download/asvspoof_2015.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/asvspoof_2021.sh
 scripts/download/asvspoof_5.sh
@@ -790,6 +791,10 @@ VOXBLINK2_CLONE_REPO=1 scripts/download/voxblink2.sh
 # VoxConverse clones official RTTM annotations by default. WAV ZIPs are large and opt-in.
 VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS=dev scripts/download/voxconverse.sh
 VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS="dev test" scripts/download/voxconverse.sh
+
+# ASVspoof 2015 downloads metadata/evaluation docs by default. Protocols and the approximately 24.1 GB audio are opt-in.
+ASVSPOOF2015_DOWNLOAD_PROTOCOLS=1 scripts/download/asvspoof_2015.sh
+ASVSPOOF2015_DOWNLOAD_AUDIO=1 scripts/download/asvspoof_2015.sh
 
 # ASVspoof 2019 downloads README/license/evaluation docs by default. LA/PA are large and opt-in.
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
