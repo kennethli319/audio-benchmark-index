@@ -52,6 +52,7 @@ scripts/download/av_speakerbench.sh
 scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/avscapbench.sh
+scripts/download/comind.sh
 scripts/download/video_salmonn2_caption.sh
 scripts/download/syncbench.sh
 scripts/download/ave_compass.sh
@@ -245,6 +246,11 @@ scripts/download/castella.sh
 # Hugging Face snapshot with embedded image/audio media is opt-in.
 OMNIBENCH_DOWNLOAD_HF=1 scripts/download/omnibench.sh
 OMNIBENCH_CLONE_REPO=1 scripts/download/omnibench.sh
+
+# CoMind saves the official page, paper metadata, first-party downloader, and
+# annotation manifest by default. Its approximately 5.0 MiB annotations are
+# opt-in; use the saved official downloader manually for large media parts.
+COMIND_DOWNLOAD_ANNOTATIONS=1 scripts/download/comind.sh
 
 ## Manual Or Gated
 

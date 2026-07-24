@@ -13436,3 +13436,65 @@ benchmarks:
       - https://raw.githubusercontent.com/TIPColin/ForestIR/main/LICENSE
       - https://api.github.com/repos/TIPColin/ForestIR
       - https://api.github.com/repos/TIPColin/ForestIR/git/trees/main?recursive=1
+
+  - id: comind
+    name: CoMind
+    full_name: "CoMind: Understanding Collaborative Human Activity from Multiple Minds and Views"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_social_reasoning
+      - joint_attention_estimation
+      - socially_conditioned_object_interaction_anticipation
+      - collaborative_handover_prediction
+      - egocentric_exocentric_understanding
+      - speech_conditioned_action_anticipation
+    official:
+      homepage: https://comind.ethz.ch/
+      paper: https://arxiv.org/abs/2607.06691
+      arxiv_html: https://arxiv.org/html/2607.06691v1
+      downloader: https://comind.ethz.ch/scripts/comind_download.py
+      annotations_manifest: https://comind.ethz.ch/dataset/annotations/healthcheck.json
+      license: https://creativecommons.org/licenses/by-nc/4.0/
+    download:
+      primary:
+        - https://comind.ethz.ch/
+        - https://comind.ethz.ch/scripts/comind_download.py
+        - https://comind.ethz.ch/dataset/annotations/healthcheck.json
+      examples:
+        - 'scripts/download/comind.sh'
+        - 'COMIND_DOWNLOAD_ANNOTATIONS=1 scripts/download/comind.sh'
+      notes: >-
+        The official public release covers 41 hours of unscripted cooking
+        collaboration across 80 sessions, with two synchronized egocentric
+        cameras, two exocentric views, audio and WhisperX transcripts, gaze,
+        hand tracking, camera trajectories, scene/object scans, and annotations.
+        Its three benchmarks accept audio or transcribed speech from a
+        ten-second context window for joint-attention estimation, socially
+        conditioned object-interaction anticipation, and collaborative
+        handover prediction. The helper saves the official page, paper
+        metadata, first-party downloader, and annotation manifest by default.
+        The approximately 5.0 MiB annotation JSON files are opt-in; large
+        recording components remain available through the saved official
+        downloader and are never fetched automatically.
+    license:
+      data: cc-by-nc-4.0
+      code: not_specified
+      notes: >-
+        The official project page declares CC BY-NC 4.0, although its displayed
+        license and terms links are currently placeholder anchors rather than
+        a separate terms document. Treat the data as non-commercial, preserve
+        attribution, and review privacy, voice, face, gaze, biometric, and
+        participant-consent implications before reuse. The paper states that
+        participants consented to release of identifiable video, but that does
+        not remove downstream ethical obligations. No separate license notice
+        is embedded in the official Python downloader; the paper itself uses
+        arXiv's perpetual non-exclusive license.
+    sources:
+      - https://comind.ethz.ch/
+      - https://comind.ethz.ch/scripts/comind_download.py
+      - https://comind.ethz.ch/dataset/annotations/healthcheck.json
+      - https://arxiv.org/abs/2607.06691
+      - https://arxiv.org/html/2607.06691v1#S3
+      - https://arxiv.org/html/2607.06691v1#S3.SS1
+      - https://arxiv.org/html/2607.06691v1#S3.SS2
