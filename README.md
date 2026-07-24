@@ -15,6 +15,7 @@ sound event detection, keyword spotting, speaker recognition, spoken language
 identification, speech instruction following, self-supervised speech representation,
 emotion, captioning, speech separation, speech enhancement, real-recorded
 microphone-array enhancement and localization, music tagging,
+forest-acoustic impulse-response simulation for bioacoustic arrays,
 music genre classification, instrument recognition, music transcription, asynchronous
 distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
@@ -63,7 +64,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 263 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 264 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -815,6 +816,7 @@ Current coverage includes:
 | [Diamond Benchmark](https://huggingface.co/datasets/nineninesix/diamond-benchmark) | Real-world degraded-speech restoration and content preservation | Public 750-clip English release with reference transcripts for paired DNSMOS-P.835 and ASR CER evaluation; helper downloads the card, API metadata, and manifest by default while the approximately 340 MB audio snapshot is opt-in | HF metadata says `other`, but no license text, source-corpus citation, consent statement, or redistribution terms are supplied; treat as evaluation-only pending clarification |
 | [DNS Challenge](https://github.com/microsoft/DNS-Challenge) | Speech enhancement | Official DNS Challenge repo and Microsoft Research challenge page; helper saves README/license/downloader scripts by default and makes multi-GB DNS5 test archives opt-in | Repository content/docs are CC BY 4.0 and code is MIT; training data combines multiple upstream sources, so component terms still need checking |
 | [RealMAN](https://github.com/Audio-WestlakeU/RealMAN) | Multichannel speech enhancement and source localization | Public, ungated 32-channel real-recorded corpus with 83.7 speech hours and 144.5 noise hours across diverse scenes; helper downloads official docs/API metadata by default and makes the approximately 812 GB Hugging Face snapshot opt-in | Dataset README declares CC BY 4.0, but the repository has no standalone license file; baseline-code terms are unspecified and should be checked separately |
+| [ForestIR](https://github.com/TIPColin/ForestIR) | Forest impulse-response simulation and bioacoustic microphone-array localization | Public simulator with measured/synthetic geometry presets, example bird calls, environmental noise, and reproducible rendering manifests; helper saves official docs and metadata by default and makes the approximately 31 MB repository clone opt-in; processed field recordings required for the paper's full validation remain request-only | Repository code is MIT, but the paper and repository do not state separate licenses or provenance terms for bundled bird/noise recordings; clarify media rights before redistribution or commercial use |
 | [MS-SNSD](https://github.com/microsoft/MS-SNSD) | Speech enhancement | Official Microsoft GitHub repo and [Interspeech 2019 paper](https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.html); helper saves README/license/generator files by default and makes the large repo clone opt-in | Code is MIT; data is mixed upstream terms listed in the README, including PTDB-TUG ODbL, VoiceBank/DataShare terms, Freesound CC0 clips, and DEMAND CC BY-SA 3.0 |
 | [NISQA](https://github.com/gabrielmittag/NISQA) | Speech quality assessment | Official NISQA repo/wiki and [Zenodo corpus mirror](https://zenodo.org/records/4728081); helper saves docs/licenses/record metadata by default and makes the 15.9 GiB corpus opt-in | Corpus uses mixed original source speech/noise terms; Zenodo reports `other-at`; code is MIT and model weights are CC BY-NC-SA 4.0 |
 | [BVCC](https://zenodo.org/records/6572573) | MOS prediction and synthetic-speech naturalness assessment | Public VoiceMOS Challenge 2022 release with unified MOS ratings and official splits; helper saves official pages and Zenodo metadata by default and makes the approximately 273.4 MiB main archive and small OOD/scoring packages opt-in; Blizzard audio must be obtained separately | Zenodo says Other (Open), but explicitly prohibits redistribution of Blizzard samples and omits them; Voice Conversion Challenge and ESPnet-TTS components retain their own terms |

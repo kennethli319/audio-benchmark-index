@@ -163,6 +163,7 @@ scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
 scripts/download/realman.sh
+scripts/download/forestir.sh
 scripts/download/mmae.sh
 scripts/download/pazabench.sh
 scripts/download/live_gurbani_captioning_v1.sh
@@ -469,6 +470,10 @@ REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
 # RealMAN downloads official docs/API metadata by default. Its approximately
 # 812 GB public Hugging Face snapshot is opt-in.
 REALMAN_DOWNLOAD_HF=1 scripts/download/realman.sh
+
+# ForestIR downloads official docs, license, repository metadata, and the paper
+# by default. Clone the approximately 31 MB simulator/input repository explicitly.
+FORESTIR_CLONE_REPO=1 scripts/download/forestir.sh
 
 # MMAE downloads official docs/metadata by default; the approximately 4.43 GB
 # Hugging Face audio snapshot and the evaluation-repo clone are separate opt-ins.

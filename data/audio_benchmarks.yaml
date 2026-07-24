@@ -13203,3 +13203,59 @@ benchmarks:
       - https://github.com/DontPushMeee/MLC-SLM-2nd-Task2-Baseline
       - https://raw.githubusercontent.com/DontPushMeee/MLC-SLM-2nd-Task2-Baseline/main/README.md
       - https://arxiv.org/abs/2607.12468
+
+  - id: forestir
+    name: ForestIR
+    full_name: "ForestIR: Physics-Informed Forest Sound Simulation for Array-Based Bioacoustic Remote Sensing"
+    qwen_cited_as: null
+    qwen_bucket:
+      - spatial_audio
+      - bioacoustics
+      - audio_simulation
+    tasks:
+      - forest_impulse_response_simulation
+      - bioacoustic_sound_source_localization
+      - microphone_array_design
+      - spatial_audio_robustness
+      - synthetic_multichannel_audio_generation
+    official:
+      repo: https://github.com/TIPColin/ForestIR
+      paper: https://arxiv.org/abs/2607.06299
+      arxiv_html: https://arxiv.org/html/2607.06299v1
+    download:
+      primary:
+        - https://github.com/TIPColin/ForestIR
+      examples:
+        - 'scripts/download/forestir.sh'
+        - 'FORESTIR_CLONE_REPO=1 scripts/download/forestir.sh'
+      notes: >-
+        The public repository provides a physics-informed forest impulse-response
+        simulator, command-line and Python interfaces, measured and synthetic
+        tree/microphone/source geometry presets, example bird calls, environmental
+        noise recordings, and manifest-producing array rendering. The helper
+        downloads official documentation, license, repository metadata, and the
+        paper by default; cloning the approximately 31 MB repository requires
+        FORESTIR_CLONE_REPO=1. The paper says processed site-recorded data needed
+        to reproduce its main validation analyses must be requested from the
+        authors, so the public repository must not be represented as a complete
+        release of those field measurements.
+    license:
+      data: bundled_media_terms_not_separately_specified
+      code: MIT
+      notes: >-
+        The repository has an MIT LICENSE and GitHub detects MIT, but neither the
+        paper nor README states separate licenses or complete provenance terms
+        for bundled bird vocalizations and recorded environmental noise. Do not
+        assume the software license clears those recordings; verify source-media
+        attribution, wildlife-recording, and field-recording rights before
+        redistribution or commercial use. The request-only processed validation
+        data may carry additional terms.
+    sources:
+      - https://arxiv.org/abs/2607.06299
+      - https://arxiv.org/html/2607.06299v1#S2
+      - https://arxiv.org/html/2607.06299v1#S5
+      - https://github.com/TIPColin/ForestIR
+      - https://raw.githubusercontent.com/TIPColin/ForestIR/main/README.md
+      - https://raw.githubusercontent.com/TIPColin/ForestIR/main/LICENSE
+      - https://api.github.com/repos/TIPColin/ForestIR
+      - https://api.github.com/repos/TIPColin/ForestIR/git/trees/main?recursive=1
