@@ -194,6 +194,15 @@ official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
 
+The July 2026 Faster IndexTTS-2 paper is likewise recorded as an
+existing-coverage audit rather than a new benchmark family. It evaluates the
+indexed Seed-TTS objective set under precision, streaming, and batching
+configurations, but reports 1,088 English and 2,020 Chinese samples while the
+official Seed-TTS repository states 1,000 Common Voice and 2,000 DiDiSpeech-2
+samples. Because the paper publishes no item manifest, split mapping, or
+alternate evaluation download, the index preserves both counts and does not
+infer that the extra cases are part of the public release.
+
 The July 2026 OPOD paper is likewise recorded as an existing-coverage audit.
 Its audio-relevant evaluation consists only of the indexed MMAU, AVQA, and
 OmniBench families; the other nine columns are text or visual benchmarks.

@@ -458,6 +458,51 @@ paper_audits:
       - https://arxiv.org/abs/2004.06833
       - https://arxiv.org/abs/2104.09356
 
+  faster_indextts_2:
+    paper: https://arxiv.org/abs/2607.21042
+    title: "Faster IndexTTS-2: Accelerating and Streaming Autoregressive Zero-Shot Text-to-Speech Synthesis on GPUs"
+    sections: 3 and 4
+    status: audited_existing_coverage_count_discrepancy
+    evaluated_sets:
+      - cited_as: Seed-TTS test-en
+        index_id: seed_tts_eval
+        status: public_objective_set
+        paper_reported_samples: 1088
+        official_release_stated_samples: 1000
+        note: >-
+          The paper evaluates English synthesis with WER, speaker similarity,
+          UTMOS, latency, and real-time factor across precision, streaming, and
+          batching configurations.
+      - cited_as: Seed-TTS test-zh
+        index_id: seed_tts_eval
+        status: public_objective_set
+        paper_reported_samples: 2020
+        official_release_stated_samples: 2000
+        note: >-
+          The paper applies the same synthesis-quality and efficiency protocol
+          to its Chinese evaluation rows.
+    protocol_note: >-
+      Section 3 says the evaluation uses Seed-TTS test sets with 1,088 English
+      and 2,020 Chinese samples, while the official Seed-TTS repository states
+      that its downloadable objective set contains 1,000 Common Voice and
+      2,000 DiDiSpeech-2 samples. The paper provides no item manifest, split
+      mapping, or alternate benchmark download that resolves the extra 88
+      English and 20 Chinese cases. This audit therefore maps both rows to the
+      existing seed_tts_eval family, preserves the conflicting reported
+      counts, and does not create a paper-specific benchmark or helper.
+    license_note: >-
+      Faster IndexTTS-2 does not re-release or re-license Seed-TTS evaluation
+      data. The official Seed-TTS repository still states no data or code
+      license, and its Common Voice and DiDiSpeech-2 source terms require
+      independent review.
+    sources:
+      - https://arxiv.org/abs/2607.21042
+      - https://export.arxiv.org/e-print/2607.21042v1
+      - https://faster-indextts-2.github.io/
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://raw.githubusercontent.com/BytedanceSpeech/seed-tts-eval/main/README.md
+      - https://arxiv.org/abs/2406.02430
+
   opod_omni_distillation:
     paper: https://arxiv.org/abs/2607.20918
     title: "OPOD: On-Policy Omni Distillation"
