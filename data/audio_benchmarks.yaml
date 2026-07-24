@@ -5086,6 +5086,49 @@ benchmarks:
       - https://huggingface.co/api/datasets/MagicLuke/CHILDES-Aligned
       - https://talkbank.org/share/rules.html
 
+  - id: tadabur
+    name: Tadabur
+    full_name: "Tadabur: A Large-Scale Quran Audio Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speaker_recognition
+    tasks:
+      - quranic_speech_recognition
+      - arabic_speech_recognition
+      - reciter_identification
+      - word_level_alignment
+      - tajwid_aware_speech_processing
+      - prosodic_analysis
+    official:
+      homepage: https://fherran.github.io/tadabur/
+      dataset: https://huggingface.co/datasets/FaisaI/tadabur
+      repo: https://github.com/fherran/tadabur
+      paper: https://arxiv.org/abs/2604.18932
+      arxiv_html: https://arxiv.org/html/2604.18932v1
+    download:
+      primary:
+        - https://huggingface.co/datasets/FaisaI/tadabur
+        - https://github.com/fherran/tadabur
+      examples:
+        - 'scripts/download/tadabur.sh'
+        - 'TADABUR_DOWNLOAD_HF=1 scripts/download/tadabur.sh'
+      notes: The public, ungated Hugging Face release contains more than 365,000 verse-level Arabic recitation examples totaling over 1,400 hours from more than 600 reciters, with simple and Uthmani text plus automatically derived word timestamps. It exposes one training split rather than a fixed held-out evaluation split. The helper downloads official documentation and repository metadata by default; the Hugging Face API reports approximately 1.94 TB of repository storage, so the audio-bearing snapshot requires TADABUR_DOWNLOAD_HF=1.
+    license:
+      data: cc-by-nc-4.0_with_source_and_cultural_caveats
+      code: not_specified
+      notes: The Hugging Face card declares CC BY-NC 4.0, limits use to research and education, and adds ethical and cultural expectations for respectful Qur'anic use. Audio was collected from public Qur'anic repositories and archives, but the release does not provide per-recording source-license provenance; confirm source rights before redistribution. The linked repository has no standalone LICENSE file, so no code license is claimed.
+    sources:
+      - https://arxiv.org/abs/2604.18932
+      - https://arxiv.org/html/2604.18932v1
+      - https://fherran.github.io/tadabur/
+      - https://github.com/fherran/tadabur
+      - https://raw.githubusercontent.com/fherran/tadabur/main/README.md
+      - https://api.github.com/repos/fherran/tadabur
+      - https://huggingface.co/datasets/FaisaI/tadabur
+      - https://huggingface.co/datasets/FaisaI/tadabur/raw/main/README.md
+      - https://huggingface.co/api/datasets/FaisaI/tadabur
+
   - id: l2_arctic
     name: L2-ARCTIC
     full_name: "L2-ARCTIC: A Non-native English Speech Corpus"

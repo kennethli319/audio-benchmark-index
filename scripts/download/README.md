@@ -332,6 +332,10 @@ ESCUCHA_CLONE_REPO=1 scripts/download/escucha.sh
 # The approximately 594 MB compressed benchmark snapshot is opt-in.
 GHANA_SPEECH_EVAL_DOWNLOAD_HF=1 scripts/download/ghana_speech_eval.sh
 
+# Tadabur downloads official docs and repository metadata by default.
+# The 1,400+ hour, approximately 1.94 TB audio-bearing snapshot is opt-in.
+TADABUR_DOWNLOAD_HF=1 scripts/download/tadabur.sh
+
 # InterPet4D downloads its public card and API metadata by default.
 # The approximately 10.7 GB audio and aligned-motion snapshot is opt-in.
 INTERPET4D_DOWNLOAD_HF=1 scripts/download/interpet4d.sh
