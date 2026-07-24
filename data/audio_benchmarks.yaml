@@ -9838,6 +9838,64 @@ benchmarks:
       - https://arxiv.org/abs/2502.08857
       - https://doi.org/10.21437/ASVspoof.2024-1
 
+  - id: spoofceleb
+    name: SpoofCeleb
+    full_name: "SpoofCeleb: Speech Deepfake Detection and SASV in the Wild"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speech_deepfake_detection
+      - synthetic_speech_detection
+      - spoofing_robust_speaker_verification
+      - in_the_wild_anti_spoofing
+      - unseen_attack_generalization
+    official:
+      project: https://jungjee.github.io/spoofceleb/
+      dataset: https://huggingface.co/datasets/jungjee/spoofceleb
+      paper: https://arxiv.org/abs/2409.17285
+      doi: https://doi.org/10.1109/OJSP.2025.3529377
+      recent_evaluation: https://arxiv.org/abs/2607.21127
+    download:
+      primary:
+        - https://jungjee.github.io/spoofceleb/
+        - https://huggingface.co/datasets/jungjee/spoofceleb
+      examples:
+        - 'scripts/download/spoofceleb.sh'
+        - 'SPOOFCELEB_ACK_TERMS=1 SPOOFCELEB_DOWNLOAD_HF=1 scripts/download/spoofceleb.sh'
+      notes: >-
+        The gated author-owned Hugging Face release contains more than 2.5
+        million bona fide and synthetic utterances from 1,251 VoxCeleb1
+        speakers. Its 23 TTS attacks and speaker-disjoint train, validation,
+        and evaluation partitions support both speech deepfake detection and
+        spoofing-robust speaker verification protocols. The helper downloads
+        the official project page, paper pages, and Hugging Face API metadata
+        by default. The API reports approximately 268.3 GB of repository
+        storage, so the snapshot requires author approval, local Hugging Face
+        authentication, explicit acceptance of the terms, and both
+        SPOOFCELEB_ACK_TERMS=1 and SPOOFCELEB_DOWNLOAD_HF=1. Section 4.1 of
+        arXiv:2607.21127 evaluates balanced TTS attacks from all SpoofCeleb
+        splits but does not publish its clipped row selection.
+    license:
+      data: cc-by-4.0_with_source_media_rights
+      code: not_applicable
+      notes: >-
+        The official project and Hugging Face tag state CC BY 4.0, while the
+        project explicitly says copyright in the human speech files remains
+        with the original video owners. Access is granted only after a request
+        and agreement to Hugging Face terms. Treat the Creative Commons label
+        as covering the released compilation and author contributions, not as
+        clearance of every underlying video, voice, likeness, privacy, or
+        generated-speech right.
+    sources:
+      - https://jungjee.github.io/spoofceleb/
+      - https://huggingface.co/datasets/jungjee/spoofceleb
+      - https://huggingface.co/api/datasets/jungjee/spoofceleb
+      - https://arxiv.org/abs/2409.17285
+      - https://arxiv.org/html/2409.17285v2#S4.SS4
+      - https://doi.org/10.1109/OJSP.2025.3529377
+      - https://arxiv.org/abs/2607.21127
+      - https://arxiv.org/html/2607.21127v1#S4.SS1
+
   - id: voxenes_2026
     name: VoxENES 2026
     full_name: "VoxENES 2026: Benchmarking Generalization of Speech Spoofing Detectors Against LLM-Era TTS and Voice Conversion"

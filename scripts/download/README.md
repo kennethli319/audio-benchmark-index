@@ -277,6 +277,7 @@ scripts/download/lrs3.sh
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 OMNIVIDEOBENCH_DOWNLOAD_HF=1 scripts/download/omnivideobench.sh
 LVOMNIBENCH_DOWNLOAD_HF=1 scripts/download/lvomnibench.sh
+SPOOFCELEB_ACK_TERMS=1 SPOOFCELEB_DOWNLOAD_HF=1 scripts/download/spoofceleb.sh
 ```
 
 Without the required environment variables, they print the manual access steps
@@ -429,6 +430,10 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# SpoofCeleb downloads public docs/API metadata by default. The approximately
+# 268.3 GB snapshot requires author approval, accepted terms, and authentication.
+SPOOFCELEB_ACK_TERMS=1 SPOOFCELEB_DOWNLOAD_HF=1 scripts/download/spoofceleb.sh
 
 # LRRo downloads official metadata and documentation by default. The approximately 278 MiB archive is opt-in.
 LRRO_DOWNLOAD_ARCHIVE=1 scripts/download/lrro.sh
