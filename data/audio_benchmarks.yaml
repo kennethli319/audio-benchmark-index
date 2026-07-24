@@ -5263,6 +5263,54 @@ benchmarks:
       - https://arxiv.org/abs/2607.10387
       - https://arxiv.org/html/2607.10387v1#S3
 
+  - id: timeground_1m
+    name: TimeGround-1M
+    full_name: TimeGround-1M
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_reasoning
+      - audio_captioning
+    tasks:
+      - temporal_audio_grounding
+      - temporal_audio_localization
+      - timestamped_audio_description
+      - timestamped_audio_summarization
+      - long_form_audio_understanding
+    official:
+      dataset: https://huggingface.co/datasets/ai-sage/TimeGround-1M
+      paper: https://arxiv.org/abs/2607.10387
+      model_card: https://huggingface.co/ai-sage/GigaChat3.1-Audio-10B-A1.8B
+    download:
+      primary:
+        - https://huggingface.co/datasets/ai-sage/TimeGround-1M
+      examples:
+        - 'scripts/download/timeground_1m.sh'
+        - 'TIMEGROUND_1M_DOWNLOAD_HF=1 scripts/download/timeground_1m.sh'
+        - 'from datasets import Audio, load_dataset; ds = load_dataset("ai-sage/TimeGround-1M", "tl", split="test", streaming=True).cast_column("audio", Audio(decode=False))'
+      notes: >-
+        The public, ungated English release contains separate train and test
+        splits for temporal localization, temporal description, timed
+        summarization, and recording-level nested annotations. The official
+        card reports about 59,000 training and 4,200 test recordings totaling
+        roughly 14,200 hours across duration buckets from under 10 minutes to
+        120 minutes. The GigaChat 3.1 Audio paper evaluates these generated
+        tasks by duration bucket in section 4.1. The helper downloads the
+        dataset card, repository API metadata, paper page, and model card by
+        default; the Hugging Face API reports about 1.50 TB of repository
+        storage, so the full snapshot requires explicit opt-in.
+    license:
+      data: cc-by-3.0_on_hugging_face_card
+      code: not_specified
+      notes: The official dataset card declares CC BY 3.0. Its recordings are selected from English YODAS2 YouTube-derived shards, so source-video rights, availability, attribution, and platform terms still require review. No separate license for generation or evaluation code is provided on the dataset card.
+    sources:
+      - https://huggingface.co/datasets/ai-sage/TimeGround-1M
+      - https://huggingface.co/datasets/ai-sage/TimeGround-1M/raw/main/README.md
+      - https://huggingface.co/api/datasets/ai-sage/TimeGround-1M
+      - https://arxiv.org/abs/2607.10387
+      - https://arxiv.org/html/2607.10387v1#S4.SS1
+      - https://huggingface.co/ai-sage/GigaChat3.1-Audio-10B-A1.8B
+
   - id: clotho_moment
     name: Clotho-Moment
     full_name: "Clotho-Moment: Simulated Long-Audio Dataset for Language-Based Audio Moment Retrieval"

@@ -671,6 +671,11 @@ ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh
 # is opt-in.
 AUDIOGROUNDING_DOWNLOAD_AUDIO=1 scripts/download/audiogrounding.sh
 
+# TimeGround-1M downloads its official card, API metadata, paper page, and
+# model card by default. The approximately 1.50 TB Hugging Face snapshot is
+# opt-in; prefer streaming a required config/split.
+TIMEGROUND_1M_DOWNLOAD_HF=1 scripts/download/timeground_1m.sh
+
 # Clotho-Moment downloads project, dataset, paper, and license metadata by
 # default. The large 51,240-recording WebDataset snapshot is opt-in.
 CLOTHO_MOMENT_DOWNLOAD_HF=1 scripts/download/clotho_moment.sh
