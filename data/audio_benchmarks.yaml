@@ -1461,6 +1461,8 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.20253
     sections: 3.1-3.2
     status: audited_not_indexed
+    paper_version: v2
+    last_verified: 2026-07-24
     public_interfaces:
       - https://hifi-song-generation.github.io/
     evaluated_domains:
@@ -1471,15 +1473,15 @@ paper_audits:
       - domain: full_song_codec_reconstruction_and_rendering
         protocol: 200 held-out songs for clean and synthetically corrupted ground-truth-codec reconstruction, 200 fixed LM-generated-codec samples, and blinded pairwise listening on 100 songs with five expert raters
         data_status: held_out_songs_codec_inputs_and_ratings_not_released
-        note: Section 3.1 specifies ViSQOL, log-mel L1, multi-resolution STFT distance, AudioBox-Aesthetic Production Quality, and non-tied win rate, but does not identify or release the held-out songs, codec tokens, corruption manifest, generated sample set, seeds, or listener ratings.
+        note: Section 3.1 specifies ViSQOL, log-mel L1, multi-resolution STFT distance, AudioBox-Aesthetic Production Quality, and non-tied win rate. Version 2 clarifies that prompts, lyrics, LM-generated tokens, song lengths, random seeds, and sampling recipes are fixed across its four ablation variants, but it still does not identify or release those inputs, the held-out songs, corruption manifest, generated sample set, or listener ratings.
     license:
       paper: arXiv perpetual non-exclusive license
       evaluation_data: not_specified_unreleased
       project_page_samples: no_separate_license_found
       upstream: Evaluator code/model terms and all rights in commercial-system outputs, prompts, lyrics, recordings, and generated songs require separate review
     sources:
-      - https://arxiv.org/html/2607.20253v1#S3.SS1
-      - https://arxiv.org/html/2607.20253v1#S3.SS2
+      - https://arxiv.org/html/2607.20253v2#S3.SS1
+      - https://arxiv.org/html/2607.20253v2#S3.SS2
       - https://hifi-song-generation.github.io/
       - https://artificialanalysis.ai/music/methodology
       - https://artificialanalysis.ai/music/leaderboard/vocals
@@ -12071,7 +12073,7 @@ benchmarks:
       - https://raw.githubusercontent.com/ASLP-lab/SongEval/main/LICENSE
       - https://api.github.com/repos/ASLP-lab/SongEval
       - https://arxiv.org/abs/2607.20253
-      - https://arxiv.org/html/2607.20253v1#S3.SS2
+      - https://arxiv.org/html/2607.20253v2#S3.SS2
 
   - id: singmos_pro
     name: SingMOS-Pro
@@ -12257,7 +12259,7 @@ benchmarks:
       - https://huggingface.co/datasets/HaiwenXia/cmi-pref/raw/main/README.md
       - https://huggingface.co/api/datasets/HaiwenXia/cmi-pref
       - https://arxiv.org/abs/2607.20253
-      - https://arxiv.org/html/2607.20253v1#S3.SS2
+      - https://arxiv.org/html/2607.20253v2#S3.SS2
 
   - id: musica_metabench
     name: MusICA-MetaBench
