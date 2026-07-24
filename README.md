@@ -22,7 +22,8 @@ music synthesis, song-aesthetics, music reward-model and compositional multimoda
 preference evaluation, full-song singing-quality assessment, and
 rhythm-game chart-generation evaluation, speech quality
 assessment, child-speech recognition, spatial audio localization, cross-modal audio-video-text retrieval,
-programmatic multimodal music-perception evaluation,
+programmatic multimodal music-perception evaluation and atomic-event-based
+audio-visual caption completeness and hallucination evaluation,
 spatio-temporal and multi-audio reasoning,
 language-based moment retrieval, phrase-level temporal audio grounding, and human-captioned
 real-world moment retrieval in long audio, plus time-aware localization,
@@ -60,7 +61,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 246 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 247 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -388,6 +389,7 @@ Current coverage includes:
 | [OmniGAIA](https://github.com/RUC-NLPIR/OmniGAIA) | Omni-modal agent reasoning and tool use | Public, ungated [RUC-NLPIR/OmniGAIA](https://huggingface.co/datasets/RUC-NLPIR/OmniGAIA) with 360 audio/image/video tasks; helper downloads docs and lightweight test metadata by default and makes the approximately 9.9 GB media snapshot opt-in | HF card declares Apache-2.0 and code is MIT; verify terms for component media curated from multiple upstream datasets |
 | [Omni-Cloze](https://github.com/ddlBoJack/Omni-Captioner) | Detailed audio, visual, and audio-visual captioning | Public, ungated [BoJack/Omni-Cloze](https://huggingface.co/datasets/BoJack/Omni-Cloze) with 2,320 audio-visual items and about 70,000 cloze blanks; helper downloads docs and evaluation scripts by default, with metadata and the multi-GB media snapshot as separate opt-ins | No data or code license is stated; source-media provenance and reuse terms are undocumented, so clarify rights before redistribution or commercial use |
 | [AVSCapBench](https://nju-link.github.io/AVSCap/) | Omni-modal audio-visual video captioning and event binding | Public, ungated [NJU-LINK/AVSCapBench](https://huggingface.co/datasets/NJU-LINK/AVSCapBench) with 1,226 clips, dense captions, and visual, speech, music, SFX, and synergy events; helper downloads docs by default and makes the approximately 19.6 GB snapshot opt-in | Card/README declare CC BY-NC-SA 4.0, while the paper describes academic-research-only use; source YouTube, TikTok, and Video-MME media rights still apply |
+| [video-SALMONN 2 Caption Benchmark](https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset) | Detailed audio-visual video captioning, completeness, and hallucination evaluation | Public, ungated release with 483 audio-bearing 30-60 second videos, human captions, manually refined atomic events, and an LLM-based evaluator; helper downloads the approximately 3.5 MB annotations and evaluator by default while the approximately 1.70 GB media snapshot is opt-in | HF card labels the dataset Apache-2.0 and code is Apache-2.0, but per-video provenance and underlying video, audio, music, speech, likeness, and platform rights are undocumented and require separate review |
 | [SyncBench](https://chenhaoqcdyq.github.io/BeyondTimeShifts/) | Causal-semantic audio-visual synchronization evaluation for generative models | Public, ungated [qianyijie/SyncBench](https://huggingface.co/datasets/qianyijie/SyncBench) with 1,185 generated clips and evaluator scores; helper fetches docs, metadata, and small score JSONs by default while the approximately 12.9 GB media snapshot is opt-in | Dataset license is unspecified; the paper's CC BY 4.0 and repository's MIT license do not establish rights for generated videos or prompts |
 | [AVE-Compass](https://ave-compass.github.io/) | Instruction-based audio-video editing evaluation | Public, ungated [NJU-LINK/AVE-Compass](https://huggingface.co/datasets/NJU-LINK/AVE-Compass) with 145 source videos, 196 human-verified instructions, and 2,688 diagnostic checklist items; helper downloads docs by default, offers lightweight annotations as an opt-in, and keeps the approximately 442 MB full snapshot behind a separate opt-in | Dataset card declares CC BY-NC 4.0; evaluation code has no stated license, and source-video uploader/platform/media rights still require review |
 | [Friend Bench](https://huggingface.co/datasets/fluid-concepts/friend-bench) | Audio-visual social-relationship recognition | Public 96-clip validation set with audio, video, transcripts, binary familiar/stranger labels, six-way relationship labels, and anonymized human judgments; helper downloads docs by default, offers lightweight JSONL metadata as an opt-in, and keeps the approximately 433 MB snapshot behind a separate opt-in; a label-held-out test split is only planned | CC BY-NC 4.0 inherited from Seamless Interaction; review the source corpus's privacy, consent, biometric, and responsible-use terms for recorded participants |

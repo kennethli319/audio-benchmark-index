@@ -50,6 +50,7 @@ scripts/download/av_speakerbench.sh
 scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/avscapbench.sh
+scripts/download/video_salmonn2_caption.sh
 scripts/download/syncbench.sh
 scripts/download/ave_compass.sh
 scripts/download/friend_bench.sh
@@ -376,6 +377,11 @@ MUSICA_METABENCH_CLONE_REPO=1 scripts/download/musica_metabench.sh
 # SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
 SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh
 SYNCBENCH_CLONE_REPO=1 scripts/download/syncbench.sh
+
+# video-SALMONN 2 downloads the approximately 3.5 MB annotations, evaluator,
+# and official docs by default; the approximately 1.70 GB video snapshot is opt-in.
+VIDEO_SALMONN2_DOWNLOAD_HF=1 scripts/download/video_salmonn2_caption.sh
+VIDEO_SALMONN2_CLONE_REPO=1 scripts/download/video_salmonn2_caption.sh
 
 # AVE-Compass downloads official docs/API metadata by default. Benchmark
 # annotations and the approximately 442 MB full snapshot are separate opt-ins.

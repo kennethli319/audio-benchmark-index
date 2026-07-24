@@ -11320,3 +11320,64 @@ benchmarks:
       - https://huggingface.co/datasets/BoJack/MMAE
       - https://huggingface.co/datasets/BoJack/MMAE/raw/main/README.md
       - https://huggingface.co/api/datasets/BoJack/MMAE
+
+  - id: video_salmonn2_caption
+    name: video-SALMONN 2 Caption Benchmark
+    full_name: "video-SALMONN 2 Human-Annotated Audio-Visual Caption Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - audio_captioning
+    tasks:
+      - audio_visual_video_captioning
+      - detailed_video_captioning
+      - audio_visual_event_understanding
+      - caption_completeness_evaluation
+      - caption_hallucination_evaluation
+    official:
+      paper: https://arxiv.org/abs/2506.15220
+      repo: https://github.com/bytedance/video-SALMONN-2
+      dataset: https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset
+      project: https://video-salmonn-2.github.io/
+    download:
+      primary:
+        - https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset
+        - https://github.com/bytedance/video-SALMONN-2
+      examples:
+        - 'scripts/download/video_salmonn2_caption.sh'
+        - 'VIDEO_SALMONN2_DOWNLOAD_HF=1 scripts/download/video_salmonn2_caption.sh'
+        - 'VIDEO_SALMONN2_CLONE_REPO=1 scripts/download/video_salmonn2_caption.sh'
+      notes: >-
+        The public, ungated test set contains 483 audio-bearing videos, each
+        30-60 seconds long, with a human-annotated detailed caption and
+        manually refined visual, speech, and non-speech atomic events. The
+        released evaluator uses an LLM to report missing-event,
+        incorrect-event, hallucination, and total error rates. The helper
+        downloads official documentation, API metadata, the approximately
+        3.5 MB annotation JSON, and evaluator by default. The current
+        Hugging Face files total approximately 1.70 GB, so the 483 MP4 files
+        require VIDEO_SALMONN2_DOWNLOAD_HF=1. ReMo evaluates this test set as
+        video-SALMONN2 / video-SAL2 in section 5.1 of arXiv:2607.21179.
+    license:
+      data: apache-2.0_card_label
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card labels the dataset Apache-2.0, and the official
+        GitHub repository contains an Apache-2.0 LICENSE. The release does not
+        document per-video provenance or underlying media licenses, so the
+        card label must not be assumed to clear third-party video, audio,
+        speech, music, likeness, or platform rights. Review source-media
+        rights before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2506.15220
+      - https://arxiv.org/html/2506.15220v2#S4.SS2
+      - https://arxiv.org/html/2506.15220v2#A5
+      - https://arxiv.org/html/2506.15220v2#A6
+      - https://arxiv.org/html/2607.21179v1#S5.SS1
+      - https://github.com/bytedance/video-SALMONN-2
+      - https://raw.githubusercontent.com/bytedance/video-SALMONN-2/main/README.md
+      - https://raw.githubusercontent.com/bytedance/video-SALMONN-2/main/LICENSE
+      - https://api.github.com/repos/bytedance/video-SALMONN-2
+      - https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset
+      - https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset/raw/main/README.md
+      - https://huggingface.co/api/datasets/tsinghua-ee/video-SALMONN_2_testset
