@@ -269,9 +269,9 @@ def render_card(benchmark, manual_ids)
         <div><span>Upstream terms</span><strong>#{escape(terms_label)}</strong></div>
       </div>
       <p class="access-copy">#{escape(access_copy)}</p>
-      <nav class="card-actions" aria-label="#{escape(name)} links">
+      <div class="card-actions">
         #{action_html}
-      </nav>
+      </div>
       <details class="benchmark-details">
         <summary>Access, terms &amp; download helper</summary>
         <div class="details-body">
