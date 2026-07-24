@@ -39,6 +39,7 @@ scripts/download/air_bench.sh
 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
 scripts/download/music_avqa.sh
+scripts/download/omnibench.sh
 scripts/download/llp.sh
 scripts/download/interpet4d.sh
 scripts/download/ava_active_speaker.sh
@@ -227,6 +228,11 @@ scripts/download/adqa_bench.sh
 scripts/download/clotho_moment.sh
 scripts/download/castella.sh
 ```
+
+# OmniBench downloads docs/API metadata by default. The approximately 1.26 GB
+# Hugging Face snapshot with embedded image/audio media is opt-in.
+OMNIBENCH_DOWNLOAD_HF=1 scripts/download/omnibench.sh
+OMNIBENCH_CLONE_REPO=1 scripts/download/omnibench.sh
 
 ## Manual Or Gated
 

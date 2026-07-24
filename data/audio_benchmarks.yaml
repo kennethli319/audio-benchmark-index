@@ -186,6 +186,30 @@ paper_audits:
       - https://arxiv.org/html/2607.21179v1#S5.SS1
       - https://arxiv.org/html/2607.21179v1#A4
 
+  opod_omni_distillation:
+    paper: https://arxiv.org/abs/2607.20918
+    sections: Experiments / Experimental Setup / Benchmarks
+    status: audited_audio_and_omni_coverage
+    evaluated_sets:
+      - cited_as: MMAU
+        index_id: mmau
+        status: public
+      - cited_as: AVQA
+        index_id: avqa
+        status: public_restricted_terms
+      - cited_as: OmniBench
+        index_id: omnibench
+        status: public
+    protocol_note: >-
+      OPOD reports accuracy on MMAU and AVQA as its audio benchmarks and on
+      OmniBench as its omni-modal benchmark. OmniBench questions require
+      integrated image, audio, and text reasoning; this audit therefore keeps
+      it in audio-visual understanding rather than treating it as a
+      text-only benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.20918
+      - https://arxiv.org/html/2607.20918v1#Sx4.SSx1.SSS0.Px3
+
   qwen_music_technical_report:
     paper: https://arxiv.org/abs/2607.11699
     sections: 4.1-4.2
@@ -1445,6 +1469,63 @@ benchmarks:
       - https://raw.githubusercontent.com/AlyssaYoung/AVQA/main/README.md
       - https://api.github.com/repos/AlyssaYoung/AVQA
       - https://dl.acm.org/doi/10.1145/3503161.3548291
+
+  - id: omnibench
+    name: OmniBench
+    full_name: "OmniBench: Towards the Future of Universal Omni-Language Models"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - omni_modal_question_answering
+      - audio_visual_question_answering
+      - tri_modal_reasoning
+      - speech_understanding
+      - sound_event_understanding
+      - music_understanding
+    official:
+      homepage: https://m-a-p.ai/OmniBench/
+      repo: https://github.com/multimodal-art-projection/OmniBench
+      dataset: https://huggingface.co/datasets/m-a-p/OmniBench
+      paper: https://arxiv.org/abs/2409.15272
+    download:
+      primary:
+        - https://huggingface.co/datasets/m-a-p/OmniBench
+        - https://github.com/multimodal-art-projection/OmniBench
+      examples:
+        - 'scripts/download/omnibench.sh'
+        - 'OMNIBENCH_DOWNLOAD_HF=1 scripts/download/omnibench.sh'
+        - 'OMNIBENCH_CLONE_REPO=1 scripts/download/omnibench.sh'
+      notes: >-
+        The public, ungated release contains 1,142 four-choice questions that
+        jointly pair an image, audio, and text prompt across seven task types.
+        Audio spans speech, sound events, and music. The helper downloads
+        official documentation and repository metadata by default; the
+        Hugging Face card reports approximately 1.26 GB of downloads, so the
+        media-bearing Parquet snapshot requires OMNIBENCH_DOWNLOAD_HF=1.
+        OPOD evaluates OmniBench as its omni-modal benchmark and reports
+        accuracy in the Experiments benchmark block of arXiv:2607.20918.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The official dataset card has no license field, and the official
+        repository has no LICENSE file or GitHub-detected license. The project
+        page's footer links CC BY-SA 4.0 but does not clearly state that it
+        covers the benchmark data, code, or component media. Obtain
+        clarification and review source-image/audio rights before
+        redistribution or commercial use.
+    sources:
+      - https://m-a-p.ai/OmniBench/
+      - https://arxiv.org/abs/2409.15272
+      - https://arxiv.org/html/2409.15272
+      - https://github.com/multimodal-art-projection/OmniBench
+      - https://raw.githubusercontent.com/multimodal-art-projection/OmniBench/main/README.md
+      - https://api.github.com/repos/multimodal-art-projection/OmniBench
+      - https://huggingface.co/datasets/m-a-p/OmniBench
+      - https://huggingface.co/datasets/m-a-p/OmniBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/m-a-p/OmniBench
+      - https://arxiv.org/abs/2607.20918
+      - https://arxiv.org/html/2607.20918v1#Sx4.SSx1.SSS0.Px3
 
   - id: llp
     name: LLP
