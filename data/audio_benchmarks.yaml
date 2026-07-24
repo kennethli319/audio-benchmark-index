@@ -152,6 +152,36 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  qwen_audio_vae_technical_report:
+    paper: https://arxiv.org/abs/2607.11738
+    sections: 4.1-4.5
+    status: audited_existing_coverage
+    evaluated_sets:
+      - cited_as: LibriSpeech
+        index_id: librispeech
+        status: public
+        note: Sections 4.1-4.3 use LibriSpeech for speech reconstruction and ablation evaluation with Mel distance, MR-STFT distance, PESQ, and STOI.
+      - cited_as: AudioCaps
+        index_id: audiocaps
+        status: public_restricted_source_media
+        note: Sections 4.1-4.2 use AudioCaps for general-audio reconstruction; section 4.5 uses its test set for CLAP, FD, and Inception Score evaluation of downstream text-to-audio generation.
+      - cited_as: SongDescriber
+        index_id: song_describer
+        status: public
+        note: Sections 4.1-4.2 use Song Describer for music reconstruction with Mel distance, MR-STFT distance, and SI-SDR.
+    protocol_note: >-
+      The report names exactly three public reconstruction benchmarks spanning
+      speech, general sound, and music. All three were already indexed, so this
+      audit adds provenance without creating duplicate families. Section 4.5
+      additionally trains text-to-audio models on LAION-Audio-630K, but that
+      training corpus is not presented as a separate benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.11738
+      - https://arxiv.org/html/2607.11738v1#S4.SS1
+      - https://arxiv.org/html/2607.11738v1#S4.SS2
+      - https://arxiv.org/html/2607.11738v1#S4.SS3
+      - https://arxiv.org/html/2607.11738v1#S4.SS5
+
   x3_opd_audio_reasoning:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4
@@ -4379,6 +4409,7 @@ benchmarks:
       hf_dataset: https://huggingface.co/datasets/openslr/librispeech_asr
       paper: https://ieeexplore.ieee.org/document/7178964
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
+      qwen_audio_vae_report: https://arxiv.org/html/2607.11738v1#S4.SS2.SSS1
     download:
       primary:
         - https://www.openslr.org/12
@@ -4387,7 +4418,7 @@ benchmarks:
         - 'scripts/download/librispeech.sh'
         - 'LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh'
         - 'from datasets import load_dataset; ds = load_dataset("openslr/librispeech_asr", "clean", split="test")'
-      notes: The helper downloads the OpenSLR landing page and checksums by default; corpus archives require LIBRISPEECH_DOWNLOAD_ARCHIVES=1. Qwen3-TTS section 4.1.2 evaluates tokenizer reconstruction on all 2,620 utterances in test-clean with PESQ, STOI, UTMOS, and WavLM-based speaker similarity.
+      notes: The helper downloads the OpenSLR landing page and checksums by default; corpus archives require LIBRISPEECH_DOWNLOAD_ARCHIVES=1. Qwen3-TTS section 4.1.2 evaluates tokenizer reconstruction on all 2,620 utterances in test-clean with PESQ, STOI, UTMOS, and WavLM-based speaker similarity. Qwen-Audio-VAE sections 4.1-4.3 use LibriSpeech for speech reconstruction and ablation evaluation.
     license:
       data: cc-by-4.0
       code: not_applicable
@@ -4397,6 +4428,7 @@ benchmarks:
       - https://huggingface.co/datasets/openslr/librispeech_asr
       - https://huggingface.co/datasets/openslr/librispeech_asr/raw/main/README.md
       - https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
+      - https://arxiv.org/html/2607.11738v1#S4.SS2.SSS1
 
   - id: whisper_rirmega
     name: Whisper-RIR-Mega
@@ -8344,6 +8376,7 @@ benchmarks:
       dataset_readme: https://github.com/cdjkim/audiocaps/blob/master/dataset/README.md
       dataset2_readme: https://github.com/cdjkim/audiocaps/blob/master/dataset2.0/README.md
       hf_mirror: https://huggingface.co/datasets/d0rj/audiocaps
+      qwen_audio_vae_report: https://arxiv.org/html/2607.11738v1#S4.SS2.SSS2
     download:
       primary:
         - https://github.com/cdjkim/audiocaps/tree/master/dataset
@@ -8364,6 +8397,7 @@ benchmarks:
       - https://github.com/cdjkim/audiocaps/blob/master/dataset/README.md
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
+      - https://arxiv.org/html/2607.11738v1#S4.SS2.SSS2
 
   - id: audiocards
     name: AudioCards / ASFx Eval
@@ -10668,6 +10702,7 @@ benchmarks:
       repo: https://github.com/mulab-mir/song-describer-dataset
       dataset: https://zenodo.org/records/10072001
       qwen_music_report: https://arxiv.org/html/2607.11699v1#S4.SS2.SSS2
+      qwen_audio_vae_report: https://arxiv.org/html/2607.11738v1#S4.SS2.SSS3
     download:
       primary:
         - https://zenodo.org/records/10072001
@@ -10683,7 +10718,8 @@ benchmarks:
         list, metadata, dataset documentation, and Zenodo record by default;
         the approximately 3.09 GiB audio archive requires explicit opt-in.
         Qwen-Music section 4.2.2 evaluates codec reconstruction on all 546
-        validated tracks.
+        validated tracks. Qwen-Audio-VAE sections 4.1-4.2 also use the dataset
+        for music reconstruction evaluation.
     license:
       data: CC-BY-SA-4.0
       code: MIT
@@ -10705,6 +10741,7 @@ benchmarks:
       - https://zenodo.org/api/records/10072001
       - https://arxiv.org/abs/2607.11699
       - https://arxiv.org/html/2607.11699v1#S4.SS2.SSS2
+      - https://arxiv.org/html/2607.11738v1#S4.SS2.SSS3
 
   - id: cmi_rewardbench
     name: CMI-RewardBench / CMI-Pref

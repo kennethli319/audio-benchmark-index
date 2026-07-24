@@ -94,6 +94,13 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 Qwen-Audio-VAE report is inventoried across sections 4.1-4.5.
+Its three public reconstruction benchmarks—LibriSpeech for speech, AudioCaps
+for general sound, and Song Describer for music—were already indexed. The
+audit also records AudioCaps test-set use for downstream text-to-audio
+evaluation and does not misclassify the report's LAION-Audio-630K training
+corpus as a new benchmark.
+
 The July 2026 X3-OPD paper is also inventoried across sections 5.1-5.4. MMSU,
 MMAU, MMAR, WorldSense, and DailyOmni map to existing public families. Its
 uncited “BIG Bench Audio” aggregate remains unmapped: the paper describes
