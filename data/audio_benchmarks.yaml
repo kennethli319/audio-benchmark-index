@@ -1817,6 +1817,24 @@ paper_audits:
       - https://huggingface.co/api/datasets/zihan-audio/AEGBench
     note: The abstract calls AEGBench released, but appendix K says the benchmark, audio, annotations, difficulty tags, and scripts will be released upon acceptance. The linked Hugging Face repository at revision b4e9fa95ad99d701b6e788c2aa51d7642ed61a75 has no dataset card, benchmark records, audio, annotations, or evaluation code. AEGBench is therefore recorded as an announced protocol rather than a downloadable benchmark family. The promised CC BY 4.0 and MIT terms do not license absent artifacts, and appendix K also preserves third-party audio terms while describing research-only use, so the eventual release terms require careful rechecking.
 
+  tf_mossformer:
+    paper: https://arxiv.org/abs/2607.21128
+    sections: 3.1-3.3
+    status: audited_existing_coverage
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: WSJ0-2Mix
+        index_id: wsj0_2mix
+        status: restricted_source_corpus
+        protocol: 8 kHz two-speaker mixtures with 20,000 training, 5,000 validation, and 3,000 speaker-disjoint test examples; SI-SDRi and SDRi are reported
+    sources:
+      - https://arxiv.org/abs/2607.21128
+      - https://arxiv.org/html/2607.21128v1#S3.SS1
+      - https://arxiv.org/html/2607.21128v1#S3.SS3
+      - https://www.merl.com/research/highlights/deep-clustering
+      - https://catalog.ldc.upenn.edu/LDC93S6A
+    note: TF-MossFormer introduces a model rather than a new benchmark. Its experiments and ablations use only the established WSJ0-2Mix family already indexed below, so no duplicate dataset entry or model-specific helper is added. The paper does not release a new mixture manifest or relax the licensing of the underlying LDC WSJ0 speech.
+
 benchmarks:
   - id: mmau
     name: MMAU
@@ -10150,6 +10168,7 @@ benchmarks:
       spatialization_scripts: https://www.merl.com/research/highlights/deep-clustering/spatialize_wsj0-mix.zip
       python_generation_repo: https://github.com/mpariente/pywsj0-mix
       wsj0_source: https://catalog.ldc.upenn.edu/LDC93S6A
+      recent_evaluation: https://arxiv.org/abs/2607.21128
     download:
       primary:
         - https://www.merl.com/research/highlights/deep-clustering
@@ -10161,7 +10180,7 @@ benchmarks:
         - 'scripts/download/wsj0_2mix.sh'
         - 'WSJ0_2MIX_CLONE_PYTHON_REPO=1 scripts/download/wsj0_2mix.sh'
         - 'WSJ0_2MIX_RUN_GENERATION=1 WSJ0_PATH=/path/to/wsj0 WSJ0_2MIX_OUTPUT=/large/storage/wsj0-mix scripts/download/wsj0_2mix.sh'
-      notes: The helper downloads the official MERL page and generation scripts by default and can clone the MIT-licensed Python generator. It does not download WSJ0 audio; generation requires an already licensed local WSJ0 corpus from LDC and explicit WSJ0_2MIX_RUN_GENERATION=1.
+      notes: The helper downloads the official MERL page and generation scripts by default and can clone the MIT-licensed Python generator. It does not download WSJ0 audio; generation requires an already licensed local WSJ0 corpus from LDC and explicit WSJ0_2MIX_RUN_GENERATION=1. TF-MossFormer sections 3.1-3.3 use the standard 8 kHz two-speaker setup with 20,000 training, 5,000 validation, and 3,000 speaker-disjoint test mixtures and report SI-SDRi and SDRi; that paper adds no new mixture release.
     license:
       data: ldc_restricted_derived
       code: "MERL script license not specified on the reachable page; pywsj0-mix is MIT."
@@ -10174,6 +10193,9 @@ benchmarks:
       - https://raw.githubusercontent.com/mpariente/pywsj0-mix/master/README.md
       - https://raw.githubusercontent.com/mpariente/pywsj0-mix/master/LICENSE
       - https://catalog.ldc.upenn.edu/LDC93S6A
+      - https://arxiv.org/abs/2607.21128
+      - https://arxiv.org/html/2607.21128v1#S3.SS1
+      - https://arxiv.org/html/2607.21128v1#S3.SS3
 
   - id: wham_whamr
     name: WHAM! / WHAMR!

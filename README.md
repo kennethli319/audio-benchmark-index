@@ -362,6 +362,13 @@ with their official access and license constraints. The paper's artifact
 transformations create an internal training protocol, not a separately
 released evaluation dataset.
 
+The July 2026 TF-MossFormer paper is also recorded as existing coverage rather
+than a new family. Sections 3.1-3.3 evaluate only the indexed WSJ0-2Mix
+benchmark: 8 kHz two-speaker mixtures with 20,000 training, 5,000 validation,
+and 3,000 speaker-disjoint test examples scored with SI-SDRi and SDRi. The
+paper introduces a separation model, not a new public mixture manifest, and it
+does not change the underlying LDC WSJ0 access and redistribution constraints.
+
 The July 2026 audit of protocol-level shortcuts in audio-language-model judges
 uses four established speech corpora. RAVDESS, FLEURS, and VoxCeleb were
 already indexed; this sweep adds the missing public
