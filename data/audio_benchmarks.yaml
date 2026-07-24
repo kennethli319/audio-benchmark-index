@@ -2326,6 +2326,56 @@ benchmarks:
       - https://arxiv.org/abs/1809.00496
       - https://export.arxiv.org/api/query?id_list=1809.00496
 
+  - id: lrro
+    name: LRRo
+    full_name: "LRRo: A Lip Reading Data Set for the Under-resourced Romanian Language"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_speech
+    tasks:
+      - visual_speech_recognition
+      - lip_reading
+      - isolated_word_recognition
+      - low_resource_romanian_speech
+    official:
+      zenodo: https://zenodo.org/records/3753559
+      repo: https://github.com/ajitaru/2020-LRRo_data_set
+      paper: https://doi.org/10.1145/3339825.3394932
+      recent_evaluation: https://arxiv.org/abs/2607.08112
+    download:
+      primary:
+        - https://zenodo.org/records/3753559
+        - https://github.com/ajitaru/2020-LRRo_data_set
+      examples:
+        - 'scripts/download/lrro.sh'
+        - 'LRRO_DOWNLOAD_ARCHIVE=1 scripts/download/lrro.sh'
+      notes: >-
+        The public, ungated Zenodo release contains Wild LRRo, with more than
+        20 hours, over 35 speakers, 1,100 word instances, and a 21-word
+        vocabulary, plus Lab LRRo, with more than 5 hours, 19 speakers, 6,400
+        word instances, and a 48-word vocabulary. Both isolated-word
+        collections provide train, validation, and test subsets. VSRo-200
+        section 4.6 evaluates transfer on both LRRo subsets. The helper saves
+        the official Zenodo record and repository documentation by default;
+        the 291,504,956-byte archive is opt-in with LRRO_DOWNLOAD_ARCHIVE=1.
+    license:
+      data: CC-BY-4.0
+      code: not_applicable
+      notes: >-
+        The Zenodo record declares CC BY 4.0. Wild LRRo was collected from
+        Internet videos and the release contains identifiable speaker imagery,
+        so attribution, privacy, likeness, and any source-media rights should
+        still be reviewed for redistribution, biometric use, or deployment.
+        The documentation-only GitHub repository has no detected license.
+    sources:
+      - https://zenodo.org/records/3753559
+      - https://zenodo.org/api/records/3753559
+      - https://github.com/ajitaru/2020-LRRo_data_set
+      - https://raw.githubusercontent.com/ajitaru/2020-LRRo_data_set/master/README.md
+      - https://api.github.com/repos/ajitaru/2020-LRRo_data_set
+      - https://doi.org/10.1145/3339825.3394932
+      - https://arxiv.org/abs/2607.08112
+      - https://arxiv.org/html/2607.08112v1#S4.SS6
+
   - id: superb
     name: SUPERB
     full_name: "SUPERB: Speech Processing Universal PERformance Benchmark"

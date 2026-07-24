@@ -56,6 +56,7 @@ scripts/download/friend_bench.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/lvomnibench.sh
+scripts/download/lrro.sh
 scripts/download/superb.sh
 scripts/download/codec_superb.sh
 scripts/download/emo_superb.sh
@@ -413,6 +414,9 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# LRRo downloads official metadata and documentation by default. The approximately 278 MiB archive is opt-in.
+LRRO_DOWNLOAD_ARCHIVE=1 scripts/download/lrro.sh
 
 # UrBAN downloads official docs/metadata only. Transfer the approximately
 # 1.265 TB corpus manually from FRDR using its Globus workflow.
