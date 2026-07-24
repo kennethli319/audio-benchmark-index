@@ -420,6 +420,39 @@ paper_audits:
       - https://catalog.ldc.upenn.edu/LDC2005S13
     note: The official repository currently contains only a README promising code and pretrained models; it does not release the custom Fisher speaker partitions, validation or evaluation trials, anonymized derivatives, or evaluation implementation. The licensed Fisher source corpus is indexed separately, but access to it does not reproduce this paper's benchmark protocol. This evaluation is therefore recorded as an audited protocol rather than a downloadable benchmark family.
 
+  spoken_digit_privacy_informed_attackers:
+    paper: https://arxiv.org/abs/2607.21393
+    sections: 2.1-2.4
+    status: audited_existing_source_corpora
+    public_interfaces:
+      - https://github.com/ol-MEGA/ppca
+    evaluated_domains:
+      - domain: task_specific_spoken_digit_privacy
+        protocol: Informed general-purpose ASR and digit-specific DNN attackers recognize isolated digits from AudioMNIST and Google Speech Commands v0.0.1, plus ten-digit same-speaker AudioMNIST sequences concatenated with 100, 200, or 500 ms silences, after temporal smoothing, low-rate resampling, or block shredding
+        data_status: source_corpora_public_derived_sequences_models_and_scores_unreleased
+        note: The paper reports 6,000 AudioMNIST and 2,552 Google Speech Commands test recordings and introduces exact and fuzzy digit recognition error rate. It does not publish the sampled sequence manifests, concatenated audio, oracle digit boundaries, trained informed models, bootstrap samples, or per-item predictions and scores.
+      - domain: read_speech_privacy_baseline
+        protocol: Informed transformer ASR models are fine-tuned on LibriSpeech train-clean-360 for each temporal-smoothing and resampling setting and evaluated on all of LibriSpeech test-clean; the original model is used for shredding
+        data_status: source_corpus_public_finetuned_models_and_evaluation_artifacts_unreleased
+        note: LibriSpeech and the base SpeechBrain ASR checkpoint are public, but the paper does not release its parameter-specific fine-tuned checkpoints, exact manifests, hypotheses, or evaluation records.
+    license:
+      paper: CC BY-NC-SA 4.0
+      evaluation_artifacts: not_specified_unreleased
+      code: Apache-2.0 for the cited PPCA repository
+      upstream: AudioMNIST, Google Speech Commands, LibriSpeech, SpeechBrain, and the pretrained ASR checkpoint retain their respective terms
+    sources:
+      - https://arxiv.org/abs/2607.21393
+      - https://arxiv.org/html/2607.21393v1#S2.SS1
+      - https://arxiv.org/html/2607.21393v1#S2.SS2
+      - https://arxiv.org/html/2607.21393v1#S2.SS3
+      - https://arxiv.org/html/2607.21393v1#S2.SS4
+      - https://github.com/ol-MEGA/ppca
+      - https://raw.githubusercontent.com/ol-MEGA/ppca/main/README.md
+      - https://raw.githubusercontent.com/ol-MEGA/ppca/main/LICENSE
+      - https://api.github.com/repos/ol-MEGA/ppca
+      - https://api.github.com/repos/ol-MEGA/ppca/git/trees/main?recursive=1
+    note: AudioMNIST, Google Speech Commands, and LibriSpeech are already indexed public source families. Although the paper calls its experimental framework public and cites PPCA, the current PPCA main tree contains general speech-privacy and SpeechBrain recipes but no paper-specific digit-sequence construction, digit-classifier training, obfuscation sweep, digit recognition error rate, or result-reproduction files. The derived informed-attacker evaluation is therefore recorded as a coverage audit rather than a duplicate benchmark family or new download helper.
+
   av_syncbench:
     paper: https://arxiv.org/abs/2607.00726
     sections: 2.1-2.3

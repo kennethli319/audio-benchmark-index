@@ -221,6 +221,18 @@ not release the custom speaker splits, trial lists, anonymized derivatives, or
 evaluation implementation. Licensed access to Fisher English therefore does
 not reproduce the paper's protocol.
 
+The July 2026 *From Read Speech to Spoken Digits* paper is recorded as a
+coverage audit over the already indexed AudioMNIST, Speech Commands, and
+LibriSpeech families. It evaluates isolated digits and constructed ten-digit
+sequences against informed ASR and digit-specific attackers under three
+obfuscation methods, but the cited
+[PPCA repository](https://github.com/ol-MEGA/ppca) currently provides only
+general speech-privacy and SpeechBrain recipes. It does not release the
+paper-specific sequence manifests, concatenated audio, oracle boundaries,
+trained informed models, digit-recognition evaluation code, or per-item
+scores. Public access to the three source corpora therefore does not reproduce
+the derived protocol, and no duplicate family or download helper is added.
+
 The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
 synchronization protocol, not a downloadable family. It describes 3,269
 in-the-wild videos and 38,390 temporal and semantic challenge samples, but the
