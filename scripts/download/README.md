@@ -99,6 +99,7 @@ scripts/download/seed_tts_eval.sh
 scripts/download/instruct_tts_eval.sh
 scripts/download/dialogs_ru.sh
 scripts/download/tts_multilingual_test_set.sh
+scripts/download/cn_news_tts_bench.sh
 scripts/download/rapidata_tts_preference.sh
 scripts/download/audio_alpaca.sh
 scripts/download/mmgenre.sh
@@ -498,6 +499,13 @@ CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh
 
 # TTS Multilingual Test Set downloads its official card by default; the ~7.3 MB snapshot is opt-in.
 TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_set.sh
+
+# CN-NewsTTS Bench downloads its public JSONL/schema/scorer/docs by default.
+# Small core/transcript archives are optional; generated TTS audio is ~2.17 GB
+# and requires acknowledging that provider/API terms may still apply.
+CN_NEWS_TTS_BENCH_DOWNLOAD_CORE=1 scripts/download/cn_news_tts_bench.sh
+CN_NEWS_TTS_BENCH_DOWNLOAD_TRANSCRIPTS=1 scripts/download/cn_news_tts_bench.sh
+CN_NEWS_TTS_BENCH_ACK_PROVIDER_TERMS=1 CN_NEWS_TTS_BENCH_DOWNLOAD_AUDIO=1 scripts/download/cn_news_tts_bench.sh
 
 # AV-SpeakerBench downloads official docs by default; the approximately 123 GB HF snapshot is opt-in.
 AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh

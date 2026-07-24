@@ -5322,6 +5322,65 @@ benchmarks:
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5
 
+  - id: cn_news_tts_bench
+    name: CN-NewsTTS Bench
+    full_name: "CN-NewsTTS Bench: A Target-Level Automatic Benchmark for Raw-Input Chinese News TTS Pronunciation"
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - chinese_text_to_speech_evaluation
+      - pronunciation_accuracy_evaluation
+      - text_normalization_evaluation
+      - target_level_error_analysis
+      - asr_based_speech_evaluation
+    official:
+      repo: https://github.com/Jayden-X-L/cn-news-tts-bench
+      paper: https://arxiv.org/abs/2606.24714
+      archive: https://doi.org/10.5281/zenodo.20822327
+      leaderboard: https://jayden-x-l.github.io/cn-news-tts-bench/
+    download:
+      primary:
+        - https://github.com/Jayden-X-L/cn-news-tts-bench
+        - https://zenodo.org/records/20822327
+      examples:
+        - 'scripts/download/cn_news_tts_bench.sh'
+        - 'CN_NEWS_TTS_BENCH_DOWNLOAD_CORE=1 scripts/download/cn_news_tts_bench.sh'
+        - 'CN_NEWS_TTS_BENCH_DOWNLOAD_TRANSCRIPTS=1 scripts/download/cn_news_tts_bench.sh'
+        - 'CN_NEWS_TTS_BENCH_ACK_PROVIDER_TERMS=1 CN_NEWS_TTS_BENCH_DOWNLOAD_AUDIO=1 scripts/download/cn_news_tts_bench.sh'
+      notes: >-
+        The public v0.1 release contains 200 development records and 800
+        public-test records with 1,240 auto-evaluable pronunciation targets,
+        fixed transcripts from a three-ASR ensemble, target-level scoring
+        code, and results for seven TTS products. The helper downloads official
+        documentation, licenses, Zenodo metadata, the two small JSONL benchmark
+        splits, schema, scorer, and checksums by default. The approximately
+        1.58 MB core archive and 1.72 MB full-transcript archive are separate
+        opt-ins. The approximately 425 MB development-audio and 1.74 GB
+        public-test-audio archives require explicit provider-terms
+        acknowledgement and opt-in.
+    license:
+      data: cc-by-4.0
+      code: MIT
+      notes: >-
+        CC BY 4.0 covers benchmark data, fixed ASR transcripts, results,
+        documentation, and metadata; MIT covers repository code. The Zenodo
+        audio consists of generated outputs from seven commercial TTS
+        providers and is published as an evaluation artifact. The maintainers
+        warn that reuse may remain subject to each provider or API's terms, so
+        do not treat those audio archives as unrestricted speech-training data
+        without a separate rights review.
+    sources:
+      - https://arxiv.org/abs/2606.24714
+      - https://arxiv.org/html/2606.24714v1#S2
+      - https://arxiv.org/html/2606.24714v1#S5
+      - https://github.com/Jayden-X-L/cn-news-tts-bench
+      - https://raw.githubusercontent.com/Jayden-X-L/cn-news-tts-bench/main/README.en.md
+      - https://raw.githubusercontent.com/Jayden-X-L/cn-news-tts-bench/main/LICENSE
+      - https://raw.githubusercontent.com/Jayden-X-L/cn-news-tts-bench/main/LICENSE-DATA.md
+      - https://api.github.com/repos/Jayden-X-L/cn-news-tts-bench
+      - https://doi.org/10.5281/zenodo.20822327
+      - https://zenodo.org/api/records/20822327
+
   - id: rapidata_tts_preference
     name: Text to Audio Human Preference Benchmark
     full_name: Rapidata Text to Audio Human Preference Benchmark
