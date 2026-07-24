@@ -1510,6 +1510,54 @@ paper_audits:
       access paths and helpers remain authoritative; no duplicate entry or
       invented paper-specific download is added.
 
+  cumsum_phase_transport_keyword_spotting:
+    paper: https://arxiv.org/abs/2607.20086
+    title: "Cumsum-Composable Phase Transport for Low-Cost Streaming Keyword Spotting"
+    sections: 3-4
+    status: audited_existing_coverage_protocol
+    evaluated_sets:
+      - cited_as: Google Speech Commands v2
+        index_id: speech_commands
+        status: public
+        note: >-
+          All experiments use one-second 16 kHz clips and the conventional
+          12-class setup: ten target commands plus unknown and silence.
+          Unknown examples are subsampled to the average target-class count,
+          while silence examples are generated from the corpus background-noise
+          clips.
+    protocol_note: >-
+      The paper reports single-seed clip-classification accuracy for compact
+      mel and raw-audio CNN baselines, fixed-frequency and tied cumsum models,
+      and a matched learned-decay scan baseline. Full local runs use about
+      36,000 training examples for 40 or 80 epochs. Although the architecture
+      has an exact online form, the paper explicitly evaluates clip
+      classification rather than continuous-stream false-accept, false-reject,
+      trigger-latency, or event-onset metrics.
+    release_audit:
+      status: no_paper_specific_release_identified
+      note: >-
+        The v1 paper and arXiv record provide no official project page,
+        repository, dataset card, configuration files, split manifest,
+        implementation, checkpoints, predictions, or score records. The public
+        Speech Commands v2 corpus and its existing helper remain the only
+        verifiable data release for this evaluation.
+    license:
+      paper: cc-by-4.0
+      code: not_specified_unreleased
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: Speech Commands v2 is CC BY 4.0
+    sources:
+      - https://arxiv.org/abs/2607.20086
+      - https://arxiv.org/html/2607.20086v1#S3
+      - https://arxiv.org/html/2607.20086v1#S4
+      - https://arxiv.org/abs/1804.03209
+      - https://www.tensorflow.org/datasets/catalog/speech_commands
+      - https://research.google/blog/launching-the-speech-commands-dataset/
+    note: >-
+      This work is recorded as a protocol audit over the already indexed
+      Speech Commands family, not as a new benchmark. No duplicate family or
+      paper-specific download helper is added.
+
 benchmarks:
   - id: mmau
     name: MMAU

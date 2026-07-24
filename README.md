@@ -479,6 +479,18 @@ caveats remain authoritative: IEMOCAP is request-gated, while MELD declares
 GPL-3.0 but contains Friends-derived media requiring separate rights review.
 No duplicate family or download helper is added.
 
+The July 2026 *Cumsum-Composable Phase Transport for Low-Cost Streaming
+Keyword Spotting* paper is recorded as a coverage audit over the already
+indexed Speech Commands v2 family. Sections 3-4 use one-second 16 kHz clips in
+the conventional 12-class setup, subsample the unknown class, synthesize
+silence from the corpus background-noise clips, and report single-seed
+clip-classification accuracy. Although the architecture has an exact online
+form, the paper does not evaluate continuous-stream trigger metrics and
+publishes no official code, configuration, split manifest, checkpoints,
+predictions, or score records. The public CC BY 4.0 Speech Commands release and
+its existing helper therefore remain authoritative; no duplicate family or
+paper-specific helper is added.
+
 ## Coverage
 
 Current coverage includes:
