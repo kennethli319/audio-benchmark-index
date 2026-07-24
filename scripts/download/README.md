@@ -232,6 +232,7 @@ scripts/download/diamond_benchmark.sh
 scripts/download/dns_challenge.sh
 scripts/download/ms_snsd.sh
 scripts/download/nisqa.sh
+scripts/download/bvcc.sh
 scripts/download/vctk.sh
 scripts/download/adqa_bench.sh
 scripts/download/clotho_moment.sh

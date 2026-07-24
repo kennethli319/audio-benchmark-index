@@ -186,6 +186,44 @@ paper_audits:
       - https://arxiv.org/html/2604.24401v1#S3.SS1
       - https://arxiv.org/html/2604.24401v1#S4
 
+  lalm_judge_protocol_shortcuts:
+    paper: https://arxiv.org/abs/2607.13477
+    title: Auditing Protocol-Level Shortcuts in Large Audio Language Model Judges for Speech Evaluation
+    sections: 3-5
+    status: audited_existing_and_new_public_coverage
+    evaluated_sets:
+      - cited_as: RAVDESS
+        index_id: ravdess
+        status: public_manual_download
+        note: The paper uses a balanced 240-clip subset plus clean/noisy, angry/neutral, and identical-clip pair controls.
+      - cited_as: FLEURS
+        index_id: fleurs
+        status: public
+        note: The language probes use up to 60 clips each for English, French, German, and Japanese.
+      - cited_as: BVCC
+        index_id: bvcc
+        status: public_mixed_component_access
+        note: The naturalness probe constructs 60 test-set pairs whose human-MOS gap is at least 1.0.
+      - cited_as: VoxCeleb1
+        index_id: voxceleb
+        status: public_registration_required
+        note: The speaker-similarity probe constructs 100 same-speaker/different-speaker triplets from the test split.
+    protocol_note: >-
+      The paper applies wrong-specialist-label, wrong-reference-placement, and
+      order-swapped pairwise probes to four existing corpora. BVCC was the only
+      missing public benchmark family and is now indexed from its official
+      VoiceMOS Challenge and Zenodo sources. The paper does not provide an
+      official repository, item manifests for its derived subsets, prompts,
+      model outputs, or evaluation code, so those derived protocol artifacts
+      are not represented as a separate downloadable benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.13477
+      - https://arxiv.org/html/2607.13477v1#S3
+      - https://arxiv.org/html/2607.13477v1#S4
+      - https://arxiv.org/html/2607.13477v1#S5
+      - https://voicemos-challenge-2022.github.io/
+      - https://zenodo.org/records/6572573
+
   qwen_audio_vae_technical_report:
     paper: https://arxiv.org/abs/2607.11738
     sections: 4.1-4.5
@@ -10249,6 +10287,70 @@ benchmarks:
       - https://api.github.com/repos/voicemos-challenge/vmc2026-baselines
       - https://arxiv.org/abs/2601.13531
       - https://arxiv.org/abs/2603.14328
+
+  - id: bvcc
+    name: BVCC
+    full_name: "BVCC: VoiceMOS Challenge 2022 Main-Track Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speech_quality_assessment
+    tasks:
+      - mean_opinion_score_prediction
+      - synthetic_speech_naturalness_assessment
+      - voice_conversion_quality_assessment
+      - text_to_speech_quality_assessment
+      - out_of_domain_mos_prediction
+    official:
+      homepage: https://voicemos-challenge-2022.github.io/
+      dataset: https://zenodo.org/records/6572573
+      doi: https://doi.org/10.5281/zenodo.6572573
+      challenge_paper: https://arxiv.org/abs/2203.11389
+      bvcc_paper: https://arxiv.org/abs/2105.02373
+      recent_evaluation: https://arxiv.org/abs/2607.13477
+    download:
+      primary:
+        - https://zenodo.org/records/6572573
+        - https://zenodo.org/api/records/6572573
+        - https://zenodo.org/api/records/6572573/files/main.tar.gz/content
+        - https://zenodo.org/api/records/6572573/files/ood.tar.gz/content
+        - https://zenodo.org/api/records/6572573/files/scoring_program_distribute.tar.gz/content
+      examples:
+        - 'scripts/download/bvcc.sh'
+        - 'BVCC_DOWNLOAD_MAIN=1 scripts/download/bvcc.sh'
+        - 'BVCC_DOWNLOAD_OOD=1 BVCC_DOWNLOAD_SCORING=1 scripts/download/bvcc.sh'
+      notes: >-
+        The public VoiceMOS Challenge 2022 release provides unified MOS ratings
+        and official train, development, and test splits for synthetic speech
+        from past Voice Conversion and Blizzard Challenges plus ESPnet-TTS.
+        The helper downloads official pages and Zenodo metadata by default.
+        The approximately 273.4 MiB main-track archive, small out-of-domain
+        package, and scoring package are separate opt-ins. Blizzard audio is
+        intentionally absent from the archive; official scripts require users
+        to obtain and preprocess that material under its original access terms.
+        Section 4.2 of arXiv:2607.13477 constructs 60 BVCC test-set pairs with
+        a human-MOS gap of at least 1.0 for its naturalness probe, but does not
+        release the selected pair manifest.
+    license:
+      data: other_open_mixed_upstream_terms
+      code: not_separately_specified
+      notes: >-
+        Zenodo labels the release Other (Open), not a standard reusable data
+        license. Its record explicitly prohibits redistribution of Blizzard
+        Challenge samples and omits those files; Voice Conversion Challenge and
+        ESPnet-TTS components retain their own terms. Treat ratings, metadata,
+        audio, and scripts according to their component provenance, and do not
+        infer broad redistribution or commercial rights from public access.
+    sources:
+      - https://voicemos-challenge-2022.github.io/
+      - https://github.com/VoiceMOS-Challenge-2022/VoiceMOS-Challenge-2022.github.io
+      - https://raw.githubusercontent.com/VoiceMOS-Challenge-2022/VoiceMOS-Challenge-2022.github.io/main/index.md
+      - https://zenodo.org/records/6572573
+      - https://zenodo.org/api/records/6572573
+      - https://doi.org/10.5281/zenodo.6572573
+      - https://arxiv.org/abs/2203.11389
+      - https://www.isca-archive.org/interspeech_2022/huang22f_interspeech.html
+      - https://arxiv.org/abs/2105.02373
+      - https://arxiv.org/abs/2607.13477
+      - https://arxiv.org/html/2607.13477v1#S4.SS2
 
   - id: asvspoof_2015
     name: ASVspoof 2015
