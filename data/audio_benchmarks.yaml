@@ -236,6 +236,51 @@ paper_audits:
       - https://www.openslr.org/12
       - https://github.com/facebookresearch/voxpopuli
 
+  generalizable_cognitive_impairment_detection:
+    paper: https://arxiv.org/abs/2607.21496
+    sections: 2.1 and 3.1-3.5
+    status: audited_existing_restricted_coverage
+    evaluated_sets:
+      - cited_as: ADReSS20
+        index_id: adress_challenges
+        status: application_required_clinical_data
+        note: >-
+          The paper retains only the full enhanced audio rather than ADReSS20's
+          manual transcripts or normalized segments, and generates transcripts
+          with one ASR pipeline for both challenge releases.
+      - cited_as: ADReSSo21
+        index_id: adress_challenges
+        status: application_required_clinical_data
+        note: >-
+          The paper uses the official audio-only training and test splits for
+          cognitive-impairment classification. ADReSSo's longitudinal
+          cognitive-decline task is part of the indexed family but is not the
+          target of this paper's reported experiments.
+    protocol_note: >-
+      Section 3.1 defines two evaluations: a combined setting that merges the
+      official ADReSS20 and ADReSSo21 training splits and separately merges
+      their test splits, and a cross-dataset setting that trains on one
+      challenge's training split and tests directly on the other's test split.
+      The combined setting contains 274 training participants and 119 test
+      participants. Both releases were already covered by adress_challenges,
+      so this audit adds protocol provenance without creating a duplicate
+      benchmark family.
+    license_note: >-
+      The paper calls ADReSS20 and ADReSSo21 publicly available, but the
+      official DementiaBank pages require approved consortium membership and
+      password-protected clinical-data handling. TalkBank's non-commercial,
+      no-LLM-incorporation, confidentiality, and no-sharing rules remain in
+      force; the paper does not provide an alternate public data release.
+    sources:
+      - https://arxiv.org/abs/2607.21496
+      - https://export.arxiv.org/e-print/2607.21496v1
+      - https://talkbank.org/dementia/ADReSS-2020/
+      - https://talkbank.org/dementia/ADReSSo-2021/
+      - https://talkbank.org/dementia/
+      - https://talkbank.org/0share/rules.html
+      - https://arxiv.org/abs/2004.06833
+      - https://arxiv.org/abs/2104.09356
+
   x3_opd_audio_reasoning:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4

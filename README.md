@@ -174,6 +174,15 @@ currently contains only a README and MIT license and says code will be released
 later; its demo's ten selected ADReSS examples are qualitative model outputs,
 not a reusable evaluation package or a new clinical-data download path.
 
+The July 2026 speech-based cognitive-impairment paper is also recorded as an
+existing-coverage audit. It uses the indexed ADReSS20 and ADReSSo21 releases in
+both a merged train/test setting and a cross-dataset generalization setting,
+retaining only full enhanced audio and generating transcripts through a common
+ASR pipeline. Although the paper calls the benchmarks publicly available, the
+official DementiaBank release remains password protected and limited to
+approved members under non-commercial, confidentiality, no-sharing, and
+no-LLM-incorporation rules; the paper supplies no alternate public download.
+
 The April 2026 CAST paper is recorded as an audited speech-generation protocol,
 not a downloadable family. It defines 113 contrastive context pairs (226
 textual items) for testing whether TTS systems realize discourse-conditioned
