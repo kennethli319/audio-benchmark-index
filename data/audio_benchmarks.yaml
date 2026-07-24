@@ -1536,7 +1536,7 @@ paper_audits:
       - domain: structured_audio_captioning
         protocol: 499 AudioCards clips across 57 UCS categories and 136 subcategories, evaluated over 15 semantic, descriptive, reasoning, numeric, and spectral fields
         data_status: source_dataset_public_augmented_subset_unreleased
-        note: The paper augments 11 AudioCards fields with integrated loudness, median fundamental frequency, active onset/offset bounds, and a ten-band frequency profile. It does not publish the selected clip manifest, computed measurements, structured targets, prompts, or evaluation implementation.
+        note: Table 1 uses ten fields present in the public AudioCards CSV (five tag sets, three descriptions, cause, and effect), then adds five unreleased targets—integrated loudness, median fundamental frequency, active onset, active offset, and a ten-band frequency profile—for 15 fields total. The prose groups onset/offset as one measurement and describes 11 source fields, but the table and released CSV support the 10+5 accounting. The paper does not publish the computed measurements, prompts, or evaluation implementation.
       - domain: structured_caption_metric_validation
         protocol: Controlled meaning-preserving paraphrases and typed semantic, reasoning, numeric, temporal, and spectral perturbations at graded severities
         data_status: perturbation_artifacts_and_score_records_unreleased
@@ -9550,9 +9550,10 @@ benchmarks:
         released CSV currently has 499 data rows. Pair its filename column with
         the separately downloaded Adobe Audition Sound Effects library to
         reproduce ASFx Eval. The July 2026 evaluation-framework paper uses 499
-        clips and adds four computed acoustic targets, but says that augmented
-        dataset "will" be released; those LUFS, pitch, active-event, and
-        frequency-profile annotations are not part of the current Zenodo file.
+        clips. Its Table 1 selects ten released semantic fields and adds five
+        computed acoustic targets (LUFS, pitch, onset, offset, and a frequency
+        profile), but says that augmented dataset "will" be released; those
+        five acoustic annotations are not part of the current Zenodo file.
         The helper safely downloads the record metadata, project page, papers,
         Adobe landing page, and approximately 323 KB annotation CSV; it does
         not download the Adobe audio archives.
