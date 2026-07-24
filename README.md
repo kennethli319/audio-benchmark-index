@@ -94,6 +94,13 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 ReMo token-compression paper is also fully inventoried in the
+source YAML. All five evaluation families were already indexed: WorldSense,
+DailyOmni, Video-MME, OmniVideoBench, and the video-SALMONN 2 caption
+benchmark. The audit preserves the paper's under-one-minute filtering of
+long-video question-answer pairs rather than presenting those filtered rows as
+a separately released benchmark.
+
 Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
 bilingual text-to-music, two cover-song reference, and bilingual rendering
 sets are internal and unreleased. The public exception is the

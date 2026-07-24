@@ -152,6 +152,40 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  remo_omni_llm_token_compression:
+    paper: https://arxiv.org/abs/2607.21179
+    sections: 5.1 and Appendix A.4
+    status: audited_existing_coverage
+    evaluated_sets:
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: public
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: public
+      - cited_as: Video-MME
+        index_id: video_mme
+        status: public_restricted_terms
+      - cited_as: OmniVideoBench
+        index_id: omnivideobench
+        status: public_gated_restricted_terms
+      - cited_as: video-SALMONN2 test set
+        index_id: video_salmonn2_caption
+        status: public
+    protocol_note: >-
+      Section 5.1 evaluates four audio-visual understanding sets and the
+      video-SALMONN 2 caption benchmark. For long-video benchmarks, the paper
+      keeps only question-answer pairs whose videos are under one minute
+      because full-token inference on the complete sets exceeds available
+      memory. Appendix A.4 additionally evaluates Qwen3-Omni-30B on the four
+      understanding sets. This audit maps the paper's names to existing index
+      families and does not treat the paper's filtered subsets as separately
+      released benchmarks.
+    sources:
+      - https://arxiv.org/abs/2607.21179
+      - https://arxiv.org/html/2607.21179v1#S5.SS1
+      - https://arxiv.org/html/2607.21179v1#A4
+
   qwen_music_technical_report:
     paper: https://arxiv.org/abs/2607.11699
     sections: 4.1-4.2
