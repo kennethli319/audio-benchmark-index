@@ -387,6 +387,17 @@ human annotations, or data license. The linked
 corpus is only an upstream input to some synthetic conversations and is not an
 Instruct-FD release.
 
+The July 2026 StemFX paper is recorded as a mixing-style representation
+protocol over the existing FMA and MUSDB18 families rather than a new benchmark
+dataset. It trains on source-separated, randomly effect-augmented FMA and
+evaluates retrieval and style transfer on balanced ten-second MUSDB18 windows.
+The official [StemFX repository](https://github.com/barry-mir/stemfx) releases
+MIT-licensed model code, weights, and evaluation entry points, but expects
+locally prepared derived directories and does not publish the exact selected
+windows, paired FX audio, effect seeds or chains, listener responses, or score
+records. The existing FMA and MUSDB18 access paths and their upstream license
+constraints therefore remain authoritative.
+
 The July 2026 artifact-specific speech-deepfake paper is recorded once as a
 coverage audit rather than a new benchmark family. Section 4.1 uses ASVspoof
 2015 only for selected calibration attacks, then draws training or held-out

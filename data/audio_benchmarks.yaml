@@ -1970,6 +1970,62 @@ paper_audits:
       - https://catalog.ldc.upenn.edu/LDC93S6A
     note: TF-MossFormer introduces a model rather than a new benchmark. Its experiments and ablations use only the established WSJ0-2Mix family already indexed below, so no duplicate dataset entry or model-specific helper is added. The paper does not release a new mixture manifest or relax the licensing of the underlying LDC WSJ0 speech.
 
+  stemfx_mixing_style_evaluation:
+    paper: https://arxiv.org/abs/2607.15634
+    title: "StemFX: Learning Mixing Style Representations via Autoregressive FX Chain Prediction on Source-Separated Stems"
+    sections: 3-4
+    status: audited_existing_coverage_public_code_derived_evaluation_unreleased
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: FMA
+        index_id: fma
+        status: public_mixed_per_track_licenses
+        role: training_source
+        note: >-
+          Section 3 applies source separation and random one-to-ten-effect
+          chains to about 105,000 FMA songs. These generated pseudo-stems and
+          paired Sep-Aug training artifacts are not distributed by StemFX.
+      - cited_as: MUSDB18
+        index_id: musdb18
+        status: public_noncommercial
+        role: evaluation_source
+        note: >-
+          Section 4 selects one balanced ten-second window per track, performs
+          FX normalization, and constructs out-of-domain pedalboard effect
+          chains for mixing-style retrieval and transfer evaluation.
+    protocol_note: >-
+      Retrieval uses augmented MUSDB18 stem sets and a 500-candidate pool,
+      reporting Top-1, Top-5, Top-10, and mean reciprocal rank across chain
+      lengths one through eight. Style transfer uses 20 synthetic MUSDB18
+      pairs, 20 real-mix examples, multi-resolution STFT loss, runtime, and a
+      20-listener MUSHRA-style similarity study. The public repository provides
+      model code, weights, training/evaluation entry points, and an MIT license,
+      but its README expects locally prepared MUSDB18_paired_fx_corrected_5,
+      MUSDB18_normalized, and MUSDB18_styled directories. It does not publish
+      those derived audio directories, exact selected-window manifest, effect
+      seeds/chains, listener responses, or score records.
+    license:
+      paper: CC BY 4.0
+      code: MIT
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: FMA audio retains per-track artist-selected licenses; MUSDB18 is restricted to educational and academic use with mixed source-track terms
+    sources:
+      - https://arxiv.org/abs/2607.15634
+      - https://arxiv.org/html/2607.15634v1#S3
+      - https://arxiv.org/html/2607.15634v1#S4
+      - https://github.com/barry-mir/stemfx
+      - https://raw.githubusercontent.com/barry-mir/stemfx/main/README.md
+      - https://raw.githubusercontent.com/barry-mir/stemfx/main/LICENSE
+      - https://huggingface.co/barry-mir/stemfx-bsfilm
+      - https://github.com/mdeff/fma
+      - https://sigsep.github.io/datasets/musdb.html
+    note: >-
+      StemFX is recorded as a reproducible model/protocol audit over two
+      existing dataset families, not as a new benchmark family. The existing
+      FMA and MUSDB18 helpers remain the authoritative data paths; neither
+      helper can reproduce the unreleased paper-specific derived evaluation
+      artifacts without additional implementation choices.
+
 benchmarks:
   - id: mmau
     name: MMAU
@@ -4296,6 +4352,7 @@ benchmarks:
       hq_zenodo: https://zenodo.org/records/3338373
       tools_repo: https://github.com/sigsep/sigsep-mus-db
       paper: https://arxiv.org/abs/1804.06267
+      recent_mixing_style_evaluation: https://arxiv.org/abs/2607.15634
     download:
       primary:
         - https://sigsep.github.io/datasets/musdb.html
@@ -4318,6 +4375,7 @@ benchmarks:
       - https://zenodo.org/records/3338373
       - https://github.com/sigsep/sigsep-mus-db
       - https://arxiv.org/abs/1804.06267
+      - https://arxiv.org/abs/2607.15634
 
   - id: medleydb
     name: MedleyDB
@@ -9825,6 +9883,7 @@ benchmarks:
       uci_record: https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
       metadata_archive: https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
       small_archive: https://os.unil.cloud.switch.ch/fma/fma_small.zip
+      recent_mixing_style_evaluation: https://arxiv.org/abs/2607.15634
     download:
       primary:
         - https://github.com/mdeff/fma
@@ -9848,6 +9907,7 @@ benchmarks:
       - https://raw.githubusercontent.com/mdeff/fma/master/LICENSE.txt
       - https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
       - https://arxiv.org/abs/1612.01840
+      - https://arxiv.org/abs/2607.15634
 
   - id: gtzan
     name: GTZAN
