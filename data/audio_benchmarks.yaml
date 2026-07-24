@@ -1156,24 +1156,34 @@ paper_audits:
 
   negeval_audio:
     paper: https://arxiv.org/abs/2607.12290
-    sections: 3, 5, and 6.4
+    title: "The Sound of Absence: Audio-Language Embedding Models Struggle with Negation"
+    sections: 3-6 and appendix A
     status: audited_not_indexed
     public_interfaces: []
     evaluated_domains:
-      - domain: audio_language_negation_understanding
+      - domain: negation_aware_audio_text_retrieval_and_multiple_choice
         protocol: Retrieval-Neg and four-option MCQ-Neg evaluations derived from the AudioCaps test split and Clotho evaluation split, with affirmation, negation, and hybrid MCQ conditions
-        data_status: no_public_release_found
-        note: The construction pipeline extracts present sound concepts, proposes contextually plausible absent concepts, verifies absence with Qwen2.5-Omni-7B, and uses Claude Opus 4.8 for text generation. A human audit of 460 automatically verified negative concepts across 200 sampled clips found 96.7% agreement.
+        data_status: source_datasets_public_derived_annotations_and_items_unreleased
+        note: The construction pipeline extracts present sound concepts, proposes contextually plausible absent concepts, verifies absence with Qwen2.5-Omni-7B, and uses Claude Opus 4.8 for text generation. A human audit of 460 automatically verified negative concepts across 200 sampled clips found 96.7% agreement, but the paper publishes no selected-item manifest, concepts, queries, MCQs, prompts, human judgments, or score records.
+      - domain: controlled_audio_negation_diagnostic
+        protocol: 1,000 ESC-50-derived target-distractor items sharing a base mixture and differing in whether a designated sound is present, with matched filler sounds from the same category group and similar loudness
+        data_status: source_dataset_public_derived_mixtures_and_manifest_unreleased
+        note: Section 6.4 and appendix A compare negated queries with affirmative, scope-swapped, bag-of-concepts, paraphrase, and content-swapped variants. The paper does not release the mixture recipes, selected source clips, random seeds, target-distractor audio, query variants, or per-item measurements.
     license:
       paper: arXiv perpetual non-exclusive license
-      benchmark_data: not_specified_unreleased
-      upstream: AudioCaps and Clotho data, caption, and source-media terms would apply to any future derived release
+      evaluation_artifacts: not_specified_unreleased
+      upstream: AudioCaps, Clotho, ESC-50, and their source-media terms remain applicable; public source corpora do not make the derived NegEval-Audio artifacts public
     sources:
+      - https://arxiv.org/abs/2607.12290
       - https://arxiv.org/html/2607.12290v1#S3
       - https://arxiv.org/html/2607.12290v1#S5
       - https://arxiv.org/html/2607.12290v1#S6.SS4
+      - https://arxiv.org/html/2607.12290v1#A1
       - https://export.arxiv.org/api/query?id_list=2607.12290
-    note: The v1 paper provides no official project, repository, dataset card, archive, derived query or MCQ files, concept annotations, prompts, or evaluation code. Public AudioCaps and Clotho source datasets do not make NegEval-Audio's generated and verified annotations public, so it is recorded as an audited protocol rather than a downloadable benchmark family.
+      - https://research.google.com/audiocaps/
+      - https://zenodo.org/records/4783391
+      - https://github.com/karolpiczak/ESC-50
+    note: Version 1 provides no official project page, repository, dataset card, archive, derived query or MCQ files, concept annotations, controlled mixtures, prompts, evaluation-code link, or standalone data-license statement. Public AudioCaps, Clotho, and ESC-50 source datasets do not make NegEval-Audio's derived artifacts public, so it remains an audited protocol rather than a downloadable benchmark family.
 
   production_oriented_sfx_evaluation:
     paper: https://arxiv.org/abs/2607.09973

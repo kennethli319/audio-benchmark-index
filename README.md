@@ -438,10 +438,12 @@ or evaluation code public.
 The July 2026 NegEval-Audio paper is recorded as an audited protocol rather
 than a downloadable family. It derives negation-aware retrieval and
 multiple-choice tasks from AudioCaps and Clotho and reports a 96.7% human
-agreement audit over 460 automatically verified negative concepts, but v1
-provides no official project, repository, dataset card, item files, prompts,
-or evaluation code. The public source datasets do not make NegEval-Audio's
-generated queries, options, concept annotations, or verified labels public.
+agreement audit over 460 automatically verified negative concepts. It also
+constructs 1,000 controlled ESC-50 target-distractor mixtures for a text-side
+diagnostic. Version 1 provides no official project, repository, dataset card,
+item files, concepts, queries, MCQs, prompts, human judgments, mixture recipes,
+derived audio, evaluation code, or score records. The public source datasets
+do not make or license NegEval-Audio's derived artifacts.
 
 The July 2026 *Production-Oriented Framework for Evaluation of SFX
 Generation* paper is likewise recorded as an audited protocol rather than a
