@@ -100,6 +100,7 @@ scripts/download/instruct_tts_eval.sh
 scripts/download/dialogs_ru.sh
 scripts/download/tts_multilingual_test_set.sh
 scripts/download/cn_news_tts_bench.sh
+scripts/download/podeval.sh
 scripts/download/rapidata_tts_preference.sh
 scripts/download/audio_alpaca.sh
 scripts/download/mmgenre.sh
@@ -506,6 +507,10 @@ TTS_MULTILINGUAL_TEST_SET_DOWNLOAD_HF=1 scripts/download/tts_multilingual_test_s
 CN_NEWS_TTS_BENCH_DOWNLOAD_CORE=1 scripts/download/cn_news_tts_bench.sh
 CN_NEWS_TTS_BENCH_DOWNLOAD_TRANSCRIPTS=1 scripts/download/cn_news_tts_bench.sh
 CN_NEWS_TTS_BENCH_ACK_PROVIDER_TERMS=1 CN_NEWS_TTS_BENCH_DOWNLOAD_AUDIO=1 scripts/download/cn_news_tts_bench.sh
+
+# PodEval downloads official docs and its 51-topic Real-Pod link manifest by default.
+# Cloning adds the MIT evaluation toolkit but does not download third-party podcast audio.
+PODEVAL_CLONE_REPO=1 scripts/download/podeval.sh
 
 # AV-SpeakerBench downloads official docs by default; the approximately 123 GB HF snapshot is opt-in.
 AV_SPEAKERBENCH_DOWNLOAD_HF=1 scripts/download/av_speakerbench.sh

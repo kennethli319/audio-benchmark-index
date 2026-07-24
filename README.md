@@ -19,8 +19,8 @@ distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
 egocentric smart-glasses speech recognition and understanding,
 music synthesis, song-aesthetics, music reward-model and compositional multimodal
-preference evaluation, full-song singing-quality assessment, and
-rhythm-game chart-generation evaluation, speech quality
+preference evaluation, full-song singing-quality assessment, long-form
+podcast-generation evaluation, and rhythm-game chart-generation evaluation, speech quality
 assessment, child-speech recognition, spatial audio localization, cross-modal audio-video-text retrieval,
 programmatic multimodal music-perception evaluation and atomic-event-based
 audio-visual caption completeness and hallucination evaluation,
@@ -62,7 +62,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 256 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 257 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -640,6 +640,7 @@ Current coverage includes:
 | [CV3-Eval](https://github.com/FunAudioLLM/CV3-Eval) | In-the-wild zero-shot and cross-lingual speech synthesis | Official CosyVoice 3 repository with multilingual, cross-lingual, emotion, expressive, continuation, and Chinese-accent subsets; Qwen3.5-Omni §5.2.3 calls its public cross-lingual subset the “Cross-Lingual benchmark” and reports 12 Chinese/English/Japanese/Korean directions; helper downloads docs by default and makes the roughly 760 MiB repository opt-in | Repository is Apache-2.0, but reference audio includes Common Voice, FLEURS, EmoBox, and web-crawled sources whose component rights require review |
 | [TTS Multilingual Test Set](https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set) | Multilingual and target-speaker speech synthesis | Public MiniMaxAI set with 100 texts and two Common Voice-derived speaker prompts for each of 24 languages; Qwen3-TTS uses a 10-language subset in §4.2.2 and §4.2.5; helper keeps the approximately 7.3 MB snapshot opt-in | Dataset card lists CC BY-SA 4.0; speaker prompts derive from CC0-1.0 Common Voice |
 | [CN-NewsTTS Bench](https://github.com/Jayden-X-L/cn-news-tts-bench) | Raw-input Chinese news TTS pronunciation and text-normalization evaluation | Public v0.1 release with 200 development and 800 test records, 1,240 auto-evaluable targets, fixed three-ASR transcripts, target-level scoring, and a reproducible leaderboard; helper downloads lightweight benchmark files by default while the roughly 2.17 GB generated-audio artifacts require explicit opt-in and provider-terms acknowledgement | Benchmark data/transcripts/results/docs are CC BY 4.0 and code is MIT; generated TTS audio may remain subject to the seven providers' API terms and should not be treated as unrestricted training data |
+| [PodEval](https://github.com/yujxx/PodEval) | Multimodal long-form podcast-generation evaluation | Public evaluation toolkit plus a Real-Pod reference manifest covering 51 topics across 17 categories; helper downloads docs and the lightweight manifest by default, while the MIT toolkit clone is opt-in and podcast recordings remain third-party links rather than redistributed data | Toolkit is MIT; no separate license is stated for the manifest, and linked podcast recordings retain creator, publisher, platform, voice, music, and other media rights |
 | [Text to Audio Human Preference Benchmark](https://huggingface.co/datasets/Rapidata/text-2-audio-human-preference-benchmark) | Human preference evaluation for synthesized speech | Public, ungated Rapidata metadata with 4,269 pairwise rows and about 32,000 friendliness/naturalness responses; helper saves official metadata by default and makes the approximately 0.8 MB snapshot opt-in | No license is declared; rows expose individual votes and annotator demographics, while referenced/generated-audio rights are also unspecified |
 | [Audio-Alpaca](https://huggingface.co/datasets/declare-lab/audio-alpaca) | Text-to-audio preference modeling and generation alignment | Public, ungated 15,025-pair synthetic corpus from AudioCaps-derived prompts and four construction strategies; Audio-Zero samples an unreleased 2,000-pair subset; helper downloads docs by default and makes the approximately 9.71 GB snapshot opt-in | HF declares Apache-2.0, while the linked Tango repository uses CC BY-NC-ND 4.0; apply the stricter interpretation pending clarification and review caption/generated-audio rights |
 | [MMGenre](https://fengjin1117.github.io/mmgenre-web/) | Multi-genre singing voice synthesis and genre alignment | Public, ungated [Leaky-ReLU/MMGenre](https://huggingface.co/datasets/Leaky-ReLU/MMGenre) with 3,152 Chinese audio-score segments spanning 10 genres and 26 subgenres; helper downloads docs/metadata by default and makes the approximately 5.54 GB snapshot opt-in | Dataset and repository declare CC BY 4.0; source music was generated with Suno V4.5, so review generation-service and generated-content terms independently |
@@ -1002,6 +1003,8 @@ Speech synthesis:
 ```bash
 scripts/download/seed_tts_eval.sh
 SEED_TTS_EVAL_CLONE_REPO=1 scripts/download/seed_tts_eval.sh
+scripts/download/podeval.sh
+PODEVAL_CLONE_REPO=1 scripts/download/podeval.sh
 scripts/download/libritts.sh
 LIBRITTS_DOWNLOAD_ARCHIVES=1 LIBRITTS_PARTS="dev-clean test-clean" scripts/download/libritts.sh
 scripts/download/ljspeech.sh

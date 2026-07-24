@@ -5381,6 +5381,64 @@ benchmarks:
       - https://doi.org/10.5281/zenodo.20822327
       - https://zenodo.org/api/records/20822327
 
+  - id: podeval
+    name: PodEval
+    full_name: "PodEval: A Multimodal Evaluation Framework for Podcast Audio Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_synthesis
+      - audio_generation
+      - long_form_audio
+      - speech_dialogue
+    tasks:
+      - podcast_generation_evaluation
+      - long_form_audio_generation_evaluation
+      - dialogue_naturalness_evaluation
+      - speech_quality_evaluation
+      - audio_quality_evaluation
+      - podcast_script_evaluation
+      - human_listening_evaluation
+    official:
+      repo: https://github.com/yujxx/PodEval
+      paper: https://arxiv.org/abs/2510.00485
+      dataset_manifest: https://github.com/yujxx/PodEval/blob/main/Real_Pod/Podcast_51topics.json
+    download:
+      primary:
+        - https://github.com/yujxx/PodEval
+      examples:
+        - 'scripts/download/podeval.sh'
+        - 'PODEVAL_CLONE_REPO=1 scripts/download/podeval.sh'
+      notes: >-
+        The public framework evaluates podcast generation across text, speech,
+        and audio using objective metrics, LLM-based judging, and structured
+        listening tests. Its Real-Pod reference manifest contains 51 topics
+        across 17 categories, with one publicly accessible Apple Podcasts
+        episode link per topic. The repository does not redistribute those
+        recordings. The helper downloads official documentation, the small
+        JSON manifest, license, repository metadata, and arXiv metadata by
+        default; cloning the approximately 12 MB MIT toolkit is opt-in and
+        still does not download podcast audio.
+    license:
+      data: not_specified_for_real_pod_manifest_and_linked_audio
+      code: MIT
+      notes: >-
+        The repository's MIT license covers the software and accompanying
+        documentation, but no separate data license is stated for the Real-Pod
+        manifest. The linked podcast recordings remain hosted by third parties
+        and retain creator, publisher, platform, voice, music, and other media
+        rights. The maintainers direct users to follow legal and ethical rules
+        and use the reference data for research and education; public links do
+        not grant redistribution or commercial-use rights.
+    sources:
+      - https://arxiv.org/abs/2510.00485
+      - https://arxiv.org/html/2510.00485v1
+      - https://github.com/yujxx/PodEval
+      - https://raw.githubusercontent.com/yujxx/PodEval/main/README.md
+      - https://raw.githubusercontent.com/yujxx/PodEval/main/Real_Pod/README.md
+      - https://raw.githubusercontent.com/yujxx/PodEval/main/Real_Pod/Podcast_51topics.json
+      - https://raw.githubusercontent.com/yujxx/PodEval/main/LICENSE
+      - https://api.github.com/repos/yujxx/PodEval
+
   - id: rapidata_tts_preference
     name: Text to Audio Human Preference Benchmark
     full_name: Rapidata Text to Audio Human Preference Benchmark
