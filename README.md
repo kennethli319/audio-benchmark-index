@@ -202,6 +202,15 @@ official repository, derived evaluation manifest, predictions, or score
 records. No duplicate family or paper-specific helper is added, and AVQA's
 non-commercial copying and redistribution restrictions remain in force.
 
+The July 2026 PolySim paper is also recorded as an existing-coverage audit.
+Its six-dataset cross-modal retrieval evaluation contains two audio-text
+families, AudioCaps and Clotho, both already indexed; MS-COCO, Flickr30K,
+MSR-VTT, and VATEX are image- or video-text datasets outside this audio
+index's scope. PolySim reports bidirectional retrieval and quantization
+experiments but releases no new benchmark data, so no duplicate family or
+paper-specific helper is added. AudioCaps still depends on externally hosted
+YouTube audio, and both corpora retain their original terms.
+
 The July 2026 diagnostic cover-song evaluation paper is recorded as a
 partial-release protocol rather than a downloadable benchmark family. Its
 official MIT repository publishes the 30-row expert-score table, anonymized

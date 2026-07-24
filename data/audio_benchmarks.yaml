@@ -555,6 +555,48 @@ paper_audits:
       - https://arxiv.org/html/2607.21179v1#S5.SS1
       - https://arxiv.org/html/2607.21179v1#A4
 
+  polysim_cross_modal_retrieval:
+    paper: https://arxiv.org/abs/2607.20358
+    title: "PolySim: Deterministic Polynomial Surrogates for Cross-Modal Retrieval on CiM"
+    sections: 4.1-4.5
+    status: audited_existing_audio_coverage
+    evaluated_sets:
+      - cited_as: AudioCaps
+        index_id: audiocaps
+        status: public_annotations_source_audio_external
+        note: >-
+          The paper reports bidirectional text-to-audio and audio-to-text
+          retrieval with CLAP-HTSAT and CLAP-Large backbones.
+      - cited_as: Clotho
+        index_id: clotho
+        status: public
+        note: >-
+          The paper reports the same bidirectional retrieval protocol and also
+          includes Clotho in its post-training-quantization comparison.
+    out_of_scope_sets:
+      - MS-COCO
+      - Flickr30K
+      - MSR-VTT
+      - VATEX
+    protocol_note: >-
+      Section 4.1 evaluates six cross-modal retrieval datasets: two image-text,
+      two video-text, and the two audio-text families mapped above. The four
+      non-audio datasets are recorded for completeness but remain outside this
+      audio index. AudioCaps and Clotho were already indexed, so this audit
+      adds exact retrieval provenance without creating duplicate families or
+      a paper-specific download helper.
+    license_note: >-
+      PolySim does not release a new benchmark dataset or re-license the
+      underlying corpora. AudioCaps annotations are CC BY 4.0 while its
+      referenced YouTube audio remains externally hosted and subject to source
+      rights; Clotho retains the terms of its official Zenodo releases.
+    sources:
+      - https://arxiv.org/abs/2607.20358
+      - https://arxiv.org/html/2607.20358v1#S4.SS1
+      - https://arxiv.org/html/2607.20358v1#S4.SS5
+      - https://github.com/cdjkim/audiocaps
+      - https://zenodo.org/records/4783391
+
   s3bench_text_to_audio_generation:
     paper: https://arxiv.org/abs/2607.13408
     sections: 3.5, 4.1-4.2, and 5.2
