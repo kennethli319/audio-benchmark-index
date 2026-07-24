@@ -152,6 +152,73 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  wansong_v1_evaluation:
+    paper: https://arxiv.org/abs/2607.14749
+    title: "WanSong v1.0 Technical Report"
+    sections: 4.1-4.2
+    status: audited_mixed_existing_public_family_and_internal_unreleased_protocols
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: wan-song music benchmark
+        index_id: null
+        status: internal_unreleased
+        role: vae_reconstruction_evaluation
+        note: >-
+          Section 4.1 describes 200 randomly held-out clips from the internal
+          Wan-song corpus. It provides no clip manifest, audio release, or
+          stable dataset link.
+      - cited_as: SeedTTS speech benchmark
+        index_id: seed_tts_eval
+        status: public_family_unreleased_sample_selection
+        role: vae_reconstruction_evaluation
+        note: >-
+          Section 4.1 says 2,000 clips were randomly sampled from SeedTTS but
+          does not identify the exact rows, seed, or whether its spelling maps
+          to the complete public objective set. The indexed official Seed-TTS
+          Eval release remains the only verifiable public source.
+      - cited_as: WanSong Bench
+        index_id: null
+        status: internal_unreleased
+        role: long_form_song_generation_evaluation
+        note: >-
+          Section 4.2 describes 200 approximately four-minute cases spanning
+          Chinese, English, Japanese, Korean, and more than ten top-level music
+          genres. It releases no prompts, reference or generated audio,
+          per-item outputs, annotations, or score records.
+      - cited_as: 90s-bench
+        index_id: null
+        status: internal_unreleased
+        role: token_compression_ablation
+        note: >-
+          Section 4.2 reports only aggregate PER and expert quality scores for
+          three VAE configurations and does not describe or release the test
+          cases or assessor records.
+    protocol_note: >-
+      WanSong Bench is scored with pronunciation error rate, the indexed public
+      SongEval evaluator, SongBench, MuQ text alignment, AudioBox-Aesthetic,
+      and an internal musicality model trained on 80,000 human-annotated songs.
+      The report does not release the 200-case benchmark or internal evaluator.
+      Its SongEval, SongBench, MuQ, and AudioBox citations are unresolved in the
+      rendered v3 bibliography, so those names do not establish additional
+      benchmark-data provenance. This audit does not count WanSong Bench as a
+      public benchmark family and does not add a download helper.
+    license:
+      paper: arXiv_perpetual_non_exclusive
+      benchmark_data: not_specified_unreleased
+      evaluation_code: not_specified_unreleased
+      generated_outputs: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.14749
+      - https://arxiv.org/html/2607.14749v3#S4.SS1
+      - https://arxiv.org/html/2607.14749v3#S4.SS2
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://huggingface.co/datasets/ASLP-lab/SongEval
+    note: >-
+      WanSong v1.0 introduces a generation model and unreleased evaluation
+      protocols, not a downloadable benchmark dataset. Public Seed-TTS Eval and
+      SongEval availability does not make the paper's random SeedTTS selection,
+      generated comparison outputs, or WanSong Bench cases public.
+
   all_that_glitters_audio_reliance:
     paper: https://arxiv.org/abs/2604.24401
     title: "All That Glitters Is Not Audio: Rethinking Text Priors and Audio Reliance in Audio-Language Evaluation"
@@ -5668,6 +5735,7 @@ benchmarks:
       paper: https://arxiv.org/abs/2406.02430
       project: https://bytedancespeech.github.io/seedtts_tech_report
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2
+      recent_codec_evaluation: https://arxiv.org/abs/2607.14749
     download:
       primary:
         - https://github.com/BytedanceSpeech/seed-tts-eval
@@ -5689,6 +5757,8 @@ benchmarks:
       - https://arxiv.org/html/2406.02430v1#S3.SS1
       - https://arxiv.org/abs/2601.15621
       - https://arxiv.org/html/2601.15621v1#S4.SS2
+      - https://arxiv.org/abs/2607.14749
+      - https://arxiv.org/html/2607.14749v3#S4.SS1
 
   - id: instruct_tts_eval
     name: InstructTTSEval
@@ -12200,6 +12270,7 @@ benchmarks:
       dataset: https://huggingface.co/datasets/ASLP-lab/SongEval
       repo: https://github.com/ASLP-lab/SongEval
       recent_evaluation: https://arxiv.org/abs/2607.20253
+      recent_wansong_evaluation: https://arxiv.org/abs/2607.14749
     download:
       primary:
         - https://huggingface.co/datasets/ASLP-lab/SongEval
@@ -12240,6 +12311,8 @@ benchmarks:
       - https://api.github.com/repos/ASLP-lab/SongEval
       - https://arxiv.org/abs/2607.20253
       - https://arxiv.org/html/2607.20253v2#S3.SS2
+      - https://arxiv.org/abs/2607.14749
+      - https://arxiv.org/html/2607.14749v3#S4.SS2
 
   - id: singmos_pro
     name: SingMOS-Pro

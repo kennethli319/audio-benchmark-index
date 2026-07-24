@@ -103,6 +103,18 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 WanSong v1.0 report is recorded as a mixed
+existing-coverage/internal-protocol audit rather than a benchmark addition.
+Section 4.1 randomly samples 2,000 clips from the public Seed-TTS family but
+does not publish the row selection, and its 200-clip Wan-song reconstruction
+set is internal. Section 4.2's WanSong Bench, 90s-bench, generated comparison
+audio, internal 80,000-song musicality evaluator, and score records are also
+unreleased. SongEval maps to the existing public family; its availability does
+not make the report's 200 four-minute multilingual cases public. The rendered
+v3 report leaves its SongEval, SongBench, MuQ, and AudioBox citations
+unresolved, so the index does not infer additional dataset links from those
+names.
+
 The July 2026 Auto-AEG paper's AEGBench is recorded as an announced
 open-vocabulary audio-event-grounding protocol rather than a downloadable
 family. The paper reports 3,427 human-verified items and 9,790 temporal queries,
