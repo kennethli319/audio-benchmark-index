@@ -116,6 +116,15 @@ and aggregate results, but not the complete prompt manifest or evaluation
 assets; the linked GitHub repository is not public, and no data or demo license
 is stated.
 
+The June 2026 CASU paper is likewise recorded as an audited protocol rather
+than a downloadable family. It describes semi-synthetic scenes combining
+speech, discrete events, and background ambience for scene description and
+four context-aware reasoning tasks, but version 1 provides no project,
+repository, dataset card, item manifest, archive, code, or download link. Its
+promised Appendix A.1 statistics and appendix examples are also absent from the
+arXiv HTML and source package, so the index does not infer a benchmark size or
+license absent evaluation assets.
+
 Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
 bilingual text-to-music, two cover-song reference, and bilingual rendering
 sets are internal and unreleased. The public exception is the

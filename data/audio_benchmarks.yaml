@@ -252,6 +252,44 @@ paper_audits:
       - https://kuan2jiu99.github.io/allm-feedback-tta/evaluation-results/metrics-data-S3Bench.json
       - https://api.github.com/repos/kuan2jiu99/allm-feedback-tta
 
+  casu_context_aware_auditory_scene_understanding:
+    paper: https://arxiv.org/abs/2606.25391
+    sections: 2.1-2.2, 3, and 7
+    status: audited_not_indexed_no_public_release
+    evaluated_sets:
+      - cited_as: CASU
+        index_id: null
+        status: described_unreleased
+        note: >-
+          The paper describes semi-synthetic audio scenes under 30 seconds
+          that combine Zonos speech conditioned on People's Speech speaker
+          embeddings with Clotho background recordings and ARCA23K events.
+          It evaluates scene description plus four-option contextual
+          reasoning, entity extraction, role inference, and counterfactual
+          reasoning questions. Version 1 provides no dataset archive, item
+          manifest, project page, repository, dataset card, or download link.
+    protocol_note: >-
+      CASU tests whether audio-language models integrate speech, discrete
+      events, and background ambience rather than treating those layers
+      independently. The paper says candidate questions are filtered by
+      multiple LLM critics and then by humans, but its promised Appendix A.1
+      dataset statistics and appendix examples are absent from the v1 HTML
+      and source package. This audit therefore does not infer a benchmark size
+      or count CASU as a downloadable family.
+    license_note: >-
+      The paper is CC BY 4.0, but that license does not release absent CASU
+      audio, questions, annotations, scripts, or evaluation code. The derived
+      audio also incorporates Clotho, ARCA23K, People's Speech, and
+      Zonos-generated material whose upstream terms would need to be preserved
+      in any future release.
+    sources:
+      - https://arxiv.org/abs/2606.25391
+      - https://arxiv.org/html/2606.25391v1#S2.SS1
+      - https://arxiv.org/html/2606.25391v1#S2.SS2
+      - https://arxiv.org/html/2606.25391v1#S3
+      - https://arxiv.org/html/2606.25391v1#S7
+      - https://export.arxiv.org/e-print/2606.25391v1
+
   qwen_music_technical_report:
     paper: https://arxiv.org/abs/2607.11699
     sections: 4.1-4.2
