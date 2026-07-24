@@ -1270,6 +1270,7 @@ paper_audits:
 
   spoken_digit_privacy_informed_attackers:
     paper: https://arxiv.org/abs/2607.21393
+    title: "From Read Speech to Spoken Digits: A Task-Specific Evaluation of Speech Privacy With Informed Attackers"
     sections: 2.1-2.4
     status: audited_existing_source_corpora
     public_interfaces:
@@ -1294,6 +1295,7 @@ paper_audits:
       - https://arxiv.org/html/2607.21393v1#S2.SS2
       - https://arxiv.org/html/2607.21393v1#S2.SS3
       - https://arxiv.org/html/2607.21393v1#S2.SS4
+      - https://arxiv.org/html/2607.21393v1#S3
       - https://github.com/ol-MEGA/ppca
       - https://raw.githubusercontent.com/ol-MEGA/ppca/main/README.md
       - https://raw.githubusercontent.com/ol-MEGA/ppca/main/LICENSE
@@ -1827,63 +1829,6 @@ paper_audits:
       - https://arxiv.org/html/2607.10229v1#S4
       - https://anonymous.4open.science/r/RaagBase-5427/
     note: RaagBase is recorded as an audited symbolic-music classification protocol rather than an indexed benchmark family. Its only claimed release is unavailable, so the paper's 116 examples, exact CSV schema, split or evaluation implementation, and data terms cannot be independently verified; no download helper is added.
-
-  informed_spoken_digit_privacy:
-    paper: https://arxiv.org/abs/2607.21393
-    title: "From Read Speech to Spoken Digits: A Task-Specific Evaluation of Speech Privacy With Informed Attackers"
-    sections: 2-3
-    status: audited_existing_coverage_protocol
-    evaluated_sets:
-      - cited_as: AudioMNIST
-        index_id: audiomnist
-        status: public
-        note: The paper reports 6,000 test recordings from the indexed 30,000-recording corpus and also constructs ten-digit same-speaker sequences with 100, 200, or 500 ms of inserted silence.
-      - cited_as: Google Speech Commands digits (v0.0.1)
-        index_id: speech_commands
-        status: public
-        note: The paper uses the zero-to-nine subset, reporting 23,666 total recordings from 1,847 speakers and 2,552 test recordings.
-      - cited_as: LibriSpeech train-clean-360 / test-clean
-        index_id: librispeech
-        status: public
-        note: Train-clean-360 is used to fine-tune informed ASR attackers, while test-clean supplies the read-speech WER baseline.
-    protocol_note: >-
-      The paper evaluates temporal smoothing, low-rate resampling, and block
-      shredding against informed general-purpose ASR and digit-specific DNN
-      attackers. It introduces digit recognition error rate and tests both
-      isolated digits and AudioMNIST-derived ten-digit sequences with oracle
-      boundaries. These derived sequences, obfuscated variants, split
-      manifests, model checkpoints, hypotheses, and score records are not a
-      separately released benchmark dataset.
-    release_audit:
-      claimed_code: https://github.com/ol-MEGA/ppca
-      status: general_framework_public_paper_specific_artifacts_unreleased
-      note: >-
-        The paper links the Apache-2.0 PPCA repository for its experimental
-        framework. At the repository's reviewed main revision, the tree
-        contains general SpeechBrain-based privacy pipelines and upstream
-        Google Speech Commands and LibriSpeech recipes, but no AudioMNIST
-        recipe, spoken-digit concatenation code, paper-specific configuration,
-        manifest, model, or results package.
-    license:
-      paper: cc-by-nc-sa-4.0
-      code: Apache-2.0
-      derived_evaluation_artifacts: not_specified_unreleased
-      upstream: AudioMNIST repository is MIT; Speech Commands and LibriSpeech are CC BY 4.0
-    sources:
-      - https://arxiv.org/abs/2607.21393
-      - https://arxiv.org/html/2607.21393v1#S2
-      - https://arxiv.org/html/2607.21393v1#S2.SS3
-      - https://arxiv.org/html/2607.21393v1#S3
-      - https://github.com/ol-MEGA/ppca
-      - https://raw.githubusercontent.com/ol-MEGA/ppca/main/README.md
-      - https://raw.githubusercontent.com/ol-MEGA/ppca/main/LICENSE
-      - https://api.github.com/repos/ol-MEGA/ppca
-      - https://api.github.com/repos/ol-MEGA/ppca/git/trees/main?recursive=1
-    note: >-
-      This is recorded as an evaluation-protocol audit over three existing
-      public benchmark families, not as a fourth downloadable family. The
-      public PPCA framework does not currently reproduce the paper-specific
-      derived data and results, so no new download link or helper is added.
 
   scope_shift_aware_emotion_recognition:
     paper: https://arxiv.org/abs/2607.20445
