@@ -9799,6 +9799,59 @@ benchmarks:
       - https://arxiv.org/abs/2607.21127
       - https://arxiv.org/html/2607.21127v1#S4.SS1
 
+  - id: asvspoof_2017
+    name: ASVspoof 2017 V2
+    full_name: "The 2nd Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2017) Database, Version 2"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - speaker_verification_anti_spoofing
+      - presentation_attack_detection
+      - spoofed_speech_detection
+      - replay_attack_detection
+      - unseen_replay_condition_generalization
+    official:
+      homepage: https://www.asvspoof.org/index2017.html
+      datashare_record: https://datashare.ed.ac.uk/items/59543650-e9b0-415d-8058-0567f908ce37
+      datashare_api: https://datashare.ed.ac.uk/server/api/core/items/59543650-e9b0-415d-8058-0567f908ce37
+      doi: https://doi.org/10.7488/ds/2332
+      summary_paper: https://doi.org/10.21437/Interspeech.2017-1111
+      version_2_paper: https://www.isca-archive.org/odyssey_2018/delgado18_odyssey.html
+    download:
+      primary:
+        - https://datashare.ed.ac.uk/items/59543650-e9b0-415d-8058-0567f908ce37
+        - https://datashare.ed.ac.uk/server/api/core/bundles/6897bad8-7045-4ad8-851e-597cd426a786/bitstreams?size=100
+      examples:
+        - 'scripts/download/asvspoof_2017.sh'
+        - 'ASVSPOOF2017_DOWNLOAD_PROTOCOLS=1 scripts/download/asvspoof_2017.sh'
+        - 'ASVSPOOF2017_DOWNLOAD_AUDIO=1 scripts/download/asvspoof_2017.sh'
+      notes: >-
+        The official Version 2 release contains 42 speakers and genuine and
+        replayed RedDots speech recorded across 179 replay sessions in 61
+        unique room, replay-device, and recording-device configurations.
+        Training, development, and evaluation archives total approximately
+        1.4 GiB. The helper downloads the DataShare metadata, README, change
+        log, instructions, evaluation plan, and primary papers by default;
+        the approximately 104 KiB protocol archive and speech archives require
+        separate explicit opt-ins.
+    license:
+      data: cc-by-nc-4.0
+      code: not_applicable
+      notes: >-
+        Edinburgh DataShare metadata explicitly declares Creative Commons
+        Attribution-NonCommercial 4.0 International. The database uses genuine
+        and replayed RedDots speech; retain attribution and review the packaged
+        files and upstream RedDots conditions before use or redistribution.
+    sources:
+      - https://www.asvspoof.org/index2017.html
+      - https://www.asvspoof.org/database
+      - https://datashare.ed.ac.uk/items/59543650-e9b0-415d-8058-0567f908ce37
+      - https://datashare.ed.ac.uk/server/api/core/items/59543650-e9b0-415d-8058-0567f908ce37
+      - https://datashare.ed.ac.uk/server/api/core/bundles/6897bad8-7045-4ad8-851e-597cd426a786/bitstreams?size=100
+      - https://doi.org/10.7488/ds/2332
+      - https://doi.org/10.21437/Interspeech.2017-1111
+      - https://www.isca-archive.org/odyssey_2018/delgado18_odyssey.html
+
   - id: asvspoof_2019
     name: ASVspoof 2019
     full_name: "ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database"
