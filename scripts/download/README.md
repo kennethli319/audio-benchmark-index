@@ -90,6 +90,7 @@ scripts/download/librispeech.sh
 scripts/download/whisper_rirmega.sh
 scripts/download/libri_light.sh
 scripts/download/mls.sh
+scripts/download/mlc_slm_eval.sh
 scripts/download/mtedx.sh
 scripts/download/europarl_st.sh
 scripts/download/tedx_spanish.sh

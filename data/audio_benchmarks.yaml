@@ -11867,3 +11867,69 @@ benchmarks:
       - https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset
       - https://huggingface.co/datasets/tsinghua-ee/video-SALMONN_2_testset/raw/main/README.md
       - https://huggingface.co/api/datasets/tsinghua-ee/video-SALMONN_2_testset
+
+  - id: mlc_slm_eval
+    name: MLC-SLM Eval
+    full_name: "Multilingual Conversational Speech Language Model Challenge Eval Ground Truth"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+      - speaker_diarization
+    tasks:
+      - multilingual_conversational_asr
+      - speaker_diarization
+      - speaker_attributed_asr
+      - long_form_speech_recognition
+      - accented_speech_recognition
+    official:
+      paper: https://arxiv.org/abs/2509.13785
+      dataset: https://huggingface.co/datasets/bsmu/MLC-SLM-Eval
+      repo: https://github.com/mubingshen/MLC-SLM-Baseline
+      vibevoice_asr_report: https://arxiv.org/abs/2601.18184
+      vibevoice_bitnet_report: https://arxiv.org/abs/2607.21075
+    download:
+      primary:
+        - https://huggingface.co/datasets/bsmu/MLC-SLM-Eval
+        - https://github.com/mubingshen/MLC-SLM-Baseline
+      examples:
+        - 'scripts/download/mlc_slm_eval.sh'
+        - 'MLC_SLM_EVAL_DOWNLOAD_HF=1 scripts/download/mlc_slm_eval.sh'
+      notes: >-
+        The public, ungated Hugging Face release contains approximately 6.55 MB
+        of oracle segmentation, speaker labels, and transcriptions for the
+        challenge's 32-hour Eval-1 and 32-hour Eval-2 sets. It covers English,
+        French, German, Italian, Japanese, Korean, Portuguese, Russian,
+        Spanish, Thai, and Vietnamese; English additionally spans five accent
+        groups. The repository currently contains 224 annotation files and no
+        audio.
+        Challenge participants previously received evaluation recordings, but
+        the official paper, dataset card, and baseline repository provide no
+        current public audio URL. The helper downloads official documentation
+        and repository metadata by default; the lightweight annotation
+        snapshot requires MLC_SLM_EVAL_DOWNLOAD_HF=1 and does not include
+        audio. VibeVoice-ASR evaluates the MLC-Challenge set, while
+        VibeVoice-ASR-BitNet section 3.1 and Table 4 report six MLC language
+        subsets.
+    license:
+      data: cc-by-sa-4.0_annotation_card_label
+      code: not_specified
+      notes: >-
+        The Hugging Face card labels the released ground-truth repository
+        CC BY-SA 4.0. It does not publish a separate license file or establish
+        terms for the absent evaluation recordings. The official baseline
+        repository has no detected license, so do not assume the annotation
+        label licenses its code. Obtain the audio and its terms from the
+        challenge owners before attempting full benchmark reproduction.
+    sources:
+      - https://arxiv.org/abs/2509.13785
+      - https://arxiv.org/html/2509.13785v1#S3
+      - https://huggingface.co/datasets/bsmu/MLC-SLM-Eval
+      - https://huggingface.co/datasets/bsmu/MLC-SLM-Eval/raw/main/README.md
+      - https://huggingface.co/api/datasets/bsmu/MLC-SLM-Eval
+      - https://github.com/mubingshen/MLC-SLM-Baseline
+      - https://raw.githubusercontent.com/mubingshen/MLC-SLM-Baseline/main/README.md
+      - https://api.github.com/repos/mubingshen/MLC-SLM-Baseline
+      - https://arxiv.org/abs/2601.18184
+      - https://arxiv.org/abs/2607.21075
+      - https://arxiv.org/html/2607.21075v1#S3.SS1
