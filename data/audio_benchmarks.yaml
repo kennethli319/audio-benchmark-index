@@ -182,42 +182,6 @@ paper_audits:
       - https://arxiv.org/html/2607.11738v1#S4.SS3
       - https://arxiv.org/html/2607.11738v1#S4.SS5
 
-  artifact_specific_deepfake_detection:
-    paper: https://arxiv.org/abs/2607.21127
-    title: Toward Interpretable Speech Deepfake Detection using Artifact-Specific Experts and Calibrated Detection Scores
-    sections: 4.1-4.3
-    status: audited_existing_coverage
-    evaluated_sets:
-      - cited_as: ASVspoof 2015
-        index_id: asvspoof_2015
-        status: public
-        note: Section 4.1 uses attacks S3 and S10 only for expert calibration; it does not use the full corpus as a held-out evaluation set.
-      - cited_as: ASVspoof 2019
-        index_id: asvspoof_2019
-        status: public
-        note: Real training speech and selected spoof attacks support training and calibration; evaluation uses real speech from the evaluation partition and TTS attacks from the development and evaluation partitions.
-      - cited_as: ASVspoof 5
-        index_id: asvspoof_5
-        status: public
-        note: The paper uses real training speech for model training and all splits for held-out TTS evaluation; post-processed samples are excluded.
-      - cited_as: SpoofCeleb
-        index_id: spoofceleb
-        status: public_gated
-        note: The paper uses real training speech for model training and all splits for held-out TTS evaluation; the official dataset release requires author approval.
-    protocol_note: >-
-      The paper evaluates only four named corpus families. All four are already
-      indexed with primary-source access and license notes, so this audit adds
-      exact split and calibration provenance without creating duplicates.
-      The paper's generated artifact-specific training pairs are an internal
-      transformation protocol, not a separately released benchmark dataset.
-    sources:
-      - https://arxiv.org/abs/2607.21127
-      - https://arxiv.org/html/2607.21127v1#S4.SS1
-      - https://www.asvspoof.org/index2015.html
-      - https://www.asvspoof.org/index2019.html
-      - https://zenodo.org/records/14498691
-      - https://jungjee.github.io/spoofceleb/
-
   codec_internal_latent_watermarking:
     paper: https://arxiv.org/abs/2607.21132
     sections: 4.1-4.7
@@ -254,6 +218,7 @@ paper_audits:
 
   artifact_specific_speech_deepfake_detection:
     paper: https://arxiv.org/abs/2607.21127
+    title: Toward Interpretable Speech Deepfake Detection using Artifact-Specific Experts and Calibrated Detection Scores
     sections: 4.1 and 5.1-5.5
     status: audited_existing_and_new_public_coverage
     evaluated_sets:
@@ -286,6 +251,10 @@ paper_audits:
       - https://arxiv.org/html/2607.21127v1#S4.SS1
       - https://arxiv.org/html/2607.21127v1#S5.SS1
       - https://arxiv.org/html/2607.21127v1#S5.SS4
+      - https://www.asvspoof.org/index2015.html
+      - https://www.asvspoof.org/index2019.html
+      - https://zenodo.org/records/14498691
+      - https://jungjee.github.io/spoofceleb/
 
   vibevoice_asr_bitnet_technical_report:
     paper: https://arxiv.org/abs/2607.21075
