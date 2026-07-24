@@ -1525,6 +1525,31 @@ paper_audits:
       - https://zenodo.org/api/records/17237181
     note: The paper says the augmented AudioCards dataset will be released, but v1 provides no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
 
+  chengdu_mandarin_forced_alignment:
+    paper: https://arxiv.org/abs/2607.21332
+    sections: 2-3
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: low_resource_phonetic_forced_alignment
+        protocol: Expert word- and phone-level boundaries for 50 minutes from 10 speakers, evaluated against text-dependent Chengdu-MFA and Chengdu-FC alignments with absolute boundary error and threshold accuracy
+        data_status: source_corpus_and_gold_test_annotations_not_released
+        note: The 17.7-hour master corpus contains 15 Chengdu Mandarin speakers from an earlier sociolinguistic study. The paper does not release its audio, transcripts, train/validation allocation, 50-minute selected-item manifest, manual TextGrids, or speaker-level split.
+      - domain: transcript_free_phonetic_segmentation
+        protocol: Chengdu-FC boundary precision, recall, F1, and R-value at 20 to 100 millisecond tolerances against the same expert-annotated test set
+        data_status: pseudo_labels_models_dictionary_and_evaluation_code_not_released
+        note: The paper says it releases Chengdu-MFA, Chengdu-FC, and a reviewed 2,876-character G2P dictionary, but version 1 and its source package provide no project page, repository, model card, archive, code URL, or artifact license.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      models_and_code: not_specified_unreleased
+      upstream: Rights and participant-consent conditions for the cited sociolinguistic recordings require separate review; the paper license does not license absent audio, annotations, models, or dictionary files
+    sources:
+      - https://arxiv.org/abs/2607.21332
+      - https://arxiv.org/pdf/2607.21332
+      - https://export.arxiv.org/e-print/2607.21332
+    note: Version 1 describes a reproducible training and evaluation pipeline and claims release of its Chengdu-specific aligners and G2P dictionary, but exposes no public artifact interface. The underlying speech corpus and expert-annotated evaluation subset are likewise unavailable. This work is therefore recorded as an unreleased forced-alignment protocol rather than a downloadable benchmark family; recheck after publication or an official repository announcement before adding an indexed entry or helper.
+
   instruct_fd:
     paper: https://arxiv.org/abs/2607.20460
     sections: 2-5 and appendix A

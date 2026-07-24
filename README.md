@@ -361,6 +361,15 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 Chengdu Mandarin forced-alignment paper is recorded as an
+unreleased protocol rather than a downloadable family. It evaluates
+text-dependent alignment and transcript-free phonetic segmentation against 50
+minutes of expert word- and phone-level boundaries selected from a 17.7-hour,
+15-speaker corpus. Although version 1 says that its Chengdu-MFA and Chengdu-FC
+models and reviewed 2,876-character G2P dictionary are released, the paper and
+source package provide no project, repository, model card, archive, code URL,
+artifact license, corpus files, selected-item manifest, or manual annotations.
+
 The July 2026 Instruct-FD paper is likewise recorded as an unreleased
 full-duplex spoken-dialogue protocol rather than a downloadable family. It
 reports 912 English test cases across 29 scenarios for instructed listening,
