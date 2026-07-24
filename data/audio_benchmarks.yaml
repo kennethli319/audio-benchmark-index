@@ -517,30 +517,6 @@ paper_audits:
       - https://arxiv.org/html/2607.21179v1#S5.SS1
       - https://arxiv.org/html/2607.21179v1#A4
 
-  opod_omni_distillation:
-    paper: https://arxiv.org/abs/2607.20918
-    sections: Experiments / Experimental Setup / Benchmarks
-    status: audited_audio_and_omni_coverage
-    evaluated_sets:
-      - cited_as: MMAU
-        index_id: mmau
-        status: public
-      - cited_as: AVQA
-        index_id: avqa
-        status: public_restricted_terms
-      - cited_as: OmniBench
-        index_id: omnibench
-        status: public
-    protocol_note: >-
-      OPOD reports accuracy on MMAU and AVQA as its audio benchmarks and on
-      OmniBench as its omni-modal benchmark. OmniBench questions require
-      integrated image, audio, and text reasoning; this audit therefore keeps
-      it in audio-visual understanding rather than treating it as a
-      text-only benchmark.
-    sources:
-      - https://arxiv.org/abs/2607.20918
-      - https://arxiv.org/html/2607.20918v1#Sx4.SSx1.SSS0.Px3
-
   s3bench_text_to_audio_generation:
     paper: https://arxiv.org/abs/2607.13408
     sections: 3.5, 4.1-4.2, and 5.2

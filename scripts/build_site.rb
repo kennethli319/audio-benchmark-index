@@ -302,9 +302,30 @@ def manual_ids
   section.scan(%r{scripts/download/([a-z0-9_]+)\.sh}).flatten.to_set
 end
 
+def validate_no_duplicate_mapping_keys!(node, path = [])
+  case node
+  when Psych::Nodes::Stream, Psych::Nodes::Document, Psych::Nodes::Sequence
+    node.children.each { |child| validate_no_duplicate_mapping_keys!(child, path) }
+  when Psych::Nodes::Mapping
+    seen = {}
+    node.children.each_slice(2) do |key_node, value_node|
+      key = key_node.respond_to?(:value) ? key_node.value : key_node.to_yaml
+      location = (path + [key]).join(".")
+      if seen.key?(key)
+        raise "Duplicate YAML mapping key #{location.inspect} at line #{key_node.start_line + 1}"
+      end
+
+      seen[key] = true
+      validate_no_duplicate_mapping_keys!(value_node, path + [key])
+    end
+  end
+end
+
 def load_catalog
+  source = File.read(DATA_PATH, encoding: "UTF-8")
+  validate_no_duplicate_mapping_keys!(Psych.parse_stream(source))
   YAML.safe_load(
-    File.read(DATA_PATH, encoding: "UTF-8"),
+    source,
     permitted_classes: [Date],
     aliases: false,
   )
