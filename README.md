@@ -316,6 +316,17 @@ or benchmark-data license can be verified. The paper is CC BY 4.0 and attributes
 its source text to SQuAD/Wikipedia under CC BY-SA 4.0, but those statements do
 not establish rights for the unavailable annotations or generated audio.
 
+The July 2026 RaagBase paper is recorded as an audited symbolic-music
+classification protocol rather than a downloadable family. It describes a
+single CSV of 116 manually transcribed Hindustani compositions across Bhairav,
+Poorvi, and Todi, represented as note sequences and frequency features for
+graph clustering. Its sole claimed
+[4open.science release](https://anonymous.4open.science/r/RaagBase-5427/)
+currently returns HTTP 401 `not_connected`, so no files, schema, code, or
+dataset-specific license can be verified. The paper's CC BY 4.0 license does
+not license the unavailable CSV or establish rights for its notation
+transcriptions, and no download helper is added.
+
 ## Coverage
 
 Current coverage includes:

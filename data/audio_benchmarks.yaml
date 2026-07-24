@@ -810,6 +810,31 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.19605
     note: RIME is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper and its arXiv source package provide no official project page, repository, dataset card, archive, item file, code link, or license for the derived benchmark. Public availability of the indexed MTG-Jamendo source corpus does not release RIME's selected rows, stem-separation results, recipes, prompts, processed audio, graphs, model outputs, or evaluation records.
 
+  raagbase:
+    paper: https://arxiv.org/abs/2607.10229
+    sections: 2 and 4
+    status: audited_claimed_public_release_unavailable
+    claimed_release:
+      - https://anonymous.4open.science/r/RaagBase-5427/
+    evaluated_data:
+      cited_as: RaagBase
+      index_id: null
+      protocol: Graph clustering of 116 notation-derived compositions across Bhairav, Poorvi, and Todi using note-frequency representations
+      data_status: claimed_public_endpoint_unavailable
+      note: The paper describes a single CSV containing manually transcribed note sequences and raag labels, but the claimed official 4open.science release returned HTTP 401 not_connected on 2026-07-23. No files, manifest, README, code, or dataset-specific license could be verified.
+    license:
+      paper: cc-by-4.0
+      benchmark_data: not_specified_unavailable
+      code: not_specified_unavailable
+      source_material: not_specified
+      note: The arXiv CC BY 4.0 license covers the paper, not the unavailable CSV or its notation transcriptions derived from the Hindi translation of Bhatkhande's Kramik Pustak Malika. Recheck copyright and transcription rights if the repository becomes available.
+    sources:
+      - https://arxiv.org/abs/2607.10229
+      - https://arxiv.org/html/2607.10229v1#S2
+      - https://arxiv.org/html/2607.10229v1#S4
+      - https://anonymous.4open.science/r/RaagBase-5427/
+    note: RaagBase is recorded as an audited symbolic-music classification protocol rather than an indexed benchmark family. Its only claimed release is unavailable, so the paper's 116 examples, exact CSV schema, split or evaluation implementation, and data terms cannot be independently verified; no download helper is added.
+
 benchmarks:
   - id: mmau
     name: MMAU
