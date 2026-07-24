@@ -274,6 +274,17 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 codec-internal latent-watermarking paper is likewise recorded as
+an audited model protocol, not a downloadable benchmark family. Sections
+4.1-4.7 use an unspecified 1,000-sample slice of gated Emilia-English to measure
+32-bit recovery and speech quality under signal-processing and neural-codec
+attacks, but v1 provides no item manifest, split recipe, checkpoints, attack
+implementation, score records, project page, or code repository. The official
+[Emilia repository](https://huggingface.co/datasets/amphion/Emilia-Dataset)
+also has a material terms conflict: its metadata tag says CC BY 4.0 while its
+gated access agreement says the original Emilia data is CC BY-NC. Neither
+designation releases or identifies the paper's evaluation subset.
+
 The July 2026 AIS-aligned passive-acoustic labelling paper is recorded as an
 audited data-construction protocol rather than a downloadable family. It
 describes aligning approximately 950,000 hydrophone windows with 6.9 million

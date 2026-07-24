@@ -182,6 +182,40 @@ paper_audits:
       - https://arxiv.org/html/2607.11738v1#S4.SS3
       - https://arxiv.org/html/2607.11738v1#S4.SS5
 
+  codec_internal_latent_watermarking:
+    paper: https://arxiv.org/abs/2607.21132
+    sections: 4.1-4.7
+    status: audited_protocol_no_released_benchmark
+    evaluated_sets:
+      - cited_as: English subset of Emilia
+        index_id: null
+        status: gated_source_corpus_unspecified_evaluation_selection
+        note: >-
+          Section 4.1 says all experiments use 48 kHz English Emilia segments
+          cropped or padded to 120,000 samples. Section 4.2 reports perceptual
+          metrics on a 1,000-sample subset, but the paper does not identify the
+          rows, source shards, selection procedure, or a reusable evaluation
+          split.
+    protocol_note: >-
+      This is a model study rather than a released benchmark family. It tests a
+      32-bit latent watermark under signal-processing and neural-codec attacks,
+      principally EnCodec-24k and an EnCodec-16k stress condition, and reports
+      bit accuracy, BCE, PESQ, ViSQOL, STOI, SNR, and SI-SDR. Version 1 provides
+      no official project, repository, dataset card, item manifest, trained
+      checkpoint, attack recipes, score records, or evaluation code. The
+      official Emilia repository is gated, and its access terms say the
+      original Emilia data is CC BY-NC even though the repository metadata tag
+      says CC BY 4.0; neither label releases the paper's unspecified evaluation
+      selection.
+    sources:
+      - https://arxiv.org/abs/2607.21132
+      - https://arxiv.org/html/2607.21132v1#S4.SS1
+      - https://arxiv.org/html/2607.21132v1#S4.SS2
+      - https://arxiv.org/html/2607.21132v1#S4.SS5
+      - https://arxiv.org/html/2607.21132v1#S4.SS6
+      - https://huggingface.co/datasets/amphion/Emilia-Dataset
+      - https://huggingface.co/api/datasets/amphion/Emilia-Dataset
+
   vibevoice_asr_bitnet_technical_report:
     paper: https://arxiv.org/abs/2607.21075
     sections: 3.1 and 3.3
