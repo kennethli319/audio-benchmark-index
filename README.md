@@ -141,6 +141,14 @@ archive, item manifest, generated audio, evaluation code, or data-license
 statement. Public upstream MMAU, MMAR, GSM8K, and MMLU resources do not release
 SYAUDIO's selected rows, speech, prompts, or acoustic perturbations.
 
+The June 2026 DDPO-VC paper is recorded as an existing-coverage audit, not a
+new benchmark family. Its ADReSS evaluation maps to the indexed, membership-
+restricted DementiaBank challenge release, while its random FHS Gold 92 split
+and examiner-filtering timestamps are not public. The official repository
+currently contains only a README and MIT license and says code will be released
+later; its demo's ten selected ADReSS examples are qualitative model outputs,
+not a reusable evaluation package or a new clinical-data download path.
+
 The April 2026 CAST paper is recorded as an audited speech-generation protocol,
 not a downloadable family. It defines 113 contrastive context pairs (226
 textual items) for testing whether TTS systems realize discourse-conditioned

@@ -290,6 +290,57 @@ paper_audits:
       - https://arxiv.org/html/2606.25391v1#S7
       - https://export.arxiv.org/e-print/2606.25391v1
 
+  ddpo_vc_speaker_deidentification:
+    paper: https://arxiv.org/abs/2606.15313
+    sections: 4.1-4.4
+    status: audited_existing_restricted_coverage_code_announced
+    evaluated_sets:
+      - cited_as: ADReSS
+        index_id: adress_challenges
+        status: application_required_clinical_data
+        note: >-
+          The paper post-trains and evaluates on the standard ADReSS split.
+          ADReSS remains available only to approved DementiaBank members under
+          TalkBank's clinical-data rules; the DDPO-VC paper and demo do not
+          create a new public download path.
+      - cited_as: FHS gold 92
+        index_id: null
+        status: restricted_unreleased_evaluation_selection
+        note: >-
+          The paper evaluates a randomly split 92-participant subset of the
+          Framingham Heart Study dementia-speech data after filtering examiner
+          speech with provided diarization timestamps. It provides no public
+          participant list, split manifest, timestamps, recordings, labels, or
+          official dataset download.
+    protocol_note: >-
+      DDPO-VC evaluates speaker de-identification with ECAPA-TDNN equal error
+      rate, dementia-classification AUC in zero-shot and fine-tuned settings,
+      and UTMOS. The public demo streams ten selected ADReSS utterances and
+      converted outputs, but is a qualitative model demo rather than a
+      reusable benchmark package. The official repository contains only a
+      README and LICENSE and says code will be released in the future, so this
+      audit maps ADReSS to its existing family and does not add DDPO-VC as a
+      benchmark dataset.
+    license_note: >-
+      The paper is CC BY 4.0 and the two-file repository is MIT, but neither
+      license grants rights to the restricted ADReSS or Framingham clinical
+      recordings, labels, derived audio, or evaluation splits. TalkBank's
+      DementiaBank membership, confidentiality, non-commercial, and no-sharing
+      rules remain applicable to ADReSS.
+    sources:
+      - https://arxiv.org/abs/2606.15313
+      - https://arxiv.org/html/2606.15313v2#S4.SS1
+      - https://arxiv.org/html/2606.15313v2#S4.SS2
+      - https://arxiv.org/html/2606.15313v2#S4.SS3
+      - https://arxiv.org/html/2606.15313v2#S4.SS4
+      - https://github.com/cactuswiththoughts/DDPO-VC
+      - https://raw.githubusercontent.com/cactuswiththoughts/DDPO-VC/main/README.md
+      - https://raw.githubusercontent.com/cactuswiththoughts/DDPO-VC/main/LICENSE
+      - https://api.github.com/repos/cactuswiththoughts/DDPO-VC/contents
+      - https://cactuswiththoughts.github.io/SpeakerDeID-Demo/
+      - https://talkbank.org/dementia/ADReSS-2020/
+      - https://talkbank.org/0share/rules.html
+
   qwen_music_technical_report:
     paper: https://arxiv.org/abs/2607.11699
     sections: 4.1-4.2
