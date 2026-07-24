@@ -211,6 +211,16 @@ experiments but releases no new benchmark data, so no duplicate family or
 paper-specific helper is added. AudioCaps still depends on externally hosted
 YouTube audio, and both corpora retain their original terms.
 
+The July 2026 Caption Studio paper is recorded as a system audit rather than a
+benchmark family. It specifies WER, NIST-style diarization error rate, and
+measured/derived/unavailable transparency labels, but explicitly says its
+scoring harness has only been checked against hand-worked examples—not a large,
+diverse, production-representative audio corpus. Version 1 releases no official
+repository, dataset, evaluation manifest, predictions, or score records.
+LibriSpeech, DIHARD, and NIST Rich Transcription appear as methodological
+references, not reported Caption Studio evaluation sets, so no duplicate
+families or paper-specific helper are added.
+
 The July 2026 diagnostic cover-song evaluation paper is recorded as a
 partial-release protocol rather than a downloadable benchmark family. Its
 official MIT repository publishes the 30-row expert-score table, anonymized

@@ -288,6 +288,37 @@ paper_audits:
       - https://huggingface.co/datasets/amphion/Emilia-Dataset
       - https://huggingface.co/api/datasets/amphion/Emilia-Dataset
 
+  caption_studio_transparency_framework:
+    paper: https://arxiv.org/abs/2607.18704
+    title: "What the Waveform Knows: Transparent-first Speech and Audio Intelligence with Caption Studio"
+    sections: 4.1-4.5 and 5
+    status: audited_system_no_benchmark_dataset
+    evaluated_sets: []
+    protocol_note: >-
+      Caption Studio is a speech-analytics system paper, not a released
+      benchmark family. Section 4.1 specifies word error rate for transcription
+      and NIST-style diarization error rate, while the broader framework labels
+      every output as measured, derived, or unavailable and proposes
+      explainability and uncertainty reporting. Section 5 explicitly says the
+      scoring harness has only been checked against hand-worked examples, not a
+      large, diverse, production-representative audio corpus. Although the
+      references discuss LibriSpeech, DIHARD, and NIST Rich Transcription, the
+      paper does not report an evaluation on those datasets.
+    release_note: >-
+      Version 1 provides no official project page, repository, dataset card,
+      evaluation manifest, audio corpus, predictions, score records, or
+      downloadable benchmark artifacts. The article's CC BY 4.0 license does
+      not license absent evaluation data or turn its cited corpora into a new
+      Caption Studio benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.18704
+      - https://arxiv.org/html/2607.18704v1#S4.SS1
+      - https://arxiv.org/html/2607.18704v1#S4.SS2
+      - https://arxiv.org/html/2607.18704v1#S4.SS3
+      - https://arxiv.org/html/2607.18704v1#S4.SS4
+      - https://arxiv.org/html/2607.18704v1#S4.SS5
+      - https://arxiv.org/html/2607.18704v1#S5
+
   artifact_specific_speech_deepfake_detection:
     paper: https://arxiv.org/abs/2607.21127
     title: Toward Interpretable Speech Deepfake Detection using Artifact-Specific Experts and Calibrated Detection Scores
