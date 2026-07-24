@@ -293,6 +293,18 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 Instruct-FD paper is likewise recorded as an unreleased
+full-duplex spoken-dialogue protocol rather than a downloadable family. It
+reports 912 English test cases across 29 scenarios for instructed listening,
+backchanneling, interruption, continuation, and acknowledgment behavior.
+Version 1 provides schemas and prompt examples but no official project,
+repository, dataset card, scenario files, selected persona rows, synthesized
+audio, timestamp manifests, test-case JSON, orchestrator, judge implementation,
+human annotations, or data license. The linked
+[Nemotron-Personas-USA](https://huggingface.co/datasets/nvidia/Nemotron-Personas-USA)
+corpus is only an upstream input to some synthetic conversations and is not an
+Instruct-FD release.
+
 The July 2026 artifact-specific speech-deepfake paper is recorded once as a
 coverage audit rather than a new benchmark family. Section 4.1 uses ASVspoof
 2015 only for selected calibration attacks, then draws training or held-out

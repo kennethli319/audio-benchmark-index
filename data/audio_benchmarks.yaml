@@ -1202,6 +1202,35 @@ paper_audits:
       - https://zenodo.org/api/records/17237181
     note: The paper says the augmented AudioCards dataset will be released, but v1 provides no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
 
+  instruct_fd:
+    paper: https://arxiv.org/abs/2607.20460
+    sections: 2-5 and appendix A
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: instruction_conditioned_full_duplex_spoken_dialogue
+        protocol: 912 English test cases across 29 scenarios, pairing synthetic user audio with listen, backchannel, interrupt, continue, acknowledge, or uninstructed turn-management policies
+        data_status: benchmark_audio_manifests_prompts_and_evaluation_code_not_released
+        note: Section 2 generates conversations from scenario specifications and optional Nemotron-Personas-USA attributes, synthesizes turns with Gemini TTS, and uses ASR plus forced alignment to recover overlap timestamps. The paper provides schema and prompt examples but no complete scenario specifications, selected persona rows, transcripts, synthesized audio, timestamp manifests, or test-case JSON objects.
+      - domain: full_duplex_instruction_adherence_judging
+        protocol: Deployment-agnostic multi-turn orchestration and an LLM judge for proactive and responsive turn behavior, validated with a human study
+        data_status: orchestrator_judge_prompts_human_annotations_and_score_records_not_released
+        note: Sections 3-5 report six systems and 89.6% human case accuracy, but provide no executable orchestrator, judge implementation, complete judge prompts, per-system outputs, per-item scores, or human-study annotations.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      upstream: Nemotron-Personas-USA terms and Gemini TTS service/output terms require separate review; the paper license does not license absent synthesized audio or annotations
+    sources:
+      - https://arxiv.org/abs/2607.20460
+      - https://arxiv.org/html/2607.20460v1#S2
+      - https://arxiv.org/html/2607.20460v1#S3
+      - https://arxiv.org/html/2607.20460v1#S4
+      - https://arxiv.org/html/2607.20460v1#S5
+      - https://arxiv.org/html/2607.20460v1#A1
+      - https://huggingface.co/datasets/nvidia/Nemotron-Personas-USA
+    note: Version 1 provides no official project page, repository, dataset card, archive, or code release. Its sole external dataset link is the upstream Nemotron-Personas-USA source used to condition some generated conversations, not an Instruct-FD release. Instruct-FD is therefore recorded as an unreleased evaluation protocol rather than a downloadable benchmark family; recheck for an official release before adding an indexed entry or helper.
+
   chronos_audio:
     paper: https://arxiv.org/abs/2601.04876
     sections: 3 and appendices 2-3
