@@ -851,6 +851,11 @@ ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asv
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS="PA DF" ASVSPOOF2021_PA_PARTS="00 01" ASVSPOOF2021_DF_PARTS="00" scripts/download/asvspoof_2021.sh
 
+# PartialEdit downloads official pages and Zenodo record metadata by default.
+# Its approximately 7.7 MB protocol/text metadata and 21.9 GB audio are separate opt-ins.
+PARTIALEDIT_DOWNLOAD_METADATA=1 scripts/download/partialedit.sh
+PARTIALEDIT_DOWNLOAD_AUDIO=1 PARTIALEDIT_PARTS="E1 E1-Codec" scripts/download/partialedit.sh
+
 # VoxENES 2026 downloads official Kaggle metadata and the paper page by default. The approximately 23.3 GB dataset is opt-in.
 VOXENES2026_DOWNLOAD_DATA=1 scripts/download/voxenes_2026.sh
 

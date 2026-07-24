@@ -10852,6 +10852,68 @@ benchmarks:
       - https://arxiv.org/abs/2607.21127
       - https://arxiv.org/html/2607.21127v1#S4.SS1
 
+  - id: partialedit
+    name: PartialEdit
+    full_name: "PartialEdit: Identifying Partial Deepfakes in the Era of Neural Speech Editing"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - partial_speech_deepfake_detection
+      - partial_speech_deepfake_localization
+      - neural_speech_editing_detection
+      - codec_artifact_analysis
+      - spoofed_speech_detection
+    official:
+      project: https://yzyouzhang.com/PartialEdit/index.html
+      zenodo_record: https://zenodo.org/records/15519188
+      doi: https://doi.org/10.5281/zenodo.15519188
+      paper: https://arxiv.org/abs/2506.02958
+      interspeech_paper: https://doi.org/10.21437/Interspeech.2025-942
+      salmonn_2_evaluation: https://arxiv.org/html/2607.17079v1#S4.SS5
+    download:
+      primary:
+        - https://zenodo.org/api/records/15519188
+        - https://zenodo.org/api/records/15519188/files/PartialEdit_E1E2.csv/content
+        - https://zenodo.org/api/records/15519188/files/modified_txt.tar.gz/content
+        - https://zenodo.org/api/records/15519188/files/E1.tar.gz/content
+        - https://zenodo.org/api/records/15519188/files/E1-Codec.tar.gz/content
+        - https://zenodo.org/api/records/15519188/files/E2.tar.gz/content
+        - https://zenodo.org/api/records/15519188/files/E2-Codec.tar.gz/content
+      examples:
+        - 'scripts/download/partialedit.sh'
+        - 'PARTIALEDIT_DOWNLOAD_METADATA=1 scripts/download/partialedit.sh'
+        - 'PARTIALEDIT_DOWNLOAD_AUDIO=1 PARTIALEDIT_PARTS="E1 E1-Codec" scripts/download/partialedit.sh'
+      notes: >-
+        The official Zenodo release contains the E1 (VoiceCraft), E1-Codec,
+        E2 (SSR-Speech), and E2-Codec subsets derived from VCTK, plus the
+        E1/E2 protocol CSV and modified-text metadata. The four audio archives
+        total approximately 21.9 GB. The project and Zenodo description state
+        that E3 (Audiobox-Speech) and E4 (Audiobox) cannot be released under
+        Audiobox's license. The helper downloads official pages and Zenodo
+        record metadata by default; the approximately 7.7 MB protocol/text
+        metadata and large audio archives are separate opt-ins. SALMONN-2
+        section IV-E and Table VIII evaluate temporal spoof localization on
+        PartialEdit using mean intersection over union.
+    license:
+      data: cc-by-4.0_with_upstream_terms_and_partial_release
+      code: not_applicable
+      notes: >-
+        Zenodo declares CC BY 4.0 for the released record. The audio is derived
+        from VCTK, whose official release is also CC BY 4.0, but users should
+        preserve both provenances and review neural-editor output terms. The
+        license does not make the withheld Audiobox-derived E3/E4 subsets
+        public or grant rights to reconstruct them.
+    sources:
+      - https://yzyouzhang.com/PartialEdit/index.html
+      - https://zenodo.org/records/15519188
+      - https://zenodo.org/api/records/15519188
+      - https://doi.org/10.5281/zenodo.15519188
+      - https://arxiv.org/abs/2506.02958
+      - https://arxiv.org/html/2506.02958v1
+      - https://doi.org/10.21437/Interspeech.2025-942
+      - https://arxiv.org/abs/2607.17079
+      - https://arxiv.org/html/2607.17079v1#S4.SS5
+
   - id: voxenes_2026
     name: VoxENES 2026
     full_name: "VoxENES 2026: Benchmarking Generalization of Speech Spoofing Detectors Against LLM-Era TTS and Voice Conversion"
