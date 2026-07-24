@@ -5217,6 +5217,52 @@ benchmarks:
       - https://arxiv.org/abs/2607.18718
       - https://arxiv.org/html/2607.18718v1#S2
 
+  - id: audiogrounding
+    name: AudioGrounding
+    full_name: "Text-to-Audio Grounding: Building Correspondence Between Captions and Sound Events"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_retrieval
+    tasks:
+      - text_to_audio_grounding
+      - temporal_audio_grounding
+      - sound_event_localization
+    official:
+      repo: https://github.com/wsntxxn/TextToAudioGrounding
+      dataset: https://zenodo.org/records/7269161
+      paper: https://doi.org/10.1109/ICASSP39728.2021.9414834
+      recent_evaluation: https://arxiv.org/abs/2607.10387
+    download:
+      primary:
+        - https://zenodo.org/records/7269161
+        - https://github.com/wsntxxn/TextToAudioGrounding
+      examples:
+        - 'scripts/download/audiogrounding.sh'
+        - 'AUDIOGROUNDING_DOWNLOAD_AUDIO=1 scripts/download/audiogrounding.sh'
+      notes: >-
+        The public, ungated v2 release contains 3,994 training, 488 validation,
+        and 492 test clips derived from AudioCaps/AudioSet, with caption phrases
+        aligned to one or more onset-offset intervals. The July 2026 GigaChat
+        Audio report evaluates the combined 980 validation/test samples as a
+        short-clip temporal-grounding benchmark and reports mIoU. The helper
+        downloads the official repository documentation, Zenodo metadata, and
+        approximately 5.2 MB of JSON annotations by default; the approximately
+        2.33 GiB audio archive requires explicit opt-in.
+    license:
+      data: CC-BY-4.0_on_Zenodo_with_upstream_terms
+      code: MIT
+      notes: Zenodo declares CC BY 4.0 for the release and the official repository is MIT. The recordings derive from AudioCaps and AudioSet YouTube clips, so retain record attribution and review source-video rights, availability, and platform terms before redistribution or commercial use.
+    sources:
+      - https://zenodo.org/records/7269161
+      - https://zenodo.org/api/records/7269161
+      - https://github.com/wsntxxn/TextToAudioGrounding
+      - https://raw.githubusercontent.com/wsntxxn/TextToAudioGrounding/master/README.md
+      - https://api.github.com/repos/wsntxxn/TextToAudioGrounding
+      - https://doi.org/10.1109/ICASSP39728.2021.9414834
+      - https://arxiv.org/abs/2607.10387
+      - https://arxiv.org/html/2607.10387v1#S3
+
   - id: clotho_moment
     name: Clotho-Moment
     full_name: "Clotho-Moment: Simulated Long-Audio Dataset for Language-Based Audio Moment Retrieval"

@@ -666,6 +666,11 @@ scripts/download/dcase2025_audioqa.sh
 # Hugging Face audio snapshot is opt-in.
 ADQA_BENCH_DOWNLOAD_HF=1 scripts/download/adqa_bench.sh
 
+# AudioGrounding downloads official docs, record metadata, and approximately
+# 5.2 MB of phrase-interval annotations by default. Its 2.33 GiB audio archive
+# is opt-in.
+AUDIOGROUNDING_DOWNLOAD_AUDIO=1 scripts/download/audiogrounding.sh
+
 # Clotho-Moment downloads project, dataset, paper, and license metadata by
 # default. The large 51,240-recording WebDataset snapshot is opt-in.
 CLOTHO_MOMENT_DOWNLOAD_HF=1 scripts/download/clotho_moment.sh
