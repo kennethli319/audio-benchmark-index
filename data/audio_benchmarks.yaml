@@ -2712,6 +2712,44 @@ benchmarks:
       - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/data/sample_list.csv
       - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/features/extracted_features.csv
 
+  - id: madb
+    name: MADB
+    full_name: "MADB: A Large-Scale Music Aesthetics Dataset with Professional and Multi-Dimensional Annotations"
+    qwen_cited_as: null
+    qwen_bucket: music_understanding
+    tasks:
+      - music_aesthetic_assessment
+      - music_quality_assessment
+      - music_score_regression
+      - multimodal_music_understanding
+    official:
+      repo: https://github.com/knownree/madb
+      dataset: https://huggingface.co/datasets/sirui1/MADB-Dataset
+      paper: https://arxiv.org/abs/2607.06929
+    download:
+      primary:
+        - https://huggingface.co/datasets/sirui1/MADB-Dataset
+        - https://huggingface.co/datasets/sirui1/MADB-Dataset/resolve/main/data/annotation/song_avg_scores.csv
+        - https://huggingface.co/datasets/sirui1/MADB-Dataset/resolve/main/data/annotation/MADB_data.csv
+      examples:
+        - 'scripts/download/madb.sh'
+        - 'MADB_DOWNLOAD_ANNOTATIONS=1 scripts/download/madb.sh'
+        - 'MADB_DOWNLOAD_HF=1 scripts/download/madb.sh'
+      notes: The paper describes 9,999 tracks rated by 30 trained annotators, with about ten ratings per track across ten perceptual dimensions and an overall score plus comments and tags. The public, ungated Hugging Face release includes all annotations and 1,730 Suno/Levo audio tracks; its card points to the separate MuChin repository for another 4,400 tracks and says remaining tracks came from diverse online sources. The helper downloads official documentation and repository metadata by default, makes the approximately 69 MB annotation tables opt-in, and requires MADB_DOWNLOAD_HF=1 for the approximately 18.6 GB Hugging Face snapshot.
+    license:
+      data: cc-by-nc-4.0_with_upstream_audio_rights
+      code: not_specified
+      notes: The Hugging Face card declares CC BY-NC 4.0 and research-only use, but also warns that audio may remain subject to original copyright restrictions. No license file is present in the official GitHub repository. Apply the non-commercial dataset terms and independently review MuChin, generator-service/output, and unidentified online-source rights before redistributing or using audio.
+    sources:
+      - https://arxiv.org/abs/2607.06929
+      - https://github.com/knownree/madb
+      - https://raw.githubusercontent.com/knownree/madb/main/README.md
+      - https://api.github.com/repos/knownree/madb
+      - https://huggingface.co/datasets/sirui1/MADB-Dataset
+      - https://huggingface.co/datasets/sirui1/MADB-Dataset/raw/main/README.md
+      - https://huggingface.co/api/datasets/sirui1/MADB-Dataset
+      - https://github.com/CarlWangChina/MuChin
+
   - id: nsynth
     name: NSynth
     full_name: "NSynth: Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders"

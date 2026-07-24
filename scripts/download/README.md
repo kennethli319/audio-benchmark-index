@@ -67,6 +67,7 @@ scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
 scripts/download/multtipop.sh
+scripts/download/madb.sh
 scripts/download/songeval.sh
 scripts/download/song_describer.sh
 scripts/download/cmi_rewardbench.sh
@@ -893,6 +894,11 @@ MULTTIPOP_DOWNLOAD_HF=1 scripts/download/multtipop.sh
 # feature tables, README, and MIT license. Raw cover audio is not released.
 scripts/download/ai_cover_song_diagnostics.sh
 AI_COVER_SONG_DIAGNOSTICS_CLONE_REPO=1 scripts/download/ai_cover_song_diagnostics.sh
+
+# MADB downloads official docs and repository metadata by default.
+# Annotation tables are about 69 MB; the HF snapshot is about 18.6 GB.
+MADB_DOWNLOAD_ANNOTATIONS=1 scripts/download/madb.sh
+MADB_DOWNLOAD_HF=1 scripts/download/madb.sh
 
 # Lyra-SA saves the official Tencent Music pages and SongSQA paper, then prints
 # the application form. The archive URL is emailed after approval.
