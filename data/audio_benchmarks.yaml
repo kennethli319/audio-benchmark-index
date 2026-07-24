@@ -11665,6 +11665,69 @@ benchmarks:
       - https://audiolabs-erlangen.de/resources/MIR/2025-ChoraleBricks
       - https://zenodo.org/records/10161065
 
+  - id: sonic_seasoning
+    name: Sonic Seasoning
+    full_name: "Sonic Seasoning: a Multi-Source Perceptual Dataset of Taste-Evoking Sounds"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - audio_understanding
+      - cross_modal_audio_understanding
+    tasks:
+      - taste_from_audio_regression
+      - taste_conditioned_music_retrieval
+      - music_representation_evaluation
+      - crossmodal_audio_perception
+    official:
+      paper: https://arxiv.org/abs/2607.03296
+      repo: https://github.com/CSCPadova/wav2taste
+      dataset: https://huggingface.co/datasets/csc-unipd/sonic-seasoning
+    download:
+      primary:
+        - https://huggingface.co/datasets/csc-unipd/sonic-seasoning
+        - https://github.com/CSCPadova/wav2taste
+      examples:
+        - 'scripts/download/sonic_seasoning.sh'
+        - 'SONIC_SEASONING_DOWNLOAD_HF=1 scripts/download/sonic_seasoning.sh'
+        - 'SONIC_SEASONING_CLONE_REPO=1 scripts/download/sonic_seasoning.sh'
+      notes: >-
+        The public, ungated Hugging Face release contains 377 uniformly encoded
+        WAV clips with normalized sweet, bitter, salty, sour, and spicy ratings;
+        some subsets also provide temperature and emotion annotations. Its
+        fixed split column contains 269 train, 68 validation, and 40 test items.
+        The paper evaluates ten frozen audio encoders with a shared multi-task
+        regression protocol and uses a 309-item pool for taste-conditioned
+        retrieval. The helper downloads the official card, repository docs,
+        API metadata, and approximately 34 KB ratings/path Parquet file by
+        default. The Hugging Face API reports approximately 797 MB of repository
+        storage, so the audio snapshot and the approximately 642 KB code
+        repository are separate opt-ins. The repository README still calls the
+        training dataset private, which conflicts with the current public,
+        ungated Hugging Face release; the helper follows the live dataset state.
+    license:
+      data: CC-BY-NC-4.0
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0 for the compilation,
+        ratings, splits, and redistributed clips, and the repository code is
+        Apache-2.0. Audio provenance varies: the release combines pre-existing
+        music, MusicGen outputs, and stimuli from 13 prior studies. The card
+        limits redistributed clips to non-commercial research and instructs
+        users to cite the originating studies; review underlying music,
+        publication-stimulus, performer, and generated-output rights in
+        addition to the compilation license.
+    sources:
+      - https://arxiv.org/abs/2607.03296
+      - https://arxiv.org/html/2607.03296v1#S3.SS1
+      - https://arxiv.org/html/2607.03296v1#S5.SS3
+      - https://huggingface.co/datasets/csc-unipd/sonic-seasoning
+      - https://huggingface.co/datasets/csc-unipd/sonic-seasoning/raw/main/README.md
+      - https://huggingface.co/api/datasets/csc-unipd/sonic-seasoning
+      - https://github.com/CSCPadova/wav2taste
+      - https://raw.githubusercontent.com/CSCPadova/wav2taste/master/README.md
+      - https://raw.githubusercontent.com/CSCPadova/wav2taste/master/LICENSE
+      - https://api.github.com/repos/CSCPadova/wav2taste
+
   - id: lyra_sa
     name: Lyra-SA
     full_name: "Lyra Lab Singing Assessment Dataset"

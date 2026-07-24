@@ -78,6 +78,7 @@ scripts/download/songeval.sh
 scripts/download/song_describer.sh
 scripts/download/cmi_rewardbench.sh
 scripts/download/musica_metabench.sh
+scripts/download/sonic_seasoning.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/uro_bench_pro.sh
@@ -390,6 +391,11 @@ CMI_REWARDBENCH_DOWNLOAD_HF=1 scripts/download/cmi_rewardbench.sh
 # MusICA-MetaBench downloads documentation, component licenses, configs, and
 # two 300-item benchmark TSVs by default. The repository clone is opt-in.
 MUSICA_METABENCH_CLONE_REPO=1 scripts/download/musica_metabench.sh
+
+# Sonic Seasoning downloads docs, metadata, and the approximately 34 KB
+# ratings/path table by default. Audio (~797 MB) and the code clone are opt-in.
+SONIC_SEASONING_DOWNLOAD_HF=1 scripts/download/sonic_seasoning.sh
+SONIC_SEASONING_CLONE_REPO=1 scripts/download/sonic_seasoning.sh
 
 # SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
 SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh
