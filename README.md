@@ -39,6 +39,7 @@ event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
+audio-conditioned human-pet interaction and multimodal motion generation,
 and multimodal speaker-segment, open-vocabulary audio-visual, in-cabin
 driver emotion recognition, and audio-visual social-relationship inference, exact structured-token
 recovery in workplace ASR, in-the-wild neurological Spanish ASR, as well as multi-turn voice-agent
@@ -55,7 +56,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 237 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 238 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -361,6 +362,7 @@ Current coverage includes:
 | [AVQA](https://mn.cs.tsinghua.edu.cn/avqa) | Audio-visual question answering and cross-modal reasoning | Public QA annotations, VGGSound-derived video manifest, and feature/raw-video pointers through the official OneDrive/Baidu release; helper saves primary-source docs and leaves archive/media retrieval manual | Official page permits noncommercial personal/classroom copying and requires permission for broader redistribution; code license is unspecified, and VGGSound/YouTube source-media rights also apply |
 | [LLP](https://github.com/YapengTian/AVVP-ECCV20) | Weakly supervised audio-visual video parsing | Official annotation CSVs for 11,849 ten-second YouTube segments, including dense audio/visual labels for validation and test; helper downloads docs and annotations by default while extracted features remain a manual Google Drive download | No clear data or code license; the README claims GPLv3 but links to an unrelated repository's license, and source videos retain YouTube/upstream terms |
 | [AVSD](https://github.com/hudaAlamri/DSTC7-Audio-Visual-Scene-Aware-Dialog-AVSD-Challenge) | Audio-visual scene-aware dialogue and response generation | Official DSTC7 repository and released Google Drive data for dialogs over more than 11,000 Charades videos; helper saves public docs/license and prints the manual dataset/media paths | Repository code is MIT; no separate license statement was found for the Drive-hosted annotations or underlying Charades videos, so review upstream terms and media provenance |
+| [InterPet4D](https://huggingface.co/datasets/ohicarip/interpet4d) | Audio-conditioned human-pet interaction and multimodal motion generation | Public, ungated v1 release with 227 egocentric audio clips plus aligned MERT, human-body, hand, dog-skeleton, and SMAL motion data; helper downloads official metadata by default and makes the approximately 10.7 GB snapshot opt-in | HF card declares CC BY-NC 4.0, while the paper requires a data-use agreement prohibiting redistribution, surveillance, and biometric identification; apply the stricter paper terms pending clarification |
 | [AVA Active Speaker](https://research.google.com/ava/) | Audio-visual active speaker detection and visible-speaker localization | Public v1.0 labels for 3.65 million frames across about 39,000 face tracks and 160 available AVA clips; helper downloads docs and the video manifest by default, with the approximately 23 MB annotation archives opt-in | Google releases the listed AVA datasets under CC BY 4.0; repository code has no stated license, and source-movie/media terms and availability still require review |
 | [DAVE](https://github.com/gorjanradevski/dave) | Diagnostic audio-visual alignment and temporal reasoning | Public, ungated [gorjanradevski/dave](https://huggingface.co/datasets/gorjanradevski/dave) with EPIC-KITCHENS and Ego4D splits; helper downloads cards, loader, and about 9 MB of JSON annotations by default and makes the approximately 113.3 GB media snapshot opt-in | HF card labels DAVE MIT and the repo README says everything is MIT, but the repo lacks a LICENSE file; EPIC-KITCHENS and Ego4D upstream media/access terms still apply |
 | [Daily-Omni](https://lliar-liar.github.io/Daily-Omni/) | Temporal audio-visual question answering and cross-modal reasoning | Public, ungated [liarliar/Daily-Omni](https://huggingface.co/datasets/liarliar/Daily-Omni) with 684 videos and 1,197 questions; helper downloads docs and QA metadata by default and makes the approximately 3.9 GB media snapshot opt-in | Benchmark is CC BY-NC-SA 4.0 and code is GPL-3.0; videos derive from AudioSet, Video-MME, and FineVideo, so component-media terms also apply |

@@ -40,6 +40,7 @@ scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
 scripts/download/music_avqa.sh
 scripts/download/llp.sh
+scripts/download/interpet4d.sh
 scripts/download/ava_active_speaker.sh
 scripts/download/dave.sh
 scripts/download/daily_omni.sh
@@ -294,6 +295,10 @@ ESCUCHA_CLONE_REPO=1 scripts/download/escucha.sh
 # Ghana Speech Eval downloads official cards and API metadata by default.
 # The approximately 594 MB compressed benchmark snapshot is opt-in.
 GHANA_SPEECH_EVAL_DOWNLOAD_HF=1 scripts/download/ghana_speech_eval.sh
+
+# InterPet4D downloads its public card and API metadata by default.
+# The approximately 10.7 GB audio and aligned-motion snapshot is opt-in.
+INTERPET4D_DOWNLOAD_HF=1 scripts/download/interpet4d.sh
 
 # FLEURS defaults to en_us. Use another locale or all.
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh

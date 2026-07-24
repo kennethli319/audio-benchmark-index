@@ -1459,6 +1459,60 @@ benchmarks:
       - https://openaccess.thecvf.com/content_CVPR_2019/papers/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.pdf
       - https://prior.allenai.org/projects/charades
 
+  - id: interpet4d
+    name: InterPet4D
+    full_name: "InterPet4D: A Multimodal 4D Human-Pet Interaction Dataset for Pet Motion Generation"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_conditioned_motion_generation
+      - human_pet_interaction_modeling
+      - multimodal_motion_generation
+      - animal_behavior_understanding
+      - egocentric_audio_understanding
+    official:
+      paper: https://arxiv.org/abs/2607.10287
+      arxiv_html: https://arxiv.org/html/2607.10287v1
+      dataset: https://huggingface.co/datasets/ohicarip/interpet4d
+    download:
+      primary:
+        - https://huggingface.co/datasets/ohicarip/interpet4d
+      examples:
+        - 'scripts/download/interpet4d.sh'
+        - 'INTERPET4D_DOWNLOAD_HF=1 scripts/download/interpet4d.sh'
+      notes: >-
+        The public, ungated v1 release contains 227 approximately 17-20-second
+        egocentric clips from 113 interaction sessions involving 13 dogs and
+        about 23 human participants. It provides synchronized 48 kHz stereo
+        MP3 audio, MERT embeddings, and human-hand, human-body, dog-skeleton,
+        and SMAL motion parameters. The helper downloads the official dataset
+        card and API metadata by default; the Hugging Face API reports about
+        10.7 GB of repository storage, so the full snapshot requires
+        INTERPET4D_DOWNLOAD_HF=1. The paper also describes 12-view and
+        egocentric RGB video, but the current Hugging Face file inventory
+        releases audio and motion artifacts rather than those raw videos.
+    license:
+      data: conflicting_noncommercial_terms
+      code: not_applicable
+      notes: >-
+        The current public Hugging Face card declares CC BY-NC 4.0 and says
+        participants consented to data release. The paper's ethical statement
+        instead says users must agree to a data-use agreement prohibiting
+        redistribution, surveillance, and biometric identification, but no
+        such agreement or click-through gate is exposed on the current
+        ungated dataset page. Apply the stricter paper restrictions pending
+        clarification, do not redistribute the corpus, and do not infer that
+        arXiv's CC BY 4.0 paper license governs the released participant
+        recordings.
+    sources:
+      - https://arxiv.org/abs/2607.10287
+      - https://arxiv.org/html/2607.10287v1#S3
+      - https://arxiv.org/html/2607.10287v1#S4.SS3
+      - https://arxiv.org/html/2607.10287v1#Pt0.A7
+      - https://huggingface.co/datasets/ohicarip/interpet4d
+      - https://huggingface.co/datasets/ohicarip/interpet4d/raw/main/README.md
+      - https://huggingface.co/api/datasets/ohicarip/interpet4d
+
   - id: ava_active_speaker
     name: AVA Active Speaker
     full_name: "AVA Active Speaker: An Audio-Visual Dataset for Active Speaker Detection"
