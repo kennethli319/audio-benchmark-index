@@ -10976,3 +10976,60 @@ benchmarks:
       - https://huggingface.co/datasets/AI4Bharat/IndicContextEval
       - https://huggingface.co/datasets/AI4Bharat/IndicContextEval/raw/main/README.md
       - https://huggingface.co/api/datasets/AI4Bharat/IndicContextEval
+
+  - id: smartglasses_challenge_2026
+    name: SmartGlasses Challenge 2026
+    full_name: "SLT 2026 SmartGlasses Challenge: Egocentric Speech Interaction on AI Glasses"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - spoken_language_understanding
+    tasks:
+      - time_stamped_speaker_attributed_asr
+      - meeting_transcription
+      - speaker_diarization
+      - spoken_language_understanding
+      - audio_question_answering
+      - egocentric_speech_understanding
+      - overlapping_speech_recognition
+    official:
+      challenge: https://aslp-lab.github.io/SmartGlasses/
+      repo: https://github.com/ASLP-lab/Smart-Glass-Challenge
+      paper: https://arxiv.org/abs/2607.17867
+      arxiv_html: https://arxiv.org/html/2607.17867v1#S2
+    download:
+      primary:
+        - https://aslp-lab.github.io/SmartGlasses/#data-description
+        - https://github.com/ASLP-lab/Smart-Glass-Challenge
+      examples:
+        - 'scripts/download/smartglasses_challenge_2026.sh'
+      notes: >-
+        The official challenge covers dyadic conversations and multi-party
+        meetings recorded with a four-channel microphone array on smart
+        glasses. Across train, development, and test, Track 1 reports 518
+        sessions and 44.95 hours, while Track 2 reports 196 sessions and 62.03
+        hours. Each track evaluates time-stamped speaker-attributed ASR with
+        tcpWER and multiple-choice spoken-language understanding; public
+        reference answers are limited to development data. The helper saves
+        the official challenge page, public evaluation-toolkit documentation
+        and metadata, and the July 2026 system paper. Corpus access required
+        registration and agreement to challenge rules, download links were
+        emailed to participating teams, registration closed in June 2026, and
+        no current public corpus URL is provided.
+    license:
+      data: access_restricted_terms_not_publicly_specified
+      code: not_specified
+      notes: >-
+        The challenge page does not publish a standalone dataset license and
+        reserves organizer control over the participation terms. The public
+        evaluation repository has no LICENSE file and GitHub reports no
+        detected license, so its availability must not be treated as
+        permission to redistribute the toolkit or corpus. Obtain permission
+        from the organizers before reusing data or code beyond the challenge.
+    sources:
+      - https://aslp-lab.github.io/SmartGlasses/
+      - https://github.com/ASLP-lab/Smart-Glass-Challenge
+      - https://raw.githubusercontent.com/ASLP-lab/Smart-Glass-Challenge/main/README.md
+      - https://api.github.com/repos/ASLP-lab/Smart-Glass-Challenge
+      - https://arxiv.org/abs/2607.17867
+      - https://arxiv.org/html/2607.17867v1#S2

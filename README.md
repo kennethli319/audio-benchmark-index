@@ -17,6 +17,7 @@ emotion, captioning, speech separation, speech enhancement, music tagging,
 music genre classification, instrument recognition, music transcription, asynchronous
 distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
+egocentric smart-glasses speech recognition and understanding,
 music synthesis, song-aesthetics, music reward-model and compositional multimodal
 preference evaluation, full-song singing-quality assessment, and
 rhythm-game chart-generation evaluation, speech quality
@@ -57,7 +58,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 240 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 241 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -565,6 +566,7 @@ Current coverage includes:
 | [NOTSOFAR-1](https://www.chimechallenge.org/challenges/chime8/task2/index) | Distant speaker-attributed meeting ASR and diarization | Public Microsoft open release documents 237 English meetings, including ground-truth 80-meeting eval-small and 129-meeting eval-full sets; the challenge/paper's roughly 280-meeting inventory differs because the current release removes restricted Dev-set-2 and adds eval-full; helper saves official docs and licenses only | Data is CC BY 4.0 and baseline code is MIT; challenge-only Dev-set-2 is not in the current open release and has separate publication restrictions |
 | [AliMeeting](https://www.openslr.org/119/) | Meeting ASR / diarization | [OpenSLR SLR119](https://www.openslr.org/119/) metadata by default; large Mandarin meeting archives are opt-in | CC BY-SA 4.0 |
 | [AISHELL-4](https://www.openslr.org/111/) | Mandarin multi-channel meeting ASR, enhancement, separation, and diarization | Public 120-hour OpenSLR release with 211 meetings, eight-channel circular-array audio, transcripts, and speaker activity; helper saves docs by default and makes the approximately 51.2 GB corpus archives opt-in; VibeVoice-ASR-BitNet evaluates its test set | Corpus is CC BY-SA 4.0; official baseline code is Apache-2.0; the paper's CC BY 4.0 terms are separate |
+| [SmartGlasses Challenge 2026](https://aslp-lab.github.io/SmartGlasses/) | Egocentric time-stamped speaker-attributed ASR and spoken-language understanding | Official SLT 2026 dyadic-dialogue and multi-party-meeting benchmark with 107 hours of four-channel smart-glasses recordings; helper saves public challenge/toolkit/paper metadata only because corpus links were emailed to registered teams and registration is closed | Dataset terms and a standalone code license are not publicly specified; the public evaluation repository has no LICENSE file, and public toolkit access does not authorize corpus redistribution |
 | [LibriWASN](https://zenodo.org/records/10952434) | Asynchronous distributed-microphone meeting separation, diarization, and recognition | Public 20-hour release recorded in two rooms with nine devices, 29 channels, 0%-40% speech overlap, and diarization ground truth; helper downloads official metadata/docs by default while the approximately 55.8 GB audio archives are opt-in | Data is CC BY 4.0 and official tools are MIT; preserve LibriSpeech/LibriCSS provenance and review upstream speech-data terms for derived redistribution |
 | [LibriMix](https://github.com/JorisCos/LibriMix) | Speech separation | Official generator/metadata repo; helper clones it by default and runs generation only with `LIBRIMIX_RUN_GENERATION=1` plus a large storage directory | Code/scripts are MIT; generated data is derived from LibriSpeech CC BY 4.0 plus WHAM noise, so re-check component terms |
 | [REAL-TSE Challenge](https://real-tse.github.io/challenge/) | Real-conversation target-speaker extraction | Official SLT 2026 protocol, MIT evaluation toolkit, and 6,991 Mandarin/English mixture-enrollment trials across DEV, EVAL-1, and EVAL-2; helper saves public docs only because password-protected data was distributed by email to registered teams and registration is closed | Dataset license is not publicly specified; challenge terms limit DEV/EVAL to validation or final evaluation and forbid training/fine-tuning; MIT covers the toolkit only, while source-corpus terms also apply |
@@ -837,6 +839,7 @@ CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scri
 scripts/download/chime_7_dasr.sh
 scripts/download/alimeeting.sh
 ALIMEETING_DOWNLOAD_ARCHIVES=1 ALIMEETING_PARTS="Eval_Ali.tar.gz Test_Ali.tar.gz" scripts/download/alimeeting.sh
+scripts/download/smartglasses_challenge_2026.sh
 ```
 
 Speech separation:

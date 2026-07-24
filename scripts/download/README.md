@@ -243,6 +243,7 @@ scripts/download/incaremo.sh
 scripts/download/msp_podcast.sh
 scripts/download/chime_7_dasr.sh
 scripts/download/real_tse.sh
+scripts/download/smartglasses_challenge_2026.sh
 SYNSFX_ACK_RESEARCH_ONLY=1 SYNSFX_DOWNLOAD_ARCHIVE=1 scripts/download/synsfx.sh
 scripts/download/timit.sh
 scripts/download/switchboard.sh
@@ -928,6 +929,11 @@ scripts/download/lyra_sa.sh
 # ADReSS and ADReSSo save public challenge/access documentation, then print
 # the DementiaBank membership path. Clinical recordings stay password protected.
 scripts/download/adress_challenges.sh
+
+# SmartGlasses Challenge 2026 saves the official challenge page, public
+# evaluation-toolkit metadata, and paper. Corpus links were emailed only to
+# registered teams; registration is closed and no public corpus URL is listed.
+scripts/download/smartglasses_challenge_2026.sh
 
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
