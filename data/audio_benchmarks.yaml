@@ -7544,6 +7544,65 @@ benchmarks:
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
 
+  - id: audiocards
+    name: AudioCards / ASFx Eval
+    full_name: "AudioCards: Structured Metadata Improves Audio Language Models for Sound Design"
+    qwen_cited_as: null
+    qwen_bucket: audio_captioning
+    tasks:
+      - structured_audio_captioning
+      - structured_metadata_generation
+      - text_audio_retrieval
+      - sound_effect_classification
+      - universal_category_system_classification
+    official:
+      project: https://sites.google.com/view/audiocards/
+      zenodo: https://zenodo.org/records/17237181
+      doi: https://doi.org/10.5281/zenodo.17237181
+      paper: https://arxiv.org/abs/2602.13835
+      evaluation_paper: https://arxiv.org/abs/2607.21424
+      adobe_sound_effects: https://www.adobe.com/products/audition/offers/adobeauditiondlcsfx.html
+    download:
+      primary:
+        - https://zenodo.org/records/17237181
+        - https://zenodo.org/api/records/17237181/files/asfx_eval_cards.csv/content
+        - https://www.adobe.com/products/audition/offers/adobeauditiondlcsfx.html
+      examples:
+        - 'scripts/download/audiocards.sh'
+      notes: >-
+        The public, ungated Zenodo release contains 499 CSV rows with filenames
+        and 13 structured semantic, caption, and UCS fields. The original paper
+        and project page describe 500 manually screened AudioCards, but the
+        released CSV currently has 499 data rows. Pair its filename column with
+        the separately downloaded Adobe Audition Sound Effects library to
+        reproduce ASFx Eval. The July 2026 evaluation-framework paper uses 499
+        clips and adds four computed acoustic targets, but says that augmented
+        dataset "will" be released; those LUFS, pitch, active-event, and
+        frequency-profile annotations are not part of the current Zenodo file.
+        The helper safely downloads the record metadata, project page, papers,
+        Adobe landing page, and approximately 323 KB annotation CSV; it does
+        not download the Adobe audio archives.
+    license:
+      data: CC-BY-4.0_annotations_with_separate_Adobe_audio_terms
+      code: not_specified
+      notes: >-
+        Zenodo declares CC BY 4.0 for the released AudioCard CSV. The underlying
+        Adobe sound effects are not included there: Adobe describes them as
+        royalty-free but states that downloading and using them is governed by
+        the Adobe Audition and related-software EULA. The July 2026 paper is
+        CC BY-NC-SA 4.0, but that paper license does not release or license its
+        absent four-field augmentation or perturbation artifacts.
+    sources:
+      - https://zenodo.org/records/17237181
+      - https://zenodo.org/api/records/17237181
+      - https://sites.google.com/view/audiocards/
+      - https://arxiv.org/abs/2602.13835
+      - https://arxiv.org/html/2602.13835v1#S2.SS3
+      - https://arxiv.org/abs/2607.21424
+      - https://arxiv.org/html/2607.21424v1#S2
+      - https://www.adobe.com/products/audition/offers/adobeauditiondlcsfx.html
+      - https://www.adobe.com/products/eulas
+
   - id: musiccaps
     name: MusicCaps
     full_name: "MusicCaps: A Dataset of Music Captions"
