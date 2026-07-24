@@ -839,6 +839,10 @@ NOTSOFAR1_CLONE_REPO=1 scripts/download/notsofar_1.sh
 # AliMeeting downloads OpenSLR metadata by default. Corpus archives are large.
 ALIMEETING_DOWNLOAD_ARCHIVES=1 ALIMEETING_PARTS="Eval_Ali.tar.gz Test_Ali.tar.gz" scripts/download/alimeeting.sh
 
+# AISHELL-4 downloads OpenSLR and baseline docs by default. The roughly 51.2 GB corpus is opt-in.
+AISHELL4_DOWNLOAD_ARCHIVES=1 AISHELL4_PARTS="test.tar.gz" scripts/download/aishell_4.sh
+AISHELL4_DOWNLOAD_ARCHIVES=1 AISHELL4_PARTS=all scripts/download/aishell_4.sh
+
 # WHAM!/WHAMR! downloads the page and small generation scripts by default. Noise archives are large.
 WHAM_DOWNLOAD_NOISE=1 scripts/download/wham_whamr.sh
 WHAM_DOWNLOAD_48KHZ=1 scripts/download/wham_whamr.sh

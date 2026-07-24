@@ -8421,6 +8421,63 @@ benchmarks:
       - https://arxiv.org/abs/2110.07393
       - https://arxiv.org/abs/2202.03647
 
+  - id: aishell_4
+    name: AISHELL-4
+    full_name: "AISHELL-4: An Open Source Dataset for Speech Enhancement, Separation, Recognition and Speaker Diarization in Conference Scenario"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+      - speech_separation
+    tasks:
+      - meeting_transcription
+      - multi_channel_asr
+      - speech_enhancement
+      - speech_separation
+      - speaker_diarization
+      - mandarin_speech_recognition
+    official:
+      openslr: https://www.openslr.org/111/
+      repo: https://github.com/felixfuyihui/AISHELL-4
+      paper: https://arxiv.org/abs/2104.03603
+      homepage: http://www.aishelltech.com/aishell_4
+    download:
+      primary:
+        - https://www.openslr.org/111/
+        - https://openslr.trmal.net/resources/111/test.tar.gz
+        - https://openslr.trmal.net/resources/111/train_L.tar.gz
+        - https://openslr.trmal.net/resources/111/train_M.tar.gz
+        - https://openslr.trmal.net/resources/111/train_S.tar.gz
+      examples:
+        - 'scripts/download/aishell_4.sh'
+        - 'AISHELL4_DOWNLOAD_ARCHIVES=1 AISHELL4_PARTS="test.tar.gz" scripts/download/aishell_4.sh'
+        - 'AISHELL4_DOWNLOAD_ARCHIVES=1 AISHELL4_PARTS=all scripts/download/aishell_4.sh'
+      notes: >-
+        The public OpenSLR release contains 211 real Mandarin meeting sessions
+        totaling 120 hours, recorded with an eight-channel circular microphone
+        array in small, medium, and large rooms. It provides accurate
+        transcripts and speaker activity for meetings with four to eight
+        speakers. The helper saves the OpenSLR page and baseline documentation
+        by default. The approximately 5.2 GB test archive and 46 GB of training
+        archives are explicit opt-ins. VibeVoice-ASR-BitNet section 3.1 and
+        Table 4 evaluate the AISHELL-4 test set with CER.
+    license:
+      data: cc-by-sa-4.0
+      code: Apache-2.0
+      notes: >-
+        OpenSLR SLR111 lists the corpus under CC BY-SA 4.0. The official
+        baseline repository is Apache-2.0. The arXiv paper is CC BY 4.0, which
+        is separate from the share-alike dataset terms.
+    sources:
+      - https://www.openslr.org/111/
+      - https://arxiv.org/abs/2104.03603
+      - https://github.com/felixfuyihui/AISHELL-4
+      - https://raw.githubusercontent.com/felixfuyihui/AISHELL-4/master/README.md
+      - https://raw.githubusercontent.com/felixfuyihui/AISHELL-4/master/LICENSE
+      - https://api.github.com/repos/felixfuyihui/AISHELL-4
+      - https://arxiv.org/abs/2607.21075
+      - https://arxiv.org/html/2607.21075v1#S3.SS1
+
   - id: libriwasn
     name: LibriWASN
     full_name: "LibriWASN: A Data Set for Meeting Separation, Diarization, and Recognition with Asynchronous Recording Devices"
