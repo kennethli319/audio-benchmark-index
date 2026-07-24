@@ -13631,3 +13631,54 @@ benchmarks:
       - https://arxiv.org/html/2607.06691v1#S3
       - https://arxiv.org/html/2607.06691v1#S3.SS1
       - https://arxiv.org/html/2607.06691v1#S3.SS2
+
+  - id: spint
+    name: SpInt
+    full_name: "SpInt: A Spanish Speech Intelligibility Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_enhancement
+      - audio_quality_assessment
+    tasks:
+      - speech_intelligibility_assessment
+      - objective_intelligibility_metric_evaluation
+      - speech_enhancement_evaluation
+      - spanish_speech
+      - human_listening_test
+    official:
+      dataset: https://zenodo.org/records/20763580
+      doi: https://doi.org/10.5281/zenodo.20763580
+      paper: https://arxiv.org/abs/2607.10619
+    download:
+      primary:
+        - https://zenodo.org/records/20763580
+      examples:
+        - 'scripts/download/spint.sh'
+        - 'SPINT_DOWNLOAD_ARCHIVES=1 SPINT_PARTS="noise masks" scripts/download/spint.sh'
+      notes: >-
+        The public Zenodo v1.0 release provides behavioral intelligibility
+        labels for 5,148 processed Spanish utterances, per-stimulus and
+        listener-response metadata, complex speech-enhancement masks, noise
+        signals, and a reconstruction script. The clean Spanish Matrix Test
+        recordings are deliberately excluded because of their separate
+        license; users must obtain that corpus independently to reconstruct
+        the stimuli. The helper downloads the official record, README,
+        reconstruction script, and approximately 2.7 MB JSON metadata by
+        default. The approximately 807 MiB noise and 3.08 GiB mask archives
+        require explicit opt-in.
+    license:
+      data: CC-BY-4.0_for_released_SpInt_artifacts
+      upstream: Spanish_Matrix_Test_clean_speech_not_included_separate_terms_apply
+      notes: >-
+        Zenodo declares CC BY 4.0 for the released SpInt package. The record
+        explicitly withholds the original clean Spanish Matrix Test recordings
+        to respect their licensing conditions, so the release is not a
+        standalone audio corpus and CC BY 4.0 must not be extended to those
+        absent recordings.
+    sources:
+      - https://arxiv.org/abs/2607.10619
+      - https://arxiv.org/html/2607.10619v1#S2
+      - https://arxiv.org/html/2607.10619v1#S3
+      - https://zenodo.org/records/20763580
+      - https://zenodo.org/api/records/20763580
+      - https://zenodo.org/api/records/20763580/files/README.md/content

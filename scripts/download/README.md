@@ -163,6 +163,7 @@ scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
+scripts/download/spint.sh
 scripts/download/realman.sh
 scripts/download/forestir.sh
 scripts/download/mmae.sh
@@ -476,6 +477,10 @@ scripts/download/urban_beehive.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# SpInt downloads its record, reconstruction script, and 2.7 MB metadata by default.
+# The approximately 807 MiB noise and 3.08 GiB mask archives are opt-in.
+SPINT_DOWNLOAD_ARCHIVES=1 SPINT_PARTS="noise masks" scripts/download/spint.sh
 
 # RealMAN downloads official docs/API metadata by default. Its approximately
 # 812 GB public Hugging Face snapshot is opt-in.
