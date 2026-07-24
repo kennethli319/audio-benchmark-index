@@ -661,6 +661,58 @@ paper_audits:
       - https://arxiv.org/html/2607.21179v1#S5.SS1
       - https://arxiv.org/html/2607.21179v1#A4
 
+  omnireasoner_long_audio_video_tool_use:
+    paper: https://arxiv.org/abs/2607.19339
+    sections: 4.1-4.2
+    status: audited_existing_audio_visual_coverage
+    evaluated_sets:
+      - cited_as: OmniVideoBench
+        index_id: omnivideobench
+        status: gated_noncommercial_research
+      - cited_as: LVOmniBench
+        index_id: lvomnibench
+        status: gated_noncommercial_research
+      - cited_as: Daily-Omni
+        index_id: daily_omni
+        status: public_noncommercial
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: public_conflicting_license_metadata
+      - cited_as: VideoMME
+        index_id: video_mme
+        status: public_custom_academic_research_terms
+      - cited_as: VideoHolmes
+        index_id: null
+        status: excluded_visual_only
+        note: >-
+          VideoHolmes evaluates complex visual reasoning over videos but does
+          not define an audio or audio-visual task, so it remains outside this
+          audio benchmark index.
+    protocol_note: >-
+      Table 1 reports multiple-choice accuracy on six evaluation families.
+      OmniVideoBench, LVOmniBench, Daily-Omni, WorldSense, and Video-MME all
+      use audio-video inputs and were already indexed. VideoHolmes is the
+      paper's general video-reasoning control rather than an audio benchmark.
+      Section 4.2 additionally ablates removal of the audio track on
+      OmniVideoBench, LVOmniBench, and WorldSense; it does not release a new
+      evaluation split, item manifest, or benchmark-specific score records.
+    license_note: >-
+      OmniReasoner does not re-release or re-license any evaluation data.
+      Existing upstream access and license constraints remain in force:
+      OmniVideoBench and LVOmniBench are gated for non-commercial research,
+      Daily-Omni is CC BY-NC-SA 4.0, WorldSense has conflicting CC BY 4.0 and
+      CC BY-NC-SA 4.0 statements, and Video-MME uses custom academic-only
+      terms with separate source-video rights.
+    sources:
+      - https://arxiv.org/abs/2607.19339
+      - https://export.arxiv.org/e-print/2607.19339v1
+      - https://huggingface.co/datasets/NJU-LINK/OmniVideoBench
+      - https://huggingface.co/datasets/KD-TAO/LVOmniBench
+      - https://huggingface.co/datasets/liarliar/Daily-Omni
+      - https://huggingface.co/datasets/honglyhly/WorldSense
+      - https://huggingface.co/datasets/lmms-lab/Video-MME
+      - https://github.com/TencentARC/Video-Holmes
+
   polysim_cross_modal_retrieval:
     paper: https://arxiv.org/abs/2607.20358
     title: "PolySim: Deterministic Polynomial Surrogates for Cross-Modal Retrieval on CiM"

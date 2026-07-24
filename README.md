@@ -233,6 +233,15 @@ official repository, derived evaluation manifest, predictions, or score
 records. No duplicate family or paper-specific helper is added, and AVQA's
 non-commercial copying and redistribution restrictions remain in force.
 
+The July 2026 OmniReasoner paper is also recorded as an existing-coverage
+audit. Its main evaluation uses the indexed OmniVideoBench, LVOmniBench,
+Daily-Omni, WorldSense, and Video-MME audio-video families; VideoHolmes is a
+visual-only control outside this index's scope. Its audio-removal ablation on
+OmniVideoBench, LVOmniBench, and WorldSense creates no new public split or
+score package. OmniReasoner does not re-license these benchmarks, so their
+gated, non-commercial, conflicting-license, or custom academic-use terms
+continue to apply.
+
 The July 2026 PolySim paper is also recorded as an existing-coverage audit.
 Its six-dataset cross-modal retrieval evaluation contains two audio-text
 families, AudioCaps and Clotho, both already indexed; MS-COCO, Flickr30K,
