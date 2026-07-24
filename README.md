@@ -25,7 +25,8 @@ assessment, child-speech recognition, spatial audio localization, cross-modal au
 programmatic multimodal music-perception evaluation and atomic-event-based
 audio-visual caption completeness and hallucination evaluation,
 spatio-temporal and multi-audio reasoning,
-language-based moment retrieval, phrase-level temporal audio grounding, and human-captioned
+language-based moment retrieval, phrase-level temporal audio grounding, massive multilingual
+audio-embedding evaluation, and human-captioned
 real-world moment retrieval in long audio, plus time-aware localization,
 timestamped description, and timed summarization over recordings up to two hours,
 audio-visual segmentation, audio-video editing, audio-visual speech recognition,
@@ -61,7 +62,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 254 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 255 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -568,6 +569,7 @@ Current coverage includes:
 | [Fluent Speech Commands](https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/) | Spoken language understanding | Official Fluent.ai dataset page, [Google Groups access path](https://groups.google.com/a/fluent.ai/forum/#!forum/fluent-speech-commands), and [license PDF](https://fluent.ai/wp-content/uploads/2021/04/Fluent_Speech_Commands_Public_License.pdf); helper saves docs and prints access steps | Academic research only under CC BY-NC-ND 4.0; official page says commercial use is not authorized |
 | [HEAR](https://hearbenchmark.com/) | Speech/audio/music representation evaluation | Official [HEAR eval kit](https://github.com/hearbenchmark/hear-eval-kit) and [Zenodo HEAR 2021 task archive](https://zenodo.org/records/5885750); helper downloads record metadata/license by default and makes task archives opt-in | Mixed component dataset terms; Zenodo lists CC BY 4.0 but says each task has its own LICENSE.txt; eval kit is Apache-2.0 |
 | [Dynamic-SUPERB](https://github.com/dynamic-superb/dynamic-superb) | Speech instruction benchmark | Official Dynamic-SUPERB repository, [leaderboard](https://huggingface.co/spaces/DynamicSuperb/leaderboard), and docs; helper downloads docs by default and can clone the repo with opt-in | Mixed component dataset terms; GitHub API reported no repository license, so check each task source before use |
+| [MAEB](https://github.com/embeddings-benchmark/mteb) | Multilingual speech, music, environmental-sound, and audio-text embedding evaluation | Public 30-task beta suite in the official MTEB registry, spanning retrieval, classification, clustering, pair classification, reranking, multilabel classification, and zero-shot classification in more than 100 languages; helper downloads lightweight official metadata/docs by default and makes the approximately 55 MB MTEB source clone opt-in | MTEB code and registry are Apache-2.0, but all component datasets retain their own mixed licenses, access controls, attribution requirements, and media rights |
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
 | [SongFormBench](https://huggingface.co/datasets/ASLP-lab/SongFormBench) | Audio understanding | `load_dataset("ASLP-lab/SongFormBench")` | HF card and SongFormer repo list CC BY 4.0 |
 | [RUBATO](https://zenodo.org/records/21407832) | Robust music transcription and analysis across multiple versions of the same works | Public Zenodo v0.3 release with 566 versions of 15 works (about 42.9 hours), aligned audio/score/video representations, and note, beat, measure, local-key, structure, and warping-path annotations; helper downloads the 83 KB metadata by default while the approximately 6.26 GB archive is opt-in | Zenodo labels the deposit CC BY 3.0, but per-recording metadata includes CC0, attribution, ShareAlike, NoDerivatives, non-commercial, ambiguous, and EEF terms; review each recording before reuse |

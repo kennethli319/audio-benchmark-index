@@ -68,6 +68,7 @@ scripts/download/slue.sh
 scripts/download/minds14.sh
 scripts/download/hear.sh
 scripts/download/dynamic_superb.sh
+scripts/download/maeb.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
@@ -687,6 +688,10 @@ HEAR_CLONE_EVAL_KIT=1 scripts/download/hear.sh
 
 # Dynamic-SUPERB downloads official docs by default. Clone the repo with opt-in.
 DYNAMIC_SUPERB_CLONE_REPO=1 scripts/download/dynamic_superb.sh
+
+# MAEB downloads the MTEB docs, license, API metadata, and benchmark registry
+# by default. Clone the MTEB source only with opt-in; component data is separate.
+MAEB_CLONE_MTEB=1 scripts/download/maeb.sh
 
 # MIR-1K defaults to the Figshare mirror because the MIR Lab archive currently 404s.
 MIR1K_SOURCE=official scripts/download/mir_1k_vocal.sh

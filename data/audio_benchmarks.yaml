@@ -3555,6 +3555,67 @@ benchmarks:
       - https://arxiv.org/abs/2309.09510
       - https://arxiv.org/abs/2411.05361
 
+  - id: maeb
+    name: MAEB
+    full_name: "MAEB: Massive Audio Embedding Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_representation_benchmark
+      - audio_text_retrieval
+    tasks:
+      - audio_embedding_evaluation
+      - audio_text_retrieval
+      - audio_classification
+      - audio_clustering
+      - audio_pair_classification
+      - audio_reranking
+      - audio_multilabel_classification
+      - zero_shot_audio_classification
+      - multilingual_speech_evaluation
+      - music_representation_evaluation
+    official:
+      repo: https://github.com/embeddings-benchmark/mteb
+      paper: https://arxiv.org/abs/2602.16008
+      registry: https://github.com/embeddings-benchmark/mteb/blob/main/mteb/benchmarks/benchmarks/benchmarks.py
+    download:
+      primary:
+        - https://github.com/embeddings-benchmark/mteb
+        - https://raw.githubusercontent.com/embeddings-benchmark/mteb/main/mteb/benchmarks/benchmarks/benchmarks.py
+      examples:
+        - 'scripts/download/maeb.sh'
+        - 'MAEB_CLONE_MTEB=1 scripts/download/maeb.sh'
+      notes: >-
+        The public MTEB registry defines the 30-task MAEB beta suite across
+        speech, music, environmental sound, and audio-text evaluation in more
+        than 100 languages. It includes retrieval, classification, clustering,
+        pair classification, reranking, multilabel classification, and
+        zero-shot classification tasks. The helper downloads official
+        documentation, repository metadata, the Apache-2.0 license, and the
+        lightweight benchmark registry by default; cloning the approximately
+        55 MB MTEB source repository is opt-in. It does not fetch component
+        datasets, which MTEB tasks acquire separately and which can be large
+        or restricted.
+    license:
+      data: mixed_component_terms
+      code: Apache-2.0
+      notes: >-
+        Apache-2.0 covers the MTEB software and benchmark registry, not the
+        underlying MAEB task datasets. The 30 tasks draw on multiple speech,
+        music, and environmental-audio sources with their own licenses,
+        access controls, attribution requirements, and media rights. Review
+        every selected task's metadata and upstream dataset terms before
+        downloading, redistributing, or using it commercially.
+    sources:
+      - https://arxiv.org/abs/2602.16008
+      - https://export.arxiv.org/api/query?id_list=2602.16008
+      - https://github.com/embeddings-benchmark/mteb
+      - https://api.github.com/repos/embeddings-benchmark/mteb
+      - https://raw.githubusercontent.com/embeddings-benchmark/mteb/main/README.md
+      - https://raw.githubusercontent.com/embeddings-benchmark/mteb/main/LICENSE
+      - https://github.com/embeddings-benchmark/mteb/blob/main/mteb/benchmarks/benchmarks/benchmarks.py
+      - https://raw.githubusercontent.com/embeddings-benchmark/mteb/main/mteb/benchmarks/benchmarks/benchmarks.py
+      - https://arxiv.org/html/2607.18666v1#S6
+
   - id: rul_muchomusic
     name: RUL-MuchoMusic
     full_name: "RUL-MuchoMusic from RUListening / Are You Really Listening?"
