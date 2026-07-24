@@ -1175,6 +1175,43 @@ paper_audits:
       - https://api.github.com/repos/ol-MEGA/ppca/git/trees/main?recursive=1
     note: AudioMNIST, Google Speech Commands, and LibriSpeech are already indexed public source families. Although the paper calls its experimental framework public and cites PPCA, the current PPCA main tree contains general speech-privacy and SpeechBrain recipes but no paper-specific digit-sequence construction, digit-classifier training, obfuscation sweep, digit recognition error rate, or result-reproduction files. The derived informed-attacker evaluation is therefore recorded as a coverage audit rather than a duplicate benchmark family or new download helper.
 
+  audio_diarization_unknown_event_classes:
+    paper: https://arxiv.org/abs/2607.12703
+    title: "Audio Diarization: A New Paradigm for Exploring Audio Recordings with Unknown Event Classes"
+    sections: 4-5
+    status: audited_existing_source_corpora
+    public_interfaces: []
+    evaluated_sets:
+      - cited_as: DESED eval
+        index_id: desed
+        status: public
+        note: Section 4.4 evaluates known-class audio diarization on the public DESED evaluation subset after training on the train_strong, synthetic20, and synthetic21 subsets.
+      - cited_as: DMix-known
+        index_id: null
+        status: derived_unreleased
+        note: Section 5.1 mixes one ESC-50 event from dog, cat, vacuum cleaner, pouring water, brushing teeth, or clock alarm into eligible DESED evaluation clips; no mixture manifest, random seed, generated audio, or derived labels are released.
+      - cited_as: DMix-unknown
+        index_id: null
+        status: derived_unreleased
+        note: Section 5.1 instead mixes cow, frog, hen, pig, sheep, or crow events to test unseen-class detection; no mixture manifest, random seed, generated audio, or derived labels are released.
+    evaluated_domains:
+      - domain: prompt_free_open_set_audio_diarization
+        protocol: Detect event onset and offset times with overlap, group occurrences by latent event class without user prompts, and score false alarm, miss, and confusion components with diarization error rate
+        data_status: public_source_corpora_derived_evaluations_unreleased
+        note: DESED and ESC-50 are independently public and already indexed, but the paper-specific energy-threshold labels, mixing positions, energy scaling, selected rows, system implementation, and per-item predictions are not public.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      evaluation_artifacts: not_specified_unreleased
+      upstream: DESED's Zenodo releases list CC BY 4.0 while incorporated source media retains applicable component terms; ESC-50 is CC BY-NC 3.0, with ESC-10 under CC BY
+    sources:
+      - https://arxiv.org/abs/2607.12703
+      - https://arxiv.org/html/2607.12703v1#S4.SS2
+      - https://arxiv.org/html/2607.12703v1#S4.SS4
+      - https://arxiv.org/html/2607.12703v1#S5.SS1
+      - https://github.com/turpaultn/DESED
+      - https://github.com/karolpiczak/ESC-50
+    note: The paper introduces an evaluation protocol rather than a separately released benchmark family. Its v1 paper and arXiv metadata provide no official project, repository, dataset card, archive, item manifest, derived labels, evaluation code, or license for DMix-known or DMix-unknown. Public access to DESED and ESC-50 therefore does not reproduce the reported mixtures, so this audit adds no duplicate family or download helper.
+
   av_syncbench:
     paper: https://arxiv.org/abs/2607.00726
     sections: 2.1-2.3

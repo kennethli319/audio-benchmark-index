@@ -458,6 +458,16 @@ trained informed models, digit-recognition evaluation code, or per-item
 scores. Public access to the three source corpora therefore does not reproduce
 the derived protocol, and no duplicate family or download helper is added.
 
+The July 2026 *Audio Diarization* paper is likewise recorded as existing
+coverage rather than a new benchmark family. Its known-class experiment uses
+the indexed DESED evaluation subset, while DMix-known and DMix-unknown mix six
+known or six unseen ESC-50 classes into eligible DESED clips. Version 1
+provides no official project, repository, dataset card, mixture manifest,
+random seed, generated audio, energy-threshold labels, evaluation code, or
+per-item scores. The public DESED and ESC-50 source corpora therefore do not
+reproduce the two derived DMix evaluations, and their respective upstream
+terms still apply.
+
 The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
 synchronization protocol, not a downloadable family. It describes 3,269
 in-the-wild videos and 38,390 temporal and semantic challenge samples, but the
