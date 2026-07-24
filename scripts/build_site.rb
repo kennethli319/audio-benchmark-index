@@ -351,7 +351,7 @@ def render_site(catalog, manual)
 
   family_tiles = FAMILIES.map do |family|
     <<~HTML.chomp
-      <button class="family-tile" type="button" data-family-choice="#{family[:slug]}">
+      <button class="family-tile" type="button" data-family-choice="#{family[:slug]}" aria-pressed="false">
         <span>#{escape(family[:label])}</span>
         <strong>#{family_counts.fetch(family[:slug])}</strong>
         <small>#{escape(family[:description])}</small>

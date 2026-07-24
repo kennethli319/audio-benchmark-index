@@ -18,32 +18,40 @@
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
-      --ink: #172026;
-      --muted: #596673;
-      --line: #d7dee6;
-      --bg: #f3f6f8;
-      --panel: #ffffff;
-      --accent: #1859a9;
-      --accent-dark: #10437f;
-      --accent-soft: #eaf2fb;
-      --good: #087a55;
-      --good-soft: #e7f5ef;
-      --warn: #985b00;
-      --warn-soft: #fff3df;
-      --shadow: 0 14px 36px rgba(23, 32, 38, .08);
+      --ink: #142033;
+      --muted: #647083;
+      --line: #dce2e8;
+      --line-strong: #c8d0d9;
+      --bg: #f5f4ef;
+      --panel: #fffefa;
+      --panel-muted: #f8f8f4;
+      --accent: #d84e34;
+      --accent-dark: #a93622;
+      --accent-soft: #fff0eb;
+      --navy: #142033;
+      --navy-soft: #e9eef5;
+      --good: #167154;
+      --good-soft: #e8f4ee;
+      --warn: #996214;
+      --warn-soft: #fff3db;
+      --shadow: 0 18px 50px rgba(20, 32, 51, .08);
+      --shadow-small: 0 8px 24px rgba(20, 32, 51, .06);
     }
     * { box-sizing: border-box; }
     html { overflow-x: hidden; scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        linear-gradient(rgba(20, 32, 51, .025) 1px, transparent 1px),
+        var(--bg);
+      background-size: 100% 32px;
       color: var(--ink);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
       overflow-wrap: anywhere;
     }
-    body, button, input, select { font: inherit; }
-    a { color: var(--accent); text-underline-offset: 3px; }
+    button, input, select { font: inherit; }
+    a { color: var(--accent-dark); text-underline-offset: 3px; }
     button, select, input { color: inherit; }
     [hidden] { display: none !important; }
     :focus-visible { outline: 3px solid #79aee5; outline-offset: 3px; }
@@ -59,68 +67,78 @@
     }
     .skip-link:focus { top: 12px; }
     .site-nav {
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 10;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid rgba(20, 32, 51, .12);
+      background: rgba(255, 254, 250, .92);
+      backdrop-filter: blur(16px);
     }
     .site-nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      max-width: 1200px;
+      max-width: 1360px;
       margin: 0 auto;
       padding: 12px 24px;
     }
     .brand {
       color: var(--ink);
-      font-weight: 850;
-      letter-spacing: -.02em;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -.025em;
       text-decoration: none;
       white-space: nowrap;
     }
     .nav-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px; }
     .nav-links a {
-      border-radius: 8px;
+      border-radius: 999px;
       color: var(--ink);
       font-size: 14px;
-      font-weight: 700;
-      padding: 7px 10px;
+      font-weight: 750;
+      padding: 7px 11px;
       text-decoration: none;
     }
-    .nav-links a:hover { background: var(--accent-soft); color: var(--accent); }
-    .nav-links .repo-link { border: 1px solid var(--line); }
+    .nav-links a:hover { background: var(--accent-soft); color: var(--accent-dark); }
+    .nav-links .repo-link { border: 1px solid var(--line-strong); background: var(--panel); }
     .hero {
-      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.12);
       background:
-        radial-gradient(circle at 88% 12%, rgba(24, 89, 169, .12), transparent 31%),
-        linear-gradient(180deg, #ffffff, #f9fbfd);
+        radial-gradient(circle at 88% 8%, rgba(216, 78, 52, .24), transparent 28%),
+        radial-gradient(circle at 58% 120%, rgba(97, 140, 188, .2), transparent 34%),
+        var(--navy);
+      color: #ffffff;
     }
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) minmax(270px, .55fr);
-      gap: 48px;
-      align-items: end;
-      max-width: 1200px;
+      grid-template-columns: minmax(0, 1.35fr) minmax(360px, .65fr);
+      gap: 70px;
+      align-items: center;
+      max-width: 1360px;
       margin: 0 auto;
-      padding: 58px 24px 46px;
+      padding: 74px 24px 66px;
     }
     .eyebrow {
       color: var(--accent);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 850;
-      letter-spacing: .09em;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
     h1 {
       max-width: 860px;
       margin: 8px 0 14px;
-      font-size: clamp(38px, 6vw, 66px);
-      line-height: 1.02;
-      letter-spacing: -.045em;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: clamp(43px, 5.7vw, 74px);
+      font-weight: 700;
+      line-height: .98;
+      letter-spacing: -.052em;
     }
-    .lede { max-width: 72ch; margin: 0; color: #394957; font-size: clamp(17px, 2vw, 20px); }
+    .lede { max-width: 66ch; margin: 0; color: #cbd4df; font-size: clamp(17px, 2vw, 20px); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
     .button,
     .card-action {
@@ -129,7 +147,7 @@
       justify-content: center;
       min-height: 42px;
       border: 1px solid var(--line);
-      border-radius: 9px;
+      border-radius: 999px;
       background: var(--panel);
       color: var(--ink);
       font-weight: 800;
@@ -138,6 +156,7 @@
     }
     .button.primary,
     .card-action.primary { border-color: var(--accent); background: var(--accent); color: #ffffff; }
+    .hero .button:not(.primary) { border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08); color: #ffffff; }
     .button:hover,
     .card-action:hover { border-color: #8bb7e8; background: var(--accent-soft); color: var(--accent-dark); }
     .button.primary:hover,
@@ -147,25 +166,24 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1px;
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--line);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 20px;
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 24px 70px rgba(0,0,0,.2);
+      transform: rotate(1.25deg);
     }
-    .hero-stat { min-width: 0; background: rgba(255, 255, 255, .96); padding: 16px; }
-    .hero-stat span { display: block; color: var(--muted); font-size: 12px; }
-    .hero-stat strong { display: block; margin-top: 3px; font-size: 24px; line-height: 1.2; }
-    main { max-width: 1200px; margin: 0 auto; padding: 30px 24px 70px; }
-    section { scroll-margin-top: 18px; }
+    .hero-stat { min-width: 0; background: rgba(255,255,255,.94); color: var(--ink); padding: 19px; }
+    .hero-stat span { display: block; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+    .hero-stat strong { display: block; margin-top: 5px; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 27px; line-height: 1.15; }
+    main { max-width: 1360px; margin: 0 auto; padding: 24px 24px 80px; }
+    section { scroll-margin-top: 78px; }
     .scope-note {
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 13px;
       align-items: start;
-      border: 1px solid #b8cadb;
-      border-radius: 14px;
-      background: #edf3f8;
-      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      padding: 17px 4px 22px;
     }
     .scope-mark {
       display: grid;
@@ -173,49 +191,63 @@
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--navy);
       color: #ffffff;
       font-weight: 900;
     }
-    .scope-note h2 { margin: 0 0 4px; font-size: 19px; }
-    .scope-note p { margin: 0; color: #40505e; }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin: 44px 0 16px; }
-    .section-heading h2 { margin: 5px 0 0; font-size: clamp(26px, 4vw, 36px); letter-spacing: -.025em; }
+    .scope-note h2 { margin: 0 0 3px; font-size: 16px; }
+    .scope-note p { margin: 0; color: var(--muted); font-size: 13px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin: 42px 0 17px; }
+    .section-heading h2 { margin: 5px 0 0; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(28px, 4vw, 40px); letter-spacing: -.035em; line-height: 1.05; }
     .section-heading p { max-width: 66ch; margin: 0; color: var(--muted); }
     .family-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
+      gap: 10px;
     }
     .family-tile {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 5px 12px;
-      min-height: 138px;
+      min-height: 108px;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 12px;
       background: var(--panel);
-      padding: 17px;
+      padding: 15px;
       text-align: left;
       cursor: pointer;
     }
-    .family-tile:hover { border-color: #8bb7e8; background: #f8fbff; transform: translateY(-1px); }
+    .family-tile:hover,
+    .family-tile[aria-pressed="true"] { border-color: var(--navy); background: var(--navy); color: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-small); }
     .family-tile span { font-weight: 850; line-height: 1.3; }
     .family-tile strong { color: var(--accent); font-size: 21px; line-height: 1; }
-    .family-tile small { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
-    .filter-panel {
-      position: relative;
-      z-index: 2;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      padding: 16px;
+    .family-tile[aria-pressed="true"] strong { color: #ff977f; }
+    .family-tile small { grid-column: 1 / -1; color: var(--muted); font-size: 12px; }
+    .family-tile[aria-pressed="true"] small { color: #cbd4df; }
+    .browse-layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
     }
+    .browse-content { min-width: 0; }
+    .filter-panel {
+      position: sticky;
+      top: 82px;
+      z-index: 2;
+      border: 1px solid var(--line-strong);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: var(--shadow-small);
+      padding: 18px;
+    }
+    .filter-title { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    .filter-title strong { display: block; font-size: 16px; }
+    .filter-title span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
     .primary-filters {
       display: grid;
-      grid-template-columns: minmax(280px, 2fr) repeat(2, minmax(185px, .8fr));
-      gap: 10px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
     .field { display: grid; gap: 5px; min-width: 0; }
     .field label { color: var(--muted); font-size: 12px; font-weight: 750; }
@@ -228,23 +260,25 @@
       background: #ffffff;
       padding: 9px 11px;
     }
-    .advanced-filters { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
-    .advanced-filters summary { cursor: pointer; color: var(--accent); font-weight: 800; }
-    .advanced-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+    .advanced-filters { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .advanced-filters summary { cursor: pointer; color: var(--accent-dark); font-size: 13px; font-weight: 800; }
+    .advanced-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
     .results-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin: 18px 0 12px;
+      min-height: 52px;
+      margin: 0 0 12px;
+      border-bottom: 1px solid var(--line);
     }
-    .results-bar p { margin: 0; font-weight: 800; }
+    .results-bar p { margin: 0; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 20px; font-weight: 700; }
     .clear-button,
     .copy-button,
     .command-block button {
       min-height: 40px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 999px;
       background: var(--panel);
       color: var(--accent);
       font-weight: 800;
@@ -254,39 +288,42 @@
     .benchmark-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 12px;
     }
     .benchmark-card {
       display: flex;
       flex-direction: column;
       min-width: 0;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 16px;
       background: var(--panel);
-      padding: 20px;
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(20,32,51,.03);
+      transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
     }
+    .benchmark-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow-small); transform: translateY(-2px); }
     .benchmark-card:target { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(24, 89, 169, .13); }
     .card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-    .card-heading h3 { margin: 3px 0 0; font-size: 24px; line-height: 1.15; letter-spacing: -.02em; }
+    .card-heading h3 { margin: 3px 0 0; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 25px; line-height: 1.08; letter-spacing: -.025em; }
     .benchmark-full-name { max-width: 54ch; margin: 7px 0 0; color: var(--muted); font-size: 14px; }
     .access-badge { flex: 0 0 auto; border-radius: 999px; font-size: 11px; font-weight: 850; padding: 5px 8px; white-space: nowrap; }
     .access-badge.helper { background: var(--good-soft); color: var(--good); }
     .access-badge.manual { background: var(--warn-soft); color: var(--warn); }
     .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 15px 0; }
-    .tag { border-radius: 999px; background: var(--accent-soft); color: #21466d; font-size: 11px; padding: 4px 7px; }
+    .tag { border: 1px solid #e6d9d4; border-radius: 999px; background: var(--accent-soft); color: #713c30; font-size: 10px; font-weight: 700; padding: 4px 7px; }
     .tag-more { background: #eef1f4; color: var(--muted); }
     .card-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
-    .card-facts div { min-width: 0; background: #fbfcfd; padding: 10px 11px; }
+    .card-facts div { min-width: 0; background: var(--panel-muted); padding: 10px 11px; }
     .card-facts span { display: block; color: var(--muted); font-size: 11px; }
     .card-facts strong { display: block; margin-top: 2px; font-size: 13px; }
-    .access-copy { margin: 14px 0; color: #40505e; font-size: 14px; }
+    .access-copy { margin: 13px 0; color: var(--muted); font-size: 13px; }
     .card-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
     .card-action { min-height: 38px; font-size: 13px; padding: 7px 10px; }
     .benchmark-details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
-    .benchmark-details > summary { cursor: pointer; color: var(--accent); font-weight: 800; }
+    .benchmark-details > summary { cursor: pointer; color: var(--accent-dark); font-size: 13px; font-weight: 800; }
     .details-body { display: grid; gap: 14px; padding-top: 13px; }
     .terms-list { display: grid; gap: 1px; overflow: hidden; margin: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
-    .terms-list div { background: #fbfcfd; padding: 10px 11px; }
+    .terms-list div { background: var(--panel-muted); padding: 10px 11px; }
     .terms-list dt { color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
     .terms-list dd { margin: 3px 0 0; font-size: 13px; }
     .command-block { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 10px; background: #172026; color: #f7f9fb; padding: 11px 12px; }
@@ -303,21 +340,23 @@
     .no-results p { margin: 0 0 14px; color: var(--muted); }
     .workflow-panel {
       margin-top: 54px;
-      border: 1px solid #8bb7e8;
-      border-radius: 16px;
-      background: linear-gradient(145deg, #f7fbff, #eaf3fc);
-      padding: 26px;
+      border: 0;
+      border-radius: 20px;
+      background: var(--navy);
+      color: #ffffff;
+      padding: 34px;
     }
-    .workflow-panel h2 { margin: 5px 0 8px; font-size: clamp(26px, 4vw, 36px); }
-    .workflow-panel > p { max-width: 78ch; margin: 0; color: #40505e; }
+    .workflow-panel h2 { margin: 5px 0 8px; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(28px, 4vw, 40px); }
+    .workflow-panel > p { max-width: 78ch; margin: 0; color: #cbd4df; }
     .workflow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
-    .workflow-step { border: 1px solid rgba(24, 89, 169, .2); border-radius: 12px; background: rgba(255,255,255,.8); padding: 14px; }
+    .workflow-step { border: 1px solid rgba(255,255,255,.13); border-radius: 12px; background: rgba(255,255,255,.07); padding: 14px; }
     .workflow-step span { color: var(--accent); font-size: 12px; font-weight: 900; }
     .workflow-step h3 { margin: 4px 0; font-size: 16px; }
-    .workflow-step p { margin: 0; color: var(--muted); font-size: 13px; }
+    .workflow-step p { margin: 0; color: #bac6d4; font-size: 13px; }
+    .workflow-panel .button:not(.primary) { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: #ffffff; }
     .workflow-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
     footer { border-top: 1px solid var(--line); background: var(--panel); }
-    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 26px 24px 34px; }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; max-width: 1360px; margin: 0 auto; padding: 30px 24px 38px; }
     .footer-inner p { margin: 0; color: var(--muted); }
     .footer-inner strong { color: var(--ink); }
     .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 15px; }
@@ -325,15 +364,26 @@
       .hero-inner { grid-template-columns: 1fr; gap: 28px; }
       .hero-stats { max-width: 620px; }
       .family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .primary-filters { grid-template-columns: 1fr 1fr; }
+      .browse-layout { grid-template-columns: 1fr; }
+      .filter-panel { position: relative; top: auto; }
+      .primary-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .primary-filters .search-field { grid-column: 1 / -1; }
+      .advanced-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .benchmark-grid { grid-template-columns: 1fr; }
       .workflow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 720px) {
+      .site-nav { position: relative; }
       .site-nav-inner { align-items: flex-start; flex-direction: column; gap: 8px; padding: 10px 16px; }
       .nav-links { justify-content: flex-start; }
-      .hero-inner { padding: 38px 18px 34px; }
+      .hero-inner { padding: 44px 18px 40px; }
+      .hero-inner > *,
+      .hero-stats,
+      .section-heading > * { width: 100%; min-width: 0; }
+      .hero-actions .button { flex: 1 1 150px; }
+      .hero-stats { transform: none; }
+      .hero-stat { padding: 15px; }
+      .hero-stat strong { font-size: 22px; }
       main { padding: 22px 12px 48px; }
       .scope-note { grid-template-columns: 1fr; }
       .scope-mark { width: 26px; height: 26px; }
@@ -421,75 +471,83 @@
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
-      <form class="filter-panel" id="benchmark-filters" role="search">
-        <div class="primary-filters">
-          <div class="field search-field">
-            <label for="benchmark-search">Search the index</label>
-            <input id="benchmark-search" name="q" type="search" placeholder="Try ASR, emotion, CC BY, diarization…" autocomplete="off">
+      <div class="browse-layout">
+        <form class="filter-panel" id="benchmark-filters" role="search">
+          <div class="filter-title">
+            <strong>Refine the catalog</strong>
+            <span>Filters update results instantly.</span>
           </div>
-          <div class="field">
-            <label for="family-filter">Task family</label>
-            <select id="family-filter" name="family">
-              <option value="">All task families</option>
-              {{FAMILY_OPTIONS}}
-            </select>
+          <div class="primary-filters">
+            <div class="field search-field">
+              <label for="benchmark-search">Search the index</label>
+              <input id="benchmark-search" name="q" type="search" placeholder="ASR, emotion, CC BY…" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="family-filter">Task family</label>
+              <select id="family-filter" name="family">
+                <option value="">All task families</option>
+                {{FAMILY_OPTIONS}}
+              </select>
+            </div>
+            <div class="field">
+              <label for="access-filter">Access</label>
+              <select id="access-filter" name="access">
+                <option value="">All access paths</option>
+                <option value="helper">Safe-first helper</option>
+                <option value="manual">Manual or gated</option>
+              </select>
+            </div>
           </div>
-          <div class="field">
-            <label for="access-filter">Access</label>
-            <select id="access-filter" name="access">
-              <option value="">All access paths</option>
-              <option value="helper">Safe-first helper</option>
-              <option value="manual">Manual or gated</option>
-            </select>
+          <details class="advanced-filters">
+            <summary>Source, terms &amp; sorting</summary>
+            <div class="advanced-grid">
+              <div class="field">
+                <label for="host-filter">Primary data host</label>
+                <select id="host-filter" name="host">
+                  <option value="">All hosts</option>
+                  <option value="hugging-face">Hugging Face</option>
+                  <option value="openslr">OpenSLR</option>
+                  <option value="zenodo">Zenodo</option>
+                  <option value="ldc">LDC / licensed</option>
+                  <option value="official">Official / other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="terms-filter">Upstream terms signal</label>
+                <select id="terms-filter" name="terms">
+                  <option value="">All terms</option>
+                  <option value="open">Open / attribution signals</option>
+                  <option value="noncommercial">Non-commercial / research terms</option>
+                  <option value="mixed">Mixed / custom — review</option>
+                  <option value="unspecified">Not specified</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="sort-filter">Sort</label>
+                <select id="sort-filter" name="sort">
+                  <option value="az">Name A–Z</option>
+                  <option value="za">Name Z–A</option>
+                </select>
+              </div>
+            </div>
+          </details>
+        </form>
+
+        <div class="browse-content">
+          <div class="results-bar">
+            <p id="result-status" role="status" aria-live="polite">Showing {{BENCHMARK_COUNT}} of {{BENCHMARK_COUNT}} benchmarks.</p>
+            <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
+          </div>
+
+          <div class="benchmark-grid" id="benchmark-list">
+            {{BENCHMARK_CARDS}}
+          </div>
+          <div class="no-results" id="no-results" hidden>
+            <h3>No benchmarks match those filters</h3>
+            <p>Try a broader task family or remove a search term.</p>
+            <button class="clear-button" type="button" data-clear-filters>Clear all filters</button>
           </div>
         </div>
-        <details class="advanced-filters">
-          <summary>More filters and sorting</summary>
-          <div class="advanced-grid">
-            <div class="field">
-              <label for="host-filter">Primary data host</label>
-              <select id="host-filter" name="host">
-                <option value="">All hosts</option>
-                <option value="hugging-face">Hugging Face</option>
-                <option value="openslr">OpenSLR</option>
-                <option value="zenodo">Zenodo</option>
-                <option value="ldc">LDC / licensed</option>
-                <option value="official">Official / other</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="terms-filter">Upstream terms signal</label>
-              <select id="terms-filter" name="terms">
-                <option value="">All terms</option>
-                <option value="open">Open / attribution signals</option>
-                <option value="noncommercial">Non-commercial / research terms</option>
-                <option value="mixed">Mixed / custom — review</option>
-                <option value="unspecified">Not specified</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="sort-filter">Sort</label>
-              <select id="sort-filter" name="sort">
-                <option value="az">Name A–Z</option>
-                <option value="za">Name Z–A</option>
-              </select>
-            </div>
-          </div>
-        </details>
-      </form>
-
-      <div class="results-bar">
-        <p id="result-status" role="status" aria-live="polite">Showing {{BENCHMARK_COUNT}} of {{BENCHMARK_COUNT}} benchmarks.</p>
-        <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
-      </div>
-
-      <div class="benchmark-grid" id="benchmark-list">
-        {{BENCHMARK_CARDS}}
-      </div>
-      <div class="no-results" id="no-results" hidden>
-        <h3>No benchmarks match those filters</h3>
-        <p>Try a broader task family or remove a search term.</p>
-        <button class="clear-button" type="button" data-clear-filters>Clear all filters</button>
       </div>
     </section>
 
@@ -538,6 +596,7 @@
       const status = document.querySelector("#result-status");
       const noResults = document.querySelector("#no-results");
       const controls = [search, family, access, host, terms, sort];
+      const familyTiles = Array.from(document.querySelectorAll("[data-family-choice]"));
 
       function normalized(value) {
         return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -578,6 +637,9 @@
         });
         status.textContent = `Showing ${visible} of ${cards.length} benchmarks.`;
         noResults.hidden = visible !== 0;
+        familyTiles.forEach((tile) => {
+          tile.setAttribute("aria-pressed", String(tile.dataset.familyChoice === family.value));
+        });
         updateUrl();
       }
 
@@ -604,7 +666,7 @@
       form.addEventListener("submit", (event) => event.preventDefault());
       document.querySelector("#clear-filters").addEventListener("click", clearFilters);
       document.querySelectorAll("[data-clear-filters]").forEach((button) => button.addEventListener("click", clearFilters));
-      document.querySelectorAll("[data-family-choice]").forEach((button) => {
+      familyTiles.forEach((button) => {
         button.addEventListener("click", () => {
           family.value = button.dataset.familyChoice;
           applyFilters();
