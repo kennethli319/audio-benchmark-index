@@ -59,7 +59,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 242 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 243 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -564,6 +564,7 @@ Current coverage includes:
 | [VocalSet](https://zenodo.org/records/1193957) | Singing voice analysis | Official [Zenodo record](https://zenodo.org/records/1193957), DOI, and [ISMIR paper](https://archives.ismir.net/ismir2018/paper/000105.pdf); helper saves record metadata by default and makes the 2.1 GB archive opt-in | Zenodo lists CC BY 4.0; treat singer voice data with normal consent/attribution care |
 | [EmoV-DB](https://github.com/numediart/EmoV-DB) | Emotional speech synthesis and speech emotion | [OpenSLR SLR115](https://www.openslr.org/115/) per-speaker/per-emotion archives; helper saves docs/license by default and downloads selected archives only with opt-in | Custom non-commercial terms for research, teaching, scientific publication, and personal experimentation; commercial use requires contacting the owner |
 | [RAVDESS](https://zenodo.org/records/1188976) | Speech emotion recognition | [Zenodo record](https://zenodo.org/records/1188976); helper saves metadata by default and downloads audio-only speech/song ZIPs with opt-in | CC BY-NC-SA 4.0; commercial licenses are separate |
+| [TESS](https://doi.org/10.5683/SP2/E8H2MF) | Speech emotion recognition and auditory emotion perception | Owner-hosted University of Toronto Dataverse release with 2,800 acted-emotion WAV stimuli; helper saves official metadata by default and makes the complete ZIP opt-in | CC BY-NC 4.0; preserve attribution and review identifiable-voice ethics for downstream use |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
 | [SpEmoC](https://skvipparthi.com/spemoc.html) | Multimodal speaker-segment emotion recognition | Official project and paper document 30,000 refined clips from 306,544 raw segments across 3,100 English-language movies and TV series; full media access requires a signed requestor and faculty/PI agreement sent from an institutional address, and the helper only saves public documentation | Custom non-commercial academic agreement prohibits redistribution; source movie/TV copyrights remain with their owners; public repository code and split/metadata terms are unspecified |

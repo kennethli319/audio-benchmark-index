@@ -180,6 +180,7 @@ scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
 scripts/download/emov_db.sh
 scripts/download/ravdess.sh
+scripts/download/tess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
 scripts/download/emoprefer.sh
@@ -803,6 +804,9 @@ EMOV_DB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/115 EMOV_DB_DOWNLOAD
 
 # RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
 RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh
+
+# TESS saves official Borealis metadata by default. The complete 2,800-file ZIP is opt-in.
+TESS_DOWNLOAD_AUDIO=1 scripts/download/tess.sh
 
 # CREMA-D saves README/license/CSV metadata by default. Full media needs Git LFS and is opt-in.
 CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh

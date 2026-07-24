@@ -7326,6 +7326,42 @@ benchmarks:
       - https://doi.org/10.1371/journal.pone.0196391
       - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0196391
 
+  - id: tess
+    name: TESS
+    full_name: Toronto Emotional Speech Set
+    qwen_cited_as: null
+    qwen_bucket: speech_emotion_recognition
+    tasks:
+      - speech_emotion_recognition
+      - acted_emotional_speech
+      - auditory_emotion_perception
+    official:
+      dataset: https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP2/E8H2MF
+      doi: https://doi.org/10.5683/SP2/E8H2MF
+      metadata_api: https://borealisdata.ca/api/datasets/:persistentId/?persistentId=doi:10.5683/SP2/E8H2MF
+      license: https://creativecommons.org/licenses/by-nc/4.0/
+    download:
+      primary:
+        - https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP2/E8H2MF
+        - https://borealisdata.ca/api/access/dataset/:persistentId/?persistentId=doi:10.5683/SP2/E8H2MF
+      examples:
+        - 'scripts/download/tess.sh'
+        - 'TESS_DOWNLOAD_AUDIO=1 scripts/download/tess.sh'
+      notes: >-
+        The owner-hosted University of Toronto Dataverse release contains
+        2,800 WAV stimuli: 200 target words spoken by two English-speaking
+        actresses aged 26 and 64 in seven acted emotions. The helper saves
+        official dataset metadata by default and requires
+        TESS_DOWNLOAD_AUDIO=1 before downloading the complete ZIP.
+    license:
+      data: cc-by-nc-4.0
+      code: not_applicable
+      notes: The official Borealis record lists CC BY-NC 4.0. The corpus contains identifiable human voices and permits only non-commercial reuse under that license; preserve attribution and review voice-data ethics for downstream use.
+    sources:
+      - https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP2/E8H2MF
+      - https://borealisdata.ca/api/datasets/:persistentId/?persistentId=doi:10.5683/SP2/E8H2MF
+      - https://doi.org/10.5683/SP2/E8H2MF
+
   - id: crema_d
     name: CREMA-D
     full_name: "CREMA-D: Crowd-sourced Emotional Multimodal Actors Dataset"
