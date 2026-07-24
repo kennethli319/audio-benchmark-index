@@ -42,7 +42,8 @@ over bilingual multi-speaker conversations, reverberant-room ASR robustness,
 audio-conditioned human-pet interaction and multimodal motion generation,
 and multimodal speaker-segment, open-vocabulary audio-visual, in-cabin
 driver emotion recognition, and audio-visual social-relationship inference, exact structured-token
-recovery in workplace ASR, in-the-wild neurological Spanish ASR, as well as multi-turn voice-agent
+recovery in workplace ASR, in-the-wild neurological Spanish ASR,
+spontaneous-speech cognitive-impairment detection, as well as multi-turn voice-agent
 tool use, grounding, state tracking, conversational memory, and context-aware
 turn-taking decisions.
 The index also covers likelihood-based acoustic consistency and semantic-acoustic
@@ -56,7 +57,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 238 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 239 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -428,6 +429,7 @@ Current coverage includes:
 | [PazaBench](https://huggingface.co/spaces/microsoft/paza-bench) | Low-resource multilingual ASR accuracy and efficiency | Public Microsoft Research Africa leaderboard reporting WER, CER, and inverse real-time factor across 61 African languages, 53 models, and 11 named upstream dataset groups; helper saves official docs, Space metadata, and the dataset inventory only because no standalone unified audio snapshot or frozen item manifest is published | Space metadata declares MIT for the leaderboard implementation; the source datasets retain mixed CC0, attribution, share-alike, non-commercial, gated, Apache-2.0, and other provider terms |
 | [VoiceCodeBench](https://huggingface.co/datasets/besimple-ai/voice-code-bench) | Exact structured-token and entity recovery in workplace ASR | Public, ungated test-only release with 300 human-recorded English segments, 1,482 targets across 26 entity types, and released baseline predictions/scoring; helper downloads docs, paper, license, and the 1.1 MB annotations by default while the approximately 1.83 GiB snapshot is opt-in | Repository and card declare MIT; the card documents contributor consent but excludes model training, speaker identification, biometric modeling, voice cloning, and demographic profiling from intended use |
 | [S-DiverSe](https://github.com/ferugit/s-diverse) | In-the-wild neurological Spanish ASR | Public TSV annotations for 444 segments (3.2 hours, 22 speakers) across ALS, Parkinson's disease, and post-stroke speech; audio is not redistributed and must be reconstructed from timestamped public-video links; helper downloads annotations/docs/code only | No data or code license is specified; arXiv's CC BY 4.0 covers the paper, not the release or linked recordings; review health-data privacy, consent, ethics, source rights, and platform terms |
+| [ADReSS / ADReSSo](https://talkbank.org/dementia/ADReSS-2020/) | Spontaneous-speech Alzheimer's detection, MMSE regression, and cognitive-decline prediction | Official age- and gender-balanced 2020 and audio-only 2021 challenge releases require approved DementiaBank membership; helper saves public challenge/access documentation and prints the manual membership path without accessing clinical recordings | TalkBank defaults to CC BY-NC-SA 3.0 plus strict password-protected clinical-data rules: non-commercial use, no LLM incorporation, no sharing with non-members, confidentiality and ethics duties, and faculty sponsorship for student access |
 | [VoxPopuli](https://github.com/facebookresearch/voxpopuli) | ASR and S2TT | [facebook/voxpopuli](https://huggingface.co/datasets/facebook/voxpopuli); select a language/config and split before downloading the large HF repository | Data is CC0-1.0; code and pretrained models are CC BY-NC 4.0; raw data also points to European Parliament legal notice |
 | [mTEDx](https://www.openslr.org/100) | ASR and S2TT | [OpenSLR SLR100](https://www.openslr.org/100) ASR language archives, speech-translation language-pair archives, IWSLT 2021 test sets, and small metadata; archives are opt-in in the helper | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
 | [OpenSTBench](https://github.com/sjtuayj/OpenSTBench) | Multidimensional offline and streaming speech-translation evaluation | Public evaluation toolkit plus an ungated [300-sample LibriTTS-based paired-speaker set](https://huggingface.co/datasets/ayj111/openstbench-paired-set); helper downloads docs/metadata by default, while the approximately 511 MiB paired set and toolkit clone are separate opt-ins | Paired-set card declares `other` and preserves upstream/synthesis terms; original code is MIT, adapted SimulEval components are CC BY-SA 4.0, and each component evaluation corpus retains its own terms |

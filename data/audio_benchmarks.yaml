@@ -3352,6 +3352,65 @@ benchmarks:
       - https://raw.githubusercontent.com/ferugit/s-diverse/master/src/download_audio.py
       - https://api.github.com/repos/ferugit/s-diverse
 
+  - id: adress_challenges
+    name: ADReSS / ADReSSo
+    full_name: "Alzheimer's Dementia Recognition through Spontaneous Speech Challenges"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_understanding
+      - health_audio
+    tasks:
+      - cognitive_impairment_detection
+      - alzheimers_dementia_classification
+      - mmse_score_regression
+      - cognitive_decline_prediction
+      - spontaneous_speech_understanding
+      - spoken_language_understanding
+    official:
+      adress_2020: https://talkbank.org/dementia/ADReSS-2020/
+      adresso_2021: https://talkbank.org/dementia/ADReSSo-2021/
+      access: https://talkbank.org/dementia/
+      ground_rules: https://talkbank.org/0share/rules.html
+      recent_evaluation: https://arxiv.org/abs/2607.21496
+    download:
+      primary:
+        - https://talkbank.org/dementia/ADReSS-2020/
+        - https://talkbank.org/dementia/ADReSSo-2021/
+      examples:
+        - 'scripts/download/adress_challenges.sh'
+      notes: >-
+        The official DementiaBank pages release age- and gender-balanced
+        spontaneous-speech challenge sets after consortium approval. ADReSS
+        2020 provides enhanced full audio, normalized speech segments,
+        transcripts, demographics, diagnosis labels, and MMSE scores for
+        Alzheimer's-dementia classification and MMSE regression. ADReSSo 2021
+        is audio-only at evaluation time and adds longitudinal cognitive-
+        decline prediction. The helper saves the public challenge pages,
+        DementiaBank access rules, and the July 2026 cross-dataset evaluation
+        paper, then prints the manual membership path; it never attempts to
+        access password-protected participant recordings.
+    license:
+      data: CC-BY-NC-SA-3.0_with_password_protected_clinical_access
+      code: not_applicable
+      notes: >-
+        TalkBank says CC BY-NC-SA 3.0 governs its data unless otherwise
+        indicated, prohibits incorporation into commercial products or large
+        language models, and restricts DementiaBank membership to established
+        researchers and clinicians or faculty-sponsored students. Password-
+        protected data may not be shared with non-members or posted elsewhere.
+        The recordings contain sensitive clinical and potentially identifiable
+        speech; users must also follow the TalkBank Code of Ethics, NIH
+        confidentiality protections, citation rules, and non-storage
+        requirements for web processing.
+    sources:
+      - https://talkbank.org/dementia/ADReSS-2020/
+      - https://talkbank.org/dementia/ADReSSo-2021/
+      - https://talkbank.org/dementia/
+      - https://talkbank.org/0share/rules.html
+      - https://arxiv.org/abs/2004.06833
+      - https://arxiv.org/abs/2104.09356
+      - https://arxiv.org/abs/2607.21496
+
   - id: voxpopuli
     name: VoxPopuli
     full_name: "VoxPopuli: A Large-Scale Multilingual Speech Corpus for Representation Learning, Semi-Supervised Learning and Interpretation"

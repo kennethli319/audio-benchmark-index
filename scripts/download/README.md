@@ -235,6 +235,7 @@ WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/lyra_sa.sh
+scripts/download/adress_challenges.sh
 scripts/download/iemocap.sh
 scripts/download/ov_merd.sh
 scripts/download/spemoc.sh
@@ -919,6 +920,10 @@ MADB_DOWNLOAD_HF=1 scripts/download/madb.sh
 # Lyra-SA saves the official Tencent Music pages and SongSQA paper, then prints
 # the application form. The archive URL is emailed after approval.
 scripts/download/lyra_sa.sh
+
+# ADReSS and ADReSSo save public challenge/access documentation, then print
+# the DementiaBank membership path. Clinical recordings stay password protected.
+scripts/download/adress_challenges.sh
 
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
