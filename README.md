@@ -175,6 +175,16 @@ only selected qualitative examples. No benchmark archive, item manifest,
 repository, dataset card, license, or evaluation-code link is currently
 provided, despite the paper describing its training split as released.
 
+The July 2026 structured-audio-caption evaluation paper is also recorded as an
+announced protocol rather than a downloadable family. It selects 499 public
+AudioCards clips and adds loudness, pitch, active-region, and ten-band spectral
+targets, then validates field-specific metrics with controlled perturbations.
+Version 1 says the augmented dataset will be released but provides no project,
+repository, dataset card, selected-item manifest, computed targets,
+perturbation artifacts, evaluation code, or standalone data license. The
+public AudioCards family remains indexed separately and must not be treated as
+the unreleased augmented subset.
+
 The July 2026 RIME paper is recorded as an audited agentic music
 post-production protocol rather than a downloadable family. Its evaluation
 uses approximately 3,000 input, edited-audio, and instruction triples derived

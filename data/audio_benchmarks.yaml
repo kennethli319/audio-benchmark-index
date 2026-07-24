@@ -638,6 +638,34 @@ paper_audits:
       - https://artificialanalysis.ai/music/leaderboard/vocals
     note: The official project page publicly streams selected qualitative examples and comparison tracks, but it is not a benchmark release and provides no repository, dataset card, archive, complete evaluation manifest, or data-license statement. The paper's independent Artificial Analysis leaderboard result is an external service evaluation, not a downloadable dataset. This report is therefore recorded as an audited protocol rather than a benchmark family.
 
+  structured_audio_caption_evaluation:
+    paper: https://arxiv.org/abs/2607.21424
+    sections: 2-4
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: structured_audio_captioning
+        protocol: 499 AudioCards clips across 57 UCS categories and 136 subcategories, evaluated over 15 semantic, descriptive, reasoning, numeric, and spectral fields
+        data_status: source_dataset_public_augmented_subset_unreleased
+        note: The paper augments 11 AudioCards fields with integrated loudness, median fundamental frequency, active onset/offset bounds, and a ten-band frequency profile. It does not publish the selected clip manifest, computed measurements, structured targets, prompts, or evaluation implementation.
+      - domain: structured_caption_metric_validation
+        protocol: Controlled meaning-preserving paraphrases and typed semantic, reasoning, numeric, temporal, and spectral perturbations at graded severities
+        data_status: perturbation_artifacts_and_score_records_unreleased
+        note: Sections 3-4 specify LLM-judge and deterministic metrics plus synthetic perturbation rules, but provide no public perturbation files, generated variants, per-item scores, judge records, or executable evaluation package.
+    license:
+      paper: CC BY-NC-SA 4.0
+      benchmark_data: not_specified_unreleased
+      upstream: AudioCards access and license terms remain applicable; the paper license does not license absent augmented annotations or evaluation artifacts
+    sources:
+      - https://arxiv.org/abs/2607.21424
+      - https://arxiv.org/html/2607.21424v1#S2
+      - https://arxiv.org/html/2607.21424v1#S3
+      - https://arxiv.org/html/2607.21424v1#S4
+      - https://sites.google.com/view/audiocards/
+      - https://zenodo.org/records/17237181
+      - https://zenodo.org/api/records/17237181
+    note: The paper says the augmented AudioCards dataset will be released, but v1 provides no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
+
   chronos_audio:
     paper: https://arxiv.org/abs/2601.04876
     sections: 3 and appendices 2-3
