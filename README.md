@@ -193,6 +193,14 @@ official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
 
+The July 2026 OPOD paper is likewise recorded as an existing-coverage audit.
+Its audio-relevant evaluation consists only of the indexed MMAU, AVQA, and
+OmniBench families; the other nine columns are text or visual benchmarks.
+The paper reports accuracy and averages all twelve columns, but publishes no
+official repository, derived evaluation manifest, predictions, or score
+records. No duplicate family or paper-specific helper is added, and AVQA's
+non-commercial copying and redistribution restrictions remain in force.
+
 The July 2026 diagnostic cover-song evaluation paper is recorded as a
 partial-release protocol rather than a downloadable benchmark family. Its
 official MIT repository publishes the 30-row expert-score table, anonymized

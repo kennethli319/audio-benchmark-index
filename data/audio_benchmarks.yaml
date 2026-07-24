@@ -389,6 +389,48 @@ paper_audits:
       - https://arxiv.org/abs/2004.06833
       - https://arxiv.org/abs/2104.09356
 
+  opod_omni_distillation:
+    paper: https://arxiv.org/abs/2607.20918
+    title: "OPOD: On-Policy Omni Distillation"
+    sections: 4.1-4.4
+    status: audited_existing_coverage
+    evaluated_sets:
+      - cited_as: MMAU
+        index_id: mmau
+        status: public
+        note: The paper reports accuracy on MMAU as one of its two audio benchmarks.
+      - cited_as: AVQA
+        index_id: avqa
+        status: public_restricted_terms
+        note: >-
+          The cited work is the public AVQA audio-visual question-answering
+          release. Its official page limits copying to personal or classroom
+          use without profit or commercial advantage and requires permission
+          for broader copying or redistribution.
+      - cited_as: OmniBench
+        index_id: omnibench
+        status: public
+        note: The paper uses OmniBench for its single omni-modal evaluation column.
+    protocol_note: >-
+      Section 4.1 evaluates twelve text, visual, audio, and omni-modal
+      benchmarks. The audio-relevant portion consists only of MMAU, AVQA, and
+      OmniBench, all already indexed. Results are reported as accuracy and
+      averaged with nine non-audio benchmarks. The paper supplies no official
+      project, repository, derived evaluation manifest, predictions, or score
+      records, so this audit adds provenance without creating a duplicate
+      benchmark family or paper-specific helper.
+    license_note: >-
+      The paper does not provide alternate benchmark copies or terms. MMAU,
+      AVQA, and OmniBench retain their respective upstream data, code, and
+      source-media conditions.
+    sources:
+      - https://arxiv.org/abs/2607.20918
+      - https://arxiv.org/html/2607.20918v1#S4.SS1
+      - https://arxiv.org/html/2607.20918v1#S4.SS2
+      - https://sakshi113.github.io/mmau_homepage/
+      - https://mn.cs.tsinghua.edu.cn/avqa
+      - https://m-a-p.ai/OmniBench/
+
   x3_opd_audio_reasoning:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4
