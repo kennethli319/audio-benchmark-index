@@ -389,6 +389,34 @@ paper_audits:
       - https://zenodo.org/records/14498691
       - https://jungjee.github.io/spoofceleb/
 
+  speech2speech_assistant_guardrails:
+    paper: https://arxiv.org/abs/2607.21180
+    title: "Safeguards for Speech2Speech LLM-Assistants: A Case Study in Automotive Applications"
+    sections: Evaluation Setup and Evaluation Results
+    status: audited_protocol_unreleased
+    evaluated_sets: []
+    protocol_note: >-
+      The paper compares no guardrail, tool-based guardrails, and
+      transcript-based guardrails across Gemini Flash, Nova Sonic, and GPT
+      Realtime. It crosses those systems with malicious and non-malicious
+      speech inputs to form 18 setups, repeats each setup 300 times, and
+      reports response-latency distributions and whether guardrails execute
+      before each answer. The malicious condition is synthetic input
+      containing the benign trigger word "whale"; detection accuracy is
+      explicitly outside the study. This is a reproducibility protocol, not a
+      named public benchmark dataset.
+    release_note: >-
+      Version 1 and its official arXiv source package provide no project page,
+      repository, dataset card, audio or prompt manifest, per-run latency
+      records, response outputs, or evaluation implementation. The paper's CC
+      BY-NC-ND 4.0 license covers the article and source package, not absent
+      experiment artifacts or vendor API outputs. No benchmark family or
+      download helper is added unless an official release appears.
+    sources:
+      - https://arxiv.org/abs/2607.21180
+      - https://arxiv.org/pdf/2607.21180
+      - https://export.arxiv.org/e-print/2607.21180v1
+
   vibevoice_asr_bitnet_technical_report:
     paper: https://arxiv.org/abs/2607.21075
     sections: 3.1 and 3.3

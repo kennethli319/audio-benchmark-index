@@ -391,6 +391,18 @@ with their official access and license constraints. The paper's artifact
 transformations create an internal training protocol, not a separately
 released evaluation dataset.
 
+The July 2026 speech-to-speech assistant safeguards paper is also recorded as
+an unreleased protocol rather than a benchmark family. Its automotive case
+study crosses three vendor systems, three guardrail configurations, and
+malicious versus non-malicious speech, repeating each of the 18 setups 300
+times to measure response latency and guardrail execution. The malicious input
+is synthetic speech containing the benign trigger word “whale,” and detection
+accuracy is explicitly outside the study. Version 1 and its official arXiv
+source package provide no prompt or audio manifest, per-run measurements,
+outputs, code, project page, repository, or dataset release; the article's CC
+BY-NC-ND 4.0 license must not be treated as licensing absent experiment
+artifacts or vendor API outputs.
+
 The July 2026 TF-MossFormer paper is also recorded as existing coverage rather
 than a new family. Sections 3.1-3.3 evaluate only the indexed WSJ0-2Mix
 benchmark: 8 kHz two-speaker mixtures with 20,000 training, 5,000 validation,
