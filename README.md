@@ -35,7 +35,8 @@ instruction-based multi-attribute speech editing, human-preference evaluation of
 multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
 Russian conversational speech synthesis, non-human voice conversion and
 designed-vocalization timbre transfer,
-few-shot robustness under foreground/background shifts, few-shot bioacoustic
+few-shot robustness under foreground/background shifts, dynamic heterogeneous
+corruption robustness for test-time audio adaptation, few-shot bioacoustic
 event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
 evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
@@ -58,7 +59,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 241 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 242 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -555,6 +556,7 @@ Current coverage includes:
 | [IFEval-Audio](https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing) | Audio and speech instruction following | Gated Hugging Face release with 280 audio-instruction-answer triples; helper downloads official docs/metadata by default and makes the approximately 45 MB snapshot opt-in after accepting access conditions | HF card lists Apache-2.0, but source clips retain mixed terms including CC BY-SA, CC BY-NC-ND, academic-only WavCaps, and inherited AudioBench-source licenses; evaluation code says Creative Commons NonCommercial without a version |
 | [Ming-Freeform-Audio-Edit](https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark) | Instruction-based semantic and acoustic speech editing | Public, ungated bilingual benchmark for deletion, insertion, substitution, emotion/dialect conversion, and speed/pitch/volume alteration; helper downloads official docs by default and makes the approximately 1.07 GB Hugging Face snapshot opt-in | HF card lists Apache-2.0, but source-audio terms still apply: Seed-TTS Eval has no stated data license, LibriTTS is CC BY 4.0, and GigaSpeech has separate agreement/access conditions; evaluation-repo code license is unspecified |
 | [MCR-Bench](https://github.com/WangCheng0116/MCR-BENCH) | Audio-text conflict resolution and robustness | Public Google Drive release with approximately 3,000 samples across audio QA, speech emotion, and vocal-sound classification; helper downloads official docs/metadata by default, prints the manual Drive path, and makes the small repository clone opt-in | Mixed upstream terms: the repo has an Apache-2.0 LICENSE but an inconsistent MIT badge, neither clearly licenses the archive; ClothoAQA/Clotho, MELD/Friends, and VocalSound source-audio rights still apply |
+| [DHAuDS](https://github.com/Andy-Shao/DHAuDS) | Dynamic heterogeneous corruption robustness for audio-classification test-time adaptation | Four public, ungated corruption benchmarks derived from Speech Commands V2, VocalSound, UrbanSound8K, and ReefSet; helper downloads docs/metadata by default and requires an explicit subset selection for approximately 50.0 GB of Hugging Face snapshots | Cards and code declare Apache-2.0, but source corpora and QUT-NOISE/DEMAND corruptions retain separate terms, including UrbanSound8K's non-commercial restriction |
 | [SpurAudio](https://github.com/Jerryaa98/SpurAudio) | Few-shot audio classification robustness | Public, ungated [spuraudioNips/SpurAudio-neurips-anonym](https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym) with 16,381 WAV files; helper downloads docs/metadata by default and makes the approximately 7.69 GB snapshot opt-in | HF card lists CC BY 4.0, but mixtures derive from five datasets with separate terms, including non-commercial ESC-50 and UrbanSound8K restrictions; code is MIT |
 | [Geo-ATBench](https://github.com/WuYanru2002/Geo-ATBench) | Geospatially contextualized multi-label audio tagging | Public, ungated [Zenodo release](https://zenodo.org/records/18980673) with 3,854 ten-second clips, 28 sound-event labels, and POI-derived context over 11 OpenStreetMap categories; helper downloads docs/metadata by default and makes the approximately 850 MB archive opt-in | Zenodo declares CC BY 4.0 and code is MIT; retain attribution and review source Freesound clip licenses plus OpenStreetMap attribution/database terms |
 | [UrBAN](https://doi.org/10.20383/103.0972) | Beehive acoustic monitoring and colony-strength regression | Public FRDR release with 2021-2022 raw audio and hive-inspection/sensor metadata from a ten-hive Montréal apiary; the paper reports more than 3,000 hours while the older repository record says more than 2,000; helper saves docs/metadata only because the approximately 1.265 TB corpus uses a manual Globus transfer | FRDR data is CC BY 4.0; repository code license is unspecified, and the Scientific Data article's CC BY-NC-ND 4.0 license is separate |

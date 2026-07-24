@@ -123,6 +123,7 @@ scripts/download/dcase2025_task2_asd.sh
 scripts/download/dcase2026_task1_hac.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
+scripts/download/dhauds.sh
 scripts/download/spuraudio.sh
 scripts/download/geo_atbench.sh
 scripts/download/urban_beehive.sh
@@ -398,6 +399,13 @@ LVOMNIBENCH_CLONE_REPO=1 scripts/download/lvomnibench.sh
 # SpurAudio downloads official docs/metadata by default; the approximately 7.69 GB snapshot is opt-in.
 SPURAUDIO_DOWNLOAD_HF=1 scripts/download/spuraudio.sh
 SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh
+
+# DHAuDS downloads docs and metadata for all four corruption benchmarks by
+# default; select snapshots explicitly because they total about 50.0 GB.
+DHAUDS_DOWNLOAD_HF=1 DHAUDS_DATASETS="SpeechCommandsV2-C" scripts/download/dhauds.sh
+DHAUDS_DOWNLOAD_HF=1 DHAUDS_DATASETS="VocalSound-C ReefSet-C" scripts/download/dhauds.sh
+DHAUDS_DOWNLOAD_HF=1 DHAUDS_DATASETS=all scripts/download/dhauds.sh
+DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.

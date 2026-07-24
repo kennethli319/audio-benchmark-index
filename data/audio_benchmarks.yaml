@@ -5624,6 +5624,70 @@ benchmarks:
       - https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA_CLAP_features
       - https://huggingface.co/api/datasets/lighthouse-emnlp2024/CASTELLA_CLAP_features
 
+  - id: dhauds
+    name: DHAuDS
+    full_name: "DHAuDS: A Dynamic and Heterogeneous Audio Benchmark for Test-Time Adaptation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_robustness
+      - audio_classification
+    tasks:
+      - test_time_adaptation
+      - audio_classification_robustness
+      - dynamic_corruption_robustness
+      - speech_command_classification
+      - human_vocal_sound_classification
+      - environmental_sound_classification
+      - bioacoustic_classification
+    official:
+      repo: https://github.com/Andy-Shao/DHAuDS
+      paper: https://arxiv.org/abs/2511.18421
+      speech_commands_v2_c: https://huggingface.co/datasets/AndyShao90/SpeechCommandsV2-C
+      vocalsound_c: https://huggingface.co/datasets/AndyShao90/VocalSound-C
+      urbansound8k_c: https://huggingface.co/datasets/AndyShao90/UrbanSound8K-C
+      reefset_c: https://huggingface.co/datasets/AndyShao90/ReefSet-C
+    download:
+      primary:
+        - https://github.com/Andy-Shao/DHAuDS
+        - https://huggingface.co/datasets/AndyShao90/SpeechCommandsV2-C
+        - https://huggingface.co/datasets/AndyShao90/VocalSound-C
+        - https://huggingface.co/datasets/AndyShao90/UrbanSound8K-C
+        - https://huggingface.co/datasets/AndyShao90/ReefSet-C
+      examples:
+        - 'scripts/download/dhauds.sh'
+        - 'DHAUDS_DOWNLOAD_HF=1 DHAUDS_DATASETS="SpeechCommandsV2-C" scripts/download/dhauds.sh'
+        - 'DHAUDS_DOWNLOAD_HF=1 DHAUDS_DATASETS="all" scripts/download/dhauds.sh'
+      notes: >-
+        The public suite contains separately corrupted adaptation and evaluation
+        sets derived from the held-out portions of Speech Commands V2,
+        VocalSound, UrbanSound8K, and ReefSet. SC2-C, VS-C, and RS-C apply seven
+        corruption categories at two severity levels; US8-C omits QUT-NOISE and
+        DEMAND corruptions that overlap its target classes and uses four
+        categories. The paper reports 908,196 derived samples in total and uses
+        different random seeds for adaptation and evaluation corruptions. The
+        helper downloads official documentation and repository metadata by
+        default. The four Hugging Face repositories report about 50.0 GB of
+        storage combined, so snapshots require DHAUDS_DOWNLOAD_HF=1 and an
+        explicit DHAUDS_DATASETS selection.
+    license:
+      data: apache-2.0_on_hugging_face_cards_with_upstream_terms
+      code: apache-2.0
+      notes: All four Hugging Face cards declare Apache-2.0 and the code repository contains an Apache-2.0 LICENSE. The corrupted audio derives from Speech Commands V2, VocalSound, UrbanSound8K, ReefSet, QUT-NOISE, and DEMAND; those sources retain separate attribution, share-alike, non-commercial, or other terms. In particular, the Apache card labels should not be assumed to remove UrbanSound8K's non-commercial restriction or other upstream obligations.
+    sources:
+      - https://arxiv.org/abs/2511.18421
+      - https://github.com/Andy-Shao/DHAuDS
+      - https://raw.githubusercontent.com/Andy-Shao/DHAuDS/main/README.md
+      - https://raw.githubusercontent.com/Andy-Shao/DHAuDS/main/LICENSE
+      - https://api.github.com/repos/Andy-Shao/DHAuDS
+      - https://huggingface.co/datasets/AndyShao90/SpeechCommandsV2-C
+      - https://huggingface.co/api/datasets/AndyShao90/SpeechCommandsV2-C
+      - https://huggingface.co/datasets/AndyShao90/VocalSound-C
+      - https://huggingface.co/api/datasets/AndyShao90/VocalSound-C
+      - https://huggingface.co/datasets/AndyShao90/UrbanSound8K-C
+      - https://huggingface.co/api/datasets/AndyShao90/UrbanSound8K-C
+      - https://huggingface.co/datasets/AndyShao90/ReefSet-C
+      - https://huggingface.co/api/datasets/AndyShao90/ReefSet-C
+
   - id: spuraudio
     name: SpurAudio
     full_name: "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"
