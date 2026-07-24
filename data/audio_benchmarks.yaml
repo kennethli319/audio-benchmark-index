@@ -5729,6 +5729,52 @@ benchmarks:
       - https://arxiv.org/abs/2601.15621
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS4
 
+  - id: capspeech
+    name: CapSpeech
+    full_name: "CapSpeech: Enabling Downstream Applications in Style-Captioned Text-to-Speech"
+    qwen_cited_as: null
+    qwen_bucket: speech_synthesis
+    tasks:
+      - style_captioned_text_to_speech
+      - text_to_speech_with_sound_effects
+      - accent_captioned_text_to_speech
+      - emotion_captioned_text_to_speech
+      - conversational_agent_text_to_speech
+      - speaker_profile_control
+    official:
+      project: https://wanghelin1997.github.io/CapSpeech-demo/
+      repo: https://github.com/WangHelin1997/CapSpeech
+      dataset: https://huggingface.co/datasets/OpenSound/CapSpeech
+      paper: https://arxiv.org/abs/2506.02863
+      recent_evaluation: https://arxiv.org/abs/2607.05276
+    download:
+      primary:
+        - https://huggingface.co/datasets/OpenSound/CapSpeech
+        - https://github.com/WangHelin1997/CapSpeech
+      examples:
+        - 'scripts/download/capspeech.sh'
+        - 'CAPSPEECH_DOWNLOAD_HF=1 scripts/download/capspeech.sh'
+        - 'CAPSPEECH_CLONE_REPO=1 scripts/download/capspeech.sh'
+        - 'from datasets import load_dataset; test = load_dataset("OpenSound/CapSpeech", split="test_SFT_CapTTS")'
+      notes: The public, ungated release contains more than 10 million machine-annotated and approximately 360,000 human-annotated English audio-caption records, with fixed pretraining and supervised-fine-tuning train, validation, and test splits across CapTTS, CapTTS-SE, AccCapTTS, EmoCapTTS, and AgentTTS. The main Hugging Face snapshot contains paths, transcripts, source labels, durations, and style captions rather than embedded source audio; the API reports approximately 4.31 GB compressed and 10.09 GB after processing. The helper downloads official documentation and API metadata by default, while the full metadata snapshot and code repository are separate opt-ins. The 2026 ProPS paper trains and evaluates prompt-conditioned speaker-profile distributions on CapSpeech's held-out splits.
+    license:
+      data: cc-by-nc-4.0_with_mixed_upstream_audio_terms
+      code: cc-by-nc-4.0
+      notes: The dataset card, paper, and repository apply CC BY-NC 4.0 to CapSpeech resources. The release points to audio from Emilia, GigaSpeech, Common Voice, MLS, LibriTTS-R, VoxCeleb, EARS, Expresso, VCTK, VGGSound, FSDKaggle2018, ESC-50, and separate CapSpeech audio repositories; those recordings retain their own attribution, non-commercial, access, privacy, and media-rights constraints. Treat the CapSpeech license as covering its annotations and author contributions, not as overriding component-source terms.
+    sources:
+      - https://wanghelin1997.github.io/CapSpeech-demo/
+      - https://github.com/WangHelin1997/CapSpeech
+      - https://raw.githubusercontent.com/WangHelin1997/CapSpeech/main/README.md
+      - https://raw.githubusercontent.com/WangHelin1997/CapSpeech/main/LICENSE
+      - https://api.github.com/repos/WangHelin1997/CapSpeech
+      - https://huggingface.co/datasets/OpenSound/CapSpeech
+      - https://huggingface.co/datasets/OpenSound/CapSpeech/raw/main/README.md
+      - https://huggingface.co/api/datasets/OpenSound/CapSpeech
+      - https://arxiv.org/abs/2506.02863
+      - https://arxiv.org/html/2506.02863v1#S3
+      - https://arxiv.org/abs/2607.05276
+      - https://arxiv.org/html/2607.05276v1#S3.SS1
+
   - id: cv3_eval
     name: CV3-Eval
     full_name: "CV3-Eval: CosyVoice 3 in-the-wild zero-shot speech synthesis benchmark"

@@ -100,6 +100,7 @@ scripts/download/europarl_st.sh
 scripts/download/tedx_spanish.sh
 scripts/download/seed_tts_eval.sh
 scripts/download/instruct_tts_eval.sh
+scripts/download/capspeech.sh
 scripts/download/dialogs_ru.sh
 scripts/download/tts_multilingual_test_set.sh
 scripts/download/cn_news_tts_bench.sh
@@ -369,6 +370,11 @@ MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/d
 # InstructTTSEval downloads official docs by default. The ~1.8 GB HF audio snapshot is opt-in.
 INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
 INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
+
+# CapSpeech downloads docs and API metadata by default. Its ~4.31 GB metadata snapshot is opt-in.
+# Source recordings are obtained separately under their respective upstream terms.
+CAPSPEECH_DOWNLOAD_HF=1 scripts/download/capspeech.sh
+CAPSPEECH_CLONE_REPO=1 scripts/download/capspeech.sh
 
 # Dialogs downloads docs and lightweight validation/test tables by default.
 DIALOGS_RU_DOWNLOAD_PREVIEW=1 scripts/download/dialogs_ru.sh
