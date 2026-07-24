@@ -153,6 +153,7 @@ scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
+scripts/download/mmae.sh
 scripts/download/pazabench.sh
 scripts/download/live_gurbani_captioning_v1.sh
 scripts/download/sonyc_ust_v2.sh
@@ -419,6 +420,11 @@ scripts/download/urban_beehive.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# MMAE downloads official docs/metadata by default; the approximately 4.43 GB
+# Hugging Face audio snapshot and the evaluation-repo clone are separate opt-ins.
+MMAE_DOWNLOAD_HF=1 scripts/download/mmae.sh
+MMAE_CLONE_REPO=1 scripts/download/mmae.sh
 
 # PazaBench downloads official leaderboard documentation and metadata only.
 # Obtain each evaluation corpus separately under its upstream provider terms.

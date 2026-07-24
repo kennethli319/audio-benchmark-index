@@ -31,7 +31,8 @@ audio-visual segmentation, audio-video editing, audio-visual speech recognition,
 causal-semantic audio-visual synchronization evaluation,
 diagnostic evaluation of AI-generated cover songs,
 spoken digit classification,
-instruction-based multi-attribute speech editing, human-preference evaluation of synthesized speech, and
+instruction-based multi-attribute speech editing, general-purpose multitask
+audio editing, human-preference evaluation of synthesized speech, and
 multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
 Russian conversational speech synthesis, non-human voice conversion and
 designed-vocalization timbre transfer,
@@ -59,7 +60,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-23. Current index size: 243 distinct benchmarks
+Last checked: 2026-07-23. Current index size: 244 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -555,6 +556,7 @@ Current coverage includes:
 | [SpeechEditBench](https://github.com/daxintan-cuhk/SpeechEditBench) | Bilingual multi-attribute instruction-guided speech editing | Public, ungated [DiscreteSpeech/SpeechEditBench](https://huggingface.co/datasets/DiscreteSpeech/SpeechEditBench) v1.1 with 4,700 English/Chinese samples across content, speaker, emotion, style, prosody, paralinguistic, acoustic, and compositional editing; helper downloads docs and sample JSONL metadata by default while the approximately 3.75 GB audio snapshot is opt-in | Contributor-authored assets and code are Apache-2.0, but affected audio retains mixed upstream CC BY, Apache, non-commercial, research-only, custom-license, and access-agreement terms |
 | [IFEval-Audio](https://huggingface.co/datasets/YichenG170/AudioLLMInstructionFollowing) | Audio and speech instruction following | Gated Hugging Face release with 280 audio-instruction-answer triples; helper downloads official docs/metadata by default and makes the approximately 45 MB snapshot opt-in after accepting access conditions | HF card lists Apache-2.0, but source clips retain mixed terms including CC BY-SA, CC BY-NC-ND, academic-only WavCaps, and inherited AudioBench-source licenses; evaluation code says Creative Commons NonCommercial without a version |
 | [Ming-Freeform-Audio-Edit](https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark) | Instruction-based semantic and acoustic speech editing | Public, ungated bilingual benchmark for deletion, insertion, substitution, emotion/dialect conversion, and speed/pitch/volume alteration; helper downloads official docs by default and makes the approximately 1.07 GB Hugging Face snapshot opt-in | HF card lists Apache-2.0, but source-audio terms still apply: Seed-TTS Eval has no stated data license, LibriTTS is CC BY 4.0, and GigaSpeech has separate agreement/access conditions; evaluation-repo code license is unspecified |
+| [MMAE](https://github.com/ddlBoJack/MMAE) | General-purpose instruction-based audio editing | Public, ungated 2,000-sample benchmark across sound, speech, music, and mixtures, with 17,741 rubric criteria; helper downloads docs/metadata by default and makes the approximately 4.43 GB [Hugging Face](https://huggingface.co/datasets/BoJack/MMAE) snapshot opt-in | Data and source-audio licenses are unspecified; evaluation-repository code is MIT, which must not be assumed to license the benchmark audio |
 | [MCR-Bench](https://github.com/WangCheng0116/MCR-BENCH) | Audio-text conflict resolution and robustness | Public Google Drive release with approximately 3,000 samples across audio QA, speech emotion, and vocal-sound classification; helper downloads official docs/metadata by default, prints the manual Drive path, and makes the small repository clone opt-in | Mixed upstream terms: the repo has an Apache-2.0 LICENSE but an inconsistent MIT badge, neither clearly licenses the archive; ClothoAQA/Clotho, MELD/Friends, and VocalSound source-audio rights still apply |
 | [DHAuDS](https://github.com/Andy-Shao/DHAuDS) | Dynamic heterogeneous corruption robustness for audio-classification test-time adaptation | Four public, ungated corruption benchmarks derived from Speech Commands V2, VocalSound, UrbanSound8K, and ReefSet; helper downloads docs/metadata by default and requires an explicit subset selection for approximately 50.0 GB of Hugging Face snapshots | Cards and code declare Apache-2.0, but source corpora and QUT-NOISE/DEMAND corruptions retain separate terms, including UrbanSound8K's non-commercial restriction |
 | [SpurAudio](https://github.com/Jerryaa98/SpurAudio) | Few-shot audio classification robustness | Public, ungated [spuraudioNips/SpurAudio-neurips-anonym](https://huggingface.co/datasets/spuraudioNips/SpurAudio-neurips-anonym) with 16,381 WAV files; helper downloads docs/metadata by default and makes the approximately 7.69 GB snapshot opt-in | HF card lists CC BY 4.0, but mixtures derive from five datasets with separate terms, including non-commercial ESC-50 and UrbanSound8K restrictions; code is MIT |

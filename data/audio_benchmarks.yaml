@@ -11156,3 +11156,60 @@ benchmarks:
       - https://api.github.com/repos/ASLP-lab/Smart-Glass-Challenge
       - https://arxiv.org/abs/2607.17867
       - https://arxiv.org/html/2607.17867v1#S2
+
+  - id: mmae
+    name: MMAE
+    full_name: "MMAE: A Massive Multitask Audio Editing Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_editing
+      - audio_generation
+    tasks:
+      - instruction_based_audio_editing
+      - multi_round_audio_editing
+      - multi_hop_audio_editing
+      - speech_editing
+      - music_editing
+      - sound_effect_editing
+      - audio_source_separation
+      - audio_instruction_following
+    official:
+      repo: https://github.com/ddlBoJack/MMAE
+      dataset: https://huggingface.co/datasets/BoJack/MMAE
+      paper: https://arxiv.org/abs/2606.07229
+    download:
+      primary:
+        - https://github.com/ddlBoJack/MMAE
+        - https://huggingface.co/datasets/BoJack/MMAE
+      examples:
+        - 'scripts/download/mmae.sh'
+        - 'MMAE_DOWNLOAD_HF=1 scripts/download/mmae.sh'
+        - 'MMAE_CLONE_REPO=1 scripts/download/mmae.sh'
+      notes: >-
+        The public, ungated release contains 2,000 high-fidelity input samples
+        across sound, speech, music, and mixtures, organized by six complexity
+        levels, two granularities, and eight operation types. Its 17,741
+        rubric criteria evaluate instruction following and context
+        consistency. The helper downloads official documentation and
+        repository metadata by default; cloning the evaluation repository is
+        opt-in, and the Hugging Face API reports approximately 4.43 GB of
+        repository storage, so the audio snapshot requires
+        MMAE_DOWNLOAD_HF=1.
+    license:
+      data: not_specified
+      code: MIT
+      notes: >-
+        The Hugging Face card does not declare a dataset license or identify
+        licenses for the source audio. The official GitHub repository has an
+        MIT LICENSE for its code, but that must not be assumed to license the
+        benchmark audio. Review source-media rights and obtain clarification
+        before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2606.07229
+      - https://github.com/ddlBoJack/MMAE
+      - https://raw.githubusercontent.com/ddlBoJack/MMAE/main/README.md
+      - https://raw.githubusercontent.com/ddlBoJack/MMAE/main/LICENSE
+      - https://api.github.com/repos/ddlBoJack/MMAE
+      - https://huggingface.co/datasets/BoJack/MMAE
+      - https://huggingface.co/datasets/BoJack/MMAE/raw/main/README.md
+      - https://huggingface.co/api/datasets/BoJack/MMAE
