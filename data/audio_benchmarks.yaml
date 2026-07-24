@@ -703,6 +703,42 @@ paper_audits:
       - https://github.com/cdjkim/audiocaps
       - https://zenodo.org/records/4783391
 
+  lh_avln_long_horizon_navigation:
+    paper: https://arxiv.org/abs/2607.03920
+    title: "LH-AVLN: A Benchmark for Long-Horizon Audio-Visual-Language Navigation"
+    sections: 3, 5, and Appendix A.2
+    status: audited_not_indexed_unreleased
+    evaluated_sets:
+      - cited_as: LH-AVLN
+        index_id: null
+        status: benchmark_protocol_unreleased
+        note: >-
+          The paper defines ordered and unordered missions with two to four
+          goals specified by category, natural-language description, or
+          reference image. Agents receive RGB-D, pose, and binaural audio
+          observations; unfinished targets alternately emit spatialized cues,
+          and completed targets are removed from the emission schedule.
+    protocol_note: >-
+      LH-AVLN is constructed on SoundSpaces 2.0 with Matterport3D scenes and
+      reports results on a 550-episode validation split. Episodes are split by
+      scene, contain at least two goal modalities, and require visual-semantic
+      confirmation rather than treating a sounding source as sufficient proof
+      of goal completion. ArXiv version 2 provides no official project page,
+      repository, episode manifest, goal cues, rendered audio, simulator
+      configuration, or evaluation code. The protocol is therefore audited
+      without being counted as a downloadable benchmark family.
+    license_note: >-
+      The article is CC BY 4.0, but that license does not release the absent
+      benchmark artifacts or override the access and use terms of SoundSpaces
+      2.0, Matterport3D, or any source sounds. Recheck first-party artifact and
+      component licenses if an official release appears.
+    sources:
+      - https://arxiv.org/abs/2607.03920
+      - https://arxiv.org/html/2607.03920v2#S3
+      - https://arxiv.org/html/2607.03920v2#S5
+      - https://arxiv.org/html/2607.03920v2#A1.SS2
+      - https://export.arxiv.org/e-print/2607.03920v2
+
   s3bench_text_to_audio_generation:
     paper: https://arxiv.org/abs/2607.13408
     sections: 3.5, 4.1-4.2, and 5.2

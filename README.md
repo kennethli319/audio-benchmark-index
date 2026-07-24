@@ -241,6 +241,15 @@ experiments but releases no new benchmark data, so no duplicate family or
 paper-specific helper is added. AudioCaps still depends on externally hosted
 YouTube audio, and both corpora retain their original terms.
 
+The July 2026 LH-AVLN paper is recorded as an unreleased-protocol audit. It
+defines ordered and unordered long-horizon navigation missions with two to
+four category, description, or image goals, alternating spatialized target
+sounds, and RGB-D/pose/binaural observations, and reports a 550-episode
+validation split built on SoundSpaces 2.0 and Matterport3D. ArXiv version 2
+provides no official project, repository, episode manifest, goal cues, rendered
+audio, simulator configuration, or evaluation code, so LH-AVLN is not counted
+as a downloadable benchmark family and no download link is inferred.
+
 The July 2026 Caption Studio paper is recorded as a system audit rather than a
 benchmark family. It specifies WER, NIST-style diarization error rate, and
 measured/derived/unavailable transparency labels, but explicitly says its
