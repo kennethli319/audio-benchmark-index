@@ -207,6 +207,7 @@ scripts/download/fma.sh
 scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
 scripts/download/musicnet.sh
+scripts/download/singmos_pro.sh
 scripts/download/nsynth.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
@@ -940,6 +941,11 @@ RUBATO_DOWNLOAD_ARCHIVE=1 scripts/download/rubato.sh
 # MulTTiPop downloads docs and lightweight dev/test manifests by default.
 # Its released snapshot contains MIDI/metadata, not the referenced source audio.
 MULTTIPOP_DOWNLOAD_HF=1 scripts/download/multtipop.sh
+
+# SingMOS-Pro downloads docs plus split/system metadata by default.
+# Rating/sample annotations are about 11.6 MB; the full snapshot is about 2.83 GB.
+SINGMOS_PRO_DOWNLOAD_ANNOTATIONS=1 scripts/download/singmos_pro.sh
+SINGMOS_PRO_DOWNLOAD_HF=1 scripts/download/singmos_pro.sh
 
 # AI-Generated Cover Song Diagnostics downloads its public score, manifest,
 # feature tables, README, and MIT license. Raw cover audio is not released.
