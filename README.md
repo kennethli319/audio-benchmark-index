@@ -274,6 +274,14 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 artifact-specific speech-deepfake paper is recorded as a coverage
+audit rather than a new benchmark family. Its section 4 uses ASVspoof 2015 only
+for selected calibration attacks, then draws training or held-out evaluation
+speech from ASVspoof 2019, ASVspoof 5, and SpoofCeleb. All four corpus families
+are already indexed with their official access and license constraints. The
+paper's artifact transformations create an internal training protocol, not a
+separately released evaluation dataset.
+
 The July 2026 codec-internal latent-watermarking paper is likewise recorded as
 an audited model protocol, not a downloadable benchmark family. Sections
 4.1-4.7 use an unspecified 1,000-sample slice of gated Emilia-English to measure
