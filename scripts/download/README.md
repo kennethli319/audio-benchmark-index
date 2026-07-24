@@ -190,6 +190,7 @@ scripts/download/ami.sh
 scripts/download/chime_6.sh
 scripts/download/alimeeting.sh
 scripts/download/libriwasn.sh
+scripts/download/libricss.sh
 scripts/download/clotho.sh
 scripts/download/clotho_aqa.sh
 scripts/download/audiocaps.sh
@@ -976,6 +977,9 @@ MOISESDB_CLONE_REPO=1 scripts/download/moisesdb.sh
 
 # LibriMix clones the official generator/metadata repo by default. Generation is very large.
 LIBRIMIX_RUN_GENERATION=1 LIBRIMIX_STORAGE_DIR=/large/storage scripts/download/librimix.sh
+
+# LibriCSS saves official docs by default. The direct dataset archive is about 5.97 GiB.
+LIBRICSS_DOWNLOAD_ARCHIVE=1 scripts/download/libricss.sh
 
 # FUSS saves official docs and its small license archive by default. Select multi-GB archives explicitly.
 FUSS_DOWNLOAD_ARCHIVES=1 FUSS_PARTS="ssdata_reverb" scripts/download/fuss.sh

@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-23
+  last_checked: 2026-07-24
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -8657,6 +8657,63 @@ benchmarks:
       - https://raw.githubusercontent.com/fgnt/libriwasn/main/README.md
       - https://raw.githubusercontent.com/fgnt/libriwasn/main/LICENSE
       - https://arxiv.org/abs/2308.10682
+
+  - id: libricss
+    name: LibriCSS
+    full_name: "LibriCSS: Continuous Speech Separation Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - meeting_transcription
+      - speech_separation
+      - spatial_audio
+      - long_form_audio
+    tasks:
+      - continuous_speech_separation
+      - overlapped_speech_recognition
+      - multi_channel_asr
+      - speaker_diarization
+      - far_field_speech_recognition
+    official:
+      repo: https://github.com/chenzhuo1011/libri_css
+      paper: https://arxiv.org/abs/2001.11482
+      dataset: https://drive.google.com/file/d/1Piioxd5G_85K9Bhcr8ebdhXx0CnaHy7l/view
+    download:
+      primary:
+        - https://github.com/chenzhuo1011/libri_css
+        - https://drive.google.com/file/d/1Piioxd5G_85K9Bhcr8ebdhXx0CnaHy7l/view
+      examples:
+        - 'scripts/download/libricss.sh'
+        - 'LIBRICSS_DOWNLOAD_ARCHIVE=1 scripts/download/libricss.sh'
+      notes: >-
+        The public, ungated release contains ten approximately one-hour
+        sessions made from LibriSpeech utterances replayed through eight
+        loudspeakers and captured with a seven-channel circular microphone
+        array in an office meeting room. Each session has six ten-minute
+        mini-sessions spanning 0%-40% overlap, including separate short-gap
+        and long-gap 0% conditions. The official repository provides
+        preparation, Kaldi ASR, and WER-scoring tools for utterance-wise and
+        continuous-input evaluation. The helper downloads official
+        documentation and repository metadata by default; the direct Google
+        Drive archive is 6,407,297,637 bytes (about 5.97 GiB) and requires
+        LIBRICSS_DOWNLOAD_ARCHIVE=1.
+    license:
+      data: CC-BY-4.0_upstream_basis_data_license_not_separately_stated
+      code: MIT
+      notes: >-
+        The repository LICENSE applies MIT to the software and documentation
+        and identifies the source LibriSpeech corpus as CC BY 4.0, but it does
+        not state a separate license for the replayed LibriCSS recordings.
+        Preserve LibriSpeech attribution and confirm recording-level rights
+        before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2001.11482
+      - https://ar5iv.labs.arxiv.org/html/2001.11482
+      - https://github.com/chenzhuo1011/libri_css
+      - https://raw.githubusercontent.com/chenzhuo1011/libri_css/master/README.md
+      - https://raw.githubusercontent.com/chenzhuo1011/libri_css/master/LICENSE
+      - https://raw.githubusercontent.com/chenzhuo1011/libri_css/master/dataprep/scripts/dataprep.sh
+      - https://api.github.com/repos/chenzhuo1011/libri_css
+      - https://drive.google.com/file/d/1Piioxd5G_85K9Bhcr8ebdhXx0CnaHy7l/view
 
   - id: librimix
     name: LibriMix
