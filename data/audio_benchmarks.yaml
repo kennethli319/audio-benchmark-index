@@ -10245,6 +10245,65 @@ benchmarks:
       - https://huggingface.co/datasets/SpeechEQ/SpeechEQ/raw/main/README.md
       - https://huggingface.co/api/datasets/SpeechEQ/SpeechEQ
 
+  - id: designed_vocalizations
+    name: Designed Vocalizations Dataset
+    full_name: "Designed Vocalizations Dataset: Sound-Designed Human and Animal Voices for Non-human Voice Conversion"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - speech_voice_conversion
+      - robustness_evaluation
+    tasks:
+      - non_human_voice_conversion
+      - designed_vocalization_generation
+      - timbre_transfer
+      - sound_design_reproduction
+      - seen_unseen_source_generalization
+      - seen_unseen_preset_generalization
+    official:
+      homepage: https://ncai-official.github.io/speech/publications/designed-vocalizations-dataset/
+      dataset: https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset
+      paper: https://arxiv.org/abs/2607.20951
+      arxiv_html: https://arxiv.org/html/2607.20951
+    download:
+      primary:
+        - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset
+      examples:
+        - 'scripts/download/designed_vocalizations.sh'
+        - 'DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("NCSOFT/Designed-Vocalizations-Dataset", "designed", split="test")'
+      notes: >-
+        The public, ungated release contains 237,574 mono 44.1 kHz WAV clips
+        embedded in Parquet: 5,654 raw training sources, 226,160 non-parallel
+        designed training clips, 120 test sources, and 5,640 aligned test
+        references. The test protocol crosses source timbres seen or unseen
+        during training with 40 seen and seven unseen effect presets. The helper
+        downloads official documentation, API metadata, licensing notices,
+        preset metadata, and the approximately 532 KB test-pair manifest by
+        default. The full Hugging Face repository is approximately 37.1 GB and
+        requires DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1.
+    license:
+      data: cc-by-4.0-with-mixed-upstream-terms
+      code: not_applicable
+      notes: >-
+        The dataset card applies CC BY 4.0 to the compilation and authors'
+        original metadata and annotations. Raw and designed clips retain their
+        applicable source terms: VCTK and HiFi-TTS are CC BY 4.0, while
+        Freesound clips are individually CC0 1.0, CC BY 3.0, or CC BY 4.0.
+        Preserve the release NOTICE and per-row license, attribution, creator,
+        and source fields when redistributing. The project does not publish a
+        separate evaluation-code repository.
+    sources:
+      - https://arxiv.org/abs/2607.20951
+      - https://arxiv.org/html/2607.20951#S2
+      - https://arxiv.org/html/2607.20951#S3
+      - https://ncai-official.github.io/speech/publications/designed-vocalizations-dataset/
+      - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset
+      - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset/raw/main/README.md
+      - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset/raw/main/LICENSE.md
+      - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset/raw/main/NOTICE
+      - https://huggingface.co/api/datasets/NCSOFT/Designed-Vocalizations-Dataset
+
   - id: synsfx
     name: SynSFX
     full_name: "SynSFX: Multi-Model Sound Effects Synthesis Dataset for Deepfake Detection and Evaluation"

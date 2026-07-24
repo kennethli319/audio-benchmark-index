@@ -166,6 +166,7 @@ scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
+scripts/download/designed_vocalizations.sh
 scripts/download/parapair_audio_bench.sh
 scripts/download/speecheq.sh
 scripts/download/star_bench.sh
@@ -388,6 +389,10 @@ LVOMNIBENCH_CLONE_REPO=1 scripts/download/lvomnibench.sh
 # SpurAudio downloads official docs/metadata by default; the approximately 7.69 GB snapshot is opt-in.
 SPURAUDIO_DOWNLOAD_HF=1 scripts/download/spuraudio.sh
 SPURAUDIO_CLONE_REPO=1 scripts/download/spuraudio.sh
+
+# Designed Vocalizations downloads docs and lightweight metadata by default;
+# the approximately 37.1 GB embedded-audio snapshot is opt-in.
+DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
 
 # UrBAN downloads official docs/metadata only. Transfer the approximately
 # 1.265 TB corpus manually from FRDR using its Globus workflow.
