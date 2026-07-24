@@ -182,6 +182,60 @@ paper_audits:
       - https://arxiv.org/html/2607.11738v1#S4.SS3
       - https://arxiv.org/html/2607.11738v1#S4.SS5
 
+  vibevoice_asr_bitnet_technical_report:
+    paper: https://arxiv.org/abs/2607.21075
+    sections: 3.1 and 3.3
+    status: audited_existing_coverage
+    evaluated_sets:
+      - cited_as: MLC (EN / FR / IT / KO / PT / VI)
+        index_id: mlc_slm_eval
+        status: public_annotations_audio_unavailable
+        note: >-
+          The report expands MLC as "Multilingual LibriSpeech Corpus," but its
+          six language rows and cited VibeVoice-ASR setup map to MLC-SLM Eval.
+          The official challenge expands MLC-SLM as Multilingual Conversational
+          Speech Language Model Challenge. Its public release contains
+          annotations but no currently documented public audio URL.
+      - cited_as: AISHELL4
+        index_id: aishell_4
+        status: public
+      - cited_as: AMI (ihm / sdm)
+        index_id: ami
+        status: public
+        note: Table 4 reports separate individual-headset-microphone and single-distant-microphone rows.
+      - cited_as: AliMeeting
+        index_id: alimeeting
+        status: public
+      - cited_as: Fleurs (EN / ZH)
+        index_id: fleurs
+        status: public
+      - cited_as: LibriSpeech (clean / other)
+        index_id: librispeech
+        status: public
+      - cited_as: VoxPopuli (EN)
+        index_id: voxpopuli
+        status: public
+    protocol_note: >-
+      Sections 3.1 and 3.3 report WER and CER across 15 rows: six MLC
+      languages, AISHELL-4, two AMI microphone conditions, AliMeeting, two
+      FLEURS languages, two LibriSpeech subsets, and English VoxPopuli. Every
+      family was already indexed, so this audit adds exact protocol provenance
+      and resolves the paper's ambiguous MLC expansion without creating a
+      duplicate benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.21075
+      - https://arxiv.org/html/2607.21075v1#S3.SS1
+      - https://arxiv.org/html/2607.21075v1#S3.SS3
+      - https://arxiv.org/abs/2509.13785
+      - https://huggingface.co/datasets/bsmu/MLC-SLM-Eval
+      - https://github.com/mubingshen/MLC-SLM-Baseline
+      - https://github.com/felixfuyihui/AISHELL-4
+      - https://groups.inf.ed.ac.uk/ami/corpus/
+      - https://arxiv.org/abs/2110.07393
+      - https://huggingface.co/datasets/google/fleurs
+      - https://www.openslr.org/12
+      - https://github.com/facebookresearch/voxpopuli
+
   x3_opd_audio_reasoning:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4

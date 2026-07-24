@@ -101,6 +101,15 @@ audit also records AudioCaps test-set use for downstream text-to-audio
 evaluation and does not misclassify the report's LAION-Audio-630K training
 corpus as a new benchmark.
 
+The July 2026 VibeVoice-ASR-BitNet report is inventoried across sections 3.1
+and 3.3. Its 15 WER/CER rows map to seven existing families: MLC-SLM Eval,
+AISHELL-4, AMI, AliMeeting, FLEURS, LibriSpeech, and VoxPopuli. The audit also
+preserves a naming conflict: the report expands MLC as “Multilingual
+LibriSpeech Corpus,” while the official challenge calls MLC-SLM the
+Multilingual Conversational Speech Language Model Challenge. The public
+MLC-SLM release contains annotations but no currently documented public audio
+URL, so the index does not imply full reproducibility.
+
 The July 2026 X3-OPD paper is also inventoried across sections 5.1-5.4. MMSU,
 MMAU, MMAR, WorldSense, and DailyOmni map to existing public families. Its
 uncited “BIG Bench Audio” aggregate remains unmapped: the paper describes
