@@ -254,6 +254,36 @@ paper_audits:
       - https://arxiv.org/html/2607.11738v1#S4.SS3
       - https://arxiv.org/html/2607.11738v1#S4.SS5
 
+  dondo_asr_base_models:
+    paper: https://arxiv.org/abs/2607.21540
+    title: "DONDO: Open w2v-BERT Speech-Recognition Base Models for African Languages"
+    sections: 3.2 and 5-7
+    status: audited_model_release_no_public_benchmark_dataset
+    evaluated_sets: []
+    protocol_note: >-
+      DONDO reports word error rate for 21 monolingual and five regional
+      multilingual ASR models covering 27 African language varieties. The
+      paper says training audio is predominantly read speech from religious
+      texts and refers to limited per-language test sets, but does not name a
+      benchmark corpus, publish split sizes or row manifests, or provide
+      stable dataset download links. Its per-language WER tables therefore
+      describe model evaluation results rather than a reusable benchmark
+      family.
+    release_note: >-
+      The official KhayaAI Hugging Face organization publicly releases 26
+      model repositories under Apache-2.0. Those repositories are model
+      checkpoints, not benchmark datasets, and their license tags do not
+      establish redistribution terms for the unnamed training or test audio.
+      No index entry or download helper is added unless an official evaluation
+      dataset and its access terms are released.
+    sources:
+      - https://arxiv.org/abs/2607.21540
+      - https://arxiv.org/html/2607.21540v1#S3.SS2
+      - https://arxiv.org/html/2607.21540v1#S5
+      - https://arxiv.org/html/2607.21540v1#S7
+      - https://huggingface.co/KhayaAI
+      - https://huggingface.co/api/models?author=KhayaAI&search=w2v-bert
+
   codec_internal_latent_watermarking:
     paper: https://arxiv.org/abs/2607.21132
     sections: 4.1-4.7

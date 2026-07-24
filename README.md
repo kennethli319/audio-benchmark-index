@@ -114,6 +114,15 @@ audit also records AudioCaps test-set use for downstream text-to-audio
 evaluation and does not misclassify the report's LAION-Audio-630K training
 corpus as a new benchmark.
 
+The July 2026 DONDO report is recorded as a model-release audit, not a new
+benchmark family. It reports WER for 21 monolingual and five regional
+multilingual ASR models across 27 African language varieties, but identifies
+the underlying data only as predominantly religious-text read speech and
+provides no named evaluation corpus, split sizes, row manifests, or stable
+dataset download. The public KhayaAI Hugging Face repositories contain
+Apache-2.0 model checkpoints; that does not release or license the unnamed
+training and test audio.
+
 The July 2026 VibeVoice-ASR-BitNet report is inventoried across sections 3.1
 and 3.3. Its 15 WER/CER rows map to seven existing families: MLC-SLM Eval,
 AISHELL-4, AMI, AliMeeting, FLEURS, LibriSpeech, and VoxPopuli. The audit also
