@@ -25,19 +25,19 @@ FAMILIES = [
     slug: "speech-recognition",
     label: "Speech recognition",
     description: "ASR, meeting transcription, and accented speech",
-    pattern: /automatic_speech_recognition|meeting_transcription/,
+    pattern: /automatic_speech_recognition|low_resource_speech_recognition|meeting_transcription/,
   },
   {
     slug: "speech-generation",
     label: "Speech generation",
     description: "TTS, singing voice, and controllable synthesis",
-    pattern: /speech_synthesis/,
+    pattern: /speech_synthesis|speech_generation|speech_voice_conversion/,
   },
   {
     slug: "speech-understanding",
     label: "Speech understanding & dialogue",
     description: "Translation, instructions, dialogue, and spoken intent",
-    pattern: /speech_to_text_translation|end_to_end_speech_dialogue|spoken_language_understanding|speech_instruction_benchmark|keyword_spotting|spoken_language_identification|spoken_digit_classification/,
+    pattern: /speech_to_text_translation|end_to_end_speech_dialogue|speech_dialogue|spoken_language_understanding|speech_instruction_benchmark|keyword_spotting|spoken_language_identification|spoken_digit_classification/,
   },
   {
     slug: "audiovisual",
@@ -55,7 +55,7 @@ FAMILIES = [
     slug: "restoration-quality",
     label: "Enhancement, separation & quality",
     description: "Denoising, source separation, and perceptual quality",
-    pattern: /speech_separation|audio_source_separation|universal_sound_separation|speech_enhancement|speech_quality_assessment|music_source_separation/,
+    pattern: /speech_separation|audio_source_separation|universal_sound_separation|speech_enhancement|(?:speech|audio)_quality_assessment|music_source_separation/,
   },
   {
     slug: "representation",
@@ -65,9 +65,9 @@ FAMILIES = [
   },
   {
     slug: "audio-understanding",
-    label: "Audio understanding & events",
-    description: "Audio reasoning, captioning, scenes, events, and urban sound",
-    pattern: /audio_understanding|audio_visual_understanding|audio_visual_question_answering|audio_language_model_benchmark|audio_captioning|audio_event_classification|acoustic_scene_classification|environmental_sound_classification|sound_event_detection|urban_sound_tagging|speech_music_noise_classification|spatial_audio|sound_source_localization|acoustic_source_tracking|source_distance_estimation/,
+    label: "Audio understanding, generation & events",
+    description: "Audio reasoning, captioning, generation, scenes, events, and urban sound",
+    pattern: /audio_understanding|audio_visual_understanding|audio_(?:visual_)?question_answering|audio_language_model_benchmark|audio_captioning|audio_event_classification|audio_generation|acoustic_scene_classification|environmental_sound_(?:classification|generation)|sound_event_detection|bioacoustic_event_detection|human_vocal_sound_classification|urban_sound_tagging|speech_music_noise_classification|spatial_audio|sound_source_localization|acoustic_source_tracking|source_distance_estimation/,
   },
   {
     slug: "music",

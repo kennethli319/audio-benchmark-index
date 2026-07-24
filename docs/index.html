@@ -448,17 +448,17 @@
       <div class="family-grid">
         <button class="family-tile" type="button" data-family-choice="speech-recognition" aria-pressed="false">
   <span>Speech recognition</span>
-  <strong>55</strong>
+  <strong>56</strong>
   <small>ASR, meeting transcription, and accented speech</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-generation" aria-pressed="false">
   <span>Speech generation</span>
-  <strong>17</strong>
+  <strong>22</strong>
   <small>TTS, singing voice, and controllable synthesis</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-understanding" aria-pressed="false">
   <span>Speech understanding &amp; dialogue</span>
-  <strong>30</strong>
+  <strong>32</strong>
   <small>Translation, instructions, dialogue, and spoken intent</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audiovisual" aria-pressed="false">
@@ -473,18 +473,18 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality" aria-pressed="false">
   <span>Enhancement, separation &amp; quality</span>
-  <strong>28</strong>
+  <strong>35</strong>
   <small>Denoising, source separation, and perceptual quality</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="representation" aria-pressed="false">
   <span>Representation &amp; general suites</span>
-  <strong>21</strong>
+  <strong>10</strong>
   <small>Cross-task representation and general-purpose evaluation</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audio-understanding" aria-pressed="false">
-  <span>Audio understanding &amp; events</span>
-  <strong>104</strong>
-  <small>Audio reasoning, captioning, scenes, events, and urban sound</small>
+  <span>Audio understanding, generation &amp; events</span>
+  <strong>115</strong>
+  <small>Audio reasoning, captioning, generation, scenes, events, and urban sound</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="music" aria-pressed="false">
   <span>Music</span>
@@ -522,7 +522,7 @@
               <option value="speaker-human">Speaker, identity &amp; emotion</option>
               <option value="restoration-quality">Enhancement, separation &amp; quality</option>
               <option value="representation">Representation &amp; general suites</option>
-              <option value="audio-understanding">Audio understanding &amp; events</option>
+              <option value="audio-understanding">Audio understanding, generation &amp; events</option>
               <option value="music">Music</option>
               </select>
             </div>
@@ -579,7 +579,7 @@
           <div class="benchmark-grid" id="benchmark-list">
             <article class="benchmark-card" id="benchmark-mlc_slm_2nd_challenge"
   data-name="2nd mlc-slm challenge 2026"
-  data-families="speech-recognition speaker-human"
+  data-families="speech-recognition speaker-human audio-understanding"
   data-access="manual"
   data-host="official"
   data-terms="mixed"
@@ -654,7 +654,7 @@
   data-search="adqa bench adqa bench adqa bench audio dependent question answering evaluation benchmark audio understanding audio reasoning audio question answering audio dependent reasoning multiple choice question answering shortcut robustness apache 2 0 with upstream terms not applicable the hugging face card declares apache 2 0 for the release but the dataset incorporates a portion of mmau mmar and mmsu plus newly annotated questions over other audio those component datasets and source recordings retain their own terms review provenance and upstream media rights before redistribution or commercial use the public ungated dcase 2026 task 5 evaluation release contains 3 000 english multiple choice questions with 3 000 wav files spanning speech music and general sound understanding every item passed the organizers four stage audio dependency filtering process to reduce silent audio and text only shortcuts the dcase 2026 task summary paper reports 1 607 development items 14 participating teams 36 ranked submissions and two parameter count tracks its team results use the hidden 3 000 item evaluation set rather than the development set used for organizer baselines the current release provides questions and choices without answers for challenge evaluation the dataset card says answers will be released after the competition the helper downloads official pages the dataset card api metadata and the lightweight no answer jsonl by default the hugging face api reports approximately 2 94 gb of repository storage so the audio snapshot requires explicit opt in challenge https dcase community challenge2026 task audio dependent question answering results https dcase community challenge2026 task audio dependent question answering results dataset https huggingface co datasets harland adqa bench paper https arxiv org abs 2509 21060 summary paper https arxiv org abs 2607 18718 https dcase community challenge2026 task audio dependent question answering https dcase community challenge2026 task audio dependent question answering results https huggingface co datasets harland adqa bench https huggingface co datasets harland adqa bench raw main readme md https huggingface co api datasets harland adqa bench https arxiv org abs 2509 21060 https arxiv org abs 2607 18718 https arxiv org html 2607 18718v1 s2">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>ADQA-Bench</h3>
       <p class="benchmark-full-name">ADQA-Bench: Audio-Dependent Question Answering Evaluation Benchmark</p>
     </div>
@@ -779,7 +779,7 @@
   data-search="af reasoning eval af reasoning eval af reasoning eval sound reasoning evaluation benchmark audio understanding audio question answering audio reasoning audio classification commonsense reasoning cc by 4 0 metadata with mixed upstream audio terms mit nvidia releases af reasoning eval metadata under cc by 4 0 and repository code under mit the 150 aqa items derive from clotho aqa whose question answer csvs are mit while freesound audio retains per file creative commons terms the 7 227 item classification set derives from fsd50k whose clips retain per file cc0 cc by cc by nc or cc sampling terms in addition to the curated dataset s cc by release the helper downloads all four official json annotation files totaling about 2 1 mb plus the sound cot readme it does not duplicate source audio the aqa subset points to clotho aqa filenames and the classification subset points to fsd50k evaluation filenames use those benchmarks separate helpers and terms to obtain audio repository https github com nvidia audio flamingo tree soundcot af reasoning eval paper https arxiv org abs 2508 11818 source repo https github com nvidia audio flamingo tree soundcot https github com nvidia audio flamingo tree soundcot af reasoning eval https raw githubusercontent com nvidia audio flamingo soundcot readme md https api github com repos nvidia audio flamingo contents af reasoning eval ref soundcot https arxiv org abs 2508 11818 https export arxiv org api query id list 2508 11818 https zenodo org records 6473207 https zenodo org records 4060432">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AF-Reasoning-Eval</h3>
       <p class="benchmark-full-name">AF-Reasoning-Eval: Sound Reasoning Evaluation Benchmark</p>
     </div>
@@ -900,7 +900,7 @@
   data-search="air bench air bench air bench benchmarking large audio language models via generative comprehension audio language model benchmark audio question answering audio instruction following audio language model evaluation speech understanding sound understanding music understanding cc by nc 4 0 apache 2 0 the hf dataset card lists cc by nc 4 0 and enumerates component sources with mixed upstream licenses including musiccaps clotho fisher spokenwoz common voice iemocap acoustic scene datasets music avqa fma mtg jamendo nsynth slurp voxceleb librispeech covost 2 fake or real and vocalsound re check component terms before redistribution or commercial use the helper downloads the official github readme and hugging face dataset card by default the full hf audio snapshot is about 45 9 gb so it requires air bench download hf 1 cloning the evaluation repo is also opt in repository https github com ofa sys air bench paper https aclanthology org 2024 acl long 109 arxiv https arxiv org abs 2402 07729 dataset https huggingface co datasets qyang1021 air bench dataset release issue https github com ofa sys air bench issues 1 https github com ofa sys air bench https github com ofa sys air bench issues 1 https huggingface co datasets qyang1021 air bench dataset https huggingface co datasets qyang1021 air bench dataset raw main readme md https aclanthology org 2024 acl long 109 https arxiv org abs 2402 07729">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AIR-Bench</h3>
       <p class="benchmark-full-name">AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension</p>
     </div>
@@ -1645,14 +1645,14 @@
 
 <article class="benchmark-card" id="benchmark-audio_alpaca"
   data-name="audio-alpaca"
-  data-families="representation"
+  data-families="restoration-quality audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
   data-search="audio alpaca audio alpaca audio alpaca a preference dataset for aligning text to audio models audio generation audio quality assessment text to audio preference modeling direct preference optimization text audio alignment temporal event alignment audio generation quality alignment conflicting apache 2 0 and cc by nc nd 4 0 cc by nc nd 4 0 the hugging face dataset card declares apache 2 0 while the linked official tango repository applies cc by nc nd 4 0 and does not explain whether that license excludes the dataset apply the more restrictive interpretation until the authors clarify scope audiocaps derived captions generated audio model terms and any source video rights also require separate review neither license signal should be assumed to clear all upstream material the public ungated release contains 15 025 english prompt chosen audio rejected audio triplets across four construction strategies tango 2 generates candidate audio from audiocaps training captions perturbed prompts and varied inference settings then filters pairs with two clap models audio zero section 3 1 samples and filters 2 000 pairs for post training but does not release its exact selection the helper downloads official documentation and api metadata by default the hugging face api reports approximately 9 71 gb of repository storage so the audio snapshot requires audio alpaca download hf 1 paper https arxiv org abs 2404 09956 repository https github com declare lab tango dataset https huggingface co datasets declare lab audio alpaca project page https tango2 web github io recent reuse https arxiv org abs 2607 20166 https arxiv org abs 2404 09956 https arxiv org html 2404 09956v1 s4 ss1 https github com declare lab tango https raw githubusercontent com declare lab tango master readme md https raw githubusercontent com declare lab tango master license md https api github com repos declare lab tango https huggingface co datasets declare lab audio alpaca https huggingface co datasets declare lab audio alpaca raw main readme md https huggingface co api datasets declare lab audio alpaca https arxiv org abs 2607 20166 https arxiv org html 2607 20166v1 s3 ss1">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>Audio-Alpaca</h3>
       <p class="benchmark-full-name">Audio-Alpaca: A Preference Dataset for Aligning Text-to-Audio Models</p>
     </div>
@@ -1777,14 +1777,14 @@
 
 <article class="benchmark-card" id="benchmark-audiobook_narration_appeal"
   data-name="audiobook narration appeal"
-  data-families="representation"
+  data-families="restoration-quality"
   data-access="helper"
   data-host="official"
   data-terms="open"
   data-search="audiobook narration appeal audiobook narration appeal audio based understanding of audiobook narration appeal speech paralinguistics audio quality assessment audio recommendation audiobook appeal prediction narration quality analysis paralinguistic feature analysis genre conditioned audio modeling intra title narration ranking apache 2 0 apache 2 0 the repository places its released csv supplementary material and code under apache 2 0 the csv derives metadata and engagement counts from librivox and the internet archive those services terms and attribution requirements remain applicable the license does not extend to separately hosted audiobook recordings or underlying texts verify per item public domain status in the intended jurisdiction and preserve source attribution proprietary spotify engagement data is described only in aggregate and is not released the public ungated spotify research release contains one metadata row for each of 8 854 single narrator english librivox audiobooks covering 1 206 narrators and 65 genres fields include librivox and internet archive urls title grouping narrator identifier duration genre views favorites reviews and days since publication the paper uses time normalized internet archive view rate as a noisy public proxy for narration appeal evaluates global and genre specific prediction and ranks alternative narrations of the same text the helper downloads the approximately 3 1 mb csv official documentation license paper and supplementary material audiobook audio is not redistributed users follow the released source urls to public domain librivox recordings the paper s separate spotify engagement analysis is proprietary and is not part of the public dataset paper https arxiv org abs 2607 02473 arxiv html https arxiv org html 2607 02473v1 repository https github com spotify research audiobook narrations interspeech dataset https github com spotify research audiobook narrations interspeech blob main dataset csv https arxiv org abs 2607 02473 https arxiv org html 2607 02473v1 s3 ss1 https arxiv org html 2607 02473v1 s4 ss3 https github com spotify research audiobook narrations interspeech https raw githubusercontent com spotify research audiobook narrations interspeech main readme md https raw githubusercontent com spotify research audiobook narrations interspeech main license https raw githubusercontent com spotify research audiobook narrations interspeech main dataset csv https api github com repos spotify research audiobook narrations interspeech https api github com repos spotify research audiobook narrations interspeech git trees main recursive 1 https librivox org https archive org details librivoxaudio">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>Audiobook Narration Appeal</h3>
       <p class="benchmark-full-name">Audio-Based Understanding of Audiobook Narration Appeal</p>
     </div>
@@ -1851,7 +1851,7 @@
   data-search="audiocaps audiocaps audiocaps generating captions for audios in the wild audio captioning audio captioning audio language modeling academic only mit github readme says the code and dataset are free to use for academic purposes only the repository has an mit license but the readme adds the academic use condition for repository material re check before redistribution or commercial use official csvs contain captions youtube ids and segment start times raw audio video download requires the upstream form and is subject to audioset youtube availability and terms homepage https audiocaps github io repository https github com cdjkim audiocaps paper https aclanthology org n19 1011 dataset readme https github com cdjkim audiocaps blob master dataset readme md dataset2 readme https github com cdjkim audiocaps blob master dataset2 0 readme md hf mirror https huggingface co datasets d0rj audiocaps qwen audio vae report https arxiv org html 2607 11738v1 s4 ss2 sss2 https audiocaps github io https github com cdjkim audiocaps https github com cdjkim audiocaps blob master dataset readme md https aclanthology org n19 1011 https huggingface co datasets d0rj audiocaps https arxiv org html 2607 11738v1 s4 ss2 sss2">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AudioCaps</h3>
       <p class="benchmark-full-name">AudioCaps: Generating Captions for Audios in The Wild</p>
     </div>
@@ -1914,7 +1914,7 @@
   data-search="audiocards audiocards asfx eval audiocards structured metadata improves audio language models for sound design audio captioning structured audio captioning structured metadata generation text audio retrieval sound effect classification universal category system classification cc by 4 0 annotations with separate adobe audio terms not specified zenodo declares cc by 4 0 for the released audiocard csv the underlying adobe sound effects are not included there adobe describes them as royalty free but states that downloading and using them is governed by the adobe audition and related software eula the july 2026 paper is cc by nc sa 4 0 but that paper license does not release or license its absent four field augmentation or perturbation artifacts the public ungated zenodo release contains 499 csv rows with filenames and 13 structured semantic caption and ucs fields the original paper and project page describe 500 manually screened audiocards but the released csv currently has 499 data rows pair its filename column with the separately downloaded adobe audition sound effects library to reproduce asfx eval the july 2026 evaluation framework paper uses 499 clips its table 1 selects ten released semantic fields and adds five computed acoustic targets lufs pitch onset offset and a frequency profile but says that augmented dataset will be released those five acoustic annotations are not part of the current zenodo file the helper safely downloads the record metadata project page papers adobe landing page and approximately 323 kb annotation csv it does not download the adobe audio archives project page https sites google com view audiocards zenodo https zenodo org records 17237181 doi https doi org 10 5281 zenodo 17237181 paper https arxiv org abs 2602 13835 evaluation paper https arxiv org abs 2607 21424 adobe sound effects https www adobe com products audition offers adobeauditiondlcsfx html https zenodo org records 17237181 https zenodo org api records 17237181 https sites google com view audiocards https arxiv org abs 2602 13835 https arxiv org html 2602 13835v1 s2 ss3 https arxiv org abs 2607 21424 https arxiv org html 2607 21424v1 s2 https www adobe com products audition offers adobeauditiondlcsfx html https www adobe com products eulas">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AudioCards / ASFx Eval</h3>
       <p class="benchmark-full-name">AudioCards: Structured Metadata Improves Audio Language Models for Sound Design</p>
     </div>
@@ -1981,7 +1981,7 @@
   data-search="audiogrounding audiogrounding text to audio grounding building correspondence between captions and sound events audio understanding audio retrieval text to audio grounding temporal audio grounding sound event localization cc by 4 0 on zenodo with upstream terms mit zenodo declares cc by 4 0 for the release and the official repository is mit the recordings derive from audiocaps and audioset youtube clips so retain record attribution and review source video rights availability and platform terms before redistribution or commercial use the public ungated v2 release contains 3 994 training 488 validation and 492 test clips derived from audiocaps audioset with caption phrases aligned to one or more onset offset intervals the july 2026 gigachat audio report evaluates the combined 980 validation test samples as a short clip temporal grounding benchmark and reports miou the helper downloads the official repository documentation zenodo metadata and approximately 5 2 mb of json annotations by default the approximately 2 33 gib audio archive requires explicit opt in repository https github com wsntxxn texttoaudiogrounding dataset https zenodo org records 7269161 paper https doi org 10 1109 icassp39728 2021 9414834 recent evaluation https arxiv org abs 2607 10387 https zenodo org records 7269161 https zenodo org api records 7269161 https github com wsntxxn texttoaudiogrounding https raw githubusercontent com wsntxxn texttoaudiogrounding master readme md https api github com repos wsntxxn texttoaudiogrounding https doi org 10 1109 icassp39728 2021 9414834 https arxiv org abs 2607 10387 https arxiv org html 2607 10387v1 s3">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AudioGrounding</h3>
       <p class="benchmark-full-name">Text-to-Audio Grounding: Building Correspondence Between Captions and Sound Events</p>
     </div>
@@ -2168,7 +2168,7 @@
   data-search="audioset audioset audio set an ontology and human labeled dataset for audio events audio event classification audio event classification audio tagging sound event detection cc by 4 0 not applicable audioset dataset annotations features are cc by 4 0 the ontology is cc by sa 4 0 original youtube media remains subject to upstream availability and terms official release provides segment csvs and precomputed 128 dimensional audio features it does not redistribute original youtube audio homepage https research google com audioset download page https research google com audioset download html ontology repo https github com audioset ontology paper https research google pubs audio set an ontology and human labeled dataset for audio events https research google com audioset https research google com audioset download html https research google pubs audio set an ontology and human labeled dataset for audio events https github com audioset ontology">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AudioSet</h3>
       <p class="benchmark-full-name">Audio Set: An ontology and human-labeled dataset for audio events</p>
     </div>
@@ -2226,7 +2226,7 @@
   data-search="audiosetcaps audiosetcaps audiosetcaps an enriched audio caption dataset using automated generation pipeline with large audio and language models audio captioning audio captioning audio text retrieval audio language pretraining synthetic audio question answering academic research only not specified the hugging face card metadata labels the release cc by 4 0 but the same official card explicitly allows only academic and research use apply the stricter research only statement pending clarification the github repository has no detected license and audioset youtube 8m and vggsound source media rights and platform terms still apply the public ungated release provides synthetic captions for 6 117 099 ten second clips sourced from audioset youtube 8m and vggsound plus 18 414 789 intermediate question answer pairs the hugging face repository contains caption q a csvs rather than the full source audio and currently reports about 20 2 gb of storage the helper downloads only official documentation and repository metadata by default the large csv files require audiosetcaps download metadata 1 the maintainers warn that audiocaps and vggsound evaluation examples overlap the release and should be filtered before training homepage https jishengbai github io audiosetcaps webpage repository https github com jishengbai audiosetcaps hf dataset https huggingface co datasets baijs audiosetcaps paper https arxiv org abs 2411 18953 workshop paper https openreview net forum id uez4pmzwzp https github com jishengbai audiosetcaps https raw githubusercontent com jishengbai audiosetcaps main readme md https api github com repos jishengbai audiosetcaps https huggingface co datasets baijs audiosetcaps https huggingface co datasets baijs audiosetcaps raw main readme md https huggingface co api datasets baijs audiosetcaps https arxiv org abs 2411 18953 https openreview net forum id uez4pmzwzp">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>AudioSetCaps</h3>
       <p class="benchmark-full-name">AudioSetCaps: An Enriched Audio-Caption Dataset using Automated Generation Pipeline with Large Audio and Language Models</p>
     </div>
@@ -2867,7 +2867,7 @@
   data-search="big bench audio big bench audio artificial analysis big bench audio audio understanding spoken question answering speech reasoning audio question answering mit apache 2 0 the hugging face card declares mit and the xiaomi mimo evaluator is apache 2 0 the 1 000 english recordings contain verbatim questions from four big bench hard tasks and were synthesized with 23 openai azure and aws provided voices review inherited task terms and provider generated audio conditions rather than assuming the card resolves every component right dataset https huggingface co datasets artificialanalysis big bench audio leaderboard https artificialanalysis ai speech to speech evaluator https github com xiaomimimo mimo audio eval source paper https arxiv org abs 2210 09261 https huggingface co datasets artificialanalysis big bench audio https huggingface co datasets artificialanalysis big bench audio raw main readme md https huggingface co api datasets artificialanalysis big bench audio https github com xiaomimimo mimo audio eval https raw githubusercontent com xiaomimimo mimo audio eval main slm eval datasets bigbench audio py https arxiv org abs 2210 09261 https arxiv org abs 2206 04615">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Big Bench Audio</h3>
       <p class="benchmark-full-name">Artificial Analysis Big Bench Audio</p>
     </div>
@@ -3065,7 +3065,7 @@
   data-search="castella castella castella long audio dataset with captions and temporal boundaries audio understanding audio retrieval long form audio audio captioning audio moment retrieval temporal audio grounding long audio retrieval audio captioning cc by 4 0 for annotations and released features not specified for audio downloader the annotation repository its hugging face card and the zenodo feature record declare cc by 4 0 that license covers the released annotations features not the underlying youtube recordings the separate raw audio downloader repository has no detected license and raw media remains governed by its owners and youtube terms verify availability and rights before downloading redistribution or commercial use the public ungated annotation release describes 1 862 real world youtube recordings split into 1 009 training 213 validation and 640 test items with 3 925 human written local captions and 11 308 temporal boundaries in english and japanese the hugging face mirror contains only the six lightweight annotation json files not raw audio the helper downloads those annotations plus official documentation and metadata by default precomputed ms clap audio text features are an approximately 2 78 gb hugging face opt in the zenodo release is about 1 33 gb raw media must be reconstructed from youtube ids with the separate official downloader subject to current availability and source platform and recording rights the helper only clones those tools when explicitly requested project page https h munakata github io castella demo paper https arxiv org abs 2511 15131 dataset https huggingface co datasets lighthouse emnlp2024 castella annotations repo https github com line castella audio tools https github com h munakata castella audio features https zenodo org records 17412176 https arxiv org abs 2511 15131 https arxiv org html 2511 15131v2 s3 https h munakata github io castella demo https github com line castella https raw githubusercontent com line castella main readme md https raw githubusercontent com line castella main license md https api github com repos line castella https huggingface co datasets lighthouse emnlp2024 castella https huggingface co datasets lighthouse emnlp2024 castella raw main readme md https huggingface co api datasets lighthouse emnlp2024 castella https github com h munakata castella audio https raw githubusercontent com h munakata castella audio main readme md https api github com repos h munakata castella audio https zenodo org records 17412176 https zenodo org api records 17412176 https huggingface co datasets lighthouse emnlp2024 castella clap features https huggingface co api datasets lighthouse emnlp2024 castella clap features">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>CASTELLA</h3>
       <p class="benchmark-full-name">CASTELLA: Long Audio Dataset with Captions and Temporal Boundaries</p>
     </div>
@@ -3381,7 +3381,7 @@
   data-search="clotho clotho clotho an audio captioning dataset audio captioning audio captioning language based audio retrieval mixed not specified zenodo lists rights as other attribution audio clips keep their original freesound licenses mostly creative commons with attribution recorded in metadata csvs captions are under the tampere university license mainly non commercial with attribution clotho v2 1 audio archives total about 7 1 gib the helper downloads captions metadata by default and makes audio opt in zenodo record https zenodo org records 4783391 repository https github com audio captioning clotho dataset dcase task https dcase community challenge2022 task automatic audio captioning paper https arxiv org abs 1910 09387 https zenodo org records 4783391 https github com audio captioning clotho dataset https dcase community challenge2022 task automatic audio captioning https arxiv org abs 1910 09387">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Clotho</h3>
       <p class="benchmark-full-name">Clotho: An Audio Captioning Dataset</p>
     </div>
@@ -3438,7 +3438,7 @@
   data-search="clotho moment clotho moment clotho moment simulated long audio dataset for language based audio moment retrieval audio understanding audio retrieval long form audio language based audio moment retrieval temporal audio grounding long audio retrieval audio text retrieval apache 2 0 on hugging face card with upstream terms apache 2 0 the hugging face card declares apache 2 0 and the lighthouse repository includes an apache 2 0 license the generated audio incorporates clotho freesound foreground clips and walking tours youtube background audio so the card does not erase component recording licenses attribution requirements or source platform terms review packaged provenance before redistribution or commercial use the public ungated release contains 51 240 one minute synthetic english recordings split into 37 930 training 5 741 validation and 7 569 test samples each sample pairs a text query with a temporal boundary for a clotho foreground event overlaid at a random interval on walking tours background audio dcase 2026 task 6 uses it as a development dataset and advertises a 16 1 gb download the helper downloads official documentation license and repository metadata by default the audio webdataset snapshot requires explicit opt in hugging face currently reports approximately 213 gb of repository storage including history so users should verify available disk space and select only needed splits or shards project page https h munakata github io language based audio moment retrieval dataset https huggingface co datasets lighthouse emnlp2024 clotho moment paper https arxiv org abs 2409 15672 code https github com line lighthouse dcase2026 task https dcase community challenge2026 task audio moment retrieval from long audio https h munakata github io language based audio moment retrieval https huggingface co datasets lighthouse emnlp2024 clotho moment https huggingface co datasets lighthouse emnlp2024 clotho moment raw main readme md https huggingface co api datasets lighthouse emnlp2024 clotho moment https arxiv org abs 2409 15672 https arxiv org html 2409 15672v3 s3 ss1 https github com line lighthouse https raw githubusercontent com line lighthouse main license https dcase community challenge2026 task audio moment retrieval from long audio">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Clotho-Moment</h3>
       <p class="benchmark-full-name">Clotho-Moment: Simulated Long-Audio Dataset for Language-Based Audio Moment Retrieval</p>
     </div>
@@ -3495,14 +3495,14 @@
 
 <article class="benchmark-card" id="benchmark-clotho_aqa"
   data-name="clothoaqa"
-  data-families="representation"
+  data-families="audio-understanding"
   data-access="helper"
   data-host="zenodo"
   data-terms="mixed"
   data-search="clotho aqa clothoaqa clotho aqa a crowdsourced dataset for audio question answering audio question answering audio question answering audio language understanding machine listening mixed not applicable zenodo lists rights as other attribution the train validation test question answer csvs are mit licensed by tampere university audio files keep per file freesound licenses mostly creative commons with attribution recorded in clotho aqa metadata csv the helper downloads the qa split csvs metadata and license by default the 3 1 gib audio files zip archive is opt in because it contains clotho freesound derived audio zenodo record https zenodo org records 6473207 doi https doi org 10 5281 zenodo 6473207 paper https arxiv org abs 2204 09634 baseline repo https github com partha2409 aquanet https zenodo org records 6473207 https zenodo org api records 6473207 https zenodo org api records 6473207 files license txt content https zenodo org records 6473207 files license txt download 1 https arxiv org abs 2204 09634">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>ClothoAQA</h3>
       <p class="benchmark-full-name">Clotho-AQA: A Crowdsourced Dataset for Audio Question Answering</p>
     </div>
@@ -3553,14 +3553,14 @@
 
 <article class="benchmark-card" id="benchmark-cmi_rewardbench"
   data-name="cmi-rewardbench / cmi-pref"
-  data-families="music"
+  data-families="restoration-quality music"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
   data-search="cmi rewardbench cmi rewardbench cmi pref cmi rewardbench evaluating music reward models with compositional multimodal instruction music generation audio quality assessment music reward model evaluation music preference prediction music quality assessment text music alignment reference audio music alignment compositional instruction alignment cc by nc sa 4 0 apache 2 0 the cmi pref card and paper declare cc by nc sa 4 0 and the evaluation repository contains apache 2 0 code the paper says some audio was generated through commercial apis and describes a terms aware release mechanism generated output and service terms may still apply the composite cmi rewardbench also incorporates pam musiceval and music arena so their source licenses and music rights remain controlling for those subsets the public ungated cmi pref release contains 4 027 individual human preference votes over generated music including a balanced 500 vote test split 133 8 hours of english chinese material and text lyrics reference audio musicality alignment confidence and anonymized listener fields cmi rewardbench combines that test split with pam musiceval and music arena for music reward model evaluation the helper downloads the official cards repository docs configuration the approximately 620 kb cmi pref test jsonl and the approximately 4 8 mb composite test manifest by default the hugging face api reports approximately 15 0 gb of repository storage so all mp3 assets require explicit opt in a july 2026 full song generation report uses cmi reward as one evaluator on its separate 500 example multilingual test set that paper does not release those 500 evaluation inputs paper https arxiv org abs 2603 00610 repository https github com haiwen xia cmi rewardbench dataset https huggingface co datasets haiwenxia cmi pref recent evaluation https arxiv org abs 2607 20253 https arxiv org abs 2603 00610 https arxiv org html 2603 00610v3 s3 https arxiv org html 2603 00610v3 sx3 https github com haiwen xia cmi rewardbench https raw githubusercontent com haiwen xia cmi rewardbench main readme md https raw githubusercontent com haiwen xia cmi rewardbench main license https raw githubusercontent com haiwen xia cmi rewardbench main config eval benchmark yaml https api github com repos haiwen xia cmi rewardbench https huggingface co datasets haiwenxia cmi pref https huggingface co datasets haiwenxia cmi pref raw main readme md https huggingface co api datasets haiwenxia cmi pref https arxiv org abs 2607 20253 https arxiv org html 2607 20253v2 s3 ss2">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Music</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>CMI-RewardBench / CMI-Pref</h3>
       <p class="benchmark-full-name">CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction</p>
     </div>
@@ -3753,14 +3753,14 @@
 
 <article class="benchmark-card" id="benchmark-codett"
   data-name="codett"
-  data-families="representation"
+  data-families="speech-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="open"
   data-search="codett codett codett a context aware decision benchmark for turn taking evaluation speech dialogue turn taking full duplex dialogue context aware turn decision spoken dialogue intent classification apache 2 0 not specified the hugging face card declares apache 2 0 for the dataset but the github repository has no license file or detected license the paper says real samples come from candor and magicdata ramc and synthetic speech uses references from kespeech and emilia verify those upstream corpus and voice data terms before redistribution or commercial use the public ungated release contains more than 300 hours of english and chinese multi turn dialogue for four turn taking actions and 14 fine grained intent scenarios across system speaking and system idle states it mixes synthetic material with real conversational samples derived from candor and magicdata ramc the helper downloads official documentation and api metadata by default the hugging face api reports approximately 51 1 gb of repository storage so the single codett lz4 archive requires codett download hf 1 homepage https yingaowang casia github io codett github io paper https arxiv org abs 2603 25434 repository https github com yingaowang casia codett github io dataset https huggingface co datasets yingaowang casia codett modelscope https www modelscope cn datasets wyawya codett https arxiv org abs 2603 25434 https arxiv org html 2603 25434 https yingaowang casia github io codett github io https github com yingaowang casia codett github io https raw githubusercontent com yingaowang casia codett github io main readme en md https api github com repos yingaowang casia codett github io https huggingface co datasets yingaowang casia codett https huggingface co datasets yingaowang casia codett raw main readme md https huggingface co api datasets yingaowang casia codett https www modelscope cn datasets wyawya codett">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Speech understanding &amp; dialogue</span>
       <h3>CoDeTT</h3>
       <p class="benchmark-full-name">CoDeTT: A Context-Aware Decision Benchmark for Turn-Taking Evaluation</p>
     </div>
@@ -3938,14 +3938,14 @@
 
 <article class="benchmark-card" id="benchmark-concerto_accompaniment_benchmark"
   data-name="concerto accompaniment benchmark"
-  data-families="music"
+  data-families="audio-understanding music"
   data-access="helper"
   data-host="official"
   data-terms="unspecified"
   data-search="concerto accompaniment benchmark concerto accompaniment benchmark concerto accompaniment benchmark for score free piano concerto accompaniment music understanding audio generation music audio alignment automatic accompaniment score free accompaniment generation downbeat alignment time scale modification mit covers the public repository s code and released annotation config files it does not license the absent music minus one recordings or override the per recording imslp terms listed in audiodatasummary csv which include cc0 several cc variants and public domain status that may differ by jurisdiction the repository does not state a license or public delivery path for the recorded solo piano performances the paper defines 150 alignment scenarios over four concerto movements combining four recorded solo piano performances four commercial music minus one orchestra tracks and eight imslp piano orchestra mixes the public repository provides the evaluation code configuration tables imslp source urls and measure downbeat annotations the helper saves those lightweight released artifacts by default and makes the repository clone opt in the commercial orchestra recordings are explicitly private and must be purchased separately although the paper calls the remaining data open source the repository currently ignores audio and exposes no solo piano recordings do not infer a public audio download repository https github com hmc mir pianoconcertoaccompaniment paper https arxiv org abs 2607 18189 paper html https arxiv org html 2607 18189v1 https arxiv org abs 2607 18189 https arxiv org html 2607 18189v1 sx2 ssx1 https arxiv org html 2607 18189v1 sx2 ssx2 https arxiv org html 2607 18189v1 sx2 ssx3 https arxiv org html 2607 18189v1 sx2 ssx4 https github com hmc mir pianoconcertoaccompaniment https raw githubusercontent com hmc mir pianoconcertoaccompaniment main readme md https raw githubusercontent com hmc mir pianoconcertoaccompaniment main license https raw githubusercontent com hmc mir pianoconcertoaccompaniment main cfg files audiodatasummary csv https api github com repos hmc mir pianoconcertoaccompaniment https api github com repos hmc mir pianoconcertoaccompaniment git trees main recursive 1">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Music</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Concerto Accompaniment Benchmark</h3>
       <p class="benchmark-full-name">Concerto Accompaniment Benchmark for Score-Free Piano Concerto Accompaniment</p>
     </div>
@@ -4325,7 +4325,7 @@
   data-search="dcase2024 task5 dcase 2024 task 5 dcase 2024 task 5 few shot bioacoustic event detection sound event detection bioacoustics few shot bioacoustic event detection sound event detection animal vocalization detection five shot learning cc by 4 0 not applicable both official zenodo records declare creative commons attribution 4 0 international the benchmark combines multiple bioacoustic sources retain the release attribution and review source specific ethical or wildlife recording constraints for downstream use the official five shot protocol provides the first five positive target events in each recording then scores detection after the fifth event the 2024 development release has 217 recordings 174 training files covering 47 classes and 43 validation files covering seven classes the official challenge reuses the 2023 evaluation release which has 66 recordings across eight subsets the helper downloads record metadata class maps and annotation only archives by default the current zenodo files total approximately 20 4 gib for development audio and 3 0 gib for evaluation audio so waveform archives require dcase2024 task5 download audio 1 challenge https dcase community challenge2024 task few shot bioacoustic event detection results https dcase community challenge2024 task few shot bioacoustic event detection results development set https zenodo org records 10829604 evaluation set https zenodo org records 7879692 development doi https doi org 10 5281 zenodo 10829604 evaluation doi https doi org 10 5281 zenodo 7879692 https dcase community challenge2024 task few shot bioacoustic event detection https dcase community challenge2024 task few shot bioacoustic event detection results https zenodo org records 10829604 https zenodo org api records 10829604 https zenodo org records 7879692 https zenodo org api records 7879692">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DCASE 2024 Task 5</h3>
       <p class="benchmark-full-name">DCASE 2024 Task 5: Few-shot Bioacoustic Event Detection</p>
     </div>
@@ -4380,14 +4380,14 @@
 
 <article class="benchmark-card" id="benchmark-dcase2024_sound_scene_synthesis"
   data-name="dcase 2024 task 7 sound scene synthesis"
-  data-families="representation"
+  data-families="audio-understanding"
   data-access="helper"
   data-host="zenodo"
   data-terms="mixed"
   data-search="dcase2024 sound scene synthesis dcase 2024 task 7 sound scene synthesis dcase 2024 task 7 sound scene synthesis audio generation environmental sound generation text to audio generation environmental sound scene synthesis compositional audio generation audio generation quality evaluation cc by 4 0 not specified zenodo declares cc by 4 0 for the open source dataset the record says its audio is sourced from freesound so retain packaged source attribution and review per clip provenance the baseline repository has no license file and the task page states that it is mostly derived from the upstream audioldm repository treat code terms as unspecified pending clarification the public open source release contains 310 manually composed four second environmental sound scenes and corresponding structured text prompts it uses only freesound source audio and excludes the proprietary private libraries present in the challenge reference data the original protocol evaluates fr chet audio distance with panns cnn14 wavegram logmel embeddings plus listening tests for foreground fit background fit and audio quality the challenge s 250 evaluation prompts and reference audios remain secret the helper downloads official metadata and task documentation by default the approximately 140 mib public archive is an explicit opt in challenge https dcase community challenge2024 task sound scene synthesis results https dcase community challenge2024 task sound scene synthesis results dataset https zenodo org records 15630417 doi https doi org 10 5281 zenodo 15630417 protocol paper https arxiv org abs 2410 17589 results paper https arxiv org abs 2501 08587 baseline repo https github com dcase2024 task7 sound scene synthesis audioldm training finetuning https dcase community challenge2024 task sound scene synthesis https dcase community challenge2024 task sound scene synthesis results https zenodo org records 15630417 https zenodo org api records 15630417 https arxiv org abs 2410 17589 https arxiv org abs 2501 08587 https github com dcase2024 task7 sound scene synthesis audioldm training finetuning">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DCASE 2024 Task 7 Sound Scene Synthesis</h3>
       <p class="benchmark-full-name">DCASE 2024 Task 7: Sound Scene Synthesis</p>
     </div>
@@ -4518,7 +4518,7 @@
   data-search="dcase2025 task2 asd dcase 2025 task 2 asd dcase 2025 task 2 first shot unsupervised anomalous sound detection for machine condition monitoring audio understanding audio robustness anomalous sound detection machine condition monitoring domain generalization first shot learning cc by nc sa 4 0 custom dcase challenge license v2 1 all three official zenodo records declare cc by nc sa 4 0 which prohibits commercial use and requires attribution and share alike distribution the evaluator repository includes a dcase challenge license v2 1 pdf rather than an spdx style open source license review it before reuse the public first shot protocol trains only on normal machine sounds tests source target domain generalization and uses different machine types for development versus final evaluation the development record has seven machine types and approximately 2 36 gb of archives the approximately 1 98 gb additional training record and 358 mb evaluation record cover eight different types each evaluation section has 200 test clips and the organizers have released labels and an evaluator the helper downloads official task record and evaluator metadata by default archives require dcase2025 task2 download archives 1 and an explicit part list challenge https dcase community challenge2025 task first shot unsupervised anomalous sound detection for machine condition monitoring results https dcase community challenge2025 task first shot unsupervised anomalous sound detection for machine condition monitoring results development set https zenodo org records 15097779 additional training set https zenodo org records 15392814 evaluation set https zenodo org records 15519362 evaluator repo https github com nttcslab dcase2025 task2 evaluator https dcase community challenge2025 task first shot unsupervised anomalous sound detection for machine condition monitoring https dcase community challenge2025 task first shot unsupervised anomalous sound detection for machine condition monitoring results https zenodo org records 15097779 https zenodo org api records 15097779 https zenodo org records 15392814 https zenodo org api records 15392814 https zenodo org records 15519362 https zenodo org api records 15519362 https github com nttcslab dcase2025 task2 evaluator https api github com repos nttcslab dcase2025 task2 evaluator">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DCASE 2025 Task 2 ASD</h3>
       <p class="benchmark-full-name">DCASE 2025 Task 2: First-Shot Unsupervised Anomalous Sound Detection for Machine Condition Monitoring</p>
     </div>
@@ -4584,7 +4584,7 @@
   data-search="dcase2025 audioqa dcase 2025 task 5 audioqa dcase 2025 task 5 multi domain audio question answering audio understanding audio reasoning bioacoustics audio question answering temporal audio reasoning bioacoustic question answering multiple choice question answering mit on hugging face card unspecified the hugging face card metadata declares mit but the benchmark incorporates audio from watkins marine mammal sound database audioset mira and other sources named by the organizers upstream audio and source platform terms may be narrower and still apply confirm them before redistribution or commercial use no separate code license was found for the release scripts the official english multiple choice benchmark combines bioacoustics qa temporal soundscapes qa and complex qa mmau the challenge page reports approximately 8 1k training and 2 4k development question answer pairs the released repository also includes the evaluation set access is public but auto approved gated users must sign in and provide basic identity and affiliation fields the helper saves public challenge paper and repository api metadata then prints the manual acceptance and authenticated download steps it never downloads audio automatically challenge https dcase community challenge2025 task audio question answering results https dcase community challenge2025 task audio question answering results dataset https huggingface co datasets peacefuldata 2025 dcase audioqa official paper https arxiv org abs 2505 07365 https dcase community challenge2025 task audio question answering https dcase community challenge2025 task audio question answering results https huggingface co datasets peacefuldata 2025 dcase audioqa official https huggingface co api datasets peacefuldata 2025 dcase audioqa official https arxiv org abs 2505 07365">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DCASE 2025 Task 5 AudioQA</h3>
       <p class="benchmark-full-name">DCASE 2025 Task 5: Multi-Domain Audio Question Answering</p>
     </div>
@@ -4643,7 +4643,7 @@
   data-search="dcase2026 task1 hac dcase 2026 task 1 hac dcase 2026 task 1 heterogeneous audio classification audio understanding audio robustness heterogeneous audio classification hierarchical audio classification multimodal audio classification domain generalization cc by 4 0 with upstream terms not specified all three official zenodo records declare cc by 4 0 the releases include per sound freesound license and uploader provenance so users must also honor each source recording s terms the official baseline repository has no detected license or license file its code terms are unspecified the task predicts 23 second level broad sound taxonomy categories and scores macro averaged hierarchical f score development uses the curated bsd10k v1 2 release about 11 000 sounds and 35 hours and the noisier crowd sourced bsd35k cs release about 35 000 sounds and 150 hours both with text metadata and freesound provenance the public evaluation archive contains audio and metadata but intentionally omits labels the helper downloads official pages zenodo records readmes and approximately 7 mb of development metadata by default roughly 200 mb of clap features and 47 gb of audio evaluation archives require separate explicit opt ins challenge https dcase community challenge2026 task heterogeneous audio classification results https dcase community challenge2026 task heterogeneous audio classification results bsd10k https zenodo org records 17233904 bsd35k cs https zenodo org records 19187100 evaluation set https zenodo org records 20442928 baseline repo https github com mtg dcase2026 task1 baseline https dcase community challenge2026 task heterogeneous audio classification https dcase community challenge2026 task heterogeneous audio classification results https zenodo org api records 17233904 https zenodo org api records 19868804 https doi org 10 5281 zenodo 17233904 https zenodo org api records 19187100 https doi org 10 5281 zenodo 19187100 https zenodo org api records 20442928 https doi org 10 5281 zenodo 20442928 https github com mtg dcase2026 task1 baseline https api github com repos mtg dcase2026 task1 baseline">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DCASE 2026 Task 1 HAC</h3>
       <p class="benchmark-full-name">DCASE 2026 Task 1: Heterogeneous Audio Classification</p>
     </div>
@@ -4776,7 +4776,7 @@
   data-search="desed desed domestic environment sound event detection dataset sound event detection sound event detection audio tagging weakly supervised sound event detection synthetic soundscape generation cc by 4 0 mit zenodo records for desed real and synthetic list cc by 4 0 the github readme says the python code is mit and that component datasets include license files at their roots source media comes from audioset youtube freesound musan sins and related sources so re check component terms before redistribution the helper downloads the official repo plus zenodo record json and small metadata jams files by default real and synthetic audio archives are multi gb and require explicit opt in flags homepage https project inria fr desed repository https github com turpaultn desed dcase 2024 task https dcase community challenge2024 task sound event detection with heterogeneous training dataset and potentially missing labels zenodo real https zenodo org records 3588179 zenodo synthetic https zenodo org records 6026841 paper https hal inria fr hal 02160855 synthetic paper https hal inria fr hal 02355573 https project inria fr desed https github com turpaultn desed https dcase community challenge2024 task sound event detection with heterogeneous training dataset and potentially missing labels https zenodo org records 3588179 https zenodo org records 6026841 https hal inria fr hal 02160855 https hal inria fr hal 02355573">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DESED</h3>
       <p class="benchmark-full-name">Domestic Environment Sound Event Detection Dataset</p>
     </div>
@@ -4834,14 +4834,14 @@
 
 <article class="benchmark-card" id="benchmark-designed_vocalizations"
   data-name="designed vocalizations dataset"
-  data-families="representation"
+  data-families="speech-generation"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="designed vocalizations designed vocalizations dataset designed vocalizations dataset sound designed human and animal voices for non human voice conversion speech generation speech voice conversion robustness evaluation non human voice conversion designed vocalization generation timbre transfer sound design reproduction seen unseen source generalization seen unseen preset generalization cc by 4 0 with mixed upstream terms not applicable the dataset card applies cc by 4 0 to the compilation and authors original metadata and annotations raw and designed clips retain their applicable source terms vctk and hifi tts are cc by 4 0 while freesound clips are individually cc0 1 0 cc by 3 0 or cc by 4 0 preserve the release notice and per row license attribution creator and source fields when redistributing the project does not publish a separate evaluation code repository the public ungated release contains 237 574 mono 44 1 khz wav clips embedded in parquet 5 654 raw training sources 226 160 non parallel designed training clips 120 test sources and 5 640 aligned test references the test protocol crosses source timbres seen or unseen during training with 40 seen and seven unseen effect presets the helper downloads official documentation api metadata licensing notices preset metadata and the approximately 532 kb test pair manifest by default the full hugging face repository is approximately 37 1 gb and requires designed vocalizations download hf 1 homepage https ncai official github io speech publications designed vocalizations dataset dataset https huggingface co datasets ncsoft designed vocalizations dataset paper https arxiv org abs 2607 20951 arxiv html https arxiv org html 2607 20951 https arxiv org abs 2607 20951 https arxiv org html 2607 20951 s2 https arxiv org html 2607 20951 s3 https ncai official github io speech publications designed vocalizations dataset https huggingface co datasets ncsoft designed vocalizations dataset https huggingface co datasets ncsoft designed vocalizations dataset raw main readme md https huggingface co datasets ncsoft designed vocalizations dataset raw main license md https huggingface co datasets ncsoft designed vocalizations dataset raw main notice https huggingface co api datasets ncsoft designed vocalizations dataset">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Speech generation</span>
       <h3>Designed Vocalizations Dataset</h3>
       <p class="benchmark-full-name">Designed Vocalizations Dataset: Sound-Designed Human and Animal Voices for Non-human Voice Conversion</p>
     </div>
@@ -4906,7 +4906,7 @@
   data-search="dhauds dhauds dhauds a dynamic and heterogeneous audio benchmark for test time adaptation audio robustness audio classification test time adaptation audio classification robustness dynamic corruption robustness speech command classification human vocal sound classification environmental sound classification bioacoustic classification apache 2 0 on hugging face cards with upstream terms apache 2 0 all four hugging face cards declare apache 2 0 and the code repository contains an apache 2 0 license the corrupted audio derives from speech commands v2 vocalsound urbansound8k reefset qut noise and demand those sources retain separate attribution share alike non commercial or other terms in particular the apache card labels should not be assumed to remove urbansound8k s non commercial restriction or other upstream obligations the public suite contains separately corrupted adaptation and evaluation sets derived from the held out portions of speech commands v2 vocalsound urbansound8k and reefset sc2 c vs c and rs c apply seven corruption categories at two severity levels us8 c omits qut noise and demand corruptions that overlap its target classes and uses four categories the paper reports 908 196 derived samples in total and uses different random seeds for adaptation and evaluation corruptions the helper downloads official documentation and repository metadata by default the four hugging face repositories report about 50 0 gb of storage combined so snapshots require dhauds download hf 1 and an explicit dhauds datasets selection repository https github com andy shao dhauds paper https arxiv org abs 2511 18421 speech commands v2 c https huggingface co datasets andyshao90 speechcommandsv2 c vocalsound c https huggingface co datasets andyshao90 vocalsound c urbansound8k c https huggingface co datasets andyshao90 urbansound8k c reefset c https huggingface co datasets andyshao90 reefset c https arxiv org abs 2511 18421 https github com andy shao dhauds https raw githubusercontent com andy shao dhauds main readme md https raw githubusercontent com andy shao dhauds main license https api github com repos andy shao dhauds https huggingface co datasets andyshao90 speechcommandsv2 c https huggingface co api datasets andyshao90 speechcommandsv2 c https huggingface co datasets andyshao90 vocalsound c https huggingface co api datasets andyshao90 vocalsound c https huggingface co datasets andyshao90 urbansound8k c https huggingface co api datasets andyshao90 urbansound8k c https huggingface co datasets andyshao90 reefset c https huggingface co api datasets andyshao90 reefset c">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>DHAuDS</h3>
       <p class="benchmark-full-name">DHAuDS: A Dynamic and Heterogeneous Audio Benchmark for Test-Time Adaptation</p>
     </div>
@@ -4969,7 +4969,7 @@
 
 <article class="benchmark-card" id="benchmark-dialogs_ru"
   data-name="dialogs"
-  data-families="speech-recognition speaker-human"
+  data-families="speech-recognition speech-generation speaker-human"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
@@ -5720,7 +5720,7 @@
   data-search="esc 50 esc 50 esc 50 dataset for environmental sound classification environmental sound classification environmental sound classification audio tagging cc by nc 3 0 not specified esc 10 subset clips are cc by esc 50 as a whole is creative commons attribution noncommercial per clip freesound attributions are in the repository license file repository https github com karolpiczak esc 50 paper https doi org 10 1145 2733373 2806390 paper pdf https www karolpiczak com papers piczak2015 esc dataset pdf direct archive https github com karolpiczak esc 50 archive refs heads master zip https github com karolpiczak esc 50 https github com karolpiczak esc 50 blob master license https doi org 10 1145 2733373 2806390">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>ESC-50</h3>
       <p class="benchmark-full-name">ESC-50: Dataset for Environmental Sound Classification</p>
     </div>
@@ -5776,7 +5776,7 @@
   data-search="escucha escucha escucha a spanish speech benchmark for heterogeneous acoustic conditions audio language model benchmark spanish speech understanding audio question answering audio reasoning multi audio comparison audio instruction following pathological speech understanding long audio understanding not specified not specified the github repository has no license file or detected github license the paper is cc by 4 0 on arxiv but that does not license the annotations code or source recordings review the rights and platform terms for each linked recording before downloading redistribution or commercial use the public repository releases 1 000 spanish questions as json and tsv including 900 multiple choice and 100 audio instruction following items the helper downloads those approximately 2 2 mb of annotations plus the readme and scorer by default cloning the repository is opt in audio is not redistributed the release provides source urls and a yt dlp script for reconstructing up to 162 9 hours from public recordings so availability can drift and source platform terms apply repository https github com ferugit escucha paper https arxiv org abs 2607 17812 arxiv html https arxiv org html 2607 17812v1 https github com ferugit escucha https raw githubusercontent com ferugit escucha master readme md https api github com repos ferugit escucha https github com ferugit escucha tree master data tsv https arxiv org abs 2607 17812 https arxiv org html 2607 17812v1 s2">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>ESCUCHA</h3>
       <p class="benchmark-full-name">ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions</p>
     </div>
@@ -6130,7 +6130,7 @@
   data-search="forestir forestir forestir physics informed forest sound simulation for array based bioacoustic remote sensing spatial audio bioacoustics audio simulation forest impulse response simulation bioacoustic sound source localization microphone array design spatial audio robustness synthetic multichannel audio generation bundled media terms not separately specified mit the repository has an mit license and github detects mit but neither the paper nor readme states separate licenses or complete provenance terms for bundled bird vocalizations and recorded environmental noise do not assume the software license clears those recordings verify source media attribution wildlife recording and field recording rights before redistribution or commercial use the request only processed validation data may carry additional terms the public repository provides a physics informed forest impulse response simulator command line and python interfaces measured and synthetic tree microphone source geometry presets example bird calls environmental noise recordings and manifest producing array rendering the helper downloads official documentation license repository metadata and the paper by default cloning the approximately 31 mb repository requires forestir clone repo 1 the paper says processed site recorded data needed to reproduce its main validation analyses must be requested from the authors so the public repository must not be represented as a complete release of those field measurements repository https github com tipcolin forestir paper https arxiv org abs 2607 06299 arxiv html https arxiv org html 2607 06299v1 https arxiv org abs 2607 06299 https arxiv org html 2607 06299v1 s2 https arxiv org html 2607 06299v1 s5 https github com tipcolin forestir https raw githubusercontent com tipcolin forestir main readme md https raw githubusercontent com tipcolin forestir main license https api github com repos tipcolin forestir https api github com repos tipcolin forestir git trees main recursive 1">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>ForestIR</h3>
       <p class="benchmark-full-name">ForestIR: Physics-Informed Forest Sound Simulation for Array-Based Bioacoustic Remote Sensing</p>
     </div>
@@ -6249,7 +6249,7 @@
   data-search="fsd50k fsd50k fsd50k an open dataset of human labeled sound events audio event classification sound event classification sound event tagging audio tagging machine listening mixed creative commons not specified zenodo says individual freesound clips keep per clip cc0 cc by cc by nc or cc sampling licenses with clip level license mappings in the metadata json files fsd50k as a curated dataset is additionally released under cc by but the maintainers warn that a single global license is not straightforward because items have different licenses the helper downloads the small documentation ground truth and metadata zips by default audio is split across about 24 7 gib of dev archives plus about 6 2 gib of eval archives so audio download is an explicit opt in homepage https fsannotator upf edu fsd release fsd50k zenodo record https zenodo org records 4060432 doi https doi org 10 5281 zenodo 4060432 paper https arxiv org abs 2010 00475 taslp paper https ieeexplore ieee org document 9645159 baseline repo https github com edufonseca fsd50k baseline https fsannotator upf edu fsd release fsd50k https zenodo org records 4060432 https arxiv org abs 2010 00475 https ieeexplore ieee org document 9645159">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>FSD50K</h3>
       <p class="benchmark-full-name">FSD50K: An Open Dataset of Human-Labeled Sound Events</p>
     </div>
@@ -6310,7 +6310,7 @@
   data-search="fsdkaggle2018 fsdkaggle2018 fsdkaggle2018 freesound general purpose audio tagging challenge dataset audio event classification audio tagging sound event classification general purpose audio tagging mixed creative commons not specified the zenodo record license id is other at the record states fsdkaggle2018 as a curated dataset is cc by while individual freesound clips retain per clip creative commons licenses listed in train post competition csv and test post competition scoring clips csv kaggle competition rules and freesound source terms should also be checked for challenge use the helper downloads the zenodo record json plus small documentation and metadata zips by default the audio archives are about 4 6 gib combined so audio download is an explicit opt in zenodo record https zenodo org records 2552860 doi https doi org 10 5281 zenodo 2552860 dcase task https dcase community challenge2018 task general purpose audio tagging kaggle competition https www kaggle com c freesound audio tagging paper https arxiv org abs 1807 09902 baseline repo https github com dcase repo dcase2018 baseline tree master task2 https zenodo org records 2552860 https dcase community challenge2018 task general purpose audio tagging https arxiv org abs 1807 09902 https github com mtg freesound datasets">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>FSDKaggle2018</h3>
       <p class="benchmark-full-name">FSDKaggle2018: Freesound General-Purpose Audio Tagging Challenge Dataset</p>
     </div>
@@ -6369,7 +6369,7 @@
   data-search="fsdkaggle2019 fsdkaggle2019 fsdkaggle2019 freesound audio tagging 2019 audio tagging with noisy labels and minimal supervision audio event classification audio tagging sound event classification noisy label learning weakly labeled audio classification domain mismatch evaluation mixed creative commons mit zenodo reports license id other at the record says fsdkaggle2019 as a curated dataset is cc by while individual freesound clips keep per clip cc0 cc by cc by nc or cc sampling licenses and flickr yfcc noisy train clips keep cc by or cc by sa licenses recorded in metadata csvs kaggle dcase challenge rules and source media terms should also be checked for challenge or redistribution use the helper downloads the zenodo record json plus small documentation and metadata zips by default full audio is about 25 gib and includes a split noisy train archive so audio download is an explicit opt in with part selection zenodo record https zenodo org records 3612637 doi https doi org 10 5281 zenodo 3612637 dcase task https dcase community challenge2019 task audio tagging kaggle competition https www kaggle com c freesound audio tagging 2019 paper https arxiv org abs 1906 02975 baseline repo https github com dcase repo dcase2019 task2 baseline https zenodo org records 3612637 https dcase community challenge2019 task audio tagging https arxiv org abs 1906 02975 https github com dcase repo dcase2019 task2 baseline https www kaggle com c freesound audio tagging 2019">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>FSDKaggle2019</h3>
       <p class="benchmark-full-name">FSDKaggle2019: Freesound Audio Tagging 2019 / Audio Tagging with Noisy Labels and Minimal Supervision</p>
     </div>
@@ -6496,7 +6496,7 @@
   data-search="geo atbench geo atbench geo atbench a benchmark for geospatial audio tagging with geospatial semantic context audio understanding environmental sound classification geospatial audio multi label audio tagging environmental sound classification audio geospatial context fusion context aware audio tagging cc by 4 0 with upstream terms mit the zenodo record declares cc by 4 0 and the official repository is mit the paper says audio comes from freesound and a prior geotagged audio dataset while contextual metadata derives from openstreetmap preserve source attribution and review per clip audio licenses and osm attribution database terms before redistribution the public ungated release contains 3 854 ten second mono wav clips totaling 10 71 hours 28 fine grained sound event labels three coarse event groups and poi derived geospatial semantic context over 11 openstreetmap feature categories the helper downloads official documentation and repository zenodo metadata by default the approximately 850 mb dataset archive is opt in repository https github com wuyanru2002 geo atbench dataset https zenodo org records 18980673 doi https doi org 10 5281 zenodo 18980673 leaderboard https github com wuyanru2002 geo atbench leaderboard paper https arxiv org abs 2603 10623 https arxiv org abs 2603 10623 https arxiv org html 2603 10623v1 https github com wuyanru2002 geo atbench https raw githubusercontent com wuyanru2002 geo atbench main readme md https api github com repos wuyanru2002 geo atbench https zenodo org records 18980673 https zenodo org api records 18980673">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Geo-ATBench</h3>
       <p class="benchmark-full-name">Geo-ATBench: A Benchmark for Geospatial Audio Tagging with Geospatial Semantic Context</p>
     </div>
@@ -7858,7 +7858,7 @@
   data-search="lat bench lat bench lat bench long form audio temporal awareness benchmark audio language model benchmark long form audio understanding temporal audio reasoning dense audio captioning temporal audio grounding targeted audio captioning cc by nc 4 0 claim with upstream media terms apache 2 0 the hugging face card declares cc by nc 4 0 for lat bench while the github repository is apache 2 0 the release references externally hosted source audio rather than relicensing or redistributing it review each recording s rights and platform terms before retrieval redistribution or commercial use the public ungated release provides chinese and english metadata plus task jsonl files for a human verified 40 hour benchmark with 25 hours of chinese and 15 hours of english audio up to 30 minutes long dense audio captioning temporal audio grounding and targeted audio captioning annotations are included audio is not bundled the metadata records source urls so availability can drift and source platform terms apply the helper downloads the approximately 2 6 mb annotations official documentation and repository metadata by default cloning the evaluation repository is opt in repository https github com alanshaott lat audio repo paper https arxiv org abs 2604 22245 dataset https huggingface co datasets mcshao lat bench collection https huggingface co collections mcshao lat audio https arxiv org abs 2604 22245 https arxiv org html 2604 22245v1 s4 https arxiv org html 2604 22245v1 s4 ss3 https github com alanshaott lat audio repo https raw githubusercontent com alanshaott lat audio repo main readme md https raw githubusercontent com alanshaott lat audio repo main license https api github com repos alanshaott lat audio repo https huggingface co datasets mcshao lat bench https huggingface co datasets mcshao lat bench raw main readme md https huggingface co api datasets mcshao lat bench">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>LAT-Bench</h3>
       <p class="benchmark-full-name">LAT-Bench: Long-form Audio Temporal Awareness Benchmark</p>
     </div>
@@ -8279,14 +8279,14 @@
 
 <article class="benchmark-card" id="benchmark-live_gurbani_captioning_v1"
   data-name="live gurbani captioning benchmark v1"
-  data-families="representation"
+  data-families="speech-recognition"
   data-access="helper"
   data-host="official"
   data-terms="mixed"
   data-search="live gurbani captioning v1 live gurbani captioning benchmark v1 live gurbani tracking a benchmark and reference system for captioning sikh kirtan singing voice dataset closed vocabulary singing captioning live audio tracking lyrics alignment sung scripture identification low resource speech recognition cc by 4 0 annotations mit the repository license applies cc by 4 0 to ground truth annotations in test and the committed baselines and mit to the software and documentation the four underlying kirtan recordings are referenced by youtube id rather than bundled the repository license does not grant rights to those recordings and platform terms uploader rights performer rights and local cultural or legal considerations remain separate the public v1 repository contains ground truth timelines for four hand reviewed sikh kirtan recordings each evaluated from 0 33 and 66 start offsets giving 12 cases and approximately 57 minutes of scored audio it also releases a standard library python scorer visualization and annotation tools and empty shifted and perfect baselines the primary metric is one second frame accuracy with a one second boundary collar the helper downloads official documentation and repository metadata by default cloning the small repository with annotations and evaluation code is opt in audio is not redistributed the official readme identifies four youtube video ids and provides yt dlp ffmpeg preparation commands so availability and source media rights must be checked separately project page https karanbirsingh github io live gurbani captioning benchmark v1 repository https github com karanbirsingh live gurbani captioning benchmark v1 paper https arxiv org abs 2607 13457 arxiv html https arxiv org html 2607 13457v1 https arxiv org abs 2607 13457 https arxiv org html 2607 13457v1 s4 https arxiv org html 2607 13457v1 s10 https karanbirsingh github io live gurbani captioning benchmark v1 https github com karanbirsingh live gurbani captioning benchmark v1 https raw githubusercontent com karanbirsingh live gurbani captioning benchmark v1 main readme md https raw githubusercontent com karanbirsingh live gurbani captioning benchmark v1 main license https api github com repos karanbirsingh live gurbani captioning benchmark v1">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Speech recognition</span>
       <h3>Live Gurbani Captioning Benchmark v1</h3>
       <p class="benchmark-full-name">Live Gurbani Tracking: A Benchmark and Reference System for Captioning Sikh Kirtan</p>
     </div>
@@ -8465,7 +8465,7 @@
   data-search="locata locata locata ieee aasp challenge on acoustic source localization and tracking spatial audio sound source localization acoustic source tracking multi source localization moving source localization moving microphone array localization odc by 1 0 not specified zenodo identifies the final dataset release as open data commons attribution and the official corpus page says both locata and its vctk speech material use open data commons terms neither official matlab repository exposes a license file or a github detected license so clarify software terms before redistribution the open final release contains corrected development and evaluation datasets with close talking speech distant multichannel recordings from four microphone array configurations and optitrack ground truth for sources and microphones its six tasks span static and moving single and multi source scenarios with static or moving arrays the dev zip and eval zip archives total about 19 3 gb so the helper downloads only official pages documentation zenodo metadata and tool metadata by default homepage https www locata lms tf fau de corpus https www locata lms tf fau de corpus dataset https www locata lms tf fau de datasets zenodo record https zenodo org records 3630471 doi https doi org 10 5281 zenodo 3630471 paper https doi org 10 1109 taslp 2020 2990485 io repo https github com cevers sap locata io evaluation repo https github com cevers sap locata eval https www locata lms tf fau de corpus https www locata lms tf fau de datasets https www locata lms tf fau de tasks https zenodo org api records 3630471 https doi org 10 1109 taslp 2020 2990485 https github com cevers sap locata io https api github com repos cevers sap locata io https github com cevers sap locata eval https api github com repos cevers sap locata eval">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>LOCATA</h3>
       <p class="benchmark-full-name">LOCATA: IEEE-AASP Challenge on Acoustic Source Localization and Tracking</p>
     </div>
@@ -8773,14 +8773,14 @@
 
 <article class="benchmark-card" id="benchmark-lyra_sa"
   data-name="lyra-sa"
-  data-families="representation"
+  data-families="restoration-quality"
   data-access="manual"
   data-host="official"
   data-terms="noncommercial"
   data-search="lyra sa lyra sa lyra lab singing assessment dataset singing voice dataset audio quality assessment singing quality assessment full song singing assessment singing score prediction cc by nc 4 0 not applicable the official page states cc by nc 4 0 for non commercial use requires attribution to the source page and notice reserves copyright to tencent music entertainment group and requires separate permission for commercial use the recordings are wesing user performances of copyrighted songs rely on the official authorization and application terms rather than inferring broader music or performance rights from the creative commons label the official tencent music lyra lab page describes 1 000 complete mobile karaoke recordings 100 user covers for each of 10 chinese songs with no repeated singer the release includes 44 1 khz 16 bit mono wav audio listener provided overall singing scores rough singer labels timed lyrics and reference midi access is application based users must complete the official form and accept its terms after which lyra lab says it emails a download link within three days the helper saves official documentation and the recent songsqa paper then prints the manual application path it never guesses or bypasses an emailed archive url homepage https lyracobar y qq com singvoicedataset en html application form https wj qq com s2 11839505 8cf1 recent evaluation https arxiv org abs 2607 16599 https lyracobar y qq com singvoicedataset en html https lyracobar y qq com singvoicedataset html https wj qq com s2 11839505 8cf1 https arxiv org abs 2607 16599 https arxiv org html 2607 16599v1 s4 ss1">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>Lyra-SA</h3>
       <p class="benchmark-full-name">Lyra Lab Singing Assessment Dataset</p>
     </div>
@@ -8836,7 +8836,7 @@
   data-search="macs macs macs multi annotator captioned soundscapes audio captioning audio captioning audio tagging multi annotator audio labeling acoustic scene captioning other nc not applicable zenodo lists macs as other non commercial and license txt grants experimental non commercial use with attribution to tampere university machine listening group audio files come from tau urban acoustic scenes 2019 whose zenodo record also lists other non commercial the helper downloads the macs annotations competence scores license and tau urban acoustic scenes 2019 docs metadata by default the upstream tau 2019 audio shards are large so audio download is an explicit opt in zenodo record https zenodo org records 5114771 doi https doi org 10 5281 zenodo 5114771 paper https arxiv org abs 2104 04214 upstream audio https zenodo org records 2589280 https zenodo org records 5114771 https zenodo org api records 5114771 https zenodo org api records 5114771 files license txt content https arxiv org abs 2104 04214 https zenodo org records 2589280">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MACS</h3>
       <p class="benchmark-full-name">MACS: Multi-Annotator Captioned Soundscapes</p>
     </div>
@@ -9078,7 +9078,7 @@
   data-search="maestro real maestro real maestro real multi annotator estimated strong labels sound event detection sound event detection soft label sound event detection multi annotator label aggregation long form sound event detection custom noncommercial not applicable the packaged tampere university license permits copying and use only for experimental and non commercial purposes with the full copyright notice and source acknowledgment it explicitly prohibits commercial use including selling or distributing results or content achieved through use of the dataset the public development release contains 49 real life recordings from five acoustic scenes with crowdsourced soft strong labels for 17 classes recordings are three to five minutes long and come from subsets of tut sound events 2016 and 2017 dcase 2024 task 4 combines maestro real with desed and evaluates 11 maestro classes its separate 26 file maestro evaluation set is not included in the public development archive the helper downloads official metadata readme license and the sub megabyte annotation archive by default the approximately 2 43 gib audio archive requires explicit opt in the official zenodo description reports 189 minutes 52 seconds total while its packaged readme reports 97 minutes 4 seconds so verify duration against the downloaded files rather than assuming either figure dataset https zenodo org records 7244360 doi https doi org 10 5281 zenodo 7244360 dcase 2024 task https dcase community challenge2024 task sound event detection with heterogeneous training dataset and potentially missing labels paper https doi org 10 1109 taslp 2022 3233468 https zenodo org records 7244360 https zenodo org api records 7244360 https dcase community challenge2024 task sound event detection with heterogeneous training dataset and potentially missing labels https doi org 10 1109 taslp 2022 3233468">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MAESTRO Real</h3>
       <p class="benchmark-full-name">MAESTRO Real: Multi-Annotator Estimated Strong Labels</p>
     </div>
@@ -9490,14 +9490,14 @@
 
 <article class="benchmark-card" id="benchmark-ming_freeform_audio_edit"
   data-name="ming-freeform-audio-edit"
-  data-families="representation"
+  data-families="speech-generation"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="ming freeform audio edit ming freeform audio edit ming freeform audio edit free form instruction based speech editing benchmark speech editing controllable speech generation instruction based speech editing semantic speech editing speech content deletion speech content insertion speech content substitution speech emotion conversion speech dialect conversion speech speed alteration speech pitch alteration speech volume alteration apache 2 0 with upstream terms not specified the hugging face dataset card declares apache 2 0 but the released audio is derived from multiple upstream corpora whose terms still apply seed tts eval states no data license libritts is cc by 4 0 and gigaspeech uses its own agreement access conditions the evaluation repository has no license file or detected github license review each source corpus and clarify annotation code rights before redistribution or commercial use the public ungated release contains chinese and english source speech natural language editing instructions and metadata for semantic deletion insertion and substitution plus acoustic emotion dialect speed pitch and volume changes the paper s section 6 3 constructs the semantic set from 896 chinese and 655 english seed tts test samples and reports separate basic and full instruction versions its acoustic sets also use seed tts audio the current dataset card additionally names libritts and gigaspeech as source corpora the helper downloads official documentation and repository metadata by default the hugging face api reports approximately 1 07 gb of repository storage so audio and annotations require explicit opt in dataset https huggingface co datasets inclusionai ming freeform audio edit benchmark repository https github com inclusionai ming freeform audio edit model repo https github com inclusionai ming uniaudio paper https arxiv org abs 2511 05516 arxiv html https arxiv org html 2511 05516v1 s6 ss3 modelscope https modelscope cn datasets inclusionai ming freeform audio edit benchmark files https arxiv org abs 2511 05516 https arxiv org html 2511 05516v1 s6 ss3 https github com inclusionai ming uniaudio https raw githubusercontent com inclusionai ming uniaudio main readme md https github com inclusionai ming freeform audio edit https raw githubusercontent com inclusionai ming freeform audio edit main readme md https api github com repos inclusionai ming freeform audio edit https huggingface co datasets inclusionai ming freeform audio edit benchmark https huggingface co datasets inclusionai ming freeform audio edit benchmark raw main readme md https huggingface co api datasets inclusionai ming freeform audio edit benchmark">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Speech generation</span>
       <h3>Ming-Freeform-Audio-Edit</h3>
       <p class="benchmark-full-name">Ming-Freeform-Audio-Edit: Free-form instruction-based speech editing benchmark</p>
     </div>
@@ -9740,7 +9740,7 @@
 
 <article class="benchmark-card" id="benchmark-mmae"
   data-name="mmae"
-  data-families="restoration-quality music"
+  data-families="restoration-quality audio-understanding music"
   data-access="helper"
   data-host="hugging-face"
   data-terms="unspecified"
@@ -9810,7 +9810,7 @@
   data-search="mmar mmar mmar a challenging benchmark for deep reasoning in speech audio music and their mix audio understanding audio question answering audio reasoning cc by nc 4 0 not specified github repo did not expose a detected license hf dataset card lists cc by nc 4 0 repository https github com ddlbojack mmar paper https arxiv org abs 2505 13032 challenge https audio reasoning challenge github io https github com ddlbojack mmar https huggingface co datasets bojack mmar">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MMAR</h3>
       <p class="benchmark-full-name">MMAR: A Challenging Benchmark for Deep Reasoning in Speech, Audio, Music, and Their Mix</p>
     </div>
@@ -9865,7 +9865,7 @@
   data-search="mmau mmau mmau a massive multi task audio understanding and reasoning benchmark audio understanding audio question answering audio reasoning hf cards mmau test mini is cc by nc 4 0 mmau test is mit apache 2 0 the two hf dataset cards list different licenses re check before redistribution homepage https sakshi113 github io mmau homepage repository https github com sakshi113 mmau paper https arxiv org abs 2410 19168 https github com sakshi113 mmau https huggingface co datasets gamma lab umd mmau test mini https huggingface co datasets gamma lab umd mmau test">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MMAU</h3>
       <p class="benchmark-full-name">MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark</p>
     </div>
@@ -9921,7 +9921,7 @@
   data-search="mmau pro mmau pro mmau pro a challenging and comprehensive benchmark for holistic evaluation of audio general intelligence audio understanding audio question answering audio reasoning long audio understanding multi audio reasoning spatial audio reasoning speech understanding sound understanding music understanding audio instruction following cc by nc 4 0 with upstream terms not specified the hugging face card declares cc by nc 4 0 but the paper says almost all audio was sourced from in the wild recordings and the spatial subset reuses easycom review source media and easycom terms before redistribution or commercial use the official github repository has no license file or detected license so evaluator code terms are unspecified the public ungated release contains 5 305 expert authored multiple choice and open ended qa instances spanning 49 skills across speech environmental sound music and their mixtures it includes multiple audio spatial instruction following and up to 10 minute long form cases the helper downloads official documentation repository metadata the evaluator and hugging face metadata by default the hugging face api reports approximately 47 5 gb of repository storage so the audio and test snapshot requires mmau pro download hf 1 homepage https sonalkum github io mmau pro repository https github com sonalkum mmaupro paper https arxiv org abs 2508 13992 dataset https huggingface co datasets gamma lab umd mmau pro https arxiv org abs 2508 13992 https arxiv org html 2508 13992v1 sx3 https github com sonalkum mmaupro https raw githubusercontent com sonalkum mmaupro main readme md https api github com repos sonalkum mmaupro https huggingface co datasets gamma lab umd mmau pro https huggingface co datasets gamma lab umd mmau pro raw main readme md https huggingface co api datasets gamma lab umd mmau pro">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MMAU-Pro</h3>
       <p class="benchmark-full-name">MMAU-Pro: A Challenging and Comprehensive Benchmark for Holistic Evaluation of Audio General Intelligence</p>
     </div>
@@ -10344,7 +10344,7 @@
 
 <article class="benchmark-card" id="benchmark-msu_bench"
   data-name="msu-bench"
-  data-families="speech-understanding speaker-human"
+  data-families="speech-understanding speaker-human audio-understanding"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
@@ -10911,7 +10911,7 @@
   data-search="musica metabench musica metabench music i care about automated multimodal benchmarking of llm music perception skills on almost any music music understanding audio understanding multimodal understanding music perception question answering audio music understanding symbolic music understanding sheet music understanding cross modal music evaluation programmatic benchmark generation mixed cc by 4 0 and cc by sa 4 0 by source gpl 3 0 or later choralebricks derived benchmark instances are cc by 4 0 while choralsynth derived instances are cc by sa 4 0 original code question templates ontology and configurations are gpl 3 0 or later model outputs and inference logs are provided without a separate license source recordings and scores are downloaded separately and retain the upstream dataset terms select the license by each benchmark file s documented source rather than treating the repository as uniformly licensed the public repository releases the evaluation and benchmark generation pipeline question templates ontology configurations inference logs and pre generated benchmark instances the paper s main choralebricks instance and its choralsynth validation instance each contain 300 five option questions balanced across audio symbolic and sheet image modalities 20 use none of the other options as the correct answer items test pitch rhythm and harmony perception the helper downloads official documentation licenses configs and both sub 500 kb tsv instances by default cloning the approximately 49 mb github repository is opt in source audio and scores are not stored in that repository and must be obtained from choralebricks or choralsynth under their respective terms paper https arxiv org abs 2607 06015 repository https github com tomsouri musica metabench preprint chorale bricks https audiolabs erlangen de resources mir 2025 choralebricks chorale synth https zenodo org records 10161065 https arxiv org abs 2607 06015 https arxiv org html 2607 06015v1 s3 https arxiv org html 2607 06015v1 s4 https github com tomsouri musica metabench preprint https raw githubusercontent com tomsouri musica metabench preprint main readme md https raw githubusercontent com tomsouri musica metabench preprint main benchmarks readme md https raw githubusercontent com tomsouri musica metabench preprint main benchmarks qs per subcat 20 seed 52 tsv https raw githubusercontent com tomsouri musica metabench preprint main benchmarks choralsynth size20 seed 52 tsv https raw githubusercontent com tomsouri musica metabench preprint main license https raw githubusercontent com tomsouri musica metabench preprint main license data choralebricks https raw githubusercontent com tomsouri musica metabench preprint main license data choralsynth https api github com repos tomsouri musica metabench preprint https audiolabs erlangen de resources mir 2025 choralebricks https zenodo org records 10161065">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MusICA-MetaBench</h3>
       <p class="benchmark-full-name">Music I Care About: Automated Multimodal Benchmarking of LLM Music Perception Skills on (Almost) Any Music</p>
     </div>
@@ -10980,7 +10980,7 @@
   data-search="musiccaps musiccaps musiccaps a dataset of music captions audio captioning music captioning text to music evaluation music understanding audio language modeling cc by sa 4 0 not applicable the hugging face card and kaggle converted metadata list cc by sa 4 0 for the annotation csv the referenced media are 10 second clips from audioset youtube so original media copyright platform terms and availability still apply the public release is a csv of 5 521 music text pairs with youtube ids segment timestamps audioset labels aspect lists and musician written captions raw audio is not mirrored by the dataset and must be reconstructed from youtube audioset subject to upstream availability and terms kaggle dataset https www kaggle com datasets googleai musiccaps hf dataset https huggingface co datasets google musiccaps paper https arxiv org abs 2301 11325 https huggingface co datasets google musiccaps https huggingface co api datasets google musiccaps https huggingface co datasets google musiccaps raw main readme md https www kaggle com datasets googleai musiccaps https arxiv org abs 2301 11325">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>MusicCaps</h3>
       <p class="benchmark-full-name">MusicCaps: A Dataset of Music Captions</p>
     </div>
@@ -11730,14 +11730,14 @@
 
 <article class="benchmark-card" id="benchmark-openstbench"
   data-name="openstbench"
-  data-families="speech-understanding speaker-human"
+  data-families="speech-generation speech-understanding speaker-human"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="openstbench openstbench openstbench beyond semantic evaluation for speech translation speech translation speech generation evaluation speech to text translation evaluation speech to speech translation evaluation streaming speech translation evaluation translation quality evaluation speech quality evaluation speaker preservation evaluation emotion preservation evaluation paralinguistic fidelity evaluation temporal consistency evaluation latency evaluation other mit with cc by sa 4 0 adapted components the paired set card marks the dataset license as other and says users must comply with the original data and synthesis component terms libritts is cc by 4 0 but neither the repository s mit license nor the paper s cc by nc sa 4 0 license establishes standalone reuse terms for all translated metadata or qwen3 tts generated reference audio openstbench s original code is mit while adapted simuleval latency components are cc by sa 4 0 mslt ravdess mcae spps nonverbaltts and synparaspeech retain their own access and license terms openstbench provides a public evaluation package for offline and streaming speech to text and speech to speech translation the paper s section 4 2 evaluates separate public source datasets for translation speech quality emotion paralinguistics temporal consistency and latency and constructs a 300 sample 35 speaker libritts based paired set for speaker preservation that paired set is public and ungated on hugging face and includes original and prompt libritts audio translated text and qwen3 tts synthesized reference speech the helper downloads the paper repository documentation license notices dataset card and hugging face api metadata by default cloning the evaluation toolkit is opt in and downloading the approximately 511 mib paired set snapshot requires openstbench download paired set 1 the helper does not fetch the other component datasets repository https github com sjtuayj openstbench paper https arxiv org abs 2605 30792 paired speaker dataset https huggingface co datasets ayj111 openstbench paired set pypi https pypi org project openstbench https arxiv org abs 2605 30792 https arxiv org html 2605 30792v1 s4 ss2 https github com sjtuayj openstbench https raw githubusercontent com sjtuayj openstbench main readme md https raw githubusercontent com sjtuayj openstbench main license https raw githubusercontent com sjtuayj openstbench main third party notices md https api github com repos sjtuayj openstbench https huggingface co datasets ayj111 openstbench paired set https huggingface co datasets ayj111 openstbench paired set raw main readme md https huggingface co api datasets ayj111 openstbench paired set">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speech understanding &amp; dialogue</span>
+      <span class="eyebrow">Speech generation</span>
       <h3>OpenSTBench</h3>
       <p class="benchmark-full-name">OpenSTBench: Beyond Semantic Evaluation for Speech Translation</p>
     </div>
@@ -12107,7 +12107,7 @@
 
 <article class="benchmark-card" id="benchmark-podeval"
   data-name="podeval"
-  data-families="speech-generation"
+  data-families="speech-generation speech-understanding audio-understanding"
   data-access="helper"
   data-host="official"
   data-terms="unspecified"
@@ -12411,7 +12411,7 @@
   data-search="realdesed realdesed realdesed a real world domestic sound event detection benchmark sound event detection sound event detection domestic sound event detection temporal audio event localization multi annotator label aggregation real world robustness cc0 or cc by per audio file and cc by 4 0 annotations mit the zenodo record is open and lists cc by 4 0 at record level but its description and official repository clarify that each audio recording and corresponding metadata row uses the per file license recorded in metadata csv either cc0 or cc by remaining metadata and annotations are cc by 4 0 preserve creator attribution for cc by recordings and consult metadata csv before redistribution the baseline repository is mit the public release contains 5 710 real home recordings 37 85 hours from 652 participants with 64 430 temporal annotations across 15 domestic event classes multiple annotators label each recording validation and test annotations receive additional review and metadata covers recording devices placement environments and scene descriptions the helper saves official zenodo github metadata and documentation by default the train validation and test archives total approximately 8 74 gb and require explicit opt in dataset https zenodo org records 20056072 zenodo https zenodo org records 20056072 repository https github com fschmid56 realdesed paper https arxiv org abs 2607 16736 arxiv html https arxiv org html 2607 16736v1 https zenodo org records 20056072 https zenodo org api records 20056072 https github com fschmid56 realdesed https raw githubusercontent com fschmid56 realdesed main readme md https raw githubusercontent com fschmid56 realdesed main license https api github com repos fschmid56 realdesed https arxiv org abs 2607 16736 https arxiv org html 2607 16736v1">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>RealDESED</h3>
       <p class="benchmark-full-name">RealDESED: A Real-World Domestic Sound Event Detection Benchmark</p>
     </div>
@@ -12667,7 +12667,7 @@
   data-search="rul muchomusic rul muchomusic rul muchomusic from rulistening are you really listening audio understanding music question answering perceptual music understanding rul repo hf card mit upstream muchomusic dataset cc by sa 4 0 mit rul muchomusic derives from muchomusic check upstream audio source terms too repository https github com yongyizang areyoureallylistening paper https arxiv org abs 2504 00369 upstream benchmark https github com mulab mir muchomusic https github com yongyizang areyoureallylistening https huggingface co datasets yongyizang rulistening https github com mulab mir muchomusic https zenodo org records 12709974">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>RUL-MuchoMusic</h3>
       <p class="benchmark-full-name">RUL-MuchoMusic from RUListening / Are You Really Listening?</p>
     </div>
@@ -12972,14 +12972,14 @@
 
 <article class="benchmark-card" id="benchmark-singmos_pro"
   data-name="singmos-pro"
-  data-families="music"
+  data-families="restoration-quality music"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="singmos pro singmos pro singmos pro a comprehensive benchmark for singing quality assessment music generation audio quality assessment singing quality assessment singing mos prediction singing voice synthesis evaluation singing voice conversion evaluation singing voice resynthesis evaluation cc by 4 0 with upstream source terms mit the hugging face card declares cc by 4 0 and the official predictor repository is mit singmos pro includes ground truth and outputs from singing synthesis conversion resynthesis and song generation systems built from 12 source datasets the paper and card do not provide a per file license inventory so retain source corpus performer composition model output and service terms rather than assuming the card clears all embedded audio rights the public ungated release contains 7 981 chinese and japanese singing clips totaling 11 15 hours generated by 41 models across 12 source datasets at least five experienced annotators rated every clip for overall mos and 4 155 clips additionally have lyrics and melody scores the helper downloads official documentation api metadata split definitions and system metadata by default the approximately 11 6 mb sample rating annotations require a separate opt in while the hugging face api reports approximately 2 83 gb of repository storage for the full audio snapshot paper https arxiv org abs 2510 01812 dataset https huggingface co datasets tangrain singmos pro repository https github com south twilight singmos recent evaluation https arxiv org abs 2607 16599 https arxiv org abs 2510 01812 https arxiv org html 2510 01812v4 s2 https arxiv org html 2510 01812v4 s3 https huggingface co datasets tangrain singmos pro https huggingface co datasets tangrain singmos pro raw main readme md https huggingface co api datasets tangrain singmos pro https github com south twilight singmos https raw githubusercontent com south twilight singmos main readme md https raw githubusercontent com south twilight singmos main license https api github com repos south twilight singmos https arxiv org abs 2607 16599 https arxiv org html 2607 16599v1 s2 ss3">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Music</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>SingMOS-Pro</h3>
       <p class="benchmark-full-name">SingMOS-Pro: A Comprehensive Benchmark for Singing Quality Assessment</p>
     </div>
@@ -13227,7 +13227,7 @@
 
 <article class="benchmark-card" id="benchmark-smartglasses_challenge_2026"
   data-name="smartglasses challenge 2026"
-  data-families="speech-recognition speech-understanding speaker-human"
+  data-families="speech-recognition speech-understanding speaker-human audio-understanding"
   data-access="manual"
   data-host="official"
   data-terms="mixed"
@@ -13290,14 +13290,14 @@
 
 <article class="benchmark-card" id="benchmark-song_describer"
   data-name="song describer dataset"
-  data-families="audio-understanding music"
+  data-families="restoration-quality audio-understanding music"
   data-access="helper"
   data-host="zenodo"
   data-terms="mixed"
   data-search="song describer song describer dataset the song describer dataset a corpus of audio captions for music and language evaluation music generation audio captioning audio quality assessment music captioning text to music generation evaluation music text retrieval music codec reconstruction cc by sa 4 0 mit zenodo and the repository declare cc by sa 4 0 for the dataset and mit for code the audio originates from mtg jamendo and retains per track creative commons licenses recorded in audio licenses txt preserve attribution and apply each track s terms in addition to the dataset license the public ungated release contains 706 approximately two minute mtg jamendo tracks with 1 106 crowdsourced english captions its human validated evaluation subset contains 546 tracks and 746 captions the helper downloads the official annotations per track audio license list metadata dataset documentation and zenodo record by default the approximately 3 09 gib audio archive requires explicit opt in qwen music section 4 2 2 evaluates codec reconstruction on all 546 validated tracks qwen audio vae sections 4 1 4 2 also use the dataset for music reconstruction evaluation paper https arxiv org abs 2311 10057 repository https github com mulab mir song describer dataset dataset https zenodo org records 10072001 qwen music report https arxiv org html 2607 11699v1 s4 ss2 sss2 qwen audio vae report https arxiv org html 2607 11738v1 s4 ss2 sss3 https arxiv org abs 2311 10057 https arxiv org html 2311 10057 https github com mulab mir song describer dataset https raw githubusercontent com mulab mir song describer dataset main readme md https raw githubusercontent com mulab mir song describer dataset main license https raw githubusercontent com mulab mir song describer dataset main docs datacard md https api github com repos mulab mir song describer dataset https zenodo org records 10072001 https zenodo org api records 10072001 https arxiv org abs 2607 11699 https arxiv org html 2607 11699v1 s4 ss2 sss2 https arxiv org html 2607 11738v1 s4 ss2 sss3">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>Song Describer Dataset</h3>
       <p class="benchmark-full-name">The Song Describer Dataset: A Corpus of Audio Captions for Music-and-Language Evaluation</p>
     </div>
@@ -13358,14 +13358,14 @@
 
 <article class="benchmark-card" id="benchmark-songeval"
   data-name="songeval"
-  data-families="music"
+  data-families="restoration-quality music"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
   data-search="songeval songeval songeval a benchmark dataset for song aesthetics evaluation music generation audio quality assessment song aesthetics assessment music quality prediction full song generation evaluation human preference modeling cc by nc sa 4 0 apache 2 0 the hugging face card declares cc by nc sa 4 0 and the github toolkit includes apache 2 0 the paper says the audio includes outputs from five open and commercial song generators plus real and deliberately poor examples generated output service and any underlying music rights may still apply and the release does not provide per item provenance in metadata jsonl review those rights before redistributing audio or relying on the card license alone the public ungated release contains 2 399 complete english and chinese songs about 140 hours spanning nine mainstream genres sixteen musically trained annotators rated coherence memorability vocal breathing and phrasing naturalness structural clarity and overall musicality on five point scales the helper downloads official cards api metadata the approximately 1 27 mb rating jsonl and toolkit documentation by default the hugging face api reports approximately 16 1 gb of repository storage so fetching all mp3 files requires explicit opt in paper https arxiv org abs 2505 10793 dataset https huggingface co datasets aslp lab songeval repository https github com aslp lab songeval recent evaluation https arxiv org abs 2607 20253 recent wansong evaluation https arxiv org abs 2607 14749 https arxiv org abs 2505 10793 https arxiv org html 2505 10793v1 s3 https huggingface co datasets aslp lab songeval https huggingface co datasets aslp lab songeval raw main readme md https huggingface co api datasets aslp lab songeval https github com aslp lab songeval https raw githubusercontent com aslp lab songeval main readme md https raw githubusercontent com aslp lab songeval main license https api github com repos aslp lab songeval https arxiv org abs 2607 20253 https arxiv org html 2607 20253v2 s3 ss2 https arxiv org abs 2607 14749 https arxiv org html 2607 14749v3 s4 ss2">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Music</span>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
       <h3>SongEval</h3>
       <p class="benchmark-full-name">SongEval: A Benchmark Dataset for Song Aesthetics Evaluation</p>
     </div>
@@ -13434,7 +13434,7 @@
   data-search="songformbench songformbench songformbench audio understanding music structure analysis cc by 4 0 cc by 4 0 dataset card lists cc by 4 0 audio reconstruction notes reference harmonixset and bigvgan resources repository https github com aslp lab songformer dataset https huggingface co datasets aslp lab songformbench paper https arxiv org abs 2510 02797 https huggingface co datasets aslp lab songformbench https github com aslp lab songformer">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>SongFormBench</h3>
 
     </div>
@@ -13551,7 +13551,7 @@
   data-search="sonyc ust v2 sonyc ust v2 sonyc ust v2 an urban sound tagging dataset with spatiotemporal context urban sound tagging audio tagging urban sound tagging multilabel sound classification spatiotemporal audio classification cc by 4 0 not specified zenodo v2 3 lists cc by 4 0 and the record readme says the sonyc ust dataset is offered under creative commons attribution 4 0 international challenge rules also restrict private external data for reproducible task submissions the helper downloads zenodo record json plus readme annotations taxonomy and unpack script by default audio is split across 19 archive shards totaling about 12 8 gib so audio download is an explicit opt in zenodo record https zenodo org records 3966543 doi https doi org 10 5281 zenodo 3966543 dcase task https dcase community challenge2020 task urban sound tagging with spatiotemporal context paper https arxiv org abs 2009 05188 https zenodo org records 3966543 https dcase community challenge2020 task urban sound tagging with spatiotemporal context https arxiv org abs 2009 05188">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>SONYC-UST-V2</h3>
       <p class="benchmark-full-name">SONYC-UST-V2: An Urban Sound Tagging Dataset with Spatiotemporal Context</p>
     </div>
@@ -13608,7 +13608,7 @@
   data-search="soroll ia soroll ia soroll ia a weakly labeled audio dataset for real world industrial port monitoring audio understanding environmental sound classification multi label audio tagging weakly supervised sound event classification industrial sound monitoring real world environmental audio classification cc by nc 4 0 not specified kaggle and the official benchmark readme declare cc by nc 4 0 which prohibits commercial use and requires attribution the benchmark repository has no license file or github detected license so its code terms are unspecified the public kaggle release contains 7 396 flac clips approximately 22 hours and 2 17 gb recorded by two fixed sensing nodes in the port of valencia with 26 weakly labeled industrial sound classes it provides two ground truth variants a permissive non cross validated annotation set and a conservative set requiring agreement from at least two thirds of annotators plus five fold assignments the helper downloads official metadata paper and benchmark documentation by default the audio and annotations require explicit opt in and an authenticated kaggle cli dataset https www kaggle com datasets itiresearch soroll ia weakly labeled audio port monitoring benchmark repo https github com anp iti sorollia baseline paper https arxiv org abs 2606 26195 arxiv html https arxiv org html 2606 26195 https arxiv org abs 2606 26195 https arxiv org html 2606 26195 https www kaggle com datasets itiresearch soroll ia weakly labeled audio port monitoring https www kaggle com api v1 datasets view itiresearch soroll ia weakly labeled audio port monitoring https github com anp iti sorollia baseline https raw githubusercontent com anp iti sorollia baseline main readme md https api github com repos anp iti sorollia baseline">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Soroll-IA</h3>
       <p class="benchmark-full-name">Soroll-IA: A Weakly Labeled Audio Dataset for Real-World Industrial Port Monitoring</p>
     </div>
@@ -13669,7 +13669,7 @@
   data-search="spatial librispeech spatial librispeech spatial librispeech an augmented dataset for spatial audio learning spatial audio sound source localization source distance estimation room acoustics estimation direct to reverberant ratio estimation reverberation time estimation spatial audio understanding cc by 4 0 not applicable apple s copyrights in the dataset are cc by 4 0 its license preserves upstream terms for librispeech microsoft dns noise audioset and cc0 freesound material and says apple makes no representations about those upstream rights review component provenance before redistribution the public apple release provides more than 650 hours of 16 khz first order ambisonic speech and optional distractor noise synthesized from librispeech across more than 200 000 acoustic conditions and 8 000 synthetic rooms labels cover 3d source position and speaking direction room geometry c50 drr edt t20 and t30 the helper downloads official documentation by default the approximately 365 mib metadata parquet file and individual flac samples are explicit opt ins the readme still describes raw 19 channel audio as forthcoming and directs users to contact apple rather than exposing a public download repository https github com apple ml spatial librispeech paper https arxiv org abs 2308 09514 proceedings https doi org 10 21437 interspeech 2023 2117 dataset schema https github com apple ml spatial librispeech blob main dataset schema md metadata https docs assets developer apple com ml research datasets spatial librispeech v1 metadata parquet https github com apple ml spatial librispeech https raw githubusercontent com apple ml spatial librispeech main readme md https raw githubusercontent com apple ml spatial librispeech main dataset schema md https raw githubusercontent com apple ml spatial librispeech main license https arxiv org abs 2308 09514 https doi org 10 21437 interspeech 2023 2117">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>Spatial LibriSpeech</h3>
       <p class="benchmark-full-name">Spatial LibriSpeech: An Augmented Dataset for Spatial Audio Learning</p>
     </div>
@@ -13848,14 +13848,14 @@
 
 <article class="benchmark-card" id="benchmark-speech_edit_bench"
   data-name="speecheditbench"
-  data-families="speaker-human"
+  data-families="speech-generation speaker-human"
   data-access="helper"
   data-host="hugging-face"
   data-terms="mixed"
   data-search="speech edit bench speecheditbench speecheditbench a bilingual multi attribute benchmark for instruction guided speech editing speech generation speech editing instruction guided speech editing content editing speaker editing emotion editing speaking style editing prosody editing paralinguistic editing acoustic editing compositional editing apache 2 0 with upstream terms apache 2 0 the repository and hugging face card release contributor authored code documentation metadata and benchmark assets under apache 2 0 while requiring compliance with source corpus terms the paper s appendix identifies mixed upstream conditions cc by sources apache 2 0 sources cc by nc and cc by nc sa sources storytts research only restrictions magicdata ramc custom terms and the iemocap access agreement apply those component restrictions to affected rows and audio rather than treating the aggregate label as overriding them the public ungated v1 1 release contains 4 700 english and chinese source instruction pairs and 5 400 audio files across seven atomic editing tasks and a compositional split evaluation separately measures target success lexical content preservation and joint success the helper downloads official documentation release metadata and the eight sample jsonl files by default the hugging face api reports approximately 3 75 gb of repository storage so audio requires speech edit bench download hf 1 cloning the roughly 3 2 mb evaluation repository is a separate opt in paper https arxiv org abs 2606 01804 arxiv html https arxiv org html 2606 01804 repository https github com daxintan cuhk speecheditbench dataset https huggingface co datasets discretespeech speecheditbench https arxiv org abs 2606 01804 https arxiv org html 2606 01804 https github com daxintan cuhk speecheditbench https raw githubusercontent com daxintan cuhk speecheditbench master readme md https raw githubusercontent com daxintan cuhk speecheditbench master license https api github com repos daxintan cuhk speecheditbench https huggingface co datasets discretespeech speecheditbench https huggingface co datasets discretespeech speecheditbench raw main readme md https huggingface co api datasets discretespeech speecheditbench">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <span class="eyebrow">Speech generation</span>
       <h3>SpeechEditBench</h3>
       <p class="benchmark-full-name">SpeechEditBench: A Bilingual Multi-Attribute Benchmark for Instruction-Guided Speech Editing</p>
     </div>
@@ -14287,7 +14287,7 @@
   data-search="spuraudio spuraudio spuraudio a benchmark for studying shortcut learning in few shot audio classification environmental sound classification audio robustness few shot audio classification environmental sound classification shortcut learning evaluation background shift robustness iid ood evaluation cc by 4 0 with mixed upstream terms mit the hugging face card declares cc by 4 0 for the released mixtures but the benchmark derives audio from five upstream datasets with separate terms in particular esc 50 and urbansound8k include non commercial restrictions review all component licenses before redistribution or commercial use the evaluation repository is mit the public ungated hugging face release contains 16 381 wav files in train validation and test splits and reports approximately 7 69 gb of repository storage it mixes foreground events from esc 50 urbansound8k vocalsound wild desed and usm with unrelated background textures to measure iid versus ood shortcut reliance in 1 shot and 5 shot classification the helper downloads official documentation and repository metadata by default the audio snapshot is opt in repository https github com jerryaa98 spuraudio dataset https huggingface co datasets spuraudionips spuraudio neurips anonym paper https arxiv org abs 2605 13672 arxiv html https arxiv org html 2605 13672 https arxiv org abs 2605 13672 https arxiv org html 2605 13672 https github com jerryaa98 spuraudio https raw githubusercontent com jerryaa98 spuraudio main readme md https api github com repos jerryaa98 spuraudio https huggingface co datasets spuraudionips spuraudio neurips anonym https huggingface co datasets spuraudionips spuraudio neurips anonym raw main readme md https huggingface co api datasets spuraudionips spuraudio neurips anonym">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>SpurAudio</h3>
       <p class="benchmark-full-name">SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification</p>
     </div>
@@ -14402,7 +14402,7 @@
   data-search="star bench star bench star bench probing deep spatio temporal reasoning as audio 4d intelligence audio language model benchmark spatial audio foundational acoustic perception pitch perception loudness perception duration perception sound source localization source distance estimation temporal audio reasoning spatial audio reasoning multi audio reasoning dynamic trajectory tracking cc by nc 4 0 conflicting mit and apache 2 0 signals the hugging face card declares the dataset cc by nc 4 0 and labels use as research only preserve the terms and provenance of clotho fsd50k starss23 and internet sourced audio the repository s license file is mit but its readme badge says apache 2 0 and describes both data and code as research only clarify the intended software terms before redistribution or commercial use the public ungated v1 0 release contains 2 353 english multiple choice questions 951 for foundational perception 900 for temporal reasoning and 502 for spatial reasoning its current metadata revises the v0 5 questions reported in the paper foundational audio is synthesized temporal tasks draw on clotho and fsd50k while spatial tasks use starss23 and in the wild audio the helper downloads official documentation repository metadata and the approximately 2 mb of json question metadata by default the 2 74 gb audio archive and evaluation repository are separate opt ins homepage https internlm github io starbench dataset https huggingface co datasets internlm star bench repository https github com internlm starbench paper https arxiv org abs 2510 24693 arxiv html https arxiv org html 2510 24693 https internlm github io starbench https arxiv org abs 2510 24693 https arxiv org html 2510 24693 https github com internlm starbench https raw githubusercontent com internlm starbench main readme md https raw githubusercontent com internlm starbench main license https api github com repos internlm starbench https huggingface co datasets internlm star bench https huggingface co datasets internlm star bench raw main readme md https huggingface co api datasets internlm star bench">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>STAR-Bench</h3>
       <p class="benchmark-full-name">STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence</p>
     </div>
@@ -14470,7 +14470,7 @@
   data-search="starss22 starss22 starss22 sony tau realistic spatial soundscapes 2022 spatial audio sound event localization and detection sound source localization spatial audio understanding acoustic source tracking mit not specified datacite identifies the zenodo dataset license as mit the baseline readme says the repository and its contents use mit but the repository has no license file and the github api reports no detected license clarify code terms before redistribution the public zenodo v1 1 0 release contains the complete dcase 2022 development and evaluation data 6 0 gb with 121 labeled development recordings and 52 unlabeled evaluation recordings in 4 channel foa and tetrahedral microphone formats the helper downloads official task doi paper and baseline metadata only use the zenodo record for the large audio archives dcase task https dcase community challenge2022 task sound event localization and detection evaluated in real spatial sound scenes zenodo record https zenodo org records 6600531 doi https doi org 10 5281 zenodo 6600531 paper https dcase community documents workshop2022 proceedings dcase2022workshop politis 51 pdf baseline repo https github com sharathadavanne seld dcase2022 https dcase community challenge2022 task sound event localization and detection evaluated in real spatial sound scenes https api datacite org dois 10 5281 zenodo 6600531 https zenodo org records 6600531 https dcase community documents workshop2022 proceedings dcase2022workshop politis 51 pdf https github com sharathadavanne seld dcase2022 https raw githubusercontent com sharathadavanne seld dcase2022 main readme md https api github com repos sharathadavanne seld dcase2022">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>STARSS22</h3>
       <p class="benchmark-full-name">STARSS22: Sony-TAu Realistic Spatial Soundscapes 2022</p>
     </div>
@@ -14912,7 +14912,7 @@
   data-search="tau spatial sound events 2019 tau spatial sound events 2019 tau spatial sound events 2019 ambisonic and microphone array spatial audio sound event localization and detection sound source localization sound event detection spatial audio understanding custom tau noncommercial custom tau noncommercial both zenodo records use a custom tampere university license permitting experimental non commercial use with attribution and prohibiting commercial use the source events derive from the dcase 2016 task 2 isolated event dataset so preserve that provenance the baseline repository applies closely matching custom experimental non commercial terms to its code the public dcase 2019 task 3 release has 400 development and 100 evaluation scenes of one minute each at 48 khz in matching 4 channel first order ambisonic and tetrahedral microphone formats scenes use stationary sources from 11 classes real impulse responses measured at 504 azimuth elevation distance combinations across five indoor locations natural ambient noise and zero or up to two overlapping events version 2 includes temporal and azimuth elevation labels for both development and evaluation audio the helper downloads official pages papers record metadata readmes and license files by default the approximately 10 1 gb audio release remains on zenodo while the roughly 490 kb label archives are an explicit opt in dcase task https dcase community challenge2019 task sound event localization and detection development record https zenodo org records 2599196 evaluation record https zenodo org records 3377088 development doi https doi org 10 5281 zenodo 2599196 evaluation doi https doi org 10 5281 zenodo 3377088 paper https arxiv org abs 1905 08546 baseline repo https github com sharathadavanne seld dcase2019 https dcase community challenge2019 task sound event localization and detection https zenodo org api records 2599196 https zenodo org api records 3377088 https doi org 10 5281 zenodo 2599196 https doi org 10 5281 zenodo 3377088 https arxiv org abs 1905 08546 https github com sharathadavanne seld dcase2019 https raw githubusercontent com sharathadavanne seld dcase2019 master readme md https raw githubusercontent com sharathadavanne seld dcase2019 master license md">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TAU Spatial Sound Events 2019</h3>
       <p class="benchmark-full-name">TAU Spatial Sound Events 2019: Ambisonic and Microphone Array</p>
     </div>
@@ -14978,7 +14978,7 @@
   data-search="tau asc 2019 tau urban acoustic scenes 2019 tau urban acoustic scenes 2019 development dataset acoustic scene classification acoustic scene classification multi device audio classification low complexity audio classification other non commercial not applicable zenodo record 2589280 lists license id other nc without a more specific spdx style license dcase challenge and dataset terms should be checked before redistribution or commercial use the helper downloads the zenodo record json plus small doc meta zips by default the 40 hour audio release is split across 21 zip files of roughly 1 3 1 8 gib each so audio download is an explicit opt in dcase task https dcase community challenge2019 task acoustic scene classification development record https zenodo org records 2589280 doi https doi org 10 5281 zenodo 2589280 paper https arxiv org abs 1807 09840 baseline repo https github com toni heittola dcase2019 task1 baseline https dcase community challenge2019 task acoustic scene classification https zenodo org records 2589280 https zenodo org api records 2589280 https arxiv org abs 1807 09840">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TAU Urban Acoustic Scenes 2019</h3>
       <p class="benchmark-full-name">TAU Urban Acoustic Scenes 2019 Development dataset</p>
     </div>
@@ -15036,7 +15036,7 @@
   data-search="tau asc 2020 mobile tau urban acoustic scenes 2020 mobile tau urban acoustic scenes 2020 mobile development and evaluation datasets acoustic scene classification acoustic scene classification device robust audio classification low complexity audio classification other non commercial not applicable both zenodo development and evaluation records list other non commercial without a more specific spdx style license dcase challenge terms should be checked before redistribution or commercial use the helper downloads zenodo record json plus small doc meta zips by default development audio is split across 16 zip files totaling about 27 4 gib evaluation audio is split across 8 zip files totaling about 13 1 gib so both are explicit opt ins dcase task https dcase community challenge2020 task acoustic scene classification development record https zenodo org records 3670167 evaluation record https zenodo org records 3685828 paper https arxiv org abs 2005 14623 dataset paper pdf https dcase community documents workshop2018 proceedings dcase2018workshop mesaros 8 pdf https dcase community challenge2020 task acoustic scene classification https zenodo org records 3670167 https zenodo org records 3685828 https arxiv org abs 2005 14623">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TAU Urban Acoustic Scenes 2020 Mobile</h3>
       <p class="benchmark-full-name">TAU Urban Acoustic Scenes 2020 Mobile: Development and Evaluation datasets</p>
     </div>
@@ -15094,7 +15094,7 @@
   data-search="tau asc 2022 mobile tau urban acoustic scenes 2022 mobile tau urban acoustic scenes 2022 mobile development and 2025 evaluation datasets acoustic scene classification acoustic scene classification device robust audio classification low complexity audio classification other non commercial not applicable both official zenodo records list other non commercial without a more specific spdx style license review the record and dcase task terms before redistribution or commercial use the helper downloads both zenodo record json files plus the small doc meta zips by default the 64 hour development release contains about 25 6 gib across 16 audio zips the dcase 2025 evaluation release contains about 19 2 gib across 12 audio zips so each audio collection is an explicit opt in dcase 2025 task 1 reuses a restricted subset of the 2022 development data with a new split and adds the 2025 evaluation release dcase2025 task https dcase community challenge2025 task low complexity acoustic scene classification with device information development record https zenodo org records 6337421 evaluation record https zenodo org records 15517945 development doi https doi org 10 5281 zenodo 6337421 evaluation doi https doi org 10 5281 zenodo 15517945 https dcase community challenge2025 task low complexity acoustic scene classification with device information https zenodo org records 6337421 https zenodo org api records 6337421 https zenodo org records 15517945 https zenodo org api records 15517945">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TAU Urban Acoustic Scenes 2022 Mobile</h3>
       <p class="benchmark-full-name">TAU Urban Acoustic Scenes 2022 Mobile Development and 2025 Evaluation datasets</p>
     </div>
@@ -15152,7 +15152,7 @@
   data-search="tau nigens sse 2020 tau nigens spatial sound events 2020 tau nigens spatial sound events 2020 spatial audio sound event localization and detection sound source localization acoustic source tracking sound event detection spatial audio understanding cc by nc 4 0 custom tau license zenodo lists the dataset as cc by nc 4 0 source events come from the separately released nigens database so preserve its provenance and review its active terms the baseline readme places most code under a custom tau license and only its metrics folder under mit the public v1 2 release is the complete dcase 2020 task 3 development and evaluation corpus 600 development and 200 evaluation sound scenes of one minute each in 4 channel foa and tetrahedral microphone formats at 24 khz it uses real room impulse responses from 15 enclosures static and moving sources from 14 classes up to two overlapping events and direction of arrival trajectories plus onset offset labels the helper downloads official pages paper record metadata and the 17 kb dataset readme by default the approximately 14 0 gb audio archives remain on zenodo while the roughly 1 7 mb label archives are an explicit opt in dcase task https dcase community challenge2020 task sound event localization and detection zenodo record https zenodo org records 4064792 doi https doi org 10 5281 zenodo 4064792 paper https arxiv org abs 2006 01919 proceedings https dcase community documents workshop2020 proceedings dcase2020workshop politis 88 pdf baseline repo https github com sharathadavanne seld dcase2020 https zenodo org api records 4064792 https doi org 10 5281 zenodo 4064792 https dcase community challenge2020 task sound event localization and detection https arxiv org abs 2006 01919 https dcase community documents workshop2020 proceedings dcase2020workshop politis 88 pdf https github com sharathadavanne seld dcase2020 https raw githubusercontent com sharathadavanne seld dcase2020 master readme md https raw githubusercontent com sharathadavanne seld dcase2020 master license md">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TAU-NIGENS Spatial Sound Events 2020</h3>
 
     </div>
@@ -15217,7 +15217,7 @@
   data-search="tau nigens sse 2021 tau nigens spatial sound events 2021 tau nigens spatial sound events 2021 spatial audio sound event localization and detection sound source localization acoustic source tracking sound event detection spatial audio understanding cc by nc 4 0 custom tau license zenodo lists the dataset as cc by nc 4 0 source events come from the separately released nigens database so preserve its provenance and review its active terms the baseline license allows experimental non commercial use and prohibits commercial use the public v1 1 0 release is the complete dcase 2021 task 3 development and evaluation corpus 600 development and 200 evaluation sound scenes of one minute each in 4 channel foa and tetrahedral microphone formats at 24 khz it adds directional non target interferers permits overlapping instances of the same target class and supplies direction of arrival trajectories plus onset offset labels for the development set the helper downloads official pages paper record metadata and the 23 kb dataset readme by default the approximately 14 2 gib audio archives remain on zenodo while the roughly 1 8 mib development labels are an explicit opt in the 200 file evaluation set intentionally has no public labels dcase task https dcase community challenge2021 task sound event localization and detection zenodo record https zenodo org records 4844825 doi https doi org 10 5281 zenodo 4844825 paper https arxiv org abs 2106 06999 proceedings https dcase community documents workshop2021 proceedings dcase2021workshop politis 43 pdf baseline repo https github com sharathadavanne seld dcase2021 https zenodo org api records 4844825 https doi org 10 5281 zenodo 4844825 https dcase community challenge2021 task sound event localization and detection https arxiv org abs 2106 06999 https dcase community documents workshop2021 proceedings dcase2021workshop politis 43 pdf https github com sharathadavanne seld dcase2021 https raw githubusercontent com sharathadavanne seld dcase2021 master readme md https raw githubusercontent com sharathadavanne seld dcase2021 master license md">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TAU-NIGENS Spatial Sound Events 2021</h3>
 
     </div>
@@ -15496,7 +15496,7 @@
   data-search="timeground 1m timeground 1m timeground 1m audio understanding audio reasoning audio captioning temporal audio grounding temporal audio localization timestamped audio description timestamped audio summarization long form audio understanding cc by 3 0 on hugging face card not specified the official dataset card declares cc by 3 0 its recordings are selected from english yodas2 youtube derived shards so source video rights availability attribution and platform terms still require review no separate license for generation or evaluation code is provided on the dataset card the public ungated english release contains separate train and test splits for temporal localization temporal description timed summarization and recording level nested annotations the official card reports about 59 000 training and 4 200 test recordings totaling roughly 14 200 hours across duration buckets from under 10 minutes to 120 minutes the gigachat 3 1 audio paper evaluates these generated tasks by duration bucket in section 4 1 the helper downloads the dataset card repository api metadata paper page and model card by default the hugging face api reports about 1 50 tb of repository storage so the full snapshot requires explicit opt in dataset https huggingface co datasets ai sage timeground 1m paper https arxiv org abs 2607 10387 model card https huggingface co ai sage gigachat3 1 audio 10b a1 8b https huggingface co datasets ai sage timeground 1m https huggingface co datasets ai sage timeground 1m raw main readme md https huggingface co api datasets ai sage timeground 1m https arxiv org abs 2607 10387 https arxiv org html 2607 10387v1 s4 ss1 https huggingface co ai sage gigachat3 1 audio 10b a1 8b">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TimeGround-1M</h3>
 
     </div>
@@ -15611,7 +15611,7 @@
   data-search="trea trea temporal reasoning evaluation of audio audio language model benchmark audio question answering temporal audio reasoning audio event ordering audio event counting audio event duration reasoning confidence and uncertainty evaluation cc0 1 0 repository with esc 50 upstream terms cc0 1 0 the repository applies a cc0 1 0 license and github detects cc0 1 0 but the paper states that every trea audio file combines recordings from esc 50 whose dataset is cc by nc 3 0 and whose esc 10 subset clips are cc by treat the restrictive upstream terms and clip attribution as surviving the derived release rather than assuming the repository level cc0 waiver clears all source audio rights trea is a public ungated 600 item temporal reasoning benchmark derived by combining esc 50 clips its trea o trea c and trea d subsets each contain 200 ordering counting or duration questions the july 2026 audio zero paper evaluates both qwen2 audio 7b instruct and qwen2 5 omni 7b on trea alongside mmau test mini and mmar the repository releases both four option multiple choice and open text answer formats audio metadata evaluation code and uncertainty perturbation scripts the helper downloads official documentation repository metadata license paper page and the lightweight csv annotations by default set trea clone repo 1 to clone the approximately 688 mib github repository and its audio repository https github com iiscleap audio llm benchmarking uncertainty paper https arxiv org abs 2505 13115 https arxiv org abs 2505 13115 https arxiv org html 2505 13115v1 s3 https arxiv org abs 2607 20166 https arxiv org html 2607 20166v1 s1 https github com iiscleap audio llm benchmarking uncertainty https raw githubusercontent com iiscleap audio llm benchmarking uncertainty main readme md https raw githubusercontent com iiscleap audio llm benchmarking uncertainty main license https api github com repos iiscleap audio llm benchmarking uncertainty https github com karolpiczak esc 50">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TREA</h3>
       <p class="benchmark-full-name">Temporal Reasoning Evaluation of Audio</p>
     </div>
@@ -15740,7 +15740,7 @@
   data-search="tut sound events 2017 tut sound events 2017 tut sound events 2017 sound event detection in real life audio sound event detection sound event detection polyphonic sound event detection temporal audio event localization street sound event detection custom noncommercial not applicable zenodo labels both releases other non commercial and each documentation archive contains a controlling eula review that packaged agreement before use or redistribution the generic zenodo label is not a permissive creative commons grant the public version 2 development release contains 24 street recordings totaling 1 32 08 with verified strong annotations for six overlapping event classes and an official four fold cross validation setup the public evaluation release contains eight recordings totaling 29 09 and now includes reference metadata dcase 2017 task 3 ranks systems by one second segment based error rate the helper downloads zenodo record json documentation and small annotation archives by default the approximately 1 55 gib of 24 bit 44 1 khz audio requires explicit opt in challenge https dcase community challenge2017 task sound event detection in real life audio development dataset https zenodo org records 814831 development doi https doi org 10 5281 zenodo 814831 evaluation dataset https zenodo org records 1040179 evaluation doi https doi org 10 5281 zenodo 1040179 challenge paper https doi org 10 1109 aaspaa 2017 8288194 https dcase community challenge2017 task sound event detection in real life audio https zenodo org records 814831 https zenodo org api records 814831 https zenodo org records 1040179 https zenodo org api records 1040179 https doi org 10 1109 aaspaa 2017 8288194">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>TUT Sound Events 2017</h3>
       <p class="benchmark-full-name">TUT Sound Events 2017: Sound Event Detection in Real-Life Audio</p>
     </div>
@@ -15802,7 +15802,7 @@
   data-search="urban beehive urban urban urban beehive acoustics and phenotyping dataset environmental audio environmental sound classification beehive acoustic monitoring colony strength regression hive health monitoring acoustic phenotyping cc by 4 0 not specified the frdr dataset record explicitly lists cc by 4 0 the github repository has no detected license so the analysis notebooks and scripts should not be assumed to use the dataset license the scientific data article itself is cc by nc nd 4 0 distinct from the dataset terms the public frdr release contains longitudinal 2021 2022 raw 16 khz beehive audio plus inspection temperature humidity and weather metadata from a ten hive montr al rooftop apiary the scientific data descriptor reports more than 3 000 hours while the older frdr record and repository readme say more than 2 000 hours the current frdr landing page reports approximately 1 265 tb of files its benchmark protocols include random split and hive independent colony strength regression a 2026 follow up evaluates modulation tensorgram models on nine hives and emphasizes cross hive generalization the helper saves official landing pages repository documentation and api metadata only full data transfer remains a manual frdr globus workflow because of the corpus size and may require a globus account and client dataset https doi org 10 20383 103 0972 paper https doi org 10 1038 s41597 025 04869 1 repository https github com mahsa abdollahi urban recent evaluation https arxiv org abs 2607 20386 https doi org 10 20383 103 0972 https www frdr dfdr ca repo dataset 487f5583 250a 464b bb71 f2da85410b13 https doi org 10 1038 s41597 025 04869 1 https github com mahsa abdollahi urban https raw githubusercontent com mahsa abdollahi urban main readme md https api github com repos mahsa abdollahi urban https arxiv org abs 2607 20386">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>UrBAN</h3>
       <p class="benchmark-full-name">UrBAN: Urban Beehive Acoustics and PheNotyping Dataset</p>
     </div>
@@ -15866,7 +15866,7 @@
   data-search="urbansound8k urbansound8k urbansound8k a dataset and taxonomy for urban sound research environmental sound classification urban sound classification environmental sound classification audio tagging cc by nc not applicable zenodo lists cc by nc 4 0 the official urban sound site says urbansound urbansound8k are free for non commercial use under creative commons by nc 3 0 freesound attributions are included in the dataset the archive is about 6 gib and contains 8732 wav clips pre sorted into 10 official folds the helper downloads citation license metadata by default and requires urbansound8k download audio 1 for the full archive homepage https urbansounddataset weebly com urbansound8k html download page https urbansounddataset weebly com download urbansound8k html zenodo record https zenodo org records 1203745 paper pdf https www justinsalamon com uploads 4 3 9 4 4394963 salamon urbansound acmmm14 pdf doi https doi org 10 5281 zenodo 1203745 https urbansounddataset weebly com urbansound8k html https urbansounddataset weebly com https zenodo org records 1203745 https www justinsalamon com uploads 4 3 9 4 4394963 salamon urbansound acmmm14 pdf">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>UrbanSound8K</h3>
       <p class="benchmark-full-name">UrbanSound8K: A Dataset and Taxonomy for Urban Sound Research</p>
     </div>
@@ -16288,14 +16288,14 @@
 
 <article class="benchmark-card" id="benchmark-vocalsound"
   data-name="vocalsound"
-  data-families="representation"
+  data-families="audio-understanding"
   data-access="helper"
   data-host="official"
   data-terms="mixed"
   data-search="vocalsound vocalsound vocalsound a dataset for improving human vocal sounds recognition human vocal sound classification human vocal sound classification vocalization recognition audio classification demographic bias evaluation cc by sa 4 0 not specified the official readme includes a creative commons by sa 4 0 notice for the vocalsound dataset github api reports no repository level license so the code baseline license is not specified re check before redistributing code or derived data the official readme describes 21 024 crowdsourced recordings from 3 365 subjects covering laughter sighs coughs throat clearing sneezes and sniffs with speaker metadata such as age gender native language country and health condition the helper saves official documentation by default and requires vocalsound download archive 1 before downloading the 1 7 gib 16 khz or 4 5 gib 44 1 khz zip repository https github com yuangongnd vocalsound paper https arxiv org abs 2205 03433 ieee paper https doi org 10 1109 icassp43922 2022 9746828 readme https raw githubusercontent com yuangongnd vocalsound main readme md colab https colab research google com github yuangongnd vocalsound blob main colab vocalsound ipynb papers with code https paperswithcode com dataset vocalsound https github com yuangongnd vocalsound https raw githubusercontent com yuangongnd vocalsound main readme md https api github com repos yuangongnd vocalsound https arxiv org abs 2205 03433 https doi org 10 1109 icassp43922 2022 9746828 https paperswithcode com dataset vocalsound">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>VocalSound</h3>
       <p class="benchmark-full-name">VocalSound: A Dataset for Improving Human Vocal Sounds Recognition</p>
     </div>
@@ -16946,14 +16946,14 @@
 
 <article class="benchmark-card" id="benchmark-wabad"
   data-name="wabad"
-  data-families="representation"
+  data-families="audio-understanding"
   data-access="helper"
   data-host="zenodo"
   data-terms="noncommercial"
   data-search="wabad wabad wabad a world annotated bird acoustic dataset for passive acoustic monitoring bioacoustic event detection bird species detection passive acoustic monitoring temporal audio event localization time frequency event localization cross region bioacoustic evaluation conflicting zenodo metadata treat as cc by nc 4 0 not applicable the zenodo structured license field says cc by 4 0 but the record s human readable description explicitly says creative commons attribution noncommercial 4 0 treat the release as cc by nc 4 0 pending clarification from the maintainers retain attribution and do not assume commercial use permission from the structured field alone the public ungated release contains 5 047 minutes of passive acoustic audio with 91 931 time frequency bounded vocalizations from 1 192 bird species collected at 72 sites in 29 recording locations across 13 biomes metaperch evaluates wabad as an 84 hour multi species detection benchmark in its results section the helper downloads the zenodo record readme site metadata pooled annotations and species list by default the 72 site archives total approximately 19 8 gib and require explicit site level opt in dataset https zenodo org records 15629388 doi https doi org 10 5281 zenodo 15629388 recent evaluation https arxiv org abs 2607 14072 metaperch code https github com google research perch tree main chirp projects metaperch https zenodo org records 15629388 https zenodo org api records 15629388 https doi org 10 5281 zenodo 15629388 https arxiv org abs 2607 14072 https export arxiv org e print 2607 14072 https github com google research perch tree main chirp projects metaperch">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Representation &amp; general suites</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>WABAD</h3>
       <p class="benchmark-full-name">WABAD: A World Annotated Bird Acoustic Dataset for Passive Acoustic Monitoring</p>
     </div>
@@ -17014,7 +17014,7 @@
   data-search="wavcaps wavcaps wavcaps a chatgpt assisted weakly labelled audio captioning dataset for audio language multimodal research audio captioning audio captioning audio language retrieval audio language modeling zero shot audio classification academic only not specified the github readme and hugging face card say only academic uses are allowed for wavcaps audio the hf metadata advertises cc by 4 0 but the dataset card also points users to component source terms for freesound bbc sound effects soundbible and audioset re check those source licenses before redistribution or commercial use provided models are described as non commercial research under a uk data copyright exemption the hugging face repository exposes json metadata and split flac waveform zips for freesound bbc sound effects soundbible and audioset sl the full repository is hundreds of gib so the helper downloads readme json metadata by default and requires wavcaps download zips 1 plus wavcaps zip sources for waveform archives repository https github com xinhaomei wavcaps hf dataset https huggingface co datasets cvssp wavcaps paper https arxiv org abs 2303 17395 doi https doi org 10 1109 taslp 2024 3419446 https github com xinhaomei wavcaps https raw githubusercontent com xinhaomei wavcaps master readme md https huggingface co datasets cvssp wavcaps https huggingface co api datasets cvssp wavcaps https arxiv org abs 2303 17395 https doi org 10 1109 taslp 2024 3419446">
   <div class="card-heading">
     <div>
-      <span class="eyebrow">Audio understanding &amp; events</span>
+      <span class="eyebrow">Audio understanding, generation &amp; events</span>
       <h3>WavCaps</h3>
       <p class="benchmark-full-name">WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research</p>
     </div>
