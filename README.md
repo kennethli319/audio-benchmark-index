@@ -97,6 +97,15 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 Auto-AEG paper's AEGBench is recorded as an announced
+open-vocabulary audio-event-grounding protocol rather than a downloadable
+family. The paper reports 3,427 human-verified items and 9,790 temporal queries,
+but its linked Hugging Face repository currently contains only
+`.gitattributes` and reports zero bytes of dataset storage. Appendix K promises
+CC BY 4.0 data and MIT code upon acceptance while preserving source-audio
+terms; those promises do not license absent artifacts. Recheck the release
+before adding a benchmark entry or helper.
+
 The April 2026 “All That Glitters Is Not Audio” paper is recorded as an
 existing-coverage audit rather than a new benchmark family. It evaluates the
 already indexed MMAU, MMAR, and MMAU-Pro releases under full-audio, no-audio,

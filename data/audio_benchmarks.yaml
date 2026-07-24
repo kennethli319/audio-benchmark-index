@@ -1791,6 +1791,32 @@ paper_audits:
       Speech Commands family, not as a new benchmark. No duplicate family or
       paper-specific download helper is added.
 
+  auto_aeg_aegbench:
+    paper: https://arxiv.org/abs/2607.04383
+    sections: abstract, 3.3, 4, and appendix K
+    status: audited_not_indexed
+    last_verified: 2026-07-24
+    public_interfaces:
+      - https://huggingface.co/datasets/zihan-audio/AEGBench
+    evaluated_domains:
+      - domain: open_vocabulary_audio_event_grounding
+        protocol: 3,427 human-verified audio items and 9,790 natural-language queries from AudioSet Strong Labels, FSD50K eval, BBC Sound Effects, and nine YouTube life-sound clips, with list-all temporal interval answers and six difficulty tags
+        data_status: announced_unreleased_empty_repository
+        note: The paper reports 10-120-second clips, 0.5-60-second target events, and strict disjointness from its Auto-AEG training corpus, but the linked public Hugging Face repository currently contains only .gitattributes and reports zero bytes of dataset storage.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: promised_CC_BY_4.0_but_not_yet_released
+      code: promised_MIT_but_not_yet_released
+      upstream: AudioSet, FSD50K, BBC Sound Effects, and YouTube source-specific terms remain applicable
+    sources:
+      - https://arxiv.org/abs/2607.04383
+      - https://arxiv.org/html/2607.04383v3#Sx4.SS3
+      - https://arxiv.org/html/2607.04383v3#Sx5
+      - https://arxiv.org/html/2607.04383v3#A11
+      - https://huggingface.co/datasets/zihan-audio/AEGBench
+      - https://huggingface.co/api/datasets/zihan-audio/AEGBench
+    note: The abstract calls AEGBench released, but appendix K says the benchmark, audio, annotations, difficulty tags, and scripts will be released upon acceptance. The linked Hugging Face repository at revision b4e9fa95ad99d701b6e788c2aa51d7642ed61a75 has no dataset card, benchmark records, audio, annotations, or evaluation code. AEGBench is therefore recorded as an announced protocol rather than a downloadable benchmark family. The promised CC BY 4.0 and MIT terms do not license absent artifacts, and appendix K also preserves third-party audio terms while describing research-only use, so the eventual release terms require careful rechecking.
+
 benchmarks:
   - id: mmau
     name: MMAU
