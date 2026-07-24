@@ -77,6 +77,7 @@ scripts/download/multtipop.sh
 scripts/download/madb.sh
 scripts/download/songeval.sh
 scripts/download/song_describer.sh
+scripts/download/concerto_accompaniment_benchmark.sh
 scripts/download/cmi_rewardbench.sh
 scripts/download/musica_metabench.sh
 scripts/download/sonic_seasoning.sh
@@ -1046,6 +1047,11 @@ AI_COVER_SONG_DIAGNOSTICS_CLONE_REPO=1 scripts/download/ai_cover_song_diagnostic
 # Annotation tables are about 69 MB; the HF snapshot is about 18.6 GB.
 MADB_DOWNLOAD_ANNOTATIONS=1 scripts/download/madb.sh
 MADB_DOWNLOAD_HF=1 scripts/download/madb.sh
+
+# Concerto Accompaniment Benchmark downloads public metadata and downbeat
+# annotations by default. The code clone is opt-in; commercial orchestra
+# recordings and absent solo-piano audio are never downloaded.
+CONCERTO_ACCOMPANIMENT_CLONE_REPO=1 scripts/download/concerto_accompaniment_benchmark.sh
 
 # Lyra-SA saves the official Tencent Music pages and SongSQA paper, then prints
 # the application form. The archive URL is emailed after approval.

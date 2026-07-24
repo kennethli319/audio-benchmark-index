@@ -13796,3 +13796,62 @@ benchmarks:
       - https://zenodo.org/records/20763580
       - https://zenodo.org/api/records/20763580
       - https://zenodo.org/api/records/20763580/files/README.md/content
+
+  - id: concerto_accompaniment_benchmark
+    name: Concerto Accompaniment Benchmark
+    full_name: Concerto Accompaniment Benchmark for Score-Free Piano Concerto Accompaniment
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - audio_generation
+    tasks:
+      - music_audio_alignment
+      - automatic_accompaniment
+      - score_free_accompaniment_generation
+      - downbeat_alignment
+      - time_scale_modification
+    official:
+      repo: https://github.com/HMC-MIR/PianoConcertoAccompaniment
+      paper: https://arxiv.org/abs/2607.18189
+      paper_html: https://arxiv.org/html/2607.18189v1
+    download:
+      primary:
+        - https://github.com/HMC-MIR/PianoConcertoAccompaniment
+      examples:
+        - 'scripts/download/concerto_accompaniment_benchmark.sh'
+        - 'CONCERTO_ACCOMPANIMENT_CLONE_REPO=1 scripts/download/concerto_accompaniment_benchmark.sh'
+      notes: >-
+        The paper defines 150 alignment scenarios over four concerto movements,
+        combining four recorded solo-piano performances, four commercial Music
+        Minus One orchestra tracks, and eight IMSLP piano-orchestra mixes. The
+        public repository provides the evaluation code, configuration tables,
+        IMSLP source URLs, and measure-downbeat annotations. The helper saves
+        those lightweight released artifacts by default and makes the repository
+        clone opt-in. The commercial orchestra recordings are explicitly
+        private and must be purchased separately. Although the paper calls the
+        remaining data open source, the repository currently ignores audio and
+        exposes no solo-piano recordings; do not infer a public audio download.
+    license:
+      code_and_released_repository_artifacts: MIT
+      orchestra_recordings: commercial_private_not_redistributed
+      imslp_mix_recordings: mixed_per_recording_terms
+      solo_piano_recordings: license_and_public_download_not_specified
+      notes: >-
+        MIT covers the public repository's code and released annotation/config
+        files. It does not license the absent Music Minus One recordings or
+        override the per-recording IMSLP terms listed in AudioDataSummary.csv,
+        which include CC0, several CC variants, and public-domain status that
+        may differ by jurisdiction. The repository does not state a license or
+        public delivery path for the recorded solo-piano performances.
+    sources:
+      - https://arxiv.org/abs/2607.18189
+      - https://arxiv.org/html/2607.18189v1#Sx2.SSx1
+      - https://arxiv.org/html/2607.18189v1#Sx2.SSx2
+      - https://arxiv.org/html/2607.18189v1#Sx2.SSx3
+      - https://arxiv.org/html/2607.18189v1#Sx2.SSx4
+      - https://github.com/HMC-MIR/PianoConcertoAccompaniment
+      - https://raw.githubusercontent.com/HMC-MIR/PianoConcertoAccompaniment/main/README.md
+      - https://raw.githubusercontent.com/HMC-MIR/PianoConcertoAccompaniment/main/LICENSE
+      - https://raw.githubusercontent.com/HMC-MIR/PianoConcertoAccompaniment/main/cfg_files/AudioDataSummary.csv
+      - https://api.github.com/repos/HMC-MIR/PianoConcertoAccompaniment
+      - https://api.github.com/repos/HMC-MIR/PianoConcertoAccompaniment/git/trees/main?recursive=1
