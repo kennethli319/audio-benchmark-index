@@ -152,6 +152,40 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  all_that_glitters_audio_reliance:
+    paper: https://arxiv.org/abs/2604.24401
+    title: "All That Glitters Is Not Audio: Rethinking Text Priors and Audio Reliance in Audio-Language Evaluation"
+    sections: 2-4
+    status: audited_existing_coverage_protocol
+    evaluated_sets:
+      - cited_as: MMAU
+        index_id: mmau
+        status: public
+        note: Section 3.1 uses the public 1,000-item test-mini split.
+      - cited_as: MMAR
+        index_id: mmar
+        status: public
+        note: Section 3.1 uses the public test split.
+      - cited_as: MMAU-Pro
+        index_id: mmau_pro
+        status: public
+        note: Section 3.1 uses the public 1,000-item test-mini split.
+    protocol_note: >-
+      The paper audits three already indexed public benchmarks under full-audio,
+      no-audio, text-backbone, and independently segmented partial-audio
+      conditions. It proposes text-prior rate, partial-audio retention, and five
+      model-dependent item categories as diagnostic analyses, not a new dataset.
+      Version 1 links no official project, repository, derived annotations,
+      per-item category assignments, score records, or evaluation code, so the
+      protocol is recorded as existing coverage rather than a downloadable
+      benchmark family. The paper's CC BY 4.0 license does not release absent
+      evaluation artifacts or change the upstream benchmark terms.
+    sources:
+      - https://arxiv.org/abs/2604.24401
+      - https://arxiv.org/html/2604.24401v1#S2
+      - https://arxiv.org/html/2604.24401v1#S3.SS1
+      - https://arxiv.org/html/2604.24401v1#S4
+
   qwen_audio_vae_technical_report:
     paper: https://arxiv.org/abs/2607.11738
     sections: 4.1-4.5

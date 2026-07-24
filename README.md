@@ -94,6 +94,16 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The April 2026 “All That Glitters Is Not Audio” paper is recorded as an
+existing-coverage audit rather than a new benchmark family. It evaluates the
+already indexed MMAU, MMAR, and MMAU-Pro releases under full-audio, no-audio,
+text-backbone, and segmented partial-audio conditions to measure text priors
+and audio reliance. Version 1 publishes no official repository, derived item
+labels, score records, or evaluation code, so the index does not imply that
+its model-dependent item categories form a downloadable dataset. The paper's
+CC BY 4.0 license applies to the article, not absent evaluation artifacts or
+the three benchmarks' upstream data.
+
 The July 2026 Qwen-Audio-VAE report is inventoried across sections 4.1-4.5.
 Its three public reconstruction benchmarks—LibriSpeech for speech, AudioCaps
 for general sound, and Song Describer for music—were already indexed. The
