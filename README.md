@@ -456,6 +456,18 @@ dataset-specific license can be verified. The paper's CC BY 4.0 license does
 not license the unavailable CSV or establish rights for its notation
 transcriptions, and no download helper is added.
 
+The July 2026 spoken-digit privacy paper is recorded as a coverage audit of
+AudioMNIST, Speech Commands, and LibriSpeech rather than a new benchmark
+family. Sections 2-3 evaluate informed ASR and digit-specific attackers on
+isolated digits, AudioMNIST-derived ten-digit sequences with three silence
+durations, and a LibriSpeech read-speech baseline. The linked
+[PPCA repository](https://github.com/ol-MEGA/ppca) is an Apache-2.0 general
+SpeechBrain-based framework, but its reviewed tree does not contain the
+paper-specific AudioMNIST recipe, concatenation code, derived or obfuscated
+audio, manifests, checkpoints, hypotheses, or score records. The upstream
+public families remain reproducible through their existing helpers; no
+duplicate family or invented derived-data download is added.
+
 ## Coverage
 
 Current coverage includes:
