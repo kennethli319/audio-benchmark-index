@@ -10285,6 +10285,65 @@ benchmarks:
       - https://www.microsoft.com/en-us/research/academic-program/deep-noise-suppression-challenge-icassp-2023/
       - https://arxiv.org/abs/2202.13288
 
+  - id: realman
+    name: RealMAN
+    full_name: "RealMAN: A Real-Recorded and Annotated Microphone Array Dataset for Dynamic Speech Enhancement and Localization"
+    qwen_cited_as: null
+    qwen_bucket: speech_enhancement
+    tasks:
+      - multichannel_speech_enhancement
+      - speech_source_localization
+      - dynamic_speaker_localization
+      - variable_array_generalization
+      - real_world_noise_robustness
+    official:
+      repo: https://github.com/Audio-WestlakeU/RealMAN
+      dataset: https://huggingface.co/datasets/AISHELL/RealMAN
+      provider_page: https://www.aishelltech.com/RealMAN
+      paper: https://arxiv.org/abs/2406.19959
+      recent_evaluation: https://arxiv.org/abs/2607.18658
+    download:
+      primary:
+        - https://huggingface.co/datasets/AISHELL/RealMAN
+        - https://github.com/Audio-WestlakeU/RealMAN
+      examples:
+        - 'scripts/download/realman.sh'
+        - 'REALMAN_DOWNLOAD_HF=1 scripts/download/realman.sh'
+      notes: >-
+        The public, ungated release contains 83.7 hours of 32-channel speech
+        recorded in 32 scenes and 144.5 hours of background noise recorded in
+        31 scenes, with direct-path speech, transcriptions, source locations,
+        and scene and speaker metadata. The repository lists approximately
+        531.4 GB of training data, 27.5 GB of validation mixtures, 39.3 GB of
+        test mixtures, 158 GB of raw validation/test recordings, and 129 MB of
+        dataset information; the Hugging Face API currently reports about
+        812.0 GB of repository storage. The helper downloads only official
+        documentation and API metadata by default, while the complete snapshot
+        requires explicit opt-in. A July 2026 geometry-aware enhancement paper
+        evaluates RealMAN after resampling to 8 kHz and fixed four-second test
+        segments, and separately tests array generalization on CHiME-4.
+    license:
+      data: cc-by-4.0
+      code: unspecified
+      notes: >-
+        The official repository README declares the dataset CC BY 4.0, but the
+        repository has no detected standalone license file and GitHub reports
+        no repository license. Treat CC BY 4.0 as covering the dataset release,
+        preserve attribution and notices, and verify terms separately for the
+        baseline code and any downstream derived artifacts.
+    sources:
+      - https://github.com/Audio-WestlakeU/RealMAN
+      - https://raw.githubusercontent.com/Audio-WestlakeU/RealMAN/main/README.md
+      - https://api.github.com/repos/Audio-WestlakeU/RealMAN
+      - https://huggingface.co/datasets/AISHELL/RealMAN
+      - https://huggingface.co/api/datasets/AISHELL/RealMAN
+      - https://www.aishelltech.com/RealMAN
+      - https://arxiv.org/abs/2406.19959
+      - https://arxiv.org/html/2406.19959v2
+      - https://arxiv.org/abs/2607.18658
+      - https://arxiv.org/html/2607.18658v1#S3.SS1
+      - https://arxiv.org/html/2607.18658v1#S4.SS2
+
   - id: ms_snsd
     name: MS-SNSD
     full_name: "Microsoft Scalable Noisy Speech Dataset"

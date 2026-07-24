@@ -162,6 +162,7 @@ scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
+scripts/download/realman.sh
 scripts/download/mmae.sh
 scripts/download/pazabench.sh
 scripts/download/live_gurbani_captioning_v1.sh
@@ -464,6 +465,10 @@ scripts/download/urban_beehive.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# RealMAN downloads official docs/API metadata by default. Its approximately
+# 812 GB public Hugging Face snapshot is opt-in.
+REALMAN_DOWNLOAD_HF=1 scripts/download/realman.sh
 
 # MMAE downloads official docs/metadata by default; the approximately 4.43 GB
 # Hugging Face audio snapshot and the evaluation-repo clone are separate opt-ins.
