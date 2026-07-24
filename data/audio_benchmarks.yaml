@@ -10135,6 +10135,47 @@ benchmarks:
       - https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html
       - https://arxiv.org/abs/2104.09494
 
+  - id: voicemos_challenge_2026
+    name: VoiceMOS Challenge 2026
+    full_name: "VoiceMOS Challenge 2026: Automatic Prediction of Human Ratings of Speech"
+    qwen_cited_as: null
+    qwen_bucket: speech_quality_assessment
+    tasks:
+      - mean_opinion_score_prediction
+      - speech_quality_assessment
+      - comparative_category_rating_prediction
+      - emotional_speech_naturalness_assessment
+      - emotion_similarity_assessment
+      - speaker_similarity_assessment
+      - accent_similarity_assessment
+    official:
+      homepage: https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
+      baseline_repo: https://github.com/voicemos-challenge/vmc2026-baselines
+      registration_form: https://forms.gle/L6YdkUf1PJdSSwLU7
+      track_1_source_paper: https://arxiv.org/abs/2601.13531
+      track_3_source_paper: https://arxiv.org/abs/2603.14328
+    download:
+      access: registration_and_codabench_email_required
+      primary:
+        - https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
+        - https://github.com/voicemos-challenge/vmc2026-baselines
+        - https://forms.gle/L6YdkUf1PJdSSwLU7
+      examples:
+        - 'scripts/download/voicemos_challenge_2026.sh'
+      notes: The official site says training data were released to registered participants through a CodaBench page sent by email, with evaluation data scheduled for July 31, 2026. Track 1 covers 840 multilingual utterances in nine languages from six URGENT speech-enhancement systems; Track 2 covers emotional TTS and human speech; Track 3 uses 4,000 CodecMOS-Accent samples from 24 codec-resynthesis and TTS systems, 32 speakers, and ten accents. The helper saves public challenge and baseline documentation, then prints the registration path; it does not guess or expose the emailed CodaBench URL.
+    license:
+      data: not_publicly_specified
+      code: Apache-2.0
+      notes: The public challenge page and baseline README do not state dataset reuse or redistribution terms. Apache-2.0 covers the baseline repository only, not challenge audio, listener ratings, URGENT material, CodecMOS-Accent, or emotional-speech source data.
+    sources:
+      - https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
+      - https://github.com/voicemos-challenge/vmc2026-baselines
+      - https://raw.githubusercontent.com/voicemos-challenge/vmc2026-baselines/main/README.md
+      - https://raw.githubusercontent.com/voicemos-challenge/vmc2026-baselines/main/LICENSE
+      - https://api.github.com/repos/voicemos-challenge/vmc2026-baselines
+      - https://arxiv.org/abs/2601.13531
+      - https://arxiv.org/abs/2603.14328
+
   - id: asvspoof_2015
     name: ASVspoof 2015
     full_name: "Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2015) Database"
