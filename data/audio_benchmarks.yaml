@@ -7998,6 +7998,57 @@ benchmarks:
       - https://arxiv.org/abs/2607.16736
       - https://arxiv.org/html/2607.16736v1
 
+  - id: wabad
+    name: WABAD
+    full_name: "WABAD: A World Annotated Bird Acoustic Dataset for Passive Acoustic Monitoring"
+    qwen_cited_as: null
+    qwen_bucket: bioacoustic_event_detection
+    tasks:
+      - bird_species_detection
+      - passive_acoustic_monitoring
+      - temporal_audio_event_localization
+      - time_frequency_event_localization
+      - cross_region_bioacoustic_evaluation
+    official:
+      dataset: https://zenodo.org/records/15629388
+      doi: https://doi.org/10.5281/zenodo.15629388
+      recent_evaluation: https://arxiv.org/abs/2607.14072
+      metaperch_code: https://github.com/google-research/perch/tree/main/chirp/projects/metaperch
+    download:
+      primary:
+        - https://zenodo.org/records/15629388
+        - https://zenodo.org/api/records/15629388/files/Pooled%20annotations.txt/content
+        - https://zenodo.org/api/records/15629388/files/Metadata.txt/content
+        - https://zenodo.org/api/records/15629388/files/Species%20list.pdf/content
+      examples:
+        - 'scripts/download/wabad.sh'
+        - 'WABAD_DOWNLOAD_AUDIO=1 WABAD_SITES="ARD BAM" scripts/download/wabad.sh'
+      notes: >-
+        The public, ungated release contains 5,047 minutes of passive-acoustic
+        audio with 91,931 time-frequency-bounded vocalizations from 1,192 bird
+        species, collected at 72 sites in 29 recording locations across 13
+        biomes. MetaPerch evaluates WABAD as an 84-hour multi-species detection
+        benchmark in its results section. The helper downloads the Zenodo record,
+        README, site metadata, pooled annotations, and species list by default;
+        the 72 site archives total approximately 19.8 GiB and require explicit
+        site-level opt-in.
+    license:
+      data: conflicting_zenodo_metadata_treat_as_cc-by-nc-4.0
+      code: not_applicable
+      notes: >-
+        The Zenodo structured license field says CC BY 4.0, but the record's
+        human-readable description explicitly says Creative Commons
+        Attribution-NonCommercial 4.0. Treat the release as CC BY-NC 4.0
+        pending clarification from the maintainers; retain attribution and do
+        not assume commercial-use permission from the structured field alone.
+    sources:
+      - https://zenodo.org/records/15629388
+      - https://zenodo.org/api/records/15629388
+      - https://doi.org/10.5281/zenodo.15629388
+      - https://arxiv.org/abs/2607.14072
+      - https://export.arxiv.org/e-print/2607.14072
+      - https://github.com/google-research/perch/tree/main/chirp/projects/metaperch
+
   - id: sonyc_ust_v2
     name: SONYC-UST-V2
     full_name: "SONYC-UST-V2: An Urban Sound Tagging Dataset with Spatiotemporal Context"

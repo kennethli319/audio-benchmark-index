@@ -163,6 +163,7 @@ scripts/download/fsdkaggle2019.sh
 scripts/download/desed.sh
 scripts/download/maestro_real.sh
 scripts/download/realdesed.sh
+scripts/download/wabad.sh
 scripts/download/spint.sh
 scripts/download/realman.sh
 scripts/download/forestir.sh
@@ -477,6 +478,10 @@ scripts/download/urban_beehive.sh
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# WABAD downloads its record, metadata, annotations, and species list by default.
+# Its 72 site archives total approximately 19.8 GiB and require explicit site IDs.
+WABAD_DOWNLOAD_AUDIO=1 WABAD_SITES="ARD BAM" scripts/download/wabad.sh
 
 # SpInt downloads its record, reconstruction script, and 2.7 MB metadata by default.
 # The approximately 807 MiB noise and 3.08 GiB mask archives are opt-in.
