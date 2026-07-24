@@ -12497,6 +12497,71 @@ benchmarks:
       - https://raw.githubusercontent.com/CSCPadova/wav2taste/master/LICENSE
       - https://api.github.com/repos/CSCPadova/wav2taste
 
+  - id: audiobook_narration_appeal
+    name: Audiobook Narration Appeal
+    full_name: "Audio-Based Understanding of Audiobook Narration Appeal"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_paralinguistics
+      - audio_quality_assessment
+      - audio_recommendation
+    tasks:
+      - audiobook_appeal_prediction
+      - narration_quality_analysis
+      - paralinguistic_feature_analysis
+      - genre_conditioned_audio_modeling
+      - intra_title_narration_ranking
+    official:
+      paper: https://arxiv.org/abs/2607.02473
+      arxiv_html: https://arxiv.org/html/2607.02473v1
+      repo: https://github.com/spotify-research/audiobook-narrations-interspeech
+      dataset: https://github.com/spotify-research/audiobook-narrations-interspeech/blob/main/dataset.csv
+    download:
+      primary:
+        - https://github.com/spotify-research/audiobook-narrations-interspeech
+        - https://raw.githubusercontent.com/spotify-research/audiobook-narrations-interspeech/main/dataset.csv
+      examples:
+        - 'scripts/download/audiobook_narration_appeal.sh'
+      notes: >-
+        The public, ungated Spotify Research release contains one metadata row
+        for each of 8,854 single-narrator English LibriVox audiobooks, covering
+        1,206 narrators and 65 genres. Fields include LibriVox and Internet
+        Archive URLs, title grouping, narrator identifier, duration, genre,
+        views, favorites, reviews, and days since publication. The paper uses
+        time-normalized Internet Archive view rate as a noisy public proxy for
+        narration appeal, evaluates global and genre-specific prediction, and
+        ranks alternative narrations of the same text. The helper downloads the
+        approximately 3.1 MB CSV, official documentation, license, paper, and
+        supplementary material. Audiobook audio is not redistributed; users
+        follow the released source URLs to public-domain LibriVox recordings.
+        The paper's separate Spotify engagement analysis is proprietary and is
+        not part of the public dataset.
+    license:
+      data: Apache-2.0
+      code: Apache-2.0
+      source_audio: public_domain_works_with_recording_and_platform_terms_to_review
+      notes: >-
+        The repository places its released CSV, supplementary material, and
+        code under Apache-2.0. The CSV derives metadata and engagement counts
+        from LibriVox and the Internet Archive; those services' terms and
+        attribution requirements remain applicable. The license does not
+        extend to separately hosted audiobook recordings or underlying texts.
+        Verify per-item public-domain status in the intended jurisdiction and
+        preserve source attribution. Proprietary Spotify engagement data is
+        described only in aggregate and is not released.
+    sources:
+      - https://arxiv.org/abs/2607.02473
+      - https://arxiv.org/html/2607.02473v1#S3.SS1
+      - https://arxiv.org/html/2607.02473v1#S4.SS3
+      - https://github.com/spotify-research/audiobook-narrations-interspeech
+      - https://raw.githubusercontent.com/spotify-research/audiobook-narrations-interspeech/main/README.md
+      - https://raw.githubusercontent.com/spotify-research/audiobook-narrations-interspeech/main/LICENSE
+      - https://raw.githubusercontent.com/spotify-research/audiobook-narrations-interspeech/main/dataset.csv
+      - https://api.github.com/repos/spotify-research/audiobook-narrations-interspeech
+      - https://api.github.com/repos/spotify-research/audiobook-narrations-interspeech/git/trees/main?recursive=1
+      - https://librivox.org/
+      - https://archive.org/details/librivoxaudio
+
   - id: lyra_sa
     name: Lyra-SA
     full_name: "Lyra Lab Singing Assessment Dataset"

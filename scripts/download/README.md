@@ -81,6 +81,7 @@ scripts/download/concerto_accompaniment_benchmark.sh
 scripts/download/cmi_rewardbench.sh
 scripts/download/musica_metabench.sh
 scripts/download/sonic_seasoning.sh
+scripts/download/audiobook_narration_appeal.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/uro_bench_pro.sh
@@ -1062,6 +1063,11 @@ CONCERTO_ACCOMPANIMENT_CLONE_REPO=1 scripts/download/concerto_accompaniment_benc
 # Lyra-SA saves the official Tencent Music pages and SongSQA paper, then prints
 # the application form. The archive URL is emailed after approval.
 scripts/download/lyra_sa.sh
+
+# Audiobook Narration Appeal downloads the public 8,854-row metadata CSV,
+# official paper/supplement, documentation, and license. It does not download
+# separately hosted LibriVox audiobook recordings.
+scripts/download/audiobook_narration_appeal.sh
 
 # ADReSS and ADReSSo save public challenge/access documentation, then print
 # the DementiaBank membership path. Clinical recordings stay password protected.
