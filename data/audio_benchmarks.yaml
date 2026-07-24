@@ -210,6 +210,48 @@ paper_audits:
       - https://arxiv.org/abs/2607.20918
       - https://arxiv.org/html/2607.20918v1#Sx4.SSx1.SSS0.Px3
 
+  s3bench_text_to_audio_generation:
+    paper: https://arxiv.org/abs/2607.13408
+    sections: 3.5, 4.1-4.2, and 5.2
+    status: audited_not_indexed_partial_demo_only
+    evaluated_sets:
+      - cited_as: Sound Scene Story Benchmark (S3Bench)
+        index_id: null
+        status: partial_public_demo_full_benchmark_unreleased
+        note: >-
+          The paper describes 1,200 narrative instructions: 300 with two
+          events, 500 with three events, 200 with four events, and 200 with
+          overlapping events. The public project page exposes a small selection
+          of instructions, event labels, generated model outputs, and aggregate
+          results, but not the complete evaluation manifest or judging
+          protocol assets.
+    protocol_note: >-
+      S3Bench evaluates text-to-audio instruction following for sound-event
+      existence and temporal order, including strict sequences and overlapping
+      partial-order cases. Event existence uses exact match and micro accuracy;
+      temporal evaluation uses exact match, pairwise accuracy, and Kendall's
+      tau, conditioned on all requested events being judged present. The
+      benchmark prompts are generated from an ESC-50- and AudioCaps-derived
+      event vocabulary and are used only for evaluation. This audit does not
+      count S3Bench as a downloadable benchmark family until the complete
+      1,200-item prompt manifest and evaluation assets are released.
+    license_note: >-
+      The arXiv article uses arXiv's non-exclusive distribution license. The
+      independently built project page states no license for its demo metadata
+      or generated audio, and the linked GitHub repository is not public as of
+      this audit. ESC-50 and AudioCaps-derived vocabulary provenance does not
+      establish terms for the unreleased S3Bench instructions.
+    sources:
+      - https://arxiv.org/abs/2607.13408
+      - https://arxiv.org/html/2607.13408v1#S3.SS5
+      - https://arxiv.org/html/2607.13408v1#S4.SS1
+      - https://arxiv.org/html/2607.13408v1#S4.SS2
+      - https://arxiv.org/html/2607.13408v1#S5.SS2
+      - https://kuan2jiu99.github.io/allm-feedback-tta/
+      - https://kuan2jiu99.github.io/allm-feedback-tta/merged-demo-metadata/S3-Bench-demo-baseline-models.json
+      - https://kuan2jiu99.github.io/allm-feedback-tta/evaluation-results/metrics-data-S3Bench.json
+      - https://api.github.com/repos/kuan2jiu99/allm-feedback-tta
+
   qwen_music_technical_report:
     paper: https://arxiv.org/abs/2607.11699
     sections: 4.1-4.2

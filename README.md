@@ -108,6 +108,14 @@ contains only a placeholder README. The paper's 32.6-hour Chinese-English
 normal/NV evaluation data therefore remains announced but unreleased; no
 download helper or invented data link is provided.
 
+The July 2026 Sound Scene Story Benchmark (S3Bench) for narrative
+text-to-audio instruction following is also release-audited but not counted as
+a downloadable family. The paper defines 1,200 multi-event and overlapping
+temporal prompts. Its public project page provides selected prompt/output demos
+and aggregate results, but not the complete prompt manifest or evaluation
+assets; the linked GitHub repository is not public, and no data or demo license
+is stated.
+
 Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
 bilingual text-to-music, two cover-song reference, and bilingual rendering
 sets are internal and unreleased. The public exception is the
