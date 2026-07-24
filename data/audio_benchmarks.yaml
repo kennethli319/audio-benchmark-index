@@ -12681,3 +12681,68 @@ benchmarks:
       - https://arxiv.org/abs/2601.18184
       - https://arxiv.org/abs/2607.21075
       - https://arxiv.org/html/2607.21075v1#S3.SS1
+
+  - id: mlc_slm_2nd_challenge
+    name: 2nd MLC-SLM Challenge 2026
+    full_name: "2nd Multilingual Conversational Speech Language Model Challenge 2026"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - meeting_transcription
+      - speaker_diarization
+      - audio_reasoning
+    tasks:
+      - multilingual_conversational_asr
+      - speaker_diarization
+      - speaker_attributed_asr
+      - acoustic_conversation_understanding
+      - semantic_conversation_understanding
+      - multilingual_audio_question_answering
+    official:
+      challenge: https://www.nexdata.ai/competition/mlc-slm
+      repo: https://github.com/Nexdata-AI/2nd-Challenge-Workshop-on-Multilingual-Conversational-Speech-Language-Model-
+      task1_baseline: https://github.com/alanshaoTT/MLC-SLM-2nd-Task1-Baseline
+      task2_baseline: https://github.com/DontPushMeee/MLC-SLM-2nd-Task2-Baseline
+      data_use_agreement: https://www.nexdata.ai/nexdata/static/file/doc/Data%20use%20agreement2026.docx
+      system_paper: https://arxiv.org/abs/2607.12468
+    download:
+      primary:
+        - https://forms.gle/LfyNjfjBV3eYwzdp8
+        - https://www.nexdata.ai/competition/mlc-slm
+      examples:
+        - 'scripts/download/mlc_slm_2nd_challenge.sh'
+      notes: >-
+        The official challenge describes approximately 2,100 hours of
+        two-speaker conversational training audio across 14 languages, plus
+        approximately four development hours per language. Task 1 evaluates
+        diarization and recognition with DER and time-constrained
+        minimum-permutation WER/CER; Task 2 evaluates acoustic and semantic
+        understanding through multilingual multiple-choice questions. The
+        Task 1 system paper reports 150 development conversations across 21
+        language/accent categories and says evaluation references are not
+        released. Access to training, development, and evaluation data requires
+        challenge registration and acceptance of the data-use agreement. The
+        helper downloads only public documentation, agreement, repository
+        metadata, and paper metadata, then prints the manual registration path.
+    license:
+      data: custom_workshop_only_registration_agreement
+      code: not_specified
+      notes: >-
+        The official agreement limits the datasets to the 2026 MLC-SLM
+        Workshop, prohibits redistribution and any other use, requires access
+        controls, and requires return or destruction after termination. The
+        challenge and baseline repositories have no detected license files, so
+        their public visibility does not establish permission to reuse code.
+        This second-edition release must not be conflated with the first
+        MLC-SLM Eval annotation repository or its CC BY-SA 4.0 card label.
+    sources:
+      - https://www.nexdata.ai/competition/mlc-slm
+      - https://github.com/Nexdata-AI/2nd-Challenge-Workshop-on-Multilingual-Conversational-Speech-Language-Model-
+      - https://raw.githubusercontent.com/Nexdata-AI/2nd-Challenge-Workshop-on-Multilingual-Conversational-Speech-Language-Model-/main/README.md
+      - https://api.github.com/repos/Nexdata-AI/2nd-Challenge-Workshop-on-Multilingual-Conversational-Speech-Language-Model-
+      - https://www.nexdata.ai/nexdata/static/file/doc/Data%20use%20agreement2026.docx
+      - https://github.com/alanshaoTT/MLC-SLM-2nd-Task1-Baseline
+      - https://raw.githubusercontent.com/alanshaoTT/MLC-SLM-2nd-Task1-Baseline/main/README.md
+      - https://github.com/DontPushMeee/MLC-SLM-2nd-Task2-Baseline
+      - https://raw.githubusercontent.com/DontPushMeee/MLC-SLM-2nd-Task2-Baseline/main/README.md
+      - https://arxiv.org/abs/2607.12468

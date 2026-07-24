@@ -272,6 +272,7 @@ scripts/download/jasmin_cgn.sh
 scripts/download/dihard_iii.sh
 scripts/download/childes_aligned.sh
 scripts/download/l2_arctic.sh
+scripts/download/mlc_slm_2nd_challenge.sh
 scripts/download/qivd.sh
 scripts/download/dcase2025_audioqa.sh
 scripts/download/avsd.sh
