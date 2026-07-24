@@ -183,6 +183,16 @@ official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
 
+The July 2026 diagnostic cover-song evaluation paper is recorded as a
+partial-release protocol rather than a downloadable benchmark family. Its
+official MIT repository publishes the 30-row expert-score table, anonymized
+sample map, extracted MIR features, and analysis pipeline for five songs
+crossed with six generation systems. It explicitly omits all source and
+generated audio because of song copyright and commercial API terms, and its
+audio-example directory is only a placeholder. The public artifacts therefore
+support analysis of the reported scores but cannot reproduce listening or
+feature extraction; the paper also relies on a single expert annotator.
+
 The April 2026 CAST paper is recorded as an audited speech-generation protocol,
 not a downloadable family. It defines 113 contrastive context pairs (226
 textual items) for testing whether TTS systems realize discourse-conditioned

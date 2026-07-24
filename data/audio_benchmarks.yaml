@@ -1216,6 +1216,35 @@ paper_audits:
       - https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/
     note: The primary JASMIN-CGN family and its manual licensed-access path are already indexed. This paper defines a new 120-utterance human-versus-ASR study protocol but provides no project page, repository, supplementary archive, exact row mapping, participant-response data, model hypotheses, or evaluation code. It is therefore recorded as a coverage audit rather than a duplicate benchmark family or helper. Access to the full licensed corpus does not reproduce the paper's balanced selection or listening experiment.
 
+  cover_song_diagnostic_evaluation:
+    paper: https://arxiv.org/abs/2607.19688
+    sections: 3-6
+    status: audited_partial_release_not_indexed
+    public_interfaces:
+      - https://github.com/TiaaL/songecho-cover-metrics
+    evaluated_domains:
+      - domain: ai_generated_cover_song_diagnosis
+        protocol: Five source songs crossed with six generation systems to produce 30 covers, each scored by one expert on melodic-pitch accuracy, harmonic-progression validity, key consistency, style consistency, and arrangement or production quality
+        data_status: scores_anonymized_metadata_features_and_analysis_code_public_audio_unreleased
+        note: The repository publishes the 30-row score table, anonymized sample map, extracted MIR features, and analysis scripts. It explicitly excludes the source and generated audio, copyrighted material, full time-stamped listening notes, and any licensed excerpts; its audio-example directory is only a placeholder.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      released_repository: MIT
+      evaluation_audio: not_released_due_to_source_song_copyright_and_commercial_api_terms
+      source_songs_and_model_outputs: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.19688
+      - https://arxiv.org/html/2607.19688v1#S3
+      - https://arxiv.org/html/2607.19688v1#S4
+      - https://arxiv.org/html/2607.19688v1#S5
+      - https://arxiv.org/html/2607.19688v1#S6
+      - https://github.com/TiaaL/songecho-cover-metrics
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/README.md
+      - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/LICENSE
+      - https://api.github.com/repos/TiaaL/songecho-cover-metrics
+      - https://api.github.com/repos/TiaaL/songecho-cover-metrics/git/trees/main?recursive=1
+    note: The paper calls the study a controlled exploratory benchmark and releases useful diagnostic artifacts, but the public package cannot reproduce listening or feature extraction without the omitted 30 cover recordings. The five source songs are anonymized as Song1-Song5, and the single-annotator design has no inter-rater reliability estimate. This work is therefore recorded as a partial-release protocol audit rather than a downloadable benchmark family or helper; MIT covers the published code and tables, not the absent copyrighted songs or commercial-system outputs.
+
   rime_agentic_post_production:
     paper: https://arxiv.org/abs/2607.19605
     sections: 4-6
