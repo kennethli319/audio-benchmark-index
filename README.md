@@ -101,6 +101,13 @@ benchmark. The audit preserves the paper's under-one-minute filtering of
 long-video question-answer pairs rather than presenting those filtered rows as
 a separately released benchmark.
 
+The June 2026 STEB expressive speech-to-speech translation benchmark is
+release-audited but not counted as a public family. Its evaluation code and
+prompts are public, while the official Hugging Face dataset repository still
+contains only a placeholder README. The paper's 32.6-hour Chinese-English
+normal/NV evaluation data therefore remains announced but unreleased; no
+download helper or invented data link is provided.
+
 Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
 bilingual text-to-music, two cover-song reference, and bilingual rendering
 sets are internal and unreleased. The public exception is the

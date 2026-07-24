@@ -235,6 +235,46 @@ paper_audits:
         status: public
         note: Section 4.2.2 evaluates acoustic reconstruction on all 546 tracks in the validated subset of the official public release.
 
+  steb_expressive_s2st:
+    paper: https://arxiv.org/abs/2606.25529
+    sections: 3 and 5, plus Ethics Statement
+    status: audited_not_indexed
+    evaluated_sets:
+      - cited_as: STEB normal subset
+        index_id: null
+        status: announced_unreleased
+        note: The paper describes 20,370 Chinese and English utterances totaling 32.27 hours across six real-world scenarios, but the official Hugging Face repository currently contains only a placeholder README.
+      - cited_as: STEB NV subset
+        index_id: null
+        status: announced_unreleased
+        note: The paper describes 901 utterances totaling 1.26 hours with confirmed non-verbal-vocalization annotations; some rows overlap the normal subset, and no item manifest or audio is currently public.
+    protocol_note: >-
+      STEB evaluates speech-to-speech translation fidelity, speaker similarity,
+      duration alignment, emotion, scenario style, and non-verbal-vocalization
+      preservation in both Chinese-to-English and English-to-Chinese directions.
+      The official GitHub repository publicly releases evaluation code, prompts,
+      and metric implementations, but its README says the dataset is still under
+      review. The paper promises a future release and states that audio without
+      clear redistribution permission will be represented by metadata and
+      annotations only. This audit does not count STEB as a public benchmark
+      family until actual evaluation items are released.
+    license_note: >-
+      The paper is CC BY 4.0, but neither the GitHub repository nor the empty
+      Hugging Face dataset repository states a license for future benchmark data
+      or code. Source recordings come from publicly accessible web sources and
+      may have separate redistribution restrictions.
+    sources:
+      - https://arxiv.org/abs/2606.25529
+      - https://arxiv.org/html/2606.25529v1#S3
+      - https://arxiv.org/html/2606.25529v1#S5
+      - https://arxiv.org/html/2606.25529v1#Sx2
+      - https://cmots.github.io/steb.github.io/
+      - https://github.com/cmots/STEB
+      - https://raw.githubusercontent.com/cmots/STEB/main/README.md
+      - https://api.github.com/repos/cmots/STEB
+      - https://huggingface.co/datasets/cmots/STEB
+      - https://huggingface.co/api/datasets/cmots/STEB
+
   rw_voice_eq_bench:
     paper: https://arxiv.org/abs/2607.14846
     sections: 2 and 4-7
