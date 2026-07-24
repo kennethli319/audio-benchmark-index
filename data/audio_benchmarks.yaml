@@ -713,6 +713,29 @@ paper_audits:
       - https://api.github.com/repos/D1gits0/fretiq/git/trees/main?recursive=1
     note: The public repository provides feature extraction, training, ablation, held-out evaluation code, and trained model weights, but both README.md and REPRODUCE.md explicitly say that the gitignored data directory and training recordings are not included. The same omission covers the paper's three 322,215-frame development sessions and its approximately 103,000-frame held-out free-play session. Fretiq is therefore recorded as an audited model-specific protocol rather than a downloadable benchmark family. The repository README labels the project MIT, but the repository exposes no LICENSE file and GitHub detects no license; do not infer terms for either code or absent recordings.
 
+  ais_aligned_passive_acoustic_data_product:
+    paper: https://arxiv.org/abs/2607.13840
+    sections: 3, 6, and 7
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: range_conditioned_underwater_passive_acoustics
+        protocol: Approximately 950,000 recording windows aligned with 6.9 million AIS position reports, partitioned into no-contact, single-contact, and two-contact conditions with closest-point-of-approach distance and spectrally ranked background context
+        data_status: source_recordings_ais_tables_parquet_product_and_code_not_released
+        note: The paper describes fixed spatial and temporal join constraints and deterministic Parquet output, but does not identify the hydrophone archive, stations, recording dates, AIS source, item manifest, database dump, queries, or scripts needed to reconstruct the data product.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      source_recordings_and_ais: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.13840
+      - https://arxiv.org/html/2607.13840v1#S3
+      - https://arxiv.org/html/2607.13840v1#S6
+      - https://arxiv.org/html/2607.13840v1#S7
+      - https://export.arxiv.org/api/query?id_list=2607.13840
+    note: The paper calls the construction reproducible because it is deterministic under identical inputs and parameters, but reproducibility in principle is not a public release. Version 1 provides no official project page, repository, dataset card, archive, DOI, item manifest, executable SQL, source-data access instructions, or data/code license. The AIS-derived labels are also explicitly weak contextual indicators rather than acoustic ground truth and omit untracked vessels. This work is therefore recorded as an audited data-construction protocol rather than an indexed benchmark family or download helper.
+
   auemochat_ncssd_emcap:
     paper: https://arxiv.org/abs/2607.15755
     sections: abstract and 5.1

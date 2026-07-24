@@ -188,6 +188,16 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 AIS-aligned passive-acoustic labelling paper is recorded as an
+audited data-construction protocol rather than a downloadable family. It
+describes aligning approximately 950,000 hydrophone windows with 6.9 million
+AIS reports to create range-aware no-, single-, and two-contact classes, but
+v1 provides no source archive, station/date manifest, AIS source, Parquet
+product, SQL/code release, repository, DOI, access instructions, or data
+license. Its deterministic method does not make the inputs or resulting data
+public, and the paper explicitly treats AIS-derived labels as weak contextual
+indicators rather than acoustic ground truth.
+
 The July 2026 RIME paper is recorded as an audited agentic music
 post-production protocol rather than a downloadable family. Its evaluation
 uses approximately 3,000 input, edited-audio, and instruction triples derived
