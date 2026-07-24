@@ -1462,6 +1462,54 @@ paper_audits:
       public PPCA framework does not currently reproduce the paper-specific
       derived data and results, so no new download link or helper is added.
 
+  scope_shift_aware_emotion_recognition:
+    paper: https://arxiv.org/abs/2607.20445
+    title: "SCoPE: Shift-Aware Speaker-Conditioned Priors for Emotion Recognition in Conversations"
+    sections: 4-5
+    status: audited_existing_coverage_protocol
+    evaluated_sets:
+      - cited_as: IEMOCAP
+        index_id: iemocap
+        status: public_form_gated
+        note: The paper uses the conventional six-class multimodal emotion-recognition task and pre-extracted RoBERTa, DenseNet, and openSMILE features attributed to the SDT baseline.
+      - cited_as: MELD
+        index_id: meld
+        status: public_with_media_rights_caveat
+        note: The paper uses all seven emotion classes and pre-extracted multimodal SDT features; the underlying clips derive from the Friends television series.
+    protocol_note: >-
+      The experiments train ten models per dataset for 150 epochs and report
+      mean, standard deviation, and best-run Accuracy and weighted F1, including
+      per-emotion results. Emotion-shift supervision is derived from changes
+      between consecutive utterances by the same speaker. The paper does not
+      publish the exact feature files, split manifests, derived shift labels,
+      random seeds, checkpoints, predictions, or score records.
+    release_audit:
+      status: no_paper_specific_release_identified
+      note: >-
+        The v1 paper and arXiv HTML provide no project page, repository,
+        dataset card, archive, supplementary artifact, or code link. They state
+        that feature representations released by the SDT repository were used,
+        but do not identify a revision or publish a SCoPE experiment package.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      code: not_specified_unreleased
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: IEMOCAP uses a custom request-based research license; MELD declares GPL-3.0 but its Friends-derived media requires separate rights review
+    sources:
+      - https://arxiv.org/abs/2607.20445
+      - https://arxiv.org/html/2607.20445v1#S4
+      - https://arxiv.org/html/2607.20445v1#S4.SS1
+      - https://arxiv.org/html/2607.20445v1#S4.SS4
+      - https://arxiv.org/html/2607.20445v1#S5
+      - https://sail.usc.edu/iemocap/iemocap_release.htm
+      - https://affective-meld.github.io/
+      - https://github.com/declare-lab/MELD
+    note: >-
+      SCoPE is recorded as an evaluation-protocol audit over the two existing
+      benchmark families, not as a new downloadable family. Their established
+      access paths and helpers remain authoritative; no duplicate entry or
+      invented paper-specific download is added.
+
 benchmarks:
   - id: mmau
     name: MMAU

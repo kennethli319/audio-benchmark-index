@@ -468,6 +468,17 @@ audio, manifests, checkpoints, hypotheses, or score records. The upstream
 public families remain reproducible through their existing helpers; no
 duplicate family or invented derived-data download is added.
 
+The July 2026 SCoPE paper is recorded as a coverage audit of IEMOCAP and MELD
+rather than a new benchmark family. Sections 4-5 use the conventional
+six-class IEMOCAP task and seven-class MELD task with pre-extracted multimodal
+features attributed to the SDT baseline, then derive same-speaker emotion-shift
+labels and report Accuracy and weighted F1 over ten runs. The paper provides no
+project page, code repository, exact feature or split package, shift-label
+file, checkpoints, predictions, or score records. Existing access and license
+caveats remain authoritative: IEMOCAP is request-gated, while MELD declares
+GPL-3.0 but contains Friends-derived media requiring separate rights review.
+No duplicate family or download helper is added.
+
 ## Coverage
 
 Current coverage includes:
