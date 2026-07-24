@@ -228,6 +228,7 @@ scripts/download/fuss.sh
 scripts/download/wsj0_2mix.sh
 scripts/download/wham_whamr.sh
 scripts/download/voicebank_demand.sh
+scripts/download/diamond_benchmark.sh
 scripts/download/dns_challenge.sh
 scripts/download/ms_snsd.sh
 scripts/download/nisqa.sh
@@ -396,6 +397,10 @@ MUSICA_METABENCH_CLONE_REPO=1 scripts/download/musica_metabench.sh
 # ratings/path table by default. Audio (~797 MB) and the code clone are opt-in.
 SONIC_SEASONING_DOWNLOAD_HF=1 scripts/download/sonic_seasoning.sh
 SONIC_SEASONING_CLONE_REPO=1 scripts/download/sonic_seasoning.sh
+
+# Diamond Benchmark downloads its card, API metadata, and manifest by default.
+# The approximately 340 MB audio snapshot is opt-in; upstream rights are unclear.
+DIAMOND_BENCHMARK_DOWNLOAD_HF=1 scripts/download/diamond_benchmark.sh
 
 # SyncBench downloads docs, metadata, and small score JSONs by default; the ~12.9 GB videos are opt-in.
 SYNCBENCH_DOWNLOAD_HF=1 scripts/download/syncbench.sh

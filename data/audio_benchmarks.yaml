@@ -10014,6 +10014,51 @@ benchmarks:
       - https://doi.org/10.7488/ds/1994
       - http://parole.loria.fr/DEMAND/
 
+  - id: diamond_benchmark
+    name: Diamond Benchmark
+    full_name: "Diamond Benchmark: 750 Real Degraded Speech Recordings for Evaluating Restoration Models"
+    qwen_cited_as: null
+    qwen_bucket: speech_enhancement
+    tasks:
+      - speech_restoration
+      - speech_enhancement
+      - perceptual_speech_quality_evaluation
+      - content_preservation_evaluation
+      - robustness_to_real_world_degradation
+    official:
+      dataset: https://huggingface.co/datasets/nineninesix/diamond-benchmark
+    download:
+      primary:
+        - https://huggingface.co/datasets/nineninesix/diamond-benchmark
+      examples:
+        - 'scripts/download/diamond_benchmark.sh'
+        - 'DIAMOND_BENCHMARK_DOWNLOAD_HF=1 scripts/download/diamond_benchmark.sh'
+      notes: >-
+        The public, ungated release contains 750 English speech clips with
+        real-world codec, bandwidth, noise, and clipping degradation, plus
+        reference transcripts and speaker, duration, and sample-rate metadata.
+        Its documented protocol combines DNSMOS-P.835 for perceptual quality
+        with ASR character error rate for content preservation. The helper
+        downloads the official card, API metadata, and approximately 197 KB
+        manifest by default. The Hugging Face API reports approximately 340 MB
+        of repository storage, so the audio snapshot is an explicit opt-in.
+    license:
+      data: other_unspecified
+      code: not_applicable
+      notes: >-
+        Hugging Face metadata labels the dataset "other", but the card provides
+        no license text, source-corpus citation, consent statement, or
+        redistribution terms. The manifest's `emolia_id` field appears to
+        reference an upstream collection, but the card does not identify or
+        license it. Treat the release as evaluation-only pending clarification
+        and verify source-recording, speaker, transcript, and redistribution
+        rights before reuse, especially for training or commercial purposes.
+    sources:
+      - https://huggingface.co/datasets/nineninesix/diamond-benchmark
+      - https://huggingface.co/datasets/nineninesix/diamond-benchmark/raw/main/README.md
+      - https://huggingface.co/datasets/nineninesix/diamond-benchmark/raw/main/manifest.csv
+      - https://huggingface.co/api/datasets/nineninesix/diamond-benchmark
+
   - id: dns_challenge
     name: DNS Challenge
     full_name: "Deep Noise Suppression Challenge"
