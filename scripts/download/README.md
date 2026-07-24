@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
+scripts/download/big_bench_audio.sh
 scripts/download/mmau_pro.sh
 scripts/download/mugen.sh
 scripts/download/trea.sh

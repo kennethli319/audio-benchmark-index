@@ -152,6 +152,58 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  x3_opd_audio_reasoning:
+    paper: https://arxiv.org/abs/2607.21550
+    sections: 5.1-5.4
+    status: audited_existing_coverage_one_unmapped_aggregate
+    evaluated_sets:
+      - cited_as: MMSU
+        index_id: mmsu
+        status: public
+      - cited_as: MMAU
+        index_id: mmau
+        status: public
+      - cited_as: BIG Bench Audio
+        index_id: null
+        status: described_unmapped_release
+        note: >-
+          X3-OPD gives no citation, item count, split manifest, repository,
+          dataset card, or download link for this aggregate. It describes
+          acoustic QA, multi-event reasoning, audio-temporal grounding, and
+          paralinguistic inference, which does not match the four spoken
+          BIG-Bench Hard tasks in the public Artificial Analysis Big Bench
+          Audio release indexed separately as big_bench_audio. The names are
+          therefore not treated as aliases without primary-source evidence.
+      - cited_as: MMAR
+        index_id: mmar
+        status: public
+        note: Section 5.3 uses the held-out benchmark for rubric and CRS chain-of-thought-quality evaluation.
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: public
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: public
+    protocol_note: >-
+      Section 5.1 evaluates in-domain audio reasoning on MMSU, MMAU, and the
+      paper's uncited BIG Bench Audio aggregate; section 5.3 evaluates
+      intermediate reasoning quality on MMAR; and section 5.4 checks
+      out-of-domain preservation on WorldSense and DailyOmni. The paper and
+      its TeX source provide no project, code, data, or evaluation-release
+      URL. This audit maps the five clearly identified public families to
+      existing entries while leaving the ambiguous BIG Bench Audio aggregate
+      unmapped.
+    license_note: >-
+      The article is CC BY-NC-ND 4.0, which does not release or license the
+      absent BIG Bench Audio aggregate, evaluation records, or three-tier
+      training corpus. Each mapped public benchmark retains its own terms.
+    sources:
+      - https://arxiv.org/abs/2607.21550
+      - https://arxiv.org/html/2607.21550v1#S5.SS1.SSS0.Px4
+      - https://arxiv.org/html/2607.21550v1#S5.SS3
+      - https://arxiv.org/html/2607.21550v1#S5.SS4
+      - https://export.arxiv.org/e-print/2607.21550v1
+
   remo_omni_llm_token_compression:
     paper: https://arxiv.org/abs/2607.21179
     sections: 5.1 and Appendix A.4
@@ -1167,6 +1219,56 @@ benchmarks:
     sources:
       - https://github.com/dingdongwang/MMSU
       - https://huggingface.co/datasets/ddwang2000/MMSU
+
+  - id: big_bench_audio
+    name: Big Bench Audio
+    full_name: Artificial Analysis Big Bench Audio
+    qwen_cited_as: null
+    qwen_bucket: audio_understanding
+    tasks:
+      - spoken_question_answering
+      - speech_reasoning
+      - audio_question_answering
+    official:
+      dataset: https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio
+      leaderboard: https://artificialanalysis.ai/speech-to-speech
+      evaluator: https://github.com/XiaomiMiMo/MiMo-Audio-Eval
+      source_paper: https://arxiv.org/abs/2210.09261
+    download:
+      primary:
+        - https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("ArtificialAnalysis/big_bench_audio", split="train")'
+        - 'BIG_BENCH_AUDIO_DOWNLOAD_HF=1 scripts/download/big_bench_audio.sh'
+    license:
+      data: mit
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares MIT and the Xiaomi MiMo evaluator is
+        Apache-2.0. The 1,000 English recordings contain verbatim questions
+        from four BIG-Bench Hard tasks and were synthesized with 23
+        OpenAI-, Azure-, and AWS-provided voices; review inherited task terms
+        and provider-generated-audio conditions rather than assuming the card
+        resolves every component right.
+    access:
+      status: public_ungated
+      requirements:
+        - Full audio snapshot is opt-in because the Hugging Face API reports approximately 612 MB of repository storage including history.
+      notes: >-
+        The public train split contains 1,000 synthetic spoken questions:
+        250 each for formal fallacies, navigate, object counting, and web of
+        lies. The helper downloads official documentation and API metadata by
+        default; the full Hugging Face snapshot requires
+        BIG_BENCH_AUDIO_DOWNLOAD_HF=1. Xiaomi's official MiMo-Audio evaluator
+        loads this exact Hugging Face repository.
+    sources:
+      - https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio
+      - https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio/raw/main/README.md
+      - https://huggingface.co/api/datasets/ArtificialAnalysis/big_bench_audio
+      - https://github.com/XiaomiMiMo/MiMo-Audio-Eval
+      - https://raw.githubusercontent.com/XiaomiMiMo/MiMo-Audio-Eval/main/slm_eval/datasets/bigbench_audio.py
+      - https://arxiv.org/abs/2210.09261
+      - https://arxiv.org/abs/2206.04615
 
   - id: mmau_pro
     name: MMAU-Pro

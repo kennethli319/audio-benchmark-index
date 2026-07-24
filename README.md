@@ -61,7 +61,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 249 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 250 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -93,6 +93,15 @@ inventoried in the source YAML: DailyOmni, WorldSense, AVUT, AV-SpeakerBench,
 audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
+
+The July 2026 X3-OPD paper is also inventoried across sections 5.1-5.4. MMSU,
+MMAU, MMAR, WorldSense, and DailyOmni map to existing public families. Its
+uncited “BIG Bench Audio” aggregate remains unmapped: the paper describes
+acoustic QA, multi-event reasoning, temporal grounding, and paralinguistic
+inference but provides no item count, split, repository, dataset card, or
+download. That description does not match the four spoken BIG-Bench Hard tasks
+in the separately indexed public Artificial Analysis Big Bench Audio release,
+so the index does not conflate the two names.
 
 The July 2026 ReMo token-compression paper is also fully inventoried in the
 source YAML. All five evaluation families were already indexed: WorldSense,
@@ -401,6 +410,7 @@ Current coverage includes:
 | [MMAU](https://github.com/Sakshi113/MMAU) | Audio understanding | [MMAU-test-mini](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini), [MMAU-test](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test) | HF cards list `cc-by-nc-4.0` for test-mini and `mit` for test; code repo is Apache-2.0 |
 | [MMAR](https://github.com/ddlBoJack/MMAR) | Audio understanding | [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) | HF card lists `cc-by-nc-4.0`; code repo had no detected license |
 | [MMSU](https://github.com/dingdongwang/MMSU) | Audio understanding | [ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU) | HF card lists `mit`; code repo had no detected license |
+| [Big Bench Audio](https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio) | Spoken question answering and reasoning | Public, ungated 1,000-recording English set with 250 questions each from the BIG-Bench Hard formal-fallacies, navigate, object-counting, and web-of-lies tasks; helper downloads official docs/API metadata and Xiaomi's evaluator loader by default while the approximately 612 MB repository snapshot is opt-in | HF card declares MIT and Xiaomi evaluator code is Apache-2.0; review inherited BIG-Bench Hard task terms and OpenAI/Azure/AWS synthesized-voice output conditions |
 | [MMAU-Pro](https://sonalkum.github.io/mmau-pro/) | Holistic audio understanding and reasoning | Public, ungated [gamma-lab-umd/MMAU-Pro](https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro) with 5,305 expert-authored QA items across 49 speech, sound, music, long-form, multi-audio, and spatial skills; helper downloads official docs/evaluator/metadata by default while the approximately 47.5 GB snapshot is opt-in | HF card declares CC BY-NC 4.0, but in-the-wild source media and the EasyCom-derived spatial subset retain upstream terms; evaluator code has no stated license |
 | [MUGEN](https://github.com/danielqwer/MUGEN) | Multi-audio grounding and understanding | Public, ungated [35-task Hugging Face collection](https://huggingface.co/MUGEN-Benchmark) with 1,750 five-way problems and 9,250 clips across speech, sound, music, paralinguistics, temporal analysis, and compositional reasoning; helper downloads official metadata by default and requires an explicit task name before fetching audio | Dataset cards state no data license; repository software/docs are MIT, while embedded audio retains mixed public-corpus, academic-corpus, Mozilla Data Collective, and synthesis-source terms |
 | [TREA](https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty) | Fine-grained temporal audio reasoning | Public, ungated 600-item benchmark with 200 ordering, 200 counting, and 200 duration questions in multiple-choice and open-text formats; helper downloads official docs and lightweight CSV annotations by default while the approximately 688 MiB repository/audio clone is opt-in | Repository declares CC0-1.0, but all audio is derived from ESC-50, whose CC BY-NC 3.0 terms and per-clip attribution remain relevant; do not assume the repository waiver clears upstream audio rights |
