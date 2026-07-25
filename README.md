@@ -79,7 +79,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 314 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 315 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -335,6 +335,15 @@ provides no named evaluation corpus, split sizes, row manifests, or stable
 dataset download. The public KhayaAI Hugging Face repositories contain
 Apache-2.0 model checkpoints; that does not release or license the unnamed
 training and test audio.
+
+The July 2026 Quality-Aware Multimodal Fusion paper adds Aff-Wild2 as a
+request-gated audiovisual valence-arousal and emotion benchmark. The owner
+requires a signed role-specific EULA and an institutional-email request; the
+helper prints those steps and never fetches granted data. The paper reports 594
+videos while the current owner page describes 564, so the index preserves the
+revision conflict rather than merging the counts. Its AFEW-VA and YouTube Faces
+identity probes use visual backbone features and are recorded only as
+visual-only provenance.
 
 The July 2026 VibeVoice-ASR-BitNet report is inventoried across sections 3.1
 and 3.3. Its 15 WER/CER rows map to seven existing families: MLC-SLM Eval,
@@ -1481,6 +1490,7 @@ Current coverage includes:
 | [SpEmoC](https://skvipparthi.com/spemoc.html) | Multimodal speaker-segment emotion recognition | Official project and paper document 30,000 refined clips from 306,544 raw segments across 3,100 English-language movies and TV series; full media access requires a signed requestor and faculty/PI agreement sent from an institutional address, and the helper only saves public documentation | Custom non-commercial academic agreement prohibits redistribution; source movie/TV copyrights remain with their owners; public repository code and split/metadata terms are unspecified |
 | [EmoPrefer](https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer) | Multimodal emotion-description preference evaluation | Public original/V2 pairwise annotation tables (574 unanimous pairs and 2,096 individual-annotator pairs) plus reverse-order and generator-name audit variants; source audio/video remains separately gated through MER2025, while the helper downloads only public annotations/docs | Official subdirectory is Apache-2.0 but says non-commercial research only; gated MER2025 adds CC BY-NC 4.0, academic-only, no-redistribution/no-modification terms; audit code is MIT |
 | [OV-MERD](https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER) | Open-vocabulary multimodal emotion recognition | Official gated [MER2025 release](https://huggingface.co/datasets/MERChallenge/MER2025) with acoustic/visual clues, descriptions, and free-form labels spanning 236 emotion categories; helper saves public docs/metadata only and leaves the approximately 442 GB repository manual | CC BY-NC 4.0 plus academic-only, non-commercial, no-redistribution, and no-modification gated terms; repository code is Apache-2.0 with a non-commercial research-preview notice, and source movie/TV rights remain separate |
+| [Aff-Wild2](https://ibug.doc.ic.ac.uk/resources/aff-wild2/) | Audiovisual valence-arousal estimation, emotion recognition, expressions, and action units | Owner-controlled access after a signed role-specific EULA and institutional-email request; helper prints the academic, supervisor, industry, or student path without fetching data; the owner page describes 564 videos while arXiv:2607.21347 reports 594 | Custom signed EULA with no standard open-data license stated; source-video, face/voice privacy, sharing, redistribution, commercial-use, and derived-artifact terms require agreement-specific review |
 | [IEMOCAP](https://sail.usc.edu/iemocap/) | Speech emotion recognition | Official [release page](https://sail.usc.edu/iemocap/iemocap_release.htm) after reading the [USC/SAIL data release form](https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf) and submitting the request form | Custom USC/SAIL data release terms; access is manual/form-gated |
 | [MSP-Podcast](https://lab-msp.com/MSP/MSP-Podcast.html) | Naturalistic speech emotion recognition | Free academic access after an authorized institutional representative signs the official data-transfer agreement; Test3 audio is released without labels for web-based evaluation | Custom institution-signed academic license; permissive source-podcast licenses do not replace the controlling corpus agreement |
 | [MUSAN](https://www.openslr.org/17/) | Speech/music/noise classification | [OpenSLR SLR17](https://www.openslr.org/17/) corpus archive; helper downloads the OpenSLR page by default and requires opt-in for the 11 GiB archive | CC BY 4.0 |

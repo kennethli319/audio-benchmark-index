@@ -311,6 +311,7 @@ scripts/download/opencpop_test.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/lyra_sa.sh
 scripts/download/adress_challenges.sh
+scripts/download/aff_wild2.sh
 scripts/download/iemocap.sh
 scripts/download/ov_merd.sh
 scripts/download/mer2023.sh
@@ -1080,6 +1081,10 @@ CH_SIMS_V2_CLONE_REPO=1 scripts/download/ch_sims_v2.sh
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh
+
+# Aff-Wild2 requires a signed role-specific EULA and institutional-email request.
+# The helper prints the current owner-controlled access steps without fetching data.
+scripts/download/aff_wild2.sh
 
 # MSP-Podcast is institution/form-gated. The helper prints the official academic access steps.
 scripts/download/msp_podcast.sh

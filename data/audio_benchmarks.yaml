@@ -9,6 +9,59 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  quality_aware_multimodal_fusion:
+    paper: https://arxiv.org/abs/2607.21347
+    title: "Quality-Aware Multimodal Fusion Reveals Implicit Identity in Valence-Arousal Features"
+    sections: 4.1, 4.4, 4.5, and 4.7
+    status: audited_one_new_gated_audiovisual_family
+    evaluated_sets:
+      - cited_as: Aff-Wild2
+        index_id: aff_wild2
+        status: public_request_gated
+        protocol: >-
+          The paper fine-tunes visual and audio backbones on frame-level
+          valence-arousal labels, then compares baseline fusion,
+          quality-aware adaptive fusion, late-fusion ensembles, and
+          audio-missing or video-missing ablations using Concordance
+          Correlation Coefficient. It reports 594 videos, whereas the current
+          owner access page describes 564 videos; users should confirm the
+          granted revision rather than assuming those inventories are
+          interchangeable.
+      - cited_as: AFEW-VA
+        status: public_research_only_visual_identity_evaluation
+        protocol: >-
+          The paper evaluates mean-pooled visual valence-arousal backbone
+          features on a 67-actor identity-verification protocol. This
+          paper-specific use does not evaluate an audio input and therefore
+          does not add a separate audio-benchmark family.
+      - cited_as: YouTube Faces DB
+        status: public_registration_gated_visual_identity_evaluation
+        protocol: >-
+          The standard 5,000-pair video face-verification protocol is used to
+          test visual backbone features. It is recorded as visual-only context,
+          not indexed as an audio benchmark.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      aff_wild2: custom_signed_eula_request_gated
+      afew_va: research_only
+      youtube_faces: not_specified_on_owner_page
+      code: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.21347
+      - https://arxiv.org/html/2607.21347v1#S4.SS1
+      - https://arxiv.org/html/2607.21347v1#S4.SS4
+      - https://arxiv.org/html/2607.21347v1#S4.SS5
+      - https://arxiv.org/html/2607.21347v1#S4.SS7
+      - https://ibug.doc.ic.ac.uk/resources/aff-wild2/
+      - https://ibug.doc.ic.ac.uk/resources/afew-va-database/
+      - https://www.cs.tau.ac.il/~wolf/ytfaces/
+    note: >-
+      Aff-Wild2 is the paper's only audio-bearing benchmark family and is
+      indexed with its owner-controlled EULA workflow. The paper provides no
+      official implementation, processed features, split manifest,
+      checkpoints, predictions, or score records. AFEW-VA and YouTube Faces
+      are retained only as provenance for the paper's visual identity probe.
+
   aad_diffusion_augmentation:
     paper: https://arxiv.org/abs/2607.18345
     title: Addressing Limited Data in Auditory Attention Decoding with Diffusion Generative Models
@@ -13105,6 +13158,56 @@ benchmarks:
       - https://api.github.com/repos/zeroQiaoba/AffectGPT
       - https://huggingface.co/datasets/MERChallenge/MER2025
       - https://huggingface.co/api/datasets/MERChallenge/MER2025
+
+  - id: aff_wild2
+    name: Aff-Wild2
+    full_name: Aff-Wild2 Database
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - speech_emotion_recognition
+      - paralinguistic_understanding
+    tasks:
+      - audio_visual_valence_arousal_estimation
+      - audio_visual_emotion_recognition
+      - facial_action_unit_detection
+      - facial_expression_classification
+      - missing_modality_robustness
+    official:
+      homepage: https://ibug.doc.ic.ac.uk/resources/aff-wild2/
+      academic_eula: https://drive.google.com/file/d/1OVobGGYTiVUUsCYkI_sTVpuOdhTDwZo-/view
+      student_eula: https://drive.google.com/file/d/1-m83qcYNR7yHQaFrDw_nYuj3Js798JEm/view
+      evaluation_paper: https://arxiv.org/abs/2607.21347
+    download:
+      primary:
+        - https://ibug.doc.ic.ac.uk/resources/aff-wild2/
+      examples:
+        - 'scripts/download/aff_wild2.sh'
+      notes: >-
+        Access is granted manually by the database owner after the appropriate
+        signed EULA and an institutional-email request. Academic staff,
+        PhD/postdoctoral researchers through a supervisor, industry users, and
+        undergraduate/postgraduate students follow distinct owner-published
+        procedures. The owner page describes 564 audiovisual videos, around
+        2.8 million frames, and 554 subjects with frame-level
+        valence-arousal, expression, and action-unit annotations. The July
+        2026 evaluation paper instead reports 594 videos, so verify the
+        revision delivered under the EULA.
+    license:
+      data: custom_signed_eula_request_gated
+      code: not_applicable
+      notes: >-
+        The owner page requires a signed role-specific EULA and does not state
+        a standard open-data license. Access, sharing, redistribution,
+        commercial use, source-video rights, identifiable faces and voices,
+        and derived artifacts remain controlled by the granted agreement and
+        applicable privacy and media rights.
+    sources:
+      - https://ibug.doc.ic.ac.uk/resources/aff-wild2/
+      - https://arxiv.org/abs/2607.21347
+      - https://arxiv.org/html/2607.21347v1#S4.SS1
+      - https://arxiv.org/html/2607.21347v1#S4.SS4
+      - https://arxiv.org/html/2607.21347v1#S4.SS5
 
   - id: iemocap
     name: IEMOCAP
