@@ -9,6 +9,37 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  echov2_asd_benchmark:
+    paper: https://arxiv.org/abs/2607.10596
+    title: "ECHOv2: Two-Level Band-Splitting Representation Learning for Anomalous Sound Detection"
+    sections: abstract and official benchmark repository
+    status: audited_new_public_benchmark_protocol
+    evaluated_sets:
+      - cited_as: DCASE 2020-2025 Task 2
+        index_id: asd_benchmark
+        status: public_protocol_over_official_source_releases
+    protocol_note: >-
+      The released ASD Benchmark applies one implementation to the official
+      DCASE Task 2 splits from 2020 through 2025. It reports AUC and pAUC under
+      two complementary protocols: nearest-neighbor scoring over frozen
+      embeddings and lightweight adaptation over frozen representations.
+    release_note: >-
+      The MIT repository publishes evaluation code and converted evaluation
+      file lists. Source audio remains in the six official DCASE releases and
+      is not mirrored by this index. The repository also links a convenience
+      Google Drive package, but does not state separate redistribution terms
+      for that copy, so the helper does not fetch it.
+    license_note: >-
+      Benchmark code is MIT. Each underlying DCASE yearly release retains its
+      own data and challenge terms; the benchmark repository does not
+      re-license those recordings.
+    sources:
+      - https://arxiv.org/abs/2607.10596
+      - https://github.com/yucongzh/ASD_Benchmark
+      - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/README.md
+      - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/LICENSE
+      - https://api.github.com/repos/yucongzh/ASD_Benchmark
+
   stadium_crowd_noise_cross_venue_protocol:
     paper: https://arxiv.org/abs/2607.18922
     title: "Towards a reproducible cross-venue method for quantifying crowd noise in stadiums"
@@ -16177,3 +16208,53 @@ benchmarks:
       - https://arxiv.org/html/2507.13155v1#S4
       - https://www.isca-archive.org/ssw_2025/borisov25_ssw.html
       - https://arxiv.org/html/2605.30792v1#S4.SS2
+
+  - id: asd_benchmark
+    name: ASD Benchmark
+    full_name: "Unified DCASE 2020-2025 Task 2 Anomalous Sound Detection Representation Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - environmental_sound_understanding
+      - robustness_evaluation
+    tasks:
+      - anomalous_sound_detection
+      - machine_condition_monitoring
+      - audio_representation_evaluation
+      - domain_shift_robustness
+      - domain_generalization
+    official:
+      repo: https://github.com/yucongzh/ASD_Benchmark
+      paper: https://arxiv.org/abs/2607.10596
+      source_challenges: https://dcase.community/challenge/
+    download:
+      access: public_protocol_source_data_separate
+      primary:
+        - https://github.com/yucongzh/ASD_Benchmark
+      examples:
+        - 'scripts/download/asd_benchmark.sh'
+        - 'ASD_BENCHMARK_CLONE_REPO=1 scripts/download/asd_benchmark.sh'
+      notes: >-
+        The public benchmark supplies a unified evaluation pipeline and
+        converted evaluation lists for the official DCASE 2020-2025 Task 2
+        releases. It preserves each year's split and scoring rules and supports
+        frozen-embedding nearest-neighbor evaluation plus lightweight
+        adaptation, reporting AUC and pAUC. The helper downloads official
+        documentation and repository metadata by default; cloning the small
+        code repository is opt-in. Obtain the six source datasets from their
+        official DCASE pages. The helper intentionally does not fetch the
+        repository's convenience Google Drive package because its separate
+        redistribution terms are not stated.
+    license:
+      code: MIT
+      data: source_release_terms_apply
+      notes: >-
+        The repository's MIT license covers benchmark software and
+        documentation, not the underlying machine recordings. DCASE Task 2
+        dataset terms vary by year and source collection; review every
+        official release before use or redistribution.
+    sources:
+      - https://arxiv.org/abs/2607.10596
+      - https://github.com/yucongzh/ASD_Benchmark
+      - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/README.md
+      - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/LICENSE
+      - https://api.github.com/repos/yucongzh/ASD_Benchmark

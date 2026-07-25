@@ -496,6 +496,11 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
 
+# ASD Benchmark downloads official protocol docs and repository metadata by
+# default. Clone the small MIT evaluation toolkit explicitly; obtain each
+# DCASE 2020-2025 Task 2 source release from its official challenge page.
+ASD_BENCHMARK_CLONE_REPO=1 scripts/download/asd_benchmark.sh
+
 # AVDC downloads docs and API metadata by default. The approximately 134 MiB
 # caption/QA annotation snapshot and code repository are separate opt-ins;
 # source videos are not included.

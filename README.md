@@ -75,7 +75,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 292 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 293 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -150,6 +150,14 @@ public but gated DCASE 2025 AudioQA family does not identify the paper's
 144 selected start-time questions without a row manifest or filtering script.
 The audit records those as unreleased paper-specific protocols rather than
 new downloadable benchmarks.
+
+The July 2026 ECHOv2 paper's ASD Benchmark is public and reproducible at the
+protocol layer. Its MIT evaluation repository unifies DCASE 2020-2025 Task 2
+under frozen-embedding and lightweight-adaptation protocols while retaining
+each year's official split and AUC/pAUC logic. Source recordings remain
+separate official DCASE downloads with year-specific terms; the helper does
+not fetch the repository's convenience Drive copy because no separate
+redistribution terms are stated for it.
 
 The July 2026 WanSong v1.0 report is recorded as a mixed
 existing-coverage/internal-protocol audit rather than a benchmark addition.
@@ -1049,6 +1057,7 @@ Current coverage includes:
 | [ESC-50](https://github.com/karolpiczak/ESC-50) | Environmental sound classification | [GitHub archive](https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip) or `git clone https://github.com/karolpiczak/ESC-50.git` | ESC-50 is CC BY-NC 3.0; ESC-10 subset clips are CC BY |
 | [DCASE 2024 Task 5](https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection) | Five-shot bioacoustic event detection | Public CC BY 4.0 [development set](https://zenodo.org/records/10829604) and reused [2023 evaluation set](https://zenodo.org/records/7879692); helper downloads official metadata, class maps, and annotation-only archives by default while approximately 23.4 GiB of audio is opt-in | Both official Zenodo records state CC BY 4.0; retain release attribution and review source-specific wildlife-recording constraints |
 | [DCASE 2025 Task 2 ASD](https://dcase.community/challenge2025/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring) | First-shot unsupervised anomalous sound detection and machine-condition monitoring | Public [development](https://zenodo.org/records/15097779), [additional-training](https://zenodo.org/records/15392814), and [evaluation](https://zenodo.org/records/15519362) records with released labels/evaluator; helper downloads metadata by default and makes roughly 4.7 GB of archives opt-in by part | All three Zenodo records declare CC BY-NC-SA 4.0; evaluator uses the custom DCASE Challenge License v2.1 |
+| [ASD Benchmark](https://github.com/yucongzh/ASD_Benchmark) | Unified anomalous-sound representation evaluation over DCASE 2020-2025 Task 2 | Public MIT pipeline with converted evaluation lists, official year-specific splits/scoring, and frozen-embedding plus lightweight-adaptation protocols; helper downloads docs by default and makes the small repository clone opt-in; source datasets remain separate official DCASE downloads | Code is MIT; underlying DCASE recordings retain year- and source-specific data terms, and the linked convenience Drive copy has no separately stated redistribution license |
 | [DCASE 2026 Task 1 HAC](https://dcase.community/challenge2026/task-heterogeneous-audio-classification) | Hierarchical heterogeneous audio classification | Public CC BY 4.0 [BSD10k-v1.2](https://zenodo.org/records/17233904), [BSD35k-CS](https://zenodo.org/records/19187100), and held-out [evaluation](https://zenodo.org/records/20442928) releases; helper downloads official docs and about 7 MB of metadata by default while CLAP features and roughly 47 GB of audio/evaluation archives are opt-in | Zenodo records declare CC BY 4.0, but per-sound Freesound licenses and provenance still apply; baseline code license is unspecified |
 | [DCASE 2024 Task 7 Sound Scene Synthesis](https://dcase.community/challenge2024/task-sound-scene-synthesis) | Text-to-audio environmental sound-scene synthesis | Public CC BY 4.0 [open-source release](https://zenodo.org/records/15630417) with 310 four-second prompt/audio pairs; helper downloads official metadata by default and makes the approximately 140 MiB archive opt-in; the original 250-item challenge evaluation set remains secret | Zenodo declares CC BY 4.0; retain packaged Freesound attribution and review per-clip provenance; baseline code terms are unspecified |
 | [DCASE 2024 Task 9 LASS](https://dcase.community/challenge2024/task-language-queried-audio-source-separation) | Language-queried audio source separation | Public CC BY 4.0 [development](https://zenodo.org/records/10887496), [validation](https://zenodo.org/records/10886481), and [evaluation](https://zenodo.org/records/11425256) releases; helper downloads official docs and lightweight captions/annotations by default while approximately 1.14 GB of validation/evaluation audio is opt-in | Zenodo records declare CC BY 4.0; retain Freesound per-clip provenance and separately review FSD50K/Clotho source terms; baseline code terms are unspecified |
