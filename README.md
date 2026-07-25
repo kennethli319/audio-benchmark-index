@@ -818,6 +818,19 @@ per-item scores. The public DESED and ESC-50 source corpora therefore do not
 reproduce the two derived DMix evaluations, and their respective upstream
 terms still apply.
 
+The July 2026 *A Production-Oriented Framework for Evaluation of SFX
+Generation* paper is also recorded as existing ESC-50 coverage plus a partial
+demo release. Its shared audio-to-audio variation protocol trains on official
+folds 1-3, validates on fold 4, and generates ten variants for each of eight
+fold-5 references per class, or 4,000 outputs per model. The official
+[project repository](https://github.com/melodiedesbos/A-PRODUCTION-ORIENTED-FRAMEWORK-FOR-EVALUATION-OF-SFX-GENERATION)
+publishes 72 illustrative WAV files and result figures, but no complete
+generated corpus, reference/output manifest, evaluation code, randomized
+listening-test selection, listener responses, or per-item scores. ESC-50
+therefore remains the indexed public family; the demo-only artifacts do not
+justify a duplicate family or helper. The repository states no license for
+its demo audio, while upstream ESC-50 remains CC BY-NC 3.0.
+
 The July 2026 AMECxSV paper led to a new TidyVoice family entry. Its main
 experiment uses a speaker-disjoint held-out split derived from the public
 TidyVoiceX development protocol, rather than the challenge's hidden evaluation
