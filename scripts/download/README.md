@@ -402,6 +402,10 @@ MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/d
 INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
 INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 
+# In-the-Wild downloads official docs and Hub metadata by default.
+# The approximately 7.60 GiB public ZIP is opt-in; review the conflicting license signals.
+IN_THE_WILD_DOWNLOAD_HF=1 scripts/download/in_the_wild_audio_deepfake.sh
+
 # CapSpeech downloads docs and API metadata by default. Its ~4.31 GB metadata snapshot is opt-in.
 # Source recordings are obtained separately under their respective upstream terms.
 CAPSPEECH_DOWNLOAD_HF=1 scripts/download/capspeech.sh

@@ -9,6 +9,47 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  layer_wise_decision_fusion_fake_audio:
+    paper: https://arxiv.org/abs/2607.20023
+    title: Layer-Wise Decision Fusion for Fake Audio Detection Using XLS-R
+    sections: 3-5
+    status: audited_one_new_public_family_one_existing_public_family
+    evaluated_sets:
+      - cited_as: ASVspoof19 LA
+        index_id: asvspoof_2019
+        status: public
+        note: >-
+          All models use the Logical Access training set and are evaluated on
+          the Logical Access evaluation set. The paper compares trimmed and
+          untrimmed-silence settings and reports EER.
+      - cited_as: In-the-Wild (ITW)
+        index_id: in_the_wild_audio_deepfake
+        status: public_ungated
+        note: >-
+          The paper uses ITW as its cross-dataset evaluation set and reports
+          mean EER over three runs. The official owner page links the complete
+          public Hugging Face archive introduced by the 2022 dataset paper.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      asvspoof_2019: ODC-BY-1.0_with_component_rights_caveat
+      in_the_wild: mixed_conflicting_official_signals_apache-2.0_vs_cc-by-sa-4.0
+    sources:
+      - https://arxiv.org/abs/2607.20023
+      - https://arxiv.org/html/2607.20023v1#S3
+      - https://arxiv.org/html/2607.20023v1#S4
+      - https://arxiv.org/html/2607.20023v1#S5
+      - https://github.com/XIAOYixuan/tomatoDD/tree/interspeech25-layer-wise
+      - https://arxiv.org/abs/2203.16263
+      - https://arxiv.org/html/2203.16263v4#S3
+      - https://www.isca-archive.org/interspeech_2022/muller22_interspeech.html
+      - https://deepfake-total.com/in_the_wild
+      - https://huggingface.co/datasets/mueller91/In-The-Wild
+    note: >-
+      The 2026 paper introduces a detector and an evaluation protocol, not a
+      new dataset. This audit adds the previously missing public ITW family
+      and maps ASVspoof 2019 LA to the existing entry. No model repository is
+      indexed as benchmark data.
+
   sstmark_watermark_robustness_evaluation:
     paper: https://arxiv.org/abs/2607.17592
     title: "SSTMark: Robust Training-Free Semantic-Level Speech Watermarking"
@@ -13815,6 +13856,69 @@ benchmarks:
       - https://doi.org/10.7488/ds/2555
       - https://doi.org/10.21437/Interspeech.2019-2249
       - https://arxiv.org/abs/1911.01601
+
+  - id: in_the_wild_audio_deepfake
+    name: In-the-Wild
+    full_name: "In-the-Wild: A Deepfake Detection Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - cross_dataset_generalization
+      - in_the_wild_anti_spoofing
+    official:
+      homepage: https://deepfake-total.com/in_the_wild
+      dataset: https://huggingface.co/datasets/mueller91/In-The-Wild
+      paper: https://arxiv.org/abs/2203.16263
+      interspeech: https://www.isca-archive.org/interspeech_2022/muller22_interspeech.html
+      recent_evaluation: https://arxiv.org/abs/2607.20023
+    download:
+      primary:
+        - https://huggingface.co/datasets/mueller91/In-The-Wild
+      examples:
+        - 'scripts/download/in_the_wild_audio_deepfake.sh'
+        - 'IN_THE_WILD_DOWNLOAD_HF=1 scripts/download/in_the_wild_audio_deepfake.sh'
+      notes: >-
+        The public, ungated release contains 37.9 hours of English recordings
+        from 58 celebrities and politicians, including 17.2 hours of deepfakes
+        collected from online videos. The owner page reports 20.8 hours of
+        bona fide speech while the current Hugging Face card reports 20.7,
+        apparently a rounding discrepancy. It is an evaluation-only
+        cross-dataset benchmark without a prescribed training split. The
+        helper downloads official pages, the dataset card, and Hub API
+        metadata by default. The approximately 7.60 GiB ZIP archive requires
+        IN_THE_WILD_DOWNLOAD_HF=1.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Hugging Face exposes the complete single-ZIP release without a gate.
+        The large archive is an explicit opt-in and is never fetched by the
+        helper's default mode.
+    license:
+      data: mixed_conflicting_official_signals_apache-2.0_vs_cc-by-sa-4.0
+      code: not_applicable
+      notes: >-
+        The dataset owner's official page says the dataset and documentation
+        are Apache License 2.0, while the current official Hugging Face card
+        declares CC BY-SA 4.0. Treat the terms as unresolved and obtain
+        clarification before redistribution or commercial use. Because the
+        audio was collected from online videos of identifiable people, source
+        copyright, platform terms, voice and likeness rights, and privacy
+        obligations may also apply.
+    sources:
+      - https://deepfake-total.com/in_the_wild
+      - https://huggingface.co/datasets/mueller91/In-The-Wild
+      - https://huggingface.co/datasets/mueller91/In-The-Wild/raw/main/README.md
+      - https://huggingface.co/api/datasets/mueller91/In-The-Wild
+      - https://arxiv.org/abs/2203.16263
+      - https://arxiv.org/html/2203.16263v4#S3
+      - https://www.isca-archive.org/interspeech_2022/muller22_interspeech.html
+      - https://arxiv.org/abs/2607.20023
+      - https://arxiv.org/html/2607.20023v1#S3
+      - https://arxiv.org/html/2607.20023v1#S4
 
   - id: tfcl_afe
     name: TFCL AFE
