@@ -9,6 +9,50 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  stadium_crowd_noise_cross_venue_protocol:
+    paper: https://arxiv.org/abs/2607.18922
+    title: "Towards a reproducible cross-venue method for quantifying crowd noise in stadiums"
+    sections: 3.1-5.2
+    status: audited_proposed_protocol_no_released_test_cases
+    public_interfaces: []
+    evaluated_domains:
+      - domain: cross_venue_stadium_crowd_noise_measurement
+        protocol: >-
+          The proposal targets 100-8,000 Hz crowd sound, requires Class 1-level
+          instrumentation and a nominal far-field distance of at least 6.8 m
+          for the 100 Hz lower bound, and reports fast-integrated A-weighted
+          L_AF,max plus L_Aeq,T. A single-anchor SCL_max is a minimum baseline;
+          the preferred mSCL_max takes the maximum across spatially distributed
+          measurement units.
+        data_status: protocol_public_no_test_cases_or_crowd_noise_database
+        note: >-
+          Section 5.2.2 explicitly says that no test cases are shared and calls
+          collection of a sports-venue crowd-noise database future work.
+          Therefore the formulas and reporting requirements are public, but
+          there is no released cross-venue benchmark dataset, split, recording
+          manifest, reference implementation, or scoring package to download.
+    example_measurement:
+      venue_event: PSV Eindhoven versus RKC Waalwijk, 19 May 2024
+      use: >-
+        Figure 2 illustrates the difference between a waveform peak and a
+        fast-integrated maximum for ten seconds around a goal; it is an
+        explanatory example, not a released test set.
+      release_status: waveform_and_measurement_metadata_unreleased
+    license:
+      paper: not_exposed_in_arxiv_atom_metadata
+      evaluation_artifacts: not_applicable_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.18922
+      - https://arxiv.org/html/2607.18922v1#S3
+      - https://arxiv.org/html/2607.18922v1#S4
+      - https://arxiv.org/html/2607.18922v1#S5.SS2.SSS2
+      - https://export.arxiv.org/api/query?id_list=2607.18922
+    note: >-
+      This paper proposes a reproducible acoustic measurement and reporting
+      protocol rather than releasing a benchmark family. The index records the
+      protocol and its explicit release limitation without adding a dataset
+      row, family count, download link, or helper.
+
   controllable_content_based_recommendations:
     paper: https://arxiv.org/abs/2607.20938
     title: "Controllable and Content-Based Recommendations"

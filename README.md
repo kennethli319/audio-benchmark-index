@@ -714,6 +714,15 @@ trained informed models, digit-recognition evaluation code, or per-item
 scores. Public access to the three source corpora therefore does not reproduce
 the derived protocol, and no duplicate family or download helper is added.
 
+The July 2026 *Towards a reproducible cross-venue method for quantifying crowd
+noise in stadiums* paper is recorded as a proposed-protocol audit. It defines
+Class 1 instrumentation, far-field placement, fast-integrated A-weighted
+levels, and single- versus multi-anchor stadium crowd-level metrics. Section
+5.2.2 explicitly states that no test cases are shared and that a sports-venue
+crowd-noise database remains future work. Its PSV Eindhoven–RKC Waalwijk goal
+measurement is an explanatory figure rather than a released test set, so the
+index adds no benchmark family, download link, or helper.
+
 The July 2026 *X-Translator* paper is likewise recorded as a mixed
 existing-coverage and unreleased-selection audit. Its short-form evaluation
 uses the indexed OpenSTBench protocol; the long-form, multi-speaker, and
