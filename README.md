@@ -44,6 +44,7 @@ audio-visual segmentation, audio-video editing, audio-visual speech recognition,
 causal-semantic audio-visual synchronization evaluation,
 diagnostic evaluation of AI-generated cover songs,
 spoken digit classification,
+L2 spoken-English proficiency assessment and shortcut-reliance evaluation,
 instruction-based multi-attribute speech editing, general-purpose multitask
 audio editing, human-preference evaluation of synthesized speech, and
 multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
@@ -75,7 +76,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 297 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 298 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -115,6 +116,15 @@ not be released and the adversarial WAVs await a later clearance review. Its
 cited Hugging Face supplement is currently authentication-required and exposes
 no public card or file inventory, so the index does not add a benchmark family
 or infer a download helper from the paper's release claim.
+
+The July 2026 L2 auto-marker shortcut-reliance paper adds the official
+Speak & Improve Corpus 2025 family. Its four open-speaking task types provide
+fixed train, development, and evaluation partitions for proficiency scoring,
+ASR, disfluency detection, and spoken grammatical-error correction. Cambridge
+distributes the roughly 315-hour corpus after registration under a custom
+non-commercial license that prohibits redistribution and requires prior
+approval for corpus-derived releases; the helper therefore prints only the
+official manual access path.
 
 The July 2026 TFCL paper adds a public acoustic-front-end robustness family
 derived from ASVspoof 2019 Logical Access. Its ungated Hugging Face release
@@ -1143,6 +1153,7 @@ Current coverage includes:
 | [CHILDES-Aligned](https://huggingface.co/datasets/MagicLuke/CHILDES-Aligned) | Child-speech ASR and timestamp alignment | Manually gated release with a 413.3-hour general-purpose English child-speech configuration and a quality-controlled 283-hour ASR configuration; helper prints access steps and requires explicit terms acknowledgement before downloading a selected config | HF card declares CC BY-NC-SA 4.0 plus non-commercial-research-only TalkBank terms, source-corpus citation requirements, manual review, and no audio redistribution; linked code repository was unavailable when checked |
 | [Tadabur](https://fherran.github.io/tadabur/) | Qur'anic Arabic ASR, reciter identification, and word alignment | Public, ungated [FaisaI/tadabur](https://huggingface.co/datasets/FaisaI/tadabur) with more than 365,000 verse-level examples, 1,400+ hours, and 600+ reciters; helper downloads official metadata by default while the approximately 1.94 TB snapshot is opt-in | Card declares CC BY-NC 4.0, research/education use, and respectful-use expectations; source repositories and archives lack per-recording license provenance, and the linked code repository has no standalone license |
 | [L2-ARCTIC](https://psi.engr.tamu.edu/l2-arctic-corpus/) | ASR and accented speech | Official TAMU corpus page and documentation; access requires accepting license terms and submitting the download form to receive a generated Google Drive link by email | CC BY-NC 4.0; current release has 24 non-native English speakers plus suitcase-corpus material, while the Interspeech 2018 paper describes v1.0 |
+| [Speak & Improve Corpus 2025](https://researchdatasets.cambridge.org/datasets/speak-and-improve-corpus-2025) | L2 English proficiency scoring, ASR, disfluency detection, and spoken grammatical-error correction | Official Cambridge release with about 315 hours, more than 45,000 utterances, fixed train/dev/eval partitions, holistic CEFR-aligned scores, and about 55 manually transcribed hours; registration and license acceptance are required, so the helper prints the manual path only | Custom non-commercial research-and-education license prohibits sharing any corpus portion and requires prior approval for derived releases or statistics; avoid services that retain submitted data for training |
 | [GigaSpeechBench](https://github.com/SpeechColab/GigaSpeechBench) | Multilingual in-the-wild ASR, speech translation, accents, dialects, terminology, and age variation | Public, ungated [speechcolab/GigaSpeechBench](https://huggingface.co/datasets/speechcolab/GigaSpeechBench); the current ~86.3 GB release exposes low-resource-language, Chinese-dialect/English-accent, and vertical-domain modules, while the paper-described age module is not yet visible; helper downloads docs/metadata by default and makes the full snapshot opt-in | No data or code license is declared; public access does not establish redistribution or commercial-use rights |
 | [IndicContextEval](https://huggingface.co/datasets/AI4Bharat/IndicContextEval) | Context-aware multilingual ASR and named-entity recognition | Public, ungated 16,884-utterance release with 55.93 hours across eight Indian languages, 555 speakers, 23 professional domains, and seven controlled prompt levels including native-script entities and adversarial incorrect-domain context; helper downloads docs/results/supplements by default and makes the 6.48 GB current data snapshot opt-in | Dataset card and repository README declare CC BY 4.0; repository outputs and forthcoming evaluation code have no standalone LICENSE file, so confirm their terms separately |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |

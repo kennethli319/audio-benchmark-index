@@ -9,6 +9,51 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speak_and_improve_shortcut_reliance:
+    paper: https://arxiv.org/abs/2607.16085
+    title: Controlling Implicit Shortcut Reliance in L2 Spoken English Auto-markers
+    sections: 1, 5.1-5.2, and 7
+    status: audited_new_gated_public_family
+    evaluated_sets:
+      - cited_as: Speak & Improve 2025 Corpus
+        index_id: speak_and_improve_2025
+        status: public_registration_gated_noncommercial
+        note: >-
+          The paper evaluates the four open-speaking task types with
+          ModernBERT transcript and wav2vec 2.0 audio graders. It measures
+          Spearman correlation against holistic proficiency scores and uses
+          word count or voice-activity duration as the targeted shortcut
+          proxy. The experiments use 6,642 training submissions with 39,490
+          utterances, 438 development submissions with 5,616 utterances, and
+          300 evaluation submissions with 3,209 utterances.
+    release_note: >-
+      Cambridge University Press & Assessment distributes the corpus through
+      its official Research Datasets portal after agreement to the license and
+      completion of a registration form. The release page describes about 315
+      hours and more than 45,000 utterances, with holistic CEFR-aligned scores
+      throughout and about 55 hours of manual transcripts, disfluencies, and
+      language-error corrections. No public direct archive URL is exposed, so
+      the helper records only the official manual access path.
+    license:
+      paper: arXiv non-exclusive distribution license
+      data: custom_noncommercial_research_and_education_only
+      redistribution: prohibited
+      derived_items: prior_approval_required
+    sources:
+      - https://arxiv.org/abs/2607.16085
+      - https://arxiv.org/html/2607.16085v1#S5.SS1
+      - https://arxiv.org/html/2607.16085v1#S5.SS2
+      - https://researchdatasets.cambridge.org/datasets/speak-and-improve-corpus-2025
+      - https://doi.org/10.17863/CAM.114333
+      - https://arxiv.org/abs/2412.11986
+      - https://www.isca-archive.org/slate_2025/knill25_slate.html
+    note: >-
+      This is indexed as a gated public benchmark family rather than an
+      unrestricted download. The owner prohibits sharing any part of the
+      corpus, including with other licensees, and warns against services that
+      retain submitted data for model training. No archive, credentials, or
+      corpus-derived artifacts are stored by this repository.
+
   room_acoustic_parameter_protocols:
     paper: https://arxiv.org/abs/2607.15243
     title: What does the model actually see? Evaluation protocols and input availability in data-driven prediction of room acoustic parameters
@@ -6975,6 +7020,64 @@ benchmarks:
       - https://psi.engr.tamu.edu/l2-arctic-corpus-docs/
       - https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.html
       - https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.pdf
+
+  - id: speak_and_improve_2025
+    name: Speak & Improve Corpus 2025
+    full_name: "The Speak & Improve Corpus 2025: An L2 English Speech Corpus for Language Assessment and Feedback"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - paralinguistic_understanding
+    tasks:
+      - spoken_language_assessment
+      - l2_english_proficiency_scoring
+      - non_native_speech_recognition
+      - spoken_grammatical_error_correction
+      - disfluency_detection
+      - shortcut_reliance_evaluation
+    official:
+      dataset: https://researchdatasets.cambridge.org/datasets/speak-and-improve-corpus-2025
+      doi: https://doi.org/10.17863/CAM.114333
+      corpus_paper: https://arxiv.org/abs/2412.11986
+      corpus_paper_html: https://arxiv.org/html/2412.11986v1
+      isca_paper: https://www.isca-archive.org/slate_2025/knill25_slate.html
+      recent_evaluation: https://arxiv.org/abs/2607.16085
+    download:
+      primary:
+        - https://researchdatasets.cambridge.org/datasets/speak-and-improve-corpus-2025
+      examples:
+        - 'scripts/download/speak_and_improve_2025.sh'
+      notes: >-
+        The official Cambridge release contains about 315 hours and more than
+        45,000 utterances from over 7,000 L2 English test submissions, with
+        holistic CEFR-aligned proficiency scores and fixed training,
+        development, and evaluation sets. About 55 hours additionally have
+        manual transcripts, disfluencies, and language-error corrections.
+        Access requires accepting the owner license and completing the
+        registration form; the portal does not expose a reusable direct
+        archive URL, so the helper prints the manual steps only. The July 2026
+        shortcut-reliance paper evaluates all four open-speaking task types on
+        39,490 training, 5,616 development, and 3,209 evaluation utterances.
+    license:
+      data: custom_noncommercial_research_and_education_only
+      code: not_applicable
+      notes: >-
+        The official agreement grants a non-exclusive, non-transferable right
+        for non-commercial research and education only. It prohibits
+        sublicensing and sharing any part of the corpus, even with another
+        licensee; publishing corpus-derived items or statistics requires prior
+        Cambridge University Press & Assessment approval, apart from permitted
+        excerpts under 100 words. The owner also instructs users not to submit
+        the corpus to services that retain data for training.
+    sources:
+      - https://researchdatasets.cambridge.org/datasets/speak-and-improve-corpus-2025
+      - https://doi.org/10.17863/CAM.114333
+      - https://arxiv.org/abs/2412.11986
+      - https://arxiv.org/html/2412.11986v1
+      - https://www.isca-archive.org/slate_2025/knill25_slate.html
+      - https://arxiv.org/abs/2607.16085
+      - https://arxiv.org/html/2607.16085v1#S5.SS1
+      - https://arxiv.org/html/2607.16085v1#S5.SS2
 
   - id: gigaspeechbench
     name: GigaSpeechBench
