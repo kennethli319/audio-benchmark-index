@@ -114,6 +114,17 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 diffusion-augmentation AAD paper is recorded as an existing
+private-corpus and unreleased-output audit. It evaluates locus-of-attention
+classification on 2,420 trials from 31 hearing-impaired listeners retained
+after EEG preprocessing, then augments training with up to 90,000 generated
+one-second samples. The original 34-listener experiment is documented in the
+[primary source](https://doi.org/10.3389/fnins.2021.636060), but neither the
+real corpus, exact split manifest, synthetic EEG, checkpoints, nor predictions
+are released. The manuscript only promises a GitHub repository after its
+publication decision and gives no URL, so the index adds no benchmark family
+or inferred helper.
+
 The July 2026 TTSYoruba paper is recorded as a public-system but unreleased-data
 audit. Its Section 6 evaluation has 50 listeners, 500 naturalness and
 intelligibility ratings, four Yoruba-name categories, and 100 matched

@@ -9,6 +9,56 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  aad_diffusion_augmentation:
+    paper: https://arxiv.org/abs/2607.18345
+    title: Addressing Limited Data in Auditory Attention Decoding with Diffusion Generative Models
+    sections: 2.1, 2.2, 3, and 5
+    status: audited_existing_private_corpus_unreleased_synthetic_evaluation
+    evaluated_sets:
+      - cited_as: hearing-impaired listener EEG dataset
+        status: previously_studied_private_human_subject_corpus
+        protocol: >-
+          The source study recorded 64-channel EEG from 34 experienced
+          hearing-aid users during two-talker Danish speech trials with
+          background babble and four hearing-aid noise-reduction conditions.
+          After artifact rejection, this paper retains 31 participants and
+          2,420 33-second trials, balances left- versus right-attention labels,
+          and uses fixed 60/20/20 train, validation, and test assignments
+          within five-trial blocks. The paper cites earlier analyses of the
+          same corpus but provides no public archive, accession, or reusable
+          participant/item manifest.
+      - cited_as: diffusion-generated speech-evoked EEG augmentation
+        status: paper_specific_outputs_unreleased
+        protocol: >-
+          Separate diffusion models generate 45,000 one-second, 64-channel
+          samples per attention direction. EEGNeX locus-of-attention
+          classifiers compare real-only training against 15%, 30%, 60%, and
+          100% synthetic augmentation over 20 runs; the synthetic tensors,
+          generation seeds, checkpoints, predictions, and split manifest are
+          not released.
+    release_audit:
+      benchmark_data: not_specified_unreleased
+      synthetic_eeg: not_specified_unreleased
+      code: promised_after_manuscript_decision_no_public_url
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      real_eeg: not_specified_private_human_subject_data
+      synthetic_eeg: not_specified_unreleased
+      code: not_specified_unreleased
+      human_subject_data: consent_privacy_and_reuse_terms_require_owner_review
+    sources:
+      - https://arxiv.org/abs/2607.18345
+      - https://arxiv.org/pdf/2607.18345
+      - https://arxiv.org/e-print/2607.18345v1
+      - https://doi.org/10.3389/fnins.2021.636060
+    note: >-
+      This is an evaluation protocol over a previously studied, non-public
+      human-subject corpus, not a released AAD benchmark family. The manuscript
+      says full training details will appear in a GitHub repository after a
+      publication decision, but supplies no repository URL. Recheck a later
+      version for code, split, or synthetic-data releases before adding a
+      benchmark entry or download helper.
+
   ttsyoruba_listener_evaluation:
     paper: https://arxiv.org/abs/2607.18317
     title: "A Situational Speech Synthesizer for Yoruba: System Design, Phonological Rule Architecture, and Orthographic Extensions for Contour Tones"
