@@ -3129,6 +3129,64 @@ paper_audits:
       - https://api.github.com/repos/ol-MEGA/ppca/git/trees/main?recursive=1
     note: AudioMNIST, Google Speech Commands, and LibriSpeech are already indexed public source families. Although the paper calls its experimental framework public and cites PPCA, the current PPCA main tree contains general speech-privacy and SpeechBrain recipes but no paper-specific digit-sequence construction, digit-classifier training, obfuscation sweep, digit recognition error rate, or result-reproduction files. The derived informed-attacker evaluation is therefore recorded as a coverage audit rather than a duplicate benchmark family or new download helper.
 
+  l2_phone_rhythm_intonation_scoring:
+    paper: https://arxiv.org/abs/2607.13721
+    title: "Self-supervised Speech Comparison for L2 Phone, Rhythm, and Intonation Scoring"
+    sections: 3.2-3.3 and 4-5
+    status: audited_one_new_restricted_family_one_deferred_related_family
+    evaluated_sets:
+      - cited_as: UME English Speech Database Read by Japanese Students (UME-ERJ)
+        index_id: ume_erj
+        status: application_reviewed_research_only
+        protocol: >-
+          English phone scoring uses sentence and word subsets, while rhythm
+          and intonation scoring use separately rated sentence subsets.
+          Self-supervised WavLM representations and dynamic time warping are
+          compared against human five-point ratings and expert inter-rater
+          agreement.
+      - cited_as: UME Japanese Speech Database Read by Foreign Students (UME-JRF)
+        index_id: null
+        status: application_reviewed_research_only_deferred
+        protocol: >-
+          Japanese overall, intonation, rhythm, and difficult-sound subsets are
+          evaluated with the same reference-comparison framework.
+        note: >-
+          UME-JRF is a distinct owner-controlled corpus and is deferred to a
+          separate increment so its official metadata, access terms, and
+          helper can be traced independently.
+      - cited_as: TIMIT
+        index_id: timit
+        status: existing_restricted_family
+        protocol: >-
+          TIMIT trains silence and vowel frame classifiers used by the
+          interval-distortion rhythm metric; it is not a scored test set.
+      - cited_as: LibriSpeech train-clean-100
+        index_id: librispeech
+        status: existing_public_family
+        protocol: >-
+          A ten-hour subset trains 200-center k-means models for the WavLM
+          residual features used in intonation scoring; it is not a scored
+          test set.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      ume_erj: custom_research_only_terms_with_application_review
+      ume_jrf: custom_research_only_terms_with_application_review
+      other_families: see_existing_entries
+    sources:
+      - https://arxiv.org/abs/2607.13721
+      - https://arxiv.org/html/2607.13721v1#S3.SS2
+      - https://arxiv.org/html/2607.13721v1#S3.SS3
+      - https://arxiv.org/html/2607.13721v1#S4
+      - https://arxiv.org/html/2607.13721v1#S5
+      - https://doi.org/10.32130/src.UME-ERJ
+      - https://doi.org/10.32130/src.UME-JRF
+    note: >-
+      The evaluation paper introduces scoring methods, not a new downloadable
+      benchmark. This audit adds the previously missing official UME-ERJ
+      source family without treating its application-reviewed access as a
+      public download, maps TIMIT and LibriSpeech to existing coverage, and
+      leaves the separately controlled UME-JRF family for a focused follow-up.
+
   x_translator_speech_translation_evaluation:
     paper: https://arxiv.org/abs/2607.17544
     title: "X-Translator: A Real-Time Multilingual Speaker-Aware Speech-to-Speech Translation System"
@@ -10920,6 +10978,51 @@ benchmarks:
       - https://api.github.com/repos/soerenab/AudioMNIST
       - https://www.sciencedirect.com/science/article/pii/S0016003223007536
       - https://arxiv.org/abs/1807.03418
+
+  - id: ume_erj
+    name: UME-ERJ
+    full_name: "UME English Speech Database Read by Japanese Students"
+    qwen_cited_as: null
+    qwen_bucket: second_language_pronunciation_assessment
+    tasks:
+      - second_language_pronunciation_assessment
+      - phone_scoring
+      - rhythm_scoring
+      - intonation_scoring
+      - non_native_read_speech
+    official:
+      dataset: https://doi.org/10.32130/src.UME-ERJ
+      recent_evaluation: https://arxiv.org/abs/2607.13721
+      recent_evaluation_html: https://arxiv.org/html/2607.13721v1#S4
+    download:
+      primary:
+        - https://doi.org/10.32130/src.UME-ERJ
+      examples:
+        - 'scripts/download/ume_erj.sh'
+      notes: >-
+        NII's Speech Resources Consortium distributes UME-ERJ only after an
+        applicant submits a usage pledge and passes review. The official record
+        describes 202 Japanese learners of English (100 male and 102 female),
+        16 kHz/16-bit mono WAV recordings, phone- and prosody-focused sentence
+        and word sets, and ratings from native English teachers. The helper
+        saves only the public official record and evaluation-paper metadata,
+        then prints the manual application requirement.
+    license:
+      data: custom_research_only_terms_with_application_review
+      code: not_applicable
+      notes: >-
+        The official NII record limits permission to research purposes and
+        requires a usage pledge plus review; it does not publish a standard
+        open-data license. Review the current agreement before use, do not
+        redistribute the recordings, and account for identifiable learner
+        voices and proficiency ratings in privacy and ethics planning.
+    sources:
+      - https://doi.org/10.32130/src.UME-ERJ
+      - https://arxiv.org/abs/2607.13721
+      - https://arxiv.org/html/2607.13721v1#S3.SS2
+      - https://arxiv.org/html/2607.13721v1#S3.SS3
+      - https://arxiv.org/html/2607.13721v1#S4
+      - https://arxiv.org/html/2607.13721v1#S5
 
   - id: korean_speechlm_benchmarks
     name: KVoiceBench / KOpenAudioBench / KMMAU

@@ -322,6 +322,7 @@ scripts/download/seabad.sh
 scripts/download/childes_aligned.sh
 scripts/download/l2_arctic.sh
 scripts/download/cdsd.sh
+scripts/download/ume_erj.sh
 scripts/download/speak_and_improve_2025.sh
 scripts/download/mlc_slm_2nd_challenge.sh
 scripts/download/qivd.sh
@@ -1004,6 +1005,10 @@ TORGO_ACK_TERMS=1 TORGO_ARCHIVES=F,FC,M,MC scripts/download/torgo.sh
 # CDSD saves the owner access page, blank agreement, and paper metadata, then
 # stops at the signed-agreement and approval step. It never submits the form.
 scripts/download/cdsd.sh
+
+# UME-ERJ saves the official NII/SRC record and evaluation-paper metadata, then
+# stops at the usage-pledge and review step. It never submits an application.
+scripts/download/ume_erj.sh
 
 # EMO-SUPERB downloads official benchmark docs by default. The evaluation repository clone is opt-in; component corpus audio remains manual/EULA-gated.
 EMO_SUPERB_CLONE_REPO=1 scripts/download/emo_superb.sh
