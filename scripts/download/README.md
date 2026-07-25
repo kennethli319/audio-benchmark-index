@@ -198,6 +198,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
+scripts/download/silent_speech_emg.sh
 scripts/download/avdc.sh
 scripts/download/pvqd.sh
 scripts/download/torgo.sh
@@ -513,6 +514,10 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# Silent Speech EMG downloads official metadata/docs by default; the public
+# approximately 3.92 GB Zenodo corpus archive is checksum-verified and opt-in.
+SILENT_SPEECH_EMG_DOWNLOAD_ARCHIVE=1 scripts/download/silent_speech_emg.sh
 
 # TFCL AFE downloads official docs and Hub metadata by default. Its ASVspoof
 # 2019-derived processed audio and checkpoint are independent large opt-ins.

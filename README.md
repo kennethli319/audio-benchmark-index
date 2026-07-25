@@ -50,7 +50,8 @@ instruction-based multi-attribute speech editing, general-purpose multitask
 audio editing, human-preference evaluation of synthesized speech, and
 multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
 Russian conversational speech synthesis, non-human voice conversion and
-designed-vocalization timbre transfer, multimodal ambivalence and hesitancy
+designed-vocalization timbre transfer, facial-EMG-to-speech synthesis and
+silent-speech recognition, multimodal ambivalence and hesitancy
 recognition,
 multimodal spoken-sarcasm and dialogue-pragmatics evaluation,
 few-shot robustness under foreground/background shifts, dynamic heterogeneous
@@ -78,7 +79,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 309 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 310 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -317,6 +318,16 @@ LibriSpeech Corpus,” while the official challenge calls MLC-SLM the
 Multilingual Conversational Speech Language Model Challenge. The public
 MLC-SLM release contains annotations but no currently documented public audio
 URL, so the index does not imply full reproducibility.
+
+The July 2026 CS-ETS paper adds the public
+[Silent Speech EMG](https://doi.org/10.5281/zenodo.4064408) family. Its
+approximately 19 hours of paired silent/vocalized facial EMG and audio support
+open-vocabulary EMG-to-speech synthesis and direct silent-speech recognition.
+The helper downloads official metadata and documentation by default and keeps
+the approximately 3.92 GB archive checksum-verified and opt-in. Zenodo declares
+the data CC BY 4.0 and the official code is MIT; biometric-signal, voice,
+privacy, and research-ethics considerations still warrant review. CS-ETS does
+not release its exact derived row split or ten-listener MOS records.
 
 The July 2026 FillGauss paper is recorded as an unreleased-protocol audit.
 It describes FillImpact as more than 5,000 impact recordings from 88 objects
@@ -1386,6 +1397,7 @@ Current coverage includes:
 | [PartialEdit](https://yzyouzhang.com/PartialEdit/index.html) | Partial speech-deepfake detection and temporal localization | Public [Zenodo release](https://zenodo.org/records/15519188) of the VCTK-derived E1/E1-Codec and E2/E2-Codec subsets; helper downloads official pages and record metadata by default, with approximately 7.7 MB of protocol/text metadata and 21.9 GB of audio as separate opt-ins; Audiobox-derived E3/E4 are explicitly withheld | Zenodo declares CC BY 4.0; preserve VCTK provenance and review neural-editor output terms; the license does not cover or release E3/E4 |
 | [AudioMarkBench](https://github.com/mileskuo42/AudioMarkBench) | Audio-watermark robustness, removal, forgery, and fairness evaluation | Public evaluation code and manual [Google Drive audio release](https://drive.google.com/drive/folders/1037mBf4LoGq0CDxe6hYx5fNNv56AY_9e) covering 20,000 Common Voice-derived AudioMarkData clips and 20,000 LibriSpeech clips; helper downloads docs by default and makes the small repository clone opt-in | Code is MPL-2.0; released original, watermarked, and perturbed audio has no separate stated license and retains Common Voice/LibriSpeech source-term and privacy considerations |
 | [Designed Vocalizations Dataset](https://ncai-official.github.io/speech/publications/designed-vocalizations-dataset/) | Non-human voice conversion and sound-designed timbre transfer | Public, ungated [NCSOFT/Designed-Vocalizations-Dataset](https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset) with 237,574 raw and effect-processed clips plus a 5,640-reference test protocol crossing seen/unseen source timbres and presets; helper downloads docs and lightweight metadata by default and makes the approximately 37.1 GB snapshot opt-in | CC BY 4.0 covers the compilation and original contributions; VCTK/HiFi-TTS/Freesound-derived clips retain per-source CC0, CC BY 3.0, or CC BY 4.0 attribution and notice requirements |
+| [Silent Speech EMG](https://doi.org/10.5281/zenodo.4064408) | Facial-EMG-to-speech synthesis and silent-speech recognition | Public, ungated approximately 19-hour single-speaker corpus with paired silent/vocalized facial EMG and audio; helper downloads official docs and metadata by default and makes the approximately 3.92 GB checksum-verified archive opt-in | Data is CC BY 4.0 and official code is MIT; preserve attribution and review privacy, biometric-data, and research-ethics obligations |
 | [SynSFX](https://ofspectrum.com/news/synsfx) | Non-speech sound-effect deepfake detection and unseen-generator robustness | Direct official academic-research-only release with 43,374 clips and 178 hours across five authentic-audio sources and seven text-to-audio generators; helper saves docs by default and requires explicit acknowledgement plus opt-in for the large uncompressed-WAV archive | Only “Academic research only” is stated; no full dataset license or redistribution terms are published, authentic source-media terms remain applicable, and no evaluation-code release was linked |
 | [VoxENES 2026](https://www.kaggle.com/datasets/interspeech2712/voxenes-2026) | Bilingual speech spoofing and audio deepfake detection robustness | Public Kaggle release with 53,628 English/Spanish bona fide, TTS, voice-conversion, and post-processed samples; helper downloads metadata by default and makes the approximately 23.3 GB dataset opt-in | Kaggle declares CC BY 4.0; LibriSpeech, VoxPopuli, voice-data, and synthesis-system source/output terms still require review |
 | [VoxLingua107](https://huggingface.co/datasets/TalTechNLP/VoxLingua107) | Spoken language identification | TalTechNLP [Hugging Face mirror](https://huggingface.co/datasets/TalTechNLP/VoxLingua107); helper downloads metadata by default and requires opt-in for the larger snapshot | HF card lists CC BY-NC 4.0; YouTube-derived source media availability and platform terms still apply |

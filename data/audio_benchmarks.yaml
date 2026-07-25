@@ -9,6 +9,42 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  cs_ets_emg_to_speech:
+    paper: https://arxiv.org/abs/2607.18629
+    title: "CS-ETS: Chaos-Inspired Samba-Based EMG-to-Speech Synthesis with Nonlinear Chaotic Losses"
+    sections: 4.1-4.2 and 5
+    status: audited_one_new_public_family
+    evaluated_sets:
+      - cited_as: Gaddy and Klein dataset / Gaddy dataset
+        index_id: silent_speech_emg
+        status: public_ungated
+        protocol: >-
+          The paper trains and evaluates on the official single-speaker
+          open-vocabulary corpus, which contains approximately 19 hours of
+          paired facial EMG and audio from silent and vocalized English speech.
+          It reports WER plus post-vocoder-aligned LSD, STOI, PESQ, SI-SDR, and
+          NISQA-MOS, and separately conducts a ten-listener MOS comparison.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      data: CC-BY-4.0
+      code: MIT
+    sources:
+      - https://arxiv.org/abs/2607.18629
+      - https://export.arxiv.org/e-print/2607.18629v1
+      - https://aclanthology.org/2020.emnlp-main.445/
+      - https://aclanthology.org/2021.acl-short.23/
+      - https://doi.org/10.5281/zenodo.4064408
+      - https://zenodo.org/api/records/4064408
+      - https://github.com/dgaddy/silent_speech
+      - https://raw.githubusercontent.com/dgaddy/silent_speech/main/README.md
+      - https://raw.githubusercontent.com/dgaddy/silent_speech/main/LICENSE
+    note: >-
+      CS-ETS introduces a model and alignment protocol rather than a new
+      dataset. This audit adds the previously missing official Silent Speech
+      EMG family. The paper does not publish its exact train/test row manifest
+      or listener-study records, so the index does not imply those derived
+      artifacts are released.
+
   musebench_audiovisual_arts_understanding:
     paper: https://arxiv.org/abs/2606.30026
     title: "MuseBench: Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs"
@@ -18488,6 +18524,66 @@ benchmarks:
       - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/README.md
       - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/LICENSE
       - https://api.github.com/repos/yucongzh/ASD_Benchmark
+
+  - id: silent_speech_emg
+    name: Silent Speech EMG
+    full_name: "Silent Speech EMG: Facial Electromyography Recordings for Voicing Silent Speech"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - multimodal_speech
+      - assistive_speech_technology
+    tasks:
+      - emg_to_speech_synthesis
+      - silent_speech_recognition
+      - articulatory_to_acoustic_mapping
+      - open_vocabulary_speech_generation
+      - silent_voiced_emg_alignment
+    official:
+      dataset: https://doi.org/10.5281/zenodo.4064408
+      repo: https://github.com/dgaddy/silent_speech
+      paper: https://aclanthology.org/2020.emnlp-main.445/
+      improved_model_paper: https://aclanthology.org/2021.acl-short.23/
+      recent_evaluation: https://arxiv.org/abs/2607.18629
+    download:
+      access: public_ungated_large_archive_opt_in
+      primary:
+        - https://zenodo.org/records/4064408
+      examples:
+        - 'scripts/download/silent_speech_emg.sh'
+        - 'SILENT_SPEECH_EMG_DOWNLOAD_ARCHIVE=1 scripts/download/silent_speech_emg.sh'
+      notes: >-
+        The official Zenodo release contains one approximately 3.92 GB
+        emg_data.tar.gz archive with facial EMG and audio from silent and
+        vocalized English speech by one speaker. The official repository
+        describes approximately 19 hours of open-vocabulary recordings and
+        supplies fixed evaluation manifests, preprocessing, synthesis, direct
+        recognition, and ASR-scored evaluation code. The helper downloads
+        Zenodo metadata, official README/LICENSE files, and paper pages by
+        default. The corpus archive requires
+        SILENT_SPEECH_EMG_DOWNLOAD_ARCHIVE=1 and is verified against the
+        official MD5 checksum.
+    license:
+      data: CC-BY-4.0
+      code: MIT
+      notes: >-
+        Zenodo declares the corpus CC BY 4.0 and the official repository
+        declares its code MIT. Preserve creator attribution and citation.
+        Because the release contains biometric facial-muscle signals and a
+        participant's voice, downstream reuse should also consider privacy,
+        biometric-data, and research-ethics obligations even though the
+        official record is public.
+    sources:
+      - https://doi.org/10.5281/zenodo.4064408
+      - https://zenodo.org/records/4064408
+      - https://zenodo.org/api/records/4064408
+      - https://github.com/dgaddy/silent_speech
+      - https://raw.githubusercontent.com/dgaddy/silent_speech/main/README.md
+      - https://raw.githubusercontent.com/dgaddy/silent_speech/main/LICENSE
+      - https://api.github.com/repos/dgaddy/silent_speech
+      - https://aclanthology.org/2020.emnlp-main.445/
+      - https://aclanthology.org/2021.acl-short.23/
+      - https://arxiv.org/abs/2607.18629
 
   - id: birdclef_2026
     name: BirdCLEF++ 2026
