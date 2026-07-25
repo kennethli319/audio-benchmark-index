@@ -72,7 +72,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 278 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 279 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -114,14 +114,19 @@ now return not found. The index records that upstream outage without
 substituting an unofficial mirror or publishing a dead download helper.
 
 The July 2026 Light-MER paper's nine-family multimodal emotion evaluation is
-also inventoried. Its public CH-SIMS and CMU-MOSI families are now indexed.
+also inventoried. Its public CH-SIMS, CMU-MOSI, and CMU-MOSEI families are now
+indexed.
 CMU-MOSI contains 2,199 English opinion segments from 93 YouTube review videos;
 the official CMU SDK releases labels and anonymized processed features, while
 MultiBench provides an additional word-aligned processed package. Raw source
 videos are not redistributed. The helper saves primary-source documentation
 and keeps toolkit clones opt-in. Both repositories are MIT-licensed, but the
 official sources do not expressly license the MOSI data or source media, so
-dataset terms remain unspecified.
+dataset terms remain unspecified. CMU-MOSEI covers more than 65 hours from
+more than 1,000 speakers across 250 topics, with sentiment and six
+non-exclusive emotion scores. Its official SDK and MultiBench releases expose
+processed features and labels, while data and source-media terms likewise
+remain unspecified.
 
 The July 2026 GigaChat Audio report is inventoried across sections 3.6 and
 4.1. Its AudioGrounding and TimeGround-1M evaluations map to existing public
@@ -991,6 +996,7 @@ Current coverage includes:
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
 | [CH-SIMS](https://aclanthology.org/2020.acl-main.343/) | Multimodal and modality-specific sentiment analysis | Official MMSA shared Drive folders contain raw video, processed features, and labels; helper downloads primary-source metadata and keeps the toolkit clone opt-in | MMSA code is MIT; dataset media and annotation terms are not expressly specified |
 | [CMU-MOSI](https://arxiv.org/abs/1606.06259) | Multimodal sentiment intensity and subjectivity analysis | Official CMU Multimodal SDK provides labels and anonymized processed acoustic, visual, and language features; MultiBench provides a word-aligned processed package; helper saves docs/metadata and makes toolkit clones opt-in | SDK and MultiBench code are MIT, but data terms are not expressly specified; raw YouTube videos are not redistributed and source-media/privacy rights remain separate |
+| [CMU-MOSEI](https://aclanthology.org/P18-1208/) | Multimodal sentiment and emotion-intensity analysis | Official CMU Multimodal SDK provides sentiment/six-emotion labels and processed acoustic, visual, and language sequences for more than 65 hours of video; MultiBench provides a word-aligned processed package; helper saves docs/definitions and keeps toolkit clones opt-in | SDK and MultiBench code are MIT, but data terms are not expressly specified; source YouTube media, creator, platform, and privacy rights remain separate |
 | [SpEmoC](https://skvipparthi.com/spemoc.html) | Multimodal speaker-segment emotion recognition | Official project and paper document 30,000 refined clips from 306,544 raw segments across 3,100 English-language movies and TV series; full media access requires a signed requestor and faculty/PI agreement sent from an institutional address, and the helper only saves public documentation | Custom non-commercial academic agreement prohibits redistribution; source movie/TV copyrights remain with their owners; public repository code and split/metadata terms are unspecified |
 | [EmoPrefer](https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer) | Multimodal emotion-description preference evaluation | Public original/V2 pairwise annotation tables (574 unanimous pairs and 2,096 individual-annotator pairs) plus reverse-order and generator-name audit variants; source audio/video remains separately gated through MER2025, while the helper downloads only public annotations/docs | Official subdirectory is Apache-2.0 but says non-commercial research only; gated MER2025 adds CC BY-NC 4.0, academic-only, no-redistribution/no-modification terms; audit code is MIT |
 | [OV-MERD](https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER) | Open-vocabulary multimodal emotion recognition | Official gated [MER2025 release](https://huggingface.co/datasets/MERChallenge/MER2025) with acoustic/visual clues, descriptions, and free-form labels spanning 236 emotion categories; helper saves public docs/metadata only and leaves the approximately 442 GB repository manual | CC BY-NC 4.0 plus academic-only, non-commercial, no-redistribution, and no-modification gated terms; repository code is Apache-2.0 with a non-commercial research-preview notice, and source movie/TV rights remain separate |
@@ -1250,6 +1256,9 @@ MELD_DOWNLOAD_FEATURES=1 scripts/download/meld.sh
 scripts/download/cmu_mosi.sh
 CMU_MOSI_CLONE_SDK=1 scripts/download/cmu_mosi.sh
 CMU_MOSI_CLONE_MULTIBENCH=1 scripts/download/cmu_mosi.sh
+scripts/download/cmu_mosei.sh
+CMU_MOSEI_CLONE_SDK=1 scripts/download/cmu_mosei.sh
+CMU_MOSEI_CLONE_MULTIBENCH=1 scripts/download/cmu_mosei.sh
 ```
 
 Speech/music/noise classification:

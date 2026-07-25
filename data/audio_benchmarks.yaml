@@ -175,8 +175,8 @@ paper_audits:
         index_id: cmu_mosi
         status: public_processed_features
       - cited_as: CMU-MOSEI
-        index_id: null
-        status: public_not_yet_separately_indexed
+        index_id: cmu_mosei
+        status: public_processed_features
       - cited_as: CH-SIMS
         index_id: ch_sims
         status: public_manual_drive
@@ -191,21 +191,25 @@ paper_audits:
       Section 4.1 evaluates nine multimodal emotion and sentiment families.
       Section 5.1 reports HIT for basic emotion recognition, weighted average
       F1 for sentiment analysis, and Fs for the OV-MERD+ open-vocabulary task.
-      This increment adds the missing public CH-SIMS family; the remaining
-      unindexed public families should be traced separately rather than bundled
-      into one helper.
+      CH-SIMS, CMU-MOSI, and CMU-MOSEI are separately indexed from their
+      primary releases. The remaining unindexed public families should be
+      traced separately rather than bundled into one helper.
     license_note: >-
       Access and terms differ across the nine families. In particular,
-      CH-SIMS is distributed through shared Drive folders while the official
-      MMSA repository's MIT license clearly covers repository code but does
-      not expressly license the dataset media. Existing MELD, IEMOCAP, and
-      OV-MERD entries retain their own media and access caveats.
+      CH-SIMS and processed CMU-MOSEI packages are distributed through shared
+      Drive folders. Their toolkit MIT licenses clearly cover repository code
+      but do not expressly license dataset annotations, features, or source
+      media. Existing MELD, IEMOCAP, and OV-MERD entries retain their own media
+      and access caveats.
     sources:
       - https://arxiv.org/abs/2607.12787
       - https://arxiv.org/html/2607.12787v1#S4.SS1
       - https://github.com/GAIR-Lab/Light-MER
       - https://aclanthology.org/2020.acl-main.343/
       - https://github.com/thuiar/MMSA
+      - https://aclanthology.org/P18-1208/
+      - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+      - https://github.com/pliang279/MultiBench
 
   audio_visual_flamingo_audio_evaluation:
     paper: https://arxiv.org/abs/2607.16107
@@ -9786,6 +9790,69 @@ benchmarks:
       - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/master/mmsdk/mmdatasdk/dataset/standard_datasets/CMU_MOSI/cmu_mosi.py
       - https://github.com/pliang279/MultiBench
       - https://raw.githubusercontent.com/pliang279/MultiBench/main/README.md
+
+  - id: cmu_mosei
+    name: CMU-MOSEI
+    full_name: "CMU-MOSEI: CMU Multimodal Opinion Sentiment and Emotion Intensity"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - audio_visual_understanding
+      - speech_emotion_recognition
+    tasks:
+      - multimodal_sentiment_analysis
+      - multimodal_emotion_recognition
+      - audio_sentiment_analysis
+      - speech_emotion_recognition
+      - audio_visual_emotion_recognition
+      - multimodal_representation_learning
+    official:
+      paper: https://aclanthology.org/P18-1208/
+      doi: https://doi.org/10.18653/v1/P18-1208
+      sdk: https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+      processed_release: https://github.com/pliang279/MultiBench
+      processed_data: https://drive.google.com/drive/folders/1A_hTmifi824gypelGobgl2M-5Rw9VWHv
+    download:
+      primary:
+        - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+        - https://github.com/pliang279/MultiBench
+        - https://drive.google.com/drive/folders/1A_hTmifi824gypelGobgl2M-5Rw9VWHv
+      examples:
+        - 'scripts/download/cmu_mosei.sh'
+        - 'CMU_MOSEI_CLONE_SDK=1 scripts/download/cmu_mosei.sh'
+        - 'CMU_MOSEI_CLONE_MULTIBENCH=1 scripts/download/cmu_mosei.sh'
+      notes: >-
+        The official SDK describes more than 65 hours of annotated YouTube
+        monologue video from more than 1,000 speakers and 250 topics. Each
+        sentence has a sentiment score and six non-exclusive emotion scores
+        for happiness, sadness, anger, surprise, disgust, and fear. The SDK
+        publishes labels plus processed acoustic, visual, and language
+        computational sequences; MultiBench provides an additional
+        word-aligned processed package through Google Drive. The helper saves
+        official documentation, dataset definitions, and repository metadata
+        only. Cloning either toolkit is opt-in, and the Drive package remains
+        a manual download.
+    license:
+      data: not_specified
+      code: MIT
+      notes: >-
+        The CMU Multimodal SDK and MultiBench repositories are MIT-licensed,
+        but neither repository expressly applies that license to MOSEI
+        annotations, processed features, or source YouTube media. Treat
+        dataset terms as unspecified and review creator, platform, privacy,
+        and media rights before reuse, redistribution, or commercial use.
+    sources:
+      - https://aclanthology.org/P18-1208/
+      - https://aclanthology.org/P18-1208.pdf
+      - https://doi.org/10.18653/v1/P18-1208
+      - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/main/README.md
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/main/LICENSE
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/main/mmsdk/mmdatasdk/dataset/standard_datasets/CMU_MOSEI/README.md
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/main/mmsdk/mmdatasdk/dataset/standard_datasets/CMU_MOSEI/cmu_mosei.py
+      - https://github.com/pliang279/MultiBench
+      - https://raw.githubusercontent.com/pliang279/MultiBench/main/README.md
+      - https://raw.githubusercontent.com/pliang279/MultiBench/main/LICENSE
 
   - id: spemoc
     name: SpEmoC
