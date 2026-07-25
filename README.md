@@ -110,6 +110,17 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 FlowSonic paper is recorded as two unreleased, paper-specific
+music-editing protocols rather than a benchmark family. Section 4.1 describes
+separate 40-clip timbre-transfer and genre-transfer sets manually selected
+from public YouTube recordings, resampled to 16 kHz, and standardized to
+10 seconds. The official repository publishes implementation code, aggregate
+logs, and one example WAV, but no 80-item manifest, source URLs, source or
+target prompts, curated evaluation audio, generated comparison corpus, or
+listener records. Public YouTube availability does not release the authors'
+exact selection or clear uploader and media rights, and the repository states
+no license, so the index adds neither a dataset link nor a helper.
+
 The July 2026 layer-wise decision-fusion paper is inventoried across sections
 3-5. Its in-domain evaluation maps to the existing ASVspoof 2019 Logical Access
 family, while its cross-dataset evaluation adds the public, ungated

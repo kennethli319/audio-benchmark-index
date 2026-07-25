@@ -9,6 +9,58 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  flowsonic_music_editing_evaluation:
+    paper: https://arxiv.org/abs/2607.17526
+    title: "FlowSonic: Stable Zero-Shot Music Editing via High-Order Trajectory Integration"
+    sections: 4.1-4.4
+    status: audited_unreleased_paper_specific_protocols
+    evaluated_sets:
+      - cited_as: timbre-transfer dataset
+        status: curated_youtube_selection_unreleased
+        note: >-
+          Section 4.1 describes 40 manually selected public YouTube recordings
+          spanning electric guitar, flute, piano, violin, and acoustic guitar.
+          Audio is resampled to 16 kHz and trimmed or segmented to uniform
+          10-second clips. The paper evaluates instrument transformation with
+          CLAP-based semantic similarity, chroma preservation, Fréchet Audio
+          Distance, and listener ratings.
+      - cited_as: genre-transfer dataset
+        status: curated_youtube_selection_unreleased
+        note: >-
+          Section 4.1 describes a separate 40-clip selection spanning pop,
+          jazz, rock, and hip-hop, processed to the same 16 kHz and 10-second
+          format. The paper evaluates genre transformation with the same
+          objective and subjective protocol.
+    release_audit:
+      status: implementation_public_benchmark_data_unreleased
+      note: >-
+        The official repository publishes inference and objective-evaluation
+        code, aggregate result logs, and one example WAV, but its current main
+        tree contains no 80-item source manifest, YouTube URLs, source or
+        target prompts, curated evaluation clips, generated comparison corpus,
+        listener records, or benchmark split files. The README documents model
+        execution rather than a dataset download or reconstruction recipe.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      repository: not_specified
+      evaluation_data: not_specified_unreleased
+      source_media: youtube_and_uploader_rights_apply
+    sources:
+      - https://arxiv.org/abs/2607.17526
+      - https://arxiv.org/html/2607.17526v1#S4.SS1
+      - https://arxiv.org/html/2607.17526v1#S4.SS3
+      - https://arxiv.org/html/2607.17526v1#S4.SS4
+      - https://github.com/aliramsy/FlowSonic
+      - https://raw.githubusercontent.com/aliramsy/FlowSonic/main/README.md
+      - https://api.github.com/repos/aliramsy/FlowSonic
+      - https://api.github.com/repos/aliramsy/FlowSonic/git/trees/main?recursive=1
+    note: >-
+      FlowSonic introduces a model and two controlled evaluation protocols,
+      not a verifiably released benchmark family. Public availability of the
+      implementation and the original YouTube recordings does not release the
+      authors' exact selections or derived clips. This audit therefore adds no
+      benchmark count, dataset download link, or helper script.
+
   layer_wise_decision_fusion_fake_audio:
     paper: https://arxiv.org/abs/2607.20023
     title: Layer-Wise Decision Fusion for Fake Audio Detection Using XLS-R
