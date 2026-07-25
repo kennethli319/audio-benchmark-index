@@ -72,7 +72,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 280 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 281 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -114,8 +114,12 @@ now return not found. The index records that upstream outage without
 substituting an unofficial mirror or publishing a dead download helper.
 
 The July 2026 Light-MER paper's nine-family multimodal emotion evaluation is
-also inventoried. Its public CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI
-families are now indexed.
+also inventoried. Its public MER2023, CH-SIMS, CH-SIMS v2, CMU-MOSI, and
+CMU-MOSEI families are now indexed. MER2023 provides multi-label,
+corrupted-modality, and semi-supervised multimodal emotion tracks through a
+request-gated Hugging Face release. The roughly 140 GB, password-protected
+repository is academic-only and prohibits redistribution or modification
+without written consent; its baseline repository states no code license.
 CH-SIMS v2 releases 4,402 supervised multimodal/unimodal sentiment segments
 and 10,161 unlabeled segments through official Drive folders. The helper saves
 primary-source metadata and keeps the repository clone opt-in; the official
@@ -998,6 +1002,7 @@ Current coverage includes:
 | [TESS](https://doi.org/10.5683/SP2/E8H2MF) | Speech emotion recognition and auditory emotion perception | Owner-hosted University of Toronto Dataverse release with 2,800 acted-emotion WAV stimuli; helper saves official metadata by default and makes the complete ZIP opt-in | CC BY-NC 4.0; preserve attribution and review identifiable-voice ethics for downstream use |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
+| [MER2023](https://arxiv.org/abs/2304.08981) | Multi-label, modality-robust, and semi-supervised multimodal emotion recognition | Request-gated [MERChallenge/MER2023](https://huggingface.co/datasets/MERChallenge/MER2023) with 3,373 Train&Val clips, 823 MER-MULTI/MER-NOISE test clips, and 73,148 unlabeled MER-SEMI clips; helper saves only public paper/repository/API metadata and leaves the roughly 140 GB password-protected release manual | CC BY-NC 4.0 plus academic-only, no-redistribution, and no-modification gated terms; baseline code license is unspecified and movie/TV source-media rights remain separate |
 | [CH-SIMS](https://aclanthology.org/2020.acl-main.343/) | Multimodal and modality-specific sentiment analysis | Official MMSA shared Drive folders contain raw video, processed features, and labels; helper downloads primary-source metadata and keeps the toolkit clone opt-in | MMSA code is MIT; dataset media and annotation terms are not expressly specified |
 | [CH-SIMS v2](https://thuiar.github.io/sims.github.io/chsims) | Multimodal, modality-specific, and semi-supervised sentiment analysis | Official release provides 4,402 supervised and 10,161 unlabeled Chinese video segments through Google Drive and Baidu; helper saves primary-source metadata and keeps the repository clone opt-in | Official project, paper, and repository state no data or code license; review source-media, speaker, privacy, and platform rights |
 | [CMU-MOSI](https://arxiv.org/abs/1606.06259) | Multimodal sentiment intensity and subjectivity analysis | Official CMU Multimodal SDK provides labels and anonymized processed acoustic, visual, and language features; MultiBench provides a word-aligned processed package; helper saves docs/metadata and makes toolkit clones opt-in | SDK and MultiBench code are MIT, but data terms are not expressly specified; raw YouTube videos are not redistributed and source-media/privacy rights remain separate |

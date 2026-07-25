@@ -160,8 +160,8 @@ paper_audits:
     last_verified: 2026-07-24
     evaluated_sets:
       - cited_as: MER2023
-        index_id: null
-        status: challenge_release_not_yet_separately_indexed
+        index_id: mer2023
+        status: public_request_gated
       - cited_as: MER2024
         index_id: null
         status: challenge_release_not_yet_separately_indexed
@@ -191,9 +191,9 @@ paper_audits:
       Section 4.1 evaluates nine multimodal emotion and sentiment families.
       Section 5.1 reports HIT for basic emotion recognition, weighted average
       F1 for sentiment analysis, and Fs for the OV-MERD+ open-vocabulary task.
-      CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI are separately indexed
-      from their primary releases. The remaining unindexed public families
-      should be traced separately rather than bundled into one helper.
+      MER2023, CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI are separately
+      indexed from their primary releases. The remaining unindexed public
+      family should be traced separately rather than bundled into one helper.
     license_note: >-
       Access and terms differ across the nine families. In particular,
       CH-SIMS and processed CMU-MOSEI packages are distributed through shared
@@ -9683,6 +9683,64 @@ benchmarks:
       - https://huggingface.co/datasets/declare-lab/MELD
       - https://aclanthology.org/P19-1050/
       - https://arxiv.org/abs/1810.02508
+
+  - id: mer2023
+    name: MER2023
+    full_name: "MER 2023: Multi-label Learning, Modality Robustness, and Semi-Supervised Learning"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+      - paralinguistic_speech_evaluation
+    tasks:
+      - multimodal_emotion_recognition
+      - discrete_emotion_classification
+      - dimensional_emotion_recognition
+      - modality_robustness
+      - semi_supervised_emotion_recognition
+      - audio_visual_emotion_understanding
+    official:
+      paper: https://arxiv.org/abs/2304.08981
+      repo: https://github.com/CASIA-Affective-Computing-Group/MER2023-Baseline
+      dataset: https://huggingface.co/datasets/MERChallenge/MER2023
+      dataset_api: https://huggingface.co/api/datasets/MERChallenge/MER2023
+    download:
+      primary:
+        - https://huggingface.co/datasets/MERChallenge/MER2023
+        - https://github.com/CASIA-Affective-Computing-Group/MER2023-Baseline
+      examples:
+        - 'scripts/download/mer2023.sh'
+      notes: >-
+        The request-gated release extends CHEAVD and provides 3,373 labeled
+        Train&Val clips, 411 MER-MULTI test clips, 412 corrupted-modality
+        MER-NOISE test clips, and MER-SEMI with 834 labeled plus 73,148
+        unlabeled clips. MER-MULTI evaluates joint discrete-emotion and
+        valence prediction, MER-NOISE tests robustness to noisy audio and
+        blurred video, and MER-SEMI evaluates semi-supervised discrete emotion
+        recognition. The helper saves public paper, repository, and Hugging
+        Face API metadata only. The current Hugging Face repository is about
+        140 GB, password-protected, and requires approval, so benchmark files
+        are left as a manual download.
+    license:
+      data: CC-BY-NC-4.0_with_additional_gated_terms
+      code: not_specified
+      notes: >-
+        The current Hugging Face card declares CC BY-NC 4.0 and limits access
+        to academic research. Its gate also prohibits handing the database or
+        derived labeling files to third parties and prohibits modification
+        without written consent. The challenge paper describes a separate EULA
+        with academic-only, no-editing, and no-upload conditions. The baseline
+        repository has no LICENSE file. Clips were collected from movies and
+        television, so underlying media, performer, privacy, and platform
+        rights remain separate.
+    sources:
+      - https://arxiv.org/abs/2304.08981
+      - https://arxiv.org/e-print/2304.08981
+      - https://github.com/CASIA-Affective-Computing-Group/MER2023-Baseline
+      - https://raw.githubusercontent.com/CASIA-Affective-Computing-Group/MER2023-Baseline/master/README.md
+      - https://api.github.com/repos/CASIA-Affective-Computing-Group/MER2023-Baseline
+      - https://huggingface.co/datasets/MERChallenge/MER2023
+      - https://huggingface.co/api/datasets/MERChallenge/MER2023
 
   - id: ch_sims
     name: CH-SIMS
