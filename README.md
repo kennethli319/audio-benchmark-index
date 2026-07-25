@@ -105,6 +105,14 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 Audio-Visual Flamingo report is inventoried across sections 3-4.
+Its audio, ASR, and omni-modal evaluations map to eleven existing families,
+including MMAR, MMSU, MMAU, WorldSense, DailyOmni, MMOU, and the report's ASR
+corpora. One named source cannot currently be added safely: the citation maps
+TEDLIUM to TED-LIUM Release 3, but the official OpenSLR SLR51 page and archive
+now return not found. The index records that upstream outage without
+substituting an unofficial mirror or publishing a dead download helper.
+
 The July 2026 GigaChat Audio report is inventoried across sections 3.6 and
 4.1. Its AudioGrounding and TimeGround-1M evaluations map to existing public
 families. The AMI source corpus is public, but the paper's 150 automatically
