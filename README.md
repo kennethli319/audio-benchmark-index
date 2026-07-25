@@ -114,6 +114,16 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 TTSYoruba paper is recorded as a public-system but unreleased-data
+audit. Its Section 6 evaluation has 50 listeners, 500 naturalness and
+intelligibility ratings, four Yoruba-name categories, and 100 matched
+geminated-versus-caron/circumflex observations. The aggregate protocol and
+scores are public, as are the deployed [TTSYoruba](https://ttsyoruba.com/)
+service and a [CC BY-NC 4.0 rule document](https://doi.org/10.5281/zenodo.21500364),
+but the exact stimuli, row-level ratings, listener records, 651-unit diphone
+inventory, and implementation are not released as benchmark artifacts. The
+index therefore adds no dataset entry or inferred download helper.
+
 The June 2026 MuseBench paper is recorded as an announced audiovisual-arts
 protocol rather than a downloadable benchmark family. Its official
 [project page](https://musebench.github.io/) describes 4,016 single- and

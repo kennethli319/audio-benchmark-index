@@ -9,6 +9,61 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  ttsyoruba_listener_evaluation:
+    paper: https://arxiv.org/abs/2607.18317
+    title: "A Situational Speech Synthesizer for Yoruba: System Design, Phonological Rule Architecture, and Orthographic Extensions for Contour Tones"
+    sections: 3, 6, and 7
+    status: audited_public_system_unreleased_evaluation_artifacts
+    evaluated_sets:
+      - cited_as: TTSYoruba 651-unit diphone corpus
+        status: deployed_system_assets_not_released_as_dataset
+        protocol: >-
+          The single-speaker inventory contains 630 consonant-vowel diphones
+          spanning 18 consonants, seven vowels, and five tone variants, plus
+          21 word-initial standalone-vowel units. The paper documents the
+          recording setup and file-key rules, and the public TTSYoruba service
+          exposes synthesized output, but it does not provide a downloadable
+          corpus archive or reusable item manifest.
+      - cited_as: TTSYoruba MOS listener study
+        status: paper_specific_evaluation_unreleased
+        protocol: >-
+          Fifty participants each rated ten synthesized Yoruba-name stimuli
+          for naturalness and intelligibility on five-point ITU-T P.800-style
+          scales. The design covers standard tonal names, syllabic nasals, and
+          matched geminated versus caron/circumflex contour forms, yielding
+          500 scored ratings and 100 matched contour-form observations. The
+          paper reports aggregate scores and statistical tests, but not the
+          exact randomized item assignments, audio package, row-level ratings,
+          replay logs, comments, or participant records.
+    public_interfaces:
+      - https://ttsyoruba.com/
+      - https://www.yorubaname.com/
+    release_audit:
+      rule_document:
+        url: https://doi.org/10.5281/zenodo.21500364
+        status: public_cc_by_nc_4_0
+        contents: one_document_describing_grapheme_to_audio_mapping_and_rules
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+    license:
+      paper_and_rule_document: CC-BY-NC-4.0
+      diphone_audio_and_service: not_specified
+      listener_study_records: not_specified_unreleased
+      human_subject_data: consent_and_privacy_terms_require_review
+    sources:
+      - https://arxiv.org/abs/2607.18317
+      - https://arxiv.org/pdf/2607.18317
+      - https://ttsyoruba.com/
+      - https://www.yorubaname.com/
+      - https://doi.org/10.5281/zenodo.21500364
+      - https://zenodo.org/api/records/21500364
+    note: >-
+      TTSYoruba is a public synthesis service and the authors release a
+      noncommercial rule-architecture document, but neither is a released
+      benchmark dataset. This audit preserves the paper's reproducible
+      aggregate listener protocol while avoiding a benchmark-family entry or
+      download helper for absent stimuli, ratings, diphone assets, and code.
+
   aad_crf_auditory_attention_decoding:
     paper: https://arxiv.org/abs/2607.18614
     title: "End-to-End Markov State Sequence Learning for Auditory Attention Decoding"
