@@ -264,6 +264,11 @@ scripts/download/castella.sh
 OMNIBENCH_DOWNLOAD_HF=1 scripts/download/omnibench.sh
 OMNIBENCH_CLONE_REPO=1 scripts/download/omnibench.sh
 
+# MMAR downloads its released MMAR-Rubrics metadata, docs, and evaluation
+# scripts by default. The approximately 2.99 GB Hugging Face audio snapshot is
+# opt-in; running the rubric evaluator separately requires an OpenAI API key.
+MMAR_DOWNLOAD_AUDIO=1 scripts/download/mmar.sh
+
 # CoMind saves the official page, paper metadata, first-party downloader, and
 # annotation manifest by default. Its approximately 5.0 MiB annotations are
 # opt-in; use the saved official downloader manually for large media parts.

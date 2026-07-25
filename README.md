@@ -863,7 +863,7 @@ Current coverage includes:
 | Benchmark | Task area | Download pointer | Upstream license / terms |
 | --- | --- | --- | --- |
 | [MMAU](https://github.com/Sakshi113/MMAU) | Audio understanding | [MMAU-test-mini](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini), [MMAU-test](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test) | HF cards list `cc-by-nc-4.0` for test-mini and `mit` for test; code repo is Apache-2.0 |
-| [MMAR](https://github.com/ddlBoJack/MMAR) | Audio understanding | [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) | HF card lists `cc-by-nc-4.0`; code repo had no detected license |
+| [MMAR / MMAR-Rubrics](https://github.com/ddlBoJack/MMAR) | Deep audio reasoning and chain-of-thought quality evaluation | Public 1,000-item benchmark plus released instance-level reasoning/rubric metadata and evaluator from the [Interspeech 2026 Audio Reasoning Challenge](https://arxiv.org/abs/2602.14224); helper downloads the approximately 2.7 MB metadata/docs/scripts by default while the approximately 2.99 GB [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) audio snapshot is opt-in | HF card declares CC BY-NC 4.0 for its snapshot, but the GitHub repository states no separate license for later rubric annotations or code; original media rights and platform terms remain relevant |
 | [MMSU](https://github.com/dingdongwang/MMSU) | Audio understanding | [ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU) | HF card lists `mit`; code repo had no detected license |
 | [Big Bench Audio](https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio) | Spoken question answering and reasoning | Public, ungated 1,000-recording English set with 250 questions each from the BIG-Bench Hard formal-fallacies, navigate, object-counting, and web-of-lies tasks; helper downloads official docs/API metadata and Xiaomi's evaluator loader by default while the approximately 612 MB repository snapshot is opt-in | HF card declares MIT and Xiaomi evaluator code is Apache-2.0; review inherited BIG-Bench Hard task terms and OpenAI/Azure/AWS synthesized-voice output conditions |
 | [MMAU-Pro](https://sonalkum.github.io/mmau-pro/) | Holistic audio understanding and reasoning | Public, ungated [gamma-lab-umd/MMAU-Pro](https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro) with 5,305 expert-authored QA items across 49 speech, sound, music, long-form, multi-audio, and spatial skills; helper downloads official docs/evaluator/metadata by default while the approximately 47.5 GB snapshot is opt-in | HF card declares CC BY-NC 4.0, but in-the-wild source media and the EasyCom-derived spatial subset retain upstream terms; evaluator code has no stated license |
@@ -1161,6 +1161,8 @@ Hugging Face datasets:
 from datasets import load_dataset
 
 mmau_mini = load_dataset("gamma-lab-umd/MMAU-test-mini")
+# Loads the original HF snapshot; use scripts/download/mmar.sh for the later
+# MMAR-Rubrics JSONL without downloading audio.
 mmar = load_dataset("BoJack/MMAR")
 mmsu = load_dataset("ddwang2000/MMSU")
 fleurs_en = load_dataset("google/fleurs", "en_us")
@@ -1199,7 +1201,8 @@ DYNAMIC_SUPERB_CLONE_REPO=1 scripts/download/dynamic_superb.sh
 Hugging Face CLI:
 
 ```bash
-huggingface-cli download --repo-type dataset BoJack/MMAR --local-dir data/MMAR
+scripts/download/mmar.sh
+MMAR_DOWNLOAD_AUDIO=1 scripts/download/mmar.sh
 huggingface-cli download --repo-type dataset Honggao/URO-Bench URO-Bench-data.zip --local-dir data/URO-Bench
 ```
 

@@ -2888,23 +2888,55 @@ benchmarks:
     tasks:
       - audio_question_answering
       - audio_reasoning
+      - chain_of_thought_reasoning_evaluation
     official:
       repo: https://github.com/ddlBoJack/MMAR
       paper: https://arxiv.org/abs/2505.13032
       challenge: https://audio-reasoning-challenge.github.io/
+      challenge_report: https://arxiv.org/abs/2602.14224
+      challenge_leaderboard: https://audio-reasoning-challenge.github.io/leaderboard/
     download:
       primary:
+        - https://github.com/ddlBoJack/MMAR/blob/main/MMAR-meta.jsonl
         - https://huggingface.co/datasets/BoJack/MMAR
       examples:
+        - 'scripts/download/mmar.sh'
+        - 'MMAR_DOWNLOAD_AUDIO=1 scripts/download/mmar.sh'
         - 'from datasets import load_dataset; ds = load_dataset("BoJack/MMAR")'
-        - 'huggingface-cli download --repo-type dataset BoJack/MMAR --local-dir data/MMAR'
     license:
       data: cc-by-nc-4.0
       code: not_specified
-      notes: GitHub repo did not expose a detected license; HF dataset card lists cc-by-nc-4.0.
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0 for its original metadata
+        and audio snapshot. The GitHub repository has no license file or
+        detected GitHub license, so do not assume that declaration separately
+        licenses the later MMAR-Rubrics annotations or evaluation code.
+        Original in-the-wild video/audio rights and platform terms also apply.
+    access:
+      status: public_ungated
+      requirements:
+        - Full audio is opt-in because the Hugging Face API reports approximately 2.99 GB of repository storage.
+        - Running the official MMAR-Rubrics evaluator requires an OpenAI API key and incurs external model usage.
+      notes: >-
+        The official repository releases a 1,000-item MMAR-meta.jsonl with
+        ground-truth reasoning, cues, and five instance-specific rubric
+        criteria per item, plus accuracy and rubric evaluation scripts.
+        MMAR-Rubrics scores a reasoning chain only when its final answer is
+        correct. The official challenge runs the judge five times and averages
+        the middle three results. The helper downloads this approximately
+        2.7 MB metadata and evaluation documentation by default without audio
+        or executing the API-backed evaluator.
     sources:
       - https://github.com/ddlBoJack/MMAR
+      - https://raw.githubusercontent.com/ddlBoJack/MMAR/main/README.md
+      - https://raw.githubusercontent.com/ddlBoJack/MMAR/main/MMAR-meta.jsonl
+      - https://raw.githubusercontent.com/ddlBoJack/MMAR/main/code/evaluation_rubrics.py
       - https://huggingface.co/datasets/BoJack/MMAR
+      - https://huggingface.co/datasets/BoJack/MMAR/raw/main/README.md
+      - https://huggingface.co/api/datasets/BoJack/MMAR
+      - https://arxiv.org/abs/2505.13032
+      - https://arxiv.org/abs/2602.14224
+      - https://audio-reasoning-challenge.github.io/
 
   - id: mmsu
     name: MMSU
