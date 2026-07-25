@@ -8874,6 +8874,61 @@ benchmarks:
       - https://github.com/sberdevices/golos/blob/master/license/en_us.pdf
       - https://arxiv.org/abs/2106.10161
 
+  - id: ksc2
+    name: KSC2
+    full_name: "KSC2: An Industrial-Scale Open-Source Kazakh Speech Corpus"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - kazakh_speech_recognition
+      - code_switched_speech_recognition
+      - low_resource_asr
+    official:
+      homepage: https://issai.nu.edu.kz/kz-speech-corpus/
+      dataset: https://huggingface.co/datasets/issai/Kazakh_Speech_Corpus_2
+      doi: https://doi.org/10.48342/m90y-aj02
+      paper: https://doi.org/10.21437/Interspeech.2022-421
+      repo: https://github.com/IS2AI/ISSAI_SAIDA_Kazakh_ASR
+    download:
+      primary:
+        - https://huggingface.co/datasets/issai/Kazakh_Speech_Corpus_2
+        - https://issai.nu.edu.kz/kz-speech-corpus/
+      examples:
+        - 'scripts/download/ksc2.sh'
+        - 'KSC2_DOWNLOAD_HF=1 scripts/download/ksc2.sh'
+      notes: >-
+        The public, ungated Hugging Face release contains around 1,200 hours
+        and more than 600,000 transcribed Kazakh utterances, including
+        Kazakh-Russian code-switching. It is stored as ten multipart archive
+        files totaling about 80.8 GB. The helper downloads the official pages,
+        dataset card, API metadata, and repository README/license by default;
+        the full snapshot requires KSC2_DOWNLOAD_HF=1. GigaAM Multilingual
+        section 3.3 names KSC2 as public fine-tuning data, not as one of its
+        Common Voice/FLEURS evaluation sets.
+    license:
+      data: cc-by-4.0
+      code: cc-by-4.0
+      notes: >-
+        The ISSAI owner page and corpus DOI state CC BY 4.0 and explicitly
+        permit academic and commercial use with attribution. The Hugging Face
+        card's machine-readable MIT tag conflicts with the owner terms; use
+        CC BY 4.0 for the corpus. The linked recipe repository is also marked
+        CC BY 4.0, but component broadcast, podcast, parliament, KSC, and
+        KazakhTTS2 source rights should still be reviewed for redistribution.
+    sources:
+      - https://issai.nu.edu.kz/kz-speech-corpus/
+      - https://doi.org/10.48342/m90y-aj02
+      - https://www.isca-archive.org/interspeech_2022/mussakhojayeva22_interspeech.html
+      - https://doi.org/10.21437/Interspeech.2022-421
+      - https://huggingface.co/datasets/issai/Kazakh_Speech_Corpus_2
+      - https://huggingface.co/datasets/issai/Kazakh_Speech_Corpus_2/raw/main/README.md
+      - https://huggingface.co/api/datasets/issai/Kazakh_Speech_Corpus_2
+      - https://github.com/IS2AI/ISSAI_SAIDA_Kazakh_ASR
+      - https://api.github.com/repos/IS2AI/ISSAI_SAIDA_Kazakh_ASR
+      - https://arxiv.org/abs/2607.10371
+      - https://arxiv.org/html/2607.10371v1#S3.SS3.SSS1
+
   - id: primewords_chinese
     name: Primewords Chinese Corpus Set 1
     full_name: "Primewords Chinese Corpus Set 1"

@@ -121,6 +121,7 @@ scripts/download/thchs_30.sh
 scripts/download/primewords_chinese.sh
 scripts/download/pansori_tedxkr.sh
 scripts/download/golos.sh
+scripts/download/ksc2.sh
 scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
 scripts/download/voxpopuli.sh
@@ -719,6 +720,10 @@ GOLOS_DOWNLOAD_OPUS=1 scripts/download/golos.sh
 GOLOS_DOWNLOAD_MODEL=1 scripts/download/golos.sh
 GOLOS_DOWNLOAD_LMS=1 scripts/download/golos.sh
 GOLOS_OPENSLR_BASE_URL=https://openslr.elda.org/resources/114 GOLOS_DOWNLOAD_MODEL=1 scripts/download/golos.sh
+
+# KSC2 downloads official pages, cards, API metadata, and repository
+# documentation by default. Its approximately 80.8 GB multipart snapshot is opt-in.
+KSC2_DOWNLOAD_HF=1 scripts/download/ksc2.sh
 
 # VoxPopuli defaults to the English test split. Use another config/split explicitly.
 VOXPOPULI_CONFIG=en VOXPOPULI_SPLITS="test validation" scripts/download/voxpopuli.sh

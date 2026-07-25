@@ -78,7 +78,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 306 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 307 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -1287,6 +1287,7 @@ Current coverage includes:
 | [ST-CMDS](https://www.openslr.org/38/) | ASR | [OpenSLR SLR38](https://www.openslr.org/38/) page by default; 8.2 GiB Mandarin speech/transcript archive is opt-in | CC BY-NC-ND 4.0 |
 | [THCHS-30](https://www.openslr.org/18/) | ASR | [OpenSLR SLR18](https://www.openslr.org/18/) page by default; 6.4 GiB Mandarin speech/transcript, 1.9 GiB noisy test, and 24 MiB resource archives are opt-in | Apache License v2.0; OpenSLR description also says free to academic users |
 | [Golos](https://www.openslr.org/114/) | ASR | [OpenSLR SLR114](https://www.openslr.org/114/) page, SberDevices README/checksums/license PDFs by default; 18 GiB Opus speech archive and models are opt-in | Custom SberDevices Golos license PDFs; OpenSLR links the English/Russian license documents, so re-check before redistribution or commercial use |
+| [KSC2](https://issai.nu.edu.kz/kz-speech-corpus/) | Kazakh and Kazakh-Russian code-switched ASR | Public, ungated [issai/Kazakh_Speech_Corpus_2](https://huggingface.co/datasets/issai/Kazakh_Speech_Corpus_2) with around 1,200 hours and more than 600,000 utterances; helper saves docs/metadata by default and makes the approximately 80.8 GB multipart snapshot opt-in | ISSAI owner page and DOI state CC BY 4.0; HF card's MIT tag conflicts, so use owner terms and review component broadcast/podcast/KSC/KazakhTTS2 rights |
 | [Primewords Chinese Corpus Set 1](https://www.openslr.org/47/) | ASR | [OpenSLR SLR47](https://www.openslr.org/47/) page by default; 9.0 GiB Mandarin speech/transcript archive is opt-in | CC BY-NC-ND 4.0; OpenSLR says the corpus is free for academic use |
 | [Pansori-TEDxKR](https://www.openslr.org/58/) | ASR | [OpenSLR SLR58](https://www.openslr.org/58/) metadata by default; 174 MB Korean TEDx speech/transcript archive is opt-in | CC BY-NC-ND 4.0; derived from TEDx talks, so source media terms still apply |
 | [KeSpeech](https://github.com/tzyll/KeSpeech) | ASR | Baidu Pan link in repo, password `b6fy` | Custom terms: non-commercial, no adaptations, no third-party distribution |
