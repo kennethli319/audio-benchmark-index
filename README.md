@@ -73,7 +73,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 283 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 284 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -653,6 +653,15 @@ per-item scores. The public DESED and ESC-50 source corpora therefore do not
 reproduce the two derived DMix evaluations, and their respective upstream
 terms still apply.
 
+The July 2026 voice-concept bottleneck paper adds public clinical-voice
+coverage through the Perceptual Voice Qualities Database (PVQD). Section 3.1
+uses an 80:20 speaker split and VAD-derived vowel and sentence segments, while
+the official release provides 296 whole-speaker WAV files plus CAPE-V, GRBAS,
+and demographic spreadsheets. The index therefore links the public PVQD
+family without claiming that the paper's derived split or segments are
+released. Its Androids Corpus source is already indexed; TORGO remains a
+separate follow-up candidate.
+
 The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
 synchronization protocol, not a downloadable family. It describes 3,269
 in-the-wild videos and 38,390 temporal and semantic challenge samples, but the
@@ -1010,6 +1019,7 @@ Current coverage includes:
 | [VocalSet](https://zenodo.org/records/1193957) | Singing voice analysis | Official [Zenodo record](https://zenodo.org/records/1193957), DOI, and [ISMIR paper](https://archives.ismir.net/ismir2018/paper/000105.pdf); helper saves record metadata by default and makes the 2.1 GB archive opt-in | Zenodo lists CC BY 4.0; treat singer voice data with normal consent/attribution care |
 | [EmoV-DB](https://github.com/numediart/EmoV-DB) | Emotional speech synthesis and speech emotion | [OpenSLR SLR115](https://www.openslr.org/115/) per-speaker/per-emotion archives; helper saves docs/license by default and downloads selected archives only with opt-in | Custom non-commercial terms for research, teaching, scientific publication, and personal experimentation; commercial use requires contacting the owner |
 | [Androids Corpus](https://github.com/androidscorpus/data) | Speech-based depression detection | Public owner-hosted 3.69 GB corpus with 228 Italian recordings from 118 speakers, read and interview tasks, speaker metadata, turn segmentation, and official five-fold protocols; helper downloads docs by default and requires terms acknowledgment before the archive | Custom academic-research-only terms prohibit commercial use, redistribution, broadcasting, or making the corpus publicly available elsewhere; recordings contain sensitive health labels and identifiable voices |
+| [PVQD](https://data.mendeley.com/datasets/9dz247gnyb/4) | Clinical and perceptual voice-quality assessment | Public, ungated Mendeley Data v4 release with 296 whole-speaker WAV files and 13 CAPE-V, GRBAS, and demographic spreadsheets; helper downloads metadata by default, makes the approximately 0.6 MiB labels/docs opt-in, and keeps the complete approximately 514.5 MiB release behind a separate opt-in | CC BY 4.0; recordings contain identifiable human voices and clinical voice-quality information, so attribution, privacy, and health-data handling still require care |
 | [RAVDESS](https://zenodo.org/records/1188976) | Speech emotion recognition | [Zenodo record](https://zenodo.org/records/1188976); helper saves metadata by default and downloads audio-only speech/song ZIPs with opt-in | CC BY-NC-SA 4.0; commercial licenses are separate |
 | [TESS](https://doi.org/10.5683/SP2/E8H2MF) | Speech emotion recognition and auditory emotion perception | Owner-hosted University of Toronto Dataverse release with 2,800 acted-emotion WAV stimuli; helper saves official metadata by default and makes the complete ZIP opt-in | CC BY-NC 4.0; preserve attribution and review identifiable-voice ethics for downstream use |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |

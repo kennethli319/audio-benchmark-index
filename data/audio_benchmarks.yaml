@@ -15166,3 +15166,58 @@ benchmarks:
       - https://raw.githubusercontent.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/main/data/dataset_summary.csv
       - https://api.github.com/repos/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA
       - https://api.github.com/repos/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/git/trees/main?recursive=1
+
+  - id: pvqd
+    name: PVQD
+    full_name: "Perceptual Voice Qualities Database"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - speech_quality_assessment
+    tasks:
+      - clinical_voice_quality_assessment
+      - pathological_voice_assessment
+      - perceptual_voice_rating
+      - cape_v_prediction
+      - grbas_prediction
+    official:
+      dataset: https://data.mendeley.com/datasets/9dz247gnyb/4
+      doi: https://doi.org/10.17632/9dz247gnyb.4
+      paper: https://doi.org/10.1016/j.jvoice.2020.10.001
+    download:
+      primary:
+        - https://data.mendeley.com/datasets/9dz247gnyb/4
+      examples:
+        - 'scripts/download/pvqd.sh'
+        - 'PVQD_DOWNLOAD_ANNOTATIONS=1 scripts/download/pvqd.sh'
+        - 'PVQD_DOWNLOAD_ALL=1 scripts/download/pvqd.sh'
+      notes: >-
+        The public, ungated Mendeley Data v4 release contains 296 mono 44.1 kHz,
+        16-bit WAV recordings of sustained /a/ and /i/ vowels and six CAPE-V
+        sentences, plus 13 XLSX files with demographics and experienced
+        clinicians' CAPE-V and GRBAS ratings. The complete 310-file release is
+        approximately 514.5 MiB. The helper downloads the official dataset page,
+        DataCite DOI record, and live Mendeley file manifest by default.
+        PVQD_DOWNLOAD_ANNOTATIONS=1 fetches the approximately 0.6 MiB PDF/XLSX
+        documentation and labels; PVQD_DOWNLOAD_ALL=1 explicitly downloads the
+        complete release including identifiable clinical voice recordings.
+        The July 2026 voice-concept bottleneck paper uses an 80:20 speaker split
+        and derives per-utterance segments with voice activity detection; those
+        split and segment artifacts are not part of PVQD itself.
+    license:
+      data: CC-BY-4.0
+      code: not_applicable
+      notes: >-
+        Mendeley Data v4 and its DataCite DOI record declare CC BY 4.0. Preserve
+        attribution and modification notices. The recordings contain human
+        voices and clinical voice-quality information, and the release includes
+        demographics; lawful and ethical handling of identifiable and
+        health-related data remains necessary even though access is ungated.
+    sources:
+      - https://data.mendeley.com/datasets/9dz247gnyb/4
+      - https://data.mendeley.com/public-api/datasets/9dz247gnyb
+      - https://api.datacite.org/dois/10.17632/9dz247gnyb.4
+      - https://doi.org/10.17632/9dz247gnyb.4
+      - https://doi.org/10.1016/j.jvoice.2020.10.001
+      - https://arxiv.org/abs/2607.16967
+      - https://arxiv.org/html/2607.16967v1#S3.SS1

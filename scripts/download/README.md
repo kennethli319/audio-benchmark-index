@@ -191,6 +191,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
+scripts/download/pvqd.sh
 scripts/download/parapair_audio_bench.sh
 scripts/download/speecheq.sh
 scripts/download/star_bench.sh
@@ -919,6 +920,10 @@ MSWC_DOWNLOAD_ARCHIVES=1 MSWC_LANGS=ta MSWC_PARTS=audio scripts/download/mswc.sh
 
 # AudioMNIST downloads README/LICENSE/speaker metadata by default. Full repo clone is opt-in.
 AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
+
+# PVQD downloads official metadata by default. Ratings/docs and the complete approximately 514.5 MiB clinical-voice release are separate opt-ins.
+PVQD_DOWNLOAD_ANNOTATIONS=1 scripts/download/pvqd.sh
+PVQD_DOWNLOAD_ALL=1 scripts/download/pvqd.sh
 
 # EMO-SUPERB downloads official benchmark docs by default. The evaluation repository clone is opt-in; component corpus audio remains manual/EULA-gated.
 EMO_SUPERB_CLONE_REPO=1 scripts/download/emo_superb.sh
