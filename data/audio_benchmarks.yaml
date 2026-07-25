@@ -9,6 +9,55 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  genre_bias_music_evaluation:
+    paper: https://arxiv.org/abs/2607.13903
+    title: "Genre Bias or Aesthetic Perception? Identifying and Mitigating Shortcut Learning in Music Evaluation"
+    sections: 3.1-3.4
+    status: audited_one_new_public_family_two_existing_public_families
+    evaluated_sets:
+      - cited_as: M6
+        index_id: m6_music_detection
+        status: public_ungated
+        protocol: >-
+          Section 3.1 constructs a genre-balanced real-recording subset with
+          ten genres and 100 samples per genre, then uses it to test whether
+          SongEval aesthetics scores follow genre shortcuts. The paper reports
+          score distributions and genre-level Spearman correlation.
+      - cited_as: MTG-Jamendo
+        index_id: mtg_jamendo
+        status: public
+        protocol: >-
+          Section 3.1 constructs a second genre-balanced subset with ten genres
+          and 50 samples per genre for the same shortcut-learning analysis.
+      - cited_as: CMI-Pref and CMI-Pref-Pseudo
+        index_id: cmi_rewardbench
+        status: public_ungated
+        protocol: >-
+          Sections 3.1 and 3.4 evaluate SongEval preference accuracy on the
+          human-annotated and pseudo-labeled CMI pairwise comparisons, focusing
+          genre analysis on the five most frequent predicted genres.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      m6_data: not_specified_with_component_source_terms
+      mtg_jamendo: CC-BY-NC-SA-4.0
+      cmi_pref: CC-BY-NC-SA-4.0
+    sources:
+      - https://arxiv.org/abs/2607.13903
+      - https://arxiv.org/html/2607.13903v1#S3.SS1
+      - https://arxiv.org/html/2607.13903v1#S3.SS3
+      - https://arxiv.org/html/2607.13903v1#S3.SS4
+      - https://doi.org/10.1038/s41598-026-36044-w
+      - https://www.nature.com/articles/s41598-026-36044-w
+      - https://huggingface.co/datasets/yl7622/M6
+      - https://huggingface.co/api/datasets/yl7622/M6
+    note: >-
+      The 2026 bias paper introduces a mitigation method and derived balanced
+      subsets, not a new downloadable benchmark. Its exact subset row IDs and
+      Qwen3-Omni-predicted CMI genre labels are not released. This audit adds
+      the previously missing public M6 source family and maps the other two
+      evaluations to existing coverage without treating derived artifacts as
+      released data.
+
   resonance_dysarthric_speech_conversion:
     paper: https://arxiv.org/abs/2607.17615
     title: "Re-Sonance: A Dysarthric Asynchronous Real-Time Speech Conversion System Based on a Three-Stage Cascaded ASR-LLM-TTS Architecture"
@@ -15528,6 +15577,64 @@ benchmarks:
       - https://arxiv.org/html/2607.20253v2#S3.SS2
       - https://arxiv.org/abs/2607.14749
       - https://arxiv.org/html/2607.14749v3#S4.SS2
+
+  - id: m6_music_detection
+    name: M6
+    full_name: "M6: Multi-Generator, Multi-Domain, Multi-Lingual and Cultural, Multi-Genres, Multi-Instrument Machine-Generated Music Detection Databases"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - audio_deepfake_detection
+    tasks:
+      - machine_generated_music_detection
+      - synthetic_music_detection
+      - music_generator_attribution
+      - cross_domain_robustness
+      - music_genre_bias_analysis
+    official:
+      paper: https://doi.org/10.1038/s41598-026-36044-w
+      article: https://www.nature.com/articles/s41598-026-36044-w
+      dataset: https://huggingface.co/datasets/yl7622/M6
+      recent_evaluation: https://arxiv.org/abs/2607.13903
+    download:
+      primary:
+        - https://huggingface.co/datasets/yl7622/M6
+      examples:
+        - 'scripts/download/m6_music_detection.sh'
+        - 'M6_DOWNLOAD_HF=1 scripts/download/m6_music_detection.sh'
+      notes: >-
+        The public, ungated release contains 13,493 WAV examples across six
+        machine-generated-music detection settings spanning instruments,
+        multilingual and culturally varied songs, genres, long-form music, and
+        general music. The paper reports 4,299 human and 9,194 AI-generated
+        examples and fixed 64/16/20-percent train/validation/test proportions
+        within each setting. The helper downloads the official article, DOI
+        metadata, Hugging Face repository metadata, file inventory, and LFS
+        rules by default. The sole data archive is approximately 30.2 GB and
+        requires M6_DOWNLOAD_HF=1. A July 2026 follow-up uses an unreleased
+        balanced 1,000-sample, ten-genre subset for aesthetics-bias analysis.
+    license:
+      data: not_specified
+      paper: CC-BY-4.0
+      notes: >-
+        The Hugging Face repository has no dataset card, license metadata, or
+        license file. The article is CC BY 4.0, but that publication license
+        does not license the archive. M6 combines AI outputs with human music
+        drawn from GTZAN, FMA, COSIAN, MISD, and online services; the article
+        discusses non-commercial and redistribution conditions but does not
+        provide a per-file rights manifest. Review every component corpus,
+        generator, service, composition, performance, and recording term
+        before redistribution or commercial use.
+    sources:
+      - https://doi.org/10.1038/s41598-026-36044-w
+      - https://www.nature.com/articles/s41598-026-36044-w
+      - https://www.nature.com/articles/s41598-026-36044-w/tables/3
+      - https://huggingface.co/datasets/yl7622/M6
+      - https://huggingface.co/api/datasets/yl7622/M6
+      - https://huggingface.co/api/datasets/yl7622/M6/tree/main?recursive=true&expand=true
+      - https://huggingface.co/datasets/yl7622/M6/resolve/main/.gitattributes
+      - https://arxiv.org/abs/2607.13903
+      - https://arxiv.org/html/2607.13903v1#S3.SS1
 
   - id: singmos_pro
     name: SingMOS-Pro

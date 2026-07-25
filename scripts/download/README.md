@@ -76,6 +76,7 @@ scripts/download/rubato.sh
 scripts/download/multtipop.sh
 scripts/download/madb.sh
 scripts/download/songeval.sh
+scripts/download/m6_music_detection.sh
 scripts/download/song_describer.sh
 scripts/download/concerto_accompaniment_benchmark.sh
 scripts/download/cmi_rewardbench.sh

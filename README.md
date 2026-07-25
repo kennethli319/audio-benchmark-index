@@ -25,7 +25,8 @@ distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
 egocentric smart-glasses speech recognition and understanding,
 music synthesis, song-aesthetics, music reward-model and compositional multimodal
-preference evaluation, full-song singing-quality assessment, long-form
+preference evaluation, machine-generated-music detection, full-song
+singing-quality assessment, long-form
 podcast-generation evaluation, audiobook narration-appeal prediction,
 rhythm-game chart-generation evaluation, and score-free
 piano-concerto accompaniment alignment, speech quality
@@ -77,7 +78,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 303 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 304 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
