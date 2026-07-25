@@ -1181,6 +1181,10 @@ scripts/download/audiobook_narration_appeal.sh
 # the DementiaBank membership path. Clinical recordings stay password protected.
 scripts/download/adress_challenges.sh
 
+# DementiaBank Pitt saves public corpus/access documentation, then prints the
+# membership path. It never authenticates or downloads clinical recordings.
+scripts/download/dementiabank_pitt.sh
+
 # SmartGlasses Challenge 2026 saves the official challenge page, public
 # evaluation-toolkit metadata, and paper. Corpus links were emailed only to
 # registered teams; registration is closed and no public corpus URL is listed.

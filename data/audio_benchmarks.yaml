@@ -2861,6 +2861,36 @@ paper_audits:
       - https://www.openslr.org/49/
     note: VoxCeleb is already indexed with its surviving public metadata and trial-list helper. This paper applies standard speaker-disjoint VoxCeleb partitions but introduces a model-frontend attack rather than a separately released benchmark dataset. Because version 1 exposes no official implementation or paper-specific evaluation artifacts, the protocol is recorded as existing-family coverage and no duplicate family or download helper is added.
 
+  privacy_preserving_dementia_detection:
+    paper: https://arxiv.org/abs/2607.17098
+    title: "Multi-Level Privacy-Preserving Dementia Detection from Speech via Targeted Adversarial Obfuscation and Representation Learning"
+    sections: 4-5
+    status: audited_new_restricted_family
+    evaluated_sets:
+      - cited_as: DementiaBank Pitt Corpus
+        index_id: dementiabank_pitt
+        status: password_protected_clinical_access
+        protocol: >-
+          The paper evaluates 552 Cookie Theft picture-description recordings
+          (309 Alzheimer's disease and 243 controls), using manual transcripts
+          for WER-based privacy evaluation and audio for dementia
+          classification, speaker identification, and speech-quality metrics.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      data: CC-BY-NC-SA-3.0_with_password_protected_clinical_access
+    sources:
+      - https://arxiv.org/abs/2607.17098
+      - https://arxiv.org/html/2607.17098v1#S4
+      - https://arxiv.org/html/2607.17098v1#S5
+      - https://talkbank.org/dementia/
+      - https://talkbank.org/dementia/access/English/Pitt.html
+      - https://talkbank.org/0share/rules.html
+    note: >-
+      The paper uses the broader Pitt Corpus rather than the balanced ADReSS
+      challenge subset. The source data are therefore indexed as their own
+      restricted clinical family; no paper-derived adversarial waveforms,
+      embeddings, predictions, or evaluation rows are publicly released.
+
   spoken_digit_privacy_informed_attackers:
     paper: https://arxiv.org/abs/2607.21393
     title: "From Read Speech to Spoken Digits: A Task-Specific Evaluation of Speech Privacy With Informed Attackers"
@@ -6848,6 +6878,59 @@ benchmarks:
       - https://arxiv.org/abs/2004.06833
       - https://arxiv.org/abs/2104.09356
       - https://arxiv.org/abs/2607.21496
+
+  - id: dementiabank_pitt
+    name: DementiaBank Pitt Corpus
+    full_name: "DementiaBank English Pitt Corpus"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_understanding
+      - health_audio
+    tasks:
+      - alzheimers_dementia_classification
+      - cognitive_impairment_detection
+      - speaker_privacy_evaluation
+      - speech_anonymization_evaluation
+      - spontaneous_speech_understanding
+    official:
+      homepage: https://talkbank.org/dementia/
+      corpus_page: https://talkbank.org/dementia/access/English/Pitt.html
+      corpus_index: https://talkbank.org/dementia/access/
+      ground_rules: https://talkbank.org/0share/rules.html
+      citing_paper: https://arxiv.org/abs/2607.17098
+    download:
+      access: password_protected_membership_required
+      primary:
+        - https://talkbank.org/dementia/
+        - https://talkbank.org/dementia/access/English/Pitt.html
+      examples:
+        - 'scripts/download/dementiabank_pitt.sh'
+      notes: >-
+        The official corpus index describes dementia and control recordings
+        across four language tasks with transcripts and media. Access is
+        password protected through DementiaBank membership; established
+        researchers and clinicians may request access, while students require
+        faculty sponsorship. The helper saves only public access, corpus-index,
+        corpus-description, and ground-rules pages, then prints the manual
+        membership path. It never authenticates or downloads clinical data.
+    license:
+      data: CC-BY-NC-SA-3.0_with_password_protected_clinical_access
+      code: not_applicable
+      notes: >-
+        TalkBank's default CC BY-NC-SA 3.0 terms prohibit commercial products
+        and incorporation into large language models. Password-protected
+        clinical data may not be shared with non-members or posted elsewhere.
+        Users must preserve confidentiality, follow the TalkBank ethics and
+        citation rules, and use non-retaining services if web processing is
+        necessary. The recordings contain sensitive, potentially identifiable
+        clinical speech.
+    sources:
+      - https://talkbank.org/dementia/
+      - https://talkbank.org/dementia/access/
+      - https://talkbank.org/dementia/access/English/Pitt.html
+      - https://talkbank.org/0share/rules.html
+      - https://arxiv.org/abs/2607.17098
+      - https://arxiv.org/html/2607.17098v1#S4
 
   - id: voxpopuli
     name: VoxPopuli
