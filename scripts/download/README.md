@@ -215,6 +215,7 @@ scripts/download/libricss.sh
 scripts/download/clotho.sh
 scripts/download/clotho_aqa.sh
 scripts/download/audiocaps.sh
+scripts/download/uiq.sh
 scripts/download/audiocards.sh
 scripts/download/musiccaps.sh
 scripts/download/wavcaps.sh

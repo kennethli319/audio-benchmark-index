@@ -9740,6 +9740,54 @@ benchmarks:
       - https://huggingface.co/datasets/d0rj/audiocaps
       - https://arxiv.org/html/2607.11738v1#S4.SS2.SSS2
 
+  - id: uiq
+    name: User-Intent Queries (UIQ)
+    full_name: "User-Intent Queries benchmark from Omni-Embed-Audio"
+    qwen_cited_as: null
+    qwen_bucket: audio_text_retrieval
+    tasks:
+      - user_intent_audio_retrieval
+      - language_based_audio_retrieval
+      - query_reformulation_robustness
+      - exclusionary_query_understanding
+      - hard_negative_discrimination
+    official:
+      repo: https://github.com/JudeJiwoo/Omni-Embed-Audio
+      dataset: https://github.com/JudeJiwoo/Omni-Embed-Audio/tree/main/data/UIQ
+      paper: https://arxiv.org/abs/2604.18360
+      paper_html: https://arxiv.org/html/2604.18360v1
+      fusion_embedding_reuse: https://arxiv.org/html/2607.18666v1#S6.SS3
+    download:
+      primary:
+        - https://github.com/JudeJiwoo/Omni-Embed-Audio/tree/main/data/UIQ
+        - https://raw.githubusercontent.com/JudeJiwoo/Omni-Embed-Audio/main/data/UIQ/README.md
+      examples:
+        - 'scripts/download/uiq.sh'
+      notes: >-
+        The public, ungated release contains 13,053 text-query records over the
+        AudioCaps test, Clotho evaluation, and MECAT pools: question,
+        imperative, tagging, paraphrase, and exclusionary negative variants.
+        The helper downloads the approximately 12 MiB of query JSONL files plus
+        the benchmark README and license; it does not download source audio.
+        Fusion Embedding section 6.3 independently reuses UIQ on the 1,045-clip
+        Clotho pool and reports only the four positive query formulations.
+    license:
+      data: CC-BY-4.0
+      code: MIT
+      notes: >-
+        CC BY 4.0 applies only to the released UIQ text queries. AudioCaps,
+        Clotho, and MECAT audio is not redistributed and retains its original
+        source terms; the top-level Omni-Embed-Audio code repository is MIT.
+    sources:
+      - https://arxiv.org/abs/2604.18360
+      - https://arxiv.org/html/2604.18360v1#S3.SS2
+      - https://arxiv.org/html/2604.18360v1#S5.SS3
+      - https://github.com/JudeJiwoo/Omni-Embed-Audio
+      - https://raw.githubusercontent.com/JudeJiwoo/Omni-Embed-Audio/main/data/UIQ/README.md
+      - https://raw.githubusercontent.com/JudeJiwoo/Omni-Embed-Audio/main/data/UIQ/LICENSE
+      - https://api.github.com/repos/JudeJiwoo/Omni-Embed-Audio
+      - https://arxiv.org/html/2607.18666v1#S6.SS3
+
   - id: audiocards
     name: AudioCards / ASFx Eval
     full_name: "AudioCards: Structured Metadata Improves Audio Language Models for Sound Design"
