@@ -18397,3 +18397,55 @@ benchmarks:
       - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/README.md
       - https://raw.githubusercontent.com/yucongzh/ASD_Benchmark/master/LICENSE
       - https://api.github.com/repos/yucongzh/ASD_Benchmark
+
+  - id: birdclef_2026
+    name: BirdCLEF++ 2026
+    full_name: "BirdCLEF++ 2026: Multi-label Animal Vocalization Detection in Pantanal Soundscapes"
+    qwen_cited_as: null
+    qwen_bucket:
+      - bioacoustic_event_detection
+      - environmental_sound_understanding
+    tasks:
+      - multi_label_animal_vocalization_detection
+      - passive_acoustic_monitoring
+      - soundscape_classification
+      - few_shot_species_detection
+      - domain_shift_robustness
+    official:
+      challenge: https://www.imageclef.org/BirdCLEF2026
+      kaggle: https://www.kaggle.com/competitions/birdclef-2026/overview
+      recent_evaluation: https://arxiv.org/abs/2607.14474
+    download:
+      access: kaggle_account_rules_acceptance_required
+      primary:
+        - https://www.kaggle.com/competitions/birdclef-2026/data
+      examples:
+        - 'scripts/download/birdclef_2026.sh'
+      notes: >-
+        The official LifeCLEF page routes data access through the BirdCLEF
+        2026 Kaggle competition. The primary CLEF working paper reports 522.1
+        hours of audio: 344.5 hours of focal recordings across 206 species and
+        177.6 hours of Pantanal soundscapes from 23 sites. Only 1.03 hours
+        (66 soundscape files and 739 unique five-second windows) are labeled;
+        the remaining 176.5 soundscape hours are unlabeled. The task predicts
+        234 target species on five-second windows from 60-second soundscapes.
+        The helper saves the official challenge page and paper metadata, then
+        prints the manual Kaggle access path. It does not accept competition
+        rules, authenticate, or download audio.
+    license:
+      data: kaggle_competition_rules_and_source_terms_apply
+      paper: CC-BY-4.0
+      notes: >-
+        The official LifeCLEF page does not state a standalone dataset license.
+        Access requires a Kaggle account and acceptance of the competition
+        rules. Focal recordings include Xeno-canto material and may retain
+        recording-specific Creative Commons terms; soundscape recordings and
+        annotations require review under the accepted competition rules. The
+        paper's CC BY 4.0 license covers the article, not the competition audio.
+    sources:
+      - https://www.imageclef.org/BirdCLEF2026
+      - https://www.kaggle.com/competitions/birdclef-2026/overview
+      - https://www.kaggle.com/competitions/birdclef-2026/data
+      - https://www.kaggle.com/competitions/birdclef-2026/rules
+      - https://arxiv.org/abs/2607.14474
+      - https://arxiv.org/html/2607.14474v1#S3

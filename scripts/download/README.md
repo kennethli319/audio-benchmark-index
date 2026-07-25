@@ -329,6 +329,7 @@ scripts/download/speak_and_improve_2025.sh
 scripts/download/mlc_slm_2nd_challenge.sh
 scripts/download/qivd.sh
 scripts/download/dcase2025_audioqa.sh
+scripts/download/birdclef_2026.sh
 scripts/download/avsd.sh
 scripts/download/avqa.sh
 scripts/download/avsbench.sh
