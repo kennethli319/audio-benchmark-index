@@ -9,6 +9,45 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  abnormal_heart_sound_spectrogram_frontends:
+    paper: https://arxiv.org/abs/2607.16220
+    title: "Comparing Spectrogram Front-Ends for Abnormal Heart-Sound Detection with a Convolutional Neural Network"
+    sections: 3 and 4.3
+    status: audited_one_new_public_family
+    evaluated_sets:
+      - cited_as: PhysioNet/CinC 2016 heart-sound dataset
+        index_id: physionet_cinc_2016_heart_sound
+        status: public_ungated
+        protocol: >-
+          The paper compares log-mel, PCEN, and multi-resolution log-mel
+          frontends for binary normal-versus-abnormal phonocardiogram
+          classification. It creates its own stratified recording-level
+          train, validation, and test partitions from the public challenge
+          training recordings and reports sensitivity, specificity, F1,
+          accuracy, and the challenge's modified accuracy.
+        note: >-
+          The paper reports 3,240 recordings, consistent with the six current
+          public training directories A-F. PhysioNet's challenge prose still
+          describes an earlier 3,126-record, five-database A-E inventory, and
+          the original hidden challenge test set remains private.
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      data: ODC-By-1.0
+      code: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.16220
+      - https://arxiv.org/html/2607.16220v1#S3
+      - https://arxiv.org/html/2607.16220v1#S4.SS3
+      - https://physionet.org/content/challenge-2016/1.0.0/
+      - https://physionet.org/content/challenge-2016/view-license/1.0.0/
+      - https://doi.org/10.1088/0967-3334/37/12/2181
+    note: >-
+      The official public training archive is indexed as the reproducible
+      benchmark family. The recent paper does not release its notebook,
+      recording split, derived five-second clips, checkpoints, predictions,
+      or Grad-CAM outputs, so those paper-specific artifacts are not presented
+      as part of the official challenge release.
+
   quality_aware_multimodal_fusion:
     paper: https://arxiv.org/abs/2607.21347
     title: "Quality-Aware Multimodal Fusion Reveals Implicit Identity in Valence-Arousal Features"
@@ -19225,3 +19264,51 @@ benchmarks:
       - https://www.kaggle.com/competitions/birdclef-2026/rules
       - https://arxiv.org/abs/2607.14474
       - https://arxiv.org/html/2607.14474v1#S3
+
+  - id: physionet_cinc_2016_heart_sound
+    name: PhysioNet/CinC 2016 Heart Sound
+    full_name: "Classification of Heart Sound Recordings: The PhysioNet/Computing in Cardiology Challenge 2016"
+    qwen_cited_as: null
+    qwen_bucket:
+      - biomedical_audio_understanding
+      - acoustic_event_classification
+    tasks:
+      - abnormal_heart_sound_detection
+      - phonocardiogram_classification
+      - cardiac_screening
+      - clinical_audio_classification
+    official:
+      homepage: https://physionet.org/content/challenge-2016/1.0.0/
+      files: https://physionet.org/files/challenge-2016/1.0.0/
+      dataset_paper: https://doi.org/10.1088/0967-3334/37/12/2181
+      recent_evaluation: https://arxiv.org/abs/2607.16220
+    download:
+      access: public_ungated_archive_opt_in
+      primary:
+        - https://physionet.org/files/challenge-2016/1.0.0/training.zip
+      examples:
+        - 'scripts/download/physionet_cinc_2016_heart_sound.sh'
+        - 'PHYSIONET_CINC_2016_DOWNLOAD_AUDIO=1 scripts/download/physionet_cinc_2016_heart_sound.sh'
+      notes: >-
+        The helper saves the official challenge and license pages by default.
+        The approximately 190 MB training.zip archive is public but requires
+        explicit opt-in. The current PhysioNet file tree exposes six training
+        directories, A-F, totaling 3,240 recordings; challenge prose also
+        retains an earlier description of 3,126 recordings in five databases.
+        The challenge's subject-disjoint test set remains private.
+    license:
+      data: ODC-By-1.0
+      code: mixed_entry_specific_terms
+      notes: >-
+        PhysioNet licenses the released files under the Open Data Commons
+        Attribution License v1.0. Submitted challenge systems carry their own
+        entry-specific licenses. Preserve dataset and PhysioNet attribution;
+        the public license does not remove clinical-audio privacy, ethics, or
+        re-identification responsibilities.
+    sources:
+      - https://physionet.org/content/challenge-2016/1.0.0/
+      - https://physionet.org/content/challenge-2016/view-license/1.0.0/
+      - https://physionet.org/files/challenge-2016/1.0.0/
+      - https://doi.org/10.1088/0967-3334/37/12/2181
+      - https://arxiv.org/abs/2607.16220
+      - https://arxiv.org/html/2607.16220v1#S3

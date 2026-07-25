@@ -144,6 +144,7 @@ scripts/download/dhauds.sh
 scripts/download/spuraudio.sh
 scripts/download/geo_atbench.sh
 scripts/download/urban_beehive.sh
+scripts/download/physionet_cinc_2016_heart_sound.sh
 scripts/download/soroll_ia.sh
 scripts/download/urbansound8k.sh
 scripts/download/tau_asc_2019.sh
@@ -557,6 +558,10 @@ LRRO_DOWNLOAD_ARCHIVE=1 scripts/download/lrro.sh
 # UrBAN downloads official docs/metadata only. Transfer the approximately
 # 1.265 TB corpus manually from FRDR using its Globus workflow.
 scripts/download/urban_beehive.sh
+
+# PhysioNet/CinC 2016 saves official challenge/license pages by default.
+# The approximately 190 MB public training archive is opt-in.
+PHYSIONET_CINC_2016_DOWNLOAD_AUDIO=1 scripts/download/physionet_cinc_2016_heart_sound.sh
 
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
