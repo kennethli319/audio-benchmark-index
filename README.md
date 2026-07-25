@@ -17,7 +17,7 @@ identification, speech instruction following, self-supervised speech representat
 emotion, voice-based depression detection, captioning, speech separation, speech enhancement, real-recorded
 microphone-array enhancement and localization, music tagging,
 forest-acoustic impulse-response simulation for bioacoustic arrays,
-global bird-species detection for passive acoustic monitoring,
+global bird-species and tropical bird-activity detection for passive acoustic monitoring,
 music genre classification, instrument recognition, music transcription, asynchronous
 distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
@@ -73,7 +73,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 287 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 288 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -1027,6 +1027,7 @@ Current coverage includes:
 | [MAESTRO Real](https://zenodo.org/records/7244360) | Soft-label sound event detection | Public 49-recording development set with crowdsourced multi-annotator strong labels; helper downloads docs and the sub-megabyte annotations by default while the approximately 2.43 GiB audio archive is opt-in; DCASE 2024 Task 4's separate 26-file evaluation set is not released here; official sources conflict on total duration | Custom Tampere University terms allow experimental, non-commercial use with attribution and explicitly prohibit commercial use, including distributing results or content achieved through the dataset |
 | [RealDESED](https://zenodo.org/records/20056072) | Real-world domestic sound event detection | Public Zenodo train, validation, and test archives with temporal annotations and recording metadata; helper saves official metadata/docs by default and makes the approximately 8.74 GB audio release opt-in | Audio and corresponding metadata use per-file CC0 or CC BY terms recorded in `metadata.csv`; remaining metadata and annotations are CC BY 4.0; baseline code is MIT |
 | [WABAD](https://zenodo.org/records/15629388) | Global bird-species detection for passive acoustic monitoring | Public, ungated 5,047-minute release with 91,931 time-frequency-bounded vocalizations from 1,192 species across 72 sites; MetaPerch evaluates it as an 84-hour detection benchmark; helper downloads metadata and annotations by default while the approximately 19.8 GiB site archives require explicit opt-in | Zenodo's structured field says CC BY 4.0 but its description says CC BY-NC 4.0; apply the stricter noncommercial terms pending clarification |
+| [SEABAD](https://zenodo.org/records/18290494) | Tropical bird-activity detection and edge bioacoustic monitoring | Public, ungated 50,000-clip release with fixed 40,000/5,000/5,000 train/validation/test splits, balanced bird-present and bird-absent classes, and 1,677 Southeast Asian species; helper downloads official metadata by default while the approximately 3.87 GiB archive requires source-terms acknowledgment and explicit opt-in | Zenodo declares CC BY 4.0 for the compilation, but audio retains per-recording Xeno-Canto and negative-source licenses, including noncommercial and share-alike variants; repository README claims MIT for code but no LICENSE file is present |
 | [SONYC-UST-V2](https://zenodo.org/records/3966543) | Urban sound tagging | [Zenodo v2.3 record](https://zenodo.org/records/3966543) for annotations, taxonomy, README, and 19 audio shards; helper downloads metadata by default and makes audio opt-in | CC BY 4.0; DCASE task rules restrict private external data for reproducible challenge submissions |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
 | [VoxBlink2](https://voxblink2.github.io/) | Speaker verification and open-set speaker identification | Official annotation/evaluation [repository](https://github.com/VoxBlink2/ScriptsForVoxBlink2) plus a manual Google Drive resource bundle; helper downloads docs/license by default and makes the repository clone opt-in, while source YouTube media is never redistributed | Annotation data is CC BY-NC-SA 4.0; code is not separately licensed, and YouTube media rights, platform terms, privacy, and local law remain separate |

@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-24
+  last_checked: 2026-07-25
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -15577,3 +15577,71 @@ benchmarks:
       - https://link.springer.com/article/10.1007/s10579-011-9145-0
       - https://arxiv.org/abs/2607.16967
       - https://arxiv.org/html/2607.16967v1#S3.SS1
+
+  - id: seabad
+    name: SEABAD
+    full_name: "SEABAD: Southeast Asian Bird Activity Detection"
+    qwen_cited_as: null
+    qwen_bucket:
+      - environmental_sound
+      - bioacoustic_monitoring
+    tasks:
+      - bird_activity_detection
+      - binary_bird_presence_detection
+      - passive_acoustic_monitoring
+      - tropical_bioacoustic_detection
+      - edge_audio_classification
+    official:
+      dataset: https://zenodo.org/records/18290494
+      doi: https://doi.org/10.5281/zenodo.18290494
+      curation_repo: https://github.com/mun3im/seabad
+      paper: https://arxiv.org/abs/2605.20853
+      recent_evaluation: https://arxiv.org/abs/2607.19721
+    download:
+      access: public_ungated_large_archive
+      primary:
+        - https://zenodo.org/records/18290494
+        - https://github.com/mun3im/seabad
+      examples:
+        - 'scripts/download/seabad.sh'
+        - 'SEABAD_ACK_SOURCE_TERMS=1 SEABAD_DOWNLOAD_AUDIO=1 scripts/download/seabad.sh'
+      notes: >-
+        Zenodo v1.0.0 releases 50,000 balanced three-second, 16 kHz mono WAV
+        clips: 25,000 bird-present clips spanning 1,677 Southeast Asian
+        species and 25,000 bird-absent clips. Fixed stratified train,
+        validation, and test splits contain 40,000, 5,000, and 5,000 clips.
+        Positive recordings derive from Xeno-Canto; negatives derive from
+        BirdVox-DCASE-20k, Freefield1010, Warblr, FSC-22, ESC-50, and DataSEC.
+        The helper downloads official Zenodo, paper, and repository metadata
+        by default. The single approximately 3.87 GiB mybad.zip archive
+        requires explicit source-terms acknowledgment and an audio opt-in.
+        DrongoNet section 7.1 evaluates the held-out 5,000-clip test split
+        across five seeds and reports AUC, accuracy, recall, and F1.
+    license:
+      zenodo_record: CC-BY-4.0
+      audio: mixed_inherited_source_licenses
+      code: MIT_claimed_in_readme_no_license_file
+      notes: >-
+        Zenodo's structured record declares CC BY 4.0 for the compilation,
+        while the official repository says individual positive clips retain
+        their Xeno-Canto licenses, including CC BY, CC BY-SA, CC BY-NC, and
+        CC BY-NC-SA, and negative clips retain each source dataset's terms.
+        Use the included provenance metadata and comply per recording; do not
+        infer that the record-level license removes noncommercial, share-alike,
+        or attribution requirements. The repository README calls the curation
+        code MIT, but the repository currently has no LICENSE file and GitHub
+        detects no license, so that code statement should be clarified before
+        reuse.
+    sources:
+      - https://zenodo.org/records/18290494
+      - https://zenodo.org/api/records/18290494
+      - https://doi.org/10.5281/zenodo.18290494
+      - https://github.com/mun3im/seabad
+      - https://raw.githubusercontent.com/mun3im/seabad/main/README.md
+      - https://api.github.com/repos/mun3im/seabad
+      - https://arxiv.org/abs/2605.20853
+      - https://arxiv.org/html/2605.20853v1
+      - https://arxiv.org/abs/2607.19721
+      - https://arxiv.org/html/2607.19721v1#S4
+      - https://arxiv.org/html/2607.19721v1#S7.SS1
+      - https://arxiv.org/html/2607.19721v1#Sx1

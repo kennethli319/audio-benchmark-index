@@ -302,6 +302,7 @@ scripts/download/fisher_english.sh
 scripts/download/jasmin_cgn.sh
 scripts/download/dihard_iii.sh
 scripts/download/tidyvoice.sh
+scripts/download/seabad.sh
 scripts/download/childes_aligned.sh
 scripts/download/l2_arctic.sh
 scripts/download/mlc_slm_2nd_challenge.sh
@@ -511,6 +512,10 @@ REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
 # TidyVoiceX saves public docs and prints the Mozilla Data Collective account/API path.
 # It never accepts credentials or downloads the approximately 36.72 GB archive.
 scripts/download/tidyvoice.sh
+
+# SEABAD downloads official metadata by default. Its approximately 3.87 GiB
+# archive retains per-recording source licenses and requires both opt-ins.
+SEABAD_ACK_SOURCE_TERMS=1 SEABAD_DOWNLOAD_AUDIO=1 scripts/download/seabad.sh
 
 # WABAD downloads its record, metadata, annotations, and species list by default.
 # Its 72 site archives total approximately 19.8 GiB and require explicit site IDs.
