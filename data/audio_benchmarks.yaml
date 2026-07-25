@@ -9,6 +9,60 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  flashrt_real_time_multimodal_serving:
+    paper: https://arxiv.org/abs/2607.18171
+    title: "FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications"
+    sections: 4.3, 5.1, 5.2, 5.3.1, and 5.4
+    status: audited_public_system_no_released_benchmark_dataset
+    evaluated_sets:
+      - cited_as: Qwen3-Omni text-to-audio serving workload
+        status: paper_specific_workload_no_released_dataset
+        protocol: >-
+          Section 5.3.1 compares the public FlashRT sequential and optimized
+          Qwen3-Omni deployments with the expert vLLM-Omni implementation on
+          end-to-end response latency and real-time factor. Section 5.4
+          repeats the hardware comparison on AMD MI355X GPUs. This is a
+          systems-performance evaluation of typed-prompt-to-speech serving,
+          not a speech-quality, content, or instruction-following benchmark.
+        note: >-
+          The paper does not name a dataset, disclose a fixed prompt set, or
+          release per-prompt evaluation records. The repository includes the
+          runtime and Qwen3-Omni application implementation but does not
+          identify a reproducible benchmark corpus or manifest.
+      - cited_as: face-to-face conversational-agent workload
+        status: paper_specific_application_workload_no_released_dataset
+        protocol: >-
+          Sections 4.1 and 5.2 measure latency and frame rate for an ASR to
+          LLM to TTS to sound-to-video pipeline. The application is exercised
+          through sample user inputs designed by the system's validation
+          loop; no named speech corpus or frozen workload is reported.
+        note: >-
+          This workload is retained as paper provenance only and is not
+          indexed as an audio benchmark family.
+    release_audit:
+      runtime_harness_and_application_code: public_ungated
+      fixed_prompt_or_audio_workload: not_released_or_identified
+      per_input_measurements: not_released
+      model_weights: fetched_from_separate_upstream_releases
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      flashrt_repository: no_license_file_or_github_license_detected
+      upstream_models: separate_provider_terms_apply
+    sources:
+      - https://arxiv.org/abs/2607.18171
+      - https://arxiv.org/html/2607.18171v1#S4.SS3
+      - https://arxiv.org/html/2607.18171v1#S5.SS1
+      - https://arxiv.org/html/2607.18171v1#S5.SS2
+      - https://arxiv.org/html/2607.18171v1#S5.SS3.SSS1
+      - https://arxiv.org/html/2607.18171v1#S5.SS4
+      - https://github.com/Infini-AI-Lab/FlashRT
+      - https://github.com/Infini-AI-Lab/FlashRT/blob/main/flashrt/apps/qwen3_omni/README.md
+    note: >-
+      FlashRT is an official public systems implementation, not a released
+      audio benchmark dataset. This audit prevents its Qwen3-Omni latency and
+      RTF tables from being mistaken for new benchmark coverage, leaves the
+      family count unchanged, and adds no download helper.
+
   voice_clone_attribution_geometry:
     paper: https://arxiv.org/abs/2607.15694
     title: "A Geometry-Limited Identification Floor and Its Consequences for Voice-Clone Attribution in Professional Voice Actors"
