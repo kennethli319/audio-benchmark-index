@@ -12943,6 +12943,60 @@ benchmarks:
       - https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html
       - https://arxiv.org/abs/2104.09494
 
+  - id: qualispeech
+    name: QualiSpeech
+    full_name: "QualiSpeech: A Speech Quality Assessment Dataset with Natural Language Reasoning and Descriptions"
+    qwen_cited_as: null
+    qwen_bucket: speech_quality_assessment
+    tasks:
+      - speech_quality_assessment
+      - multidimensional_speech_quality
+      - speech_quality_reasoning
+      - natural_language_quality_description
+      - mean_opinion_score_prediction
+      - temporal_degradation_description
+    official:
+      dataset: https://huggingface.co/datasets/tsinghua-ee/QualiSpeech
+      paper: https://arxiv.org/abs/2503.20290
+      arxiv_html: https://arxiv.org/html/2503.20290
+      salmonn_2_evaluation: https://arxiv.org/html/2607.17079v1#S4.SS5
+    download:
+      primary:
+        - https://huggingface.co/datasets/tsinghua-ee/QualiSpeech
+      examples:
+        - 'scripts/download/qualispeech.sh'
+        - 'QUALISPEECH_DOWNLOAD_AUDIO=1 scripts/download/qualispeech.sh'
+      notes: >-
+        The public, ungated release provides official train, validation, and
+        test CSVs with seven numerical quality scores, four specific
+        descriptions, and natural-language quality reasoning. The paper
+        reports 10,558 train, 2,167 validation, and 1,852 test utterances from
+        BVCC, recent TTS systems, GigaSpeech, and NISQA. The helper downloads
+        the dataset card, scripts, split CSVs, and BVCC filename lists by
+        default. Its approximately 1.46 GiB non-BVCC WAV archive is opt-in;
+        BVCC audio is deliberately excluded and must be obtained separately
+        under its original terms before running the official merge script.
+        SALMONN-2 section IV-E and Table VIII evaluate QualiSpeech using
+        Pearson correlation coefficient.
+    license:
+      data: cc-by-nc-sa-4.0-with-upstream-restrictions
+      code: not_separately_specified
+      notes: >-
+        The official card declares CC BY-NC-SA 4.0 for QualiSpeech. Component
+        audio retains upstream conditions from BVCC, NISQA, and GigaSpeech;
+        in particular, Blizzard Challenge data may not be redistributed and
+        is not included in the Hugging Face release. The card does not state
+        a separate software license for its download and merge scripts.
+    sources:
+      - https://arxiv.org/abs/2503.20290
+      - https://arxiv.org/html/2503.20290#S3
+      - https://huggingface.co/datasets/tsinghua-ee/QualiSpeech
+      - https://huggingface.co/datasets/tsinghua-ee/QualiSpeech/raw/main/README.md
+      - https://huggingface.co/api/datasets/tsinghua-ee/QualiSpeech
+      - https://arxiv.org/abs/2607.17079
+      - https://arxiv.org/html/2607.17079v1#S4.SS5
+      - https://arxiv.org/html/2607.17079v1#S5.SS4
+
   - id: voicemos_challenge_2026
     name: VoiceMOS Challenge 2026
     full_name: "VoiceMOS Challenge 2026: Automatic Prediction of Human Ratings of Speech"
