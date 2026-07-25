@@ -206,6 +206,7 @@ scripts/download/tess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
 scripts/download/ch_sims.sh
+scripts/download/cmu_mosi.sh
 scripts/download/emoprefer.sh
 scripts/download/musan.sh
 scripts/download/ami.sh

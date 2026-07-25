@@ -172,8 +172,8 @@ paper_audits:
         index_id: iemocap
         status: public_request_gated
       - cited_as: CMU-MOSI
-        index_id: null
-        status: public_not_yet_separately_indexed
+        index_id: cmu_mosi
+        status: public_processed_features
       - cited_as: CMU-MOSEI
         index_id: null
         status: public_not_yet_separately_indexed
@@ -9730,6 +9730,62 @@ benchmarks:
       - https://raw.githubusercontent.com/thuiar/MMSA/master/README.md
       - https://raw.githubusercontent.com/thuiar/MMSA/master/LICENSE
       - https://api.github.com/repos/thuiar/MMSA
+
+  - id: cmu_mosi
+    name: CMU-MOSI
+    full_name: "CMU-MOSI: Multimodal Opinion-level Sentiment Intensity Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - audio_visual_understanding
+    tasks:
+      - multimodal_sentiment_analysis
+      - audio_sentiment_analysis
+      - subjectivity_analysis
+      - audio_visual_sentiment_analysis
+      - multimodal_representation_learning
+    official:
+      paper: https://arxiv.org/abs/1606.06259
+      sdk: https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+      processed_release: https://github.com/pliang279/MultiBench
+      processed_data: https://drive.google.com/drive/folders/1uEK737LXB9jAlf9kyqRs6B9N6cDncodq
+    download:
+      primary:
+        - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+        - https://github.com/pliang279/MultiBench
+        - https://drive.google.com/drive/folders/1uEK737LXB9jAlf9kyqRs6B9N6cDncodq
+      examples:
+        - 'scripts/download/cmu_mosi.sh'
+        - 'CMU_MOSI_CLONE_SDK=1 scripts/download/cmu_mosi.sh'
+        - 'CMU_MOSI_CLONE_MULTIBENCH=1 scripts/download/cmu_mosi.sh'
+      notes: >-
+        The original paper introduces 2,199 opinion segments from 93 English
+        YouTube review videos with sentiment-intensity, subjectivity, visual,
+        and acoustic annotations. The official CMU Multimodal SDK publishes
+        labels and anonymized processed acoustic, visual, and language
+        computational sequences, but explicitly does not share raw videos
+        because of YouTube creator privacy. MultiBench provides an additional
+        word-aligned processed release through Google Drive. The helper saves
+        official documentation and repository metadata only; cloning either
+        toolkit is opt-in and the Drive package remains a manual download.
+    license:
+      data: not_specified
+      code: MIT
+      notes: >-
+        Both official code repositories are MIT-licensed, but neither license
+        expressly grants rights to the MOSI annotations, processed features,
+        or source media. Raw YouTube videos are not redistributed. Treat
+        dataset terms as unspecified and review creator, platform, privacy,
+        and media rights before reuse or redistribution.
+    sources:
+      - https://arxiv.org/abs/1606.06259
+      - https://export.arxiv.org/api/query?id_list=1606.06259
+      - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/master/README.md
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/master/LICENSE
+      - https://raw.githubusercontent.com/CMU-MultiComp-Lab/CMU-MultimodalSDK/master/mmsdk/mmdatasdk/dataset/standard_datasets/CMU_MOSI/cmu_mosi.py
+      - https://github.com/pliang279/MultiBench
+      - https://raw.githubusercontent.com/pliang279/MultiBench/main/README.md
 
   - id: spemoc
     name: SpEmoC
