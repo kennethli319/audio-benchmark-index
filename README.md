@@ -911,6 +911,18 @@ predictions, or score records. The public CC BY 4.0 Speech Commands release and
 its existing helper therefore remain authoritative; no duplicate family or
 paper-specific helper is added.
 
+The July 2026 *Scalable Keyword Spotting via Modular Network Expansion* paper
+is likewise recorded as an existing-family audit rather than a new benchmark.
+Sections 4.1-4.4 run five paired-command expansion tasks over the official
+Speech Commands v2 splits, using Common Voice v17 test audio only as negatives
+to calibrate per-keyword thresholds at 1% false accept rate. False reject rate
+is then measured on Speech Commands positives over eight seeds. The paper
+releases no official code, exact Common Voice negative manifest, processed
+features, configurations, checkpoints, predictions, or score records. The
+public Speech Commands and Common Voice access paths and licenses therefore
+remain authoritative, and no duplicate family or paper-specific helper is
+added.
+
 The July 2026 hybrid-feature ASV paper is likewise recorded as an
 existing-coverage audit over Speech Commands rather than a new benchmark
 family. It randomly selects 30 speakers and 100 utterances per speaker,

@@ -3077,6 +3077,68 @@ paper_audits:
       Speech Commands family, not as a new benchmark. No duplicate family or
       paper-specific download helper is added.
 
+  modular_expansion_keyword_spotting:
+    paper: https://arxiv.org/abs/2607.19918
+    title: "Scalable Keyword Spotting via Modular Network Expansion"
+    sections: 4.1-4.4
+    status: audited_existing_public_families_unreleased_protocol_artifacts
+    last_verified: 2026-07-25
+    evaluated_sets:
+      - cited_as: Google Speech Commands v2
+        index_id: speech_commands
+        status: public
+        role: keyword_positive_training_and_evaluation
+        note: >-
+          The paper uses the official train, validation, and test splits and
+          the standard ten-command vocabulary. Five experiments each hold out
+          one paired command set (left/right, on/off, stop/go, up/down, or
+          yes/no) as new keywords and treat the other eight as the deployed
+          core vocabulary; all remaining words and silence are background.
+      - cited_as: Mozilla Common Voice v17
+        index_id: common_voice
+        status: public_versioned_release
+        role: negative_only_false_accept_calibration
+        note: >-
+          The Common Voice v17 test partition supplies only negative examples
+          for per-keyword threshold calibration at 1% false accept rate.
+          Positive false-reject evaluation remains on the Speech Commands v2
+          test split.
+    protocol_note: >-
+      Each base model trains on the eight core commands plus background, then
+      expansion uses only the two held-out commands plus background and no
+      access to the original core audio. Results report macro false reject
+      rate on Speech Commands at per-keyword thresholds calibrated to 1% false
+      accept rate on Common Voice. Each method and keyword-pair configuration
+      is repeated with eight random seeds and summarized with a
+      t-statistic-based 95% confidence interval.
+    release_audit:
+      status: no_paper_specific_release_identified
+      note: >-
+        The v1 arXiv record and paper expose no official project page,
+        repository, code, exact Common Voice negative manifest, processed
+        features, configurations, checkpoints, per-seed predictions, or score
+        records. The two indexed upstream corpus families are public, but that
+        does not make the paper-specific experiment package released.
+    license:
+      paper: cc-by-sa-4.0
+      code: not_specified_unreleased
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: Speech Commands v2 is CC BY 4.0; Common Voice releases are CC0-1.0
+    sources:
+      - https://arxiv.org/abs/2607.19918
+      - https://arxiv.org/html/2607.19918v1#S4.SS1
+      - https://arxiv.org/html/2607.19918v1#S4.SS3
+      - https://arxiv.org/html/2607.19918v1#S4.SS4
+      - https://arxiv.org/abs/1804.03209
+      - https://www.tensorflow.org/datasets/catalog/speech_commands
+      - https://commonvoice.mozilla.org/
+      - https://github.com/common-voice/cv-dataset
+    note: >-
+      This work is recorded as a protocol audit over the already indexed
+      Speech Commands and Common Voice families, not as a new benchmark. Their
+      established access paths and helpers remain authoritative; no duplicate
+      family or paper-specific download helper is added.
+
   hybrid_features_noisy_speaker_verification:
     paper: https://arxiv.org/abs/2607.20706
     title: "Improving the performance of an ASV system using hybrid speech features"
