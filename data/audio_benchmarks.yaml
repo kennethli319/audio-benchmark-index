@@ -9,6 +9,55 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  tfcl_acoustic_front_end_robustness:
+    paper: https://arxiv.org/abs/2607.17761
+    title: Time-Frequency Consistency Learning for Robust Speech Deepfake Detection
+    sections: 4.1-4.4
+    status: audited_new_public_derived_family
+    evaluated_sets:
+      - cited_as: ASVspoof 2019 Logical Access
+        index_id: asvspoof_2019
+        status: public_source_family
+      - cited_as: TFCL paired clean and AFE-processed speech
+        index_id: tfcl_afe
+        status: public_ungated_derived_family
+        note: >-
+          The official Hugging Face repository releases VAD-processed
+          train/development data and the six-stage AFE evaluation data derived
+          from ASVspoof 2019 LA.
+    protocol_note: >-
+      Section 4.1 sequentially applies echo, acoustic echo cancellation,
+      additive noise, noise suppression, automatic gain control, and voice
+      activity detection. Training/development echo uses pyroomacoustics and
+      MUSAN noise at randomly sampled 5-20 dB SNR. Evaluation echo uses
+      OpenSLR room impulse responses and evaluation noise uses DNS Challenge
+      AudioSet/Freesound material. WebRTC supplies the cascaded AFE modules.
+      Sections 4.3-4.4 report EER and AUC for clean input, every intermediate
+      stage, independent modules, and the full cascade.
+    release_note: >-
+      The public, ungated Hugging Face repository contains approximately 38.5
+      GB of processed audio in two archives and a 1.27 GB checkpoint. The
+      official GitHub repository provides training and evaluation code but no
+      fixed score files or predictions. TFCL is indexed separately from its
+      ASVspoof 2019 source because the released transformations constitute the
+      paper's reproducible robustness evaluation family.
+    license_note: >-
+      The GitHub implementation is MIT. The Hugging Face card uses the
+      machine-readable value "other" and states no dataset-specific terms;
+      public access therefore does not establish reuse or redistribution
+      rights. ASVspoof 2019 and the RIR, MUSAN, DNS Challenge, AudioSet, and
+      Freesound components retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2607.17761
+      - https://arxiv.org/html/2607.17761v1#S4.SS1
+      - https://arxiv.org/html/2607.17761v1#S4.SS3
+      - https://arxiv.org/html/2607.17761v1#S4.SS4
+      - https://github.com/JunXue-tech/TFCL
+      - https://raw.githubusercontent.com/JunXue-tech/TFCL/main/LICENSE
+      - https://huggingface.co/datasets/JunXueTech/TFCL
+      - https://huggingface.co/datasets/JunXueTech/TFCL/raw/main/README.md
+      - https://huggingface.co/api/datasets/JunXueTech/TFCL
+
   lalm_judge_full_duplex_reliability:
     paper: https://arxiv.org/abs/2607.07985
     title: "A Reliability Assessment of LALM Audio Judges for Full-Duplex Voice Agents"
@@ -13294,6 +13343,75 @@ benchmarks:
       - https://doi.org/10.7488/ds/2555
       - https://doi.org/10.21437/Interspeech.2019-2249
       - https://arxiv.org/abs/1911.01601
+
+  - id: tfcl_afe
+    name: TFCL AFE
+    full_name: "TFCL Paired Clean and Acoustic-Front-End-Processed Speech Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    category: speech_deepfake_robustness
+    tasks:
+      - synthetic_speech_detection
+      - audio_deepfake_detection
+      - acoustic_front_end_robustness
+      - paired_representation_consistency
+    official:
+      dataset: https://huggingface.co/datasets/JunXueTech/TFCL
+      repo: https://github.com/JunXue-tech/TFCL
+      paper: https://arxiv.org/abs/2607.17761
+      source_dataset: https://datashare.ed.ac.uk/handle/10283/3336
+    download:
+      primary:
+        - https://huggingface.co/datasets/JunXueTech/TFCL
+        - https://github.com/JunXue-tech/TFCL
+      examples:
+        - 'scripts/download/tfcl_afe.sh'
+        - 'TFCL_AFE_DOWNLOAD_DATA=1 scripts/download/tfcl_afe.sh'
+        - 'TFCL_AFE_DOWNLOAD_CHECKPOINT=1 scripts/download/tfcl_afe.sh'
+        - 'TFCL_AFE_CLONE_REPO=1 scripts/download/tfcl_afe.sh'
+      notes: >-
+        The helper downloads official dataset/repository documentation and Hub
+        metadata by default. Set TFCL_AFE_DOWNLOAD_DATA=1 for the approximately
+        34.9 GB evaluation archive and 3.61 GB train/development archive,
+        TFCL_AFE_DOWNLOAD_CHECKPOINT=1 for the approximately 1.27 GB checkpoint,
+        or TFCL_AFE_CLONE_REPO=1 for the code. Clean ASVspoof 2019 LA data is
+        obtained separately under its source terms.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Hugging Face exposes both processed-audio archives without a gate.
+        Large downloads are explicit opt-ins and no archive is fetched by the
+        helper's default mode.
+    license:
+      data: not_specified_hugging_face_card_uses_other
+      code: mit
+      notes: >-
+        The dataset card labels its license "other" but provides no actual
+        dataset terms. The MIT license covers the GitHub code, not the derived
+        audio or checkpoint. ASVspoof 2019, OpenSLR RIRs, MUSAN, DNS Challenge,
+        AudioSet, and Freesound inputs retain their own terms; verify all
+        component rights before reuse or redistribution.
+    provenance:
+      source_family: asvspoof_2019
+      evaluation_paper: https://arxiv.org/abs/2607.17761
+      notes: >-
+        The release derives paired variants from ASVspoof 2019 Logical Access.
+        The paper's evaluation cascade comprises echo, AEC, additive noise,
+        noise suppression, AGC, and VAD and reports EER and AUC after each
+        stage. The public archives reproduce the processed-data side of that
+        protocol; clean LA audio remains in the official source corpus.
+    sources:
+      - https://arxiv.org/abs/2607.17761
+      - https://arxiv.org/html/2607.17761v1#S4.SS1
+      - https://arxiv.org/html/2607.17761v1#S4.SS3
+      - https://arxiv.org/html/2607.17761v1#S4.SS4
+      - https://github.com/JunXue-tech/TFCL
+      - https://raw.githubusercontent.com/JunXue-tech/TFCL/main/README.md
+      - https://raw.githubusercontent.com/JunXue-tech/TFCL/main/LICENSE
+      - https://huggingface.co/datasets/JunXueTech/TFCL
+      - https://huggingface.co/datasets/JunXueTech/TFCL/raw/main/README.md
+      - https://huggingface.co/api/datasets/JunXueTech/TFCL
 
   - id: asvspoof_2021
     name: ASVspoof 2021

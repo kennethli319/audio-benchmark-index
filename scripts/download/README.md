@@ -183,6 +183,7 @@ scripts/download/voxconverse.sh
 scripts/download/asvspoof_2015.sh
 scripts/download/asvspoof_2017.sh
 scripts/download/asvspoof_2019.sh
+scripts/download/tfcl_afe.sh
 scripts/download/diffssd.sh
 scripts/download/fake_or_real.sh
 scripts/download/asvspoof_2021.sh
@@ -498,6 +499,12 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# TFCL AFE downloads official docs and Hub metadata by default. Its ASVspoof
+# 2019-derived processed audio and checkpoint are independent large opt-ins.
+TFCL_AFE_DOWNLOAD_DATA=1 scripts/download/tfcl_afe.sh
+TFCL_AFE_DOWNLOAD_CHECKPOINT=1 scripts/download/tfcl_afe.sh
+TFCL_AFE_CLONE_REPO=1 scripts/download/tfcl_afe.sh
 
 # ASD Benchmark downloads official protocol docs and repository metadata by
 # default. Clone the small MIT evaluation toolkit explicitly; obtain each

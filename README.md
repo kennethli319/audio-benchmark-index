@@ -75,7 +75,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 296 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 297 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -115,6 +115,15 @@ not be released and the adversarial WAVs await a later clearance review. Its
 cited Hugging Face supplement is currently authentication-required and exposes
 no public card or file inventory, so the index does not add a benchmark family
 or infer a download helper from the paper's release claim.
+
+The July 2026 TFCL paper adds a public acoustic-front-end robustness family
+derived from ASVspoof 2019 Logical Access. Its ungated Hugging Face release
+contains approximately 38.5 GB of paired VAD-processed train/development audio
+and six-stage AFE evaluation audio covering echo, AEC, additive noise, noise
+suppression, AGC, and VAD. The helper fetches only official documentation and
+metadata by default; audio, the 1.27 GB checkpoint, and the MIT-licensed code
+are separate opt-ins. The dataset card says only `license: other`, so the index
+does not infer reuse rights and preserves all ASVspoof/RIR/noise-source terms.
 
 The June 2026 LA-RAG paper is recorded as an existing-family and unreleased
 derived-protocol audit. Its two 24-hour synthetic Home-IoT and Industrial-IoT
@@ -1196,6 +1205,7 @@ Current coverage includes:
 | [ASVspoof 2015](https://datashare.ed.ac.uk/handle/10283/853) | Speaker verification anti-spoofing and unseen synthetic-speech attack detection | Public Edinburgh DataShare release covering ten known/unknown TTS and voice-conversion attacks; helper downloads official metadata/docs by default, makes the approximately 2.1 MB protocol archive opt-in, and keeps the approximately 24.1 GB WAV archive behind a separate opt-in | DataShare metadata declares CC BY 4.0; retain attribution and review packaged terms and source-speech provenance |
 | [ASVspoof 2017 V2](https://datashare.ed.ac.uk/items/59543650-e9b0-415d-8058-0567f908ce37) | Speaker verification anti-spoofing and replay attack detection | Public Edinburgh DataShare release with 42 speakers and replayed speech from 179 sessions in 61 replay configurations; helper downloads official metadata/docs by default, makes the small protocol archive opt-in, and keeps the approximately 1.4 GiB train/dev/eval archives behind a separate opt-in | DataShare metadata declares CC BY-NC 4.0; the corpus uses genuine and replayed RedDots speech, so retain attribution and review packaged/upstream terms |
 | [ASVspoof 2019](https://datashare.ed.ac.uk/handle/10283/3336) | Speaker verification anti-spoofing | Edinburgh DataShare record with README, license, evaluation plan, paper PDF, and opt-in LA/PA archives | Open Data Commons Attribution License on the DataShare record; derived from VCTK, so component terms should be re-checked |
+| [TFCL AFE](https://huggingface.co/datasets/JunXueTech/TFCL) | Speech-deepfake robustness under cascaded acoustic-front-end processing | Public, ungated ASVspoof 2019 LA derivative with approximately 38.5 GB of paired VAD train/development and six-stage AFE evaluation audio; helper downloads docs/metadata by default while processed audio, the 1.27 GB checkpoint, and code are separate opt-ins | Dataset card says `license: other` without terms; code is MIT, while ASVspoof 2019, RIR, MUSAN, DNS Challenge, AudioSet, and Freesound component terms remain applicable |
 | [ASVspoof 2021](https://www.asvspoof.org/index2021.html) | Speaker verification anti-spoofing and speech deepfake detection | Official ASVspoof page, [baseline repo](https://github.com/asvspoof-challenge/2021), [LA](https://zenodo.org/record/4837263), [PA](https://zenodo.org/record/4834716), and [DF](https://zenodo.org/record/4835108) Zenodo records; helper downloads eval plan and keys/metadata by default, with large speech archives opt-in | Official page says Open Data Commons Attribution Licence; Zenodo lists ODC-BY for LA/PA and ODC-ODbL for DF; baseline repo had no detected license |
 | [DiffSSD](https://huggingface.co/datasets/purdueviperlab/diffssd) | Diffusion-TTS synthetic-speech detection and speech forensics | Public, ungated release with 70,000 English synthetic utterances from ten TTS systems and a 94,226-row protocol referencing 24,226 separately obtained real LJ Speech/LibriSpeech files; helper downloads docs and lightweight metadata by default and makes the approximately 16.9 GiB synthetic-audio TAR opt-in | CC BY-NC-ND 4.0 applies only to synthetic voices and incorporates source-corpus, ChatGPT, and TTS-system requirements; real speech retains its owner terms |
 | [Fake-or-Real](https://bil.eecs.yorku.ca/datasets/) | Synthetic-speech and audio-deepfake detection, including rerecording robustness | Public York University release with more than 195,000 utterances across original, normalized, two-second, and rerecorded variants; helper saves the owner page by default and makes the approximately 16.0 GiB archives explicit per-version opt-ins | No dataset-specific license or reuse terms stated; CMU Arctic, LJ Speech, VoxForge, generated-voice, and lab-recording component rights require separate review |
