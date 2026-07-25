@@ -9,6 +9,40 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  polysim_2026_multilingual_missing_modality_speaker_identification:
+    paper: https://arxiv.org/abs/2607.13669
+    title: "Learning Speaker Identity Beyond Language and Modality Constraints: Insights from the POLY-SIM 2026 Challenge"
+    sections: 3.1-3.4 and 5
+    status: audited_one_new_public_family
+    evaluated_sets:
+      - cited_as: POLY-SIM 2026 / MAV-Celeb English-Urdu subset
+        index_id: polysim_2026
+        status: public_ungated_google_drive
+        protocol: >-
+          Systems train on paired English speech and face inputs, then use one
+          unified model for English audio-visual, English audio-only, Urdu
+          audio-visual, and Urdu audio-only closed-set speaker classification.
+          The challenge reports accuracy for P3-P6 and ranks systems by their
+          mean. The official release provides raw data, precomputed features,
+          and CSV files for train, development, and hidden-label test splits.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      data: not_specified
+      code: not_specified
+      source_media: youtube_uploader_and_platform_terms_apply
+    sources:
+      - https://arxiv.org/abs/2607.13669
+      - https://export.arxiv.org/e-print/2607.13669v1
+      - https://github.com/msaadsaeed/polysim
+      - https://raw.githubusercontent.com/msaadsaeed/polysim/main/README.md
+      - https://www.codabench.org/competitions/11283/
+    note: >-
+      This audit adds the released challenge family rather than treating its
+      baseline model as benchmark data. The repository and paper state that
+      the data are public, but neither states data or code reuse terms; the
+      Google Drive packages also derive from YouTube-hosted MAV-Celeb source
+      videos, whose rights remain separate.
+
   cs_ets_emg_to_speech:
     paper: https://arxiv.org/abs/2607.18629
     title: "CS-ETS: Chaos-Inspired Samba-Based EMG-to-Speech Synthesis with Nonlinear Chaotic Losses"
@@ -10851,6 +10885,61 @@ benchmarks:
       - https://www.openslr.org/49/
       - https://arxiv.org/abs/1706.08612
       - https://arxiv.org/abs/1806.05622
+
+  - id: polysim_2026
+    name: POLY-SIM 2026
+    full_name: Polyglot Speaker Identification with Missing Modality 2026 Grand Challenge
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_recognition
+      - audio_visual_understanding
+    tasks:
+      - closed_set_speaker_identification
+      - audio_visual_speaker_recognition
+      - audio_only_speaker_recognition
+      - cross_lingual_speaker_recognition
+      - missing_modality_robustness
+    official:
+      repo: https://github.com/msaadsaeed/polysim
+      leaderboard: https://www.codabench.org/competitions/11283/
+      results_paper: https://arxiv.org/abs/2607.13669
+      evaluation_plan: https://arxiv.org/abs/2603.24569
+      registration: https://docs.google.com/forms/d/e/1FAIpQLSde1K3fV89P_KCHE8RGM8XY0znP8BY44JQP8AEf9Idi-jdWdg/viewform
+    download:
+      access: public_ungated_google_drive
+      primary:
+        - https://github.com/msaadsaeed/polysim
+        - https://drive.google.com/file/d/1bRFbL9jOcmauEMJlEN_-4DvbpL2SFwlz/view
+        - https://drive.google.com/file/d/1JRkgFKUo0hVdnPaT8JsrSn06C1hl8g89/view
+        - https://drive.google.com/file/d/1jj7zwU1j1qYCjr2Awl9Gp1fvtpWxGuP4/view
+      examples:
+        - 'scripts/download/polysim_2026.sh'
+        - 'POLYSIM2026_CLONE_REPO=1 scripts/download/polysim_2026.sh'
+      notes: >-
+        The English-Urdu challenge release provides raw paired speech/face
+        data, precomputed features, and CSV files for train, development, and
+        hidden-label test splits. The paper reports 6,850 English and 12,706
+        Urdu samples across the three splits. The helper downloads official
+        documentation only by default, optionally clones the small baseline
+        repository, and leaves Drive-hosted data as a manual download.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        Neither the official repository nor the results/evaluation-plan papers
+        state a data or code license. The release derives from MAV-Celeb
+        interviews, talk shows, and television debates sourced from YouTube;
+        uploader copyright, likeness/privacy considerations, and platform
+        terms remain applicable. Confirm reuse and redistribution rights
+        before downloading or publishing derived data.
+    sources:
+      - https://arxiv.org/abs/2607.13669
+      - https://export.arxiv.org/e-print/2607.13669v1
+      - https://arxiv.org/abs/2603.24569
+      - https://github.com/msaadsaeed/polysim
+      - https://raw.githubusercontent.com/msaadsaeed/polysim/main/README.md
+      - https://api.github.com/repos/msaadsaeed/polysim
+      - https://www.codabench.org/competitions/11283/
 
   - id: voxblink2
     name: VoxBlink2

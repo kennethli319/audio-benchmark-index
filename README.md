@@ -79,7 +79,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 310 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 311 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -1378,6 +1378,7 @@ Current coverage includes:
 | [SEABAD](https://zenodo.org/records/18290494) | Tropical bird-activity detection and edge bioacoustic monitoring | Public, ungated 50,000-clip release with fixed 40,000/5,000/5,000 train/validation/test splits, balanced bird-present and bird-absent classes, and 1,677 Southeast Asian species; helper downloads official metadata by default while the approximately 3.87 GiB archive requires source-terms acknowledgment and explicit opt-in | Zenodo declares CC BY 4.0 for the compilation, but audio retains per-recording Xeno-Canto and negative-source licenses, including noncommercial and share-alike variants; repository README claims MIT for code but no LICENSE file is present |
 | [SONYC-UST-V2](https://zenodo.org/records/3966543) | Urban sound tagging | [Zenodo v2.3 record](https://zenodo.org/records/3966543) for annotations, taxonomy, README, and 19 audio shards; helper downloads metadata by default and makes audio opt-in | CC BY 4.0; DCASE task rules restrict private external data for reproducible challenge submissions |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
+| [POLY-SIM 2026](https://github.com/msaadsaeed/polysim) | Cross-lingual audio-visual and audio-only speaker identification under missing modality | Public Google Drive raw data, features, and CSVs for English-Urdu train/development/hidden-label test splits; helper downloads official docs by default, can clone the baseline repository, and leaves dataset packages as manual Drive downloads | No data or code license is stated; MAV-Celeb source recordings derive from YouTube interviews and broadcasts, so uploader rights, privacy/likeness considerations, and platform terms remain applicable |
 | [VoxBlink2](https://voxblink2.github.io/) | Speaker verification and open-set speaker identification | Official annotation/evaluation [repository](https://github.com/VoxBlink2/ScriptsForVoxBlink2) plus a manual Google Drive resource bundle; helper downloads docs/license by default and makes the repository clone opt-in, while source YouTube media is never redistributed | Annotation data is CC BY-NC-SA 4.0; code is not separately licensed, and YouTube media rights, platform terms, privacy, and local law remain separate |
 | [TidyVoice](https://tidyvoice2026.github.io/) | Multilingual and cross-lingual read-speech speaker verification | Public [Mozilla Data Collective release](https://datacollective.mozillafoundation.org/datasets/cmihtsewu023so207xot1iqqw) with 321,711 utterances, 4,474 speakers, 40 languages, and same-/cross-language trials; account and API key are required, so the helper saves docs and prints the official access path without accepting credentials or fetching the approximately 36.72 GB archive | Data page labels the release CC0-1.0 but restricts use to speaker verification and forbids speaker identification or identity recovery; baseline code is Apache-2.0 |
 | [HI-MIA](https://www.openslr.org/85/) | Far-field text-dependent speaker verification | [OpenSLR SLR85](https://www.openslr.org/85/) page and filename mapping by default; train/dev/test archives are opt-in because they are multi-GB | Apache License v2.0 |
@@ -1652,6 +1653,8 @@ Speaker recognition and diarization metadata:
 ```bash
 scripts/download/voxceleb.sh
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
+scripts/download/polysim_2026.sh
+POLYSIM2026_CLONE_REPO=1 scripts/download/polysim_2026.sh
 scripts/download/hi_mia.sh
 HIMIA_DOWNLOAD_ARCHIVES=1 HIMIA_PARTS="dev test_v2" scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh

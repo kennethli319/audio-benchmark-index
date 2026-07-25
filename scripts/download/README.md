@@ -179,6 +179,7 @@ scripts/download/live_gurbani_captioning_v1.sh
 scripts/download/storyad_qa.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
+scripts/download/polysim_2026.sh
 scripts/download/voxblink2.sh
 scripts/download/hi_mia.sh
 scripts/download/voxconverse.sh
@@ -943,6 +944,9 @@ SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS=all scripts/download/sony
 
 # VoxCeleb downloads small OpenSLR metadata/trial lists only.
 VOXCELEB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/49 scripts/download/voxceleb.sh
+
+# POLY-SIM downloads official docs only. Drive-hosted data remains manual.
+POLYSIM2026_CLONE_REPO=1 scripts/download/polysim_2026.sh
 
 # VoxBlink2 downloads official docs/license only. The Drive resource bundle is manual;
 # repository code and evaluation protocols can be cloned explicitly without source media.
