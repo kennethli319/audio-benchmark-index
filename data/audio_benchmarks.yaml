@@ -9,6 +9,49 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  charm_multimodal_sarcasm_evaluation:
+    paper: https://arxiv.org/abs/2607.11102
+    title: "CHARM: Charge Calibration and Acoustic Rescue for LLM-based Multimodal Sarcasm Detection"
+    sections: 4.1 and 4.3
+    status: audited_one_new_public_family_one_deferred_candidate
+    evaluated_sets:
+      - cited_as: MUStARD
+        index_id: mustard
+        status: public_ungated
+        note: >-
+          CHARM evaluates all 690 English sitcom-derived examples for its
+          training-free text calibration and uses stratified five-fold
+          cross-validation for its lightly supervised audio-text late-fusion
+          stage. The official MUStARD release provides labels, dialogue
+          context, fold indices, baseline code, and public audiovisual files.
+      - cited_as: CMMA
+        index_id: null
+        status: primary_paper_verified_official_public_artifact_not_yet_verified
+        note: >-
+          CHARM evaluates the official 3,961-utterance Chinese test split.
+          The CMMA NeurIPS paper is verifiable, but this audit did not locate
+          an author-controlled public dataset archive or repository with clear
+          access and reuse terms, so no benchmark entry or download link is
+          added yet.
+    license:
+      paper: arXiv non-exclusive distribution license
+      mustard_repository: MIT
+      mustard_media: third_party_television_rights_require_review
+      cmma_data: not_verified
+    sources:
+      - https://arxiv.org/abs/2607.11102
+      - https://arxiv.org/html/2607.11102v1#S4.SS1
+      - https://arxiv.org/html/2607.11102v1#S4.SS3
+      - https://aclanthology.org/P19-1455/
+      - https://github.com/soujanyaporia/MUStARD
+      - https://huggingface.co/datasets/MichiganNLP/MUStARD
+      - https://doi.org/10.52202/075280-0824
+    note: >-
+      This audit adds MUStARD as a public multimodal audio benchmark and keeps
+      CMMA as a traceable follow-up candidate. It does not infer a CMMA
+      download from secondary mirrors or treat machine-readable license tags
+      as clearing third-party television media.
+
   speak_and_improve_shortcut_reliance:
     paper: https://arxiv.org/abs/2607.16085
     title: Controlling Implicit Shortcut Reliance in L2 Spoken English Auto-markers
@@ -11039,6 +11082,67 @@ benchmarks:
       - https://gitlab.com/cs-cooper-lab/crema-d-mirror
       - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4313618/
       - https://doi.org/10.1109/TAFFC.2014.2336244
+
+  - id: mustard
+    name: MUStARD
+    full_name: "MUStARD: Multimodal Sarcasm Detection Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - paralinguistic_understanding
+    tasks:
+      - multimodal_sarcasm_detection
+      - spoken_sarcasm_detection
+      - audio_visual_pragmatics
+      - dialogue_context_understanding
+      - paralinguistic_understanding
+    official:
+      repo: https://github.com/soujanyaporia/MUStARD
+      dataset: https://huggingface.co/datasets/MichiganNLP/MUStARD
+      paper: https://aclanthology.org/P19-1455/
+      recent_evaluation: https://arxiv.org/abs/2607.11102
+    download:
+      access: public_ungated
+      primary:
+        - https://github.com/soujanyaporia/MUStARD
+        - https://huggingface.co/datasets/MichiganNLP/MUStARD
+      examples:
+        - 'scripts/download/mustard.sh'
+        - 'MUSTARD_DOWNLOAD_MEDIA=1 scripts/download/mustard.sh'
+      notes: >-
+        The official release contains 690 audiovisual utterances from four
+        English-language comedy sources, binary sarcasm labels, dialogue
+        context and speakers, and fixed five-fold indices. The helper downloads
+        the official documentation, repository metadata, 375 KB annotation
+        JSON, and 28 KB fold file by default. The public Hugging Face repository
+        is approximately 4.63 GB and includes raw audiovisual clips plus
+        pre-extracted BERT and ResNet features, so it requires explicit opt-in.
+        CHARM section 4.1 evaluates all 690 items for text calibration and uses
+        stratified five-fold cross-validation for audio-text late fusion.
+    license:
+      repository: MIT
+      dataset_card: MIT
+      media: third_party_rights_require_review
+      notes: >-
+        The official GitHub repository includes an MIT license and the
+        Hugging Face card declares MIT. MUStARD audiovisual clips are excerpted
+        from Friends, The Big Bang Theory, The Golden Girls, and
+        Sarcasmaholics Anonymous; neither machine-readable label establishes
+        that those third-party recordings are relicensed. Review copyright,
+        fair-use, and redistribution constraints before downloading or using
+        the media, especially commercially.
+    sources:
+      - https://aclanthology.org/P19-1455/
+      - https://aclanthology.org/P19-1455.pdf
+      - https://github.com/soujanyaporia/MUStARD
+      - https://raw.githubusercontent.com/soujanyaporia/MUStARD/master/README.md
+      - https://raw.githubusercontent.com/soujanyaporia/MUStARD/master/LICENSE
+      - https://api.github.com/repos/soujanyaporia/MUStARD
+      - https://huggingface.co/datasets/MichiganNLP/MUStARD
+      - https://huggingface.co/datasets/MichiganNLP/MUStARD/raw/main/README.md
+      - https://huggingface.co/api/datasets/MichiganNLP/MUStARD
+      - https://arxiv.org/abs/2607.11102
+      - https://arxiv.org/html/2607.11102v1#S4.SS1
 
   - id: meld
     name: MELD

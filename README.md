@@ -51,6 +51,7 @@ multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
 Russian conversational speech synthesis, non-human voice conversion and
 designed-vocalization timbre transfer, multimodal ambivalence and hesitancy
 recognition,
+multimodal spoken-sarcasm and dialogue-pragmatics evaluation,
 few-shot robustness under foreground/background shifts, dynamic heterogeneous
 corruption robustness for test-time audio adaptation, few-shot bioacoustic
 event detection, multi-domain audio question answering, Spanish speech
@@ -76,7 +77,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 298 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 299 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -108,6 +109,16 @@ inventoried in the source YAML: DailyOmni, WorldSense, AVUT, AV-SpeakerBench,
 audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
+
+The July 2026 CHARM paper is inventoried across sections 4.1 and 4.3. Its
+English audio-text sarcasm evaluation maps to the newly indexed public
+[MUStARD](https://github.com/soujanyaporia/MUStARD) family: 690
+sitcom-derived audiovisual utterances with labels, dialogue context, and fixed
+fold indices. The repository and dataset card say MIT, but those labels must
+not be assumed to relicense the underlying television excerpts. CHARM's CMMA
+evaluation is recorded as a follow-up candidate because this audit verified
+the primary NeurIPS paper but not an author-controlled public archive with
+clear access and reuse terms.
 
 The July 2026 LALM audio-judge reliability paper is recorded as a
 claimed-public-supplement audit. It evaluates 152 production full-duplex
@@ -1297,6 +1308,7 @@ Current coverage includes:
 | [TESS](https://doi.org/10.5683/SP2/E8H2MF) | Speech emotion recognition and auditory emotion perception | Owner-hosted University of Toronto Dataverse release with 2,800 acted-emotion WAV stimuli; helper saves official metadata by default and makes the complete ZIP opt-in | CC BY-NC 4.0; preserve attribution and review identifiable-voice ethics for downstream use |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
+| [MUStARD](https://github.com/soujanyaporia/MUStARD) | Multimodal spoken-sarcasm detection and dialogue pragmatics | Public 690-item English audiovisual corpus with binary labels, dialogue context, and fixed fold indices; helper downloads lightweight docs, labels, and folds by default while the approximately 4.63 GB Hugging Face media/features snapshot is opt-in | Repository and HF card say MIT, but sitcom-derived television clips retain third-party rights that require separate review |
 | [BAH](https://www.etsmtl.ca/en/labs/livia/datasets/bah-ambivalence-hesitancy) | Multimodal ambivalence/hesitancy recognition and temporal affect localization | Proprietary research release with 1,427 videos, 10.60 hours, 300 participants, 16 kHz audio, timestamped transcripts, aligned faces, expert video/frame annotations, metadata, and participant-disjoint splits; helper saves public documentation only | Research-only proprietary EULA; access requests must come from eligible full-time faculty and name all users; BSD-3-Clause covers public baseline code, not participant data |
 | [MER2023](https://arxiv.org/abs/2304.08981) | Multi-label, modality-robust, and semi-supervised multimodal emotion recognition | Request-gated [MERChallenge/MER2023](https://huggingface.co/datasets/MERChallenge/MER2023) with 3,373 Train&Val clips, 823 MER-MULTI/MER-NOISE test clips, and 73,148 unlabeled MER-SEMI clips; helper saves only public paper/repository/API metadata and leaves the roughly 140 GB password-protected release manual | CC BY-NC 4.0 plus academic-only, no-redistribution, and no-modification gated terms; baseline code license is unspecified and movie/TV source-media rights remain separate |
 | [MER2024](https://arxiv.org/abs/2404.17113) | Semi-supervised, noise-robust, and open-vocabulary multimodal emotion recognition | Request-gated [MERChallenge/MER2024](https://huggingface.co/datasets/MERChallenge/MER2024) with 5,030 labeled and 115,595 unlabeled clips; helper saves only public paper/project/repository/API metadata and leaves the roughly 218.4 GB release manual | CC BY-NC 4.0 plus academic-only, non-commercial, no-redistribution, no-modification, and no-upload terms; MER2024 code license is unspecified and source-video rights remain separate |
