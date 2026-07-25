@@ -200,6 +200,15 @@ promised Appendix A.1 statistics and appendix examples are also absent from the
 arXiv HTML and source package, so the index does not infer a benchmark size or
 license absent evaluation assets.
 
+The June 2026 AOR-Bench paper is also recorded as an unreleased audio-safety
+protocol rather than a public benchmark family. It reports 3,000
+pseudo-harmful samples across six scenario categories after varying speaker
+gender, emotion, and rate, but version 1 provides no official project,
+repository, dataset card, item manifest, audio archive, evaluation code, or
+download link. The paper's arXiv license does not establish reuse terms for
+the absent benchmark or redistribution rights for its generated Sora-2 and
+CosyVoice outputs.
+
 Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
 bilingual text-to-music, two cover-song reference, and bilingual rendering
 sets are internal and unreleased. The public exception is the

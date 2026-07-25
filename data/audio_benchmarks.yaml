@@ -966,6 +966,45 @@ paper_audits:
       - https://arxiv.org/html/2606.25391v1#S7
       - https://export.arxiv.org/e-print/2606.25391v1
 
+  aor_bench_audio_over_refusal:
+    paper: https://arxiv.org/abs/2606.21147
+    title: "AOR-Bench: Do Large Audio Language Models Over-Refuse Pseudo-Harmful Queries?"
+    sections: 4-5, 8, and appendix F
+    status: audited_not_indexed_no_public_release
+    evaluated_sets:
+      - cited_as: AOR-Bench
+        index_id: null
+        status: described_unreleased
+        note: >-
+          The paper describes 50 background scenarios across agriculture,
+          cooking, emergency, game, shows, and sports. Each scenario is paired
+          with 10 harmful-sounding speech samples, yielding 500 pseudo-harmful
+          mixtures and 500 contrastive speech-only samples. Gender, emotion,
+          and speech-rate variants expand the reported evaluation to 3,000
+          audio samples, but version 1 provides no dataset archive, item
+          manifest, project page, repository, dataset card, or download link.
+    protocol_note: >-
+      AOR-Bench measures whether an audio-language model refuses speech that
+      sounds harmful in isolation even when generated background audio makes
+      the combined request benign. Background tracks are extracted from
+      Sora-2-generated videos, harmful-sounding speech is synthesized with
+      CosyVoice v3 Flash, and candidate pairs are moderated by an LLM ensemble
+      plus manual review. The paper warns that samples may contain toxic or
+      undesired content. Its appendix publishes prompt images, not reusable
+      audio, annotations, split files, or evaluation code.
+    license_note: >-
+      The article uses arXiv's perpetual non-exclusive license. No license is
+      stated for the absent AOR-Bench audio, scripts, prompts, annotations, or
+      evaluation implementation, and the paper does not establish
+      redistribution rights for generated Sora-2 or CosyVoice outputs.
+    sources:
+      - https://arxiv.org/abs/2606.21147
+      - https://arxiv.org/html/2606.21147v1#S4
+      - https://arxiv.org/html/2606.21147v1#S5
+      - https://arxiv.org/html/2606.21147v1#S8
+      - https://arxiv.org/html/2606.21147v1#A6
+      - https://export.arxiv.org/api/query?id_list=2606.21147
+
   ddpo_vc_speaker_deidentification:
     paper: https://arxiv.org/abs/2606.15313
     sections: 4.1-4.4
