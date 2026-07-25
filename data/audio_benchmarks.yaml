@@ -9,6 +9,55 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  musebench_audiovisual_arts_understanding:
+    paper: https://arxiv.org/abs/2606.30026
+    title: "MuseBench: Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs"
+    sections: 3-4 and appendices B-C
+    status: audited_code_public_benchmark_data_unreleased
+    public_interfaces:
+      - https://musebench.github.io/
+      - https://github.com/musebench/musebench-code
+    evaluated_domains:
+      - domain: intent_level_audiovisual_arts_understanding
+        protocol: >-
+          4,016 single-select and multi-select questions with four to eight
+          options, spanning cinematic arts, static visual arts, stage
+          performing arts, and game arts across eleven sub-domains. Evaluation
+          uses narrator-removed ten-second evidence clips and reports raw
+          accuracy, chance-adjusted accuracy, exact match, precision, recall,
+          and F1.
+        data_status: benchmark_questions_clips_and_item_manifest_unreleased
+        note: >-
+          The official page describes the benchmark and publishes examples,
+          aggregate statistics, and leaderboard results. Its Hugging Face
+          button is a non-resolving placeholder link. The official repository
+          releases construction scripts, a dataset adapter, and metric code,
+          but its adapter requires users to supply benchmark.json and the
+          video clips locally; neither artifact is present in the repository.
+    license:
+      paper: CC-BY-4.0
+      code: MIT
+      benchmark_data: not_specified_unreleased
+      source_media: youtube_bilibili_tiktok_uploader_and_platform_terms_apply
+    sources:
+      - https://arxiv.org/abs/2606.30026
+      - https://arxiv.org/html/2606.30026v1#S3
+      - https://arxiv.org/html/2606.30026v1#S4
+      - https://musebench.github.io/
+      - https://github.com/musebench/musebench-code
+      - https://raw.githubusercontent.com/musebench/musebench-code/main/README.md
+      - https://raw.githubusercontent.com/musebench/musebench-code/main/LICENSE
+      - https://raw.githubusercontent.com/musebench/musebench-code/main/evaluation/musebench_dataset.py
+      - https://api.github.com/repos/musebench/musebench-code/git/trees/main?recursive=1
+    note: >-
+      MuseBench is recorded as an announced benchmark protocol rather than an
+      indexed downloadable family. Public MIT-licensed construction and
+      evaluation code does not release the paper's questions, answer keys,
+      item manifest, transcripts, or narrator-removed clips, and the paper's
+      CC BY license does not establish reuse rights for those absent artifacts
+      or the underlying platform-hosted media. Recheck the official page and
+      repository before adding a benchmark entry or download helper.
+
   traceback_translators_continual_fake_speech_detection:
     paper: https://arxiv.org/abs/2607.12569
     title: Traceback Translators Against Forgetting in Continual Fake Speech Detection

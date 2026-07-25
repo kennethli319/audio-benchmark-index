@@ -111,6 +111,17 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The June 2026 MuseBench paper is recorded as an announced audiovisual-arts
+protocol rather than a downloadable benchmark family. Its official
+[project page](https://musebench.github.io/) describes 4,016 single- and
+multi-select questions over narrator-removed evidence clips, while the
+[official repository](https://github.com/musebench/musebench-code) releases
+MIT-licensed construction, adapter, and metric code. The repository requires
+users to supply `benchmark.json` and the clips, however, and neither those
+files nor a working dataset-card link is currently public. Paper and code
+licenses therefore must not be treated as licensing the absent benchmark data
+or source-platform media.
+
 The July 2026 traceback-translator paper adds the official
 [ADD 2022](http://addchallenge.cn/downloadADD2022) challenge family. Its
 Mandarin continual-learning evaluation complements the already indexed
