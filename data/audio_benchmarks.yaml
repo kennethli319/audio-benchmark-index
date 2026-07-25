@@ -163,8 +163,8 @@ paper_audits:
         index_id: mer2023
         status: public_request_gated
       - cited_as: MER2024
-        index_id: null
-        status: challenge_release_not_yet_separately_indexed
+        index_id: mer2024
+        status: public_request_gated
       - cited_as: MELD
         index_id: meld
         status: public
@@ -191,9 +191,9 @@ paper_audits:
       Section 4.1 evaluates nine multimodal emotion and sentiment families.
       Section 5.1 reports HIT for basic emotion recognition, weighted average
       F1 for sentiment analysis, and Fs for the OV-MERD+ open-vocabulary task.
-      MER2023, CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI are separately
-      indexed from their primary releases. The remaining unindexed public
-      family should be traced separately rather than bundled into one helper.
+      MER2023, MER2024, CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI are
+      separately indexed from their primary releases. The remaining families
+      retain their existing entries and access caveats.
     license_note: >-
       Access and terms differ across the nine families. In particular,
       CH-SIMS and processed CMU-MOSEI packages are distributed through shared
@@ -9741,6 +9741,70 @@ benchmarks:
       - https://api.github.com/repos/CASIA-Affective-Computing-Group/MER2023-Baseline
       - https://huggingface.co/datasets/MERChallenge/MER2023
       - https://huggingface.co/api/datasets/MERChallenge/MER2023
+
+  - id: mer2024
+    name: MER2024
+    full_name: "MER 2024: Semi-Supervised Learning, Noise Robustness, and Open-Vocabulary Multimodal Emotion Recognition"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+      - paralinguistic_speech_evaluation
+    tasks:
+      - multimodal_emotion_recognition
+      - discrete_emotion_classification
+      - semi_supervised_emotion_recognition
+      - modality_robustness
+      - open_vocabulary_emotion_recognition
+      - audio_visual_emotion_understanding
+    official:
+      paper: https://arxiv.org/abs/2404.17113
+      doi: https://doi.org/10.1145/3689092.3689959
+      project: https://zeroqiaoba.github.io/MER2024-website/
+      repo: https://github.com/zeroQiaoba/MERTools/tree/master/MER2024
+      dataset: https://huggingface.co/datasets/MERChallenge/MER2024
+      dataset_api: https://huggingface.co/api/datasets/MERChallenge/MER2024
+    download:
+      primary:
+        - https://huggingface.co/datasets/MERChallenge/MER2024
+        - https://github.com/zeroQiaoba/MERTools/tree/master/MER2024
+      examples:
+        - 'scripts/download/mer2024.sh'
+      notes: >-
+        This request-gated extension of MER2023 provides 5,030 labeled
+        Train&Val clips and 115,595 unlabeled clips. MER-SEMI evaluates 1,169
+        annotated clips from the unlabeled pool, MER-NOISE evaluates 1,170
+        clips with additive audio noise and image blur, and MER-OV evaluates
+        free-form emotion labels. Table 1 of the paper reports 322 MER-OV
+        samples, while the surrounding prose says 332; the index preserves
+        that primary-source discrepancy. The current Hugging Face tree is
+        approximately 218.4 GB and requires approval. The helper saves only
+        public paper, project, repository, and Hugging Face API metadata.
+    license:
+      data: CC-BY-NC-4.0_with_additional_gated_terms
+      code: not_specified
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0 and non-commercial use.
+        Its gate prohibits transfer of the database or derived labeling files
+        to third parties and modification without written consent. The
+        challenge page additionally limits the dataset to academic research
+        and prohibits uploading samples. The MER2024 README displays an
+        Apache-2.0 badge but links to a license under the later MER2025
+        directory; the repository root and MER2024 directory contain no
+        applicable LICENSE file, so the MER2024 code license is recorded as
+        unspecified. Source-video, performer, privacy, and platform rights
+        remain separate.
+    sources:
+      - https://arxiv.org/abs/2404.17113
+      - https://arxiv.org/html/2404.17113v4#S2
+      - https://doi.org/10.1145/3689092.3689959
+      - https://zeroqiaoba.github.io/MER2024-website/
+      - https://github.com/zeroQiaoba/MERTools/tree/master/MER2024
+      - https://raw.githubusercontent.com/zeroQiaoba/MERTools/master/MER2024/README.md
+      - https://api.github.com/repos/zeroQiaoba/MERTools
+      - https://huggingface.co/datasets/MERChallenge/MER2024
+      - https://huggingface.co/api/datasets/MERChallenge/MER2024
+      - https://huggingface.co/api/datasets/MERChallenge/MER2024/tree/main?recursive=true&expand=true
 
   - id: ch_sims
     name: CH-SIMS

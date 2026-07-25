@@ -283,6 +283,7 @@ scripts/download/adress_challenges.sh
 scripts/download/iemocap.sh
 scripts/download/ov_merd.sh
 scripts/download/mer2023.sh
+scripts/download/mer2024.sh
 scripts/download/spemoc.sh
 scripts/download/incaremo.sh
 scripts/download/msp_podcast.sh
