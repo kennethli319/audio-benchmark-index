@@ -192,6 +192,7 @@ scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
 scripts/download/pvqd.sh
+scripts/download/torgo.sh
 scripts/download/parapair_audio_bench.sh
 scripts/download/speecheq.sh
 scripts/download/star_bench.sh
@@ -924,6 +925,10 @@ AUDIO_MNIST_DOWNLOAD_REPO=1 scripts/download/audio_mnist.sh
 # PVQD downloads official metadata by default. Ratings/docs and the complete approximately 514.5 MiB clinical-voice release are separate opt-ins.
 PVQD_DOWNLOAD_ANNOTATIONS=1 scripts/download/pvqd.sh
 PVQD_DOWNLOAD_ALL=1 scripts/download/pvqd.sh
+
+# TORGO downloads official docs by default. Large speaker-group archives require terms acknowledgment and explicit selection.
+TORGO_ACK_TERMS=1 TORGO_ARCHIVES=F scripts/download/torgo.sh
+TORGO_ACK_TERMS=1 TORGO_ARCHIVES=F,FC,M,MC scripts/download/torgo.sh
 
 # EMO-SUPERB downloads official benchmark docs by default. The evaluation repository clone is opt-in; component corpus audio remains manual/EULA-gated.
 EMO_SUPERB_CLONE_REPO=1 scripts/download/emo_superb.sh

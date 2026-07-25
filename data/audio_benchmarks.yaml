@@ -211,6 +211,46 @@ paper_audits:
       - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
       - https://github.com/pliang279/MultiBench
 
+  voice_concept_bottleneck_health_evaluation:
+    paper: https://arxiv.org/abs/2607.16967
+    title: "An Audio Language Model-Based Voice Concept Bottleneck Framework for Interpretable Health Assessment"
+    sections: 3.1 and 4
+    status: audited_public_families
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: PVQD
+        index_id: pvqd
+        status: public
+      - cited_as: Android Corpus
+        index_id: androids_corpus
+        status: public_restricted_terms
+      - cited_as: TORGO
+        index_id: torgo
+        status: public_nonprofit_academic_only
+        note: >-
+          The paper uses only head-mounted-microphone recordings and evaluates
+          dysarthria with leave-one-speaker-out cross-validation. The official
+          release packages data by speaker group rather than publishing this
+          paper's exact evaluation manifest.
+    protocol_note: >-
+      Section 3.1 fine-tunes the audio-language-model concept extractor on
+      PVQD, evaluates depression on the Android Corpus interview subset using
+      the official five folds, and evaluates dysarthria on TORGO with
+      leave-one-speaker-out cross-validation. TORGO's owner release includes
+      the source acoustic and articulatory recordings but not the paper's
+      headMic-only split manifest or derived model features.
+    license_note: >-
+      TORGO's University of Toronto page permits use free of charge only for
+      academic, non-profit purposes and requires citation of at least one
+      listed paper. It does not state a standard open-data license. PVQD and
+      Android Corpus retain their separately documented terms and sensitive
+      human-voice caveats.
+    sources:
+      - https://arxiv.org/abs/2607.16967
+      - https://arxiv.org/html/2607.16967v1#S3.SS1
+      - http://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html
+      - https://link.springer.com/article/10.1007/s10579-011-9145-0
+
   multimodal_ambivalence_hesitancy_evaluation:
     paper: https://arxiv.org/abs/2607.15779
     title: "Multimodal Ambivalence and Hesitancy Recognition via Cross-Attention and Gated Fusion"
@@ -15219,5 +15259,60 @@ benchmarks:
       - https://api.datacite.org/dois/10.17632/9dz247gnyb.4
       - https://doi.org/10.17632/9dz247gnyb.4
       - https://doi.org/10.1016/j.jvoice.2020.10.001
+      - https://arxiv.org/abs/2607.16967
+      - https://arxiv.org/html/2607.16967v1#S3.SS1
+
+  - id: torgo
+    name: TORGO
+    full_name: "TORGO Database of Acoustic and Articulatory Speech from Speakers with Dysarthria"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - clinical_speech_assessment
+      - automatic_speech_recognition
+    tasks:
+      - dysarthria_detection
+      - pathological_speech_recognition
+      - speech_intelligibility_assessment
+      - acoustic_articulatory_modeling
+    official:
+      dataset: http://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html
+      paper: https://link.springer.com/article/10.1007/s10579-011-9145-0
+    download:
+      primary:
+        - http://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html
+      examples:
+        - 'scripts/download/torgo.sh'
+        - 'TORGO_ACK_TERMS=1 TORGO_ARCHIVES=F scripts/download/torgo.sh'
+        - 'TORGO_ACK_TERMS=1 TORGO_ARCHIVES=F,FC,M,MC scripts/download/torgo.sh'
+      notes: >-
+        The public University of Toronto release contains aligned 16 kHz
+        acoustic recordings and measured 3D articulatory features from eight
+        English speakers with cerebral palsy or amyotrophic lateral sclerosis
+        and seven matched controls. Stimuli include non-words, isolated words,
+        restricted sentences, and spontaneous descriptions. Four BZip2
+        archives are organized as female dysarthric (F), female control (FC),
+        male dysarthric (M), and male control (MC); they total approximately
+        8.9 GiB compressed and 18 GB uncompressed. The helper downloads the
+        official page, correction spreadsheet, and coil-location documentation
+        by default. Archive downloads require explicit terms acknowledgment and
+        a selected group list. The July 2026 voice-concept bottleneck paper
+        evaluates only headMic recordings with leave-one-speaker-out
+        cross-validation; its exact derived split is not separately released.
+    license:
+      data: custom_academic_nonprofit_only
+      code: not_applicable
+      notes: >-
+        The owner page says use is free for academic, non-profit purposes and
+        requires citation of at least one listed TORGO paper. It supplies the
+        data as-is and does not identify a standard open-data license or grant
+        commercial use. The recordings contain identifiable voices and
+        disability and health information, so ethical and privacy review
+        remains necessary.
+    sources:
+      - http://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html
+      - http://www.cs.toronto.edu/~complingweb/data/TORGO/doc/ERRORS.xls
+      - http://www.cs.toronto.edu/~complingweb/data/TORGO/doc/CoilLocations.pdf
+      - https://link.springer.com/article/10.1007/s10579-011-9145-0
       - https://arxiv.org/abs/2607.16967
       - https://arxiv.org/html/2607.16967v1#S3.SS1
