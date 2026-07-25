@@ -1061,34 +1061,55 @@ paper_audits:
 
   qwen3_tts_technical_report:
     paper: https://arxiv.org/abs/2601.15621
+    title: Qwen3-TTS Technical Report
     sections: 4.1-4.2
+    status: audited_seven_public_families_one_internal_protocol
     evaluated_sets:
       - cited_as: CommonVoice
         index_id: common_voice
         status: public
+        note: Section 4.1.1 evaluates English and Chinese ASR reconstruction with the existing public Common Voice family.
       - cited_as: Fleurs
         index_id: fleurs
         status: public
+        note: Section 4.1.1 evaluates English and Chinese ASR reconstruction with the existing public FLEURS family.
       - cited_as: LibriSpeech test-clean
         index_id: librispeech
         status: public
+        note: Section 4.1.2 evaluates all 2,620 public test-clean utterances for speech-codec reconstruction.
       - cited_as: Seed-TTS test set
         index_id: seed_tts_eval
         status: public_objective_set
-        note: The Seed-TTS paper says its separate subjective set is unreleased because of copyright restrictions.
+        note: Section 4.2.1 reports WER on the public objective test-en and test-zh sets. The Seed-TTS paper says its separate subjective set is unreleased because of copyright restrictions.
       - cited_as: TTS multilingual test set
         index_id: tts_multilingual_test_set
         status: public
+        note: Sections 4.2.2 and 4.2.5 use a 10-language subset of the public MiniMaxAI release for zero-shot multilingual and target-speaker generation; the report does not identify exact text rows.
       - cited_as: Cross-Lingual benchmark
         index_id: cv3_eval
         status: public
+        note: Section 4.2.3 uses the public CV3-Eval cross-lingual benchmark for mixed error rate across source-target language directions.
       - cited_as: InstructTTSEval
         index_id: instruct_tts_eval
         status: public
+        note: Section 4.2.4 uses the public benchmark's Voice Design and Target Speaker instruction-following scenarios.
       - cited_as: long speech test set
         index_id: null
         status: internal_unreleased
-        note: Section 4.2.6 describes 100 curated Chinese and English texts of 200 to 2,000 words; the report provides no public dataset or download link.
+        note: Section 4.2.6 describes 100 curated Chinese and English texts of 200 to 2,000 words and generated samples exceeding 10 minutes; the report provides no text manifest, generated audio, public dataset, or download link.
+    sources:
+      - https://arxiv.org/abs/2601.15621
+      - https://arxiv.org/html/2601.15621v1#S4.SS1
+      - https://arxiv.org/html/2601.15621v1#S4.SS2
+      - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5
+      - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS6
+    note: >-
+      The report's multilingual, cross-lingual, controllable, and
+      target-speaker evaluations map to existing public benchmark families.
+      Only its paper-specific long-speech evaluation is explicitly internal
+      and unreleased; the public source families do not reproduce that
+      protocol. Dataset licenses and component-source caveats are recorded in
+      the corresponding benchmark entries.
   qwen3_5_omni_x_to_speech:
     paper: https://arxiv.org/abs/2604.15804
     sections: 5.2-5.2.4

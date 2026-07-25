@@ -88,9 +88,11 @@ the repository is no longer limited to that paper's benchmark list.
 Qwen3-TTS sections 4.1-4.2 are fully inventoried in the source YAML. Its named
 public evaluation sets map to Common Voice, FLEURS, LibriSpeech `test-clean`,
 Seed-TTS Eval, TTS Multilingual Test Set, CV3-Eval, and InstructTTSEval. The
-section 4.2.6 long-speech set is not a public benchmark: the report describes
-an internal set of 100 Chinese and English texts (200-2,000 words) and provides
-no release or download link.
+target-speaker evaluation in section 4.2.5 reuses a 10-language subset of the
+public TTS Multilingual Test Set, although the exact text rows are not
+identified. The section 4.2.6 long-speech set is not a public benchmark: the
+report describes an internal set of 100 Chinese and English texts (200-2,000
+words) and provides no text manifest, generated audio, or download link.
 
 Qwen3.5-Omni section 5.2 is also inventoried in the source YAML. Its public
 speech-generation sets map to Seed-TTS Eval, TTS Multilingual Test Set, and
