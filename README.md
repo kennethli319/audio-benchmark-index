@@ -349,6 +349,16 @@ repository, dataset card, item manifest, generated spectrograms, questions,
 answers, split definitions, or benchmark license. The public source corpora do
 not themselves release CaReCoS's derived evaluation package.
 
+The June 2026 BCoughBench paper is likewise recorded as an audited respiratory
+health protocol rather than a downloadable family. It evaluates nine
+classification and three age-regression tasks over five named cough corpora,
+each under smartphone audio and five EBEN-simulated body-coupled sensor
+conditions. Version 1 releases no official benchmark manifest, subject splits,
+transformed cough audio, code, or license for the derived evaluation package.
+The public CC BY 4.0 Cough-COPD(CC) Zenodo archive and any independently
+available source corpora or EBEN checkpoints do not reproduce BCoughBench's
+exact selections and simulated evaluation artifacts.
+
 The June 2026 Preference-ASR paper is also recorded as an audited protocol,
 not a downloadable family. It describes 3,210 English preference-aware ASR
 triples plus 335 standard items across normalization, entities, disfluencies,

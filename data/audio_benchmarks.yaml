@@ -1191,6 +1191,31 @@ paper_audits:
       - https://arxiv.org/html/2607.03356v1#S4
     note: CaReCoS is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper has no project page, repository, dataset card, archive, code link, or benchmark-license statement. Public availability of the seven source corpora does not release the paper's derived spectrograms, questions, answers, inferred clinical labels, evaluation selections, or splits, and the paper's CC BY 4.0 license applies to the article rather than absent benchmark files.
 
+  bcoughbench:
+    paper: https://arxiv.org/abs/2606.25116
+    sections: 2.1-2.4
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: respiratory_health_classification_and_regression
+        protocol: Nine classification tasks and three age-regression tasks over CoughVID, Coswara, CIDRZ, Cough-COPD(CC), and CovidUK, evaluated on smartphone audio and five EBEN-simulated body-coupled sensor conditions
+        data_status: source_corpora_mixed_benchmark_artifacts_unreleased
+        note: The five simulated conditions are forehead accelerometer, soft and rigid in-ear microphones, temple vibration pickup, and throat microphone. The paper reports task-level clip counts and says official or subject-disjoint splits are used, but provides no row manifest, split files, transformed cough audio, or evaluation package.
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      upstream: The five cough corpora retain their own access, health-data, consent, and reuse terms; the public Cough-COPD(CC) Zenodo record lists CC BY 4.0
+    sources:
+      - https://arxiv.org/abs/2606.25116
+      - https://arxiv.org/html/2606.25116v1#S2.SS1
+      - https://arxiv.org/html/2606.25116v1#S2.SS2
+      - https://arxiv.org/html/2606.25116v1#S2.SS4
+      - https://export.arxiv.org/api/query?id_list=2606.25116
+      - https://doi.org/10.5281/zenodo.14881818
+      - https://zenodo.org/api/records/14881818
+    note: BCoughBench is recorded as an audited protocol rather than a downloadable benchmark family. Version 1 and its arXiv metadata expose no official project, repository, dataset card, archive, item manifest, derived body-coupled audio, evaluation code, or benchmark-license statement. Public availability of individual source corpora or EBEN checkpoints does not release the paper's exact selections, subject-disjoint splits, simulated clips, or evaluation artifacts, so no helper or duplicate source-corpus entry is added.
+
   preference_asr:
     paper: https://arxiv.org/abs/2606.29534
     sections: 2-3 and appendix
