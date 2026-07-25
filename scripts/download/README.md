@@ -269,6 +269,7 @@ scripts/download/qualispeech.sh
 scripts/download/bvcc.sh
 scripts/download/vctk.sh
 scripts/download/adqa_bench.sh
+scripts/download/multiref_compass.sh
 scripts/download/clotho_moment.sh
 scripts/download/castella.sh
 ```
@@ -277,6 +278,12 @@ scripts/download/castella.sh
 # Hugging Face snapshot with embedded image/audio media is opt-in.
 OMNIBENCH_DOWNLOAD_HF=1 scripts/download/omnibench.sh
 OMNIBENCH_CLONE_REPO=1 scripts/download/omnibench.sh
+
+# MultiRef-Compass downloads its public CSV/JSONL manifests and official docs
+# by default. The approximately 1.96 GB image/video snapshot and toolkit clone
+# are separate opt-ins.
+MULTIREF_COMPASS_DOWNLOAD_HF=1 scripts/download/multiref_compass.sh
+MULTIREF_COMPASS_CLONE_REPO=1 scripts/download/multiref_compass.sh
 
 # MMAR downloads its released MMAR-Rubrics metadata, docs, and evaluation
 # scripts by default. The approximately 2.99 GB Hugging Face audio snapshot is

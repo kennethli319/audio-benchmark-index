@@ -3546,23 +3546,32 @@ paper_audits:
   multiref_compass:
     paper: https://arxiv.org/abs/2607.14189
     sections: abstract, 1, 3, and appendix B
-    status: audited_not_indexed
-    public_interfaces: []
+    status: audited_one_new_public_family
+    public_interfaces:
+      - https://github.com/zxhhh0201/MultiRef-Compass
+      - https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass
     evaluated_domains:
       - domain: multi_reference_audio_video_generation
         protocol: 350 curated samples across multi-view subject preservation, heterogeneous reference composition, multi-entity binding, and audio-video reference-input challenges, scored with 14 sub-metrics under four evaluation dimensions
-        data_status: no_public_release_found
-        note: The benchmark uses image, video, and audio references plus text instructions and combines automatic metrics with a rejudging-enhanced MLLM-as-a-Judge protocol, but the paper provides no project, repository, dataset card, archive, item file, or evaluation-code link.
+        index_id: multiref_compass
+        data_status: public_ungated_partial_audio_reference_release
+        note: The official release provides all 350 structured prompts, image references, and board-4 video references plus a 14-metric toolkit. The current dataset schema has no reference-audio column or audio files, so paper scenarios requiring an explicit audio reference are not fully reproduced by the public snapshot.
     license:
       paper: CC BY 4.0
-      benchmark_data: not_specified_unreleased
-      upstream: The paper describes Pexels and Freesound assets plus generated images and voices; their source-specific terms would remain relevant to any future release
+      benchmark_data: CC BY 4.0
+      code: MIT
+      upstream: Pexels, Freesound, generated-image, generated-voice, and other source-asset terms remain applicable
     sources:
       - https://arxiv.org/html/2607.14189v1
       - https://arxiv.org/html/2607.14189v1#Sx3
       - https://arxiv.org/html/2607.14189v1#A2
-      - https://export.arxiv.org/api/query?id_list=2607.14189
-    note: MultiRef-Compass is recorded as an audited protocol rather than a downloadable benchmark family. The v1 paper and arXiv metadata expose no official data or code interface, so its 350 prompts, reference assets, metric routing, judge prompts, and evaluation implementation must not be inferred to be public from the paper's CC BY 4.0 license or its descriptions of permissively licensed source assets.
+      - https://github.com/zxhhh0201/MultiRef-Compass
+      - https://raw.githubusercontent.com/zxhhh0201/MultiRef-Compass/main/README.md
+      - https://raw.githubusercontent.com/zxhhh0201/MultiRef-Compass/main/LICENSE
+      - https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass
+      - https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass/raw/main/README.md
+      - https://huggingface.co/api/datasets/zxhhhhhh/MultiRef-Compass
+    note: The public interfaces appeared after the original paper audit. This update indexes the released family while preserving the reproducibility gap for explicit audio-reference inputs rather than inferring absent files from the paper.
 
   scenebind:
     paper: https://arxiv.org/abs/2607.15265
@@ -18727,6 +18736,67 @@ benchmarks:
       - https://arxiv.org/abs/2507.19634
       - https://openreview.net/forum?id=PtPYZYfa0h
       - https://aclanthology.org/events/acl-2023/
+
+  - id: multiref_compass
+    name: MultiRef-Compass
+    full_name: "MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_generation_evaluation
+      - speech_generation_evaluation
+      - music_generation_evaluation
+    tasks:
+      - multi_reference_audio_video_generation
+      - audio_visual_consistency_evaluation
+      - voice_timbre_similarity
+      - speech_lip_synchronization
+      - sound_event_alignment
+      - audio_instruction_following
+      - speech_content_accuracy
+    official:
+      repo: https://github.com/zxhhh0201/MultiRef-Compass
+      dataset: https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass
+      paper: https://arxiv.org/abs/2607.14189
+    download:
+      access: public_ungated_large_media_opt_in
+      primary:
+        - https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass
+      examples:
+        - 'scripts/download/multiref_compass.sh'
+        - 'MULTIREF_COMPASS_CLONE_REPO=1 scripts/download/multiref_compass.sh'
+        - 'MULTIREF_COMPASS_DOWNLOAD_HF=1 scripts/download/multiref_compass.sh'
+      notes: >-
+        The public release contains 350 English structured prompts across four
+        boards, image references, and input reference videos for board 4. The
+        helper downloads the dataset card, API metadata, CSV/JSONL manifests,
+        and repository license by default. Cloning the evaluation toolkit and
+        downloading the approximately 1.96 GB Hugging Face snapshot are
+        separate opt-ins. Although the paper evaluates explicit audio-reference
+        conditions and the toolkit accepts reference_audio_path, the current
+        dataset schema exposes only image and video reference columns and
+        includes no audio files; do not claim those paper scenarios are fully
+        reproducible from this snapshot.
+    license:
+      data: CC-BY-4.0
+      code: MIT
+      source_assets: source_specific_terms_apply
+      notes: >-
+        The Hugging Face card declares CC BY 4.0 and the evaluation repository
+        is MIT. The paper describes assets from Pexels and Freesound plus
+        generated images and voices, so preserve per-asset attribution and
+        review source-platform and generation-service terms; the dataset-level
+        tag should not be assumed to erase those underlying rights.
+    sources:
+      - https://arxiv.org/abs/2607.14189
+      - https://arxiv.org/html/2607.14189v1#S3
+      - https://arxiv.org/html/2607.14189v1#A2
+      - https://github.com/zxhhh0201/MultiRef-Compass
+      - https://raw.githubusercontent.com/zxhhh0201/MultiRef-Compass/main/README.md
+      - https://raw.githubusercontent.com/zxhhh0201/MultiRef-Compass/main/LICENSE
+      - https://api.github.com/repos/zxhhh0201/MultiRef-Compass
+      - https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass
+      - https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass/raw/main/README.md
+      - https://huggingface.co/api/datasets/zxhhhhhh/MultiRef-Compass
 
   - id: nonverbal_tts
     name: NonverbalTTS

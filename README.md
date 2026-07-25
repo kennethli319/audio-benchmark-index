@@ -79,7 +79,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 313 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 314 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -1028,13 +1028,13 @@ evaluation code and dataset will be released soon, while the official
 contains only README metadata and no dataset files. Its MIT card tag therefore
 does not establish reuse rights for the unreleased benchmark or source videos.
 
-The July 2026 MultiRef-Compass paper is also recorded as an audited protocol,
-not a downloadable family. It defines 350 multi-reference audio-video
-generation samples and a 14-sub-metric evaluation across basic quality,
-reference consistency, audio-visual consistency, and instruction following,
-but v1 provides no official project, repository, dataset card, archive, item
-file, or evaluation-code link. The paper's CC BY 4.0 license does not release
-its prompts, reference assets, metric routing, judge prompts, or implementation.
+The July 2026 MultiRef-Compass release is now indexed as a public benchmark
+family. Its official Hugging Face repository provides 350 prompts, image
+references, and board-4 input videos, while its MIT toolkit implements 14
+metrics spanning basic quality, reference fidelity, audio-visual consistency,
+and instruction following. The current public dataset has no reference-audio
+column or audio files, however, so the paper's explicit audio-reference
+conditions remain only partially reproducible.
 
 The July 2026 PC-Mix paper is recorded as an audited partial-component audio
 spoofing benchmark rather than a downloadable family. It describes 126,586
@@ -1229,6 +1229,7 @@ Current coverage includes:
 | [Video-MME](https://video-mme.github.io/) | Audio-enabled video question answering and long-video understanding | Public, ungated [lmms-lab/Video-MME](https://huggingface.co/datasets/lmms-lab/Video-MME) with 900 videos and 2,700 QA pairs; Qwen3.5-Omni evaluates it with audio enabled; helper downloads docs by default and requires explicit terms acknowledgment before the approximately 389 GB snapshot | Custom academic-research-only terms prohibit commercial use and, without approval, redistribution, publication, copying, dissemination, or modification; video rights remain with owners |
 | [OmniVideoBench](https://omnivideobench.github.io/omnivideobench_home/) | Complementary audio-visual reasoning and long-video understanding | Gated [NJU-LINK/OmniVideoBench](https://huggingface.co/datasets/NJU-LINK/OmniVideoBench) with 628 videos and 1,000 reasoning-annotated QA pairs; helper downloads public docs/API metadata by default and requires approved access plus explicit opt-in for the approximately 114 GB snapshot; OmniReasoner evaluates it across audio type and duration | Official GitHub README says CC BY-NC-SA 4.0, while HF declares CC BY-NC-ND 4.0 and requires non-commercial/no-redistribution terms; apply the stricter terms, and review raw-video rights separately |
 | [LVOmniBench](https://kd-tao.github.io/LVOmniBench/) | Long-form audio-video understanding and temporal reasoning | Gated [KD-TAO/LVOmniBench](https://huggingface.co/datasets/KD-TAO/LVOmniBench) with 275 videos totaling 140 hours and 1,014 manually authored QA pairs; helper downloads public docs/API metadata by default and requires approved access plus explicit opt-in for the approximately 187.4 GB snapshot; OmniReasoner evaluates it as an audio-visual benchmark | Paper says source videos are Creative Commons licensed, but the dataset card/repository state no benchmark-level license or per-video CC variants and the code has no license; review the access form, source-video attribution/rights, and YouTube terms |
+| [MultiRef-Compass](https://huggingface.co/datasets/zxhhhhhh/MultiRef-Compass) | Multi-reference audio-video generation evaluation | Public 350-prompt release with image references and board-4 input videos plus a 14-metric toolkit; helper downloads lightweight manifests/docs by default and makes the approximately 1.96 GB snapshot opt-in; explicit audio-reference files described by the paper are absent from the current public schema | Dataset card declares CC BY 4.0 and code is MIT; Pexels, Freesound, generated-media, and other source-asset terms remain applicable |
 | [StoryAD-QA](https://github.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA) | Long-form audio-description narrative comprehension | Public official release with 2,572 verified five-option questions, answer keys, prompts, and an accuracy scorer across segment-only and context-conditioned tracks; helper downloads lightweight docs/evaluator metadata by default and makes the approximately 8 MB repository clone opt-in; no movie media is included | License is explicitly pending finalization; suggested MIT/Apache and CC BY-NC terms are not grants, and underlying MAD-Eval/LSMDC movie rights remain separate |
 | [OmniRetriever-Bench](https://huggingface.co/datasets/YunzeLiu/OmniRetriever-Bench) | 12-direction audio-video-text retrieval | Public, ungated CSV with 3,782 held-out triples, source URLs, clip intervals, and human-corrected English captions; helper downloads the sub-1 MB annotations and official docs, while users obtain source media separately | HF card labels annotations Apache-2.0 but adds a biometric-identification/profiling/surveillance prohibition and the paper calls it custom research-use; TikTok media stays under uploader/platform terms; evaluator code has no stated license |
 | [AVSBench](https://opennlplab.github.io/AVSBench/) | Audio-visual segmentation and sounding-object localization | Official project/repository for S4, MS3, and semantic AVSS evaluation; original object annotations are publicly linked on Google Drive, while processed media and the updated object/semantic release require the official email/application path; helper downloads docs only | Project page licenses its published dataset under CC BY-NC 4.0 and repository code is Apache-2.0; underlying YouTube videos retain uploader/platform terms, and applicants should review any additional updated-release conditions |
