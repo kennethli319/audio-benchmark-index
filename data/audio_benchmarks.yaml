@@ -9,6 +9,60 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  traceback_translators_continual_fake_speech_detection:
+    paper: https://arxiv.org/abs/2607.12569
+    title: Traceback Translators Against Forgetting in Continual Fake Speech Detection
+    sections: 3-4
+    status: audited_one_new_public_family_three_existing_public_families
+    evaluated_sets:
+      - cited_as: ASVspoof 2019
+        index_id: asvspoof_2019
+        status: public
+        protocol: >-
+          The Logical Access training split trains the frozen source detector,
+          and its development and evaluation splits measure initial
+          performance and forgetting after each target-domain adaptation.
+      - cited_as: FakeOrReal (FoR)
+        index_id: fake_or_real
+        status: public_ungated
+        protocol: >-
+          FoR is one of three target domains used to compare full retraining,
+          batch-normalization adaptation, and traceback translation.
+      - cited_as: In-The-Wild (ITW)
+        index_id: in_the_wild_audio_deepfake
+        status: public_ungated
+        protocol: >-
+          ITW supplies a second English target domain with in-the-wild
+          celebrity and politician recordings.
+      - cited_as: ADD 2022 (ADD22)
+        index_id: add_2022
+        status: public_ungated
+        protocol: >-
+          ADD 2022 supplies the Mandarin target domain and tests cross-lingual
+          continual adaptation. The paper does not identify which challenge
+          track or exact split combination it uses, so the index links the
+          complete official challenge family without inferring a subset.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      add_2022: CC-BY-NC-ND-4.0
+      other_families: see_existing_entries
+    sources:
+      - https://arxiv.org/abs/2607.12569
+      - https://arxiv.org/html/2607.12569v1#S3
+      - https://arxiv.org/html/2607.12569v1#S4
+      - http://addchallenge.cn/downloadADD2022
+      - https://doi.org/10.1109/ICASSP43922.2022.9746939
+      - https://zenodo.org/records/12188127
+      - https://zenodo.org/records/12188083
+      - https://zenodo.org/records/10843991
+      - https://zenodo.org/records/12187997
+      - https://zenodo.org/records/12188035
+      - https://zenodo.org/records/12188055
+    note: >-
+      The continual-learning paper introduces a detector adaptation method,
+      not a new dataset. This audit adds the previously missing official ADD
+      2022 family and maps its other evaluations to existing coverage.
+
   genre_bias_music_evaluation:
     paper: https://arxiv.org/abs/2607.13903
     title: "Genre Bias or Aesthetic Perception? Identifying and Mitigating Shortcut Learning in Music Evaluation"
@@ -14191,6 +14245,79 @@ benchmarks:
       - https://doi.org/10.7488/ds/2555
       - https://doi.org/10.21437/Interspeech.2019-2249
       - https://arxiv.org/abs/1911.01601
+
+  - id: add_2022
+    name: ADD 2022
+    full_name: "ADD 2022: The First Audio Deep Synthesis Detection Challenge"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - low_quality_fake_audio_detection
+      - partially_fake_audio_detection
+      - synthetic_speech_detection
+      - audio_generation_and_detection_game
+      - cross_lingual_deepfake_detection
+    official:
+      challenge: http://addchallenge.cn/downloadADD2022
+      paper: https://doi.org/10.1109/ICASSP43922.2022.9746939
+      train_dev: https://zenodo.org/records/12188127
+      adaptation: https://zenodo.org/records/12188083
+      track1_test: https://zenodo.org/records/10843991
+      track2_test: https://zenodo.org/records/12187997
+      track3_round1_test: https://zenodo.org/records/12188035
+      track3_round2_test: https://zenodo.org/records/12188055
+      recent_evaluation: https://arxiv.org/abs/2607.12569
+    download:
+      primary:
+        - https://zenodo.org/records/12188127
+        - https://zenodo.org/records/12188083
+        - https://zenodo.org/records/10843991
+        - https://zenodo.org/records/12187997
+        - https://zenodo.org/records/12188035
+        - https://zenodo.org/records/12188055
+      examples:
+        - 'scripts/download/add_2022.sh'
+        - 'ADD2022_DOWNLOAD_ARCHIVES=1 ADD2022_RECORDS="adaptation track1" scripts/download/add_2022.sh'
+      notes: >-
+        The public, ungated release covers low-quality fully fake speech,
+        partially fake speech, and an audio generation-versus-detection game.
+        Six official Zenodo records provide train/development, adaptation, and
+        challenge test packages totaling approximately 49.5 GB. The helper
+        downloads the challenge page, paper page, and all record metadata by
+        default; archive files require an explicit opt-in and named record
+        selection. The July 2026 traceback-translator paper evaluates ADD 2022
+        as a Mandarin continual-learning target but does not identify the
+        exact track or split combination.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        The official challenge site links all six public Zenodo records
+        directly. Large archives are never fetched by the helper by default.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_applicable
+      notes: >-
+        The official challenge download page and every Zenodo record declare
+        CC BY-NC-ND 4.0. Commercial use and distribution of modified material
+        are prohibited; preserve attribution and review voice, source-recording,
+        generator, and challenge-specific rights before redistribution.
+    sources:
+      - http://addchallenge.cn/downloadADD2022
+      - https://doi.org/10.1109/ICASSP43922.2022.9746939
+      - https://zenodo.org/api/records/12188127
+      - https://zenodo.org/api/records/12188083
+      - https://zenodo.org/api/records/10843991
+      - https://zenodo.org/api/records/12187997
+      - https://zenodo.org/api/records/12188035
+      - https://zenodo.org/api/records/12188055
+      - https://arxiv.org/abs/2607.12569
+      - https://arxiv.org/html/2607.12569v1#S3
+      - https://arxiv.org/html/2607.12569v1#S4
 
   - id: in_the_wild_audio_deepfake
     name: In-the-Wild
