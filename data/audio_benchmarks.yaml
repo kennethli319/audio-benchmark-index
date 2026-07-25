@@ -1223,6 +1223,65 @@ paper_audits:
       - https://arxiv.org/abs/2004.06833
       - https://arxiv.org/abs/2104.09356
 
+  kenyan_nemotron_streaming_asr:
+    paper: https://arxiv.org/abs/2607.18912
+    title: "From a Multilingual Streaming ASR Backbone to Kenyan-Language Systems: Data-Centric Adaptation of Nemotron 3.5 for Kikuyu, Dholuo, and Kalenjin"
+    sections: 5, 9, 12.6, 15, and Appendix G
+    status: audited_internal_adaptively_consulted_evaluation
+    last_verified: 2026-07-25
+    evaluated_sets:
+      - cited_as: Kikuyu internal held-out evaluation set
+        index_id: null
+        status: internal_unreleased_adaptively_consulted
+        note: >-
+          The versioned project manifest is drawn from African Next Voices
+          data. The paper says the set was inspected at multiple development
+          milestones, was never used for gradient updates, and is not a
+          pristine one-shot external benchmark.
+      - cited_as: Dholuo internal held-out evaluation set
+        index_id: null
+        status: internal_unreleased_adaptively_consulted
+        note: >-
+          The final true-streaming evaluation manifest contains 5,480 rows and
+          12.16 hours. The manifest, evaluation reports, champion model, and
+          source-controlled audio are not publicly released.
+      - cited_as: Kalenjin internal evaluation set
+        index_id: null
+        status: internal_unreleased_work_in_progress
+        note: >-
+          Kalenjin remains a work-in-progress system and has not met the
+          project's release threshold; its internal evaluation is not a public
+          benchmark.
+      - cited_as: PazaBench
+        index_id: pazabench
+        status: referenced_public_benchmark_not_evaluated
+        note: >-
+          The paper discusses PazaBench as a public external comparison target
+          but explicitly states that it does not evaluate the systems on the
+          exact PazaBench protocol or claim comparable state-of-the-art results.
+    protocol_note: >-
+      Section 9 evaluates cache-aware true streaming with greedy decoding,
+      prompt sw-KE, attention context [56,13], WER, CER, and no-space CER.
+      Complete-set wall-clock time is reported only as evaluation runtime, not
+      per-utterance or interactive latency. Because the held-out manifests were
+      repeatedly consulted and normalization changed during development, this
+      audit records the study as an internal protocol and does not add a new
+      benchmark family.
+    license_note: >-
+      The manuscript is CC BY 4.0, but that does not relicense African Next
+      Voices recordings or speaker metadata. The paper says raw source audio,
+      manifests, evaluation reports, checkpoints, and private Hugging Face
+      preservation mirrors are not redistributed; provider terms and community
+      governance continue to apply. No download helper is added.
+    sources:
+      - https://arxiv.org/abs/2607.18912
+      - https://arxiv.org/html/2607.18912v1#S5
+      - https://arxiv.org/html/2607.18912v1#S9
+      - https://arxiv.org/html/2607.18912v1#S12.SS6
+      - https://arxiv.org/html/2607.18912v1#S15
+      - https://arxiv.org/html/2607.18912v1#A7
+      - https://huggingface.co/spaces/microsoft/paza-bench
+
   faster_indextts_2:
     paper: https://arxiv.org/abs/2607.21042
     title: "Faster IndexTTS-2: Accelerating and Streaming Autoregressive Zero-Shot Text-to-Speech Synthesis on GPUs"

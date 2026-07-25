@@ -333,6 +333,17 @@ official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
 
+The July 2026 Kenyan-language Nemotron 3.5 adaptation report is recorded as
+an internal-protocol audit, not a new benchmark family. Its Kikuyu, Dholuo,
+and Kalenjin true-streaming evaluations use versioned project manifests drawn
+from African Next Voices data; the paper says they were repeatedly consulted
+during development and are not pristine external benchmarks. The Dholuo
+manifest contains 5,480 rows (12.16 hours), but the manifests, reports, source
+audio, checkpoints, and private preservation mirrors are not released.
+PazaBench is mentioned only as a public comparison target and was not actually
+run, so the audit maps that name to the existing PazaBench entry without
+inventing a result or download path.
+
 The July 2026 CCBR paper adds recent provenance for the indexed Million Song
 Dataset family. Its music-recommendation evaluation preprocesses MSD to 31,046
 items and 166,188 users, uses an unseen-user split and 80 tag descriptors, and
