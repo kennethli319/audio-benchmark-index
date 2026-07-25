@@ -470,6 +470,17 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 Harness TTS paper is likewise recorded as two internal,
+unreleased evaluation protocols rather than downloadable benchmark families.
+Its routing evaluation contains 630 LLM-generated cases over a simulated
+42-tool registry, while its synthesis evaluation uses 135 generated utterance
+cases and a private 25-clip single-speaker prompt library. Version 2 and its
+official arXiv source package provide no cases, registry, prompt audio,
+generated speech, teacher labels, judge records, scores, code, artifact
+license, or author-controlled repository. A similarly named third-party
+GitHub repository explicitly describes an independent reproduction and is not
+treated as the paper's official release.
+
 The July 2026 Chengdu Mandarin forced-alignment paper is recorded as an
 unreleased protocol rather than a downloadable family. It evaluates
 text-dependent alignment and transcript-free phonetic segmentation against 50

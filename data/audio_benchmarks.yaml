@@ -2151,6 +2151,36 @@ paper_audits:
       - https://zenodo.org/api/records/17237181
     note: The paper says the augmented AudioCards dataset will be released, but v1 provides no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
 
+  harness_tts_context_aware_evaluation:
+    paper: https://arxiv.org/abs/2607.17900
+    title: "Harness TTS: Towards Context-Aware Expressive Speech Synthesis with Harness Layer"
+    sections: 4-5
+    status: audited_internal_unreleased_protocols
+    public_interfaces: []
+    evaluated_domains:
+      - domain: context_aware_expressive_tool_routing
+        protocol: 630 LLM-generated text cases over a simulated 42-tool registry, split equally among explicit style requests, implicit contextual cues, and conflicts resolved by a fixed priority policy
+        data_status: cases_registry_templates_teacher_labels_and_predictions_unreleased
+        note: Gemini-2.5-Pro generates five cases per tool for each 210-case subset and supplies ranked teacher labels. The paper reports teacher-alignment and planner-latency metrics but does not publish the cases, 42-tool metadata, generation templates, teacher rankings, student predictions, or latency records.
+      - domain: context_aware_expressive_speech_generation
+        protocol: 135 LLM-generated utterance cases spanning 27 acoustic-control and application-scenario tags, evaluated on CosyVoice3 and VoxCPM2 with Harness versus instruction-only control
+        data_status: prompt_library_cases_generated_audio_judgments_and_scores_unreleased
+        note: The experiment uses an internal 25-clip single-speaker voice library and reports Gemini-3.1-Pro instruction-following preference, UTMOSv2 naturalness, and WeSpeaker-based speaker stability. The paper does not release the prompt audio, case texts, generated speech, judge prompts or responses, embeddings, or per-item scores.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      evaluation_code: not_specified_unreleased
+      note: The article license does not license the absent routing cases, voice library, generated speech, labels, judgments, or score records.
+    sources:
+      - https://arxiv.org/abs/2607.17900
+      - https://arxiv.org/html/2607.17900v2#S4
+      - https://arxiv.org/html/2607.17900v2#S4.SS1
+      - https://arxiv.org/html/2607.17900v2#S4.SS2
+      - https://arxiv.org/html/2607.17900v2#S5
+      - https://export.arxiv.org/api/query?id_list=2607.17900
+      - https://export.arxiv.org/e-print/2607.17900v2
+    note: Version 2 and its official arXiv source package provide no project page, repository, dataset card, archive, code URL, or artifact license. A similarly named third-party GitHub repository describes an independent reproduction and is not treated as an author-controlled release. The paper-specific routing and synthesis evaluations are therefore recorded as internal, unreleased protocols rather than downloadable benchmark families; no helper or invented link is added.
+
   chengdu_mandarin_forced_alignment:
     paper: https://arxiv.org/abs/2607.21332
     sections: 2-3
