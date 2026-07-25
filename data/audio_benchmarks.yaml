@@ -9,6 +9,56 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  room_acoustic_parameter_protocols:
+    paper: https://arxiv.org/abs/2607.15243
+    title: What does the model actually see? Evaluation protocols and input availability in data-driven prediction of room acoustic parameters
+    sections: 2-4, 6, and data availability
+    status: audited_request_only_data_and_announced_code
+    evaluated_sets:
+      - cited_as: two-hall multi-condition room-acoustics campaign
+        index_id: null
+        status: underlying_measurements_request_only
+        note: >-
+          The study re-analyses 189 omnidirectional rows from ten receiver
+          locations in a 180-seat concert hall and 285 rows from 75 receiver
+          locations in a 264-seat conference hall. Measurements span three
+          source positions, repeated temperature and occupancy states, and
+          eleven ISO 3382-1 parameter families at up to six octave bands.
+      - cited_as: factorial evaluation-protocol ablation
+        index_id: null
+        status: split_definitions_and_results_announced_not_released
+        note: >-
+          The protocol crosses row-random versus receiver-grouped validation
+          with full, geometry-only, signal-only, and privileged input modes.
+          It compares Random Forest, a hybrid CNN, nearest-neighbour, and
+          inverse-distance baselines, and separately evaluates held-out
+          receiver-position density.
+    release_note: >-
+      Version 1 says evaluation scripts, split definitions, random seeds, and
+      per-fold results will be deposited in a public repository upon
+      acceptance; no repository or archive is linked. The underlying impulse
+      responses and derived parameter tables are available only from the
+      author upon reasonable request. Neither route is a currently
+      downloadable public benchmark release.
+    license:
+      paper: arXiv non-exclusive distribution license
+      measurement_data: not_specified_request_only
+      evaluation_artifacts: not_specified_announced
+      ISO_standard: ISO 3382-1 is a separately governed standard
+    sources:
+      - https://arxiv.org/abs/2607.15243
+      - https://arxiv.org/html/2607.15243v1#S2
+      - https://arxiv.org/html/2607.15243v1#S3
+      - https://arxiv.org/html/2607.15243v1#S4
+      - https://arxiv.org/html/2607.15243v1#S6
+      - https://export.arxiv.org/api/query?id_list=2607.15243
+    note: >-
+      This is recorded as a protocol audit rather than an indexed benchmark
+      family. The reporting checklist is reproducible as methodology, but the
+      exact experimental folds and results are not yet public and the
+      request-only measurements have no published reuse terms. No download
+      helper or inferred data URL is added; recheck after acceptance.
+
   production_oriented_sfx_generation:
     paper: https://arxiv.org/abs/2607.09973
     title: A Production-Oriented Framework for Evaluation of SFX Generation

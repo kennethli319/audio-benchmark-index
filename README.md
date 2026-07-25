@@ -503,6 +503,17 @@ The source corpora retain separate clinical-data access, consent, privacy, and
 reuse terms, and independently obtaining them would not reproduce SpeechDx's
 paper-specific evaluation package.
 
+The July 2026 room-acoustics protocol study
+[arXiv:2607.15243](https://arxiv.org/abs/2607.15243) is also recorded as an
+audit rather than a benchmark family. It cleanly separates row-random
+condition interpolation from receiver-grouped spatial prediction and audits
+whether model inputs would exist at an unmeasured position. Its two-hall
+impulse-response campaign and derived ISO 3382-1 parameter tables are
+request-only, while scripts, split definitions, seeds, and per-fold results
+are promised for a public repository only after acceptance. Version 1 links
+no such repository and states no data or artifact license, so the index adds
+neither a download helper nor an inferred release URL.
+
 The June 2026 BCoughBench paper is likewise recorded as an audited respiratory
 health protocol rather than a downloadable family. It evaluates nine
 classification and three age-regression tasks over five named cough corpora,
