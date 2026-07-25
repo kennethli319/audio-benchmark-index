@@ -7406,7 +7406,7 @@ benchmarks:
 
   - id: opencpop_test
     name: Opencpop-test
-    full_name: Opencpop
+    full_name: "Opencpop: A High-Quality Open Source Chinese Popular Song Corpus for Singing Voice Synthesis"
     qwen_cited_as: Opencpop-test
     qwen_bucket: automatic_speech_recognition
     tasks:
@@ -7422,16 +7422,34 @@ benchmarks:
       primary:
         - https://wenet-e2e.github.io/opencpop/download/
       examples:
+        - "scripts/download/opencpop_test.sh"
         - "Fill out the official Google Form and follow the email instructions."
+        - "OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh"
         - "Use the included test split after extracting the corpus."
+      notes: >-
+        The official corpus contains 3,756 Mandarin singing utterances from 100
+        songs and about 5.2 hours of studio audio. Its fixed test split is five
+        randomly selected songs. Qwen3.5-Omni section 5.1 evaluates singing
+        transcription on Opencpop-test and reports CER in Table 5. The helper
+        saves the official landing, download, license, test-set, and paper
+        pages by default; corpus access still requires the owner Google Form
+        and emailed instructions.
     license:
       data: cc-by-nc-nd-4.0
       code: not_specified
-      notes: License page is spelled /liscense/ on the official site.
+      notes: >-
+        The official page limits the dataset to non-commercial use under CC
+        BY-NC-ND 4.0, retains corpus copyright with the Opencpop Team, and
+        directs commercial users to contact the team. The repository has no
+        detected license. The license-page path is spelled /liscense/.
     sources:
       - https://wenet-e2e.github.io/opencpop/
       - https://wenet-e2e.github.io/opencpop/download/
       - https://wenet-e2e.github.io/opencpop/liscense/
+      - https://wenet-e2e.github.io/opencpop/resources/testset/
+      - https://arxiv.org/abs/2201.07429
+      - https://arxiv.org/abs/2604.15804
+      - https://arxiv.org/html/2604.15804v1#S5.SS1
 
   - id: mmgenre
     name: MMGenre

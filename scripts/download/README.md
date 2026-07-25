@@ -286,6 +286,7 @@ SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=dev scripts/download/spgispeech.sh
 scripts/download/fluent_speech_commands.sh
 WENETSPEECH_PASSWORD='...' scripts/download/wenetspeech.sh
 KESPEECH_ARCHIVE_URL='https://...' scripts/download/kespeech.sh
+scripts/download/opencpop_test.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/lyra_sa.sh
 scripts/download/adress_challenges.sh
