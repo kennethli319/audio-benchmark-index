@@ -4549,6 +4549,55 @@ benchmarks:
       - https://arxiv.org/abs/1704.01279
       - https://proceedings.mlr.press/v70/engel17a.html
 
+  - id: surge_pitch
+    name: Surge Pitch Dataset
+    full_name: "Pitch Audio Dataset (Surge synthesizer)"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - music_synthesis
+    tasks:
+      - musical_pitch_classification
+      - musical_pitch_ranking
+      - synthesizer_preset_classification
+      - audio_representation_evaluation
+    official:
+      dataset: https://zenodo.org/records/4677097
+      paper: https://arxiv.org/abs/2104.12922
+      recent_evaluation: https://arxiv.org/abs/2607.16688
+      synthesizer: https://surge-synthesizer.github.io/
+    download:
+      primary:
+        - https://zenodo.org/records/4677097
+        - https://zenodo.org/api/records/4677097/files/surge-velocity64-2K.tar/content
+      examples:
+        - 'scripts/download/surge_pitch.sh'
+        - 'SURGE_PITCH_DOWNLOAD_ARCHIVE=1 scripts/download/surge_pitch.sh'
+      notes: >-
+        The public, ungated Zenodo release contains 3.4 hours of four-second
+        sounds generated from 2,084 human-authored Surge presets. Each preset
+        is rendered at MIDI pitches 21 through 108 with velocity 64, a
+        three-second note-on duration, and RMS normalization. The helper saves
+        official record metadata and the paper by default; the approximately
+        7.58 GB tar archive requires explicit opt-in. NABEATs section 4.1 uses
+        this release for downstream pitch classification under clean and
+        constructed noisy conditions.
+    license:
+      data: CC-BY-4.0
+      code: not_applicable
+      notes: >-
+        Zenodo declares CC BY 4.0 for the released dataset. The paper's
+        publication license and the Surge synthesizer and preset licenses are
+        separate; retain the dataset citation and review synthesizer/preset
+        terms if regenerating or redistributing modified renders.
+    sources:
+      - https://zenodo.org/records/4677097
+      - https://zenodo.org/api/records/4677097
+      - https://arxiv.org/abs/2104.12922
+      - https://arxiv.org/abs/2607.16688
+      - https://arxiv.org/html/2607.16688v1#S4.SS1
+      - https://surge-synthesizer.github.io/
+
   - id: maestro
     name: MAESTRO
     full_name: "MAESTRO: MIDI and Audio Edited for Synchronous TRacks and Organization"

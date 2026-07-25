@@ -72,7 +72,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 275 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 276 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -796,6 +796,7 @@ Current coverage includes:
 | [OpenMIC-2018](https://zenodo.org/records/1432913) | Music information retrieval | Official Zenodo record and [OpenMIC archive](https://zenodo.org/api/records/1432913/files/openmic-2018-v1.0.0.tgz/content); helper saves metadata by default and makes the 2.6 GiB archive opt-in | Zenodo lists CC BY 4.0; included metadata contains per-recording licenses |
 | [MusicNet](https://zenodo.org/records/5120004) | Music transcription | Official Zenodo record, metadata CSV, reference MIDI archive, and opt-in 10.3 GiB audio/label archive | Zenodo lists CC BY 4.0; source recordings are Creative Commons licensed or public domain, with per-recording provenance in the metadata |
 | [NSynth](https://magenta.withgoogle.com/datasets/nsynth) | Music synthesis | Official Magenta TFRecord or JSON/WAV split archives; helper saves the page by default and downloads archives only with opt-in | CC BY 4.0 for data; Magenta code is Apache-2.0 |
+| [Surge Pitch Dataset](https://zenodo.org/records/4677097) | Musical-pitch classification, ranking, and audio-representation evaluation | Public, ungated 3.4-hour release generated from 2,084 human-authored Surge presets across MIDI pitches 21-108; NABEATs evaluates downstream pitch classification under clean and constructed noisy conditions; helper saves official metadata/docs by default and makes the approximately 7.58 GB archive opt-in | Zenodo declares CC BY 4.0; retain the dataset citation and review the separate Surge synthesizer/preset terms when regenerating or redistributing modified renders |
 | [MAESTRO](https://magenta.withgoogle.com/datasets/maestro) | Music transcription and synthesis | Official Magenta v3.0.0 CSV/JSON metadata by default, optional MIDI-only archive, and opt-in 101 GiB WAV+MIDI archive | CC BY-NC-SA 4.0 |
 | [MUSDB18](https://sigsep.github.io/datasets/musdb.html) | Music source separation | Official SigSep page plus Zenodo [MUSDB18](https://zenodo.org/records/1117372) and [MUSDB18-HQ](https://zenodo.org/records/3338373) archives; helper saves pages by default and requires acknowledgement before large archives | Zenodo lists Other (Non-Commercial); official pages state educational/academic use only, with mixed upstream track sources |
 | [MedleyDB](https://medleydb.weebly.com/) | Music multitrack MIR | Official [downloads page](https://medleydb.weebly.com/downloads.html), public sample archive, GitHub annotation/metadata/tooling repo, and Zenodo request records for full MedleyDB and MedleyDB 2.0 audio | Dataset is CC BY-NC-SA 4.0 for non-commercial research use; official page asks users not to republish without consent; tooling repo is MIT |

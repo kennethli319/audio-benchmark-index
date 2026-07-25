@@ -229,6 +229,7 @@ scripts/download/openmic_2018.sh
 scripts/download/musicnet.sh
 scripts/download/singmos_pro.sh
 scripts/download/nsynth.sh
+scripts/download/surge_pitch.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
 scripts/download/medleydb.sh
@@ -1092,6 +1093,10 @@ scripts/download/smartglasses_challenge_2026.sh
 # NSynth downloads the official page by default. Archives are large and opt-in.
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS=test NSYNTH_FORMAT=jsonwav scripts/download/nsynth.sh
 NSYNTH_DOWNLOAD_ARCHIVES=1 NSYNTH_SPLITS="valid test" NSYNTH_FORMAT=tfrecord scripts/download/nsynth.sh
+
+# Surge Pitch saves the official Zenodo record and papers by default; the
+# approximately 7.58 GB synthesized-audio tar archive is opt-in.
+SURGE_PITCH_DOWNLOAD_ARCHIVE=1 scripts/download/surge_pitch.sh
 
 # MAESTRO downloads v3.0.0 metadata by default. MIDI and audio archives are opt-in.
 MAESTRO_DOWNLOAD_MIDI=1 scripts/download/maestro.sh
