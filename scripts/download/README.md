@@ -191,6 +191,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
+scripts/download/avdc.sh
 scripts/download/pvqd.sh
 scripts/download/torgo.sh
 scripts/download/parapair_audio_bench.sh
@@ -484,6 +485,12 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# AVDC downloads docs and API metadata by default. The approximately 134 MiB
+# caption/QA annotation snapshot and code repository are separate opt-ins;
+# source videos are not included.
+AVDC_DOWNLOAD_HF=1 scripts/download/avdc.sh
+AVDC_CLONE_REPO=1 scripts/download/avdc.sh
 
 # SpoofCeleb downloads public docs/API metadata by default. The approximately
 # 268.3 GB snapshot requires author approval, accepted terms, and authentication.

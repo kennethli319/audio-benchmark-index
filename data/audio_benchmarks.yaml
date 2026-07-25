@@ -14425,6 +14425,73 @@ benchmarks:
       - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset/raw/main/NOTICE
       - https://huggingface.co/api/datasets/NCSOFT/Designed-Vocalizations-Dataset
 
+  - id: avdc
+    name: AVDC
+    full_name: "AVDC: Audio-Visual Decoupled Captions"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - audio_visual_captioning
+      - audio_visual_question_answering
+    tasks:
+      - audio_visual_decoupled_captioning
+      - audio_only_captioning
+      - visual_only_captioning
+      - joint_audio_visual_captioning
+      - visible_invisible_sound_event_evaluation
+      - audio_visual_question_answering
+      - chain_of_thought_audio_visual_reasoning
+    official:
+      project: https://radiant0726.github.io/AVDC-web/
+      repo: https://github.com/Radiant0726/AVDC
+      dataset: https://huggingface.co/datasets/KaiyingYan/AVDC
+      paper: https://arxiv.org/abs/2607.10299
+      arxiv_html: https://arxiv.org/html/2607.10299
+    download:
+      primary:
+        - https://huggingface.co/datasets/KaiyingYan/AVDC
+        - https://github.com/Radiant0726/AVDC
+      examples:
+        - 'scripts/download/avdc.sh'
+        - 'AVDC_DOWNLOAD_HF=1 scripts/download/avdc.sh'
+        - 'AVDC_CLONE_REPO=1 scripts/download/avdc.sh'
+      notes: >-
+        The public, ungated Hugging Face release provides avdc_caption.json
+        with decoupled audio, visual, and joint captions and omni_qa.json with
+        questions, answers, reasoning steps, and split labels. The paper
+        describes 10,000 long-form videos, 10,000 caption-derived QA pairs, and
+        an AVDC-test split for visible versus invisible sound-event evaluation.
+        The current JSON blobs total approximately 134 MiB, so the helper
+        downloads only official documentation and API metadata by default and
+        requires AVDC_DOWNLOAD_HF=1 for the annotation snapshot. Source videos
+        are referenced by video ID but are not redistributed in the Hugging
+        Face release; users must obtain applicable ShareGPT4Video- and
+        Vript-sourced media separately. The training/evaluation repository is
+        an additional AVDC_CLONE_REPO=1 opt-in.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The Hugging Face card has no license field, and neither the dataset
+        repository nor the official GitHub repository exposes a license file.
+        The arXiv publication license does not license the released
+        annotations, generated captions or reasoning traces, code, or source
+        videos. ShareGPT4Video, Vript, and each source platform or media owner
+        retain applicable terms; obtain clarification before redistribution or
+        commercial use.
+    sources:
+      - https://arxiv.org/abs/2607.10299
+      - https://arxiv.org/html/2607.10299#S2
+      - https://arxiv.org/html/2607.10299#S4
+      - https://radiant0726.github.io/AVDC-web/
+      - https://github.com/Radiant0726/AVDC
+      - https://raw.githubusercontent.com/Radiant0726/AVDC/main/README.md
+      - https://api.github.com/repos/Radiant0726/AVDC
+      - https://api.github.com/repos/Radiant0726/AVDC/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/KaiyingYan/AVDC
+      - https://huggingface.co/datasets/KaiyingYan/AVDC/raw/main/README.md
+      - https://huggingface.co/api/datasets/KaiyingYan/AVDC
+
   - id: synsfx
     name: SynSFX
     full_name: "SynSFX: Multi-Model Sound Effects Synthesis Dataset for Deepfake Detection and Evaluation"
