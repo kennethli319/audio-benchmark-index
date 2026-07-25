@@ -108,6 +108,14 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 LALM audio-judge reliability paper is recorded as a
+claimed-public-supplement audit. It evaluates 152 production full-duplex
+conversations and 57 defect-injected clips, but says the production audio will
+not be released and the adversarial WAVs await a later clearance review. Its
+cited Hugging Face supplement is currently authentication-required and exposes
+no public card or file inventory, so the index does not add a benchmark family
+or infer a download helper from the paper's release claim.
+
 The June 2026 LA-RAG paper is recorded as an existing-family and unreleased
 derived-protocol audit. Its two 24-hour synthetic Home-IoT and Industrial-IoT
 benchmarks and its CASTELLA-QA question rows are not released. The public

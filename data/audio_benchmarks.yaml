@@ -9,6 +9,52 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  lalm_judge_full_duplex_reliability:
+    paper: https://arxiv.org/abs/2607.07985
+    title: "A Reliability Assessment of LALM Audio Judges for Full-Duplex Voice Agents"
+    sections: 3-4 and appendices A-E
+    status: audited_claimed_public_supplement_currently_unavailable
+    evaluated_sets:
+      - cited_as: LALM Judge Validation on Full-Duplex Voice Agents
+        index_id: null
+        status: supplement_url_authentication_required
+        note: >-
+          The paper evaluates 152 natural stereo agent-client conversations
+          across 13 accent-and-codec strata and 57 successfully rendered
+          defect-injected clips. It reports ratings from three calibrated
+          humans and Gemini audio judges across eight production dimensions.
+    protocol_note: >-
+      The natural arm measures per-dimension Spearman correlation, agreement,
+      bias, and calibration between human ratings and Gemini 2.5 Flash, 3.5
+      Flash, and 3.1 Pro. The adversarial arm applies clipping, dead air,
+      additive noise, truncation, phoneme-region overdubbing, and 8 kHz
+      down/upsampling, then measures defect recall. The paper says anonymized
+      rating CSVs, prompts, schemas, analysis scripts, and figures reproduce
+      its headline results.
+    release_note: >-
+      Appendix E cites a Hugging Face dataset and labels its tabular artifacts
+      public, but on 2026-07-25 the canonical dataset page, Hub API, and raw
+      README endpoint all require authentication and expose no public card,
+      files, sizes, or revision metadata. The paper separately says the 152
+      production-session recordings will not be public and the adversarial
+      WAVs await a later v0.2 clearance review. No benchmark family or download
+      helper is added until the claimed supplement is publicly verifiable.
+    license_note: >-
+      The paper is CC BY 4.0 and says the supplement's data and figures are CC
+      BY 4.0 while scripts and prompts are Apache-2.0. Those claims cannot
+      currently be checked against repository files. The production audio is
+      governed by internal data-handling policy and is not licensed or
+      released by the paper.
+    sources:
+      - https://arxiv.org/abs/2607.07985
+      - https://arxiv.org/html/2607.07985v1#S3
+      - https://arxiv.org/html/2607.07985v1#S4
+      - https://arxiv.org/html/2607.07985v1#A1
+      - https://arxiv.org/html/2607.07985v1#A5
+      - https://huggingface.co/datasets/armaan-sayyad/lalm-judge-validation-full-duplex
+      - https://huggingface.co/api/datasets/armaan-sayyad/lalm-judge-validation-full-duplex
+      - https://huggingface.co/datasets/armaan-sayyad/lalm-judge-validation-full-duplex/raw/main/README.md
+
   black_box_drc_inversion:
     paper: https://arxiv.org/abs/2607.19645
     title: "Black-Box Optimization for Identifying and Inverting Audio Dynamic Range Control Effects"
