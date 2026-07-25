@@ -137,6 +137,7 @@ scripts/download/halas.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
+scripts/download/dcase2024_task2_asd.sh
 scripts/download/dcase2025_task2_asd.sh
 scripts/download/dcase2026_task2_asd.sh
 scripts/download/dcase2026_task1_hac.sh
@@ -407,7 +408,9 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 # LibriSpeech downloads official metadata/checksums by default. Archives are opt-in.
 LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh
 
-# DCASE 2025 Task 2 ASD downloads official metadata by default. Select archive groups explicitly.
+# DCASE 2024/2025 Task 2 ASD helpers download official metadata by default.
+# Select archive groups explicitly.
+DCASE2024_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2024_TASK2_PARTS="dev eval" scripts/download/dcase2024_task2_asd.sh
 DCASE2025_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2025_TASK2_PARTS="dev eval" scripts/download/dcase2025_task2_asd.sh
 
 # DCASE 2026 Task 2 ASD downloads official metadata by default. Its roughly

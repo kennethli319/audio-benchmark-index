@@ -9997,6 +9997,67 @@ benchmarks:
       - https://arxiv.org/abs/2501.08587
       - https://github.com/DCASE2024-Task7-Sound-Scene-Synthesis/AudioLDM-training-finetuning
 
+  - id: dcase2024_task2_asd
+    name: DCASE 2024 Task 2 ASD
+    full_name: "DCASE 2024 Task 2: First-Shot Unsupervised Anomalous Sound Detection for Machine Condition Monitoring"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    tasks:
+      - anomalous_sound_detection
+      - machine_condition_monitoring
+      - domain_generalization
+      - first_shot_learning
+    official:
+      challenge: https://dcase.community/challenge2024/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      results: https://dcase.community/challenge2024/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results
+      development_set: https://zenodo.org/records/10902294
+      additional_training_set: https://zenodo.org/records/11259435
+      evaluation_set: https://zenodo.org/records/11363076
+      evaluator_repo: https://github.com/nttcslab/dcase2024_task2_evaluator
+      recent_evaluation: https://arxiv.org/abs/2607.16678
+    download:
+      primary:
+        - https://zenodo.org/records/10902294
+        - https://zenodo.org/records/11259435
+        - https://zenodo.org/records/11363076
+      examples:
+        - 'scripts/download/dcase2024_task2_asd.sh'
+        - 'DCASE2024_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2024_TASK2_PARTS="dev eval" scripts/download/dcase2024_task2_asd.sh'
+      notes: >-
+        The public first-shot protocol uses seven development machine types and
+        nine disjoint final-evaluation types, one section per type, with only
+        normal source/target-domain audio available for training. The three
+        official records contain approximately 2.24 GB of development, 1.99 GB
+        of additional-training, and 398 MB of evaluation archives. Each final
+        type has 200 test clips, and the organizers have released labels and an
+        evaluator. The helper downloads official task, record, and evaluator
+        metadata by default; archives require an explicit environment opt-in
+        and part list. A July 2026 pseudo-label-distillation paper evaluates
+        this release as part of its DCASE 2020-2025 Task 2 sweep.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: not_specified
+      notes: >-
+        All three official Zenodo records declare CC BY-NC-SA 4.0, which
+        prohibits commercial use and requires attribution and share-alike
+        distribution. The evaluator repository has no LICENSE file and GitHub
+        reports no detected license, so its code terms remain unspecified.
+    sources:
+      - https://dcase.community/challenge2024/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      - https://dcase.community/challenge2024/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results
+      - https://zenodo.org/records/10902294
+      - https://zenodo.org/api/records/10902294
+      - https://zenodo.org/records/11259435
+      - https://zenodo.org/api/records/11259435
+      - https://zenodo.org/records/11363076
+      - https://zenodo.org/api/records/11363076
+      - https://github.com/nttcslab/dcase2024_task2_evaluator
+      - https://api.github.com/repos/nttcslab/dcase2024_task2_evaluator
+      - https://arxiv.org/abs/2607.16678
+      - https://arxiv.org/html/2607.16678v1#S4.SS1
+
   - id: dcase2025_task2_asd
     name: DCASE 2025 Task 2 ASD
     full_name: "DCASE 2025 Task 2: First-Shot Unsupervised Anomalous Sound Detection for Machine Condition Monitoring"
