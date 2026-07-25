@@ -14045,3 +14045,67 @@ benchmarks:
       - https://raw.githubusercontent.com/HMC-MIR/PianoConcertoAccompaniment/main/cfg_files/AudioDataSummary.csv
       - https://api.github.com/repos/HMC-MIR/PianoConcertoAccompaniment
       - https://api.github.com/repos/HMC-MIR/PianoConcertoAccompaniment/git/trees/main?recursive=1
+
+  - id: storyad_qa
+    name: StoryAD-QA
+    full_name: "StoryAD-QA: Narrative-Comprehension Evaluation for Long-Form Audio Description"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - long_form_audio_visual_reasoning
+      - captioning
+    tasks:
+      - long_form_audio_description_evaluation
+      - narrative_comprehension
+      - multiple_choice_question_answering
+      - context_conditioned_reasoning
+      - video_caption_evaluation
+    official:
+      repo: https://github.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA
+      paper: https://arxiv.org/abs/2607.11798
+      paper_html: https://arxiv.org/html/2607.11798v1
+      dataset: https://github.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/tree/main/data
+      evaluation: https://github.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/tree/main/evaluation
+    download:
+      primary:
+        - https://github.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA
+      examples:
+        - 'scripts/download/storyad_qa.sh'
+        - 'STORYAD_QA_CLONE_REPO=1 scripts/download/storyad_qa.sh'
+      notes: >-
+        The official ECCV 2026 repository releases 2,572 manually verified,
+        five-option question-answer pairs across two tracks: 1,609 segment-only
+        questions over 30-, 60-, 120-, and 240-second windows, and 963
+        context-conditioned questions using 30, 60, or 90 seconds of preceding
+        context plus a 30-second target clip. The repository includes full
+        annotation CSVs, question-only files, answer keys with rationales,
+        prompts, and a local accuracy scorer. The paper reports 2,574 retained
+        questions, while the repository README says its public release contains
+        2,572 after validation and cleanup; this entry uses the released-file
+        total. The helper saves official documentation, license notice, summary,
+        evaluator, and repository metadata by default; cloning the approximately
+        8 MB repository is opt-in.
+    license:
+      annotations: not_specified_pending_finalization
+      code: not_specified_pending_finalization
+      media: not_included_upstream_rights_apply
+      notes: >-
+        The repository's LICENSE is a placeholder that says release terms will
+        be finalized and merely recommends MIT or Apache-2.0 for code and
+        CC BY-NC 4.0 or another author-approved license for annotations. Those
+        recommendations are not grants. The release contains no movie video,
+        audio, frames, subtitles, or scripts; clip identifiers derive from ten
+        MAD-Eval movies in LSMDC, and users must obtain lawful access to the
+        underlying copyrighted media separately.
+    sources:
+      - https://arxiv.org/abs/2607.11798
+      - https://arxiv.org/html/2607.11798v1#S4
+      - https://arxiv.org/html/2607.11798v1#S4.SS1
+      - https://arxiv.org/html/2607.11798v1#S4.SS2
+      - https://github.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA
+      - https://raw.githubusercontent.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/main/README.md
+      - https://raw.githubusercontent.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/main/DATASET_CARD.md
+      - https://raw.githubusercontent.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/main/LICENSE
+      - https://raw.githubusercontent.com/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/main/data/dataset_summary.csv
+      - https://api.github.com/repos/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA
+      - https://api.github.com/repos/SEE-AI-Lab/ECCV2026_StoryTeller_StoryAD_QA/git/trees/main?recursive=1

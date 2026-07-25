@@ -173,6 +173,7 @@ scripts/download/forestir.sh
 scripts/download/mmae.sh
 scripts/download/pazabench.sh
 scripts/download/live_gurbani_captioning_v1.sh
+scripts/download/storyad_qa.sh
 scripts/download/sonyc_ust_v2.sh
 scripts/download/voxceleb.sh
 scripts/download/voxblink2.sh
@@ -514,6 +515,11 @@ scripts/download/pazabench.sh
 
 # Live Gurbani Captioning v1 downloads official docs/metadata by default; clone the small annotation/scorer repo explicitly.
 LIVE_GURBANI_CAPTIONING_CLONE_REPO=1 scripts/download/live_gurbani_captioning_v1.sh
+
+# StoryAD-QA downloads official docs, summary, evaluator, and repository metadata
+# by default. Clone the approximately 8 MB annotation/scorer repository explicitly.
+# The license is pending finalization and movie media is not included.
+STORYAD_QA_CLONE_REPO=1 scripts/download/storyad_qa.sh
 
 # LOCATA downloads official pages, docs, Zenodo metadata, and tool READMEs by default.
 # The public corpus archives total about 19.3 GB and remain on the official Zenodo record.
