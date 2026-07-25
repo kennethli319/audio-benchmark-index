@@ -1781,6 +1781,48 @@ paper_audits:
       - https://catalog.ldc.upenn.edu/LDC2005S13
     note: The official repository currently contains only a README promising code and pretrained models; it does not release the custom Fisher speaker partitions, validation or evaluation trials, anonymized derivatives, or evaluation implementation. The licensed Fisher source corpus is indexed separately, but access to it does not reproduce this paper's benchmark protocol. This evaluation is therefore recorded as an audited protocol rather than a downloadable benchmark family.
 
+  speech_token_speaker_inversion:
+    paper: https://arxiv.org/abs/2607.16870
+    title: "Do Speech Tokens Leak Voiceprints? Speaker Inversion Attacks Against End-to-End Speech Language Models"
+    sections: 4.1-4.4 and 6
+    status: audited_existing_public_family_unreleased_attack_implementation
+    public_interfaces: []
+    evaluated_sets:
+      - cited_as: VoxCeleb1 development and verification test partitions
+        index_id: voxceleb
+        status: existing_public_metadata_source_audio_unavailable_from_owner
+        note: Privacy-leakage validation trains Audio BERT on the standard 1,211-speaker VoxCeleb1 development partition and evaluates the speaker-disjoint 40-speaker verification test partition using random three-second crops.
+      - cited_as: VoxCeleb2-dev to VoxCeleb2-test
+        index_id: voxceleb
+        status: existing_public_metadata_source_audio_unavailable_from_owner
+        note: The main speaker-embedding-recovery protocol trains SpInv on the standard 5,994-speaker VoxCeleb2 development partition and evaluates on its identity-disjoint 118-speaker test partition.
+      - cited_as: VoxCeleb2-dev to VoxCeleb1
+        index_id: voxceleb
+        status: existing_public_metadata_source_audio_unavailable_from_owner
+        note: The cross-corpus recovery protocol trains on VoxCeleb2-dev and evaluates on VoxCeleb1; the paper states that the two sets have no overlapping speakers.
+    evaluated_domains:
+      - domain: speech_token_voiceprint_leakage_and_speaker_embedding_inversion
+        protocol: Audio BERT and SpInv attack exposed three-second frontend representations from Moshi, Higgs3, Kimi-Audio, and Qwen3-Omni; ablations vary observed duration from one to ten seconds and target ECAPA-TDNN, ERes2Net, and CAM++ speaker-embedding spaces
+        data_status: source_family_indexed_attack_models_frontend_outputs_predictions_and_scores_unreleased
+        note: The paper reports aggregate cosine similarity, KL divergence, accuracy, EER, and normalized minDCF, but provides no project page, repository, dataset card, attack checkpoints, extracted frontend representations, per-item predictions, or score files.
+    license:
+      paper: CC BY-NC-SA 4.0
+      evaluation_artifacts: not_specified_unreleased
+      upstream: VoxCeleb metadata is CC BY-SA 4.0; original YouTube media rights, availability, privacy, and platform terms remain separate
+    sources:
+      - https://arxiv.org/abs/2607.16870
+      - https://arxiv.org/html/2607.16870v1#S4.SS1
+      - https://arxiv.org/html/2607.16870v1#S4.SS2
+      - https://arxiv.org/html/2607.16870v1#S4.SS3
+      - https://arxiv.org/html/2607.16870v1#S4.SS4
+      - https://arxiv.org/html/2607.16870v1#S6
+      - https://export.arxiv.org/api/query?id_list=2607.16870
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html
+      - https://www.openslr.org/49/
+    note: VoxCeleb is already indexed with its surviving public metadata and trial-list helper. This paper applies standard speaker-disjoint VoxCeleb partitions but introduces a model-frontend attack rather than a separately released benchmark dataset. Because version 1 exposes no official implementation or paper-specific evaluation artifacts, the protocol is recorded as existing-family coverage and no duplicate family or download helper is added.
+
   spoken_digit_privacy_informed_attackers:
     paper: https://arxiv.org/abs/2607.21393
     title: "From Read Speech to Spoken Digits: A Task-Specific Evaluation of Speech Privacy With Informed Attackers"

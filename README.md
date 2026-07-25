@@ -631,6 +631,17 @@ not release the custom speaker splits, trial lists, anonymized derivatives, or
 evaluation implementation. Licensed access to Fisher English therefore does
 not reproduce the paper's protocol.
 
+The July 2026 *Do Speech Tokens Leak Voiceprints?* paper is recorded as a
+coverage audit over the already indexed VoxCeleb family. It trains and tests
+SpInv on standard speaker-disjoint VoxCeleb1 and VoxCeleb2 partitions to
+measure voiceprint leakage from Moshi, Higgs3, Kimi-Audio, and Qwen3-Omni
+frontends. Version 1 provides no project page, repository, attack checkpoints,
+extracted frontend representations, per-item predictions, or score files.
+VoxCeleb's surviving public metadata and trial lists therefore cover the
+source family but not the new attack implementation, so no duplicate family
+or download helper is added. The original YouTube media is no longer available
+from the owner pages and retains separate rights, privacy, and platform terms.
+
 The July 2026 *From Read Speech to Spoken Digits* paper is recorded as a
 coverage audit over the already indexed AudioMNIST, Speech Commands, and
 LibriSpeech families. It evaluates isolated digits and constructed ten-digit
