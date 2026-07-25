@@ -205,6 +205,14 @@ Multilingual Conversational Speech Language Model Challenge. The public
 MLC-SLM release contains annotations but no currently documented public audio
 URL, so the index does not imply full reproducibility.
 
+The July 2026 FillGauss paper is recorded as an unreleased-protocol audit.
+It describes FillImpact as more than 5,000 impact recordings from 88 objects
+with paired 3D representations and fine-grained container, striker, strike
+position, and fill-state conditions. Version 1 publishes no owner repository,
+dataset card, archive, row manifest, code, generated outputs, listener records,
+or data license. The index therefore does not advertise FillImpact as a
+downloadable family and will recheck it after an official release appears.
+
 The July 2026 X3-OPD paper is also inventoried across sections 5.1-5.4. MMSU,
 MMAU, MMAR, WorldSense, and DailyOmni map to existing public families. Its
 uncited “BIG Bench Audio” aggregate remains unmapped: the paper describes

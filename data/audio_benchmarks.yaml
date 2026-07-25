@@ -248,6 +248,44 @@ paper_audits:
       - https://github.com/LIVIAETS/bah-dataset
       - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
 
+  fillgauss_fillimpact_evaluation:
+    paper: https://arxiv.org/abs/2607.17773
+    title: "FillGauss: Fine-Grained Filling-Aware Impact Sound Generation for 3D Gaussian Splatting"
+    sections: 3 and 5.1-5.2
+    status: audited_announced_unreleased
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: FillImpact
+        index_id: null
+        status: announced_unreleased
+        note: >-
+          The paper describes more than 5,000 impact recordings from 88
+          real-world objects, paired 3D Gaussian representations, strike
+          positions, container and striker materials, and hollow, water, or
+          rice fill conditions. It uses an 80/20 train/test split but publishes
+          no row manifest or reusable evaluation package.
+    protocol_note: >-
+      FillGauss evaluates position-, striker-, fill-level-, and fill-material-
+      aware impact-sound generation with FAD, KL divergence, Inception Score,
+      MOS, pairwise win rate, matched-attribute count, and per-attribute
+      identification accuracy. The main evaluation text says the blind
+      listening study had eight participants, while Appendix A.3 says 20; this
+      audit preserves that unresolved paper inconsistency. The paper does not
+      publish the test split, generated outputs, listener responses, prompts,
+      or evaluation implementation.
+    release_note: >-
+      Version 1 provides no official project page, repository, dataset card,
+      DOI record, archive, code release, or download URL. The article uses
+      arXiv's perpetual non-exclusive license, which does not license the
+      absent recordings, 3D representations, annotations, or evaluation
+      artifacts. FillImpact is therefore not added as a downloadable benchmark
+      family; recheck after an owner-controlled public release appears.
+    sources:
+      - https://arxiv.org/abs/2607.17773
+      - https://arxiv.org/html/2607.17773v1#S3
+      - https://arxiv.org/html/2607.17773v1#S5.SS1
+      - https://arxiv.org/html/2607.17773v1#S5.SS2
+
   audio_visual_flamingo_audio_evaluation:
     paper: https://arxiv.org/abs/2607.16107
     title: "Nemotron-Labs-Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos"
