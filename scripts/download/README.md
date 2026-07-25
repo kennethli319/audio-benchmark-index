@@ -206,6 +206,7 @@ scripts/download/tess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
 scripts/download/ch_sims.sh
+scripts/download/ch_sims_v2.sh
 scripts/download/cmu_mosi.sh
 scripts/download/cmu_mosei.sh
 scripts/download/emoprefer.sh
@@ -950,6 +951,10 @@ MELD_BASE_URL=https://huggingface.co/datasets/declare-lab/MELD/resolve/main scri
 
 # CH-SIMS downloads official paper/repository metadata by default. Dataset files remain a manual Drive download; the MMSA toolkit clone is opt-in.
 CH_SIMS_CLONE_TOOLKIT=1 scripts/download/ch_sims.sh
+
+# CH-SIMS v2 saves official project, repository, and paper metadata by default.
+# Supervised and unlabeled releases remain manual Drive downloads; the code clone is opt-in.
+CH_SIMS_V2_CLONE_REPO=1 scripts/download/ch_sims_v2.sh
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh

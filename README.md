@@ -72,7 +72,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 279 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 280 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -114,8 +114,12 @@ now return not found. The index records that upstream outage without
 substituting an unofficial mirror or publishing a dead download helper.
 
 The July 2026 Light-MER paper's nine-family multimodal emotion evaluation is
-also inventoried. Its public CH-SIMS, CMU-MOSI, and CMU-MOSEI families are now
-indexed.
+also inventoried. Its public CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI
+families are now indexed.
+CH-SIMS v2 releases 4,402 supervised multimodal/unimodal sentiment segments
+and 10,161 unlabeled segments through official Drive folders. The helper saves
+primary-source metadata and keeps the repository clone opt-in; the official
+sources state no data or code license.
 CMU-MOSI contains 2,199 English opinion segments from 93 YouTube review videos;
 the official CMU SDK releases labels and anonymized processed features, while
 MultiBench provides an additional word-aligned processed package. Raw source
@@ -995,6 +999,7 @@ Current coverage includes:
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
 | [CH-SIMS](https://aclanthology.org/2020.acl-main.343/) | Multimodal and modality-specific sentiment analysis | Official MMSA shared Drive folders contain raw video, processed features, and labels; helper downloads primary-source metadata and keeps the toolkit clone opt-in | MMSA code is MIT; dataset media and annotation terms are not expressly specified |
+| [CH-SIMS v2](https://thuiar.github.io/sims.github.io/chsims) | Multimodal, modality-specific, and semi-supervised sentiment analysis | Official release provides 4,402 supervised and 10,161 unlabeled Chinese video segments through Google Drive and Baidu; helper saves primary-source metadata and keeps the repository clone opt-in | Official project, paper, and repository state no data or code license; review source-media, speaker, privacy, and platform rights |
 | [CMU-MOSI](https://arxiv.org/abs/1606.06259) | Multimodal sentiment intensity and subjectivity analysis | Official CMU Multimodal SDK provides labels and anonymized processed acoustic, visual, and language features; MultiBench provides a word-aligned processed package; helper saves docs/metadata and makes toolkit clones opt-in | SDK and MultiBench code are MIT, but data terms are not expressly specified; raw YouTube videos are not redistributed and source-media/privacy rights remain separate |
 | [CMU-MOSEI](https://aclanthology.org/P18-1208/) | Multimodal sentiment and emotion-intensity analysis | Official CMU Multimodal SDK provides sentiment/six-emotion labels and processed acoustic, visual, and language sequences for more than 65 hours of video; MultiBench provides a word-aligned processed package; helper saves docs/definitions and keeps toolkit clones opt-in | SDK and MultiBench code are MIT, but data terms are not expressly specified; source YouTube media, creator, platform, and privacy rights remain separate |
 | [SpEmoC](https://skvipparthi.com/spemoc.html) | Multimodal speaker-segment emotion recognition | Official project and paper document 30,000 refined clips from 306,544 raw segments across 3,100 English-language movies and TV series; full media access requires a signed requestor and faculty/PI agreement sent from an institutional address, and the helper only saves public documentation | Custom non-commercial academic agreement prohibits redistribution; source movie/TV copyrights remain with their owners; public repository code and split/metadata terms are unspecified |
@@ -1253,6 +1258,10 @@ CREMAD_DOWNLOAD_MEDIA=1 scripts/download/crema_d.sh
 scripts/download/meld.sh
 MELD_DOWNLOAD_RAW=1 scripts/download/meld.sh
 MELD_DOWNLOAD_FEATURES=1 scripts/download/meld.sh
+scripts/download/ch_sims.sh
+CH_SIMS_CLONE_TOOLKIT=1 scripts/download/ch_sims.sh
+scripts/download/ch_sims_v2.sh
+CH_SIMS_V2_CLONE_REPO=1 scripts/download/ch_sims_v2.sh
 scripts/download/cmu_mosi.sh
 CMU_MOSI_CLONE_SDK=1 scripts/download/cmu_mosi.sh
 CMU_MOSI_CLONE_MULTIBENCH=1 scripts/download/cmu_mosi.sh

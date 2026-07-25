@@ -181,8 +181,8 @@ paper_audits:
         index_id: ch_sims
         status: public_manual_drive
       - cited_as: CH-SIMS v2
-        index_id: null
-        status: public_not_yet_separately_indexed
+        index_id: ch_sims_v2
+        status: public_manual_drive
       - cited_as: OV-MERD+
         index_id: ov_merd
         status: public_family_gated_release
@@ -191,9 +191,9 @@ paper_audits:
       Section 4.1 evaluates nine multimodal emotion and sentiment families.
       Section 5.1 reports HIT for basic emotion recognition, weighted average
       F1 for sentiment analysis, and Fs for the OV-MERD+ open-vocabulary task.
-      CH-SIMS, CMU-MOSI, and CMU-MOSEI are separately indexed from their
-      primary releases. The remaining unindexed public families should be
-      traced separately rather than bundled into one helper.
+      CH-SIMS, CH-SIMS v2, CMU-MOSI, and CMU-MOSEI are separately indexed
+      from their primary releases. The remaining unindexed public families
+      should be traced separately rather than bundled into one helper.
     license_note: >-
       Access and terms differ across the nine families. In particular,
       CH-SIMS and processed CMU-MOSEI packages are distributed through shared
@@ -9734,6 +9734,61 @@ benchmarks:
       - https://raw.githubusercontent.com/thuiar/MMSA/master/README.md
       - https://raw.githubusercontent.com/thuiar/MMSA/master/LICENSE
       - https://api.github.com/repos/thuiar/MMSA
+
+  - id: ch_sims_v2
+    name: CH-SIMS v2
+    full_name: "CH-SIMS v2.0: A Fine-grained Multi-label Chinese Multimodal Sentiment Analysis Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - audio_visual_understanding
+    tasks:
+      - multimodal_sentiment_analysis
+      - audio_sentiment_analysis
+      - visual_sentiment_analysis
+      - text_sentiment_analysis
+      - modality_specific_sentiment_analysis
+      - semi_supervised_multimodal_sentiment_analysis
+    official:
+      homepage: https://thuiar.github.io/sims.github.io/chsims
+      repo: https://github.com/thuiar/ch-sims-v2
+      paper: https://arxiv.org/abs/2209.02604
+      supervised_google_drive: https://drive.google.com/drive/folders/1wFvGS0ebKRvT3q6Xolot-sDtCNfz7HRA
+      unsupervised_google_drive: https://drive.google.com/drive/folders/1llIbm3gwyJRwwk58RUQHWBNKjHI9vGGB
+    download:
+      primary:
+        - https://thuiar.github.io/sims.github.io/chsims
+        - https://drive.google.com/drive/folders/1wFvGS0ebKRvT3q6Xolot-sDtCNfz7HRA
+        - https://drive.google.com/drive/folders/1llIbm3gwyJRwwk58RUQHWBNKjHI9vGGB
+        - https://pan.baidu.com/s/13Ds2_XDIGUqMHt4lXNLQSQ
+        - https://pan.baidu.com/s/1tezEDR3Y23hJ6Mp5fmcp-w
+      examples:
+        - 'scripts/download/ch_sims_v2.sh'
+        - 'CH_SIMS_V2_CLONE_REPO=1 scripts/download/ch_sims_v2.sh'
+      notes: >-
+        The official release extends and re-annotates CH-SIMS with 4,402
+        supervised segments carrying multimodal and unimodal sentiment labels
+        plus 10,161 unlabeled segments for semi-supervised evaluation. It
+        provides raw videos, extracted features, IDs, splits, and labels
+        through separate Google Drive and Baidu folders. The helper downloads
+        only the official homepage, repository README/API metadata, and arXiv
+        metadata; Drive data remains manual and the code clone is opt-in.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The official project page, paper, and repository state no dataset or
+        code license, and the repository has no LICENSE file. Treat the videos,
+        annotations, features, and code as all-rights-reserved unless the
+        authors provide terms; also review source-media, speaker, privacy, and
+        platform rights before reuse or redistribution.
+    sources:
+      - https://thuiar.github.io/sims.github.io/chsims
+      - https://github.com/thuiar/ch-sims-v2
+      - https://raw.githubusercontent.com/thuiar/ch-sims-v2/main/README.md
+      - https://api.github.com/repos/thuiar/ch-sims-v2
+      - https://arxiv.org/abs/2209.02604
+      - https://export.arxiv.org/api/query?id_list=2209.02604
 
   - id: cmu_mosi
     name: CMU-MOSI
