@@ -19,9 +19,9 @@ paper_audits:
         index_id: asvspoof_2019
         status: public_existing_family
       - cited_as: FakeOrReal
-        index_id: null
-        status: public_candidate_not_added_in_this_increment
-        note: The York University owner page exposes four multi-gigabyte archives, but no dataset-specific license statement was found on that page.
+        index_id: fake_or_real
+        status: public_new_family
+        note: The York University owner page exposes four ungated multi-gigabyte archives but states no dataset-specific license or reuse terms.
       - cited_as: DiffSSD
         index_id: diffssd
         status: public_new_family
@@ -36,8 +36,8 @@ paper_audits:
       checkpoints, predictions, or score records. DiffSSD itself is publicly
       and ungatedly released by Purdue VIPER Lab on Hugging Face with synthetic
       audio, input texts, and a 94,226-row real/synthetic split manifest.
-      ASVspoof 2019 remains separately indexed. FakeOrReal is retained as a
-      follow-up candidate pending a clearer license record.
+      ASVspoof 2019, Fake-or-Real, and DiffSSD are separately indexed public
+      families.
     license_note: >-
       DiffSSD synthetic audio is CC BY-NC-ND 4.0 and incorporates the
       requirements of its source speech, text-generation service, and ten TTS
@@ -13101,6 +13101,53 @@ benchmarks:
       - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/LICENSE.txt
       - https://huggingface.co/api/datasets/purdueviperlab/diffssd
       - https://doi.org/10.1109/ICASSP49660.2025.10889450
+      - https://arxiv.org/abs/2607.12584
+      - https://arxiv.org/html/2607.12584v1#S4.SS1
+      - https://arxiv.org/html/2607.12584v1#S5.SS1
+
+  - id: fake_or_real
+    name: Fake-or-Real
+    full_name: "Fake-or-Real (FoR) Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - synthetic_speech_detection
+      - audio_deepfake_detection
+      - replay_robust_synthetic_speech_detection
+      - binary_real_fake_speech_classification
+    official:
+      dataset: https://bil.eecs.yorku.ca/datasets/
+      recent_evaluation: https://arxiv.org/abs/2607.12584
+    download:
+      primary:
+        - https://bil.eecs.yorku.ca/share/for-original.tar.gz
+        - https://bil.eecs.yorku.ca/share/for-norm.tar.gz
+        - https://bil.eecs.yorku.ca/share/for-2sec.tar.gz
+        - https://bil.eecs.yorku.ca/share/for-rerec.tar.gz
+      examples:
+        - 'scripts/download/fake_or_real.sh'
+        - 'FAKE_OR_REAL_DOWNLOAD_ARCHIVES=1 FAKE_OR_REAL_VERSIONS="2sec" scripts/download/fake_or_real.sh'
+      notes: >-
+        The official York University page describes more than 195,000 real and
+        synthetic speech utterances aggregated from contemporary TTS systems,
+        CMU Arctic, LJ Speech, VoxForge, and lab recordings. It publishes four
+        variants: original collected files; gender/class-balanced normalized
+        audio; normalized files truncated to two seconds; and rerecorded
+        two-second audio modeling transmission through a voice channel. The
+        helper saves only the official landing page by default. The four
+        archives total approximately 16.0 GiB and require both an explicit
+        archive opt-in and a version selection.
+    license:
+      data: not_specified
+      code: not_applicable
+      notes: >-
+        The official dataset page states no license, terms of use, or
+        redistribution grant. Public, ungated downloadability is not a license.
+        Obtain permission as needed and review the separate CMU Arctic,
+        LJ Speech, VoxForge, generated-voice, and lab-recording rights before
+        use or redistribution.
+    sources:
+      - https://bil.eecs.yorku.ca/datasets/
       - https://arxiv.org/abs/2607.12584
       - https://arxiv.org/html/2607.12584v1#S4.SS1
       - https://arxiv.org/html/2607.12584v1#S5.SS1

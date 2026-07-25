@@ -184,6 +184,7 @@ scripts/download/asvspoof_2015.sh
 scripts/download/asvspoof_2017.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/diffssd.sh
+scripts/download/fake_or_real.sh
 scripts/download/asvspoof_2021.sh
 scripts/download/asvspoof_5.sh
 scripts/download/audiomarkbench.sh
@@ -936,6 +937,10 @@ ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asv
 # 8.2 MiB split manifest by default. Synthetic audio is approximately 16.9 GiB
 # and opt-in; real LJ Speech/LibriSpeech files are obtained separately.
 DIFFSSD_DOWNLOAD_AUDIO=1 scripts/download/diffssd.sh
+
+# Fake-or-Real saves the official owner page by default. Select one or more
+# approximately 1.0-7.7 GiB archives explicitly; no dataset license is stated.
+FAKE_OR_REAL_DOWNLOAD_ARCHIVES=1 FAKE_OR_REAL_VERSIONS="2sec" scripts/download/fake_or_real.sh
 
 # ASVspoof 2021 downloads evaluation plan and keys/metadata by default. LA/PA/DF speech archives are large and opt-in.
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
