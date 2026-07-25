@@ -333,6 +333,14 @@ official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
 
+The July 2026 black-box dynamic-range-control paper is likewise recorded as an
+existing-coverage audit. It randomly selects 25 thirty-second mono excerpts
+from the indexed MedleyDB family, then applies 30 compression and 30 expansion
+profiles for 750 processed samples per task. The paper does not publish the
+source track IDs or timestamps, processed audio, manifest, implementation,
+predictions, or scores. Its source package only comments that code will follow
+acceptance, so the derived evaluation is not treated as a downloadable family.
+
 The July 2026 Kenyan-language Nemotron 3.5 adaptation report is recorded as
 an internal-protocol audit, not a new benchmark family. Its Kikuyu, Dholuo,
 and Kalenjin true-streaming evaluations use versioned project manifests drawn

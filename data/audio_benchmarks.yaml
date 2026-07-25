@@ -9,6 +9,46 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  black_box_drc_inversion:
+    paper: https://arxiv.org/abs/2607.19645
+    title: "Black-Box Optimization for Identifying and Inverting Audio Dynamic Range Control Effects"
+    sections: 5 and 6
+    status: audited_existing_public_family_and_unreleased_derived_evaluation
+    evaluated_sets:
+      - cited_as: MedleyDB
+        index_id: medleydb
+        status: public_source_family_unreleased_sample_selection
+        note: >-
+          Section 5 randomly selects one 30-second mono excerpt from each of
+          five distinct recordings in each of five genres: classical, rock,
+          electronic, pop, and jazz. The paper does not identify the 25 source
+          tracks, timestamps, or exact downmixes.
+    protocol_note: >-
+      Each of the 25 excerpts is processed with 30 predefined dynamic-range
+      compression profiles and 30 corresponding expansion profiles, yielding
+      750 processed samples per task. The evaluation compares pattern search
+      and Bayesian optimization for blind parameter recovery and inversion,
+      with feature-selection and optimization ablations in section 6.
+    release_note: >-
+      Version 1 exposes no active project page, repository, dataset card,
+      archive, manifest, code release, processed audio, predictions, or score
+      records. A commented source note says code will be available after paper
+      acceptance, and the commented audio-example URL is not presented as a
+      release. MedleyDB remains separately indexed; this paper-specific random
+      selection and its processed variants are recorded only as an unreleased
+      derived evaluation.
+    license_note: >-
+      MedleyDB is CC BY-NC-SA 4.0 for non-commercial research and asks users
+      not to republish the dataset without consent. The paper does not
+      separately license or distribute its selected excerpts, DRC-derived
+      audio, implementation, or evaluation artifacts.
+    sources:
+      - https://arxiv.org/abs/2607.19645
+      - https://export.arxiv.org/e-print/2607.19645v1
+      - https://medleydb.weebly.com/
+      - https://medleydb.weebly.com/downloads.html
+      - https://github.com/marl/medleydb
+
   wiener_hopf_audio_deepfake_detection:
     paper: https://arxiv.org/abs/2607.12584
     title: "Explainable-by-Design Audio Deepfake Detection via Wiener-Hopf Linear Prediction"
