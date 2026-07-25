@@ -205,6 +205,7 @@ scripts/download/ravdess.sh
 scripts/download/tess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
+scripts/download/ch_sims.sh
 scripts/download/emoprefer.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
@@ -944,6 +945,9 @@ CREMAD_REPO_URL=https://github.com/CheyneyComputerScience/CREMA-D.git CREMAD_DOW
 MELD_DOWNLOAD_RAW=1 scripts/download/meld.sh
 MELD_DOWNLOAD_FEATURES=1 scripts/download/meld.sh
 MELD_BASE_URL=https://huggingface.co/datasets/declare-lab/MELD/resolve/main scripts/download/meld.sh
+
+# CH-SIMS downloads official paper/repository metadata by default. Dataset files remain a manual Drive download; the MMSA toolkit clone is opt-in.
+CH_SIMS_CLONE_TOOLKIT=1 scripts/download/ch_sims.sh
 
 # IEMOCAP is form-gated by USC SAIL. The helper prints official request steps.
 scripts/download/iemocap.sh

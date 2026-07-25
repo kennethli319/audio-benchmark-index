@@ -72,7 +72,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 276 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 277 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -112,6 +112,16 @@ corpora. One named source cannot currently be added safely: the citation maps
 TEDLIUM to TED-LIUM Release 3, but the official OpenSLR SLR51 page and archive
 now return not found. The index records that upstream outage without
 substituting an unofficial mirror or publishing a dead download helper.
+
+The July 2026 Light-MER paper's nine-family multimodal emotion evaluation is
+also inventoried. This sweep adds the missing public CH-SIMS family: 2,281
+Chinese video segments with multimodal and modality-specific sentiment
+annotations, distributed through the official MMSA project's shared Drive
+folders. The helper saves lightweight primary-source metadata and keeps the
+toolkit clone opt-in; dataset files remain a manual download. MMSA's MIT
+license covers repository code, but the official sources do not expressly
+license the shared CH-SIMS media and annotations, so their data terms remain
+unspecified.
 
 The July 2026 GigaChat Audio report is inventoried across sections 3.6 and
 4.1. Its AudioGrounding and TimeGround-1M evaluations map to existing public
@@ -979,6 +989,7 @@ Current coverage includes:
 | [TESS](https://doi.org/10.5683/SP2/E8H2MF) | Speech emotion recognition and auditory emotion perception | Owner-hosted University of Toronto Dataverse release with 2,800 acted-emotion WAV stimuli; helper saves official metadata by default and makes the complete ZIP opt-in | CC BY-NC 4.0; preserve attribution and review identifiable-voice ethics for downstream use |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |
 | [MELD](https://affective-meld.github.io/) | Speech emotion recognition | Official project/GitHub/Hugging Face metadata by default; raw audio/video and feature/model tarballs are opt-in | GitHub and HF list GPL-3.0; clips derive from Friends TV media, so re-check media rights before redistribution or commercial use |
+| [CH-SIMS](https://aclanthology.org/2020.acl-main.343/) | Multimodal and modality-specific sentiment analysis | Official MMSA shared Drive folders contain raw video, processed features, and labels; helper downloads primary-source metadata and keeps the toolkit clone opt-in | MMSA code is MIT; dataset media and annotation terms are not expressly specified |
 | [SpEmoC](https://skvipparthi.com/spemoc.html) | Multimodal speaker-segment emotion recognition | Official project and paper document 30,000 refined clips from 306,544 raw segments across 3,100 English-language movies and TV series; full media access requires a signed requestor and faculty/PI agreement sent from an institutional address, and the helper only saves public documentation | Custom non-commercial academic agreement prohibits redistribution; source movie/TV copyrights remain with their owners; public repository code and split/metadata terms are unspecified |
 | [EmoPrefer](https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer) | Multimodal emotion-description preference evaluation | Public original/V2 pairwise annotation tables (574 unanimous pairs and 2,096 individual-annotator pairs) plus reverse-order and generator-name audit variants; source audio/video remains separately gated through MER2025, while the helper downloads only public annotations/docs | Official subdirectory is Apache-2.0 but says non-commercial research only; gated MER2025 adds CC BY-NC 4.0, academic-only, no-redistribution/no-modification terms; audit code is MIT |
 | [OV-MERD](https://github.com/zeroQiaoba/AffectGPT/tree/master/OV-MER) | Open-vocabulary multimodal emotion recognition | Official gated [MER2025 release](https://huggingface.co/datasets/MERChallenge/MER2025) with acoustic/visual clues, descriptions, and free-form labels spanning 236 emotion categories; helper saves public docs/metadata only and leaves the approximately 442 GB repository manual | CC BY-NC 4.0 plus academic-only, non-commercial, no-redistribution, and no-modification gated terms; repository code is Apache-2.0 with a non-commercial research-preview notice, and source movie/TV rights remain separate |

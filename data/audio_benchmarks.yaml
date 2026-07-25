@@ -152,6 +152,61 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  light_mer_emotion_evaluation:
+    paper: https://arxiv.org/abs/2607.12787
+    title: "Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters?"
+    sections: 4.1 and 5.1
+    status: audited_mixed_existing_and_new_public_families
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: MER2023
+        index_id: null
+        status: challenge_release_not_yet_separately_indexed
+      - cited_as: MER2024
+        index_id: null
+        status: challenge_release_not_yet_separately_indexed
+      - cited_as: MELD
+        index_id: meld
+        status: public
+      - cited_as: IEMOCAP
+        index_id: iemocap
+        status: public_request_gated
+      - cited_as: CMU-MOSI
+        index_id: null
+        status: public_not_yet_separately_indexed
+      - cited_as: CMU-MOSEI
+        index_id: null
+        status: public_not_yet_separately_indexed
+      - cited_as: CH-SIMS
+        index_id: ch_sims
+        status: public_manual_drive
+      - cited_as: CH-SIMS v2
+        index_id: null
+        status: public_not_yet_separately_indexed
+      - cited_as: OV-MERD+
+        index_id: ov_merd
+        status: public_family_gated_release
+        note: The paper reports the OV-MERD+ fine-grained open-vocabulary track; the index maps it conservatively to the official OV-MERD/MER2025 release family rather than claiming a separately licensed archive.
+    protocol_note: >-
+      Section 4.1 evaluates nine multimodal emotion and sentiment families.
+      Section 5.1 reports HIT for basic emotion recognition, weighted average
+      F1 for sentiment analysis, and Fs for the OV-MERD+ open-vocabulary task.
+      This increment adds the missing public CH-SIMS family; the remaining
+      unindexed public families should be traced separately rather than bundled
+      into one helper.
+    license_note: >-
+      Access and terms differ across the nine families. In particular,
+      CH-SIMS is distributed through shared Drive folders while the official
+      MMSA repository's MIT license clearly covers repository code but does
+      not expressly license the dataset media. Existing MELD, IEMOCAP, and
+      OV-MERD entries retain their own media and access caveats.
+    sources:
+      - https://arxiv.org/abs/2607.12787
+      - https://arxiv.org/html/2607.12787v1#S4.SS1
+      - https://github.com/GAIR-Lab/Light-MER
+      - https://aclanthology.org/2020.acl-main.343/
+      - https://github.com/thuiar/MMSA
+
   audio_visual_flamingo_audio_evaluation:
     paper: https://arxiv.org/abs/2607.16107
     title: "Nemotron-Labs-Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos"
@@ -9624,6 +9679,57 @@ benchmarks:
       - https://huggingface.co/datasets/declare-lab/MELD
       - https://aclanthology.org/P19-1050/
       - https://arxiv.org/abs/1810.02508
+
+  - id: ch_sims
+    name: CH-SIMS
+    full_name: "CH-SIMS: A Chinese Multimodal Sentiment Analysis Dataset with Fine-grained Annotation of Modality"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_speech_evaluation
+      - audio_visual_understanding
+    tasks:
+      - multimodal_sentiment_analysis
+      - audio_sentiment_analysis
+      - visual_sentiment_analysis
+      - text_sentiment_analysis
+      - modality_specific_sentiment_analysis
+    official:
+      paper: https://aclanthology.org/2020.acl-main.343/
+      repo: https://github.com/thuiar/MMSA
+      google_drive: https://drive.google.com/drive/folders/1A2S4pqCHryGmiqnNSPLv7rEg63WvjCSk
+      baidu_drive: https://pan.baidu.com/s/1a1bDX5htPsZjsRyHcvCKHw?pwd=qq0b
+    download:
+      primary:
+        - https://github.com/thuiar/MMSA
+        - https://drive.google.com/drive/folders/1A2S4pqCHryGmiqnNSPLv7rEg63WvjCSk
+        - https://pan.baidu.com/s/1a1bDX5htPsZjsRyHcvCKHw?pwd=qq0b
+      examples:
+        - 'scripts/download/ch_sims.sh'
+        - 'CH_SIMS_CLONE_TOOLKIT=1 scripts/download/ch_sims.sh'
+      notes: >-
+        The paper introduces 2,281 Chinese in-the-wild video segments with
+        multimodal sentiment labels and separate text, audio, and visual
+        annotations. The official MMSA repository provides shared Baidu and
+        Google Drive folders containing raw video, processed features, and
+        labels for CH-SIMS alongside MOSI and MOSEI. The helper downloads
+        official paper, README, license, and repository metadata only; dataset
+        files remain a manual Drive download, and cloning the toolkit is opt-in.
+    license:
+      data: not_specified
+      code: MIT
+      notes: >-
+        The MMSA repository is MIT-licensed, but neither the paper nor the
+        repository README expressly applies that license to the CH-SIMS video
+        and annotation files in the shared Drive folders. Treat dataset terms
+        and source-media rights as unspecified and verify permitted use before
+        redistribution or commercial use.
+    sources:
+      - https://aclanthology.org/2020.acl-main.343/
+      - https://aclanthology.org/2020.acl-main.343.pdf
+      - https://github.com/thuiar/MMSA
+      - https://raw.githubusercontent.com/thuiar/MMSA/master/README.md
+      - https://raw.githubusercontent.com/thuiar/MMSA/master/LICENSE
+      - https://api.github.com/repos/thuiar/MMSA
 
   - id: spemoc
     name: SpEmoC
