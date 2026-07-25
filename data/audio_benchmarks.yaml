@@ -3180,7 +3180,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.13721
     title: "Self-supervised Speech Comparison for L2 Phone, Rhythm, and Intonation Scoring"
     sections: 3.2-3.3 and 4-5
-    status: audited_one_new_restricted_family_one_deferred_related_family
+    status: audited_two_restricted_families
     evaluated_sets:
       - cited_as: UME English Speech Database Read by Japanese Students (UME-ERJ)
         index_id: ume_erj
@@ -3192,15 +3192,11 @@ paper_audits:
           compared against human five-point ratings and expert inter-rater
           agreement.
       - cited_as: UME Japanese Speech Database Read by Foreign Students (UME-JRF)
-        index_id: null
-        status: application_reviewed_research_only_deferred
+        index_id: ume_jrf
+        status: application_reviewed_research_only
         protocol: >-
           Japanese overall, intonation, rhythm, and difficult-sound subsets are
           evaluated with the same reference-comparison framework.
-        note: >-
-          UME-JRF is a distinct owner-controlled corpus and is deferred to a
-          separate increment so its official metadata, access terms, and
-          helper can be traced independently.
       - cited_as: TIMIT
         index_id: timit
         status: existing_restricted_family
@@ -3229,10 +3225,9 @@ paper_audits:
       - https://doi.org/10.32130/src.UME-JRF
     note: >-
       The evaluation paper introduces scoring methods, not a new downloadable
-      benchmark. This audit adds the previously missing official UME-ERJ
-      source family without treating its application-reviewed access as a
-      public download, maps TIMIT and LibriSpeech to existing coverage, and
-      leaves the separately controlled UME-JRF family for a focused follow-up.
+      benchmark. This audit maps its two official NII/SRC source families,
+      UME-ERJ and UME-JRF, without treating their application-reviewed access
+      as public downloads, and maps TIMIT and LibriSpeech to existing coverage.
 
   x_translator_speech_translation_evaluation:
     paper: https://arxiv.org/abs/2607.17544
@@ -11120,6 +11115,54 @@ benchmarks:
         voices and proficiency ratings in privacy and ethics planning.
     sources:
       - https://doi.org/10.32130/src.UME-ERJ
+      - https://arxiv.org/abs/2607.13721
+      - https://arxiv.org/html/2607.13721v1#S3.SS2
+      - https://arxiv.org/html/2607.13721v1#S3.SS3
+      - https://arxiv.org/html/2607.13721v1#S4
+      - https://arxiv.org/html/2607.13721v1#S5
+
+  - id: ume_jrf
+    name: UME-JRF
+    full_name: "UME Japanese Speech Database Read by Foreign Students"
+    qwen_cited_as: null
+    qwen_bucket: second_language_pronunciation_assessment
+    tasks:
+      - second_language_pronunciation_assessment
+      - holistic_pronunciation_scoring
+      - rhythm_scoring
+      - intonation_scoring
+      - difficult_sound_scoring
+      - non_native_read_speech
+    official:
+      dataset: https://doi.org/10.32130/src.UME-JRF
+      recent_evaluation: https://arxiv.org/abs/2607.13721
+      recent_evaluation_html: https://arxiv.org/html/2607.13721v1#S4
+    download:
+      primary:
+        - https://doi.org/10.32130/src.UME-JRF
+      examples:
+        - 'scripts/download/ume_jrf.sh'
+      notes: >-
+        NII's Speech Resources Consortium distributes UME-JRF only after an
+        applicant submits a usage pledge and passes review. The official record
+        describes 141 intermediate-to-advanced learners from 26 native-language
+        groups (72 male and 69 female), 16 kHz/16-bit mono WAV recordings, and
+        ATR-balanced, difficult-sentence, prosody-sentence, and difficult-word
+        materials. The helper saves only public provenance and
+        evaluation-paper metadata, then prints the manual application
+        requirement.
+    license:
+      data: custom_research_only_terms_with_application_review
+      code: not_applicable
+      notes: >-
+        The official NII record limits permission to research purposes and
+        requires a usage pledge plus review; it does not publish a standard
+        open-data license. Review the current agreement before use, do not
+        redistribute the recordings, and account for identifiable learner
+        voices, native-language backgrounds, and pronunciation ratings in
+        privacy and ethics planning.
+    sources:
+      - https://doi.org/10.32130/src.UME-JRF
       - https://arxiv.org/abs/2607.13721
       - https://arxiv.org/html/2607.13721v1#S3.SS2
       - https://arxiv.org/html/2607.13721v1#S3.SS3

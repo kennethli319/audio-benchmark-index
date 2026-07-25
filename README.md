@@ -78,7 +78,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 307 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 308 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -898,13 +898,14 @@ scores. Public access to the three source corpora therefore does not reproduce
 the derived protocol, and no duplicate family or download helper is added.
 
 The July 2026 *Self-supervised Speech Comparison for L2 Phone, Rhythm, and
-Intonation Scoring* paper adds the official
-[UME-ERJ](https://doi.org/10.32130/src.UME-ERJ) source family. Its rated
-English sentence and word subsets support phone, rhythm, and intonation
-scoring for Japanese learners, but NII/SRC provides the recordings only after
-a usage pledge and review and permits research use only. The paper also uses
-the distinct UME-JRF corpus plus the already indexed TIMIT and LibriSpeech
-families; UME-JRF is deferred for its own primary-source access audit.
+Intonation Scoring* paper maps to the official
+[UME-ERJ](https://doi.org/10.32130/src.UME-ERJ) and
+[UME-JRF](https://doi.org/10.32130/src.UME-JRF) source families. Their rated
+English and Japanese sentence and word subsets support phone, holistic
+pronunciation, rhythm, intonation, and difficult-sound scoring for L2 learners.
+NII/SRC provides both corpora only after a usage pledge and review and permits
+research use only. The paper's TIMIT and LibriSpeech dependencies map to
+existing entries.
 
 The July 2026 *Towards a reproducible cross-venue method for quantifying crowd
 noise in stadiums* paper is recorded as a proposed-protocol audit. It defines
@@ -1370,6 +1371,7 @@ Current coverage includes:
 | [SpInt](https://zenodo.org/records/20763580) | Spanish speech-intelligibility and enhancement-metric evaluation | Public Zenodo v1.0 release with behavioral scores and metadata for 5,148 processed utterances, complex enhancement masks, noise, and a reconstruction script; helper downloads the record and lightweight files by default while the approximately 3.87 GiB archives are opt-in | Released artifacts are CC BY 4.0; clean Spanish Matrix Test speech is intentionally excluded and must be obtained under separate terms |
 | [AudioMNIST](https://github.com/soerenab/AudioMNIST) | Spoken digit classification | Official GitHub repository with 30,000 spoken-digit WAV files and speaker metadata; helper downloads README/LICENSE/metadata by default and clones the repository only with opt-in | Repository-level LICENSE is MIT; recorded-voice consent/privacy obligations should still be considered for downstream use |
 | [UME-ERJ](https://doi.org/10.32130/src.UME-ERJ) | L2 English phone, rhythm, and intonation assessment | Official NII/SRC corpus with rated word and sentence recordings from 202 Japanese learners of English; access requires submitting a usage pledge and passing review, and the helper saves only public provenance before printing the manual steps | Custom research-only permission; no standard open-data license is stated, redistribution is not authorized by the public record, and identifiable learner voices and proficiency ratings warrant privacy and ethics review |
+| [UME-JRF](https://doi.org/10.32130/src.UME-JRF) | L2 Japanese holistic pronunciation, rhythm, intonation, and difficult-sound assessment | Official NII/SRC corpus with read speech from 141 intermediate-to-advanced learners across 26 native-language groups; access requires submitting a usage pledge and passing review, and the helper saves only public provenance before printing the manual steps | Custom research-only permission; no standard open-data license is stated, redistribution is not authorized by the public record, and identifiable learner voices, language backgrounds, and ratings warrant privacy and ethics review |
 | [SALMon](https://pages.cs.huji.ac.il/adiyoss-lab/salmon/) | Acoustic consistency and semantic-acoustic alignment for speech language models | Public, ungated [slprl/SALMon](https://huggingface.co/datasets/slprl/SALMon) with 1,600 likelihood-ranking pairs across eight configurations; helper downloads official docs/metadata by default and makes the approximately 562 MB snapshot opt-in | Dataset is CC BY-NC 4.0 and derives components from Expresso, VCTK, LJSpeech, FSD50K, EchoThief, and Azure TTS; evaluation-repository code terms are unspecified |
 | [ParaPairAudioBench](https://github.com/jsujeon/ParaPairAudioBench) | Paralinguistic pairwise evaluation of audio-language-model judges | Official repository with 5,175 pair definitions across style, rate, emphasis, age, and gender; rate/emphasis/style annotations are ready to use, while age and part of gender require SVC access; helper downloads docs by default and makes the small metadata/code clone opt-in | Mixed upstream terms: SVC is non-commercial academic research, EARS/Expresso are CC BY-NC 4.0, and LibriTTS is CC BY 4.0; the benchmark repo itself has no stated data or code license |
 | [SpeechEQ](https://huggingface.co/datasets/SpeechEQ/SpeechEQ) | Multi-turn spoken-dialogue emotional intelligence and paralinguistic reasoning | Public, ungated English release with 2,265 six-turn dialogues (42h 23m) across 15 EQ-i 2.0 subscales; helper downloads docs by default and makes the approximately 2.45 GB embedded-audio snapshot opt-in | Data and code licenses are not specified; the paper's CC BY-NC-SA 4.0 publication license must not be assumed to cover benchmark audio, annotations, or code |
