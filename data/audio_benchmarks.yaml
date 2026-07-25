@@ -211,6 +211,43 @@ paper_audits:
       - https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK
       - https://github.com/pliang279/MultiBench
 
+  multimodal_ambivalence_hesitancy_evaluation:
+    paper: https://arxiv.org/abs/2607.15779
+    title: "Multimodal Ambivalence and Hesitancy Recognition via Cross-Attention and Gated Fusion"
+    sections: 3-7
+    status: audited_new_restricted_public_family
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: BAH
+        index_id: bah
+        status: public_request_gated_research_only
+        note: >-
+          The ABAW11 paper evaluates the official 1,427-video annotated
+          release and a separately distributed 152-video unlabeled private
+          challenge test set. The indexed family documents the reusable
+          research release rather than treating the private test set as a
+          separate downloadable benchmark.
+    protocol_note: >-
+      Section 3 uses participant-disjoint training, validation, and public
+      test splits with video-level binary ambivalence/hesitancy labels. The
+      paper extracts text, audio, and visual features and reports Macro F1 for
+      unimodal and multimodal fusion systems. The official BAH release also
+      provides frame-level timestamps and cues, transcripts, aligned faces,
+      participant metadata, and predefined splits.
+    license_note: >-
+      BAH is distributed only after an eligible full-time faculty member
+      submits the official request form and signed EULA. The owner page calls
+      the dataset proprietary and research-only. BSD-3-Clause covers the
+      public baseline repository, not the participant recordings or
+      annotations.
+    sources:
+      - https://arxiv.org/abs/2607.15779
+      - https://arxiv.org/html/2607.15779v1#S3
+      - https://arxiv.org/abs/2505.19328
+      - https://www.etsmtl.ca/en/labs/livia/datasets/bah-ambivalence-hesitancy
+      - https://github.com/LIVIAETS/bah-dataset
+      - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
+
   audio_visual_flamingo_audio_evaluation:
     paper: https://arxiv.org/abs/2607.16107
     title: "Nemotron-Labs-Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos"
@@ -9683,6 +9720,66 @@ benchmarks:
       - https://huggingface.co/datasets/declare-lab/MELD
       - https://aclanthology.org/P19-1050/
       - https://arxiv.org/abs/1810.02508
+
+  - id: bah
+    name: BAH
+    full_name: "BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behavioural Change"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+      - paralinguistic_speech_evaluation
+    tasks:
+      - ambivalence_hesitancy_recognition
+      - multimodal_affect_recognition
+      - vocal_expression_analysis
+      - audio_visual_behavior_understanding
+      - temporal_affect_localization
+      - personalized_affect_recognition
+    official:
+      homepage: https://www.etsmtl.ca/en/labs/livia/datasets/bah-ambivalence-hesitancy
+      paper: https://arxiv.org/abs/2505.19328
+      repo: https://github.com/LIVIAETS/bah-dataset
+      request_form: https://www.crhscm.ca/redcap/surveys/?s=LDMDDJR3AT9P37JY
+      challenge: https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
+    download:
+      primary:
+        - https://github.com/LIVIAETS/bah-dataset#download-bah
+        - https://www.crhscm.ca/redcap/surveys/?s=LDMDDJR3AT9P37JY
+      examples:
+        - 'scripts/download/bah.sh'
+      notes: >-
+        The release contains 1,427 videos totaling 10.60 hours from 300
+        participants across Canada, including 1.8 hours of annotated
+        ambivalence/hesitancy moments. It provides raw videos, 16 kHz audio,
+        timestamped transcripts, cropped and aligned faces, expert video- and
+        frame-level labels and cues, participant metadata, and predefined
+        participant-disjoint splits. Access is manual: an eligible full-time
+        faculty member must submit the official form, list every team member,
+        certify institutional eligibility, and sign the EULA. The helper
+        saves only public owner, paper, repository, challenge, and request
+        documentation and never downloads participant data.
+    license:
+      data: proprietary_research_only_eula
+      code: BSD-3-Clause
+      notes: >-
+        The ÉTS owner page expressly labels BAH proprietary and research-only.
+        The current request process is limited to full-time faculty at an
+        eligible university, higher-education institution, or equivalent
+        organization; students and postdoctoral researchers cannot apply
+        directly. The public repository's BSD-3-Clause license applies to
+        code, not the gated recordings, transcripts, annotations, faces, or
+        participant metadata. Review the signed EULA for storage, sharing,
+        publication, retention, privacy, and downstream-use obligations.
+    sources:
+      - https://www.etsmtl.ca/en/labs/livia/datasets/bah-ambivalence-hesitancy
+      - https://arxiv.org/abs/2505.19328
+      - https://github.com/LIVIAETS/bah-dataset
+      - https://raw.githubusercontent.com/LIVIAETS/bah-dataset/master/README.md
+      - https://raw.githubusercontent.com/LIVIAETS/bah-dataset/master/LICENSE
+      - https://api.github.com/repos/LIVIAETS/bah-dataset
+      - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
+      - https://arxiv.org/abs/2607.15779
 
   - id: mer2023
     name: MER2023
