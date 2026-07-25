@@ -19441,3 +19441,55 @@ benchmarks:
       - https://doi.org/10.1088/0967-3334/37/12/2181
       - https://arxiv.org/abs/2607.16220
       - https://arxiv.org/html/2607.16220v1#S3
+
+  - id: savee
+    name: SAVEE
+    full_name: "Surrey Audio-Visual Expressed Emotion Database"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_emotion_recognition
+      - audio_visual_understanding
+    tasks:
+      - speech_emotion_recognition
+      - audio_visual_emotion_recognition
+      - speaker_independent_emotion_classification
+      - explainable_speech_emotion_recognition
+    official:
+      homepage: http://kahlan.eps.surrey.ac.uk/savee/
+      database: http://kahlan.eps.surrey.ac.uk/savee/Database.html
+      download: http://kahlan.eps.surrey.ac.uk/savee/Download.html
+      references: http://kahlan.eps.surrey.ac.uk/savee/References.html
+      recent_evaluation: https://arxiv.org/abs/2607.16803
+    download:
+      access: registration_password_gated_research_use
+      primary:
+        - http://kahlan.eps.surrey.ac.uk/savee/Download.html
+      examples:
+        - 'scripts/download/savee.sh'
+      notes: >-
+        The owner page describes 480 British-English audiovisual utterances
+        from four male actors, with 120 utterances per speaker across anger,
+        disgust, fear, happiness, sadness, surprise, and neutral. It reports
+        44.1 kHz audio and 60 fps video. Access requires registration, after
+        which approved users log in to the password-protected data directory.
+        The helper saves only public owner documentation and never
+        authenticates or downloads the corpus.
+    license:
+      data: custom_free_for_research_registration_required
+      code: not_applicable
+      notes: >-
+        The official download page says SAVEE is available free of charge for
+        research purposes, but publishes no standard license, redistribution
+        grant, or commercial-use terms. Treat access as research-only and
+        request clarification from the owner before redistribution or use
+        outside research. The recordings contain identifiable actor voices
+        and faces, so privacy, likeness, and research-ethics considerations
+        remain applicable.
+    sources:
+      - http://kahlan.eps.surrey.ac.uk/savee/
+      - http://kahlan.eps.surrey.ac.uk/savee/Database.html
+      - http://kahlan.eps.surrey.ac.uk/savee/Download.html
+      - http://kahlan.eps.surrey.ac.uk/savee/References.html
+      - https://doi.org/10.4018/978-1-61520-919-4
+      - https://arxiv.org/abs/2607.16803
+      - https://arxiv.org/html/2607.16803v1#S4.SS1

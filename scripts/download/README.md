@@ -316,6 +316,7 @@ scripts/download/lyra_sa.sh
 scripts/download/adress_challenges.sh
 scripts/download/aff_wild2.sh
 scripts/download/iemocap.sh
+scripts/download/savee.sh
 scripts/download/ov_merd.sh
 scripts/download/mer2023.sh
 scripts/download/mer2024.sh
