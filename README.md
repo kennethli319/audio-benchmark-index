@@ -353,6 +353,16 @@ FRDR/Globus transfer, but the paper does not release its exact folds, derived
 per-segment targets, models, predictions, or score records. Those artifacts
 are not presented as a separate downloadable benchmark.
 
+The July 2026 compact Hindi TTS paper is likewise recorded as an
+existing-coverage audit. Its independent benchmark selects 50 Hindi sentences
+from the indexed FLEURS `hi_in` test split and compares IndicF5, a released
+190M student, and MMS-TTS-hin using WER/CER, speaker similarity, UTMOS, and
+real-time factor. The public model repository releases the exact sentence
+list, evaluation scripts, and per-sentence scores and timings, but not the
+generated evaluation audio. This released selection maps to FLEURS rather than
+creating a duplicate family; repository artifacts are MIT while the selected
+FLEURS material retains CC BY 4.0 attribution obligations.
+
 The July 2026 OmniReasoner paper is also recorded as an existing-coverage
 audit. Its main evaluation uses the indexed OmniVideoBench, LVOmniBench,
 Daily-Omni, WorldSense, and Video-MME audio-video families; VideoHolmes is a

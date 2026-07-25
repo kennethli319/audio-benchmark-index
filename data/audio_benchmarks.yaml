@@ -1159,6 +1159,53 @@ paper_audits:
       - https://doi.org/10.1038/s41597-025-04869-1
       - https://github.com/mahsa-abdollahi/UrBAN
 
+  compact_hindi_tts_distillation:
+    paper: https://arxiv.org/abs/2607.18662
+    title: "Staged Depth-Pruning Distillation of a Flow-Matching Text-to-Speech Teacher: A Compact Hindi Speech Synthesizer"
+    sections: 3.6 and 4.1
+    status: audited_existing_public_family_released_selection_and_scores
+    last_verified: 2026-07-25
+    evaluated_sets:
+      - cited_as: FLEURS hi_in test split
+        index_id: fleurs
+        status: public_family_released_50_sentence_selection
+        examples: 50
+        note: >-
+          Section 4.1 evaluates IndicF5, the released 190M student, and
+          MMS-TTS-hin on the same 50 unique Hindi sentences selected from the
+          public FLEURS hi_in test split. The model repository releases the
+          exact text list, synthesis/evaluation scripts, and per-sentence
+          scores and timings for all three systems.
+    protocol_note: >-
+      The independent benchmark reports corpus WER and CER from the public
+      Vakyansh Hindi wav2vec2 ASR judge, ECAPA-TDNN speaker similarity against
+      one reference speaker, UTMOS, and median real-time factor. Flow models
+      use NFE 32, CFG 2.0, and a fixed seed. The repository makes the selected
+      inputs and result JSON files reproducible, but it does not publish the
+      generated evaluation waveforms. The paper's separate two-sentence
+      pruning gate uses one known and one fresh sentence rather than a
+      benchmark dataset and is not indexed as a family.
+    release_note: >-
+      FLEURS is already indexed and its helper supports the hi_in configuration.
+      The paper-specific release adds a small derived selection, scripts, and
+      score records to a model repository; it does not constitute a new
+      benchmark family or require another download helper.
+    license_note: >-
+      The model repository and evaluation artifacts declare MIT. FLEURS remains
+      CC BY 4.0, and the repository's MIT license does not supersede attribution
+      obligations for the selected FLEURS text or any separately downloaded
+      FLEURS recordings. The paper does not release generated benchmark audio
+      under either license.
+    sources:
+      - https://arxiv.org/abs/2607.18662
+      - https://arxiv.org/html/2607.18662v1#S4.SS1
+      - https://huggingface.co/5ivatej/hindi-tts-190M
+      - https://huggingface.co/5ivatej/hindi-tts-190M/tree/main/eval
+      - https://huggingface.co/5ivatej/hindi-tts-190M/raw/main/eval/RESULTS.md
+      - https://huggingface.co/5ivatej/hindi-tts-190M/raw/main/eval/test_sentences.txt
+      - https://huggingface.co/5ivatej/hindi-tts-190M/raw/main/LICENSE
+      - https://huggingface.co/datasets/google/fleurs
+
   x3_opd_audio_reasoning:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4
