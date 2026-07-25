@@ -218,6 +218,7 @@ scripts/download/ravdess.sh
 scripts/download/tess.sh
 scripts/download/crema_d.sh
 scripts/download/meld.sh
+scripts/download/cmma.sh
 scripts/download/mustard.sh
 scripts/download/ch_sims.sh
 scripts/download/ch_sims_v2.sh

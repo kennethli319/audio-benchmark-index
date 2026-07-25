@@ -561,7 +561,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.11102
     title: "CHARM: Charge Calibration and Acoustic Rescue for LLM-based Multimodal Sarcasm Detection"
     sections: 4.1 and 4.3
-    status: audited_one_new_public_family_one_deferred_candidate
+    status: audited_two_public_families
     evaluated_sets:
       - cited_as: MUStARD
         index_id: mustard
@@ -573,19 +573,20 @@ paper_audits:
           stage. The official MUStARD release provides labels, dialogue
           context, fold indices, baseline code, and public audiovisual files.
       - cited_as: CMMA
-        index_id: null
-        status: primary_paper_verified_official_public_artifact_not_yet_verified
+        index_id: cmma
+        status: public_ungated_google_drive
         note: >-
           CHARM evaluates the official 3,961-utterance Chinese test split.
-          The CMMA NeurIPS paper is verifiable, but this audit did not locate
-          an author-controlled public dataset archive or repository with clear
-          access and reuse terms, so no benchmark entry or download link is
-          added yet.
+          The official NeurIPS proceedings page links the author-controlled
+          repository, which releases text splits, annotation guidance, a data
+          card, explicit CC BY-NC 4.0-style terms, and a public Google Drive
+          archive for the audiovisual data.
     license:
       paper: arXiv non-exclusive distribution license
       mustard_repository: MIT
       mustard_media: third_party_television_rights_require_review
-      cmma_data: not_verified
+      cmma_data: custom_cc_by_nc_4_0_style_terms
+      cmma_media: third_party_television_rights_require_review
     sources:
       - https://arxiv.org/abs/2607.11102
       - https://arxiv.org/html/2607.11102v1#S4.SS1
@@ -594,11 +595,16 @@ paper_audits:
       - https://github.com/soujanyaporia/MUStARD
       - https://huggingface.co/datasets/MichiganNLP/MUStARD
       - https://doi.org/10.52202/075280-0824
+      - https://proceedings.neurips.cc/paper_files/paper/2023/hash/3be60b4a739b95a07a944a1a2c41e05e-Abstract-Datasets_and_Benchmarks.html
+      - https://github.com/annoymity2022/Chinese-Dataset
+      - https://raw.githubusercontent.com/annoymity2022/Chinese-Dataset/main/README.md
+      - https://raw.githubusercontent.com/annoymity2022/Chinese-Dataset/main/License/License-English.txt
+      - https://drive.google.com/file/d/19NgqpYLPa3bLFm4YUjuCT2sbmQemziG-/view
     note: >-
-      This audit adds MUStARD as a public multimodal audio benchmark and keeps
-      CMMA as a traceable follow-up candidate. It does not infer a CMMA
-      download from secondary mirrors or treat machine-readable license tags
-      as clearing third-party television media.
+      This audit maps both CHARM evaluations to public owner-controlled
+      families. CMMA's repository terms restrict use to noncommercial purposes
+      and preserve the original copyright of its television conversations;
+      public download access does not clear those source-media rights.
 
   speak_and_improve_shortcut_reliance:
     paper: https://arxiv.org/abs/2607.16085
@@ -12179,6 +12185,67 @@ benchmarks:
       - https://gitlab.com/cs-cooper-lab/crema-d-mirror
       - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4313618/
       - https://doi.org/10.1109/TAFFC.2014.2336244
+
+  - id: cmma
+    name: CMMA
+    full_name: "CMMA: Benchmarking Multi-Affection Detection in Chinese Multi-Modal Conversations"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - paralinguistic_understanding
+    tasks:
+      - multimodal_sentiment_analysis
+      - multimodal_emotion_recognition
+      - multimodal_sarcasm_detection
+      - multimodal_humor_detection
+      - conversational_context_understanding
+      - multi_task_affect_analysis
+    official:
+      repo: https://github.com/annoymity2022/Chinese-Dataset
+      dataset: https://drive.google.com/file/d/19NgqpYLPa3bLFm4YUjuCT2sbmQemziG-/view
+      paper: https://proceedings.neurips.cc/paper_files/paper/2023/hash/3be60b4a739b95a07a944a1a2c41e05e-Abstract-Datasets_and_Benchmarks.html
+      doi: https://doi.org/10.52202/075280-0824
+      recent_evaluation: https://arxiv.org/abs/2607.11102
+    download:
+      access: public_ungated_google_drive
+      primary:
+        - https://github.com/annoymity2022/Chinese-Dataset
+        - https://drive.google.com/file/d/19NgqpYLPa3bLFm4YUjuCT2sbmQemziG-/view
+      examples:
+        - 'scripts/download/cmma.sh'
+        - 'CMMA_CLONE_REPO=1 scripts/download/cmma.sh'
+      notes: >-
+        The release contains 3,000 Chinese multi-party television conversations
+        and 21,795 multimodal utterances with sentiment, emotion, sarcasm,
+        humor, speaker, topic, and cross-task correlation annotations. The
+        helper downloads the official README, data card, license, annotation
+        guidance, text splits, and repository metadata by default. The public
+        Google Drive CMMA.zip is approximately 12.66 GB and remains a manual
+        download; set CMMA_CLONE_REPO=1 only to clone the approximately 5 MB
+        metadata and text repository. CHARM section 4.1 evaluates the official
+        3,961-utterance test split.
+    license:
+      data: custom_cc_by_nc_4_0_style_terms
+      repository_code: not_applicable
+      media: third_party_rights_require_review
+      notes: >-
+        The repository's English agreement calls itself CC BY-NC 4.0 and
+        permits attributed use, copying, distribution, display, and adapted
+        material only for noncommercial purposes. It is custom license text,
+        not a copy of the standard Creative Commons deed, and it says the
+        original copyright of all television conversations remains with source
+        owners. Review those third-party media rights before use or
+        redistribution.
+    sources:
+      - https://proceedings.neurips.cc/paper_files/paper/2023/hash/3be60b4a739b95a07a944a1a2c41e05e-Abstract-Datasets_and_Benchmarks.html
+      - https://proceedings.neurips.cc/paper_files/paper/2023/file/3be60b4a739b95a07a944a1a2c41e05e-Paper-Datasets_and_Benchmarks.pdf
+      - https://doi.org/10.52202/075280-0824
+      - https://github.com/annoymity2022/Chinese-Dataset
+      - https://raw.githubusercontent.com/annoymity2022/Chinese-Dataset/main/README.md
+      - https://raw.githubusercontent.com/annoymity2022/Chinese-Dataset/main/License/License-English.txt
+      - https://api.github.com/repos/annoymity2022/Chinese-Dataset
+      - https://api.github.com/repos/annoymity2022/Chinese-Dataset/git/trees/main?recursive=1
+      - https://drive.google.com/file/d/19NgqpYLPa3bLFm4YUjuCT2sbmQemziG-/view
 
   - id: mustard
     name: MUStARD
