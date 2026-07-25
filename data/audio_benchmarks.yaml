@@ -1344,6 +1344,31 @@ paper_audits:
       - https://github.com/karolpiczak/ESC-50
     note: Version 1 provides no official project page, repository, dataset card, archive, derived query or MCQ files, concept annotations, controlled mixtures, prompts, evaluation-code link, or standalone data-license statement. Public AudioCaps, Clotho, and ESC-50 source datasets do not make NegEval-Audio's derived artifacts public, so it remains an audited protocol rather than a downloadable benchmark family.
 
+  sound_symbolism_slm:
+    paper: https://arxiv.org/abs/2607.10162
+    title: "Hearing Like Humans? Sound Symbolism and Perceptual Alignment in Speech Language Models"
+    sections: 3 and appendices B-D
+    status: audited_not_indexed
+    public_interfaces:
+      - https://anonymous.4open.science/r/Sound-Symbolism-SLM
+    evaluated_domains:
+      - domain: auditory_and_crossmodal_sound_symbolism
+        protocol: Four experiments test rounded-versus-pointed judgments for two spoken bouba/kiki stimuli across 25 prompt languages, seven-point ratings for 536 spoken pseudowords, audio-to-shape matching, and visual-only ratings for 90 shapes
+        data_status: upstream_stimuli_mixed_exact_evaluation_package_unverified
+        note: Experiments 1 and 3 reuse two recordings from Ćwiek et al.; experiment 2 uses 536 of 537 McCormick et al. pseudowords and human ratings and dissimilarity matrices from Lacey et al.; experiments 3 and 4 use two and 90 Lacey et al. shapes respectively. The paper says full prompt translations will be released with code, but its sole code URL currently requires authentication and exposes no verifiable files, revision, item manifest, prompts, model outputs, or score records.
+    license:
+      paper: CC BY-SA 4.0
+      evaluation_artifacts: not_specified_unverified
+      upstream: Previously published audio and human perceptual data retain their source-study terms; the paper says Lacey et al. shape stimuli and dissimilarity matrices are available from the corresponding author for academic research
+    sources:
+      - https://arxiv.org/abs/2607.10162
+      - https://arxiv.org/html/2607.10162v1#S3
+      - https://arxiv.org/html/2607.10162v1#A2
+      - https://arxiv.org/html/2607.10162v1#A4
+      - https://export.arxiv.org/api/query?id_list=2607.10162
+      - https://anonymous.4open.science/r/Sound-Symbolism-SLM
+    note: The paper describes a useful speech-perception evaluation and cites an anonymous code interface, but that interface currently returns HTTP 401 to an unauthenticated request. Without a publicly inspectable repository, dataset card, archive, commit snapshot, standalone license, or exact evaluation artifacts, the protocol cannot be verified as a public benchmark release and no download helper is added. Public availability of some source-study data does not itself release this paper's selected inputs, translated prompts, repeated trials, outputs, or scoring package.
+
   production_oriented_sfx_evaluation:
     paper: https://arxiv.org/abs/2607.09973
     sections: 3.3, 4, and appendix B

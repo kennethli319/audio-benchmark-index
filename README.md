@@ -537,6 +537,16 @@ item files, concepts, queries, MCQs, prompts, human judgments, mixture recipes,
 derived audio, evaluation code, or score records. The public source datasets
 do not make or license NegEval-Audio's derived artifacts.
 
+The July 2026 sound-symbolism paper is likewise recorded as an audited
+speech-perception protocol rather than a downloadable family. It tests two
+spoken bouba/kiki stimuli across 25 prompt languages, 536 human-recorded
+pseudowords, audio-to-shape matching, and a 90-shape visual control. Its sole
+cited anonymous code interface currently requires authentication and exposes
+no verifiable files, revision, prompts, item manifest, model outputs, scores,
+or standalone artifact license. Some source-study stimuli are public or
+available from their corresponding author for academic research, but that
+does not release the paper's exact evaluation package.
+
 The July 2026 *Production-Oriented Framework for Evaluation of SFX
 Generation* paper is likewise recorded as an audited protocol rather than a
 new downloadable family. It adapts five systems on ESC-50 folds 1-3, validates
