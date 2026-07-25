@@ -9,6 +9,44 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audiomarathon_long_context_audio:
+    paper: https://arxiv.org/abs/2510.07293
+    title: "AudioMarathon: A Comprehensive Benchmark for Long-Context Audio Understanding and Efficiency in Audio LLMs"
+    sections: 2, 3, and appendix D
+    status: audited_one_new_public_family
+    evaluated_sets:
+      - cited_as: AudioMarathon
+        index_id: audio_marathon
+        status: public_ungated
+        protocol: >-
+          The released English suite contains 6,567 examples with audio from
+          90 to 300 seconds across ten tasks derived from LibriSpeech, RACE,
+          Half-Truth, GTZAN, TAU, VESUS, SLUE, DESED, and VoxCeleb. Evaluation
+          covers transcription, spoken reasoning, sound-event detection,
+          scene/music classification, emotion, deepfake detection, and speaker
+          age/gender classification, alongside long-context inference cost.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      benchmark: CC-BY-NC-4.0
+      code: Apache-2.0
+      components: mixed_upstream_terms
+    sources:
+      - https://arxiv.org/abs/2510.07293
+      - https://arxiv.org/html/2510.07293v1#S2
+      - https://arxiv.org/html/2510.07293v1#A4
+      - https://github.com/DabDans/AudioMarathon
+      - https://raw.githubusercontent.com/DabDans/AudioMarathon/main/README.md
+      - https://raw.githubusercontent.com/DabDans/AudioMarathon/main/LICENSE
+      - https://huggingface.co/datasets/Hezep/AudioMarathon
+      - https://huggingface.co/datasets/Hezep/AudioMarathon/raw/main/README.md
+      - https://huggingface.co/api/datasets/Hezep/AudioMarathon
+    note: >-
+      The benchmark-level noncommercial license does not erase the component
+      restrictions listed in the official card, including research-only,
+      academic-only, mixed Creative Commons, and source-media terms. The index
+      therefore treats the Hugging Face snapshot as a derived suite rather
+      than relicensing its ten component datasets.
+
   polysim_2026_multilingual_missing_modality_speaker_identification:
     paper: https://arxiv.org/abs/2607.13669
     title: "Learning Speaker Identity Beyond Language and Modality Constraints: Insights from the POLY-SIM 2026 Challenge"
@@ -4791,6 +4829,68 @@ benchmarks:
       - https://huggingface.co/datasets/mcshao/LAT-Bench
       - https://huggingface.co/datasets/mcshao/LAT-Bench/raw/main/README.md
       - https://huggingface.co/api/datasets/mcshao/LAT-Bench
+
+  - id: audio_marathon
+    name: AudioMarathon
+    full_name: "AudioMarathon: A Comprehensive Benchmark for Long-Context Audio Understanding and Efficiency in Audio LLMs"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - long_form_audio_understanding
+      - automatic_speech_recognition
+      - spoken_question_answering
+      - sound_event_detection
+      - acoustic_scene_classification
+      - music_genre_classification
+      - speech_emotion_recognition
+      - audio_deepfake_detection
+      - speaker_age_classification
+      - speaker_gender_classification
+      - inference_efficiency
+    official:
+      repo: https://github.com/DabDans/AudioMarathon
+      paper: https://arxiv.org/abs/2510.07293
+      dataset: https://huggingface.co/datasets/Hezep/AudioMarathon
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/Hezep/AudioMarathon
+        - https://github.com/DabDans/AudioMarathon
+      examples:
+        - 'scripts/download/audio_marathon.sh'
+        - 'AUDIO_MARATHON_DOWNLOAD_HF=1 scripts/download/audio_marathon.sh'
+        - 'AUDIO_MARATHON_CLONE_REPO=1 scripts/download/audio_marathon.sh'
+      notes: >-
+        The public release contains 6,567 English examples across ten
+        long-context tasks, with audio between 90 and 300 seconds. It derives
+        long-form items from LibriSpeech, RACE, Half-Truth, GTZAN, TAU, VESUS,
+        SLUE, DESED, and VoxCeleb. The helper downloads official documentation,
+        repository metadata, and the approximately 1.36 MB test CSV by default.
+        The Hugging Face API reports approximately 58.75 GB of repository
+        storage, so the full snapshot requires AUDIO_MARATHON_DOWNLOAD_HF=1;
+        the evaluation repository clone is a separate opt-in.
+    license:
+      data: CC-BY-NC-4.0_with_mixed_upstream_terms
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0 for the benchmark and the
+        GitHub repository is Apache-2.0. Its own component table additionally
+        marks GTZAN research-only, VESUS academic-only, DESED mixed Creative
+        Commons, and several other sources under separate terms. Apply the
+        benchmark's noncommercial restriction and review every component's
+        provenance, attribution, source-media, and redistribution conditions.
+    sources:
+      - https://arxiv.org/abs/2510.07293
+      - https://arxiv.org/html/2510.07293v1#S2
+      - https://arxiv.org/html/2510.07293v1#S3
+      - https://arxiv.org/html/2510.07293v1#A4
+      - https://github.com/DabDans/AudioMarathon
+      - https://raw.githubusercontent.com/DabDans/AudioMarathon/main/README.md
+      - https://raw.githubusercontent.com/DabDans/AudioMarathon/main/LICENSE
+      - https://api.github.com/repos/DabDans/AudioMarathon
+      - https://huggingface.co/datasets/Hezep/AudioMarathon
+      - https://huggingface.co/datasets/Hezep/AudioMarathon/raw/main/README.md
+      - https://huggingface.co/api/datasets/Hezep/AudioMarathon
 
   - id: escucha
     name: ESCUCHA
