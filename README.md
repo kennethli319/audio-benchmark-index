@@ -584,6 +584,15 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 StellarTTS paper is recorded as existing Seed-TTS Eval coverage
+rather than a new benchmark family. Section IV evaluates the public Mandarin
+`test-zh` and `test-hard` configurations for objective intelligibility,
+speaker similarity, latency, subjective quality, and duration-control
+robustness. The official StellarTTS page provides selected listening samples
+but no generated benchmark archive, item-level scores, comparison manifest,
+listener records, evaluation repository, or artifact license; those
+paper-specific materials remain unreleased.
+
 The July 2026 *Sidewalk Moments* paper is recorded as a request-only
 multimodal protocol rather than a public benchmark family. Its CityWalk Corpus
 segments 61 public first-person YouTube walks into more than 50,000 ten-second

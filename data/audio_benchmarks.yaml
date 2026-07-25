@@ -2941,6 +2941,61 @@ paper_audits:
       - https://artificialanalysis.ai/music/leaderboard/vocals
     note: The official project page publicly streams selected qualitative examples and comparison tracks, but it is not a benchmark release and provides no repository, dataset card, archive, complete evaluation manifest, or data-license statement. The paper's independent Artificial Analysis leaderboard result is an external service evaluation, not a downloadable dataset. This report is therefore recorded as an audited protocol rather than a benchmark family.
 
+  stellartts_seed_tts_evaluation:
+    paper: https://arxiv.org/abs/2607.19859
+    title: "StellarTTS: Sparse Temporal Embedding for Low-Latency and Robust Speech Synthesis"
+    sections: IV and IV-A-IV-D
+    status: audited_existing_public_family_and_unreleased_subjective_records
+    last_verified: 2026-07-25
+    public_interfaces:
+      - https://stellartts.github.io/
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+    evaluated_domains:
+      - domain: zero_shot_mandarin_speech_synthesis
+        index_id: seed_tts_eval
+        protocol: Seed-TTS test-zh and test-hard evaluated with WER, prompt-to-generation speaker similarity, real-time factor, comparative MOS, and similarity MOS
+        data_status: public_objective_family_generated_outputs_and_subjective_records_unreleased
+        note: >-
+          The official Seed-TTS Eval release includes both zh/meta.lst and
+          zh/hardcase.lst in its downloadable objective package. StellarTTS
+          reports objective results on both and uses 20 native speakers for
+          randomized paired CMOS and SMOS comparisons, but it does not release
+          its generated evaluation audio, selected comparison pairs, listener
+          instructions, ratings, or per-item objective scores.
+      - domain: phoneme_duration_control_robustness
+        index_id: seed_tts_eval
+        protocol: Seed-TTS test-zh WER after multiplying predicted phoneme durations by factors from 0.7 to 1.3
+        data_status: public_source_family_unreleased_generated_variants_and_scores
+        note: >-
+          Section IV-D describes the duration sweep and compares it with
+          MaskGCT results taken from that model's paper. StellarTTS does not
+          release the duration-scaled generations, item-level transcripts, or
+          score records.
+    license:
+      paper: IEEE personal-use notice in the article
+      benchmark_data: not_specified_by_seed_tts_eval
+      evaluation_artifacts: not_specified_unreleased
+      project_page_samples: no_separate_license_found
+      upstream: Common Voice and DiDiSpeech-2 terms remain applicable to the public Seed-TTS objective package
+    sources:
+      - https://arxiv.org/abs/2607.19859
+      - https://arxiv.org/html/2607.19859v1#S4
+      - https://arxiv.org/html/2607.19859v1#S4.SS1
+      - https://arxiv.org/html/2607.19859v1#S4.SS2
+      - https://arxiv.org/html/2607.19859v1#S4.SS4
+      - https://export.arxiv.org/api/query?id_list=2607.19859
+      - https://stellartts.github.io/
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://raw.githubusercontent.com/BytedanceSpeech/seed-tts-eval/main/README.md
+    note: >-
+      This paper adds no distinct downloadable benchmark family. Its named
+      test-zh and test-hard sets are configurations of the already indexed
+      public Seed-TTS Eval objective package. The official StellarTTS page
+      provides selected listening samples but no repository, evaluation
+      manifest, generated benchmark archive, listener records, or artifact
+      license, so those paper-specific materials remain unreleased and no new
+      helper is inferred.
+
   rppnet_melodynet_evaluation:
     paper: https://arxiv.org/abs/2607.19776
     title: "RPPNet: Perceptually-Grouped Rhythm-Pitch Primitives for Long-Term Structure Melody Generation via Boundary-Aware Modeling"
@@ -7464,6 +7519,7 @@ benchmarks:
       project: https://bytedancespeech.github.io/seedtts_tech_report
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2
       recent_codec_evaluation: https://arxiv.org/abs/2607.14749
+      recent_robustness_evaluation: https://arxiv.org/abs/2607.19859
     download:
       primary:
         - https://github.com/BytedanceSpeech/seed-tts-eval
@@ -7487,6 +7543,8 @@ benchmarks:
       - https://arxiv.org/html/2601.15621v1#S4.SS2
       - https://arxiv.org/abs/2607.14749
       - https://arxiv.org/html/2607.14749v3#S4.SS1
+      - https://arxiv.org/abs/2607.19859
+      - https://arxiv.org/html/2607.19859v1#S4
 
   - id: instruct_tts_eval
     name: InstructTTSEval
