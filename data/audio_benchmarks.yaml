@@ -4007,6 +4007,76 @@ paper_audits:
       access paths and helpers remain authoritative; no duplicate entry or
       invented paper-specific download is added.
 
+  caps_hearable_reconstruction_evaluation:
+    paper: https://arxiv.org/abs/2607.19434
+    title: "CAPS: A Cascaded Reconstruction Model to Power Saving in Hearables Using Sub-Nyquist Sampling with Bandwidth Extension"
+    sections: 4.2-5.6
+    status: audited_existing_public_families_and_internal_unreleased_corpus
+    evaluated_sets:
+      - cited_as: newly collected multimodal hearables dataset
+        index_id: null
+        status: internal_unreleased
+        protocol: >-
+          Twenty participants (11 male and 9 female, ages 18-36) each provide
+          45 minutes of simultaneous air-conduction microphone and two
+          bone-conduction microphone recordings at 22 kHz and 12-, 10-, and
+          8-bit resolutions. Experiments add Freesound non-speech noise and
+          LibriSpeech speech noise from -7 to 5 dB and evaluate bandwidth
+          extension plus multimodal speech enhancement.
+        note: >-
+          The paper does not identify participant-disjoint train, validation,
+          or test manifests and provides no public corpus URL, archive,
+          repository, consent documentation, metadata schema, or data license.
+      - cited_as: VCTK
+        index_id: vctk
+        status: public
+        note: The authors use Whisper transcripts of VCTK material as prompts for the newly recorded participant speech; the VCTK recordings themselves are not the paper's evaluation corpus.
+      - cited_as: LibriSpeech
+        index_id: librispeech
+        status: public
+        note: LibriSpeech speakers provide additive speech-noise material rather than a standalone benchmark result.
+      - cited_as: MagnaTagATune
+        index_id: magnatagatune
+        status: public_noncommercial
+        note: Section 5.1 uses the existing music family for single-modality bandwidth-extension and enhancement comparisons.
+    protocol_note: >-
+      Evaluation reports LSD, STOI, PESQ, SI-SDR, NISQA-MOS, and ViSQOL,
+      desktop and mobile inference time, measured ADC/mobile power, and a
+      12-volunteer MOS study. The paper varies sampling rate and bit depth,
+      compares six reconstruction/enhancement baselines, and evaluates Google
+      Pixel 7 and Samsung Galaxy S21 deployment, but it does not release the
+      exact noisy mixtures, model outputs, listener assignments or ratings,
+      checkpoints, predictions, or score records.
+    release_audit:
+      status: no_paper_specific_release_identified
+      note: >-
+        Version 1 and its arXiv HTML expose no official project page,
+        repository, dataset card, archive, supplementary artifact, code URL,
+        or paper-specific license beyond the arXiv posting terms.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      code: not_specified_unreleased
+      newly_collected_corpus: not_specified_unreleased
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: VCTK is CC BY 4.0; LibriSpeech is CC BY 4.0; MagnaTagATune is CC BY-NC-SA 3.0; Freesound clips retain per-item licenses
+    sources:
+      - https://arxiv.org/abs/2607.19434
+      - https://arxiv.org/html/2607.19434v1#S4.SS2
+      - https://arxiv.org/html/2607.19434v1#S4.SS4
+      - https://arxiv.org/html/2607.19434v1#S5.SS1
+      - https://arxiv.org/html/2607.19434v1#S5.SS6
+      - https://datashare.ed.ac.uk/handle/10283/3443
+      - https://www.openslr.org/12/
+      - https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset
+      - https://freesound.org/help/faq/#licenses
+    note: >-
+      CAPS is recorded as an evaluation-protocol audit rather than a new
+      downloadable benchmark family. Its VCTK, LibriSpeech, and MagnaTagATune
+      dependencies map to existing entries, while neither those source
+      families nor public Freesound access reproduce the newly captured
+      synchronized hearables corpus. No duplicate entry, invented corpus link,
+      or paper-specific download helper is added.
+
   cumsum_phase_transport_keyword_spotting:
     paper: https://arxiv.org/abs/2607.20086
     title: "Cumsum-Composable Phase Transport for Low-Cost Streaming Keyword Spotting"

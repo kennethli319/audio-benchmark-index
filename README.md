@@ -928,6 +928,16 @@ crowd-noise database remains future work. Its PSV Eindhoven–RKC Waalwijk goal
 measurement is an explanatory figure rather than a released test set, so the
 index adds no benchmark family, download link, or helper.
 
+The July 2026 *CAPS* hearables paper is recorded as a coverage audit over the
+already indexed VCTK, LibriSpeech, and MagnaTagATune families. Its main speech
+evaluation instead uses a newly captured 20-participant corpus with simultaneous
+air- and bone-conduction microphones at three ADC bit depths, plus Freesound and
+LibriSpeech noise. Version 1 provides no corpus archive, participant-disjoint
+split manifests, repository, code, model outputs, listener ratings, consent
+documentation, or data license. The public source families therefore do not
+reproduce the synchronized hearables evaluation, so no new benchmark entry,
+download link, or helper is added.
+
 The July 2026 *X-Translator* paper is likewise recorded as a mixed
 existing-coverage and unreleased-selection audit. Its short-form evaluation
 uses the indexed OpenSTBench protocol; the long-form, multi-speaker, and
