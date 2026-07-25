@@ -814,6 +814,45 @@ paper_audits:
       - https://mn.cs.tsinghua.edu.cn/avqa
       - https://m-a-p.ai/OmniBench/
 
+  honeybee_colony_strength_tensorgrams:
+    paper: https://arxiv.org/abs/2607.20386
+    title: "Improved Monitoring of Honey bee Colony Strength via Audio IoT Sensors, Modulation Tensorgrams and Recurrent Neural Networks"
+    sections: Experimental Setup and Results and Discussion
+    status: audited_existing_public_family_unreleased_evaluation_artifacts
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: UrBAN
+        index_id: urban_beehive
+        status: public_large_manual_transfer
+        note: >-
+          The paper uses more than 3,000 hours of 16 kHz audio from nine UrBAN
+          hives monitored in 2021-2022. It assigns a continuous colony-strength
+          target to each 15-minute segment by linearly interpolating between
+          manual frame-of-bees inspections.
+    protocol_note: >-
+      The study compares nested five-fold random segment-level evaluation with
+      five hive-independent folds, using mean absolute error and Pearson
+      correlation as regression metrics. It evaluates MFCC, spectrogram, modulation-
+      spectrogram, and modulation-tensorgram inputs with CNN, attention, and
+      CRDNN architectures, both with and without spectral subtraction. The
+      public UrBAN family and its inspection metadata are already indexed, but
+      the paper does not publish its exact fold assignments, interpolated
+      per-segment targets, trained models, predictions, or implementation.
+      Those paper-specific artifacts are not treated as a separate release.
+    license_note: >-
+      The official FRDR record licenses the UrBAN data under CC BY 4.0. The
+      follow-up article is CC BY 4.0, but that publication license does not
+      create a release of the absent folds, derived targets, model artifacts,
+      or score records. The existing UrBAN repository's code terms remain
+      unspecified.
+    sources:
+      - https://arxiv.org/abs/2607.20386
+      - https://export.arxiv.org/e-print/2607.20386v1
+      - https://doi.org/10.20383/103.0972
+      - https://www.frdr-dfdr.ca/repo/dataset/487f5583-250a-464b-bb71-f2da85410b13
+      - https://doi.org/10.1038/s41597-025-04869-1
+      - https://github.com/mahsa-abdollahi/UrBAN
+
   x3_opd_audio_reasoning:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4

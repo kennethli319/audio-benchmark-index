@@ -287,6 +287,15 @@ official repository, derived evaluation manifest, predictions, or score
 records. No duplicate family or paper-specific helper is added, and AVQA's
 non-commercial copying and redistribution restrictions remain in force.
 
+The July 2026 honey-bee colony-strength paper is also recorded as an
+existing-coverage audit. It evaluates the indexed public UrBAN family using
+nested random segment-level evaluation and five hive-independent folds, with
+linearly interpolated frame-of-bees targets, MAE, and Pearson correlation.
+UrBAN remains a public CC BY 4.0 corpus delivered through a large manual
+FRDR/Globus transfer, but the paper does not release its exact folds, derived
+per-segment targets, models, predictions, or score records. Those artifacts
+are not presented as a separate downloadable benchmark.
+
 The July 2026 OmniReasoner paper is also recorded as an existing-coverage
 audit. Its main evaluation uses the indexed OmniVideoBench, LVOmniBench,
 Daily-Omni, WorldSense, and Video-MME audio-video families; VideoHolmes is a
