@@ -1448,6 +1448,47 @@ paper_audits:
       - https://arxiv.org/html/2607.21550v1#S5.SS4
       - https://export.arxiv.org/e-print/2607.21550v1
 
+  sidewalk_moments_citywalk:
+    paper: https://arxiv.org/abs/2607.20903
+    title: "Sidewalk Moments: Are Richer Representations Always More Human-Aligned? Evidence from City-Walk Videos"
+    sections: 2 and 5, Data Availability, and Code Availability
+    status: audited_request_only_derived_multimodal_protocol
+    last_verified: 2026-07-25
+    evaluated_sets:
+      - cited_as: CityWalk Corpus
+        index_id: null
+        status: source_videos_public_derived_dataset_request_only
+        note: >-
+          The study segments 61 public first-person YouTube city-walk videos
+          into more than 50,000 ten-second clips and compares VideoMAE video
+          features, temporally averaged images, ImageBind audio embeddings,
+          and InternVL3-derived text embeddings against YouTube replay-heat
+          engagement values. The paper does not publish the video list, clip
+          boundaries, replay values, extracted representations, split files,
+          or Amazon Mechanical Turk annotations.
+    protocol_note: >-
+      Evaluation includes per-video Spearman and Kendall correlation,
+      pairwise accuracy, nDCG@10, within-video high-versus-low engagement
+      classification across five quantile thresholds, and a 900-HIT
+      two-alternative forced-choice human study (300 tasks per medium). Audio is an evaluated
+      baseline modality, but the paper reports that it is near chance and
+      does not present CityWalk as a reusable public audio benchmark. The
+      Data Availability statement makes derived data available only from the
+      corresponding author upon reasonable request, and the Code Availability
+      statement applies the same request-only condition to custom code.
+    license_note: >-
+      Public availability of the source videos on YouTube does not grant a
+      dataset redistribution license. The paper states no license for the
+      request-only derived clips, replay labels, embeddings, survey records,
+      or custom code; source videos remain subject to uploader rights and
+      YouTube terms. No download helper is added.
+    sources:
+      - https://arxiv.org/abs/2607.20903
+      - https://arxiv.org/html/2607.20903v1#S2
+      - https://arxiv.org/html/2607.20903v1#S5
+      - https://arxiv.org/html/2607.20903v1#Sx2
+      - https://arxiv.org/html/2607.20903v1#Sx3
+
   remo_omni_llm_token_compression:
     paper: https://arxiv.org/abs/2607.21179
     sections: 5.1 and Appendix A.4

@@ -517,6 +517,17 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 *Sidewalk Moments* paper is recorded as a request-only
+multimodal protocol rather than a public benchmark family. Its CityWalk Corpus
+segments 61 public first-person YouTube walks into more than 50,000 ten-second
+clips and evaluates video, temporally averaged image, audio, and text
+representations against replay-heat engagement. The paper publicly releases
+neither its video list nor clip boundaries, replay labels, ImageBind audio
+embeddings, splits, human annotations, or code; its Data and Code Availability
+statements instead direct requests to the corresponding author. Public source
+videos do not provide a redistribution license for those derived artifacts,
+so no dataset link or download helper is inferred.
+
 The July 2026 Harness TTS paper is likewise recorded as two internal,
 unreleased evaluation protocols rather than downloadable benchmark families.
 Its routing evaluation contains 630 LLM-generated cases over a simulated
