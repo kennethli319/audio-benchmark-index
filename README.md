@@ -54,7 +54,7 @@ few-shot robustness under foreground/background shifts, dynamic heterogeneous
 corruption robustness for test-time audio adaptation, few-shot bioacoustic
 event detection, multi-domain audio question answering, Spanish speech
 reasoning under heterogeneous acoustic conditions, and bilingual robustness
-evaluation for modern speech deepfake detectors, plus speaker-centric reasoning
+evaluation for modern speech deepfake detectors and diffusion-TTS forensics, plus speaker-centric reasoning
 over bilingual multi-speaker conversations, reverberant-room ASR robustness,
 audio-conditioned human-pet interaction and multimodal motion generation,
 and multimodal speaker-segment, open-vocabulary audio-visual, in-cabin
@@ -75,7 +75,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 293 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 294 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -901,6 +901,19 @@ paper does not establish a current official public archive or redistribution
 terms; the index therefore adds neither an invented noise download nor a
 paper-specific helper.
 
+The July 2026 *Explainable-by-Design Audio Deepfake Detection via Wiener-Hopf
+Linear Prediction* paper adds recent evaluation provenance for ASVspoof 2019,
+FakeOrReal, and DiffSSD. This increment indexes the public, ungated
+[DiffSSD](https://huggingface.co/datasets/purdueviperlab/diffssd) release:
+70,000 English synthetic utterances from ten TTS systems plus a 94,226-row
+real/synthetic train-validation-test manifest. The approximately 16.9 GiB
+synthetic-audio archive is opt-in, while real LJ Speech and LibriSpeech files
+must be obtained separately. DiffSSD applies CC BY-NC-ND 4.0 only to its
+synthetic voices and incorporates the source-corpus, text-generation, and TTS
+system terms. The paper publishes no implementation or perturbation artifacts.
+FakeOrReal remains a follow-up candidate because its owner page exposes four
+large archives without a clear dataset-specific license statement.
+
 ## Coverage
 
 Current coverage includes:
@@ -1129,6 +1142,7 @@ Current coverage includes:
 | [ASVspoof 2017 V2](https://datashare.ed.ac.uk/items/59543650-e9b0-415d-8058-0567f908ce37) | Speaker verification anti-spoofing and replay attack detection | Public Edinburgh DataShare release with 42 speakers and replayed speech from 179 sessions in 61 replay configurations; helper downloads official metadata/docs by default, makes the small protocol archive opt-in, and keeps the approximately 1.4 GiB train/dev/eval archives behind a separate opt-in | DataShare metadata declares CC BY-NC 4.0; the corpus uses genuine and replayed RedDots speech, so retain attribution and review packaged/upstream terms |
 | [ASVspoof 2019](https://datashare.ed.ac.uk/handle/10283/3336) | Speaker verification anti-spoofing | Edinburgh DataShare record with README, license, evaluation plan, paper PDF, and opt-in LA/PA archives | Open Data Commons Attribution License on the DataShare record; derived from VCTK, so component terms should be re-checked |
 | [ASVspoof 2021](https://www.asvspoof.org/index2021.html) | Speaker verification anti-spoofing and speech deepfake detection | Official ASVspoof page, [baseline repo](https://github.com/asvspoof-challenge/2021), [LA](https://zenodo.org/record/4837263), [PA](https://zenodo.org/record/4834716), and [DF](https://zenodo.org/record/4835108) Zenodo records; helper downloads eval plan and keys/metadata by default, with large speech archives opt-in | Official page says Open Data Commons Attribution Licence; Zenodo lists ODC-BY for LA/PA and ODC-ODbL for DF; baseline repo had no detected license |
+| [DiffSSD](https://huggingface.co/datasets/purdueviperlab/diffssd) | Diffusion-TTS synthetic-speech detection and speech forensics | Public, ungated release with 70,000 English synthetic utterances from ten TTS systems and a 94,226-row protocol referencing 24,226 separately obtained real LJ Speech/LibriSpeech files; helper downloads docs and lightweight metadata by default and makes the approximately 16.9 GiB synthetic-audio TAR opt-in | CC BY-NC-ND 4.0 applies only to synthetic voices and incorporates source-corpus, ChatGPT, and TTS-system requirements; real speech retains its owner terms |
 | [ASVspoof 5](https://zenodo.org/records/14498691) | Speech spoofing, deepfake, adversarial-attack detection, and spoofing-robust speaker verification | Public ASVspoof release with 1,006,363 utterances from roughly 2,000 speakers; helper downloads official metadata/docs by default, makes the approximately 19.7 MiB protocols opt-in, and leaves the approximately 142.3 GB audio on Zenodo | Database is ODC-BY 1.0 and bona fide data is CC BY 4.0; preserve Multilingual LibriSpeech provenance and review individual-content/privacy rights; baseline code license is unspecified |
 | [SpoofCeleb](https://jungjee.github.io/spoofceleb/) | In-the-wild speech deepfake detection and spoofing-robust speaker verification | Author-approved gated [jungjee/spoofceleb](https://huggingface.co/datasets/jungjee/spoofceleb) with more than 2.5 million utterances, 1,251 speakers, and 23 TTS attacks; helper downloads public docs/API metadata by default and makes the approximately 268.3 GB snapshot a terms-acknowledged opt-in | Project and HF tag state CC BY 4.0, but source human-speech copyright remains with original video owners; review video, voice, likeness, privacy, and generated-speech rights |
 | [PartialEdit](https://yzyouzhang.com/PartialEdit/index.html) | Partial speech-deepfake detection and temporal localization | Public [Zenodo release](https://zenodo.org/records/15519188) of the VCTK-derived E1/E1-Codec and E2/E2-Codec subsets; helper downloads official pages and record metadata by default, with approximately 7.7 MB of protocol/text metadata and 21.9 GB of audio as separate opt-ins; Audiobox-derived E3/E4 are explicitly withheld | Zenodo declares CC BY 4.0; preserve VCTK provenance and review neural-editor output terms; the license does not cover or release E3/E4 |
@@ -1389,6 +1403,8 @@ VOXCONVERSE_DOWNLOAD_AUDIO=1 VOXCONVERSE_AUDIO_SPLITS=dev scripts/download/voxco
 scripts/download/dihard_iii.sh
 scripts/download/asvspoof_2019.sh
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
+scripts/download/diffssd.sh
+DIFFSSD_DOWNLOAD_AUDIO=1 scripts/download/diffssd.sh
 scripts/download/asvspoof_2021.sh
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
 scripts/download/voxenes_2026.sh

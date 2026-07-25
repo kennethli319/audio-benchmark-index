@@ -9,6 +9,52 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  wiener_hopf_audio_deepfake_detection:
+    paper: https://arxiv.org/abs/2607.12584
+    title: "Explainable-by-Design Audio Deepfake Detection via Wiener-Hopf Linear Prediction"
+    sections: 4.1 and 5.1
+    status: audited_new_public_family_and_existing_coverage
+    evaluated_sets:
+      - cited_as: ASVspoof 2019 Logical Access
+        index_id: asvspoof_2019
+        status: public_existing_family
+      - cited_as: FakeOrReal
+        index_id: null
+        status: public_candidate_not_added_in_this_increment
+        note: The York University owner page exposes four multi-gigabyte archives, but no dataset-specific license statement was found on that page.
+      - cited_as: DiffSSD
+        index_id: diffssd
+        status: public_new_family
+    protocol_note: >-
+      The paper uses the original train, validation, and test protocols for
+      each family and reports equal error rate and ROC area under the curve.
+      Its robustness study additionally applies additive noise, MP3
+      compression, and telephone filtering, with frozen-model and fine-tuned
+      results.
+    release_note: >-
+      The paper does not publish its implementation, perturbation files,
+      checkpoints, predictions, or score records. DiffSSD itself is publicly
+      and ungatedly released by Purdue VIPER Lab on Hugging Face with synthetic
+      audio, input texts, and a 94,226-row real/synthetic split manifest.
+      ASVspoof 2019 remains separately indexed. FakeOrReal is retained as a
+      follow-up candidate pending a clearer license record.
+    license_note: >-
+      DiffSSD synthetic audio is CC BY-NC-ND 4.0 and incorporates the
+      requirements of its source speech, text-generation service, and ten TTS
+      systems. The real LJ Speech and LibriSpeech files are not mirrored in
+      DiffSSD and must be obtained under their own terms. The paper is CC BY
+      4.0, which does not license its unreleased implementation or results.
+    sources:
+      - https://arxiv.org/abs/2607.12584
+      - https://arxiv.org/html/2607.12584v1#S4.SS1
+      - https://arxiv.org/html/2607.12584v1#S5.SS1
+      - https://doi.org/10.1145/3785353.3815087
+      - https://huggingface.co/datasets/purdueviperlab/diffssd
+      - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/README.md
+      - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/LICENSE.txt
+      - https://huggingface.co/api/datasets/purdueviperlab/diffssd
+      - https://bil.eecs.yorku.ca/datasets/
+
   la_rag_event_grounded_long_audio_qa:
     paper: https://arxiv.org/abs/2602.14612
     title: "Event-Grounded Question Answering over Long Audio via Structured Retrieval"
@@ -13005,6 +13051,59 @@ benchmarks:
       - https://zenodo.org/api/records/4835108
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
+
+  - id: diffssd
+    name: DiffSSD
+    full_name: "DiffSSD: A Diffusion-Based Dataset for Speech Forensics"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - synthetic_speech_detection
+      - audio_deepfake_detection
+      - speech_forensics
+      - synthetic_speech_attribution
+      - diffusion_tts_detection
+    official:
+      dataset: https://huggingface.co/datasets/purdueviperlab/diffssd
+      paper: https://doi.org/10.1109/ICASSP49660.2025.10889450
+      recent_evaluation: https://arxiv.org/abs/2607.12584
+    download:
+      primary:
+        - https://huggingface.co/datasets/purdueviperlab/diffssd
+        - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/train_val_test_splits.csv
+        - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/text_script_0_499.csv
+        - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/text_script_0_4999.csv
+      examples:
+        - 'scripts/download/diffssd.sh'
+        - 'DIFFSSD_DOWNLOAD_AUDIO=1 scripts/download/diffssd.sh'
+      notes: >-
+        The public, ungated release contains 70,000 English synthetic
+        utterances from eight open and two commercial TTS systems. Its
+        94,226-row protocol combines those files with paths to 24,226 real
+        LJ Speech and LibriSpeech utterances and defines 31,690 training,
+        7,923 validation, and 54,613 test rows. The helper downloads the
+        official card, license, input-text CSVs, and approximately 8.2 MiB
+        split manifest by default. The approximately 16.9 GiB synthetic-audio
+        TAR requires DIFFSSD_DOWNLOAD_AUDIO=1; real speech must be obtained
+        separately from its owner releases.
+    license:
+      data: cc-by-nc-nd-4.0_with_incorporated_source_terms
+      code: not_applicable
+      notes: >-
+        The dataset card applies CC BY-NC-ND 4.0 only to the synthetic voice
+        data and incorporates the requirements of LJ Speech, LibriSpeech,
+        ChatGPT, and all ten TTS systems. The release does not include the
+        real-speech files named by its split manifest. Review every incorporated
+        source and service term before use or redistribution.
+    sources:
+      - https://huggingface.co/datasets/purdueviperlab/diffssd
+      - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/README.md
+      - https://huggingface.co/datasets/purdueviperlab/diffssd/raw/main/LICENSE.txt
+      - https://huggingface.co/api/datasets/purdueviperlab/diffssd
+      - https://doi.org/10.1109/ICASSP49660.2025.10889450
+      - https://arxiv.org/abs/2607.12584
+      - https://arxiv.org/html/2607.12584v1#S4.SS1
+      - https://arxiv.org/html/2607.12584v1#S5.SS1
 
   - id: asvspoof_5
     name: ASVspoof 5

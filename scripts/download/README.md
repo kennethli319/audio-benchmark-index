@@ -183,6 +183,7 @@ scripts/download/voxconverse.sh
 scripts/download/asvspoof_2015.sh
 scripts/download/asvspoof_2017.sh
 scripts/download/asvspoof_2019.sh
+scripts/download/diffssd.sh
 scripts/download/asvspoof_2021.sh
 scripts/download/asvspoof_5.sh
 scripts/download/audiomarkbench.sh
@@ -930,6 +931,11 @@ ASVSPOOF2017_DOWNLOAD_AUDIO=1 scripts/download/asvspoof_2017.sh
 # ASVspoof 2019 downloads README/license/evaluation docs by default. LA/PA are large and opt-in.
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS=LA scripts/download/asvspoof_2019.sh
 ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asvspoof_2019.sh
+
+# DiffSSD downloads its official card, license, input texts, and approximately
+# 8.2 MiB split manifest by default. Synthetic audio is approximately 16.9 GiB
+# and opt-in; real LJ Speech/LibriSpeech files are obtained separately.
+DIFFSSD_DOWNLOAD_AUDIO=1 scripts/download/diffssd.sh
 
 # ASVspoof 2021 downloads evaluation plan and keys/metadata by default. LA/PA/DF speech archives are large and opt-in.
 ASVSPOOF2021_DOWNLOAD_ARCHIVES=1 ASVSPOOF2021_PARTS=LA scripts/download/asvspoof_2021.sh
