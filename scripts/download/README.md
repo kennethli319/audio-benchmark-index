@@ -138,6 +138,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/dcase2024_task5.sh
 scripts/download/dcase2025_task2_asd.sh
+scripts/download/dcase2026_task2_asd.sh
 scripts/download/dcase2026_task1_hac.sh
 scripts/download/dcase2024_sound_scene_synthesis.sh
 scripts/download/dcase2024_lass.sh
@@ -408,6 +409,10 @@ LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/
 
 # DCASE 2025 Task 2 ASD downloads official metadata by default. Select archive groups explicitly.
 DCASE2025_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2025_TASK2_PARTS="dev eval" scripts/download/dcase2025_task2_asd.sh
+
+# DCASE 2026 Task 2 ASD downloads official metadata by default. Its roughly
+# 8.16 GB of synchronized near/far microphone audio is opt-in by record.
+DCASE2026_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2026_TASK2_PARTS="dev eval" scripts/download/dcase2026_task2_asd.sh
 
 # Libri-Light downloads official docs by default. Finetuning, ABX, and unlabeled archives are opt-in.
 LIBRI_LIGHT_DOWNLOAD_FINETUNE=1 scripts/download/libri_light.sh

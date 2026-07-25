@@ -10052,6 +10052,64 @@ benchmarks:
       - https://github.com/nttcslab/dcase2025_task2_evaluator
       - https://api.github.com/repos/nttcslab/dcase2025_task2_evaluator
 
+  - id: dcase2026_task2_asd
+    name: DCASE 2026 Task 2 ASD
+    full_name: "DCASE 2026 Task 2: Noise-Aware Unsupervised Anomalous Sound Detection for Machine Condition Monitoring"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    tasks:
+      - anomalous_sound_detection
+      - machine_condition_monitoring
+      - domain_generalization
+      - first_shot_learning
+      - noise_robustness
+      - multi_channel_audio
+    official:
+      challenge: https://dcase.community/challenge2026/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      results: https://dcase.community/challenge2026/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results
+      development_set: https://zenodo.org/records/19336329
+      additional_training_set: https://zenodo.org/records/20151556
+      evaluation_set: https://zenodo.org/records/20437238
+      overview_paper: https://arxiv.org/abs/2606.01578
+      baseline_repo: https://github.com/nttcslab/dcase2023_task2_baseline_ae
+    download:
+      primary:
+        - https://zenodo.org/records/19336329
+        - https://zenodo.org/records/20151556
+        - https://zenodo.org/records/20437238
+      examples:
+        - 'scripts/download/dcase2026_task2_asd.sh'
+        - 'DCASE2026_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2026_TASK2_PARTS="dev eval" scripts/download/dcase2026_task2_asd.sh'
+      notes: >-
+        The public noise-aware first-shot protocol uses synchronized two-channel
+        recordings: a near microphone emphasizes the target machine and a far
+        microphone provides an environmental-noise reference. Development data
+        contains seven machine types with normal training and labeled
+        normal/anomalous test clips. Five different real-machine types appear
+        in the additional-training and evaluation releases; evaluation labels
+        are hidden by the challenge protocol. The three records total about
+        8.16 GB. The helper downloads official task, paper, repository, and
+        Zenodo metadata by default; archives require an explicit environment
+        opt-in and part list.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: custom_dcase_challenge_license_v2.1
+      notes: All three official Zenodo records declare CC BY-NC-SA 4.0, which prohibits commercial use and requires attribution and share-alike distribution. The shared baseline repository reports a non-standard DCASE Challenge License rather than an SPDX open-source license; review its terms separately.
+    sources:
+      - https://dcase.community/challenge2026/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      - https://dcase.community/challenge2026/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results
+      - https://zenodo.org/records/19336329
+      - https://zenodo.org/api/records/19336329
+      - https://zenodo.org/records/20151556
+      - https://zenodo.org/api/records/20151556
+      - https://zenodo.org/records/20437238
+      - https://zenodo.org/api/records/20437238
+      - https://arxiv.org/abs/2606.01578
+      - https://github.com/nttcslab/dcase2023_task2_baseline_ae
+      - https://api.github.com/repos/nttcslab/dcase2023_task2_baseline_ae
+
   - id: dcase2026_task1_hac
     name: DCASE 2026 Task 1 HAC
     full_name: "DCASE 2026 Task 1: Heterogeneous Audio Classification"
