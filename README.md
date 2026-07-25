@@ -73,7 +73,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 286 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 287 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -688,6 +688,15 @@ per-item scores. The public DESED and ESC-50 source corpora therefore do not
 reproduce the two derived DMix evaluations, and their respective upstream
 terms still apply.
 
+The July 2026 AMECxSV paper led to a new TidyVoice family entry. Its main
+experiment uses a speaker-disjoint held-out split derived from the public
+TidyVoiceX development protocol, rather than the challenge's hidden evaluation
+set. The official Mozilla Data Collective release contains 321,711 utterances
+(457 hours) from 4,474 multilingual speakers across 40 languages and requires
+an account/API key. Although its page labels the data CC0-1.0, it expressly
+permits only speaker verification and forbids speaker identification or
+identity recovery; the index and helper preserve that restriction.
+
 The July 2026 voice-concept bottleneck paper adds public clinical-voice
 coverage through the Perceptual Voice Qualities Database (PVQD). Section 3.1
 uses an 80:20 speaker split and VAD-derived vowel and sentence segments, while
@@ -1021,6 +1030,7 @@ Current coverage includes:
 | [SONYC-UST-V2](https://zenodo.org/records/3966543) | Urban sound tagging | [Zenodo v2.3 record](https://zenodo.org/records/3966543) for annotations, taxonomy, README, and 19 audio shards; helper downloads metadata by default and makes audio opt-in | CC BY 4.0; DCASE task rules restrict private external data for reproducible challenge submissions |
 | [VoxCeleb](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/) | Speaker recognition | [OpenSLR SLR49 metadata/trial lists](https://www.openslr.org/49/); official VGG pages currently say original audio/URL files are no longer available there | VGG metadata is CC BY-SA 4.0; OpenSLR SLR49 lists its small metadata resource as not copyrighted; original YouTube media rights still apply |
 | [VoxBlink2](https://voxblink2.github.io/) | Speaker verification and open-set speaker identification | Official annotation/evaluation [repository](https://github.com/VoxBlink2/ScriptsForVoxBlink2) plus a manual Google Drive resource bundle; helper downloads docs/license by default and makes the repository clone opt-in, while source YouTube media is never redistributed | Annotation data is CC BY-NC-SA 4.0; code is not separately licensed, and YouTube media rights, platform terms, privacy, and local law remain separate |
+| [TidyVoice](https://tidyvoice2026.github.io/) | Multilingual and cross-lingual read-speech speaker verification | Public [Mozilla Data Collective release](https://datacollective.mozillafoundation.org/datasets/cmihtsewu023so207xot1iqqw) with 321,711 utterances, 4,474 speakers, 40 languages, and same-/cross-language trials; account and API key are required, so the helper saves docs and prints the official access path without accepting credentials or fetching the approximately 36.72 GB archive | Data page labels the release CC0-1.0 but restricts use to speaker verification and forbids speaker identification or identity recovery; baseline code is Apache-2.0 |
 | [HI-MIA](https://www.openslr.org/85/) | Far-field text-dependent speaker verification | [OpenSLR SLR85](https://www.openslr.org/85/) page and filename mapping by default; train/dev/test archives are opt-in because they are multi-GB | Apache License v2.0 |
 | [VoxConverse](https://www.robots.ox.ac.uk/~vgg/data/voxconverse/) | Speaker diarization | Official [annotation repository](https://github.com/joonson/voxconverse) plus dev/test WAV ZIPs on the VGG page; helper clones annotations by default and makes audio opt-in | CC BY 4.0 for research use; original video copyrights remain with upstream owners |
 | [DIHARD III](https://dihardchallenge.github.io/dihard3/) | Speaker diarization | LDC [development](https://catalog.ldc.upenn.edu/LDC2022S12) and [evaluation](https://catalog.ldc.upenn.edu/LDC2022S14) web-download releases after LDC access; helper prints official access steps | LDC user agreement access; development/evaluation data require LDC membership or non-member licensing |

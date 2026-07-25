@@ -8995,6 +8995,72 @@ benchmarks:
       - https://arxiv.org/abs/2407.11510
       - https://www.isca-archive.org/interspeech_2024/lin24j_interspeech.html
 
+  - id: tidyvoice
+    name: TidyVoice
+    full_name: "TidyVoice: A Curated Multilingual Dataset for Speaker Verification Derived from Common Voice"
+    qwen_cited_as: null
+    qwen_bucket: speaker_recognition
+    tasks:
+      - multilingual_speaker_verification
+      - cross_lingual_speaker_verification
+      - speaker_recognition
+      - language_mismatch_robustness
+      - read_speech_speaker_verification
+    official:
+      homepage: https://tidyvoice2026.github.io/
+      dataset: https://datacollective.mozillafoundation.org/datasets/cmihtsewu023so207xot1iqqw
+      baseline_repo: https://github.com/areffarhadi/wespeaker/tree/master/examples/tidyvocie
+      paper: https://arxiv.org/abs/2601.16358
+      challenge_plan: https://arxiv.org/abs/2601.21960
+      recent_evaluation: https://arxiv.org/abs/2607.16532
+    download:
+      access: public_account_and_api_key_required
+      primary:
+        - https://datacollective.mozillafoundation.org/datasets/cmihtsewu023so207xot1iqqw
+        - https://tidyvoice2026.github.io/2_dataset_download/
+        - https://github.com/areffarhadi/wespeaker/tree/master/examples/tidyvocie
+      examples:
+        - 'scripts/download/tidyvoice.sh'
+      notes: >-
+        The public Mozilla Data Collective release contains 321,711
+        utterances (457 hours) from 4,474 multilingual speakers across 40
+        languages, with training and development splits, pseudonymized speaker
+        IDs, language metadata, and same-/cross-language target and non-target
+        trial lists. The current archive is approximately 36.72 GB. Download
+        requires a Data Collective account and API key, so the helper saves
+        official public documentation and prints the owner-supported access
+        path without accepting credentials or fetching audio. The January
+        paper also describes the broader Tidy-M monolingual condition across
+        81 languages; this entry's reproducible download pointer is the
+        released TidyVoiceX_ASV challenge package. AMECxSV section 4.1
+        evaluates a deterministic speaker-disjoint split derived from the
+        12-million-trial TidyVoiceX development protocol, not the challenge's
+        hidden official evaluation set.
+    license:
+      data: CC0-1.0_with_use_restrictions
+      code: Apache-2.0
+      notes: >-
+        Mozilla Data Collective labels TidyVoiceX_ASV CC0-1.0 but also states
+        that it must only be used for speaker verification and forbids speaker
+        identification or attempts to recover speaker identity. Treat those
+        owner-stated usage rules and the current Common Voice terms as binding
+        access conditions despite the permissive license label. Apache-2.0
+        covers the WeSpeaker baseline repository, not any separate model or
+        derived artifact rights.
+    sources:
+      - https://tidyvoice2026.github.io/
+      - https://tidyvoice2026.github.io/2_dataset_download/
+      - https://datacollective.mozillafoundation.org/datasets/cmihtsewu023so207xot1iqqw
+      - https://commonvoice.mozilla.org/en/terms
+      - https://github.com/areffarhadi/wespeaker/tree/master/examples/tidyvocie
+      - https://raw.githubusercontent.com/areffarhadi/wespeaker/master/examples/tidyvocie/README.md
+      - https://raw.githubusercontent.com/areffarhadi/wespeaker/master/LICENSE
+      - https://arxiv.org/abs/2601.16358
+      - https://arxiv.org/html/2601.16358v1#S2
+      - https://arxiv.org/abs/2601.21960
+      - https://arxiv.org/abs/2607.16532
+      - https://arxiv.org/html/2607.16532v1#S4.SS1
+
   - id: hi_mia
     name: HI-MIA
     full_name: "HI-MIA: A Far-field Text-Dependent Speaker Verification Database and the Baselines"
