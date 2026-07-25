@@ -108,6 +108,13 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The June 2026 LA-RAG paper is recorded as an existing-family and unreleased
+derived-protocol audit. Its two 24-hour synthetic Home-IoT and Industrial-IoT
+benchmarks and its CASTELLA-QA question rows are not released. The public
+CASTELLA annotations remain indexed separately, but they do not reproduce the
+paper's derived questions, negative sampling, IoT streams, predictions, or
+scores; no download link is inferred for those artifacts.
+
 The July 2026 Audio-Visual Flamingo report is inventoried across sections 3-4.
 Its audio, ASR, and omni-modal evaluations map to eleven existing families,
 including MMAR, MMSU, MMAU, WorldSense, DailyOmni, MMOU, and the report's ASR

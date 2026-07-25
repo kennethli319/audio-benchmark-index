@@ -9,6 +9,75 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  la_rag_event_grounded_long_audio_qa:
+    paper: https://arxiv.org/abs/2602.14612
+    title: "Event-Grounded Question Answering over Long Audio via Structured Retrieval"
+    sections: 4.1 and appendices A, F, and H
+    status: audited_existing_public_family_and_unreleased_derived_benchmarks
+    evaluated_sets:
+      - cited_as: Home-IoT
+        index_id: null
+        status: synthetic_benchmark_unreleased
+        duration_hours: 24
+        questions:
+          detection: 300
+          counting: 300
+          summary: 200
+        note: >-
+          The paper describes a 24-hour synthetic stream at 6 dB global SNR
+          and -16 LUFS with 13 home-event classes, but releases no waveform,
+          source-item manifest, event timeline, questions, answers, prompts,
+          or scoring code.
+      - cited_as: Industrial-IoT
+        index_id: null
+        status: synthetic_benchmark_unreleased
+        duration_hours: 24
+        questions:
+          detection: 300
+          counting: 300
+          summary: 200
+        note: >-
+          The paper describes a 24-hour synthetic stream at 6 dB global SNR
+          and -16 LUFS with 12 industrial-event classes, but releases no
+          waveform, source-item manifest, event timeline, questions, answers,
+          prompts, or scoring code.
+      - cited_as: CASTELLA-QA
+        index_id: castella
+        status: public_source_family_unreleased_derived_qa
+        note: >-
+          Section 4.1 derives 200 balanced detection questions and temporal
+          detection questions from the public CASTELLA test annotations.
+          CASTELLA remains public, but the paper does not release its derived
+          question rows, negative sampling, predictions, or scores.
+    protocol_note: >-
+      Home-IoT and Industrial-IoT evaluate binary event detection, exact-match
+      counting, and LLM-judged temporal/statistical summaries. Appendix F
+      describes HH:MM:SS-normalized answers, varied time expressions,
+      positive and negative queries, and synonym substitutions. CASTELLA-QA
+      evaluates detection accuracy plus temporal precision, recall, and F1 at
+      IoU 0.5.
+    release_note: >-
+      The v5 paper contains no project, repository, dataset-card, archive, DOI
+      record for evaluation artifacts, or download link. Its only public
+      benchmark input is the separately indexed CASTELLA family. The paper
+      says the IoT backgrounds come from Freesound, but does not identify the
+      recordings or establish redistribution rights for the derived 24-hour
+      streams. No dataset rows or download helper are added.
+    license_note: >-
+      The arXiv paper is CC BY 4.0. That publication license does not license
+      the unreleased benchmark audio, questions, predictions, or third-party
+      Freesound recordings. Public CASTELLA annotations are separately CC BY
+      4.0, while underlying YouTube media retains owner and platform terms.
+    sources:
+      - https://arxiv.org/abs/2602.14612
+      - https://arxiv.org/html/2602.14612v5#S4.SS1
+      - https://arxiv.org/html/2602.14612v5#A1
+      - https://arxiv.org/html/2602.14612v5#A6
+      - https://arxiv.org/html/2602.14612v5#A8
+      - https://export.arxiv.org/api/query?id_list=2602.14612
+      - https://h-munakata.github.io/CASTELLA-demo/
+      - https://huggingface.co/datasets/lighthouse-emnlp2024/CASTELLA
+
   echov2_asd_benchmark:
     paper: https://arxiv.org/abs/2607.10596
     title: "ECHOv2: Two-Level Band-Splitting Representation Learning for Anomalous Sound Detection"
