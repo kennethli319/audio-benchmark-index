@@ -9,6 +9,47 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  resonance_dysarthric_speech_conversion:
+    paper: https://arxiv.org/abs/2607.17615
+    title: "Re-Sonance: A Dysarthric Asynchronous Real-Time Speech Conversion System Based on a Three-Stage Cascaded ASR-LLM-TTS Architecture"
+    sections: 3.4 and 4
+    status: audited_one_new_application_gated_family
+    evaluated_sets:
+      - cited_as: Chinese Dysarthric Speech Dataset (CDSD)
+        index_id: cdsd
+        status: public_application_gated
+        protocol: >-
+          The subjective evaluation selects ten Mandarin speakers spanning
+          mild, moderate, and severe dysarthria and has twenty native speakers
+          rate original, ASR-TTS, and LLM-enhanced ASR-TTS speech for
+          intelligibility, naturalness, and semantic relevance. The objective
+          evaluation uses thirty speakers, grouped equally by severity, for
+          WER, MER, and WIL, and measures pipeline latency on 200 approximately
+          ten-second clips.
+        note: >-
+          The paper does not publish the selected row IDs, generated speech,
+          listener questionnaire responses, or latency manifest. Those
+          paper-specific derived artifacts therefore remain unreleased even
+          though the source CDSD corpus has an official application path.
+    license:
+      paper: CC-BY-4.0
+      cdsd_data: custom_signed_agreement_review_required
+      paper_specific_artifacts: not_specified_unreleased
+      privacy: identifiable_clinical_voice_data
+    sources:
+      - https://arxiv.org/abs/2607.17615
+      - https://arxiv.org/html/2607.17615v1#S3.SS4
+      - https://arxiv.org/html/2607.17615v1#S4
+      - https://www.isca-archive.org/interspeech_2024/wan24b_interspeech.html
+      - https://doi.org/10.21437/Interspeech.2024-1597
+      - http://melab.psych.ac.cn/CDSD.html
+      - http://melab.psych.ac.cn/assets/pdf/CDSD_License_Agreement_Blank.pdf
+    note: >-
+      Re-Sonance introduces a conversion system and an evaluation protocol,
+      not a new dataset. This audit adds the previously missing CDSD source
+      family using its owner-controlled application page and does not treat
+      generated Re-Sonance outputs as released benchmark data.
+
   efficient_audio_visual_event_recognition:
     paper: https://arxiv.org/abs/2607.16980
     title: "Efficient Audio-Visual Event Recognition via Knowledge Distillation and Dynamic INT8 Quantization of a Hybrid Cross-Attention Network"
@@ -17450,6 +17491,59 @@ benchmarks:
       - https://link.springer.com/article/10.1007/s10579-011-9145-0
       - https://arxiv.org/abs/2607.16967
       - https://arxiv.org/html/2607.16967v1#S3.SS1
+
+  - id: cdsd
+    name: CDSD
+    full_name: "CDSD: Chinese Dysarthria Speech Database"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - clinical_speech_assessment
+      - paralinguistic_speech_evaluation
+    tasks:
+      - dysarthric_speech_recognition
+      - pathological_speech_recognition
+      - speech_intelligibility_assessment
+      - dysarthria_severity_evaluation
+    official:
+      dataset: http://melab.psych.ac.cn/CDSD.html
+      paper: https://www.isca-archive.org/interspeech_2024/wan24b_interspeech.html
+      doi: https://doi.org/10.21437/Interspeech.2024-1597
+      license_agreement: http://melab.psych.ac.cn/assets/pdf/CDSD_License_Agreement_Blank.pdf
+      recent_evaluation: https://arxiv.org/abs/2607.17615
+    download:
+      primary:
+        - http://melab.psych.ac.cn/CDSD.html
+      examples:
+        - 'scripts/download/cdsd.sh'
+      notes: >-
+        The owner describes 133 hours of Mandarin dysarthric speech from 44
+        speakers and reports a best benchmark character error rate of 16.4%.
+        Access is not an anonymous archive download: applicants must download,
+        complete, sign, and upload the owner's license agreement, then wait for
+        approval by email. The helper saves only the official access page,
+        blank agreement, paper page, and Crossref DOI metadata; it never
+        submits an application or downloads clinical recordings.
+    license:
+      data: custom_signed_agreement_review_required
+      code: not_applicable
+      notes: >-
+        Access requires a signed owner agreement and approval. No standard
+        open-data license is stated on the public access or paper pages; users
+        must read the current agreement and retain its conditions rather than
+        inferring rights from the paper's publication license. The corpus
+        contains identifiable voices and health/disability information, so
+        institutional ethics, privacy, storage, sharing, and permitted-purpose
+        requirements need review before application and use.
+    sources:
+      - http://melab.psych.ac.cn/CDSD.html
+      - http://melab.psych.ac.cn/assets/pdf/CDSD_License_Agreement_Blank.pdf
+      - https://www.isca-archive.org/interspeech_2024/wan24b_interspeech.html
+      - https://www.isca-archive.org/interspeech_2024/wan24b_interspeech.pdf
+      - https://doi.org/10.21437/Interspeech.2024-1597
+      - https://arxiv.org/abs/2607.17615
+      - https://arxiv.org/html/2607.17615v1#S3.SS4
+      - https://arxiv.org/html/2607.17615v1#S4
 
   - id: seabad
     name: SEABAD
