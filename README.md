@@ -313,12 +313,13 @@ download. That description does not match the four spoken BIG-Bench Hard tasks
 in the separately indexed public Artificial Analysis Big Bench Audio release,
 so the index does not conflate the two names.
 
-The July 2026 ReMo token-compression paper is also fully inventoried in the
-source YAML. All five evaluation families were already indexed: WorldSense,
-DailyOmni, Video-MME, OmniVideoBench, and the video-SALMONN 2 caption
-benchmark. The audit preserves the paper's under-one-minute filtering of
-long-video question-answer pairs rather than presenting those filtered rows as
-a separately released benchmark.
+The July 2026 ReMo token-compression paper is fully inventoried in the source
+YAML. All six evaluation families were already indexed: WorldSense, DailyOmni,
+Video-MME, OmniVideoBench, the video-SALMONN 2 caption benchmark, and
+VGGSound. The audit preserves the paper's under-one-minute filtering of
+long-video question-answer pairs and its 50-seed VGGSound retrieval analysis
+rather than presenting those derived selections as separately released
+benchmarks.
 
 The July 2026 RPPNet symbolic-melody paper is recorded as a partial-source
 coverage audit rather than a new downloadable family. Its 274,300-item

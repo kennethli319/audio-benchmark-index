@@ -2160,7 +2160,7 @@ paper_audits:
 
   remo_omni_llm_token_compression:
     paper: https://arxiv.org/abs/2607.21179
-    sections: 5.1 and Appendix A.4
+    sections: 5.1-5.3 and Appendix D
     status: audited_existing_coverage
     evaluated_sets:
       - cited_as: WorldSense
@@ -2178,19 +2178,29 @@ paper_audits:
       - cited_as: video-SALMONN2 test set
         index_id: video_salmonn2_caption
         status: public
+      - cited_as: VGGSound train and test sets
+        index_id: vggsound
+        status: public_metadata_source_media_external
     protocol_note: >-
       Section 5.1 evaluates four audio-visual understanding sets and the
       video-SALMONN 2 caption benchmark. For long-video benchmarks, the paper
       keeps only question-answer pairs whose videos are under one minute
       because full-token inference on the complete sets exceeds available
-      memory. Appendix A.4 additionally evaluates Qwen3-Omni-30B on the four
-      understanding sets. This audit maps the paper's names to existing index
-      families and does not treat the paper's filtered subsets as separately
-      released benchmarks.
+      memory. Section 5.3 additionally fits the cross-modal projection on
+      VGGSound train and evaluates audio-to-video retrieval on its test set,
+      averaging over 50 sampling seeds. Appendix D evaluates Qwen3-Omni-30B
+      on the four understanding sets and repeats the VGGSound retrieval
+      analysis. The paper releases neither the under-one-minute row manifest
+      nor the sampled retrieval pools. This audit maps every name to an
+      existing family instead of treating derived selections as new
+      benchmarks.
     sources:
       - https://arxiv.org/abs/2607.21179
       - https://arxiv.org/html/2607.21179v1#S5.SS1
+      - https://arxiv.org/html/2607.21179v1#S5.SS3
       - https://arxiv.org/html/2607.21179v1#A4
+      - https://www.robots.ox.ac.uk/~vgg/data/vggsound/
+      - https://github.com/hche11/VGGSound
 
   omnireasoner_long_audio_video_tool_use:
     paper: https://arxiv.org/abs/2607.19339
