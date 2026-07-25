@@ -668,6 +668,16 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 AAD-CRF paper is recorded as a coverage audit over its AVGC, KUL,
+and USTC EEG-audio evaluation protocols rather than as three downloadable
+families. The official
+[experiment repository](https://github.com/YusanX/AAD-CRF) releases loaders,
+configurations, and training code, but bundles no EEG/audio data, links no
+official dataset download pages, and states no code license. Because these are
+human-subject corpora and their access, consent, privacy, and reuse terms were
+not verified from an official data repository, the index does not infer
+download routes or licenses from local filename placeholders.
+
 The July 2026 StellarTTS paper is recorded as existing Seed-TTS Eval coverage
 rather than a new benchmark family. Section IV evaluates the public Mandarin
 `test-zh` and `test-hard` configurations for objective intelligibility,

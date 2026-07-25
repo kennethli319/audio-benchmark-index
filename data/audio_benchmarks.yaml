@@ -9,6 +9,61 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  aad_crf_auditory_attention_decoding:
+    paper: https://arxiv.org/abs/2607.18614
+    title: "End-to-End Markov State Sequence Learning for Auditory Attention Decoding"
+    sections: 4.1, 4.3, and 5
+    status: audited_public_source_claims_access_and_license_not_verified
+    evaluated_sets:
+      - cited_as: AVGC
+        status: paper_describes_public_release
+        protocol: >-
+          Thirteen normal-hearing participants, each with six ten-minute
+          64-channel EEG trials and two competing speech envelopes. Every
+          trial includes one programmed spatial-attention switch near five
+          minutes. Evaluation uses participant-dependent leave-one-trial-out
+          folds with one-, two-, and four-second windows, causal and
+          non-causal accuracy, and switch delay.
+      - cited_as: KUL
+        status: established_dataset_official_access_not_traced_in_this_audit
+        protocol: >-
+          Sixteen normal-hearing participants, each completing eight
+          six-minute static-attention trials with two competing stories and
+          64-channel EEG. The paper evaluates one-second windows with
+          participant-dependent leave-one-trial-out folds.
+      - cited_as: USTC
+        status: established_dataset_official_access_not_traced_in_this_audit
+        protocol: >-
+          Eighteen participants attended to one of two simultaneous Mandarin
+          news speakers across twenty 120-second trials with 64-channel EEG.
+          The paper excludes four duplicated-speech trials and evaluates the
+          remaining 356 trials with participant-dependent leave-one-trial-out
+          folds.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      code: not_specified
+      datasets: not_verified
+      human_subject_data: consent_and_privacy_terms_require_review
+    sources:
+      - https://arxiv.org/abs/2607.18614
+      - https://arxiv.org/html/2607.18614v1#S4.SS1
+      - https://arxiv.org/html/2607.18614v1#S4.SS3
+      - https://arxiv.org/html/2607.18614v1#S5
+      - https://github.com/YusanX/AAD-CRF
+      - https://raw.githubusercontent.com/YusanX/AAD-CRF/main/README.md
+      - https://api.github.com/repos/YusanX/AAD-CRF
+      - https://doi.org/10.1088/1741-2552/ad2214
+      - https://doi.org/10.1088/1741-2560/13/5/056014
+      - https://doi.org/10.1109/TASLPRO.2026.3698439
+    note: >-
+      The official experiment repository releases loaders, configurations,
+      training code, and expected local filenames, but it does not bundle the
+      EEG/audio data, link official dataset download pages, or state a code
+      license. This audit therefore records the three evaluation protocols
+      without adding a benchmark family or inventing a download route. Recheck
+      the cited primary dataset papers and their institutional repositories
+      before indexing any of these human-subject corpora.
+
   audiomarathon_long_context_audio:
     paper: https://arxiv.org/abs/2510.07293
     title: "AudioMarathon: A Comprehensive Benchmark for Long-Context Audio Understanding and Efficiency in Audio LLMs"
