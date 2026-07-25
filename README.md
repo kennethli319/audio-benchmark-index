@@ -105,6 +105,15 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 GigaChat Audio report is inventoried across sections 3.6 and
+4.1. Its AudioGrounding and TimeGround-1M evaluations map to existing public
+families. The AMI source corpus is public, but the paper's 150 automatically
+generated phrase-localization questions are not released. Likewise, the
+public but gated DCASE 2025 AudioQA family does not identify the paper's
+144 selected start-time questions without a row manifest or filtering script.
+The audit records those as unreleased paper-specific protocols rather than
+new downloadable benchmarks.
+
 The July 2026 WanSong v1.0 report is recorded as a mixed
 existing-coverage/internal-protocol audit rather than a benchmark addition.
 Section 4.1 randomly samples 2,000 clips from the public Seed-TTS family but

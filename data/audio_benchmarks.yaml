@@ -152,6 +152,74 @@ paper_audits:
         status: public
         note: Table 7 evaluates without a thinking prompt or answer-tag formatting and uses DeepSeek-V3.2-Thinking as the judge.
 
+  gigachat_audio_time_aware_evaluation:
+    paper: https://arxiv.org/abs/2607.10387
+    title: "GigaChat Audio: Time-aware Large Audio Language Model"
+    sections: 3.6 and 4.1
+    status: audited_mixed_public_families_and_unreleased_sample_selections
+    last_verified: 2026-07-24
+    evaluated_sets:
+      - cited_as: AudioGrounding
+        index_id: audiogrounding
+        status: public
+        role: short_clip_temporal_grounding
+        note: >-
+          Section 4.1 evaluates all 488 validation and 492 test examples from
+          the public AudioGrounding release and reports mIoU.
+      - cited_as: AMI Meeting Corpus
+        index_id: ami
+        status: public_family_unreleased_derived_questions
+        role: long_meeting_phrase_localization
+        note: >-
+          The source AMI recordings and word-level timestamps are public.
+          GigaChat Audio automatically generates 150 phrase-level questions
+          targeting 3-5 second utterances, but does not release the question
+          manifest, generation code, or exact source-row mapping.
+      - cited_as: DCASE Audio QA (time-aware subset)
+        index_id: dcase2025_audioqa
+        status: public_family_unreleased_sample_selection
+        role: short_clip_timestamp_question_answering
+        note: >-
+          The paper selects 144 "What is the start time..." questions from the
+          public but auto-approved-gated DCASE 2025 Task 5 family and reports
+          pointwise MAE. It does not publish the selected item IDs or a
+          filtering script.
+      - cited_as: our benchmarks covering three tasks
+        index_id: timeground_1m
+        status: public
+        role: long_form_time_aware_audio_understanding
+        note: >-
+          The linked official model card identifies the public, ungated
+          TimeGround-1M release for temporal localization, timestamped
+          description, and timed summarization. Section 4.1 reports results by
+          duration bucket from under one minute through 20-40 minutes.
+    protocol_note: >-
+      Section 3.6 defines mIoU for temporal grounding, interval or pointwise
+      MAE for AMI and DCASE timing questions, LLM-judge scores for fragment
+      descriptions, and timing/content/round-segment measures for timed
+      summaries. Public source families do not make the paper-specific AMI
+      questions or DCASE 144-item selection reproducible without their missing
+      manifests.
+    license:
+      paper: arXiv_perpetual_non_exclusive
+      benchmark_data: mixed_see_indexed_families
+      evaluation_code: not_specified
+      derived_question_manifests: not_released
+    sources:
+      - https://arxiv.org/abs/2607.10387
+      - https://arxiv.org/html/2607.10387v1#S3.SS6
+      - https://arxiv.org/html/2607.10387v1#S4.SS1
+      - https://huggingface.co/ai-sage/GigaChat3.1-Audio-10B-A1.8B
+      - https://huggingface.co/datasets/ai-sage/TimeGround-1M
+      - https://zenodo.org/records/7269161
+      - https://groups.inf.ed.ac.uk/ami/corpus/
+      - https://dcase.community/challenge2025/task-audio-question-answering
+    note: >-
+      This audit adds no benchmark family. AudioGrounding and TimeGround-1M
+      were already indexed as public releases; AMI and DCASE 2025 AudioQA were
+      already indexed with their access terms. The two paper-specific derived
+      selections remain unreleased.
+
   wansong_v1_evaluation:
     paper: https://arxiv.org/abs/2607.14749
     title: "WanSong v1.0 Technical Report"
