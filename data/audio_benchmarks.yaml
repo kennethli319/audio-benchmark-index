@@ -2173,6 +2173,57 @@ paper_audits:
       helper can reproduce the unreleased paper-specific derived evaluation
       artifacts without additional implementation choices.
 
+  andha_dhun_hindi_audio_descriptions:
+    paper: https://arxiv.org/abs/2607.06457
+    title: "Andha-Dhun: A First Look at Audio Descriptions in Hindi"
+    sections: 3-5
+    status: audited_announced_unreleased_dataset_and_protocol
+    last_verified: 2026-07-24
+    public_interfaces:
+      - https://github.com/katha-ai/AndhaDhun-HindiAD
+    evaluated_data:
+      cited_as: Andha-Dhun
+      index_id: null
+      protocol: 5,870 timestamped human-authored Hindi audio-description sentences synchronized to eight full-length movies, including four English-language movies with both Hindi and English description tracks
+      data_status: announced_unreleased_readme_placeholder
+      note: >-
+        Table 1 reports 63,317 seconds of movie content and 16,902 seconds of
+        Hindi narration. Section 4 converts descriptions into short video-AD
+        pairs for zero-shot Hindi generation and evaluates them with
+        LLM-AD-Eval and perplexity; section 5 analyzes bilingual description
+        alignment and culture-specific adaptation. The paper does not define
+        public train, validation, or test splits.
+    release_audit:
+      status: official_repository_placeholder_only
+      note: >-
+        The official GitHub repository's main branch contains only a 93-byte
+        README saying "Coming soon!" Its repository metadata reports size zero
+        and no detected license. It provides no transcripts, timestamps,
+        clip or movie manifest, video/audio-description pairs, character banks,
+        prompts as executable artifacts, model outputs, evaluator code, human
+        annotations, or score records.
+    license:
+      paper: CC BY-NC-ND 4.0
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      source_media: movie_and_AudioVault_rights_require_separate_review
+      note: The arXiv article license covers the paper, not absent dataset files or the DVD, public-platform, AudioVault, and IMDb-derived source material.
+    sources:
+      - https://arxiv.org/abs/2607.06457
+      - https://arxiv.org/html/2607.06457v1#S3
+      - https://arxiv.org/html/2607.06457v1#S4
+      - https://arxiv.org/html/2607.06457v1#S5
+      - https://github.com/katha-ai/AndhaDhun-HindiAD
+      - https://api.github.com/repos/katha-ai/AndhaDhun-HindiAD
+      - https://api.github.com/repos/katha-ai/AndhaDhun-HindiAD/contents
+      - https://raw.githubusercontent.com/katha-ai/AndhaDhun-HindiAD/main/README.md
+    note: >-
+      Andha-Dhun is recorded as an announced Hindi audio-description dataset
+      and evaluation protocol rather than an indexed downloadable benchmark
+      family. A paper link and placeholder repository do not establish public
+      access or reuse rights, so no benchmark entry, invented download link, or
+      helper is added. Recheck the official repository for the promised release.
+
 benchmarks:
   - id: mmau
     name: MMAU

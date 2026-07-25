@@ -431,6 +431,18 @@ windows, paired FX audio, effect seeds or chains, listener responses, or score
 records. The existing FMA and MUSDB18 access paths and their upstream license
 constraints therefore remain authoritative.
 
+The July 2026 Andha-Dhun paper is recorded as an announced Hindi
+audio-description dataset and evaluation protocol rather than a downloadable
+family. It reports 5,870 timestamped descriptions synchronized to eight
+full-length movies, then uses short video-description pairs for zero-shot
+generation evaluation and a four-movie bilingual subset for translation and
+cultural-adaptation analysis. The official
+[repository](https://github.com/katha-ai/AndhaDhun-HindiAD) currently contains
+only a 93-byte README saying “Coming soon!”, with no transcripts, media
+manifest, splits, annotations, evaluation artifacts, code, or license. The
+paper's CC BY-NC-ND 4.0 terms do not license absent files or the underlying
+movie, AudioVault, public-platform, and IMDb-derived materials.
+
 The July 2026 artifact-specific speech-deepfake paper is recorded once as a
 coverage audit rather than a new benchmark family. Section 4.1 uses ASVspoof
 2015 only for selected calibration attacks, then draws training or held-out
