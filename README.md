@@ -14,7 +14,7 @@ speech dialogue, audio understanding, environmental sound,
 text-to-audio environmental sound-scene synthesis, synthetic-to-real sound-effect retrieval,
 sound event detection, keyword spotting, speaker recognition, spoken language
 identification, speech instruction following, self-supervised speech representation,
-emotion, captioning, speech separation, speech enhancement, real-recorded
+emotion, voice-based depression detection, captioning, speech separation, speech enhancement, real-recorded
 microphone-array enhancement and localization, music tagging,
 forest-acoustic impulse-response simulation for bioacoustic arrays,
 global bird-species detection for passive acoustic monitoring,
@@ -71,7 +71,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-24. Current index size: 273 distinct benchmarks
+Last checked: 2026-07-24. Current index size: 274 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -904,6 +904,7 @@ Current coverage includes:
 | [VocalSound](https://github.com/YuanGongND/vocalsound) | Human vocal sound classification | Official GitHub README and direct Dropbox archives for 16 kHz and 44.1 kHz releases; helper saves docs by default and makes archives opt-in | Dataset README says CC BY-SA 4.0; GitHub API reports no repository-level license, so code license is not specified |
 | [VocalSet](https://zenodo.org/records/1193957) | Singing voice analysis | Official [Zenodo record](https://zenodo.org/records/1193957), DOI, and [ISMIR paper](https://archives.ismir.net/ismir2018/paper/000105.pdf); helper saves record metadata by default and makes the 2.1 GB archive opt-in | Zenodo lists CC BY 4.0; treat singer voice data with normal consent/attribution care |
 | [EmoV-DB](https://github.com/numediart/EmoV-DB) | Emotional speech synthesis and speech emotion | [OpenSLR SLR115](https://www.openslr.org/115/) per-speaker/per-emotion archives; helper saves docs/license by default and downloads selected archives only with opt-in | Custom non-commercial terms for research, teaching, scientific publication, and personal experimentation; commercial use requires contacting the owner |
+| [Androids Corpus](https://github.com/androidscorpus/data) | Speech-based depression detection | Public owner-hosted 3.69 GB corpus with 228 Italian recordings from 118 speakers, read and interview tasks, speaker metadata, turn segmentation, and official five-fold protocols; helper downloads docs by default and requires terms acknowledgment before the archive | Custom academic-research-only terms prohibit commercial use, redistribution, broadcasting, or making the corpus publicly available elsewhere; recordings contain sensitive health labels and identifiable voices |
 | [RAVDESS](https://zenodo.org/records/1188976) | Speech emotion recognition | [Zenodo record](https://zenodo.org/records/1188976); helper saves metadata by default and downloads audio-only speech/song ZIPs with opt-in | CC BY-NC-SA 4.0; commercial licenses are separate |
 | [TESS](https://doi.org/10.5683/SP2/E8H2MF) | Speech emotion recognition and auditory emotion perception | Owner-hosted University of Toronto Dataverse release with 2,800 acted-emotion WAV stimuli; helper saves official metadata by default and makes the complete ZIP opt-in | CC BY-NC 4.0; preserve attribution and review identifiable-voice ethics for downstream use |
 | [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D) | Speech emotion recognition | Official GitHub/GitLab repositories; helper downloads README/license/CSV metadata by default and keeps the full Git LFS media clone opt-in | Database is ODbL 1.0; individual contents are Database Contents License 1.0 |

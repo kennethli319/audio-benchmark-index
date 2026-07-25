@@ -200,6 +200,7 @@ scripts/download/mcr_bench.sh
 scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
 scripts/download/emov_db.sh
+scripts/download/androids_corpus.sh
 scripts/download/ravdess.sh
 scripts/download/tess.sh
 scripts/download/crema_d.sh
@@ -923,6 +924,9 @@ VOCALSET_DOWNLOAD_ARCHIVE=1 scripts/download/vocalset.sh
 # EmoV-DB downloads OpenSLR/GitHub docs by default. Speech archives are opt-in.
 EMOV_DB_DOWNLOAD_ARCHIVES=1 EMOV_DB_PARTS="bea_Neutral.tar.gz sam_Neutral.tar.gz" scripts/download/emov_db.sh
 EMOV_DB_OPENSLR_BASE_URL=https://openslr.elda.org/resources/115 EMOV_DB_DOWNLOAD_ARCHIVES=1 scripts/download/emov_db.sh
+
+# Androids Corpus downloads official docs by default. The 3.69 GB academic-only archive requires explicit terms acknowledgment.
+ANDROIDS_CORPUS_ACK_TERMS=1 ANDROIDS_CORPUS_DOWNLOAD_DATA=1 scripts/download/androids_corpus.sh
 
 # RAVDESS saves Zenodo metadata by default. Audio-only archives are opt-in.
 RAVDESS_DOWNLOAD_AUDIO=1 scripts/download/ravdess.sh

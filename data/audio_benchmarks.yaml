@@ -9047,6 +9047,61 @@ benchmarks:
       - https://api.github.com/repos/numediart/EmoV-DB
       - https://arxiv.org/abs/1806.09514
 
+  - id: androids_corpus
+    name: Androids Corpus
+    full_name: "The Androids Corpus: A New Publicly Available Benchmark for Speech Based Depression Detection"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_understanding
+      - health_audio
+    tasks:
+      - speech_based_depression_detection
+      - clinical_voice_assessment
+      - health_audio_classification
+      - paralinguistic_speech_analysis
+    official:
+      repo: https://github.com/androidscorpus/data
+      readme: https://raw.githubusercontent.com/androidscorpus/data/main/README.md
+      paper: https://www.isca-archive.org/interspeech_2023/tao23_interspeech.html
+      paper_doi: https://doi.org/10.21437/Interspeech.2023-894
+      evaluation_paper: https://arxiv.org/abs/2607.16967
+      archive: https://www.dropbox.com/s/2rurxlh70ihfki4/Androids-Corpus.zip?dl=0
+    download:
+      primary:
+        - https://github.com/androidscorpus/data
+        - https://www.dropbox.com/s/2rurxlh70ihfki4/Androids-Corpus.zip?dl=0
+      examples:
+        - 'scripts/download/androids_corpus.sh'
+        - 'ANDROIDS_CORPUS_ACK_TERMS=1 ANDROIDS_CORPUS_DOWNLOAD_DATA=1 scripts/download/androids_corpus.sh'
+      notes: >-
+        The owner repository links a 3.69 GB archive containing 228 recordings
+        from 118 native Italian speakers: 112 read-speech recordings and 116
+        spontaneous interview recordings, including 874 segmented interview
+        clips, speaker metadata, turn timing, an openSMILE configuration, and
+        official five-fold lists. The July 2026 voice-concept-bottleneck paper
+        evaluates the 116-speaker interview subset with the official five-fold
+        protocol. The helper saves owner documentation, repository metadata,
+        and the primary Interspeech paper by default; archive download requires
+        explicit acknowledgment of the restrictive terms.
+    license:
+      data: custom_academic_research_only_no_redistribution
+      code: not_specified
+      notes: >-
+        The official README limits the corpus to non-commercial academic
+        research and prohibits redistribution, broadcasting, or making it
+        publicly available anywhere else. No standalone code or data license
+        file is present. The recordings expose depression/control labels plus
+        age, gender, education, and identifiable voices, so users must also
+        apply appropriate clinical-data, privacy, consent, and ethics review.
+    sources:
+      - https://github.com/androidscorpus/data
+      - https://raw.githubusercontent.com/androidscorpus/data/main/README.md
+      - https://api.github.com/repos/androidscorpus/data
+      - https://www.isca-archive.org/interspeech_2023/tao23_interspeech.html
+      - https://doi.org/10.21437/Interspeech.2023-894
+      - https://arxiv.org/abs/2607.16967
+      - https://arxiv.org/html/2607.16967v1#S3.SS1
+
   - id: ravdess
     name: RAVDESS
     full_name: "The Ryerson Audio-Visual Database of Emotional Speech and Song"
