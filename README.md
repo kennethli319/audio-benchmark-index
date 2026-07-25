@@ -889,6 +889,18 @@ predictions, or score records. The public CC BY 4.0 Speech Commands release and
 its existing helper therefore remain authoritative; no duplicate family or
 paper-specific helper is added.
 
+The July 2026 hybrid-feature ASV paper is likewise recorded as an
+existing-coverage audit over Speech Commands rather than a new benchmark
+family. It randomly selects 30 speakers and 100 utterances per speaker,
+concatenates five-utterance sequences, and tests 3,600 speaker/model trials per
+setup under clean conditions and NOISEX-92 babble and Volvo noise at five SNR
+levels. The paper releases no selected-file list, random seed, concatenation
+manifest, noisy derivatives, trial keys, code, or scores. Speech Commands
+remains publicly available under CC BY 4.0, while the cited primary NOISEX-92
+paper does not establish a current official public archive or redistribution
+terms; the index therefore adds neither an invented noise download nor a
+paper-specific helper.
+
 ## Coverage
 
 Current coverage includes:

@@ -2931,6 +2931,64 @@ paper_audits:
       Speech Commands family, not as a new benchmark. No duplicate family or
       paper-specific download helper is added.
 
+  hybrid_features_noisy_speaker_verification:
+    paper: https://arxiv.org/abs/2607.20706
+    title: "Improving the performance of an ASV system using hybrid speech features"
+    sections: methodology and results
+    status: audited_existing_public_family_unreleased_derived_protocol
+    evaluated_sets:
+      - cited_as: Google Speech Commands
+        index_id: speech_commands
+        status: public
+        role: text_dependent_speaker_verification_source
+        note: >-
+          The paper selects the 30 speakers with the most recordings, randomly
+          takes 100 utterances per speaker, and concatenates groups of five.
+          This yields 16 training and four test sequences per speaker, but the
+          selected file list, random seed, and concatenation manifest are not
+          released.
+      - cited_as: NoiseX-92
+        index_id: null
+        status: historical_noise_database_no_verified_official_public_release
+        role: additive_robustness_noise
+        note: >-
+          Babble and Volvo recordings are mixed into the Speech Commands test
+          sequences at 0, 5, 10, 15, and 20 dB SNR. The paper cites the
+          original 1993 NOISEX-92 publication but supplies no official archive
+          or redistribution terms, so this audit does not invent a download
+          path or add a standalone family.
+    protocol_note: >-
+      Thirty Gaussian-mixture speaker models are tested against all 120 test
+      sequences, producing 3,600 trials per feature/noise setup. Equal error
+      rate is reported for MFCC, CQCC, PNCC, RAB, and hybrid feature sets under
+      clean, babble-noise, and Volvo-noise conditions.
+    release_audit:
+      status: no_paper_specific_release_identified
+      note: >-
+        The v1 source package contains the manuscript and figures but no code,
+        selected-file list, train/test manifest, concatenated sequences, noisy
+        derivatives, trial keys, predictions, or score files. Exact results
+        therefore cannot be reconstructed from the public Speech Commands
+        family alone.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      code: not_specified_unreleased
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: Speech Commands is CC BY 4.0; NOISEX-92 redistribution terms were not established by the cited primary paper
+    sources:
+      - https://arxiv.org/abs/2607.20706
+      - https://export.arxiv.org/e-print/2607.20706v1
+      - https://doi.org/10.1016/0167-6393(93)90095-3
+      - https://arxiv.org/abs/1804.03209
+      - https://www.tensorflow.org/datasets/catalog/speech_commands
+      - https://research.google/blog/launching-the-speech-commands-dataset/
+    note: >-
+      This work is recorded as an evaluation-protocol audit over the indexed
+      Speech Commands family. Its random speaker subset and derived clean/noisy
+      trials are not a released benchmark, and NOISEX-92 lacks a verified
+      official public download and clear redistribution terms in the sources
+      consulted, so no new family or helper is added.
+
   auto_aeg_aegbench:
     paper: https://arxiv.org/abs/2607.04383
     sections: abstract, 3.3, 4, and appendix K
