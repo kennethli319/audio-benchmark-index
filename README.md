@@ -9,7 +9,8 @@ The initial seed list came from the Audio -> Text evaluation benchmarks cited in
 the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, multidimensional
 offline and streaming speech-translation evaluation,
-speech synthesis, style-captioned and sound-effect-conditioned TTS,
+speech synthesis, style-captioned, nonverbal-vocalization, and
+sound-effect-conditioned TTS,
 speech dialogue, audio understanding, environmental sound,
 text-to-audio environmental sound-scene synthesis, synthetic-to-real sound-effect retrieval,
 sound event detection, keyword spotting, speaker recognition, spoken language
@@ -74,7 +75,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 289 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 291 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -951,6 +952,7 @@ Current coverage includes:
 | [VoxPopuli](https://github.com/facebookresearch/voxpopuli) | ASR and S2TT | [facebook/voxpopuli](https://huggingface.co/datasets/facebook/voxpopuli); select a language/config and split before downloading the large HF repository | Data is CC0-1.0; code and pretrained models are CC BY-NC 4.0; raw data also points to European Parliament legal notice |
 | [mTEDx](https://www.openslr.org/100) | ASR and S2TT | [OpenSLR SLR100](https://www.openslr.org/100) ASR language archives, speech-translation language-pair archives, IWSLT 2021 test sets, and small metadata; archives are opt-in in the helper | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
 | [OpenSTBench](https://github.com/sjtuayj/OpenSTBench) | Multidimensional offline and streaming speech-translation evaluation | Public evaluation toolkit plus an ungated [300-sample LibriTTS-based paired-speaker set](https://huggingface.co/datasets/ayj111/openstbench-paired-set); helper downloads docs/metadata by default, while the approximately 511 MiB paired set and toolkit clone are separate opt-ins | Paired-set card declares `other` and preserves upstream/synthesis terms; original code is MIT, adapted SimulEval components are CC BY-SA 4.0, and each component evaluation corpus retains its own terms |
+| [NonverbalTTS](https://huggingface.co/datasets/deepvk/NonverbalTTS) | Expressive TTS and paralinguistic-fidelity evaluation | Public 17-hour English corpus with ten nonverbal-vocalization types and eight emotion categories; OpenSTBench evaluates its 359-sample test split for English-to-Chinese speech-translation fidelity; helper downloads docs by default, while the approximately 108 MiB test split and 3.9 GiB full snapshot are opt-in | Card prose assigns annotations CC BY-NC-SA 4.0 and preserves VoxCeleb/Expresso terms for audio, conflicting with its machine-readable Apache-2.0 tag; use the more restrictive source-specific terms pending clarification |
 | [RealSI](https://github.com/byteresearchcla/RealSI) | Long-form simultaneous Chinese-English speech translation | Public timestamped transcripts/translations for 20 natural recordings (95:29, 778 segments) across ten domains; current repository also contains about 351 MiB of WAV derivatives; helper downloads docs and lightweight JSON annotations by default while the repository clone is opt-in | Repository declares CC BY 4.0, but authors disclaim ownership of source videos; treat attribution licensing as covering author annotations and separately review recording copyright, platform terms, and the README disclaimer |
 | [TEDx Spanish Corpus](https://www.openslr.org/67/) | ASR | [OpenSLR SLR67](https://www.openslr.org/67/) Spanish speech/transcript archive; helper saves the page by default and makes the 2.3 GiB archive opt-in | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
 | [Europarl-ST](https://www.mllp.upv.es/europarl-st/) | S2TT | Official [Europarl-ST page](https://www.mllp.upv.es/europarl-st/), [README](https://www.mllp.upv.es/europarl-st/README.md), and v1.1 archive; helper saves docs by default and makes the ~21 GB corpus opt-in | Corpus construction work is CC BY-NC 4.0; underlying debate data rights remain with the European Union and respective copyright holders |

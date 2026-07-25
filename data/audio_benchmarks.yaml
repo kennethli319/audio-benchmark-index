@@ -15815,3 +15815,61 @@ benchmarks:
       - https://arxiv.org/abs/2507.19634
       - https://openreview.net/forum?id=PtPYZYfa0h
       - https://aclanthology.org/events/acl-2023/
+
+  - id: nonverbal_tts
+    name: NonverbalTTS
+    full_name: "NonverbalTTS: A Public English Corpus of Text-Aligned Nonverbal Vocalizations with Emotion Annotations for Text-to-Speech"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation_evaluation
+      - paralinguistic_understanding
+      - emotion_recognition
+    tasks:
+      - expressive_text_to_speech
+      - nonverbal_vocalization_synthesis
+      - paralinguistic_fidelity_evaluation
+      - emotion_conditioned_speech_generation
+      - nonverbal_vocalization_detection
+    official:
+      dataset: https://huggingface.co/datasets/deepvk/NonverbalTTS
+      paper: https://arxiv.org/abs/2507.13155
+      publication: https://www.isca-archive.org/ssw_2025/borisov25_ssw.html
+      citing_benchmark: https://arxiv.org/abs/2605.30792
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/deepvk/NonverbalTTS
+      examples:
+        - 'scripts/download/nonverbal_tts.sh'
+        - 'NONVERBAL_TTS_DOWNLOAD_TEST=1 scripts/download/nonverbal_tts.sh'
+        - 'NONVERBAL_TTS_DOWNLOAD_HF=1 scripts/download/nonverbal_tts.sh'
+      notes: >-
+        The public English release contains about 17 hours of speech derived
+        from VoxCeleb and Expresso, with text-aligned labels for ten nonverbal
+        vocalization types and eight emotion categories. The paper reports
+        speaker-disjoint train, development, and test splits; OpenSTBench
+        section 4.2 evaluates all 359 test samples for English-to-Chinese
+        speech-translation paralinguistic fidelity, using text-tag positions
+        to approximate event locations. The helper downloads official
+        documentation and repository metadata by default. The approximately
+        108 MiB test Parquet is a separate opt-in, and the full approximately
+        3.9 GiB Hugging Face snapshot requires NONVERBAL_TTS_DOWNLOAD_HF=1.
+    license:
+      annotations: CC-BY-NC-SA-4.0
+      audio: source_terms_apply
+      dataset_card_metadata: conflicting_apache-2.0
+      notes: >-
+        The dataset card's prose says annotations are CC BY-NC-SA 4.0 and audio
+        follows the original VoxCeleb and Expresso licenses, while its
+        machine-readable front matter declares Apache-2.0 for the dataset.
+        Treat the more specific prose and upstream source restrictions as
+        controlling pending clarification; do not assume the Apache tag
+        re-licenses recordings or annotations for commercial use.
+    sources:
+      - https://huggingface.co/datasets/deepvk/NonverbalTTS
+      - https://huggingface.co/datasets/deepvk/NonverbalTTS/raw/main/README.md
+      - https://huggingface.co/api/datasets/deepvk/NonverbalTTS?blobs=true
+      - https://arxiv.org/abs/2507.13155
+      - https://arxiv.org/html/2507.13155v1#S4
+      - https://www.isca-archive.org/ssw_2025/borisov25_ssw.html
+      - https://arxiv.org/html/2605.30792v1#S4.SS2

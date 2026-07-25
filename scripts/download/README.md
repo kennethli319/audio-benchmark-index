@@ -125,6 +125,7 @@ scripts/download/indic_context_eval.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
 scripts/download/openstbench.sh
+scripts/download/nonverbal_tts.sh
 scripts/download/realsi.sh
 scripts/download/earnings_22.sh
 scripts/download/earnings_21.sh
