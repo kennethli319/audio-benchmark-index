@@ -665,6 +665,19 @@ trained informed models, digit-recognition evaluation code, or per-item
 scores. Public access to the three source corpora therefore does not reproduce
 the derived protocol, and no duplicate family or download helper is added.
 
+The July 2026 *X-Translator* paper is likewise recorded as a mixed
+existing-coverage and unreleased-selection audit. Its short-form evaluation
+uses the indexed OpenSTBench protocol; the long-form, multi-speaker, and
+multilingual experiments draw from WenetSpeech, VoxConverse, FLEURS,
+TEDLIUM-3, and unspecified public Bilibili interviews. The official
+[repository](https://github.com/zhaoyx239/X-Translator) currently releases
+the demo and backend adapters but explicitly lists evaluation code as future
+work. It provides no sampled recording or sentence-ID manifests, interview
+URLs, generated speech, runtime logs, predictions, or scores. OpenSLR resource
+51, historically associated with TEDLIUM Release 3, currently reports
+“Resource not found,” so the index does not invent a replacement download
+link or claim that the paper-specific selections are public.
+
 The July 2026 *Audio Diarization* paper is likewise recorded as existing
 coverage rather than a new benchmark family. Its known-class experiment uses
 the indexed DESED evaluation subset, while DMix-known and DMix-unknown mix six

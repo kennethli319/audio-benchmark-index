@@ -1858,6 +1858,62 @@ paper_audits:
       - https://api.github.com/repos/ol-MEGA/ppca/git/trees/main?recursive=1
     note: AudioMNIST, Google Speech Commands, and LibriSpeech are already indexed public source families. Although the paper calls its experimental framework public and cites PPCA, the current PPCA main tree contains general speech-privacy and SpeechBrain recipes but no paper-specific digit-sequence construction, digit-classifier training, obfuscation sweep, digit recognition error rate, or result-reproduction files. The derived informed-attacker evaluation is therefore recorded as a coverage audit rather than a duplicate benchmark family or new download helper.
 
+  x_translator_speech_translation_evaluation:
+    paper: https://arxiv.org/abs/2607.17544
+    title: "X-Translator: A Real-Time Multilingual Speaker-Aware Speech-to-Speech Translation System"
+    sections: 4.1, 4.4, and appendices A-B and D
+    status: audited_mixed_existing_public_families_and_unreleased_selections
+    public_interfaces:
+      - https://github.com/zhaoyx239/X-Translator
+    evaluated_sets:
+      - cited_as: OpenSTBench
+        index_id: openstbench
+        status: public
+        note: The short-form English-Chinese evaluation follows the indexed public OpenSTBench protocol.
+      - cited_as: TEDLIUM-3
+        index_id: null
+        status: referenced_corpus_current_owner_download_not_verified
+        note: The paper randomly selects ten clear English recordings of at least ten minutes. It releases neither their identifiers nor a manifest, and the historically cited OpenSLR resource 51 currently returns "Resource not found."
+      - cited_as: WenetSpeech
+        index_id: wenetspeech
+        status: public_application_required
+        note: The long-form Chinese-English evaluation randomly selects ten clear recordings of at least ten minutes from the indexed WenetSpeech family.
+      - cited_as: VoxConverse
+        index_id: voxconverse
+        status: public_restricted_terms
+        note: The English-Chinese multi-speaker evaluation uses ten recordings under VoxConverse research-use terms without redistributing source audio.
+      - cited_as: Bilibili interviews
+        index_id: null
+        status: source_urls_and_selection_unreleased
+        note: The paper describes ten public multi-speaker Chinese interviews of exactly ten minutes each but provides no video URLs, item manifest, timestamps, or reusable derived package.
+      - cited_as: FLEURS
+        index_id: fleurs
+        status: public
+        note: The multilingual protocol keeps sentence IDs shared by each source-target locale pair and evaluates 70 directions; the exact selected IDs are not released.
+    evaluated_domains:
+      - domain: long_form_and_speaker_aware_speech_translation
+        protocol: Continuous single-speaker and multi-speaker sessions evaluate translation quality, latency, target-voice stability, speaker routing, and multilingual speech translation beyond utterance-level OpenSTBench
+        data_status: public_source_families_paper_specific_selections_logs_outputs_and_scores_unreleased
+        note: Appendix A reports aggregate durations for the TEDLIUM-3 and WenetSpeech samples, Appendix B reports aggregate durations for VoxConverse and Bilibili samples, and Appendix D defines the FLEURS direction-matching rule, but no row-level manifests are public.
+    license:
+      paper: CC-BY-NC-SA-4.0
+      evaluation_artifacts: not_specified_unreleased
+      repository_code: not_specified
+      upstream: OpenSTBench, WenetSpeech, VoxConverse, FLEURS, TEDLIUM-3, and source Bilibili recordings retain their own terms
+    sources:
+      - https://arxiv.org/abs/2607.17544
+      - https://arxiv.org/html/2607.17544v1#S4.SS1
+      - https://arxiv.org/html/2607.17544v1#S4.SS4
+      - https://arxiv.org/html/2607.17544v1#A1
+      - https://arxiv.org/html/2607.17544v1#A2
+      - https://arxiv.org/html/2607.17544v1#A4
+      - https://github.com/zhaoyx239/X-Translator
+      - https://raw.githubusercontent.com/zhaoyx239/X-Translator/main/README.md
+      - https://api.github.com/repos/zhaoyx239/X-Translator
+      - https://api.github.com/repos/zhaoyx239/X-Translator/git/trees/main?recursive=1
+      - https://www.openslr.org/51/
+    note: The official repository currently releases the local demo and backend adapters, has no detected license, and explicitly marks evaluation code as a future release. It contains no benchmark manifests, source identifiers, generated speech, runtime logs, predictions, or score records. OpenSTBench, WenetSpeech, VoxConverse, and FLEURS remain covered by their indexed public-family entries; the paper-specific long-form, multi-speaker, and multilingual selections are recorded only as an unreleased protocol, with no duplicate helper or invented TEDLIUM/Bilibili download link.
+
   audio_diarization_unknown_event_classes:
     paper: https://arxiv.org/abs/2607.12703
     title: "Audio Diarization: A New Paradigm for Exploring Audio Recordings with Unknown Event Classes"
