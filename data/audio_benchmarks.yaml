@@ -703,6 +703,40 @@ paper_audits:
       - https://huggingface.co/datasets/amphion/Emilia-Dataset
       - https://huggingface.co/api/datasets/amphion/Emilia-Dataset
 
+  betrac_audio_to_soap_evaluation:
+    paper: https://arxiv.org/abs/2607.17230
+    title: "Robust Summarization of Doctor-Patient Conversations: TalTech Systems for the Beyond Transcription Challenge"
+    sections: 2 and 5
+    status: audited_public_training_and_development_hidden_test
+    evaluated_sets:
+      - cited_as: SynthDoPaCo / BeTraC
+        index_id: synth_dopaco
+        status: public_train_dev_hidden_test
+        note: >-
+          The public Synth-DoPaCo release contains 7,200 training and 400
+          development conversations. BeTraC's 875-item blind test set combines
+          600 synthetic dialogues, 272 acted patient-physician interviews, and
+          three realistic recordings; test audio and reference notes are not
+          part of the public Hugging Face dataset.
+    protocol_note: >-
+      BeTraC evaluates direct audio-to-SOAP generation without an intermediate
+      transcription component. The primary metric is Open Medical Concept F1
+      using MeSH keyword matching and scispaCy named-entity recognition;
+      ROUGE-2, ROUGE-3, and ROUGE-L F1 are secondary metrics. The challenge
+      provides lightweight and heavyweight open-weight tracks capped at 6B and
+      36B total parameters. The public metrics implementation is indexed with
+      the dataset, while hidden-test access remains a challenge submission
+      procedure rather than a public download.
+    sources:
+      - https://arxiv.org/abs/2607.17230
+      - https://arxiv.org/html/2607.17230v1#S2
+      - https://arxiv.org/html/2607.17230v1#S5
+      - https://betrac.github.io/
+      - https://raw.githubusercontent.com/betrac/betrac.github.io/main/rules.md
+      - https://huggingface.co/datasets/BeTraC/betrac-2026
+      - https://huggingface.co/api/datasets/BeTraC/betrac-2026
+      - https://github.com/betrac/betrac-metrics
+
   caption_studio_transparency_framework:
     paper: https://arxiv.org/abs/2607.18704
     title: "What the Waveform Knows: Transparent-first Speech and Audio Intelligence with Caption Studio"
@@ -15645,3 +15679,65 @@ benchmarks:
       - https://arxiv.org/html/2607.19721v1#S4
       - https://arxiv.org/html/2607.19721v1#S7.SS1
       - https://arxiv.org/html/2607.19721v1#Sx1
+
+  - id: synth_dopaco
+    name: Synth-DoPaCo
+    full_name: "Synth-DoPaCo: Synthetic Doctor-Patient Conversations for Long-form Audio Summarization"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - long_form_audio
+      - clinical_speech
+    tasks:
+      - audio_to_soap_note_generation
+      - long_form_audio_summarization
+      - clinical_conversation_understanding
+      - speech_to_text_generation
+    official:
+      challenge: https://betrac.github.io/
+      dataset: https://huggingface.co/datasets/BeTraC/betrac-2026
+      metrics_repo: https://github.com/betrac/betrac-metrics
+      dataset_paper: https://arxiv.org/abs/2604.06138
+      recent_evaluation: https://arxiv.org/abs/2607.17230
+    download:
+      access: public_ungated_train_dev_hidden_challenge_test
+      primary:
+        - https://huggingface.co/datasets/BeTraC/betrac-2026
+        - https://github.com/betrac/betrac-metrics
+      examples:
+        - 'scripts/download/synth_dopaco.sh'
+        - 'SYNTH_DOPACO_DOWNLOAD_HF=1 scripts/download/synth_dopaco.sh'
+      notes: >-
+        The public, ungated WebDataset release contains 7,200 training and 400
+        development English doctor-patient dialogues with 16 kHz mono Opus
+        audio, transcripts, generation metadata, and reference SOAP notes.
+        The dataset paper describes the complete 8,800-conversation,
+        approximately 1,329-hour corpus; the public challenge repository
+        currently exposes only the 7,600 train/dev examples. The helper
+        downloads official pages, cards, API metadata, rules, and metrics
+        repository metadata by default. The Hugging Face API reports about
+        14.6 GB of repository storage, so the full snapshot is opt-in.
+        BeTraC's 875-item blind test set is withheld and cannot be fetched by
+        the helper.
+    license:
+      data: CC-BY-4.0
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares CC BY 4.0 for the released train/dev
+        dataset, and the official metrics repository is Apache-2.0. The audio
+        and conversations are synthetic, but the hidden challenge test set
+        includes acted and realistic recordings that are not covered by the
+        public dataset release or its license statement. Do not infer access or
+        redistribution rights for those withheld recordings.
+    sources:
+      - https://betrac.github.io/
+      - https://raw.githubusercontent.com/betrac/betrac.github.io/main/rules.md
+      - https://huggingface.co/datasets/BeTraC/betrac-2026
+      - https://huggingface.co/datasets/BeTraC/betrac-2026/raw/main/README.md
+      - https://huggingface.co/api/datasets/BeTraC/betrac-2026
+      - https://github.com/betrac/betrac-metrics
+      - https://api.github.com/repos/betrac/betrac-metrics
+      - https://arxiv.org/abs/2604.06138
+      - https://arxiv.org/abs/2607.17230
+      - https://arxiv.org/html/2607.17230v1#S2
+      - https://arxiv.org/html/2607.17230v1#S5

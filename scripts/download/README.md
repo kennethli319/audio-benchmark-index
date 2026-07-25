@@ -517,6 +517,10 @@ scripts/download/tidyvoice.sh
 # archive retains per-recording source licenses and requires both opt-ins.
 SEABAD_ACK_SOURCE_TERMS=1 SEABAD_DOWNLOAD_AUDIO=1 scripts/download/seabad.sh
 
+# Synth-DoPaCo downloads official docs and API metadata by default. The public
+# approximately 14.6 GB train/dev snapshot is opt-in; BeTraC test data is withheld.
+SYNTH_DOPACO_DOWNLOAD_HF=1 scripts/download/synth_dopaco.sh
+
 # WABAD downloads its record, metadata, annotations, and species list by default.
 # Its 72 site archives total approximately 19.8 GiB and require explicit site IDs.
 WABAD_DOWNLOAD_AUDIO=1 WABAD_SITES="ARD BAM" scripts/download/wabad.sh

@@ -16,6 +16,7 @@ sound event detection, keyword spotting, speaker recognition, spoken language
 identification, speech instruction following, self-supervised speech representation,
 emotion, voice-based depression detection, captioning, speech separation, speech enhancement, real-recorded
 microphone-array enhancement and localization, music tagging,
+long-form clinical conversation understanding and audio-to-SOAP summarization,
 forest-acoustic impulse-response simulation for bioacoustic arrays,
 global bird-species and tropical bird-activity detection for passive acoustic monitoring,
 music genre classification, instrument recognition, music transcription, asynchronous
@@ -73,7 +74,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 288 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 289 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -573,6 +574,15 @@ also has a material terms conflict: its metadata tag says CC BY 4.0 while its
 gated access agreement says the original Emilia data is CC BY-NC. Neither
 designation releases or identifies the paper's evaluation subset.
 
+The July 2026 TalTech BeTraC system paper adds the public
+[Synth-DoPaCo](https://huggingface.co/datasets/BeTraC/betrac-2026) family for
+long-form audio-to-SOAP evaluation. Its ungated CC BY 4.0 release contains
+7,200 training and 400 development conversations with audio, transcripts,
+metadata, and reference notes. The challenge's 875-item blind test set mixes
+600 synthetic, 272 acted, and three realistic recordings and remains withheld;
+the index does not imply public access or license coverage for those test
+recordings.
+
 The July 2026 AIS-aligned passive-acoustic labelling paper is recorded as an
 audited data-construction protocol rather than a downloadable family. It
 describes aligning approximately 950,000 hydrophone windows with 6.9 million
@@ -995,6 +1005,7 @@ Current coverage includes:
 | [Soroll-IA](https://www.kaggle.com/datasets/itiresearch/soroll-ia-weakly-labeled-audio-port-monitoring) | Weakly labeled industrial-port audio tagging | Public 7,396-clip, 22-hour Kaggle release with 26 classes, two annotator-agreement protocols, and five-fold assignments; helper downloads official metadata/docs by default and makes the approximately 2.17 GB dataset opt-in | Dataset is CC BY-NC 4.0; benchmark repository has no stated code license |
 | [DCASE 2025 Task 5 AudioQA](https://dcase.community/challenge2025/task-audio-question-answering) | Multi-domain audio question answering and temporal reasoning | Official auto-approved gated [Hugging Face release](https://huggingface.co/datasets/PeacefulData/2025_DCASE_AudioQA_Official) with Bioacoustics QA, Temporal Soundscapes QA, and Complex QA; helper saves public metadata and prints authenticated access steps without downloading audio | HF card metadata declares MIT, but upstream Watkins, AudioSet, Mira, and other source-audio terms may still apply; release-script code license is unspecified |
 | [ADQA-Bench](https://dcase.community/challenge2026/task-audio-dependent-question-answering) | Audio-dependent question answering and shortcut-resistant audio reasoning | Public, ungated [Harland/ADQA-Bench](https://huggingface.co/datasets/Harland/ADQA-Bench) with 3,000 questions and WAV files; the [DCASE 2026 task summary](https://arxiv.org/abs/2607.18718) reports the finalized hidden-evaluation protocol and 36 submissions; the current release omits answers; helper downloads docs and the lightweight no-answer JSONL by default and makes the approximately 2.94 GB snapshot opt-in | HF card declares Apache-2.0, but incorporated MMAU, MMAR, MMSU, and other source recordings retain their own terms and media rights |
+| [Synth-DoPaCo](https://huggingface.co/datasets/BeTraC/betrac-2026) | Long-form doctor-patient audio understanding and SOAP-note generation | Public, ungated 7,200-dialogue train and 400-dialogue development release with 16 kHz Opus audio, transcripts, metadata, and reference notes; helper downloads docs/API metadata by default and makes the approximately 14.6 GB snapshot opt-in; BeTraC's 875-item blind test set remains withheld | Public train/dev data is CC BY 4.0 and metrics code is Apache-2.0; do not infer access or redistribution rights for withheld acted and realistic test recordings |
 | [AudioGrounding](https://zenodo.org/records/7269161) | Phrase-level temporal audio grounding and sound-event localization | Public, ungated v2 release with 4,974 AudioCaps/AudioSet-derived clips and phrase interval annotations; [GigaChat Audio](https://arxiv.org/abs/2607.10387) evaluates its combined 980 validation/test examples; helper downloads docs and approximately 5.2 MB of annotations by default while the approximately 2.33 GiB audio archive is opt-in | Zenodo declares CC BY 4.0 and code is MIT; underlying YouTube recordings retain source rights, availability, and platform-term caveats |
 | [TimeGround-1M](https://huggingface.co/datasets/ai-sage/TimeGround-1M) | Long-form temporal localization, timestamped audio description, and timed summarization | Public, ungated English release with about 59,000 train and 4,200 test recordings spanning under 10 minutes to two hours; helper downloads docs/metadata by default and makes the approximately 1.50 TB snapshot opt-in | HF card declares CC BY 3.0; recordings derive from YODAS2 YouTube shards, so source-video rights and platform terms still apply; generation/evaluation code license is unspecified |
 | [Clotho-Moment](https://h-munakata.github.io/Language-based-Audio-Moment-Retrieval/) | Language-based audio moment retrieval and temporal grounding in long audio | Public, ungated [51,240-item WebDataset](https://huggingface.co/datasets/lighthouse-emnlp2024/Clotho-Moment) used as DCASE 2026 Task 6 development data; helper downloads docs/metadata by default and makes the large audio snapshot opt-in | HF card and Lighthouse code declare Apache-2.0, but generated mixtures retain Clotho/Freesound and Walking Tours/YouTube component terms |
