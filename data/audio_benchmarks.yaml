@@ -15741,3 +15741,77 @@ benchmarks:
       - https://arxiv.org/abs/2607.17230
       - https://arxiv.org/html/2607.17230v1#S2
       - https://arxiv.org/html/2607.17230v1#S5
+
+  - id: mcif
+    name: MCIF
+    full_name: "MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - audio_understanding
+      - automatic_speech_recognition
+      - speech_to_text_translation
+      - audio_question_answering
+    tasks:
+      - multimodal_crosslingual_instruction_following
+      - audio_visual_instruction_following
+      - automatic_speech_recognition
+      - speech_to_text_translation
+      - spoken_question_answering
+      - speech_summarization
+      - video_question_answering
+      - video_summarization
+      - audio_visual_recognition
+      - audio_visual_translation
+      - audio_visual_question_answering
+      - audio_visual_summarization
+      - crosslingual_text_generation
+    official:
+      dataset: https://huggingface.co/datasets/FBK-MT/MCIF
+      repo: https://github.com/hlt-mt/mcif
+      paper: https://arxiv.org/abs/2507.19634
+      openreview: https://openreview.net/forum?id=PtPYZYfa0h
+      challenge: https://iwslt.org/2025/instruction-following
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/FBK-MT/MCIF
+        - https://github.com/hlt-mt/mcif
+      examples:
+        - 'scripts/download/mcif.sh'
+        - 'MCIF_CLONE_CODE=1 scripts/download/mcif.sh'
+        - 'MCIF_DOWNLOAD_HF=1 scripts/download/mcif.sh'
+      notes: >-
+        MCIF is a professionally annotated test benchmark built from 100 ACL
+        2023 scientific talks: 21 core presentations totaling two hours
+        support all 13 tasks, and 79 additional talks expand long-form
+        summarization to about 10 hours overall. It provides English speech,
+        video, and transcripts
+        with prompts and references in English, German, Italian, and Mandarin
+        Chinese. Fixed- and mixed-prompt configurations each expose 362
+        long-form and 1,560 short-form examples; the underlying media is shared
+        rather than duplicated across configurations. The helper downloads the
+        official cards, API metadata, four small Parquet manifests, and eight
+        compressed reference files by default. Cloning the evaluation code is
+        optional, and the public Hugging Face media snapshot is a separate
+        opt-in because the repository is approximately 7.58 GiB.
+    license:
+      data: CC-BY-4.0
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card and paper declare MCIF data CC BY 4.0, and the
+        official repository licenses evaluation and construction code under
+        Apache-2.0. The source talks, papers, slides, voices, and presenter
+        videos come from the ACL Anthology's CC BY 4.0 ACL 2023 release;
+        preserve benchmark and source attribution and consider voice, likeness,
+        and conference-media privacy obligations in downstream redistribution.
+    sources:
+      - https://huggingface.co/datasets/FBK-MT/MCIF
+      - https://huggingface.co/datasets/FBK-MT/MCIF/raw/main/README.md
+      - https://huggingface.co/api/datasets/FBK-MT/MCIF?blobs=true
+      - https://github.com/hlt-mt/mcif
+      - https://raw.githubusercontent.com/hlt-mt/mcif/main/README.md
+      - https://raw.githubusercontent.com/hlt-mt/mcif/main/LICENSE
+      - https://arxiv.org/abs/2507.19634
+      - https://openreview.net/forum?id=PtPYZYfa0h
+      - https://aclanthology.org/events/acl-2023/

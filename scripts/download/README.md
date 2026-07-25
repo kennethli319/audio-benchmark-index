@@ -521,6 +521,10 @@ SEABAD_ACK_SOURCE_TERMS=1 SEABAD_DOWNLOAD_AUDIO=1 scripts/download/seabad.sh
 # approximately 14.6 GB train/dev snapshot is opt-in; BeTraC test data is withheld.
 SYNTH_DOPACO_DOWNLOAD_HF=1 scripts/download/synth_dopaco.sh
 
+# MCIF downloads its small manifests, multilingual references, and official
+# documentation by default. The approximately 7.58 GiB media snapshot is opt-in.
+MCIF_DOWNLOAD_HF=1 scripts/download/mcif.sh
+
 # WABAD downloads its record, metadata, annotations, and species list by default.
 # Its 72 site archives total approximately 19.8 GiB and require explicit site IDs.
 WABAD_DOWNLOAD_AUDIO=1 WABAD_SITES="ARD BAM" scripts/download/wabad.sh
