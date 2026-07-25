@@ -718,6 +718,16 @@ also has a material terms conflict: its metadata tag says CC BY 4.0 while its
 gated access agreement says the original Emilia data is CC BY-NC. Neither
 designation releases or identifies the paper's evaluation subset.
 
+The July 2026 SSTMark paper is also recorded as existing-family coverage rather
+than a new benchmark. Sections 5.1-5.4 reuse the indexed AudioMarkBench no-box
+perturbation categories and use LibriSpeech `train-clean-100` prompts to
+generate speech, including 1,000 clean samples for detector-threshold
+calibration. The authors add stronger attack settings, but version 1 exposes no
+official project page, code or data repository, prompt-row manifest, generated
+speech, watermarked or attacked variants, predictions, or per-item scores.
+AudioMarkBench's MPL-2.0 covers its public evaluation code, not SSTMark's absent
+artifacts; its released audio also retains mixed upstream terms.
+
 The July 2026 TalTech BeTraC system paper adds the public
 [Synth-DoPaCo](https://huggingface.co/datasets/BeTraC/betrac-2026) family for
 long-form audio-to-SOAP evaluation. Its ungated CC BY 4.0 release contains

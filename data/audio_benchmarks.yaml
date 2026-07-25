@@ -9,6 +9,59 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  sstmark_watermark_robustness_evaluation:
+    paper: https://arxiv.org/abs/2607.17592
+    title: "SSTMark: Robust Training-Free Semantic-Level Speech Watermarking"
+    sections: 5.1-5.4 and appendices B-D
+    status: audited_existing_public_families_unreleased_derived_evaluation
+    evaluated_sets:
+      - cited_as: AudioMarkBench no-box perturbations
+        index_id: audiomarkbench
+        status: public_family_paper_specific_outputs_unreleased
+        note: >-
+          Sections 5.1 and 5.3 reuse AudioMarkBench's no-box signal-processing
+          and compression categories, then add stronger parameter settings.
+          The paper reports TPR at fixed FPRs of 1% and 0.1% for Gaussian
+          noise, low-pass and high-pass filtering, speed perturbation,
+          smoothing, echo, MP3, quantization, SoundStream, Opus, and EnCodec.
+      - cited_as: LibriSpeech train-clean-100
+        index_id: librispeech
+        status: public_source_family_unreleased_generated_selection
+        note: >-
+          The complete train-clean-100 split supplies text prompts to
+          SpeechGPT. Detection thresholds use 1,000 clean non-watermarked
+          generated samples drawn from those prompts, but the paper does not
+          publish their row selection, generated audio, or derived watermarked
+          and attacked variants.
+    release_audit:
+      status: no_paper_specific_artifacts_identified
+      note: >-
+        The v1 arXiv record, HTML article, and source references provide no
+        author-controlled project page, repository, dataset card, archive,
+        generated-audio manifest, implementation, checkpoints, predictions, or
+        per-item score records. The article's only direct code URL is the
+        third-party AudiowMark baseline repository.
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      evaluation_artifacts: not_specified_unreleased
+      audiomarkbench_code: MPL-2.0
+      audiomarkbench_audio: mixed_upstream_terms_not_separately_specified
+      librispeech: CC-BY-4.0
+    sources:
+      - https://arxiv.org/abs/2607.17592
+      - https://arxiv.org/html/2607.17592v1#S5.SS1
+      - https://arxiv.org/html/2607.17592v1#S5.SS3
+      - https://arxiv.org/html/2607.17592v1#S5.SS4
+      - https://arxiv.org/html/2607.17592v1#A2
+      - https://arxiv.org/html/2607.17592v1#A3
+      - https://github.com/mileskuo42/AudioMarkBench
+      - https://www.openslr.org/12/
+    note: >-
+      SSTMark adds a watermarking method and an unreleased derived evaluation,
+      not a new benchmark dataset. AudioMarkBench and LibriSpeech remain
+      covered by their existing entries and helpers; no duplicate family,
+      model helper, or inferred download link is added.
+
   charm_multimodal_sarcasm_evaluation:
     paper: https://arxiv.org/abs/2607.11102
     title: "CHARM: Charge Calibration and Acoustic Rescue for LLM-based Multimodal Sarcasm Detection"
