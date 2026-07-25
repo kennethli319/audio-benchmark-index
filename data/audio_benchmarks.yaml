@@ -9,6 +9,52 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  efficient_audio_visual_event_recognition:
+    paper: https://arxiv.org/abs/2607.16980
+    title: "Efficient Audio-Visual Event Recognition via Knowledge Distillation and Dynamic INT8 Quantization of a Hybrid Cross-Attention Network"
+    sections: 4-5
+    status: audited_existing_public_family
+    evaluated_sets:
+      - cited_as: AVE dataset
+        index_id: ave
+        status: public_manual_download
+        protocol: >-
+          The paper follows AVE's predefined training, validation, and test
+          subsets, divides each approximately 10-second video into ten
+          one-second segments, extracts frozen VideoMAE and AST features, and
+          reports test accuracy, weighted precision, weighted recall, and
+          weighted F1 for teacher, distilled student, and INT8 student models.
+        note: >-
+          AVE contains 4,143 YouTube videos across 28 event categories. Its
+          official repository and Google Drive links are already indexed under
+          the ave family; the dataset has no standalone license statement.
+    release_audit:
+      status: paper_specific_artifacts_not_released
+      note: >-
+        The arXiv record and article do not link an author-controlled code
+        repository, checkpoints, cached VideoMAE or AST features, preprocessing
+        manifests, predictions, confusion-matrix values, or per-item scores.
+        The study introduces a compressed model and an evaluation on AVE, not
+        a new benchmark dataset.
+    license:
+      paper: CC-BY-4.0
+      ave_data: not_specified
+      paper_specific_artifacts: not_specified_unreleased
+      source_media: youtube_and_uploader_rights_apply
+    sources:
+      - https://arxiv.org/abs/2607.16980
+      - https://arxiv.org/html/2607.16980v1#S4
+      - https://arxiv.org/html/2607.16980v1#S5
+      - https://sites.google.com/view/audiovisualresearch
+      - https://github.com/YapengTian/AVE-ECCV18
+      - https://raw.githubusercontent.com/YapengTian/AVE-ECCV18/master/README.md
+      - https://arxiv.org/abs/1803.08842
+    note: >-
+      This audit maps the paper's only evaluated dataset to existing AVE
+      coverage. It adds no benchmark count, duplicate dataset link, or helper;
+      scripts/download/ave.sh remains the reproducible metadata and manual
+      access path for the upstream family.
+
   flowsonic_music_editing_evaluation:
     paper: https://arxiv.org/abs/2607.17526
     title: "FlowSonic: Stable Zero-Shot Music Editing via High-Order Trajectory Integration"

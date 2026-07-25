@@ -110,6 +110,15 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 efficient audio-visual event-recognition paper is mapped to the
+existing AVE family rather than counted as a new benchmark. Sections 4-5 use
+AVE's predefined train, validation, and test subsets, split each approximately
+10-second video into ten one-second segments, and evaluate frozen VideoMAE/AST
+features with teacher, distilled-student, and INT8-student models. The paper
+does not release its preprocessing manifests, cached features, checkpoints,
+predictions, or per-item scores. AVE remains a manual Google Drive download
+with no standalone dataset license, and source-video rights still apply.
+
 The July 2026 FlowSonic paper is recorded as two unreleased, paper-specific
 music-editing protocols rather than a benchmark family. Section 4.1 describes
 separate 40-clip timbre-transfer and genre-transfer sets manually selected
