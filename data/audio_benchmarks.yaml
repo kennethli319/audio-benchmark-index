@@ -9,6 +9,78 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  voice_clone_attribution_geometry:
+    paper: https://arxiv.org/abs/2607.15694
+    title: "A Geometry-Limited Identification Floor and Its Consequences for Voice-Clone Attribution in Professional Voice Actors"
+    sections: 3, 4.3-4.6, 6, appendix A, and data/code availability
+    status: audited_one_new_public_control_family_withheld_biometric_evaluation
+    evaluated_sets:
+      - cited_as: JVS and JVS-varied
+        index_id: jvs
+        status: public_manual_download_research_and_personal_use
+        protocol: >-
+          The paper uses the public JVS parallel100 recordings as a neutral
+          read-speech speaker-identification control. Its JVS-varied condition
+          samples, per speaker, eight nonpara30 utterances, two falset10
+          utterances, and two whisper10 utterances to test whether wider style
+          variation explains the professional-actor domain's higher
+          misidentification and equal-error rates. Six fixed parallel100
+          utterances from jvs001 also provide Seed-VC source speech.
+        note: >-
+          JVS is indexed as the reusable public corpus family. The paper's
+          exact processed embeddings and paired trials are not part of JVS and
+          remain in the paper's withheld biometric tier.
+      - cited_as: Japanese professional voice-actor corpus
+        status: public_web_source_audio_collected_but_not_redistributed
+        protocol: >-
+          The study collects 7,405 agency and official-personal-site files,
+          yielding 56,568 three-to-four-second segments from 1,168 speakers
+          and approximately 63 hours after preprocessing. It evaluates
+          large-gallery speaker identification, calibration, hubness,
+          discriminative reranking, and session/style confounds.
+        note: >-
+          Raw audio, source manifests resolvable to actors, per-segment and
+          centroid embeddings, paired trials, and the identity-to-hash mapping
+          are not public. They are not indexed as a downloadable benchmark.
+      - cited_as: Seed-VC, GPT-SoVITS, and Irodori-TTS clone probes
+        status: paper_specific_generated_audio_unreleased
+        protocol: >-
+          Clone probes evaluate enrolled and non-enrolled targets plus
+          designed fictitious voices under 1:N attribution, real-calibrated
+          thresholds, and synthetic-versus-real shift.
+        note: >-
+          Generated clones and per-clone rows are not redistributed. Public
+          aggregate hash-keyed statistics and code do not constitute a
+          released clone-audio benchmark.
+    release_audit:
+      analysis_code_and_aggregate_derived_statistics: public_ungated
+      speaker_disjoint_splits_and_random_seeds: public_hash_keyed
+      raw_audio_and_generated_clones: not_redistributed
+      embeddings_trials_and_identity_mapping: request_gated_biometric_data
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      jvs_audio: custom_research_noncommercial_and_personal_use_no_redistribution
+      jvs_tags: CC-BY-SA-4.0
+      public_analysis_release: MIT
+      withheld_voice_actor_audio: source_rights_and_japanese_law_require_review
+      biometric_artifacts: verification_only_data_use_agreement
+    sources:
+      - https://arxiv.org/abs/2607.15694
+      - https://arxiv.org/html/2607.15694v1#S3
+      - https://arxiv.org/html/2607.15694v1#S4.SS3
+      - https://arxiv.org/html/2607.15694v1#S6
+      - https://arxiv.org/html/2607.15694v1#Sx2
+      - https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus
+      - https://arxiv.org/abs/1908.06248
+      - https://github.com/shuheikatoinfo/va-space-geometry
+      - https://doi.org/10.5281/zenodo.21368121
+    note: >-
+      This audit adds only the independently released JVS control family.
+      The professional-actor corpus and clone probes are retained as
+      unreleased evaluation provenance. The Zenodo public tier is a small MIT
+      code-and-derived-statistics release, not a license or download path for
+      the withheld audio, biometric embeddings, paired trials, or clones.
+
   abnormal_heart_sound_spectrogram_frontends:
     paper: https://arxiv.org/abs/2607.16220
     title: "Comparing Spectrogram Front-Ends for Abnormal Heart-Sound Detection with a Convolutional Neural Network"
@@ -8355,6 +8427,63 @@ benchmarks:
     sources:
       - https://github.com/common-voice/cv-dataset
       - https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk
+
+  - id: jvs
+    name: JVS
+    full_name: Japanese versatile speech corpus
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_recognition
+      - speech_generation
+      - robustness_evaluation
+    tasks:
+      - speaker_identification
+      - speaker_verification
+      - multi_speaker_speech_synthesis
+      - speaking_style_robustness
+      - whisper_and_falsetto_speech
+      - voice_conversion_source_speech
+    official:
+      project: https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus
+      dataset: https://drive.google.com/open?id=19oAw8wWn3Y7z6CKChRdAyGOB9yupL_Xt
+      paper: https://arxiv.org/abs/1908.06248
+      recent_evaluation: https://arxiv.org/abs/2607.15694
+    download:
+      primary:
+        - https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus
+        - https://drive.google.com/open?id=19oAw8wWn3Y7z6CKChRdAyGOB9yupL_Xt
+      examples:
+        - 'scripts/download/jvs.sh'
+      notes: >-
+        The official public Google Drive archive is approximately 3.5 GB and
+        contains about 30 hours of 24 kHz studio speech from 100 professional
+        Japanese speakers. Each speaker has 100 shared parallel100 readings,
+        30 speaker-specific nonpara30 readings, ten whispered utterances, and
+        ten falsetto utterances, plus metadata tags and alignments. The helper
+        saves the official project and paper pages, then prints the manual
+        Drive path; it does not automate the large archive. A July 2026
+        voice-clone-attribution paper uses parallel100 and a JVS-varied
+        mixture of nonpara30, falset10, and whisper10 as speaker-identification
+        controls, and uses six jvs001 parallel100 utterances as Seed-VC input.
+    license:
+      data: custom_research_noncommercial_and_personal_use
+      annotations: CC-BY-SA-4.0
+      code: not_applicable
+      notes: >-
+        The owner page permits the audio for academic research, noncommercial
+        research including within commercial organizations, and personal use;
+        commercial use requires contacting the owners. Audio redistribution
+        is prohibited except for small illustrative excerpts such as about
+        ten files. Tags are CC BY-SA 4.0, while texts derive from JSUT and
+        retain its terms. Review voice and biometric-data considerations.
+    sources:
+      - https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus
+      - https://drive.google.com/open?id=19oAw8wWn3Y7z6CKChRdAyGOB9yupL_Xt
+      - https://arxiv.org/abs/1908.06248
+      - https://arxiv.org/abs/2607.15694
+      - https://arxiv.org/html/2607.15694v1#S3
+      - https://arxiv.org/html/2607.15694v1#S4.SS3
+      - https://arxiv.org/html/2607.15694v1#Sx2
 
   - id: librispeech
     name: LibriSpeech

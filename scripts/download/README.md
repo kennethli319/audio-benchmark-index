@@ -93,6 +93,7 @@ scripts/download/spearbench.sh
 scripts/download/fleurs.sh
 scripts/download/voicecodebench.sh
 scripts/download/s_diverse.sh
+scripts/download/jvs.sh
 scripts/download/librispeech.sh
 scripts/download/whisper_rirmega.sh
 scripts/download/libri_light.sh
@@ -303,6 +304,7 @@ generated URL, or manual form step first:
 
 ```bash
 COMMON_VOICE_DOWNLOAD_URL='https://...' scripts/download/common_voice.sh
+scripts/download/jvs.sh
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
 SPGISPEECH_ACK_TERMS=1 SPGISPEECH_CONFIG=dev scripts/download/spgispeech.sh
 scripts/download/fluent_speech_commands.sh

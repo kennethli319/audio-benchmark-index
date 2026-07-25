@@ -80,7 +80,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 316 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 317 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -354,6 +354,16 @@ LibriSpeech Corpus,” while the official challenge calls MLC-SLM the
 Multilingual Conversational Speech Language Model Challenge. The public
 MLC-SLM release contains annotations but no currently documented public audio
 URL, so the index does not imply full reproducibility.
+
+The July 2026 professional voice-actor attribution paper adds the public JVS
+corpus as a speaker-identification and style-robustness control. JVS provides
+about 30 hours of studio speech from 100 professional Japanese speakers,
+including shared and speaker-specific readings, whispers, and falsetto. Its
+audio is a manual 3.5 GB Google Drive download under custom research,
+noncommercial, and personal-use terms with redistribution prohibited; tags
+are CC BY-SA 4.0. The paper's separately collected 63-hour actor corpus,
+biometric embeddings, paired trials, identity mapping, and generated clones
+remain withheld or verification-only and are not presented as JVS data.
 
 The July 2026 CS-ETS paper adds the public
 [Silent Speech EMG](https://doi.org/10.5281/zenodo.4064408) family. Its
@@ -1349,6 +1359,7 @@ Current coverage includes:
 | [GigaSpeechBench](https://github.com/SpeechColab/GigaSpeechBench) | Multilingual in-the-wild ASR, speech translation, accents, dialects, terminology, and age variation | Public, ungated [speechcolab/GigaSpeechBench](https://huggingface.co/datasets/speechcolab/GigaSpeechBench); the current ~86.3 GB release exposes low-resource-language, Chinese-dialect/English-accent, and vertical-domain modules, while the paper-described age module is not yet visible; helper downloads docs/metadata by default and makes the full snapshot opt-in | No data or code license is declared; public access does not establish redistribution or commercial-use rights |
 | [IndicContextEval](https://huggingface.co/datasets/AI4Bharat/IndicContextEval) | Context-aware multilingual ASR and named-entity recognition | Public, ungated 16,884-utterance release with 55.93 hours across eight Indian languages, 555 speakers, 23 professional domains, and seven controlled prompt levels including native-script entities and adversarial incorrect-domain context; helper downloads docs/results/supplements by default and makes the 6.48 GB current data snapshot opt-in | Dataset card and repository README declare CC BY 4.0; repository outputs and forthcoming evaluation code have no standalone LICENSE file, so confirm their terms separately |
 | [Common Voice](https://github.com/common-voice/cv-dataset) | ASR | [Mozilla Data Collective Common Voice](https://mozilladatacollective.com/organization/cmfh0j9o10006ns07jq45h7xk) | Common Voice datasets are CC0-1.0; metadata repo is MPL-2.0 |
+| [JVS](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus) | Japanese speaker identification, multi-speaker synthesis, and speaking-style robustness | Public 30-hour, 100-speaker studio corpus on Google Drive with parallel, non-parallel, whispered, and falsetto speech; helper saves official docs and prints the manual approximately 3.5 GB download path | Audio is limited to academic/noncommercial research and personal use with redistribution prohibited; commercial use requires owner contact; tags are CC BY-SA 4.0 and texts retain JSUT terms |
 | [JASMIN-CGN](https://taalmaterialen.ivdnt.org/download/tstc-jasmin-spraakcorpus/) | Diverse Dutch/Flemish ASR and demographic robustness | Official Dutch Language Institute release with approximately 115 hours of read speech and human-machine dialogues from adolescents, non-native speakers, and seniors; free non-commercial access requires login and a signed license, and the helper prints the official steps only | Custom signed non-commercial license; commercial users are directed to a separate product, so review the current agreement before use or redistribution |
 | [LibriSpeech](https://www.openslr.org/12) | ASR and speech-codec reconstruction | OpenSLR SLR12 metadata/checksums by default, opt-in archives, or [openslr/librispeech_asr](https://huggingface.co/datasets/openslr/librispeech_asr); Qwen3-TTS §4.1.2 uses all 2,620 `test-clean` utterances | CC BY 4.0 |
 | [Whisper-RIR-Mega](https://huggingface.co/datasets/mandipgoswami/whisper-rirmega-bench) | Paired clean/reverberant ASR robustness | Public, ungated 2,000-pair English benchmark with 400 validation and 1,600 test pairs; helper downloads docs and lightweight leaderboard metadata by default and makes the approximately 1.13 GB snapshot opt-in | Dataset card says CC BY 4.0, but the RIR-Mega source audio is CC BY-NC 4.0, so apply the stricter non-commercial upstream terms; cited code repository was unavailable when checked |
