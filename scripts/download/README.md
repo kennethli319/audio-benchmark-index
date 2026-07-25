@@ -257,6 +257,7 @@ scripts/download/diamond_benchmark.sh
 scripts/download/dns_challenge.sh
 scripts/download/ms_snsd.sh
 scripts/download/nisqa.sh
+scripts/download/somos.sh
 scripts/download/qualispeech.sh
 scripts/download/bvcc.sh
 scripts/download/vctk.sh
@@ -1092,6 +1093,9 @@ MS_SNSD_RUN_SYNTHESIS=1 scripts/download/ms_snsd.sh
 
 # NISQA downloads official docs/license files and Zenodo metadata by default.
 NISQA_DOWNLOAD_CORPUS=1 scripts/download/nisqa.sh
+
+# SOMOS saves official pages and Zenodo metadata by default. The 3.70 GiB archive is opt-in.
+SOMOS_DOWNLOAD_ARCHIVE=1 scripts/download/somos.sh
 
 # QualiSpeech downloads docs, scripts, annotations, and BVCC filename lists by
 # default. The approximately 1.46 GiB non-BVCC WAV archive is opt-in; obtain

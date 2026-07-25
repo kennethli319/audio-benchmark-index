@@ -13649,6 +13649,60 @@ benchmarks:
       - https://www.isca-archive.org/interspeech_2021/mittag21_interspeech.html
       - https://arxiv.org/abs/2104.09494
 
+  - id: somos
+    name: SOMOS
+    full_name: "SOMOS: The Samsung Open MOS Dataset for the Evaluation of Neural Text-to-Speech Synthesis"
+    qwen_cited_as: null
+    qwen_bucket: speech_quality_assessment
+    tasks:
+      - mean_opinion_score_prediction
+      - synthetic_speech_naturalness_assessment
+      - text_to_speech_quality_assessment
+      - cross_corpus_speech_quality_evaluation
+    official:
+      homepage: https://innoetics.github.io/publications/somos-dataset/index.html
+      dataset: https://zenodo.org/records/7378801
+      doi: https://doi.org/10.5281/zenodo.7378801
+      paper: https://www.isca-archive.org/interspeech_2022/maniati22_interspeech.html
+      paper_doi: https://doi.org/10.21437/Interspeech.2022-10922
+      recent_cross_corpus_evaluation: https://arxiv.org/abs/2607.10146
+    download:
+      primary:
+        - https://zenodo.org/records/7378801
+        - https://zenodo.org/api/records/7378801
+        - https://zenodo.org/api/records/7378801/files/somos.zip/content
+      examples:
+        - 'scripts/download/somos.sh'
+        - 'SOMOS_DOWNLOAD_ARCHIVE=1 scripts/download/somos.sh'
+      notes: >-
+        The public, ungated release contains 20,000 synthetic utterances, 100
+        natural utterances, and 374,955 crowdsourced naturalness ratings. It
+        provides carefully designed 70/15/15 train, validation, and test
+        partitions with unseen systems, listeners, and texts. The helper saves
+        the official project page, Zenodo metadata, and primary paper page by
+        default; the approximately 3.70 GiB archive requires
+        SOMOS_DOWNLOAD_ARCHIVE=1. A July 2026 cross-corpus MOS study uses all
+        20,100 SOMOS samples in its 19-dataset leave-one-dataset-out evaluation.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: not_applicable
+      notes: >-
+        Zenodo declares CC BY-NC-SA 4.0 and restricts the dataset to
+        non-commercial research use with citation and same-terms
+        redistribution. Synthetic audio was generated from a public-domain
+        LJ Speech voice using multiple TTS models, while evaluation texts also
+        draw from Blizzard Challenge, LJ Speech, Wikipedia, and general web
+        sources; preserve provenance and review source-text terms for
+        redistribution or derivative releases.
+    sources:
+      - https://zenodo.org/records/7378801
+      - https://zenodo.org/api/records/7378801
+      - https://innoetics.github.io/publications/somos-dataset/index.html
+      - https://www.isca-archive.org/interspeech_2022/maniati22_interspeech.html
+      - https://www.isca-archive.org/interspeech_2022/maniati22_interspeech.pdf
+      - https://arxiv.org/abs/2607.10146
+      - https://arxiv.org/html/2607.10146v1#S3.SS1
+
   - id: qualispeech
     name: QualiSpeech
     full_name: "QualiSpeech: A Speech Quality Assessment Dataset with Natural Language Reasoning and Descriptions"
