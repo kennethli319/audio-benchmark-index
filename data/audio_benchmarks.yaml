@@ -9,6 +9,64 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  openmic_instrument_grounding_diagnostics:
+    paper: https://arxiv.org/abs/2606.31338
+    title: "Beyond Binary Instrument QA: Probing Instrument Grounding in Music Audio-Language Models"
+    sections: 2 and appendix A.1-A.7
+    status: audited_announced_unreleased_protocols
+    evaluated_sets:
+      - cited_as: Binary Instrument-Presence QA
+        index_id: null
+        status: derived_metadata_unreleased
+        examples: 9332
+        source_family_id: openmic_2018
+      - cited_as: Genre-Prior-Reduced Presence QA
+        index_id: null
+        status: derived_metadata_unreleased
+        examples: 590
+        source_family_id: openmic_2018
+      - cited_as: Confusion-Aware Instrument Discrimination
+        index_id: null
+        status: derived_metadata_unreleased
+        examples: 1051
+        source_family_id: openmic_2018
+      - cited_as: Long-Context Multi-label Instrument Recognition
+        index_id: null
+        status: derived_audio_and_metadata_unreleased
+        examples: 1028
+        source_family_id: openmic_2018
+      - cited_as: Temporal Instrument Localization
+        index_id: null
+        status: derived_audio_and_metadata_unreleased
+        examples: 3579
+        source_family_id: openmic_2018
+    protocol_note: >-
+      Section 2 constructs five increasingly diagnostic evaluations from
+      OpenMIC-2018 relevance labels. The first three use individual 10-second
+      clips; the final two concatenate three source clips into 30-second
+      inputs. The appendix documents prompt and CSV schemas, manually defined
+      related-instrument groups, exact-set/F1 scoring for multi-label
+      recognition, and three balanced temporal answer ranges. These details
+      make the protocols auditable but do not constitute a public release.
+    release_note: >-
+      The v1 paper says the authors "will release" benchmark metadata, prompt
+      templates, and evaluation code. It provides no official project page,
+      repository, dataset card, archive, DOI, item manifest, or derived audio
+      release. The public OpenMIC-2018 source family remains indexed, but its
+      availability does not reproduce the paper's sampled rows, genre-hard
+      split, manually defined candidates, concatenation assignments, prompts,
+      or evaluation metadata. Recheck after an official release appears.
+    license_note: >-
+      OpenMIC-2018 is distributed through Zenodo under CC BY 4.0 and includes
+      per-recording license metadata. No separate license is stated for the
+      paper's unreleased annotations, prompts, or derived 30-second inputs.
+    sources:
+      - https://arxiv.org/abs/2606.31338
+      - https://export.arxiv.org/e-print/2606.31338v1
+      - https://zenodo.org/records/1432913
+      - https://github.com/cosmir/openmic-2018
+      - https://brianmcfee.net/papers/ismir2018_openmic.pdf
+
   qwen3_tts_technical_report:
     paper: https://arxiv.org/abs/2601.15621
     sections: 4.1-4.2

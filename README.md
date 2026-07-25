@@ -290,6 +290,17 @@ archive, item manifest, generated audio, evaluation code, or data-license
 statement. Public upstream MMAU, MMAR, GSM8K, and MMLU resources do not release
 SYAUDIO's selected rows, speech, prompts, or acoustic perturbations.
 
+The June 2026 OpenMIC instrument-grounding paper is likewise recorded as an
+announced but unreleased protocol sequence. It defines five evaluations:
+9,332 binary instrument-presence questions, a 590-item genre-prior-reduced
+subset, 1,051 related-instrument discrimination items, 1,028 concatenated
+30-second multi-label items, and 3,579 concatenated temporal-localization
+items. The public [OpenMIC-2018](https://zenodo.org/records/1432913) corpus is
+already indexed, but the paper only says its derived metadata, prompts, and
+evaluation code *will* be released. No official project, repository, dataset
+card, archive, item manifest, or separate license is currently supplied, so
+the index does not claim that the five derived evaluations are downloadable.
+
 The June 2026 DDPO-VC paper is recorded as an existing-coverage audit, not a
 new benchmark family. Its ADReSS evaluation maps to the indexed, membership-
 restricted DementiaBank challenge release, while its random FHS Gold 92 split
