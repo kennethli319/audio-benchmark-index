@@ -493,6 +493,16 @@ repository, dataset card, item manifest, generated spectrograms, questions,
 answers, split definitions, or benchmark license. The public source corpora do
 not themselves release CaReCoS's derived evaluation package.
 
+The June 2026 SpeechDx paper is recorded as an audited clinical-speech
+evaluation protocol rather than a downloadable family. It defines 27
+classification and regression tasks over 12 named clinical speech datasets,
+plus zero-shot cross-condition transfer. Version 1 provides no official
+project, repository, unified manifest, processed clips, custom
+speaker-disjoint splits, task mappings, evaluation code, or benchmark license.
+The source corpora retain separate clinical-data access, consent, privacy, and
+reuse terms, and independently obtaining them would not reproduce SpeechDx's
+paper-specific evaluation package.
+
 The June 2026 BCoughBench paper is likewise recorded as an audited respiratory
 health protocol rather than a downloadable family. It evaluates nine
 classification and three age-regression tasks over five named cough corpora,

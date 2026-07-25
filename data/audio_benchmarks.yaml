@@ -9,6 +9,58 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speechdx:
+    paper: https://arxiv.org/abs/2606.17339
+    title: "SpeechDx: A Multi-Task Benchmark for Clinical Speech AI"
+    sections: 3-5 and appendices A-B
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: clinical_speech_representation_evaluation
+        protocol: >-
+          Twenty-seven classification and regression tasks over 12 clinical
+          speech datasets, grouped into conceptualization, formulation,
+          neuromuscular articulation, and phonatory/respiratory disorders.
+          Frozen encoders are evaluated with linear probes using official
+          splits, speaker-disjoint 70/10/20 partitions, or speaker-disjoint
+          five-fold cross-validation.
+        data_status: source_corpora_mixed_unified_benchmark_artifacts_unreleased
+        note: >-
+          The named sources are EDAIC-WOZ, RAVDESS, IEMOCAP, DementiaBank,
+          AphasiaBank, TORGO, UASpeech, MDVR-KCL, KSoF-C, COVID-19 Sounds,
+          Coswara, and AVFAD. The paper does not release a unified row
+          manifest, its new speaker partitions, processed 16 kHz clips, task
+          labels, or executable evaluation configuration.
+      - domain: zero_shot_cross_condition_transfer
+        protocol: >-
+          Binary probes trained on an 80/20 source-dataset split are evaluated
+          without adaptation on an entire disjoint target dataset, including
+          within-stage and cross-stage transfer.
+        data_status: transfer_pair_manifests_and_scores_unreleased
+    license:
+      paper: CC BY 4.0
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      upstream: >-
+        The 12 source corpora retain their own clinical-data access, consent,
+        privacy, and reuse terms.
+    sources:
+      - https://arxiv.org/abs/2606.17339
+      - https://arxiv.org/html/2606.17339v1#S3
+      - https://arxiv.org/html/2606.17339v1#S4.SS3
+      - https://arxiv.org/html/2606.17339v1#S5.SS2
+      - https://arxiv.org/html/2606.17339v1#A1
+      - https://arxiv.org/html/2606.17339v1#A2
+      - https://export.arxiv.org/api/query?id_list=2606.17339
+    note: >-
+      SpeechDx is recorded as an audited protocol rather than a downloadable
+      benchmark family. Version 1 and its arXiv metadata provide no official
+      project page, repository, dataset card, archive, code link, benchmark
+      manifest, or benchmark-license statement. Independently obtaining some
+      source corpora would not reproduce the paper's preprocessing, custom
+      speaker-disjoint splits, task mappings, or cross-condition transfer
+      evaluation, so no helper or duplicate source-family entry is added.
+
   tfcl_acoustic_front_end_robustness:
     paper: https://arxiv.org/abs/2607.17761
     title: Time-Frequency Consistency Learning for Robust Speech Deepfake Detection
