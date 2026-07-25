@@ -9,6 +9,46 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  controllable_content_based_recommendations:
+    paper: https://arxiv.org/abs/2607.20938
+    title: "Controllable and Content-Based Recommendations"
+    sections: 4.1-4.4 and appendix A.2
+    status: audited_new_public_family_unreleased_derived_protocol
+    evaluated_sets:
+      - cited_as: Million Song Dataset (MSD)
+        index_id: million_song_dataset
+        status: public_metadata_and_interactions
+        note: >-
+          Section 4.1 reports a strong-generalization evaluation after
+          preprocessing MSD to 31,046 items and 166,188 users, with 5,000
+          validation and 5,000 test users. It uses 80 tag-based genre
+          descriptors and reports Recall@20 and NDCG@100.
+    protocol_note: >-
+      CCBR generates offline item descriptions from music audio with
+      MusicFlamingo, aggregates them into editable user profiles, and tests
+      recommendation plus text- and audio-mediated concept interventions.
+      The official MSD release provides derived acoustic features, metadata,
+      tags, and Taste Profile play counts, but no listenable audio.
+    release_note: >-
+      The paper and project page do not publish the processed 31,046-item
+      mapping, disjoint user split, cached MusicFlamingo descriptions, prompts,
+      or audio used for the experiment. The indexed public MSD family therefore
+      supports the source metadata and interaction benchmark, not exact
+      reproduction of CCBR's derived evaluation protocol.
+    license_note: >-
+      Core Echo Nest-derived data uses the archived non-commercial API terms;
+      MusicBrainz years are public domain and its tags/counts are
+      CC BY-NC-SA 2.0. The paper does not separately license its unreleased
+      derived artifacts or any audio it obtained outside MSD.
+    sources:
+      - https://arxiv.org/abs/2607.20938
+      - https://arxiv.org/html/2607.20938v1#S4.SS1
+      - https://firatoncel.github.io/ccbr/
+      - http://millionsongdataset.com/
+      - http://millionsongdataset.com/tasteprofile/
+      - https://github.com/tbertinmahieux/MSongsDB
+      - https://raw.githubusercontent.com/tbertinmahieux/MSongsDB/master/LICENSE
+
   openmic_instrument_grounding_diagnostics:
     paper: https://arxiv.org/abs/2606.31338
     title: "Beyond Binary Instrument QA: Probing Instrument Grounding in Music Audio-Language Models"
@@ -11411,6 +11451,71 @@ benchmarks:
       - https://archive.ics.uci.edu/dataset/386/fma%2Ba%2Bdataset%2Bfor%2Bmusic%2Banalysis
       - https://arxiv.org/abs/1612.01840
       - https://arxiv.org/abs/2607.15634
+
+  - id: million_song_dataset
+    name: Million Song Dataset
+    full_name: "Million Song Dataset (MSD)"
+    qwen_cited_as: null
+    qwen_bucket: music_information_retrieval
+    tasks:
+      - music_recommendation
+      - collaborative_filtering
+      - music_auto_tagging
+      - music_similarity
+      - music_year_prediction
+      - scalable_music_information_retrieval
+    official:
+      homepage: http://millionsongdataset.com/
+      download_page: http://millionsongdataset.com/pages/getting-dataset/
+      field_list: http://millionsongdataset.com/pages/field-list/
+      taste_profile: http://millionsongdataset.com/tasteprofile/
+      code: https://github.com/tbertinmahieux/MSongsDB
+      paper: http://www.columbia.edu/~tb2332/Papers/ismir11.pdf
+      recent_evaluation: https://arxiv.org/abs/2607.20938
+    download:
+      primary:
+        - http://millionsongdataset.com/
+        - http://millionsongdataset.com/sites/default/files/AdditionalFiles/unique_terms.txt
+        - http://millionsongdataset.com/sites/default/files/AdditionalFiles/unique_tracks.txt
+        - http://labrosa.ee.columbia.edu/~dpwe/tmp/train_triplets.txt.zip
+        - http://labrosa.ee.columbia.edu/~dpwe/tmp/millionsongsubset.tar.gz
+      examples:
+        - 'scripts/download/million_song_dataset.sh'
+        - 'MSD_DOWNLOAD_TASTE_PROFILE=1 scripts/download/million_song_dataset.sh'
+        - 'MSD_DOWNLOAD_10K_SUBSET=1 scripts/download/million_song_dataset.sh'
+        - 'MSD_CLONE_CODE=1 scripts/download/million_song_dataset.sh'
+      notes: >-
+        The core public release contains Echo Nest-derived audio features and
+        metadata for one million tracks, not listenable audio. The Taste
+        Profile subset contains 48,373,586 user-song-play-count triplets for
+        1,019,318 users and 384,546 songs. The helper downloads official pages,
+        terms, and the approximately 100 KiB tag vocabulary by default; the
+        approximately 500 MB Taste Profile archive, 1.8 GB 10,000-song feature
+        subset, and code clone require separate opt-ins. The July 2026 CCBR
+        paper uses an unreleased processed selection of 31,046 items and
+        166,188 users plus separately obtained audio and cached descriptions.
+    license:
+      data: custom_noncommercial_mixed
+      code: gpl_version_unspecified
+      notes: >-
+        The packaged LICENSE applies archived Echo Nest API terms allowing
+        non-commercial research/use with attribution and requiring separate
+        permission for other purposes. It identifies MusicBrainz track years
+        as public domain and MusicBrainz tags/counts as CC BY-NC-SA 2.0.
+        Complementary lyrics, cover-song, tag, recommendation, and other
+        datasets have their own terms. The repository describes its code only
+        as GNU Public License without specifying a version; MSD distributes no
+        listenable audio.
+    sources:
+      - http://millionsongdataset.com/
+      - http://millionsongdataset.com/pages/getting-dataset/
+      - http://millionsongdataset.com/pages/field-list/
+      - http://millionsongdataset.com/tasteprofile/
+      - https://github.com/tbertinmahieux/MSongsDB
+      - https://raw.githubusercontent.com/tbertinmahieux/MSongsDB/master/LICENSE
+      - http://www.columbia.edu/~tb2332/Papers/ismir11.pdf
+      - https://arxiv.org/abs/2607.20938
+      - https://arxiv.org/html/2607.20938v1#S4.SS1
 
   - id: gtzan
     name: GTZAN

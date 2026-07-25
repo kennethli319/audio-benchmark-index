@@ -75,7 +75,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 291 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 292 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -317,6 +317,15 @@ ASR pipeline. Although the paper calls the benchmarks publicly available, the
 official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
+
+The July 2026 CCBR paper adds recent provenance for the indexed Million Song
+Dataset family. Its music-recommendation evaluation preprocesses MSD to 31,046
+items and 166,188 users, uses an unseen-user split and 80 tag descriptors, and
+generates cached item descriptions from separately obtained audio. The official
+MSD release provides features, metadata, tags, and Taste Profile play counts
+but no listenable audio; CCBR does not release its exact item mapping, user
+split, descriptions, prompts, or audio, so those remain a derived protocol
+rather than a claimed public download.
 
 The July 2026 Faster IndexTTS-2 paper is likewise recorded as an
 existing-coverage audit rather than a new benchmark family. It evaluates the
@@ -938,6 +947,7 @@ Current coverage includes:
 | [MagnaTagATune](https://mirg.city.ac.uk/codeapps/the-magnatagatune-dataset) | Music tagging | Official MIRG-hosted metadata, annotations, comparisons, optional Echo Nest features, and optional MP3 split archives | CC BY-NC-SA 3.0 for data; GPLv3 for scripts; Magnatune audio excerpts are non-commercial research redistribution |
 | [MTG-Jamendo](https://mtg.github.io/mtg-jamendo-dataset/) | Music tagging | Official [metadata/scripts repo](https://github.com/MTG/mtg-jamendo-dataset), [Zenodo metadata archive](https://zenodo.org/records/3826813), and upstream downloader for large audio/features with opt-in | Metadata is CC BY-NC-SA 4.0; code is Apache-2.0; audio keeps per-track Creative Commons licenses and is limited to non-commercial research/academic use unless Jamendo authorizes otherwise |
 | [FMA](https://github.com/mdeff/fma) | Music information retrieval | Official README/license by default; optional [metadata archive](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip) and opt-in FMA audio subsets from small through full | Metadata is CC BY 4.0 and code is MIT; audio uses each artist's chosen license, so check per-track terms |
+| [Million Song Dataset](http://millionsongdataset.com/) | Scalable music information retrieval and recommendation | Public Echo Nest-derived features/metadata for one million tracks plus a 48.4-million-row Taste Profile play-count release; helper downloads official docs, terms, and the tag vocabulary by default while the approximately 500 MB interactions, 1.8 GB feature subset, and code clone are opt-in; no listenable audio is included | Custom archived Echo Nest terms permit non-commercial use with attribution; MusicBrainz years are public domain and tags/counts are CC BY-NC-SA 2.0; complementary datasets retain separate terms, and code is described only as GNU Public License without a version |
 | [GTZAN](https://huggingface.co/datasets/marsyas/gtzan) | Music genre classification | Hugging Face `marsyas/gtzan`; helper saves the dataset card by default and downloads the full snapshot only with opt-in | License not specified on the reachable HF card; original Marsyas terms should be confirmed before redistribution or commercial use |
 | [OpenMIC-2018](https://zenodo.org/records/1432913) | Music information retrieval | Official Zenodo record and [OpenMIC archive](https://zenodo.org/api/records/1432913/files/openmic-2018-v1.0.0.tgz/content); helper saves metadata by default and makes the 2.6 GiB archive opt-in | Zenodo lists CC BY 4.0; included metadata contains per-recording licenses |
 | [MusicNet](https://zenodo.org/records/5120004) | Music transcription | Official Zenodo record, metadata CSV, reference MIDI archive, and opt-in 10.3 GiB audio/label archive | Zenodo lists CC BY 4.0; source recordings are Creative Commons licensed or public domain, with per-recording provenance in the metadata |

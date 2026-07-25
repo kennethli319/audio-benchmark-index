@@ -232,6 +232,7 @@ scripts/download/macs.sh
 scripts/download/magnatagatune.sh
 scripts/download/mtg_jamendo.sh
 scripts/download/fma.sh
+scripts/download/million_song_dataset.sh
 scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
 scripts/download/musicnet.sh
