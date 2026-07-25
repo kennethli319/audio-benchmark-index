@@ -1633,6 +1633,47 @@ paper_audits:
       - https://artificialanalysis.ai/music/leaderboard/vocals
     note: The official project page publicly streams selected qualitative examples and comparison tracks, but it is not a benchmark release and provides no repository, dataset card, archive, complete evaluation manifest, or data-license statement. The paper's independent Artificial Analysis leaderboard result is an external service evaluation, not a downloadable dataset. This report is therefore recorded as an audited protocol rather than a benchmark family.
 
+  rppnet_melodynet_evaluation:
+    paper: https://arxiv.org/abs/2607.19776
+    title: "RPPNet: Perceptually-Grouped Rhythm-Pitch Primitives for Long-Term Structure Melody Generation via Boundary-Aware Modeling"
+    sections: 4.1-4.3
+    status: audited_partial_source_access_not_indexed
+    last_verified: 2026-07-24
+    public_interfaces:
+      - https://github.com/Kreuzter0421/RPPNet-PyTorch
+      - https://nextlab-zju.github.io/melodyglm/
+      - https://github.com/NEXTLab-ZJU/MelodyGLM
+    evaluated_domains:
+      - domain: symbolic_melody_generation
+        protocol: RPPNet filters MelodyNet to 274,300 monophonic MIDI melodies, splits them 18:1:1 for training, validation, and testing, and evaluates generated 32-bar melodies with perplexity, structural-effectiveness metrics, and a listening test
+        data_status: component_sources_and_processing_code_public_exact_filtered_corpus_and_splits_unreleased
+        note: The original MelodyGLM paper describes 444,102 cleaned MelodyNet pieces assembled from about 1.6 million source files. Its project page provides selected component-corpus downloads or owner links and marks several web collections unavailable, while the repository provides processing code but no assembled MelodyNet archive. RPPNet does not publish the identities, filter manifest, random seed, or split files for its smaller 274,300-piece version.
+      - domain: subjective_symbolic_melody_evaluation
+        protocol: Fifteen paid listeners rate 50 generated melodies across five system configurations plus 10 human-composed test references for coherence, rhythmicity, structure, and overall impression on a ten-point scale
+        data_status: generated_midi_reference_selection_and_listener_records_unreleased
+        note: The public RPPNet repository contains model, preprocessing, inference, perplexity, and structure-effectiveness code, but no paper-specific generated MIDI set, selected human references, questionnaire, anonymized ratings, or per-item scores.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      rppnet_code: Apache-2.0
+      melodynet_code: no_repository_license_found
+      benchmark_data: not_specified_for_assembled_or_filtered_corpus
+      upstream: FreeMIDI, Hooktheory, BitMidi, MuseScore, KernScores, Kunst der Fuge, and the linked component corpora retain their own copyright and access terms
+    sources:
+      - https://arxiv.org/abs/2607.19776
+      - https://arxiv.org/html/2607.19776v1#S4.SS1
+      - https://arxiv.org/html/2607.19776v1#S4.SS3
+      - https://github.com/Kreuzter0421/RPPNet-PyTorch
+      - https://raw.githubusercontent.com/Kreuzter0421/RPPNet-PyTorch/main/README.md
+      - https://raw.githubusercontent.com/Kreuzter0421/RPPNet-PyTorch/main/LICENSE.txt
+      - https://api.github.com/repos/Kreuzter0421/RPPNet-PyTorch/git/trees/main?recursive=1
+      - https://arxiv.org/abs/2309.10738
+      - https://arxiv.org/html/2309.10738v1#S2.SS5
+      - https://arxiv.org/html/2309.10738v1#Sx2
+      - https://nextlab-zju.github.io/melodyglm/
+      - https://github.com/NEXTLab-ZJU/MelodyGLM
+      - https://api.github.com/repos/NEXTLab-ZJU/MelodyGLM/git/trees/main?recursive=1
+    note: MelodyNet is recorded here as provenance for an unreproducible paper-specific evaluation rather than added as a downloadable benchmark family. The public MelodyGLM page offers several source-corpus bundles and links, not the complete cleaned 444,102-piece assembly, and RPPNet's public repository leaves its dataset directory empty. Public processing code and partial source access do not release RPPNet's exact 274,300 items, 18:1:1 split, generated comparison set, or listener data, so no helper or invented aggregate download is added.
+
   structured_audio_caption_evaluation:
     paper: https://arxiv.org/abs/2607.21424
     sections: 2-4

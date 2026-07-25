@@ -177,6 +177,16 @@ benchmark. The audit preserves the paper's under-one-minute filtering of
 long-video question-answer pairs rather than presenting those filtered rows as
 a separately released benchmark.
 
+The July 2026 RPPNet symbolic-melody paper is recorded as a partial-source
+coverage audit rather than a new downloadable family. Its 274,300-item
+MelodyNet variant is smaller than the original paper's 444,102-piece assembly,
+but RPPNet publishes no item manifest, filtering recipe, random seed, or
+18:1:1 split files. The public MelodyGLM page links or bundles selected source
+corpora and publishes processing code; it does not release the complete
+assembled MelodyNet corpus. RPPNet's Apache-2.0 repository also omits the
+paper's generated MIDI comparison set, selected human references, and listener
+ratings, so the index does not invent an aggregate download or data license.
+
 The June 2026 STEB expressive speech-to-speech translation benchmark is
 release-audited but not counted as a public family. Its evaluation code and
 prompts are public, while the official Hugging Face dataset repository still
