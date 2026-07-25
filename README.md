@@ -549,12 +549,15 @@ archive, item file, code link, or data-license statement. The paper's CC BY
 4.0 license does not license absent benchmark or corpus files.
 
 The July 2026 RW-Voice-EQ paper has also been audited across sections 2 and
-4-7. Its public [voice-system](https://huggingface.co/spaces/HumeAI/rw-voice-eq)
-and [ASR](https://huggingface.co/spaces/HumeAI/asr-leaderboard) leaderboards do
-not release benchmark item files. The paper explicitly describes its four ASR
-robustness sets as private, while no public item release was found for its TTS,
-speech-to-speech, or speech-understanding protocols, so RW-Voice-EQ is recorded
-in the YAML audit rather than counted as a downloadable benchmark family.
+4-7 as a public-leaderboard, private-data protocol. Its public
+[voice-system](https://huggingface.co/spaces/HumeAI/rw-voice-eq) and
+[ASR](https://huggingface.co/spaces/HumeAI/asr-leaderboard) leaderboards expose
+Apache-2.0 application code and aggregate results, but the Space source tree
+contains no benchmark data and loads tables and optional samples from a
+separately configured dataset. The paper explicitly describes its roughly
+17-hour ASR evaluation as four private sets and does not release the fixed TTS
+prompts, speech-to-speech scenarios, speech-understanding clips and labels,
+source-item manifests, generations, human ratings, or standalone data terms.
 
 The July 2026 SongSQA paper is also audited as a mixed public/internal
 evaluation. Its public Lyra-SA component maps to the indexed, application-based

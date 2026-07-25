@@ -2721,26 +2721,73 @@ paper_audits:
 
   rw_voice_eq_bench:
     paper: https://arxiv.org/abs/2607.14846
+    title: "RW-Voice-EQ Bench: A Real World Benchmark for Evaluating Voice AI Systems"
     sections: 2 and 4-7
-    status: audited_not_indexed
+    status: audited_public_leaderboard_private_benchmark_data
     public_interfaces:
       - https://huggingface.co/spaces/HumeAI/rw-voice-eq
       - https://huggingface.co/spaces/HumeAI/asr-leaderboard
     evaluated_domains:
-      - domain: text_to_speech
-        protocol: 30 evaluations across seven dimensions, with up to 120 prompts per category
-        data_status: no_public_item_release_found
-      - domain: speech_to_speech
-        protocol: Five task families using fixed user audio, prerecorded prompts, and matched audio-only/transcript-only conditions where applicable
-        data_status: no_public_item_release_found
+      - domain: multidimensional_text_to_speech
+        protocol: >-
+          30 evaluations grouped into acting/role-fit, expressiveness, voice
+          identity, multilingual code-switching, reliability, long-form
+          speaker stability, and acoustic quality, using 496 unique prompts,
+          39,460 generations, and 785,679 human ratings.
+        data_status: fixed_prompts_generations_and_ratings_unreleased
+      - domain: speech_to_speech_interaction
+        protocol: >-
+          Five dimensions covering emotion understanding and alignment,
+          robustness under degraded, hostile, and urgent input, agent-voice
+          naturalness, and problem redirection, using 50 unique scenarios,
+          1,143 generations, and 48,053 human ratings.
+        data_status: scenarios_reference_audio_generations_and_ratings_unreleased
       - domain: speech_understanding
-        protocol: Six emotion, speaker-matching, and synthetic-speech-detection evaluations
-        data_status: no_public_item_release_found
-      - domain: automatic_speech_recognition
-        protocol: Four English robustness sets for accented, emotional, background-audio, and conversational speech
-        data_status: private_unreleased
-        note: Section 7.2 explicitly calls all four ASR sets private. They total roughly 17 hours; public online video and Hume-DaiKon are source descriptions, not public benchmark downloads.
-    note: The public Hugging Face Spaces expose leaderboards and application code, not benchmark audio or item files. RW-Voice-EQ is therefore recorded as an audited protocol rather than a downloadable benchmark family; no data link should be inferred from the public leaderboards.
+        protocol: >-
+          Emotion identification (150 clips), separate and beep-combined
+          relative-emotion comparison (200 pairs each), separate and
+          beep-combined speaker matching (200 pairs each), and synthetic-speech
+          detection (201 clips).
+        data_status: clips_pair_manifests_labels_prompts_and_predictions_unreleased
+      - domain: real_world_asr_robustness
+        protocol: >-
+          Four English WER tracks covering 230 accented clips, 620 emotional
+          clips, 460 clips with background noise or music, and 14,142
+          conversational segments, totaling roughly 17 hours with
+          human-adjudicated transcripts.
+        data_status: explicitly_private_evaluation_sets
+        note: >-
+          The first three tracks derive from online video, while the
+          conversational track derives from the Hume-DaiKon corpus. The paper
+          calls all four datasets private and does not publish item URLs,
+          transcripts, labels, or a reproducible selection manifest.
+    license:
+      paper: CC BY 4.0
+      leaderboard_code: Apache-2.0
+      benchmark_data: not_specified_unreleased
+      source_media: online_video_and_hume_daikon_rights_require_separate_review
+    sources:
+      - https://arxiv.org/abs/2607.14846
+      - https://arxiv.org/html/2607.14846v1#S2
+      - https://arxiv.org/html/2607.14846v1#S4
+      - https://arxiv.org/html/2607.14846v1#S5
+      - https://arxiv.org/html/2607.14846v1#S6
+      - https://arxiv.org/html/2607.14846v1#S7
+      - https://huggingface.co/spaces/HumeAI/rw-voice-eq
+      - https://huggingface.co/spaces/HumeAI/rw-voice-eq/tree/main
+      - https://huggingface.co/spaces/HumeAI/rw-voice-eq/blob/main/README.md
+      - https://huggingface.co/spaces/HumeAI/rw-voice-eq/blob/main/app.py
+    note: >-
+      The public Hugging Face Space exposes an Apache-2.0 leaderboard
+      application and aggregate tables, not the benchmark package. Its source
+      tree contains only application files and says the six leaderboard JSON
+      files and optional sample audio are loaded at runtime from a separately
+      configured Hugging Face dataset; it includes no local data directory.
+      The paper likewise provides no downloadable prompt set, scenario set,
+      clip manifest, reference transcript package, annotations, generated
+      outputs, human ratings, or standalone data terms. RW-Voice-EQ is
+      therefore recorded as a private evaluation protocol rather than an
+      indexed downloadable benchmark family, and no helper is added.
 
   song_sqa:
     paper: https://arxiv.org/abs/2607.16599
