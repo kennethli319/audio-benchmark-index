@@ -86,8 +86,19 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 344 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 345 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 BackgroundMellow release adds a public long-form cinematic
+soundscape-generation evaluation family. Its paper curates roughly 100 public
+YouTube trailers into 1,000 clips and evaluates 40 story prompts for
+sound-event coverage and temporal alignment. The official repository releases
+evaluation code, prompt/source mappings, cue manifests, comparison outputs,
+and ablation results, while a public spreadsheet exposes row-level experiment
+records. Source trailer media is not released as a clean archive, and neither
+the repository nor spreadsheet states a license, so the helper defaults to
+lightweight documentation and mappings and keeps the results export and
+repository clone opt-in.
 
 The July 2026 *Validating the Single Item Kawaii Measure* release adds a
 public subjective voice/paralinguistic evaluation family. Its author-linked
@@ -2028,6 +2039,7 @@ Current coverage includes:
 | [AudioMarkBench](https://github.com/mileskuo42/AudioMarkBench) | Audio-watermark robustness, removal, forgery, and fairness evaluation | Public evaluation code and manual [Google Drive audio release](https://drive.google.com/drive/folders/1037mBf4LoGq0CDxe6hYx5fNNv56AY_9e) covering 20,000 Common Voice-derived AudioMarkData clips and 20,000 LibriSpeech clips; helper downloads docs by default and makes the small repository clone opt-in | Code is MPL-2.0; released original, watermarked, and perturbed audio has no separate stated license and retains Common Voice/LibriSpeech source-term and privacy considerations |
 | [Designed Vocalizations Dataset](https://ncai-official.github.io/speech/publications/designed-vocalizations-dataset/) | Non-human voice conversion and sound-designed timbre transfer | Public, ungated [NCSOFT/Designed-Vocalizations-Dataset](https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset) with 237,574 raw and effect-processed clips plus a 5,640-reference test protocol crossing seen/unseen source timbres and presets; helper downloads docs and lightweight metadata by default and makes the approximately 37.1 GB snapshot opt-in | CC BY 4.0 covers the compilation and original contributions; VCTK/HiFi-TTS/Freesound-derived clips retain per-source CC0, CC BY 3.0, or CC BY 4.0 attribution and notice requirements |
 | [Movie Gen Audio Bench](https://github.com/facebookresearch/MovieGenBench) | Video-conditioned sound-effect and joint sound-effect/music generation | Public Meta release with 527 generated test videos and separate human-reviewed SFX and SFX+music prompt manifests; helper downloads official docs, terms, and both lightweight manifests by default while the approximately 8.05 GiB and 8.08 GiB media archives are independent opt-ins; Flowley §4.3.5 uses it for zero-shot evaluation | CC BY-NC 4.0 requires attribution and prohibits commercial use; generated-media prompts, depicted subjects, music, and other third-party rights still require review |
+| [BackgroundMellow Cinematic Trailer Evaluation](https://github.com/anonymous-ismir/BackgroundMellow_ismir) | Narrative-driven cinematic soundscape generation, sound-event coverage, and temporal alignment | Public evaluation code, prompt/source mappings, cue manifests, comparison outputs, ablations, and a row-level results spreadsheet over YouTube-trailer-derived material; helper defaults to lightweight docs/mappings and keeps the approximately 7.1 MB sheet and 121 MB repository opt-in | No data or top-level code license is stated; underlying trailer media, generated outputs, prompts, and annotations require separate rights review |
 | [VoicePrivacy Challenge](https://www.voiceprivacychallenge.org/vp2024/) | Voice anonymization, speaker-linkability privacy, ASR utility, and speech-emotion utility | Public GPL-3.0 evaluation recipe with registered/password-protected challenge packages; IEMOCAP requires a separate owner request; helper saves official docs and repository metadata only | Mixed component terms: recipe code is GPL-3.0, LibriSpeech is CC BY 4.0, IEMOCAP is request-controlled, and no standalone open-data license was identified for every challenge package or anonymized submission output |
 | [Silent Speech EMG](https://doi.org/10.5281/zenodo.4064408) | Facial-EMG-to-speech synthesis and silent-speech recognition | Public, ungated approximately 19-hour single-speaker corpus with paired silent/vocalized facial EMG and audio; helper downloads official docs and metadata by default and makes the approximately 3.92 GB checksum-verified archive opt-in | Data is CC BY 4.0 and official code is MIT; preserve attribution and review privacy, biometric-data, and research-ethics obligations |
 | [SynSFX](https://ofspectrum.com/news/synsfx) | Non-speech sound-effect deepfake detection and unseen-generator robustness | Direct official academic-research-only release with 43,374 clips and 178 hours across five authentic-audio sources and seven text-to-audio generators; helper saves docs by default and requires explicit acknowledgement plus opt-in for the large uncompressed-WAV archive | Only “Academic research only” is stated; no full dataset license or redistribution terms are published, authentic source-media terms remain applicable, and no evaluation-code release was linked |

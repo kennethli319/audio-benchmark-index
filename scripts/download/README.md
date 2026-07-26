@@ -218,6 +218,7 @@ scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
 scripts/download/movie_gen_audio_bench.sh
+scripts/download/backgroundmellow_cinematic_trailer_eval.sh
 scripts/download/covomix2_dialogue.sh
 scripts/download/silent_speech_emg.sh
 scripts/download/japaneeg.sh
@@ -583,6 +584,12 @@ DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
 # independent opt-ins.
 MOVIE_GEN_AUDIO_DOWNLOAD_SFX=1 scripts/download/movie_gen_audio_bench.sh
 MOVIE_GEN_AUDIO_DOWNLOAD_SFX_MUSIC=1 scripts/download/movie_gen_audio_bench.sh
+
+# BackgroundMellow downloads docs, repository metadata, lightweight evaluation
+# mappings, and aggregate ablations by default. The approximately 7.1 MB
+# results sheet and 121 MB repository are independent opt-ins.
+BACKGROUNDMELLOW_DOWNLOAD_RESULTS=1 scripts/download/backgroundmellow_cinematic_trailer_eval.sh
+BACKGROUNDMELLOW_CLONE_REPO=1 scripts/download/backgroundmellow_cinematic_trailer_eval.sh
 
 # Eating Sound Collection downloads public Kaggle metadata and baseline docs
 # by default. The approximately 6.27 GiB archive requires an authenticated

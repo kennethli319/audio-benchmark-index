@@ -21439,6 +21439,73 @@ benchmarks:
       - https://arxiv.org/abs/2607.06405
       - https://arxiv.org/html/2607.06405v2#S4.SS3.SSS5
 
+  - id: backgroundmellow_cinematic_trailer_eval
+    name: BackgroundMellow Cinematic Trailer Evaluation
+    full_name: "BackgroundMellow: Narrative-Driven Cinematic Soundscape Generation Evaluation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_generation
+      - long_form_audio_generation
+      - audio_visual_generation
+    tasks:
+      - narrative_to_audio_generation
+      - cinematic_soundscape_generation
+      - multi_track_audio_orchestration
+      - sound_event_coverage
+      - sound_event_temporal_alignment
+      - audio_generation_human_evaluation
+    official:
+      repo: https://github.com/anonymous-ismir/BackgroundMellow_ismir
+      results: https://docs.google.com/spreadsheets/d/1QyqbvlgpzJ0clwwLy8J5hq-WthJ6IBAN
+      paper: https://arxiv.org/abs/2607.11364
+      arxiv_html: https://arxiv.org/html/2607.11364
+    download:
+      primary:
+        - https://github.com/anonymous-ismir/BackgroundMellow_ismir
+        - https://docs.google.com/spreadsheets/d/1QyqbvlgpzJ0clwwLy8J5hq-WthJ6IBAN
+      examples:
+        - 'scripts/download/backgroundmellow_cinematic_trailer_eval.sh'
+        - 'BACKGROUNDMELLOW_DOWNLOAD_RESULTS=1 scripts/download/backgroundmellow_cinematic_trailer_eval.sh'
+        - 'BACKGROUNDMELLOW_CLONE_REPO=1 scripts/download/backgroundmellow_cinematic_trailer_eval.sh'
+      notes: >-
+        The paper curates approximately 100 public YouTube movie trailers into
+        1,000 clips with generated story descriptions, sound categories,
+        timings, and relative mix levels. Section 6 evaluates 40 sampled story
+        prompts with retrieval-based sound-event coverage and temporal-IoU
+        synchronization metrics. The public repository includes evaluation
+        code, prompt-to-source mappings, cue manifests, comparison outputs, and
+        aggregate ablation results; the linked public spreadsheet exports
+        approximately 7.1 MB of row-level experiment results. The helper saves
+        official documentation, repository metadata, the paper page, a
+        lightweight evaluation mapping, and aggregate results by default.
+        Exporting the spreadsheet requires
+        BACKGROUNDMELLOW_DOWNLOAD_RESULTS=1, while cloning the approximately
+        121 MB repository requires BACKGROUNDMELLOW_CLONE_REPO=1. Source
+        YouTube audio/video is referenced rather than redistributed as a clean
+        benchmark archive.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The repository has no top-level LICENSE and GitHub detects no license;
+        neither the public results sheet nor the paper states separate terms
+        for the trailer annotations, generated prompts, cue manifests,
+        experiment rows, or evaluation code. The arXiv distribution license
+        covers the paper only. Underlying trailer audio/video remains subject
+        to uploader, studio, copyright-holder, and YouTube terms, and generated
+        outputs may carry additional model-service conditions. Obtain
+        permission or clarification before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2607.11364
+      - https://arxiv.org/html/2607.11364#S4.SS2
+      - https://arxiv.org/html/2607.11364#S5
+      - https://arxiv.org/html/2607.11364#S6
+      - https://github.com/anonymous-ismir/BackgroundMellow_ismir
+      - https://raw.githubusercontent.com/anonymous-ismir/BackgroundMellow_ismir/main/README.md
+      - https://api.github.com/repos/anonymous-ismir/BackgroundMellow_ismir
+      - https://api.github.com/repos/anonymous-ismir/BackgroundMellow_ismir/git/trees/main?recursive=1
+      - https://docs.google.com/spreadsheets/d/1QyqbvlgpzJ0clwwLy8J5hq-WthJ6IBAN
+
   - id: avdc
     name: AVDC
     full_name: "AVDC: Audio-Visual Decoupled Captions"
