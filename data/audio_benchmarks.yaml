@@ -2795,6 +2795,54 @@ paper_audits:
       - https://arxiv.org/abs/2004.06833
       - https://arxiv.org/abs/2104.09356
 
+  ahead_crowd_label_aggregation:
+    paper: https://arxiv.org/abs/2607.18465
+    title: "AHEAD: Advancing Multi-Class Label Aggregation with Interpretable Cross-Annotator Modeling"
+    sections: 5.1-5.2
+    status: audited_existing_source_family_unreleased_crowd_labels
+    last_verified: 2026-07-25
+    evaluated_sets:
+      - cited_as: MS
+        index_id: gtzan
+        status: public_source_audio_unreleased_crowd_annotation_derivative
+        note: >-
+          MS is the paper's only audio-domain evaluation. It contains 700
+          ten-class tasks, 44 annotators, and 2,945 observed labels. The
+          primary 2013 source identifies its underlying recordings as the
+          ten-genre GTZAN collection, but the 700-item selection, annotator
+          identities, noisy labels, and task-to-recording mapping are a
+          separate crowdsourcing artifact.
+    protocol_note: >-
+      AHEAD evaluates label aggregation rather than acoustic classification:
+      it infers one latent genre label per task from sparse annotator votes and
+      reports accuracy and macro-F1 over ten repeated runs. The public GTZAN
+      source family is already indexed, but obtaining its 1,000 audio clips
+      does not reproduce the paper's 700-task MS matrix. No duplicate audio
+      family or download helper is added.
+    release_audit:
+      paper: public_ungated
+      source_audio: existing_public_gtzan_family
+      ms_task_selection_and_crowd_labels: not_released_by_paper
+      code_and_experiment_configuration: not_released_by_paper
+    license:
+      paper: arXiv_perpetual_nonexclusive_license
+      source_audio: not_specified
+      derived_crowd_annotations: not_specified_unreleased
+      code: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.18465
+      - https://export.arxiv.org/e-print/2607.18465v1
+      - https://doi.org/10.1016/j.patrec.2013.05.012
+      - https://ismir2001.ismir.net/pdf/tzanetakis.pdf
+      - https://huggingface.co/datasets/marsyas/gtzan
+    note: >-
+      The paper evaluates eleven generic crowdsourcing datasets and does not
+      introduce an audio benchmark. MS is its only audio-relevant row, and its
+      derived labels are not supplied through an official project,
+      repository, dataset card, archive, or code release. This audit preserves
+      the connection to GTZAN while avoiding a false public download claim for
+      the crowdsourced evaluation matrix.
+
   kenyan_nemotron_streaming_asr:
     paper: https://arxiv.org/abs/2607.18912
     title: "From a Multilingual Streaming ASR Backbone to Kenyan-Language Systems: Data-Centric Adaptation of Nemotron 3.5 for Kikuyu, Dholuo, and Kalenjin"

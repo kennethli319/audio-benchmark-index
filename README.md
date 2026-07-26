@@ -536,6 +536,15 @@ official DementiaBank release remains password protected and limited to
 approved members under non-commercial, confidentiality, no-sharing, and
 no-LLM-incorporation rules; the paper supplies no alternate public download.
 
+The July 2026 AHEAD paper is likewise recorded as an existing-source-family
+audit rather than a new audio benchmark. Its only audio-domain row, “MS,” is a
+700-task, 44-annotator music-genre label-aggregation evaluation derived from
+the indexed GTZAN collection. The paper and its primary 2013 source identify
+the underlying corpus, but no official release supplies the 700-item mapping,
+2,945 noisy crowd labels, annotator records, code, or experiment package.
+Downloading public GTZAN audio therefore does not reproduce MS, and the index
+does not invent a download path for the derived matrix.
+
 The July 2026 black-box dynamic-range-control paper is likewise recorded as an
 existing-coverage audit. It randomly selects 25 thirty-second mono excerpts
 from the indexed MedleyDB family, then applies 30 compression and 30 expansion
