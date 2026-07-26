@@ -61,6 +61,7 @@ scripts/download/video_salmonn2_caption.sh
 scripts/download/syncbench.sh
 scripts/download/ave_compass.sh
 scripts/download/friend_bench.sh
+scripts/download/k9_bench.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/lvomnibench.sh
@@ -531,6 +532,11 @@ AVE_COMPASS_DOWNLOAD_HF=1 scripts/download/ave_compass.sh
 # tables and approximately 433 MB full snapshot are separate opt-ins.
 FRIEND_BENCH_DOWNLOAD_METADATA=1 scripts/download/friend_bench.sh
 FRIEND_BENCH_DOWNLOAD_HF=1 scripts/download/friend_bench.sh
+
+# K9-Bench saves public first-party docs by default, then prints the manual
+# auto-gated HF terms step. After accepting them, fetch only the ~1.8 MB table;
+# the helper never downloads the linked YouTube videos.
+K9BENCH_ACK_TERMS=1 K9BENCH_DOWNLOAD_METADATA=1 scripts/download/k9_bench.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh

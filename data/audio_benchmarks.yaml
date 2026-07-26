@@ -7459,6 +7459,61 @@ benchmarks:
       - https://huggingface.co/datasets/facebook/seamless-interaction
       - https://huggingface.co/datasets/facebook/seamless-interaction/raw/main/README.md
 
+  - id: k9_bench
+    name: K9-Bench
+    full_name: "K9-Bench: Evaluating Multimodal LLMs on Canine-Centric Videos"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_understanding
+    tasks:
+      - audio_visual_question_answering
+      - long_video_understanding
+      - animal_behavior_understanding
+      - temporal_reasoning
+      - multimodal_reasoning
+    official:
+      homepage: https://ogmenrobotics.github.io/K9Bench/
+      repo: https://github.com/ogmenrobotics/K9Bench-eval-code
+      paper: https://arxiv.org/abs/2607.02680
+      dataset: https://huggingface.co/datasets/ogmen/K9Bench
+    download:
+      primary:
+        - https://huggingface.co/datasets/ogmen/K9Bench
+        - https://github.com/ogmenrobotics/K9Bench-eval-code
+      examples:
+        - 'scripts/download/k9_bench.sh'
+        - 'K9BENCH_ACK_TERMS=1 K9BENCH_DOWNLOAD_METADATA=1 scripts/download/k9_bench.sh'
+      notes: >-
+        The auto-approved gated Hugging Face release contains 4,744 English
+        five-choice question-answer pairs over 907 domestic-dog YouTube videos.
+        Its approximately 1.8 MB parquet table includes source video URLs,
+        questions, options, categories, and answer keys but does not mirror the
+        videos. The five task categories cover posture, action sequence,
+        context, cause-effect, and interaction analysis. The project also
+        evaluates audio-plus-video input and finds modest gains for action
+        sequences. The helper saves public first-party documentation by
+        default; after accepting the dataset terms and authenticating with
+        Hugging Face, an explicit acknowledgment can fetch only the lightweight
+        parquet metadata. It never downloads the linked YouTube videos.
+    license:
+      data: cc-by-nc-4.0_with_custom_gated_terms
+      code: not_specified
+      notes: >-
+        The dataset card declares CC BY-NC 4.0, while its required access terms
+        additionally prohibit commercial use, sharing, redistribution, and
+        derivative datasets without written permission. The authors disclaim
+        ownership of the linked YouTube media; original uploader copyright,
+        YouTube terms, and availability remain applicable. The evaluation
+        repository has no LICENSE file, so its code terms are unspecified.
+    sources:
+      - https://ogmenrobotics.github.io/K9Bench/
+      - https://github.com/ogmenrobotics/K9Bench-eval-code
+      - https://raw.githubusercontent.com/ogmenrobotics/K9Bench-eval-code/main/README.md
+      - https://api.github.com/repos/ogmenrobotics/K9Bench-eval-code
+      - https://huggingface.co/datasets/ogmen/K9Bench
+      - https://huggingface.co/datasets/ogmen/K9Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/ogmen/K9Bench
+      - https://arxiv.org/abs/2607.02680
+
   - id: video_mme
     name: Video-MME
     full_name: "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"
