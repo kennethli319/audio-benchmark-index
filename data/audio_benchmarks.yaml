@@ -9,6 +9,55 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  ibr_power_waveform_scope_audit:
+    paper: https://arxiv.org/abs/2607.20817
+    title: "Spectrogram-Based Joint Detection, Localization, and Classification of Events in Continuously Recorded IBR Waveforms"
+    sections: 3 and 5
+    status: audited_out_of_scope_non_acoustic_waveforms
+    public_interfaces:
+      - https://github.com/shivanshutripath/Spectrogram-Based-Temporal-Event-Detection
+    evaluated_sets:
+      - cited_as: single-phase disturbance dataset
+        index_id: null
+        status: public_synthetic_electrical_waveforms_out_of_scope
+        protocol: >-
+          Six 40-second single-phase voltage records sampled at 3 kHz contain
+          harmonic distortion, inter-harmonic distortion, voltage flicker, and
+          oscillatory-transient events. Days 1-3 train, days 4-5 validate, and
+          day 6 tests raw-waveform and log-STFT U-Net detectors.
+      - cited_as: three-phase IBR fault dataset
+        index_id: null
+        status: public_electrical_waveforms_out_of_scope
+        protocol: >-
+          Two hundred six-channel voltage/current recordings sampled at 1 kHz
+          cover three-phase power-system fault events. The repository includes
+          eight NPZ parts and evaluates on 66 test events.
+    release_audit:
+      paper: public_ungated
+      code_and_data: public_ungated_github_repository
+      repository_size: approximately_267_MB
+      acoustic_or_audio_recordings: none
+    license:
+      paper: CC_BY_4_0
+      repository_data_and_code: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.20817
+      - https://arxiv.org/html/2607.20817v1#S3
+      - https://arxiv.org/html/2607.20817v1#S5
+      - https://github.com/shivanshutripath/Spectrogram-Based-Temporal-Event-Detection
+      - https://api.github.com/repos/shivanshutripath/Spectrogram-Based-Temporal-Event-Detection
+      - https://api.github.com/repos/shivanshutripath/Spectrogram-Based-Temporal-Event-Detection/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/shivanshutripath/Spectrogram-Based-Temporal-Event-Detection/main/README.md
+      - https://raw.githubusercontent.com/shivanshutripath/Spectrogram-Based-Temporal-Event-Detection/main/INSTRUCTIONS.txt
+    note: >-
+      This paper appears in arXiv eess.AS and uses spectrograms, but its signals
+      are inverter-terminal voltage and current measurements rather than
+      acoustic, speech, music, or audio waveforms. The public repository is a
+      reproducible power-systems event-detection release, not an audio
+      benchmark. It is therefore intentionally excluded from the family count,
+      table, and download helpers; the audit prevents category-based scans from
+      later misclassifying it as an audio dataset.
+
   bon_tts_asr_family_alignment:
     paper: https://arxiv.org/abs/2607.08256
     title: "Best-of-N TTS Evaluation is Confounded by ASR Family Alignment"

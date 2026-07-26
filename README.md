@@ -83,6 +83,13 @@ upstream data.
 Last checked: 2026-07-25. Current index size: 321 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 IBR waveform paper is recorded as an explicit scope exclusion.
+Although it is categorized under arXiv eess.AS and converts its inputs to
+spectrograms, its released signals are power-system voltage and current
+measurements rather than acoustic audio. Its public code and approximately
+267 MB of NPZ data are therefore not counted as an audio benchmark; the
+repository also states no data or code license.
+
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
 Audio -> Text evaluation block. The Qwen report remains useful provenance, but
 the repository is no longer limited to that paper's benchmark list.
