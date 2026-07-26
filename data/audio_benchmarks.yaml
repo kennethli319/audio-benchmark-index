@@ -4252,6 +4252,55 @@ paper_audits:
       - http://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html
       - https://link.springer.com/article/10.1007/s10579-011-9145-0
 
+  telltale_bah_challenge_evaluation:
+    paper: https://arxiv.org/abs/2607.16635
+    title: "TellTale: Blending Multi-Instance LoRA Text Encoders and a Zero-Shot LLM Judge for Ambivalence/Hesitancy Recognition in Videos"
+    sections: 1, 2.2, and 3
+    status: audited_existing_restricted_public_family_private_challenge_test
+    last_verified: 2026-07-26
+    evaluated_sets:
+      - cited_as: BAH
+        index_id: bah
+        status: public_request_gated_research_only_with_private_challenge_test
+        protocol: >-
+          Use participant-grouped five-fold cross-validation over the 1,427
+          labelled BAH videos for development and model selection, with an
+          additional participant-grouped 10% early-stopping split inside each
+          training fold. The challenge organizer scores final predictions on
+          152 private-test videos from 30 unseen participants using Macro-F1
+          as the primary metric and positive-class average precision as a
+          secondary metric.
+        note: >-
+          TellTale is transcript-only even though BAH provides video, audio,
+          facial crops, and transcripts. It uses the dataset's approximately
+          three-to-five-second transcript chunks and does not establish a new
+          audio benchmark family.
+    release_audit:
+      new_benchmark_family: none
+      reusable_bah_release: request_gated_research_only
+      challenge_private_test_labels: not_released
+      paper_code_models_predictions_and_score_records: not_linked
+    license:
+      paper: CC-BY-4.0
+      bah_data: proprietary_research_only_eula
+      bah_baseline_code: BSD-3-Clause
+      paper_specific_artifacts: not_stated_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.16635
+      - https://arxiv.org/html/2607.16635v1#S1
+      - https://arxiv.org/html/2607.16635v1#S2.SS2
+      - https://arxiv.org/html/2607.16635v1#S3
+      - https://arxiv.org/abs/2505.19328
+      - https://www.etsmtl.ca/en/labs/livia/datasets/bah-ambivalence-hesitancy
+      - https://github.com/LIVIAETS/bah-dataset
+      - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
+    note: >-
+      This is follow-up evaluation provenance for the existing BAH family,
+      not a new benchmark addition. The exact organizer-held test set remains
+      private, and the paper links no implementation, trained adapters,
+      prediction file, or score record. The existing manual-required BAH
+      helper therefore remains the honest reproducibility path.
+
   multimodal_ambivalence_hesitancy_evaluation:
     paper: https://arxiv.org/abs/2607.15779
     title: "Multimodal Ambivalence and Hesitancy Recognition via Cross-Attention and Gated Fusion"
@@ -16013,6 +16062,7 @@ benchmarks:
       - https://api.github.com/repos/LIVIAETS/bah-dataset
       - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
       - https://arxiv.org/abs/2607.15779
+      - https://arxiv.org/abs/2607.16635
 
   - id: mer2023
     name: MER2023

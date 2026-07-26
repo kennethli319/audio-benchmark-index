@@ -89,6 +89,17 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 TellTale paper is traced as follow-up evaluation provenance for
+the existing BAH ambivalence/hesitancy family rather than counted as a new
+benchmark. It uses participant-grouped five-fold cross-validation over the
+1,427 labelled videos and reports Macro-F1 plus positive-class average
+precision on the organizer-held test set of 152 videos from 30 unseen
+participants. The final system uses only BAH transcripts despite the
+dataset's audio-visual modalities. BAH remains faculty-request-gated under
+its proprietary research-only EULA, the challenge labels remain private, and
+the paper links no code, adapters, predictions, or score records, so the
+existing manual-required helper and index count are unchanged.
+
 The July 2026 conversational-Mandarin vowel study is recorded as a corpus
 coverage audit rather than a benchmark family. Sections 2.1-2.3 derive a
 5,828-token, 87-word-type analysis set from the cited Taiwan Mandarin
