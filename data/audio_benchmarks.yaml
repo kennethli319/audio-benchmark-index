@@ -5327,6 +5327,70 @@ paper_audits:
       - https://zenodo.org/api/records/17237181
     note: The paper says the augmented AudioCards dataset will be released, but v1 provides no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
 
+  autoresearch_quran_recitation_evaluation:
+    paper: https://arxiv.org/abs/2607.18064
+    title: "Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data"
+    sections: 3-10
+    status: audited_claimed_release_with_placeholder_urls
+    last_verified: 2026-07-26
+    public_interfaces: []
+    evaluated_domains:
+      - domain: quran_recitation_transcript_alignment
+        protocol: >-
+          Detect the set of recited Quranic verse identifiers, split a
+          diacritics-free ASR transcript by verse, and abstain on
+          non-recitation input. The production-derived corpus contains 258
+          Telegram-bot recordings spanning 45 surahs: 254 Quranic and four
+          non-Quranic examples, with gold verse assignments, per-verse splits,
+          and confidence labels.
+        data_status: described_as_deidentified_and_released_but_no_resolvable_dataset_url
+        note: >-
+          Version 1 says that a Hugging Face dataset contains de-identified ASR
+          transcripts, gold labels, and train/test splits, but the
+          reproducibility statement prints the literal placeholder
+          "[ADD DATASET URL]". No dataset card, owner page, repository, archive,
+          split file, checksum manifest, or data-license statement is linked.
+      - domain: autonomous_coding_agent_evaluation
+        protocol: >-
+          Two three-run studies compare Claude Code and OpenAI Codex under
+          matched one-hour edit-score-keep loops. Study 1 exposes a single
+          gameable evaluation set; Study 2 discloses a held-out split. The
+          score sums verse-set detection error, word-level split error, and
+          abstention error.
+        data_status: harness_logs_git_histories_and_hashes_claimed_public_but_repository_url_is_placeholder
+        note: >-
+          The paper says the harness, frozen metric, experiment logs, per-run
+          git histories, and SHA-256 hashes are in a supplementary repository,
+          but version 1 prints the literal placeholder "[ADD REPOSITORY URL]".
+          The only resolvable GitHub link in the paper is Karpathy's unrelated
+          autoresearch reference repository.
+    release_audit:
+      paper: public_ungated_arxiv
+      deidentified_transcripts_and_gold_labels: claimed_release_url_missing
+      frozen_train_test_splits: claimed_release_url_missing
+      harness_metric_logs_and_git_histories: claimed_release_url_missing
+      paper_specific_audio_recordings: not_claimed_as_released
+      artifact_license: not_stated
+    license:
+      paper: CC-BY-4.0
+      dataset_and_artifacts: not_stated_unresolvable
+      source_recordings: production_user_data_not_released
+    sources:
+      - https://arxiv.org/abs/2607.18064
+      - https://arxiv.org/html/2607.18064v1#S3
+      - https://arxiv.org/html/2607.18064v1#S6
+      - https://arxiv.org/html/2607.18064v1#S10
+      - https://export.arxiv.org/api/query?id_list=2607.18064
+    note: >-
+      This is recorded as a release audit rather than a new benchmark family.
+      The task and corpus are described precisely enough to identify, but not
+      reproduce, the evaluation. Public-release assertions accompanied only
+      by unresolved manuscript placeholders are not verifiable official
+      sources, so the index adds no download link or helper. Recheck a later
+      paper version for owner-controlled repository and Hugging Face URLs,
+      artifact licenses, and confirmation of whether audio or only
+      de-identified transcripts are released.
+
   harness_tts_context_aware_evaluation:
     paper: https://arxiv.org/abs/2607.17900
     title: "Harness TTS: Towards Context-Aware Expressive Speech Synthesis with Harness Layer"

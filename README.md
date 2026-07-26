@@ -88,6 +88,17 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 336 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 Quran-recitation autoresearch paper is recorded as an
+unreleased evaluation audit rather than a downloadable benchmark family. It
+describes 258 production Telegram-bot recordings spanning 45 surahs and a
+verse-detection, transcript-splitting, and non-recitation-abstention protocol,
+then claims that de-identified transcripts, labels, splits, harness code,
+logs, git histories, and hashes are public. However, arXiv v1 still prints
+literal `[ADD DATASET URL]` and `[ADD REPOSITORY URL]` placeholders and
+provides no resolvable dataset card, artifact license, or paper-specific
+repository. The index therefore adds no inferred download route or helper and
+will recheck a later version for owner-controlled release URLs.
+
 The July 2026 SpInt paper is recorded as a protocol and release audit over the
 existing SpInt family. Twenty-six native Spanish listeners each rated 198
 randomized stimuli spanning eleven SNRs and unprocessed, FullSubNet+, and
