@@ -87,7 +87,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 347 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 348 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The July 2026 MiMo-Audio release adds a public speech adaptation of Scale
@@ -732,6 +732,16 @@ provides no named evaluation corpus, split sizes, row manifests, or stable
 dataset download. The public KhayaAI Hugging Face repositories contain
 Apache-2.0 model checkpoints; that does not release or license the unnamed
 training and test audio.
+
+The July 2026 multimodal deepfake-news paper adds FakeAVCeleb as a
+request-gated audio-visual benchmark family. The official release describes
+500 real and 19,500 fake celebrity videos with cloned speech, lip-synced
+audio/video manipulations, and fine-grained labels, but provides the data only
+after a request and author approval. The repository licenses its code under
+MIT but states no separate data license, and explicitly marks the YouTube
+source videos as not rights-cleared with zero agreeing subjects. The helper
+therefore prints only the official request path and never infers an archive
+URL.
 
 The July 2026 Quality-Aware Multimodal Fusion paper adds Aff-Wild2 as a
 request-gated audiovisual valence-arousal and emotion benchmark. The owner
@@ -2070,6 +2080,7 @@ Current coverage includes:
 | [Fake-or-Real](https://bil.eecs.yorku.ca/datasets/) | Synthetic-speech and audio-deepfake detection, including rerecording robustness | Public York University release with more than 195,000 utterances across original, normalized, two-second, and rerecorded variants; helper saves the owner page by default and makes the approximately 16.0 GiB archives explicit per-version opt-ins | No dataset-specific license or reuse terms stated; CMU Arctic, LJ Speech, VoxForge, generated-voice, and lab-recording component rights require separate review |
 | [ASVspoof 5](https://zenodo.org/records/14498691) | Speech spoofing, deepfake, adversarial-attack detection, and spoofing-robust speaker verification | Public ASVspoof release with 1,006,363 utterances from roughly 2,000 speakers; helper downloads official metadata/docs by default, makes the approximately 19.7 MiB protocols opt-in, and leaves the approximately 142.3 GB audio on Zenodo | Database is ODC-BY 1.0 and bona fide data is CC BY 4.0; preserve Multilingual LibriSpeech provenance and review individual-content/privacy rights; baseline code license is unspecified |
 | [In-the-Wild](https://deepfake-total.com/in_the_wild) | In-the-wild audio-deepfake detection and cross-dataset generalization | Public, ungated [mueller91/In-The-Wild](https://huggingface.co/datasets/mueller91/In-The-Wild) with 37.9 hours of English bona fide and deepfake speech from 58 celebrities and politicians; helper downloads docs/metadata by default while the approximately 7.60 GiB ZIP is opt-in | Conflicting official signals: owner page says Apache-2.0, HF card says CC BY-SA 4.0; source-video copyright, platform, voice/likeness, and privacy rights also require review |
+| [FakeAVCeleb](https://sites.google.com/view/fakeavcelebdash-lab/) | Audio-visual deepfake detection, cloned-speech detection, face swaps, and lip-sync manipulation | Official 20,000-video family with 500 real and 19,500 fake celebrity videos; access requires the owner request form and approval, and the helper prints that manual path without inferring a private archive URL | Code is MIT, but no separate data license is stated; the owner marks source videos as not rights-cleared with zero agreeing subjects, so YouTube, copyright, voice, likeness, privacy, and publicity rights require review |
 | [SpoofCeleb](https://jungjee.github.io/spoofceleb/) | In-the-wild speech deepfake detection and spoofing-robust speaker verification | Author-approved gated [jungjee/spoofceleb](https://huggingface.co/datasets/jungjee/spoofceleb) with more than 2.5 million utterances, 1,251 speakers, and 23 TTS attacks; helper downloads public docs/API metadata by default and makes the approximately 268.3 GB snapshot a terms-acknowledged opt-in | Project and HF tag state CC BY 4.0, but source human-speech copyright remains with original video owners; review video, voice, likeness, privacy, and generated-speech rights |
 | [PartialEdit](https://yzyouzhang.com/PartialEdit/index.html) | Partial speech-deepfake detection and temporal localization | Public [Zenodo release](https://zenodo.org/records/15519188) of the VCTK-derived E1/E1-Codec and E2/E2-Codec subsets; helper downloads official pages and record metadata by default, with approximately 7.7 MB of protocol/text metadata and 21.9 GB of audio as separate opt-ins; Audiobox-derived E3/E4 are explicitly withheld | Zenodo declares CC BY 4.0; preserve VCTK provenance and review neural-editor output terms; the license does not cover or release E3/E4 |
 | [CompSpoof V2](https://huggingface.co/datasets/XuepingZhang/ESDD2-CompSpoof-V2) | Component-level speech and environmental-sound deepfake detection | Gated author-owned ESDD2 release with 255,433 four-second clips (approximately 283 hours), five bona fide/spoofed component combinations, unseen generators, codec transformations, and fixed train/validation/evaluation/test splits; helper downloads public docs and metadata by default and makes the approximately 130.0 GB snapshot a terms-acknowledged opt-in | CC BY-NC 4.0 with mixed upstream CC0, attribution, noncommercial, ODC-By, GPL, and custom terms; authors disclaim ownership of original audio, and baseline-code terms are unspecified |

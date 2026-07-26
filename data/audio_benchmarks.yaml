@@ -9,6 +9,49 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  deepfake_news_fakeavceleb_evaluation:
+    paper: https://arxiv.org/abs/2607.20579
+    title: "Deepfake News Detection: A Multimodal Framework Integrating LipNet, DeepSpeech and ResNET for Enhanced Audio-Visual Analysis"
+    sections: experiments and dataset description
+    status: audited_new_request_gated_public_family
+    last_verified: 2026-07-26
+    evaluated_sets:
+      - cited_as: FakeAVCeleb
+        index_id: fakeavceleb
+        status: public_request_gated
+        protocol: >-
+          Evaluate audio-visual deepfake-news classification using lip-motion,
+          speech-content, and facial-frame features. The paper reports 94%
+          accuracy after audio augmentation, but does not release a
+          paper-specific split manifest, augmented audio, predictions, or
+          score records.
+    release_audit:
+      new_benchmark_family: fakeavceleb
+      owner_repository_and_dataset_site: public_ungated
+      dataset: request_form_and_author_approval_required
+      paper_specific_artifacts: not_released
+    license:
+      data: not_specified
+      code: MIT
+      source_media: youtube_owner_rights_and_platform_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.20579
+      - https://arxiv.org/abs/2108.05080
+      - https://github.com/DASH-Lab/FakeAVCeleb
+      - https://raw.githubusercontent.com/DASH-Lab/FakeAVCeleb/main/README.md
+      - https://api.github.com/repos/DASH-Lab/FakeAVCeleb
+      - https://sites.google.com/view/fakeavcelebdash-lab/
+      - https://docs.google.com/forms/d/e/1FAIpQLSfPDd3oV0auqmmWEgCSaTEQ6CGpFeB-ozQJ35x-B_0Xjd93bw/viewform
+    note: >-
+      FakeAVCeleb is added as one reusable benchmark family, not as a release
+      of the July 2026 paper's derived experiment. The owner repository says
+      its 500 real and 19,500 fake videos cover real/fake audio and real/fake
+      video combinations with fine-grained labels, but also states that the
+      source videos are not rights-cleared and that no subjects agreed to this
+      release. Access requires an official request and an author-supplied
+      download script. No public archive URL is inferred.
+
   av_jepa_audio_visual_self_supervised_learning:
     paper: https://arxiv.org/abs/2607.15295
     title: "AV-JEPA: Extending LeJEPA to Audio-Visual Self-Supervised Learning"
@@ -19288,6 +19331,59 @@ benchmarks:
       - https://raw.githubusercontent.com/asvspoof-challenge/asvspoof5/main/README.md
       - https://arxiv.org/abs/2502.08857
       - https://doi.org/10.21437/ASVspoof.2024-1
+
+  - id: fakeavceleb
+    name: FakeAVCeleb
+    full_name: "FakeAVCeleb: A Novel Audio-Video Multimodal Deepfake Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - speaker_verification_anti_spoofing
+    tasks:
+      - audio_visual_deepfake_detection
+      - synthetic_speech_detection
+      - face_swap_detection
+      - lip_sync_deepfake_detection
+      - multimodal_deepfake_classification
+    official:
+      project: https://sites.google.com/view/fakeavcelebdash-lab/
+      repo: https://github.com/DASH-Lab/FakeAVCeleb
+      request_form: https://docs.google.com/forms/d/e/1FAIpQLSfPDd3oV0auqmmWEgCSaTEQ6CGpFeB-ozQJ35x-B_0Xjd93bw/viewform
+      paper: https://arxiv.org/abs/2108.05080
+      recent_evaluation: https://arxiv.org/abs/2607.20579
+    download:
+      access: request_gated
+      primary:
+        - https://docs.google.com/forms/d/e/1FAIpQLSfPDd3oV0auqmmWEgCSaTEQ6CGpFeB-ozQJ35x-B_0Xjd93bw/viewform
+      examples:
+        - 'scripts/download/fakeavceleb.sh'
+      notes: >-
+        The owner repository describes 500 real and 19,500 generated videos
+        from 500 English-speaking celebrities, with real/fake audio and video
+        combinations, lip-synced cloned speech, multiple face/audio generation
+        methods, demographic metadata, and fine-grained labels. Dataset access
+        is not a public direct download: applicants must submit the official
+        Google form and, if approved, receive an author-provided download
+        script. The helper prints the owner-controlled request path and never
+        guesses or accepts a private archive URL.
+    license:
+      data: not_specified_request_terms_apply
+      code: MIT
+      notes: >-
+        The repository explicitly describes its code as MIT, but states no
+        separate dataset license. Its comparison table marks FakeAVCeleb as
+        not rights-cleared with zero agreeing subjects; source clips come from
+        celebrity YouTube videos. Author approval does not itself clear
+        copyright, platform, voice, likeness, privacy, or publicity rights.
+        Review the granted terms and local law before use or redistribution.
+    sources:
+      - https://arxiv.org/abs/2108.05080
+      - https://github.com/DASH-Lab/FakeAVCeleb
+      - https://raw.githubusercontent.com/DASH-Lab/FakeAVCeleb/main/README.md
+      - https://api.github.com/repos/DASH-Lab/FakeAVCeleb
+      - https://sites.google.com/view/fakeavcelebdash-lab/
+      - https://docs.google.com/forms/d/e/1FAIpQLSfPDd3oV0auqmmWEgCSaTEQ6CGpFeB-ozQJ35x-B_0Xjd93bw/viewform
+      - https://arxiv.org/abs/2607.20579
 
   - id: spoofceleb
     name: SpoofCeleb
