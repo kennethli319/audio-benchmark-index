@@ -9,6 +9,69 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speech_foundation_sft_matching:
+    paper: https://arxiv.org/abs/2607.13864
+    title: "Rethinking Speech Foundation Model Fine-tuning: Better SFT or Better Match?"
+    sections: 3.1-3.6 and 4
+    status: audited_existing_public_and_request_gated_superb_families
+    evaluated_sets:
+      - cited_as: SUPERB intent classification (IC)
+        index_id: fluent_speech_commands
+        status: existing_manual_access_family
+        protocol: >-
+          Fine-tune nine speech-foundation-model checkpoints under eight
+          supervised configurations on the official SUPERB Fluent Speech
+          Commands intent-classification task and report task accuracy.
+      - cited_as: SUPERB emotion recognition (ER)
+        index_id: iemocap
+        status: existing_request_gated_family
+        protocol: >-
+          Use the official SUPERB IEMOCAP emotion-recognition pipeline and
+          five-session cross-validation, reporting the task-defined accuracy
+          averaged over the held-out sessions.
+      - cited_as: SUPERB speaker identification (SID)
+        index_id: voxceleb
+        status: existing_family_with_original_media_unavailable
+        protocol: >-
+          Use the official SUPERB closed-set VoxCeleb1 speaker-identification
+          recipe and task accuracy. The original VGG download page no longer
+          distributes VoxCeleb audio or identifying metadata.
+    release_audit:
+      superb_toolkit_and_task_recipes: public_ungated
+      fluent_speech_commands: manual_academic_access
+      iemocap: owner_request_and_signed_terms_required
+      voxceleb1_original_audio: no_longer_distributed_by_owner
+      paper_code_configs_checkpoints_predictions_and_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      superb_toolkit: Apache-2.0_with_repository_exceptions
+      component_datasets: source_specific_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The paper does not relicense the three SUPERB component corpora or
+        provide terms for absent experiment artifacts. Fluent Speech Commands
+        is limited to academic research under CC BY-NC-ND 4.0, IEMOCAP uses
+        custom owner-issued research terms, and VoxCeleb metadata and source
+        media remain subject to their separate rights and availability.
+    sources:
+      - https://arxiv.org/abs/2607.13864
+      - https://arxiv.org/html/2607.13864v1#S3.SS1
+      - https://arxiv.org/html/2607.13864v1#S3.SS4
+      - https://arxiv.org/html/2607.13864v1#S3.SS5
+      - https://arxiv.org/html/2607.13864v1#S3.SS6
+      - https://github.com/s3prl/s3prl
+      - https://github.com/s3prl/s3prl/blob/main/s3prl/downstream/docs/superb.md
+      - https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/
+      - https://sail.usc.edu/iemocap/iemocap_release.htm
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
+    note: >-
+      This is an existing-coverage audit of three indexed source families, not
+      a new benchmark family. The paper varies pretrained checkpoints,
+      fine-tuning modes, and random seeds while keeping the official SUPERB
+      task pipelines fixed; it does not publish the resulting checkpoints,
+      paired predictions, score matrix, or exact run configuration bundle.
+      Existing family helpers remain the authoritative access paths.
+
   efficient_audioldm_pruning:
     paper: https://arxiv.org/abs/2607.13330
     title: "Efficient Text-to-Audio Generation via Pruning"
@@ -9067,6 +9130,7 @@ benchmarks:
       paper: https://arxiv.org/abs/2105.01051
       interspeech: https://www.isca-archive.org/interspeech_2021/yang21c_interspeech.html
       superb_sg_paper: https://arxiv.org/abs/2203.06849
+      recent_evaluation: https://arxiv.org/abs/2607.13864
     download:
       primary:
         - https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md
@@ -9279,6 +9343,8 @@ benchmarks:
       - https://huggingface.co/datasets/PolyAI/minds14
       - https://huggingface.co/datasets/PolyAI/minds14/raw/main/README.md
       - https://arxiv.org/abs/2104.08524
+      - https://arxiv.org/abs/2607.13864
+      - https://arxiv.org/html/2607.13864v1#S3.SS1
 
   - id: fluent_speech_commands
     name: Fluent Speech Commands

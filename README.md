@@ -1375,6 +1375,20 @@ per-item metrics, or score records. AudioCaps' academic-use condition and
 upstream YouTube availability remain authoritative, so no new benchmark
 family or download helper is added.
 
+The July 2026 *Rethinking Speech Foundation Model Fine-tuning: Better SFT or
+Better Match?* paper is recorded as an existing-coverage audit of three
+official SUPERB tasks: Fluent Speech Commands intent classification, IEMOCAP
+emotion recognition, and VoxCeleb1 speaker identification. Sections 3-4 vary
+nine pretrained checkpoints, eight fine-tuning configurations, and multiple
+random seeds while keeping the official SUPERB task pipelines fixed. The
+public Apache-2.0 S3PRL toolkit documents the component protocols, but the
+paper releases no experiment-specific configs, checkpoints, paired
+predictions, or score matrix. Component access and terms remain authoritative:
+Fluent Speech Commands is manual academic access under CC BY-NC-ND 4.0,
+IEMOCAP requires an owner request and signed research terms, and the VoxCeleb
+owner page no longer distributes the original audio. No duplicate family or
+download helper is added.
+
 The July 2026 *SpeechGuard* paper is likewise recorded as a coverage audit
 over the already indexed Speech Commands v2 and AudioMNIST families. Section 5
 poisons one percent of training examples with random-noise,
