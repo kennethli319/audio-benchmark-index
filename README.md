@@ -1196,6 +1196,14 @@ also has a material terms conflict: its metadata tag says CC BY 4.0 while its
 gated access agreement says the original Emilia data is CC BY-NC. Neither
 designation releases or identifies the paper's evaluation subset.
 
+The July 2026 EmoAgent-R1 report is recorded as an existing-coverage audit of
+MER-UniBench rather than a new downloadable family. Its complete audio-visual
+emotion matrix maps to the already indexed MOSI, MOSEI, CH-SIMS, CH-SIMS v2,
+MER2023, MER2024, MELD, IEMOCAP, and OV-MERD families. Version 1 publishes no
+separate MER-UniBench manifest, evaluation code, predictions, training corpus,
+or checkpoints; component access remains mixed public, gated, and restricted,
+with source-specific terms still applying.
+
 The July 2026 BirdCLEF working-paper sweep adds the official
 [BirdCLEF++ 2026](https://www.imageclef.org/BirdCLEF2026) family. The primary
 paper reports 522.1 hours of focal recordings and Pantanal soundscapes, with

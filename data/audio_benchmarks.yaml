@@ -9,6 +9,80 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  emoagent_r1_mer_unibench:
+    paper: https://arxiv.org/abs/2607.21013
+    title: "EmoAgent-R1: Towards Multimodal Emotion Understanding with Reinforcement Learning-based Dynamic Agent Specialization"
+    sections: 3.3.1, 4.1-4.2, and 5
+    status: audited_existing_public_and_gated_families
+    evaluated_sets:
+      - cited_as: MOSI
+        index_id: cmu_mosi
+        status: existing_public_family
+      - cited_as: MOSEI
+        index_id: cmu_mosei
+        status: existing_public_family
+      - cited_as: SIMS
+        index_id: ch_sims
+        status: existing_public_family
+      - cited_as: SIMS v2
+        index_id: ch_sims_v2
+        status: existing_public_family
+      - cited_as: MER23
+        index_id: mer2023
+        status: existing_gated_family
+      - cited_as: MER24
+        index_id: mer2024
+        status: existing_gated_family
+      - cited_as: MELD
+        index_id: meld
+        status: existing_public_family
+      - cited_as: IEMO
+        index_id: iemocap
+        status: existing_restricted_family
+      - cited_as: OV-MERD+
+        index_id: ov_merd
+        status: existing_gated_family
+    protocol_note: >-
+      Table 2 calls this nine-family evaluation matrix MER-UniBench and groups
+      it into sentiment analysis, basic emotion recognition, and fine-grained
+      emotion understanding. The paper applies weighted F1 to sentiment,
+      label-hit rate to basic emotion, and the Emotion Wheel semantic metric
+      to OV-MERD+. It does not present MER-UniBench as a separately packaged
+      dataset, and version 1 provides no project page, repository, split
+      manifest, prediction records, or evaluation code. This audit therefore
+      maps every row to the existing source families without adding a
+      duplicate benchmark or download helper.
+    release_audit:
+      paper_specific_training_corpus: not_released
+      mer_unibench_manifest_and_evaluation_code: not_released
+      model_checkpoints_and_predictions: not_released
+      component_benchmark_access: mixed_public_gated_and_restricted
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      paper_specific_artifacts: not_specified_unreleased
+      component_datasets: source_specific_terms_apply
+      note: >-
+        The paper does not grant a new license over the nine component
+        families. MER2023, MER2024, and OV-MERD+ require access approval, and
+        IEMOCAP remains subject to its owner agreement; their existing index
+        entries record the applicable source terms.
+    sources:
+      - https://arxiv.org/abs/2607.21013
+      - https://arxiv.org/html/2607.21013v1#S3.SS3.SSS1
+      - https://arxiv.org/html/2607.21013v1#S4.SS1
+      - https://arxiv.org/html/2607.21013v1#S4.SS2
+      - https://arxiv.org/html/2607.21013v1#S5
+      - https://arxiv.org/abs/2410.01495
+      - https://github.com/zeroQiaoba/AffectGPT
+      - https://huggingface.co/datasets/MERChallenge/MER2023
+      - https://huggingface.co/datasets/MERChallenge/MER2024
+      - https://huggingface.co/datasets/MERChallenge/MER2025
+    note: >-
+      This is an existing-coverage audit of the paper's complete
+      audio-visual emotion benchmark matrix. General video-only evaluations
+      in Table 3 are outside this audio index and are not treated as audio
+      benchmark additions.
+
   sonicagi_real_tse_challenge:
     paper: https://arxiv.org/abs/2607.11083
     title: "The SonicAGI System for the REAL-TSE Challenge"
