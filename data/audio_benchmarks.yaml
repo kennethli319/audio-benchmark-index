@@ -9,6 +9,61 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  merl_real_tse_challenge_submission:
+    paper: https://arxiv.org/abs/2607.09043
+    title: "Technical Report for MERL's Real-TSE Challenge Submission"
+    sections: 1, 3-4, 6, and 7
+    status: audited_existing_restricted_family_followup
+    evaluated_sets:
+      - cited_as: Real-TSE Challenge
+        index_id: real_tse
+        status: registration_closed_password_protected
+        protocol: >-
+          The paper evaluates the official real Mandarin/English
+          target-speaker-extraction development set with token error rate,
+          target-speaker timing precision/recall/F1, speaker similarity, and
+          DNSMOS. Its challenge submission achieved first place in the
+          full-context offline Track 2.
+        note: >-
+          Sections 6-7 additionally use the same restricted development
+          material to study four training stages and per-utterance adversarial
+          optimization of DNSMOS and the English and Chinese speaker-similarity
+          models. These experiments are paper-specific protocols, not a new
+          released benchmark family.
+    release_audit:
+      challenge_page_and_rules: public_ungated
+      evaluation_toolkit: public_ungated
+      development_and_evaluation_audio: restricted_to_registered_teams
+      registration: closed_2026_05_31
+      merl_models_training_pipeline_outputs_and_attack_code: not_released
+    license:
+      paper: CC-BY-4.0
+      challenge_toolkit: MIT
+      challenge_audio: not_publicly_specified
+      merl_artifacts: not_specified_unreleased
+      note: >-
+        The paper's CC BY 4.0 license applies to the report, and the official
+        repository's MIT license applies to its evaluation code. Neither
+        licenses the password-protected challenge audio or any absent MERL
+        model, processed training data, predictions, enhanced waveforms, or
+        adversarial outputs. Source-corpus terms remain applicable.
+    sources:
+      - https://arxiv.org/abs/2607.09043
+      - https://arxiv.org/html/2607.09043v1#S1
+      - https://arxiv.org/html/2607.09043v1#S3
+      - https://arxiv.org/html/2607.09043v1#S4
+      - https://arxiv.org/html/2607.09043v1#S6
+      - https://arxiv.org/html/2607.09043v1#S7
+      - https://real-tse.github.io/challenge/
+      - https://github.com/REAL-TSE/REAL-TSE-Challenge
+      - https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main/README.md
+      - https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main/LICENSE
+      - https://arxiv.org/abs/2607.15198
+    note: >-
+      This follow-up maps the MERL system paper to the existing REAL-TSE
+      family. Version 1 contains no project or artifact link, so it does not
+      justify a new benchmark, public data path, or reproducibility claim.
+
   emoagent_r1_mer_unibench:
     paper: https://arxiv.org/abs/2607.21013
     title: "EmoAgent-R1: Towards Multimodal Emotion Understanding with Reinforcement Learning-based Dynamic Agent Specialization"
@@ -17193,13 +17248,14 @@ benchmarks:
       paper: https://arxiv.org/abs/2607.15198
       arxiv_html: https://arxiv.org/html/2607.15198
       followup_paper: https://arxiv.org/abs/2607.11083
+      merl_followup_paper: https://arxiv.org/abs/2607.09043
     download:
       primary:
         - https://real-tse.github.io/challenge/#data
         - https://github.com/REAL-TSE/REAL-TSE-Challenge
       examples:
         - 'scripts/download/real_tse.sh'
-      notes: The challenge reports 6,991 Mandarin/English mixture-enrollment trials over 2,309 real conversational mixtures and 11.3 hours of mixture audio. DEV has 1,991 REAL-T-derived pairs; EVAL-1 and EVAL-2 contain 2,000 seen and 3,000 unseen pairs without public references. The July 2026 SonicAGI system paper independently documents the online and offline protocols and reports second and fifth place respectively, but releases no challenge data, model, training pipeline, or evaluation outputs. The public helper saves official pages, repository metadata, and both papers only. Organizers distributed password-protected data by email exclusively to registered teams, registration closed on May 31, 2026, and no public dataset URL is currently provided.
+      notes: The challenge reports 6,991 Mandarin/English mixture-enrollment trials over 2,309 real conversational mixtures and 11.3 hours of mixture audio. DEV has 1,991 REAL-T-derived pairs; EVAL-1 and EVAL-2 contain 2,000 seen and 3,000 unseen pairs without public references. The July 2026 SonicAGI paper documents both tracks and reports second and fifth place; the MERL submission reports first place in offline Track 2 and audits DNSMOS and speaker-similarity metric fragility on DEV. Neither paper releases challenge data, models, training pipelines, outputs, or attack artifacts. The public helper saves official pages, repository metadata, and the papers only. Organizers distributed password-protected data by email exclusively to registered teams, registration closed on May 31, 2026, and no public dataset URL is currently provided.
     license:
       data: access_restricted_terms_not_publicly_specified
       code: MIT
@@ -17215,6 +17271,9 @@ benchmarks:
       - https://arxiv.org/html/2607.15198
       - https://arxiv.org/abs/2607.11083
       - https://arxiv.org/html/2607.11083v1#S5
+      - https://arxiv.org/abs/2607.09043
+      - https://arxiv.org/html/2607.09043v1#S6
+      - https://arxiv.org/html/2607.09043v1#S7
 
   - id: fuss
     name: FUSS

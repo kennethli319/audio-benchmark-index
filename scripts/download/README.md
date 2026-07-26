@@ -345,8 +345,8 @@ scripts/download/incaremo.sh
 scripts/download/msp_podcast.sh
 scripts/download/chime_7_dasr.sh
 # REAL-TSE saves the challenge page, toolkit metadata, primary challenge paper,
-# and SonicAGI follow-up paper, then exits because closed-registration audio
-# has no public download path.
+# and SonicAGI/MERL follow-up papers, then exits because closed-registration
+# audio has no public download path.
 scripts/download/real_tse.sh
 scripts/download/smartglasses_challenge_2026.sh
 scripts/download/voicemos_challenge_2026.sh

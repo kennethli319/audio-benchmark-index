@@ -97,6 +97,15 @@ not release models, training code, outputs, or challenge audio; DEV, EVAL-1,
 and EVAL-2 remain password-protected, evaluation-only artifacts distributed
 to teams that registered before the May 31 closure.
 
+The July 2026 MERL submission report is also traced to REAL-TSE rather than
+counted as a new benchmark. It reports first place in offline Track 2 and uses
+the restricted development set to show that DNSMOS and English/Chinese
+speaker-similarity scores can be adversarially optimized without changing
+token error rate or target-speaker timing F1. Version 1 releases no model,
+processed training data, outputs, attack implementation, or score records;
+its CC BY 4.0 paper license and the toolkit's MIT license do not license the
+password-protected challenge audio.
+
 The May 2026 SEABAD dataset paper and July 2026 DrongoNet follow-up are now
 traced to the public author-owned
 [Zenodo release](https://zenodo.org/records/18290494). SEABAD supplies 50,000
