@@ -23956,3 +23956,55 @@ benchmarks:
       - https://api.github.com/repos/music-x-lab/POP909-Dataset
       - https://arxiv.org/abs/2607.14537
       - https://arxiv.org/html/2607.14537v1#S2.SS1
+
+  - id: melobottleneck_eval
+    name: MeloBottleneck Evaluation Suite
+    full_name: "MeloBottleneck: Self-Supervised Melody Skeleton Extraction with a Latent Subsequence Bottleneck"
+    qwen_cited_as: null
+    qwen_bucket: symbolic_music_analysis
+    tasks:
+      - melody_skeleton_extraction
+      - ornament_to_backbone_reduction
+      - variation_to_theme_alignment
+      - gongche_skeleton_alignment
+      - symbolic_melody_fragment_retrieval
+    official:
+      paper: https://arxiv.org/abs/2607.10233
+      repo: https://github.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission
+      code_archive: https://github.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission/raw/main/melobottleneck-codebase.zip
+    download:
+      access: public_ungated
+      primary:
+        - https://github.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission
+      examples:
+        - 'scripts/download/melobottleneck_eval.sh'
+        - 'MELOBOTTLENECK_DOWNLOAD_CODEBASE=1 scripts/download/melobottleneck_eval.sh'
+      notes: >-
+        The public supplementary repository releases the paper's three
+        evaluation families inside a 4.76 MB codebase ZIP: synthetic
+        out-of-distribution Main O2B splits, a 619-sequence TAVERN V2T set,
+        and a 20-sequence Jiugong O2G set, together with preprocessing code,
+        split metadata, result records, and symbolic MIDI/pickle artifacts.
+        The paper reports 2,600 O2B sequences, 12,700 TAVERN notes, and 3,100
+        Jiugong notes. The helper downloads the official README and GitHub
+        repository metadata by default; set MELOBOTTLENECK_DOWNLOAD_CODEBASE=1
+        to fetch the checksum-recorded code/data ZIP. The separate 55.7 MB RAR
+        result bundle and 9.8 MB demo archive are not fetched.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The supplementary repository has no LICENSE file and GitHub detects no
+        license. The paper's arXiv license does not grant reuse rights for the
+        released code, benchmark derivatives, MIDI files, or experiment
+        outputs. TAVERN, Jiugong, and the seven training-corpus sources retain
+        their own terms; obtain author and upstream clarification before
+        redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2607.10233
+      - https://arxiv.org/html/2607.10233v1#S4.SS1
+      - https://arxiv.org/html/2607.10233v1#S4.SS3
+      - https://github.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission
+      - https://raw.githubusercontent.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission/main/README.md
+      - https://api.github.com/repos/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission
+      - https://api.github.com/repos/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission/git/trees/main?recursive=1

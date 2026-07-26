@@ -78,6 +78,7 @@ scripts/download/maeb.sh
 scripts/download/dilemmadata.sh
 scripts/download/emopia.sh
 scripts/download/pop909.sh
+scripts/download/melobottleneck_eval.sh
 scripts/download/single_item_kawaii_measure.sh
 scripts/download/kitchen20.sh
 scripts/download/rul_muchomusic.sh

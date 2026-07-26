@@ -22,7 +22,8 @@ forest-acoustic impulse-response simulation for bioacoustic arrays,
 global bird-species and tropical bird-activity detection for passive acoustic monitoring,
 biomedical heart-sound classification and cardiac-screening evaluation,
 music genre classification, instrument recognition, music transcription,
-symbolic Roman-numeral, harmonic, cadence, phrase, key, structural, and emotion analysis,
+symbolic Roman-numeral, harmonic, cadence, phrase, key, structural, emotion,
+and melody-skeleton analysis,
 asynchronous distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
 egocentric smart-glasses speech recognition and understanding,
@@ -86,7 +87,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 345 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 346 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The July 2026 BackgroundMellow release adds a public long-form cinematic
@@ -277,6 +278,16 @@ BY-NC-SA 4.0, upstream corpus terms remain independent, and the repository has
 no software LICENSE. The helper saves lightweight official metadata by default
 and makes the approximately 84 MB repository clone opt-in; paper-specific mask
 manifests and random seeds remain unreleased.
+
+The July 2026 MeloBottleneck paper adds a public symbolic melody-skeleton
+evaluation suite. Its official supplementary repository includes synthetic
+out-of-distribution Main O2B splits, a 619-sequence TAVERN variation-to-theme
+set, and a 20-sequence Jiugong ornament-to-gongche set, plus preprocessing
+code, split metadata, symbolic artifacts, and result records. The helper saves
+official documentation and repository metadata by default and makes the 4.76
+MB code/data archive opt-in. The repository has no LICENSE file, so neither
+the released artifacts nor their TAVERN, Jiugong, and folk-corpus derivatives
+should be assumed reusable beyond applicable upstream terms.
 
 The July 2026 UD-ASD paper adds coverage of the public DCASE 2022 Task 2
 anomalous-sound-detection family. Its section 3.1 evaluates the official
@@ -1849,6 +1860,7 @@ Current coverage includes:
 | [Dilemmadata](https://github.com/johentsch/dilemmadata) | Symbolic Roman-numeral, harmonic, cadence, phrase, key, and structural music analysis | Public v1.0 processed pitch-array TSVs and split structure combining AugmentedNet with more than 40 Distant Listening subcorpora; helper saves lightweight official metadata by default and makes the approximately 84 MB repository clone opt-in | Owner metadata declares CC BY-NC-SA 4.0; upstream corpus terms remain independent, and the repository has no software LICENSE |
 | [EMOPIA](https://annahung31.github.io/EMOPIA/) | Symbolic music emotion recognition and emotion-conditioned generation | Public v1.0 release with 1,087 labelled MIDI clips from 387 songs; helper saves official metadata by default and makes the checksum-verified 5.5 MB archive opt-in; copyrighted source audio is represented only by YouTube IDs and timestamps | Conflicting official terms: Zenodo says CC BY 4.0 while the repository says CC BY-NC-SA 4.0; apply the stricter non-commercial terms pending clarification |
 | [POP909](https://github.com/music-x-lab/POP909-Dataset) | Symbolic piano arrangement, generation, and beat/chord/key analysis | Public MIDI arrangements and aligned annotations for 909 popular songs; helper downloads official metadata and the song index by default and makes the approximately 47 MB repository clone opt-in; original commercial-song audio is not redistributed | Repository is MIT, but composition, arrangement, transcription, and other underlying music rights are not separately resolved and require review |
+| [MeloBottleneck Evaluation Suite](https://github.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission) | Symbolic melody-skeleton extraction, ornament reduction, and variation/theme alignment | Public O2B, TAVERN V2T, and Jiugong O2G benchmark artifacts plus split metadata and result records; helper saves official docs by default and makes the 4.76 MB code/data ZIP opt-in | No data or code license is stated; TAVERN, Jiugong, and seven training-corpus sources retain separate terms |
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
 | [SongFormBench](https://huggingface.co/datasets/ASLP-lab/SongFormBench) | Audio understanding | `load_dataset("ASLP-lab/SongFormBench")` | HF card and SongFormer repo list CC BY 4.0 |
 | [RUBATO](https://zenodo.org/records/21407832) | Robust music transcription and analysis across multiple versions of the same works | Public Zenodo v0.3 release with 566 versions of 15 works (about 42.9 hours), aligned audio/score/video representations, and note, beat, measure, local-key, structure, and warping-path annotations; helper downloads the 83 KB metadata by default while the approximately 6.26 GB archive is opt-in | Zenodo labels the deposit CC BY 3.0, but per-recording metadata includes CC0, attribution, ShareAlike, NoDerivatives, non-commercial, ambiguous, and EEF terms; review each recording before reuse |
