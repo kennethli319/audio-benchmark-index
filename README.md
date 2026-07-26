@@ -89,6 +89,14 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 conversational-Mandarin vowel study is recorded as a corpus
+coverage audit rather than a benchmark family. Sections 2.1-2.3 derive a
+5,828-token, 87-word-type analysis set from the cited Taiwan Mandarin
+Spontaneous Corpus and compare generalized additive models with a permutation
+baseline. The paper links no owner-controlled corpus release, selected-row
+manifest, derived formants, sense labels, analysis code, or artifact license.
+The count and download helpers therefore remain unchanged.
+
 The July 2026 EmoEUS paper is recorded as an evaluation-coverage audit rather
 than a new benchmark family. Section 3.1 evaluates the existing IEMOCAP and
 MELD families with accuracy and weighted F1, using leave-one-session-out on

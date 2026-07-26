@@ -9,6 +9,48 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  conversational_mandarin_visc_corpus_analysis:
+    paper: https://arxiv.org/abs/2607.21391
+    title: "Word meaning co-determines vowel-inherent spectral change: A corpus-based investigation of conversational Mandarin"
+    sections: 2.1-2.3
+    status: audited_nonbenchmark_unreleased_derived_subset
+    last_verified: 2026-07-26
+    source_corpus:
+      cited_as: Taiwan Mandarin Spontaneous Corpus
+      description: 55 casual conversations with traditional-Chinese word transcriptions, phone labels, and audio alignments
+      public_release: not_linked_or_verified
+    evaluated_material:
+      domain: spontaneous_speech_acoustic_and_semantic_analysis
+      protocol: >-
+        The study filters 118,592 single-character tokens to four vowel
+        classes, frequency-samples common words, removes short or noisy
+        tokens, extracts formant trajectories, and retains a sense-annotated
+        analysis set of 5,828 tokens from 87 word types and 188 word senses.
+        It evaluates generalized additive models against a permutation
+        baseline rather than defining a reusable model benchmark.
+      data_status: derived_rows_audio_alignments_sense_labels_and_splits_unreleased
+    release_audit:
+      paper: public_ungated_arxiv
+      source_audio_and_transcripts: not_linked
+      selected_token_manifest: not_released
+      derived_formant_trajectories: not_released
+      contextual_embeddings_and_sense_labels: not_released
+      analysis_code_and_fitted_models: not_linked
+      artifact_license: not_stated
+    sources:
+      - https://arxiv.org/abs/2607.21391
+      - https://arxiv.org/html/2607.21391v1#S2.SS1
+      - https://arxiv.org/html/2607.21391v1#S2.SS2
+      - https://arxiv.org/html/2607.21391v1#S2.SS3
+      - https://export.arxiv.org/api/query?id_list=2607.21391
+    note: >-
+      This is a coverage and release audit, not a benchmark-family addition.
+      The paper supplies no owner-controlled corpus page, repository, dataset
+      card, archive, item manifest, or license for the source or derived data.
+      Public access to the article does not establish reuse rights for the
+      conversational recordings or annotations, so no download helper or
+      inferred link is added.
+
   emoeus_multimodal_emotion_evaluation:
     paper: https://arxiv.org/abs/2607.18336
     title: "EmoEUS: Uncertainty Supervision for Multimodal Emotion Recognition in Conversation"
