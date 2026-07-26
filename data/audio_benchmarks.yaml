@@ -902,6 +902,50 @@ paper_audits:
       closes the current recent-eess.AS sweep without presenting a generic
       time-series source as an audio benchmark.
 
+  distributed_anc_delay_simulation_audit:
+    paper: https://arxiv.org/abs/2607.17165
+    title: "Adaptive Momentum Enhanced Distributed Multichannel Active Noise Control for Faster Convergence under Communication Delays"
+    sections: 4
+    status: audited_unreleased_measured_paths_and_synthetic_noise_protocol
+    evaluated_sets:
+      - cited_as: six-node ANC-window numerical simulation
+        index_id: null
+        status: internal_measured_acoustic_paths_unreleased
+        protocol: >-
+          Section 4 simulates six distributed active-noise-control nodes at
+          16 kHz using 256-tap measured secondary paths, 33-tap compensation
+          filters, 512-tap control filters, and synthetic 100-1,000 Hz
+          broadband primary noise. Average normalized squared error is
+          compared for MGDFxLMS, ASSS-MGDFxLMS, fixed-momentum
+          ASSS-MGDFxLMS, and the proposed adaptive-momentum method under
+          abrupt and gradually fluctuating communication delays.
+        note: >-
+          The primary and secondary acoustic paths were measured in a real
+          noise chamber equipped with an ANC window, but the paper does not
+          identify or release the impulse-response files, broadband-noise
+          realization, random seed, or exact simulation implementation.
+    release_audit:
+      paper: public_ungated
+      measured_primary_and_secondary_paths: not_released
+      synthetic_noise_waveform_and_seed: not_released
+      simulation_code_and_configuration: not_released
+      per_run_curves_and_numeric_results: not_released
+      dataset_or_project_repository: not_provided
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      measured_paths_and_simulation_artifacts: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.17165
+      - https://arxiv.org/html/2607.17165v1#S4
+      - https://export.arxiv.org/api/query?id_list=2607.17165
+    note: >-
+      This is an acoustic evaluation, but it is a paper-specific numerical
+      simulation rather than a released benchmark dataset. The chamber
+      impulse responses are essential to reproduce the reported curves and
+      are not recoverable from the filter lengths or the cited predecessor
+      method. No benchmark family, family-count increase, inferred download
+      link, or helper is therefore added.
+
   bon_tts_asr_family_alignment:
     paper: https://arxiv.org/abs/2607.08256
     title: "Best-of-N TTS Evaluation is Confounded by ASR Family Alignment"

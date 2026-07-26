@@ -225,6 +225,15 @@ Despite its eess.AS cross-listing and signal-processing terminology, neither
 evaluation contains acoustic audio, so no benchmark family or download helper
 is added.
 
+The July 2026 adaptive-momentum distributed active-noise-control paper is
+recorded as an unreleased simulation audit. Section 4 evaluates a six-node ANC
+window with measured primary and secondary acoustic paths, synthetic
+100-1,000 Hz broadband noise, and abrupt or fluctuating communication delays.
+The paper releases no chamber impulse responses, noise realization or seed,
+simulation code, per-run results, dataset page, or project repository. Those
+measured paths are essential to reproduce the evaluation, so the index does
+not invent a downloadable benchmark family or helper.
+
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
 Audio -> Text evaluation block. The Qwen report remains useful provenance, but
 the repository is no longer limited to that paper's benchmark list.
