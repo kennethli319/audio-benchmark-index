@@ -1260,6 +1260,16 @@ instructions and English, German, Italian, and Chinese outputs. Lightweight
 manifests and references are fetched by default; the shared 7.58 GiB media
 snapshot is opt-in.
 
+The July 2026 EGTA paper is mapped to that existing MCIF family rather than
+counted as a new benchmark. Its MCIF-dev protocol selects 21 talks and 919
+segments for English-to-Mandarin and English-to-German simultaneous speech
+translation with terminology and latency diagnostics. The paper also evaluates
+ACL60/60-dev, a five-talk, 468-segment external set with tagged terminology.
+Version 1 releases neither the exact MCIF-dev selection and streaming files nor
+an ACL60/60-dev dataset page, manifest, references, terminology tags, code,
+outputs, or scores. ACL60/60-dev therefore remains an unreleased paper-specific
+protocol, and the arXiv license does not supply data terms for it.
+
 The July 2026 AIS-aligned passive-acoustic labelling paper is recorded as an
 audited data-construction protocol rather than a downloadable family. It
 describes aligning approximately 950,000 hydrophone windows with 6.9 million

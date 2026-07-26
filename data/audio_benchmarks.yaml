@@ -9,6 +9,71 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  egta_technical_talk_simulst:
+    paper: https://arxiv.org/abs/2607.17766
+    title: "When to Use Extra Context: Evidence-Grounded Terminology Adaptation for Simultaneous Speech Translation"
+    sections: 4.1, 5.1-5.4, and A.1-A.9
+    status: audited_existing_public_family_and_unreleased_derived_protocol
+    evaluated_sets:
+      - cited_as: MCIF-dev
+        index_id: mcif
+        status: existing_public_family_with_unreleased_derived_artifacts
+        protocol: >-
+          A 21-talk, 919-segment English-to-Mandarin and English-to-German
+          technical-talk simultaneous-speech-translation subset derived from
+          public MCIF. The paper evaluates BLEU, chrF, XCOMET-XL, clean named
+          entity recall, acronym recall, and LongLAAL under multiple streaming
+          latency settings.
+        note: >-
+          MCIF's official release is public, but version 1 does not release
+          the paper's exact development-row selection, extracted terminology
+          memories, streaming hypotheses, system outputs, or score records.
+      - cited_as: ACL60/60-dev
+        index_id: null
+        status: paper_specific_protocol_not_publicly_released
+        protocol: >-
+          External validation on five ACL talks and 468 gold-segmented
+          segments with English-to-Mandarin and English-to-German references
+          and tagged terminology. The paper reports text-quality and
+          terminology-recall results but excludes comparable public latency
+          reporting because its streaming protocol differs from MCIF-dev.
+        note: >-
+          Version 1 provides no canonical dataset page, archive, manifest,
+          row identifiers, references, tagged-terminology file, or access
+          instructions for ACL60/60-dev, so it is not counted as a public
+          benchmark family.
+    release_audit:
+      mcif_source_family: public_ungated
+      mcif_dev_exact_selection_and_streaming_yaml: not_released
+      acl60_60_dev_data_and_manifest: not_released
+      paper_code_models_adapters_predictions_and_scores: not_released
+      terminology_memories_and_activation_audits: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      mcif_source_family: CC-BY-4.0
+      mcif_evaluation_code: Apache-2.0
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The paper does not relicense MCIF or grant terms for its absent
+        derived artifacts. MCIF's CC BY 4.0 data and Apache-2.0 evaluation
+        code terms remain source-specific; no license can be inferred for
+        ACL60/60-dev from the paper's arXiv license.
+    sources:
+      - https://arxiv.org/abs/2607.17766
+      - https://arxiv.org/html/2607.17766v1#S4.SS1
+      - https://arxiv.org/html/2607.17766v1#S5
+      - https://arxiv.org/html/2607.17766v1#A5
+      - https://huggingface.co/datasets/FBK-MT/MCIF
+      - https://huggingface.co/datasets/FBK-MT/MCIF/raw/main/README.md
+      - https://github.com/hlt-mt/mcif
+      - https://raw.githubusercontent.com/hlt-mt/mcif/main/LICENSE
+      - https://arxiv.org/abs/2507.19634
+    note: >-
+      This audit maps MCIF-dev to the existing MCIF family and preserves
+      ACL60/60-dev as an unreleased paper-specific protocol. It does not treat
+      either derived name as a new downloadable benchmark or imply that the
+      EGTA experimental artifacts are public.
+
   eii_scl_emotional_inertia:
     paper: https://arxiv.org/abs/2607.17366
     title: "EII-SCL: Harnessing Emotional Inertia for Multimodal Emotion Recognition in Conversation"
@@ -21866,6 +21931,7 @@ benchmarks:
       paper: https://arxiv.org/abs/2507.19634
       openreview: https://openreview.net/forum?id=PtPYZYfa0h
       challenge: https://iwslt.org/2025/instruction-following
+      recent_evaluation: https://arxiv.org/abs/2607.17766
     download:
       access: public_ungated
       primary:
@@ -21909,6 +21975,8 @@ benchmarks:
       - https://arxiv.org/abs/2507.19634
       - https://openreview.net/forum?id=PtPYZYfa0h
       - https://aclanthology.org/events/acl-2023/
+      - https://arxiv.org/abs/2607.17766
+      - https://arxiv.org/html/2607.17766v1#S4.SS1
 
   - id: multiref_compass
     name: MultiRef-Compass
