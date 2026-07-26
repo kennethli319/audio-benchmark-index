@@ -209,6 +209,7 @@ scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
 scripts/download/covomix2_dialogue.sh
 scripts/download/silent_speech_emg.sh
+scripts/download/japaneeg.sh
 scripts/download/avdc.sh
 scripts/download/pvqd.sh
 scripts/download/torgo.sh
@@ -564,6 +565,10 @@ COVOMIX2_DIALOGUE_CLONE_REPO=1 scripts/download/covomix2_dialogue.sh
 # Silent Speech EMG downloads official metadata/docs by default; the public
 # approximately 3.92 GB Zenodo corpus archive is checksum-verified and opt-in.
 SILENT_SPEECH_EMG_DOWNLOAD_ARCHIVE=1 scripts/download/silent_speech_emg.sh
+
+# JapanEEG downloads ds007808 metadata/provenance only. Select required files
+# manually from the versioned OpenNeuro page; the full corpus is about 955 GB.
+scripts/download/japaneeg.sh
 
 # TFCL AFE downloads official docs and Hub metadata by default. Its ASVspoof
 # 2019-derived processed audio and checkpoint are independent large opt-ins.

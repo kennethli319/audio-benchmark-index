@@ -21347,3 +21347,75 @@ benchmarks:
       - https://api.github.com/repos/CognoSpeak/PROCESS-2
       - https://zenodo.org/records/19900225
       - https://zenodo.org/api/records/19900225
+
+  - id: japaneeg
+    name: JapanEEG
+    full_name: "JapanEEG: A 1000-hour EEG-EMG-audio dataset of Japanese speech production"
+    qwen_cited_as: null
+    qwen_bucket:
+      - multimodal_speech
+      - speech_representation
+      - neural_speech_decoding
+    tasks:
+      - overt_speech_neural_decoding
+      - eeg_speech_representation_learning
+      - eeg_emg_audio_alignment
+      - speech_artifact_modeling
+      - longitudinal_session_adaptation
+      - cross_device_neural_signal_adaptation
+      - speech_event_detection
+    official:
+      dataset: https://openneuro.org/datasets/ds007808/versions/1.0.0
+      doi: https://doi.org/10.18112/openneuro.ds007808.v1.0.0
+      paper: https://arxiv.org/abs/2606.01264
+      repo: https://github.com/Motoshige496/JapanEEG
+    download:
+      access: public_ungated_very_large_openneuro_release
+      primary:
+        - https://openneuro.org/datasets/ds007808/versions/1.0.0
+      examples:
+        - 'scripts/download/japaneeg.sh'
+      notes: >-
+        OpenNeuro version 1.0.0 provides approximately 955 GB in BIDS format.
+        The paper reports 1,020 hours of synchronized scalp EEG, facial EMG,
+        and 48 kHz speech audio from three healthy native Japanese speakers,
+        recorded longitudinally with three 62-128-channel EEG systems. The
+        release includes event timing, ASR transcriptions, participant and
+        channel metadata, and overt, covert, and listening conditions. The
+        helper downloads only lightweight official metadata, documentation,
+        and provenance; obtain selected files or the full corpus through the
+        versioned OpenNeuro page. The companion repository's current README
+        and downloader refer to older ds007602/ds007600 identifiers, so they
+        must not be used as a substitute for the paper's ds007808 release.
+    access:
+      status: public_ungated
+      requirements:
+        - Use the versioned ds007808 OpenNeuro record cited by the paper.
+        - Select only required subjects, sessions, or files because the complete release is approximately 955 GB.
+        - Apply appropriate safeguards for identifiable voice and biometric neural and facial-muscle recordings.
+      notes: >-
+        No account or approval is stated for public OpenNeuro access. CC0
+        removes copyright and database-right barriers to the extent legally
+        possible, but it does not waive participant privacy, publicity,
+        biometric-data, or research-ethics obligations.
+    license:
+      data: CC0-1.0
+      code: CC0-1.0
+      notes: >-
+        The versioned OpenNeuro dataset_description.json declares CC0 and the
+        companion repository uses CC0-1.0. Cite the dataset DOI and paper
+        despite the waiver. Treat voice, EEG, EMG, demographic, and
+        transcript data as potentially identifying, and do not infer that
+        CC0 eliminates privacy, consent, ethics, or institutional-review
+        responsibilities.
+    sources:
+      - https://arxiv.org/abs/2606.01264
+      - https://arxiv.org/html/2606.01264v1
+      - https://openneuro.org/datasets/ds007808/versions/1.0.0
+      - https://openneuro.org/crn/datasets/ds007808/snapshots/1.0.0/files/dataset_description.json
+      - https://doi.org/10.18112/openneuro.ds007808.v1.0.0
+      - https://github.com/Motoshige496/JapanEEG
+      - https://raw.githubusercontent.com/Motoshige496/JapanEEG/main/README.md
+      - https://raw.githubusercontent.com/Motoshige496/JapanEEG/main/LICENSE
+      - https://raw.githubusercontent.com/Motoshige496/JapanEEG/main/src/japaneeg/download.py
+      - https://api.github.com/repos/Motoshige496/JapanEEG

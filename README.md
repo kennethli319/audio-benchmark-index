@@ -52,7 +52,8 @@ audio editing, human-preference evaluation of synthesized speech, and
 multi-turn spoken-dialogue emotional-intelligence evaluation and expressive
 Russian conversational speech synthesis, non-human voice conversion and
 designed-vocalization timbre transfer, facial-EMG-to-speech synthesis and
-silent-speech recognition, multimodal ambivalence and hesitancy
+silent-speech recognition, synchronized EEG-EMG-audio speech-production
+analysis and neural decoding, multimodal ambivalence and hesitancy
 recognition,
 multimodal spoken-sarcasm and dialogue-pragmatics evaluation,
 German read-speech word-boundary timing,
@@ -83,7 +84,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 331 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 332 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The ICASSP 2026 LongSpeech paper is recorded as an announced-but-unreleased
@@ -1522,6 +1523,7 @@ Current coverage includes:
 | [ADReSS / ADReSSo](https://talkbank.org/dementia/ADReSS-2020/) | Spontaneous-speech Alzheimer's detection, MMSE regression, and cognitive-decline prediction | Official age- and gender-balanced 2020 and audio-only 2021 challenge releases require approved DementiaBank membership; helper saves public challenge/access documentation and prints the manual membership path without accessing clinical recordings | TalkBank defaults to CC BY-NC-SA 3.0 plus strict password-protected clinical-data rules: non-commercial use, no LLM incorporation, no sharing with non-members, confidentiality and ethics duties, and faculty sponsorship for student access |
 | [DementiaBank Pitt Corpus](https://talkbank.org/dementia/access/English/Pitt.html) | Alzheimer's detection, spontaneous-speech analysis, and speech-privacy evaluation | Password-protected clinical corpus with dementia/control recordings, transcripts, and media across four language tasks; helper saves public documentation and prints the membership path without authenticating or downloading data; arXiv:2607.17098 evaluates 552 Cookie Theft recordings | TalkBank defaults to CC BY-NC-SA 3.0 and prohibits commercial products or LLM incorporation; access requires membership, students need faculty sponsorship, and clinical data cannot be shared with non-members or reposted |
 | [PROCESS-2](https://huggingface.co/datasets/CognoSpeak/PROCESS-2) | Spontaneous-speech cognitive-impairment classification, MMSE regression, and clinical speech analysis | Manually approved Hugging Face release with approximately 21 hours from 400 UK participants, three speech tasks, verified transcripts, participant metadata, and predefined 80/20 splits; helper downloads only public paper/code metadata and prints the access path | Custom research-only DUA prohibits re-identification, redistribution, public hosting, biometric identification training, and commercial or clinical deployment without permission; Apache-2.0 applies only to the public analysis code |
+| [JapanEEG](https://openneuro.org/datasets/ds007808/versions/1.0.0) | Overt-speech neural decoding, synchronized EEG-EMG-audio alignment, artifact modeling, and longitudinal/cross-device adaptation | Public OpenNeuro v1.0.0 BIDS release with 1,020 hours from three native Japanese speakers and three EEG systems; helper downloads lightweight metadata and provenance only because the full corpus is approximately 955 GB; use `ds007808`, not the older identifiers still present in the companion repository | Dataset and companion code are CC0-1.0, but voice, EEG, facial EMG, demographics, and transcripts remain potentially identifying; privacy, biometric-data, consent, ethics, and institutional-review obligations still apply |
 | [VoxPopuli](https://github.com/facebookresearch/voxpopuli) | ASR and S2TT | [facebook/voxpopuli](https://huggingface.co/datasets/facebook/voxpopuli); select a language/config and split before downloading the large HF repository | Data is CC0-1.0; code and pretrained models are CC BY-NC 4.0; raw data also points to European Parliament legal notice |
 | [mTEDx](https://www.openslr.org/100) | ASR and S2TT | [OpenSLR SLR100](https://www.openslr.org/100) ASR language archives, speech-translation language-pair archives, IWSLT 2021 test sets, and small metadata; archives are opt-in in the helper | CC BY-NC-ND 4.0; derived from TEDx Talks, so TED/TEDx source terms also apply |
 | [OpenSTBench](https://github.com/sjtuayj/OpenSTBench) | Multidimensional offline and streaming speech-translation evaluation | Public evaluation toolkit plus an ungated [300-sample LibriTTS-based paired-speaker set](https://huggingface.co/datasets/ayj111/openstbench-paired-set); helper downloads docs/metadata by default, while the approximately 511 MiB paired set and toolkit clone are separate opt-ins | Paired-set card declares `other` and preserves upstream/synthesis terms; original code is MIT, adapted SimulEval components are CC BY-SA 4.0, and each component evaluation corpus retains its own terms |
