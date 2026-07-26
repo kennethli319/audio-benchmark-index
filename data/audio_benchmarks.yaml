@@ -9,6 +9,56 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  midi_rae_jepa_symbolic_representation:
+    paper: https://arxiv.org/abs/2607.14537
+    title: "MIDI-RAE-JEPA: Hierarchical Representation Learning and Generation for Symbolic Music"
+    sections: 2.1 and 3.1.3
+    status: audited_new_public_family
+    evaluated_sets:
+      - cited_as: POP909
+        status: public_source_corpus_not_added_this_increment
+        note: >-
+          Section 2.1 trains the representation model on 909 MIDI songs from
+          POP909. This run focuses on the paper's held-out downstream
+          evaluation family rather than adding both source corpora at once.
+      - cited_as: EMOPIA
+        index_id: emopia
+        status: public_ungated
+        note: >-
+          Section 3.1.3 trains linear probes on 1,071 emotion-labelled piano
+          clips and reports four-quadrant, arousal, and valence accuracy.
+    protocol_note: >-
+      MIDI-RAE-JEPA renders each symbolic clip as a 128-by-128 binary piano
+      roll, mean-pools 4,000 crop embeddings at each hierarchy level, and
+      compares linear probes with Haar-scattering and DINOv2 baselines.
+      Version 1 does not link a paper-specific implementation, checkpoint,
+      crop manifest, random seed, or trained-probe release.
+    release_audit:
+      emopia_midi_labels_metadata_and_split_notebook: public_ungated
+      precomputed_split_files: not_in_v1_Zenodo_archive
+      source_youtube_audio: ids_and_timestamps_only_due_to_copyright
+      midi_rae_jepa_implementation_checkpoints_and_probe_artifacts: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      emopia_dataset: conflicting_official_CC-BY-4.0_and_CC-BY-NC-SA-4.0
+      emopia_code: MIT
+      paper_specific_artifacts: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.14537
+      - https://arxiv.org/html/2607.14537v1#S2.SS1
+      - https://arxiv.org/html/2607.14537v1#S3.SS1.SSS3
+      - https://arxiv.org/abs/2108.01374
+      - https://github.com/annahung31/EMOPIA
+      - https://raw.githubusercontent.com/annahung31/EMOPIA/main/README.md
+      - https://raw.githubusercontent.com/annahung31/EMOPIA/main/LICENSE
+      - https://api.github.com/repos/annahung31/EMOPIA
+      - https://zenodo.org/records/5090631
+      - https://zenodo.org/api/records/5090631
+    note: >-
+      This audit adds the released EMOPIA family. The public source release
+      does not reproduce MIDI-RAE-JEPA's crop sampling, learned embeddings,
+      trained linear probes, or reported score records.
+
   interactive_symbolic_music_analysis:
     paper: https://arxiv.org/abs/2607.13587
     title: "From Prediction to Collaboration: Interactive Symbolic Music Analysis"
@@ -22278,3 +22328,65 @@ benchmarks:
       - https://api.github.com/repos/johentsch/dilemmadata
       - https://github.com/manoskary/analysisgnn
       - https://raw.githubusercontent.com/manoskary/analysisgnn/main/analysisgnn/data/datasets/dlc.py
+
+  - id: emopia
+    name: EMOPIA
+    full_name: "EMOPIA: A Multi-Modal Pop Piano Dataset for Emotion Recognition and Emotion-based Music Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - symbolic_music_analysis
+    tasks:
+      - symbolic_music_emotion_recognition
+      - four_quadrant_emotion_classification
+      - arousal_classification
+      - valence_classification
+      - emotion_conditioned_music_generation
+    official:
+      paper: https://arxiv.org/abs/2108.01374
+      project: https://annahung31.github.io/EMOPIA/
+      repo: https://github.com/annahung31/EMOPIA
+      dataset: https://zenodo.org/records/5090631
+      doi: https://doi.org/10.5281/zenodo.5090631
+    download:
+      access: public_ungated
+      primary:
+        - https://zenodo.org/records/5090631
+        - https://github.com/annahung31/EMOPIA
+      examples:
+        - 'scripts/download/emopia.sh'
+        - 'EMOPIA_DOWNLOAD_DATA=1 scripts/download/emopia.sh'
+        - 'import muspy; ds = muspy.EMOPIADataset("data/emopia", download_and_extract=True)'
+      notes: >-
+        The public v1.0 release contains 1,087 transcribed MIDI clips with
+        four-quadrant emotion labels, YouTube IDs, timestamps, and a notebook
+        that reproducibly creates song-disjoint training, validation, and test
+        splits with a fixed random state. Precomputed split CSVs are not
+        included in the Zenodo ZIP. The original paper reports 1,087 clips
+        from 387 songs; MIDI-RAE-JEPA section 3.1.3 evaluates 1,071 piano clips
+        after its own preprocessing. The helper saves official documentation
+        and metadata by default. The approximately 5.5 MB Zenodo ZIP is
+        checksum-verified and requires EMOPIA_DOWNLOAD_DATA=1. Copyrighted
+        source audio is not redistributed.
+    license:
+      data: conflicting_official_CC-BY-4.0_and_CC-BY-NC-SA-4.0
+      code: MIT
+      notes: >-
+        Zenodo metadata declares CC BY 4.0, while the official repository
+        README declares the dataset CC BY-NC-SA 4.0, prohibits commercial
+        use, and asks users not to defame original music owners. Apply the
+        stricter non-commercial share-alike terms pending clarification.
+        Repository code is MIT. The release provides only YouTube identifiers
+        and timestamps for source audio, whose copyright and platform terms
+        remain separate.
+    sources:
+      - https://arxiv.org/abs/2108.01374
+      - https://github.com/annahung31/EMOPIA
+      - https://raw.githubusercontent.com/annahung31/EMOPIA/main/README.md
+      - https://raw.githubusercontent.com/annahung31/EMOPIA/main/LICENSE
+      - https://api.github.com/repos/annahung31/EMOPIA
+      - https://zenodo.org/records/5090631
+      - https://zenodo.org/api/records/5090631
+      - https://doi.org/10.5281/zenodo.5090631
+      - https://arxiv.org/abs/2607.14537
+      - https://arxiv.org/html/2607.14537v1#S3.SS1.SSS3

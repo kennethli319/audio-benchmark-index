@@ -22,7 +22,7 @@ forest-acoustic impulse-response simulation for bioacoustic arrays,
 global bird-species and tropical bird-activity detection for passive acoustic monitoring,
 biomedical heart-sound classification and cardiac-screening evaluation,
 music genre classification, instrument recognition, music transcription,
-symbolic Roman-numeral, harmonic, cadence, phrase, key, and structural music analysis,
+symbolic Roman-numeral, harmonic, cadence, phrase, key, structural, and emotion analysis,
 asynchronous distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
 egocentric smart-glasses speech recognition and understanding,
@@ -86,8 +86,20 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 338 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 339 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 MIDI-RAE-JEPA paper adds EMOPIA as a symbolic-music
+emotion-recognition family. Section 3.1.3 evaluates linear probes on 1,071
+preprocessed piano clips for four-quadrant emotion, arousal, and valence.
+The official v1.0 Zenodo release contains 1,087 labelled MIDI clips and is
+public and ungated; copyrighted source audio is represented only by YouTube
+IDs and timestamps. Zenodo declares CC BY 4.0, but the official repository
+README declares CC BY-NC-SA 4.0 and prohibits commercial use, so the index
+conservatively applies the stricter terms pending clarification. The helper
+saves lightweight metadata by default and makes the checksum-verified 5.5 MB
+archive opt-in. MIDI-RAE-JEPA code, crop manifests, embeddings, trained probes,
+and score records remain unreleased.
 
 The July 2026 interactive symbolic-music-analysis paper adds Dilemmadata, a
 public benchmark that harmonizes AugmentedNet and more than 40 Distant
