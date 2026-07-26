@@ -9,6 +9,51 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  interactive_symbolic_music_analysis:
+    paper: https://arxiv.org/abs/2607.13587
+    title: "From Prediction to Collaboration: Interactive Symbolic Music Analysis"
+    sections: 4.1-4.2
+    status: audited_new_public_family
+    evaluated_sets:
+      - cited_as: Dilemmadata
+        index_id: dilemmadata
+        status: public_ungated
+        note: >-
+          Section 4.1 evaluates held-out AugmentedNet and Distant Listening
+          Corpus subsets processed into a shared task vocabulary. Section 4.2
+          reports blind full-inference Roman-numeral accuracy and structural
+          metrics, plus masked completion at multiple known-label ratios with
+          five independently sampled masks per ratio.
+    protocol_note: >-
+      Dilemmadata harmonizes AugmentedNet and more than 40 Distant Listening
+      subcorpora into note-level pitch-array TSVs for Roman-numeral, cadence,
+      phrase, key, chord, pedal, section, rhythmic, and note-degree analysis.
+      The official release preserves AugmentedNet's train, validation, and
+      test partitions and excludes overlapping DLC pieces from training to
+      reduce test leakage.
+    release_audit:
+      processed_pitch_arrays_and_split_structure: public_ungated
+      processing_scripts_and_column_specs: public_ungated
+      upstream_corpora: public_git_submodules_with_independent_terms
+      paper_specific_mask_samples_and_random_seeds: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      dataset_metadata: CC-BY-NC-SA-4.0
+      upstream: independent_AugmentedNet_and_DLC_terms_apply
+    sources:
+      - https://arxiv.org/abs/2607.13587
+      - https://arxiv.org/html/2607.13587v1#S4.SS1
+      - https://arxiv.org/html/2607.13587v1#S4.SS2
+      - https://github.com/johentsch/dilemmadata
+      - https://github.com/johentsch/dilemmadata/releases/tag/v1.0
+      - https://raw.githubusercontent.com/johentsch/dilemmadata/main/README.md
+      - https://raw.githubusercontent.com/johentsch/dilemmadata/main/.zenodo.json
+      - https://github.com/manoskary/analysisgnn
+    note: >-
+      This audit adds the released Dilemmadata family. Public source data does
+      not reproduce the paper's five sampled masks per context ratio because
+      their item manifests and random seeds are not published.
+
   ud_asd_unified_diffusion:
     paper: https://arxiv.org/abs/2607.12576
     title: "UD-ASD: A Unified Diffusion Model for Anomalous Sound Detection"
@@ -22171,3 +22216,65 @@ benchmarks:
       - https://arxiv.org/abs/2607.15724
       - https://arxiv.org/html/2607.15724v1#S4.SS1
       - https://doi.org/10.1007/978-3-031-20096-0_45
+
+  - id: dilemmadata
+    name: Dilemmadata
+    full_name: "Dilemmadata: A Symbolic Dataset for Music Research"
+    qwen_cited_as: null
+    qwen_bucket: symbolic_music_analysis
+    tasks:
+      - roman_numeral_analysis
+      - harmonic_analysis
+      - cadence_detection
+      - phrase_segmentation
+      - key_analysis
+      - rhythmic_analysis
+      - voice_leading_analysis
+      - section_segmentation
+      - pedal_point_detection
+      - note_degree_inference
+      - partial_label_completion
+    official:
+      repo: https://github.com/johentsch/dilemmadata
+      release: https://github.com/johentsch/dilemmadata/releases/tag/v1.0
+      paper: https://arxiv.org/abs/2607.13587
+      evaluation_repo: https://github.com/manoskary/analysisgnn
+    download:
+      access: public_ungated
+      primary:
+        - https://github.com/johentsch/dilemmadata/releases/tag/v1.0
+        - https://github.com/johentsch/dilemmadata
+      examples:
+        - 'scripts/download/dilemmadata.sh'
+        - 'DILEMMADATA_CLONE_REPO=1 scripts/download/dilemmadata.sh'
+      notes: >-
+        The public v1.0 repository contains processed pitch-array TSVs,
+        predefined AugmentedNet training, validation, and test splits, more
+        than 40 Distant Listening subcorpora, processing scripts, summary
+        tables, and column specifications. The helper downloads lightweight
+        official documentation and repository metadata by default; cloning
+        the approximately 84 MB GitHub repository and its processed symbolic
+        data requires DILEMMADATA_CLONE_REPO=1. Git submodules point to the
+        independent upstream corpora and are not initialized by the helper.
+    license:
+      data: CC-BY-NC-SA-4.0_metadata_with_upstream_terms
+      code: not_specified
+      notes: >-
+        The owner-provided .zenodo.json declares the dataset CC BY-NC-SA 4.0,
+        but the GitHub repository has no LICENSE file and GitHub detects no
+        license. AugmentedNet and Distant Listening source corpora retain
+        independent terms. Apply the declared non-commercial share-alike
+        terms to the processed release, review upstream rights, and do not
+        infer a software license for processing code.
+    sources:
+      - https://arxiv.org/abs/2607.13587
+      - https://arxiv.org/html/2607.13587v1#S4.SS1
+      - https://arxiv.org/html/2607.13587v1#S4.SS2
+      - https://github.com/johentsch/dilemmadata
+      - https://github.com/johentsch/dilemmadata/releases/tag/v1.0
+      - https://raw.githubusercontent.com/johentsch/dilemmadata/main/README.md
+      - https://raw.githubusercontent.com/johentsch/dilemmadata/main/.zenodo.json
+      - https://raw.githubusercontent.com/johentsch/dilemmadata/main/.gitmodules
+      - https://api.github.com/repos/johentsch/dilemmadata
+      - https://github.com/manoskary/analysisgnn
+      - https://raw.githubusercontent.com/manoskary/analysisgnn/main/analysisgnn/data/datasets/dlc.py

@@ -75,6 +75,7 @@ scripts/download/minds14.sh
 scripts/download/hear.sh
 scripts/download/dynamic_superb.sh
 scripts/download/maeb.sh
+scripts/download/dilemmadata.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh

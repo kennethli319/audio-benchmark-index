@@ -21,8 +21,9 @@ long-form clinical conversation understanding and audio-to-SOAP summarization,
 forest-acoustic impulse-response simulation for bioacoustic arrays,
 global bird-species and tropical bird-activity detection for passive acoustic monitoring,
 biomedical heart-sound classification and cardiac-screening evaluation,
-music genre classification, instrument recognition, music transcription, asynchronous
-distributed-microphone meeting recognition, speaker
+music genre classification, instrument recognition, music transcription,
+symbolic Roman-numeral, harmonic, cadence, phrase, key, and structural music analysis,
+asynchronous distributed-microphone meeting recognition, speaker
 verification anti-spoofing, speaker diarization, target-speaker extraction,
 egocentric smart-glasses speech recognition and understanding,
 music synthesis, song-aesthetics, music reward-model and compositional multimodal
@@ -85,8 +86,20 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 337 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 338 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 interactive symbolic-music-analysis paper adds Dilemmadata, a
+public benchmark that harmonizes AugmentedNet and more than 40 Distant
+Listening subcorpora into note-level pitch arrays. Sections 4.1-4.2 evaluate
+held-out AugmentedNet and DLC subsets for blind Roman-numeral and structural
+analysis, plus partial-label completion with five sampled masks per context
+ratio. The public v1.0 repository provides processed TSVs, split structure,
+column specifications, and processing scripts. Its metadata declares CC
+BY-NC-SA 4.0, upstream corpus terms remain independent, and the repository has
+no software LICENSE. The helper saves lightweight official metadata by default
+and makes the approximately 84 MB repository clone opt-in; paper-specific mask
+manifests and random seeds remain unreleased.
 
 The July 2026 UD-ASD paper adds coverage of the public DCASE 2022 Task 2
 anomalous-sound-detection family. Its section 3.1 evaluates the official
@@ -1577,6 +1590,7 @@ Current coverage includes:
 | [HEAR](https://hearbenchmark.com/) | Speech/audio/music representation evaluation | Official [HEAR eval kit](https://github.com/hearbenchmark/hear-eval-kit) and [Zenodo HEAR 2021 task archive](https://zenodo.org/records/5885750); helper downloads record metadata/license by default and makes task archives opt-in | Mixed component dataset terms; Zenodo lists CC BY 4.0 but says each task has its own LICENSE.txt; eval kit is Apache-2.0 |
 | [Dynamic-SUPERB](https://github.com/dynamic-superb/dynamic-superb) | Speech instruction benchmark | Official Dynamic-SUPERB repository, [leaderboard](https://huggingface.co/spaces/DynamicSuperb/leaderboard), and docs; helper downloads docs by default and can clone the repo with opt-in | Mixed component dataset terms; GitHub API reported no repository license, so check each task source before use |
 | [MAEB](https://github.com/embeddings-benchmark/mteb) | Multilingual speech, music, environmental-sound, and audio-text embedding evaluation | Public 30-task beta suite in the official MTEB registry, spanning retrieval, classification, clustering, pair classification, reranking, multilabel classification, and zero-shot classification in more than 100 languages; helper downloads lightweight official metadata/docs by default and makes the approximately 55 MB MTEB source clone opt-in | MTEB code and registry are Apache-2.0, but all component datasets retain their own mixed licenses, access controls, attribution requirements, and media rights |
+| [Dilemmadata](https://github.com/johentsch/dilemmadata) | Symbolic Roman-numeral, harmonic, cadence, phrase, key, and structural music analysis | Public v1.0 processed pitch-array TSVs and split structure combining AugmentedNet with more than 40 Distant Listening subcorpora; helper saves lightweight official metadata by default and makes the approximately 84 MB repository clone opt-in | Owner metadata declares CC BY-NC-SA 4.0; upstream corpus terms remain independent, and the repository has no software LICENSE |
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
 | [SongFormBench](https://huggingface.co/datasets/ASLP-lab/SongFormBench) | Audio understanding | `load_dataset("ASLP-lab/SongFormBench")` | HF card and SongFormer repo list CC BY 4.0 |
 | [RUBATO](https://zenodo.org/records/21407832) | Robust music transcription and analysis across multiple versions of the same works | Public Zenodo v0.3 release with 566 versions of 15 works (about 42.9 hours), aligned audio/score/video representations, and note, beat, measure, local-key, structure, and warping-path annotations; helper downloads the 83 KB metadata by default while the approximately 6.26 GB archive is opt-in | Zenodo labels the deposit CC BY 3.0, but per-recording metadata includes CC0, attribution, ShareAlike, NoDerivatives, non-commercial, ambiguous, and EEF terms; review each recording before reuse |
