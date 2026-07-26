@@ -67,7 +67,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.18934
     title: "Transcription Policy as a Latent Variable: Activating Controllable Verbatim ASR with Word-Level Timing"
     sections: 5 and 6.1
-    status: audited_one_new_public_family
+    status: audited_two_new_public_families
     evaluated_sets:
       - cited_as: DisfluencySpeech
         index_id: nyra_verbatim_speech_benchmark
@@ -96,9 +96,14 @@ paper_audits:
         status: public_controlled_access_family_not_yet_indexed
         protocol: Section 6.1 uses disfluent FluencyBank speech for word-boundary timing evaluation.
       - cited_as: Thorsten
-        index_id: null
-        status: public_family_not_yet_indexed
-        protocol: Section 6.1 uses the German Thorsten speech corpus for word-boundary timing evaluation.
+        index_id: thorsten_voice
+        status: new_public_family
+        protocol: >-
+          Sections 5.1, 6.1, and 7.2 use the 23-hour German
+          Thorsten-Voice 2021.02 neutral corpus for word-boundary timing
+          evaluation, reporting mean absolute boundary error and F1 with
+          50/100/200 ms collars. The paper cites Zenodo DOI
+          10.5281/zenodo.5525342, identifying the exact public release.
       - cited_as: ICSI rare-word evaluation set
         index_id: null
         status: paper_specific_derived_protocol_not_separately_released
@@ -111,11 +116,13 @@ paper_audits:
       paper: public_ungated
       english_dataset: public_ungated_hugging_face
       german_dataset: public_ungated_hugging_face
+      thorsten_voice_2021_02: public_ungated_zenodo
       evaluator_and_cached_predictions: public_ungated_github_repository
       icsi_rare_word_subset_manifest: not_separately_released
     license:
       english_dataset: Apache-2.0
       german_dataset: not_specified
+      thorsten_voice_2021_02: conflicting_CC_BY_4_0_Zenodo_and_CC0_repository
       evaluator: README_states_MIT_but_repository_has_no_LICENSE_file
       source_english_dataset: Apache-2.0
     sources:
@@ -126,10 +133,16 @@ paper_audits:
       - https://www.nyra-labs.com/research/nyra-verbatim-speech-benchmark
       - https://huggingface.co/datasets/nyralabs/disfluency_speech_english
       - https://huggingface.co/datasets/nyralabs/disfluency_speech_german
+      - https://doi.org/10.5281/zenodo.5525342
+      - https://zenodo.org/api/records/5525342
+      - https://github.com/thorstenMueller/Thorsten-Voice
     note: >-
       The index treats the two language datasets and their shared evaluator as
       one bilingual benchmark family. The German set is author-collected and
       publicly available, but its dataset card still declares no license.
+      The separately indexed Thorsten-Voice family covers the paper's German
+      read-speech timing evaluation; use the exact Zenodo release's CC BY 4.0
+      terms because the broader project repository instead declares CC0.
       Public release does not imply permission beyond the terms explicitly
       stated by each owner.
 
@@ -20563,3 +20576,71 @@ benchmarks:
       - https://huggingface.co/api/datasets/nyralabs/disfluency_speech_german
       - https://huggingface.co/datasets/amaai-lab/DisfluencySpeech
       - https://arxiv.org/abs/2406.08820
+
+  - id: thorsten_voice
+    name: Thorsten-Voice
+    full_name: Thorsten-Voice Dataset 2021.02 (Neutral)
+    qwen_cited_as: null
+    qwen_bucket: speech_recognition
+    tasks:
+      - word_level_timing
+      - speech_alignment
+      - automatic_speech_recognition
+      - speech_synthesis
+      - german_read_speech
+    official:
+      zenodo: https://doi.org/10.5281/zenodo.5525342
+      repo: https://github.com/thorstenMueller/Thorsten-Voice
+      homepage: https://www.thorsten-voice.de/
+      recent_evaluation: https://arxiv.org/abs/2607.18934
+    download:
+      primary:
+        - https://doi.org/10.5281/zenodo.5525342
+        - https://zenodo.org/api/records/5525342
+      examples:
+        - 'scripts/download/thorsten_voice.sh'
+        - 'THORSTEN_VOICE_DOWNLOAD_ARCHIVE=1 scripts/download/thorsten_voice.sh'
+      notes: >-
+        The helper downloads the official Zenodo record, project README,
+        repository metadata, and license text by default. The approximately
+        2.74 GB version 3.0 archive requires explicit opt-in. The July 2026
+        controllable-verbatim-ASR paper cites this exact DOI and describes the
+        23-hour German neutral corpus as its read-speech word-boundary timing
+        evaluation set; it reports mean absolute boundary error and F1 at
+        50, 100, and 200 ms collars.
+    access:
+      status: public_ungated
+      requirements:
+        - No account or approval gate is listed on the Zenodo record.
+        - The large archive requires explicit environment-variable opt-in.
+      notes: >-
+        Version 3.0 contains 22,668 single-speaker German WAV recordings in
+        LJSpeech structure at 22.05 kHz, totaling more than 23 hours. The
+        paper identifies the family and release DOI but does not publish a
+        separate evaluated-row manifest, split definition, or preprocessing
+        recipe, so do not infer that every archive row was scored.
+    license:
+      data: CC_BY_4_0_with_conflicting_CC0_project_signal
+      code: CC0_1_0
+      notes: >-
+        The exact Zenodo 5525342 record declares CC BY 4.0, while the official
+        project repository has a CC0-1.0 LICENSE and describes all
+        Thorsten-Voice datasets as free to use; the newer combined Hugging
+        Face release also declares CC0. Apply the exact archive's CC BY 4.0
+        attribution terms unless the owner clarifies that CC0 supersedes
+        them. The repository's CC0 signal does not silently replace the
+        license attached to the cited Zenodo record.
+    sources:
+      - https://doi.org/10.5281/zenodo.5525342
+      - https://zenodo.org/records/5525342
+      - https://zenodo.org/api/records/5525342
+      - https://github.com/thorstenMueller/Thorsten-Voice
+      - https://raw.githubusercontent.com/thorstenMueller/Thorsten-Voice/master/README.md
+      - https://raw.githubusercontent.com/thorstenMueller/Thorsten-Voice/master/LICENSE
+      - https://api.github.com/repos/thorstenMueller/Thorsten-Voice
+      - https://huggingface.co/datasets/Thorsten-Voice/TV-44kHz-Full
+      - https://huggingface.co/api/datasets/Thorsten-Voice/TV-44kHz-Full
+      - https://arxiv.org/abs/2607.18934
+      - https://arxiv.org/html/2607.18934v1#S5.SS1
+      - https://arxiv.org/html/2607.18934v1#S6.SS1
+      - https://arxiv.org/html/2607.18934v1#S7.SS2

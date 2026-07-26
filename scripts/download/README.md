@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh
 scripts/download/nyra_verbatim_speech_benchmark.sh
+scripts/download/thorsten_voice.sh
 scripts/download/mmau_pro.sh
 scripts/download/mugen.sh
 scripts/download/trea.sh
@@ -411,6 +412,10 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech downloads official metadata/checksums by default. Archives are opt-in.
 LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh
+
+# Thorsten-Voice downloads official Zenodo/project metadata by default.
+# The exact 23-hour, approximately 2.74 GB v3.0 archive is opt-in.
+THORSTEN_VOICE_DOWNLOAD_ARCHIVE=1 scripts/download/thorsten_voice.sh
 
 # DCASE 2024/2025 Task 2 ASD helpers download official metadata by default.
 # Select archive groups explicitly.
