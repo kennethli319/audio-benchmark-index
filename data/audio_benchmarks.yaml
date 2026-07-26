@@ -9,6 +9,57 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  natural_backdoor_speech_recognition:
+    paper: https://arxiv.org/abs/2607.15724
+    title: "Natural Backdoor Attacks on Speech Recognition Models"
+    sections: 4.1-4.3
+    status: audited_existing_and_new_public_coverage
+    evaluated_sets:
+      - cited_as: Speech Commands Dataset Version 2
+        index_id: speech_commands
+        status: public
+        note: >-
+          The paper selects ten keywords, removes clips shorter than one
+          second, and evaluates benign accuracy and natural-trigger attack
+          success rate with CNN and LSTM classifiers.
+      - cited_as: Eating Sound Collection
+        index_id: eating_sound_collection
+        status: public_with_source_media_rights_caveat
+        note: >-
+          The paper evaluates a 20-class eating-sound classifier after
+          removing clips shorter than three seconds. The owner release
+          contains 11,141 hand-cut clips from 246 YouTube videos.
+    protocol_note: >-
+      Experiments mix rain, whistle, bird-call, random-noise, and ultrasonic
+      triggers into source clips and vary poisoning rate, trigger duration,
+      and blend ratio. The authors do not release fixed poisoned-example
+      manifests, trigger files, seeds, trained models, predictions, or score
+      records, so the paper-specific attack protocol is not independently
+      downloadable from the two source datasets.
+    release_audit:
+      speech_commands_source: public_ungated
+      eating_sound_collection_source: public_kaggle
+      paper_specific_poisoned_audio_and_protocol_artifacts: not_released
+      paper_specific_attack_implementation: not_released
+      eating_sound_classification_baseline: public_repository
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      attack_artifacts: not_specified_unreleased
+      upstream: Speech Commands v2 is CC BY 4.0; Kaggle labels Eating Sound Collection PDDL, but the incorporated YouTube-derived clips require separate source-rights review
+    sources:
+      - https://arxiv.org/abs/2607.15724
+      - https://arxiv.org/html/2607.15724v1#S4.SS1
+      - https://arxiv.org/html/2607.15724v1#S4.SS2
+      - https://doi.org/10.1007/978-3-031-20096-0_45
+      - https://www.tensorflow.org/datasets/catalog/speech_commands
+      - https://www.kaggle.com/datasets/mashijie/eating-sound-collection
+      - https://www.kaggle.com/api/v1/datasets/view/mashijie/eating-sound-collection
+      - https://github.com/jsjm/EatingSoundClassification
+    note: >-
+      This audit adds the previously missing public Eating Sound Collection
+      family and maps Speech Commands to its existing entry. It does not treat
+      the paper's unreleased poisoned mixtures as a separate benchmark.
+
   badge_greedy_dpp_hyenaset_evaluation:
     paper: https://arxiv.org/abs/2607.13555
     title: "Greedy Volume Maximization of Gradient Embeddings for Long-Tailed Frame-Level Bioacoustic Active Learning"
@@ -21662,3 +21713,60 @@ benchmarks:
       - https://raw.githubusercontent.com/Motoshige496/JapanEEG/main/LICENSE
       - https://raw.githubusercontent.com/Motoshige496/JapanEEG/main/src/japaneeg/download.py
       - https://api.github.com/repos/Motoshige496/JapanEEG
+
+  - id: eating_sound_collection
+    name: Eating Sound Collection
+    full_name: "Eating Sound Collection: 20-class food-eating audio dataset"
+    qwen_cited_as: null
+    qwen_bucket: environmental_sound_classification
+    tasks:
+      - eating_sound_classification
+      - acoustic_event_classification
+      - audio_classification
+      - robustness_to_natural_audio_triggers
+    official:
+      dataset: https://www.kaggle.com/datasets/mashijie/eating-sound-collection
+      metadata_api: https://www.kaggle.com/api/v1/datasets/view/mashijie/eating-sound-collection
+      baseline_repo: https://github.com/jsjm/EatingSoundClassification
+      paper: https://arxiv.org/abs/2607.15724
+      publication: https://doi.org/10.1007/978-3-031-20096-0_45
+    download:
+      access: public_kaggle_account_and_cli_for_archive
+      primary:
+        - https://www.kaggle.com/datasets/mashijie/eating-sound-collection
+        - https://www.kaggle.com/api/v1/datasets/view/mashijie/eating-sound-collection
+      examples:
+        - 'scripts/download/eating_sound_collection.sh'
+        - 'EATING_SOUND_COLLECTION_DOWNLOAD_DATA=1 scripts/download/eating_sound_collection.sh'
+      notes: >-
+        The owner release contains 11,141 normalized eating-sound clips across
+        20 food categories, hand-cut from 246 YouTube videos. The helper saves
+        public Kaggle metadata and baseline documentation by default. The
+        approximately 6.27 GiB Kaggle archive requires explicit opt-in and an
+        authenticated Kaggle CLI. The paper filters clips shorter than three
+        seconds but does not release its exact retained-item or split manifest.
+    access:
+      status: public
+      requirements:
+        - A Kaggle account and authenticated Kaggle CLI may be required for archive download.
+        - Review source-video copyright, uploader permissions, privacy, and YouTube terms before use or redistribution.
+    license:
+      data: pddl_with_unresolved_source_media_rights
+      code: MIT
+      notes: >-
+        Kaggle labels the dataset ODC Public Domain Dedication and Licence
+        (PDDL), and the baseline repository is MIT. The audio was extracted
+        from 246 YouTube videos, however, and neither source-video licenses nor
+        per-clip provenance are published on the dataset page. The Kaggle
+        declaration should not be assumed to waive third-party copyright,
+        performer, privacy, or platform rights in the recordings.
+    sources:
+      - https://www.kaggle.com/datasets/mashijie/eating-sound-collection
+      - https://www.kaggle.com/api/v1/datasets/view/mashijie/eating-sound-collection
+      - https://github.com/jsjm/EatingSoundClassification
+      - https://raw.githubusercontent.com/jsjm/EatingSoundClassification/master/README.md
+      - https://raw.githubusercontent.com/jsjm/EatingSoundClassification/master/LICENSE
+      - https://api.github.com/repos/jsjm/EatingSoundClassification
+      - https://arxiv.org/abs/2607.15724
+      - https://arxiv.org/html/2607.15724v1#S4.SS1
+      - https://doi.org/10.1007/978-3-031-20096-0_45

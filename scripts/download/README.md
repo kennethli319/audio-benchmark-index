@@ -140,6 +140,7 @@ scripts/download/earnings_21.sh
 scripts/download/halas.sh
 scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
+scripts/download/eating_sound_collection.sh
 scripts/download/dcase2024_task5.sh
 scripts/download/dcase2024_task2_asd.sh
 scripts/download/dcase2025_task2_asd.sh
@@ -565,6 +566,11 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# Eating Sound Collection downloads public Kaggle metadata and baseline docs
+# by default. The approximately 6.27 GiB archive requires an authenticated
+# Kaggle CLI and explicit opt-in; review its YouTube source-media rights.
+EATING_SOUND_COLLECTION_DOWNLOAD_DATA=1 scripts/download/eating_sound_collection.sh
 
 # CoVoMix2 Dialogue downloads the paper, 1,000-row manifest, and provenance by
 # default; cloning the small repository with all transcript files is opt-in.
