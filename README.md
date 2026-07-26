@@ -115,6 +115,19 @@ audio-enabled Video-MME, Qualcomm IVD, Omni-Cloze, and OmniGAIA. Protocol notes
 preserve the report's audio-enabled Video-MME setting and its OmniGAIA
 prompt/judge configuration.
 
+The July 2026 BoN-TTS paper is recorded as an existing-family,
+unreleased-derived-evaluation audit. It generates ten F5-TTS candidates for
+1,127 LibriSpeech-PC `test-clean` cross-sentence samples and compares
+wav2vec 2.0, Distil-Whisper, and cross-family selection under three ASR
+evaluator families, with SIM-o and UTMOS checks. LibriSpeech is public and
+already indexed, but the exact row/prompt manifest, generated candidates,
+transcripts, and per-item scores are not released. Although the paper says
+that code and evaluation scripts are available at the cited
+[BoN-TTS repository](https://github.com/yu1012/BoN-TTS), GitHub currently
+reports an empty, zero-size repository with no commits or license. The index
+therefore adds no duplicate benchmark family or download helper and marks the
+derived protocol for a later release recheck.
+
 The July 2026 diffusion-augmentation AAD paper is recorded as an existing
 private-corpus and unreleased-output audit. It evaluates locus-of-attention
 classification on 2,420 trials from 31 hearing-impaired listeners retained

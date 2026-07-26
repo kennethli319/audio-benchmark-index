@@ -9,6 +9,60 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  bon_tts_asr_family_alignment:
+    paper: https://arxiv.org/abs/2607.08256
+    title: "Best-of-N TTS Evaluation is Confounded by ASR Family Alignment"
+    sections: 3, 4.1-4.4, and 5
+    status: audited_existing_public_family_unreleased_derived_evaluation
+    public_interfaces:
+      - https://github.com/yu1012/BoN-TTS
+    evaluated_sets:
+      - cited_as: LibriSpeech-PC test-clean cross-sentence subset
+        index_id: librispeech
+        status: public_source_family_derived_manifest_unreleased
+        protocol: >-
+          The paper evaluates F5-TTS on 1,127 LibriSpeech-PC test-clean
+          cross-sentence samples, generating ten candidates per utterance and
+          reporting best-of-N results for N=3, 5, and 10. Candidate selection
+          uses wav2vec 2.0, Distil-Whisper, and cross-family rank ensembles;
+          WER is triangulated with Whisper-large-v3, wav2vec 2.0-large, and
+          HuBERT-large evaluators, with SIM-o and UTMOS quality checks.
+        note: >-
+          LibriSpeech test-clean is public and already indexed, but the paper
+          does not release its exact LibriSpeech-PC cross-sentence row
+          manifest, reference-prompt pairing, generated candidates,
+          transcriptions, or per-item evaluator scores.
+    release_audit:
+      paper_and_aggregate_results: public_ungated
+      cited_github_repository: public_empty_placeholder
+      evaluation_code_and_decoding_configuration: not_released
+      derived_1127_item_manifest_and_prompt_pairs: not_released
+      generated_best_of_n_candidates: not_released
+      per_item_transcripts_scores_and_similarity_results: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      cited_repository: no_files_or_license
+      evaluation_artifacts: not_specified_unreleased
+      upstream: LibriSpeech is CC BY 4.0; F5-TTS, ASR checkpoints, WavLM, and UTMOS retain their separate terms
+    sources:
+      - https://arxiv.org/abs/2607.08256
+      - https://arxiv.org/html/2607.08256v1#S3
+      - https://arxiv.org/html/2607.08256v1#S4
+      - https://arxiv.org/html/2607.08256v1#S4.SS4
+      - https://arxiv.org/html/2607.08256v1#S5
+      - https://github.com/yu1012/BoN-TTS
+      - https://api.github.com/repos/yu1012/BoN-TTS
+      - https://api.github.com/repos/yu1012/BoN-TTS/git/trees/master?recursive=1
+      - https://www.openslr.org/12
+    note: >-
+      This is an evaluator-bias study over an existing public source family,
+      not a released benchmark dataset. Although section 3 says that code,
+      decoding settings, and evaluation scripts are available at the cited
+      repository, the official GitHub API currently reports a zero-size
+      repository with no commits or tree. The audit therefore leaves the
+      family count unchanged, adds no helper, and records the paper-specific
+      evaluation as unreleased pending a substantive repository publication.
+
   zipl_dialog_long_form_synthesis:
     paper: https://arxiv.org/abs/2607.12496
     title: "ZipL-Dialog: Memory-Efficient Long-Form Spoken Dialog Synthesis via Latent Flow Matching"
