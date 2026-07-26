@@ -142,6 +142,7 @@ scripts/download/mir_1k_vocal.sh
 scripts/download/esc_50.sh
 scripts/download/eating_sound_collection.sh
 scripts/download/dcase2024_task5.sh
+scripts/download/dcase2022_task2_asd.sh
 scripts/download/dcase2024_task2_asd.sh
 scripts/download/dcase2025_task2_asd.sh
 scripts/download/dcase2026_task2_asd.sh
@@ -432,8 +433,9 @@ THORSTEN_VOICE_DOWNLOAD_ARCHIVE=1 scripts/download/thorsten_voice.sh
 DAPS_DOWNLOAD_ARCHIVE=1 scripts/download/daps.sh
 DAPS_CLONE_CROSS_VERIFICATION=1 scripts/download/daps.sh
 
-# DCASE 2024/2025 Task 2 ASD helpers download official metadata by default.
+# DCASE 2022/2024/2025 Task 2 ASD helpers download official metadata by default.
 # Select archive groups explicitly.
+DCASE2022_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2022_TASK2_PARTS="dev eval" scripts/download/dcase2022_task2_asd.sh
 DCASE2024_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2024_TASK2_PARTS="dev eval" scripts/download/dcase2024_task2_asd.sh
 DCASE2025_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2025_TASK2_PARTS="dev eval" scripts/download/dcase2025_task2_asd.sh
 

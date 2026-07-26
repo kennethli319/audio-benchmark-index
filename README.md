@@ -85,8 +85,17 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 336 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 337 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 UD-ASD paper adds coverage of the public DCASE 2022 Task 2
+anomalous-sound-detection family. Its section 3.1 evaluates the official
+seven-machine development release under domain shift, while the owner task
+page and three Zenodo records also publish additional-training and evaluation
+audio. The approximately 11.58 GiB release is CC BY 4.0; its MIT baseline is
+public, but UD-ASD-specific code, checkpoints, predictions, and score records
+are unreleased. The helper therefore fetches lightweight official metadata by
+default and makes archive groups explicit opt-ins.
 
 The July 2026 Quran-recitation autoresearch paper is recorded as an
 unreleased evaluation audit rather than a downloadable benchmark family. It
@@ -1681,6 +1690,7 @@ Current coverage includes:
 | [ESC-50](https://github.com/karolpiczak/ESC-50) | Environmental sound classification | [GitHub archive](https://github.com/karolpiczak/ESC-50/archive/refs/heads/master.zip) or `git clone https://github.com/karolpiczak/ESC-50.git` | ESC-50 is CC BY-NC 3.0; ESC-10 subset clips are CC BY |
 | [Eating Sound Collection](https://www.kaggle.com/datasets/mashijie/eating-sound-collection) | Eating-sound and food-class audio classification | Public 11,141-clip Kaggle release across 20 foods; helper downloads metadata/docs by default and makes the approximately 6.27 GiB archive an authenticated opt-in; the Natural Backdoor Attacks paper evaluates a duration-filtered 20-class subset | Kaggle labels the dataset PDDL and baseline code is MIT, but clips derive from 246 YouTube videos with no per-source licenses or clip provenance; review copyright, performer/privacy rights, and platform terms |
 | [DCASE 2024 Task 5](https://dcase.community/challenge2024/task-few-shot-bioacoustic-event-detection) | Five-shot bioacoustic event detection | Public CC BY 4.0 [development set](https://zenodo.org/records/10829604) and reused [2023 evaluation set](https://zenodo.org/records/7879692); helper downloads official metadata, class maps, and annotation-only archives by default while approximately 23.4 GiB of audio is opt-in | Both official Zenodo records state CC BY 4.0; retain release attribution and review source-specific wildlife-recording constraints |
+| [DCASE 2022 Task 2 ASD](https://dcase.community/challenge2022/task-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring) | Unsupervised anomalous sound detection and machine-condition monitoring under domain shift | Public [development](https://zenodo.org/records/6355122), [additional-training](https://zenodo.org/records/6462969), and [evaluation](https://zenodo.org/records/6586456) records totaling approximately 11.58 GiB; helper downloads metadata by default and makes archives opt-in by part; UD-ASD evaluates the seven-machine development set | All three Zenodo records declare CC BY 4.0; official baseline code is MIT |
 | [DCASE 2024 Task 2 ASD](https://dcase.community/challenge2024/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring) | First-shot unsupervised anomalous sound detection and machine-condition monitoring | Public [development](https://zenodo.org/records/10902294), [additional-training](https://zenodo.org/records/11259435), and [evaluation](https://zenodo.org/records/11363076) records totaling approximately 4.63 GB, with released labels/evaluator; helper downloads metadata by default and makes archives opt-in by part; arXiv:2607.16678 evaluates it in a 2020-2025 sweep | All three Zenodo records declare CC BY-NC-SA 4.0; evaluator code license is unspecified |
 | [DCASE 2025 Task 2 ASD](https://dcase.community/challenge2025/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring) | First-shot unsupervised anomalous sound detection and machine-condition monitoring | Public [development](https://zenodo.org/records/15097779), [additional-training](https://zenodo.org/records/15392814), and [evaluation](https://zenodo.org/records/15519362) records with released labels/evaluator; helper downloads metadata by default and makes roughly 4.7 GB of archives opt-in by part | All three Zenodo records declare CC BY-NC-SA 4.0; evaluator uses the custom DCASE Challenge License v2.1 |
 | [DCASE 2026 Task 2 ASD](https://dcase.community/challenge2026/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring) | Noise-aware first-shot unsupervised anomalous sound detection with synchronized near/far microphones | Public [development](https://zenodo.org/records/19336329), [additional-training](https://zenodo.org/records/20151556), and [evaluation](https://zenodo.org/records/20437238) records totaling about 8.16 GB; helper downloads lightweight metadata by default and makes archives opt-in by part | All three records declare CC BY-NC-SA 4.0; shared baseline code uses the custom DCASE Challenge License v2.1 |
