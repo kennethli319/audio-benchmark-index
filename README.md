@@ -699,6 +699,16 @@ Multilingual Conversational Speech Language Model Challenge. The public
 MLC-SLM release contains annotations but no currently documented public audio
 URL, so the index does not imply full reproducibility.
 
+The July 2026 AV-JEPA paper is recorded as an existing-coverage audit over
+AudioSet and VGGSound. Sections 3.1-3.3 report audio-visual classification,
+AudioSet mean average precision, and zero-shot audio↔video retrieval. The
+retrieval study balances each evaluation set to five clips per class (2,015
+AudioSet clips and 1,545 VGGSound clips), but version 1 releases no item IDs,
+construction code, checkpoint, predictions, or score records. The index
+therefore points to the existing official metadata releases without presenting
+the paper-specific subsets as downloadable benchmarks; original YouTube media
+availability and owner terms still apply.
+
 The July 2026 *Audio-Native Speech Recognition with a Frozen
 Discrete-Diffusion Language Model* paper is recorded as an existing-coverage
 audit over LibriSpeech, FLEURS, and VoxPopuli. Sections 4-5 train on

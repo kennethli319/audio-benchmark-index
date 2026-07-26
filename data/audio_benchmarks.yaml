@@ -9,6 +9,63 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  av_jepa_audio_visual_self_supervised_learning:
+    paper: https://arxiv.org/abs/2607.15295
+    title: "AV-JEPA: Extending LeJEPA to Audio-Visual Self-Supervised Learning"
+    sections: 3.1-3.3 and appendices I-J
+    status: audited_existing_public_families_unreleased_derived_subsets
+    last_verified: 2026-07-26
+    evaluated_sets:
+      - cited_as: VGGSound
+        index_id: vggsound
+        status: public_metadata_source_media_not_redistributed
+        protocol: >-
+          Pretrain on the VGGSound training split in the controlled study,
+          fine-tune for 309-class audio-visual classification, and report
+          top-1 accuracy. For zero-shot audio-to-video and video-to-audio
+          retrieval, construct a balanced five-clips-per-class subset of the
+          evaluation split containing 1,545 clips.
+      - cited_as: AudioSet-2M
+        index_id: audioset
+        status: public_annotations_and_features_source_media_not_redistributed
+        protocol: >-
+          Pretrain for 57 epochs on the unbalanced AudioSet-2M training split,
+          fine-tune on AudioSet, and report audio-visual mean average
+          precision on the official evaluation split. For zero-shot
+          cross-modal retrieval, construct a balanced five-clips-per-class
+          evaluation subset containing 2,015 clips.
+    release_audit:
+      new_benchmark_family: none
+      source_families: public_metadata_with_upstream_youtube_availability_constraints
+      balanced_retrieval_subset_item_ids: not_released
+      training_and_evaluation_code: not_linked
+      checkpoints_predictions_and_scores: not_linked
+    license:
+      audioset_annotations_and_features: cc-by-4.0
+      audioset_ontology: cc-by-sa-4.0
+      vggsound_dataset_metadata: cc-by-4.0
+      source_media: original_youtube_owner_terms_and_availability_apply
+      paper_specific_artifacts: not_stated_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.15295
+      - https://arxiv.org/html/2607.15295v1#S3.SS1
+      - https://arxiv.org/html/2607.15295v1#S3.SS2
+      - https://arxiv.org/html/2607.15295v1#S3.SS3
+      - https://arxiv.org/html/2607.15295v1#A9
+      - https://arxiv.org/html/2607.15295v1#A10
+      - https://research.google.com/audioset/
+      - https://research.google.com/audioset/download.html
+      - https://www.robots.ox.ac.uk/~vgg/data/vggsound/
+      - https://github.com/hche11/VGGSound
+    note: >-
+      This is an evaluation-coverage audit over two existing benchmark
+      families, not a new family addition. The five-per-class retrieval
+      subsets are paper-specific derived selections, but version 1 supplies
+      no item IDs, construction script, repository, checkpoint, predictions,
+      or per-item scores. The existing AudioSet and VGGSound helpers therefore
+      remain the reproducible public-source paths, and no AV-JEPA-specific
+      download helper is added.
+
   conversational_mandarin_visc_corpus_analysis:
     paper: https://arxiv.org/abs/2607.21391
     title: "Word meaning co-determines vowel-inherent spectral change: A corpus-based investigation of conversational Mandarin"
