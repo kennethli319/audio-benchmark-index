@@ -204,6 +204,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
+scripts/download/covomix2_dialogue.sh
 scripts/download/silent_speech_emg.sh
 scripts/download/avdc.sh
 scripts/download/pvqd.sh
@@ -537,6 +538,10 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# CoVoMix2 Dialogue downloads the paper, 1,000-row manifest, and provenance by
+# default; cloning the small repository with all transcript files is opt-in.
+COVOMIX2_DIALOGUE_CLONE_REPO=1 scripts/download/covomix2_dialogue.sh
 
 # Silent Speech EMG downloads official metadata/docs by default; the public
 # approximately 3.92 GB Zenodo corpus archive is checksum-verified and opt-in.

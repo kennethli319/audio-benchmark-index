@@ -9,6 +9,74 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  zipl_dialog_long_form_synthesis:
+    paper: https://arxiv.org/abs/2607.12496
+    title: "ZipL-Dialog: Memory-Efficient Long-Form Spoken Dialog Synthesis via Latent Flow Matching"
+    sections: 4.3-4.7
+    status: audited_one_new_public_family_plus_unreleased_test_set
+    evaluated_sets:
+      - cited_as: CoVoMix2 dialog test set
+        index_id: covomix2_dialogue
+        status: public_ungated_text_protocol_with_external_prompts
+        protocol: >-
+          Section 4.3 evaluates 1,000 DailyDialog-derived two-speaker
+          transcripts with two LibriSpeech test-clean acoustic prompts per
+          item. Sections 4.5-4.6 report WER, permutation-aware speaker
+          similarity, UTMOS, runtime, real-time factor, and peak GPU memory.
+        note: >-
+          The official repository releases the 1,000 transcript files and a
+          JSON manifest containing the corresponding LibriSpeech test-clean
+          paths and prompt transcriptions. It does not redistribute the
+          LibriSpeech audio.
+      - cited_as: OpenDialog test set
+        index_id: null
+        status: paper_specific_test_selection_unreleased
+        protocol: >-
+          ZipL-Dialog reuses the OpenDialog test set from ZipVoice-Dialog and
+          reports the same quality and systems-efficiency metrics. The paper
+          reports average and maximum durations but no item count or manifest.
+        note: >-
+          The ZipL-Dialog paper links only an audio-demo page and does not
+          release the OpenDialog evaluation rows, source audio, or exact split.
+      - cited_as: LibriSpeech-PC test-clean
+        index_id: librispeech
+        status: public_source_family_derived_protocol
+        protocol: >-
+          Section 4.7 follows the F5-TTS single-speaker ablation protocol and
+          reports WER, SIM-o, and UTMOS on a LibriSpeech-PC test-clean
+          selection.
+        note: >-
+          LibriSpeech is public and already indexed, but the paper does not
+          provide a separate ZipL-Dialog row manifest for this derived
+          evaluation.
+    release_audit:
+      covomix2_transcripts_and_prompt_manifest: public_ungated
+      covomix2_prompt_audio: external_librispeech_test_clean
+      opendialog_test_manifest_and_audio: not_released
+      zipl_dialog_generated_evaluation_audio: demo_examples_only
+      zipl_dialog_code_and_weights: not_linked_or_released
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      covomix2_test_repository: not_specified
+      upstream_transcripts: DailyDialog_CC_BY_NC_SA_4_0
+      upstream_prompt_audio: LibriSpeech_CC_BY_4_0
+      zipl_dialog_outputs_and_code: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.12496
+      - https://arxiv.org/html/2607.12496v1#S4.SS3
+      - https://arxiv.org/html/2607.12496v1#S4.SS5
+      - https://arxiv.org/html/2607.12496v1#S4.SS7
+      - https://arxiv.org/abs/2506.00885
+      - https://arxiv.org/html/2506.00885v2#S4.SS1
+      - https://github.com/vivian556123/covomix2-dialogue-testset
+      - https://raw.githubusercontent.com/vivian556123/covomix2-dialogue-testset/main/dailydialog-dialogue.json
+      - https://www.openslr.org/12
+    note: >-
+      This audit adds only the released CoVoMix2 dialogue protocol. OpenDialog
+      remains paper-specific and unreleased, while the LibriSpeech-PC ablation
+      maps to the existing LibriSpeech family. No demo audio is treated as a
+      benchmark release.
+
   sonic_stage_accessible_spatial_soundscapes:
     paper: https://arxiv.org/abs/2607.20835
     title: "Sonic Stage: Automatically Generating Interactive Spatial Soundscapes to Facilitate Dialogue Video Comprehension for Blind Viewers"
@@ -19730,3 +19798,62 @@ benchmarks:
       - https://doi.org/10.4018/978-1-61520-919-4
       - https://arxiv.org/abs/2607.16803
       - https://arxiv.org/html/2607.16803v1#S4.SS1
+
+  - id: covomix2_dialogue
+    name: CoVoMix2 Dialogue
+    full_name: "CoVoMix2 Dialogue Test Set"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_dialogue_generation
+      - long_form_speech_generation
+    tasks:
+      - zero_shot_dialogue_synthesis
+      - multi_speaker_speech_generation
+      - overlapping_speech_generation
+      - speaker_consistency_evaluation
+      - long_form_speech_generation
+    official:
+      repo: https://github.com/vivian556123/covomix2-dialogue-testset
+      project: https://www.microsoft.com/en-us/research/project/covomix/covomix2/
+      paper: https://arxiv.org/abs/2506.00885
+      paper_html: https://arxiv.org/html/2506.00885v2#S4.SS1
+      recent_evaluation: https://arxiv.org/abs/2607.12496
+    download:
+      primary:
+        - https://github.com/vivian556123/covomix2-dialogue-testset
+        - https://raw.githubusercontent.com/vivian556123/covomix2-dialogue-testset/main/dailydialog-dialogue.json
+        - https://www.openslr.org/12
+      examples:
+        - 'scripts/download/covomix2_dialogue.sh'
+        - 'COVOMIX2_DIALOGUE_CLONE_REPO=1 scripts/download/covomix2_dialogue.sh'
+      notes: >-
+        The public repository contains 1,000 DailyDialog-derived dialogue
+        transcript files and a 549 KB JSON manifest. Each row identifies two
+        LibriSpeech test-clean prompt paths and supplies their transcriptions;
+        prompt audio is not redistributed and must be obtained separately from
+        the official LibriSpeech release. The helper downloads the paper,
+        manifest, and GitHub metadata by default; cloning the small repository
+        with all transcript files is explicit opt-in.
+    license:
+      data: not_specified_with_upstream_terms
+      code: not_applicable_or_not_specified
+      notes: >-
+        The test-set repository has no license file or GitHub-detected license.
+        Its dialogue text derives from DailyDialog, whose authors distribute
+        it under CC BY-NC-SA 4.0, and its acoustic prompts reference
+        LibriSpeech test-clean, released under CC BY 4.0. Those upstream terms
+        do not establish a license for the CoVoMix2 selection or annotations;
+        seek clarification before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2506.00885
+      - https://arxiv.org/html/2506.00885v2#S4.SS1
+      - https://www.microsoft.com/en-us/research/project/covomix/covomix2/
+      - https://github.com/vivian556123/covomix2-dialogue-testset
+      - https://api.github.com/repos/vivian556123/covomix2-dialogue-testset
+      - https://api.github.com/repos/vivian556123/covomix2-dialogue-testset/contents
+      - https://raw.githubusercontent.com/vivian556123/covomix2-dialogue-testset/main/dailydialog-dialogue.json
+      - https://arxiv.org/abs/1710.03957
+      - https://aclanthology.org/I17-1099/
+      - https://www.openslr.org/12
+      - https://arxiv.org/abs/2607.12496
+      - https://arxiv.org/html/2607.12496v1#S4.SS3

@@ -80,7 +80,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 320 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 321 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
@@ -391,6 +391,16 @@ inference but provides no item count, split, repository, dataset card, or
 download. That description does not match the four spoken BIG-Bench Hard tasks
 in the separately indexed public Artificial Analysis Big Bench Audio release,
 so the index does not conflate the two names.
+
+The July 2026 ZipL-Dialog paper adds the public CoVoMix2 Dialogue test-set
+family. Its official repository releases 1,000 DailyDialog-derived transcript
+files and a manifest identifying two LibriSpeech `test-clean` acoustic prompts
+per item; the prompt audio remains in LibriSpeech rather than being
+redistributed. The repository states no license, so DailyDialog's
+CC BY-NC-SA 4.0 and LibriSpeech's CC BY 4.0 terms remain relevant without
+establishing rights for CoVoMix2's selection or annotations. ZipL-Dialog's
+separate OpenDialog test selection is unreleased, and its LibriSpeech-PC
+ablation maps to the existing LibriSpeech family.
 
 The July 2026 Sonic Stage paper is recorded as an unreleased systems and
 user-study protocol rather than a benchmark family. Its technical evaluation
@@ -1382,6 +1392,7 @@ Current coverage includes:
 | [2nd MLC-SLM Challenge 2026](https://www.nexdata.ai/competition/mlc-slm) | Multilingual conversational ASR, diarization, acoustic understanding, and semantic understanding | Registration-gated challenge with approximately 2,100 training hours across 14 languages plus development and evaluation sets; helper downloads public documentation and prints the official registration path without attempting restricted data access | Custom agreement limits data to the 2026 workshop, prohibits redistribution and other use, and requires return or destruction after termination; public baseline repositories have no detected code license |
 | [Seed-TTS Eval](https://github.com/BytedanceSpeech/seed-tts-eval) | Zero-shot speech synthesis and voice cloning | Official ByteDance repository and public objective EN/ZH set on Google Drive; helper downloads evaluation docs/code by default while the dataset remains a manual Drive download | No data or code license specified; objective data selects Common Voice and DiDiSpeech-2 samples, and the subjective set is explicitly unreleased |
 | [InstructTTSEval](https://github.com/KexinHUANG19/InstructTTSEval) | Controllable speech synthesis and instruction following | Official evaluation repo and public, ungated [CaasiHUANG/InstructTTSEval](https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval); helper downloads docs by default and makes the ~1.8 GB embedded-audio snapshot opt-in | HF card lists MIT, but paper limits the dataset to academic/research use and describes film/TV-derived audio; code license is unspecified and source-media rights require review |
+| [CoVoMix2 Dialogue](https://github.com/vivian556123/covomix2-dialogue-testset) | Zero-shot multi-speaker dialogue synthesis, overlap, speaker consistency, and long-form generation | Public 1,000-item DailyDialog-derived transcript release with two LibriSpeech `test-clean` prompt references per item; helper downloads the paper and 549 KB manifest by default and makes the small transcript-repository clone opt-in; prompt audio is obtained separately from LibriSpeech | Repository license is unspecified; DailyDialog is CC BY-NC-SA 4.0 and LibriSpeech is CC BY 4.0, but those terms do not establish rights for the CoVoMix2 selection or annotations |
 | [CapSpeech](https://wanghelin1997.github.io/CapSpeech-demo/) | Style-, accent-, emotion-, sound-effect-, and agent-conditioned speech synthesis | Public, ungated [OpenSound/CapSpeech](https://huggingface.co/datasets/OpenSound/CapSpeech) with more than 10 million machine-annotated and approximately 360,000 human-annotated audio-caption records plus fixed evaluation splits; helper downloads docs/API metadata by default and makes the approximately 4.31 GB metadata snapshot opt-in; source audio is obtained separately | CapSpeech resources are CC BY-NC 4.0, but referenced recordings span many upstream corpora with separate attribution, non-commercial, access, privacy, and media-rights constraints |
 | [Dialogs](https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations) | Expressive conversational Russian TTS, ASR, and emotion classification | Public, ungated 20.6-hour studio corpus with 11,796 utterances, three professional performers, 12 style/emotion labels, and fixed train/dev/test splits; helper downloads docs and lightweight dev/test tables by default while the 29.3 MB preview and 5.56 GB full snapshot are separate opt-ins | Custom OpenRAIL responsible-use license permits commercial use subject to use-based restrictions; the paper/card state performers consented to public and commercial release; baseline code is MIT |
 | [SILMA Open-source Arabic TTS Benchmark](https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark) | MSA, Egyptian, and Saudi Arabic speech synthesis listening evaluation | Public fixed prompts and generated outputs for direct auditory comparison across open-source Arabic TTS systems; helper downloads docs and prompt CSVs by default while the approximately 29.6 MB Space clone with audio is opt-in | Space metadata declares Apache-2.0, but no separate license file or prompt provenance is provided and evaluated-model output terms may still apply |
