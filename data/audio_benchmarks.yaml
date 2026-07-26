@@ -9,6 +9,66 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audio_native_discrete_diffusion_asr:
+    paper: https://arxiv.org/abs/2607.13013
+    title: Audio-Native Speech Recognition with a Frozen Discrete-Diffusion Language Model
+    sections: 4 and 5.1-5.5
+    status: audited_existing_public_asr_families
+    evaluated_sets:
+      - cited_as: LibriSpeech test-clean
+        index_id: librispeech
+        status: existing_public_family
+        protocol: >-
+          Train the English adapter on LibriSpeech train-clean-100, then
+          report Whisper-normalized WER on 100 test-clean utterances. Despite
+          calling this the final or full evaluation, version 1 reports n=100,
+          not the complete 2,620-utterance test-clean split.
+      - cited_as: FLEURS English, Hindi, and Mandarin
+        index_id: fleurs
+        status: existing_public_family
+        protocol: >-
+          Train one adapter on six FLEURS languages, then report
+          Whisper-normalized WER on 150 English items and CER on 300 Hindi and
+          300 Mandarin items. A separate English sweep varies diffusion
+          decoding from eight to 48 steps on the same reported n=150 sample.
+      - cited_as: VoxPopuli English
+        index_id: voxpopuli
+        status: existing_public_family
+        protocol: >-
+          Continue multilingual training with VoxPopuli parliamentary speech
+          and report Whisper-normalized WER on 1,000 English evaluation items.
+    release_audit:
+      source_benchmark_families: public_ungated
+      exact_evaluation_row_selections: not_released
+      training_mixture_and_preprocessing_manifests: not_released
+      projector_adapters_code_checkpoints_predictions_and_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      source_benchmarks: source_specific_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The paper does not relicense LibriSpeech, FLEURS, or VoxPopuli and
+        provides no terms for its absent experiment artifacts. LibriSpeech
+        and FLEURS are CC BY 4.0; VoxPopuli data is CC0 with European
+        Parliament source notices, while its repository code and pretrained
+        models are CC BY-NC 4.0.
+    sources:
+      - https://arxiv.org/abs/2607.13013
+      - https://arxiv.org/html/2607.13013v1#S4
+      - https://arxiv.org/html/2607.13013v1#S5.SS1
+      - https://arxiv.org/html/2607.13013v1#S5.SS2
+      - https://arxiv.org/html/2607.13013v1#S5.SS3
+      - https://www.openslr.org/12
+      - https://huggingface.co/datasets/google/fleurs
+      - https://github.com/facebookresearch/voxpopuli
+    note: >-
+      This is an existing-coverage audit, not a new benchmark family. The
+      paper introduces an ASR model and evaluates three already indexed
+      public corpora using paper-specific samples whose exact row identifiers
+      are not released. Version 1 links no official implementation or artifact
+      package, so the existing family helpers remain the reproducible access
+      paths and no model-specific download helper is added.
+
   speech_foundation_sft_matching:
     paper: https://arxiv.org/abs/2607.13864
     title: "Rethinking Speech Foundation Model Fine-tuning: Better SFT or Better Match?"
@@ -10167,6 +10227,7 @@ benchmarks:
       google_research: https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/
       dataset: https://huggingface.co/datasets/google/fleurs
       paper: https://arxiv.org/abs/2205.12446
+      recent_evaluation: https://arxiv.org/abs/2607.13013
     download:
       primary:
         - https://huggingface.co/datasets/google/fleurs
@@ -10180,6 +10241,9 @@ benchmarks:
     sources:
       - https://huggingface.co/datasets/google/fleurs
       - https://research.google/pubs/fleurs-few-shot-learning-evaluation-of-universal-representations-of-speech/
+      - https://arxiv.org/abs/2607.13013
+      - https://arxiv.org/html/2607.13013v1#S5.SS2
+      - https://arxiv.org/html/2607.13013v1#S5.SS3
 
   - id: voicecodebench
     name: VoiceCodeBench
@@ -10395,6 +10459,7 @@ benchmarks:
       hf_dataset: https://huggingface.co/datasets/facebook/voxpopuli
       paper: https://aclanthology.org/2021.acl-long.80/
       arxiv: https://arxiv.org/abs/2101.00390
+      recent_evaluation: https://arxiv.org/abs/2607.13013
     download:
       primary:
         - https://huggingface.co/datasets/facebook/voxpopuli
@@ -10411,6 +10476,8 @@ benchmarks:
       - https://github.com/facebookresearch/voxpopuli
       - https://huggingface.co/datasets/facebook/voxpopuli
       - https://aclanthology.org/2021.acl-long.80/
+      - https://arxiv.org/abs/2607.13013
+      - https://arxiv.org/html/2607.13013v1#S5.SS2
 
   - id: mtedx
     name: mTEDx
@@ -11044,6 +11111,7 @@ benchmarks:
       paper: https://ieeexplore.ieee.org/document/7178964
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
       qwen_audio_vae_report: https://arxiv.org/html/2607.11738v1#S4.SS2.SSS1
+      recent_evaluation: https://arxiv.org/abs/2607.13013
     download:
       primary:
         - https://www.openslr.org/12
@@ -11063,6 +11131,8 @@ benchmarks:
       - https://huggingface.co/datasets/openslr/librispeech_asr/raw/main/README.md
       - https://arxiv.org/html/2601.15621v1#S4.SS1.SSS2
       - https://arxiv.org/html/2607.11738v1#S4.SS2.SSS1
+      - https://arxiv.org/abs/2607.13013
+      - https://arxiv.org/html/2607.13013v1#S5.SS1
 
   - id: whisper_rirmega
     name: Whisper-RIR-Mega

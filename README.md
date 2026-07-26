@@ -639,6 +639,18 @@ Multilingual Conversational Speech Language Model Challenge. The public
 MLC-SLM release contains annotations but no currently documented public audio
 URL, so the index does not imply full reproducibility.
 
+The July 2026 *Audio-Native Speech Recognition with a Frozen
+Discrete-Diffusion Language Model* paper is recorded as an existing-coverage
+audit over LibriSpeech, FLEURS, and VoxPopuli. Sections 4-5 train on
+LibriSpeech train-clean-100, six FLEURS languages, and VoxPopuli parliamentary
+speech, then report paper-specific English, Hindi, and Mandarin samples. The
+reported LibriSpeech “full evaluation” contains only 100 test-clean utterances,
+not the complete 2,620-item split. Version 1 releases no row identifiers,
+mixture or preprocessing manifests, code, adapters, checkpoints, predictions,
+or score records, so no duplicate family or model-specific helper is added.
+The three existing public-family access paths and source-specific terms remain
+authoritative.
+
 The July 2026 professional voice-actor attribution paper adds the public JVS
 corpus as a speaker-identification and style-robustness control. JVS provides
 about 30 hours of studio speech from 100 professional Japanese speakers,
