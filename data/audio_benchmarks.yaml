@@ -9,6 +9,83 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  nabeats_noise_aware_audio_representation:
+    paper: https://arxiv.org/abs/2607.16688
+    title: "NABEATs: Noise-Aware Audio Representation Learning"
+    sections: 3-5
+    status: audited_existing_public_families_unreleased_randomized_mixtures
+    evaluated_sets:
+      - cited_as: FSD50K
+        index_id: fsd50k
+        status: public_mixed_per_clip_licenses
+      - cited_as: UrbanSound8K
+        index_id: urbansound8k
+        status: public_noncommercial
+      - cited_as: Speech Commands V2
+        index_id: speech_commands
+        status: public
+      - cited_as: CREMA-D
+        index_id: crema_d
+        status: public_with_database_and_contents_terms
+      - cited_as: NSynth
+        index_id: nsynth
+        status: public
+      - cited_as: Surge Pitch Dataset
+        index_id: surge_pitch
+        status: public
+      - cited_as: WHAM! 48 kHz
+        index_id: wham_whamr
+        status: public_noncommercial_noise_release
+        role: seen_noise_condition
+      - cited_as: CHiME-3
+        index_id: chime_4
+        status: licensed_ldc_family
+        role: unseen_noise_condition
+        note: >-
+          The indexed CHiME-4 family documents the CHiME-3 package and its
+          LDC2017S24 access path; this is not counted as a second family.
+      - cited_as: MUSDB18
+        index_id: musdb18
+        status: public_academic_noncommercial
+        role: unseen_noise_condition
+      - cited_as: DCASE 2025 Task 2
+        index_id: dcase2025_task2_asd
+        status: public_noncommercial
+    protocol_note: >-
+      Sections 3-4 train linear classifiers on clean downstream splits, then
+      mix every split with a randomly chosen WHAM!, CHiME-3, or MUSDB18 noise
+      recording at a random SNR from -5 to 10 dB. Section 5 separately
+      evaluates nine DCASE 2025 Task 2 machine types that provide noise-only
+      supplementary samples. The paper reports aggregate results but does not
+      release mixture manifests, random seeds, mixed waveforms, selected
+      reference-noise mappings, model checkpoints, predictions, or score
+      records.
+    release_audit:
+      source_benchmark_families: public_or_licensed_as_recorded_by_each_index_entry
+      paper_specific_randomized_noisy_mixtures: not_released
+      mixture_manifests_and_random_seeds: not_released
+      reference_noise_pairings: not_released
+      model_checkpoints_and_evaluation_code: not_released
+      predictions_and_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      paper_specific_artifacts: not_specified_unreleased
+      upstream: mixed
+    sources:
+      - https://arxiv.org/abs/2607.16688
+      - https://arxiv.org/html/2607.16688v1#S3
+      - https://arxiv.org/html/2607.16688v1#S4
+      - https://arxiv.org/html/2607.16688v1#S5
+      - https://zenodo.org/records/4677097
+      - https://dcase.community/challenge2025/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      - https://www.chimechallenge.org/challenges/chime4/download
+    note: >-
+      This audit maps every downstream dataset and noise condition to existing
+      index coverage and leaves the family count unchanged. Availability of
+      the source corpora does not reconstruct NABEATs's stochastic corruption
+      protocol, and their Creative Commons, non-commercial, LDC, database,
+      source-media, and per-file terms remain independent.
+
   spint_spanish_intelligibility:
     paper: https://arxiv.org/abs/2607.10619
     title: "An Objective Intelligibility Metric Evaluation on Spanish Speech"

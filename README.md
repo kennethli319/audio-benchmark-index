@@ -1224,6 +1224,17 @@ distributed through [LDC2017S24](https://catalog.ldc.upenn.edu/LDC2017S24)
 under LDC/WSJ0 terms. The helper saves documentation only and never fetches
 licensed recordings.
 
+The July 2026 *NABEATs* paper is recorded as a complete existing-coverage
+audit. Its downstream tasks use FSD50K, UrbanSound8K, Speech Commands V2,
+CREMA-D, NSynth, and Surge Pitch; robustness conditions use WHAM! 48 kHz,
+CHiME-3, and MUSDB18; and section 5 evaluates nine DCASE 2025 Task 2 machine
+types with supplementary noise samples. All map to existing families. The
+paper does not release its random -5 to 10 dB mixture manifests, seeds,
+reference-noise pairings, checkpoints, predictions, or score records, so those
+derived evaluations remain unreleased and no duplicate family or helper is
+added. Each source dataset's own open, non-commercial, mixed per-file, or LDC
+terms still apply.
+
 The July 2026 *Towards a reproducible cross-venue method for quantifying crowd
 noise in stadiums* paper is recorded as a proposed-protocol audit. It defines
 Class 1 instrumentation, far-field placement, fast-integrated A-weighted
