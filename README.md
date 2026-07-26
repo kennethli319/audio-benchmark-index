@@ -279,6 +279,16 @@ predictions, or artifact license. Source-family access therefore does not
 reproduce the paper-specific protocol, and no duplicate family or invented
 download route is added.
 
+The July 2026 discrete-audio-token speaker-verification paper is recorded as
+existing VoxCeleb coverage. It trains most systems on VoxCeleb1 development
+and evaluates the standard Vox1-O/E/H trial lists, with a larger-scale
+VoxCeleb2 training experiment evaluated on Vox1-O. MUSAN and OpenSLR room
+impulse responses provide public augmentation sources, but the VoxCeleb owner
+no longer distributes its original audio or URL/timestamp metadata. Version 2
+links no official code, configurations, checkpoints, predictions, or scores,
+so the index retains the existing source-family helpers rather than inventing
+a model-specific release.
+
 The July 2026 arXiv posting of the ICASSP 2023 Audio Cross Verification paper
 is now traced to the public DAPS source family. DAPS provides 15 aligned
 studio-produced and consumer-device versions of roughly 4.5 hours each from

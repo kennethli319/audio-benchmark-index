@@ -9,6 +9,65 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  discrete_audio_token_speaker_verification:
+    paper: https://arxiv.org/abs/2607.07579
+    title: Text-Independent Speaker Verification Using Discrete Audio Tokens
+    sections: 4.1-4.2 and 5.1-5.4
+    status: audited_existing_public_family_with_unreleased_experiment_artifacts
+    evaluated_sets:
+      - cited_as: VoxCeleb1-O, VoxCeleb1-E, and VoxCeleb1-H
+        index_id: voxceleb
+        status: existing_public_metadata_source_audio_unavailable_from_owner
+        protocol: >-
+          Train most Fbank and EnCodec-token systems on the standard
+          1,211-speaker VoxCeleb1 development partition, then report EER and
+          minDCF on the original, extended, and hard VoxCeleb1 verification
+          trial lists. The paper's diagnostic and architecture comparisons
+          use VoxCeleb1-O; its bitrate comparison reports all three lists.
+      - cited_as: VoxCeleb2
+        index_id: voxceleb
+        status: existing_public_metadata_source_audio_unavailable_from_owner
+        protocol: >-
+          Train a separate large-scale ECAPA-TDNN system on the standard
+          5,994-speaker VoxCeleb2 development partition with the WeSpeaker
+          recipe, then evaluate on VoxCeleb1-O across EnCodec bitrates.
+    release_audit:
+      voxceleb_metadata_and_trial_lists: public_ungated
+      original_voxceleb_audio_and_url_timestamps: no_longer_distributed_by_owner
+      musan_augmentation_corpus: public_ungated_large_archive
+      openslr_rir_augmentation_corpus: public_ungated_large_archive
+      paper_code_configs_checkpoints_predictions_and_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      voxceleb_metadata: CC-BY-SA-4.0
+      musan: CC-BY-4.0
+      openslr_rirs: Apache-2.0
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The paper does not relicense VoxCeleb, MUSAN, or the OpenSLR room
+        impulse responses and provides no terms for its absent experiment
+        artifacts. Original VoxCeleb YouTube media rights, availability,
+        privacy, and platform terms remain separate from the CC BY-SA 4.0
+        metadata.
+    sources:
+      - https://arxiv.org/abs/2607.07579
+      - https://arxiv.org/html/2607.07579v2#S4.SS1
+      - https://arxiv.org/html/2607.07579v2#S4.SS2
+      - https://arxiv.org/html/2607.07579v2#S5.SS1
+      - https://arxiv.org/html/2607.07579v2#S5.SS4
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
+      - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html
+      - https://www.openslr.org/49
+      - https://www.openslr.org/17
+      - https://www.openslr.org/28
+    note: >-
+      This is an existing-coverage audit, not a new benchmark family. The
+      paper evaluates a speaker-verification method on the standard VoxCeleb
+      family and uses MUSAN plus OpenSLR room impulse responses for training
+      augmentation. Version 2 links no official implementation or artifact
+      package, so the existing VoxCeleb and MUSAN helpers remain the public
+      access paths and no model-specific download helper is added.
+
   audio_native_discrete_diffusion_asr:
     paper: https://arxiv.org/abs/2607.13013
     title: Audio-Native Speech Recognition with a Frozen Discrete-Diffusion Language Model
