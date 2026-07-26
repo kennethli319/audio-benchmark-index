@@ -89,6 +89,16 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 arXiv posting of *Segmental DTW: A Parallelizable Alternative
+to Dynamic Time Warping* is recorded as an evaluation-coverage audit rather
+than a new benchmark family. Sections 3-4 develop on 1,953 unique performance
+pairs from one Chopin mazurka and test on 7,630 pairs from four others. The
+official MIT repository releases the implementation notebooks and exact
+train/test filename lists, but its data-preparation notebook requires a local
+`Chopin_Mazurkas` tree and does not release or link the source recordings,
+beat annotations, precomputed features, generated query lists, alignments, or
+complete scores. No download helper is added for those absent artifacts.
+
 The July 2026 arXiv posting of *A Study of Parallelizable Alternatives to
 Dynamic Time Warping for Aligning Long Sequences* is recorded as an
 evaluation-coverage audit rather than a new benchmark family. Sections IV-VI

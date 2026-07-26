@@ -9,6 +9,56 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  segmental_dtw_chopin_mazurka_evaluation:
+    paper: https://arxiv.org/abs/2607.15475
+    title: "Segmental DTW: A Parallelizable Alternative to Dynamic Time Warping"
+    sections: 3-4
+    status: audited_public_code_with_unreleased_source_benchmark
+    evaluated_sets:
+      - cited_as: Chopin Mazurka dataset
+        status: evaluation_protocol_public_source_audio_and_annotations_not_released
+        protocol: >-
+          Develop on all 1,953 unique performance pairs of Chopin Mazurka
+          Op. 17 No. 4, then test on 7,630 unique pairs from four other
+          mazurkas. Systems align L2-normalized constant-Q chromagrams at a
+          512-sample, approximately 23 ms hop and report the fraction of
+          predicted beat timestamps outside a sweep of error tolerances.
+        note: >-
+          The official repository publishes experiment notebooks and exact
+          train/test performance filename lists, but no source corpus. Its
+          data-preparation notebook expects users to supply a local
+          Chopin_Mazurkas directory containing annotations_beat and
+          wav_22050_mono.
+    release_audit:
+      experiment_notebooks_and_split_filelists: public_ungated
+      source_audio_beat_annotations_and_precomputed_chroma: not_released
+      generated_query_lists_alignments_and_complete_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      code: MIT
+      benchmark_audio_and_annotations: not_specified_unreleased
+      note: >-
+        The repository's MIT license covers its notebooks and supporting
+        experiment files, not the absent commercial-recording audio or beat
+        annotations.
+    sources:
+      - https://arxiv.org/abs/2607.15475
+      - https://arxiv.org/html/2607.15475v1#S3
+      - https://arxiv.org/html/2607.15475v1#S4
+      - https://github.com/tjtsai/SegmentalDTW
+      - https://raw.githubusercontent.com/tjtsai/SegmentalDTW/master/README.md
+      - https://raw.githubusercontent.com/tjtsai/SegmentalDTW/master/01_DataPrep.ipynb
+      - https://raw.githubusercontent.com/tjtsai/SegmentalDTW/master/cfg_files/filelist.train.txt
+      - https://raw.githubusercontent.com/tjtsai/SegmentalDTW/master/cfg_files/filelist.test.txt
+      - https://raw.githubusercontent.com/tjtsai/SegmentalDTW/master/LICENSE
+      - https://archives.ismir.net/ismir2008/paper/000111.pdf
+    note: >-
+      This is an evaluation-coverage audit, not a new benchmark family. The
+      public repository makes the algorithm and experiment structure
+      reproducible, but not the five-piece source corpus. Because no official
+      public archive for the exact audio and beat annotations is identified,
+      no benchmark entry or download helper is added.
+
   parallelizing_dtw_chopin_mazurka_evaluation:
     paper: https://arxiv.org/abs/2607.15478
     title: A Study of Parallelizable Alternatives to Dynamic Time Warping for Aligning Long Sequences
@@ -18,7 +68,7 @@ paper_audits:
       - cited_as: Chopin Mazurka dataset
         status: evaluation_protocol_public_source_audio_and_annotations_not_released
         protocol: >-
-          Develop on every ordered pair of performances of Chopin Mazurka
+          Develop on every unique pair of performances of Chopin Mazurka
           Op. 17 No. 4 (1,953 pairs), then test on four other mazurkas (7,630
           pairs). Systems align 23 ms-hop chroma features and report the
           fraction of predicted beat timestamps outside tolerances from 10
