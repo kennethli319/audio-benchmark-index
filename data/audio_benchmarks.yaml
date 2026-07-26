@@ -9,6 +9,54 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  local_information_disclosure_voiceprivacy_evaluation:
+    paper: https://arxiv.org/abs/2607.06259
+    title: "Goodbye Equal Error Rate, Hello Local Information Disclosure: Evaluating Voice Anonymisation against 1-to-N Linkage Threats"
+    sections: 3.2.1 and 6
+    status: audited_new_registered_challenge_family_unreleased_paper_artifacts
+    evaluated_sets:
+      - cited_as: VoicePrivacy 2024 LibriSpeech dev and eval enrol/trial splits
+        index_id: voiceprivacy_challenge
+        status: new_registered_challenge_family
+        protocol: >-
+          Section 6 fixes the standard VoicePrivacy 2024 LibriSpeech
+          development and evaluation enrolment/trial splits, excludes impostor
+          trials to model closed-set 1-to-N linkage, and evaluates the B3, B4,
+          B5, T8-5, T10-2, T12-5, and T25-1 anonymisation systems with a
+          semi-informed ECAPA-TDNN attacker.
+    release_audit:
+      baseline_and_evaluation_code: public_ungated_github
+      source_librispeech: public_ungated_openslr
+      voiceprivacy_data_and_models: registration_and_password_required
+      selected_submission_outputs: supplied_privately_by_organisers
+      lid_implementation_scores_and_calibration_artifacts: not_released
+    license:
+      challenge_code: GPL_3_0
+      source_librispeech: CC_BY_4_0
+      challenge_packages_and_anonymised_outputs: no_standalone_public_data_license_identified
+      paper: CC_BY_NC_SA_4_0
+    sources:
+      - https://arxiv.org/abs/2607.06259
+      - https://arxiv.org/html/2607.06259v1#S3.SS2.SSS1
+      - https://arxiv.org/html/2607.06259v1#S6
+      - https://www.voiceprivacychallenge.org/vp2024/
+      - https://github.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024
+      - https://raw.githubusercontent.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024/main/README.md
+      - https://raw.githubusercontent.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024/main/LICENSE
+      - https://api.github.com/repos/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024
+      - https://www.openslr.org/12
+    note: >-
+      The paper contributes a new metric and threat-model analysis over an
+      established challenge protocol, not a new released audio dataset.
+      VoicePrivacy 2024's repository makes its recipes and evaluation code
+      public, but its downloader requires the password issued after
+      registration. The paper acknowledges that organisers supplied the
+      anonymised LibriSpeech datasets and provides no public LID code,
+      similarity matrices, calibration records, or evaluated submission
+      outputs. The indexed family therefore points to the official registered
+      challenge workflow without claiming the paper-specific artifacts are
+      downloadable.
+
   pint_invariant_speech_tokenization_evaluation:
     paper: https://arxiv.org/abs/2607.19033
     title: "Content is What Remains: Invariant Speech Tokenization from Parallel Utterances"
@@ -21011,3 +21059,75 @@ benchmarks:
       - https://arxiv.org/html/2607.18934v1#S5.SS1
       - https://arxiv.org/html/2607.18934v1#S6.SS1
       - https://arxiv.org/html/2607.18934v1#S7.SS2
+
+  - id: voiceprivacy_challenge
+    name: VoicePrivacy Challenge
+    full_name: VoicePrivacy Challenge 2024
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification
+      - speech_privacy
+    tasks:
+      - voice_anonymization
+      - speaker_linkability_evaluation
+      - speaker_verification_privacy
+      - anonymized_speech_recognition
+      - anonymized_speech_emotion_recognition
+    official:
+      homepage: https://www.voiceprivacychallenge.org/
+      challenge: https://www.voiceprivacychallenge.org/vp2024/
+      repo: https://github.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024
+      paper: https://www.isca-archive.org/interspeech_2024/tomashenko24_interspeech.html
+      recent_evaluation: https://arxiv.org/abs/2607.06259
+      librispeech: https://www.openslr.org/12
+      iemocap: https://sail.usc.edu/iemocap/iemocap_release.htm
+    download:
+      access: registration_password_and_component_access_required
+      primary:
+        - https://github.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024
+        - https://www.voiceprivacychallenge.org/vp2024/
+      examples:
+        - 'scripts/download/voiceprivacy_challenge.sh'
+      notes: >-
+        The helper downloads the official 2024 README, GPL-3.0 license text,
+        and GitHub repository metadata only. The public recipe defines
+        LibriSpeech development/test enrolment and trial partitions for
+        speaker-linkability privacy and ASR utility, plus IEMOCAP development
+        and test data for emotion-recognition utility. Its official downloader
+        requires a password issued after challenge registration, and IEMOCAP
+        must be requested separately. No credentials or protected audio are
+        accepted or downloaded by the helper.
+    access:
+      status: registered_challenge_with_public_code
+      requirements:
+        - Register with the VoicePrivacy organisers to receive the challenge download password.
+        - Obtain IEMOCAP separately through its owner request process.
+        - Review LibriSpeech, IEMOCAP, challenge-package, and submitted-system terms before use.
+      notes: >-
+        The July 2026 Local Information Disclosure paper uses the standard
+        VoicePrivacy 2024 LibriSpeech development and evaluation enrol/trial
+        splits under a semi-informed attack. It acknowledges that organisers
+        supplied the anonymised data for selected baselines and submissions;
+        those outputs, its similarity matrices, and LID evaluation code are
+        not released with version 1.
+    license:
+      data: registered_challenge_with_mixed_component_terms
+      code: GPL-3.0
+      notes: >-
+        The 2024 repository's LICENSE is GPL-3.0. LibriSpeech is CC BY 4.0;
+        IEMOCAP is separately request-controlled. The public challenge pages
+        and repository do not state a standalone open-data license covering
+        every model package, anonymised submission output, or derived
+        evaluation artifact, so the code license must not be applied to them.
+    sources:
+      - https://www.voiceprivacychallenge.org/
+      - https://www.voiceprivacychallenge.org/vp2024/
+      - https://github.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024
+      - https://raw.githubusercontent.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024/main/README.md
+      - https://raw.githubusercontent.com/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024/main/LICENSE
+      - https://api.github.com/repos/Voice-Privacy-Challenge/Voice-Privacy-Challenge-2024
+      - https://www.isca-archive.org/interspeech_2024/tomashenko24_interspeech.html
+      - https://www.openslr.org/12
+      - https://sail.usc.edu/iemocap/iemocap_release.htm
+      - https://arxiv.org/abs/2607.06259
+      - https://arxiv.org/html/2607.06259v1#S6
