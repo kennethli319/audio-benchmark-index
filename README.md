@@ -1420,6 +1420,16 @@ project, repository, dataset card, archive, or download URL. Public source
 components such as DEMAND do not make DEAF's derived stimuli, prompts, labels,
 or evaluation code public.
 
+The May 2026 ChildVox paper is recorded as an audited suite rather than a
+downloadable family. It combines more than 20 child-centered physiological
+sound, vocalization, speech-quality, diarization, and ASR tasks, and reports a
+64,641-item ChildVox-Balanced collection across 14 subtasks. Version 1 provides
+no project page, repository, dataset card, archive, unified manifests,
+preprocessing code, or benchmark license; it also mixes public upstream
+corpora with two private in-house datasets. The authors promise future code and
+checkpoints under a Responsible AI License, but that statement is not a public
+release of ChildVox or ChildVox-Balanced.
+
 The July 2026 NegEval-Audio paper is recorded as an audited protocol rather
 than a downloadable family. It derives negation-aware retrieval and
 multiple-choice tasks from AudioCaps and Clotho and reports a 96.7% human

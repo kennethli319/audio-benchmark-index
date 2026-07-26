@@ -6049,6 +6049,32 @@ paper_audits:
       - https://arxiv.org/html/2603.18048v2#A1.SS5
     note: The v2 paper contains no project, repository, dataset-card, archive, or download URL. Its detailed construction recipe and public DEMAND source do not make the derived stimuli, scripts, prompts, labels, or evaluation code public, so DEAF is recorded as an audited protocol rather than a downloadable benchmark family.
 
+  childvox:
+    paper: https://arxiv.org/abs/2605.29257
+    title: "ChildVox: A Speech, Audio, and Large Audio-Language Model Benchmark in Understanding and Characterizing Sound across Childhood"
+    sections: 3, 7, limitations and appendix A
+    status: audited_not_indexed
+    public_interfaces: []
+    evaluated_domains:
+      - domain: child_centered_audio_and_speech
+        protocol: More than 20 tasks spanning pediatric cardiac and respiratory sounds, infant cry, child vocalization and affect, canonical syllables, pronunciation and articulation, adult-child diarization, and word- and phoneme-level ASR
+        data_status: public_upstream_corpora_mixed_with_private_in_house_data
+        note: The full suite combines CirCor, ICBHI, SPRSound, Donate-a-Cry, CryBank, AudioSet, ReCANVo, BabbleCor, SpeechMaturity, C-BESD, PERCEPT-R, SpeechOcean762, UltraSuite, MyST, and TinyVox with private Natural Language Sampling and ADOS2-Mod3 recordings.
+      - domain: childvox_balanced_lalm_finetuning
+        protocol: A reported 64,641-item balanced training collection across 14 subtasks, with at most 2,000 training and 50 test samples per classification label plus 10,000 training and 500 test utterances for each ASR source
+        data_status: derived_manifest_and_packaging_unreleased
+        note: Section 3.3 says this subset draws only on publicly accessible resources, but version 1 publishes no item manifest, split files, preprocessing code, packaged data, checksums, or release endpoint.
+    license:
+      paper: arXiv perpetual non-exclusive license
+      benchmark_data: not_specified_unreleased
+      planned_code_and_checkpoints: Responsible AI License promised but no exact license text or artifact is released
+      upstream: Mixed open, customized, PhonBank, non-commercial, unspecified, and private source-corpus terms
+    sources:
+      - https://arxiv.org/abs/2605.29257
+      - https://arxiv.org/pdf/2605.29257
+      - https://export.arxiv.org/api/query?id_list=2605.29257
+    note: Version 1 provides no official project page, repository, dataset card, archive, download URL, unified split manifest, preprocessing code, or standalone benchmark license. The limitations section says the authors plan to release code and checkpoints under a Responsible AI License, while the complete benchmark includes two private in-house corpora. Public availability of some component datasets does not release or reproduce ChildVox or ChildVox-Balanced, so this remains an audited protocol rather than an indexed family.
+
   negeval_audio:
     paper: https://arxiv.org/abs/2607.12290
     title: "The Sound of Absence: Audio-Language Embedding Models Struggle with Negation"
