@@ -71,7 +71,9 @@ tool use, grounding, state tracking, conversational memory, and context-aware
 turn-taking decisions.
 The index also covers likelihood-based acoustic consistency and semantic-acoustic
 alignment evaluation for speech language models, plus closed-vocabulary live
-tracking and captioning of sung scripture.
+tracking and captioning of sung scripture, controllable verbatim versus
+intended ASR, typed disfluency and vocal-event transcription, and word-level
+timing evaluation.
 
 The goal is simple: for each benchmark, keep a pointer to the official project,
 how to get the data, and the upstream license or access terms. When practical,
@@ -80,8 +82,18 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 324 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 325 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 controllable-verbatim-ASR paper contributes the public Nyra
+Verbatim Speech Benchmark family. Its official evaluator scores paired
+verbatim/intended transcripts with separate WER/CER and typed filler,
+vocal-sound, cutoff, and repetition metrics. The released English set contains
+4,957 DisfluencySpeech-derived utterances and declares Apache-2.0; the authors'
+German companion set contains 202 utterances but declares no license. Both
+Hugging Face datasets are ungated. The evaluator README says MIT, although its
+repository currently has no LICENSE file, so that code grant should be
+confirmed before relying on it.
 
 The July 2026 HARP neural-codec paper is recorded as existing-family coverage,
 not a new benchmark. Its objective evaluation uses the already indexed
@@ -1439,6 +1451,7 @@ Current coverage includes:
 | [Seed-TTS Eval](https://github.com/BytedanceSpeech/seed-tts-eval) | Zero-shot speech synthesis and voice cloning | Official ByteDance repository and public objective EN/ZH set on Google Drive; helper downloads evaluation docs/code by default while the dataset remains a manual Drive download | No data or code license specified; objective data selects Common Voice and DiDiSpeech-2 samples, and the subjective set is explicitly unreleased |
 | [InstructTTSEval](https://github.com/KexinHUANG19/InstructTTSEval) | Controllable speech synthesis and instruction following | Official evaluation repo and public, ungated [CaasiHUANG/InstructTTSEval](https://huggingface.co/datasets/CaasiHUANG/InstructTTSEval); helper downloads docs by default and makes the ~1.8 GB embedded-audio snapshot opt-in | HF card lists MIT, but paper limits the dataset to academic/research use and describes film/TV-derived audio; code license is unspecified and source-media rights require review |
 | [CoVoMix2 Dialogue](https://github.com/vivian556123/covomix2-dialogue-testset) | Zero-shot multi-speaker dialogue synthesis, overlap, speaker consistency, and long-form generation | Public 1,000-item DailyDialog-derived transcript release with two LibriSpeech `test-clean` prompt references per item; helper downloads the paper and 549 KB manifest by default and makes the small transcript-repository clone opt-in; prompt audio is obtained separately from LibriSpeech | Repository license is unspecified; DailyDialog is CC BY-NC-SA 4.0 and LibriSpeech is CC BY 4.0, but those terms do not establish rights for the CoVoMix2 selection or annotations |
+| [Nyra Verbatim Speech Benchmark](https://www.nyra-labs.com/research/nyra-verbatim-speech-benchmark) | Controllable verbatim/intended ASR, typed disfluency and vocal-event transcription, and word-level timing | Public, ungated English and German Hugging Face releases with paired transcripts; official evaluator includes cached predictions and typed filler, sound, cutoff, and repetition metrics; helper saves owner docs/metadata by default while the approximately 1.17 GB combined snapshots and evaluator clone are separate opt-ins | English data is Apache-2.0; German data license is unspecified; evaluator README says MIT but the repository currently has no LICENSE file or detected license |
 | [CapSpeech](https://wanghelin1997.github.io/CapSpeech-demo/) | Style-, accent-, emotion-, sound-effect-, and agent-conditioned speech synthesis | Public, ungated [OpenSound/CapSpeech](https://huggingface.co/datasets/OpenSound/CapSpeech) with more than 10 million machine-annotated and approximately 360,000 human-annotated audio-caption records plus fixed evaluation splits; helper downloads docs/API metadata by default and makes the approximately 4.31 GB metadata snapshot opt-in; source audio is obtained separately | CapSpeech resources are CC BY-NC 4.0, but referenced recordings span many upstream corpora with separate attribution, non-commercial, access, privacy, and media-rights constraints |
 | [Dialogs](https://huggingface.co/datasets/langswap/dialogs-ru-emotional-conversations) | Expressive conversational Russian TTS, ASR, and emotion classification | Public, ungated 20.6-hour studio corpus with 11,796 utterances, three professional performers, 12 style/emotion labels, and fixed train/dev/test splits; helper downloads docs and lightweight dev/test tables by default while the 29.3 MB preview and 5.56 GB full snapshot are separate opt-ins | Custom OpenRAIL responsible-use license permits commercial use subject to use-based restrictions; the paper/card state performers consented to public and commercial release; baseline code is MIT |
 | [SILMA Open-source Arabic TTS Benchmark](https://huggingface.co/spaces/silma-ai/opensource-arabic-tts-benchmark) | MSA, Egyptian, and Saudi Arabic speech synthesis listening evaluation | Public fixed prompts and generated outputs for direct auditory comparison across open-source Arabic TTS systems; helper downloads docs and prompt CSVs by default while the approximately 29.6 MB Space clone with audio is opt-in | Space metadata declares Apache-2.0, but no separate license file or prompt provenance is provided and evaluated-model output terms may still apply |
@@ -2049,6 +2062,7 @@ For example:
 scripts/download/mmar.sh
 scripts/download/slurp.sh
 scripts/download/minds14.sh
+scripts/download/nyra_verbatim_speech_benchmark.sh
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
 scripts/download/libri_light.sh

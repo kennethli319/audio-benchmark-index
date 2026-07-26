@@ -9,6 +9,76 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  controllable_verbatim_asr_evaluation:
+    paper: https://arxiv.org/abs/2607.18934
+    title: "Transcription Policy as a Latent Variable: Activating Controllable Verbatim ASR with Word-Level Timing"
+    sections: 5 and 6.1
+    status: audited_one_new_public_family
+    evaluated_sets:
+      - cited_as: DisfluencySpeech
+        index_id: nyra_verbatim_speech_benchmark
+        status: new_public_family_english_component
+        protocol: >-
+          Sections 5 and 6.1 evaluate disfluency detection on the public
+          English DisfluencySpeech-derived set. The paper reports 4,707
+          evaluation items, while the current official benchmark release and
+          cached leaderboard cover all 4,957 released utterances; no separate
+          4,707-item manifest is published. Both use paired verbatim and
+          intended transcripts and report verbatim/intended WER and CER plus
+          typed filler, vocal-sound, cutoff, and repetition metrics.
+      - cited_as: German DisfluencySpeech
+        index_id: nyra_verbatim_speech_benchmark
+        status: new_public_family_german_component
+        protocol: >-
+          Sections 5 and 6.1 evaluate the authors' 202-utterance German
+          companion set. It is now publicly released with paired verbatim and
+          intended transcripts and used by the official bilingual benchmark.
+      - cited_as: TIMIT
+        index_id: timit
+        status: existing_licensed_family
+        protocol: Section 6.1 uses TIMIT read speech for word-boundary timing evaluation.
+      - cited_as: FluencyBank
+        index_id: null
+        status: public_controlled_access_family_not_yet_indexed
+        protocol: Section 6.1 uses disfluent FluencyBank speech for word-boundary timing evaluation.
+      - cited_as: Thorsten
+        index_id: null
+        status: public_family_not_yet_indexed
+        protocol: Section 6.1 uses the German Thorsten speech corpus for word-boundary timing evaluation.
+      - cited_as: ICSI rare-word evaluation set
+        index_id: null
+        status: paper_specific_derived_protocol_not_separately_released
+        protocol: >-
+          Section 6.1 describes a 1,342-item evaluation subset derived from
+          held-out ICSI utterances containing transcript words absent from
+          Whisper's baseline output. The paper and benchmark repository do
+          not publish an exact row manifest for this selection.
+    release_audit:
+      paper: public_ungated
+      english_dataset: public_ungated_hugging_face
+      german_dataset: public_ungated_hugging_face
+      evaluator_and_cached_predictions: public_ungated_github_repository
+      icsi_rare_word_subset_manifest: not_separately_released
+    license:
+      english_dataset: Apache-2.0
+      german_dataset: not_specified
+      evaluator: README_states_MIT_but_repository_has_no_LICENSE_file
+      source_english_dataset: Apache-2.0
+    sources:
+      - https://arxiv.org/abs/2607.18934
+      - https://arxiv.org/html/2607.18934v1#S5
+      - https://arxiv.org/html/2607.18934v1#S6.SS1
+      - https://github.com/nyrahealth/nyra_verbatim_speech_benchmark
+      - https://www.nyra-labs.com/research/nyra-verbatim-speech-benchmark
+      - https://huggingface.co/datasets/nyralabs/disfluency_speech_english
+      - https://huggingface.co/datasets/nyralabs/disfluency_speech_german
+    note: >-
+      The index treats the two language datasets and their shared evaluator as
+      one bilingual benchmark family. The German set is author-collected and
+      publicly available, but its dataset card still declares no license.
+      Public release does not imply permission beyond the terms explicitly
+      stated by each owner.
+
   cover_first_active_learning_evaluation:
     paper: https://arxiv.org/abs/2607.13571
     title: "Cover First, Disagree Softly: Rethinking Mismatch-First Active Learning for Frame-Level Audio Classification"
@@ -363,6 +433,8 @@ paper_audits:
     sources:
       - https://arxiv.org/abs/2607.12496
       - https://arxiv.org/html/2607.12496v1#S4.SS3
+
+
       - https://arxiv.org/html/2607.12496v1#S4.SS5
       - https://arxiv.org/html/2607.12496v1#S4.SS7
       - https://arxiv.org/abs/2506.00885
@@ -20351,3 +20423,77 @@ benchmarks:
       - https://www.openslr.org/12
       - https://arxiv.org/abs/2607.12496
       - https://arxiv.org/html/2607.12496v1#S4.SS3
+
+  - id: nyra_verbatim_speech_benchmark
+    name: Nyra Verbatim Speech Benchmark
+    full_name: Nyra Verbatim Speech Benchmark for Controllable Verbatim Automatic Speech Recognition
+    qwen_cited_as: null
+    qwen_bucket: speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - verbatim_speech_recognition
+      - intended_speech_recognition
+      - disfluency_detection
+      - paralanguage_transcription
+      - word_level_timing
+    official:
+      homepage: https://www.nyra-labs.com/research/nyra-verbatim-speech-benchmark
+      repo: https://github.com/nyrahealth/nyra_verbatim_speech_benchmark
+      paper: https://arxiv.org/abs/2607.18934
+      english_dataset: https://huggingface.co/datasets/nyralabs/disfluency_speech_english
+      german_dataset: https://huggingface.co/datasets/nyralabs/disfluency_speech_german
+    download:
+      primary:
+        - https://huggingface.co/datasets/nyralabs/disfluency_speech_english
+        - https://huggingface.co/datasets/nyralabs/disfluency_speech_german
+        - https://github.com/nyrahealth/nyra_verbatim_speech_benchmark
+      examples:
+        - 'scripts/download/nyra_verbatim_speech_benchmark.sh'
+        - 'NYRA_VERBATIM_DOWNLOAD_DATASETS=1 scripts/download/nyra_verbatim_speech_benchmark.sh'
+        - 'NYRA_VERBATIM_CLONE_EVALUATOR=1 scripts/download/nyra_verbatim_speech_benchmark.sh'
+      notes: >-
+        The helper downloads owner-controlled dataset cards, API metadata, and
+        evaluator documentation by default. The English and German Hugging
+        Face snapshots are explicit opt-ins and total approximately 1.17 GB
+        in current repository files. Cloning the evaluator and its cached
+        model predictions is a separate opt-in.
+    access:
+      status: public_ungated
+      requirements:
+        - No account or acceptance gate is currently required for either Hugging Face dataset.
+        - Full dataset snapshots and the evaluator repository require explicit environment-variable opt-in.
+      notes: >-
+        The English release contains 4,957 utterances (about 9.4 hours) derived
+        from AMAAI Lab DisfluencySpeech, split 4,458/250/249 for
+        train/validation/test. The authors' German companion release contains
+        202 test utterances (about 0.95 hours). Both expose audio with paired
+        verbatim and intended transcripts. The official evaluator derives
+        typed labels for fillers, vocal sounds, cutoffs, and repetitions and
+        includes cached predictions for reproducible leaderboards.
+    license:
+      data: mixed_apache_2_0_and_unspecified
+      code: stated_MIT_without_repository_LICENSE_file
+      notes: >-
+        The English Hugging Face card declares Apache-2.0 and identifies its
+        AMAAI Lab DisfluencySpeech source, which also declares Apache-2.0. The
+        German dataset card declares its license as unknown and provides no
+        separate grant, so do not assume the English terms apply. The
+        evaluator README says MIT, but the repository currently has no LICENSE
+        file or GitHub-detected license; confirm terms with the owner before
+        reuse that depends on a formal code grant.
+    sources:
+      - https://arxiv.org/abs/2607.18934
+      - https://arxiv.org/html/2607.18934v1#S5
+      - https://arxiv.org/html/2607.18934v1#S6.SS1
+      - https://www.nyra-labs.com/research/nyra-verbatim-speech-benchmark
+      - https://github.com/nyrahealth/nyra_verbatim_speech_benchmark
+      - https://raw.githubusercontent.com/nyrahealth/nyra_verbatim_speech_benchmark/main/README.md
+      - https://api.github.com/repos/nyrahealth/nyra_verbatim_speech_benchmark
+      - https://huggingface.co/datasets/nyralabs/disfluency_speech_english
+      - https://huggingface.co/datasets/nyralabs/disfluency_speech_english/raw/main/README.md
+      - https://huggingface.co/api/datasets/nyralabs/disfluency_speech_english
+      - https://huggingface.co/datasets/nyralabs/disfluency_speech_german
+      - https://huggingface.co/datasets/nyralabs/disfluency_speech_german/raw/main/README.md
+      - https://huggingface.co/api/datasets/nyralabs/disfluency_speech_german
+      - https://huggingface.co/datasets/amaai-lab/DisfluencySpeech
+      - https://arxiv.org/abs/2406.08820
