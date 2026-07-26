@@ -1167,8 +1167,9 @@ in-the-wild videos and 38,390 temporal and semantic challenge samples, but the
 official [GitHub repository](https://github.com/fgt7t6g/AV-SyncBench) says the
 evaluation code and dataset will be released soon, while the official
 [Hugging Face repository](https://huggingface.co/datasets/coming245/AV-SyncBench)
-contains only README metadata and no dataset files. Its MIT card tag therefore
-does not establish reuse rights for the unreleased benchmark or source videos.
+still contains only README metadata and zero bytes of dataset storage as of
+July 25. Its MIT card tag therefore does not establish reuse rights for the
+unreleased benchmark or source videos.
 
 The July 2026 MultiRef-Compass release is now indexed as a public benchmark
 family. Its official Hugging Face repository provides 350 prompts, image
