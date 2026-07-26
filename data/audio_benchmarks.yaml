@@ -6504,13 +6504,15 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.15265
     sections: 4.1-4.3 and appendix B
     status: audited_not_indexed
+    last_verified: 2026-07-26
     public_interfaces:
       - https://scenebind.github.io/
+      - https://github.com/scenebind/scenebind.github.io
     evaluated_domains:
       - domain: semantic_spatial_audio_visual_retrieval_and_grounding
         protocol: Human-verified Binaural benchmark with 1,066 two-second clips, plus a 97-clip Sphere360 hard benchmark, for six-direction audio-image-text retrieval, spatial retrieval, and object grounding
         data_status: no_public_item_release_found
-        note: The paper reports 1,040 audio-visual, 325 audio-text, and 757 visual-text scene queries, 1,386 audio-relevant grounding targets, and 2,682 visual-relevant targets. The public project page exposes selected qualitative examples rather than benchmark item files, splits, or evaluation code.
+        note: The paper reports 1,040 audio-visual, 325 audio-text, and 757 visual-text scene queries, 1,386 audio-relevant grounding targets, and 2,682 visual-relevant targets. The public project repository exposes selected supplementary examples rather than benchmark item files, splits, or evaluation code.
     license:
       paper: arXiv perpetual non-exclusive license
       benchmark_data: not_specified_unreleased
@@ -6520,7 +6522,10 @@ paper_audits:
       - https://arxiv.org/html/2607.15265v1#A2
       - https://arxiv.org/html/2607.15265v1#A2.SS4
       - https://scenebind.github.io/
-    note: The paper describes its 38,430-clip Binaural training split as released, but neither the paper nor the official project page provides a dataset archive, repository, dataset card, item manifest, license, or evaluation-code link. The page hosts a selected qualitative viewer only. SceneBind is therefore recorded as an audited protocol rather than a downloadable benchmark family; recheck the official page before adding an indexed dataset or helper.
+      - https://github.com/scenebind/scenebind.github.io
+      - https://api.github.com/repos/scenebind/scenebind.github.io
+      - https://api.github.com/repos/scenebind/scenebind.github.io/git/trees/main?recursive=1
+    note: Rechecked on 2026-07-26. The paper describes its 38,430-clip Binaural training split as released, and an author-controlled GitHub repository backs the official project page, but its tree contains only static site/supplementary assets, including 103 selected audio clips and 103 selected images. It provides no dataset archive, benchmark item or split manifest, dataset card, license, evaluation code, or training-set release. Those selected examples are not treated as the reported 1,066-item Binaural benchmark or 97-item Sphere360 hard benchmark. SceneBind therefore remains an audited protocol rather than a downloadable benchmark family; recheck the official repository before adding an indexed dataset or helper.
 
   cast:
     paper: https://arxiv.org/abs/2604.10580

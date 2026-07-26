@@ -1150,9 +1150,13 @@ The July 2026 SceneBind paper is recorded as an audited protocol rather than a
 downloadable family. It reports a human-verified 1,066-clip Binaural benchmark
 and a 97-clip Sphere360 hard benchmark for semantic-spatial retrieval and
 grounding, but the official [project page](https://scenebind.github.io/) exposes
-only selected qualitative examples. No benchmark archive, item manifest,
-repository, dataset card, license, or evaluation-code link is currently
-provided, despite the paper describing its training split as released.
+only selected qualitative examples. Its author-controlled
+[GitHub repository](https://github.com/scenebind/scenebind.github.io) contains
+the static site and supplementary assets, including 103 selected audio clips
+and 103 selected images, but no benchmark archive, item or split manifest,
+dataset card, license, evaluation code, or training-set release. Those examples
+are not treated as the reported benchmarks, despite the paper describing its
+training split as released.
 
 The July 2026 structured-audio-caption evaluation paper is also recorded as an
 announced protocol rather than a downloadable family. It selects 499 public
