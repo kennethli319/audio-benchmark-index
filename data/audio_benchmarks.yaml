@@ -21273,3 +21273,77 @@ benchmarks:
       - https://sail.usc.edu/iemocap/iemocap_release.htm
       - https://arxiv.org/abs/2607.06259
       - https://arxiv.org/html/2607.06259v1#S6
+
+  - id: process_2
+    name: PROCESS-2
+    full_name: "PROCESS-2: A Benchmark Speech Corpus for Early Cognitive Impairment Detection"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_recognition
+      - paralinguistic_understanding
+    tasks:
+      - cognitive_impairment_classification
+      - mild_cognitive_impairment_detection
+      - dementia_detection
+      - cognitive_score_regression
+      - spontaneous_speech_analysis
+      - clinical_speech_recognition
+      - speech_biomarker_evaluation
+    official:
+      dataset: https://huggingface.co/datasets/CognoSpeak/PROCESS-2
+      paper: https://arxiv.org/abs/2605.14888
+      repo: https://github.com/CognoSpeak/PROCESS-2
+      code_archive: https://zenodo.org/records/19900225
+    download:
+      access: manual_approval_and_data_use_agreement_required
+      primary:
+        - https://huggingface.co/datasets/CognoSpeak/PROCESS-2
+      examples:
+        - 'scripts/download/process_2.sh'
+      notes: >-
+        The helper saves the public Hugging Face API response, official
+        analysis-repository documentation, repository metadata, code license,
+        and Zenodo software metadata. It never authenticates, submits the
+        access form, or downloads participant speech, transcripts, or
+        clinical metadata.
+    access:
+      status: manually_approved_research_only
+      requirements:
+        - Sign in to Hugging Face and submit all required professional and intended-use fields.
+        - Accept the PROCESS-2 Data Use Agreement before requesting owner approval.
+        - Store data on secure institutional systems and restrict it to authorized project personnel.
+      notes: >-
+        The release contains approximately 21 hours of English speech from 400
+        UK participants: 200 healthy controls, 150 participants with mild
+        cognitive impairment, and 50 with dementia. Each participant completed
+        semantic fluency, phonemic fluency, and Cookie Theft picture-description
+        tasks. The corpus includes manually verified transcripts, demographic
+        and diagnostic metadata, some MMSE scores, and predefined 80/20
+        train/test partitions. The DUA permits non-commercial academic
+        research, methodological development, education, and scientific
+        publication; clinical deployment or commercial product development
+        requires separate written permission.
+    license:
+      data: custom_research_only_data_use_agreement
+      code: Apache-2.0
+      notes: >-
+        The participant data agreement prohibits re-identification, external
+        linkage for identification, redistribution, public hosting, inclusion
+        in public model-training datasets, surveillance, profiling,
+        discriminatory uses, and biometric-identification training. It also
+        requires secure storage, authorized-personnel access, deletion on
+        completion or request, citation, and omission of identifiable speech
+        excerpts from publications. The Hugging Face card uses the machine
+        tag "other"; Apache-2.0 applies to the separate analysis code and
+        Zenodo software archive, not to the clinical dataset.
+    sources:
+      - https://arxiv.org/abs/2605.14888
+      - https://arxiv.org/html/2605.14888v1
+      - https://huggingface.co/datasets/CognoSpeak/PROCESS-2
+      - https://huggingface.co/api/datasets/CognoSpeak/PROCESS-2
+      - https://github.com/CognoSpeak/PROCESS-2
+      - https://raw.githubusercontent.com/CognoSpeak/PROCESS-2/main/README.md
+      - https://raw.githubusercontent.com/CognoSpeak/PROCESS-2/main/LICENSE
+      - https://api.github.com/repos/CognoSpeak/PROCESS-2
+      - https://zenodo.org/records/19900225
+      - https://zenodo.org/api/records/19900225
