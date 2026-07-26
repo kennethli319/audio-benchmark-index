@@ -9,6 +9,61 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  sonicagi_real_tse_challenge:
+    paper: https://arxiv.org/abs/2607.11083
+    title: "The SonicAGI System for the REAL-TSE Challenge"
+    sections: 1, 2.1, 4, and 5
+    status: audited_existing_restricted_family_followup
+    evaluated_sets:
+      - cited_as: REAL-TSE Challenge
+        index_id: real_tse
+        status: registration_closed_password_protected
+        protocol: >-
+          Online target-speaker extraction with at most 100 ms latency and
+          full-context offline target-speaker extraction on real Mandarin and
+          English conversational mixtures. The official composite ranking
+          averages dense ranks for transcription error, target-speaker timing
+          F1, speaker similarity, and DNSMOS perceptual quality.
+        note: >-
+          Section 5 reports that SonicAGI ranks second in Track 1 and fifth in
+          Track 2. Its training uses only permitted training splits and
+          external public corpora; the challenge development and evaluation
+          splits remain evaluation-only and are not re-released by the paper.
+    release_audit:
+      challenge_page_and_rules: public_ungated
+      evaluation_toolkit: public_ungated
+      development_and_evaluation_audio: restricted_to_registered_teams
+      registration: closed_2026_05_31
+      sonicagi_models_training_pipeline_and_outputs: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      challenge_toolkit: MIT
+      challenge_audio: not_publicly_specified
+      sonicagi_artifacts: not_specified_unreleased
+      note: >-
+        The MIT license applies only to the official evaluation repository.
+        Neither the challenge page nor the SonicAGI paper publishes a dataset
+        license or authorizes redistribution of password-protected audio.
+        AISHELL-4, AliMeeting, AMI, DipCo, and CHiME-6 source terms also apply
+        to derived challenge material.
+    sources:
+      - https://arxiv.org/abs/2607.11083
+      - https://arxiv.org/html/2607.11083v1#S1
+      - https://arxiv.org/html/2607.11083v1#S2.SS1
+      - https://arxiv.org/html/2607.11083v1#S4
+      - https://arxiv.org/html/2607.11083v1#S5
+      - https://real-tse.github.io/challenge/
+      - https://github.com/REAL-TSE/REAL-TSE-Challenge
+      - https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main/README.md
+      - https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main/LICENSE
+      - https://api.github.com/repos/REAL-TSE/REAL-TSE-Challenge
+      - https://arxiv.org/abs/2607.15198
+    note: >-
+      This follow-up audit adds reproducibility and official-result provenance
+      to the existing REAL-TSE family. It does not count the SonicAGI system as
+      a benchmark and does not infer a public download path from the public
+      challenge code.
+
   seabad_tropical_bird_activity_detection:
     paper: https://arxiv.org/abs/2605.20853
     title: "SEABAD: A Tropical Bird Activity Detection Dataset for Passive Acoustic Monitoring"
@@ -17063,13 +17118,14 @@ benchmarks:
       baseline_repo: https://github.com/REAL-TSE/wesep-real-tse
       paper: https://arxiv.org/abs/2607.15198
       arxiv_html: https://arxiv.org/html/2607.15198
+      followup_paper: https://arxiv.org/abs/2607.11083
     download:
       primary:
         - https://real-tse.github.io/challenge/#data
         - https://github.com/REAL-TSE/REAL-TSE-Challenge
       examples:
         - 'scripts/download/real_tse.sh'
-      notes: The challenge reports 6,991 Mandarin/English mixture-enrollment trials over 2,309 real conversational mixtures and 11.3 hours of mixture audio. DEV has 1,991 REAL-T-derived pairs; EVAL-1 and EVAL-2 contain 2,000 seen and 3,000 unseen pairs without public references. The public helper saves official pages and repository metadata only. Organizers distributed password-protected data by email exclusively to registered teams, registration closed on May 31, 2026, and no public dataset URL is currently provided.
+      notes: The challenge reports 6,991 Mandarin/English mixture-enrollment trials over 2,309 real conversational mixtures and 11.3 hours of mixture audio. DEV has 1,991 REAL-T-derived pairs; EVAL-1 and EVAL-2 contain 2,000 seen and 3,000 unseen pairs without public references. The July 2026 SonicAGI system paper independently documents the online and offline protocols and reports second and fifth place respectively, but releases no challenge data, model, training pipeline, or evaluation outputs. The public helper saves official pages, repository metadata, and both papers only. Organizers distributed password-protected data by email exclusively to registered teams, registration closed on May 31, 2026, and no public dataset URL is currently provided.
     license:
       data: access_restricted_terms_not_publicly_specified
       code: MIT
@@ -17083,6 +17139,8 @@ benchmarks:
       - https://github.com/REAL-TSE/wesep-real-tse
       - https://arxiv.org/abs/2607.15198
       - https://arxiv.org/html/2607.15198
+      - https://arxiv.org/abs/2607.11083
+      - https://arxiv.org/html/2607.11083v1#S5
 
   - id: fuss
     name: FUSS

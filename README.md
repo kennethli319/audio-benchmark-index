@@ -89,6 +89,14 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 SonicAGI system paper is now traced as follow-up provenance for
+the existing [REAL-TSE Challenge](https://real-tse.github.io/challenge/).
+It confirms the online sub-100 ms and full-context offline target-speaker
+extraction protocols and reports second and fifth place respectively. It does
+not release models, training code, outputs, or challenge audio; DEV, EVAL-1,
+and EVAL-2 remain password-protected, evaluation-only artifacts distributed
+to teams that registered before the May 31 closure.
+
 The May 2026 SEABAD dataset paper and July 2026 DrongoNet follow-up are now
 traced to the public author-owned
 [Zenodo release](https://zenodo.org/records/18290494). SEABAD supplies 50,000

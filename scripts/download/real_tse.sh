@@ -8,12 +8,14 @@ challenge_url="${REAL_TSE_CHALLENGE_URL:-https://real-tse.github.io/challenge/}"
 repo_base_url="${REAL_TSE_REPO_BASE_URL:-https://raw.githubusercontent.com/REAL-TSE/REAL-TSE-Challenge/main}"
 repo_api_url="${REAL_TSE_REPO_API_URL:-https://api.github.com/repos/REAL-TSE/REAL-TSE-Challenge}"
 paper_url="${REAL_TSE_PAPER_URL:-https://arxiv.org/abs/2607.15198}"
+followup_paper_url="${REAL_TSE_FOLLOWUP_PAPER_URL:-https://arxiv.org/abs/2607.11083}"
 
 download_url "$challenge_url" "$out/challenge.html"
 download_url "$repo_base_url/README.md" "$out/repository-README.md"
 download_url "$repo_base_url/LICENSE" "$out/repository-LICENSE"
 download_url "$repo_api_url" "$out/github-api.json"
 download_url "$paper_url" "$out/arxiv-2607.15198.html"
+download_url "$followup_paper_url" "$out/arxiv-2607.11083.html"
 
 manual_required \
   "REAL-TSE Challenge" \
