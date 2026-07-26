@@ -27,6 +27,7 @@ scripts/download/mmau.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh
+scripts/download/multichallenge_audio.sh
 scripts/download/nyra_verbatim_speech_benchmark.sh
 scripts/download/thorsten_voice.sh
 scripts/download/daps.sh

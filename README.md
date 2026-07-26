@@ -72,8 +72,8 @@ driver emotion recognition, audio-visual social-relationship inference, and
 speech-conditioned collaborative egocentric social reasoning, exact structured-token
 recovery in workplace ASR, in-the-wild neurological Spanish ASR,
 spontaneous-speech cognitive-impairment detection, as well as multi-turn voice-agent
-tool use, grounding, state tracking, conversational memory, and context-aware
-turn-taking decisions.
+tool use, grounding, state tracking, conversational memory, instruction
+retention and self-coherence, and context-aware turn-taking decisions.
 The index also covers likelihood-based acoustic consistency and semantic-acoustic
 alignment evaluation for speech language models, plus closed-vocabulary live
 tracking and captioning of sung scripture, controllable verbatim versus
@@ -87,8 +87,18 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 346 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 347 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 MiMo-Audio release adds a public speech adaptation of Scale
+AI's MultiChallenge. It filters the 266-example text benchmark to remove
+non-spoken formats and uses a commercial TTS system with a 250-voice pool,
+then evaluates speech-to-text dialogue with textual history and
+speech-to-speech dialogue with fully spoken history. Xiaomi releases the
+speech archive through its official evaluation set, but does not state the
+surviving row count or identify the TTS provider. The helper therefore
+downloads only documentation and evaluator code by default and keeps the
+approximately 1.55 GB archive behind explicit opt-in.
 
 The July 2026 BackgroundMellow release adds a public long-form cinematic
 soundscape-generation evaluation family. Its paper curates roughly 100 public
@@ -1814,6 +1824,7 @@ Current coverage includes:
 | [MMAR / MMAR-Rubrics](https://github.com/ddlBoJack/MMAR) | Deep audio reasoning and chain-of-thought quality evaluation | Public 1,000-item benchmark plus released instance-level reasoning/rubric metadata and evaluator from the [Interspeech 2026 Audio Reasoning Challenge](https://arxiv.org/abs/2602.14224); helper downloads the approximately 2.7 MB metadata/docs/scripts by default while the approximately 2.99 GB [BoJack/MMAR](https://huggingface.co/datasets/BoJack/MMAR) audio snapshot is opt-in | HF card declares CC BY-NC 4.0 for its snapshot, but the GitHub repository states no separate license for later rubric annotations or code; original media rights and platform terms remain relevant |
 | [MMSU](https://github.com/dingdongwang/MMSU) | Audio understanding | [ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU) | HF card lists `mit`; code repo had no detected license |
 | [Big Bench Audio](https://huggingface.co/datasets/ArtificialAnalysis/big_bench_audio) | Spoken question answering and reasoning | Public, ungated 1,000-recording English set with 250 questions each from the BIG-Bench Hard formal-fallacies, navigate, object-counting, and web-of-lies tasks; helper downloads official docs/API metadata and Xiaomi's evaluator loader by default while the approximately 612 MB repository snapshot is opt-in | HF card declares MIT and Xiaomi evaluator code is Apache-2.0; review inherited BIG-Bench Hard task terms and OpenAI/Azure/AWS synthesized-voice output conditions |
+| [MultiChallenge Audio](https://huggingface.co/datasets/XiaomiMiMo/MiMo-Audio-Evalset) | Multi-turn spoken dialogue, instruction retention, conversational memory, and self-coherence | Public MiMo speech adaptation of Scale AI's 266-example text benchmark with S2T/text-history and S2S/spoken-history protocols; helper saves official cards, metadata, loader, and evaluator by default while the approximately 1.55 GB speech archive is opt-in | MiMo card declares MIT but disclaims ownership; source text is CC BY 4.0, and the commercial TTS provider and generated-voice rights are unspecified |
 | [MMAU-Pro](https://sonalkum.github.io/mmau-pro/) | Holistic audio understanding and reasoning | Public, ungated [gamma-lab-umd/MMAU-Pro](https://huggingface.co/datasets/gamma-lab-umd/MMAU-Pro) with 5,305 expert-authored QA items across 49 speech, sound, music, long-form, multi-audio, and spatial skills; helper downloads official docs/evaluator/metadata by default while the approximately 47.5 GB snapshot is opt-in | HF card declares CC BY-NC 4.0, but in-the-wild source media and the EasyCom-derived spatial subset retain upstream terms; evaluator code has no stated license |
 | [MUGEN](https://github.com/danielqwer/MUGEN) | Multi-audio grounding and understanding | Public, ungated [35-task Hugging Face collection](https://huggingface.co/MUGEN-Benchmark) with 1,750 five-way problems and 9,250 clips across speech, sound, music, paralinguistics, temporal analysis, and compositional reasoning; helper downloads official metadata by default and requires an explicit task name before fetching audio | Dataset cards state no data license; repository software/docs are MIT, while embedded audio retains mixed public-corpus, academic-corpus, Mozilla Data Collective, and synthesis-source terms |
 | [TREA](https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty) | Fine-grained temporal audio reasoning | Public, ungated 600-item benchmark with 200 ordering, 200 counting, and 200 duration questions in multiple-choice and open-text formats; helper downloads official docs and lightweight CSV annotations by default while the approximately 688 MiB repository/audio clone is opt-in | Repository declares CC0-1.0, but all audio is derived from ESC-50, whose CC BY-NC 3.0 terms and per-clip attribution remain relevant; do not assume the repository waiver clears upstream audio rights |

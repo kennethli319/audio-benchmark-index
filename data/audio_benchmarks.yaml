@@ -7905,6 +7905,68 @@ benchmarks:
       - https://arxiv.org/abs/2210.09261
       - https://arxiv.org/abs/2206.04615
 
+  - id: multichallenge_audio
+    name: MultiChallenge Audio
+    full_name: Speech adaptation of MultiChallenge for multi-turn spoken dialogue evaluation
+    qwen_cited_as: null
+    qwen_bucket: speech_dialogue
+    tasks:
+      - multi_turn_spoken_dialogue
+      - speech_to_text_dialogue
+      - speech_to_speech_dialogue
+      - instruction_retention
+      - conversational_memory
+      - self_coherence
+    official:
+      paper: https://github.com/XiaomiMiMo/MiMo-Audio/blob/main/MiMo-Audio-Technical-Report.pdf
+      dataset: https://huggingface.co/datasets/XiaomiMiMo/MiMo-Audio-Evalset
+      evaluator: https://github.com/XiaomiMiMo/MiMo-Audio-Eval
+      source_benchmark: https://labs.scale.com/papers/multichallenge
+      source_dataset: https://huggingface.co/datasets/ScaleAI/MultiChallenge
+    download:
+      primary:
+        - https://huggingface.co/datasets/XiaomiMiMo/MiMo-Audio-Evalset/blob/main/multi_challenge.tar.gz
+      examples:
+        - 'scripts/download/multichallenge_audio.sh'
+        - 'MULTICHALLENGE_AUDIO_DOWNLOAD_ARCHIVE=1 scripts/download/multichallenge_audio.sh'
+    license:
+      data: mit_claim_with_upstream_and_synthetic_voice_caveats
+      code: Apache-2.0
+      source_text: cc-by-4.0
+      notes: >-
+        The MiMo evaluation-set card declares MIT but also says Xiaomi does
+        not own the included datasets and directs users to upstream terms.
+        Scale AI's 266-example source text release is CC BY 4.0. The report
+        says the filtered conversations were rendered with a commercial TTS
+        model and 250 voices, but it does not identify the provider or state
+        separate rights for those generated voices; review those conditions
+        before redistribution or commercial use.
+    access:
+      status: public_ungated
+      requirements:
+        - The approximately 1.55 GB speech archive is an explicit opt-in.
+      notes: >-
+        MiMo-Audio section 4.3.2 filters the text MultiChallenge test set to
+        remove excessive mathematical notation, tables, URLs, and other
+        non-spoken formats, then synthesizes each remaining conversation with
+        consistent speaker voices selected from a pool of 250. It evaluates
+        S2T with text dialogue history and S2S with fully spoken history. The
+        report and dataset card do not state the surviving example count or
+        publish a lightweight row manifest outside the archive.
+    sources:
+      - https://github.com/XiaomiMiMo/MiMo-Audio
+      - https://github.com/XiaomiMiMo/MiMo-Audio/blob/main/MiMo-Audio-Technical-Report.pdf
+      - https://huggingface.co/datasets/XiaomiMiMo/MiMo-Audio-Evalset
+      - https://huggingface.co/datasets/XiaomiMiMo/MiMo-Audio-Evalset/raw/main/README.md
+      - https://huggingface.co/api/datasets/XiaomiMiMo/MiMo-Audio-Evalset
+      - https://github.com/XiaomiMiMo/MiMo-Audio-Eval
+      - https://raw.githubusercontent.com/XiaomiMiMo/MiMo-Audio-Eval/main/slm_eval/datasets/multi_challenge.py
+      - https://raw.githubusercontent.com/XiaomiMiMo/MiMo-Audio-Eval/main/slm_eval/evaluator/multi_challenge_evaluator.py
+      - https://labs.scale.com/papers/multichallenge
+      - https://arxiv.org/abs/2501.17399
+      - https://huggingface.co/datasets/ScaleAI/MultiChallenge
+      - https://huggingface.co/datasets/ScaleAI/MultiChallenge/raw/main/README.md
+
   - id: mmau_pro
     name: MMAU-Pro
     full_name: "MMAU-Pro: A Challenging and Comprehensive Benchmark for Holistic Evaluation of Audio General Intelligence"
