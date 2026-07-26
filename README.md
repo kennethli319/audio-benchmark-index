@@ -83,8 +83,18 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 327 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 328 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 arXiv posting of the ICASSP 2023 Audio Cross Verification paper
+is now traced to the public DAPS source family. DAPS provides 15 aligned
+studio-produced and consumer-device versions of roughly 4.5 hours each from
+20 speakers under CC BY-NC 4.0. The paper constructs 15
+insertion/deletion/replacement tampering evaluations from 100 clean
+recordings, but its random ten-second trials have no released fixed manifest,
+seed, generated-query archive, or checksums. The official notebooks provide
+construction logic but state no code license, so the index does not present
+the derived trials as a separately downloadable benchmark release.
 
 The July 2026 controllable-verbatim-ASR paper also evaluates German
 read-speech word-boundary timing on the public 23-hour Thorsten-Voice 2021.02
@@ -1466,6 +1476,7 @@ Current coverage includes:
 | [Libri-Light](https://github.com/facebookresearch/libri-light) | ASR and self-supervised speech representation | Official repository docs and Meta public-file archives; helper downloads docs by default and makes 0.6 GiB finetuning, ABX, and 35 GiB to 3.05 TiB unlabeled archives opt-in | Code is MIT; reviewed docs do not state a standalone data license, and audio comes from open-source LibriVox audiobooks with source-term/attribution caution |
 | [TIMIT](https://catalog.ldc.upenn.edu/LDC93S1) | ASR and phone recognition | LDC catalog [LDC93S1](https://catalog.ldc.upenn.edu/LDC93S1) or MS-WAV version [LDC93S1W](https://catalog.ldc.upenn.edu/LDC93S1W) after login/licensing; helper prints official access steps | Custom LDC license/paid access; portions copyright 1993 Trustees of the University of Pennsylvania |
 | [Thorsten-Voice](https://doi.org/10.5281/zenodo.5525342) | German read-speech word-boundary timing, ASR, and speech synthesis | Public, ungated 23-hour neutral corpus with 22,668 WAV recordings; the July 2026 controllable-verbatim-ASR paper cites this exact Zenodo release for timing MAE and F1 at 50/100/200 ms collars; helper downloads official metadata by default and makes the approximately 2.74 GB archive opt-in | Exact Zenodo record declares CC BY 4.0, while the official project repository and newer combined release declare CC0-1.0; retain attribution pending owner clarification |
+| [DAPS](https://doi.org/10.5281/zenodo.4660670) | Speech enhancement, device/environment robustness, and audio-tampering cross verification | Public 15-version aligned corpus with about 4.5 hours per version and 20 speakers; helper downloads official metadata and evaluation docs by default while the approximately 14.95 GiB archive and notebook clone are opt-in; the paper-specific randomized trials have no fixed released manifest | Corpus is CC BY-NC 4.0; the cross-verification repository states no code license, and recorded-voice privacy and ethics still warrant review |
 | [FluencyBank](https://talkbank.org/fluency/) | Disfluent word-level timing, ASR, stuttering, cluttering, and fluency research | Mixed collection whose research data is primarily password protected through FluencyBank consortium membership; helper saves public documentation and prints the manual access path; the July 2026 controllable-verbatim-ASR paper uses four hours but publishes no corpus, speaker, or file manifest | TalkBank defaults to CC BY-NC-SA 3.0 and prohibits commercial-product or model incorporation; protected data cannot be shared with non-members, and users must follow corpus citations, ethics, confidentiality, and non-retaining processing rules |
 | [Switchboard](https://catalog.ldc.upenn.edu/LDC97S62) | Conversational telephone ASR | LDC catalog [LDC97S62](https://catalog.ldc.upenn.edu/LDC97S62) for Switchboard-1 Release 2 plus [LDC2002S09](https://catalog.ldc.upenn.edu/LDC2002S09) for 2000 HUB5 English Evaluation Speech; helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
 | [Fisher English](https://catalog.ldc.upenn.edu/LDC2004S13) | Conversational telephone ASR | LDC catalogs for [speech part 1](https://catalog.ldc.upenn.edu/LDC2004S13), [transcripts part 1](https://catalog.ldc.upenn.edu/LDC2004T19), [speech part 2](https://catalog.ldc.upenn.edu/LDC2005S13), and [transcripts part 2](https://catalog.ldc.upenn.edu/LDC2005T19); helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
@@ -2087,6 +2098,7 @@ scripts/download/mmar.sh
 scripts/download/slurp.sh
 scripts/download/minds14.sh
 scripts/download/nyra_verbatim_speech_benchmark.sh
+scripts/download/daps.sh
 FLEURS_CONFIG=ja_jp scripts/download/fleurs.sh
 LIBRISPEECH_PARTS="test-clean train-clean-100" scripts/download/librispeech.sh
 scripts/download/libri_light.sh

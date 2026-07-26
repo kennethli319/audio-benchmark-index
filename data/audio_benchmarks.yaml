@@ -9,6 +9,44 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audio_cross_verification_evaluation:
+    paper: https://arxiv.org/abs/2607.18190
+    title: Audio Cross Verification Using Dual Alignment Likelihood Ratio Test
+    sections: 3
+    status: audited_new_public_source_family_unreleased_randomized_trials
+    evaluated_sets:
+      - cited_as: DAPS
+        index_id: daps
+        status: new_public_family
+        protocol: >-
+          Section 3 uses the 100 high-quality, low-noise DAPS recordings and
+          randomly samples ten-second queries with insertion, deletion, or
+          replacement tampering. For each of three MP3 bitrates and five
+          tampering durations, it reports a 2,000-query training set and a
+          2,000-query speaker-disjoint test set.
+    release_audit:
+      source_corpus: public_ungated_zenodo
+      source_corpus_license: CC_BY_NC_4_0
+      construction_code: public_ungated_github
+      fixed_trial_manifests: not_released
+      generated_queries: not_released
+    sources:
+      - https://arxiv.org/abs/2607.18190
+      - https://arxiv.org/html/2607.18190v1#S3
+      - https://ccrma.stanford.edu/~gautham/Site/daps.html
+      - https://zenodo.org/records/4660670
+      - https://zenodo.org/api/records/4660670
+      - https://github.com/HMC-MIR/AudioCrossVerification
+      - https://raw.githubusercontent.com/HMC-MIR/AudioCrossVerification/main/README.md
+      - https://api.github.com/repos/HMC-MIR/AudioCrossVerification
+    note: >-
+      DAPS is a fixed public source corpus, but the paper's 15 derived
+      tampering benchmarks depend on random query sampling and manipulation.
+      The public notebooks provide construction logic but no fixed trial
+      manifests, random seed, generated-query archive, or checksums, so the
+      index does not describe those derived instances as a separately
+      downloadable benchmark release.
+
   emoprefer_shortcut_audit:
     paper: https://arxiv.org/abs/2607.18508
     title: "Style over Substance: A Shortcut Audit of Emotion-Description Preference Evaluation"
@@ -20701,6 +20739,75 @@ benchmarks:
       - https://arxiv.org/html/2607.18934v1#S5.SS1
       - https://arxiv.org/html/2607.18934v1#S6.SS1
       - https://arxiv.org/html/2607.18934v1#S7.SS2
+
+  - id: daps
+    name: DAPS
+    full_name: Device and Produced Speech Dataset
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_enhancement
+      - audio_forensics
+    tasks:
+      - speech_enhancement
+      - device_and_environment_robustness
+      - professional_speech_production
+      - voice_conversion
+      - audio_tampering_detection
+      - audio_cross_verification
+    official:
+      homepage: https://ccrma.stanford.edu/~gautham/Site/daps.html
+      zenodo: https://doi.org/10.5281/zenodo.4660670
+      paper: https://doi.org/10.1109/LSP.2014.2381264
+      recent_evaluation: https://arxiv.org/abs/2607.18190
+      evaluation_repo: https://github.com/HMC-MIR/AudioCrossVerification
+    download:
+      primary:
+        - https://zenodo.org/records/4660670
+        - https://zenodo.org/api/records/4660670
+      examples:
+        - 'scripts/download/daps.sh'
+        - 'DAPS_CLONE_CROSS_VERIFICATION=1 scripts/download/daps.sh'
+        - 'DAPS_DOWNLOAD_ARCHIVE=1 scripts/download/daps.sh'
+      notes: >-
+        The helper downloads the owner page, Zenodo metadata, and public
+        cross-verification repository documentation by default. Cloning the
+        approximately 1.7 MiB notebook repository is optional. The single
+        approximately 14.95 GiB daps.tar.gz corpus archive is a separate
+        explicit opt-in and is not downloaded during metadata inspection.
+    access:
+      status: public_ungated
+      requirements:
+        - No account or approval gate is listed on the owner page or Zenodo record.
+        - The large archive requires explicit environment-variable opt-in.
+      notes: >-
+        DAPS provides 15 aligned versions of approximately 4.5 hours each:
+        three professionally produced versions and 12 consumer-device and
+        real-world-environment combinations, covering about 14 minutes from
+        each of 20 speakers. The July 2026 cross-verification paper uses only
+        100 high-quality, low-noise recordings in an ICASSP 2023 paper posted
+        to arXiv in July 2026. Its random ten-second insertion, deletion, and
+        replacement trials are construction protocols rather than fixed
+        released DAPS splits.
+    license:
+      data: CC_BY_NC_4_0
+      code: not_specified
+      notes: >-
+        The Zenodo record declares CC BY-NC 4.0 for the corpus. The public
+        AudioCrossVerification repository has no license file and GitHub
+        reports no detected license, so its notebooks and code must not be
+        assumed reusable under the dataset license. Recorded human voices
+        also warrant appropriate privacy and research-ethics handling.
+    sources:
+      - https://ccrma.stanford.edu/~gautham/Site/daps.html
+      - https://doi.org/10.5281/zenodo.4660670
+      - https://zenodo.org/records/4660670
+      - https://zenodo.org/api/records/4660670
+      - https://doi.org/10.1109/LSP.2014.2381264
+      - https://arxiv.org/abs/2607.18190
+      - https://arxiv.org/html/2607.18190v1#S3
+      - https://github.com/HMC-MIR/AudioCrossVerification
+      - https://raw.githubusercontent.com/HMC-MIR/AudioCrossVerification/main/README.md
+      - https://api.github.com/repos/HMC-MIR/AudioCrossVerification
 
   - id: fluencybank
     name: FluencyBank
