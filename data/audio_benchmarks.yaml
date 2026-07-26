@@ -404,6 +404,50 @@ paper_audits:
       table, and download helpers; the audit prevents category-based scans from
       later misclassifying it as an audio dataset.
 
+  nonlinear_time_series_scope_audit:
+    paper: https://arxiv.org/abs/2607.19902
+    title: "Nonlinear Bias-Compensated Adaptive Filter and Its Application for Time-Series Prediction"
+    sections: 5.3
+    status: audited_out_of_scope_non_acoustic_time_series
+    evaluated_sets:
+      - cited_as: monthly sunspot series
+        index_id: null
+        status: public_solar_activity_time_series_out_of_scope
+        protocol: >-
+          Section 5.3.1 uses monthly sunspot observations from January 1749
+          through January 2025. The first 3,000 noise-contaminated samples are
+          used for training and the next 100 for test-MSE evaluation.
+      - cited_as: Chua's circuit time series
+        index_id: null
+        status: physical_circuit_voltage_time_series_out_of_scope
+        protocol: >-
+          Section 5.3.2 samples the voltage across capacitor C1 in a physical
+          Chua circuit and predicts each voltage value from preceding values.
+          This is an electrical measurement generated for the experiment, not
+          an acoustic recording or released audio benchmark.
+    release_audit:
+      paper: public_ungated
+      monthly_sunspot_source: owner_page_named_but_exact_snapshot_not_packaged
+      chua_circuit_measurements: not_released
+      acoustic_or_audio_recordings: none
+      code: not_released
+    license:
+      paper: arXiv_perpetual_non_exclusive
+      evaluation_data_and_code: not_applicable_or_not_specified
+    sources:
+      - https://arxiv.org/abs/2607.19902
+      - https://arxiv.org/html/2607.19902v1#S5.SS3
+      - https://arxiv.org/html/2607.19902v1#S5.SS3.SSS1
+      - https://arxiv.org/html/2607.19902v1#S5.SS3.SSS2
+    note: >-
+      This paper is cross-listed in arXiv eess.AS and repeatedly uses the word
+      "signal," but its two real-world evaluations operate on solar-activity
+      counts and electrical circuit voltage rather than acoustic, speech,
+      music, or audio waveforms. It is intentionally excluded from the
+      benchmark-family count, visible table, and download helpers. The audit
+      closes the current recent-eess.AS sweep without presenting a generic
+      time-series source as an audio benchmark.
+
   bon_tts_asr_family_alignment:
     paper: https://arxiv.org/abs/2607.08256
     title: "Best-of-N TTS Evaluation is Confounded by ASR Family Alignment"

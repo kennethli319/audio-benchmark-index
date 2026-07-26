@@ -133,6 +133,13 @@ measurements rather than acoustic audio. Its public code and approximately
 267 MB of NPZ data are therefore not counted as an audio benchmark; the
 repository also states no data or code license.
 
+The July 2026 nonlinear bias-compensated adaptive-filter paper is likewise
+recorded as a scope exclusion. Its real-world evaluations predict monthly
+sunspot counts and capacitor voltage sampled from a physical Chua circuit.
+Despite its eess.AS cross-listing and signal-processing terminology, neither
+evaluation contains acoustic audio, so no benchmark family or download helper
+is added.
+
 Seed source: [Qwen3.5-Omni Technical Report](https://arxiv.org/html/2604.15804v1#S5),
 Audio -> Text evaluation block. The Qwen report remains useful provenance, but
 the repository is no longer limited to that paper's benchmark list.
