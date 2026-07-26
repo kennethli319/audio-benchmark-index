@@ -10,7 +10,7 @@ the Qwen3.5-Omni technical report, section 5.1. The index has since expanded
 into a broader map of the audio evaluation landscape: ASR, multidimensional
 offline and streaming speech-translation evaluation,
 speech synthesis, style-captioned, nonverbal-vocalization, and
-sound-effect-conditioned TTS,
+sound-effect-conditioned TTS and fine-grained Foley classification,
 speech dialogue, audio understanding, environmental sound,
 text-to-audio environmental sound-scene synthesis, synthetic-to-real sound-effect retrieval,
 sound event detection, keyword spotting, speaker recognition, spoken language
@@ -85,7 +85,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 333 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 334 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The ICASSP 2026 LongSpeech paper is recorded as an announced-but-unreleased
@@ -1630,6 +1630,7 @@ Current coverage includes:
 | [EPIC-SOUNDS](https://epic-kitchens.github.io/epic-sounds/site) | Egocentric audio event recognition | Official [annotation repository](https://github.com/epic-kitchens/epic-sounds-annotations) with public train/validation/test timestamp CSVs; helper downloads docs/CSV annotations by default while raw audio follows EPIC-KITCHENS-100 access/extraction steps | Annotation README states CC BY-NC 4.0; raw audio derives from EPIC-KITCHENS-100 videos and may require separate access/HDF5 approval |
 | [FSD50K](https://fsannotator.upf.edu/fsd/release/FSD50K/) | Audio event classification | [Zenodo record](https://zenodo.org/records/4060432); helper downloads docs/labels/metadata by default and audio only with opt-in | Mixed Creative Commons: per-clip Freesound licenses include CC0, CC-BY, CC-BY-NC, and CC Sampling+; curated dataset is CC BY with upstream caveats |
 | [Doppelganger](https://github.com/elliottash/doppelganger) | Synthetic-to-real sound-effect retrieval and audio-representation evaluation | Public, ungated 10,420-pair UCS benchmark plus a seven-class DCASE 2023 Task 7 core; official manifests/code are on GitHub and generated twins/embeddings are on [Hugging Face](https://huggingface.co/datasets/elliottash/doppelganger); helper downloads docs by default while the roughly 10 MB repo and 8.48 GB dataset are separate opt-ins | Mixed: manifests/embeddings/logs and code are MIT; Stable Audio Open twins use the Stability AI Community License, ElevenLabs twins use the author's ElevenLabs license, and real audio retains source-specific terms or is reference-by-ID only |
+| [FoleySet](https://zenodo.org/records/20735877) | Fine-grained Foley sound classification, retrieval, and generation | Public 10,000-clip, 9.5-hour release with fixed leakage-aware train/validation/test splits, 9 major categories, 73 subcategories, and one-shot/multi-shot labels; helper saves official metadata/docs by default and makes the approximately 2.16 GB archive opt-in | Zenodo declares CC BY 4.0; the paper says all incorporated Freesound audio was CC0 and preserves source provenance; no standalone baseline-code release was identified |
 | [FSDKaggle2018](https://zenodo.org/records/2552860) | Audio event classification | [Zenodo record](https://zenodo.org/records/2552860) for docs, metadata, train audio, and test audio; helper downloads docs/metadata by default and audio only with opt-in | Zenodo license id is `other-at`; dataset curation is CC BY, while individual Freesound clips keep per-clip Creative Commons licenses in the metadata |
 | [FSDKaggle2019](https://zenodo.org/records/3612637) | Audio event classification | [Zenodo record](https://zenodo.org/records/3612637) for docs, metadata, curated/noisy train audio, and test audio; helper downloads docs/metadata by default and audio only with opt-in | Zenodo license id is `other-at`; dataset curation is CC BY, while Freesound/Flickr clips keep per-clip Creative Commons licenses in the metadata |
 | [DESED](https://project.inria.fr/desed/) | Sound event detection | Official [DESED repo](https://github.com/turpaultn/DESED), [real metadata](https://zenodo.org/records/3588179), and [synthetic soundscape files](https://zenodo.org/records/6026841); helper downloads repo/metadata/JAMS by default and makes audio opt-in | Zenodo real and synthetic records list CC BY 4.0; Python code is MIT; component source-media terms still need checking |
