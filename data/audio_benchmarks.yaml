@@ -9,6 +9,53 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  cover_first_active_learning_evaluation:
+    paper: https://arxiv.org/abs/2607.13571
+    title: "Cover First, Disagree Softly: Rethinking Mismatch-First Active Learning for Frame-Level Audio Classification"
+    sections: 4.1-4.3
+    status: audited_one_new_public_family_one_existing_public_family
+    evaluated_sets:
+      - cited_as: DESED
+        index_id: desed
+        status: existing_public_family
+        protocol: >-
+          Section 4.1 uses 10,000 synthetic DCASE 2021 Task 4 training
+          soundscapes as the active-learning pool, 2,500 synthetic validation
+          soundscapes, and 693 segments from the public real-recording
+          evaluation set for testing.
+      - cited_as: DataSED
+        index_id: datased
+        status: new_public_family
+        protocol: >-
+          Section 4.1 segments the real-world, strongly labeled environmental
+          recordings into 6,808 ten-second examples, then uses a
+          label-stratified 5,446/681/681 pool, validation, and test split over
+          22 classes. The paper evaluates frame-wise mean average precision
+          across 20 acquisition rounds and ten random seeds.
+    release_audit:
+      paper: public_ungated
+      desed_source_family: public_with_separate_component_terms
+      datased_audio_and_annotations: public_ungated_zenodo_archive
+      active_learning_code_and_exact_split_manifest: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      datased: CC_BY_NC_SA_4_0
+      data_descriptor: CC_BY_NC_ND_4_0
+      active_learning_implementation: not_released
+    sources:
+      - https://arxiv.org/abs/2607.13571
+      - https://arxiv.org/html/2607.13571v1#S4.SS1
+      - https://doi.org/10.1038/s41597-025-05991-w
+      - https://zenodo.org/records/15346092
+      - https://zenodo.org/api/records/15346092
+      - https://doi.org/10.5281/zenodo.15438634
+    note: >-
+      DataSED is a released benchmark family rather than an artifact introduced
+      by the active-learning paper. The paper does not link an implementation
+      or release its exact label-stratified split indices, so the index records
+      its protocol without claiming that the reported ten-seed experiment is
+      directly reproducible from the public dataset alone.
+
   harp_neural_codec_evaluation:
     paper: https://arxiv.org/abs/2607.16657
     title: "HARP: Harmonic-Aware Residual Partitioning for Neural Audio Codecs"
@@ -11812,6 +11859,63 @@ benchmarks:
       - https://zenodo.org/records/6026841
       - https://hal.inria.fr/hal-02160855
       - https://hal.inria.fr/hal-02355573
+
+  - id: datased
+    name: DataSED
+    full_name: "DataSED: Dataset for Sound Event Detection of Environmental Noise"
+    qwen_cited_as: null
+    qwen_bucket: sound_event_detection
+    tasks:
+      - sound_event_detection
+      - polyphonic_sound_event_detection
+      - monophonic_sound_event_detection
+      - temporal_audio_event_localization
+      - environmental_noise_analysis
+      - active_learning_for_audio
+    official:
+      dataset: https://zenodo.org/records/15346092
+      dataset_doi: https://doi.org/10.5281/zenodo.15346092
+      paper: https://doi.org/10.1038/s41597-025-05991-w
+      labeling_tool: https://doi.org/10.5281/zenodo.15438634
+      active_learning_evaluation: https://arxiv.org/abs/2607.13571
+    download:
+      primary:
+        - https://zenodo.org/records/15346092
+        - https://zenodo.org/api/records/15346092
+      examples:
+        - 'scripts/download/datased.sh'
+        - 'DATASED_DOWNLOAD_AUDIO=1 scripts/download/datased.sh'
+      notes: >-
+        The current public, ungated Zenodo record describes 717 mono 44.1 kHz
+        WAV recordings totaling approximately 17.02 hours, with expert
+        timestamp annotations for monophonic and polyphonic detection across
+        22 environmental classes. Its single archive is approximately 4.20
+        GiB, so the helper saves official metadata and provenance pages by
+        default and requires DATASED_DOWNLOAD_AUDIO=1 for the archive. The
+        2025 data descriptor describes 712 files, while the updated Zenodo
+        record and archive description say 717; use the downloaded release
+        manifest as authoritative for the current version. The July 2026
+        active-learning paper creates 6,808 ten-second segments and a
+        5,446/681/681 split, but does not release its exact split indices.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: cc-by-4.0
+      notes: >-
+        Zenodo assigns CC BY-NC-SA 4.0 to the dataset archive. The separately
+        published labeling tool is CC BY 4.0, while the Scientific Data
+        descriptor is CC BY-NC-ND 4.0. The dataset combines field measurements
+        and material from online repositories and says some sounds were
+        manually added; review source-recording attribution and rights before
+        redistribution rather than treating the compilation license as
+        overriding upstream terms.
+    sources:
+      - https://zenodo.org/records/15346092
+      - https://zenodo.org/api/records/15346092
+      - https://doi.org/10.5281/zenodo.15346092
+      - https://doi.org/10.1038/s41597-025-05991-w
+      - https://doi.org/10.5281/zenodo.15438634
+      - https://arxiv.org/abs/2607.13571
+      - https://arxiv.org/html/2607.13571v1#S4.SS1
 
   - id: tut_sound_events_2017
     name: TUT Sound Events 2017

@@ -975,6 +975,10 @@ FSDKAGGLE2019_DOWNLOAD_AUDIO=1 FSDKAGGLE2019_AUDIO_PARTS=noisy scripts/download/
 DESED_DOWNLOAD_REAL_AUDIO=1 scripts/download/desed.sh
 DESED_DOWNLOAD_SYNTHETIC_AUDIO=1 DESED_SYNTHETIC_PARTS="DESED_synth_eval_dcase2019.tar.gz" scripts/download/desed.sh
 
+# DataSED downloads official metadata and provenance pages by default.
+# Its approximately 4.20 GiB audio-and-annotations archive is opt-in.
+DATASED_DOWNLOAD_AUDIO=1 scripts/download/datased.sh
+
 # SONYC-UST-V2 downloads annotations/taxonomy by default. Audio is split into 19 large shards.
 SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS="audio-0.tar.gz audio-18.tar.gz" scripts/download/sonyc_ust_v2.sh
 SONYC_UST_V2_DOWNLOAD_AUDIO=1 SONYC_UST_V2_AUDIO_PARTS=all scripts/download/sonyc_ust_v2.sh
