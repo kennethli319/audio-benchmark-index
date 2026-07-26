@@ -9,6 +9,93 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  harp_neural_codec_evaluation:
+    paper: https://arxiv.org/abs/2607.16657
+    title: "HARP: Harmonic-Aware Residual Partitioning for Neural Audio Codecs"
+    sections: 5.2-6.6
+    status: audited_existing_public_families_unreleased_paper_specific_protocols
+    public_interfaces:
+      - https://github.com/QiaoyuYang/harp-codec
+      - https://huggingface.co/KelvinYang/harp-codec
+      - https://qiaoyuyang.github.io/harp-codec/
+    evaluated_sets:
+      - cited_as: MUSDB18-HQ test
+        index_id: musdb18
+        status: existing_public_restricted_family
+        protocol: >-
+          Sections 5.2 and 6.1 evaluate neural-codec reconstruction on the
+          official MUSDB18-HQ test split with SI-SDR and Kernel Audio Distance,
+          and section 6.4 reports SI-SDR at four bitrate tiers.
+      - cited_as: FSD50K eval
+        index_id: fsd50k
+        status: existing_public_mixed_license_family
+        protocol: >-
+          Sections 5.2, 6.1, and 6.4 use the official FSD50K evaluation split
+          as the general-audio domain for SI-SDR, Kernel Audio Distance, and
+          bitrate-scaling results.
+      - cited_as: LibriTTS test-clean
+        index_id: libritts
+        status: existing_public_family
+        protocol: >-
+          Sections 5.2, 6.1, 6.4, 6.5, and 6.6 use the public test-clean split
+          for codec reconstruction, bitrate scaling, PESQ/STOI, and ablations.
+      - cited_as: synthetic harmonic tones
+        index_id: null
+        status: paper_specific_generated_protocol_unreleased
+        protocol: >-
+          Section 6.3 evaluates 500 synthetic tones with fundamentals from
+          50-200 Hz and 20 overtones under aligned and independently randomized
+          harmonic phases, reporting phase coherence and amplitude RMSE.
+        note: >-
+          The paper describes the construction at aggregate level, but the
+          official repository does not release the exact tone parameters,
+          random seed, generated waveforms, or evaluation implementation.
+      - cited_as: MUSHRA listening test
+        index_id: null
+        status: paper_specific_subjective_protocol_unreleased
+        protocol: >-
+          Section 6.5 reports ratings from 12 participants on 12 ten-second
+          items spanning four music, four speech, and four general-audio
+          examples at 4.3 and 7.7 kbps.
+        note: >-
+          The official demo publishes selected codec audio examples, but not
+          the listening-test item manifest, participant-level ratings, or
+          study interface.
+    release_audit:
+      paper: public_ungated
+      implementation_and_inference_code: public_ungated_github_repository
+      pretrained_checkpoint: public_ungated_hugging_face_model
+      selected_audio_demo: public_ungated
+      source_benchmark_families: public_with_separate_upstream_terms
+      synthetic_tone_manifest_waveforms_and_metrics_code: not_released
+      mushra_item_manifest_and_ratings: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      implementation: MIT
+      model_checkpoint: MIT
+      evaluation_artifacts: not_specified_unreleased
+      upstream: MUSDB18-HQ is restricted to educational/academic use; FSD50K has per-clip Creative Commons terms; LibriTTS is CC BY 4.0
+    sources:
+      - https://arxiv.org/abs/2607.16657
+      - https://arxiv.org/html/2607.16657v1#S5.SS2
+      - https://arxiv.org/html/2607.16657v1#S6.SS3
+      - https://arxiv.org/html/2607.16657v1#S6.SS5
+      - https://github.com/QiaoyuYang/harp-codec
+      - https://raw.githubusercontent.com/QiaoyuYang/harp-codec/main/README.md
+      - https://raw.githubusercontent.com/QiaoyuYang/harp-codec/main/LICENSE
+      - https://api.github.com/repos/QiaoyuYang/harp-codec
+      - https://huggingface.co/KelvinYang/harp-codec
+      - https://huggingface.co/KelvinYang/harp-codec/raw/main/README.md
+      - https://huggingface.co/api/models/KelvinYang/harp-codec
+      - https://qiaoyuyang.github.io/harp-codec/
+    note: >-
+      HARP is a codec method evaluated on three already indexed public source
+      families, not a new benchmark dataset. Its public repository and model
+      checkpoint support inference and dataset evaluation, but they do not
+      reproduce the paper's synthetic-tone diagnostic or MUSHRA study. This
+      audit therefore leaves the family count unchanged and adds no download
+      helper.
+
   q_trim_music_avqa_robustness:
     paper: https://arxiv.org/abs/2607.03825
     title: "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering"

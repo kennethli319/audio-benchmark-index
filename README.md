@@ -83,6 +83,14 @@ upstream data.
 Last checked: 2026-07-25. Current index size: 323 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 HARP neural-codec paper is recorded as existing-family coverage,
+not a new benchmark. Its objective evaluation uses the already indexed
+MUSDB18-HQ test, FSD50K eval, and LibriTTS test-clean splits. The official MIT
+repository, model checkpoint, and selected audio demo are public, but the
+paper-specific 500-tone harmonic diagnostic and 12-item MUSHRA study do not
+release their exact manifests, generated waveforms, evaluation code, or
+participant-level ratings. Upstream dataset terms still apply.
+
 The July 2026 Q-TriM paper's three audio-visual QA evaluations are now traced
 to owner-controlled sources. MUSIC-AVQA was already indexed; the newly indexed
 MUSIC-AVQA-R release expands the original 9,129 test questions to 211,572
