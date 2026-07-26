@@ -9,6 +9,51 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  longspeech_release_audit:
+    paper: https://arxiv.org/abs/2601.13539
+    title: "LongSpeech: A Scalable Benchmark for Transcription, Translation and Understanding in Long Speech"
+    sections: 2-3
+    status: audited_announced_benchmark_unreleased
+    evaluated_sets:
+      - cited_as: LongSpeech
+        index_id: null
+        status: announced_unreleased
+        protocol: >-
+          The paper describes more than 100,000 approximately ten-minute
+          segments and eight task families: ASR, speech translation,
+          summarization, language detection, speaker counting, content
+          separation, spoken question answering, and temporal issue
+          localization. It reports aggregate train/dev/test example totals,
+          but does not publish item manifests, audio, annotations, construction
+          code, or fixed evaluation files.
+    release_audit:
+      paper_source: public_ungated_arxiv
+      source_corpora: mixed_public_and_restricted
+      benchmark_audio_and_annotations: not_released
+      construction_and_evaluation_code: not_released
+      split_and_source_manifests: not_released
+      official_project_or_dataset_page: not_found
+    license:
+      paper: CC_BY_NC_ND_4_0
+      benchmark_data_and_code: not_stated
+      upstream_sources: mixed_source_specific_terms
+    sources:
+      - https://arxiv.org/abs/2601.13539
+      - https://arxiv.org/html/2601.13539v1#S2
+      - https://arxiv.org/html/2601.13539v1#S3
+      - https://export.arxiv.org/e-print/2601.13539v1
+    note: >-
+      Version 1 says the benchmark "will be made publicly available" but gives
+      no project page, repository, dataset card, DOI-backed archive, or
+      download link. Public access to named source families such as
+      LibriSpeech, TED-LIUM 3, VoxPopuli, and Common Voice does not reproduce
+      LongSpeech: the paper also uses SPGISpeech, AISHELL-2, IWSLT, and a
+      custom movie-dialogue corpus, and releases no source-row mapping,
+      concatenation recipe, synthetic-content records, generated annotations,
+      split manifests, or checksums. LongSpeech is therefore retained as an
+      unreleased protocol audit rather than counted as a downloadable
+      benchmark family. Recheck after an owner-controlled release appears.
+
   local_information_disclosure_voiceprivacy_evaluation:
     paper: https://arxiv.org/abs/2607.06259
     title: "Goodbye Equal Error Rate, Hello Local Information Disclosure: Evaluating Voice Anonymisation against 1-to-N Linkage Threats"

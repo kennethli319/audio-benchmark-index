@@ -86,6 +86,18 @@ upstream data.
 Last checked: 2026-07-25. Current index size: 330 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The ICASSP 2026 LongSpeech paper is recorded as an announced-but-unreleased
+benchmark rather than a downloadable family. It describes more than 100,000
+approximately ten-minute segments spanning ASR, speech translation,
+summarization, language detection, speaker counting, content separation,
+spoken QA, and temporal localization, but version 1 only says the benchmark
+"will be made publicly available." It provides no owner project, repository,
+dataset card, archive, item/source manifest, construction code, annotations,
+or fixed evaluation files. The named source corpora have mixed terms and do
+not reconstruct the paper's custom movie-dialogue, synthetic-content, split,
+or task-annotation pipeline, so no download link or benchmark-family count is
+invented.
+
 The July 2026 Local Information Disclosure paper adds coverage of the
 [VoicePrivacy Challenge 2024](https://www.voiceprivacychallenge.org/vp2024/)
 family. Its public GPL-3.0 recipe defines the LibriSpeech enrol/trial privacy
