@@ -89,6 +89,18 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 paper *Estimating the Reliability of Dynamic Time Warping
+Alignments Using Circumstantial Evidence* is recorded as an
+evaluation-coverage audit rather than a new benchmark family. Sections 3-5
+construct 19 controlled matching/non-matching scenarios from five Chopin
+mazurkas. The official repository releases the generator and evaluator, but
+it expects a hard-coded local `Chopin_Mazurkas` audio tree and provides no
+recordings, beat annotations, paper-run selection/tampering manifest,
+generated features, ground truth, or results. The paper describes random
+recording selection while the current generator sorts filenames and takes the
+first N, so the exact reported suite is not independently reconstructible and
+no download helper is added.
+
 The July 2026 arXiv posting of *Segmental DTW: A Parallelizable Alternative
 to Dynamic Time Warping* is recorded as an evaluation-coverage audit rather
 than a new benchmark family. Sections 3-4 develop on 1,953 unique performance

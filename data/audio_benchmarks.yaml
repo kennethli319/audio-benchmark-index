@@ -9,6 +9,63 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  dtw_alignment_reliability_chopin_mazurka_suite:
+    paper: https://arxiv.org/abs/2607.15443
+    title: Estimating the Reliability of Dynamic Time Warping Alignments Using Circumstantial Evidence
+    sections: 3-5
+    status: audited_public_code_with_unreleased_source_benchmark
+    evaluated_sets:
+      - cited_as: Chopin Mazurka dataset
+        status: evaluation_protocol_public_source_audio_and_annotations_not_released
+        protocol: >-
+          Construct 19 conceptual reliability scenarios from five Chopin
+          mazurkas by pairing performances of the same piece and inserting
+          controlled non-matching audio at the beginning, middle, or end of
+          the query. Tampered regions span 10%, 20%, or 30% of the query.
+          The paper uses 63 recordings per development piece and 34 per test
+          piece, extracts constant-Q chroma at a 512-sample hop, and reports
+          AUROC, equal error rate, and true-positive rate at 2% false-positive
+          rate over reliable versus unreliable alignment coordinates.
+        note: >-
+          The official repository releases the generator and evaluator but
+          expects an absolute local
+          /mnt/data0/Datasets/Chopin_Mazurkas/wav_22050_mono directory. It
+          contains no source recordings, beat annotations, generated features,
+          ground-truth manifests, or experiment results. The paper says
+          recordings are randomly selected, while the current generator sorts
+          filenames and takes the first N; no paper-run selection manifest or
+          random seed is released.
+    release_audit:
+      benchmark_generator_and_evaluator: public_ungated
+      source_audio_and_beat_annotations: not_released
+      paper_run_recording_selection_and_tampering_manifest: not_released
+      generated_features_ground_truth_and_results: not_released
+    license:
+      paper: CC-BY-4.0
+      code: not_specified
+      benchmark_audio_and_annotations: not_specified_unreleased
+      note: >-
+        The repository has no detected license file. The paper's CC BY 4.0
+        license does not establish reuse terms for the code or for the absent
+        historic commercial recordings and beat annotations.
+    sources:
+      - https://arxiv.org/abs/2607.15443
+      - https://arxiv.org/html/2607.15443v1#S3
+      - https://arxiv.org/html/2607.15443v1#S4
+      - https://arxiv.org/html/2607.15443v1#S5
+      - https://github.com/HMC-MIR/DTW-Reliability-Metric
+      - https://raw.githubusercontent.com/HMC-MIR/DTW-Reliability-Metric/main/README.md
+      - https://raw.githubusercontent.com/HMC-MIR/DTW-Reliability-Metric/main/generate_confidence_benchmarks.py
+      - https://raw.githubusercontent.com/HMC-MIR/DTW-Reliability-Metric/main/benchmarks/build_n_pairs.py
+      - https://raw.githubusercontent.com/HMC-MIR/DTW-Reliability-Metric/main/benchmarks/benchmark_definitions.py
+      - https://api.github.com/repos/HMC-MIR/DTW-Reliability-Metric
+      - https://archives.ismir.net/ismir2008/paper/000111.pdf
+    note: >-
+      This is an evaluation-coverage audit, not a new benchmark family. The
+      transformation logic is public, but the exact suite cannot be recreated
+      from the repository alone because the source corpus and paper-run
+      manifests are absent. No benchmark entry or download helper is added.
+
   segmental_dtw_chopin_mazurka_evaluation:
     paper: https://arxiv.org/abs/2607.15475
     title: "Segmental DTW: A Parallelizable Alternative to Dynamic Time Warping"
