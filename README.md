@@ -88,6 +88,15 @@ upstream data.
 Last checked: 2026-07-25. Current index size: 335 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 BADGE-Greedy-DPP paper is recorded as an unreleased bioacoustic
+evaluation rather than a downloadable family. It evaluates ten-run
+frame-level active learning on approximately 205 annotated hours from a
+preliminary HyenaSET corpus, covering 19 spotted hyenas and ten call types,
+but releases no data, annotations, fixed splits, code, seeds, predictions, or
+scores. The cited HyenaSET bioRxiv identifier also returned HTTP 404 through
+its DOI resolver on 2026-07-25, so the index does not invent a dataset link or
+license and will recheck for an owner-controlled release.
+
 The ICASSP 2026 LongSpeech paper is recorded as an announced-but-unreleased
 benchmark rather than a downloadable family. It describes more than 100,000
 approximately ten-minute segments spanning ASR, speech translation,

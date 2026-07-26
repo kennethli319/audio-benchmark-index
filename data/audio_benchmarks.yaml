@@ -9,6 +9,46 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  badge_greedy_dpp_hyenaset_evaluation:
+    paper: https://arxiv.org/abs/2607.13555
+    title: "Greedy Volume Maximization of Gradient Embeddings for Long-Tailed Frame-Level Bioacoustic Active Learning"
+    sections: 3
+    status: audited_unreleased_preliminary_source_dataset
+    evaluated_sets:
+      - cited_as: preliminary version of HyenaSET
+        index_id: null
+        status: unreleased_preliminary_dataset
+        protocol: >-
+          The paper uses approximately 205 fully annotated hours of
+          tracking-collar audio from 19 spotted hyenas, with ten call types.
+          Recordings are divided into non-overlapping ten-second segments and
+          0.5-second frames for ten-run active-learning evaluation.
+    release_audit:
+      active_learning_paper: public_ungated_arxiv
+      hyenaset_data_and_annotations: not_released
+      fixed_train_test_and_acquisition_splits: not_released
+      active_learning_code_and_configurations: not_released
+      per_run_seeds_predictions_and_scores: not_released
+      cited_hyenaset_preprint_identifier: unresolved_404
+    license:
+      paper: arxiv_nonexclusive_distribution_license
+      hyenaset_data_and_annotations: not_stated_unreleased
+      evaluation_code_and_artifacts: not_stated_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.13555
+      - https://arxiv.org/html/2607.13555v1#S3
+      - https://export.arxiv.org/api/query?id_list=2607.13555
+      - https://doi.org/10.1101/2026.06.14.732108
+    note: >-
+      This is recorded as a release audit rather than an indexed benchmark
+      family. Version 1 names a preliminary HyenaSET corpus but provides no
+      owner project, repository, dataset card, archive, annotations, split
+      manifest, code, or artifact license. Its bibliography cites the bioRxiv
+      identifier 2026.06.14.732108, which returned HTTP 404 through the DOI
+      resolver on 2026-07-25. The paper's aggregate corpus description is not
+      enough to reconstruct the evaluation, so no inferred download link or
+      helper is added; recheck after an owner-controlled release appears.
+
   svhalluc_speech_vision_hallucination:
     paper: https://arxiv.org/abs/2606.02642
     title: "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"
