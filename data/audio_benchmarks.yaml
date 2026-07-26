@@ -5812,7 +5812,8 @@ paper_audits:
   structured_audio_caption_evaluation:
     paper: https://arxiv.org/abs/2607.21424
     sections: 2-4
-    status: audited_not_indexed
+    status: audited_announced_release_still_unavailable
+    last_verified: 2026-07-26
     public_interfaces: []
     evaluated_domains:
       - domain: structured_audio_captioning
@@ -5823,6 +5824,15 @@ paper_audits:
         protocol: Controlled meaning-preserving paraphrases and typed semantic, reasoning, numeric, temporal, and spectral perturbations at graded severities
         data_status: perturbation_artifacts_and_score_records_unreleased
         note: Sections 3-4 specify LLM-judge and deterministic metrics plus synthetic perturbation rules, but provide no public perturbation files, generated variants, per-item scores, judge records, or executable evaluation package.
+    release_audit:
+      arxiv_version: v1
+      arxiv_source_package: public_ungated_no_artifact_url
+      augmented_audiocards_rows_and_measurements: announced_not_released
+      selected_item_manifest: not_released
+      perturbation_variants_and_score_records: not_released
+      evaluation_code: not_released
+      github_repository_search: no_matching_release_found_2026_07_26
+      hugging_face_dataset_search: no_matching_release_found_2026_07_26
     license:
       paper: CC BY-NC-SA 4.0
       benchmark_data: not_specified_unreleased
@@ -5832,10 +5842,14 @@ paper_audits:
       - https://arxiv.org/html/2607.21424v1#S2
       - https://arxiv.org/html/2607.21424v1#S3
       - https://arxiv.org/html/2607.21424v1#S4
+      - https://export.arxiv.org/api/query?id_list=2607.21424
+      - https://export.arxiv.org/e-print/2607.21424v1
       - https://sites.google.com/view/audiocards/
       - https://zenodo.org/records/17237181
       - https://zenodo.org/api/records/17237181
-    note: The paper says the augmented AudioCards dataset will be released, but v1 provides no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
+      - "https://api.github.com/search/repositories?q=%22Structured+Audio+Captions%22+OR+%222607.21424%22"
+      - "https://huggingface.co/api/datasets?search=Structured%20Audio%20Captions&limit=50"
+    note: The paper says the augmented AudioCards dataset will be released, but v1 and its complete official source package provide no project page, repository, dataset card, archive, item manifest, code link, or standalone data-license statement. Official GitHub and Hugging Face searches also returned no matching release on 2026-07-26. The indexed public AudioCards family does not contain this paper's 499-clip selection, four computed acoustic target groups, perturbation variants, or evaluation records. This work is therefore recorded as an announced structured-caption evaluation protocol rather than a new downloadable benchmark family; recheck for the promised release before adding an indexed entry or helper.
 
   autoresearch_quran_recitation_evaluation:
     paper: https://arxiv.org/abs/2607.18064

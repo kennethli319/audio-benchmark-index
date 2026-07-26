@@ -1011,6 +1011,8 @@ profiles, then validates field-specific metrics with controlled perturbations.
 Version 1 says the augmented dataset will be released but provides no project,
 repository, dataset card, selected-item manifest, computed targets,
 perturbation artifacts, evaluation code, or standalone data license. The
+official arXiv source package and GitHub/Hugging Face release searches were
+rechecked on July 26 and still expose no matching artifact. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
