@@ -86,18 +86,20 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 341 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The July 2026 TriA paper is audited across sections 3-4. Its official
 repository releases the annotation pipeline but still marks the claimed
 2,130-hour, 431-class TriA dataset and TriA-GK subsets as an incomplete TODO,
 so the index records those artifacts as unreleased and provides no inferred
-data link. The paper's Kitchen20 source benchmark is now indexed from its
-official public repository: 800 clips, 20 kitchen-sound classes, and fixed
-five-fold evaluation from a 1,070-clip, nine-fold release under Apache-2.0.
-DESED is already covered, while Nonspeech7k remains queued for a separate
-canonical-source and license audit.
+data link. The paper's Kitchen20 and Nonspeech7k source benchmarks are now
+indexed from their official public releases. Kitchen20 supplies a fixed
+five-fold evaluation from its 1,070-clip, nine-fold Apache-2.0 repository.
+Nonspeech7k supplies 6,289 training and 725 test clips through the authors'
+Zenodo record; because its structured CC BY 4.0 field conflicts with an
+explicit CC BY-NC-SA 4.0 noncommercial statement, the index applies the
+stricter terms pending clarification. DESED is already covered.
 
 The June 2026 ATCCaps paper is recorded as an announced-but-unreleased ATC
 speech dataset and evaluation audit. Sections 3-5 describe 202.94 hours,
@@ -1811,6 +1813,7 @@ Current coverage includes:
 | [MAESTRO Real](https://zenodo.org/records/7244360) | Soft-label sound event detection | Public 49-recording development set with crowdsourced multi-annotator strong labels; helper downloads docs and the sub-megabyte annotations by default while the approximately 2.43 GiB audio archive is opt-in; DCASE 2024 Task 4's separate 26-file evaluation set is not released here; official sources conflict on total duration | Custom Tampere University terms allow experimental, non-commercial use with attribution and explicitly prohibit commercial use, including distributing results or content achieved through the dataset |
 | [RealDESED](https://zenodo.org/records/20056072) | Real-world domestic sound event detection | Public Zenodo train, validation, and test archives with temporal annotations and recording metadata; helper saves official metadata/docs by default and makes the approximately 8.74 GB audio release opt-in | Audio and corresponding metadata use per-file CC0 or CC BY terms recorded in `metadata.csv`; remaining metadata and annotations are CC BY 4.0; baseline code is MIT |
 | [Kitchen20](https://github.com/marc-moreaux/kitchen20) | Kitchen and domestic environmental-sound classification | Public 1,070-clip, 20-class repository with nine-fold metadata; the TriA evaluation uses the 800 clips in folds 1-3 for training, fold 4 for validation, and fold 5 as a 160-clip test set; helper downloads lightweight metadata by default and makes the approximately 325 MB audio/code clone opt-in | Repository is Apache-2.0, but the source table has no per-recording license inventory; preserve provenance and review source-audio rights before redistribution or commercial use |
+| [Nonspeech7k](https://zenodo.org/records/6967442) | Human non-speech and paralinguistic sound classification | Public author-owned release with 7,014 strongly annotated clips and a fixed 6,289-train/725-test split; TriA further divides training 9:1 for train/validation; helper downloads annotations and provenance by default while the approximately 2.54 GB audio requires explicit opt-in | Official record conflicts: structured field says CC BY 4.0, while its description limits use to non-commercial academic research under CC BY-NC-SA 4.0; apply the stricter statement and preserve Freesound, YouTube, and Aigei provenance |
 | [WABAD](https://zenodo.org/records/15629388) | Global bird-species detection for passive acoustic monitoring | Public, ungated 5,047-minute release with 91,931 time-frequency-bounded vocalizations from 1,192 species across 72 sites; MetaPerch evaluates it as an 84-hour detection benchmark; helper downloads metadata and annotations by default while the approximately 19.8 GiB site archives require explicit opt-in | Zenodo's structured field says CC BY 4.0 but its description says CC BY-NC 4.0; apply the stricter noncommercial terms pending clarification |
 | [BirdCLEF++ 2026](https://www.imageclef.org/BirdCLEF2026) | Multi-label animal-vocalization detection in Pantanal soundscapes | Official 522.1-hour Kaggle competition family with 344.5 hours of focal recordings and 177.6 hours of soundscapes; 1.03 soundscape hours are labeled and the task predicts 234 species on five-second windows; helper saves official provenance and prints the manual Kaggle access path | Kaggle account and competition-rule acceptance required; no standalone data license is stated on the LifeCLEF page, and Xeno-canto/source-recording terms remain applicable |
 | [SEABAD](https://zenodo.org/records/18290494) | Tropical bird-activity detection and edge bioacoustic monitoring | Public, ungated 50,000-clip release with fixed 40,000/5,000/5,000 train/validation/test splits, balanced bird-present and bird-absent classes, and 1,677 Southeast Asian species; helper downloads official metadata by default while the approximately 3.87 GiB archive requires source-terms acknowledgment and explicit opt-in | Zenodo declares CC BY 4.0 for the compilation, but audio retains per-recording Xeno-Canto and negative-source licenses, including noncommercial and share-alike variants; repository README claims MIT for code but no LICENSE file is present |

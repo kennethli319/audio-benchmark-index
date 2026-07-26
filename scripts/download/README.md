@@ -630,6 +630,10 @@ REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
 # The approximately 325 MB audio and baseline repository clone is opt-in.
 KITCHEN20_CLONE_REPO=1 scripts/download/kitchen20.sh
 
+# Nonspeech7k downloads its official annotations and provenance list by default.
+# The approximately 2.54 GB audio requires stricter record-term acknowledgment.
+NONSPEECH7K_ACK_NONCOMMERCIAL=1 NONSPEECH7K_DOWNLOAD_AUDIO=1 scripts/download/nonspeech7k.sh
+
 # TidyVoiceX saves public docs and prints the Mozilla Data Collective account/API path.
 # It never accepts credentials or downloads the approximately 36.72 GB archive.
 scripts/download/tidyvoice.sh
