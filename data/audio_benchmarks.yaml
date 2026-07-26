@@ -9,6 +9,48 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  svhalluc_speech_vision_hallucination:
+    paper: https://arxiv.org/abs/2606.02642
+    title: "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"
+    sections: 2.1-2.5
+    status: audited_announced_benchmark_unreleased
+    evaluated_sets:
+      - cited_as: SVHalluc
+        index_id: null
+        status: announced_unreleased
+        protocol: >-
+          The paper derives 2,405 balanced, human-verified video-question
+          pairs from the YouCook2 validation set. Its six diagnostic tasks
+          cover global and fine-grained semantic alignment, cross-modal
+          semantic binding, temporal alignment, temporal forecasting, and
+          cross-modal temporal binding.
+    release_audit:
+      paper_and_project_page: public_ungated
+      benchmark_video_question_pairs: not_released
+      selected_youcook2_segments: not_released
+      construction_and_evaluation_code: not_released
+      prompts_and_human_verification_records: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      benchmark_data_and_code: not_stated
+      upstream_source: YouCook2_terms_apply
+    sources:
+      - https://arxiv.org/abs/2606.02642
+      - https://arxiv.org/html/2606.02642v1#S2
+      - https://arxiv.org/html/2606.02642v1#S2.SS4
+      - https://arxiv.org/html/2606.02642v1#S2.SS5
+      - https://chenshuang-zhang.github.io/projects/svhalluc/
+    note: >-
+      The official project page says the paper, code, dataset, poster, and
+      slides "will be released here" but currently links only the paper and
+      exposes no repository, dataset card, archive, item manifest, selected
+      YouCook2 segment IDs, generated questions, answers, or evaluation code.
+      Public access to YouCook2 does not reproduce the paper's audio swaps,
+      GPT-derived objects and events, temporal assignments, filtering, or
+      human verification. SVHalluc is therefore retained as an unreleased
+      protocol audit rather than counted as a downloadable benchmark family.
+      Recheck the owner project page after an official artifact release.
+
   longspeech_release_audit:
     paper: https://arxiv.org/abs/2601.13539
     title: "LongSpeech: A Scalable Benchmark for Transcription, Translation and Understanding in Long Speech"

@@ -854,6 +854,17 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The CVPR 2026 SVHalluc paper is likewise recorded as an announced benchmark,
+not a downloadable family. It derives 2,405 balanced, human-verified
+video-question pairs from YouCook2 validation clips across three semantic and
+three temporal speech-vision hallucination tasks. The official
+[project page](https://chenshuang-zhang.github.io/projects/svhalluc/) says its
+code and dataset “will be released here,” but currently provides no repository,
+dataset card, archive, selected YouCook2 segment IDs, questions, answers,
+prompts, verification records, or evaluation implementation. YouCook2 access
+alone does not reproduce the derived protocol, so the index adds no download
+helper or benchmark-family count.
+
 The July 2026 Audio-Zero paper is recorded as a coverage audit over the
 already indexed TREA, MMAU Test-mini, and MMAR benchmarks. Its paper-specific
 post-training data are not a separate public release: Appendix A.1 describes
