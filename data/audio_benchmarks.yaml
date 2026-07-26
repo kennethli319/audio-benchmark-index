@@ -15413,6 +15413,61 @@ benchmarks:
       - https://arxiv.org/abs/1711.04845
       - https://github.com/jthickstun/pytorch_musicnet
 
+  - id: chime_4
+    name: CHiME-4
+    full_name: "CHiME-4 Challenge: Speech Separation and Recognition in Everyday Environments"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_enhancement
+      - automatic_speech_recognition
+    tasks:
+      - multichannel_speech_enhancement
+      - noise_robust_automatic_speech_recognition
+      - distant_speech_recognition
+      - microphone_array_generalization
+    official:
+      homepage: https://www.chimechallenge.org/challenges/chime4/index
+      data_description: https://www.chimechallenge.org/challenges/chime4/data
+      download_instructions: https://www.chimechallenge.org/challenges/chime4/download
+      ldc_catalog: https://catalog.ldc.upenn.edu/LDC2017S24
+      paper: https://doi.org/10.1016/j.csl.2016.11.005
+      recent_evaluation: https://arxiv.org/abs/2607.18658
+    download:
+      primary:
+        - https://www.chimechallenge.org/challenges/chime4/download
+        - https://catalog.ldc.upenn.edu/LDC2017S24
+      examples:
+        - 'scripts/download/chime_4.sh'
+      notes: >-
+        The helper saves public challenge, data-layout, LDC-catalog, and recent
+        evaluation documentation only. The official download page says the
+        audio, six-channel annotations, acoustic simulation, and additional
+        enhancement software are distributed through LDC2017S24 as part of
+        the CHiME-3 package. LDC access requires an eligible membership or
+        non-member license; the challenge page also says licensed WSJ0 access
+        is required for the licensed portion. Public one- and two-channel
+        annotations and Apache-2.0 baseline links are documented by the
+        challenge, but they do not replace access to the evaluation audio.
+    license:
+      data: ldc_user_agreement
+      code: Apache-2.0
+      notes: >-
+        LDC2017S24 is controlled by the LDC User Agreement for Non-Members or
+        applicable member terms and incorporates CSR-I WSJ0 material. The
+        Apache-2.0 statement on the challenge download page covers the public
+        baseline and supplementary annotations, not the speech and noise
+        recordings. Do not redistribute licensed audio or infer open-data
+        rights from the public documentation.
+    sources:
+      - https://www.chimechallenge.org/challenges/chime4/index
+      - https://www.chimechallenge.org/challenges/chime4/data
+      - https://www.chimechallenge.org/challenges/chime4/download
+      - https://catalog.ldc.upenn.edu/LDC2017S24
+      - https://doi.org/10.1016/j.csl.2016.11.005
+      - https://arxiv.org/abs/2607.18658
+      - https://arxiv.org/html/2607.18658v1#S3.SS1
+      - https://arxiv.org/html/2607.18658v1#S4.SS2
+
   - id: chime_6
     name: CHiME-6
     full_name: "CHiME-6 Challenge: Tackling Multispeaker Speech Recognition for Unsegmented Recordings"

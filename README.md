@@ -83,7 +83,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 329 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 330 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The July 2026 Local Information Disclosure paper adds coverage of the
@@ -1131,6 +1131,16 @@ NII/SRC provides both corpora only after a usage pledge and review and permits
 research use only. The paper's TIMIT and LibriSpeech dependencies map to
 existing entries.
 
+The July 2026 *Towards Array-Invariant Speech Enhancement via Geometry-Aware
+Dynamic Convolution* paper evaluates RealMAN with fixed four-second segments
+and tests zero-shot array generalization on the six-microphone real-recorded
+CHiME-4 test set. RealMAN was already indexed; CHiME-4 is now recorded as a
+separate licensed family. Its public challenge pages document the data layout
+and Apache-2.0 baseline, while the audio and six-channel annotations are
+distributed through [LDC2017S24](https://catalog.ldc.upenn.edu/LDC2017S24)
+under LDC/WSJ0 terms. The helper saves documentation only and never fetches
+licensed recordings.
+
 The July 2026 *Towards a reproducible cross-venue method for quantifying crowd
 noise in stadiums* paper is recorded as a proposed-protocol audit. It defines
 Class 1 instrumentation, far-field placement, fast-integrated A-weighted
@@ -1664,6 +1674,7 @@ Current coverage includes:
 | [MSP-Podcast](https://lab-msp.com/MSP/MSP-Podcast.html) | Naturalistic speech emotion recognition | Free academic access after an authorized institutional representative signs the official data-transfer agreement; Test3 audio is released without labels for web-based evaluation | Custom institution-signed academic license; permissive source-podcast licenses do not replace the controlling corpus agreement |
 | [MUSAN](https://www.openslr.org/17/) | Speech/music/noise classification | [OpenSLR SLR17](https://www.openslr.org/17/) corpus archive; helper downloads the OpenSLR page by default and requires opt-in for the 11 GiB archive | CC BY 4.0 |
 | [AMI](https://groups.inf.ed.ac.uk/ami/corpus/) | Meeting ASR | Official [annotation ZIPs](https://groups.inf.ed.ac.uk/ami/download/), optional [OpenSLR SLR16](https://www.openslr.org/16/) acoustic archives, or [edinburghcstr/ami](https://huggingface.co/datasets/edinburghcstr/ami) | Official AMI pages list CC BY 4.0; OpenSLR mirror still shows an older modified CC BY-NC-SA v2.0 notice |
+| [CHiME-4](https://www.chimechallenge.org/challenges/chime4/index) | Multichannel speech enhancement and noise-robust ASR | Official challenge and data-layout documentation; audio and six-channel annotations require licensed [LDC2017S24](https://catalog.ldc.upenn.edu/LDC2017S24) access, and the helper saves public provenance only | LDC user agreement/member terms plus incorporated WSJ0 conditions; Apache-2.0 covers the public baseline, not the recordings |
 | [CHiME-6](https://www.chimechallenge.org/datasets/chime6) | Meeting ASR / diarization | [OpenSLR SLR150](https://www.openslr.org/150/) transcriptions/floorplans by default; large train/dev/eval audio archives are opt-in | CC BY-SA 4.0 |
 | [CHiME-7 DASR](https://www.chimechallenge.org/challenges/chime7/task1/index) | Multi-device distant speaker-attributed meeting ASR | Official protocol over revised CHiME-6, DiPCo, and task-specific Mixer 6 partitions; helper saves public documentation, while CHiME and LDC/Mixer 6 access remains manual | Mixed corpus-specific terms and agreements; ESPnet baseline code is Apache-2.0 |
 | [NOTSOFAR-1](https://www.chimechallenge.org/challenges/chime8/task2/index) | Distant speaker-attributed meeting ASR and diarization | Public Microsoft open release documents 237 English meetings, including ground-truth 80-meeting eval-small and 129-meeting eval-full sets; the challenge/paper's roughly 280-meeting inventory differs because the current release removes restricted Dev-set-2 and adds eval-full; helper saves official docs and licenses only | Data is CC BY 4.0 and baseline code is MIT; challenge-only Dev-set-2 is not in the current open release and has separate publication restrictions |

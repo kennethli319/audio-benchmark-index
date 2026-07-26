@@ -237,6 +237,7 @@ scripts/download/cmu_mosei.sh
 scripts/download/emoprefer.sh
 scripts/download/musan.sh
 scripts/download/ami.sh
+scripts/download/chime_4.sh
 scripts/download/chime_6.sh
 scripts/download/alimeeting.sh
 scripts/download/libriwasn.sh
@@ -1149,6 +1150,10 @@ MUSAN_OPENSLR_BASE_URL=https://openslr.elda.org/resources/17 MUSAN_DOWNLOAD_ARCH
 # AMI downloads official annotation ZIPs by default. Audio/HF mirrors are large.
 AMI_DOWNLOAD_OPENSLR_AUDIO=1 AMI_OPENSLR_PARTS="headset.tar.gz" scripts/download/ami.sh
 AMI_DOWNLOAD_HF=1 AMI_HF_INCLUDE="data/ihm/*validation*" scripts/download/ami.sh
+
+# CHiME-4 saves official public documentation, then prints the LDC2017S24 and
+# licensed-WSJ0 access requirements. It never downloads licensed audio.
+scripts/download/chime_4.sh
 
 # CHiME-6 downloads transcriptions/floorplans by default. Audio archives are large.
 CHIME6_DOWNLOAD_AUDIO=1 CHIME6_PARTS="CHiME6_dev.tar.gz CHiME6_eval.tar.gz" scripts/download/chime_6.sh
