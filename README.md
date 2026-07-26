@@ -88,6 +88,16 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 336 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 SpInt paper is recorded as a protocol and release audit over the
+existing SpInt family. Twenty-six native Spanish listeners each rated 198
+randomized stimuli spanning eleven SNRs and unprocessed, FullSubNet+, and
+SGMSE+ conditions, producing 5,148 listener-response rows used to compare
+seven objective intelligibility metrics. Zenodo publicly releases CC BY 4.0
+metadata, responses, noise, complex masks, and reconstruction code, but not
+the clean Spanish Matrix Test speech. The fixed stimuli therefore require
+separately licensed owner-provided speech and must not be described as a
+standalone public audio corpus.
+
 The July 2026 arXiv posting of the 2023 Natural Backdoor Attacks paper adds
 coverage of the public Eating Sound Collection. Its owner Kaggle release
 contains 11,141 clips across 20 foods, hand-cut from 246 YouTube videos, and

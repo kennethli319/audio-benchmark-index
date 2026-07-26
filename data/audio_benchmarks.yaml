@@ -9,6 +9,45 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  spint_spanish_intelligibility:
+    paper: https://arxiv.org/abs/2607.10619
+    title: "An Objective Intelligibility Metric Evaluation on Spanish Speech"
+    sections: 2-3
+    status: audited_existing_public_partial_release
+    evaluated_sets:
+      - cited_as: SpInt
+        index_id: spint
+        status: public_partial_release_requires_separately_licensed_clean_speech
+        protocol: >-
+          Twenty-six native Spanish speakers each evaluated 198 randomized
+          stimuli: six matrix sentences for every combination of eleven SNRs
+          and three processing conditions (unprocessed, FullSubNet+, and
+          SGMSE+), yielding 5,148 listener-response rows. The paper compares
+          behavioral word-recognition scores with STOI, ESTOI, STGI, HASPI,
+          SIIB, MOSA-Net+, and W2V-SIP.
+    release_audit:
+      metadata_listener_responses_noise_and_complex_masks: public_ungated_zenodo
+      reconstruction_script: public_ungated_zenodo
+      original_spanish_matrix_test_clean_speech: not_included_separate_owner_license
+      paper_specific_fixed_stimulus_audio: reconstructable_only_with_separately_obtained_clean_speech
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      released_spint_artifacts: CC-BY-4.0
+      spanish_matrix_test_clean_speech: separate_Hoerzentrum_Oldenburg_terms
+    sources:
+      - https://arxiv.org/abs/2607.10619
+      - https://arxiv.org/html/2607.10619v1#S2
+      - https://arxiv.org/html/2607.10619v1#S3
+      - https://doi.org/10.5281/zenodo.20763579
+      - https://zenodo.org/records/20763580
+      - https://zenodo.org/api/records/20763580
+      - https://zenodo.org/api/records/20763580/files/README.md/content
+    note: >-
+      This audit maps the paper to the existing SpInt family and leaves the
+      family count unchanged. It does not describe the release as a standalone
+      audio corpus: users need clean Spanish Matrix Test recordings obtained
+      under their owner-controlled terms to reconstruct the listening stimuli.
+
   natural_backdoor_speech_recognition:
     paper: https://arxiv.org/abs/2607.15724
     title: "Natural Backdoor Attacks on Speech Recognition Models"
@@ -20251,6 +20290,7 @@ benchmarks:
       - human_listening_test
     official:
       dataset: https://zenodo.org/records/20763580
+      concept_doi: https://doi.org/10.5281/zenodo.20763579
       doi: https://doi.org/10.5281/zenodo.20763580
       paper: https://arxiv.org/abs/2607.10619
     download:
@@ -20270,6 +20310,15 @@ benchmarks:
         reconstruction script, and approximately 2.7 MB JSON metadata by
         default. The approximately 807 MiB noise and 3.08 GiB mask archives
         require explicit opt-in.
+    access:
+      status: public_partial_release
+      requirements:
+        - Obtain the original Spanish Matrix Test clean recordings separately from Hörzentrum Oldenburg to reconstruct stimuli.
+        - Follow the Spanish Matrix Test owner's licensing conditions in addition to SpInt's CC BY 4.0 terms.
+      notes: >-
+        Metadata, listener responses, noise, masks, and reconstruction code are
+        public and ungated. The fixed listening-test audio cannot be recreated
+        from the release alone because the licensed clean speech is absent.
     license:
       data: CC-BY-4.0_for_released_SpInt_artifacts
       upstream: Spanish_Matrix_Test_clean_speech_not_included_separate_terms_apply
@@ -20283,6 +20332,7 @@ benchmarks:
       - https://arxiv.org/abs/2607.10619
       - https://arxiv.org/html/2607.10619v1#S2
       - https://arxiv.org/html/2607.10619v1#S3
+      - https://doi.org/10.5281/zenodo.20763579
       - https://zenodo.org/records/20763580
       - https://zenodo.org/api/records/20763580
       - https://zenodo.org/api/records/20763580/files/README.md/content
