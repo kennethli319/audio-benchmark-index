@@ -89,6 +89,19 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 340 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 GRAFT paper is recorded as an incomplete release audit rather
+than a downloadable benchmark family. Section 4.1 describes 2,500 difficult
+words across English, German, French, Spanish, and Italian, each paired with
+an openly licensed Lingua Libre pronunciation, while sections 5-6 report
+objective pronunciation metrics and an English listener study and claim that
+the benchmark, code, and checkpoints are released. However, the sole official
+GitHub repository currently contains only the static sample page and 52
+demonstration WAV files. It provides no benchmark word list, carrier phrases,
+source identifiers, per-item licenses, evaluation manifest, scoring code, or
+checkpoints, and the repository itself has no license. The index therefore
+does not infer a download route or helper and will recheck for the promised
+artifacts.
+
 The July 2026 MIDI-RAE-JEPA paper also uses POP909 as its 909-song
 symbolic-music source family. The official public repository provides MIDI
 arrangements with melody, bridge, and piano tracks plus aligned beat, chord,

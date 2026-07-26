@@ -9,6 +9,76 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  graft_multilingual_difficult_word_tts:
+    paper: https://arxiv.org/abs/2607.02633
+    title: "GRAFT: Grafted Reference Audio for Fine-grained Pronunciation in Zero-shot Text-to-Speech"
+    sections: 4.1, 5.1-5.2, and 6
+    status: audited_claimed_release_incomplete
+    public_interfaces:
+      - https://graft-tts.github.io/graft/
+      - https://github.com/GRAFT-TTS/graft
+    evaluated_domains:
+      - domain: multilingual_difficult_word_tts
+        protocol: >-
+          2,500 carrier phrases covering 500 rare words in each of English,
+          German, French, Spanish, and Italian, paired with isolated human
+          reference pronunciations selected from Wikimedia Lingua Libre.
+          Systems are evaluated with target-word difficult-word phoneme error
+          rate, its hardest-10-percent mean, WER, UTMOS, and speaker
+          similarity.
+        data_status: claimed_redistributed_benchmark_not_present_in_official_repository
+        note: >-
+          The paper says every selected recording is CC0, CC BY, or CC BY-SA
+          and that the benchmark is redistributed with audio. The official
+          repository currently contains only its static sample page and 52
+          demonstration WAV files: 18 hints, 18 GRAFT outputs, and 16 base
+          outputs. It provides no 2,500-item word list, carrier phrases,
+          Lingua Libre source identifiers, per-item licenses, benchmark
+          audio, split or evaluation manifest, or scoring code.
+      - domain: english_pronunciation_preference
+        protocol: >-
+          Blind Bradley-Terry listening study on 30 difficult English words,
+          with 20 paid listeners and 1,000 pairwise judgments.
+        data_status: stimuli_assignments_responses_and_scores_not_released
+        note: >-
+          The public sample page provides selected qualitative examples, not
+          the fixed listening-study item set, comparison assignments, raw
+          judgments, fitted preference records, or study instructions.
+    release_audit:
+      paper_and_sample_page: public_ungated
+      qualitative_demo_audio: public_ungated
+      multilingual_difficult_word_benchmark: claimed_released_but_absent
+      benchmark_manifest_and_per_item_provenance: absent
+      evaluation_code_and_checkpoints: claimed_released_but_absent
+      repository_license: absent
+    license:
+      paper: CC-BY-4.0
+      source_recordings: paper_reports_mixed_CC0_CC-BY_and_CC-BY-SA_per_item_terms
+      repository_and_demo_audio: not_specified
+      benchmark_and_code: not_verifiable_absent
+      note: >-
+        The paper's CC BY 4.0 license does not establish terms for the
+        repository, demo outputs, absent code, checkpoints, or absent
+        benchmark package. A future benchmark release must preserve each
+        Lingua Libre recording's item-level license and attribution.
+    sources:
+      - https://arxiv.org/abs/2607.02633
+      - https://arxiv.org/html/2607.02633v1#S4.SS1
+      - https://arxiv.org/html/2607.02633v1#S5.SS1
+      - https://arxiv.org/html/2607.02633v1#S5.SS2
+      - https://arxiv.org/html/2607.02633v1#S6
+      - https://graft-tts.github.io/graft/
+      - https://github.com/GRAFT-TTS/graft
+      - https://api.github.com/repos/GRAFT-TTS/graft
+      - https://api.github.com/repos/GRAFT-TTS/graft/git/trees/master?recursive=1
+    note: >-
+      This is recorded as a release audit rather than a benchmark family.
+      The official GitHub repository was last pushed on 2026-06-24 and, as
+      verified on 2026-07-26, exposes only the sample site and demonstration
+      audio. Recheck the official interfaces for the promised benchmark,
+      code, checkpoints, complete provenance, and artifact licenses before
+      adding an indexed entry or download helper.
+
   midi_rae_jepa_symbolic_representation:
     paper: https://arxiv.org/abs/2607.14537
     title: "MIDI-RAE-JEPA: Hierarchical Representation Learning and Generation for Symbolic Music"
