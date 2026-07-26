@@ -1362,6 +1362,19 @@ trained informed models, digit-recognition evaluation code, or per-item
 scores. Public access to the three source corpora therefore does not reproduce
 the derived protocol, and no duplicate family or download helper is added.
 
+The July 2026 *Efficient Text-to-Audio Generation via Pruning* paper is
+recorded as recent evaluation provenance for the existing AudioCaps family.
+Sections 4-6 fine-tune pruned AudioLDM-M-Full variants on the training split
+and generate from the 964-caption test split, reporting FAD, KL divergence,
+runtime, storage, and PANNs event-capture analyses. The official
+[implementation](https://github.com/Arshdeep-Singh-Boparai/PruningAudioLDM)
+is MIT-licensed and its large
+[checkpoint record](https://zenodo.org/records/21376822) is CC BY 4.0, but
+neither release contains the generated test audio, exact run manifests,
+per-item metrics, or score records. AudioCaps' academic-use condition and
+upstream YouTube availability remain authoritative, so no new benchmark
+family or download helper is added.
+
 The July 2026 *SpeechGuard* paper is likewise recorded as a coverage audit
 over the already indexed Speech Commands v2 and AudioMNIST families. Section 5
 poisons one percent of training examples with random-noise,

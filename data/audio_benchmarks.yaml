@@ -9,6 +9,63 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  efficient_audioldm_pruning:
+    paper: https://arxiv.org/abs/2607.13330
+    title: "Efficient Text-to-Audio Generation via Pruning"
+    sections: 4-6
+    status: audited_existing_public_family_with_released_code_and_models
+    evaluated_sets:
+      - cited_as: AudioCaps
+        index_id: audiocaps
+        status: existing_public_metadata_with_source_media_constraints
+        protocol: >-
+          Fine-tune pruned AudioLDM-M-Full variants on the AudioCaps training
+          split and generate from the 964-caption test split, reporting
+          Frechet Audio Distance, KL divergence, real-time factor, checkpoint
+          size, and PANNs-based top-ten event capture and recovery analyses.
+        note: >-
+          The paper uses AudioCaps' existing public captions and identifiers
+          rather than introducing a separately packaged benchmark. Upstream
+          YouTube audio availability and the AudioCaps academic-use condition
+          remain applicable.
+    release_audit:
+      source_benchmark_metadata: public_ungated
+      source_audio: form_and_upstream_availability_dependent
+      pruning_code_and_index_dictionary: public_ungated
+      model_checkpoints: public_ungated_large_zenodo_files
+      generated_test_audio_and_per_item_metrics: not_released
+      exact_training_and_evaluation_manifests: not_released
+    license:
+      paper: CC-BY-4.0
+      source_benchmark: academic_only
+      implementation_code: MIT
+      checkpoint_record: CC-BY-4.0
+      generated_outputs_and_scores: not_specified_unreleased
+      note: >-
+        The MIT implementation and CC BY 4.0 Zenodo checkpoint record do not
+        relicense AudioCaps captions or upstream YouTube media. The AudioCaps
+        repository limits its code and dataset to academic use, and the paper
+        states no terms for absent generated outputs or score records.
+    sources:
+      - https://arxiv.org/abs/2607.13330
+      - https://arxiv.org/html/2607.13330v1#S4
+      - https://arxiv.org/html/2607.13330v1#S5
+      - https://arxiv.org/html/2607.13330v1#S6
+      - https://github.com/Arshdeep-Singh-Boparai/PruningAudioLDM
+      - https://raw.githubusercontent.com/Arshdeep-Singh-Boparai/PruningAudioLDM/main/README.md
+      - https://raw.githubusercontent.com/Arshdeep-Singh-Boparai/PruningAudioLDM/main/LICENSE
+      - https://zenodo.org/records/21376822
+      - https://zenodo.org/api/records/21376822
+      - https://audiocaps.github.io/
+      - https://github.com/cdjkim/audiocaps
+      - https://aclanthology.org/N19-1011/
+    note: >-
+      This audit adds recent evaluation provenance to AudioCaps and records
+      the public implementation and model release without treating a pruning
+      method or checkpoint archive as a new benchmark dataset. No additional
+      download helper is needed because the existing AudioCaps helper remains
+      the authoritative source-family path.
+
   egta_technical_talk_simulst:
     paper: https://arxiv.org/abs/2607.17766
     title: "When to Use Extra Context: Evidence-Grounded Terminology Adaptation for Simultaneous Speech Translation"
@@ -16336,6 +16393,7 @@ benchmarks:
       dataset2_readme: https://github.com/cdjkim/audiocaps/blob/master/dataset2.0/README.md
       hf_mirror: https://huggingface.co/datasets/d0rj/audiocaps
       qwen_audio_vae_report: https://arxiv.org/html/2607.11738v1#S4.SS2.SSS2
+      recent_evaluation: https://arxiv.org/abs/2607.13330
     download:
       primary:
         - https://github.com/cdjkim/audiocaps/tree/master/dataset
@@ -16345,7 +16403,13 @@ benchmarks:
         - 'scripts/download/audiocaps.sh'
         - 'AUDIOCAPS_VERSION=2.0 scripts/download/audiocaps.sh'
         - 'from datasets import load_dataset; ds = load_dataset("d0rj/audiocaps")'
-      notes: Official CSVs contain captions, YouTube ids, and segment start times. Raw audio/video download requires the upstream form and is subject to AudioSet/YouTube availability and terms.
+      notes: >-
+        Official CSVs contain captions, YouTube ids, and segment start times.
+        Raw audio/video download requires the upstream form and is subject to
+        AudioSet/YouTube availability and terms. The July 2026 AudioLDM
+        pruning paper fine-tunes on the training split and evaluates generation
+        from the 964-caption test split; its public code and checkpoints do not
+        include generated test audio or per-item metric records.
     license:
       data: academic_only
       code: MIT
@@ -16357,6 +16421,10 @@ benchmarks:
       - https://aclanthology.org/N19-1011/
       - https://huggingface.co/datasets/d0rj/audiocaps
       - https://arxiv.org/html/2607.11738v1#S4.SS2.SSS2
+      - https://arxiv.org/abs/2607.13330
+      - https://arxiv.org/html/2607.13330v1#S4
+      - https://github.com/Arshdeep-Singh-Boparai/PruningAudioLDM
+      - https://zenodo.org/records/21376822
 
   - id: uiq
     name: User-Intent Queries (UIQ)
