@@ -80,8 +80,17 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 321 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 323 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 Q-TriM paper's three audio-visual QA evaluations are now traced
+to owner-controlled sources. MUSIC-AVQA was already indexed; the newly indexed
+MUSIC-AVQA-R release expands the original 9,129 test questions to 211,572
+manually screened paraphrases for head/tail and question-robustness evaluation.
+The newly indexed MUSIC-AVQA-v2.0 adds biased/balanced QA splits and 1,230
+manually collected musical-performance videos. MUSIC-AVQA-R states no data or
+code license; MUSIC-AVQA-v2.0 packages its repository under GPL-3.0 but limits
+its YouTube-derived videos to research use. Neither re-licenses upstream media.
 
 The July 2026 IBR waveform paper is recorded as an explicit scope exclusion.
 Although it is categorized under arXiv eess.AS and converts its inputs to

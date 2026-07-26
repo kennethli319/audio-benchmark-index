@@ -825,6 +825,12 @@ AIR_BENCH_CLONE_REPO=1 scripts/download/air_bench.sh
 # MUSIC-AVQA downloads official docs and JSON annotations by default. Raw videos are manual/large.
 MUSIC_AVQA_CLONE_REPO=1 scripts/download/music_avqa.sh
 
+# MUSIC-AVQA-R downloads docs/tree metadata by default. Its roughly 90 MB annotation/code repository is opt-in.
+MUSIC_AVQA_R_CLONE_REPO=1 scripts/download/music_avqa_r.sh
+
+# MUSIC-AVQA-v2.0 downloads docs and the video manifest by default. QA JSONs are an opt-in clone; video is manual.
+MUSIC_AVQA_V2_CLONE_REPO=1 scripts/download/music_avqa_v2.sh
+
 # LLP downloads official docs and all annotation CSVs by default. Features are a manual Drive download.
 LLP_CLONE_REPO=1 scripts/download/llp.sh
 

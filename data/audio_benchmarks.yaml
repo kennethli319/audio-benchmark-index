@@ -9,6 +9,68 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  q_trim_music_avqa_robustness:
+    paper: https://arxiv.org/abs/2607.03825
+    title: "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering"
+    sections: 4.1-4.5
+    status: audited_two_new_public_derived_families_one_existing_public_family
+    public_interfaces:
+      - https://github.com/Sunghun95/Q-TriM
+      - https://github.com/mira-ai-lab/MUSIC-AVQA-R
+      - https://github.com/DragonLiu1995/MUSIC-AVQA-v2.0
+    evaluated_sets:
+      - cited_as: MUSIC-AVQA
+        index_id: music_avqa
+        status: existing_public_family
+        protocol: Official train, validation, and test splits with accuracy by audio-only, visual-only, and audio-visual question type.
+      - cited_as: MUSIC-AVQA-R
+        index_id: music_avqa_r
+        status: public_ungated_derived_test_benchmark
+        protocol: >-
+          The paper reports overall and head/tail accuracy on the released
+          paraphrased robustness test set, plus keep-ratio and component
+          ablations. MUSIC-AVQA-R retains the original MUSIC-AVQA training and
+          validation splits and expands its 9,129 test questions to 211,572
+          manually screened paraphrases.
+      - cited_as: MUSIC-AVQA-v2.0
+        index_id: music_avqa_v2
+        status: existing_public_derived_family
+        protocol: Accuracy under biased/balanced train and test combinations.
+    release_audit:
+      paper: public_ungated
+      q_trim_repository: public_placeholder_readme_code_announced
+      music_avqa_r_annotations_and_evaluation_code: public_ungated_github_repository
+      music_avqa_r_source_media: inherited_from_music_avqa_not_redistributed
+      music_avqa_v2_annotations_and_video_manifest: public_ungated_github_repository
+      music_avqa_v2_video_archive: public_manual_dropbox_download
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      q_trim_repository: not_specified
+      music_avqa_r_data_and_code: not_specified
+      music_avqa_v2_repository: GPL_3_0_with_research_only_video_statement
+      upstream: Original MUSIC-AVQA data license is unspecified and source-video rights remain applicable
+    sources:
+      - https://arxiv.org/abs/2607.03825
+      - https://arxiv.org/html/2607.03825v1#S4.SS1
+      - https://arxiv.org/html/2607.03825v1#S4.SS3
+      - https://github.com/Sunghun95/Q-TriM
+      - https://raw.githubusercontent.com/Sunghun95/Q-TriM/main/README.md
+      - https://api.github.com/repos/Sunghun95/Q-TriM
+      - https://github.com/mira-ai-lab/MUSIC-AVQA-R
+      - https://raw.githubusercontent.com/mira-ai-lab/MUSIC-AVQA-R/main/README.md
+      - https://api.github.com/repos/mira-ai-lab/MUSIC-AVQA-R
+      - https://arxiv.org/abs/2404.12020
+      - https://github.com/DragonLiu1995/MUSIC-AVQA-v2.0
+      - https://raw.githubusercontent.com/DragonLiu1995/MUSIC-AVQA-v2.0/main/README.md
+      - https://arxiv.org/abs/2310.06238
+    note: >-
+      The new indexed families are the released MUSIC-AVQA-R robustness test
+      benchmark and MUSIC-AVQA-v2.0 balanced benchmark, not the Q-TriM model
+      repository. Q-TriM's repository currently contains only documentation
+      and says code will be released soon. Its paper's HTML has unresolved
+      citation keys for both derived datasets, so this audit traces each one
+      independently to its owner-controlled release.
+
   ibr_power_waveform_scope_audit:
     paper: https://arxiv.org/abs/2607.20817
     title: "Spectrogram-Based Joint Detection, Localization, and Classification of Events in Continuously Recorded IBR Waveforms"
@@ -5797,6 +5859,96 @@ benchmarks:
       - https://api.github.com/repos/GeWu-Lab/MUSIC-AVQA/license
       - https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf
       - https://arxiv.org/abs/2203.14072
+
+  - id: music_avqa_r
+    name: MUSIC-AVQA-R
+    full_name: "MUSIC-AVQA-R: Robust Audio-Visual Question Answering"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_question_answering
+    tasks:
+      - audio_visual_question_answering
+      - robustness_evaluation
+      - long_tail_reasoning
+      - question_paraphrase_robustness
+      - music_understanding
+    official:
+      repo: https://github.com/mira-ai-lab/MUSIC-AVQA-R
+      paper: https://arxiv.org/abs/2404.12020
+      q_trim_evaluation: https://arxiv.org/html/2607.03825v1#S4
+    download:
+      primary:
+        - https://github.com/mira-ai-lab/MUSIC-AVQA-R/tree/main/dataset/MUSIC-AVQA-R
+      examples:
+        - 'scripts/download/music_avqa_r.sh'
+        - 'MUSIC_AVQA_R_CLONE_REPO=1 scripts/download/music_avqa_r.sh'
+      notes: >-
+        The helper downloads official documentation and the GitHub tree
+        manifest by default. Set MUSIC_AVQA_R_CLONE_REPO=1 to clone the
+        approximately 90 MB repository containing the three public JSON test
+        files and evaluation code. Training/validation annotations and source
+        videos remain in the separately indexed MUSIC-AVQA release.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        No LICENSE file or standalone dataset terms were found in the official
+        repository on 2026-07-25. The derived questions and evaluation code
+        should not be assumed open-licensed; original MUSIC-AVQA media rights
+        and its unspecified dataset license remain applicable.
+    sources:
+      - https://github.com/mira-ai-lab/MUSIC-AVQA-R
+      - https://raw.githubusercontent.com/mira-ai-lab/MUSIC-AVQA-R/main/README.md
+      - https://api.github.com/repos/mira-ai-lab/MUSIC-AVQA-R
+      - https://api.github.com/repos/mira-ai-lab/MUSIC-AVQA-R/git/trees/main?recursive=1
+      - https://arxiv.org/abs/2404.12020
+      - https://arxiv.org/html/2607.03825v1#S4.SS1
+
+  - id: music_avqa_v2
+    name: MUSIC-AVQA-v2.0
+    full_name: "MUSIC-AVQA-v2.0: A Balanced Dataset for Unbiased Audio-Visual Question Answering"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_question_answering
+    tasks:
+      - audio_visual_question_answering
+      - dataset_bias_evaluation
+      - balanced_evaluation
+      - music_understanding
+    official:
+      repo: https://github.com/DragonLiu1995/MUSIC-AVQA-v2.0
+      paper: https://arxiv.org/abs/2310.06238
+      wacv_openaccess: https://openaccess.thecvf.com/content/WACV2024/html/Liu_Tackling_Data_Bias_in_MUSIC-AVQA_Crafting_a_Balanced_Dataset_for_WACV_2024_paper.html
+      q_trim_evaluation: https://arxiv.org/html/2607.03825v1#S4
+    download:
+      primary:
+        - https://github.com/DragonLiu1995/MUSIC-AVQA-v2.0/tree/main/data
+        - https://www.dropbox.com/s/ejb36sh6gzqwdhn/collect_new_set.rar?st=8o3m8ds9&dl=0
+      examples:
+        - 'scripts/download/music_avqa_v2.sh'
+        - 'MUSIC_AVQA_V2_CLONE_REPO=1 scripts/download/music_avqa_v2.sh'
+      notes: >-
+        The helper downloads the official README, GPL-3.0 license, GitHub tree
+        manifest, and lightweight additional-video manifest by default. Set
+        MUSIC_AVQA_V2_CLONE_REPO=1 to clone the repository with the biased and
+        balanced QA JSON splits. The much larger 1,040-video archive remains a
+        manual Dropbox download.
+    license:
+      data: research_purpose_only_statement_for_youtube_videos
+      repository: GPL_3_0
+      notes: >-
+        The repository-wide GPL-3.0 file covers the packaged repository, while
+        its README separately says the manually collected YouTube videos are
+        for research purposes only. Upstream YouTube and original MUSIC-AVQA
+        media rights remain applicable; do not infer that GPL-3.0 re-licenses
+        third-party video content.
+    sources:
+      - https://github.com/DragonLiu1995/MUSIC-AVQA-v2.0
+      - https://raw.githubusercontent.com/DragonLiu1995/MUSIC-AVQA-v2.0/main/README.md
+      - https://raw.githubusercontent.com/DragonLiu1995/MUSIC-AVQA-v2.0/main/LICENSE
+      - https://api.github.com/repos/DragonLiu1995/MUSIC-AVQA-v2.0
+      - https://api.github.com/repos/DragonLiu1995/MUSIC-AVQA-v2.0/git/trees/main?recursive=1
+      - https://arxiv.org/abs/2310.06238
+      - https://openaccess.thecvf.com/content/WACV2024/html/Liu_Tackling_Data_Bias_in_MUSIC-AVQA_Crafting_a_Balanced_Dataset_for_WACV_2024_paper.html
+      - https://arxiv.org/html/2607.03825v1#S4.SS1
 
   - id: avqa
     name: AVQA
