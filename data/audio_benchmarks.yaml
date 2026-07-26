@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-25
+  last_checked: 2026-07-26
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -3284,6 +3284,42 @@ paper_audits:
       - https://www.asvspoof.org/index2019.html
       - https://zenodo.org/records/14498691
       - https://jungjee.github.io/spoofceleb/
+
+  lalm_spoofing_aware_speaker_verification:
+    paper: https://arxiv.org/abs/2607.14753
+    title: "Large Audio Language Models for Spoofing-Aware Speaker Verification"
+    sections: 4 and 4.2
+    status: audited_existing_public_family_unreleased_derived_protocol
+    evaluated_sets:
+      - cited_as: ASVspoof 5 Track 2
+        index_id: asvspoof_5
+        status: public
+        protocol: >-
+          The paper trains primarily on the ASVspoof 5 training split under
+          the Track 2 open condition, adds non-overlapping VoxCeleb bona fide
+          speakers, and evaluates on a stratified 20,000-pair sample of the
+          ASVspoof 5 evaluation set using one enrollment utterance per claimed
+          identity rather than the official three.
+    protocol_note: >-
+      The authors construct approximately 1.8 million enrollment-trial
+      training pairs across 500 speakers and retain approximately 90,000
+      filtered Step-Audio R1 reasoning pairs. They report accuracy, EER, and
+      the ASVspoof 5 Track 2 minimum architecture-agnostic detection cost
+      function, but do not publish the sampled evaluation-pair IDs, pair
+      construction recipe, reasoning traces, predictions, scores, training
+      code, checkpoints, or a project repository. Those paper-specific
+      selections are therefore not a separately reproducible benchmark
+      release and must not be inferred from the public ASVspoof 5 archive.
+    license:
+      asvspoof_5: ODC_BY_1_0_database_with_CC_BY_4_0_bona_fide_audio
+      voxceleb: identity_and_source_media_terms_apply
+      paper_specific_pairs_reasoning_and_code: not_stated_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.14753
+      - https://arxiv.org/html/2607.14753v1#S4
+      - https://arxiv.org/html/2607.14753v1#S4.SS2
+      - https://zenodo.org/records/14498691
+      - https://www.asvspoof.org/
 
   speech2speech_assistant_guardrails:
     paper: https://arxiv.org/abs/2607.21180

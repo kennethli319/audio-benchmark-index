@@ -1001,6 +1001,17 @@ with their official access and license constraints. The paper's artifact
 transformations create an internal training protocol, not a separately
 released evaluation dataset.
 
+The July 2026 large-audio-language-model SASV paper is likewise recorded as
+existing ASVspoof 5 coverage rather than a new benchmark family. Sections 4
+and 4.2 follow the Track 2 open condition but evaluate a paper-specific
+stratified sample of 20,000 enrollment-trial pairs, use one enrollment
+utterance instead of the official three, and augment training with VoxCeleb.
+The approximately 1.8 million constructed training pairs, 90,000 filtered
+reasoning pairs, sampled evaluation IDs, predictions, scores, code, and
+checkpoints are not released. The indexed public
+[ASVspoof 5](https://zenodo.org/records/14498691) archive remains the official
+dataset source, but it cannot reproduce those unpublished selections.
+
 The July 2026 speech-to-speech assistant safeguards paper is also recorded as
 an unreleased protocol rather than a benchmark family. Its automotive case
 study crosses three vendor systems, three guardrail configurations, and
