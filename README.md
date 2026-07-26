@@ -89,6 +89,16 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The May 2026 SEABAD dataset paper and July 2026 DrongoNet follow-up are now
+traced to the public author-owned
+[Zenodo release](https://zenodo.org/records/18290494). SEABAD supplies 50,000
+balanced three-second clips, fixed 40,000/5,000/5,000
+train/validation/test splits, and provenance for 1,677 Southeast Asian bird
+species plus six negative-audio sources. Its compilation is CC BY 4.0, but
+component recordings retain source-specific Creative Commons and dataset
+terms; the helper therefore keeps the approximately 3.87 GiB archive behind
+explicit source-terms acknowledgment.
+
 The July 2026 TriA paper is audited across sections 3-4. Its official
 repository releases the annotation pipeline but still marks the claimed
 2,130-hour, 431-class TriA dataset and TriA-GK subsets as an incomplete TODO,

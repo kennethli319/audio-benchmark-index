@@ -9,6 +9,57 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  seabad_tropical_bird_activity_detection:
+    paper: https://arxiv.org/abs/2605.20853
+    title: "SEABAD: A Tropical Bird Activity Detection Dataset for Passive Acoustic Monitoring"
+    sections: 2-4 and data availability
+    status: audited_existing_public_family_metadata_corrected
+    evaluated_sets:
+      - cited_as: SEABAD
+        index_id: seabad
+        status: public_ungated
+        protocol: >-
+          Binary bird-presence detection on a fixed stratified split of 40,000
+          training, 5,000 validation, and 5,000 test clips, each three seconds
+          long and balanced between bird-present and bird-absent audio.
+        note: >-
+          The July 2026 DrongoNet paper (arXiv:2607.19721) independently uses
+          the same fixed split for multi-seed embedded-model evaluation.
+    release_audit:
+      audio_split_manifests_and_provenance: public_ungated
+      curation_and_baseline_code: public_ungated
+      zenodo_archive_size_bytes: 4156535175
+      fixed_test_set: public_ungated
+    license:
+      paper: CC-BY-4.0
+      compilation: CC-BY-4.0
+      component_audio: source_specific_terms_apply
+      code: MIT_claimed_in_README_without_license_file
+      note: >-
+        The Zenodo record licenses the compilation under CC BY 4.0, but
+        positive Xeno-Canto clips include CC0, CC BY-SA, CC BY-NC-SA, and
+        CC BY-NC-ND material, and negative clips retain the terms of six source
+        datasets. The repository README claims MIT for code, but the repository
+        has no LICENSE file and GitHub detects no license.
+    sources:
+      - https://arxiv.org/abs/2605.20853
+      - https://arxiv.org/html/2605.20853v1#S2
+      - https://arxiv.org/html/2605.20853v1#S3
+      - https://arxiv.org/html/2605.20853v1#S4
+      - https://arxiv.org/html/2605.20853v1#Sx1
+      - https://arxiv.org/abs/2607.19721
+      - https://arxiv.org/html/2607.19721v1#S4
+      - https://arxiv.org/html/2607.19721v1#S7
+      - https://zenodo.org/records/18290494
+      - https://zenodo.org/api/records/18290494
+      - https://github.com/mun3im/seabad
+      - https://raw.githubusercontent.com/mun3im/seabad/main/README.md
+      - https://api.github.com/repos/mun3im/seabad
+    note: >-
+      SEABAD is a released benchmark family rather than merely a model-training
+      corpus: its public archive includes fixed split CSVs, provenance, and a
+      held-out 5,000-clip test set used by both the dataset paper and DrongoNet.
+
   tria_audio_annotation_pipeline:
     paper: https://arxiv.org/abs/2607.06179
     title: "TriA Pipeline: A Large-Scale Automatic Audio Annotation Pipeline For Audio Classification In Specific Scenarios"
@@ -21433,14 +21484,14 @@ benchmarks:
       notes: >-
         Zenodo's structured record declares CC BY 4.0 for the compilation,
         while the official repository says individual positive clips retain
-        their Xeno-Canto licenses, including CC BY, CC BY-SA, CC BY-NC, and
-        CC BY-NC-SA, and negative clips retain each source dataset's terms.
+        their Xeno-Canto licenses, including CC0, CC BY-SA, CC BY-NC-SA, and
+        CC BY-NC-ND, and negative clips retain each source dataset's terms.
         Use the included provenance metadata and comply per recording; do not
         infer that the record-level license removes noncommercial, share-alike,
-        or attribution requirements. The repository README calls the curation
-        code MIT, but the repository currently has no LICENSE file and GitHub
-        detects no license, so that code statement should be clarified before
-        reuse.
+        no-derivatives, or attribution requirements. The repository README
+        calls the curation code MIT, but the repository currently has no
+        LICENSE file and GitHub detects no license, so that code statement
+        should be clarified before reuse.
     sources:
       - https://zenodo.org/records/18290494
       - https://zenodo.org/api/records/18290494
@@ -21448,8 +21499,11 @@ benchmarks:
       - https://github.com/mun3im/seabad
       - https://raw.githubusercontent.com/mun3im/seabad/main/README.md
       - https://api.github.com/repos/mun3im/seabad
+      - https://api.github.com/repos/mun3im/seabad/git/trees/main?recursive=1
       - https://arxiv.org/abs/2605.20853
-      - https://arxiv.org/html/2605.20853v1
+      - https://arxiv.org/html/2605.20853v1#S3
+      - https://arxiv.org/html/2605.20853v1#S4
+      - https://arxiv.org/html/2605.20853v1#Sx1
       - https://arxiv.org/abs/2607.19721
       - https://arxiv.org/html/2607.19721v1#S4
       - https://arxiv.org/html/2607.19721v1#S7.SS1
