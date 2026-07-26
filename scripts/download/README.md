@@ -78,6 +78,7 @@ scripts/download/maeb.sh
 scripts/download/dilemmadata.sh
 scripts/download/emopia.sh
 scripts/download/pop909.sh
+scripts/download/single_item_kawaii_measure.sh
 scripts/download/kitchen20.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
@@ -1321,6 +1322,10 @@ scripts/download/lyra_sa.sh
 # official paper/supplement, documentation, and license. It does not download
 # separately hosted LibriVox audiobook recordings.
 scripts/download/audiobook_narration_appeal.sh
+
+# Single-Item Kawaii Measure saves the paper by default. The public workbook
+# contains participant-level ratings, states no data license, and bundles no audio.
+SINGLE_ITEM_KAWAII_ACK_UNSPECIFIED_LICENSE=1 SINGLE_ITEM_KAWAII_DOWNLOAD_XLSX=1 scripts/download/single_item_kawaii_measure.sh
 
 # ADReSS and ADReSSo save public challenge/access documentation, then print
 # the DementiaBank membership path. Clinical recordings stay password protected.

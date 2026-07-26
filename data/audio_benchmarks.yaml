@@ -20730,6 +20730,62 @@ benchmarks:
       - https://librivox.org/
       - https://archive.org/details/librivoxaudio
 
+  - id: single_item_kawaii_measure
+    name: Single-Item Kawaii Measure Validation Data
+    full_name: "Validating the Single Item Kawaii Measure"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_paralinguistics
+      - subjective_audio_evaluation
+    tasks:
+      - voice_cuteness_rating
+      - subjective_voice_evaluation
+      - paralinguistic_perception_modeling
+      - psychometric_measure_validation
+      - cross_context_voice_evaluation
+    official:
+      paper: https://arxiv.org/abs/2607.19352
+      paper_html: https://arxiv.org/html/2607.19352v1
+      dataset: https://docs.google.com/spreadsheets/d/1h7qdgqUb7k60VuccAaOSeBVv8HrlbGJ1rrecAAqSW24/edit
+      dataset_shortlink: https://bit.ly/validatingkawaii
+    download:
+      access: public_ungated_unspecified_data_license
+      primary:
+        - https://docs.google.com/spreadsheets/d/1h7qdgqUb7k60VuccAaOSeBVv8HrlbGJ1rrecAAqSW24/edit
+      examples:
+        - 'scripts/download/single_item_kawaii_measure.sh'
+        - 'SINGLE_ITEM_KAWAII_ACK_UNSPECIFIED_LICENSE=1 SINGLE_ITEM_KAWAII_DOWNLOAD_XLSX=1 scripts/download/single_item_kawaii_measure.sh'
+      notes: >-
+        The paper validates a one-item kawaii/cuteness rating across nine
+        Japanese participant datasets covering voice assistants and video-game
+        characters. It reports 1,228 total participant records from 967 unique
+        participants and evaluates convergent, known-groups, and cross-context
+        validity. The author-linked public Google workbook exports to an
+        approximately 1.0 MB XLSX with participant-ID, dataset-summary,
+        analysis, and nine study-data worksheets. It contains ratings and
+        derived analysis rather than a bundled audio corpus. The helper saves
+        the public paper by default; exporting the participant-level workbook
+        requires explicit opt-in and acknowledgment that reuse terms are
+        unspecified.
+    license:
+      data: not_specified
+      paper: CC-BY-NC-ND-4.0
+      voice_stimuli: not_bundled_upstream_rights_apply
+      notes: >-
+        The public workbook does not display a data license or reuse notice.
+        The paper's CC BY-NC-ND 4.0 license does not automatically license the
+        spreadsheet, participant responses, or source voice/game-character
+        stimuli. Treat participant identifiers as study pseudonyms, minimize
+        unnecessary processing, and obtain author clarification before
+        redistribution or commercial use. Separately sourced voice and
+        character media retain their original rights.
+    sources:
+      - https://arxiv.org/abs/2607.19352
+      - https://arxiv.org/html/2607.19352v1#S3.SS1
+      - https://arxiv.org/html/2607.19352v1#S3.T1
+      - https://bit.ly/validatingkawaii
+      - https://docs.google.com/spreadsheets/d/1h7qdgqUb7k60VuccAaOSeBVv8HrlbGJ1rrecAAqSW24/edit
+
   - id: lyra_sa
     name: Lyra-SA
     full_name: "Lyra Lab Singing Assessment Dataset"
