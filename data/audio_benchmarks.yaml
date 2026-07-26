@@ -5684,6 +5684,67 @@ paper_audits:
       access or reuse rights, so no benchmark entry, invented download link, or
       helper is added. Recheck the official repository for the promised release.
 
+  audio_zero_evaluation:
+    paper: https://arxiv.org/abs/2607.20166
+    title: "Audio-Zero: Label-Free Self-Evolution for Fine-Grained Audio Reasoning"
+    sections: 3.1 and Appendix A.1/B
+    status: audited_three_existing_public_benchmarks_unreleased_training_subset
+    last_verified: 2026-07-25
+    evaluated_sets:
+      - cited_as: TREA
+        index_id: trea
+        status: existing_public_family
+        protocol: >-
+          Section 3.1 and Appendix B report multiple-choice accuracy separately
+          for the 200-item Order, Count, and Duration subsets.
+      - cited_as: MMAU Test-mini
+        index_id: mmau
+        status: existing_public_family
+        protocol: >-
+          Section 3.1 and Appendix B evaluate the public 1,000-question
+          Test-mini split and report Sound, Music, Speech, and overall accuracy.
+      - cited_as: MMAR
+        index_id: mmar
+        status: existing_public_family
+        protocol: >-
+          Section 3.1 and Appendix B report Sound, Music, Speech, and overall
+          multiple-choice accuracy, with the overall score also including
+          mixed-modality samples.
+    training_data:
+      cited_as: 2k unlabeled Audio-Alpaca contrast pairs
+      source_family_id: audio_alpaca
+      status: derived_subset_unreleased
+      note: >-
+        Appendix A.1 says the authors sample and filter 2,000 chosen/rejected
+        pairs from Audio-Alpaca, remove unloadable, duration-outlier, and
+        near-duplicate examples, then resample them to 16 kHz. Version 1
+        provides no selected-row manifest, filtering thresholds, checksums, or
+        downloadable derived subset, so the public parent dataset does not
+        reproduce the paper-specific training selection.
+    release_audit:
+      evaluation_data: existing_public_families
+      paper_specific_training_subset: not_released
+      paper_specific_code: not_linked
+      checkpoints_and_predictions: not_linked
+    license:
+      paper: CC BY 4.0
+      evaluation_data: family_specific_terms_apply
+      training_parent: Apache-2.0_card_with_conflicting_Tango_noncommercial_terms
+      derived_subset: not_separately_licensed_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.20166
+      - https://arxiv.org/html/2607.20166v1#S3.SS1
+      - https://arxiv.org/html/2607.20166v1#A1.SS1.SSS1
+      - https://arxiv.org/html/2607.20166v1#A2
+      - https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty
+      - https://huggingface.co/datasets/declare-lab/audio-alpaca
+    note: >-
+      Audio-Zero introduces a post-training method rather than a new evaluation
+      family. Its three reported benchmarks are already indexed with their
+      official data paths and license caveats. The paper-specific 2,000-pair
+      Audio-Alpaca selection remains unreleased and is not represented as a
+      downloadable benchmark or given an invented helper.
+
 benchmarks:
   - id: mmau
     name: MMAU

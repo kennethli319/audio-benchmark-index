@@ -834,6 +834,14 @@ perturbation artifacts, evaluation code, or standalone data license. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
+The July 2026 Audio-Zero paper is recorded as a coverage audit over the
+already indexed TREA, MMAU Test-mini, and MMAR benchmarks. Its paper-specific
+post-training data are not a separate public release: Appendix A.1 describes
+sampling and filtering 2,000 Audio-Alpaca contrast pairs but provides no
+selected-row manifest, filtering thresholds, checksums, code link, or derived
+archive. The public Audio-Alpaca parent family therefore remains the only
+downloadable source and must not be presented as reproducing that subset.
+
 The July 2026 spectrogram-front-end comparison adds the public
 PhysioNet/CinC 2016 Heart Sound benchmark for normal-versus-abnormal
 phonocardiogram classification. The current public file tree contains six
