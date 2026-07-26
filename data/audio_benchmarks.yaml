@@ -9,6 +9,80 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  pint_invariant_speech_tokenization_evaluation:
+    paper: https://arxiv.org/abs/2607.19033
+    title: "Content is What Remains: Invariant Speech Tokenization from Parallel Utterances"
+    sections: 2.1 and 3
+    status: audited_existing_public_families_unreleased_artifacts
+    evaluated_sets:
+      - cited_as: LibriSpeech
+        index_id: librispeech
+        status: existing_public_family
+        protocol: >-
+          Section 3.1 trains two-layer BLSTM-CTC probes on train-clean-360,
+          reports WER and CER on test-clean, and computes within- and
+          across-speaker ABX error on dev-clean with zrc_abx2.
+      - cited_as: CSTR-VCTK
+        index_id: vctk
+        status: existing_public_family
+        protocol: >-
+          Section 3.2 reports a held-out-speaker identity probe plus DTW
+          cosine-distance ratios and normalized token-sequence edit distance.
+          Section 2.1 says 10% of speakers are held out, but no speaker list,
+          exact split, or preprocessing manifest is released.
+      - cited_as: RAVDESS
+        index_id: ravdess
+        status: existing_public_family
+        protocol: >-
+          Section 3.2 evaluates emotion-and-intensity leakage with a frozen
+          representation and x-vector TDNN classifier over 720 speech items.
+          The paper does not identify the selected actors, statements, or
+          intensity-label mapping in a released manifest.
+      - cited_as: TIMIT
+        index_id: timit
+        status: existing_licensed_family
+        protocol: >-
+          Section 3 fits the 200-cluster k-means tokenizers used by baseline
+          systems on TIMIT. This is an evaluation-pipeline dependency rather
+          than a separately reported TIMIT score.
+      - cited_as: Noise
+        index_id: null
+        status: cited_source_family_and_selection_inconclusive
+        protocol: >-
+          Sections 2.1 and 3.2 describe 30 hours and 10,000 noise samples for
+          token-distribution entropy and RMS-stability evaluation. The sole
+          citation is the 2019 FSD/Freesound noisy-label paper, but version 1
+          does not identify a released corpus version, Freesound IDs, or a
+          selection manifest, so the exact noise evaluation cannot be
+          reconstructed or safely mapped to FSD50K.
+    release_audit:
+      source_families: mixed_public_ungated_and_licensed
+      paper_source: public_ungated_arxiv
+      claimed_model_repository: not_found_HTTP_404
+      training_code: not_released
+      evaluation_code: not_released
+      split_and_trial_manifests: not_released
+      checkpoints_and_predictions: not_released
+    sources:
+      - https://arxiv.org/abs/2607.19033
+      - https://arxiv.org/html/2607.19033v1#S2.SS1
+      - https://arxiv.org/html/2607.19033v1#S3
+      - https://export.arxiv.org/e-print/2607.19033v1
+      - https://github.com/nyrahealth/PINT
+      - https://doi.org/10.7488/ds/2645
+      - https://zenodo.org/records/1188976
+      - https://www.openslr.org/12
+      - https://catalog.ldc.upenn.edu/LDC93S1
+    note: >-
+      The paper introduces an evaluation protocol over source families already
+      represented in the index, not a released benchmark dataset. Its model
+      footnote points to an author-organization GitHub URL that returned HTTP
+      404 on 2026-07-25, and the arXiv source package contains no alternative
+      artifact URL or artifact license. Public access to LibriSpeech, VCTK,
+      or RAVDESS therefore does not reproduce the paper-specific speaker
+      holdout, noise selection, trained probes, tokenizer checkpoints, or
+      score records. TIMIT remains separately licensed through LDC.
+
   audio_cross_verification_evaluation:
     paper: https://arxiv.org/abs/2607.18190
     title: Audio Cross Verification Using Dual Alignment Likelihood Ratio Test

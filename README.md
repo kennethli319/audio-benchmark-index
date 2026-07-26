@@ -86,6 +86,17 @@ upstream data.
 Last checked: 2026-07-25. Current index size: 328 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 PINT invariant-speech-tokenization paper is recorded as a
+coverage audit over the existing LibriSpeech, VCTK, RAVDESS, and TIMIT
+families. It reports LibriSpeech WER/CER and ABX, VCTK speaker and
+parallel-invariance probes, RAVDESS emotion leakage, TIMIT-fitted baseline
+tokenizers, and an underspecified 10,000-item noise evaluation. The model URL
+given in the paper currently returns HTTP 404, and version 1 releases no code,
+checkpoints, exact VCTK speaker holdout, noise-item manifest, trained probes,
+predictions, or artifact license. Source-family access therefore does not
+reproduce the paper-specific protocol, and no duplicate family or invented
+download route is added.
+
 The July 2026 arXiv posting of the ICASSP 2023 Audio Cross Verification paper
 is now traced to the public DAPS source family. DAPS provides 15 aligned
 studio-produced and consumer-device versions of roughly 4.5 hours each from
