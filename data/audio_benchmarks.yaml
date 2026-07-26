@@ -9,6 +9,70 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  sonic_stage_accessible_spatial_soundscapes:
+    paper: https://arxiv.org/abs/2607.20835
+    title: "Sonic Stage: Automatically Generating Interactive Spatial Soundscapes to Facilitate Dialogue Video Comprehension for Blind Viewers"
+    sections: 4.1-4.3, 5.1-6.2, and appendix A.2
+    status: audited_copyrighted_video_protocol_not_released
+    evaluated_sets:
+      - cited_as: 16-video dialogue dataset
+        index_id: null
+        status: paper_specific_copyrighted_clips_not_released
+        protocol: >-
+          The technical evaluation uses 16 one-to-two-minute dialogue clips
+          from named movies, television programs, musical theater, and talk
+          shows. It samples 20 two-second slices per clip for researcher-rated
+          character-trajectory accuracy and evaluates 300 generated visual
+          descriptions: all 173 descriptions from V1-V6 plus 127 sampled from
+          the other ten clips.
+        note: >-
+          Appendix A.2 identifies the source productions, duration, dialogue
+          ratio, genre, and a screenshot for each clip, but the paper provides
+          no video files, source URLs, time ranges, clip manifest, trajectory
+          labels, description annotations, generated spatial soundscapes, or
+          per-item scores.
+      - cited_as: V1-V6 user-evaluation videos
+        index_id: null
+        status: paper_specific_subset_not_released
+        protocol: >-
+          Twelve blind or low-vision participants compare Sonic Stage with a
+          SPICA-inspired baseline on two matched three-video groups. Each
+          Mandarin clip has ten three-choice immediate-recall questions
+          covering dialogue, character position, movement, action, and visual
+          detail, alongside spatial-presence, engagement, usability, audio
+          quality, effort, enjoyment, and future-use ratings.
+        note: >-
+          The paper reports aggregate results and participant demographics but
+          does not release the question sets, answer keys, condition
+          assignments, interaction logs, response rows, interview data, or
+          generated evaluation audio.
+    release_audit:
+      paper_and_aggregate_tables: public_ungated
+      evaluation_video_or_clip_manifest: not_released
+      generated_spatial_audio_and_descriptions: not_released
+      trajectory_and_description_labels: not_released
+      recall_questions_answers_and_participant_rows: not_released
+      system_code: not_linked_or_released
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      source_videos: third_party_film_television_and_stage_rights_require_review
+      evaluation_annotations_and_generated_audio: not_specified_unreleased
+      code: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.20835
+      - https://arxiv.org/html/2607.20835v1#S4.SS1
+      - https://arxiv.org/html/2607.20835v1#S4.SS2
+      - https://arxiv.org/html/2607.20835v1#S4.SS3
+      - https://arxiv.org/html/2607.20835v1#S5
+      - https://arxiv.org/html/2607.20835v1#S6
+      - https://arxiv.org/html/2607.20835v1#A1.SS2
+      - https://doi.org/10.1145/3830398.3830486
+    note: >-
+      Sonic Stage is a systems and user-study evaluation, not a released
+      benchmark dataset. This audit preserves the paper's reproducibility
+      boundary, leaves the family count unchanged, and adds no download helper
+      or invented source-media link.
+
   flashrt_real_time_multimodal_serving:
     paper: https://arxiv.org/abs/2607.18171
     title: "FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications"

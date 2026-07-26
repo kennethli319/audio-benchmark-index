@@ -392,6 +392,16 @@ download. That description does not match the four spoken BIG-Bench Hard tasks
 in the separately indexed public Artificial Analysis Big Bench Audio release,
 so the index does not conflate the two names.
 
+The July 2026 Sonic Stage paper is recorded as an unreleased systems and
+user-study protocol rather than a benchmark family. Its technical evaluation
+uses 16 short dialogue clips from named film, television, theater, and talk
+show productions; six clips support a 12-participant blind/low-vision study.
+The paper reports aggregate trajectory, description, recall, presence, and
+engagement results, but publishes no clip manifest or source URLs, generated
+spatial audio, annotations, recall questions, participant rows, code, or
+artifact license. The index therefore adds no download helper and does not
+invent a public path for third-party source media.
+
 The July 2026 ReMo token-compression paper is fully inventoried in the source
 YAML. All six evaluation families were already indexed: WorldSense, DailyOmni,
 Video-MME, OmniVideoBench, the video-SALMONN 2 caption benchmark, and
