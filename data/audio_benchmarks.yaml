@@ -9,6 +9,71 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  atccaps_atc_call_sign_speech:
+    paper: https://arxiv.org/abs/2606.22399
+    title: "ATCCaps: A Call-Sign-Aware Speech Dataset for Air Traffic Control Recognition"
+    sections: 3.1-3.4, 4, and 5
+    status: audited_announced_dataset_unreleased
+    evaluated_sets:
+      - cited_as: ATCCaps
+        status: paper_described_dataset_unreleased
+        protocol: >-
+          202.94 hours of real air-traffic-control radio speech comprising
+          170,385 utterances and 922 normalized call signs. Training and
+          validation derive from chronologically partitioned ATCO2-PL
+          pseudo-labelled monthly files; the 1.68-hour, 1,470-utterance test
+          split derives from the human-annotated ATCO2 test set.
+        tasks:
+          - automatic_speech_recognition
+          - call_sign_matching
+          - call_sign_aware_audio_text_retrieval
+        note: >-
+          Each retained FLAC is paired with JSON text metadata containing
+          transcript and call-sign descriptions plus LLM-generated ATC-style
+          captions. The paper reports WER/CER, matching AUC, and bidirectional
+          retrieval Recall@K and mAP reference evaluations.
+      - cited_as: UWB-ATCC
+        status: existing_public_cross_corpus_reference
+        note: >-
+          Section 5 uses the existing public validation split only as an ASR
+          cross-corpus reference. It is not an ATCCaps release interface and
+          is not counted as a new family in this audit.
+    release_audit:
+      paper_and_html: public_ungated
+      atccaps_audio_json_and_split_manifests: not_released
+      construction_pipeline_and_filtering_logs: not_released
+      evaluation_code_models_and_score_records: not_released
+      official_project_repository_or_dataset_page: not_linked
+      github_repository_search: no_matching_official_release_found_2026_07_26
+      hugging_face_dataset_search: no_matching_release_found_2026_07_26
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      atccaps_dataset_and_metadata: not_specified_unreleased
+      code: not_specified_unreleased
+      source_audio: upstream_ATCO2_terms_apply
+      llm_generated_captions: not_specified_unreleased
+      note: >-
+        The paper's arXiv license does not license the described dataset,
+        derived captions, construction artifacts, or evaluation code.
+        ATCCaps is derived from ATCO2, so any future release must also state
+        how the upstream corpus terms govern redistributed audio and metadata.
+    sources:
+      - https://arxiv.org/abs/2606.22399
+      - https://arxiv.org/html/2606.22399v1#S3.SS1
+      - https://arxiv.org/html/2606.22399v1#S3.SS4
+      - https://arxiv.org/html/2606.22399v1#S4.SS1
+      - https://arxiv.org/html/2606.22399v1#S5
+      - https://export.arxiv.org/api/query?id_list=2606.22399
+      - https://api.github.com/search/repositories?q=ATCCaps
+      - https://huggingface.co/api/datasets?search=ATCCaps
+    note: >-
+      ATCCaps is retained as an unreleased dataset and protocol audit rather
+      than a counted benchmark family. Version 1 describes an export format
+      and calls some evaluation splits released, but links no official
+      project, repository, dataset card, archive, or access instructions.
+      Recheck for a primary release and explicit dataset terms before adding
+      an indexed family or download helper.
+
   graft_multilingual_difficult_word_tts:
     paper: https://arxiv.org/abs/2607.02633
     title: "GRAFT: Grafted Reference Audio for Fine-grained Pronunciation in Zero-shot Text-to-Speech"

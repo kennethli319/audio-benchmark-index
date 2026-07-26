@@ -89,6 +89,17 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 340 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The June 2026 ATCCaps paper is recorded as an announced-but-unreleased ATC
+speech dataset and evaluation audit. Sections 3-5 describe 202.94 hours,
+170,385 utterances, 922 normalized call signs, and protocols for ASR,
+call-sign matching, and call-sign-aware audio-text retrieval. Version 1 links
+no official project, repository, dataset card, archive, access instructions,
+or artifact license; searches of GitHub and Hugging Face on 2026-07-26 found
+no matching release. The index therefore does not count ATCCaps as a public
+benchmark family or provide a speculative download helper. Its source audio
+derives from ATCO2, whose upstream terms would remain applicable to any future
+release.
+
 The July 2026 GRAFT paper is recorded as an incomplete release audit rather
 than a downloadable benchmark family. Section 4.1 describes 2,500 difficult
 words across English, German, French, Spanish, and Italian, each paired with
