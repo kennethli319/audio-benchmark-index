@@ -89,6 +89,17 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 arXiv posting of *A Study of Parallelizable Alternatives to
+Dynamic Time Warping for Aligning Long Sequences* is recorded as an
+evaluation-coverage audit rather than a new benchmark family. Sections IV-VI
+use five Chopin mazurkas for beat-aligned audio-to-audio evaluation, with
+1,953 development pairs, 7,630 test pairs, and seven synthetic-noise
+conditions. The official MIT repositories release CPU/GPU implementations,
+notebooks, filename lists, small implementation-test features, and aggregate
+results, but require a local `Chopin_Mazurkas` tree and do not release or link
+the source recordings, beat annotations, exact noise realizations, or
+complete outputs. No download helper is added for those absent artifacts.
+
 The July 2026 SonicAGI system paper is now traced as follow-up provenance for
 the existing [REAL-TSE Challenge](https://real-tse.github.io/challenge/).
 It confirms the online sub-100 ms and full-context offline target-speaker

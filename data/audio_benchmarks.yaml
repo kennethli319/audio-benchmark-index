@@ -9,6 +9,63 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  parallelizing_dtw_chopin_mazurka_evaluation:
+    paper: https://arxiv.org/abs/2607.15478
+    title: A Study of Parallelizable Alternatives to Dynamic Time Warping for Aligning Long Sequences
+    sections: IV-VI
+    status: audited_public_code_with_unreleased_source_benchmark
+    evaluated_sets:
+      - cited_as: Chopin Mazurka dataset
+        status: evaluation_protocol_public_source_audio_and_annotations_not_released
+        protocol: >-
+          Develop on every ordered pair of performances of Chopin Mazurka
+          Op. 17 No. 4 (1,953 pairs), then test on four other mazurkas (7,630
+          pairs). Systems align 23 ms-hop chroma features and report the
+          fraction of predicted beat timestamps outside tolerances from 10
+          to 500 ms. A robustness analysis repeats the same pairs after
+          adding white Gaussian noise at seven SNRs from 20 to -10 dB.
+        note: >-
+          The paper describes multiple performances and beat annotations for
+          five mazurkas, but it does not link a public corpus archive. The
+          official CPU repository publishes train/test filename lists,
+          notebooks, small synthetic implementation-test features, and
+          aggregate results; its data-preparation notebook expects users to
+          supply a local Chopin_Mazurkas directory containing
+          annotations_beat and wav_22050_mono.
+    release_audit:
+      cpu_experiment_notebooks_filelists_and_results: public_ungated
+      gpu_pardtw_implementation: public_ungated
+      source_audio_beat_annotations_and_precomputed_chroma: not_released
+      exact_noise_realizations_and_complete_pairwise_outputs: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      cpu_and_gpu_code: MIT
+      benchmark_audio_and_annotations: not_specified_unreleased
+      note: >-
+        The MIT files license only the released implementations and experiment
+        artifacts. They do not establish permission to obtain, redistribute,
+        or reuse the absent commercial-recording audio or beat annotations.
+    sources:
+      - https://arxiv.org/abs/2607.15478
+      - https://arxiv.org/html/2607.15478v1#S4
+      - https://arxiv.org/html/2607.15478v1#S5
+      - https://arxiv.org/html/2607.15478v1#S6
+      - https://github.com/HMC-MIR/ParallelizingDTW
+      - https://github.com/HMC-MIR/ParallelizingDTW-CPU_Implementations
+      - https://raw.githubusercontent.com/HMC-MIR/ParallelizingDTW-CPU_Implementations/master/README.md
+      - https://raw.githubusercontent.com/HMC-MIR/ParallelizingDTW-CPU_Implementations/master/01_DataPrep.ipynb
+      - https://raw.githubusercontent.com/HMC-MIR/ParallelizingDTW-CPU_Implementations/master/LICENSE
+      - https://github.com/HMC-MIR/pyParDTW
+      - https://raw.githubusercontent.com/HMC-MIR/pyParDTW/master/LICENSE
+      - https://archives.ismir.net/ismir2008/paper/000111.pdf
+    note: >-
+      This is an evaluation-coverage audit, not a new benchmark family. The
+      public repositories make the DTW implementations and much of the
+      experiment structure reproducible, but not the five-piece source corpus.
+      Because no official public source for the exact audio and beat
+      annotations is identified, no benchmark entry or download helper is
+      added.
+
   discrete_audio_token_speaker_verification:
     paper: https://arxiv.org/abs/2607.07579
     title: Text-Independent Speaker Verification Using Discrete Audio Tokens
