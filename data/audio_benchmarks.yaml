@@ -21377,6 +21377,68 @@ benchmarks:
       - https://huggingface.co/datasets/NCSOFT/Designed-Vocalizations-Dataset/raw/main/NOTICE
       - https://huggingface.co/api/datasets/NCSOFT/Designed-Vocalizations-Dataset
 
+  - id: movie_gen_audio_bench
+    name: Movie Gen Audio Bench
+    full_name: "Movie Gen Audio Bench: Video-Conditioned Sound Effect and Music Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_generation
+      - audio_visual_generation
+      - music_generation
+    tasks:
+      - video_to_audio_generation
+      - text_and_video_to_audio_generation
+      - video_conditioned_sound_effect_generation
+      - joint_sound_effect_and_music_generation
+      - audio_visual_semantic_alignment
+      - audio_visual_temporal_alignment
+    official:
+      project: https://ai.meta.com/research/movie-gen/
+      repo: https://github.com/facebookresearch/MovieGenBench
+      paper: https://arxiv.org/abs/2410.13720
+      flowley_evaluation: https://arxiv.org/abs/2607.06405
+    download:
+      primary:
+        - https://github.com/facebookresearch/MovieGenBench
+        - https://d14whct5a0wtwm.cloudfront.net/moviegen/MovieGenAudioBenchSfx.tar.gz
+        - https://d14whct5a0wtwm.cloudfront.net/moviegen/MovieGenAudioBenchSfxMusic.tar.gz
+      examples:
+        - 'scripts/download/movie_gen_audio_bench.sh'
+        - 'MOVIE_GEN_AUDIO_DOWNLOAD_SFX=1 scripts/download/movie_gen_audio_bench.sh'
+        - 'MOVIE_GEN_AUDIO_DOWNLOAD_SFX_MUSIC=1 scripts/download/movie_gen_audio_bench.sh'
+      notes: >-
+        Meta's public repository releases two JSONL prompt manifests for 527
+        Movie Gen Video-generated test videos: one for sound effects and one
+        for joint sound effects plus background music. The benchmark supports
+        video-to-audio and text-plus-video-to-audio evaluation and includes
+        human-reviewed sound and music captions. The helper downloads the
+        repository documentation, license, and both approximately 338 KB total
+        prompt manifests by default. The media archives include Meta's
+        non-cherry-picked generated audio and are separate explicit opt-ins:
+        the SFX archive is approximately 8.05 GiB and the SFX+music archive is
+        approximately 8.08 GiB. Flowley section 4.3.5 evaluates the public
+        benchmark as a zero-shot distribution-shift test.
+    license:
+      data: CC-BY-NC-4.0
+      code: not_applicable
+      notes: >-
+        The repository applies Creative Commons Attribution-NonCommercial 4.0
+        to Movie Gen Bench. Commercial use is prohibited and attribution is
+        required. The release contains generated videos and generated audio;
+        users should still review prompt, depicted-subject, music, and other
+        third-party rights that the repository license may not control. No
+        separate scoring-code release is identified.
+    sources:
+      - https://arxiv.org/abs/2410.13720
+      - https://arxiv.org/html/2410.13720v2#S6.SS3.SSS2
+      - https://ai.meta.com/research/movie-gen/
+      - https://github.com/facebookresearch/MovieGenBench
+      - https://raw.githubusercontent.com/facebookresearch/MovieGenBench/main/README.md
+      - https://raw.githubusercontent.com/facebookresearch/MovieGenBench/main/LICENSE
+      - https://api.github.com/repos/facebookresearch/MovieGenBench/contents/benchmark
+      - https://arxiv.org/abs/2607.06405
+      - https://arxiv.org/html/2607.06405v2#S4.SS3.SSS5
+
   - id: avdc
     name: AVDC
     full_name: "AVDC: Audio-Visual Decoupled Captions"

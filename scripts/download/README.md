@@ -217,6 +217,7 @@ scripts/download/speech_commands.sh
 scripts/download/mswc.sh
 scripts/download/audio_mnist.sh
 scripts/download/designed_vocalizations.sh
+scripts/download/movie_gen_audio_bench.sh
 scripts/download/covomix2_dialogue.sh
 scripts/download/silent_speech_emg.sh
 scripts/download/japaneeg.sh
@@ -576,6 +577,12 @@ DHAUDS_CLONE_REPO=1 scripts/download/dhauds.sh
 # Designed Vocalizations downloads docs and lightweight metadata by default;
 # the approximately 37.1 GB embedded-audio snapshot is opt-in.
 DESIGNED_VOCALIZATIONS_DOWNLOAD_HF=1 scripts/download/designed_vocalizations.sh
+
+# Movie Gen Audio Bench downloads both prompt manifests and official terms by
+# default; its approximately 8.05 GiB SFX and 8.08 GiB SFX+music archives are
+# independent opt-ins.
+MOVIE_GEN_AUDIO_DOWNLOAD_SFX=1 scripts/download/movie_gen_audio_bench.sh
+MOVIE_GEN_AUDIO_DOWNLOAD_SFX_MUSIC=1 scripts/download/movie_gen_audio_bench.sh
 
 # Eating Sound Collection downloads public Kaggle metadata and baseline docs
 # by default. The approximately 6.27 GiB archive requires an authenticated
