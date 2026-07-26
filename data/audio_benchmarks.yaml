@@ -67,7 +67,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.18934
     title: "Transcription Policy as a Latent Variable: Activating Controllable Verbatim ASR with Word-Level Timing"
     sections: 5 and 6.1
-    status: audited_two_new_public_families
+    status: audited_two_new_public_families_one_gated_family
     evaluated_sets:
       - cited_as: DisfluencySpeech
         index_id: nyra_verbatim_speech_benchmark
@@ -92,9 +92,14 @@ paper_audits:
         status: existing_licensed_family
         protocol: Section 6.1 uses TIMIT read speech for word-boundary timing evaluation.
       - cited_as: FluencyBank
-        index_id: null
-        status: public_controlled_access_family_not_yet_indexed
-        protocol: Section 6.1 uses disfluent FluencyBank speech for word-boundary timing evaluation.
+        index_id: fluencybank
+        status: new_password_protected_family
+        protocol: >-
+          Sections 5.1, 6.1, and 7.2 use four hours of English disfluent
+          FluencyBank speech with verbatim transcripts and word-level
+          timestamps for boundary-timing MAE and F1 at 50/100/200 ms collars.
+          The paper does not identify the contributing corpus, speakers, or
+          evaluated-file manifest within the larger FluencyBank collection.
       - cited_as: Thorsten
         index_id: thorsten_voice
         status: new_public_family
@@ -117,12 +122,14 @@ paper_audits:
       english_dataset: public_ungated_hugging_face
       german_dataset: public_ungated_hugging_face
       thorsten_voice_2021_02: public_ungated_zenodo
+      fluencybank: password_protected_talkbank_consortium
       evaluator_and_cached_predictions: public_ungated_github_repository
       icsi_rare_word_subset_manifest: not_separately_released
     license:
       english_dataset: Apache-2.0
       german_dataset: not_specified
       thorsten_voice_2021_02: conflicting_CC_BY_4_0_Zenodo_and_CC0_repository
+      fluencybank: CC_BY_NC_SA_3_0_plus_password_protected_clinical_bank_rules
       evaluator: README_states_MIT_but_repository_has_no_LICENSE_file
       source_english_dataset: Apache-2.0
     sources:
@@ -136,13 +143,19 @@ paper_audits:
       - https://doi.org/10.5281/zenodo.5525342
       - https://zenodo.org/api/records/5525342
       - https://github.com/thorstenMueller/Thorsten-Voice
+      - https://talkbank.org/fluency/
+      - https://talkbank.org/fluency/access/
+      - https://talkbank.org/0share/rules.html
     note: >-
       The index treats the two language datasets and their shared evaluator as
       one bilingual benchmark family. The German set is author-collected and
       publicly available, but its dataset card still declares no license.
       The separately indexed Thorsten-Voice family covers the paper's German
-      read-speech timing evaluation; use the exact Zenodo release's CC BY 4.0
-      terms because the broader project repository instead declares CC0.
+      read-speech timing evaluation, while FluencyBank covers its controlled-
+      access English disfluent timing data. Use the exact Thorsten Zenodo
+      release's CC BY 4.0 terms because the broader project repository instead
+      declares CC0. The paper does not publish a manifest for its four-hour
+      FluencyBank selection.
       Public release does not imply permission beyond the terms explicitly
       stated by each owner.
 
@@ -20640,6 +20653,74 @@ benchmarks:
       - https://api.github.com/repos/thorstenMueller/Thorsten-Voice
       - https://huggingface.co/datasets/Thorsten-Voice/TV-44kHz-Full
       - https://huggingface.co/api/datasets/Thorsten-Voice/TV-44kHz-Full
+      - https://arxiv.org/abs/2607.18934
+      - https://arxiv.org/html/2607.18934v1#S5.SS1
+      - https://arxiv.org/html/2607.18934v1#S6.SS1
+      - https://arxiv.org/html/2607.18934v1#S7.SS2
+
+  - id: fluencybank
+    name: FluencyBank
+    full_name: FluencyBank Shared Database for Fluency Research
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - paralinguistic_understanding
+    tasks:
+      - word_level_timing
+      - speech_alignment
+      - disfluent_speech_recognition
+      - stuttering_research
+      - cluttering_research
+      - fluency_analysis
+    official:
+      homepage: https://talkbank.org/fluency/
+      corpus_index: https://talkbank.org/fluency/access/
+      ground_rules: https://talkbank.org/0share/rules.html
+      paper: https://doi.org/10.1016/j.jfludis.2018.03.002
+      recent_evaluation: https://arxiv.org/abs/2607.18934
+    download:
+      access: password_protected_membership_required
+      primary:
+        - https://talkbank.org/fluency/
+        - https://talkbank.org/fluency/access/
+      examples:
+        - 'scripts/download/fluencybank.sh'
+      notes: >-
+        FluencyBank contains corpora from typically developing monolingual and
+        bilingual participants, children and adults who stutter or clutter,
+        and second-language learners. Most research data is password protected
+        and restricted to approved FluencyBank consortium members, though the
+        official corpus index also identifies a small number of open teaching
+        or research collections. The helper saves only public documentation
+        and prints the membership path; it never authenticates or downloads
+        protected participant recordings.
+    access:
+      status: mixed_open_and_password_protected_research_access
+      requirements:
+        - Researchers and clinicians must create a TalkBank account and request FluencyBank consortium membership.
+        - Students and laboratory researchers require a faculty advisor to join and sponsor time-bounded access.
+        - Password-protected data cannot be shared with non-members or posted to other sites or servers.
+      notes: >-
+        The July 2026 controllable-verbatim-ASR paper reports a four-hour
+        English disfluent subset with verbatim transcripts and word-level
+        timestamps. It does not name the underlying FluencyBank corpus,
+        speakers, files, or exact preprocessing, so consortium access alone
+        does not reconstruct that paper-specific evaluation selection.
+    license:
+      data: CC_BY_NC_SA_3_0_with_password_protected_clinical_bank_rules
+      code: not_applicable
+      notes: >-
+        TalkBank applies CC BY-NC-SA 3.0 unless a corpus says otherwise and
+        prohibits incorporating the data into commercial products or model
+        parameters. Users must follow corpus citation requirements, the
+        TalkBank Code of Ethics, confidentiality protections, local-storage
+        restrictions for identifiable data, and non-retaining web-processing
+        requirements. Individual corpora may impose additional terms.
+    sources:
+      - https://talkbank.org/fluency/
+      - https://talkbank.org/fluency/access/
+      - https://talkbank.org/0share/rules.html
+      - https://doi.org/10.1016/j.jfludis.2018.03.002
       - https://arxiv.org/abs/2607.18934
       - https://arxiv.org/html/2607.18934v1#S5.SS1
       - https://arxiv.org/html/2607.18934v1#S6.SS1

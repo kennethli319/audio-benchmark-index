@@ -83,7 +83,7 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-25. Current index size: 326 distinct benchmarks
+Last checked: 2026-07-25. Current index size: 327 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
 The July 2026 controllable-verbatim-ASR paper also evaluates German
@@ -93,6 +93,11 @@ MAE plus F1 at 50/100/200 ms collars, but does not publish a separate row
 manifest or split recipe. The Zenodo record declares CC BY 4.0 while the
 official project repository declares CC0-1.0, so the index conservatively
 retains the exact archive's attribution requirement pending clarification.
+The same paper uses four hours of English disfluent FluencyBank speech for
+word-boundary timing. FluencyBank research data is password protected through
+TalkBank consortium membership, and the paper publishes no contributing
+corpus, speaker, or file manifest, so the index records the family and access
+path without claiming that the paper-specific selection is reproducible.
 
 The July 2026 controllable-verbatim-ASR paper contributes the public Nyra
 Verbatim Speech Benchmark family. Its official evaluator scores paired
@@ -1453,6 +1458,7 @@ Current coverage includes:
 | [Libri-Light](https://github.com/facebookresearch/libri-light) | ASR and self-supervised speech representation | Official repository docs and Meta public-file archives; helper downloads docs by default and makes 0.6 GiB finetuning, ABX, and 35 GiB to 3.05 TiB unlabeled archives opt-in | Code is MIT; reviewed docs do not state a standalone data license, and audio comes from open-source LibriVox audiobooks with source-term/attribution caution |
 | [TIMIT](https://catalog.ldc.upenn.edu/LDC93S1) | ASR and phone recognition | LDC catalog [LDC93S1](https://catalog.ldc.upenn.edu/LDC93S1) or MS-WAV version [LDC93S1W](https://catalog.ldc.upenn.edu/LDC93S1W) after login/licensing; helper prints official access steps | Custom LDC license/paid access; portions copyright 1993 Trustees of the University of Pennsylvania |
 | [Thorsten-Voice](https://doi.org/10.5281/zenodo.5525342) | German read-speech word-boundary timing, ASR, and speech synthesis | Public, ungated 23-hour neutral corpus with 22,668 WAV recordings; the July 2026 controllable-verbatim-ASR paper cites this exact Zenodo release for timing MAE and F1 at 50/100/200 ms collars; helper downloads official metadata by default and makes the approximately 2.74 GB archive opt-in | Exact Zenodo record declares CC BY 4.0, while the official project repository and newer combined release declare CC0-1.0; retain attribution pending owner clarification |
+| [FluencyBank](https://talkbank.org/fluency/) | Disfluent word-level timing, ASR, stuttering, cluttering, and fluency research | Mixed collection whose research data is primarily password protected through FluencyBank consortium membership; helper saves public documentation and prints the manual access path; the July 2026 controllable-verbatim-ASR paper uses four hours but publishes no corpus, speaker, or file manifest | TalkBank defaults to CC BY-NC-SA 3.0 and prohibits commercial-product or model incorporation; protected data cannot be shared with non-members, and users must follow corpus citations, ethics, confidentiality, and non-retaining processing rules |
 | [Switchboard](https://catalog.ldc.upenn.edu/LDC97S62) | Conversational telephone ASR | LDC catalog [LDC97S62](https://catalog.ldc.upenn.edu/LDC97S62) for Switchboard-1 Release 2 plus [LDC2002S09](https://catalog.ldc.upenn.edu/LDC2002S09) for 2000 HUB5 English Evaluation Speech; helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
 | [Fisher English](https://catalog.ldc.upenn.edu/LDC2004S13) | Conversational telephone ASR | LDC catalogs for [speech part 1](https://catalog.ldc.upenn.edu/LDC2004S13), [transcripts part 1](https://catalog.ldc.upenn.edu/LDC2004T19), [speech part 2](https://catalog.ldc.upenn.edu/LDC2005S13), and [transcripts part 2](https://catalog.ldc.upenn.edu/LDC2005T19); helper prints official access steps | Custom LDC license/paid access; re-check current LDC agreement before use or redistribution |
 | [MLS](https://www.openslr.org/94/) | ASR | OpenSLR SLR94 links to Meta public-file archives for 8 LibriVox-derived languages; helper saves the page/checksums and downloads selected language archives only with opt-in | CC BY 4.0 |

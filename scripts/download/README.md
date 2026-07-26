@@ -344,6 +344,7 @@ scripts/download/dihard_iii.sh
 scripts/download/tidyvoice.sh
 scripts/download/seabad.sh
 scripts/download/childes_aligned.sh
+scripts/download/fluencybank.sh
 scripts/download/l2_arctic.sh
 scripts/download/cdsd.sh
 scripts/download/ume_erj.sh
