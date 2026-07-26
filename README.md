@@ -1224,6 +1224,16 @@ trained informed models, digit-recognition evaluation code, or per-item
 scores. Public access to the three source corpora therefore does not reproduce
 the derived protocol, and no duplicate family or download helper is added.
 
+The July 2026 *SpeechGuard* paper is likewise recorded as a coverage audit
+over the already indexed Speech Commands v2 and AudioMNIST families. Section 5
+poisons one percent of training examples with random-noise,
+environmental-noise, or 6 kHz ultrasonic triggers, then evaluates online
+detection and time-frequency-mask purification. Version 1 provides no project
+repository, selected-row or random-seed manifest, trigger files, poisoned
+audio, trained victim/autoencoder models, entropy thresholds, predictions, or
+score records. Public source corpora therefore do not reproduce its stochastic
+defense protocol, and the index adds no duplicate family or download helper.
+
 The July 2026 *Self-supervised Speech Comparison for L2 Phone, Rhythm, and
 Intonation Scoring* paper maps to the official
 [UME-ERJ](https://doi.org/10.32130/src.UME-ERJ) and

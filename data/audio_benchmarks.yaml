@@ -9,6 +9,61 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speechguard_online_backdoor_defense:
+    paper: https://arxiv.org/abs/2607.15697
+    title: "SpeechGuard: Online Defense against Backdoor Attacks on Speech Recognition Models"
+    sections: 5.1-5.3
+    status: audited_existing_public_families_unreleased_poisoned_protocol
+    evaluated_sets:
+      - cited_as: Speech Commands Dataset Version 2
+        index_id: speech_commands
+        status: public
+        note: >-
+          Section 5.1 selects ten of the corpus's 30 commands for a ten-class
+          keyword-recognition task with 2D-CNN and attention-LSTM victims.
+      - cited_as: AudioMNIST
+        index_id: audio_mnist
+        status: public
+        note: >-
+          Section 5.1 uses the ten spoken-digit classes with the same two
+          victim architectures.
+    protocol_note: >-
+      Section 5 poisons one percent of training examples (247 samples) with
+      random-noise, environmental-noise, or 6 kHz ultrasonic-pulse triggers.
+      S-STRIP randomly selects 100 source-dataset clips as perturbations at
+      10 dB SNR and uses 1,000 clean clips to estimate entropy thresholds.
+      The purification stage trains its time-frequency-mask autoencoder on
+      100 filtered poisoned samples and evaluates benign accuracy, attack
+      success rate, false rejection/acceptance rates, and purification
+      accuracy.
+    release_audit:
+      speech_commands_v2_source: public_ungated
+      audiomnist_source: public_ungated
+      selected_rows_and_random_seeds: not_released
+      environmental_noise_and_ultrasonic_trigger_files: not_released
+      poisoned_audio_and_fixed_splits: not_released
+      victim_models_and_defense_implementation: not_released
+      trained_autoencoders_thresholds_predictions_and_scores: not_released
+      project_repository_or_dataset_page: not_provided
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      paper_specific_artifacts: not_specified_unreleased
+      upstream: Speech Commands v2 is CC BY 4.0; the AudioMNIST repository uses MIT
+    sources:
+      - https://arxiv.org/abs/2607.15697
+      - https://arxiv.org/html/2607.15697v1#S5.SS1
+      - https://arxiv.org/html/2607.15697v1#S5.SS2
+      - https://arxiv.org/html/2607.15697v1#S5.SS3
+      - https://export.arxiv.org/api/query?id_list=2607.15697
+      - https://www.tensorflow.org/datasets/catalog/speech_commands
+      - https://github.com/soerenab/AudioMNIST
+    note: >-
+      Both source benchmark families are already indexed, but their public
+      releases do not reproduce SpeechGuard's stochastic poisoning and
+      defense evaluation. Version 1 gives no artifact or code URL, so this
+      audit adds no duplicate family, family-count increase, inferred
+      download link, or helper.
+
   nabeats_noise_aware_audio_representation:
     paper: https://arxiv.org/abs/2607.16688
     title: "NABEATs: Noise-Aware Audio Representation Learning"
