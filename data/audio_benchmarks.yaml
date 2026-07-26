@@ -9,6 +9,60 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  eii_scl_emotional_inertia:
+    paper: https://arxiv.org/abs/2607.17366
+    title: "EII-SCL: Harnessing Emotional Inertia for Multimodal Emotion Recognition in Conversation"
+    sections: 2.1, 3.1-3.6
+    status: audited_existing_public_and_request_gated_families
+    evaluated_sets:
+      - cited_as: IEMOCAP
+        index_id: iemocap
+        status: existing_request_gated_family
+        protocol: >-
+          Leave-one-session-out multimodal conversational emotion recognition
+          using text, audio, and video features, reported with accuracy and
+          weighted F1. The paper additionally analyzes hard and easy negative
+          pairs, dynamic versus fixed emotional-inertia windows, and ambiguous
+          emotion-pair errors on IEMOCAP.
+      - cited_as: MELD
+        index_id: meld
+        status: existing_public_family
+        protocol: >-
+          Multimodal conversational emotion recognition on MELD's predefined
+          train, validation, and test splits, reported with accuracy and
+          weighted F1.
+    release_audit:
+      source_benchmark_access: mixed_public_and_request_gated
+      paper_specific_code_models_features_predictions_and_scores: not_released
+      fixed_iemocap_loso_fold_definition: standard_source_sessions
+      meld_split_definition: public_source_split
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      paper_specific_artifacts: not_specified_unreleased
+      component_datasets: source_specific_terms_apply
+      note: >-
+        Version 1 grants no artifact license and does not relicense either
+        source family. IEMOCAP requires the USC owner request and signed
+        research terms. MELD's repository and dataset card state GPL-3.0, but
+        its Friends-derived media still requires independent rights review.
+    sources:
+      - https://arxiv.org/abs/2607.17366
+      - https://arxiv.org/html/2607.17366v1#S2.SS1
+      - https://arxiv.org/html/2607.17366v1#S3.SS1
+      - https://arxiv.org/html/2607.17366v1#S3.SS4
+      - https://arxiv.org/html/2607.17366v1#S3.SS5
+      - https://arxiv.org/html/2607.17366v1#S3.SS6
+      - https://sail.usc.edu/iemocap/iemocap_release.htm
+      - https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
+      - https://affective-meld.github.io/
+      - https://github.com/declare-lab/MELD
+      - https://raw.githubusercontent.com/declare-lab/MELD/master/LICENSE
+    note: >-
+      This paper introduces a training module and evaluation protocol, not a
+      separately packaged benchmark. Mapping both evaluation rows to their
+      existing families avoids a duplicate entry and does not imply that the
+      paper's feature extractions, folds, checkpoints, or outputs are public.
+
   merl_real_tse_challenge_submission:
     paper: https://arxiv.org/abs/2607.09043
     title: "Technical Report for MERL's Real-TSE Challenge Submission"
@@ -15250,6 +15304,7 @@ benchmarks:
       dataset: https://huggingface.co/datasets/declare-lab/MELD
       paper: https://aclanthology.org/P19-1050/
       arxiv: https://arxiv.org/abs/1810.02508
+      evaluation_paper: https://arxiv.org/abs/2607.17366
     download:
       primary:
         - https://affective-meld.github.io/
@@ -15274,6 +15329,8 @@ benchmarks:
       - https://huggingface.co/datasets/declare-lab/MELD
       - https://aclanthology.org/P19-1050/
       - https://arxiv.org/abs/1810.02508
+      - https://arxiv.org/abs/2607.17366
+      - https://arxiv.org/html/2607.17366v1#S3.SS1
 
   - id: bah
     name: BAH
@@ -15995,6 +16052,7 @@ benchmarks:
       license_form: https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
       request_form: https://docs.google.com/forms/d/e/1FAIpQLScBecgI2K5bFTrXi_-05IYSSwOcqL5mX7dh57xcJV1m_NoznA/viewform?usp=sf_link
       paper: https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf
+      evaluation_paper: https://arxiv.org/abs/2607.17366
     download:
       primary:
         - https://sail.usc.edu/iemocap/iemocap_release.htm
@@ -16011,6 +16069,8 @@ benchmarks:
       - https://sail.usc.edu/iemocap/iemocap_release.htm
       - https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
       - https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf
+      - https://arxiv.org/abs/2607.17366
+      - https://arxiv.org/html/2607.17366v1#S3.SS1
 
   - id: msp_podcast
     name: MSP-Podcast

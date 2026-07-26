@@ -106,6 +106,16 @@ processed training data, outputs, attack implementation, or score records;
 its CC BY 4.0 paper license and the toolkit's MIT license do not license the
 password-protected challenge audio.
 
+The July 2026 EII-SCL paper is mapped to the existing IEMOCAP and MELD
+families rather than counted as a new benchmark. Section 3 uses IEMOCAP's
+standard leave-one-session-out protocol and MELD's predefined splits for
+multimodal conversational emotion recognition, then adds paper-specific
+emotional-inertia and ambiguous-pair analyses. Version 1 provides no project
+page, code, extracted features, checkpoints, predictions, or scores. IEMOCAP
+therefore remains owner-requested under signed research terms, while MELD is
+public under its stated GPL-3.0 terms with separate rights review still needed
+for Friends-derived media.
+
 The May 2026 SEABAD dataset paper and July 2026 DrongoNet follow-up are now
 traced to the public author-owned
 [Zenodo release](https://zenodo.org/records/18290494). SEABAD supplies 50,000
