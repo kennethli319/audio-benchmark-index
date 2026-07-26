@@ -9,6 +9,70 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  tria_audio_annotation_pipeline:
+    paper: https://arxiv.org/abs/2607.06179
+    title: "TriA Pipeline: A Large-Scale Automatic Audio Annotation Pipeline For Audio Classification In Specific Scenarios"
+    sections: 3.1-3.2 and 4.1-4.2
+    status: audited_one_new_public_family_plus_unreleased_tria_dataset
+    evaluated_sets:
+      - cited_as: Kitchen20
+        index_id: kitchen20
+        status: public_ungated
+        note: >-
+          Section 4 uses the 800 clips in the first five folds of the public
+          Kitchen20 release for kitchen-sound classification. Folds 1-3 train,
+          fold 4 validates, and fold 5 supplies the fixed 160-clip test set.
+      - cited_as: DESED real
+        status: existing_public_family
+        note: >-
+          The paper converts DESED's public real recordings into a ten-class
+          clip-classification task. DESED is already indexed and is not counted
+          again by this audit.
+      - cited_as: Nonspeech7k
+        status: public_source_not_added_in_this_increment
+        note: >-
+          Section 4 reports the source dataset's published 6,289-train and
+          725-test split. Its canonical release provenance and artifact terms
+          require a separate primary-source audit before indexing.
+      - cited_as: TriA and TriA-GK
+        status: paper_described_dataset_unreleased
+        note: >-
+          The paper describes more than 2,130 hours across 431 AudioSet classes
+          and three prior-knowledge-guided subsets aligned to DESED, Kitchen20,
+          and Nonspeech7k. The official repository currently marks dataset
+          release as an incomplete TODO and contains pipeline code only.
+    release_audit:
+      tria_pipeline_code: public_ungated
+      tria_dataset_and_tria_gk_subsets: not_released
+      kitchen20_audio_metadata_and_folds: public_ungated
+      paper_specific_models_checkpoints_and_split_manifests: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      tria_repository: no_license_file
+      tria_dataset: not_specified_unreleased
+      kitchen20_repository: Apache-2.0
+      note: >-
+        The Kitchen20 repository's Apache-2.0 file covers its released
+        repository artifacts. The TriA paper's arXiv license does not license
+        the unreleased TriA audio, annotations, derived subsets, or evaluation
+        artifacts, and the public TriA repository has no LICENSE file.
+    sources:
+      - https://arxiv.org/abs/2607.06179
+      - https://arxiv.org/html/2607.06179v1#S3
+      - https://arxiv.org/html/2607.06179v1#S4
+      - https://github.com/huanxian/TriA
+      - https://raw.githubusercontent.com/huanxian/TriA/main/README.md
+      - https://api.github.com/repos/huanxian/TriA
+      - https://api.github.com/repos/huanxian/TriA/git/trees/main?recursive=1
+      - https://github.com/marc-moreaux/kitchen20
+      - https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/kitchen20.csv
+      - https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/LICENSE.md
+      - https://api.github.com/repos/marc-moreaux/kitchen20
+    note: >-
+      This audit adds only Kitchen20 as a verified public family. It does not
+      treat the public annotation pipeline as a dataset release or infer a
+      download path for TriA, TriA-GK, or the paper's derived subsets.
+
   atccaps_atc_call_sign_speech:
     paper: https://arxiv.org/abs/2606.22399
     title: "ATCCaps: A Call-Sign-Aware Speech Dataset for Air Traffic Control Recognition"
@@ -6579,6 +6643,55 @@ paper_audits:
       downloadable benchmark or given an invented helper.
 
 benchmarks:
+  - id: kitchen20
+    name: Kitchen20
+    full_name: Kitchen20 Kitchen Sound Dataset
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - environmental_sound_classification
+    tasks:
+      - environmental_sound_classification
+      - kitchen_sound_classification
+      - domestic_audio_classification
+    official:
+      repository: https://github.com/marc-moreaux/kitchen20
+      metadata: https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/kitchen20.csv
+      license: https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/LICENSE.md
+      recent_evaluation: https://arxiv.org/abs/2607.06179
+    download:
+      primary:
+        - https://github.com/marc-moreaux/kitchen20
+      examples:
+        - 'scripts/download/kitchen20.sh'
+        - 'KITCHEN20_CLONE_REPO=1 scripts/download/kitchen20.sh'
+      notes: >-
+        The official public repository's kitchen20.csv lists 1,070 audio clips
+        in 20 kitchen classes across nine folds. The recent TriA evaluation
+        uses the 800 clips in folds 1-5: folds 1-3 train, fold 4 validates, and
+        fold 5 tests. The helper downloads the approximately 67 KB split
+        metadata, class-source table, license, and repository metadata by
+        default. Cloning the approximately 325 MB repository, including WAV
+        audio and baseline code, requires explicit opt-in.
+    license:
+      data: Apache-2.0
+      code: Apache-2.0
+      notes: >-
+        The official repository provides an Apache License 2.0 file covering
+        the released repository. The class-source table identifies source
+        recordings and offsets but does not provide a per-recording license
+        inventory, so users should preserve provenance and review source-audio
+        rights before redistribution or commercial use.
+    sources:
+      - https://github.com/marc-moreaux/kitchen20
+      - https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/kitchen20.csv
+      - https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/classes.csv
+      - https://raw.githubusercontent.com/marc-moreaux/kitchen20/master/LICENSE.md
+      - https://api.github.com/repos/marc-moreaux/kitchen20
+      - https://api.github.com/repos/marc-moreaux/kitchen20/git/trees/master?recursive=1
+      - https://arxiv.org/abs/2607.06179
+      - https://arxiv.org/html/2607.06179v1#S4.SS1.SSS2
+
   - id: mmau
     name: MMAU
     full_name: "MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark"

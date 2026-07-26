@@ -78,6 +78,7 @@ scripts/download/maeb.sh
 scripts/download/dilemmadata.sh
 scripts/download/emopia.sh
 scripts/download/pop909.sh
+scripts/download/kitchen20.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
@@ -624,6 +625,10 @@ PHYSIONET_CINC_2016_DOWNLOAD_AUDIO=1 scripts/download/physionet_cinc_2016_heart_
 # RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
+
+# Kitchen20 downloads its split/source metadata and license by default.
+# The approximately 325 MB audio and baseline repository clone is opt-in.
+KITCHEN20_CLONE_REPO=1 scripts/download/kitchen20.sh
 
 # TidyVoiceX saves public docs and prints the Mozilla Data Collective account/API path.
 # It never accepts credentials or downloads the approximately 36.72 GB archive.
