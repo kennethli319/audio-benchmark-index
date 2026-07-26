@@ -19,6 +19,12 @@ download_url "$official_root/README.md" "$out/README.md"
 download_url "$official_root/LICENSE" "$out/LICENSE"
 download_url "https://api.github.com/repos/zeroQiaoba/AffectGPT" "$out/official-repo.json"
 download_url "https://huggingface.co/api/datasets/MERChallenge/MER2025" "$out/mer2025-api.json"
+download_url \
+  "https://zeroqiaoba.github.io/MER-Challenge/" \
+  "$out/mer2026-challenge.html"
+download_url \
+  "https://huggingface.co/api/datasets/MERChallenge/MER2026" \
+  "$out/mer2026-api.json"
 
 for annotation in "${annotations[@]}"; do
   download_url \
@@ -36,10 +42,15 @@ download_url \
 cat <<'EOF'
 Downloaded the public EmoPrefer annotations and official/audit documentation.
 
-The paired source audio/video is not included. Request access from the gated
-MER2025 Hugging Face page and accept its academic, non-commercial,
-no-redistribution, and no-modification conditions:
+The paired source audio/video is not included. The original release points to
+the gated MER2025 page. MER2026 Track 3 also packages EmoPrefer-V1/V2 media and
+challenge tables behind manual approval:
 https://huggingface.co/datasets/MERChallenge/MER2025
+https://huggingface.co/datasets/MERChallenge/MER2026
+
+Both gates impose academic/non-commercial and no-redistribution conditions.
+The MER2026 form also prohibits mirroring, modification, and redistribution of
+derived files without prior written permission.
 
 Do not commit downloaded media, access tokens, or private evaluation rows.
 EOF

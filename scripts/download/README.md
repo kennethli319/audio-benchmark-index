@@ -230,6 +230,8 @@ scripts/download/ch_sims.sh
 scripts/download/ch_sims_v2.sh
 scripts/download/cmu_mosi.sh
 scripts/download/cmu_mosei.sh
+# Downloads public EmoPrefer CSVs/docs and MER2025/MER2026 API metadata only.
+# Audio/video remains manually gated; no token or gated file is fetched.
 scripts/download/emoprefer.sh
 scripts/download/musan.sh
 scripts/download/ami.sh

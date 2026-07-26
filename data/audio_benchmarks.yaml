@@ -9,6 +9,60 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  emoprefer_shortcut_audit:
+    paper: https://arxiv.org/abs/2607.18508
+    title: "Style over Substance: A Shortcut Audit of Emotion-Description Preference Evaluation"
+    sections: 3-5 and Appendix A
+    status: audited_existing_public_annotations_gated_media
+    evaluated_sets:
+      - cited_as: EmoPrefer-V1
+        index_id: emoprefer
+        status: existing_public_annotation_family
+        protocol: >-
+          The audit uses all 574 released unanimous three-annotator pairs as a
+          confounding check. After excluding "same" labels, 563 binary pairs
+          remain; the paper applies shuffled five-fold cross-validation with
+          seed 42 and reports weighted F1 with bootstrap confidence intervals.
+      - cited_as: EmoPrefer-V2
+        index_id: emoprefer
+        status: existing_public_annotation_family
+        protocol: >-
+          The main audit uses all 2,096 released individual-annotator pairs.
+          Removing 471 "same" labels leaves 1,625 binary pairs, including 310
+          length-matched and 552 counter-stereotypical items. The released
+          model-name variants support the content-blind generator-identity
+          probes, while audio-visual judges require separately gated media.
+    release_audit:
+      annotation_tables: public_ungated_github
+      original_source_media: gated_MER2025
+      current_challenge_packaging: gated_MER2026
+      audit_code: public_ungated_github
+      audit_predictions_checkpoints_and_private_data: intentionally_not_distributed
+    license:
+      annotation_repository: Apache_2_0_with_noncommercial_research_notice
+      original_source_media: CC_BY_NC_4_0_plus_stricter_gate_terms
+      current_challenge_packaging: CC_BY_NC_4_0_plus_academic_no_redistribution_no_modification_terms
+      audit_code: MIT
+    sources:
+      - https://arxiv.org/abs/2607.18508
+      - https://arxiv.org/html/2607.18508v1#S3
+      - https://arxiv.org/html/2607.18508v1#A1
+      - https://arxiv.org/abs/2507.04278
+      - https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer
+      - https://zeroqiaoba.github.io/MER-Challenge/
+      - https://arxiv.org/abs/2604.19417
+      - https://huggingface.co/datasets/MERChallenge/MER2026
+      - https://huggingface.co/api/datasets/MERChallenge/MER2026
+      - https://github.com/jiabingyang01/EmoPrefer-Audit
+    note: >-
+      The July 2026 audit contributes a reproducible diagnostic protocol, not a
+      new benchmark family. Public CSVs are sufficient for its content-blind
+      probes, but audio-visual reproduction still requires approved access to
+      source media. The current MER2026 release explicitly packages
+      EmoPrefer-V1 and V2 audio/video for Track 3 behind manual review and does
+      not make those media public merely because repository metadata is
+      visible.
+
   controllable_verbatim_asr_evaluation:
     paper: https://arxiv.org/abs/2607.18934
     title: "Transcription Policy as a Latent Variable: Activating Controllable Verbatim ASR with Word-Level Timing"
@@ -14090,6 +14144,8 @@ benchmarks:
       audit_paper: https://arxiv.org/abs/2607.18508
       audit_repo: https://github.com/jiabingyang01/EmoPrefer-Audit
       source_media: https://huggingface.co/datasets/MERChallenge/MER2025
+      current_challenge: https://zeroqiaoba.github.io/MER-Challenge/
+      current_challenge_data: https://huggingface.co/datasets/MERChallenge/MER2026
     download:
       primary:
         - https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer/dataset
@@ -14103,9 +14159,12 @@ benchmarks:
         analysis, and variants exposing the two description-generator names
         for score calculation and shortcut auditing. The paired English
         audio/video comes from the separately gated MER2025 release and is not
-        redistributed by the repository. The helper downloads the annotations,
-        official documentation, licenses, and repository metadata only; users
-        must accept the MER2025 access conditions themselves to obtain media.
+        redistributed by the repository. MER2026 Track 3 now also packages
+        the original and V2 audio/video, candidate/test tables, and a
+        supplementary stage-2 set behind manual approval. The helper downloads
+        the annotations, official documentation, licenses, challenge page, and
+        public API metadata only; users must accept the applicable Hugging Face
+        access conditions themselves to obtain media.
         The 2026 audit paper and code provide reproducible content-blind,
         counterfactual, audio-visual judge, and ODIN-style diagnostics but
         intentionally distribute no private data, model weights, predictions,
@@ -14116,11 +14175,13 @@ benchmarks:
       notes: >-
         The official EmoPrefer subdirectory includes Apache-2.0 but its README
         also calls the service a non-commercial research preview. The gated
-        MER2025 card declares CC BY-NC 4.0 plus stricter academic-only,
-        no-redistribution, and no-modification conditions that control the
-        source media and annotations obtained there. The 2026 audit repository
-        is MIT. Treat the narrower access terms as controlling where they
-        conflict, and do not infer media rights from the public CSV release.
+        MER2025 and MER2026 cards declare CC BY-NC 4.0 plus stricter
+        academic-only, no-redistribution, and no-modification conditions that
+        control files obtained through those gates. The MER2026 gate also
+        prohibits mirroring and derived-file redistribution without written
+        permission. The 2026 audit repository is MIT. Treat the narrower
+        access terms as controlling where they conflict, and do not infer
+        media rights from the public CSV release.
     sources:
       - https://arxiv.org/abs/2507.04278
       - https://github.com/zeroQiaoba/AffectGPT/tree/master/EmoPrefer
@@ -14129,6 +14190,11 @@ benchmarks:
       - https://api.github.com/repos/zeroQiaoba/AffectGPT
       - https://huggingface.co/datasets/MERChallenge/MER2025
       - https://huggingface.co/api/datasets/MERChallenge/MER2025
+      - https://zeroqiaoba.github.io/MER-Challenge/
+      - https://arxiv.org/abs/2604.19417
+      - https://arxiv.org/html/2604.19417v4#S4
+      - https://huggingface.co/datasets/MERChallenge/MER2026
+      - https://huggingface.co/api/datasets/MERChallenge/MER2026
       - https://arxiv.org/abs/2607.18508
       - https://github.com/jiabingyang01/EmoPrefer-Audit
       - https://raw.githubusercontent.com/jiabingyang01/EmoPrefer-Audit/main/README.md
