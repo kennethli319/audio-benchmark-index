@@ -17279,6 +17279,65 @@ benchmarks:
       - https://arxiv.org/abs/2607.17079
       - https://arxiv.org/html/2607.17079v1#S4.SS5
 
+  - id: compspoof_v2
+    name: CompSpoof V2
+    full_name: "CompSpoof V2 Dataset"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    tasks:
+      - component_level_audio_deepfake_detection
+      - speech_spoofing_detection
+      - environmental_sound_spoofing_detection
+      - audio_deepfake_detection
+      - unseen_generator_robustness
+      - codec_robustness
+    official:
+      hf_dataset: https://huggingface.co/datasets/XuepingZhang/ESDD2-CompSpoof-V2
+      baseline_repo: https://github.com/XuepingZhang/ESDD2-Baseline
+      challenge_paper: https://arxiv.org/abs/2606.10791
+      recent_evaluation: https://arxiv.org/abs/2607.16369
+    download:
+      primary:
+        - https://huggingface.co/datasets/XuepingZhang/ESDD2-CompSpoof-V2
+        - https://huggingface.co/api/datasets/XuepingZhang/ESDD2-CompSpoof-V2
+        - https://github.com/XuepingZhang/ESDD2-Baseline
+      examples:
+        - 'scripts/download/compspoof_v2.sh'
+        - 'COMPSPOOF_V2_ACK_TERMS=1 COMPSPOOF_V2_DOWNLOAD_HF=1 scripts/download/compspoof_v2.sh'
+      notes: >-
+        The gated author-owned Hugging Face release contains 255,433
+        four-second clips (approximately 283 hours) across train, validation,
+        evaluation, and test splits. Its five labels distinguish original
+        audio and every bona fide/spoofed combination of speech and
+        environmental components; evaluation and test add unseen generated
+        speech, generated environmental audio, and codec transformations. The
+        helper downloads public documentation, API metadata, paper pages, and
+        baseline-repository metadata by default. The Hugging Face API reports
+        approximately 130.0 GB of repository storage, so the snapshot requires
+        login, license acknowledgement, and both
+        COMPSPOOF_V2_ACK_TERMS=1 and COMPSPOOF_V2_DOWNLOAD_HF=1.
+    license:
+      data: cc-by-nc-4.0_with_mixed_upstream_terms
+      code: not_specified
+      notes: >-
+        The Hugging Face card releases CompSpoof V2 under CC BY-NC 4.0 and
+        requires compliance with every source dataset's terms. Components come
+        from MLAAD, VCapAV, LibriTTS, EnvSDD, VGGSound, Common Voice,
+        ASVspoof 5, English Conversation Corpus, AudioCaps, TUT acoustic-scene
+        and sound-event data, and UrbanSound; those sources include CC0,
+        attribution, noncommercial, ODC-By, GPL, and custom terms. The authors
+        disclaim ownership of original audio. The baseline repository exposes
+        no detected license, so do not infer code rights from the data card.
+    sources:
+      - https://huggingface.co/datasets/XuepingZhang/ESDD2-CompSpoof-V2
+      - https://huggingface.co/api/datasets/XuepingZhang/ESDD2-CompSpoof-V2
+      - https://github.com/XuepingZhang/ESDD2-Baseline
+      - https://api.github.com/repos/XuepingZhang/ESDD2-Baseline
+      - https://arxiv.org/abs/2606.10791
+      - https://arxiv.org/html/2606.10791v1
+      - https://arxiv.org/abs/2607.16369
+      - https://arxiv.org/html/2607.16369v1#S3.SS2
+
   - id: voxenes_2026
     name: VoxENES 2026
     full_name: "VoxENES 2026: Benchmarking Generalization of Speech Spoofing Detectors Against LLM-Era TTS and Voice Conversion"

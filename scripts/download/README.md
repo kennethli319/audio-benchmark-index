@@ -201,6 +201,7 @@ scripts/download/fake_or_real.sh
 scripts/download/asvspoof_2021.sh
 scripts/download/asvspoof_5.sh
 scripts/download/audiomarkbench.sh
+scripts/download/compspoof_v2.sh
 scripts/download/voxenes_2026.sh
 scripts/download/voxlingua107.sh
 scripts/download/speech_commands.sh
