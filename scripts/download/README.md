@@ -77,6 +77,7 @@ scripts/download/dynamic_superb.sh
 scripts/download/maeb.sh
 scripts/download/dilemmadata.sh
 scripts/download/emopia.sh
+scripts/download/pop909.sh
 scripts/download/rul_muchomusic.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
@@ -884,6 +885,9 @@ RUL_DOWNLOAD_UPSTREAM_MUCHOMUSIC=1 scripts/download/rul_muchomusic.sh
 
 # EMOPIA downloads official docs and metadata by default. The small MIDI archive is opt-in and checksum-verified.
 EMOPIA_DOWNLOAD_DATA=1 scripts/download/emopia.sh
+
+# POP909 downloads official docs, metadata, and the song index by default. The MIDI/annotation repository clone is opt-in.
+POP909_CLONE_REPO=1 scripts/download/pop909.sh
 
 # MusicNet downloads Zenodo metadata by default. MIDI and the large audio/label archive are opt-in.
 MUSICNET_DOWNLOAD_MIDIS=1 scripts/download/musicnet.sh

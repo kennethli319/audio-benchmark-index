@@ -16,11 +16,13 @@ paper_audits:
     status: audited_new_public_family
     evaluated_sets:
       - cited_as: POP909
-        status: public_source_corpus_not_added_this_increment
+        index_id: pop909
+        status: public_ungated
         note: >-
           Section 2.1 trains the representation model on 909 MIDI songs from
-          POP909. This run focuses on the paper's held-out downstream
-          evaluation family rather than adding both source corpora at once.
+          POP909. The official release provides the MIDI arrangements and
+          beat, chord, key, and tempo-alignment annotations, but not the
+          original commercial-song audio.
       - cited_as: EMOPIA
         index_id: emopia
         status: public_ungated
@@ -35,6 +37,8 @@ paper_audits:
       crop manifest, random seed, or trained-probe release.
     release_audit:
       emopia_midi_labels_metadata_and_split_notebook: public_ungated
+      pop909_midi_arrangements_annotations_and_processing_code: public_ungated
+      pop909_original_commercial_song_audio: not_redistributed
       precomputed_split_files: not_in_v1_Zenodo_archive
       source_youtube_audio: ids_and_timestamps_only_due_to_copyright
       midi_rae_jepa_implementation_checkpoints_and_probe_artifacts: not_released
@@ -42,6 +46,8 @@ paper_audits:
       paper: arxiv_perpetual_nonexclusive
       emopia_dataset: conflicting_official_CC-BY-4.0_and_CC-BY-NC-SA-4.0
       emopia_code: MIT
+      pop909_repository: MIT
+      pop909_underlying_compositions_and_original_audio: separate_rights_apply
       paper_specific_artifacts: not_specified_unreleased
     sources:
       - https://arxiv.org/abs/2607.14537
@@ -54,10 +60,15 @@ paper_audits:
       - https://api.github.com/repos/annahung31/EMOPIA
       - https://zenodo.org/records/5090631
       - https://zenodo.org/api/records/5090631
+      - https://arxiv.org/abs/2008.07142
+      - https://github.com/music-x-lab/POP909-Dataset
+      - https://raw.githubusercontent.com/music-x-lab/POP909-Dataset/master/README.md
+      - https://raw.githubusercontent.com/music-x-lab/POP909-Dataset/master/LICENSE
+      - https://api.github.com/repos/music-x-lab/POP909-Dataset
     note: >-
-      This audit adds the released EMOPIA family. The public source release
-      does not reproduce MIDI-RAE-JEPA's crop sampling, learned embeddings,
-      trained linear probes, or reported score records.
+      This audit indexes both released source families used by MIDI-RAE-JEPA.
+      Their public releases do not reproduce the paper's crop sampling,
+      learned embeddings, trained linear probes, or reported score records.
 
   interactive_symbolic_music_analysis:
     paper: https://arxiv.org/abs/2607.13587
@@ -22390,3 +22401,61 @@ benchmarks:
       - https://doi.org/10.5281/zenodo.5090631
       - https://arxiv.org/abs/2607.14537
       - https://arxiv.org/html/2607.14537v1#S3.SS1.SSS3
+
+  - id: pop909
+    name: POP909
+    full_name: "POP909: A Pop-song Dataset for Music Arrangement Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - symbolic_music_analysis
+    tasks:
+      - symbolic_music_generation
+      - piano_arrangement_generation
+      - melody_conditioned_accompaniment_generation
+      - beat_tracking
+      - chord_recognition
+      - key_estimation
+      - audio_midi_alignment
+    official:
+      paper: https://arxiv.org/abs/2008.07142
+      repo: https://github.com/music-x-lab/POP909-Dataset
+      dataset: https://github.com/music-x-lab/POP909-Dataset/tree/master/POP909
+    download:
+      access: public_ungated
+      primary:
+        - https://github.com/music-x-lab/POP909-Dataset
+      examples:
+        - 'scripts/download/pop909.sh'
+        - 'POP909_CLONE_REPO=1 scripts/download/pop909.sh'
+      notes: >-
+        The public repository contains MIDI arrangements for 909 popular
+        songs, including melody, bridge, and piano-accompaniment tracks,
+        multiple arrangement versions, and aligned beat, chord, key, and
+        tempo-derived annotations. The paper describes approximately 60 hours
+        of symbolic performances created by professional musicians. Original
+        commercial-song audio is not included. The helper downloads official
+        documentation, license, repository metadata, and the song index by
+        default; cloning the approximately 47 MB GitHub repository and its
+        MIDI/annotation files requires POP909_CLONE_REPO=1.
+    license:
+      data: MIT_repository_license_with_underlying_music_rights_caveat
+      code: MIT
+      notes: >-
+        The official repository includes an MIT LICENSE and GitHub detects
+        MIT, but neither the README nor paper separately analyzes rights in
+        the transcribed arrangements or underlying popular compositions.
+        Original commercial-song audio is not redistributed. Retain the
+        repository notice and review composition, arrangement, performance,
+        and jurisdiction-specific rights before redistribution or commercial
+        use.
+    sources:
+      - https://arxiv.org/abs/2008.07142
+      - https://export.arxiv.org/e-print/2008.07142
+      - https://github.com/music-x-lab/POP909-Dataset
+      - https://github.com/music-x-lab/POP909-Dataset/tree/master/POP909
+      - https://raw.githubusercontent.com/music-x-lab/POP909-Dataset/master/README.md
+      - https://raw.githubusercontent.com/music-x-lab/POP909-Dataset/master/LICENSE
+      - https://api.github.com/repos/music-x-lab/POP909-Dataset
+      - https://arxiv.org/abs/2607.14537
+      - https://arxiv.org/html/2607.14537v1#S2.SS1

@@ -86,8 +86,19 @@ non-gated files while making large archives and restricted datasets explicit
 opt-ins. This repository does not mirror datasets or grant rights to use any
 upstream data.
 
-Last checked: 2026-07-26. Current index size: 339 distinct benchmarks
+Last checked: 2026-07-26. Current index size: 340 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
+
+The July 2026 MIDI-RAE-JEPA paper also uses POP909 as its 909-song
+symbolic-music source family. The official public repository provides MIDI
+arrangements with melody, bridge, and piano tracks plus aligned beat, chord,
+key, and tempo-derived annotations, while original commercial-song audio is
+not redistributed. The repository is MIT-licensed, but the paper and README
+do not separately resolve rights in the transcribed arrangements or underlying
+popular compositions, so those rights require independent review. The helper
+saves lightweight official metadata and the song index by default; the
+approximately 47 MB repository clone is opt-in. MIDI-RAE-JEPA's crop manifest,
+embeddings, trained probes, and score records remain unreleased.
 
 The July 2026 MIDI-RAE-JEPA paper adds EMOPIA as a symbolic-music
 emotion-recognition family. Section 3.1.3 evaluates linear probes on 1,071
@@ -1603,6 +1614,8 @@ Current coverage includes:
 | [Dynamic-SUPERB](https://github.com/dynamic-superb/dynamic-superb) | Speech instruction benchmark | Official Dynamic-SUPERB repository, [leaderboard](https://huggingface.co/spaces/DynamicSuperb/leaderboard), and docs; helper downloads docs by default and can clone the repo with opt-in | Mixed component dataset terms; GitHub API reported no repository license, so check each task source before use |
 | [MAEB](https://github.com/embeddings-benchmark/mteb) | Multilingual speech, music, environmental-sound, and audio-text embedding evaluation | Public 30-task beta suite in the official MTEB registry, spanning retrieval, classification, clustering, pair classification, reranking, multilabel classification, and zero-shot classification in more than 100 languages; helper downloads lightweight official metadata/docs by default and makes the approximately 55 MB MTEB source clone opt-in | MTEB code and registry are Apache-2.0, but all component datasets retain their own mixed licenses, access controls, attribution requirements, and media rights |
 | [Dilemmadata](https://github.com/johentsch/dilemmadata) | Symbolic Roman-numeral, harmonic, cadence, phrase, key, and structural music analysis | Public v1.0 processed pitch-array TSVs and split structure combining AugmentedNet with more than 40 Distant Listening subcorpora; helper saves lightweight official metadata by default and makes the approximately 84 MB repository clone opt-in | Owner metadata declares CC BY-NC-SA 4.0; upstream corpus terms remain independent, and the repository has no software LICENSE |
+| [EMOPIA](https://annahung31.github.io/EMOPIA/) | Symbolic music emotion recognition and emotion-conditioned generation | Public v1.0 release with 1,087 labelled MIDI clips from 387 songs; helper saves official metadata by default and makes the checksum-verified 5.5 MB archive opt-in; copyrighted source audio is represented only by YouTube IDs and timestamps | Conflicting official terms: Zenodo says CC BY 4.0 while the repository says CC BY-NC-SA 4.0; apply the stricter non-commercial terms pending clarification |
+| [POP909](https://github.com/music-x-lab/POP909-Dataset) | Symbolic piano arrangement, generation, and beat/chord/key analysis | Public MIDI arrangements and aligned annotations for 909 popular songs; helper downloads official metadata and the song index by default and makes the approximately 47 MB repository clone opt-in; original commercial-song audio is not redistributed | Repository is MIT, but composition, arrangement, transcription, and other underlying music rights are not separately resolved and require review |
 | [RUL-MuchoMusic](https://github.com/yongyizang/AreYouReallyListening) | Audio understanding | [RUL-MuchoMusic.json](https://raw.githubusercontent.com/yongyizang/AreYouReallyListening/main/RUL-MuchoMusic.json), [RUListening](https://huggingface.co/datasets/yongyizang/RUListening) | RUL repo/HF card list MIT; upstream MuChoMusic dataset is CC BY-SA 4.0 |
 | [SongFormBench](https://huggingface.co/datasets/ASLP-lab/SongFormBench) | Audio understanding | `load_dataset("ASLP-lab/SongFormBench")` | HF card and SongFormer repo list CC BY 4.0 |
 | [RUBATO](https://zenodo.org/records/21407832) | Robust music transcription and analysis across multiple versions of the same works | Public Zenodo v0.3 release with 566 versions of 15 works (about 42.9 hours), aligned audio/score/video representations, and note, beat, measure, local-key, structure, and warping-path annotations; helper downloads the 83 KB metadata by default while the approximately 6.26 GB archive is opt-in | Zenodo labels the deposit CC BY 3.0, but per-recording metadata includes CC0, attribution, ShareAlike, NoDerivatives, non-commercial, ambiguous, and EEF terms; review each recording before reuse |
