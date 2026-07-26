@@ -9,6 +9,48 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  emoeus_multimodal_emotion_evaluation:
+    paper: https://arxiv.org/abs/2607.18336
+    title: "EmoEUS: Uncertainty Supervision for Multimodal Emotion Recognition in Conversation"
+    sections: 3.1
+    status: audited_existing_public_and_request_gated_families
+    last_verified: 2026-07-26
+    evaluated_sets:
+      - cited_as: IEMOCAP
+        index_id: iemocap
+        status: public_request_gated
+        protocol: >-
+          Use the commonly adopted leave-one-session-out strategy for
+          utterance-level multimodal emotion recognition and report accuracy
+          and weighted F1. The paper does not state which emotion-label mapping
+          or validation/model-selection subdivision it uses.
+      - cited_as: MELD
+        index_id: meld
+        status: public
+        protocol: >-
+          Use the official predefined train, validation, and test splits for
+          utterance-level multimodal emotion recognition and report accuracy
+          and weighted F1.
+    release_audit:
+      new_benchmark_family: none
+      paper_code_or_outputs: not_linked
+      iemocap: request_form_and_custom_research_license
+      meld: public_ungated_with_third_party_media_rights_caveat
+    sources:
+      - https://arxiv.org/abs/2607.18336
+      - https://arxiv.org/html/2607.18336v1#S3.SS1
+      - https://sail.usc.edu/iemocap/
+      - https://sail.usc.edu/iemocap/iemocap_release.htm
+      - https://sail.usc.edu/iemocap/Data_Release_Form_IEMOCAP.pdf
+      - https://affective-meld.github.io/
+      - https://github.com/declare-lab/MELD
+      - https://aclanthology.org/P19-1050/
+    note: >-
+      This is an evaluation-coverage audit, not a new benchmark family. Both
+      named datasets already have index entries and download helpers. The
+      arXiv paper links no benchmark release, implementation, prediction
+      outputs, or split manifest of its own, so no additional helper is added.
+
   dtw_alignment_reliability_chopin_mazurka_suite:
     paper: https://arxiv.org/abs/2607.15443
     title: Estimating the Reliability of Dynamic Time Warping Alignments Using Circumstantial Evidence

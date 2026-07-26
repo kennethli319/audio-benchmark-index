@@ -89,6 +89,15 @@ upstream data.
 Last checked: 2026-07-26. Current index size: 342 distinct benchmarks
 or benchmark families, with FLEURS de-duplicated across S2TT and ASR.
 
+The July 2026 EmoEUS paper is recorded as an evaluation-coverage audit rather
+than a new benchmark family. Section 3.1 evaluates the existing IEMOCAP and
+MELD families with accuracy and weighted F1, using leave-one-session-out on
+IEMOCAP and MELD's predefined train/validation/test splits. IEMOCAP remains
+request/form-gated under its custom research terms, while MELD is publicly
+downloadable but includes third-party television media. The paper links no
+new dataset, code, predictions, or split manifest, so the count and download
+helpers are unchanged.
+
 The July 2026 paper *Estimating the Reliability of Dynamic Time Warping
 Alignments Using Circumstantial Evidence* is recorded as an
 evaluation-coverage audit rather than a new benchmark family. Sections 3-5
