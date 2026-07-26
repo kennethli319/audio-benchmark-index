@@ -788,10 +788,12 @@ The July 2026 RW-Voice-EQ paper has also been audited across sections 2 and
 [ASR](https://huggingface.co/spaces/HumeAI/asr-leaderboard) leaderboards expose
 Apache-2.0 application code and aggregate results, but the Space source tree
 contains no benchmark data and loads tables and optional samples from a
-separately configured dataset. The paper explicitly describes its roughly
-17-hour ASR evaluation as four private sets and does not release the fixed TTS
-prompts, speech-to-speech scenarios, speech-understanding clips and labels,
-source-item manifests, generations, human ratings, or standalone data terms.
+separately configured dataset. The separate ASR Space publishes its normalizer,
+model metadata, and application code, but no audio, item manifest, or human
+reference transcripts. The paper explicitly describes its roughly 17-hour ASR
+evaluation as four private sets and does not release the fixed TTS prompts,
+speech-to-speech scenarios, speech-understanding clips and labels, source-item
+manifests, generations, human ratings, or standalone data terms.
 
 The July 2026 SongSQA paper is also audited as a mixed public/internal
 evaluation. Its public Lyra-SA component maps to the indexed, application-based

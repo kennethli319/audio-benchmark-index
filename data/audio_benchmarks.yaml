@@ -4378,17 +4378,24 @@ paper_audits:
       - https://huggingface.co/spaces/HumeAI/rw-voice-eq/tree/main
       - https://huggingface.co/spaces/HumeAI/rw-voice-eq/blob/main/README.md
       - https://huggingface.co/spaces/HumeAI/rw-voice-eq/blob/main/app.py
+      - https://huggingface.co/api/spaces/HumeAI/rw-voice-eq/tree/main?recursive=true&expand=false
+      - https://huggingface.co/spaces/HumeAI/asr-leaderboard/tree/main
+      - https://huggingface.co/spaces/HumeAI/asr-leaderboard/blob/main/README.md
+      - https://huggingface.co/spaces/HumeAI/asr-leaderboard/blob/main/app.py
+      - https://huggingface.co/api/spaces/HumeAI/asr-leaderboard/tree/main?recursive=true&expand=false
     note: >-
-      The public Hugging Face Space exposes an Apache-2.0 leaderboard
-      application and aggregate tables, not the benchmark package. Its source
-      tree contains only application files and says the six leaderboard JSON
-      files and optional sample audio are loaded at runtime from a separately
-      configured Hugging Face dataset; it includes no local data directory.
-      The paper likewise provides no downloadable prompt set, scenario set,
-      clip manifest, reference transcript package, annotations, generated
-      outputs, human ratings, or standalone data terms. RW-Voice-EQ is
-      therefore recorded as a private evaluation protocol rather than an
-      indexed downloadable benchmark family, and no helper is added.
+      The public Hugging Face Spaces expose Apache-2.0 leaderboard applications
+      and aggregate tables, not the benchmark package. The consolidated
+      Space's source tree contains only application files and says its six
+      leaderboard JSON files and optional sample audio are loaded at runtime
+      from a separately configured Hugging Face dataset. The separate ASR
+      Space publishes its normalizer, model metadata, and application code,
+      but no audio, item manifest, or human reference transcripts. The paper
+      likewise provides no downloadable prompt set, scenario set, clip
+      manifest, reference transcript package, annotations, generated outputs,
+      human ratings, or standalone data terms. RW-Voice-EQ is therefore
+      recorded as a private evaluation protocol rather than an indexed
+      downloadable benchmark family, and no helper is added.
 
   song_sqa:
     paper: https://arxiv.org/abs/2607.16599
