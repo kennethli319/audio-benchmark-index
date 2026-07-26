@@ -422,7 +422,9 @@ but its linked Hugging Face repository currently contains only
 `.gitattributes` and reports zero bytes of dataset storage. Appendix K promises
 CC BY 4.0 data and MIT code upon acceptance while preserving source-audio
 terms; those promises do not license absent artifacts. Recheck the release
-before adding a benchmark entry or helper.
+before adding a benchmark entry or helper. The official repository was
+rechecked on 2026-07-25 and remained unchanged at revision
+`b4e9fa95ad99d701b6e788c2aa51d7642ed61a75`.
 
 The April 2026 “All That Glitters Is Not Audio” paper is recorded as an
 existing-coverage audit rather than a new benchmark family. It evaluates the

@@ -5672,7 +5672,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.04383
     sections: abstract, 3.3, 4, and appendix K
     status: audited_not_indexed
-    last_verified: 2026-07-24
+    last_verified: 2026-07-25
     public_interfaces:
       - https://huggingface.co/datasets/zihan-audio/AEGBench
     evaluated_domains:
@@ -5692,7 +5692,7 @@ paper_audits:
       - https://arxiv.org/html/2607.04383v3#A11
       - https://huggingface.co/datasets/zihan-audio/AEGBench
       - https://huggingface.co/api/datasets/zihan-audio/AEGBench
-    note: The abstract calls AEGBench released, but appendix K says the benchmark, audio, annotations, difficulty tags, and scripts will be released upon acceptance. The linked Hugging Face repository at revision b4e9fa95ad99d701b6e788c2aa51d7642ed61a75 has no dataset card, benchmark records, audio, annotations, or evaluation code. AEGBench is therefore recorded as an announced protocol rather than a downloadable benchmark family. The promised CC BY 4.0 and MIT terms do not license absent artifacts, and appendix K also preserves third-party audio terms while describing research-only use, so the eventual release terms require careful rechecking.
+    note: The abstract calls AEGBench released, but appendix K says the benchmark, audio, annotations, difficulty tags, and scripts will be released upon acceptance. Rechecked on 2026-07-25, the linked Hugging Face repository remained at revision b4e9fa95ad99d701b6e788c2aa51d7642ed61a75 with only .gitattributes and zero bytes of dataset storage; it still had no dataset card, benchmark records, audio, annotations, or evaluation code. AEGBench is therefore recorded as an announced protocol rather than a downloadable benchmark family. The promised CC BY 4.0 and MIT terms do not license absent artifacts, and appendix K also preserves third-party audio terms while describing research-only use, so the eventual release terms require careful rechecking.
 
   tf_mossformer:
     paper: https://arxiv.org/abs/2607.21128
