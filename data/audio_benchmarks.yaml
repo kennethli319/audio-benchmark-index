@@ -9,6 +9,79 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  context_speech_bench:
+    paper: https://arxiv.org/abs/2607.21943
+    title: "Listen, Do Not Copy: Internalizing Audio-Grounded Scaffold Context for Robust Omni-Model Speech Understanding"
+    sections: introduction and experiments
+    status: audited_announced_benchmark_not_released
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Context-Speech Bench (CSB)
+        index_id: null
+        status: described_but_unreleased
+        protocol: >-
+          CSB evaluates Omni-model speech understanding across overlap, noise,
+          meetings, streaming clue maturity, and gating. The paper reports
+          13,255 training and 1,525 evaluation samples, plus dedicated splits
+          for gate-only reinforcement (120 streams and 240 paired windows),
+          full-chain reinforcement (160 streams), clue maturity (385 prefix
+          clues), and real-time gating (30 streams). Its reported measures
+          include permutation word error rate, Mandarin character error rate,
+          and gating F1.
+        note: >-
+          The benchmark is constructed from LibriSpeech, SparseLibriMix2,
+          AISHELL-3 mixes, WHAM!, MUSAN, and AMI. The paper says the AGSC code,
+          benchmark manifests, and result evidence will be open-sourced
+          following acceptance, but provides no repository, archive, dataset
+          card, DOI, manifest, access form, or license for those artifacts.
+      - cited_as: LibriSpeech
+        index_id: librispeech
+        status: existing_public_family
+      - cited_as: SparseLibriMix2
+        index_id: librimix
+        status: existing_public_family
+        note: >-
+          SparseLibriMix is released by the official LibriMix project and
+          remains part of that counted benchmark family.
+      - cited_as: AISHELL-3
+        index_id: aishell_3
+        status: existing_public_family
+      - cited_as: WHAM!
+        index_id: wham_whamr
+        status: existing_public_family
+      - cited_as: MUSAN
+        index_id: musan
+        status: existing_public_family
+      - cited_as: AMI Meeting Corpus
+        index_id: ami
+        status: existing_public_family
+    release_audit:
+      context_speech_bench_audio_and_labels: not_released
+      benchmark_manifests: announced_after_acceptance_not_released
+      agsc_code: announced_after_acceptance_not_released
+      result_evidence: announced_after_acceptance_not_released
+      source_corpora: public_under_separate_upstream_terms
+    license:
+      context_speech_bench: not_specified
+      paper: arxiv_perpetual_nonexclusive
+      source_corpora: mixed_upstream_terms
+    sources:
+      - https://arxiv.org/abs/2607.21943
+      - https://arxiv.org/html/2607.21943v1#Sx1
+      - https://arxiv.org/html/2607.21943v1#Sx4
+      - https://www.openslr.org/12
+      - https://github.com/JorisCos/LibriMix
+      - https://www.openslr.org/93
+      - http://wham.whisper.ai/
+      - https://www.openslr.org/17
+      - https://groups.inf.ed.ac.uk/ami/corpus/
+    note: >-
+      CSB is not counted as a public benchmark family until an official
+      benchmark manifest or documented access route is released. Public access
+      to its component corpora does not reproduce the paper's synthesized
+      mixtures, gold answers, predicted clues, split assignments, or streaming
+      protocols, and does not supply a license for the derived benchmark.
+
   msst_music_source_separation_training:
     paper: https://arxiv.org/abs/2607.23395
     title: "Music-Source-Separation-Training (MSST): A Unified Framework for Training and Evaluating Music Demixing Models"
