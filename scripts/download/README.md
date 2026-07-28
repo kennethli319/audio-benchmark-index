@@ -897,6 +897,9 @@ EARNINGS21_SPARSE_CHECKOUT=1 scripts/download/earnings_21.sh
 # approximately 12.0 GB archive includes audio governed by upstream terms.
 EARNINGS25_ACK_AUDIO_TERMS=1 EARNINGS25_DOWNLOAD_ARCHIVE=1 scripts/download/earnings25.sh
 
+# Indic DiarBench downloads official paper and dataset metadata by default. The approximately 30.3 GB HF snapshot is opt-in.
+INDIC_DIARBENCH_DOWNLOAD_HF=1 scripts/download/indic_diarbench.sh
+
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
 

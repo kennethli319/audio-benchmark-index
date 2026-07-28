@@ -24760,3 +24760,59 @@ benchmarks:
       - https://zenodo.org/records/18762168
       - https://zenodo.org/api/records/18762168
       - https://doi.org/10.5281/zenodo.18762168
+
+  - id: indic_diarbench
+    name: Indic DiarBench
+    full_name: "Indic DiarBench: A Multilingual Joint Diarization and ASR Benchmark for Indian Languages"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speaker_diarization
+    tasks:
+      - speaker_attributed_asr
+      - multilingual_speaker_diarization
+      - joint_diarization_and_asr
+      - code_mixed_speech_recognition
+      - overlapping_speech_recognition
+      - far_field_speech_recognition
+    official:
+      paper: https://arxiv.org/abs/2607.23808
+      dataset: https://huggingface.co/datasets/sarvamai/indic-diarbench
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/sarvamai/indic-diarbench
+      examples:
+        - 'scripts/download/indic_diarbench.sh'
+        - 'INDIC_DIARBENCH_DOWNLOAD_HF=1 scripts/download/indic_diarbench.sh'
+      notes: >-
+        Indic DiarBench is one public test-only benchmark family spanning all
+        22 scheduled Indian languages. Its 1,164 recordings total about 108
+        hours across near-field meetings, far-field recordings, and
+        in-the-wild audio, with human-corrected, time-aligned,
+        speaker-attributed transcripts. It evaluates joint diarization and
+        ASR with DER, cpWER, and WDER; the dataset card reports 485 meeting
+        speakers, approximately 750 in-the-wild speakers, and 12.8% average
+        overlap. The helper downloads official paper, card, and repository
+        metadata by default. The Hugging Face API reports approximately 30.3
+        GB of repository storage, so the full snapshot requires
+        INDIC_DIARBENCH_DOWNLOAD_HF=1.
+    license:
+      data: CC-BY-4.0_with_source_media_rights_caveat
+      code: not_released
+      notes: >-
+        The official dataset card declares CC BY 4.0 for the release. The
+        paper says the in-the-wild condition was curated from publicly
+        available YouTube videos, but neither primary source separately
+        analyzes the underlying recordings' copyright or platform terms.
+        Retain attribution and review source-media rights before
+        redistribution or commercial use. No separate baseline or evaluation
+        code repository is linked in version 1.
+    sources:
+      - https://arxiv.org/abs/2607.23808
+      - https://arxiv.org/html/2607.23808v1#S3
+      - https://arxiv.org/html/2607.23808v1#S4
+      - https://arxiv.org/html/2607.23808v1#S5
+      - https://huggingface.co/datasets/sarvamai/indic-diarbench
+      - https://huggingface.co/datasets/sarvamai/indic-diarbench/raw/main/README.md
+      - https://huggingface.co/api/datasets/sarvamai/indic-diarbench
