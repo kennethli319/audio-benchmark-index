@@ -9,6 +9,77 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  synthetic_speech_paralinguistic_preservation:
+    paper: https://arxiv.org/abs/2607.22304
+    title: "Synthetic Speech, Real Signal: Paralinguistic Preservation and Cross-Lingual Augmentation via Voice Cloning"
+    sections: 2.2-2.4 and 3.1-3.4
+    status: audited_existing_public_families_and_proprietary_clinical_protocol
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: IEMOCAP
+        index_id: iemocap
+        status: existing_form_gated_family
+        protocol: 5,531 utterances from 10 speakers for four-class emotion classification
+      - cited_as: MELD
+        index_id: meld
+        status: existing_public_family
+        protocol: 13,708 utterances from 304 speakers for seven-class emotion and three-class sentiment classification
+      - cited_as: MUStARD
+        index_id: mustard
+        status: existing_public_family
+        protocol: 690 utterances from 21 speakers for binary sarcasm classification
+      - cited_as: VCTK
+        index_id: vctk
+        status: existing_public_family
+        protocol: 29,650 utterances from 73 speakers for three-class accent classification
+      - cited_as: proprietary English clinical corpus
+        index_id: null
+        status: proprietary_unreleased
+        protocol: >-
+          Depression and anxiety classification on 82,046 samples (about 228
+          hours) from 30,537 speakers, using paragraph reading, mood, and
+          general-weekend prompts plus PHQ-8, GAD-7, and self-reported
+          diagnosis labels.
+      - cited_as: proprietary Japanese clinical corpus
+        index_id: null
+        status: proprietary_unreleased
+        protocol: >-
+          Cross-lingual depression and anxiety evaluation on 14,159 samples
+          (about 39 hours) from 6,253 speakers collected under the matched
+          three-activity protocol.
+    release_audit:
+      iemocap_meld_mustard_and_vctk: existing_as_indexed
+      english_clinical_audio_labels_and_splits: proprietary_not_released
+      japanese_clinical_audio_labels_and_splits: proprietary_not_released
+      cloned_public_and_clinical_audio: not_released
+      fixed_standard_passage: described_but_not_a_standalone_benchmark_release
+      paper_specific_code_manifests_and_predictions: not_identified
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      public_source_families: retain_each_indexed_family_terms
+      proprietary_clinical_data: not_publicly_specified
+      cloned_derivatives: not_released_or_separately_licensed
+    sources:
+      - https://arxiv.org/abs/2607.22304
+      - https://arxiv.org/html/2607.22304v1#S2.SS2
+      - https://arxiv.org/html/2607.22304v1#S2.SS3
+      - https://arxiv.org/html/2607.22304v1#S2.SS4
+      - https://arxiv.org/html/2607.22304v1#S3
+      - https://sail.usc.edu/iemocap/
+      - https://affective-meld.github.io/
+      - https://github.com/soujanyaporia/MUStARD
+      - https://datashare.ed.ac.uk/handle/10283/3443
+    note: >-
+      This work defines a voice-cloning preservation protocol rather than a
+      new public dataset family. It trims source recordings to ten seconds,
+      compares repeated-transcript and fixed-passage cloning conditions, and
+      evaluates logistic classifiers on WavLM embeddings with AUC and an
+      above-chance preservation score. The four public-source families remain
+      indexed separately. Their availability does not make the authors'
+      clinical recordings, translated transcripts, cloned audio, exact
+      speaker splits, predictions, or bootstrap records public, so no new
+      benchmark entry or download helper is added.
+
   spatial_information_foundation_model_diarization:
     paper: https://arxiv.org/abs/2607.12647
     title: "Investigating the Integration of Spatial Information in Foundation-Model-Based Speaker Diarization"
