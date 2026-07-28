@@ -9,6 +9,75 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  stanceflip_multimodal_conversational_stance:
+    paper: https://arxiv.org/abs/2607.24191
+    title: "StanceFlip: A Comprehensive Multi-Dimensional Benchmark for Multimodal Conversational Stance Flipping Forecasting"
+    sections: 3.1-3.4, 5.1, and appendix A
+    status: audited_announced_audio_inclusive_benchmark_not_released
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: StanceFlip
+        index_id: null
+        status: described_but_not_publicly_released
+        protocol: >-
+          Evaluate bilingual multimodal conversational stance forecasting on
+          7,710 English and Chinese dialogues with 37,836 turns, split
+          8:1:1 by topic and language. Subtask I extracts holder, target,
+          emotion, sentiment, stance, and rationale sextuples; Subtask II
+          predicts stance reversals and their trigger categories.
+        note: >-
+          The five modalities are text, image, audio, sticker or meme, and
+          video. AudioSet and WebVid material is segmented into three- to
+          eight-second clips and retrieved with generated semantic queries;
+          COCO images and a proprietary collection of more than 15,000
+          stickers supply other media. Seventeen expert annotators review the
+          synthesized and retrieved dialogues, but the paper does not release
+          the dialogues, source-item IDs, media, annotations, split manifests,
+          retrieval queries, evaluation code, or model checkpoints.
+      - cited_as: MT-CSD zero-shot evaluation
+        index_id: null
+        status: existing_external_text_conversation_benchmark_outside_audio_scope
+        protocol: >-
+          Test the StanceFlip-trained model without adaptation on the Bitcoin,
+          SpaceX, and Trump target domains of MT-CSD and report F1.
+        note: >-
+          This auxiliary evaluation does not use StanceFlip audio and is not a
+          separate audio benchmark candidate.
+    release_audit:
+      paper_and_complete_protocol_description: public
+      stanceflip_dialogues_annotations_and_split_manifests: not_released
+      retrieved_audio_images_video_and_source_item_ids: not_released
+      proprietary_sticker_collection: not_released
+      construction_evaluation_code_and_model_checkpoints: not_released
+      official_project_repository_or_dataset_page: not_found
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      benchmark_data_and_annotations: not_specified_unreleased
+      source_media: upstream_and_proprietary_terms_apply
+      note: >-
+        The article license does not grant rights to the absent benchmark
+        package. AudioSet, WebVid, COCO, DailyDialog, MELD, ZS-CSD, and each
+        underlying media item retain their own terms; the proprietary sticker
+        collection has no public access or license.
+    sources:
+      - https://arxiv.org/abs/2607.24191
+      - https://arxiv.org/html/2607.24191v1#S3.SS1
+      - https://arxiv.org/html/2607.24191v1#S3.SS2
+      - https://arxiv.org/html/2607.24191v1#S3.SS3
+      - https://arxiv.org/html/2607.24191v1#S3.SS4
+      - https://arxiv.org/html/2607.24191v1#S5.SS1
+      - https://arxiv.org/html/2607.24191v1#A1.SS1
+      - https://export.arxiv.org/api/query?id_list=2607.24191
+      - "https://api.github.com/search/repositories?q=StanceFlip+in:name,description,readme"
+      - "https://huggingface.co/api/datasets?search=StanceFlip&limit=20"
+      - "https://huggingface.co/api/models?search=StanceFlip&limit=20"
+    note: >-
+      StanceFlip is audio-inclusive and reports a detailed benchmark
+      construction and evaluation protocol, but no official public release
+      can be verified. This audit prevents an announced synthetic/retrieval
+      benchmark from being counted as downloadable and preserves the
+      proprietary and upstream-source limitations for a future release check.
+
   speaker_identity_sensitivity_deepfake_detection:
     paper: https://arxiv.org/abs/2607.21820
     title: "Probing Speaker Identity Sensitivity in Audio Deepfake Detectors"
