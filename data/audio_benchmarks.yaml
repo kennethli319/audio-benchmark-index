@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-26
+  last_checked: 2026-07-27
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -17111,6 +17111,73 @@ benchmarks:
       - https://arxiv.org/html/2607.13330v1#S4
       - https://github.com/Arshdeep-Singh-Boparai/PruningAudioLDM
       - https://zenodo.org/records/21376822
+
+  - id: mecat
+    name: MECAT
+    full_name: "MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks"
+    qwen_cited_as: null
+    qwen_bucket: audio_understanding
+    tasks:
+      - fine_grained_audio_understanding
+      - audio_captioning
+      - audio_question_answering
+      - speech_understanding
+      - music_understanding
+      - environmental_sound_understanding
+      - audio_quality_assessment
+      - audio_text_evaluation
+    official:
+      repo: https://github.com/xiaomi-research/mecat
+      demo: https://nyd3001.github.io/mecat-demo
+      paper: https://arxiv.org/abs/2507.23511
+      conference: ICML 2026
+      caption_dataset: https://huggingface.co/datasets/mispeech/MECAT-Caption
+      qa_dataset: https://huggingface.co/datasets/mispeech/MECAT-QA
+    download:
+      primary:
+        - https://huggingface.co/datasets/mispeech/MECAT-Caption
+        - https://huggingface.co/datasets/mispeech/MECAT-QA
+        - https://github.com/xiaomi-research/mecat
+      examples:
+        - 'scripts/download/mecat.sh'
+        - 'MECAT_DOWNLOAD_CAPTION=1 scripts/download/mecat.sh'
+        - 'MECAT_DOWNLOAD_QA=1 scripts/download/mecat.sh'
+      notes: >-
+        MECAT is one benchmark family with two public, ungated WebDataset
+        releases rather than two independent families. MECAT-Caption has
+        20,052 training and 20,052 test clips, each annotated for systematic,
+        content-specific, and acoustic-environment captioning. MECAT-QA uses
+        the same eight speech/music/general-sound mixture domains and has
+        100,260 question-answer pairs in each split across perception,
+        analysis, and reasoning tracks. The DATE metric and baseline evaluation
+        code are in the repository. The helper downloads first-party cards,
+        API metadata, paper, license, and repository documentation by default;
+        the approximately 16.2 GB caption and 42.4 GB QA snapshots require
+        separate explicit opt-ins.
+    license:
+      data: cc-by-3.0
+      code: Apache-2.0
+      paper: cc-by-4.0
+      notes: >-
+        Both Hugging Face cards declare CC BY 3.0 for the released audio and
+        annotations, while the repository code is Apache 2.0 and the arXiv
+        paper is CC BY 4.0. MECAT is derived from a selected subset of
+        ACAV100M; preserve attribution and review the source dataset and
+        underlying media terms before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2507.23511
+      - https://arxiv.org/html/2507.23511
+      - https://github.com/xiaomi-research/mecat
+      - https://raw.githubusercontent.com/xiaomi-research/mecat/main/README.md
+      - https://raw.githubusercontent.com/xiaomi-research/mecat/main/LICENSE
+      - https://api.github.com/repos/xiaomi-research/mecat
+      - https://nyd3001.github.io/mecat-demo
+      - https://huggingface.co/datasets/mispeech/MECAT-Caption
+      - https://huggingface.co/datasets/mispeech/MECAT-Caption/raw/main/README.md
+      - https://huggingface.co/api/datasets/mispeech/MECAT-Caption
+      - https://huggingface.co/datasets/mispeech/MECAT-QA
+      - https://huggingface.co/datasets/mispeech/MECAT-QA/raw/main/README.md
+      - https://huggingface.co/api/datasets/mispeech/MECAT-QA
 
   - id: uiq
     name: User-Intent Queries (UIQ)

@@ -122,6 +122,7 @@ scripts/download/cn_news_tts_bench.sh
 scripts/download/podeval.sh
 scripts/download/rapidata_tts_preference.sh
 scripts/download/audio_alpaca.sh
+scripts/download/mecat.sh
 scripts/download/mmgenre.sh
 scripts/download/libritts.sh
 scripts/download/ljspeech.sh
