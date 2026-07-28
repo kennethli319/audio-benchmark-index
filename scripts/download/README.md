@@ -143,6 +143,7 @@ scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
 scripts/download/duplexchat.sh
 scripts/download/biotalk_3d.sh
+scripts/download/imda_nsc.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
 scripts/download/openstbench.sh
@@ -1434,4 +1435,9 @@ DUPLEXCHAT_CLONE_TOOLKIT=1 scripts/download/duplexchat.sh
 # multimodal package is hosted on Baidu Netdisk and must be obtained manually
 # with extraction code em25; redistribution is prohibited by its custom terms.
 scripts/download/biotalk_3d.sh
+
+# IMDA NSC downloads the official page, paper, and public-mirror metadata by
+# default. Official audio access requires registration and Dropbox; the
+# multi-terabyte third-party mirror is a separate explicit opt-in.
+IMDA_NSC_DOWNLOAD_MIRROR=1 scripts/download/imda_nsc.sh
 ```

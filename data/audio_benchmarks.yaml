@@ -25005,3 +25005,68 @@ benchmarks:
       - https://raw.githubusercontent.com/2002zym/BioTalk-3D/main/CITATION.cff
       - https://api.github.com/repos/2002zym/BioTalk-3D
       - https://api.github.com/repos/2002zym/BioTalk-3D/git/trees/main?recursive=1
+
+  - id: imda_nsc
+    name: IMDA National Speech Corpus
+    full_name: "IMDA National Speech Corpus (NSC)"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - text_to_speech
+      - speech_dialogue
+    tasks:
+      - singapore_english_asr
+      - singlish_asr
+      - conversational_asr
+      - accent_aware_tts_evaluation
+      - speaker_similarity_evaluation
+      - accent_similarity_evaluation
+    official:
+      homepage: https://www.imda.gov.sg/how-we-can-help/national-speech-corpus
+      registration: https://docs.google.com/forms/d/e/1FAIpQLSd3k8wFF4GQP4yo_lDAXKjCltfYk-dE-yYpegTnCB20kr7log/viewform
+      paper: https://arxiv.org/abs/2607.23027
+      public_mirror: https://huggingface.co/datasets/mesolitica/IMDA-STT
+    download:
+      access: official_registration_required_public_third_party_mirror
+      primary:
+        - https://www.imda.gov.sg/how-we-can-help/national-speech-corpus
+        - https://huggingface.co/datasets/mesolitica/IMDA-STT
+      examples:
+        - 'scripts/download/imda_nsc.sh'
+        - 'IMDA_NSC_DOWNLOAD_MIRROR=1 scripts/download/imda_nsc.sh'
+      notes: >-
+        IMDA NSC is one six-part Singapore English corpus family, not six
+        independent benchmarks. IMDA describes an approximately 1.2 TB
+        release of audio and transcripts, last expanded to all six parts in
+        July 2021. Official access is free under the Singapore Open Data
+        Licence but requires a registration form and Dropbox account; IMDA
+        shares the folder by email. An ungated Mesolitica Hugging Face mirror
+        is also public, explicitly identifies itself as a mirror, and reports
+        per-part duration estimates. The 2026 Singlish TTS paper derives a
+        50-speaker, 55.50-hour in-domain selection from mirrored Part 3 and
+        adds 42 held-out speakers, with a 60/20/20 per-speaker split for the
+        in-domain condition. It does not release the selected speaker IDs,
+        split manifests, prompts, generated speech, or score records, so that
+        paper-specific evaluation protocol is not independently downloadable.
+        The helper saves official and mirror documentation by default; the
+        multi-terabyte mirror snapshot requires explicit opt-in.
+    license:
+      data: singapore_open_data_licence
+      paper_specific_protocol: not_released
+      code: not_released
+      notes: >-
+        IMDA states that NSC is provided under the Singapore Open Data
+        Licence, and the third-party mirror repeats that provenance. Review
+        the current official licence and registration terms before use; the
+        mirror does not create new rights or replace IMDA's authoritative
+        release. The paper is CC BY 4.0, but that article licence does not
+        release its curated 92-speaker selection or evaluation artifacts.
+    sources:
+      - https://www.imda.gov.sg/how-we-can-help/national-speech-corpus
+      - https://docs.google.com/forms/d/e/1FAIpQLSd3k8wFF4GQP4yo_lDAXKjCltfYk-dE-yYpegTnCB20kr7log/viewform
+      - https://huggingface.co/datasets/mesolitica/IMDA-STT
+      - https://huggingface.co/datasets/mesolitica/IMDA-STT/raw/main/README.md
+      - https://huggingface.co/api/datasets/mesolitica/IMDA-STT
+      - https://arxiv.org/abs/2607.23027
+      - https://arxiv.org/html/2607.23027v1#S3
+      - https://arxiv.org/html/2607.23027v1#S4.SS1
