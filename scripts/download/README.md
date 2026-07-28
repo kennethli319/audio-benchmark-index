@@ -253,6 +253,7 @@ scripts/download/mcr_bench.sh
 scripts/download/vocalsound.sh
 scripts/download/vocalset.sh
 scripts/download/emov_db.sh
+scripts/download/daic_woz.sh
 scripts/download/androids_corpus.sh
 scripts/download/ravdess.sh
 scripts/download/tess.sh
@@ -355,6 +356,7 @@ scripts/download/opencpop_test.sh
 OPEN_CPOP_ARCHIVE_URL='https://...' scripts/download/opencpop_test.sh
 scripts/download/lyra_sa.sh
 scripts/download/adress_challenges.sh
+scripts/download/daic_woz.sh
 scripts/download/aff_wild2.sh
 scripts/download/iemocap.sh
 scripts/download/fakeavceleb.sh
@@ -1406,6 +1408,10 @@ SINGLE_ITEM_KAWAII_ACK_UNSPECIFIED_LICENSE=1 SINGLE_ITEM_KAWAII_DOWNLOAD_XLSX=1 
 # ADReSS and ADReSSo save public challenge/access documentation, then print
 # the DementiaBank membership path. Clinical recordings stay password protected.
 scripts/download/adress_challenges.sh
+
+# DAIC-WOZ / E-DAIC saves USC ICT documentation and primary paper pages, then
+# prints the separate owner application routes. No clinical data is fetched.
+scripts/download/daic_woz.sh
 
 # DementiaBank Pitt saves public corpus/access documentation, then prints the
 # membership path. It never authenticates or downloads clinical recordings.

@@ -16714,6 +16714,68 @@ benchmarks:
       - https://api.github.com/repos/numediart/EmoV-DB
       - https://arxiv.org/abs/1806.09514
 
+  - id: daic_woz
+    name: DAIC-WOZ / E-DAIC
+    full_name: "Distress Analysis Interview Corpus Wizard-of-Oz and Extended DAIC"
+    qwen_cited_as: null
+    qwen_bucket:
+      - paralinguistic_understanding
+      - health_audio
+      - audio_visual_understanding
+    tasks:
+      - speech_based_depression_detection
+      - psychological_distress_assessment
+      - multimodal_depression_classification
+      - clinical_interview_analysis
+      - audio_visual_behavior_analysis
+    official:
+      project: https://dcapswoz.ict.usc.edu/
+      daic_woz_application: https://dcapswoz.ict.usc.edu/daic-woz-database-download/
+      extended_daic_application: https://dcapswoz.ict.usc.edu/extended-daic-database-download/
+      documentation: https://dcapswoz.ict.usc.edu/wp-content/uploads/2022/02/DAICWOZDepression_Documentation.pdf
+      paper: https://aclanthology.org/L14-1422/
+      avec_2019_paper: https://arxiv.org/abs/1907.11510
+      recent_evaluation: https://arxiv.org/abs/2607.22952
+    download:
+      primary:
+        - https://dcapswoz.ict.usc.edu/
+        - https://dcapswoz.ict.usc.edu/daic-woz-database-download/
+        - https://dcapswoz.ict.usc.edu/extended-daic-database-download/
+      examples:
+        - 'scripts/download/daic_woz.sh'
+      notes: >-
+        USC ICT treats DAIC-WOZ and its extended E-DAIC release as one corpus
+        lineage with separate application forms. DAIC-WOZ contains 189
+        Wizard-of-Oz interview sessions lasting 7–33 minutes, with participant
+        audio, transcripts, facial features, and questionnaire responses.
+        E-DAIC extends the corpus used by the AVEC 2019 depression challenge.
+        The helper saves only public owner documentation and primary paper
+        pages, then prints both application routes; it never submits a form,
+        authenticates, or downloads sensitive interview data. The July 2026
+        LIWC study evaluates 189 DAIC-WOZ and 275 E-DAIC participants using
+        pooled challenge labels under participant-level cross-validation, not
+        the official AVEC test splits.
+    license:
+      data: application_required_terms_not_publicly_specified
+      code: not_applicable
+      notes: >-
+        The owner page makes both clinical interview releases available upon
+        request but does not publish reusable data-license terms on the public
+        landing or application pages. Approval does not imply redistribution
+        or commercial-use rights. The corpus contains identifiable voices,
+        video, facial features, questionnaire responses, and mental-health
+        labels; follow the approved agreement and institutional privacy,
+        consent, security, and ethics requirements.
+    sources:
+      - https://dcapswoz.ict.usc.edu/
+      - https://dcapswoz.ict.usc.edu/daic-woz-database-download/
+      - https://dcapswoz.ict.usc.edu/extended-daic-database-download/
+      - https://dcapswoz.ict.usc.edu/wp-content/uploads/2022/02/DAICWOZDepression_Documentation.pdf
+      - https://aclanthology.org/L14-1422/
+      - https://arxiv.org/abs/1907.11510
+      - https://arxiv.org/abs/2607.22952
+      - https://arxiv.org/html/2607.22952v1#S3
+
   - id: androids_corpus
     name: Androids Corpus
     full_name: "The Androids Corpus: A New Publicly Available Benchmark for Speech Based Depression Detection"
