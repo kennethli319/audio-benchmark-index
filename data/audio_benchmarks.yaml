@@ -2133,6 +2133,79 @@ paper_audits:
       citation and public artifacts do not establish primary provenance or
       dataset reuse terms.
 
+  molge_multilingual_asr_evaluation:
+    paper: https://arxiv.org/abs/2607.24030
+    title: "MoLGE: Mixture of Language Group Experts for Efficient Scaling of Massively Multilingual Speech Recognition"
+    sections: 4.1-4.3 and appendix A
+    status: audited_composite_of_existing_public_families_with_unavailable_derivative
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: 495-language multilingual benchmark
+        index_id: null
+        status: composite_protocol_not_new_family
+        protocol: >-
+          Combine FLEURS (968 hours, 102 languages), Common Voice 22.0
+          (10,448 hours, 131 languages), and the Omnilingual ASR Corpus
+          (2,342 hours, 348 languages) into a 13,758-hour, 495-unique-language
+          ASR evaluation protocol. Compare dense and randomly grouped
+          baselines with MoLGE using phonetic LAMA-UT and orthographic
+          Omnilingual ASR backbones, reporting character error rate and
+          routing accuracy overall and by language-resource tier.
+        note: >-
+          The three source corpora are existing public families. Their union,
+          language sampling, resampling, augmentation, and model-routing
+          conditions define a paper protocol rather than a fourth downloadable
+          benchmark dataset.
+      - cited_as: segmented OmniASR dataset
+        index_id: omnilingual_asr_corpus
+        status: announced_derivative_currently_metadata_only
+        protocol: >-
+          Resample Omnilingual ASR audio to 16 kHz, segment utterances longer
+          than about 30 seconds using punctuation and MMS-FA alignment, force
+          remaining long segments near 150 characters at word boundaries, and
+          filter low-alignment-score segments separately for each language.
+        note: >-
+          The linked Hugging Face repository is public and ungated, but its
+          current tree exposes only .gitattributes: no dataset card, audio,
+          annotations, split manifests, or license artifact. The API reports
+          about 26.1 GB of used storage despite the empty visible tree, so that
+          field must not be treated as proof of a usable release.
+    release_audit:
+      fleurs: existing_public_family
+      common_voice_22: existing_public_family
+      omnilingual_asr_corpus: existing_public_family
+      paper_specific_495_language_union_manifest: not_released
+      segmented_omniasr_visible_files: metadata_only
+      official_code_repository: empty
+      model_checkpoints_and_group_assignments: not_released
+    license:
+      paper: CC-BY-4.0
+      source_corpora: use_entry_specific_terms
+      segmented_derivative: not_specified
+      code_repository: no_files_or_detected_license
+      note: >-
+        The paper license does not re-license the three source corpora or the
+        announced segmented derivative. The derivative has no dataset card or
+        license file, so its eventual reuse terms cannot yet be verified.
+    sources:
+      - https://arxiv.org/abs/2607.24030
+      - https://arxiv.org/html/2607.24030v1#S4.SS1
+      - https://arxiv.org/html/2607.24030v1#S4.SS2
+      - https://arxiv.org/html/2607.24030v1#S4.SS3
+      - https://arxiv.org/html/2607.24030v1#A1.SS1
+      - https://arxiv.org/html/2607.24030v1#A1.SS2
+      - https://github.com/sanghyang00/molge
+      - https://api.github.com/repos/sanghyang00/molge
+      - https://huggingface.co/datasets/Sanghyang00/omniasr-molge
+      - https://huggingface.co/api/datasets/Sanghyang00/omniasr-molge
+      - https://huggingface.co/api/datasets/Sanghyang00/omniasr-molge/tree/main
+    note: >-
+      This audit adds current evaluation provenance without increasing the
+      family count. FLEURS, Common Voice, and Omnilingual ASR remain separate
+      indexed families; MoLGE is a model and routing protocol, and its
+      paper-specific composite and currently unavailable segmented derivative
+      are not counted as additional public datasets.
+
   qwen_audio_3_tts_evaluation:
     paper: https://arxiv.org/abs/2607.23938
     title: "Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm"
@@ -13522,11 +13595,13 @@ benchmarks:
         snapshot. The MoLGE paper links a derivative in which the authors use
         MMS-FA to segment the 2,342 hours of Omnilingual ASR data used in their
         experiments into roughly 30-second chunks. As checked on 2026-07-28,
-        however, that Hugging Face repository had been recreated minutes
-        earlier and contained only .gitattributes: no card, audio, manifest,
-        or license was available. Treat it as an announced, currently
-        metadata-only preprocessing variant rather than a distinct benchmark
-        or usable release. Omnilingual ASR models cover more than 1,600
+        however, that Hugging Face repository contained only .gitattributes
+        in its visible tree: no card, audio, manifest, or license was
+        available. Its API reported approximately 26.1 GB of used storage, but
+        that unexplained backend field does not provide downloadable files or
+        establish a usable release. Treat it as an announced, currently
+        metadata-only preprocessing variant rather than a distinct benchmark.
+        Omnilingual ASR models cover more than 1,600
         languages, but that model coverage must not be confused with this
         348-language public corpus.
     license:
@@ -13557,6 +13632,7 @@ benchmarks:
       - https://arxiv.org/html/2607.24030v1#A1.SS2
       - https://huggingface.co/datasets/Sanghyang00/omniasr-molge
       - https://huggingface.co/api/datasets/Sanghyang00/omniasr-molge
+      - https://huggingface.co/api/datasets/Sanghyang00/omniasr-molge/tree/main
 
   - id: voicecodebench
     name: VoiceCodeBench

@@ -13,12 +13,15 @@ download_url "https://huggingface.co/api/datasets/$hf_repo" "$out/hf-api.json"
 download_url "$repo_raw/README.md" "$out/repo-README.md"
 download_url "$repo_raw/LICENSE" "$out/repo-LICENSE"
 download_url "https://huggingface.co/api/datasets/$molge_hf_repo" "$out/molge-hf-api.json"
+download_url "https://huggingface.co/api/datasets/$molge_hf_repo/tree/main" "$out/molge-hf-tree.json"
 
 if [[ "${OMNILINGUAL_ASR_DOWNLOAD_CONFIG:-0}" != "1" ]]; then
   cat <<'EOF'
 Downloaded Omnilingual ASR Corpus documentation and API metadata, including
 current metadata for the paper-linked MoLGE segmented derivative. As checked
-on 2026-07-28, the MoLGE repository contains no released data or dataset card.
+on 2026-07-28, the MoLGE repository's visible tree contains no released data
+or dataset card. Its API reports backend storage despite exposing only
+.gitattributes, so the helper also saves the tree response for verification.
 The canonical public Hugging Face repository is approximately 491 GB. This
 helper does not download the complete canonical repository.
 
