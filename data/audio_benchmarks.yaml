@@ -11634,6 +11634,7 @@ benchmarks:
       project: https://ai.meta.com/research/publications/omnilingual-asr-open-source-multilingual-speech-recognition-for-1600-languages/
       repo: https://github.com/facebookresearch/omnilingual-asr
       dataset: https://huggingface.co/datasets/facebook/omnilingual-asr-corpus
+      molge_segmented_derivative: https://huggingface.co/datasets/Sanghyang00/omniasr-molge
       paper: https://arxiv.org/abs/2511.09690
       recent_evaluation: https://arxiv.org/abs/2607.24030
     download:
@@ -11650,21 +11651,28 @@ benchmarks:
         available. The paper reports 3,350 hours; the current Hugging Face
         repository exposes 349 configurations and approximately 491 GB of
         storage. The helper downloads only the official dataset card, Hub API
-        metadata, and repository documentation by default. A single explicit
-        language-script configuration can be requested with
+        metadata, repository documentation, and metadata for the MoLGE
+        segmented derivative by default. A single explicit language-script
+        configuration from Meta's canonical release can be requested with
         OMNILINGUAL_ASR_DOWNLOAD_CONFIG=1; it never requests the complete
-        snapshot. Omnilingual ASR models cover more than 1,600 languages, but
-        that model coverage must not be confused with this 348-language
-        public corpus.
+        snapshot. The MoLGE paper separately publishes an approximately
+        86.6 GB, 99,438-file derivative in which the authors use MMS-FA to
+        segment the 2,342 hours of Omnilingual ASR data used in their
+        experiments into roughly 30-second chunks. That derivative is a
+        preprocessing variant of this family, not a distinct benchmark, and
+        the helper intentionally does not download it. Omnilingual ASR models
+        cover more than 1,600 languages, but that model coverage must not be
+        confused with this 348-language public corpus.
     license:
       data: cc-by-4.0
       code_and_models: Apache-2.0
       notes: >-
         Meta's dataset card and repository README declare the corpus CC BY
-        4.0; repository code and models are Apache 2.0. The corpus contains
-        human voices and spontaneous responses, so attribution, privacy,
-        consent, and local-law considerations remain relevant even though
-        access is ungated.
+        4.0; the MoLGE derivative card also declares CC BY 4.0; repository
+        code and models are Apache 2.0. The derivative does not create new
+        rights in the source recordings. The corpus contains human voices and
+        spontaneous responses, so attribution, privacy, consent, and local-law
+        considerations remain relevant even though access is ungated.
     sources:
       - https://ai.meta.com/research/publications/omnilingual-asr-open-source-multilingual-speech-recognition-for-1600-languages/
       - https://arxiv.org/abs/2511.09690
@@ -11679,6 +11687,10 @@ benchmarks:
       - https://huggingface.co/api/datasets/facebook/omnilingual-asr-corpus
       - https://arxiv.org/abs/2607.24030
       - https://arxiv.org/html/2607.24030v1#S4.SS1
+      - https://arxiv.org/html/2607.24030v1#A1.SS2
+      - https://huggingface.co/datasets/Sanghyang00/omniasr-molge
+      - https://huggingface.co/datasets/Sanghyang00/omniasr-molge/raw/main/README.md
+      - https://huggingface.co/api/datasets/Sanghyang00/omniasr-molge
 
   - id: voicecodebench
     name: VoiceCodeBench
