@@ -219,6 +219,7 @@ scripts/download/codecfake.sh
 scripts/download/dfadd.sh
 scripts/download/librisevoc.sh
 scripts/download/speech_df_arena.sh
+scripts/download/wavefake.sh
 scripts/download/tfcl_afe.sh
 scripts/download/diffssd.sh
 scripts/download/fake_or_real.sh
@@ -491,6 +492,12 @@ INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
 # default. Its approximately 400 MB protocol/toolkit repository is opt-in;
 # component datasets must be acquired separately under their own terms.
 SPEECH_DF_ARENA_CLONE_TOOLKIT=1 scripts/download/speech_df_arena.sh
+
+# WaveFake downloads the paper, official docs, Zenodo metadata, dataset
+# license, and datasheet by default. Its 28.9 GB generated-audio ZIP and
+# evaluation-toolkit clone are separate opt-ins.
+WAVEFAKE_DOWNLOAD_ARCHIVE=1 scripts/download/wavefake.sh
+WAVEFAKE_CLONE_TOOLKIT=1 scripts/download/wavefake.sh
 
 # In-the-Wild downloads official docs and Hub metadata by default.
 # The approximately 7.60 GiB public ZIP is opt-in; review the conflicting license signals.

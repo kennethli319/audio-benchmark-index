@@ -25604,3 +25604,73 @@ benchmarks:
       - https://huggingface.co/api/spaces/Speech-Arena-2025/Speech-DF-Arena
       - https://arxiv.org/abs/2607.23961
       - https://arxiv.org/html/2607.23961v1#S4.SS1
+
+  - id: wavefake
+    name: WaveFake
+    full_name: "WaveFake: A Data Set to Facilitate Audio Deepfake Detection"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - vocoder_artifact_detection
+      - cross_generator_generalization
+      - cross_language_generalization
+      - generator_attribution
+    official:
+      paper: https://arxiv.org/abs/2111.02813
+      proceedings: https://proceedings.neurips.cc/paper_files/paper/2021/hash/c74d97b01eae257e44aa9d5bade97baf-Abstract-round2.html
+      repo: https://github.com/RUB-SysSec/WaveFake
+      dataset: https://zenodo.org/records/5642694
+    download:
+      access: public_ungated_large_archive
+      primary:
+        - https://zenodo.org/records/5642694
+        - https://github.com/RUB-SysSec/WaveFake
+      examples:
+        - 'scripts/download/wavefake.sh'
+        - 'WAVEFAKE_DOWNLOAD_ARCHIVE=1 scripts/download/wavefake.sh'
+        - 'WAVEFAKE_CLONE_TOOLKIT=1 scripts/download/wavefake.sh'
+      notes: >-
+        WaveFake is one bilingual audio-deepfake family containing 104,885
+        generated 16-bit PCM WAV clips, approximately 175 hours in total. Its
+        ten sample subsets cover six vocoder architectures and a complete TTS
+        pipeline: eight English distributions based on LJSpeech and two
+        Japanese distributions based on JSUT basic5000. The release does not
+        redistribute either bona fide source corpus. The paper evaluates
+        MFCC/LFCC GMM and RawNet2 baselines with EER, leave-one-generator-out,
+        cross-language/speaker, novel-text, and simulated phone-recording
+        protocols. The helper downloads the paper page, first-party
+        documentation, Zenodo metadata, license, and datasheet by default. The
+        28,918,626,084-byte audio ZIP and toolkit clone are separate opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Zenodo provides the generated-audio archive without an account or
+        application. Reproducing bona fide-versus-generated experiments also
+        requires obtaining LJSpeech and JSUT separately from their official
+        sources.
+    license:
+      data: CC-BY-SA-4.0
+      code: MIT
+      notes: >-
+        The Zenodo record and bundled dataset license declare CC BY-SA 4.0,
+        while the GitHub toolkit is MIT. The archive contains generated audio
+        only; LJSpeech and JSUT are not redistributed and retain their own
+        source-corpus, speaker, and attribution terms. Review the licenses and
+        usage conditions of the pretrained vocoders and TTS models when
+        regenerating or extending the benchmark.
+    sources:
+      - https://arxiv.org/abs/2111.02813
+      - https://export.arxiv.org/e-print/2111.02813
+      - https://proceedings.neurips.cc/paper_files/paper/2021/hash/c74d97b01eae257e44aa9d5bade97baf-Abstract-round2.html
+      - https://github.com/RUB-SysSec/WaveFake
+      - https://raw.githubusercontent.com/RUB-SysSec/WaveFake/main/README.md
+      - https://raw.githubusercontent.com/RUB-SysSec/WaveFake/main/LICENSE
+      - https://api.github.com/repos/RUB-SysSec/WaveFake
+      - https://zenodo.org/records/5642694
+      - https://zenodo.org/api/records/5642694
