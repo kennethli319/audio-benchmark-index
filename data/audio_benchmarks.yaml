@@ -9,6 +9,54 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  codecmos_accent:
+    paper: https://arxiv.org/abs/2603.14328
+    title: "CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents"
+    sections: 2 and 3
+    status: audited_registered_challenge_data_not_independently_released
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: CodecMOS-Accent
+        index_id: voicemos_challenge_2026
+        status: registration_required_as_voicemos_2026_track_3
+        protocol: >-
+          The paper evaluates 4,000 samples from nine neural-codec resynthesis
+          systems, 15 voice-cloning systems, and ground truth. The source
+          material covers 32 VCTK speakers and ten English accents. Its
+          listening test collected 19,600 ratings from 25 listeners for
+          naturalness, speaker similarity, and accent similarity, then removed
+          55 invalid samples and their 275 ratings from analysis.
+        note: >-
+          The paper says the dataset will be made public in the near future
+          but provides no dataset repository, archive, DOI, or access form.
+          The same 4,000-sample corpus is currently used as VoiceMOS Challenge
+          2026 Track 3 training data, available only to registered participants
+          through a CodaBench page sent by email. It therefore remains part of
+          the existing VoiceMOS 2026 family rather than a second counted entry.
+    release_audit:
+      standalone_audio_and_ratings: not_released
+      voicemos_2026_track_3_training_data: registration_required
+      voicemos_2026_evaluation_data: scheduled_for_2026_07_31
+      source_vctk_audio: public_with_registration_and_upstream_terms
+      objective_metric_models: public_third_party_models
+    license:
+      codecmos_accent_data: not_specified
+      paper: cc-by-4.0
+      voicemos_baseline_code: apache-2.0
+      source_vctk: cc-by-4.0
+    sources:
+      - https://arxiv.org/abs/2603.14328
+      - https://arxiv.org/html/2603.14328v1#S2
+      - https://arxiv.org/html/2603.14328v1#S3
+      - https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
+      - https://github.com/voicemos-challenge/vmc2026-baselines
+      - https://raw.githubusercontent.com/voicemos-challenge/vmc2026-baselines/main/README.md
+      - https://raw.githubusercontent.com/voicemos-challenge/vmc2026-baselines/main/LICENSE
+    note: >-
+      A CC BY 4.0 arXiv paper license does not license its underlying generated
+      audio or listener ratings. Do not infer public dataset access from the
+      paper's future-release statement or from public baseline code.
+
   facial_talker_vsdd_1k:
     paper: https://arxiv.org/abs/2607.24430
     title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
@@ -19285,6 +19333,7 @@ benchmarks:
       registration_form: https://forms.gle/L6YdkUf1PJdSSwLU7
       track_1_source_paper: https://arxiv.org/abs/2601.13531
       track_3_source_paper: https://arxiv.org/abs/2603.14328
+      track_3_source_paper_html: https://arxiv.org/html/2603.14328v1#S2
     download:
       access: registration_and_codabench_email_required
       primary:
@@ -19306,6 +19355,8 @@ benchmarks:
       - https://api.github.com/repos/voicemos-challenge/vmc2026-baselines
       - https://arxiv.org/abs/2601.13531
       - https://arxiv.org/abs/2603.14328
+      - https://arxiv.org/html/2603.14328v1#S2
+      - https://arxiv.org/html/2603.14328v1#S3
 
   - id: bvcc
     name: BVCC
