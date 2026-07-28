@@ -9,6 +9,97 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  omnivae_audio_video_evaluation:
+    paper: https://arxiv.org/abs/2607.23855
+    title: "OmniVAE: An Audio-Video VAE with Cross-Modal Alignment for Joint Generation"
+    sections: experimental setup, reconstruction evaluation, audio-video sync probing, and text-to-audio-video generation
+    status: audited_existing_public_families_and_partially_released_protocol
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: LibriSpeech test-clean
+        index_id: librispeech
+        status: existing_public_family
+        protocol: >-
+          Evaluate speech reconstruction with speaker similarity, STOI,
+          narrow-band PESQ, and wide-band PESQ.
+      - cited_as: AudioSet
+        index_id: audioset
+        status: existing_public_family
+        protocol: >-
+          Evaluate general-audio reconstruction with mel loss, STFT loss, and
+          ViSQOL. AudioSet is also incorporated into the paper's approximately
+          23-million-clip training corpus.
+      - cited_as: MUSDB18
+        index_id: musdb18
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Evaluate music reconstruction with mel loss, STFT loss, and ViSQOL.
+      - cited_as: VGGSound-Sparse
+        index_id: vggsound
+        status: existing_public_source_family_with_derived_protocol
+        protocol: >-
+          Follow the Synchformer temporal-offset probe on sparse, temporally
+          localizable VGGSound events: shift audio in 0.2-second increments,
+          classify 21 offsets from minus two to plus two seconds, and report
+          top-1, top-5, and top-1 accuracy with one-bin tolerance.
+        note: >-
+          The paper and release do not present VGGSound-Sparse as a new
+          independently licensed audio corpus. It remains a derived evaluation
+          subset and protocol over the existing VGGSound family.
+      - cited_as: Verse-Bench
+        index_id: null
+        status: public_text_manifest_with_reference_media_withheld
+        protocol: >-
+          Evaluate text-to-audio-video generation on 205 image-sourced
+          prompts, 295 video-sourced prompts, and 100 TED-talk prompts. OmniVAE
+          additionally rewrites the third subset for closer face framing, so
+          its lip-sync results are not directly comparable with evaluations
+          using the original prompts.
+        note: >-
+          The OmniVAE model repository publishes an 800-row text-only manifest,
+          including the original subsets and two rewritten Set3 variants, but
+          intentionally omits first-frame paths, reference images, and other
+          optional reference assets. This audit does not count the manifest as
+          a separately complete public audio benchmark family.
+    release_audit:
+      paper_code_and_model_checkpoints: public_ungated
+      source_reconstruction_families: existing_public_or_restricted_as_indexed
+      vggsound_sparse_source_audio: existing_vggsound_access_path
+      verse_bench_text_only_manifest: public_ungated
+      verse_bench_reference_media: withheld_from_omnivae_release
+      paper_23m_training_corpus_and_captions: not_released
+      paper_generated_outputs_and_item_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      code: Apache-2.0
+      model_bundle: not_declared_in_hugging_face_metadata
+      evaluation_data: source_specific_terms_apply
+      note: >-
+        The GitHub Apache 2.0 license covers repository code, while its README
+        says bundled third-party evaluation components retain their original
+        licenses. It does not override LibriSpeech, AudioSet, MUSDB18,
+        VGGSound, TED, image, or web-video rights, and the Hugging Face model
+        card exposes no separate dataset or model license.
+    sources:
+      - https://arxiv.org/abs/2607.23855
+      - https://export.arxiv.org/e-print/2607.23855
+      - https://github.com/OpenMOSS/OmniVAE
+      - https://raw.githubusercontent.com/OpenMOSS/OmniVAE/main/README.md
+      - https://raw.githubusercontent.com/OpenMOSS/OmniVAE/main/LICENSE
+      - https://raw.githubusercontent.com/OpenMOSS/OmniVAE/main/docs/evaluation.md
+      - https://huggingface.co/OpenMOSS-Team/OmniVAE
+      - https://huggingface.co/api/models/OpenMOSS-Team/OmniVAE
+      - https://huggingface.co/OpenMOSS-Team/OmniVAE/raw/main/eval/data/t2av/versebench_minimal/README.md
+      - https://arxiv.org/abs/2509.06155
+      - https://arxiv.org/abs/2409.20448
+      - https://www.robots.ox.ac.uk/~vgg/data/vggsound/
+    note: >-
+      OmniVAE is a model and evaluation study rather than a newly released
+      audio dataset. Recording its exact mappings prevents reconstruction
+      sets, the VGGSound-derived sync probe, a partial Verse-Bench manifest,
+      and the unreleased training corpus from inflating the benchmark-family
+      count.
+
   multimodal_domain_generalization_depression_detection:
     paper: https://arxiv.org/abs/2607.22794
     title: "Multimodal Domain Generalization for Depression Detection: An Attention-Based BiLSTM Network with Domain-Adversarial Training"
