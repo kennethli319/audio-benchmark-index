@@ -105,6 +105,7 @@ scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/spearbench.sh
+scripts/download/stancebench.sh
 scripts/download/fleurs.sh
 scripts/download/omnilingual_asr_corpus.sh
 scripts/download/voicecodebench.sh
@@ -930,6 +931,10 @@ EARNINGS25_ACK_AUDIO_TERMS=1 EARNINGS25_DOWNLOAD_ARCHIVE=1 scripts/download/earn
 
 # Indic DiarBench downloads official paper and dataset metadata by default. The approximately 30.3 GB HF snapshot is opt-in.
 INDIC_DIARBENCH_DOWNLOAD_HF=1 scripts/download/indic_diarbench.sh
+
+# StanceBench downloads official docs and lightweight stance definitions by default.
+# The 9.8k-row interaction mapping is opt-in; obtain Seamless Interaction audio separately.
+STANCEBENCH_DOWNLOAD_INTERACTION_MAP=1 scripts/download/stancebench.sh
 
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh

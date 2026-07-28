@@ -26615,3 +26615,74 @@ benchmarks:
       - https://huggingface.co/datasets/tanABBCC/VABench_I2AV/raw/main/README.md
       - https://huggingface.co/api/datasets/tanABBCC/VABench_I2AV
       - https://huggingface.co/api/datasets/tanABBCC/VABENCH_CACHE_DIR
+
+  - id: stancebench
+    name: StanceBench
+    full_name: "StanceBench: A Benchmark for Audio LLM-Based Interpersonal Stance Evaluation from Speech"
+    qwen_cited_as: null
+    qwen_bucket: end_to_end_speech_dialogue
+    category: end_to_end_speech_dialogue
+    tasks:
+      - interpersonal_stance_evaluation
+      - audio_llm_judge_evaluation
+      - conversational_speech_understanding
+      - paralinguistic_understanding
+      - interaction_context_evaluation
+      - judge_robustness_evaluation
+    official:
+      paper: https://arxiv.org/abs/2607.22658
+      repo: https://github.com/YuzheWangjhu/StanceBench
+      source_dataset: https://huggingface.co/datasets/facebook/seamless-interaction
+    download:
+      access: public_protocol_and_metadata_with_separate_public_source_audio
+      primary:
+        - https://github.com/YuzheWangjhu/StanceBench
+        - https://huggingface.co/datasets/facebook/seamless-interaction
+      examples:
+        - 'scripts/download/stancebench.sh'
+        - 'STANCEBENCH_DOWNLOAD_INTERACTION_MAP=1 scripts/download/stancebench.sh'
+      notes: >-
+        StanceBench is a distinct evaluation protocol derived from the
+        Improvised subset of Seamless Interaction, not a second release of its
+        audio. The repository provides nine stance definitions, role/category
+        mappings, a 9,817-row conversation mapping, clip-construction and model
+        evaluation code, and analysis tooling. S0-S5 evaluate single-speaker
+        clips; S6-S8 evaluate a target response with partner context. Safe
+        defaults fetch the paper, repository documentation, current license,
+        questions, and role mappings. The approximately 8.8 MB interaction
+        mapping is opt-in, and source audio must be obtained separately from
+        Meta's official release.
+    access:
+      status: public_metadata_and_protocol_requires_separate_public_source_audio
+      registration_required: false
+      notes: >-
+        Benchmark metadata and code are public and ungated. Running the
+        benchmark requires the separately indexed Seamless Interaction
+        Improvised audio. Intended role prompts are weak labels rather than
+        independently established perceptual ground truth. The paper reports
+        human correlation on a small subset, but the repository says those
+        human-evaluation materials are not redistributed.
+    license:
+      data: MIT_for_bundled_benchmark_metadata
+      code: MIT
+      source_audio: CC-BY-NC-4.0
+      human_evaluation_materials: not_released
+      notes: >-
+        The repository currently contains an MIT LICENSE covering its software
+        and bundled materials, although its README still says the project
+        license is pending. Seamless Interaction audio remains under Meta's
+        CC BY-NC 4.0 terms and is not redistributed. Treat the current LICENSE
+        file as authoritative for the repository while preserving the
+        upstream noncommercial restriction for source audio.
+    sources:
+      - https://arxiv.org/abs/2607.22658
+      - https://arxiv.org/html/2607.22658v1#S2.SS1
+      - https://arxiv.org/html/2607.22658v1#S3
+      - https://github.com/YuzheWangjhu/StanceBench
+      - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/README.md
+      - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/LICENSE
+      - https://api.github.com/repos/YuzheWangjhu/StanceBench
+      - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/stancebench/metadata/questions_main.json
+      - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/stancebench/metadata/category_roles.csv
+      - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/stancebench/metadata/interactions_role_ABmapped.csv
+      - https://huggingface.co/datasets/facebook/seamless-interaction
