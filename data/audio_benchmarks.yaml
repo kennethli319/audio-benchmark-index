@@ -28339,3 +28339,78 @@ benchmarks:
       - https://api.github.com/repos/yongyizang/MSRKit
       - https://arxiv.org/abs/2607.11630
       - https://arxiv.org/html/2607.11630v1#S3.SS2
+
+  - id: singfox
+    name: SingFox
+    full_name: "SingFox: A Multi-Lingual Singfake Detection Corpus"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_deepfake_detection
+      - music_understanding
+    category: singing_voice_deepfake_detection
+    tasks:
+      - singing_voice_deepfake_detection
+      - multilingual_singfake_detection
+      - cross_dataset_generalization
+      - synthetic_source_verification
+      - open_set_source_rejection
+      - generator_attribution
+    official:
+      paper: https://arxiv.org/abs/2606.18985
+      repo: https://github.com/Arth-Shah/SingFox
+      dataset: https://doi.org/10.5281/zenodo.20691932
+      models: https://www.kaggle.com/datasets/artharking/pytorch-models-singfox/data
+    download:
+      access: request_restricted
+      primary:
+        - https://doi.org/10.5281/zenodo.20691932
+        - https://github.com/Arth-Shah/SingFox
+      examples:
+        - 'scripts/download/singfox.sh'
+      notes: >-
+        SingFox is one multilingual singing-deepfake benchmark family with
+        six related tracks, not six independent dataset releases. T1 covers
+        14 widely spoken non-Indic languages; T2 covers six Indic languages;
+        T3 evaluates five music types; T4 combines T1 and T2 as the recommended
+        20-language global evaluation; T5 mixes real and fake vocals and
+        instruments as alternative-fake conditions; and T6 defines closed-set
+        and open-set source-verification trials over T4. The paper reports
+        113,802 clips, more than 126.32 hours, 20 languages, and about 1,150
+        singers across the family. Track totals overlap because T4 combines
+        T1 and T2 and T6 reuses T4 test material. The helper saves the paper,
+        repository documentation/API metadata, and Zenodo record metadata,
+        then prints the owner-request steps; it cannot fetch the restricted
+        audio.
+    access:
+      status: request_restricted
+      registration_required: true
+      notes: >-
+        The official Zenodo record has no downloadable files and marks the
+        corpus restricted. Its description directs requesters to obtain,
+        complete, and sign documentation supplied by the authors before
+        receiving access. The public GitHub repository provides dataset
+        construction scripts, and Kaggle hosts trained PyTorch models, but
+        neither location is a public corpus download.
+    license:
+      data: not_specified_request_restricted_with_upstream_media_terms
+      code: not_specified
+      notes: >-
+        The Zenodo record does not declare a reusable data license, and the
+        GitHub repository has no LICENSE file or GitHub-detected license.
+        The arXiv manuscript is CC BY-NC-ND 4.0, which licenses the paper
+        rather than the corpus. SingFox incorporates real singing and source
+        material from multiple upstream datasets and generated outputs from
+        several models; access approval does not by itself grant
+        redistribution or commercial-use rights. Review the signed corpus
+        documentation and every upstream source and model term before use.
+    sources:
+      - https://arxiv.org/abs/2606.18985
+      - https://arxiv.org/html/2606.18985v1#S2
+      - https://arxiv.org/html/2606.18985v1#S2.SS3
+      - https://arxiv.org/html/2606.18985v1#S3
+      - https://github.com/Arth-Shah/SingFox
+      - https://raw.githubusercontent.com/Arth-Shah/SingFox/main/README.md
+      - https://api.github.com/repos/Arth-Shah/SingFox
+      - https://doi.org/10.5281/zenodo.20691932
+      - https://zenodo.org/api/records/20691932
+      - https://www.kaggle.com/datasets/artharking/pytorch-models-singfox/data

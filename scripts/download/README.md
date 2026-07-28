@@ -418,6 +418,7 @@ IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
 OMNIVIDEOBENCH_DOWNLOAD_HF=1 scripts/download/omnivideobench.sh
 LVOMNIBENCH_DOWNLOAD_HF=1 scripts/download/lvomnibench.sh
 SPOOFCELEB_ACK_TERMS=1 SPOOFCELEB_DOWNLOAD_HF=1 scripts/download/spoofceleb.sh
+scripts/download/singfox.sh
 ```
 
 Without the required environment variables, they print the manual access steps
