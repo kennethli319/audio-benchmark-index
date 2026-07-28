@@ -304,6 +304,7 @@ scripts/download/nsynth.sh
 scripts/download/surge_pitch.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
+scripts/download/msrbench.sh
 scripts/download/dsd100.sh
 scripts/download/medleydb.sh
 scripts/download/slakh2100.sh
@@ -1475,6 +1476,12 @@ MAESTRO_BASE_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.
 # MUSDB18 saves official pages by default. Large archives require terms acknowledgement and opt-in.
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
+
+# MSRBench saves official documentation and metadata by default. Select one
+# large CC BY-NC 4.0 instrument ZIP explicitly; the full Hub repo is ~28.4 GB.
+MSRBENCH_STEM=Vocals scripts/download/msrbench.sh
+MSRBENCH_STEM="Orchestral Elements" scripts/download/msrbench.sh
+MSRBENCH_CLONE_TOOLKIT=1 scripts/download/msrbench.sh
 
 # Slakh2100 downloads the official page and slakh-utils README/LICENSE by default.
 SLAKH_CHECK_ZENODO=1 scripts/download/slakh2100.sh

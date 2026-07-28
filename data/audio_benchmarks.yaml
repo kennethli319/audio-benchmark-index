@@ -1488,6 +1488,70 @@ paper_audits:
       noncommercial terms and remain the only counted families from this
       paper.
 
+  teaching_speech_enhancement_models_to_sing:
+    paper: https://arxiv.org/abs/2607.11630
+    title: "Teaching Speech Enhancement Models to Sing: Domain Adaptation from Speech Enhancement to Singing Voice Separation"
+    sections: 3.1-3.5 and 4
+    status: audited_new_public_family_and_existing_public_families
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: MUSDB18-HQ and GenSVS
+        index_id: musdb18
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Fine-tune on MUSDB18-HQ plus MoisesDB, then evaluate singing-voice
+          separation on the five-second MUSDB18-HQ test excerpts defined by
+          GenSVS using SDR, MERT-MSE, and multi-resolution loss.
+        note: >-
+          GenSVS is an evaluation package over the existing MUSDB18-HQ test
+          material, not a separately released audio dataset family.
+      - cited_as: MoisesDB
+        index_id: moisesdb
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Combine MoisesDB with MUSDB18-HQ as labeled multi-stem adaptation
+          data for singing-voice separation.
+      - cited_as: EARS-WHAM
+        index_id: ears
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Evaluate preservation of speech-enhancement capability on the first
+          five seconds of each EARS-WHAM test item with SI-SDR, PESQ, and
+          DistillMOS.
+      - cited_as: MSRBench
+        index_id: msrbench
+        status: new_public_ungated_noncommercial_family
+        protocol: >-
+          Evaluate out-of-domain singing-voice restoration with SDR, MERT-MSE,
+          and multi-resolution loss after EBU R128 loudness matching between
+          predictions and targets.
+    release_audit:
+      musdb18_hq_moisesdb_ears_and_msrbench: public_under_separate_noncommercial_terms
+      gensvs_evaluation_code: public_ungated
+      paper_models_and_results: public_demo_and_report
+      new_dataset_from_domain_adaptation_paper: none_claimed
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      msrbench: CC-BY-NC-4.0
+      msrkit: MIT
+      other_datasets: mixed_noncommercial_upstream_terms
+    sources:
+      - https://arxiv.org/abs/2607.11630
+      - https://arxiv.org/html/2607.11630v1#S3.SS2
+      - https://arxiv.org/html/2607.11630v1#S3.SS5
+      - https://arxiv.org/html/2607.11630v1#S4
+      - https://arxiv.org/abs/2510.10995
+      - https://arxiv.org/html/2510.10995v1
+      - https://msrchallenge.com/
+      - https://huggingface.co/datasets/yongyizang/MSRBench
+      - https://github.com/yongyizang/MSRKit
+    note: >-
+      The domain-adaptation study introduces no new dataset. Its reusable
+      evaluation sources map to three existing families plus newly indexed
+      MSRBench. The paper-specific five-second selections, loudness matching,
+      and checkpoint-selection procedure are protocols rather than additional
+      benchmark families.
+
   finnaffect_release_status:
     paper: https://arxiv.org/abs/2607.24155
     title: "Looking for Affect in Spontaneous Finnish Speech through Linguistic Interpretability"
@@ -28205,3 +28269,73 @@ benchmarks:
       - https://huggingface.co/api/datasets/WueNLP/belebele-fleurs
       - https://arxiv.org/abs/2607.22100
       - https://arxiv.org/html/2607.22100v1#S4.SS1
+
+  - id: msrbench
+    name: MSRBench
+    full_name: "MSRBench: A Benchmarking Dataset for Music Source Restoration"
+    qwen_cited_as: null
+    qwen_bucket: music_source_separation
+    category: music_source_separation
+    tasks:
+      - music_source_restoration
+      - music_source_separation
+      - singing_voice_restoration
+      - robust_audio_restoration
+      - audio_codec_robustness
+    official:
+      paper: https://arxiv.org/abs/2510.10995
+      challenge: https://msrchallenge.com/
+      dataset: https://huggingface.co/datasets/yongyizang/MSRBench
+      repo: https://github.com/yongyizang/MSRKit
+      baseline_models: https://huggingface.co/yongyizang/MSRChallengeBaseline
+      recent_evaluation: https://arxiv.org/abs/2607.11630
+    download:
+      access: public_ungated_large_noncommercial
+      primary:
+        - https://huggingface.co/datasets/yongyizang/MSRBench
+        - https://github.com/yongyizang/MSRKit
+      examples:
+        - 'scripts/download/msrbench.sh'
+        - 'MSRBENCH_CLONE_TOOLKIT=1 scripts/download/msrbench.sh'
+        - 'MSRBENCH_STEM=Vocals scripts/download/msrbench.sh'
+      notes: >-
+        MSRBench is one public benchmark family and the validation set for the
+        MSR Challenge 2025. It contains 250 professionally mixed clips and
+        unprocessed targets for each of eight instrument classes. Every item
+        has the original mixture plus 12 analog, environmental, conventional
+        codec, and neural-codec degradation conditions. The Hub repository is
+        approximately 28.4 GB and the card reports 28.7 GB after extraction.
+        The helper downloads only official pages, cards, API metadata, paper
+        metadata, and repository documentation by default. Set
+        MSRBENCH_STEM to exactly one available class to fetch its ZIP; cloning
+        the lightweight MIT toolkit is a separate opt-in.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        The Hugging Face dataset is directly downloadable without gating.
+        Individual stems are packaged as large ZIP archives, so the helper
+        requires an explicit class selection and never fetches the complete
+        snapshot by default.
+    license:
+      data: CC-BY-NC-4.0
+      code: MIT
+      notes: >-
+        The paper and Hugging Face card declare CC BY-NC 4.0 for MSRBench, so
+        commercial use is not authorized by this release. The MSRKit
+        repository's MIT license covers the evaluation and baseline code, not
+        the benchmark audio. Preserve attribution and review any third-party
+        degradation-tool terms separately.
+    sources:
+      - https://arxiv.org/abs/2510.10995
+      - https://arxiv.org/html/2510.10995v1
+      - https://msrchallenge.com/
+      - https://huggingface.co/datasets/yongyizang/MSRBench
+      - https://huggingface.co/datasets/yongyizang/MSRBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/yongyizang/MSRBench
+      - https://github.com/yongyizang/MSRKit
+      - https://raw.githubusercontent.com/yongyizang/MSRKit/main/README.md
+      - https://raw.githubusercontent.com/yongyizang/MSRKit/main/LICENSE
+      - https://api.github.com/repos/yongyizang/MSRKit
+      - https://arxiv.org/abs/2607.11630
+      - https://arxiv.org/html/2607.11630v1#S3.SS2
