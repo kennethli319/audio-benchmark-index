@@ -9,6 +9,64 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  steer_dyadic_avatar_evaluation:
+    paper: https://arxiv.org/abs/2607.23840
+    title: "STEER: Steerable Dyadic Head Avatars"
+    sections: 3.1, 4.1, and appendix G
+    status: audited_partial_release_not_indexed
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: filtered RealTalk corpus
+        index_id: realtalk
+        status: existing_source_family_with_unreleased_derived_benchmark
+        protocol: >-
+          Train on 9,790 filtered RealTalk clips and evaluate on a held-out
+          765-clip split partitioned into Speak (170), Listen (330), and Mixed
+          (265) conversational-role subsets. Each method consumes both
+          speakers' audio plus partner motion and predicts target 61-D FLAME
+          motion. Evaluation covers lip fidelity, motion realism and dynamics,
+          diversity, and partner-conditioned reactivity.
+        note: >-
+          The paper derives per-frame gaze, head-rhythm, facial-expression,
+          action-unit, motion, and audio features from RealTalk. The official
+          repository does not contain the complete 10,555-clip filtered
+          manifest, train/test assignments, pseudo-labels, tracked motion, or
+          metric implementation needed to reproduce the reported benchmark.
+    release_audit:
+      inference_code: public_cc_by_nc_4_0
+      checkpoints: link_tba
+      packaged_examples: six_held_out_realtalk_derived_feature_examples
+      source_video_frames: not_redistributed
+      complete_filtered_manifest_and_splits: not_released
+      complete_behavior_annotations_and_tracked_features: not_released
+      training_code_and_evaluation_code: promised_not_currently_released
+      paper_predictions_and_per_clip_scores: not_released
+    license:
+      paper: cc_by_nc_sa_4_0
+      repository_code_checkpoints_and_examples: cc_by_nc_4_0
+      realtalk_source_videos: not_redistributed_upstream_terms_apply
+      flame_assets: separate_registration_and_license_required
+      complete_derived_benchmark: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.23840
+      - https://arxiv.org/html/2607.23840v1#S3.SS1
+      - https://arxiv.org/html/2607.23840v1#S4.SS1
+      - https://arxiv.org/html/2607.23840v1#A7
+      - https://github.com/Kartik-Teotia/STEER
+      - https://raw.githubusercontent.com/Kartik-Teotia/STEER/main/README.md
+      - https://raw.githubusercontent.com/Kartik-Teotia/STEER/main/LICENSE
+      - https://api.github.com/repos/Kartik-Teotia/STEER
+      - https://api.github.com/repos/Kartik-Teotia/STEER/git/trees/main?recursive=1
+      - https://kartik-teotia.github.io/STEER/
+    note: >-
+      STEER is a model and paper-specific protocol over an existing RealTalk
+      source family, not a separately released dataset. The repository makes
+      inference code and six derived examples public, while checkpoint links
+      remain TBA and the complete annotations, splits, training/evaluation
+      code, and results are absent. This audit preserves that distinction
+      without adding a duplicate family, changing the index count, or adding
+      a download helper.
+
   omniscope_audio_video_evaluation:
     paper: https://arxiv.org/abs/2607.23193
     title: "OmniScope: Modality-Decoupled Token Compression for Omnimodal Large Language Models"
