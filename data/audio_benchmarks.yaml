@@ -9,6 +9,83 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  s3bench_and_multievent_temporal:
+    paper: https://arxiv.org/abs/2607.13408
+    title: "Improving Text-to-Audio Instruction Following via Fine-Grained Feedback from Audio-Aware Large Language Models"
+    sections: 3.2, 3.5, 4.1, and 5.2
+    status: audited_unreleased_paper_specific_generation_benchmarks
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Sound Scene Story Benchmark (S3Bench)
+        status: paper_specific_prompt_set_not_released
+        protocol: >-
+          Evaluate text-to-audio event completeness, temporal ordering, and
+          their joint exact match on 1,200 narrative instructions. The paper
+          reports 300 two-event, 500 three-event, and 200 four-event cases,
+          plus 200 cases that explicitly involve overlapping events. Event
+          labels are sampled from a vocabulary derived from ESC-50 and
+          AudioCaps, and an LLM generates the narrative instructions from
+          manually designed in-context examples.
+        note: >-
+          The paper does not publish the event-label vocabulary, 1,200
+          prompts, event assignments, temporal annotations, generation
+          outputs, judge prompts, or per-item results. The public project
+          page contains selected independently regenerated demonstrations and
+          aggregate metrics, not the benchmark package.
+      - cited_as: MultiEvent-Temporal-2/3/4
+        index_id: esc_50
+        status: unreleased_derived_evaluation_sets
+        protocol: >-
+          Concatenate ESC-50 clips into controlled sequences containing two,
+          three, or four sound events, then evaluate event existence and
+          temporal order. The corresponding text instructions are also used
+          as generation prompts.
+        note: >-
+          ESC-50 is public and indexed separately, but the paper does not
+          release selected clips, concatenation assignments, ordering
+          templates, prompts, random seeds, generated outputs, or item-level
+          scores for these derived sets.
+      - cited_as: AudioCaps-test instruction-following evaluation
+        index_id: audiocaps
+        status: existing_public_source_with_unreleased_paper_specific_protocol
+        protocol: >-
+          Use AudioCaps test captions as text-to-audio prompts and ask an
+          audio-language-model judge binary questions about target-event
+          presence; report exact match alongside FAD, FD, and CLAPScore.
+        note: >-
+          AudioCaps is public and indexed separately. The paper-specific
+          target-event mapping, judge questions, generated candidate audio,
+          human-verification sample, and per-item results are not released.
+    release_audit:
+      paper_and_aggregate_results: public
+      selected_independently_regenerated_web_examples: public
+      s3bench_prompts_and_annotations: not_released
+      multievent_temporal_recipes_and_manifests: not_released
+      preference_training_pairs: not_released
+      evaluation_and_training_code: not_released
+      model_checkpoints: not_released
+      generated_evaluation_audio_and_per_item_results: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      project_page_examples: no_standalone_license_stated
+      benchmark_prompts_annotations_and_code: not_specified_unreleased
+      source_audio: esc_50_and_audiocaps_upstream_terms_apply
+    sources:
+      - https://arxiv.org/abs/2607.13408
+      - https://arxiv.org/html/2607.13408v2#S3.SS2
+      - https://arxiv.org/html/2607.13408v2#S3.SS5
+      - https://arxiv.org/html/2607.13408v2#S4.SS1
+      - https://arxiv.org/html/2607.13408v2#S5.SS2
+      - https://kuan2jiu99.github.io/allm-feedback-tta/
+    note: >-
+      S3Bench and MultiEvent-Temporal are evaluation protocols introduced by
+      the paper, but neither is currently a reproducible public benchmark
+      release. The only linked public page explicitly describes itself as an
+      independently built project page and comments out its code link; the
+      corresponding GitHub repository endpoint returned 404 at verification
+      time. This audit preserves the reported protocols and release gap
+      without adding a benchmark family, helper, or count increase.
+
   pathrir_simulation_evaluation:
     paper: https://arxiv.org/abs/2607.23293
     title: "PathRIR: Physics-Guided Acoustic Path Selection and Late-Tail Compensation for Fast Room Impulse Response Simulation"
