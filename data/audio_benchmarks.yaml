@@ -9,6 +9,71 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  output_based_multi_microphone_speech_enhancement:
+    paper: https://arxiv.org/abs/2607.12529
+    title: "Listen first: Output-Based Multi-Microphone Speech Enhancement"
+    sections: 4.1-4.3 and 5
+    status: audited_existing_public_sources_unreleased_derived_evaluation
+    evaluated_material:
+      - cited_as: LibriSpeech
+        index_id: librispeech
+        status: public_source_corpus
+        protocol: >-
+          Clean speech signals are selected from LibriSpeech and convolved
+          into simulated hearing-aid acoustic scenes.
+      - cited_as: ESC-50 10-class point-noise subset
+        index_id: esc_50
+        status: public_source_corpus_paper_selection_unreleased
+        protocol: >-
+          Point noises come from ten spatially localized ESC-50 classes. The
+          paper does not publish the selected clips or a subset manifest.
+      - cited_as: OTIMP
+        index_id: null
+        status: cited_hrir_dataset_without_public_artifact_link
+        protocol: >-
+          Hearing-aid microphone signals use late-reverberation-removed HRIRs
+          for 46 individuals, sampled at 48 azimuths and zero-degree elevation.
+          The cited 2019 article is public bibliographic provenance but neither
+          it nor this paper supplies an official dataset download interface.
+      - cited_as: simulated VAD training and beamforming evaluation datasets
+        index_id: null
+        status: paper_derived_unreleased
+        protocol: >-
+          Section 4 constructs a one-hour VAD dataset with a 90/10 split and a
+          separate two-hour beamforming dataset split equally into validation
+          and test. Evaluation reports SNR, ESTOI, and PESQ, but the exact
+          source selections, random seeds, mixtures, HRIR package, split
+          manifests, model, and generated signals are not released.
+    release_audit:
+      librispeech: public_ungated
+      esc_50: public_ungated_noncommercial
+      otimp_download_interface: not_identified
+      derived_training_and_evaluation_data: not_specified_unreleased
+      code_and_model: not_specified_unreleased
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      librispeech: CC-BY-4.0
+      esc_50: CC-BY-NC-3.0
+      otimp_and_derived_artifacts: not_specified
+      note: >-
+        Rights for the indexed source corpora do not establish redistribution
+        terms for the paper's derived mixtures or OTIMP HRIRs.
+    sources:
+      - https://arxiv.org/abs/2607.12529
+      - https://arxiv.org/html/2607.12529v1#S4.SS1
+      - https://arxiv.org/html/2607.12529v1#S4.SS2
+      - https://arxiv.org/html/2607.12529v1#S4.SS3
+      - https://arxiv.org/html/2607.12529v1#S5
+      - https://www.openslr.org/12
+      - https://github.com/karolpiczak/ESC-50
+      - https://doi.org/10.1121/1.5102173
+    note: >-
+      This work defines a paper-specific simulated experiment, not a named
+      public benchmark release. Existing LibriSpeech and ESC-50 entries cover
+      its reusable public source corpora. The audit records the unreleased
+      subset and mixture protocol without adding a benchmark row, count,
+      download helper, or unsupported OTIMP download link.
+
   bring_music_the_horizon:
     paper: https://arxiv.org/abs/2607.13471
     title: "Bring Music The Horizon: Music-Driven 360-degree Video Generation"
