@@ -175,6 +175,7 @@ scripts/download/vggsound.sh
 scripts/download/ave.sh
 scripts/download/starss22.sh
 scripts/download/starss23.sh
+scripts/download/audiblelight_eigenmike32.sh
 scripts/download/dcase2025_stereo_seld.sh
 scripts/download/locata.sh
 scripts/download/spatial_librispeech.sh
@@ -711,6 +712,10 @@ STORYAD_QA_CLONE_REPO=1 scripts/download/storyad_qa.sh
 # LOCATA downloads official pages, docs, Zenodo metadata, and tool READMEs by default.
 # The public corpus archives total about 19.3 GB and remain on the official Zenodo record.
 LOCATA_CLONE_TOOLS=1 scripts/download/locata.sh
+
+# AudibleLight downloads official cards and release metadata by default. Its
+# approximately 57.1 GB Hugging Face repository snapshot is opt-in.
+AUDIBLELIGHT_DOWNLOAD_HF=1 scripts/download/audiblelight_eigenmike32.sh
 
 # Spatial LibriSpeech downloads official docs by default. Its ~365 MiB metadata
 # and individual ambisonic speech/noise samples are separate opt-ins.

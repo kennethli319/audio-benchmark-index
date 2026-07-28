@@ -9,6 +9,63 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  array_upsampling_latent_acoustic_mapping:
+    paper: https://arxiv.org/abs/2607.24463
+    title: "Mind the Microphone Gap: Benchmarking Array Upsampling Strategies for Latent Acoustic Mapping"
+    sections: 3.1-3.3
+    status: audited_new_public_family_and_existing_public_families
+    last_verified: 2026-07-27
+    evaluated_sets:
+      - cited_as: AudibleLight
+        index_id: audiblelight_eigenmike32
+        status: public_ungated
+        protocol: >-
+          Train on synthetic 32-channel Eigenmike scenes, validate through a
+          scene-level split, and evaluate localization error and recall on
+          held-out AudibleLight scenes. The benchmark compares six learned
+          4-to-32-channel CSM upsamplers plus bicubic interpolation under
+          distinct, aligned, and end-to-end training strategies.
+      - cited_as: LOCATA tasks 1-4
+        index_id: locata
+        status: public
+      - cited_as: STARSS23
+        index_id: starss23
+        status: public
+    release_audit:
+      audiblelight_data: public_ungated_hugging_face
+      benchmark_code_and_outputs: public_ungated_zenodo
+      locata_and_starss23: existing_public_families
+      paper_specific_models: public_release_archive
+    license:
+      audiblelight_data: ambiguous_generic_cc_tag_with_upstream_terms
+      benchmark_code_archive: cc-by-4.0
+      generator_archive: cc-by-4.0
+      foreground_audio: esc_50_cc_by_nc_3_0_and_source_attribution_apply
+      environment_meshes: gibson_database_terms_apply
+    sources:
+      - https://arxiv.org/abs/2607.24463
+      - https://arxiv.org/html/2607.24463v1#S3
+      - https://doi.org/10.5281/zenodo.19735049
+      - https://zenodo.org/api/records/19735049
+      - https://github.com/PhilippXXY/upsampler-lam-benchmarking
+      - https://huggingface.co/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset
+      - https://huggingface.co/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset/raw/main/README.md
+      - https://doi.org/10.5281/zenodo.18607188
+      - https://github.com/PhilippXXY/audiblelight-dataset-generator
+    note: >-
+      AudibleLight is added as one public synthetic spatial-audio family.
+      LOCATA and STARSS23 remain their existing families. EigenScape is used
+      for training rather than as a paper test set, so this audit does not
+      create a paper-specific EigenScape benchmark alias. The paper and
+      official repository disagree on the AudibleLight validation wording:
+      the paper reports an 0.89/0.11 train/validation partition and a held-out
+      test set, while the current loader documentation describes a
+      deterministic scene-level train/validation/test split. The dataset card
+      claims 121 scenes (111 training and ten evaluation) and 570 minutes, but
+      the current Hub inventory instead exposes 560 train and 30 test
+      one-minute WAV files (590 capture-minutes). Reproductions should pin the
+      dataset revision, benchmark release v1.0.1, and its configuration.
+
   deepfake_news_fakeavceleb_evaluation:
     paper: https://arxiv.org/abs/2607.20579
     title: "Deepfake News Detection: A Multimodal Framework Integrating LipNet, DeepSpeech and ResNET for Enhanced Audio-Visual Analysis"
@@ -19983,6 +20040,71 @@ benchmarks:
       - https://github.com/sharathadavanne/seld-dcase2023
       - https://api.github.com/repos/sharathadavanne/seld-dcase2023
       - https://github.com/sony/audio-visual-seld-dcase2023
+
+  - id: audiblelight_eigenmike32
+    name: AudibleLight Eigenmike32
+    full_name: "AudibleLight Eigenmike32-5 DCASE-STARSS23 Dataset"
+    qwen_cited_as: null
+    qwen_bucket: spatial_audio
+    tasks:
+      - sound_source_localization
+      - acoustic_source_tracking
+      - spatial_audio_understanding
+      - microphone_array_upsampling
+      - cross_spectral_matrix_reconstruction
+    official:
+      dataset: https://huggingface.co/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset
+      dataset_doi: https://doi.org/10.57967/hf/7810
+      generator_repo: https://github.com/PhilippXXY/audiblelight-dataset-generator
+      generator_doi: https://doi.org/10.5281/zenodo.18607188
+      benchmark_repo: https://github.com/PhilippXXY/upsampler-lam-benchmarking
+      benchmark_release: https://doi.org/10.5281/zenodo.19735049
+      paper: https://arxiv.org/abs/2607.24463
+    download:
+      primary:
+        - https://huggingface.co/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset
+        - https://huggingface.co/api/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset
+        - https://doi.org/10.5281/zenodo.19735049
+        - https://github.com/PhilippXXY/upsampler-lam-benchmarking
+      examples:
+        - 'scripts/download/audiblelight_eigenmike32.sh'
+        - 'AUDIBLELIGHT_DOWNLOAD_HF=1 scripts/download/audiblelight_eigenmike32.sh'
+      notes: >-
+        The public, ungated card describes one-minute synthetic spatial scenes,
+        each rendered as five independent 32-channel Eigenmike captures at 24
+        kHz, with DCASE/STARSS23-format annotations using class label 0. Its
+        stated counts conflict: it claims 121 scenes (111 training and ten
+        evaluation) and 570 minutes, while the current Hub API inventory
+        exposes 560 train and 30 test WAV files, or 590 capture-minutes. The
+        helper downloads official cards, API records, paper metadata, and
+        benchmark documentation by default. The Hub API reports about 57.1 GB
+        of repository storage, so the audio snapshot requires
+        AUDIBLELIGHT_DOWNLOAD_HF=1.
+    license:
+      data: ambiguous-cc-tag-with-upstream-terms
+      code: CC-BY-4.0-release-archives
+      notes: >-
+        The Hugging Face card declares only the generic identifier "cc", which
+        does not identify a specific Creative Commons license. Foreground
+        events come from ESC-50, whose release is CC BY-NC 3.0, and simulated
+        environments use Gibson meshes under their own database terms. The
+        benchmark and generator Zenodo archives declare CC BY 4.0, but that
+        does not override incorporated-data restrictions. Review all upstream
+        terms before redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2607.24463
+      - https://arxiv.org/html/2607.24463v1#S3.SS1
+      - https://huggingface.co/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset
+      - https://huggingface.co/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset/raw/main/README.md
+      - https://huggingface.co/api/datasets/PhilippXXY/AudibleLight_Eigenmike32-5_DCASE-STARSS23_Dataset
+      - https://doi.org/10.57967/hf/7810
+      - https://zenodo.org/api/records/19735049
+      - https://github.com/PhilippXXY/upsampler-lam-benchmarking
+      - https://raw.githubusercontent.com/PhilippXXY/upsampler-lam-benchmarking/v1.0.1/README.md
+      - https://zenodo.org/api/records/18607188
+      - https://github.com/PhilippXXY/audiblelight-dataset-generator
+      - https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YDEPUT
+      - http://gibsonenv.stanford.edu/database/
 
   - id: dcase2025_stereo_seld
     name: DCASE2025 Task 3 Stereo SELD Dataset
