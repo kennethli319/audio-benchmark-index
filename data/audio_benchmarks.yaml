@@ -9,6 +9,59 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  revisiting_vocos_evaluation:
+    paper: https://arxiv.org/abs/2607.24323
+    title: "Revisiting Vocos: That Phasiness Business in Time-Frequency Neural Vocoding"
+    sections: 4.1 and 5.1
+    status: audited_existing_public_family_and_proprietary_listening_set
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: LibriTTS test-clean (D1)
+        index_id: libritts
+        status: existing_public_family
+        protocol: >-
+          The paper trains on the LibriTTS train-clean-100, train-clean-360,
+          and train-other-500 subsets, validates on dev-clean, and reports its
+          objective vocoder comparison on test-clean after resampling to
+          22.05 kHz. Reported measures include multi-resolution log-mel loss,
+          SCOREQ, voiced/unvoiced F1, periodicity RMSE, and log-spectral
+          convergence.
+      - cited_as: out-of-distribution German dataset (D2)
+        index_id: null
+        status: proprietary_not_released_as_benchmark
+        protocol: >-
+          D2 contains 20 proprietary German utterances from two speakers.
+          Objective results use D2, while the MUSHRA study asks 16 participants
+          to rate 14 of the 20 utterances.
+        note: >-
+          The accompanying official page streams reference and generated
+          stimuli for the 14 listening-test items, but neither the paper nor
+          page supplies a reusable source-dataset archive, item manifest,
+          transcript set, access procedure, or data license.
+    release_audit:
+      libritts_test_clean: public_ungated_openslr
+      proprietary_german_source_set: not_released
+      german_listening_test_stimuli: public_streaming_examples_only
+      listening_test_ratings_and_item_manifest: not_released
+      paper_code_and_checkpoints: not_identified
+    license:
+      libritts: cc-by-4.0
+      proprietary_german_source_set: not_specified
+      listening_test_stimuli: not_specified
+      paper: cc-by-nc-nd-4.0
+    sources:
+      - https://arxiv.org/abs/2607.24323
+      - https://arxiv.org/html/2607.24323v1#S4.SS1
+      - https://arxiv.org/html/2607.24323v1#S5.SS1
+      - https://audiolabs-erlangen.de/resources/NLUI/2026-IWAENC-vocoder
+      - https://www.openslr.org/60/
+    note: >-
+      This paper does not introduce a new public benchmark family. LibriTTS is
+      already indexed with its official OpenSLR access path. Public playback
+      of derived MUSHRA examples does not establish redistribution rights or
+      make the proprietary D2 source set a reproducible benchmark, so D2 is
+      documented only as an audit and is not added to the benchmark count.
+
   context_speech_bench:
     paper: https://arxiv.org/abs/2607.21943
     title: "Listen, Do Not Copy: Internalizing Audio-Grounded Scaffold Context for Robust Omni-Model Speech Understanding"
