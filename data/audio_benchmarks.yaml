@@ -9,6 +9,73 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speaker_identity_sensitivity_deepfake_detection:
+    paper: https://arxiv.org/abs/2607.21820
+    title: "Probing Speaker Identity Sensitivity in Audio Deepfake Detectors"
+    sections: 4.1-4.5 and 5
+    status: audited_existing_benchmarks_with_unreleased_diagnostic_artifacts
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: ASVspoof 2019 LA
+        index_id: asvspoof_2019
+        status: existing_public_family
+        protocol: >-
+          Evaluate AASIST and RawNet2 on all 71,237 logical-access evaluation
+          utterances, using prototypes formed from five enrollment utterances
+          for each of the 20 training speakers. Tune the Identity Sensitivity
+          Score perturbation strength on the 2019 LA development set and
+          compare score distributions for correct and incorrect predictions.
+        note: >-
+          The paper additionally selects the 250 highest-ISS and 250 lowest-ISS
+          correctly classified bona fide utterances per detector, converts
+          each with FreeVC toward a randomly selected target speaker, and
+          measures detector-score shifts. It does not release the selections,
+          target assignments, converted audio, ISS values, or predictions.
+      - cited_as: ASVspoof 2021 LA
+        index_id: asvspoof_2021
+        status: existing_public_family
+        protocol: >-
+          Evaluate the 2019-trained detectors zero-shot on all 181,566
+          logical-access evaluation utterances under telephone-channel and
+          codec shift, reporting EER, AUC, and ISS error-diagnostic results.
+        note: >-
+          ASVspoof 2021 LA is public and indexed separately. The paper does not
+          publish a new split, annotation layer, result manifest, or checkpoint
+          specific to this cross-dataset experiment.
+    release_audit:
+      paper_and_aggregate_results: public
+      source_asvspoof_2019_and_2021_la_data: public_existing_families
+      identity_sensitivity_score_implementation: not_released
+      rawnet2_trained_checkpoint: not_released
+      enrollment_utterance_selection_and_speaker_prototypes: not_released
+      freevc_source_target_assignments_and_converted_audio: not_released
+      per_utterance_scores_predictions_and_iss_values: not_released
+    license:
+      paper: CC-BY-4.0
+      asvspoof_2019: ODC-BY-1.0_with_component_terms
+      asvspoof_2021: mixed_ODC-BY_and_ODbL_with_component_terms
+      unreleased_artifacts: not_specified
+      note: >-
+        The paper's CC BY 4.0 license covers the publication, not the source
+        challenge audio or unreleased derived artifacts. Retain the separately
+        indexed ASVspoof database and component-source terms; no license can be
+        assigned to absent code, checkpoints, converted audio, or predictions.
+    sources:
+      - https://arxiv.org/abs/2607.21820
+      - https://arxiv.org/html/2607.21820v1#S4.SS1
+      - https://arxiv.org/html/2607.21820v1#S4.SS3
+      - https://arxiv.org/html/2607.21820v1#S4.SS4
+      - https://arxiv.org/html/2607.21820v1#S4.SS5
+      - https://arxiv.org/html/2607.21820v1#S5
+      - https://www.asvspoof.org/index2019.html
+      - https://www.asvspoof.org/index2021.html
+      - https://github.com/asvspoof-challenge/2021
+    note: >-
+      Identity Sensitivity Score is a paper-specific diagnostic protocol, not
+      a newly released benchmark family. This audit maps both evaluations to
+      the existing ASVspoof 2019 and 2021 families and records the missing
+      reproducibility artifacts without changing the benchmark or helper count.
+
   reflector_harmonic_retrieval:
     paper: https://arxiv.org/abs/2607.22413
     title: "Reflector: Arrangement-Aware Harmonic Retrieval for Sample-Based Composition"
