@@ -27358,3 +27358,86 @@ benchmarks:
       - https://api.github.com/repos/sp-uhh/ears_benchmark
       - https://arxiv.org/abs/2607.23846
       - https://export.arxiv.org/e-print/2607.23846
+
+  - id: fleurs_slu
+    name: Fleurs-SLU
+    full_name: "Fleurs-SLU: A Massively Multilingual Benchmark for Spoken Language Understanding"
+    qwen_cited_as: null
+    qwen_bucket:
+      - spoken_language_understanding
+      - automatic_speech_recognition
+      - speech_to_text_translation
+    category: spoken_language_understanding
+    tasks:
+      - multilingual_spoken_language_understanding
+      - spoken_topic_classification
+      - spoken_question_answering
+      - listening_comprehension
+      - multilingual_asr
+      - speech_to_text_translation
+      - long_form_asr
+    official:
+      paper: https://arxiv.org/abs/2501.06117
+      sib_fleurs_dataset: https://huggingface.co/datasets/WueNLP/sib-fleurs
+      belebele_fleurs_dataset: https://huggingface.co/datasets/WueNLP/belebele-fleurs
+      repo: https://github.com/fdschmidt93/fleurs-slu
+      recent_evaluation: https://arxiv.org/abs/2607.22100
+    download:
+      access: public_ungated_large
+      primary:
+        - https://huggingface.co/datasets/WueNLP/sib-fleurs
+        - https://huggingface.co/datasets/WueNLP/belebele-fleurs
+        - https://github.com/fdschmidt93/fleurs-slu
+      examples:
+        - 'scripts/download/fleurs_slu.sh'
+        - 'FLEURS_SLU_CLONE_REPO=1 scripts/download/fleurs_slu.sh'
+        - 'FLEURS_SLU_DATASET=sib FLEURS_SLU_CONFIG=eng_Latn scripts/download/fleurs_slu.sh'
+        - 'FLEURS_SLU_DATASET=belebele FLEURS_SLU_CONFIG=eng_Latn scripts/download/fleurs_slu.sh'
+      notes: >-
+        Fleurs-SLU is one benchmark family with two aligned public releases.
+        SIB-Fleurs maps FLEURS/FLORES utterances to seven SIB-200 topics for
+        topical classification in 102 languages (692 hours). Belebele-Fleurs
+        maps FLEURS speech to Belebele passages and questions for multilingual
+        listening comprehension in 92 languages (944 hours), and can also
+        support constructed long-form ASR. The Hugging Face API reports about
+        157.2 GB for SIB-Fleurs and 223.4 GB for Belebele-Fleurs. The helper
+        downloads only official cards, Hub metadata, paper metadata, and
+        repository documentation by default. A single explicit language-script
+        configuration can be fetched with FLEURS_SLU_DATASET and
+        FLEURS_SLU_CONFIG; it never requests the complete snapshots.
+        MEUSLI section 4.1 evaluates ASR, speech translation, and seven-topic
+        identification on five public SIB-Fleurs language subsets.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Both Hugging Face releases are directly accessible, but their hundreds
+        of gigabytes of audio-bearing Parquet files make per-configuration
+        downloads preferable. The family reuses source recordings and text
+        rather than publishing newly recorded speech.
+    license:
+      data: CC-BY-SA-4.0_as_declared_on_hugging_face
+      code: not_specified
+      upstream: FLEURS_FLORES_SIB-200_and_Belebele_terms_apply
+      notes: >-
+        Both dataset cards declare CC BY-SA 4.0. The derived releases align
+        FLEURS audio with FLORES, SIB-200, or Belebele annotations, so preserve
+        attribution, share-alike obligations, and all source-dataset notices.
+        The reproduction repository has no LICENSE file and GitHub reports no
+        detected license, so no code reuse terms are claimed.
+    sources:
+      - https://arxiv.org/abs/2501.06117
+      - https://arxiv.org/html/2501.06117v2#S3
+      - https://arxiv.org/html/2501.06117v2#A1.SS2
+      - https://arxiv.org/html/2501.06117v2#A1.SS3
+      - https://github.com/fdschmidt93/fleurs-slu
+      - https://raw.githubusercontent.com/fdschmidt93/fleurs-slu/main/README.md
+      - https://api.github.com/repos/fdschmidt93/fleurs-slu
+      - https://huggingface.co/datasets/WueNLP/sib-fleurs
+      - https://huggingface.co/datasets/WueNLP/sib-fleurs/raw/main/README.md
+      - https://huggingface.co/api/datasets/WueNLP/sib-fleurs
+      - https://huggingface.co/datasets/WueNLP/belebele-fleurs
+      - https://huggingface.co/datasets/WueNLP/belebele-fleurs/raw/main/README.md
+      - https://huggingface.co/api/datasets/WueNLP/belebele-fleurs
+      - https://arxiv.org/abs/2607.22100
+      - https://arxiv.org/html/2607.22100v1#S4.SS1
