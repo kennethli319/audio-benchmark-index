@@ -18,6 +18,13 @@ download_url \
   "https://api.github.com/repos/LIVIAETS/bah-dataset" \
   "$out/github-repository.json"
 download_url "https://arxiv.org/abs/2505.19328" "$out/arxiv-2505.19328.html"
+download_url "https://arxiv.org/abs/2607.11120" "$out/arxiv-2607.11120.html"
+download_url \
+  "https://raw.githubusercontent.com/wmivikas/ABAW2026-Task2-ECCV/main/README.md" \
+  "$out/abaw-2026-calibration-README.md"
+download_url \
+  "https://api.github.com/repos/wmivikas/ABAW2026-Task2-ECCV" \
+  "$out/abaw-2026-calibration-repository.json"
 download_url \
   "https://affective-behavior-analysis-in-the-wild.github.io/11th/" \
   "$out/abaw11-challenge.html"

@@ -5847,6 +5847,58 @@ paper_audits:
       prediction file, or score record. The existing manual-required BAH
       helper therefore remains the honest reproducibility path.
 
+  bah_abaw_2026_calibration_evaluation:
+    paper: https://arxiv.org/abs/2607.11120
+    title: "Simple Features and Honest Calibration for Ambivalence and Hesitancy Recognition in Video"
+    sections: 1, 3.4-3.6, and 4.1-4.7
+    status: audited_existing_restricted_public_family_public_code_private_challenge_test
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: BAH
+        index_id: bah
+        status: public_request_gated_research_only_with_private_challenge_test
+        protocol: >-
+          Train and ablate text, audio, video, hesitation-marker, and gated
+          fusion systems on the official 778/124/525 participant-disjoint
+          train, validation, and public-test videos. The paper reports
+          Macro-F1 and positive-class average precision, then pools all 1,427
+          labelled videos with a shared seeded 113-video holdout before
+          producing predictions for the 152-video private challenge test.
+        note: >-
+          The paper's ASR-erased-time protocol derives 16 timing features from
+          timestamp gaps in the supplied transcripts. Those features and the
+          public implementation are evaluation methods over BAH, not a new
+          dataset or benchmark family.
+    release_audit:
+      new_benchmark_family: none
+      reusable_bah_release: request_gated_research_only
+      paper_implementation: public_ungated_github
+      private_challenge_test_labels: not_released
+      trained_checkpoints_features_and_predictions: not_in_repository
+    license:
+      paper: CC-BY-4.0
+      bah_data: proprietary_research_only_eula
+      bah_baseline_code: BSD-3-Clause
+      paper_implementation: no_license_file_or_detected_github_license
+    sources:
+      - https://arxiv.org/abs/2607.11120
+      - https://arxiv.org/html/2607.11120v1#S3.SS4
+      - https://arxiv.org/html/2607.11120v1#S4.SS1
+      - https://arxiv.org/html/2607.11120v1#S4.SS6
+      - https://github.com/wmivikas/ABAW2026-Task2-ECCV
+      - https://raw.githubusercontent.com/wmivikas/ABAW2026-Task2-ECCV/main/README.md
+      - https://api.github.com/repos/wmivikas/ABAW2026-Task2-ECCV
+      - https://www.etsmtl.ca/en/labs/livia/datasets/bah-ambivalence-hesitancy
+      - https://github.com/LIVIAETS/bah-dataset
+      - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
+    note: >-
+      This is reproducible method and protocol coverage for the already
+      indexed BAH family. The public repository expects users to obtain BAH
+      under its owner EULA and does not redistribute participant data. Its
+      one-command pipeline does not make the private challenge labels public,
+      and the repository currently has no license file, so public source
+      access alone does not establish reuse rights for the paper code.
+
   multimodal_ambivalence_hesitancy_evaluation:
     paper: https://arxiv.org/abs/2607.15779
     title: "Multimodal Ambivalence and Hesitancy Recognition via Cross-Attention and Gated Fusion"
@@ -18137,6 +18189,8 @@ benchmarks:
       repo: https://github.com/LIVIAETS/bah-dataset
       request_form: https://www.crhscm.ca/redcap/surveys/?s=LDMDDJR3AT9P37JY
       challenge: https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
+      recent_evaluation: https://arxiv.org/abs/2607.11120
+      recent_evaluation_repo: https://github.com/wmivikas/ABAW2026-Task2-ECCV
     download:
       primary:
         - https://github.com/LIVIAETS/bah-dataset#download-bah
@@ -18153,7 +18207,8 @@ benchmarks:
         faculty member must submit the official form, list every team member,
         certify institutional eligibility, and sign the EULA. The helper
         saves only public owner, paper, repository, challenge, and request
-        documentation and never downloads participant data.
+        documentation, plus the ABAW 2026 calibration paper and implementation
+        metadata, and never downloads participant data or model artifacts.
     license:
       data: proprietary_research_only_eula
       code: BSD-3-Clause
@@ -18176,6 +18231,11 @@ benchmarks:
       - https://affective-behavior-analysis-in-the-wild.github.io/11th/#counts1
       - https://arxiv.org/abs/2607.15779
       - https://arxiv.org/abs/2607.16635
+      - https://arxiv.org/abs/2607.11120
+      - https://arxiv.org/html/2607.11120v1#S4.SS1
+      - https://github.com/wmivikas/ABAW2026-Task2-ECCV
+      - https://raw.githubusercontent.com/wmivikas/ABAW2026-Task2-ECCV/main/README.md
+      - https://api.github.com/repos/wmivikas/ABAW2026-Task2-ECCV
 
   - id: mer2023
     name: MER2023
