@@ -24949,3 +24949,59 @@ benchmarks:
       - https://huggingface.co/datasets/sarulab-speech/DuplexChat
       - https://huggingface.co/datasets/sarulab-speech/DuplexChat/raw/main/README.md
       - https://huggingface.co/api/datasets/sarulab-speech/DuplexChat
+
+  - id: biotalk_3d
+    name: BioTalk-3D
+    full_name: "BioTalk-3D: A Synchronized EEG, Audio, and Blendshape Dataset and Benchmark for 3D Facial Animation"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_speech
+    tasks:
+      - speech_driven_3d_facial_animation
+      - physiology_aware_facial_motion_reconstruction
+      - audio_physiology_facial_motion_alignment
+      - cross_subject_generalization
+      - cross_session_generalization
+      - cross_language_generalization
+    official:
+      paper: not_publicly_linked
+      repo: https://github.com/2002zym/BioTalk-3D
+      dataset: https://pan.baidu.com/s/17m1xekiNR08e_CIgu-0Tbg?pwd=em25
+    download:
+      access: public_ungated_manual_baidu_netdisk
+      primary:
+        - https://github.com/2002zym/BioTalk-3D
+        - https://pan.baidu.com/s/17m1xekiNR08e_CIgu-0Tbg?pwd=em25
+      examples:
+        - 'scripts/download/biotalk_3d.sh'
+      notes: >-
+        BioTalk-3D is one synchronized multimodal dataset and benchmark
+        family, not separate audio, electrophysiology, and facial-motion
+        datasets. Version 1.0.0 reports 2,300 Chinese and English utterances
+        from five anonymized participants and 20 sessions, totaling
+        13,120.016 seconds. The approximately 18.05 GB Baidu Netdisk package
+        includes segmented WAV audio, 51-dimensional ARKit blendshapes,
+        preprocessed session-level and segmented 64-channel scalp
+        electrophysiological signals, rendering videos, and official
+        train/validation/test splits. Raw acquisition files and original
+        participant face videos are not released. The helper downloads only
+        the lightweight repository documentation; obtain the data manually
+        with extraction code em25.
+    license:
+      data: custom_noncommercial_research_terms
+      code: not_released
+      notes: >-
+        DATA_LICENSE.md permits academic research, education, and
+        non-commercial scientific evaluation, prohibits re-identification,
+        biometric surveillance, clinical use, and redistribution, and
+        requires citation. The repository contains documentation but no
+        baseline code. Its README names additional data-card, ethics, and
+        rendering documents that are not present in the current four-file
+        repository tree. Review the packaged terms and institutional ethics
+        requirements before use.
+    sources:
+      - https://github.com/2002zym/BioTalk-3D
+      - https://raw.githubusercontent.com/2002zym/BioTalk-3D/main/README.md
+      - https://raw.githubusercontent.com/2002zym/BioTalk-3D/main/DATA_LICENSE.md
+      - https://raw.githubusercontent.com/2002zym/BioTalk-3D/main/CITATION.cff
+      - https://api.github.com/repos/2002zym/BioTalk-3D
+      - https://api.github.com/repos/2002zym/BioTalk-3D/git/trees/main?recursive=1

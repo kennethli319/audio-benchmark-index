@@ -142,6 +142,7 @@ scripts/download/ksc2.sh
 scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
 scripts/download/duplexchat.sh
+scripts/download/biotalk_3d.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
 scripts/download/openstbench.sh
@@ -1428,4 +1429,9 @@ VCTK_ARCHIVE_URL=https://datashare.ed.ac.uk/bitstreams/535f4286-e54c-4038-838c-a
 # opt-ins; the release does not redistribute referenced podcast audio.
 DUPLEXCHAT_DOWNLOAD_HF=1 scripts/download/duplexchat.sh
 DUPLEXCHAT_CLONE_TOOLKIT=1 scripts/download/duplexchat.sh
+
+# BioTalk-3D downloads official lightweight documentation only. The 18.05 GB
+# multimodal package is hosted on Baidu Netdisk and must be obtained manually
+# with extraction code em25; redistribution is prohibited by its custom terms.
+scripts/download/biotalk_3d.sh
 ```
