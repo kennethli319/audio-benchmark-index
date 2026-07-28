@@ -12349,6 +12349,74 @@ benchmarks:
       - https://arxiv.org/abs/1804.06267
       - https://arxiv.org/abs/2607.15634
 
+  - id: dsd100
+    name: DSD100
+    full_name: "DSD100: The 2016 Signal Separation Evaluation Campaign Music Dataset"
+    qwen_cited_as: null
+    qwen_bucket: music_source_separation
+    category: music_source_separation
+    tasks:
+      - music_source_separation
+      - singing_voice_separation
+      - music_demixing
+      - professionally_produced_music_evaluation
+    official:
+      homepage: https://sigsep.github.io/datasets/dsd100.html
+      challenge: https://sisec.inria.fr/sisec-2016/2016-professionally-produced-music-recordings/
+      track_list: https://www.sisec17.audiolabs-erlangen.de/#/dataset
+      parser_repo: https://github.com/faroit/dsdtools
+      matlab_repo: https://github.com/faroit/dsd100mat
+      paper: https://doi.org/10.1007/978-3-319-53547-0_31
+      recent_evaluation: https://arxiv.org/abs/2607.23846
+    download:
+      access: public_ungated_large_with_source_specific_terms
+      primary:
+        - https://sigsep.github.io/datasets/dsd100.html
+        - http://liutkus.net/DSD100.zip
+        - https://github.com/faroit/dsdtools
+      examples:
+        - 'scripts/download/dsd100.sh'
+        - 'DSD100_DOWNLOAD_ARCHIVE=1 scripts/download/dsd100.sh'
+        - 'DSD100_CLONE_PARSER=1 scripts/download/dsd100.sh'
+      notes: >-
+        DSD100 contains 100 full-length, 44.1 kHz stereo songs with mixture,
+        drums, bass, vocals, and other stems, divided into 50-track train and
+        50-track test sets for the SiSEC 2016 professionally produced music
+        task. It is one benchmark family rather than separate families for
+        each stem or split. The helper saves the official dataset page and
+        parser documentation by default. The live approximately 14.9 GB ZIP
+        requires DSD100_DOWNLOAD_ARCHIVE=1; cloning the small parser toolkit
+        separately requires DSD100_CLONE_PARSER=1.
+    access:
+      status: public_ungated_large_archive
+      registration_required: false
+      notes: >-
+        The official SigSep page directly links the full archive over HTTP.
+        Its former 120 MB sample link currently redirects to a missing file,
+        so the helper does not advertise or fetch that stale subset.
+    license:
+      data: source_specific_terms_not_stated_as_single_dataset_license
+      code: MIT_for_dsdtools
+      derivatives: Mixing_Secrets_track_owner_terms_apply
+      notes: >-
+        SigSep states that all 100 tracks derive from the Mixing Secrets Free
+        Multitrack Download Library and directs users to that original source
+        for usage rights; it does not declare one blanket DSD100 data license.
+        Public download access therefore does not establish redistribution or
+        commercial-use rights. The dsdtools parser has an MIT license, which
+        does not cover the music or stems.
+    sources:
+      - https://sigsep.github.io/datasets/dsd100.html
+      - https://raw.githubusercontent.com/sigsep/website/master/content/datasets/dsd100.md
+      - https://sisec.inria.fr/sisec-2016/2016-professionally-produced-music-recordings/
+      - https://www.sisec17.audiolabs-erlangen.de/#/dataset
+      - https://github.com/faroit/dsdtools
+      - https://raw.githubusercontent.com/faroit/dsdtools/master/LICENSE
+      - https://github.com/faroit/dsd100mat
+      - https://doi.org/10.1007/978-3-319-53547-0_31
+      - https://arxiv.org/abs/2607.23846
+      - https://arxiv.org/html/2607.23846v1#S4.SS3
+
   - id: medleydb
     name: MedleyDB
     full_name: "MedleyDB: A Multitrack Dataset for Annotation-Intensive MIR Research"

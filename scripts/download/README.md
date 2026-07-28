@@ -303,6 +303,7 @@ scripts/download/nsynth.sh
 scripts/download/surge_pitch.sh
 scripts/download/maestro.sh
 scripts/download/musdb18.sh
+scripts/download/dsd100.sh
 scripts/download/medleydb.sh
 scripts/download/slakh2100.sh
 scripts/download/moisesdb.sh
@@ -999,6 +1000,11 @@ MUSICNET_DOWNLOAD_AUDIO=1 scripts/download/musicnet.sh
 MEDLEYDB_CHECK_ZENODO=1 scripts/download/medleydb.sh
 MEDLEYDB_DOWNLOAD_SAMPLE=1 scripts/download/medleydb.sh
 MEDLEYDB_CLONE_REPO=1 scripts/download/medleydb.sh
+
+# DSD100 saves the official page and parser docs/license by default.
+# The approximately 14.9 GB archive retains source-track-specific terms and is opt-in.
+DSD100_DOWNLOAD_ARCHIVE=1 scripts/download/dsd100.sh
+DSD100_CLONE_PARSER=1 scripts/download/dsd100.sh
 
 # SpeechRole downloads both eval and data by default.
 SPEECHROLE_DATA=0 scripts/download/speechrole.sh
