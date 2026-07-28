@@ -9,6 +9,62 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  multimodal_domain_generalization_depression_detection:
+    paper: https://arxiv.org/abs/2607.22794
+    title: "Multimodal Domain Generalization for Depression Detection: An Attention-Based BiLSTM Network with Domain-Adversarial Training"
+    sections: V-A-V-C, VI-A-VI-D, and VII
+    status: audited_existing_restricted_public_family_with_unavailable_linked_code
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Androids-Corpus
+        index_id: androids_corpus
+        status: public_restricted_terms
+        protocol: >-
+          Use only the 116 spontaneous-interview recordings, segment each
+          participant's concatenated interview into fixed 10-, 20-, 30-, or
+          40-second windows, and evaluate depression classification with the
+          corpus authors' participant-disjoint five folds. At each iteration,
+          hold one fold out for testing and stratify the remaining data 80:20
+          for training and validation.
+        note: >-
+          The paper selects 30-second segments with Mel spectrogram and
+          ItalianBERT features, then compares a multimodal attention BiLSTM
+          with and without a speaker-domain adversarial objective. It reports
+          aggregate fold metrics and ablations, but does not introduce a new
+          corpus, split family, annotation layer, or evaluation package.
+    release_audit:
+      paper_and_aggregate_results: public
+      source_androids_corpus: public_under_restrictive_academic_terms
+      source_corpus_five_fold_lists: public_in_existing_owner_release
+      paper_linked_source_repository: unavailable_http_404_on_2026_07_28
+      exact_train_validation_partition_manifests: not_released
+      processed_segments_features_predictions_and_checkpoints: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      androids_corpus: custom_academic_research_only_no_redistribution
+      paper_specific_code_and_artifacts: not_verifiable_unavailable
+      note: >-
+        The paper license does not supersede the Androids Corpus restrictions.
+        The owner README limits the identifiable clinical recordings to
+        non-commercial academic research and prohibits redistribution. The
+        paper links a GitHub repository, but that URL is unavailable, so no
+        code license or artifact terms can be verified.
+    sources:
+      - https://arxiv.org/abs/2607.22794
+      - https://arxiv.org/html/2607.22794v1#S5.SS1
+      - https://arxiv.org/html/2607.22794v1#S5.SS2
+      - https://arxiv.org/html/2607.22794v1#S6.SS3
+      - https://arxiv.org/html/2607.22794v1#S7
+      - https://github.com/tabaraei/MultimodalDG-depression-detection
+      - https://github.com/androidscorpus/data
+      - https://raw.githubusercontent.com/androidscorpus/data/main/README.md
+      - https://www.isca-archive.org/interspeech_2023/tao23_interspeech.html
+    note: >-
+      This is a model and protocol study over the existing Androids Corpus,
+      not a new benchmark family. Recording the exact participant-independent
+      evaluation and missing implementation prevents the reported results
+      from being mistaken for a separately downloadable depression benchmark.
+
   meta_learned_lora_adapter_geometry:
     paper: https://arxiv.org/abs/2607.22010
     title: "How Meta-Learning Shapes LoRA Adapter Geometry in Speech Deepfake Detection"
@@ -17925,6 +17981,7 @@ benchmarks:
       paper: https://www.isca-archive.org/interspeech_2023/tao23_interspeech.html
       paper_doi: https://doi.org/10.21437/Interspeech.2023-894
       evaluation_paper: https://arxiv.org/abs/2607.16967
+      domain_generalization_evaluation: https://arxiv.org/abs/2607.22794
       archive: https://www.dropbox.com/s/2rurxlh70ihfki4/Androids-Corpus.zip?dl=0
     download:
       primary:
@@ -17940,9 +17997,13 @@ benchmarks:
         clips, speaker metadata, turn timing, an openSMILE configuration, and
         official five-fold lists. The July 2026 voice-concept-bottleneck paper
         evaluates the 116-speaker interview subset with the official five-fold
-        protocol. The helper saves owner documentation, repository metadata,
-        and the primary Interspeech paper by default; archive download requires
-        explicit acknowledgment of the restrictive terms.
+        protocol. A later domain-generalization study also uses that interview
+        subset and those participant-disjoint folds, comparing 10-, 20-, 30-,
+        and 40-second segmentation before selecting 30-second windows; its
+        linked implementation repository was unavailable on 2026-07-28. The
+        helper saves owner documentation, repository metadata, and the primary
+        Interspeech paper by default; archive download requires explicit
+        acknowledgment of the restrictive terms.
     license:
       data: custom_academic_research_only_no_redistribution
       code: not_specified
@@ -17961,6 +18022,8 @@ benchmarks:
       - https://doi.org/10.21437/Interspeech.2023-894
       - https://arxiv.org/abs/2607.16967
       - https://arxiv.org/html/2607.16967v1#S3.SS1
+      - https://arxiv.org/abs/2607.22794
+      - https://arxiv.org/html/2607.22794v1#S5.SS1
 
   - id: ravdess
     name: RAVDESS
