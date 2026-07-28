@@ -9,6 +9,77 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  reflector_harmonic_retrieval:
+    paper: https://arxiv.org/abs/2607.22413
+    title: "Reflector: Arrangement-Aware Harmonic Retrieval for Sample-Based Composition"
+    sections: 5.1-5.2 and 6
+    status: audited_private_characterization_corpus_not_a_public_benchmark
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: working corpus
+        index_id: null
+        status: private_personal_sample_collections
+        protocol: >-
+          Rank all 631 samples as queries under the shipped embedding,
+          mean-chroma cosine, a TIV-style distance, the direct interval-class
+          kernel, and two perturbed kernels; compare top-10 coverage,
+          agreement, NDCG, residency, and rank correlation. A second analysis
+          replays placements from 24 composer sessions to measure suggestion
+          drift and embedding dispersion as arrangements develop.
+        note: >-
+          The paper says the audio comes from the author and another
+          professional composer's personal collections. It makes no
+          generality claim beyond that working corpus and does not release the
+          631 audio files, their index, the 24 sessions, placements, derived
+          embeddings, or item-level results.
+      - cited_as: synthetic Stage A and Stage B training data
+        index_id: null
+        status: reproducible_generator_not_fixed_benchmark_release
+        protocol: >-
+          Generate 50,000 training pairs plus 5,000 validation and 5,000 test
+          pairs of synthetic pitch-class trajectories, then render Stage B
+          audio and train the retrieval encoder against a hand-designed
+          interval-class oracle.
+        note: >-
+          The public repository supplies deterministic data-generation and
+          training programs plus the shipped checkpoint, but it does not
+          publish a canonical fixed dataset archive or present the generated
+          test split as a reusable benchmark family.
+    release_audit:
+      paper_project_page_and_repository: public
+      synthetic_data_generators_training_code_and_checkpoint: public
+      working_631_sample_audio_corpus_and_index: not_released
+      twenty_four_session_timelines_and_placements: not_released
+      paper_run_manifests_embeddings_and_item_level_results: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      repository_code_and_checkpoint: Apache-2.0
+      private_characterization_audio: not_released_owner_specific
+      note: >-
+        Apache 2.0 covers the public repository and shipped model output. It
+        does not grant rights to either composer's private sample collection,
+        which is absent from the repository. The optional Pedalboard
+        dependency used for Stage B rendering is GPL-3.0 and retains its own
+        terms.
+    sources:
+      - https://arxiv.org/abs/2607.22413
+      - https://arxiv.org/html/2607.22413v1#S5
+      - https://arxiv.org/html/2607.22413v1#S5.SS1
+      - https://arxiv.org/html/2607.22413v1#S5.SS2
+      - https://arxiv.org/html/2607.22413v1#S6
+      - https://austinrockman.com/research/reflector
+      - https://github.com/austinrockman/reflector
+      - https://raw.githubusercontent.com/austinrockman/reflector/main/README.md
+      - https://raw.githubusercontent.com/austinrockman/reflector/main/LICENSE
+      - https://api.github.com/repos/austinrockman/reflector
+      - https://api.github.com/repos/austinrockman/reflector/git/trees/main?recursive=1
+    note: >-
+      Reflector is a public application and reproducible synthetic-training
+      pipeline, not a released evaluation dataset. This audit prevents its
+      private characterization corpus and paper-specific protocol from being
+      counted as a public music-retrieval benchmark. The benchmark count and
+      download-helper inventory remain unchanged.
+
   zero_shot_phonetic_classification:
     paper: https://arxiv.org/abs/2607.23606
     title: "Improving Zero-Shot Phonetic Classification through Language-Agnostic Articulatory Features"
