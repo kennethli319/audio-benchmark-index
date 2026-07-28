@@ -20587,6 +20587,89 @@ benchmarks:
       - https://huggingface.co/datasets/JunXueTech/TFCL/raw/main/README.md
       - https://huggingface.co/api/datasets/JunXueTech/TFCL
 
+  - id: mixfake
+    name: MixFake
+    full_name: "MixFake: Benchmarking and Enhancing Audio Deepfake Detection in Diverse Real-world Mixed Audio"
+    qwen_cited_as: null
+    qwen_bucket: speaker_verification_anti_spoofing
+    category: audio_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - synthetic_music_detection
+      - synthetic_environmental_sound_detection
+      - mixed_source_authenticity_detection
+      - foreground_authenticity_detection
+      - background_authenticity_detection
+      - snr_robustness
+    official:
+      paper: https://arxiv.org/abs/2605.23201
+      repo: https://github.com/saltfish233/MixFake
+      dataset: https://huggingface.co/datasets/Tnxts/MixFake
+    download:
+      primary:
+        - https://huggingface.co/datasets/Tnxts/MixFake
+        - https://github.com/saltfish233/MixFake
+      examples:
+        - 'scripts/download/mixfake.sh'
+        - 'MIXFAKE_DOWNLOAD_DATA=1 scripts/download/mixfake.sh'
+        - 'MIXFAKE_CLONE_TOOLKIT=1 scripts/download/mixfake.sh'
+      notes: >-
+        MixFake is one benchmark family with isolated-source and mixed-source
+        evaluation conditions, not separate benchmark families for its
+        foreground and background tasks. The paper reports 252,500 clips
+        totaling 673.69 hours: 510.59 hours of isolated speech, music, and
+        environmental sound plus 163.10 hours of mixtures. Train, development,
+        and evaluation partitions cover real/fake foreground-background
+        combinations at -5, 0, 5, 10, 15, and 20 dB SNR. The helper downloads
+        the official paper, repository documentation, and Hugging Face
+        card/API metadata by default. The public snapshot is split across 67
+        7-Zip volumes totaling approximately 66.7 GiB and therefore requires
+        MIXFAKE_DOWNLOAD_DATA=1; cloning the released baseline and score files
+        is a separate opt-in.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Hugging Face exposes all 67 archive volumes without a gate. The large
+        snapshot is an explicit opt-in and is never fetched by the helper's
+        default mode.
+    license:
+      data: cc-by-4.0_with_source_corpus_terms
+      code: not_specified
+      notes: >-
+        The Hugging Face card declares CC BY 4.0 for the release, but contains
+        no explanatory license text. The GitHub repository has no LICENSE file
+        or detected license, so its code terms are unspecified. MixFake derives
+        material from ASVspoof 2019 LA, FMA-Medium, Sonics, FakeMusicCaps, and
+        EnvSDD; review all source-corpus, generated-media, voice, and
+        redistribution terms in addition to the dataset-card declaration.
+    provenance:
+      source_families:
+        - asvspoof_2019_la
+        - fma_medium
+        - sonics
+        - fake_music_caps
+        - envsdd
+      notes: >-
+        The foreground pool uses bona fide and synthetic speech from ASVspoof
+        2019 LA. Real backgrounds combine FMA-Medium music and EnvSDD
+        environmental sounds; synthetic backgrounds use Sonics,
+        FakeMusicCaps, and EnvSDD. The four mixture labels independently track
+        foreground and background authenticity, and the official evaluation
+        code reports equal error rate for the foreground and background tasks.
+    sources:
+      - https://arxiv.org/abs/2605.23201
+      - https://arxiv.org/html/2605.23201v1#S2
+      - https://arxiv.org/html/2605.23201v1#S4
+      - https://github.com/saltfish233/MixFake
+      - https://raw.githubusercontent.com/saltfish233/MixFake/main/README.md
+      - https://api.github.com/repos/saltfish233/MixFake
+      - https://api.github.com/repos/saltfish233/MixFake/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Tnxts/MixFake
+      - https://huggingface.co/datasets/Tnxts/MixFake/raw/main/README.md
+      - https://huggingface.co/api/datasets/Tnxts/MixFake
+
   - id: asvspoof_2021
     name: ASVspoof 2021
     full_name: "ASVspoof 2021: Logical Access, Physical Access, and Speech Deepfake Challenge databases"

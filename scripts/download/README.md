@@ -224,6 +224,7 @@ scripts/download/dfadd.sh
 scripts/download/librisevoc.sh
 scripts/download/speech_df_arena.sh
 scripts/download/wavefake.sh
+scripts/download/mixfake.sh
 scripts/download/tfcl_afe.sh
 scripts/download/diffssd.sh
 scripts/download/fake_or_real.sh
@@ -504,6 +505,12 @@ SPEECH_DF_ARENA_CLONE_TOOLKIT=1 scripts/download/speech_df_arena.sh
 # evaluation-toolkit clone are separate opt-ins.
 WAVEFAKE_DOWNLOAD_ARCHIVE=1 scripts/download/wavefake.sh
 WAVEFAKE_CLONE_TOOLKIT=1 scripts/download/wavefake.sh
+
+# MixFake downloads the paper, official docs, and repository/Hub metadata by
+# default. Its 67-volume, approximately 66.7 GiB public snapshot and baseline
+# repository are separate opt-ins.
+MIXFAKE_DOWNLOAD_DATA=1 scripts/download/mixfake.sh
+MIXFAKE_CLONE_TOOLKIT=1 scripts/download/mixfake.sh
 
 # In-the-Wild downloads official docs and Hub metadata by default.
 # The approximately 7.60 GiB public ZIP is opt-in; review the conflicting license signals.
