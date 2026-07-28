@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-27
+  last_checked: 2026-07-28
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -3111,10 +3111,12 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.18614
     title: "End-to-End Markov State Sequence Learning for Auditory Attention Decoding"
     sections: 4.1, 4.3, and 5
-    status: audited_public_source_claims_access_and_license_not_verified
+    status: audited_one_new_public_family
+    last_verified: 2026-07-28
     evaluated_sets:
       - cited_as: AVGC
-        status: paper_describes_public_release
+        index_id: av_gc_aad
+        status: public_ungated
         protocol: >-
           Thirteen normal-hearing participants, each with six ten-minute
           64-channel EEG trials and two competing speech envelopes. Every
@@ -3140,7 +3142,8 @@ paper_audits:
     license:
       paper: arxiv_nonexclusive_distribution_license
       code: not_specified
-      datasets: not_verified
+      av_gc_aad: CC-BY-SA-4.0
+      other_datasets: not_verified
       human_subject_data: consent_and_privacy_terms_require_review
     sources:
       - https://arxiv.org/abs/2607.18614
@@ -3151,16 +3154,19 @@ paper_audits:
       - https://raw.githubusercontent.com/YusanX/AAD-CRF/main/README.md
       - https://api.github.com/repos/YusanX/AAD-CRF
       - https://doi.org/10.1088/1741-2552/ad2214
+      - https://doi.org/10.5281/zenodo.11058711
+      - https://zenodo.org/records/11058711
+      - https://zenodo.org/api/records/11058711
       - https://doi.org/10.1088/1741-2560/13/5/056014
       - https://doi.org/10.1109/TASLPRO.2026.3698439
     note: >-
       The official experiment repository releases loaders, configurations,
       training code, and expected local filenames, but it does not bundle the
       EEG/audio data, link official dataset download pages, or state a code
-      license. This audit therefore records the three evaluation protocols
-      without adding a benchmark family or inventing a download route. Recheck
-      the cited primary dataset papers and their institutional repositories
-      before indexing any of these human-subject corpora.
+      license. The primary AV-GC-AAD authors separately publish the exact
+      public 13-participant release on Zenodo, so it is now indexed with its
+      version DOI and CC BY-SA 4.0 terms. KUL and USTC remain protocol-only
+      here until their official access routes and terms are traced.
 
   audiomarathon_long_context_audio:
     paper: https://arxiv.org/abs/2510.07293
@@ -25674,3 +25680,82 @@ benchmarks:
       - https://api.github.com/repos/RUB-SysSec/WaveFake
       - https://zenodo.org/records/5642694
       - https://zenodo.org/api/records/5642694
+
+  - id: av_gc_aad
+    name: AV-GC-AAD
+    full_name: "Audiovisual, Gaze-controlled Auditory Attention Decoding Dataset KU Leuven"
+    qwen_cited_as: null
+    qwen_bucket:
+      - multimodal_speech
+      - paralinguistics
+      - neural_speech_decoding
+    category: multimodal_speech
+    tasks:
+      - auditory_attention_decoding
+      - attended_speaker_decoding
+      - attention_switch_detection
+      - eeg_speech_envelope_reconstruction
+      - gaze_confound_analysis
+      - audiovisual_speech_attention
+    official:
+      paper: https://doi.org/10.1088/1741-2552/ad2214
+      dataset: https://zenodo.org/records/11058711
+      doi: https://doi.org/10.5281/zenodo.11058711
+      baseline_paper: https://arxiv.org/abs/2412.01401
+      baseline_repo: https://github.com/AlexanderBertrandLab/linear-stimulus-reconstruction-AAD-AV-GC-AAD-dataset
+    download:
+      access: public_ungated_large_zenodo_release
+      primary:
+        - https://zenodo.org/records/11058711
+      examples:
+        - 'scripts/download/av_gc_aad.sh'
+        - 'AV_GC_AAD_DOWNLOAD_DATA=1 AV_GC_AAD_SUBJECTS="01 14" scripts/download/av_gc_aad.sh'
+      notes: >-
+        The versioned Zenodo release contains approximately 2.04 GB of
+        preprocessed 128 Hz EEG/EOG, attended and unattended speech envelopes,
+        trial metadata, condition IDs, and attention-side annotations for 13
+        consenting participants. The helper downloads only the official record
+        metadata and 6 KB README by default; subject MAT files require explicit
+        opt-in and a subject list. Original WAV and MP4 stimuli are excluded
+        for copyright reasons. The 2026 CRF paper evaluates six trials per
+        participant with one programmed spatial switch near five minutes,
+        participant-dependent leave-one-trial-out folds, one-, two-, and
+        four-second windows, accuracy, and switch delay.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Zenodo provides the 13 participant files without an account or access
+        application. Three of the original 16 participants are excluded
+        because they did not consent to public sharing. Treat EEG, EOG, gaze,
+        trial metadata, and behavioral annotations as human-subject data even
+        though the public files use anonymized participant IDs.
+    license:
+      data: CC-BY-SA-4.0
+      code: not_specified_for_crf_repository
+      baseline_code: custom_KU_Leuven_academic_noncommercial_nontransferable
+      notes: >-
+        The official Zenodo record declares CC BY-SA 4.0 for the released
+        dataset. Copyrighted source speech and video are not included; the
+        record provides only derived acoustic envelopes. The MATLAB baseline
+        uses a custom KU Leuven license limited to academic users and internal,
+        noncommercial research, and prohibits transfer without prior written
+        agreement. The AAD-CRF repository currently has no detected license,
+        so public source access does not establish code reuse rights.
+        Human-subject consent, privacy, ethics, and re-identification
+        constraints remain relevant.
+    sources:
+      - https://arxiv.org/abs/2607.18614
+      - https://arxiv.org/html/2607.18614v1#S4.SS1
+      - https://doi.org/10.1088/1741-2552/ad2214
+      - https://iopscience.iop.org/article/10.1088/1741-2552/ad2214/meta
+      - https://doi.org/10.5281/zenodo.11058711
+      - https://zenodo.org/records/11058711
+      - https://zenodo.org/api/records/11058711
+      - https://arxiv.org/abs/2412.01401
+      - https://github.com/AlexanderBertrandLab/linear-stimulus-reconstruction-AAD-AV-GC-AAD-dataset
+      - https://raw.githubusercontent.com/AlexanderBertrandLab/linear-stimulus-reconstruction-AAD-AV-GC-AAD-dataset/main/README.md
+      - https://raw.githubusercontent.com/AlexanderBertrandLab/linear-stimulus-reconstruction-AAD-AV-GC-AAD-dataset/main/LICENSE.md
+      - https://api.github.com/repos/AlexanderBertrandLab/linear-stimulus-reconstruction-AAD-AV-GC-AAD-dataset
+      - https://github.com/YusanX/AAD-CRF
+      - https://raw.githubusercontent.com/YusanX/AAD-CRF/main/README.md

@@ -143,6 +143,7 @@ scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
 scripts/download/duplexchat.sh
 scripts/download/biotalk_3d.sh
+scripts/download/av_gc_aad.sh
 scripts/download/imda_nsc.sh
 scripts/download/voxpopuli.sh
 scripts/download/covost2.sh
@@ -1467,6 +1468,10 @@ DUPLEXCHAT_CLONE_TOOLKIT=1 scripts/download/duplexchat.sh
 # multimodal package is hosted on Baidu Netdisk and must be obtained manually
 # with extraction code em25; redistribution is prohibited by its custom terms.
 scripts/download/biotalk_3d.sh
+
+# AV-GC-AAD saves the official Zenodo metadata and README by default. Its
+# approximately 2.04 GB of participant MAT files require explicit selection.
+AV_GC_AAD_DOWNLOAD_DATA=1 AV_GC_AAD_SUBJECTS="01 14" scripts/download/av_gc_aad.sh
 
 # IMDA NSC downloads the official page, paper, and public-mirror metadata by
 # default. Official audio access requires registration and Dropbox; the
