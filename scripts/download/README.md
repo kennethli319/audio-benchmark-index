@@ -57,6 +57,7 @@ scripts/download/av_speakerbench.sh
 scripts/download/avut.sh
 scripts/download/omnigaia.sh
 scripts/download/avscapbench.sh
+scripts/download/vabench.sh
 scripts/download/comind.sh
 scripts/download/video_salmonn2_caption.sh
 scripts/download/syncbench.sh

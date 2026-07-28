@@ -26539,3 +26539,79 @@ benchmarks:
       - https://api.github.com/repos/AlexanderBertrandLab/linear-stimulus-reconstruction-AAD-AV-GC-AAD-dataset
       - https://github.com/YusanX/AAD-CRF
       - https://raw.githubusercontent.com/YusanX/AAD-CRF/main/README.md
+
+  - id: vabench
+    name: VABench
+    full_name: "VABench: A Comprehensive Benchmark for Audio-Video Generation"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_generation_evaluation
+    category: audio_visual_generation_evaluation
+    tasks:
+      - text_to_audio_video_generation
+      - image_to_audio_video_generation
+      - stereo_audio_generation
+      - audio_video_synchronization
+      - lip_speech_consistency
+      - audio_video_semantic_alignment
+      - audio_quality_assessment
+      - video_quality_assessment
+      - audio_visual_question_answering
+    official:
+      paper: https://arxiv.org/abs/2512.09299
+      proceedings: https://openaccess.thecvf.com/content/CVPR2026/html/Hua_VABench_A_Comprehensive_Benchmark_for_Audio-Video_Generation_CVPR_2026_paper.html
+      repo: https://github.com/tanABCC/VABench
+      image_dataset: https://huggingface.co/datasets/tanABBCC/VABench_I2AV
+      model_cache: https://huggingface.co/datasets/tanABBCC/VABENCH_CACHE_DIR
+    download:
+      access: public_ungated_with_large_optional_model_cache
+      primary:
+        - https://github.com/tanABCC/VABench
+        - https://huggingface.co/datasets/tanABBCC/VABench_I2AV
+      examples:
+        - 'scripts/download/vabench.sh'
+        - 'VABENCH_CLONE_TOOLKIT=1 scripts/download/vabench.sh'
+        - 'VABENCH_DOWNLOAD_I2AV_IMAGES=1 scripts/download/vabench.sh'
+      notes: >-
+        VABench is one benchmark family with 778 text-conditioned and 521
+        image-conditioned audio-video cases across seven content categories,
+        plus a 116-prompt stereo-audio track. The GitHub release includes the
+        complete 1,299-row prompt mapping, task JSON files with audio and visual
+        QA, and the evaluation framework. The public Hugging Face image release
+        contains a roughly 296 MB ZIP. The separate approximately 36.5 GB
+        VABENCH_CACHE_DIR repository contains evaluator model caches rather than
+        benchmark examples and is intentionally not downloaded by the helper.
+        Safe defaults fetch only official documentation, repository metadata,
+        the prompt mapping, and the image dataset card; toolkit cloning and the
+        image ZIP are explicit opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Prompts, QA annotations, evaluation code, and I2AV conditioning images
+        are publicly accessible without an application. Running all 15
+        evaluation dimensions requires substantial third-party model weights;
+        the authors recommend at least two 80 GB GPUs.
+    license:
+      data: apache-2.0_for_i2av_hugging_face_release
+      code: not_specified
+      model_cache: mixed_third_party_terms
+      notes: >-
+        The VABench_I2AV dataset card declares Apache 2.0. The GitHub repository
+        has no license file or detected license, so public access does not
+        establish reuse rights for its prompt/QA files or evaluation code. The
+        large cache repository has no top-level dataset license and bundles
+        third-party evaluators and weights; review every component's terms
+        separately. The paper itself is CC BY 4.0.
+    sources:
+      - https://arxiv.org/abs/2512.09299
+      - https://arxiv.org/html/2512.09299v2#S3
+      - https://openaccess.thecvf.com/content/CVPR2026/html/Hua_VABench_A_Comprehensive_Benchmark_for_Audio-Video_Generation_CVPR_2026_paper.html
+      - https://github.com/tanABCC/VABench
+      - https://raw.githubusercontent.com/tanABCC/VABench/main/README.md
+      - https://api.github.com/repos/tanABCC/VABench
+      - https://api.github.com/repos/tanABCC/VABench/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/tanABCC/VABench/main/mapping/final_idx_to_prompt.csv
+      - https://huggingface.co/datasets/tanABBCC/VABench_I2AV
+      - https://huggingface.co/datasets/tanABBCC/VABench_I2AV/raw/main/README.md
+      - https://huggingface.co/api/datasets/tanABBCC/VABench_I2AV
+      - https://huggingface.co/api/datasets/tanABBCC/VABENCH_CACHE_DIR
