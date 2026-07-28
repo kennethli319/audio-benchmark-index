@@ -9,6 +9,72 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  fdaudio_text_to_audio_evaluation:
+    paper: https://arxiv.org/abs/2607.10421
+    title: "FdAudio: MeanFlow-Anchored Fréchet-Distance Post-Training for One-Step Text-to-Audio Generation"
+    sections: 4.1-4.3 and 5.1-5.3
+    status: audited_existing_public_families_and_released_model_protocol
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: AudioCaps
+        index_id: audiocaps
+        status: existing_public_metadata_audio_subject_to_upstream_availability
+        protocol: >-
+          Generate the 957 currently available 10-second test clips from the
+          repository's test-audiocaps.tsv captions and compare them with
+          ground-truth AudioCaps audio using PANN-based Fréchet distance,
+          VGGish-based FAD, KL divergence, Inception Score, and CLAP score.
+          Human evaluation uses 90 generated samples, nine raters, and
+          text-relevance and overall-quality mean opinion scores.
+      - cited_as: WavCaps
+        index_id: wavcaps
+        status: existing_public_family_used_for_training_only
+        protocol: >-
+          Aggregate WavCaps with AudioCaps for post-training, randomly sample
+          80,000 items from the reported 387,438-item pool, and train for one
+          epoch. WavCaps is not a separate evaluation set in this paper.
+    release_audit:
+      audiocaps_and_wavcaps_source_families: existing_as_indexed
+      evaluation_captions_and_metric_code: public_ungated_github
+      fdaudio_code: public_ungated_github
+      fdaudio_model_weights: public_ungated_hugging_face
+      exact_random_80000_item_training_manifest: not_released
+      generated_test_audio_and_per_item_metrics: not_released
+      listening_test_assignments_and_ratings: not_released
+    license:
+      audiocaps: academic_only_with_youtube_and_audioset_terms
+      wavcaps: academic_research_only_with_source_specific_terms
+      fdaudio_code: MIT
+      fdaudio_model_weights: cc-by-nc-sa-4.0
+      paper: arxiv_perpetual_nonexclusive
+      unreleased_experiment_artifacts: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.10421
+      - https://arxiv.org/html/2607.10421v1#S4.SS1
+      - https://arxiv.org/html/2607.10421v1#S4.SS2
+      - https://arxiv.org/html/2607.10421v1#S4.SS3
+      - https://arxiv.org/html/2607.10421v1#S5.SS1
+      - https://fdoneaudio.github.io/
+      - https://github.com/nobel861017/FdAudio
+      - https://raw.githubusercontent.com/nobel861017/FdAudio/main/README.md
+      - https://raw.githubusercontent.com/nobel861017/FdAudio/main/LICENSE
+      - https://api.github.com/repos/nobel861017/FdAudio
+      - https://huggingface.co/kph68/FdAudio
+      - https://huggingface.co/api/models/kph68/FdAudio
+      - https://audiocaps.github.io/
+      - https://github.com/cdjkim/audiocaps
+      - https://huggingface.co/datasets/cvssp/WavCaps
+    note: >-
+      FdAudio contributes a model and a reproducible evaluation pipeline, not
+      a new benchmark dataset family. Its repository publishes the 957-row
+      AudioCaps test-caption list and whole-set metric scripts, while requiring
+      users to obtain ground-truth AudioCaps audio separately. The randomly
+      selected post-training subset, generated evaluation audio, per-item
+      metric records, and listening-test records are not released. AudioCaps
+      and WavCaps therefore remain the two indexed source families, the count
+      and download-helper set are unchanged, and the released non-commercial
+      model license does not override either dataset's upstream terms.
+
   speech_enhancement_asr_polar_projection:
     paper: https://arxiv.org/abs/2607.11157
     title: "Where Speech Enhancement Hurts Recognition: An Inference Time Polar Projection Diagnosis"
@@ -20754,6 +20820,7 @@ benchmarks:
       hf_mirror: https://huggingface.co/datasets/d0rj/audiocaps
       qwen_audio_vae_report: https://arxiv.org/html/2607.11738v1#S4.SS2.SSS2
       recent_evaluation: https://arxiv.org/abs/2607.13330
+      fdaudio_evaluation: https://arxiv.org/abs/2607.10421
     download:
       primary:
         - https://github.com/cdjkim/audiocaps/tree/master/dataset
@@ -20785,6 +20852,9 @@ benchmarks:
       - https://arxiv.org/html/2607.13330v1#S4
       - https://github.com/Arshdeep-Singh-Boparai/PruningAudioLDM
       - https://zenodo.org/records/21376822
+      - https://arxiv.org/abs/2607.10421
+      - https://arxiv.org/html/2607.10421v1#S4.SS1
+      - https://github.com/nobel861017/FdAudio
 
   - id: mecat
     name: MECAT

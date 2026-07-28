@@ -7,6 +7,17 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 FdAudio paper is recorded as evaluation provenance for the
+existing AudioCaps family rather than as a new benchmark. It post-trains on a
+random 80,000-item sample from AudioCaps plus WavCaps and evaluates 957
+currently available AudioCaps test clips with distribution, diversity,
+text-alignment, latency, and listening-test measures. The public repository
+releases the test-caption list and whole-set evaluation code, but not the exact
+training sample, generated test audio, per-item metrics, or listening-test
+records. Its MIT code and CC BY-NC-SA 4.0 model weights do not override the
+academic-use and upstream-media terms of AudioCaps or WavCaps, so the benchmark
+count and helper set remain unchanged.
+
 The July 2026 polar-projection study is recorded as evaluation provenance for
 the existing public VoiceBank-DEMAND family rather than as a new benchmark.
 It evaluates six speech enhancers with Whisper-large-v3 and diagnoses two of
