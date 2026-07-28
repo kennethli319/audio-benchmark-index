@@ -24890,3 +24890,62 @@ benchmarks:
       - https://huggingface.co/datasets/sarvamai/indic-diarbench
       - https://huggingface.co/datasets/sarvamai/indic-diarbench/raw/main/README.md
       - https://huggingface.co/api/datasets/sarvamai/indic-diarbench
+
+  - id: duplexchat
+    name: DuplexChat
+    full_name: "DuplexChat: Constructing Speaker-Separated Full-Duplex Dialogue Speech at Scale for Spoken Dialogue Language Modeling"
+    qwen_cited_as: null
+    qwen_bucket: speech_dialogue
+    tasks:
+      - full_duplex_spoken_dialogue_modeling
+      - bilingual_spoken_dialogue_generation
+      - turn_taking_modeling
+      - backchannel_modeling
+      - overlapping_speech_modeling
+      - speaker_separated_dialogue_reconstruction
+    official:
+      paper: https://arxiv.org/abs/2607.04941
+      repo: https://github.com/sarulab-speech/DuplexChat
+      dataset: https://huggingface.co/datasets/sarulab-speech/DuplexChat
+    download:
+      access: public_ungated_metadata_source_audio_not_redistributed
+      primary:
+        - https://huggingface.co/datasets/sarulab-speech/DuplexChat
+        - https://github.com/sarulab-speech/DuplexChat
+      examples:
+        - 'scripts/download/duplexchat.sh'
+        - 'DUPLEXCHAT_DOWNLOAD_HF=1 scripts/download/duplexchat.sh'
+        - 'DUPLEXCHAT_CLONE_TOOLKIT=1 scripts/download/duplexchat.sh'
+      notes: >-
+        DuplexChat is one bilingual corpus family with separate English and
+        Japanese manifests, not two independent benchmarks. The public,
+        ungated Hugging Face release contains 15,304,412 English dialogue
+        spans totaling 282,634 hours and 7,329,011 Japanese spans totaling
+        132,723 hours. It distributes approximately 791.5 MB of compressed
+        URL-and-timing metadata and no podcast audio. The helper downloads
+        official documentation, API metadata, and the lightweight count file
+        by default; the full manifest snapshot and construction toolkit are
+        separate opt-ins. Reconstructing speaker-separated stereo clips
+        requires downloading source episodes whose URLs may expire, a GPU,
+        and access to the gated DialogueSidon model.
+    license:
+      data: MIT_metadata_only_with_upstream_podcast_rights
+      code: MIT
+      notes: >-
+        The repository license explicitly applies MIT only to the software
+        and reconstruction metadata. It grants no rights in podcast audio or
+        RSS content, which remain with their respective publishers under
+        per-show terms. The paper is CC BY 4.0, but that article license does
+        not broaden rights in referenced recordings. Confirm source terms
+        before reconstruction, training, redistribution, or commercial use.
+    sources:
+      - https://arxiv.org/abs/2607.04941
+      - https://arxiv.org/html/2607.04941v1#S2
+      - https://arxiv.org/html/2607.04941v1#S3
+      - https://github.com/sarulab-speech/DuplexChat
+      - https://raw.githubusercontent.com/sarulab-speech/DuplexChat/master/README.md
+      - https://raw.githubusercontent.com/sarulab-speech/DuplexChat/master/LICENSE
+      - https://api.github.com/repos/sarulab-speech/DuplexChat
+      - https://huggingface.co/datasets/sarulab-speech/DuplexChat
+      - https://huggingface.co/datasets/sarulab-speech/DuplexChat/raw/main/README.md
+      - https://huggingface.co/api/datasets/sarulab-speech/DuplexChat
