@@ -27198,3 +27198,82 @@ benchmarks:
       - https://raw.githubusercontent.com/LAAC-LSCP/benchmarking-dataset-factory/main/LICENSE
       - https://api.github.com/repos/LAAC-LSCP/benchmarking-dataset-factory
       - https://raw.githubusercontent.com/LAAC-LSCP/benchmarking-dataset-factory/main/outputs/manually_annotated_metadata.json
+
+  - id: ears
+    name: EARS
+    full_name: "EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_synthesis
+      - audio_generation
+    category: speech_enhancement
+    tasks:
+      - speech_enhancement
+      - speech_dereverberation
+      - speech_denoising
+      - expressive_speech_modeling
+      - text_to_speech
+    official:
+      project: https://sp-uhh.github.io/ears_dataset/
+      paper: https://arxiv.org/abs/2406.06185
+      proceedings: https://www.isca-archive.org/interspeech_2024/richter24_interspeech.html
+      dataset_repo: https://github.com/facebookresearch/ears_dataset
+      benchmark_repo: https://github.com/sp-uhh/ears_benchmark
+    download:
+      access: public_ungated_noncommercial
+      primary:
+        - https://github.com/facebookresearch/ears_dataset
+        - https://github.com/sp-uhh/ears_benchmark
+      examples:
+        - 'scripts/download/ears.sh'
+        - 'EARS_CLONE_BENCHMARK=1 scripts/download/ears.sh'
+        - 'EARS_DOWNLOAD_AUDIO=1 EARS_SPEAKERS="001 107" scripts/download/ears.sh'
+        - 'EARS_DOWNLOAD_BLIND_TEST=1 scripts/download/ears.sh'
+      notes: >-
+        EARS is one 100-hour, 48 kHz English speech family with 107 speakers,
+        not a separate family for every derived track. The official paper and
+        generation repository define an 86.8-hour training split, 1.7-hour
+        validation split, and 3.7-hour test split, plus EARS-WHAM speech
+        enhancement, EARS-Reverb dereverberation, and a 743-item, two-hour
+        blind noisy-speech test whose clean references are withheld. Version
+        2 generation scripts are public for EARS-WHAM and EARS-Reverb.
+        Safe defaults fetch only official documentation, transcripts, speaker
+        statistics, licenses, and repository metadata. Benchmark cloning and
+        speaker archives are opt-in; audio downloads can be limited with
+        EARS_SPEAKERS and never run downloaded code.
+    access:
+      status: public_ungated_with_blind_ground_truth_withheld
+      registration_required: false
+      notes: >-
+        Clean EARS speaker archives and the noisy blind test archive are
+        directly downloadable. The blind clean targets remain private for
+        evaluation integrity. Reproducing EARS-WHAM and EARS-Reverb also
+        requires their separately sourced WHAM! noise and public room impulse
+        response collections under the upstream terms documented by the
+        generation scripts.
+    license:
+      data: CC-BY-NC-4.0
+      code: CC-BY-NC-4.0_as_declared_in_repository_readmes
+      derivatives: source_specific_noncommercial_terms
+      notes: >-
+        The official dataset repository supplies CC BY-NC 4.0 and applies it
+        to the code and dataset. The benchmark README declares the same terms
+        by linking that license, but its repository has no standalone license
+        file. EARS-WHAM and EARS-Reverb also incorporate WHAM! noise and
+        multiple RIR collections, so preserve every upstream attribution and
+        noncommercial restriction rather than treating the EARS license as
+        overriding component terms.
+    sources:
+      - https://arxiv.org/abs/2406.06185
+      - https://arxiv.org/html/2406.06185v2#S3
+      - https://www.isca-archive.org/interspeech_2024/richter24_interspeech.html
+      - https://sp-uhh.github.io/ears_dataset/
+      - https://github.com/facebookresearch/ears_dataset
+      - https://raw.githubusercontent.com/facebookresearch/ears_dataset/main/README.md
+      - https://raw.githubusercontent.com/facebookresearch/ears_dataset/main/LICENSE
+      - https://api.github.com/repos/facebookresearch/ears_dataset
+      - https://github.com/sp-uhh/ears_benchmark
+      - https://raw.githubusercontent.com/sp-uhh/ears_benchmark/main/README.md
+      - https://api.github.com/repos/sp-uhh/ears_benchmark
+      - https://arxiv.org/abs/2607.23846
+      - https://export.arxiv.org/e-print/2607.23846

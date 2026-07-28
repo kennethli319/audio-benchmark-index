@@ -112,6 +112,7 @@ scripts/download/omnilingual_asr_corpus.sh
 scripts/download/voicecodebench.sh
 scripts/download/s_diverse.sh
 scripts/download/lfr_benchmarking_factory.sh
+scripts/download/ears.sh
 scripts/download/jvs.sh
 scripts/download/librispeech.sh
 scripts/download/whisper_rirmega.sh
