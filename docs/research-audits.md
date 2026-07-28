@@ -7,6 +7,18 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 Qwen-Audio-3.0-TTS report adds evaluation provenance for the
+existing public Seed-TTS Eval and CV3-Eval families. Its separate
+Qwen-Audio-TTS-Eval suite comprises 1,375 bilingual text-normalization cases,
+200 long-form cases, 894 real-world degraded-prompt cases, and 440
+instruction-following cases, but the report provides no repository, dataset
+card, item manifest, audio archive, evaluation code, or data license. The
+paper's seven-language CV3 extension and its 20-dialect subjective prompts,
+outputs, and ratings are likewise unreleased. They are therefore recorded as
+protocols rather than counted as public benchmark families; the independent
+Artificial Analysis arena result is a service evaluation, not downloadable
+benchmark data.
+
 The July 2026 MiMo-Audio release adds a public speech adaptation of Scale
 AI's MultiChallenge. It filters the 266-example text benchmark to remove
 non-spoken formats and uses a commercial TTS system with a 250-voice pool,

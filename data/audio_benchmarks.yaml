@@ -9,6 +9,84 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  qwen_audio_3_tts_evaluation:
+    paper: https://arxiv.org/abs/2607.23938
+    title: "Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm"
+    sections: 3.3 and 4.2-4.6
+    status: audited_two_existing_public_families_and_unreleased_diagnostic_suite
+    last_verified: 2026-07-27
+    evaluated_sets:
+      - cited_as: SEED-TTS-Eval
+        index_id: seed_tts_eval
+        status: public_objective_family
+        protocol: >-
+          Evaluate zero-shot English and Mandarin speech generation for
+          CER/WER and speaker similarity, including the Mandarin hard-case
+          subset. The report adds ERes2Net similarity alongside WavLM and also
+          reuses test-zh and test-en for four anonymized speaker-adapted
+          models.
+      - cited_as: CV3-Eval
+        index_id: cv3_eval
+        status: public_core_family_with_unreleased_paper_extension
+        protocol: >-
+          Evaluate multilingual voice cloning, hard Chinese and English
+          cases, and 12 Chinese-English-Japanese-Korean cross-lingual
+          directions. The report extends multilingual evaluation with Arabic,
+          Indonesian, Portuguese, Thai, Vietnamese, Malay, and Tagalog.
+        note: >-
+          The official CV3-Eval repository releases the core benchmark but
+          does not identify or publish a separate manifest or archive for the
+          report's seven added languages.
+      - cited_as: Qwen-Audio-TTS-Eval
+        index_id: null
+        status: internal_unreleased
+        protocol: >-
+          A diagnostic suite of 1,375 Chinese and English text-normalization
+          cases, 200 paragraph-level long-form cases, 894 real-world degraded
+          prompt cases, and 440 zero-shot instruction-following cases.
+        note: >-
+          The report describes task categories, metrics, and aggregate
+          results, but provides no official repository, dataset card, item
+          manifest, audio archive, evaluation code, or data license for this
+          suite. Its English long-form cases are adapted from a cited source,
+          while its Chinese cases are curated in-house; neither selection is
+          released.
+      - cited_as: Chinese dialect subjective evaluation
+        index_id: null
+        status: internal_unreleased
+        protocol: >-
+          Fifty prompts for each of 20 Chinese dialects, with three native
+          speakers rating dialect authenticity, pronunciation accuracy, and
+          prosodic naturalness on four severity levels.
+    release_audit:
+      seed_tts_eval: existing_public_family
+      cv3_eval_core: existing_public_family
+      cv3_eval_seven_language_extension: not_released
+      qwen_audio_tts_eval: not_released
+      dialect_prompts_outputs_and_ratings: not_released
+      artificial_analysis_tts_arena: public_service_evaluation_not_dataset
+    license:
+      paper: arXiv_perpetual_non_exclusive
+      public_source_families: use_entry_specific_terms
+      qwen_audio_tts_eval: not_specified_unreleased
+      dialect_evaluation: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.23938
+      - https://arxiv.org/html/2607.23938v1#S3.SS3
+      - https://arxiv.org/html/2607.23938v1#S4.SS2
+      - https://arxiv.org/html/2607.23938v1#S4.SS3
+      - https://arxiv.org/html/2607.23938v1#S4.SS4
+      - https://arxiv.org/html/2607.23938v1#S4.SS6
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://github.com/FunAudioLLM/CV3-Eval
+      - https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard
+    note: >-
+      This paper adds current evaluation provenance but no new verified public
+      benchmark family. Public Seed-TTS Eval and core CV3-Eval remain indexed
+      separately. Their availability does not make the paper-specific
+      Qwen-Audio-TTS-Eval cases, CV3 language extension, dialect prompts,
+      generated outputs, judge inputs, human ratings, or score records public.
+
   array_upsampling_latent_acoustic_mapping:
     paper: https://arxiv.org/abs/2607.24463
     title: "Mind the Microphone Gap: Benchmarking Array Upsampling Strategies for Latent Acoustic Mapping"
@@ -12253,6 +12331,7 @@ benchmarks:
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2
       recent_codec_evaluation: https://arxiv.org/abs/2607.14749
       recent_robustness_evaluation: https://arxiv.org/abs/2607.19859
+      qwen_audio_3_tts_evaluation: https://arxiv.org/html/2607.23938v1#S4.SS2
     download:
       primary:
         - https://github.com/BytedanceSpeech/seed-tts-eval
@@ -12278,6 +12357,8 @@ benchmarks:
       - https://arxiv.org/html/2607.14749v3#S4.SS1
       - https://arxiv.org/abs/2607.19859
       - https://arxiv.org/html/2607.19859v1#S4
+      - https://arxiv.org/abs/2607.23938
+      - https://arxiv.org/html/2607.23938v1#S4.SS2
 
   - id: instruct_tts_eval
     name: InstructTTSEval
@@ -12388,6 +12469,7 @@ benchmarks:
       paper: https://arxiv.org/abs/2505.17589
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2.SSS3
       qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS2.SSS3
+      qwen_audio_3_tts_evaluation: https://arxiv.org/html/2607.23938v1#S4.SS3
     download:
       primary:
         - https://github.com/FunAudioLLM/CV3-Eval
@@ -12395,7 +12477,7 @@ benchmarks:
       examples:
         - 'scripts/download/cv3_eval.sh'
         - 'CV3_EVAL_CLONE_REPO=1 scripts/download/cv3_eval.sh'
-      notes: The official repository includes objective multilingual, cross-lingual, and emotion-cloning subsets plus subjective expressive, continuation, and Chinese-accent subsets. Qwen3.5-Omni section 5.2.3 calls the public cross-lingual subset both CV3-Eval and the Cross-Lingual benchmark, and reports mixed error rate over 12 source-target directions among Chinese, English, Japanese, and Korean. The helper downloads the README and Apache-2.0 license by default; cloning the roughly 760 MiB repository, including evaluation audio and bundled scoring utilities/models, requires CV3_EVAL_CLONE_REPO=1.
+      notes: The official repository includes objective multilingual, cross-lingual, and emotion-cloning subsets plus subjective expressive, continuation, and Chinese-accent subsets. Qwen3.5-Omni section 5.2.3 calls the public cross-lingual subset both CV3-Eval and the Cross-Lingual benchmark, and reports mixed error rate over 12 source-target directions among Chinese, English, Japanese, and Korean. Qwen-Audio-3.0-TTS section 4.3 reuses those protocols and reports seven additional multilingual languages, but does not release a separate manifest or archive for that extension. The helper downloads the README and Apache-2.0 license by default; cloning the roughly 760 MiB repository, including evaluation audio and bundled scoring utilities/models, requires CV3_EVAL_CLONE_REPO=1.
     license:
       data: "Apache-2.0 repository license; mixed upstream media rights"
       code: Apache-2.0
@@ -12411,6 +12493,8 @@ benchmarks:
       - https://arxiv.org/html/2601.15621v1#S4.SS2.SSS3
       - https://arxiv.org/abs/2604.15804
       - https://arxiv.org/html/2604.15804v1#S5.SS2.SSS3
+      - https://arxiv.org/abs/2607.23938
+      - https://arxiv.org/html/2607.23938v1#S4.SS3
 
   - id: tts_multilingual_test_set
     name: TTS Multilingual Test Set
