@@ -89,8 +89,12 @@ paper_audits:
         index_id: add_2022
         status: existing_public_family
       - cited_as: ADD 2023
-        index_id: null
-        status: pending_primary_source_audit
+        index_id: add_2023
+        status: public_ungated
+        note: >-
+          The official challenge site now links eight open Zenodo records
+          covering the four challenge tracks. The records were published in
+          2024 after the 2023 challenge.
       - cited_as: LibriSeVoc
         index_id: null
         status: pending_primary_source_audit
@@ -19545,6 +19549,90 @@ benchmarks:
       - https://arxiv.org/abs/2607.12569
       - https://arxiv.org/html/2607.12569v1#S3
       - https://arxiv.org/html/2607.12569v1#S4
+
+  - id: add_2023
+    name: ADD 2023
+    full_name: "ADD 2023: The Second Audio Deepfake Detection Challenge"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_generation
+      - audio_deepfake_detection
+      - partially_fake_audio_detection
+      - manipulation_region_localization
+      - deepfake_algorithm_recognition
+      - open_set_deepfake_attribution
+      - audio_generation_and_detection_game
+    official:
+      challenge: http://addchallenge.cn/add2023
+      download_page: http://addchallenge.cn/downloadADD2023
+      overview_paper: https://arxiv.org/abs/2305.13774
+      analysis_paper: https://arxiv.org/abs/2408.04967
+      track1_1_evaluation: https://zenodo.org/records/12145773
+      track1_2_train_dev: https://zenodo.org/records/12151404
+      track1_2_evaluation_round1: https://zenodo.org/records/12175884
+      track1_2_evaluation_round2: https://zenodo.org/records/12176326
+      track2_train_dev: https://zenodo.org/records/12176530
+      track2_evaluation: https://zenodo.org/records/12176904
+      track3_train_dev: https://zenodo.org/records/12179632
+      track3_evaluation: https://zenodo.org/records/12179884
+    download:
+      primary:
+        - https://zenodo.org/records/12145773
+        - https://zenodo.org/records/12151404
+        - https://zenodo.org/records/12175884
+        - https://zenodo.org/records/12176326
+        - https://zenodo.org/records/12176530
+        - https://zenodo.org/records/12176904
+        - https://zenodo.org/records/12179632
+        - https://zenodo.org/records/12179884
+      examples:
+        - 'scripts/download/add_2023.sh'
+        - 'ADD2023_DOWNLOAD_ARCHIVES=1 ADD2023_RECORDS="track1_1 track2_eval" scripts/download/add_2023.sh'
+      notes: >-
+        ADD 2023 is one challenge family with four task tracks, not eight
+        independent benchmarks. Eight official, ungated Zenodo records cover
+        Track 1.1 fake generation evaluation, Track 1.2 fake detection
+        train/development and two evaluation rounds, Track 2 manipulation
+        localization train/development and evaluation, and Track 3 algorithm
+        recognition train/development and evaluation. Together they are about
+        65.4 GB. The helper fetches only official pages and record metadata by
+        default; archives require an explicit opt-in and named selection.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        The current official download page links directly to open Zenodo
+        records. The historical challenge registration page describes a
+        manually checked password workflow, but that gate no longer applies
+        to these public 2024 deposits. Large archives are never fetched by
+        default.
+    license:
+      data: cc-by-nc-nd-4.0
+      code: not_applicable
+      notes: >-
+        The official download page and all eight Zenodo records declare
+        CC BY-NC-ND 4.0. Commercial use and distribution of adaptations are
+        prohibited. Track 1.2 evaluation includes participant-generated
+        attacks, and other tracks derive from genuine and synthesized source
+        speech; review source-media, voice, generator, and challenge terms
+        before redistribution.
+    sources:
+      - http://addchallenge.cn/add2023
+      - http://addchallenge.cn/downloadADD2023
+      - https://arxiv.org/abs/2305.13774
+      - https://arxiv.org/abs/2408.04967
+      - https://zenodo.org/api/records/12145773
+      - https://zenodo.org/api/records/12151404
+      - https://zenodo.org/api/records/12175884
+      - https://zenodo.org/api/records/12176326
+      - https://zenodo.org/api/records/12176530
+      - https://zenodo.org/api/records/12176904
+      - https://zenodo.org/api/records/12179632
+      - https://zenodo.org/api/records/12179884
 
   - id: in_the_wild_audio_deepfake
     name: In-the-Wild

@@ -214,6 +214,7 @@ scripts/download/asvspoof_2015.sh
 scripts/download/asvspoof_2017.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/add_2022.sh
+scripts/download/add_2023.sh
 scripts/download/codecfake.sh
 scripts/download/dfadd.sh
 scripts/download/tfcl_afe.sh
@@ -1117,6 +1118,10 @@ ASVSPOOF2019_DOWNLOAD_ARCHIVES=1 ASVSPOOF2019_PARTS="LA PA" scripts/download/asv
 # ADD 2022 downloads official challenge and Zenodo metadata by default. Its
 # six records total approximately 49.5 GB; select records explicitly.
 ADD2022_DOWNLOAD_ARCHIVES=1 ADD2022_RECORDS="adaptation track1" scripts/download/add_2022.sh
+
+# ADD 2023 downloads official challenge, paper, and eight Zenodo metadata
+# records by default. Its approximately 65.4 GB release is opt-in.
+ADD2023_DOWNLOAD_ARCHIVES=1 ADD2023_RECORDS="track1_1 track2_eval" scripts/download/add_2023.sh
 
 # Codecfake downloads official paper/repository documentation and all six
 # Zenodo metadata records by default. Its approximately 172.7 GB release is
