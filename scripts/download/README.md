@@ -893,6 +893,10 @@ EARNINGS22_SPARSE_CHECKOUT=1 EARNINGS22_LFS_PULL=1 scripts/download/earnings_22.
 # Earnings-21 downloads docs and lightweight metadata by default. The roughly 770 MB media tree is opt-in.
 EARNINGS21_SPARSE_CHECKOUT=1 scripts/download/earnings_21.sh
 
+# Earnings25 downloads the paper and Zenodo metadata by default. The single
+# approximately 12.0 GB archive includes audio governed by upstream terms.
+EARNINGS25_ACK_AUDIO_TERMS=1 EARNINGS25_DOWNLOAD_ARCHIVE=1 scripts/download/earnings25.sh
+
 # MMAU downloads both test-mini and test by default.
 MMAU_TEST=0 scripts/download/mmau.sh
 

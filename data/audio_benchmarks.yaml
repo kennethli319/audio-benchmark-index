@@ -24706,3 +24706,57 @@ benchmarks:
       - https://raw.githubusercontent.com/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission/main/README.md
       - https://api.github.com/repos/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission
       - https://api.github.com/repos/m-july/Supplementary-Files-For-MelobottleNeck-arXiv-Submission/git/trees/main?recursive=1
+
+  - id: earnings25
+    name: Earnings25
+    full_name: "Earnings25: A Comprehensive 500-Hour Speech Benchmark for Finance"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - financial_domain_asr
+      - long_form_asr
+      - speaker_aware_asr_evaluation
+      - industry_aware_asr_evaluation
+      - accented_english_asr
+      - speaker_diarization_analysis
+    official:
+      paper: https://arxiv.org/abs/2607.23813
+      dataset: https://zenodo.org/records/18762168
+      doi: https://doi.org/10.5281/zenodo.18762168
+    download:
+      access: public_ungated
+      primary:
+        - https://zenodo.org/records/18762168
+      examples:
+        - 'scripts/download/earnings25.sh'
+        - 'EARNINGS25_ACK_AUDIO_TERMS=1 EARNINGS25_DOWNLOAD_ARCHIVE=1 scripts/download/earnings25.sh'
+      notes: >-
+        Earnings25 is one benchmark family with two complementary English
+        evaluation tracks. Testset-full contains 498 hours of complete 2025
+        Q4 earnings calls from approximately 500 S&P 500 companies, preserving
+        long-form conversational structure. Testset-segmented contains 46
+        hours in 290 industry-balanced, five-to-ten-minute segments sampled
+        from more than 2,000 U.S. calls across 2025. Both tracks provide
+        aligned transcripts plus speaker names and roles, industry labels,
+        company identifiers, and call structure. The helper saves official
+        paper and Zenodo metadata by default. The single approximately 12.0 GB
+        ZIP requires explicit upstream-audio terms acknowledgement and opt-in.
+    license:
+      data: cc-by-4.0_metadata_and_annotations_with_upstream_audio_terms
+      code: not_released
+      notes: >-
+        The paper applies CC BY 4.0 to transcripts, annotations, metadata,
+        evaluation splits, and alignments, and the Zenodo record declares CC
+        BY 4.0. The paper separately states that redistributed earnings-call
+        audio remains subject to applicable original content-provider terms.
+        Review those provider terms before redistributing, training on, or
+        commercially using the recordings. No separate evaluation-code
+        repository is linked in version 1.
+    sources:
+      - https://arxiv.org/abs/2607.23813
+      - https://arxiv.org/html/2607.23813v1#S3
+      - https://arxiv.org/html/2607.23813v1#S6
+      - https://arxiv.org/html/2607.23813v1#S8
+      - https://zenodo.org/records/18762168
+      - https://zenodo.org/api/records/18762168
+      - https://doi.org/10.5281/zenodo.18762168

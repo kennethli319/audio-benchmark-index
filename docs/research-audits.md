@@ -7,6 +7,19 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 Earnings25 release adds a public financial-domain ASR
+benchmark with two complementary English test tracks. Testset-full supplies
+498 hours of complete 2025 Q4 earnings calls from approximately 500 S&P 500
+companies; testset-segmented supplies 46 hours in 290 industry-balanced,
+five-to-ten-minute segments sampled from more than 2,000 U.S. calls across
+2025. Both include aligned transcripts and structured speaker, role,
+industry, company, and call metadata. The single Zenodo archive is about
+12.0 GB, so its helper defaults to lightweight paper and record metadata and
+requires explicit opt-in plus source-terms acknowledgement for the archive.
+CC BY 4.0 covers the transcripts, annotations, metadata, splits, and
+alignments, while the redistributed earnings-call audio remains subject to
+applicable original content-provider terms.
+
 The July 2026 Qwen-Audio-3.0-TTS report adds evaluation provenance for the
 existing public Seed-TTS Eval and CV3-Eval families. Its separate
 Qwen-Audio-TTS-Eval suite comprises 1,375 bilingual text-normalization cases,
