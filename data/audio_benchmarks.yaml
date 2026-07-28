@@ -9,6 +9,59 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  revisiting_vocos:
+    paper: https://arxiv.org/abs/2607.24323
+    title: "Revisiting Vocos: That Phasiness Business in Time-Frequency Neural Vocoding"
+    sections: 4.1 and 5
+    status: audited_existing_public_dataset_plus_internal_evaluation
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: D1 / LibriTTS test-clean
+        index_id: libritts
+        status: public_ungated_existing_index_family
+        protocol: >-
+          Train vocoders on the LibriTTS train-clean-100, train-clean-360, and
+          train-other-500 subsets, validate on dev-clean, and report objective
+          vocoder and phase-reconstruction metrics on test-clean after
+          resampling audio to 22.05 kHz.
+        note: >-
+          The paper's D1 mnemonic is an evaluation subset and protocol, not a
+          new dataset family. LibriTTS and its official OpenSLR 60 release are
+          already indexed.
+      - cited_as: D2 / out-of-distribution German dataset
+        index_id: null
+        status: paper_evaluated_proprietary_internal
+        protocol: >-
+          Evaluate out-of-distribution vocoding on 20 proprietary German
+          utterances from two speakers, resampled to 22.05 kHz.
+        note: >-
+          The paper provides no item manifest, audio release, access process,
+          project page, repository, or dataset license for D2.
+    release_audit:
+      libritts: public_ungated_existing_index_family
+      proprietary_german_d2: internal_unreleased
+      paper_code_repository: not_linked
+      note: >-
+        No new benchmark family is added. D1 maps to the existing LibriTTS
+        family, while D2 is explicitly proprietary and cannot be reproduced
+        from a public source.
+    license:
+      libritts: CC-BY-4.0
+      proprietary_german_d2: not_published
+      note: >-
+        LibriTTS retains the terms documented by its official OpenSLR release.
+        Do not infer reuse rights for the proprietary German utterances from
+        the public paper.
+    sources:
+      - https://arxiv.org/abs/2607.24323
+      - https://arxiv.org/html/2607.24323v1#S4.SS1
+      - https://arxiv.org/html/2607.24323v1#S5
+      - https://www.openslr.org/60/
+    note: >-
+      This is a vocoder analysis paper rather than a dataset release. Its only
+      public evaluation corpus is already covered, and its 20-utterance German
+      test set remains proprietary; no alias row or download helper is added.
+
   long_audio_bench:
     paper: https://arxiv.org/abs/2503.03983
     title: "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities"
