@@ -1447,6 +1447,11 @@ CONCERTO_ACCOMPANIMENT_CLONE_REPO=1 scripts/download/concerto_accompaniment_benc
 # the application form. The archive URL is emailed after approval.
 scripts/download/lyra_sa.sh
 
+# COREFL saves official corpus design, statistics, metadata, terms, citation,
+# and recent evaluation-paper pages. Select and export participant data
+# manually through the owner search interface.
+scripts/download/corefl.sh
+
 # Audiobook Narration Appeal downloads the public 8,854-row metadata CSV,
 # official paper/supplement, documentation, and license. It does not download
 # separately hosted LibriVox audiobook recordings.

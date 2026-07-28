@@ -9,6 +9,62 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  corefl_l2_speech_augmentation:
+    paper: https://arxiv.org/abs/2607.10790
+    title: "Data Augmentation for L2 English Speaking Assessment using TTS"
+    sections: 3-4
+    status: audited_new_public_family_with_unreleased_synthetic_derivatives
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: COREFL
+        index_id: corefl
+        status: public_ungated_interactive_export
+        protocol: >-
+          Use 410 spoken training responses totaling 16.7 hours and 100
+          speaker-disjoint spoken test responses totaling 4.2 hours, together
+          with paired learner writing, manual speech transcripts, L1 and CEFR
+          metadata, and an additional 2,820 written responses. Train audio-
+          and text-based proficiency regressors and compare real speech with
+          TTS augmentation under speaker, CEFR, L1, joint CEFR/L1, and random
+          speaker-text pairing strategies.
+        note: >-
+          COREFL itself is publicly searchable and downloadable through its
+          owner interface. The paper-specific split files, five randomized
+          pairings per condition, speechified text, synthetic waveforms,
+          predictions, and score records are not released.
+    release_audit:
+      corefl_search_and_filtered_exports: public_ungated
+      corefl_audio_transcripts_and_metadata: public_ungated
+      paper_specific_split_manifests: not_released
+      speechified_text_and_synthetic_audio: not_released
+      pairing_assignments_models_predictions_and_scores: not_released
+      demo_examples: public_qualitative_examples_only
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      corefl: CC-BY-NC-ND-3.0-ES
+      paper_specific_derivatives: not_specified_unreleased
+      note: >-
+        COREFL permits research and teaching use with attribution, prohibits
+        commercial use, and prohibits distribution of modified material.
+        Its terms also require users to avoid analyses that could jeopardize
+        participant confidentiality. Public access does not authorize
+        redistribution of filtered exports or participant audio.
+    sources:
+      - https://arxiv.org/abs/2607.10790
+      - https://arxiv.org/html/2607.10790v1#S3
+      - https://arxiv.org/html/2607.10790v1#S4
+      - https://corefl.learnercorpora.com/
+      - https://corefl.learnercorpora.com/statistics
+      - https://corefl.learnercorpora.com/user_guide/corpus_design
+      - https://corefl.learnercorpora.com/user_guide/metadata
+      - https://corefl.learnercorpora.com/gdpr/terms
+      - https://doi.org/10.3726/978-3-653-05182-7
+      - https://sbanno.github.io/l2-synthetic-speech/
+    note: >-
+      COREFL is counted as one learner-corpus family. The 2026 paper's
+      unpublished split and generated augmentation conditions are evaluation
+      protocols, not additional public datasets.
+
   cross_era_style_coevolution:
     paper: https://arxiv.org/abs/2607.23957
     title: "Modeling Stylistic Co-evolution in Symbolic Music Heritage Collections"
@@ -29092,3 +29148,80 @@ benchmarks:
       - https://github.com/hreyulog/music_opinion_dynamic
       - https://raw.githubusercontent.com/hreyulog/music_opinion_dynamic/main/README.md
       - https://api.github.com/repos/hreyulog/music_opinion_dynamic
+
+  - id: corefl
+    name: COREFL
+    full_name: "COREFL: Corpus of English as a Foreign Language"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_recognition
+      - speech_paralinguistics
+    category: learner_speech
+    tasks:
+      - l2_speaking_proficiency_assessment
+      - learner_speech_recognition
+      - spoken_written_modality_comparison
+      - cefr_level_prediction
+      - l1_identification
+      - speech_transcription
+    official:
+      homepage: https://corefl.learnercorpora.com/
+      search: https://corefl.learnercorpora.com/search
+      statistics: https://corefl.learnercorpora.com/statistics
+      terms: https://corefl.learnercorpora.com/gdpr/terms
+      primary_paper: https://doi.org/10.3726/978-3-653-05182-7
+      recent_evaluation: https://arxiv.org/abs/2607.10790
+    download:
+      access: public_ungated_interactive_export
+      primary:
+        - https://corefl.learnercorpora.com/search
+      examples:
+        - 'scripts/download/corefl.sh'
+      notes: >-
+        COREFL v2.0 is an owner-hosted learner corpus with written and spoken
+        English responses, manual speech transcriptions, CEFR placement
+        scores, L1 and demographic metadata, task prompts, and native control
+        subcorpora. The live statistics page reports 894 spoken documents and
+        264,306 spoken words across learner and native-control material;
+        paired spoken/written responses from the same participant and prompt
+        are a central design feature. The 2026 TTS-augmentation study uses a
+        510-response, 20.9-hour spoken subset, but does not release its exact
+        split or generated derivatives. The helper saves official
+        documentation and the paper only; filtered corpus exports require
+        choosing criteria in the official interface and describing intended
+        use.
+    access:
+      status: public_ungated_interactive_export
+      registration_required: false
+      requirements:
+        - Use the official search interface to choose an appropriate filtered export.
+        - Provide the requested anonymous intended-use information at download time.
+        - Preserve participant confidentiality and the corpus citation.
+      notes: >-
+        The owner describes COREFL as freely searchable and downloadable for
+        research and teaching. Downloads are generated through an interactive
+        search/export workflow rather than a stable bulk archive URL.
+    license:
+      data: CC-BY-NC-ND-3.0-ES
+      code: not_applicable
+      notes: >-
+        The official terms require attribution, prohibit commercial use, and
+        prohibit redistribution of remixed, transformed, or built-upon
+        material. They additionally prohibit analysis or manipulation that
+        could jeopardize confidentiality. Treat learner audio, transcripts,
+        proficiency scores, L1, age, sex, and other participant metadata as
+        human-subject data; minimize exports and do not use the helper to
+        automate collection of participant records.
+    sources:
+      - https://corefl.learnercorpora.com/
+      - https://corefl.learnercorpora.com/search
+      - https://corefl.learnercorpora.com/statistics
+      - https://corefl.learnercorpora.com/user_guide/user_manual
+      - https://corefl.learnercorpora.com/user_guide/corpus_design
+      - https://corefl.learnercorpora.com/user_guide/metadata
+      - https://corefl.learnercorpora.com/gdpr/terms
+      - https://corefl.learnercorpora.com/about/cite
+      - https://doi.org/10.3726/978-3-653-05182-7
+      - https://arxiv.org/abs/2607.10790
+      - https://arxiv.org/html/2607.10790v1#S3
+      - https://arxiv.org/html/2607.10790v1#S4
