@@ -28414,3 +28414,77 @@ benchmarks:
       - https://doi.org/10.5281/zenodo.20691932
       - https://zenodo.org/api/records/20691932
       - https://www.kaggle.com/datasets/artharking/pytorch-models-singfox/data
+
+  - id: dcase2020_task2_asd
+    name: DCASE 2020 Task 2 ASD
+    full_name: "DCASE 2020 Task 2: Unsupervised Detection of Anomalous Sounds for Machine Condition Monitoring"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    category: anomalous_sound_detection
+    tasks:
+      - anomalous_sound_detection
+      - machine_condition_monitoring
+      - unsupervised_anomaly_detection
+    official:
+      challenge: https://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds
+      results: https://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds-results
+      development_set: https://doi.org/10.5281/zenodo.3678171
+      additional_training_set: https://doi.org/10.5281/zenodo.3727685
+      evaluation_set: https://doi.org/10.5281/zenodo.3841772
+      baseline_repo: https://github.com/y-kawagu/dcase2020_task2_baseline
+      recent_evaluation: https://arxiv.org/abs/2607.22086
+    download:
+      access: public_ungated_large_noncommercial
+      primary:
+        - https://doi.org/10.5281/zenodo.3678171
+        - https://doi.org/10.5281/zenodo.3727685
+        - https://doi.org/10.5281/zenodo.3841772
+      examples:
+        - 'scripts/download/dcase2020_task2_asd.sh'
+        - 'DCASE2020_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2020_TASK2_PARTS="dev eval" scripts/download/dcase2020_task2_asd.sh'
+      notes: >-
+        This is one challenge benchmark family assembled from subsets of
+        ToyADMOS and MIMII, not a replacement release of either full source
+        corpus. It covers toy car, toy conveyor, valve, pump, fan, and slide
+        rail sounds. The development set supplies normal training audio and
+        labeled normal/anomalous test audio; the additional set supplies normal
+        training audio for the evaluation machine IDs; and the evaluation set
+        contains the corresponding test audio. All recordings are approximately
+        ten-second, single-channel, 16 kHz clips. The three official releases
+        total approximately 13.23 GiB. The helper downloads official task,
+        record, paper, and baseline metadata by default; archives require an
+        explicit opt-in and part list.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        All three Zenodo releases and post-challenge evaluation audio are
+        directly accessible. The original protocol withheld evaluation
+        condition labels during the challenge and prohibited using test audio
+        or other ToyADMOS/MIMII material for training.
+    license:
+      data: CC-BY-NC-SA-4.0
+      code: MIT
+      upstream: ToyADMOS_and_MIMII_source_terms_apply
+      notes: >-
+        Each official Zenodo record declares CC BY-NC-SA 4.0, so commercial
+        use is not authorized and adaptations must retain share-alike terms.
+        The baseline repository's MIT license covers software, not benchmark
+        audio. Preserve the packaged ToyADMOS and MIMII attribution and source
+        notices.
+    sources:
+      - https://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds
+      - https://dcase.community/challenge2020/task-unsupervised-detection-of-anomalous-sounds-results
+      - https://doi.org/10.5281/zenodo.3678171
+      - https://zenodo.org/api/records/3678171
+      - https://doi.org/10.5281/zenodo.3727685
+      - https://zenodo.org/api/records/3727685
+      - https://doi.org/10.5281/zenodo.3841772
+      - https://zenodo.org/api/records/3841772
+      - https://github.com/y-kawagu/dcase2020_task2_baseline
+      - https://raw.githubusercontent.com/y-kawagu/dcase2020_task2_baseline/master/README.md
+      - https://raw.githubusercontent.com/y-kawagu/dcase2020_task2_baseline/master/LICENSE
+      - https://arxiv.org/abs/2607.22086
+      - https://arxiv.org/html/2607.22086v1#S4.SS1
