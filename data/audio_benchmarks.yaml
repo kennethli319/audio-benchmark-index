@@ -9,6 +9,69 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  zero_shot_phonetic_classification:
+    paper: https://arxiv.org/abs/2607.23606
+    title: "Improving Zero-Shot Phonetic Classification through Language-Agnostic Articulatory Features"
+    sections: 4.1-4.2
+    status: audited_unreleased_paper_specific_derived_evaluations
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Chinese aspiration classification
+        index_id: fleurs
+        status: existing_public_source_with_unreleased_derived_labels
+        protocol: >-
+          Classify aspirated and unaspirated Chinese voiceless stops on 652
+          utterances (2.0 hours) from the Chinese FLEURS test split distributed
+          through IPAPack++. Report macro-averaged per-IPA recall as balanced
+          accuracy.
+        note: >-
+          FLEURS is public and indexed separately. The paper does not release
+          its selected examples, IPAPack++ preprocessing snapshot, derived IPA
+          targets, target-phone frame selections, or per-item predictions.
+      - cited_as: Japanese moraic nasal classification
+        index_id: null
+        status: derived_from_restricted_csj_with_unreleased_human_verified_labels
+        protocol: >-
+          Classify four Japanese moraic-nasal realizations on 586 utterances
+          (52 minutes) from CSJ eval2 and eval3, using human-verified IPA
+          labels, and report macro-averaged per-IPA recall.
+        note: >-
+          The Corpus of Spontaneous Japanese is available through NINJAL's
+          online and paid-media access paths rather than as an unrestricted
+          benchmark download. The paper does not release the 586-item
+          selection, human-verified IPA annotations, frame alignments, or
+          per-item predictions.
+    release_audit:
+      paper_and_aggregate_results: public
+      source_fleurs_corpus: public_existing_family
+      source_csj_corpus: public_access_with_owner_terms
+      chinese_aspiration_manifest_and_targets: not_released
+      japanese_nasal_manifest_and_human_verified_labels: not_released
+      evaluation_code_models_and_predictions: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      fleurs_source: cc-by-4.0
+      csj_source: owner_terms_apply
+      derived_labels_code_and_predictions: not_specified_unreleased
+      note: >-
+        Public access to the paper does not grant rights to the unreleased
+        derived annotations. NINJAL considers commercial CSJ requests
+        individually, so the paper-specific Japanese evaluation cannot be
+        treated as an open redistribution-ready benchmark.
+    sources:
+      - https://arxiv.org/abs/2607.23606
+      - https://arxiv.org/html/2607.23606v1#S4.SS1
+      - https://arxiv.org/html/2607.23606v1#S4.SS2
+      - https://aclanthology.org/2025.acl-long.961/
+      - https://huggingface.co/datasets/google/fleurs
+      - https://clrd.ninjal.ac.jp/csj/en/
+      - https://aclanthology.org/2024.sigmorphon-1.9/
+    note: >-
+      The two tasks are paper-specific diagnostic slices, not newly released
+      benchmark families. This audit records their exact construction and
+      release gap without duplicating FLEURS, counting CSJ as an open
+      benchmark, or adding a download helper.
+
   vsdd_1k:
     paper: https://arxiv.org/abs/2607.24430
     title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
