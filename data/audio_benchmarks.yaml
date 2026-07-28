@@ -19617,6 +19617,80 @@ benchmarks:
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
 
+  - id: codecfake
+    name: Codecfake
+    full_name: "The Codecfake Dataset and Countermeasures for the Universally Detection of Deepfake Audio"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - codec_generated_speech_detection
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - unseen_codec_generalization
+      - cross_lingual_deepfake_detection
+      - audio_language_model_output_detection
+    official:
+      paper: https://arxiv.org/abs/2405.04880
+      repo: https://github.com/xieyuankun/Codecfake
+      train_part_1: https://zenodo.org/records/13838106
+      train_part_2: https://zenodo.org/records/13841652
+      train_part_3: https://zenodo.org/records/13853860
+      development: https://zenodo.org/records/13841216
+      seen_and_alm_tests: https://zenodo.org/records/13838823
+      unseen_codec_test: https://zenodo.org/records/11125029
+      recent_evaluation: https://arxiv.org/abs/2607.23961
+    download:
+      access: public_ungated
+      primary:
+        - https://zenodo.org/records/13838106
+        - https://zenodo.org/records/13841652
+        - https://zenodo.org/records/13853860
+        - https://zenodo.org/records/13841216
+        - https://zenodo.org/records/13838823
+        - https://zenodo.org/records/11125029
+      examples:
+        - 'scripts/download/codecfake.sh'
+        - 'CODECFAKE_DOWNLOAD_ARCHIVES=1 CODECFAKE_RECORDS="dev test_unseen" scripts/download/codecfake.sh'
+      notes: >-
+        The paper defines a bilingual English/Mandarin family with 1,058,216
+        distinct real and codec-resynthesized samples derived from VCTK and
+        AISHELL-3. Its C1-C7 protocol tests six seen codecs and one held-out
+        codec; separate A1-A3 tracks test VALL-E, VALL-E X, and AudioGen
+        outputs. The release arranges repeated real evaluation items inside
+        condition directories, so repository directory counts should not be
+        summed as a unique-sample total. The helper saves the official paper,
+        repository documentation, and all six Zenodo metadata records by
+        default. The approximately 172.7 GB release requires explicit opt-in
+        and selection of individual records.
+    license:
+      data: cc-by-nc-nd-4.0_with_source_corpus_terms
+      code: not_specified
+      notes: >-
+        Every official Zenodo record and the repository README declare CC
+        BY-NC-ND 4.0 for Codecfake. The GitHub repository has no LICENSE file
+        or detected code license, so the reuse terms for its implementation
+        and checkpoints remain unspecified. VCTK, AISHELL-3, AudioCaps, and
+        the generation systems retain their own terms; review all component
+        conditions before use or redistribution.
+    sources:
+      - https://arxiv.org/abs/2405.04880
+      - https://arxiv.org/html/2405.04880v3#S3.SS4
+      - https://arxiv.org/html/2405.04880v3#S3.SS5
+      - https://github.com/xieyuankun/Codecfake
+      - https://raw.githubusercontent.com/xieyuankun/Codecfake/main/README.md
+      - https://api.github.com/repos/xieyuankun/Codecfake
+      - https://zenodo.org/api/records/13838106
+      - https://zenodo.org/api/records/13841652
+      - https://zenodo.org/api/records/13853860
+      - https://zenodo.org/api/records/13841216
+      - https://zenodo.org/api/records/13838823
+      - https://zenodo.org/api/records/11125029
+      - https://arxiv.org/abs/2607.23961
+      - https://arxiv.org/html/2607.23961v1#S4.SS1
+
   - id: diffssd
     name: DiffSSD
     full_name: "DiffSSD: A Diffusion-Based Dataset for Speech Forensics"

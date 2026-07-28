@@ -1755,3 +1755,18 @@ two-second, and rerecorded variants. Its four archives total approximately
 dataset-specific license or reuse terms, so users must review and obtain any
 needed permissions for its CMU Arctic, LJ Speech, VoxForge, generated-voice,
 and lab-recording components.
+
+The July 2026 dataset-aware audio-deepfake paper led to public Codecfake
+coverage. Section 4.1 follows the claimed 2025 Speech Deepfake Arena protocol
+across eleven named source datasets, but version 1 provides no bibliographic
+entry or official release for that arena as a standalone benchmark. Codecfake
+itself is independently verifiable from its owner repository and six Zenodo
+records: the paper defines 1,058,216 distinct English/Mandarin real and
+codec-resynthesized samples, C1-C7 seen/unseen-codec conditions, and A1-A3
+audio-language-model tests. The approximately 172.7 GB public release is
+CC BY-NC-ND 4.0 and remains opt-in. The paper's ungated
+[Hugging Face model repository](https://huggingface.co/RuiRuihigh/hyperion-mt-deepfake-detector)
+publishes a checkpoint and inference/runtime code but no exact
+multi-dataset selection manifests, trial protocol, predictions, or per-item
+scores, and states no license. The index therefore adds Codecfake as a source
+family, not a duplicate Speech Deepfake Arena family.
