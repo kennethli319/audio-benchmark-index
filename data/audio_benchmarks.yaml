@@ -9,6 +9,72 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  facialtalker_vsdd_1k:
+    paper: https://arxiv.org/abs/2607.24430
+    title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
+    sections: 5, 6.1, 6.3, and 7
+    status: audited_announced_dataset_not_yet_released
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: VSDD-1K
+        index_id: null
+        status: announced_unreleased
+        protocol: >-
+          Construct 61,801 audiovisual dialogues with 991,439 utterances and
+          approximately 1,033 hours from 1,362 real-world interview and
+          face-to-face podcast videos, then use an 8:1:1 train, validation, and
+          test split for conversational speech-synthesis experiments.
+        note: >-
+          The paper reports synchronized 25 FPS video, 16 kHz mono audio,
+          transcripts, speaker and timestamp annotations, and at least 85%
+          valid target-speaker face frames. It does not publish the source
+          video URLs, item manifest, split files, media, or annotations.
+      - cited_as: VSDD-1K evaluation subset
+        index_id: null
+        status: internal_unreleased_selection
+        protocol: >-
+          Randomly select 200 dialogue samples for objective and subjective
+          speech-synthesis evaluation using speaker similarity, pitch-DTW,
+          emotion accuracy, DNSMOS, UTMOS, naturalness MOS, and emotion MOS.
+        note: >-
+          The paper does not identify the selected dialogue samples or publish
+          generated audio, listener ratings, predictions, or per-item scores.
+    release_audit:
+      dataset_media_and_annotations: announced_not_released
+      data_processing_pipeline: announced_not_released
+      repository_readme_and_license: public_ungated
+      model_code_and_checkpoints: not_released
+      note: >-
+        The official repository's To-Do list says both the VSDD-1K dataset and
+        data-processing pipeline will be released. Its current contents are
+        only a README and MIT license.
+    license:
+      paper_stated_dataset_license: CC-BY-NC-SA-4.0
+      repository_code_license: MIT
+      released_dataset_license_artifact: not_published
+      source_internet_videos: rights_not_documented
+      note: >-
+        The paper states a prospective CC BY-NC-SA 4.0 dataset license, but no
+        dataset files or separate license artifact are currently available.
+        The repository's MIT license covers its present repository contents
+        and does not establish redistribution rights for unreleased
+        third-party Internet videos.
+    sources:
+      - https://arxiv.org/abs/2607.24430
+      - https://arxiv.org/html/2607.24430v1#S5
+      - https://arxiv.org/html/2607.24430v1#S6.SS1
+      - https://arxiv.org/html/2607.24430v1#S6.SS3
+      - https://arxiv.org/html/2607.24430v1#S7
+      - https://github.com/walker-hyf/FacialTalker
+      - https://raw.githubusercontent.com/walker-hyf/FacialTalker/main/README.md
+      - https://raw.githubusercontent.com/walker-hyf/FacialTalker/main/LICENSE
+      - https://api.github.com/repos/walker-hyf/FacialTalker
+    note: >-
+      VSDD-1K is a claimed dataset family, but no usable public data release
+      can yet be verified. It is recorded as an audit rather than counted as a
+      benchmark or assigned a download helper; revisit the official repository
+      when its release To-Do items are completed.
+
   revisiting_vocos:
     paper: https://arxiv.org/abs/2607.24323
     title: "Revisiting Vocos: That Phasiness Business in Time-Frequency Neural Vocoding"
