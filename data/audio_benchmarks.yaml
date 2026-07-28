@@ -10028,6 +10028,81 @@ benchmarks:
       - https://zenodo.org/records/5885750
       - https://arxiv.org/abs/2203.03022
 
+  - id: xares
+    name: X-ARES
+    full_name: "X-ARES: A Comprehensive Framework for Assessing Audio Encoder Performance"
+    qwen_cited_as: null
+    qwen_bucket: speech_audio_music_representation_benchmark
+    tasks:
+      - audio_representation_evaluation
+      - speech_representation_evaluation
+      - environmental_sound_representation_evaluation
+      - music_representation_evaluation
+      - linear_probe_evaluation
+      - knn_evaluation
+      - automatic_speech_recognition
+      - speaker_identification
+      - spoken_language_identification
+      - speech_emotion_recognition
+      - audio_text_retrieval
+      - sound_event_detection
+      - music_genre_classification
+      - musical_instrument_classification
+      - pitch_classification
+    official:
+      repo: https://github.com/jimbozhang/xares
+      paper: https://arxiv.org/abs/2505.16369
+      interspeech: https://www.isca-archive.org/interspeech_2025/zhang25d_interspeech.html
+      doi: https://doi.org/10.21437/Interspeech.2025-552
+      conference: Interspeech 2025
+      zenodo_community: https://zenodo.org/communities/mispeech/records
+    download:
+      primary:
+        - https://github.com/jimbozhang/xares
+        - https://zenodo.org/communities/mispeech/records
+      examples:
+        - 'scripts/download/xares.sh'
+        - 'XARES_CLONE_TOOLKIT=1 scripts/download/xares.sh'
+      notes: >-
+        X-ARES is one benchmark protocol over component corpora, not a new
+        collection of 22 independent datasets. The Interspeech 2025 paper
+        evaluates frozen encoders with task-specific MLP and k-NN heads across
+        speech, environmental-sound, and music domains. The current repository
+        provides 22 public task implementations backed by 21 Zenodo records;
+        its LibriSpeech ASR and male/female tasks share one record. Five
+        additional vehicle or user-interaction sound tasks (finger snap,
+        inside/outside car, key scratching, LiveEnv, and subway broadcast) are
+        marked private and are skipped by the runner. SpeechOcean762 remains
+        unchecked in the supported-task list and has no current task module.
+        The helper downloads only official metadata, documentation, and license
+        text by default, with an optional toolkit clone; it never launches the
+        toolkit's automatic multi-dataset downloads.
+    license:
+      data: mixed_component_terms
+      code: Apache-2.0
+      paper: not_specified
+      notes: >-
+        The repository code is Apache 2.0. Public task data are repackaged
+        upstream corpora whose Zenodo records declare dataset-specific
+        licenses (for example, the ESC-50 record declares CC BY-NC 3.0);
+        review every selected record and original corpus terms before use or
+        redistribution. The five private task datasets are not publicly
+        released. No explicit paper license was found in the canonical arXiv
+        or ISCA metadata.
+    sources:
+      - https://github.com/jimbozhang/xares
+      - https://raw.githubusercontent.com/jimbozhang/xares/main/README.md
+      - https://raw.githubusercontent.com/jimbozhang/xares/main/LICENSE
+      - https://api.github.com/repos/jimbozhang/xares
+      - https://arxiv.org/abs/2505.16369
+      - https://arxiv.org/html/2505.16369v2
+      - https://www.isca-archive.org/interspeech_2025/zhang25d_interspeech.html
+      - https://doi.org/10.21437/Interspeech.2025-552
+      - https://zenodo.org/communities/mispeech/records
+      - https://zenodo.org/api/communities/mispeech
+      - https://zenodo.org/records/14614287
+      - https://zenodo.org/api/records/14614287
+
   - id: dynamic_superb
     name: Dynamic-SUPERB
     full_name: "Dynamic-SUPERB: A dynamic, collaborative, and comprehensive instruction-tuning benchmark for speech"
