@@ -9,6 +9,67 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  spatial_information_foundation_model_diarization:
+    paper: https://arxiv.org/abs/2607.12647
+    title: "Investigating the Integration of Spatial Information in Foundation-Model-Based Speaker Diarization"
+    sections: 3 and 4.1-4.3
+    status: audited_existing_public_families_and_unresolved_dipco_release
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: AMI
+        index_id: ami
+        status: existing_public_family
+      - cited_as: AliMeeting
+        index_id: alimeeting
+        status: existing_public_family
+      - cited_as: AISHELL-4
+        index_id: aishell_4
+        status: existing_public_family
+      - cited_as: NOTSOFAR-1
+        index_id: notsofar_1
+        status: existing_public_family
+      - cited_as: DiPCo
+        index_id: null
+        status: publication_public_but_dataset_access_and_terms_unresolved
+        protocol: >-
+          Evaluate four-microphone speaker diarization on DiPCo as an unseen
+          meeting corpus and microphone geometry, using oracle clustering and
+          diarization error rate with no collar.
+        note: >-
+          The primary DiPCo paper describes ten public research and benchmarking
+          sessions recorded with close-talk microphones and five seven-channel
+          far-field arrays. It does not provide a current owner download URL or
+          dataset license, and no author-owned release was identified during
+          this audit. DiPCo therefore remains uncounted pending a verifiable
+          official access path and terms.
+    release_audit:
+      source_ami_alimeeting_aishell4_and_notsofar1_families: existing_as_indexed
+      dipco_primary_paper: public_ungated
+      dipco_dataset_download: not_verified_from_owner_source
+      dipco_dataset_license: not_specified_in_primary_paper
+      diarizen_code: public_ungated
+      exact_paper_multichannel_configs_and_checkpoints: not_identified
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      diarizen_code: MIT
+      source_datasets: retain_each_indexed_family_terms
+      dipco_data: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.12647
+      - https://arxiv.org/html/2607.12647v1#S3
+      - https://arxiv.org/html/2607.12647v1#S4.SS1
+      - https://arxiv.org/html/2607.12647v1#S4.SS3
+      - https://github.com/BUTSpeechFIT/DiariZen
+      - https://raw.githubusercontent.com/BUTSpeechFIT/DiariZen/main/README.md
+      - https://raw.githubusercontent.com/BUTSpeechFIT/DiariZen/main/LICENSE
+      - https://arxiv.org/abs/1909.13447
+      - https://doi.org/10.21437/Interspeech.2020-2800
+    note: >-
+      This is a model and evaluation-protocol study, not a new corpus release.
+      Its four training families are already indexed. Recording the unresolved
+      DiPCo access and licensing gap prevents a publication-level claim that it
+      is public from being converted into an unsupported download entry.
+
   automatic_audio_equalization:
     paper: https://arxiv.org/abs/2607.23846
     title: "Automatic Audio Equalization with Semantic Embeddings"
