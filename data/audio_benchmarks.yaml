@@ -9,6 +9,65 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  multiparty_digital_agent_entrainment:
+    paper: https://arxiv.org/abs/2607.22939
+    title: "Speech Entrainment in Multi-Party Conversations with a Digital Agent"
+    sections: 2.1-2.2, 3.1, and 4.1
+    status: audited_unreleased_sensitive_conversation_dataset
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: adult multi-party digital-agent sessions
+        status: paper_described_dataset_unreleased
+        protocol: >-
+          Thirty English-language sessions with two to six human speakers
+          conversing with a Wizard-of-Oz animated digital agent. The paper
+          reports 337.61 minutes, a median of 24.5 turns per session, and a
+          mean turn duration of 26.03 seconds.
+      - cited_as: family multi-party digital-agent sessions
+        status: paper_described_sensitive_dataset_unreleased
+        protocol: >-
+          Ten English-language sessions with two or three speakers, including
+          children aged 8 to 14 and their guardians, conversing with the same
+          digital agent. The paper reports 65.88 minutes, a median of 28 turns
+          per session, and a mean turn duration of 18.05 seconds.
+    protocol_note: >-
+      Section 2.1 describes single-channel beamformed recordings supported by
+      lavalier microphones, manual utterance timestamps and speaker labels,
+      speaker-isolated waveforms, cached agent speech, and turn partitions.
+      Sections 3 and 4 evaluate local and global entrainment with amplitude,
+      pitch, emotion, Whisper, and Mimi features across human-human,
+      human-agent, child-guardian, and child-agent groupings. These
+      descriptions and aggregate results do not provide
+      reproducible recordings, annotations, scripts, or item-level scores.
+    release_audit:
+      paper_and_aggregate_statistics: public
+      adult_recordings_and_annotations: not_released
+      family_child_recordings_and_annotations: not_released
+      agent_audio_dialog_tree_and_turn_manifests: not_released
+      participant_consent_and_data_access_process: not_stated
+      feature_extraction_and_statistical_analysis_code: not_released
+      per_session_features_and_results: not_released
+    license:
+      paper: CC-BY-4.0
+      recordings_annotations_and_code: not_specified_unreleased
+      privacy_note: >-
+        The corpus contains identifiable conversational speech and includes
+        minors. The paper's CC BY 4.0 publication license does not license or
+        authorize redistribution of the unreleased participant recordings.
+    sources:
+      - https://arxiv.org/abs/2607.22939
+      - https://arxiv.org/html/2607.22939v1#S2.SS1
+      - https://arxiv.org/html/2607.22939v1#S2.SS2
+      - https://arxiv.org/html/2607.22939v1#S3.SS1
+      - https://arxiv.org/html/2607.22939v1#S4.SS1
+    note: >-
+      The paper introduces a potentially useful conversational entrainment
+      corpus, but it provides no official project page, repository, dataset
+      card, archive, access request, data statement, or artifact license.
+      Searches of GitHub and Hugging Face by exact title on 2026-07-28 found
+      no matching author release. This audit records the release gap without
+      adding a benchmark family, download helper, or count increase.
+
   s3bench_and_multievent_temporal:
     paper: https://arxiv.org/abs/2607.13408
     title: "Improving Text-to-Audio Instruction Following via Fine-Grained Feedback from Audio-Aware Large Language Models"
