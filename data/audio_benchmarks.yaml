@@ -9,6 +9,76 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  spatial_frequency_gfanc:
+    paper: https://arxiv.org/abs/2607.12807
+    title: "Spatial-Frequency Cued Generative Fixed-Filter Active Noise Control Based on Deep Learning in Reverberant Environments"
+    sections: 5.2-5.4
+    status: audited_protocol_with_partial_reproduction_assets
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: UrbanSound8K
+        index_id: urbansound8k
+        status: existing_public_family
+        protocol: >-
+          Mix selected real-world UrbanSound8K noises with synthesized
+          band-limited white noise, convolve them with gpuRIR room impulse
+          responses, and evaluate spatial-frequency active noise control on
+          unseen rooms, reverberation times, source positions, noise types,
+          and SNRs.
+        note: >-
+          UrbanSound8K remains the only separately released source dataset.
+          The paper-specific four-channel mixtures, labels, and train,
+          validation, and test manifests are not published.
+      - cited_as: SF-GFANC generated datasets and measured-path evaluation
+        index_id: null
+        status: partially_reproducible_protocol_not_public_dataset
+        protocol: >-
+          Train on 46,080 simulated four-channel half-second samples, validate
+          on 5,760, and test on 15 room-SNR subsets with 4,800 samples each;
+          then evaluate compressor and hand-drill noise at two measured
+          three-dimensional source locations.
+        note: >-
+          The repository releases an executable Figure 10 notebook, model
+          checkpoint, simulated secondary path, control filters, and two
+          example noises. It explicitly excludes the full training datasets
+          and generation scripts. Although section 5.4 says detailed measured
+          paths are available in the repository, the current public tree does
+          not identify a measured-path response package.
+    release_audit:
+      urbansound8k_source_dataset: existing_public_family
+      paper_generated_train_validation_and_test_sets: not_released
+      training_dataset_generation_scripts: not_released
+      executable_figure_10_robustness_notebook: public_ungated
+      trained_checkpoint_and_control_filters: public_ungated
+      example_real_noises: public_ungated
+      measured_path_response_package: not_identified_in_current_repository
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      repository: GPL-3.0
+      urbansound8k: CC-BY-NC
+      generated_datasets: not_specified_unreleased
+      note: >-
+        GPL-3.0 covers the released repository materials but does not remove
+        UrbanSound8K's non-commercial source-data restriction. The paper does
+        not state separate terms for its unreleased generated mixtures,
+        labels, or measured acoustic paths.
+    sources:
+      - https://arxiv.org/abs/2607.12807
+      - https://arxiv.org/html/2607.12807v1#S5.SS2
+      - https://arxiv.org/html/2607.12807v1#S5.SS3
+      - https://arxiv.org/html/2607.12807v1#S5.SS4
+      - https://github.com/Wang-Boxiang/Spatial-Frequency-Generative-Fixed-Filter-Active-Noise-Control
+      - https://raw.githubusercontent.com/Wang-Boxiang/Spatial-Frequency-Generative-Fixed-Filter-Active-Noise-Control/main/README.md
+      - https://raw.githubusercontent.com/Wang-Boxiang/Spatial-Frequency-Generative-Fixed-Filter-Active-Noise-Control/main/LICENSE
+      - https://api.github.com/repos/Wang-Boxiang/Spatial-Frequency-Generative-Fixed-Filter-Active-Noise-Control
+      - https://urbansounddataset.weebly.com/urbansound8k.html
+      - https://zenodo.org/records/1203745
+    note: >-
+      This paper adds a reproducible model experiment around the already
+      indexed UrbanSound8K family, not a new public benchmark family. Its
+      paper-specific generated data and measured-path protocol remain
+      incomplete as a public benchmark release.
+
   corefl_l2_speech_augmentation:
     paper: https://arxiv.org/abs/2607.10790
     title: "Data Augmentation for L2 English Speaking Assessment using TTS"
