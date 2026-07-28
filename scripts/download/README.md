@@ -312,6 +312,7 @@ scripts/download/singmos_pro.sh
 scripts/download/nsynth.sh
 scripts/download/surge_pitch.sh
 scripts/download/maestro.sh
+scripts/download/asap.sh
 scripts/download/musdb18.sh
 scripts/download/msrbench.sh
 scripts/download/dsd100.sh
@@ -1490,6 +1491,12 @@ SURGE_PITCH_DOWNLOAD_ARCHIVE=1 scripts/download/surge_pitch.sh
 MAESTRO_DOWNLOAD_MIDI=1 scripts/download/maestro.sh
 MAESTRO_DOWNLOAD_AUDIO=1 scripts/download/maestro.sh
 MAESTRO_BASE_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0 scripts/download/maestro.sh
+
+# ASAP downloads official documentation and its approximately 420 KB metadata
+# table by default. Combined annotations and the roughly 448 MB repository are
+# separate opt-ins. Audio must be reconstructed from MAESTRO v2.0.0 manually.
+ASAP_DOWNLOAD_ANNOTATIONS=1 scripts/download/asap.sh
+ASAP_CLONE_DATASET=1 scripts/download/asap.sh
 
 # MUSDB18 saves official pages by default. Large archives require terms acknowledgement and opt-in.
 MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_ARCHIVE=1 scripts/download/musdb18.sh

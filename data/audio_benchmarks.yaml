@@ -9,6 +9,70 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  music_jepa_evaluation:
+    paper: https://arxiv.org/abs/2607.22000
+    title: "Music-JEPA: Learning a World Model of Sound from Action"
+    sections: 4.1 and 4.4-4.5
+    status: audited_new_public_family_and_existing_public_family
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: MAESTRO v3.0.0
+        index_id: maestro
+        status: existing_public_family
+        protocol: >-
+          Train the action-conditioned audio representation on the standard
+          MAESTRO train, validation, and test partitions, evaluate an
+          11-composer classifier on a paper-specific filtered subset, and
+          evaluate transcription and continuous sustain-pedal estimation on
+          the test partition.
+        note: >-
+          The 11-composer selection and pseudo key labels are paper-specific
+          derived protocols. The paper promises code and pretrained models but
+          does not currently link a public repository or release those
+          artifacts.
+      - cited_as: ASAP
+        index_id: asap
+        status: public_ungated
+        protocol: >-
+          Probe frozen representations for beat tracking on ASAP audio using
+          4-second clips and report precision, recall, and F1 at 70 ms and
+          100 ms onset tolerances.
+        note: >-
+          ASAP is a separately released aligned score/performance family. Its
+          repository provides annotations, symbolic scores, performance MIDI,
+          and a script that reconstructs its 519 aligned audio performances
+          from MAESTRO v2.0.0; it does not redistribute the audio directly.
+    release_audit:
+      asap_annotations_scores_and_performance_midi: public_ungated
+      asap_audio: reproducible_from_separately_downloaded_maestro_v2
+      paper_specific_asap_probe_configuration: described_not_released
+      paper_specific_maestro_composer_subset_and_pseudo_key_labels: not_released
+      music_jepa_code_and_checkpoints: announced_not_released
+    license:
+      asap_dataset: CC-BY-NC-SA-4.0
+      asap_paper: CC-BY-4.0
+      maestro: CC-BY-NC-SA-4.0
+      music_jepa_paper: arxiv_perpetual_nonexclusive
+      paper_specific_artifacts: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.22000
+      - https://arxiv.org/html/2607.22000v1#S4.SS1
+      - https://arxiv.org/html/2607.22000v1#S4.SS4
+      - https://arxiv.org/html/2607.22000v1#S4.SS5
+      - https://zzwaang.github.io/music-jepa-demo/
+      - https://github.com/fosfrancesco/asap-dataset
+      - https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/README.md
+      - https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/LICENSE.md
+      - https://api.github.com/repos/fosfrancesco/asap-dataset
+      - https://doi.org/10.5281/zenodo.4245489
+      - https://cnam.hal.science/hal-02929324
+      - https://magenta.withgoogle.com/datasets/maestro
+    note: >-
+      Music-JEPA does not define a new downloadable benchmark family. Its
+      evaluation adds provenance for existing MAESTRO and exposes ASAP as one
+      missing public family; unreleased model artifacts and derived task
+      manifests are not counted separately.
+
   spatial_frequency_gfanc:
     paper: https://arxiv.org/abs/2607.12807
     title: "Spatial-Frequency Cued Generative Fixed-Filter Active Noise Control Based on Deep Learning in Reverberant Environments"
@@ -13272,6 +13336,75 @@ benchmarks:
       - https://magenta.withgoogle.com/maestro-wave2midi2wave
       - https://arxiv.org/abs/1810.12247
       - https://openreview.net/forum?id=r1lYRjC9F7
+
+  - id: asap
+    name: ASAP
+    full_name: "ASAP: A Dataset of Aligned Scores and Performances for Piano Transcription"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - music_transcription
+    category: music_understanding
+    tasks:
+      - beat_tracking
+      - downbeat_tracking
+      - automatic_music_transcription
+      - score_performance_alignment
+      - key_signature_estimation
+      - time_signature_estimation
+      - piano_transcription
+    official:
+      repo: https://github.com/fosfrancesco/asap-dataset
+      paper: https://doi.org/10.5281/zenodo.4245489
+      paper_landing_page: https://cnam.hal.science/hal-02929324
+      recent_evaluation: https://arxiv.org/abs/2607.22000
+      source_audio: https://magenta.withgoogle.com/datasets/maestro
+    download:
+      access: public_ungated_audio_reconstruction_requires_maestro_v2
+      primary:
+        - https://github.com/fosfrancesco/asap-dataset
+        - https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/metadata.csv
+        - https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/asap_annotations.json
+      examples:
+        - 'scripts/download/asap.sh'
+        - 'ASAP_DOWNLOAD_ANNOTATIONS=1 scripts/download/asap.sh'
+        - 'ASAP_CLONE_DATASET=1 scripts/download/asap.sh'
+      notes: >-
+        The public repository reports 236 distinct musical scores and 1,067
+        MIDI performances across 15 composers, with 519 performances also
+        aligned to audio. It provides MusicXML and MIDI scores, performance
+        MIDI, beat/downbeat, time-signature, and key-signature annotations,
+        and alignment metadata. The helper downloads official documentation,
+        repository metadata, and the approximately 420 KB metadata table by
+        default. The approximately 45 MB combined annotation JSON and roughly
+        448 MB shallow repository clone are separate opt-ins. Audio is not
+        redistributed by ASAP: obtain MAESTRO v2.0.0 separately and run the
+        repository's initialize_dataset.py script to reconstruct the aligned
+        and trimmed files. Music-JEPA section 4.4 uses ASAP audio in 4-second
+        clips for beat tracking at 70 ms and 100 ms tolerances but does not
+        release its exact probe configuration or derived clip manifest.
+    license:
+      data: CC-BY-NC-SA-4.0
+      source_audio: CC-BY-NC-SA-4.0
+      paper: CC-BY-4.0
+      notes: >-
+        ASAP's repository applies CC BY-NC-SA 4.0 to the dataset, including
+        attribution, noncommercial, and share-alike conditions. Its ISMIR
+        paper is separately CC BY 4.0. Reconstructed audio comes from MAESTRO,
+        which also uses CC BY-NC-SA 4.0; retain both attributions and review
+        the source release before redistribution.
+    sources:
+      - https://github.com/fosfrancesco/asap-dataset
+      - https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/README.md
+      - https://raw.githubusercontent.com/fosfrancesco/asap-dataset/master/LICENSE.md
+      - https://api.github.com/repos/fosfrancesco/asap-dataset
+      - https://github.com/fosfrancesco/asap-dataset/releases/tag/v1.2
+      - https://doi.org/10.5281/zenodo.4245489
+      - https://zenodo.org/api/records/4245489
+      - https://cnam.hal.science/hal-02929324
+      - https://magenta.withgoogle.com/datasets/maestro
+      - https://arxiv.org/abs/2607.22000
+      - https://arxiv.org/html/2607.22000v1#S4.SS4
 
   - id: musdb18
     name: MUSDB18

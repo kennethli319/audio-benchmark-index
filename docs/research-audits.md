@@ -1780,3 +1780,18 @@ publishes a checkpoint and inference/runtime code but no exact
 multi-dataset selection manifests, trial protocol, predictions, or per-item
 scores, and states no license. The index therefore adds Codecfake as a source
 family, not a duplicate Speech Deepfake Arena family.
+
+The July 2026 Music-JEPA paper adds evaluation provenance for MAESTRO and
+public ASAP coverage. Sections 4.1 and 4.4 train on MAESTRO v3.0.0 and probe
+frozen representations for ASAP beat tracking using four-second clips with
+70 ms and 100 ms tolerances. The public
+[ASAP repository](https://github.com/fosfrancesco/asap-dataset) provides
+MusicXML and MIDI scores, performance MIDI, alignment metadata, and beat,
+downbeat, time-signature, and key-signature annotations under CC BY-NC-SA 4.0.
+It reports 1,067 MIDI performances and 519 audio-aligned performances, but
+does not redistribute audio; users must obtain MAESTRO v2.0.0 separately and
+run the supplied initialization script. Music-JEPA's paper-specific probe
+configuration, derived clip manifest, filtered MAESTRO composer subset,
+pseudo key labels, code, and checkpoints remain unreleased. ASAP is therefore
+counted as one public benchmark family, while those derived protocols and
+announced model artifacts are not counted separately.
