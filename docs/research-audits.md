@@ -1795,3 +1795,19 @@ configuration, derived clip manifest, filtered MAESTRO composer subset,
 pseudo key labels, code, and checkpoints remain unreleased. ASAP is therefore
 counted as one public benchmark family, while those derived protocols and
 announced model artifacts are not counted separately.
+
+The July 2026 *Automatic Audio Equalization with Semantic Embeddings* paper
+adds evaluation provenance for VCTK, EARS, MedleyDB, and DSD100, and exposes
+DEMAND as one missing public source family. Section 4.3 creates four
+paper-specific 1,000-example tests; its noisy-speech condition mixes DEMAND
+noise at -5 to 30 dB SNR, but the exact utterance selection, random filters,
+gains, derived audio, and listening-test package are not released. The
+owner-authored [DEMAND Zenodo record](https://doi.org/10.5281/zenodo.1227121)
+publishes 16-channel real-world environmental recordings at 16 kHz and 48 kHz.
+Its prose says 15 recordings while the current file inventory exposes 18
+named scenes, so the index preserves that discrepancy. The record's prose
+explicitly applies CC BY-SA 3.0 to the audio and documentation even though its
+structured license field says CC BY 4.0; the helper therefore treats the
+specific share-alike statement as controlling, downloads only metadata and
+the technical description by default, and requires an explicit scene and
+sample rate for audio.

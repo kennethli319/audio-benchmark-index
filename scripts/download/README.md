@@ -115,6 +115,7 @@ scripts/download/voicecodebench.sh
 scripts/download/s_diverse.sh
 scripts/download/lfr_benchmarking_factory.sh
 scripts/download/ears.sh
+scripts/download/demand.sh
 scripts/download/jvs.sh
 scripts/download/librispeech.sh
 scripts/download/libriheavy.sh
@@ -1025,6 +1026,11 @@ MEDLEYDB_CLONE_REPO=1 scripts/download/medleydb.sh
 # The approximately 14.9 GB archive retains source-track-specific terms and is opt-in.
 DSD100_DOWNLOAD_ARCHIVE=1 scripts/download/dsd100.sh
 DSD100_CLONE_PARSER=1 scripts/download/dsd100.sh
+
+# DEMAND downloads metadata and its technical description by default.
+# Select exactly one 16-channel scene archive explicitly; 16k is the default.
+DEMAND_SCENE=TMETRO scripts/download/demand.sh
+DEMAND_SCENE=PCAFETER DEMAND_SAMPLE_RATE=48k scripts/download/demand.sh
 
 # SpeechRole downloads both eval and data by default.
 SPEECHROLE_DATA=0 scripts/download/speechrole.sh

@@ -9,6 +9,62 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  automatic_audio_equalization:
+    paper: https://arxiv.org/abs/2607.23846
+    title: "Automatic Audio Equalization with Semantic Embeddings"
+    sections: 4.1 and 4.3-4.4
+    status: audited_new_public_family_and_existing_public_families
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: VCTK
+        index_id: vctk
+        status: existing_public_family
+      - cited_as: EARS
+        index_id: ears
+        status: existing_public_family
+      - cited_as: MedleyDB
+        index_id: medleydb
+        status: existing_public_family
+      - cited_as: DSD100
+        index_id: dsd100
+        status: existing_public_family
+      - cited_as: DEMAND
+        index_id: demand
+        status: public_ungated
+        protocol: >-
+          Add DEMAND noise at SNRs from -5 to 30 dB to the paper's
+          speech-equalization test material, then evaluate 1,000 derived noisy
+          examples using L1 power-spectrum error and log-spectral distortion.
+        note: >-
+          The derived 1,000-example test set, exact source-utterance selection,
+          random equalization filters, and random gains are not released.
+          DEMAND itself is a separately public source-noise family.
+    release_audit:
+      source_corpora: public_or_entry_specific_access
+      demand_noise_recordings: public_ungated
+      derived_equalization_test_sets: not_released
+      listening_test_audio_and_responses: attached_material_not_linked_or_archived_publicly
+      model_code_and_checkpoints: not_released
+    license:
+      demand: CC-BY-SA-3.0
+      source_corpora: use_entry_specific_terms
+      paper_specific_artifacts: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.23846
+      - https://arxiv.org/html/2607.23846v1#S4.SS1
+      - https://arxiv.org/html/2607.23846v1#S4.SS3
+      - https://arxiv.org/html/2607.23846v1#S4.SS4
+      - https://arxiv.org/html/2607.23846v1#S6
+      - https://doi.org/10.5281/zenodo.1227121
+      - https://zenodo.org/api/records/1227121
+      - https://doi.org/10.1121/1.4806631
+    note: >-
+      This paper does not release a new equalization benchmark. Its source
+      corpora remain distinct families, and its exact derived test rows,
+      degradations, outputs, listening-test package, models, and code should
+      not be inferred from the public availability of those sources. DEMAND
+      is added as the one missing independently released family.
+
   music_jepa_evaluation:
     paper: https://arxiv.org/abs/2607.22000
     title: "Music-JEPA: Learning a World Model of Sound from Action"
@@ -29026,6 +29082,71 @@ benchmarks:
       - https://api.github.com/repos/sp-uhh/ears_benchmark
       - https://arxiv.org/abs/2607.23846
       - https://export.arxiv.org/e-print/2607.23846
+
+  - id: demand
+    name: DEMAND
+    full_name: "DEMAND: Diverse Environments Multichannel Acoustic Noise Database"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_enhancement
+      - spatial_audio
+    category: speech_enhancement
+    tasks:
+      - speech_enhancement
+      - speech_denoising
+      - noise_robustness_evaluation
+      - multichannel_audio_processing
+      - sound_source_localization
+      - acoustic_noise_modeling
+    official:
+      zenodo: https://doi.org/10.5281/zenodo.1227121
+      paper: https://doi.org/10.1121/1.4806631
+      recent_evaluation: https://arxiv.org/abs/2607.23846
+    download:
+      access: public_ungated
+      primary:
+        - https://zenodo.org/records/1227121
+        - https://zenodo.org/api/records/1227121
+      examples:
+        - 'scripts/download/demand.sh'
+        - 'DEMAND_SCENE=TMETRO DEMAND_SAMPLE_RATE=16k scripts/download/demand.sh'
+      notes: >-
+        The owner-authored Zenodo release provides real-world environmental
+        noise as 16 synchronized single-channel WAV files per scene at both
+        16 kHz and 48 kHz. Its prose says this version contains 15 recordings,
+        while the current file inventory exposes 18 named scenes and 36 scene
+        archives; preserve that source inconsistency rather than silently
+        choosing one count. The helper downloads official metadata and the
+        approximately 86 KB technical description by default. Set
+        DEMAND_SCENE to one documented scene and DEMAND_SAMPLE_RATE to 16k or
+        48k to fetch one checksum-published archive; the complete release is
+        approximately 7.36 GB. Automatic Audio Equalization section 4.3 uses
+        DEMAND at -5 to 30 dB SNR for a paper-specific 1,000-example noisy
+        speech test, but does not release the exact derived test manifest or
+        degradations.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Stable per-scene archives and record metadata are directly available
+        from Zenodo. Audio remains opt-in in the helper to avoid unexpectedly
+        downloading hundreds of megabytes.
+    license:
+      data: CC-BY-SA-3.0
+      paper: publisher_terms
+      notes: >-
+        The record's structured license field says CC BY 4.0, but its
+        owner-written description explicitly applies CC BY-SA 3.0 Unported to
+        the audio and accompanying document. Apply the more specific
+        attribution and share-alike terms pending clarification rather than
+        treating the generic metadata field as controlling.
+    sources:
+      - https://zenodo.org/records/1227121
+      - https://zenodo.org/api/records/1227121
+      - https://doi.org/10.5281/zenodo.1227121
+      - https://doi.org/10.1121/1.4806631
+      - https://arxiv.org/abs/2607.23846
+      - https://arxiv.org/html/2607.23846v1#S4.SS3
 
   - id: fleurs_slu
     name: Fleurs-SLU
