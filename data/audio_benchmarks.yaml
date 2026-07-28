@@ -28488,3 +28488,82 @@ benchmarks:
       - https://raw.githubusercontent.com/y-kawagu/dcase2020_task2_baseline/master/LICENSE
       - https://arxiv.org/abs/2607.22086
       - https://arxiv.org/html/2607.22086v1#S4.SS1
+
+  - id: msmd
+    name: MSMD
+    full_name: "Multimodal Sheet Music Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - audio_visual_understanding
+    category: multimodal_music_understanding
+    tasks:
+      - audio_sheet_music_retrieval
+      - sheet_music_audio_retrieval
+      - piece_identification
+      - score_following
+      - audio_score_alignment
+    official:
+      paper: https://doi.org/10.5334/tismir.12
+      repo: https://github.com/CPJKU/msmd
+      dataset: https://doi.org/10.5281/zenodo.2597505
+      score_following_dataset: https://doi.org/10.5281/zenodo.4745838
+      recent_evaluation: https://arxiv.org/abs/2607.21899
+      recent_evaluation_repo: https://github.com/ValleyC/CODA
+    download:
+      access: public_ungated_large_conflicting_license_metadata
+      primary:
+        - https://doi.org/10.5281/zenodo.2597505
+        - https://doi.org/10.5281/zenodo.4745838
+        - https://github.com/CPJKU/msmd
+      examples:
+        - 'scripts/download/msmd.sh'
+        - 'MSMD_DOWNLOAD_ARCHIVES=1 MSMD_PARTS="score_following" scripts/download/msmd.sh'
+      notes: >-
+        MSMD is one multimodal benchmark family rather than separate retrieval
+        and score-following datasets. The original release describes 497
+        classical pieces and 344,742 notehead-to-audio/MIDI alignments, with
+        score images, notation graphs, MIDI-derived performance features, and
+        composer-aware splits; a 2019 correction removed 12 pieces with
+        unreliable da-capo alignments and updated the split files. The
+        approximately 9.56 GB original Zenodo archive contains preprocessed
+        data without rendered audio. A later approximately 1.92 GB
+        score-following package contains 354 training, 19 validation, and 94
+        test pieces as NPZ/WAV pairs. The helper downloads official repository,
+        paper, release, and recent-evaluation metadata by default; either large
+        archive requires an explicit part selection.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Both official Zenodo archives are directly downloadable. The original
+        repository also documents how to rebuild or extend the dataset from
+        Mutopia LilyPond sources and synthesized performances.
+    license:
+      data: conflicting_official_CC-BY-4.0_and_CC-BY-NC-SA-4.0
+      code: CC-BY-NC-SA-4.0_repository_wide
+      upstream: Mutopia_source_score_terms_may_apply
+      notes: >-
+        Both Zenodo records declare CC BY 4.0, while the official MSMD
+        repository contains a repository-wide CC BY-NC-SA 4.0 LICENSE. This
+        conflict is not resolved by the release pages; conservatively follow
+        the noncommercial share-alike terms and verify intended rights with
+        the maintainers before commercial use or redistribution. Preserve
+        attribution and inspect the licenses of the underlying Mutopia scores.
+        CODA's MIT license covers its evaluation code, not MSMD data.
+    sources:
+      - https://doi.org/10.5334/tismir.12
+      - https://github.com/CPJKU/msmd
+      - https://raw.githubusercontent.com/CPJKU/msmd/master/README.md
+      - https://raw.githubusercontent.com/CPJKU/msmd/master/LICENSE
+      - https://raw.githubusercontent.com/CPJKU/msmd/master/msmd/splits/README
+      - https://api.github.com/repos/CPJKU/msmd
+      - https://doi.org/10.5281/zenodo.2597505
+      - https://zenodo.org/api/records/2597505
+      - https://doi.org/10.5281/zenodo.4745838
+      - https://zenodo.org/api/records/4745838
+      - https://arxiv.org/abs/2607.21899
+      - https://arxiv.org/html/2607.21899v1
+      - https://github.com/ValleyC/CODA
+      - https://raw.githubusercontent.com/ValleyC/CODA/main/README.md
+      - https://raw.githubusercontent.com/ValleyC/CODA/main/LICENSE

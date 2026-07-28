@@ -300,6 +300,7 @@ scripts/download/million_song_dataset.sh
 scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
 scripts/download/musicnet.sh
+scripts/download/msmd.sh
 scripts/download/singmos_pro.sh
 scripts/download/nsynth.sh
 scripts/download/surge_pitch.sh
@@ -1485,6 +1486,12 @@ MUSDB18_ACK_TERMS=1 MUSDB18_DOWNLOAD_HQ=1 scripts/download/musdb18.sh
 MSRBENCH_STEM=Vocals scripts/download/msrbench.sh
 MSRBENCH_STEM="Orchestral Elements" scripts/download/msrbench.sh
 MSRBENCH_CLONE_TOOLKIT=1 scripts/download/msrbench.sh
+
+# MSMD downloads official repository, paper, release, and recent score-following
+# metadata by default. Its approximately 9.56 GB original feature archive and
+# 1.92 GB score-following NPZ/WAV package are opt-in.
+MSMD_DOWNLOAD_ARCHIVES=1 MSMD_PARTS="score_following" scripts/download/msmd.sh
+MSMD_DOWNLOAD_ARCHIVES=1 MSMD_PARTS="original score_following" scripts/download/msmd.sh
 
 # Slakh2100 downloads the official page and slakh-utils README/LICENSE by default.
 SLAKH_CHECK_ZENODO=1 scripts/download/slakh2100.sh
