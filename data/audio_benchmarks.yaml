@@ -9,6 +9,91 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  meta_learned_lora_adapter_geometry:
+    paper: https://arxiv.org/abs/2607.22010
+    title: "How Meta-Learning Shapes LoRA Adapter Geometry in Speech Deepfake Detection"
+    sections: III-C, IV-A, IV-B, and V-A-V-C
+    status: audited_existing_deepfake_benchmarks_with_unreleased_diagnostic_artifacts
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: ASVspoof 2019 LA Eval
+        index_id: asvspoof_2019
+        status: existing_public_family
+        protocol: >-
+          Train the frozen XLSR-53 plus AASIST detector's rank-16 LoRA
+          adapters on ASVspoof 2019 LA under either empirical risk
+          minimization or first-order meta-learning for domain generalization.
+        note: >-
+          The paper analyzes five released checkpoint seeds from the preceding
+          ICASSP 2026 study. It does not publish a new ASVspoof split,
+          annotation layer, or audio package.
+      - cited_as: ASVspoof 2021 LA and DF
+        index_id: asvspoof_2021
+        status: existing_public_family
+        protocol: >-
+          Estimate the empirical Fisher separately on the logical-access and
+          deepfake evaluation tracks, treating them as two of the six
+          out-of-domain corpora used for adapter-geometry comparisons.
+        note: >-
+          LA and DF are distinct tracks within the existing ASVspoof 2021
+          family, not two newly released benchmark families.
+      - cited_as: ASVspoof 5
+        index_id: asvspoof_5
+        status: existing_public_family
+        protocol: >-
+          Use the existing ASVspoof 5 evaluation corpus as an out-of-domain
+          Fisher probe and report projection-wise effective-rank changes.
+      - cited_as: In-The-Wild
+        index_id: in_the_wild_audio_deepfake
+        status: existing_public_family
+        protocol: >-
+          Use the existing in-the-wild audio deepfake corpus for Fisher
+          analysis and for the paper's only local score-sensitivity
+          experiment, perturbing each trained LoRA adapter in five random
+          directions at several relative radii.
+      - cited_as: FakeAVCeleb
+        index_id: fakeavceleb
+        status: existing_public_family
+        protocol: >-
+          Use the audio modality of the existing multimodal deepfake dataset
+          as the sixth out-of-domain Fisher probe corpus.
+    release_audit:
+      paper_and_aggregate_geometry_results: public
+      source_benchmark_families: public_or_access_controlled_as_indexed
+      five_erm_and_mldg_checkpoint_seeds: released_by_preceding_study
+      empirical_fisher_and_effective_rank_diagnostic_code: not_linked
+      per_checkpoint_per_layer_per_projection_statistics: not_released
+      in_the_wild_perturbation_directions_and_item_scores: not_released
+      new_benchmark_data_or_split_manifests: none
+    license:
+      paper: CC-BY-4.0
+      source_benchmark_data: retain_each_indexed_family_terms
+      diagnostic_artifacts: not_specified_unreleased
+      note: >-
+        The paper's CC BY 4.0 license covers the publication, not ASVspoof,
+        In-The-Wild, or FakeAVCeleb audio. No license can be assigned to the
+        absent diagnostic implementation or item-level analysis artifacts.
+    sources:
+      - https://arxiv.org/abs/2607.22010
+      - https://arxiv.org/html/2607.22010v1#S3.SS3
+      - https://arxiv.org/html/2607.22010v1#S4.SS1
+      - https://arxiv.org/html/2607.22010v1#S4.SS2
+      - https://arxiv.org/html/2607.22010v1#S5.SS1
+      - https://arxiv.org/html/2607.22010v1#S5.SS3
+      - https://www.asvspoof.org/index2019.html
+      - https://www.asvspoof.org/index2021.html
+      - https://www.asvspoof.org/
+      - https://zenodo.org/records/14498691
+      - https://deepfake-total.com/in_the_wild
+      - https://github.com/DASH-Lab/FakeAVCeleb
+    note: >-
+      This work contributes a descriptive Fisher-weighted adapter-geometry
+      protocol rather than a new audio benchmark. The six corpus probes map
+      to five existing index families because ASVspoof 2021 LA and DF are
+      separate tracks in one challenge family. Recording the mapping prevents
+      the diagnostic results or reused tracks from inflating the public
+      benchmark count.
+
   stanceflip_multimodal_conversational_stance:
     paper: https://arxiv.org/abs/2607.24191
     title: "StanceFlip: A Comprehensive Multi-Dimensional Benchmark for Multimodal Conversational Stance Flipping Forecasting"
