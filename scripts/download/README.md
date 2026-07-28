@@ -116,6 +116,7 @@ scripts/download/s_diverse.sh
 scripts/download/lfr_benchmarking_factory.sh
 scripts/download/ears.sh
 scripts/download/demand.sh
+scripts/download/drone_audio_dataset.sh
 scripts/download/jvs.sh
 scripts/download/librispeech.sh
 scripts/download/libriheavy.sh

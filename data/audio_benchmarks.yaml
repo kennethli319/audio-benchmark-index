@@ -29881,3 +29881,85 @@ benchmarks:
       - https://arxiv.org/abs/2607.10790
       - https://arxiv.org/html/2607.10790v1#S3
       - https://arxiv.org/html/2607.10790v1#S4
+
+  - id: drone_audio_dataset
+    name: DroneAudioDataset
+    full_name: "DroneAudioDataset for Audio-Based Drone Detection and Identification"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    category: acoustic_drone_detection
+    tasks:
+      - acoustic_drone_detection
+      - drone_type_classification
+      - environmental_sound_classification
+      - session_grouped_generalization
+      - low_false_alarm_detection
+    official:
+      dataset: https://github.com/saraalemadi/DroneAudioDataset
+      paper: https://doi.org/10.1109/IWCMC.2019.8766732
+      recent_evaluation: https://arxiv.org/abs/2606.29589
+      evaluation_repo: https://github.com/shulm/echohawk
+    download:
+      access: public_ungated_large
+      primary:
+        - https://github.com/saraalemadi/DroneAudioDataset
+      examples:
+        - 'scripts/download/drone_audio_dataset.sh'
+        - 'DRONE_AUDIO_DATASET_CLONE_DATA=1 scripts/download/drone_audio_dataset.sh'
+        - 'DRONE_AUDIO_DATASET_CLONE_ECHOHAWK=1 scripts/download/drone_audio_dataset.sh'
+      notes: >-
+        The owner repository directly stores 23,408 WAV files in parallel
+        binary and multiclass directory trees: each tree has 1,332 drone clips
+        and 10,372 unknown clips, while the multiclass tree divides the drone
+        clips equally between the repository labels `bebop_1` and `membo_1`.
+        The two trees are alternate label organizations rather than independent
+        recordings, so their totals must not be interpreted as 23,408 unique
+        source clips. The unknown class includes clips derived from ESC-50 and
+        Speech Commands, plus author-created silence. EchoHawk resamples and
+        segments a working copy into 19,275 one-second examples and shows that
+        adjacent slices from the same continuous recording can leak across
+        naive clip-level splits. Its corrected protocol groups drone clips by
+        257 recording sessions and negatives by source clip or speaker. The
+        helper downloads official documentation, repository metadata, and
+        paper metadata by default; cloning either the approximately 281 MB
+        compressed dataset repository or the separate evaluation toolkit
+        requires an explicit opt-in.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Audio is committed directly to the public GitHub repository. Use a
+        session- or source-grouped split for evaluation rather than randomly
+        dividing pre-segmented clips. EchoHawk's generated synthetic
+        hard-confuser and direction-of-arrival tests are reproducible from its
+        code, but they are an evaluation protocol rather than another recorded
+        dataset release.
+    license:
+      data: not_specified
+      evaluation_code: MIT
+      upstream: ESC-50_and_Speech_Commands_terms_apply_to_negative_audio
+      notes: >-
+        DroneAudioDataset has no LICENSE file or GitHub-detected license, so
+        public download access does not establish permission to redistribute
+        or commercially reuse its author-recorded drone audio. Its README
+        attributes negative clips to ESC-50 and Speech Commands; retain their
+        provenance and applicable source terms. EchoHawk's MIT license covers
+        its code and synthetic generator, not the separately hosted recorded
+        dataset.
+    sources:
+      - https://github.com/saraalemadi/DroneAudioDataset
+      - https://raw.githubusercontent.com/saraalemadi/DroneAudioDataset/master/README.md
+      - https://api.github.com/repos/saraalemadi/DroneAudioDataset
+      - https://api.github.com/repos/saraalemadi/DroneAudioDataset/git/trees/master?recursive=1
+      - https://doi.org/10.1109/IWCMC.2019.8766732
+      - https://arxiv.org/abs/2606.29589
+      - https://arxiv.org/html/2606.29589v1#S8
+      - https://arxiv.org/html/2606.29589v1#S9
+      - https://arxiv.org/html/2606.29589v1#S10.SS3
+      - https://github.com/shulm/echohawk
+      - https://raw.githubusercontent.com/shulm/echohawk/main/README.md
+      - https://raw.githubusercontent.com/shulm/echohawk/main/LICENSE
+      - https://raw.githubusercontent.com/shulm/echohawk/main/data/README.md
+      - https://api.github.com/repos/shulm/echohawk
