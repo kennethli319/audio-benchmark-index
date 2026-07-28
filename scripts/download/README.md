@@ -88,6 +88,7 @@ scripts/download/melobottleneck_eval.sh
 scripts/download/single_item_kawaii_measure.sh
 scripts/download/kitchen20.sh
 scripts/download/rul_muchomusic.sh
+scripts/download/cross_era.sh
 scripts/download/songformbench.sh
 scripts/download/rubato.sh
 scripts/download/multtipop.sh
@@ -302,6 +303,11 @@ scripts/download/gtzan.sh
 scripts/download/openmic_2018.sh
 scripts/download/musicnet.sh
 scripts/download/msmd.sh
+
+# Cross-Era downloads official annotations, chord features, and source-backed
+# work-year metadata by default. The ~244 MB chroma archive is opt-in; the
+# underlying commercial recordings are unavailable from the official release.
+CROSS_ERA_DOWNLOAD_CHROMA=1 scripts/download/cross_era.sh
 scripts/download/singmos_pro.sh
 scripts/download/nsynth.sh
 scripts/download/surge_pitch.sh

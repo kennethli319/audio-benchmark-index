@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 383 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 384 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231859a9'/%3E%3Cpath d='M10 32h7l4-12 7 25 7-31 7 36 6-27 5 9h2' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="383 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="384 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -416,15 +416,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 383 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 384 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>383</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>383</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>384</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>384</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>57</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-28">July 28, 2026</time></strong></div>
       </div>
@@ -478,7 +478,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="representation" aria-pressed="false">
   <span>Representation &amp; general suites</span>
-  <strong>26</strong>
+  <strong>27</strong>
   <small>Cross-task representation and general-purpose evaluation</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audio-understanding" aria-pressed="false">
@@ -488,7 +488,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="music" aria-pressed="false">
   <span>Music</span>
-  <strong>62</strong>
+  <strong>63</strong>
   <small>Music tagging, MIR, transcription, synthesis, and genre</small>
 </button>
       </div>
@@ -496,7 +496,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 383 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 384 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -572,7 +572,7 @@
 
         <div class="browse-content">
           <div class="results-bar">
-            <p id="result-status" role="status" aria-live="polite">Showing 383 of 383 benchmarks.</p>
+            <p id="result-status" role="status" aria-live="polite">Showing 384 of 384 benchmarks.</p>
             <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
           </div>
 
@@ -5704,6 +5704,78 @@
                     <li><a href="https://gitlab.com/cs-cooper-lab/crema-d-mirror">Source 2 · gitlab.com</a></li>
                     <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4313618/">Source 3 · ncbi.nlm.nih.gov</a></li>
                     <li><a href="https://doi.org/10.1109/TAFFC.2014.2336244">Source 4 · doi.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-cross_era"
+  data-name="cross-era"
+  data-families="representation music"
+  data-access="helper"
+  data-host="hugging-face"
+  data-terms="unspecified"
+  data-search="cross era cross era cross era dataset for western classical music style analysis music understanding classical music style classification historical style analysis global key detection chord analysis harmonic representation learning the audiolabs page requests citation but states no explicit license for its downloadable annotations chord sequences or chroma features the supplementary hugging face card declares apache 2 0 for its work year metadata the recent github repository has no detected license and intentionally excludes datasets models embeddings and outputs do not infer rights to the absent commercial recordings or use the supplementary metadata license to override upstream terms cross era contains 2 000 commercial classical music recordings balanced across piano and orchestra and five historical groupings because the recordings cannot be redistributed the official release provides a 2 000 row annotation csv approximately 1 mb of extracted chordino chord sequences and an optional approximately 244 mb nnls chroma archive instead expert global key labels cover 1 200 baroque classical and romantic works a 2026 study adds an approximately 0 9 mb public work year table with source urls and uses all 2 000 works as a held out representation target before evaluating chronological forecasts on a 480 work 1875 1940 subset the helper fetches the official page annotations chord features work year metadata and source cards by default chroma features require explicit opt in and commercial audio is never requested project page https www audiolabs erlangen de resources mir cross era paper https doi org 10 1177 1029864918757595 recent evaluation https arxiv org abs 2607 23957 recent evaluation repo https github com hreyulog music opinion dynamic work year annotations https huggingface co datasets stravyndynamics cross era classical work years https www audiolabs erlangen de resources mir cross era https www audiolabs erlangen de content resources mir cross era cross era annotations csv https www audiolabs erlangen de content resources mir cross era cross era chords chordino zip https www audiolabs erlangen de content resources mir cross era cross era chroma nnls zip https doi org 10 1177 1029864918757595 https arxiv org abs 2607 23957 https arxiv org html 2607 23957v1 s3 ss1 https arxiv org html 2607 23957v1 s3 ss2 https arxiv org html 2607 23957v1 s4 ss4 https arxiv org html 2607 23957v1 a3 https huggingface co datasets stravyndynamics cross era classical work years https huggingface co datasets stravyndynamics cross era classical work years raw main readme md https huggingface co api datasets stravyndynamics cross era classical work years https github com hreyulog music opinion dynamic https raw githubusercontent com hreyulog music opinion dynamic main readme md https api github com repos hreyulog music opinion dynamic">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Representation &amp; general suites</span>
+      <h3>Cross-Era</h3>
+      <p class="benchmark-full-name">Cross-Era Dataset for Western Classical Music Style Analysis</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Classical Music Style Classification</span>
+        <span class="tag">Historical Style Analysis</span>
+        <span class="tag">Global Key Detection</span>
+        <span class="tag">Chord Analysis</span>
+        <span class="tag tag-more">+1 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Hugging Face</strong></div>
+    <div><span>Upstream terms</span><strong>Not specified</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <div class="card-actions">
+    <a class="card-action primary" href="https://www.audiolabs-erlangen.de/resources/MIR/cross-era">Get data</a>
+          <a class="card-action secondary" href="https://doi.org/10.1177/1029864918757595">Read the paper</a>
+  </div>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>Not specified in the source record.</dd></div>
+        <div><dt>Code license</dt><dd>Not specified in the source record.</dd></div>
+        <div><dt>License caution</dt><dd>The AudioLabs page requests citation but states no explicit license for its downloadable annotations, chord sequences, or chroma features. The supplementary Hugging Face card declares Apache 2.0 for its work-year metadata. The recent GitHub repository has no detected license and intentionally excludes datasets, models, embeddings, and outputs. Do not infer rights to the absent commercial recordings or use the supplementary metadata license to override upstream terms.</dd></div>
+        <div><dt>Download notes</dt><dd>Cross-Era contains 2,000 commercial classical-music recordings, balanced across piano and orchestra and five historical groupings. Because the recordings cannot be redistributed, the official release provides a 2,000-row annotation CSV, approximately 1 MB of extracted Chordino chord sequences, and an optional approximately 244 MB NNLS chroma archive instead. Expert global-key labels cover 1,200 Baroque, Classical, and Romantic works. A 2026 study adds an approximately 0.9 MB public work-year table with source URLs and uses all 2,000 works as a held-out representation target before evaluating chronological forecasts on a 480-work 1875-1940 subset. The helper fetches the official page, annotations, chord features, work-year metadata, and source cards by default; chroma features require explicit opt-in and commercial audio is never requested.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/cross_era.sh</code></div>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/cross_era.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/cross_era.sh" aria-label="Copy Cross-Era helper path">Copy path</button>
+        </div>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://www.audiolabs-erlangen.de/resources/MIR/cross-era">Project page</a></li>
+                    <li><a href="https://doi.org/10.1177/1029864918757595">Paper</a></li>
+                    <li><a href="https://arxiv.org/abs/2607.23957">Recent Evaluation</a></li>
+                    <li><a href="https://github.com/hreyulog/music_opinion_dynamic">Recent Evaluation Repo</a></li>
+                    <li><a href="https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years">Work Year Annotations</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://www.audiolabs-erlangen.de/resources/MIR/cross-era">Source 1 · audiolabs-erlangen.de</a></li>
+                    <li><a href="https://www.audiolabs-erlangen.de/content/resources/MIR/cross-era/cross-era_annotations.csv">Source 2 · audiolabs-erlangen.de</a></li>
+                    <li><a href="https://www.audiolabs-erlangen.de/content/resources/MIR/cross-era/cross-era_chords-chordino.zip">Source 3 · audiolabs-erlangen.de</a></li>
+                    <li><a href="https://www.audiolabs-erlangen.de/content/resources/MIR/cross-era/cross-era_chroma-nnls.zip">Source 4 · audiolabs-erlangen.de</a></li>
+                    <li><a href="https://doi.org/10.1177/1029864918757595">Source 5 · doi.org</a></li>
+                    <li><a href="https://arxiv.org/abs/2607.23957">Source 6 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.23957v1#S3.SS1">Source 7 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.23957v1#S3.SS2">Source 8 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.23957v1#S4.SS4">Source 9 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.23957v1#A3">Source 10 · arxiv.org</a></li>
+                    <li><a href="https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years">Source 11 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years/raw/main/README.md">Source 12 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/StravynDynamics/cross-era-classical-work-years">Source 13 · huggingface.co</a></li>
+                    <li><a href="https://github.com/hreyulog/music_opinion_dynamic">Source 14 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/hreyulog/music_opinion_dynamic/main/README.md">Source 15 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://api.github.com/repos/hreyulog/music_opinion_dynamic">Source 16 · api.github.com</a></li></ul></div>
     </div>
   </details>
 </article>

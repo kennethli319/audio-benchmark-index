@@ -9,6 +9,79 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  cross_era_style_coevolution:
+    paper: https://arxiv.org/abs/2607.23957
+    title: "Modeling Stylistic Co-evolution in Symbolic Music Heritage Collections"
+    sections: 3.1-3.2, 4.4, and appendix C
+    status: audited_new_public_family_with_unreleased_commercial_audio
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: Cross-Era
+        index_id: cross_era
+        status: public_annotations_and_features_audio_unreleased
+        protocol: >-
+          Use the complete 2,000-work Cross-Era corpus as a held-out target
+          collection, enrich it with source-backed work years, fit
+          country-level harmonic trajectories through 1925, and recursively
+          forecast the 1930, 1935, and 1940 states. The main paper analyzes a
+          480-work 1875-1940 subset across Russia, France, Germany, Austria,
+          and a pooled Others group.
+        note: >-
+          The official AudioLabs release provides 2,000-row annotations,
+          Chordino chord sequences, and NNLS chroma features, but not the
+          underlying commercial recordings. The paper's supplementary Hugging
+          Face repository adds public source-backed work-year metadata.
+      - cited_as: MIDI BiLSTM stress-test corpus
+        index_id: null
+        status: external_symbolic_diagnostic_not_new_family
+        protocol: >-
+          Run an optional robustness analysis on a filtered external
+          IMSLP-derived MIDI collection using era-classifier probabilities
+          rather than the main ChordBERT/PCA representation.
+        note: >-
+          This diagnostic does not define the main benchmark, and the paper
+          repository intentionally excludes its external MIDI data and model
+          weights.
+    release_audit:
+      official_annotations: public_ungated
+      official_chord_features: public_ungated
+      official_chroma_features: public_ungated_large
+      source_backed_work_year_annotations: public_ungated
+      commercial_audio: unavailable
+      paper_code: public_ungated
+      paper_embeddings_models_and_outputs: excluded
+    license:
+      paper: CC-BY-4.0
+      work_year_annotations: Apache-2.0
+      original_annotations_and_features: not_specified
+      commercial_recordings: not_redistributed
+      code_repository: no_detected_license
+      note: >-
+        The supplementary metadata card declares Apache 2.0, but neither it
+        nor the paper re-licenses the original Cross-Era features or the
+        underlying commercial recordings. Public download access does not
+        establish commercial-use or redistribution rights.
+    sources:
+      - https://arxiv.org/abs/2607.23957
+      - https://arxiv.org/html/2607.23957v1#S3.SS1
+      - https://arxiv.org/html/2607.23957v1#S3.SS2
+      - https://arxiv.org/html/2607.23957v1#S4.SS4
+      - https://arxiv.org/html/2607.23957v1#A3
+      - https://www.audiolabs-erlangen.de/resources/MIR/cross-era
+      - https://doi.org/10.1177/1029864918757595
+      - https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years
+      - https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years/raw/main/README.md
+      - https://huggingface.co/api/datasets/StravynDynamics/cross-era-classical-work-years
+      - https://github.com/hreyulog/music_opinion_dynamic
+      - https://raw.githubusercontent.com/hreyulog/music_opinion_dynamic/main/README.md
+      - https://api.github.com/repos/hreyulog/music_opinion_dynamic
+    note: >-
+      Cross-Era is counted as one audio-derived music-analysis family because
+      its official annotations and feature representations are reproducibly
+      downloadable. Its absent commercial recordings, the paper's 480-work
+      chronological selection, and the supplementary work-year table are not
+      counted as separate benchmark families.
+
   facialtalker_vsdd_1k:
     paper: https://arxiv.org/abs/2607.24430
     title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
@@ -28940,3 +29013,82 @@ benchmarks:
       - https://github.com/ValleyC/CODA
       - https://raw.githubusercontent.com/ValleyC/CODA/main/README.md
       - https://raw.githubusercontent.com/ValleyC/CODA/main/LICENSE
+
+  - id: cross_era
+    name: Cross-Era
+    full_name: "Cross-Era Dataset for Western Classical Music Style Analysis"
+    qwen_cited_as: null
+    qwen_bucket: music_understanding
+    category: music_analysis
+    tasks:
+      - classical_music_style_classification
+      - historical_style_analysis
+      - global_key_detection
+      - chord_analysis
+      - harmonic_representation_learning
+    official:
+      project: https://www.audiolabs-erlangen.de/resources/MIR/cross-era
+      paper: https://doi.org/10.1177/1029864918757595
+      recent_evaluation: https://arxiv.org/abs/2607.23957
+      recent_evaluation_repo: https://github.com/hreyulog/music_opinion_dynamic
+      work_year_annotations: https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years
+    download:
+      access: public_features_audio_unavailable
+      primary:
+        - https://www.audiolabs-erlangen.de/resources/MIR/cross-era
+        - https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years
+      examples:
+        - 'scripts/download/cross_era.sh'
+        - 'CROSS_ERA_DOWNLOAD_CHROMA=1 scripts/download/cross_era.sh'
+      notes: >-
+        Cross-Era contains 2,000 commercial classical-music recordings,
+        balanced across piano and orchestra and five historical groupings.
+        Because the recordings cannot be redistributed, the official release
+        provides a 2,000-row annotation CSV, approximately 1 MB of extracted
+        Chordino chord sequences, and an optional approximately 244 MB NNLS
+        chroma archive instead. Expert global-key labels cover 1,200 Baroque,
+        Classical, and Romantic works. A 2026 study adds an approximately
+        0.9 MB public work-year table with source URLs and uses all 2,000
+        works as a held-out representation target before evaluating
+        chronological forecasts on a 480-work 1875-1940 subset. The helper
+        fetches the official page, annotations, chord features, work-year
+        metadata, and source cards by default; chroma features require explicit
+        opt-in and commercial audio is never requested.
+    access:
+      status: public_features_only
+      registration_required: false
+      notes: >-
+        Annotations and derived features are directly downloadable without an
+        account. The official page explicitly says the source recordings are
+        commercial and cannot be made public, so reproducing audio-level
+        experiments requires separately licensed matching recordings.
+    license:
+      annotations_and_features: not_specified
+      work_year_annotations: Apache-2.0
+      recent_evaluation_code: no_detected_license
+      source_audio: commercial_recordings_not_redistributed
+      notes: >-
+        The AudioLabs page requests citation but states no explicit license
+        for its downloadable annotations, chord sequences, or chroma features.
+        The supplementary Hugging Face card declares Apache 2.0 for its
+        work-year metadata. The recent GitHub repository has no detected
+        license and intentionally excludes datasets, models, embeddings, and
+        outputs. Do not infer rights to the absent commercial recordings or
+        use the supplementary metadata license to override upstream terms.
+    sources:
+      - https://www.audiolabs-erlangen.de/resources/MIR/cross-era
+      - https://www.audiolabs-erlangen.de/content/resources/MIR/cross-era/cross-era_annotations.csv
+      - https://www.audiolabs-erlangen.de/content/resources/MIR/cross-era/cross-era_chords-chordino.zip
+      - https://www.audiolabs-erlangen.de/content/resources/MIR/cross-era/cross-era_chroma-nnls.zip
+      - https://doi.org/10.1177/1029864918757595
+      - https://arxiv.org/abs/2607.23957
+      - https://arxiv.org/html/2607.23957v1#S3.SS1
+      - https://arxiv.org/html/2607.23957v1#S3.SS2
+      - https://arxiv.org/html/2607.23957v1#S4.SS4
+      - https://arxiv.org/html/2607.23957v1#A3
+      - https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years
+      - https://huggingface.co/datasets/StravynDynamics/cross-era-classical-work-years/raw/main/README.md
+      - https://huggingface.co/api/datasets/StravynDynamics/cross-era-classical-work-years
+      - https://github.com/hreyulog/music_opinion_dynamic
+      - https://raw.githubusercontent.com/hreyulog/music_opinion_dynamic/main/README.md
+      - https://api.github.com/repos/hreyulog/music_opinion_dynamic
