@@ -11620,6 +11620,66 @@ benchmarks:
       - https://arxiv.org/html/2607.13013v1#S5.SS2
       - https://arxiv.org/html/2607.13013v1#S5.SS3
 
+  - id: omnilingual_asr_corpus
+    name: Omnilingual ASR Corpus
+    full_name: "Omnilingual ASR: Open-Source Multilingual Speech Recognition for 1600+ Languages"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - multilingual_asr
+      - low_resource_asr
+      - zero_shot_asr
+      - speech_representation_learning
+    official:
+      project: https://ai.meta.com/research/publications/omnilingual-asr-open-source-multilingual-speech-recognition-for-1600-languages/
+      repo: https://github.com/facebookresearch/omnilingual-asr
+      dataset: https://huggingface.co/datasets/facebook/omnilingual-asr-corpus
+      paper: https://arxiv.org/abs/2511.09690
+      recent_evaluation: https://arxiv.org/abs/2607.24030
+    download:
+      access: public_ungated_large
+      primary:
+        - https://huggingface.co/datasets/facebook/omnilingual-asr-corpus
+        - https://github.com/facebookresearch/omnilingual-asr
+      examples:
+        - 'scripts/download/omnilingual_asr_corpus.sh'
+        - 'OMNILINGUAL_ASR_CONFIG=lij_Latn OMNILINGUAL_ASR_DOWNLOAD_CONFIG=1 scripts/download/omnilingual_asr_corpus.sh'
+      notes: >-
+        The commissioned corpus provides spontaneous speech and transcripts
+        for 348 languages, with train, development, and test splits where
+        available. The paper reports 3,350 hours; the current Hugging Face
+        repository exposes 349 configurations and approximately 491 GB of
+        storage. The helper downloads only the official dataset card, Hub API
+        metadata, and repository documentation by default. A single explicit
+        language-script configuration can be requested with
+        OMNILINGUAL_ASR_DOWNLOAD_CONFIG=1; it never requests the complete
+        snapshot. Omnilingual ASR models cover more than 1,600 languages, but
+        that model coverage must not be confused with this 348-language
+        public corpus.
+    license:
+      data: cc-by-4.0
+      code_and_models: Apache-2.0
+      notes: >-
+        Meta's dataset card and repository README declare the corpus CC BY
+        4.0; repository code and models are Apache 2.0. The corpus contains
+        human voices and spontaneous responses, so attribution, privacy,
+        consent, and local-law considerations remain relevant even though
+        access is ungated.
+    sources:
+      - https://ai.meta.com/research/publications/omnilingual-asr-open-source-multilingual-speech-recognition-for-1600-languages/
+      - https://arxiv.org/abs/2511.09690
+      - https://arxiv.org/html/2511.09690v1#S3.SS3.SSS3
+      - https://arxiv.org/html/2511.09690v1#S3.SS5
+      - https://arxiv.org/html/2511.09690v1#S5.SS9
+      - https://github.com/facebookresearch/omnilingual-asr
+      - https://raw.githubusercontent.com/facebookresearch/omnilingual-asr/main/README.md
+      - https://raw.githubusercontent.com/facebookresearch/omnilingual-asr/main/LICENSE
+      - https://huggingface.co/datasets/facebook/omnilingual-asr-corpus
+      - https://huggingface.co/datasets/facebook/omnilingual-asr-corpus/raw/main/README.md
+      - https://huggingface.co/api/datasets/facebook/omnilingual-asr-corpus
+      - https://arxiv.org/abs/2607.24030
+      - https://arxiv.org/html/2607.24030v1#S4.SS1
+
   - id: voicecodebench
     name: VoiceCodeBench
     full_name: "VoiceCodeBench: Evaluating Exact Structured-Token Recovery in Automatic Speech Recognition"

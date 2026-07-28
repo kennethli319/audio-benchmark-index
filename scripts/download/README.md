@@ -105,6 +105,7 @@ scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/spearbench.sh
 scripts/download/fleurs.sh
+scripts/download/omnilingual_asr_corpus.sh
 scripts/download/voicecodebench.sh
 scripts/download/s_diverse.sh
 scripts/download/jvs.sh
