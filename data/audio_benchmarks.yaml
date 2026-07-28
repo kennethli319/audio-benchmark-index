@@ -9,6 +9,85 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  omniscope_audio_video_evaluation:
+    paper: https://arxiv.org/abs/2607.23193
+    title: "OmniScope: Modality-Decoupled Token Compression for Omnimodal Large Language Models"
+    sections: 4.1 and appendix A
+    status: audited_existing_public_benchmark_families_and_partial_evaluation_code
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: existing_public_benchmark_with_released_paper_evaluation_path
+        protocol: >-
+          Evaluate Qwen2.5-Omni 3B and 7B on audio-video multiple-choice
+          questions with video uniformly capped at 128 frames. Compare full
+          tokens and compression methods at approximately 45 and 25 percent
+          overall token retention; appendix A also reports all eight
+          WorldSense domains.
+        note: >-
+          The Apache-2.0 repository provides the WorldSense inference script
+          and a format example, but users must obtain WorldSense separately.
+          It does not bundle benchmark media or annotations.
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: existing_public_benchmark_without_paper_specific_evaluation_script
+        protocol: >-
+          Use the same Qwen2.5-Omni model scales, 128-frame cap, and token
+          retention settings for everyday audio-video question answering.
+          The appendix additionally computes audio-versus-video salience
+          correlation over all 1,197 query-video pairs.
+        note: >-
+          The public repository reports aggregate results but contains no
+          DailyOmni evaluation script, predictions, per-item salience values,
+          or derived correlation table.
+      - cited_as: OmniVideoBench
+        index_id: omnivideobench
+        status: existing_public_benchmark_without_paper_specific_evaluation_script
+        protocol: >-
+          Evaluate omnimodal video understanding using the common two-model,
+          128-frame, and 45/25-percent token-retention protocol.
+        note: >-
+          The repository does not release an OmniVideoBench adapter,
+          predictions, or per-item results.
+      - cited_as: Video-MME
+        index_id: video_mme
+        status: existing_public_benchmark_without_paper_specific_evaluation_script
+        protocol: >-
+          Evaluate video understanding with audio enabled using the common
+          two-model, 128-frame, and 45/25-percent token-retention protocol.
+        note: >-
+          The repository does not release a Video-MME adapter, predictions,
+          or per-item results.
+    release_audit:
+      framework_code: public_apache_2_0
+      worldsense_evaluation_script_and_format_example: released
+      dailyomni_omnivideobench_and_video_mme_adapters: not_released
+      benchmark_media_and_annotations: use_existing_upstream_releases
+      paper_predictions_and_per_item_results: not_released
+      paper_specific_salience_scores: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      framework_code: apache_2_0
+      benchmark_data: use_each_upstream_family_terms
+      predictions_and_derived_evaluation_artifacts: not_specified_unreleased
+    sources:
+      - https://arxiv.org/abs/2607.23193
+      - https://arxiv.org/html/2607.23193v1
+      - https://github.com/MAC-AutoML/OmniScope
+      - https://raw.githubusercontent.com/MAC-AutoML/OmniScope/main/README.md
+      - https://raw.githubusercontent.com/MAC-AutoML/OmniScope/main/LICENSE
+      - https://api.github.com/repos/MAC-AutoML/OmniScope/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/MAC-AutoML/OmniScope/main/eval_worldSense.py
+      - https://raw.githubusercontent.com/MAC-AutoML/OmniScope/main/data/worldsense_format.json
+    note: >-
+      OmniScope evaluates four already indexed public benchmark families and
+      introduces a token-compression method, not a new benchmark dataset. Its
+      repository currently makes only the WorldSense evaluation path directly
+      reproducible. This audit records the shared protocol and release gap
+      without adding a duplicate family, changing the index count, or adding
+      a download helper.
+
   soundscapeagent_evaluation:
     paper: https://arxiv.org/abs/2607.21857
     title: "SoundscapeAgent: Agentic Soundscape Construction for Controllable Synthesis and Scalable Audio-Language Supervision"
