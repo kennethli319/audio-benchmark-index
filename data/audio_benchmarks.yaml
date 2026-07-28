@@ -9,6 +9,64 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  redvox_multilingual_speech_safety:
+    paper: https://arxiv.org/abs/2606.26968
+    title: "RedVox: Safety and Fairness Gaps in Speech Models Across Languages"
+    sections: 3-4, ethical considerations, and appendix B
+    status: audited_announced_gated_release_currently_placeholder_only
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: RedVox released subset
+        index_id: null
+        status: paper_evaluated_release_announced_but_not_yet_published
+        protocol: >-
+          Evaluate open-ended safety, stereotype fairness, and response
+          relatedness for speech, non-speech-audio-plus-text, and text-only
+          requests across English, French, Italian, Spanish, and German.
+          The planned public subset contains 3,414 entries from 26 consenting
+          voices; the full private collection contains 6,118 entries from 52
+          participants and is not planned for release.
+        note: >-
+          Speech requests vocalize the harmful content and add a textual
+          follow-up. Audio requests keep the harmful content in text and pair
+          it with six-second silence, ambient noise, or babble from MUSAN.
+          The paper evaluates model responses with safe/fair, controversial,
+          unsafe/unfair, and related/unrelated judgments.
+    release_audit:
+      paper: public_CC-BY-4.0
+      hugging_face_repository: public_placeholder_only
+      hugging_face_gating: currently_false_despite_paper_announcing_gated_access
+      hugging_face_data_files: not_present
+      hugging_face_reported_storage_bytes: 0
+      code_repository: linked_by_paper_but_currently_returns_404
+      full_6118_entry_collection: private_not_for_release
+      planned_3414_entry_subset: not_yet_released
+    license:
+      paper: CC-BY-4.0
+      planned_dataset: customized_research_only_gated_terms_not_yet_published
+      planned_code: Apache-2.0_not_yet_verifiable
+      musan_noise: upstream_terms_apply
+      note: >-
+        The paper says access will require acceptance of a customized license
+        and binding intended-use terms. The current Hub card labels the
+        license only as "other" and publishes no terms or data. The paper's
+        CC BY 4.0 license does not license participant recordings.
+    sources:
+      - https://arxiv.org/abs/2606.26968
+      - https://arxiv.org/html/2606.26968v1#S3
+      - https://arxiv.org/html/2606.26968v1#S4
+      - https://arxiv.org/html/2606.26968v1#Sx2
+      - https://huggingface.co/datasets/FBK-MT/RedVox
+      - https://huggingface.co/datasets/FBK-MT/RedVox/raw/main/README.md
+      - https://huggingface.co/api/datasets/FBK-MT/RedVox
+      - https://github.com/hlt-mt/redvox
+      - https://api.github.com/repos/hlt-mt/redvox
+    note: >-
+      RedVox appears to be a substantive benchmark family, but no benchmark
+      row or download helper is added until the promised gated subset and its
+      customized terms are actually published. Recheck the official Hub and
+      repository after paper acceptance.
+
   output_based_multi_microphone_speech_enhancement:
     paper: https://arxiv.org/abs/2607.12529
     title: "Listen first: Output-Based Multi-Microphone Speech Enhancement"
