@@ -9,6 +9,79 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  soundscapeagent_evaluation:
+    paper: https://arxiv.org/abs/2607.21857
+    title: "SoundscapeAgent: Agentic Soundscape Construction for Controllable Synthesis and Scalable Audio-Language Supervision"
+    sections: 4.1-4.2
+    status: audited_existing_public_benchmarks_and_unreleased_paper_specific_artifacts
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Track A agent evaluation
+        index_id: audiocaps
+        status: public_source_family_with_partially_exposed_paper_specific_protocol
+        protocol: >-
+          Compare SoundscapeAgent, TangoFlux, EzAudio, and AudioLDM 2 on eight
+          prompts in each of five scenarios: AudioCaps captions,
+          ambiance-heavy scenes, event-rich scenes, temporally specified
+          scenes, and affective or abstract scenes. The study contains 40
+          prompts, 160 generated ten-second samples, and ten ratings per
+          sample from 22 listeners.
+        note: >-
+          The public demo repository exposes five representative comparison
+          prompts and their 20 system outputs. It does not release the full
+          40-prompt selection, all 160 samples, listener assignments,
+          anonymized ratings, or item-level scores. AudioCaps is already
+          indexed and does not reproduce the four paper-specific
+          compositional prompt groups.
+      - cited_as: Track B MMAU test-mini
+        index_id: mmau
+        status: public_benchmark_with_unreleased_training_augmentation
+        protocol: >-
+          Evaluate a frozen-backbone audio-language model on the public
+          1,000-item MMAU test-mini split with the official string-matching
+          protocol after adding nested 50k, 100k, or 200k subsets from a
+          200k-example agent-generated supervision pool.
+        note: >-
+          The public code requires users to configure local HIVE and generated
+          audio indexes. It does not include the paper's 200k generated
+          examples, nested subset manifests, aligned scene metadata, expanded
+          responses, training checkpoints, predictions, or per-item MMAU
+          scores. MMAU remains its existing public benchmark family.
+    release_audit:
+      framework_source: public_repository_all_rights_reserved
+      selected_project_page_demos: publicly_viewable_no_separate_license
+      complete_track_a_prompt_manifest: not_released
+      complete_track_a_generated_audio: not_released
+      track_a_listener_assignments_ratings_and_item_scores: not_released
+      track_b_200k_agent_generated_pool_and_nested_subsets: not_released
+      track_b_training_outputs_and_predictions: not_released
+      audiocaps_and_mmau: existing_public_families
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      framework_code: proprietary_all_rights_reserved
+      project_page_samples: no_separate_license_found
+      paper_specific_evaluation_and_generated_data: not_specified_unreleased
+      upstream: AudioCaps, MMAU, HIVE, TangoFlux, EzAudio, CaptionStew, and component-source terms remain applicable
+    sources:
+      - https://arxiv.org/abs/2607.21857
+      - https://arxiv.org/html/2607.21857v1#S4.SS1
+      - https://arxiv.org/html/2607.21857v1#S4.SS2
+      - https://haozhang6720.github.io/SoundscapeAgentDemoPage/
+      - https://github.com/HaoZhang6720/SoundscapeAgentDemoPage
+      - https://api.github.com/repos/HaoZhang6720/SoundscapeAgentDemoPage/git/trees/main?recursive=1
+      - https://github.com/HaoZhang6720/Soundscape_agent
+      - https://raw.githubusercontent.com/HaoZhang6720/Soundscape_agent/main/README.md
+      - https://raw.githubusercontent.com/HaoZhang6720/Soundscape_agent/main/LICENSE
+      - https://api.github.com/repos/HaoZhang6720/Soundscape_agent/git/trees/main?recursive=1
+    note: >-
+      SoundscapeAgent introduces a generation framework and paper-specific
+      evaluation protocols rather than a distinct released benchmark family.
+      Its official repositories make the implementation and selected listening
+      examples inspectable, but the framework license grants no reuse rights
+      and the complete evaluation and 200k-example generated supervision pool
+      are absent. AudioCaps and MMAU remain the reproducible public source
+      families; no benchmark entry, count change, or download helper is added.
+
   trident_source_speaker_recovery:
     paper: https://arxiv.org/abs/2607.23650
     title: "Expose Your Disguise: Recovering Source Speaker Identity From Voice Conversion"
