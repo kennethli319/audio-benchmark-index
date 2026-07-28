@@ -239,6 +239,7 @@ scripts/download/torgo.sh
 scripts/download/parapair_audio_bench.sh
 scripts/download/speecheq.sh
 scripts/download/star_bench.sh
+scripts/download/blab.sh
 scripts/download/speech_edit_bench.sh
 scripts/download/ming_freeform_audio_edit.sh
 scripts/download/mcr_bench.sh
@@ -507,6 +508,11 @@ SPEECHEQ_DOWNLOAD_HF=1 scripts/download/speecheq.sh
 # STAR-Bench downloads question metadata by default; its approximately 2.74 GB audio snapshot is opt-in.
 STAR_BENCH_DOWNLOAD_HF=1 scripts/download/star_bench.sh
 STAR_BENCH_CLONE_REPO=1 scripts/download/star_bench.sh
+
+# BLAB downloads docs/API metadata by default. Its approximately 535 MB
+# question, answer, and timestamp snapshot is opt-in; source audio is not redistributed.
+BLAB_DOWNLOAD_HF=1 scripts/download/blab.sh
+BLAB_CLONE_TOOLKIT=1 scripts/download/blab.sh
 
 # SpeechEditBench downloads docs and sample JSONL files by default; the approximately 3.75 GB audio release is opt-in.
 SPEECH_EDIT_BENCH_DOWNLOAD_HF=1 scripts/download/speech_edit_bench.sh

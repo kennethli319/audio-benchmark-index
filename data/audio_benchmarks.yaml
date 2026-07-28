@@ -25117,3 +25117,68 @@ benchmarks:
       - https://arxiv.org/abs/2607.23027
       - https://arxiv.org/html/2607.23027v1#S3
       - https://arxiv.org/html/2607.23027v1#S4.SS1
+
+  - id: blab
+    name: BLAB
+    full_name: "BLAB: Brutally Long Audio Bench"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - long_form_audio_understanding
+    tasks:
+      - long_audio_question_answering
+      - word_localization
+      - named_entity_localization
+      - advertisement_localization
+      - speaker_counting
+      - audio_event_duration_estimation
+      - full_audio_duration_estimation
+      - long_form_emotion_reasoning
+      - emotion_ranking
+    official:
+      paper: https://arxiv.org/abs/2505.03054
+      repo: https://github.com/orevaahia/brutally_long_audio_bench
+      dataset: https://huggingface.co/datasets/oreva/blab_long_audio
+    download:
+      access: public_ungated_metadata_source_audio_not_redistributed
+      primary:
+        - https://huggingface.co/datasets/oreva/blab_long_audio
+        - https://github.com/orevaahia/brutally_long_audio_bench
+      examples:
+        - 'scripts/download/blab.sh'
+        - 'BLAB_DOWNLOAD_HF=1 scripts/download/blab.sh'
+        - 'BLAB_CLONE_TOOLKIT=1 scripts/download/blab.sh'
+      notes: >-
+        BLAB is one long-form audio-language benchmark with eight task
+        configurations, not eight independent datasets. The paper reports
+        1,600 question-audio-answer items over more than 833 hours of
+        YouTube-sourced audio, with clips averaging 51 minutes. The public,
+        ungated Hugging Face release contains video URLs, audio-path fields,
+        questions, answers, and task-specific timestamps rather than audio
+        files. Its JSON metadata totals approximately 535 MB, so the helper
+        downloads only official paper, repository, dataset-card, and API
+        metadata by default; the full metadata snapshot and evaluation
+        toolkit are separate opt-ins. Reconstructing inputs depends on each
+        source video remaining available and on compliance with its terms.
+    license:
+      data: conflicting_cc_by_4.0_and_evaluation_only_metadata_with_upstream_video_terms
+      code: not_specified
+      notes: >-
+        The Hugging Face card declares CC BY 4.0 in structured metadata but
+        also says the data should only be used for evaluation and not model
+        training. The repository has no license file and GitHub detects no
+        code license. BLAB does not redistribute the underlying YouTube
+        audio; the paper says sources were Creative Commons-licensed, but
+        each video's license, availability, and platform terms still apply.
+        Resolve the card's conflicting reuse signals with the authors before
+        training, redistribution, or commercial use.
+    sources:
+      - https://arxiv.org/abs/2505.03054
+      - https://arxiv.org/html/2505.03054v2#S2
+      - https://arxiv.org/html/2505.03054v2#S4
+      - https://github.com/orevaahia/brutally_long_audio_bench
+      - https://raw.githubusercontent.com/orevaahia/brutally_long_audio_bench/main/README.md
+      - https://api.github.com/repos/orevaahia/brutally_long_audio_bench
+      - https://huggingface.co/datasets/oreva/blab_long_audio
+      - https://huggingface.co/datasets/oreva/blab_long_audio/raw/main/README.md
+      - https://huggingface.co/api/datasets/oreva/blab_long_audio

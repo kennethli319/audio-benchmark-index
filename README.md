@@ -71,7 +71,7 @@ Do not hand-edit `docs/index.html` or `docs/site-manifest.json`.
 
 ## Current snapshot
 
-Last checked: **2026-07-27**. The index contains **359 distinct benchmarks or benchmark families**,
+Last checked: **2026-07-27**. The index contains **360 distinct benchmarks or benchmark families**,
 with FLEURS de-duplicated across speech-to-text translation and ASR.
 
 The initial seed came from the Audio-to-Text evaluation benchmarks in section 5.1 of the
