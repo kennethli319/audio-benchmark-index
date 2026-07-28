@@ -15708,6 +15708,79 @@ benchmarks:
       - https://arxiv.org/abs/2607.12576
       - https://arxiv.org/html/2607.12576v1#S3.SS1
 
+  - id: dcase2023_task2_asd
+    name: DCASE 2023 Task 2 ASD
+    full_name: "DCASE 2023 Task 2: First-Shot Unsupervised Anomalous Sound Detection for Machine Condition Monitoring"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    category: anomalous_sound_detection
+    tasks:
+      - anomalous_sound_detection
+      - machine_condition_monitoring
+      - domain_generalization
+      - first_shot_learning
+    official:
+      challenge: https://dcase.community/challenge2023/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      results: https://dcase.community/challenge2023/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results
+      development_set: https://zenodo.org/records/7882613
+      additional_training_set: https://zenodo.org/records/7830345
+      evaluation_set: https://zenodo.org/records/7860847
+      baseline_repo: https://github.com/nttcslab/dcase2023_task2_baseline_ae
+      evaluator_repo: https://github.com/nttcslab/dcase2023_task2_evaluator
+      baseline_paper: https://arxiv.org/abs/2303.00455
+    download:
+      access: public_ungated_large
+      primary:
+        - https://zenodo.org/records/7882613
+        - https://zenodo.org/records/7830345
+        - https://zenodo.org/records/7860847
+      examples:
+        - 'scripts/download/dcase2023_task2_asd.sh'
+        - 'DCASE2023_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2023_TASK2_PARTS="dev eval" scripts/download/dcase2023_task2_asd.sh'
+      notes: >-
+        This is one first-shot challenge family, not three independent
+        datasets. Seven development machine types are disjoint from the final
+        additional-training/evaluation types, and each type has one section.
+        Development sections provide 990 normal source-domain and ten normal
+        target-domain training clips plus 100 normal and 100 anomalous test
+        clips. Each final evaluation type has 200 test clips; the organizers
+        subsequently released labels and an evaluator. The three official
+        records total approximately 4.55 GB. The helper downloads official
+        task, record, repository, and baseline-paper metadata by default;
+        archives require an explicit opt-in and part list.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Development, additional-training, and evaluation audio are directly
+        downloadable. During the challenge, evaluation labels and domains were
+        hidden and test audio could not be used for training; labels are now
+        public through the official evaluator repository.
+    license:
+      data: CC-BY-4.0
+      code: custom_dcase_challenge_license_v2.1
+      notes: >-
+        All three official Zenodo records declare CC BY 4.0. The current
+        baseline repository points to a DCASE Challenge License v2.1 PDF, and
+        the evaluator contains a license PDF with no SPDX-detected license;
+        review those custom code terms separately from the dataset license.
+    sources:
+      - https://dcase.community/challenge2023/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring
+      - https://dcase.community/challenge2023/task-first-shot-unsupervised-anomalous-sound-detection-for-machine-condition-monitoring-results
+      - https://zenodo.org/records/7882613
+      - https://zenodo.org/api/records/7882613
+      - https://zenodo.org/records/7830345
+      - https://zenodo.org/api/records/7830345
+      - https://zenodo.org/records/7860847
+      - https://zenodo.org/api/records/7860847
+      - https://github.com/nttcslab/dcase2023_task2_baseline_ae
+      - https://api.github.com/repos/nttcslab/dcase2023_task2_baseline_ae
+      - https://github.com/nttcslab/dcase2023_task2_evaluator
+      - https://api.github.com/repos/nttcslab/dcase2023_task2_evaluator
+      - https://arxiv.org/abs/2303.00455
+
   - id: dcase2024_task2_asd
     name: DCASE 2024 Task 2 ASD
     full_name: "DCASE 2024 Task 2: First-Shot Unsupervised Anomalous Sound Detection for Machine Condition Monitoring"
