@@ -14,9 +14,15 @@ download_url "$zenodo_api_url" "$out/zenodo-record-$zenodo_record.json"
 download_url "$raw_base_url/README.md" "$out/README.md"
 download_url "$raw_base_url/LICENSE" "$out/LICENSE"
 download_url "$repo_api_url" "$out/github-repo.json"
+download_url \
+  "https://zenodo.org/records/$zenodo_record/files/Data_Collection_Guidelines.pdf?download=1" \
+  "$out/Data_Collection_Guidelines.pdf"
+download_url \
+  "https://zenodo.org/records/$zenodo_record/files/Data_Annotation_Guidelines.pdf?download=1" \
+  "$out/Data_Annotation_Guidelines.pdf"
 
 if [[ "${REALDESED_DOWNLOAD_AUDIO:-0}" != "1" ]]; then
-  echo "Downloaded RealDESED docs and repository metadata to: $out"
+  echo "Downloaded RealDESED docs, guidelines, and repository metadata to: $out"
   echo "Set REALDESED_DOWNLOAD_AUDIO=1 to download selected multi-GB archives."
   echo "Use REALDESED_PARTS='validation test' (default) or REALDESED_PARTS=all."
   exit 0

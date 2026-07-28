@@ -688,7 +688,8 @@ scripts/download/urban_beehive.sh
 # The approximately 190 MB public training archive is opt-in.
 PHYSIONET_CINC_2016_DOWNLOAD_AUDIO=1 scripts/download/physionet_cinc_2016_heart_sound.sh
 
-# RealDESED downloads official docs/metadata by default; the approximately 8.74 GB archives are opt-in.
+# RealDESED downloads official docs, metadata, and collection/annotation guides by default;
+# the approximately 8.74 GB train, validation, and test archives are opt-in.
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh
 REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh
 

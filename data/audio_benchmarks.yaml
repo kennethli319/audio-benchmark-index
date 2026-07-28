@@ -16195,14 +16195,18 @@ benchmarks:
     full_name: "RealDESED: A Real-World Domestic Sound Event Detection Benchmark"
     qwen_cited_as: null
     qwen_bucket: sound_event_detection
+    category: sound_event_detection
     tasks:
       - sound_event_detection
       - domestic_sound_event_detection
+      - polyphonic_sound_event_detection
       - temporal_audio_event_localization
       - multi_annotator_label_aggregation
       - real_world_robustness
+      - recording_condition_robustness
     official:
       dataset: https://zenodo.org/records/20056072
+      dataset_doi: https://doi.org/10.5281/zenodo.20056072
       zenodo: https://zenodo.org/records/20056072
       repo: https://github.com/fschmid56/RealDESED
       paper: https://arxiv.org/abs/2607.16736
@@ -16217,7 +16221,27 @@ benchmarks:
         - 'scripts/download/realdesed.sh'
         - 'REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS="validation test" scripts/download/realdesed.sh'
         - 'REALDESED_DOWNLOAD_AUDIO=1 REALDESED_PARTS=all scripts/download/realdesed.sh'
-      notes: The public release contains 5,710 real-home recordings (37.85 hours) from 652 participants, with 64,430 temporal annotations across 15 domestic event classes. Multiple annotators label each recording, validation and test annotations receive additional review, and metadata covers recording devices, placement, environments, and scene descriptions. The helper saves official Zenodo/GitHub metadata and documentation by default; the train, validation, and test archives total approximately 8.74 GB and require explicit opt-in.
+      notes: >-
+        The public release contains 5,710 real-home recordings (37.85 hours)
+        from 652 participants, with 64,430 temporal annotations across 15
+        domestic event classes. Collector-disjoint train, validation, and test
+        splits contain 3,704, 999, and 1,007 recordings. All validation and
+        test labels and 1,108 training files (29.91%) received additional
+        review. The protocol reports PSDS1 and PSDS2, including macro-averaged
+        variants, and analyzes annotation aggregation, long-form inference,
+        and recording-condition metadata. The helper saves official
+        Zenodo/GitHub metadata, documentation, and the two lightweight
+        collection and annotation guides by default; the three audio archives
+        total approximately 8.74 GB and require explicit opt-in.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Audio, per-recording metadata, raw multi-annotator labels,
+        reviewed/aggregated labels, predefined splits, baseline code, and data
+        collection and annotation guidelines are publicly accessible. The
+        official baseline setup can fetch and extract all three splits, while
+        this index's helper keeps the multi-GB archives opt-in.
     license:
       data: cc0_or_cc-by_per_audio_file_and_cc-by-4.0_annotations
       code: MIT
@@ -16228,9 +16252,12 @@ benchmarks:
       - https://github.com/fschmid56/RealDESED
       - https://raw.githubusercontent.com/fschmid56/RealDESED/main/README.md
       - https://raw.githubusercontent.com/fschmid56/RealDESED/main/LICENSE
+      - https://raw.githubusercontent.com/fschmid56/RealDESED/main/setup.sh
       - https://api.github.com/repos/fschmid56/RealDESED
       - https://arxiv.org/abs/2607.16736
-      - https://arxiv.org/html/2607.16736v1
+      - https://arxiv.org/html/2607.16736v1#S2
+      - https://arxiv.org/html/2607.16736v1#S4
+      - https://doi.org/10.5281/zenodo.20056072
 
   - id: wabad
     name: WABAD
