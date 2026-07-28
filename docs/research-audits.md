@@ -20,6 +20,16 @@ CC BY 4.0 covers the transcripts, annotations, metadata, splits, and
 alignments, while the redistributed earnings-call audio remains subject to
 applicable original content-provider terms.
 
+The July 2026 MoLGE paper is recorded as existing Omnilingual ASR Corpus,
+FLEURS, and Common Voice coverage rather than a new benchmark family. Its
+paper links a Hugging Face derivative whose 2,342 hours of Omnilingual ASR
+speech were segmented with MMS-FA into roughly 30-second chunks. The linked
+repository was recreated on July 28 and, when checked minutes later, contained
+only `.gitattributes`: it had no card, audio, manifest, or license. The index
+therefore marks that derivative as announced and metadata-only until the
+paper-specific files become verifiably available, while retaining Meta's
+canonical public corpus as the usable family.
+
 The July 2026 Qwen-Audio-3.0-TTS report adds evaluation provenance for the
 existing public Seed-TTS Eval and CV3-Eval families. Its separate
 Qwen-Audio-TTS-Eval suite comprises 1,375 bilingual text-normalization cases,
