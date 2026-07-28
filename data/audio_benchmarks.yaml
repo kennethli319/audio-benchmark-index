@@ -9,6 +9,65 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  vsdd_1k:
+    paper: https://arxiv.org/abs/2607.24430
+    title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
+    sections: 5, 6.1, and 7.1-7.3
+    status: audited_announced_dataset_not_yet_released
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: VSDD-1K
+        status: paper_described_dataset_release_pending
+        protocol: >-
+          The paper describes 61,801 real-world face-to-face dialogues and
+          991,439 utterances totaling about 1,033 hours, with synchronized
+          speech, transcripts, target-speaker facial video, emotion labels,
+          and facial Action Unit labels. Dialogues contain 3 to 20 utterances,
+          and at least 85% of frames contain a valid target-speaker face.
+        note: >-
+          Section 7.1 samples 400 same-speaker utterance pairs for dataset
+          quality comparison, while sections 7.2-7.3 evaluate AUTokenizer and
+          conversational speech synthesis on paper-specific 8:1:1 splits.
+          The paper does not publish the selected samples, split manifests,
+          preprocessing outputs, or per-item evaluation results.
+    release_audit:
+      paper_and_aggregate_results: public
+      official_repository_readme: public
+      dataset_audio_video_and_annotations: not_yet_released
+      train_validation_test_manifests: not_released
+      data_processing_pipeline: not_yet_released
+      model_code_and_checkpoints: not_released
+      evaluation_code_and_per_item_results: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      repository: MIT
+      announced_dataset: CC-BY-NC-SA-4.0
+      note: >-
+        The paper states that VSDD-1K will use CC BY-NC-SA 4.0, but no dataset
+        files or standalone dataset license are currently present. The
+        repository's MIT license covers the repository material and does not
+        substitute for a license or release of the collected audiovisual
+        source content.
+    sources:
+      - https://arxiv.org/abs/2607.24430
+      - https://arxiv.org/html/2607.24430v1#S5
+      - https://arxiv.org/html/2607.24430v1#S6.SS1
+      - https://arxiv.org/html/2607.24430v1#S7.SS1
+      - https://arxiv.org/html/2607.24430v1#S7.SS2
+      - https://arxiv.org/html/2607.24430v1#S7.SS3
+      - https://github.com/walker-hyf/FacialTalker
+      - https://raw.githubusercontent.com/walker-hyf/FacialTalker/main/README.md
+      - https://raw.githubusercontent.com/walker-hyf/FacialTalker/main/LICENSE
+      - https://api.github.com/repos/walker-hyf/FacialTalker
+    note: >-
+      Although the paper calls VSDD-1K open-source and says it is released,
+      the official repository's current README lists releasing the dataset
+      and processing pipeline as future work. The repository contains only a
+      short README and MIT license, with no data, access form, dataset card,
+      archive, manifests, or code. This audit preserves the useful dataset
+      description and the conflict between the paper and live release state
+      without adding a benchmark family, download helper, or count increase.
+
   multiparty_digital_agent_entrainment:
     paper: https://arxiv.org/abs/2607.22939
     title: "Speech Entrainment in Multi-Party Conversations with a Digital Agent"
