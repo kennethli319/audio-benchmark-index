@@ -762,53 +762,6 @@ paper_audits:
       audio or listener ratings. Do not infer public dataset access from the
       paper's future-release statement or from public baseline code.
 
-  facial_talker_vsdd_1k:
-    paper: https://arxiv.org/abs/2607.24430
-    title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
-    sections: 5 and 7.1-7.5
-    status: audited_unreleased_dataset_family
-    last_verified: 2026-07-27
-    evaluated_sets:
-      - cited_as: VSDD-1K
-        index_id: null
-        status: described_but_unreleased
-        protocol: >-
-          The paper reports 61,801 dialogues, 991,439 utterances, and about
-          1,033 hours of synchronized conversational video and speech. It
-          randomly samples 400 same-speaker utterance pairs for dataset-quality
-          comparisons and 200 dialogues for model evaluation, but does not
-          publish the sampled item manifests.
-        note: >-
-          The paper calls VSDD-1K open-source and declares CC BY-NC-SA 4.0.
-          However, the official repository currently contains only its README
-          and MIT license, and explicitly lists release of the dataset and data
-          processing pipeline as TODO items. No archive, dataset card, DOI,
-          manifest, access form, or download instructions are available.
-    release_audit:
-      vsdd_1k_data: not_released
-      dataset_item_manifests_and_splits: not_released
-      paper_evaluation_samples: not_released
-      data_processing_pipeline: not_released
-      project_repository: public_metadata_only
-    license:
-      dataset: cc-by-nc-sa-4.0_declared_in_paper_but_no_artifact_available
-      repository: mit
-      source_internet_videos: upstream_rights_not_documented
-    sources:
-      - https://arxiv.org/abs/2607.24430
-      - https://arxiv.org/html/2607.24430v1#S5
-      - https://arxiv.org/html/2607.24430v1#S7.SS1
-      - https://github.com/walker-hyf/FacialTalker
-      - https://raw.githubusercontent.com/walker-hyf/FacialTalker/main/README.md
-      - https://raw.githubusercontent.com/walker-hyf/FacialTalker/main/LICENSE
-      - https://api.github.com/repos/walker-hyf/FacialTalker
-    note: >-
-      VSDD-1K is not counted as a public benchmark family until an official
-      data artifact or documented access route is released. A paper-level
-      license declaration and public model-project placeholder do not make the
-      underlying Internet-derived audiovisual corpus downloadable or establish
-      that its source-media rights permit redistribution.
-
   dataset_aware_audio_deepfake_detection:
     paper: https://arxiv.org/abs/2607.23961
     title: "Leveraging Gradient Reversal Loss and Multitask Learning for Datasets-Aware Audio Deepfake Detection"
