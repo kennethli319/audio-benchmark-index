@@ -218,6 +218,7 @@ scripts/download/add_2023.sh
 scripts/download/codecfake.sh
 scripts/download/dfadd.sh
 scripts/download/librisevoc.sh
+scripts/download/speech_df_arena.sh
 scripts/download/tfcl_afe.sh
 scripts/download/diffssd.sh
 scripts/download/fake_or_real.sh
@@ -485,6 +486,11 @@ MLS_DOWNLOAD_ARCHIVES=1 MLS_LANGS="italian portuguese" MLS_FORMAT=opus scripts/d
 # InstructTTSEval downloads official docs by default. The ~1.8 GB HF audio snapshot is opt-in.
 INSTRUCT_TTS_EVAL_DOWNLOAD_HF=1 scripts/download/instruct_tts_eval.sh
 INSTRUCT_TTS_EVAL_CLONE_REPO=1 scripts/download/instruct_tts_eval.sh
+
+# Speech DF Arena downloads official paper/repository/leaderboard metadata by
+# default. Its approximately 400 MB protocol/toolkit repository is opt-in;
+# component datasets must be acquired separately under their own terms.
+SPEECH_DF_ARENA_CLONE_TOOLKIT=1 scripts/download/speech_df_arena.sh
 
 # In-the-Wild downloads official docs and Hub metadata by default.
 # The approximately 7.60 GiB public ZIP is opt-in; review the conflicting license signals.

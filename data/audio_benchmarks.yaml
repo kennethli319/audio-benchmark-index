@@ -60,7 +60,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.23961
     title: "Leveraging Gradient Reversal Loss and Multitask Learning for Datasets-Aware Audio Deepfake Detection"
     sections: 4.1 and 5.1
-    status: audited_three_new_public_families_and_existing_public_families
+    status: audited_four_new_public_families_and_existing_public_families
     last_verified: 2026-07-27
     evaluated_sets:
       - cited_as: DFADD
@@ -105,24 +105,48 @@ paper_audits:
           split 55,440/18,480/18,487 for train/development/test.
       - cited_as: SONAR
         index_id: null
-        status: pending_primary_source_audit
+        status: public_artifact_but_primary_source_and_terms_unresolved
+        protocol: >-
+          The paper uses a multilingual 3,947-utterance SONAR corpus for
+          training, validation, and evaluation. Speech DF Arena evaluates an
+          archived SONAR version under the same family name.
+        note: >-
+          The cited bibliography supplies only the title "SONAR: A Synthetic
+          AI-Audio Detection Framework and Benchmark," three author names, and
+          the year 2024; it provides no venue, DOI, paper URL, or repository.
+          Speech DF Arena links a public archived Google Drive file, while a
+          later GitHub repository links a different public Drive folder.
+          Neither artifact states dataset terms, and the later repository's
+          owner/maintainers do not match the cited authors. SONAR therefore
+          remains uncounted until a primary publication or author-owned release
+          establishes provenance and reuse terms.
     release_audit:
       dfadd_audio_and_labels: public_ungated_hugging_face
       librisevoc_audio_and_splits: public_ungated_google_drive
       paper_model_checkpoints: public_ungated_hugging_face
       paper_experiment_code: not_linked_in_paper
-      speech_deepfake_arena_protocol: cited_but_primary_reference_unresolved
+      speech_deepfake_arena_protocol: public_ungated_indexed_as_speech_df_arena
+      sonar_audio_archive: public_ungated_provenance_and_terms_unresolved
+      sonar_primary_paper: not_located
     license:
       dfadd_hugging_face_metadata: mit
       dfadd_repository: mit
       vctk_bonafide_source: cc-by-4.0
       ljspeech_text_source: public_domain
       component_generators: upstream_terms_apply
+      sonar_dataset: not_specified
     sources:
       - https://arxiv.org/abs/2607.23961
       - https://arxiv.org/html/2607.23961v1#S4.SS1
 
       - https://arxiv.org/html/2607.23961v1#S5.SS1
+      - https://arxiv.org/abs/2509.02859
+      - https://doi.org/10.1109/OJSP.2026.3652496
+      - https://github.com/Speech-Arena/speech_df_arena
+      - https://raw.githubusercontent.com/Speech-Arena/speech_df_arena/main/README.md
+      - https://huggingface.co/spaces/Speech-Arena-2025/Speech-DF-Arena
+      - https://github.com/Itsmeejoshiee/SONAR
+      - https://raw.githubusercontent.com/Itsmeejoshiee/SONAR/main/README.md
       - https://arxiv.org/abs/2409.08731
       - https://arxiv.org/html/2409.08731v1#S3
       - https://github.com/isjwdu/DFADD
@@ -136,11 +160,13 @@ paper_audits:
       - https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html
       - https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts
     note: >-
-      The July 2026 paper evaluates 14 subsets under a cited 2025 Speech
-      DeepFake Arena aggregate-EER protocol. Its arXiv HTML has an unresolved
-      citation key for that protocol, so this audit does not claim a separate
-      downloadable Arena family. DFADD is independently verifiable through
-      its primary paper, author repository, and public dataset release.
+      The July 2026 paper evaluates 14 subsets under the Speech DF Arena
+      aggregate-EER protocol. The rendered arXiv HTML has an unresolved
+      citation key, but the submitted bibliography identifies the primary
+      arena paper and the official public toolkit and leaderboard verify the
+      family independently. SONAR remains uncounted because its sparse 2024
+      citation and public artifacts do not establish primary provenance or
+      dataset reuse terms.
 
   qwen_audio_3_tts_evaluation:
     paper: https://arxiv.org/abs/2607.23938
@@ -25506,3 +25532,75 @@ benchmarks:
       - https://huggingface.co/datasets/csun22/LibriSeVoc/raw/main/README.md
       - https://huggingface.co/api/datasets/csun22/LibriSeVoc
       - https://arxiv.org/abs/2607.23961
+
+  - id: speech_df_arena
+    name: Speech DF Arena
+    full_name: "Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - cross_dataset_generalization
+      - detector_evaluation
+      - leaderboard_evaluation
+    official:
+      paper: https://arxiv.org/abs/2509.02859
+      doi: https://doi.org/10.1109/OJSP.2026.3652496
+      repo: https://github.com/Speech-Arena/speech_df_arena
+      leaderboard: https://huggingface.co/spaces/Speech-Arena-2025/Speech-DF-Arena
+      recent_evaluation: https://arxiv.org/abs/2607.23961
+    download:
+      access: public_protocol_and_toolkit_component_datasets_separate
+      primary:
+        - https://github.com/Speech-Arena/speech_df_arena
+        - https://huggingface.co/spaces/Speech-Arena-2025/Speech-DF-Arena
+      examples:
+        - 'scripts/download/speech_df_arena.sh'
+        - 'SPEECH_DF_ARENA_CLONE_TOOLKIT=1 scripts/download/speech_df_arena.sh'
+      notes: >-
+        Speech DF Arena is one cross-dataset evaluation protocol and
+        leaderboard, not a new redistribution of its component corpora. Phase
+        I evaluates detectors on 14 public evaluation subsets spanning In the
+        Wild, ASVspoof 2019/2021/2024, Fake or Real, CodecFake, ADD 2022/2023,
+        DFADD, LibriSeVoc, and SONAR. The toolkit standardizes CSV protocols
+        with absolute file paths and spoof/bonafide labels, 16 kHz input, EER,
+        pooled EER, accuracy, and F1. Its public repository contains model
+        adapters and protocol CSVs but no component audio. The helper downloads
+        only the paper page, repository documentation/API metadata, and
+        leaderboard metadata by default. Cloning the approximately 400 MB
+        toolkit is an explicit opt-in; acquire every component dataset from
+        its own official source.
+    access:
+      status: public_protocol_and_leaderboard
+      registration_required: false
+      notes: >-
+        The arXiv paper, Hugging Face leaderboard, GitHub toolkit, model
+        adapters, and protocol CSVs are public without a gate. Component data
+        access varies by family. SONAR is linked through an archived public
+        Google Drive file, but its cited primary publication and dataset terms
+        could not be verified, so the index does not count SONAR separately.
+    license:
+      data: component_specific_with_sonar_terms_unresolved
+      code: not_specified
+      notes: >-
+        The toolkit repository has no LICENSE file and GitHub reports no
+        detected license. Its protocol CSVs expose absolute path strings from
+        the authors' evaluation setup and do not license the underlying audio.
+        Each component corpus retains its own terms; SONAR's terms remain
+        unspecified. Treat public source access as distinct from permission to
+        redistribute data, code, checkpoints, or score files.
+    sources:
+      - https://arxiv.org/abs/2509.02859
+      - https://arxiv.org/html/2509.02859
+      - https://doi.org/10.1109/OJSP.2026.3652496
+      - https://github.com/Speech-Arena/speech_df_arena
+      - https://raw.githubusercontent.com/Speech-Arena/speech_df_arena/main/README.md
+      - https://api.github.com/repos/Speech-Arena/speech_df_arena
+      - https://huggingface.co/spaces/Speech-Arena-2025/Speech-DF-Arena
+      - https://huggingface.co/api/spaces/Speech-Arena-2025/Speech-DF-Arena
+      - https://arxiv.org/abs/2607.23961
+      - https://arxiv.org/html/2607.23961v1#S4.SS1
