@@ -10885,6 +10885,75 @@ benchmarks:
       - https://arxiv.org/abs/1809.00496
       - https://export.arxiv.org/api/query?id_list=1809.00496
 
+  - id: vsro_200
+    name: VSRo-200
+    full_name: "VSRo-200: A Romanian Visual Speech Recognition Dataset for Studying Supervision and Multimodal Robustness"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_speech
+      - robustness_evaluation
+    tasks:
+      - visual_speech_recognition
+      - audio_visual_speech_recognition
+      - sentence_level_lip_reading
+      - low_resource_romanian_speech
+      - weak_supervision_evaluation
+      - seen_unseen_speaker_generalization
+      - acoustic_noise_robustness
+      - domain_shift_evaluation
+    official:
+      repo: https://github.com/vsro200/vsro200
+      dataset: https://huggingface.co/datasets/vsro200/vsro200
+      paper: https://arxiv.org/abs/2607.08112
+      arxiv_html: https://arxiv.org/html/2607.08112
+    download:
+      primary:
+        - https://huggingface.co/datasets/vsro200/vsro200
+        - https://github.com/vsro200/vsro200
+      examples:
+        - 'scripts/download/vsro_200.sh'
+        - 'VSRO_200_CLONE_TOOLKIT=1 scripts/download/vsro_200.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("vsro200/vsro200", "in_domain")'
+      notes: >-
+        The public, ungated Hugging Face release contains approximately 26.3
+        MB of metadata rather than podcast media: YouTube video IDs, segment
+        timestamps, Romanian transcripts, and speaker-gender labels for
+        64,710 clips from 235 speakers. It provides separate human-annotated
+        and automatically transcribed training/validation manifests, seen-
+        and unseen-speaker tests, and four-category out-of-domain evaluation
+        metadata. The official repository provides reconstruction,
+        preprocessing, training, inference, audio-visual fusion, and LRRo
+        transfer-evaluation code plus small sample face crops. The helper
+        downloads the dataset card, API record, and five CSV manifests by
+        default; cloning the toolkit is opt-in. Reconstructing clips requires
+        accessing the referenced YouTube videos, which may disappear or carry
+        separate platform and rights constraints.
+    license:
+      data: conflicting-noncommercial-terms
+      code: not_specified
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0, while paper appendix A.1
+        says VSRo-200 is shared under CC BY-NC-SA 4.0. Both prohibit commercial
+        use, but the share-alike discrepancy should be clarified before
+        redistribution. The release contains metadata only and does not
+        relicense the referenced YouTube audio or video. The official code
+        repository exposes no license file, so do not assume its scripts or
+        model artifacts inherit the dataset terms.
+    sources:
+      - https://arxiv.org/abs/2607.08112
+      - https://arxiv.org/html/2607.08112#S3
+      - https://arxiv.org/html/2607.08112#S4.SS1
+      - https://arxiv.org/html/2607.08112#S4.SS4
+      - https://arxiv.org/html/2607.08112#S4.SS5
+      - https://arxiv.org/html/2607.08112#A1.SS1
+      - https://github.com/vsro200/vsro200
+      - https://raw.githubusercontent.com/vsro200/vsro200/main/README.md
+      - https://api.github.com/repos/vsro200/vsro200
+      - https://api.github.com/repos/vsro200/vsro200/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/vsro200/vsro200
+      - https://huggingface.co/datasets/vsro200/vsro200/raw/main/README.md
+      - https://huggingface.co/api/datasets/vsro200/vsro200
+
   - id: lrro
     name: LRRo
     full_name: "LRRo: A Lip Reading Data Set for the Under-resourced Romanian Language"

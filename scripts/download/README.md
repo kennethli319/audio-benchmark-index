@@ -68,6 +68,7 @@ scripts/download/k9_bench.sh
 scripts/download/video_mme.sh
 scripts/download/omniretriever_bench.sh
 scripts/download/lvomnibench.sh
+scripts/download/vsro_200.sh
 scripts/download/lrro.sh
 scripts/download/superb.sh
 scripts/download/codec_superb.sh
