@@ -7,6 +7,17 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 TaoMate paper is recorded as recent evaluation provenance for
+the existing VABench protocol, not as a new benchmark family. It evaluates
+60-second Mandarin and English prompt sequences with four VABench dimensions
+and paper-specific temporal-stability metrics. The public Apache 2.0 repository
+and approximately 38.2 GB model release make inference reproducible, but the
+claimed 20-case prompt JSON currently contains only one 12-segment Mandarin
+case. The complete bilingual manifest, generated outputs, per-case metrics,
+and evaluation records are not released. This partial prompt example therefore
+does not justify a duplicate family or helper, and the benchmark count remains
+unchanged.
+
 The July 2026 FdAudio paper is recorded as evaluation provenance for the
 existing AudioCaps family rather than as a new benchmark. It post-trains on a
 random 80,000-item sample from AudioCaps plus WavCaps and evaluates 957

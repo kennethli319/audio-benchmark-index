@@ -9,6 +9,73 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  taomate_long_form_audio_video_evaluation:
+    paper: https://arxiv.org/abs/2607.24359
+    title: "TaoMate: Anchor-Guided Memory Bridging Evolving and Reference States for Real-Time Audio-Video Digital Human Generation"
+    sections: 4.1-4.2
+    status: audited_existing_public_protocol_with_partial_prompt_release
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: long-form benchmark
+        index_id: null
+        status: paper_specific_protocol_partially_released
+        protocol: >-
+          Generate 60-second, 24 fps single-presenter videos from temporally
+          ordered Mandarin and English prompt sequences. Keep subject, scene,
+          camera, and voice descriptions fixed while changing actions and
+          speech across segments; compare audio-video generators with VABench
+          LipSync, Desync, Alignment, and Expressiveness metrics plus
+          paper-specific Color Delta and Long Consistency measures.
+        note: >-
+          The public repository describes a 20-case, one-minute prompt JSON,
+          but the current file contains only one 12-segment Mandarin case.
+          The paper does not state the total number of benchmark scenarios or
+          publish a complete case manifest, generated outputs, or per-case
+          scores, so the released example does not establish a separate public
+          benchmark family.
+      - cited_as: VABench evaluation protocol
+        index_id: vabench
+        status: existing_public_family_metrics_reused
+        protocol: >-
+          Reuse four official VABench dimensions for lip synchronization,
+          audio-video desynchronization, semantic alignment, and
+          expressiveness. TaoMate's bilingual long-form prompts and additional
+          temporal-stability metrics are paper-specific extensions rather than
+          additions to the VABench release.
+    release_audit:
+      vabench_protocol: existing_public_family
+      taomate_code_and_inference_runtime: public_ungated_github
+      taomate_model_checkpoint: public_ungated_hugging_face_about_38_2_gb
+      claimed_20_case_prompt_json: currently_contains_one_case
+      complete_bilingual_benchmark_manifest: not_released
+      generated_benchmark_outputs: not_released
+      per_case_metrics_and_human_records: not_released
+    license:
+      paper: CC-BY-4.0
+      taomate_repository: Apache-2.0
+      taomate_model_project: Apache-2.0_with_upstream_model_terms
+      prompt_example: Apache-2.0_repository_scope
+      complete_unreleased_protocol_artifacts: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.24359
+      - https://arxiv.org/html/2607.24359v1#S4.SS1
+      - https://arxiv.org/html/2607.24359v1#S4.SS2
+      - https://taoliveaigc.github.io/TaoMate/
+      - https://github.com/TaoLiveAIGC/TaoMate
+      - https://raw.githubusercontent.com/TaoLiveAIGC/TaoMate/main/README.md
+      - https://raw.githubusercontent.com/TaoLiveAIGC/TaoMate/main/LICENSE
+      - https://raw.githubusercontent.com/TaoLiveAIGC/TaoMate/main/configs/inference/benchmark_1min_windowed.json
+      - https://api.github.com/repos/TaoLiveAIGC/TaoMate
+      - https://huggingface.co/TaoLiveAIGC/TaoMate
+      - https://huggingface.co/api/models/TaoLiveAIGC/TaoMate
+      - https://github.com/tanABCC/VABench
+    note: >-
+      TaoMate releases a model, inference runtime, and one benchmark-shaped
+      prompt example. It does not release enough of the paper's bilingual
+      long-form evaluation to count it as a new dataset or benchmark family.
+      VABench remains the indexed public source protocol, so the family count
+      and download-helper inventory are unchanged.
+
   fdaudio_text_to_audio_evaluation:
     paper: https://arxiv.org/abs/2607.10421
     title: "FdAudio: MeanFlow-Anchored Fréchet-Distance Post-Training for One-Step Text-to-Audio Generation"
@@ -29073,6 +29140,7 @@ benchmarks:
       repo: https://github.com/tanABCC/VABench
       image_dataset: https://huggingface.co/datasets/tanABBCC/VABench_I2AV
       model_cache: https://huggingface.co/datasets/tanABBCC/VABENCH_CACHE_DIR
+      recent_evaluation: https://arxiv.org/abs/2607.24359
     download:
       access: public_ungated_with_large_optional_model_cache
       primary:
@@ -29126,6 +29194,9 @@ benchmarks:
       - https://huggingface.co/datasets/tanABBCC/VABench_I2AV/raw/main/README.md
       - https://huggingface.co/api/datasets/tanABBCC/VABench_I2AV
       - https://huggingface.co/api/datasets/tanABBCC/VABENCH_CACHE_DIR
+      - https://arxiv.org/abs/2607.24359
+      - https://arxiv.org/html/2607.24359v1#S4.SS2
+      - https://github.com/TaoLiveAIGC/TaoMate
 
   - id: stancebench
     name: StanceBench
