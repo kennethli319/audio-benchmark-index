@@ -7,6 +7,17 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 polar-projection study is recorded as evaluation provenance for
+the existing public VoiceBank-DEMAND family rather than as a new benchmark.
+It evaluates six speech enhancers with Whisper-large-v3 and diagnoses two of
+them with magnitude/phase sweeps using both Whisper and wav2vec 2.0. In
+addition to the standard four-SNR test set, the paper creates four harsher
+conditions for a combined 1,648-utterance evaluation. The authors do not
+release the added mixtures, source/noise selection and random-onset manifest,
+projection implementation, exact sweep configuration, predictions, or
+bootstrap records. The index therefore records the reproducibility gap and
+maps the work to VoiceBank-DEMAND without adding a family or helper.
+
 The July 2026 FinnAffect follow-up is recorded as a release-status audit
 rather than a new downloadable benchmark family. It evaluates continuous
 valence and arousal on the 2,000-utterance Gold Standard subset of a

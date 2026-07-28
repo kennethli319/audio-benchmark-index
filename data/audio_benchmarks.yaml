@@ -9,6 +9,65 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speech_enhancement_asr_polar_projection:
+    paper: https://arxiv.org/abs/2607.11157
+    title: "Where Speech Enhancement Hurts Recognition: An Inference Time Polar Projection Diagnosis"
+    sections: 4.1-4.3, 5, and 6
+    status: audited_existing_public_family_and_unreleased_derived_protocol
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: VoiceBank+DEMAND
+        index_id: voicebank_demand
+        status: existing_public_family
+        protocol: >-
+          Evaluate six speech enhancers with Whisper-large-v3 on the standard
+          four-SNR test set, then apply magnitude/phase polar-projection sweeps
+          to FRCRN-SE and MossFormerGAN-SE with both Whisper-large-v3 and
+          wav2vec 2.0-large-960h-lv60-self.
+      - cited_as: extended low-SNR VoiceBank+DEMAND test set
+        index_id: null
+        status: paper_specific_derivative_not_released
+        protocol: >-
+          Add 0, -2.5, -5, and -7.5 dB conditions to the standard 2.5, 7.5,
+          12.5, and 17.5 dB test set using five DEMAND noise types, random
+          noise onsets, no reverberation, and a fixed per-file SNR. The
+          resulting evaluation has 1,648 16 kHz utterances, about 205 per SNR.
+        note: >-
+          The paper does not identify the selected source utterances, noise
+          excerpts or random onsets, publish a mixing manifest, or link the
+          resulting audio and transcripts.
+    release_audit:
+      standard_voicebank_demand: existing_public_ungated_family
+      extended_low_snr_mixtures_and_manifest: not_released
+      polar_projection_implementation_and_sweep_configuration: not_released
+      paper_predictions_scores_and_bootstrap_records: not_released
+      referenced_enhancer_code_and_checkpoints: public_clearervoice_studio
+    license:
+      voicebank_demand: cc-by-4.0_with_upstream_component_terms
+      clearervoice_studio_code: apache-2.0
+      paper: arxiv_perpetual_nonexclusive
+      absent_derived_artifacts: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.11157
+      - https://arxiv.org/html/2607.11157v1#S4.SS1
+      - https://arxiv.org/html/2607.11157v1#S4.SS2
+      - https://arxiv.org/html/2607.11157v1#S4.SS3
+      - https://arxiv.org/html/2607.11157v1#S5
+      - https://arxiv.org/html/2607.11157v1#S6
+      - https://export.arxiv.org/api/query?id_list=2607.11157
+      - https://export.arxiv.org/e-print/2607.11157v1
+      - https://datashare.ed.ac.uk/handle/10283/2791
+      - https://github.com/modelscope/ClearerVoice-Studio
+      - https://api.github.com/repos/modelscope/ClearerVoice-Studio
+    note: >-
+      This paper contributes a diagnosis and mitigation protocol, not a new
+      public corpus. Its sole source family is already indexed. The official
+      paper page and complete arXiv source package provide no project,
+      repository, dataset archive, or artifact link for the added low-SNR
+      mixtures or polar-projection experiments. The existing VoiceBank-DEMAND
+      entry therefore gains evaluation provenance, but the paper-specific
+      derivative remains uncounted and gets no download helper.
+
   synthetic_speech_paralinguistic_preservation:
     paper: https://arxiv.org/abs/2607.22304
     title: "Synthetic Speech, Real Signal: Paralinguistic Preservation and Cross-Lingual Augmentation via Voice Cloning"
@@ -21980,6 +22039,7 @@ benchmarks:
       doi: https://doi.org/10.7488/ds/2117
       interspeech_paper: https://doi.org/10.21437/Interspeech.2016-159
       ieee_paper: https://doi.org/10.1109/TASLP.2018.2828980
+      polar_projection_evaluation: https://arxiv.org/abs/2607.11157
       vctk_source: https://doi.org/10.7488/ds/1994
       demand_source: http://parole.loria.fr/DEMAND/
     download:
@@ -22003,6 +22063,8 @@ benchmarks:
       - https://doi.org/10.7488/ds/2117
       - https://doi.org/10.21437/Interspeech.2016-159
       - https://doi.org/10.1109/TASLP.2018.2828980
+      - https://arxiv.org/abs/2607.11157
+      - https://arxiv.org/html/2607.11157v1#S4.SS1
       - https://doi.org/10.7488/ds/1994
       - http://parole.loria.fr/DEMAND/
 
