@@ -9,6 +9,67 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  msst_music_source_separation_training:
+    paper: https://arxiv.org/abs/2607.23395
+    title: "Music-Source-Separation-Training (MSST): A Unified Framework for Training and Evaluating Music Demixing Models"
+    sections: 5, 6.2, 7.2, and 8
+    status: audited_existing_public_families_and_unspecified_experiment_set
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: MUSDB18
+        index_id: musdb18
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Section 5.1 describes the standard 150-track, four-stem corpus and
+          its 100-song training and 50-song test split. The public MSST
+          repository includes MUSDB18 configuration examples and uses the
+          MUSDB18-HQ test directory in its validation command.
+      - cited_as: MoisesDB
+        index_id: moisesdb
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Section 5.1 describes the 240-song professionally recorded corpus as
+          a source-separation dataset with a finer-grained stem taxonomy. The
+          paper presents it as a supported training-data source, not as a new
+          MSST benchmark release.
+    release_audit:
+      msst_training_validation_and_inference_code: public_ungated_github
+      musdb18_and_musdb18_hq: public_noncommercial_archives
+      moisesdb: public_noncommercial_browser_download
+      table_3_tta_evaluation_audio_and_item_manifest: not_identified
+      table_4_ensemble_evaluation_audio_and_item_manifest: not_identified
+      new_msst_dataset: none_claimed
+    license:
+      msst_code: MIT
+      paper: arxiv_perpetual_nonexclusive
+      musdb18: other_noncommercial
+      moisesdb: cc-by-nc-sa-4.0
+      experiment_outputs: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.23395
+      - https://arxiv.org/html/2607.23395v1#S5
+      - https://arxiv.org/html/2607.23395v1#S6.SS2
+      - https://arxiv.org/html/2607.23395v1#S7.SS2
+      - https://arxiv.org/html/2607.23395v1#S8
+      - https://github.com/ZFTurbo/Music-Source-Separation-Training
+      - https://raw.githubusercontent.com/ZFTurbo/Music-Source-Separation-Training/main/README.md
+      - https://raw.githubusercontent.com/ZFTurbo/Music-Source-Separation-Training/main/LICENSE
+      - https://api.github.com/repos/ZFTurbo/Music-Source-Separation-Training
+      - https://sigsep.github.io/datasets/musdb.html
+      - https://zenodo.org/records/1117372
+      - https://zenodo.org/records/3338373
+      - https://music.ai/research/
+      - https://github.com/moises-ai/moises-db
+    note: >-
+      MSST is a general training and evaluation framework rather than a new
+      dataset family. The paper's TTA and model-ensemble result tables identify
+      models, stems, and aggregate metrics but do not name the evaluation
+      corpus, split, item manifest, or released predictions. Those results
+      should not be attributed to MUSDB18 or MoisesDB without further primary
+      documentation. The two named benchmark datasets retain their existing
+      noncommercial terms and remain the only counted families from this
+      paper.
+
   finnaffect_release_status:
     paper: https://arxiv.org/abs/2607.24155
     title: "Looking for Affect in Spontaneous Finnish Speech through Linguistic Interpretability"
