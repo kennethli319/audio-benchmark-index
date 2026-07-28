@@ -9,6 +9,90 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  trident_source_speaker_recovery:
+    paper: https://arxiv.org/abs/2607.23650
+    title: "Expose Your Disguise: Recovering Source Speaker Identity From Voice Conversion"
+    sections: 5.1, 5.4-5.11, and appendices A, B, and D
+    status: audited_existing_public_source_families_and_unavailable_claimed_artifacts
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: LibriSpeech, VoxCeleb1, and VoxCeleb2
+        index_id: null
+        status: existing_public_source_families_with_unreleased_derived_audio
+        protocol: >-
+          The main protocol trains on LibriSpeech train-clean-100,
+          train-clean-360, and train-other-500 plus VoxCeleb1 and VoxCeleb2,
+          then evaluates 40 LibriSpeech test-clean speakers. Appendix A
+          constructs converted samples with seven voice-conversion systems:
+          AGAIN-VC, VQVC, VQVC+, BNE-Seq2seqMoL, FreeVC, Diff-HierVC, and
+          DDDM-VC. The paper also evaluates genuine speech and reference
+          voiceprint templates with disjoint sampled utterances.
+        note: >-
+          LibriSpeech and VoxCeleb are already indexed public source families.
+          The paper does not identify the sampled utterances, source-target
+          pairs, generated conversions, or random seeds outside its currently
+          unavailable claimed artifact repository.
+      - cited_as: telephony, VoIP, and preprocessing robustness sets
+        index_id: null
+        status: paper_specific_derived_protocols_not_released
+        protocol: >-
+          Section 5.4 applies four telephony codecs. Section 5.5 plays audio
+          through a loudspeaker, iPhone capture, a commercial cellular
+          network, and Discord at two bitrates. Section 5.7 applies white
+          noise, low-pass filtering, and MP3 compression. Section 5.8 reports
+          naturalness ratings from 30 participants over 90 converted and
+          noise-obfuscated samples.
+        note: >-
+          No public item manifest, channel capture, processed audio, listener
+          response table, consent documentation, or artifact license could be
+          verified at the paper's official repository URL.
+      - cited_as: cross-lingual evaluation
+        index_id: null
+        status: existing_source_corpora_with_unreleased_derived_protocol
+        protocol: >-
+          Section 5.11 and Appendix D sample VCTK English, Multilingual
+          LibriSpeech Spanish, French, and German, AISHELL Mandarin, ALFFA
+          Amharic, and Eduskunta Corpus Finnish speakers, then generate
+          cross-speaker conversions with AGAIN-VC, FreeVC, Diff-HierVC, and
+          DDDM-VC.
+        note: >-
+          The source corpora are named, but the selected item IDs,
+          source-target pairings, converted waveforms, and evaluation manifests
+          are not recoverable from the paper alone.
+    release_audit:
+      librispeech_voxceleb_vctk_mls_and_other_source_corpora: existing_external_releases
+      converted_training_and_test_audio: claimed_by_paper_but_repository_unavailable
+      sampling_and_source_target_pair_manifests: claimed_by_paper_but_repository_unavailable
+      telephony_and_voip_captures: claimed_by_paper_but_repository_unavailable
+      subjective_study_items_and_ratings: claimed_by_paper_but_repository_unavailable
+      code_models_and_evaluation_pipeline: claimed_by_paper_but_repository_unavailable
+      official_github_repository: http_404_on_2026_07_28
+    license:
+      source_corpora: use_each_upstream_family_terms
+      generated_and_captured_audio: not_verifiable_while_artifacts_unavailable
+      subjective_study_data: not_verifiable_while_artifacts_unavailable
+      claimed_code_and_models: not_verifiable_while_repository_unavailable
+      paper: arxiv_perpetual_nonexclusive
+    sources:
+      - https://arxiv.org/abs/2607.23650
+      - https://arxiv.org/html/2607.23650v1#S5.SS1.SSS1
+      - https://arxiv.org/html/2607.23650v1#S5.SS4
+      - https://arxiv.org/html/2607.23650v1#S5.SS11
+      - https://arxiv.org/html/2607.23650v1#A1
+      - https://arxiv.org/html/2607.23650v1#A4
+      - https://github.com/Forliqr/TRIDENT
+      - https://api.github.com/repos/Forliqr/TRIDENT
+    note: >-
+      Appendix D states that the official GitHub repository provides all code,
+      datasets, models, and evaluation pipelines needed for the paper, but
+      both the linked repository and GitHub API endpoint returned HTTP 404 on
+      2026-07-28. The work defines substantial derived evaluation protocols
+      over existing corpora rather than a separately named public benchmark.
+      Until an author-controlled artifact becomes accessible, the generated
+      audio, exact splits, robustness captures, listener study, models, and
+      evaluation pipeline are documented as unavailable and do not change the
+      benchmark-family count. No download helper is added.
+
   pathology_perception_alzheimer_speech:
     paper: https://arxiv.org/abs/2607.23977
     title: "Disentangling Acoustic Cues in Alzheimer's Pathology and Perception: The Roles of Language and Gender"
