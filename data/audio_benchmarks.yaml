@@ -56,6 +56,79 @@ paper_audits:
       underlying Internet-derived audiovisual corpus downloadable or establish
       that its source-media rights permit redistribution.
 
+  dataset_aware_audio_deepfake_detection:
+    paper: https://arxiv.org/abs/2607.23961
+    title: "Leveraging Gradient Reversal Loss and Multitask Learning for Datasets-Aware Audio Deepfake Detection"
+    sections: 4.1 and 5.1
+    status: audited_one_new_public_family_and_existing_public_families
+    last_verified: 2026-07-27
+    evaluated_sets:
+      - cited_as: DFADD
+        index_id: dfadd
+        status: public_ungated
+      - cited_as: In The Wild
+        index_id: in_the_wild_audio_deepfake
+        status: existing_public_family
+      - cited_as: ASVspoof 2019
+        index_id: asvspoof_2019
+        status: existing_public_family
+      - cited_as: ASVspoof 2021
+        index_id: asvspoof_2021
+        status: existing_public_family
+      - cited_as: ASVspoof 2024
+        index_id: asvspoof_5
+        status: existing_public_family
+        note: ASVspoof 5 is the official name of the 2024 challenge edition.
+      - cited_as: Fake or Real
+        index_id: fake_or_real
+        status: existing_public_family
+      - cited_as: Codecfake
+        index_id: codecfake
+        status: existing_public_family
+      - cited_as: ADD 2022
+        index_id: add_2022
+        status: existing_public_family
+      - cited_as: ADD 2023
+        index_id: null
+        status: pending_primary_source_audit
+      - cited_as: LibriSeVoc
+        index_id: null
+        status: pending_primary_source_audit
+      - cited_as: SONAR
+        index_id: null
+        status: pending_primary_source_audit
+    release_audit:
+      dfadd_audio_and_labels: public_ungated_hugging_face
+      paper_model_checkpoints: public_ungated_hugging_face
+      paper_experiment_code: not_linked_in_paper
+      speech_deepfake_arena_protocol: cited_but_primary_reference_unresolved
+    license:
+      dfadd_hugging_face_metadata: mit
+      dfadd_repository: mit
+      vctk_bonafide_source: cc-by-4.0
+      ljspeech_text_source: public_domain
+      component_generators: upstream_terms_apply
+    sources:
+      - https://arxiv.org/abs/2607.23961
+      - https://arxiv.org/html/2607.23961v1#S4.SS1
+      - https://arxiv.org/html/2607.23961v1#S5.SS1
+      - https://arxiv.org/abs/2409.08731
+      - https://arxiv.org/html/2409.08731v1#S3
+      - https://github.com/isjwdu/DFADD
+      - https://raw.githubusercontent.com/isjwdu/DFADD/main/README.md
+      - https://raw.githubusercontent.com/isjwdu/DFADD/main/LICENSE
+      - https://huggingface.co/datasets/isjwdu/DFADD
+      - https://huggingface.co/datasets/isjwdu/DFADD/raw/main/README.md
+      - https://huggingface.co/api/datasets/isjwdu/DFADD
+      - https://huggingface.co/RuiRuihigh/hyperion-grl-deepfake-detector
+      - https://huggingface.co/RuiRuihigh/hyperion-mt-deepfake-detector
+    note: >-
+      The July 2026 paper evaluates 14 subsets under a cited 2025 Speech
+      DeepFake Arena aggregate-EER protocol. Its arXiv HTML has an unresolved
+      citation key for that protocol, so this audit does not claim a separate
+      downloadable Arena family. DFADD is independently verifiable through
+      its primary paper, author repository, and public dataset release.
+
   qwen_audio_3_tts_evaluation:
     paper: https://arxiv.org/abs/2607.23938
     title: "Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm"
@@ -25182,3 +25255,77 @@ benchmarks:
       - https://huggingface.co/datasets/oreva/blab_long_audio
       - https://huggingface.co/datasets/oreva/blab_long_audio/raw/main/README.md
       - https://huggingface.co/api/datasets/oreva/blab_long_audio
+
+  - id: dfadd
+    name: DFADD
+    full_name: "DFADD: The Diffusion and Flow-Matching Based Audio Deepfake Dataset"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - diffusion_tts_detection
+      - flow_matching_tts_detection
+      - cross_generator_generalization
+    official:
+      paper: https://arxiv.org/abs/2409.08731
+      repo: https://github.com/isjwdu/DFADD
+      dataset: https://huggingface.co/datasets/isjwdu/DFADD
+      recent_evaluation: https://arxiv.org/abs/2607.23961
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/isjwdu/DFADD
+        - https://github.com/isjwdu/DFADD
+      examples:
+        - 'scripts/download/dfadd.sh'
+        - 'DFADD_DOWNLOAD_HF=1 scripts/download/dfadd.sh'
+        - 'DFADD_DOWNLOAD_ZIPS=1 scripts/download/dfadd.sh'
+      notes: >-
+        DFADD is one English audio-deepfake family spanning five diffusion or
+        flow-matching TTS generators: Grad-TTS, NaturalSpeech 2, PFlow-TTS,
+        StyleTTS 2, and Matcha-TTS. The paper reports 163,500 spoofed
+        utterances paired with 44,455 VCTK bona fide utterances from 109
+        speakers. The current Hugging Face dataset-viewer snapshot contains
+        207,955 examples in train, validation, and test splits and reports
+        approximately 28.6 GB of downloads. The repository says its separately
+        packaged ZIP files were corrected in April 2025 for a Matcha-TTS
+        audio/label mismatch and instructs users to merge VCTK_BONAFIDE into
+        each generated subset. The helper downloads only the paper page,
+        first-party documentation, license, and API metadata by default. The
+        complete viewer snapshot or corrected ZIP packages require separate
+        explicit opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Hugging Face exposes the dataset-viewer files, six component ZIP
+        packages, and a PFlow-TTS checkpoint without a gate. Large artifacts
+        are never downloaded by the helper's default mode.
+    license:
+      data: mit_metadata_with_incorporated_source_terms
+      code: mit
+      notes: >-
+        The Hugging Face card and repository declare MIT, while the repository
+        separately identifies VCTK bona fide speech as CC BY 4.0 and LJ Speech
+        text as public domain. The generated subsets also depend on five
+        official or unofficial TTS implementations and checkpoints. Do not
+        assume the blanket MIT tag overrides source-corpus, voice, model,
+        checkpoint, or generated-output terms; review every component before
+        redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2409.08731
+      - https://arxiv.org/html/2409.08731v1#S3
+      - https://arxiv.org/html/2409.08731v1#S4
+      - https://github.com/isjwdu/DFADD
+      - https://raw.githubusercontent.com/isjwdu/DFADD/main/README.md
+      - https://raw.githubusercontent.com/isjwdu/DFADD/main/LICENSE
+      - https://api.github.com/repos/isjwdu/DFADD
+      - https://huggingface.co/datasets/isjwdu/DFADD
+      - https://huggingface.co/datasets/isjwdu/DFADD/raw/main/README.md
+      - https://huggingface.co/api/datasets/isjwdu/DFADD
+      - https://arxiv.org/abs/2607.23961
+      - https://arxiv.org/html/2607.23961v1#S4.SS1

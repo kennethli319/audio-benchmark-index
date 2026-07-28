@@ -215,6 +215,7 @@ scripts/download/asvspoof_2017.sh
 scripts/download/asvspoof_2019.sh
 scripts/download/add_2022.sh
 scripts/download/codecfake.sh
+scripts/download/dfadd.sh
 scripts/download/tfcl_afe.sh
 scripts/download/diffssd.sh
 scripts/download/fake_or_real.sh
@@ -1121,6 +1122,12 @@ ADD2022_DOWNLOAD_ARCHIVES=1 ADD2022_RECORDS="adaptation track1" scripts/download
 # Zenodo metadata records by default. Its approximately 172.7 GB release is
 # CC BY-NC-ND 4.0; select records explicitly.
 CODECFAKE_DOWNLOAD_ARCHIVES=1 CODECFAKE_RECORDS="dev test_unseen" scripts/download/codecfake.sh
+
+# DFADD downloads official paper/repository/dataset metadata by default. The
+# approximately 28.6 GB dataset-viewer snapshot and corrected component ZIPs
+# are separate explicit opt-ins.
+DFADD_DOWNLOAD_HF=1 scripts/download/dfadd.sh
+DFADD_DOWNLOAD_ZIPS=1 scripts/download/dfadd.sh
 
 # DiffSSD downloads its official card, license, input texts, and approximately
 # 8.2 MiB split manifest by default. Synthetic audio is approximately 16.9 GiB
