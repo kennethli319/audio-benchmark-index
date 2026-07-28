@@ -485,9 +485,10 @@ THORSTEN_VOICE_DOWNLOAD_ARCHIVE=1 scripts/download/thorsten_voice.sh
 DAPS_DOWNLOAD_ARCHIVE=1 scripts/download/daps.sh
 DAPS_CLONE_CROSS_VERIFICATION=1 scripts/download/daps.sh
 
-# DCASE 2020/2022/2024/2025 Task 2 ASD helpers download official metadata by default.
+# DCASE 2020/2021/2022/2024/2025 Task 2 ASD helpers download official metadata by default.
 # Select archive groups explicitly.
 DCASE2020_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2020_TASK2_PARTS="dev eval" scripts/download/dcase2020_task2_asd.sh
+DCASE2021_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2021_TASK2_PARTS="dev eval" scripts/download/dcase2021_task2_asd.sh
 DCASE2022_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2022_TASK2_PARTS="dev eval" scripts/download/dcase2022_task2_asd.sh
 DCASE2024_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2024_TASK2_PARTS="dev eval" scripts/download/dcase2024_task2_asd.sh
 DCASE2025_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2025_TASK2_PARTS="dev eval" scripts/download/dcase2025_task2_asd.sh

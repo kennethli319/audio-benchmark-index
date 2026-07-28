@@ -15585,6 +15585,69 @@ benchmarks:
       - https://arxiv.org/abs/2501.08587
       - https://github.com/DCASE2024-Task7-Sound-Scene-Synthesis/AudioLDM-training-finetuning
 
+  - id: dcase2021_task2_asd
+    name: DCASE 2021 Task 2 ASD
+    full_name: "DCASE 2021 Task 2: Unsupervised Anomalous Sound Detection for Machine Condition Monitoring under Domain Shifted Conditions"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_robustness
+    tasks:
+      - anomalous_sound_detection
+      - machine_condition_monitoring
+      - domain_generalization
+      - few_shot_domain_adaptation
+    official:
+      challenge: https://dcase.community/challenge2021/task-unsupervised-detection-of-anomalous-sounds
+      results: https://dcase.community/challenge2021/task-unsupervised-detection-of-anomalous-sounds-results
+      development_set: https://zenodo.org/records/4562016
+      additional_training_set: https://zenodo.org/records/4660992
+      evaluation_set: https://zenodo.org/records/4884786
+      repo: https://github.com/y-kawagu/dcase2021_task2_baseline_ae
+      overview_paper: https://dcase.community/documents/workshop2021/proceedings/DCASE2021Workshop_Kawaguchi_61.pdf
+    download:
+      primary:
+        - https://zenodo.org/records/4562016
+        - https://zenodo.org/records/4660992
+        - https://zenodo.org/records/4884786
+      examples:
+        - 'scripts/download/dcase2021_task2_asd.sh'
+        - 'DCASE2021_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2021_TASK2_PARTS="dev eval" scripts/download/dcase2021_task2_asd.sh'
+        - 'DCASE2021_TASK2_DOWNLOAD_ARCHIVES=1 DCASE2021_TASK2_PARTS="dev train eval" scripts/download/dcase2021_task2_asd.sh'
+      notes: >-
+        This public challenge family introduced domain-shifted anomalous sound
+        detection with seven machine types and three development sections plus
+        three disjoint additional-training/evaluation sections per type. Each
+        development section has about 1,000 normal source-domain and only three
+        normal target-domain training clips, plus roughly 100 normal and 100
+        anomalous test clips in each domain. The final evaluation audio is
+        public, but its normal/anomaly condition labels are withheld under the
+        challenge protocol. The three official releases total approximately
+        15.25 GB. The helper downloads official task, record, and baseline
+        metadata by default; archives require an explicit environment opt-in
+        and part list.
+    license:
+      data: cc-by-nc-sa-4.0
+      code: mit
+      notes: >-
+        All three official Zenodo records declare CC BY-NC-SA 4.0, which
+        prohibits commercial use and requires attribution and share-alike
+        distribution. The official autoencoder baseline repository contains an
+        MIT LICENSE. Preserve packaged attribution and machine/source
+        provenance when redistributing derived material.
+    sources:
+      - https://dcase.community/challenge2021/task-unsupervised-detection-of-anomalous-sounds
+      - https://dcase.community/challenge2021/task-unsupervised-detection-of-anomalous-sounds-results
+      - https://zenodo.org/records/4562016
+      - https://zenodo.org/api/records/4562016
+      - https://zenodo.org/records/4660992
+      - https://zenodo.org/api/records/4660992
+      - https://zenodo.org/records/4884786
+      - https://zenodo.org/api/records/4884786
+      - https://github.com/y-kawagu/dcase2021_task2_baseline_ae
+      - https://api.github.com/repos/y-kawagu/dcase2021_task2_baseline_ae
+      - https://dcase.community/documents/workshop2021/proceedings/DCASE2021Workshop_Kawaguchi_61.pdf
+
   - id: dcase2022_task2_asd
     name: DCASE 2022 Task 2 ASD
     full_name: "DCASE 2022 Task 2: Unsupervised Anomalous Sound Detection for Machine Condition Monitoring under Domain Shifted Conditions"
