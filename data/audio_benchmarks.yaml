@@ -9,6 +9,80 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  apple_decoupled_temporal_depth_audio_synthesis:
+    paper: https://arxiv.org/abs/2607.23811
+    title: "Memory Efficient Audio Synthesis with Decoupled Temporal Depth Diffusion Transformers"
+    sections: 3, 3.7, and 3.8
+    status: audited_new_public_family_and_internal_evaluations
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: LibriHeavy
+        index_id: libriheavy
+        status: public_ungated_manifests_with_separate_public_audio
+        protocol: >-
+          Measure within-speaker ABX error on reconstructed quantized-vector
+          representations to assess phonetic discriminability. The paper
+          reports 5.3 percent for its research configuration but does not name
+          the LibriHeavy split, item manifest, or ABX preprocessing recipe.
+        note: >-
+          The text calls the corpus LibriHeavy while its bibliography
+          incorrectly points to the LibriSpeech paper. This audit follows the
+          explicitly named corpus and records the citation mismatch instead
+          of silently treating the evaluation as LibriSpeech.
+      - cited_as: held-out evaluation datasets
+        index_id: null
+        status: internal_unreleased
+        protocol: >-
+          Compare DiT-style conditioning and cross-attention with evaluation
+          loss and next-token accuracy, and evaluate codec reconstructions
+          with UTMOS, SI-SNR, ViSQOL, and MOSNet.
+        note: >-
+          No dataset names, split manifests, audio, item-level results, or
+          evaluation package are disclosed for these experiments.
+      - cited_as: production human evaluation
+        index_id: null
+        status: internal_unreleased
+        protocol: >-
+          Crowd-source mean-opinion scores across five production voices in
+          Siri, conversational, and navigation domains, and report an audio
+          cleanliness rate for tremor, slurs, and glitches.
+        note: >-
+          The paper reports aggregate results but does not release prompts,
+          reference or generated audio, rater instructions, ratings, or split
+          manifests.
+    release_audit:
+      libriheavy_manifests: public_ungated
+      libriheavy_source_audio: public_separately_through_libri_light
+      proprietary_training_corpus: not_released
+      held_out_codec_evaluation_sets: not_identified_or_released
+      production_mos_prompts_audio_and_ratings: not_released
+      paper_code_models_and_item_level_results: not_released
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      libriheavy_release: Apache-2.0_metadata_with_source_audio_terms
+      proprietary_and_production_assets: not_specified_unreleased
+      note: >-
+        The LibriHeavy repository and Hub card declare Apache 2.0, but its
+        manifests point to separately obtained Libri-Light/LibriVox audio and
+        do not override source audiobook rights. The Apple paper does not
+        provide reusable terms for its proprietary corpus or evaluations.
+    sources:
+      - https://arxiv.org/abs/2607.23811
+      - https://arxiv.org/html/2607.23811v1#S3.SS7
+      - https://arxiv.org/html/2607.23811v1#S3.SS8
+      - https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models
+      - https://arxiv.org/abs/2309.08105
+      - https://github.com/k2-fsa/libriheavy
+      - https://raw.githubusercontent.com/k2-fsa/libriheavy/master/README.md
+      - https://huggingface.co/datasets/pkufool/libriheavy
+      - https://github.com/facebookresearch/libri-light
+    note: >-
+      The report is a production model and systems study, not a released
+      benchmark. LibriHeavy is added as the one newly verified public corpus
+      family. The undisclosed training, held-out codec, and production MOS
+      collections remain protocol provenance only and do not increase the
+      benchmark-family count.
+
   omnivae_audio_video_evaluation:
     paper: https://arxiv.org/abs/2607.23855
     title: "OmniVAE: An Audio-Video VAE with Cross-Modal Alignment for Joint Generation"
@@ -13927,6 +14001,82 @@ benchmarks:
       - https://raw.githubusercontent.com/facebookresearch/libri-light/main/eval/README.md
       - https://raw.githubusercontent.com/facebookresearch/libri-light/main/LICENSE
       - https://arxiv.org/abs/1912.07875
+
+  - id: libriheavy
+    name: LibriHeavy
+    full_name: "LibriHeavy: A 50,000-Hour ASR Corpus with Punctuation, Casing, and Context"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_codec_evaluation
+      - contextual_speech_recognition
+    category: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - long_form_speech_recognition
+      - contextual_speech_recognition
+      - punctuation_and_casing_prediction
+      - speech_codec_phonetic_discriminability
+    official:
+      repo: https://github.com/k2-fsa/libriheavy
+      dataset: https://huggingface.co/datasets/pkufool/libriheavy
+      paper: https://arxiv.org/abs/2309.08105
+      source_audio: https://github.com/facebookresearch/libri-light
+      recent_codec_evaluation: https://arxiv.org/abs/2607.23811
+    download:
+      access: public_ungated_manifests_with_separate_large_audio
+      primary:
+        - https://github.com/k2-fsa/libriheavy
+        - https://huggingface.co/datasets/pkufool/libriheavy
+        - https://github.com/facebookresearch/libri-light/tree/main/data_preparation
+      examples:
+        - 'scripts/download/libriheavy.sh'
+        - 'LIBRIHEAVY_DOWNLOAD_MANIFESTS=1 LIBRIHEAVY_PARTS="dev test_clean test_other" scripts/download/libriheavy.sh'
+        - 'scripts/download/libri_light.sh'
+      notes: >-
+        LibriHeavy aligns and labels the Libri-Light audiobook audio with
+        punctuation, casing, and preceding-text context. It provides nested
+        509-, 5,042-, and 50,794-hour training subsets plus 22.3-hour dev,
+        10.5-hour test-clean, and 11.5-hour test-other sets with no overlapping
+        training speakers or books. The helper downloads official
+        documentation and API metadata by default. Selected compressed
+        manifests require LIBRIHEAVY_DOWNLOAD_MANIFESTS=1; the Hub inventory
+        is approximately 15.9 GB because it includes multi-gigabyte large
+        manifests and duplicate raw variants. Audio is not stored in the Hub
+        repository and must be obtained separately through Libri-Light. The
+        July 2026 Apple report names LibriHeavy for within-speaker ABX codec
+        evaluation but does not identify its split or release its ABX items.
+    access:
+      status: public_ungated_metadata_and_separate_public_large_audio
+      registration_required: false
+      notes: >-
+        The public Hugging Face repository contains Lhotse manifests, not
+        waveforms. Their recording paths assume a local Libri-Light checkout;
+        acquiring the full source audio can require several terabytes.
+    license:
+      metadata_and_code: Apache-2.0
+      source_audio: source_specific_libri_light_and_librivox_terms
+      notes: >-
+        The official repository LICENSE and Hugging Face card declare Apache
+        2.0 for the released code and metadata. LibriHeavy does not repackage
+        the audio, and that license does not supersede Libri-Light or the
+        underlying LibriVox audiobook terms. Preserve source attribution and
+        verify audiobook-specific rights before redistribution or commercial
+        use.
+    sources:
+      - https://arxiv.org/abs/2309.08105
+      - https://arxiv.org/html/2309.08105v2#S2.SS2
+      - https://arxiv.org/html/2309.08105v2#S2.SS2.SSS2
+      - https://github.com/k2-fsa/libriheavy
+      - https://raw.githubusercontent.com/k2-fsa/libriheavy/master/README.md
+      - https://raw.githubusercontent.com/k2-fsa/libriheavy/master/LICENSE
+      - https://api.github.com/repos/k2-fsa/libriheavy
+      - https://huggingface.co/datasets/pkufool/libriheavy
+      - https://huggingface.co/datasets/pkufool/libriheavy/raw/main/README.md
+      - https://huggingface.co/api/datasets/pkufool/libriheavy
+      - https://github.com/facebookresearch/libri-light
+      - https://arxiv.org/abs/2607.23811
+      - https://arxiv.org/html/2607.23811v1#S3.SS7
 
   - id: timit
     name: TIMIT

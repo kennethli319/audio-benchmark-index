@@ -116,6 +116,7 @@ scripts/download/lfr_benchmarking_factory.sh
 scripts/download/ears.sh
 scripts/download/jvs.sh
 scripts/download/librispeech.sh
+scripts/download/libriheavy.sh
 scripts/download/whisper_rirmega.sh
 scripts/download/libri_light.sh
 scripts/download/mls.sh
@@ -466,6 +467,10 @@ FLEURS_CONFIG=all scripts/download/fleurs.sh
 
 # LibriSpeech downloads official metadata/checksums by default. Archives are opt-in.
 LIBRISPEECH_DOWNLOAD_ARCHIVES=1 LIBRISPEECH_PARTS="test-clean" scripts/download/librispeech.sh
+
+# LibriHeavy downloads official docs/API metadata by default. Selected
+# manifests are opt-in; obtain the several-terabyte source audio via Libri-Light.
+LIBRIHEAVY_DOWNLOAD_MANIFESTS=1 LIBRIHEAVY_PARTS="dev test_clean test_other" scripts/download/libriheavy.sh
 
 # Thorsten-Voice downloads official Zenodo/project metadata by default.
 # The exact 23-hour, approximately 2.74 GB v3.0 archive is opt-in.
