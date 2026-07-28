@@ -9,6 +9,60 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  pathrir_simulation_evaluation:
+    paper: https://arxiv.org/abs/2607.23293
+    title: "PathRIR: Physics-Guided Acoustic Path Selection and Late-Tail Compensation for Fast Room Impulse Response Simulation"
+    sections: 4.1-4.4
+    status: audited_unreleased_synthetic_evaluation_protocol
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Monte Carlo-generated 3D irregular rooms
+        status: paper_specific_synthetic_train_and_test_sets_not_released
+        protocol: >-
+          Train on 1,000 randomly generated irregular rooms and test on 20
+          held-out rooms. Each extruded polygonal room has one source and two
+          microphones; full-order image-source RIRs use maximum reflection
+          order 10, 8 kHz sampling, and 0.5-second truncation. Compare PathRIR
+          with Pyroomacoustics, a self-implemented Full-ISM baseline, and
+          MESH2IR using cosine distance, NMSE, energy-decay-curve error,
+          direct-to-reverberant-ratio error, RT60 error, runtime speedup, and
+          image-source reduction.
+        note: >-
+          The paper specifies room-dimension, absorption, placement, and
+          reverberation-time ranges, but it does not identify random seeds or
+          publish the 1,020 room geometries, source/microphone coordinates,
+          generated RIRs, train/test manifest, or per-room results.
+    release_audit:
+      paper_method_and_aggregate_results: public
+      pathrir_code_and_model_weights: not_released
+      generated_training_and_test_rooms: not_released
+      random_seeds_and_exact_manifests: not_released
+      generated_reference_rirs: not_released
+      paper_predictions_and_per_room_results: not_released
+      pyroomacoustics_baseline: public_mit
+      mesh2ir_baseline_code: public_no_license_file
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      pathrir_code_weights_and_generated_evaluation_assets: not_specified_unreleased
+      pyroomacoustics: mit
+      mesh2ir_code: not_specified
+    sources:
+      - https://arxiv.org/abs/2607.23293
+      - https://arxiv.org/html/2607.23293v1#S4.SS1
+      - https://arxiv.org/html/2607.23293v1#S4.SS2
+      - https://arxiv.org/html/2607.23293v1#S4.SS3
+      - https://arxiv.org/html/2607.23293v1#S4.SS4
+      - https://github.com/LCAV/pyroomacoustics
+      - https://raw.githubusercontent.com/LCAV/pyroomacoustics/master/LICENSE
+      - https://github.com/anton-jeran/MESH2IR
+      - https://api.github.com/repos/anton-jeran/MESH2IR
+    note: >-
+      PathRIR is a simulation method evaluated on a newly sampled but
+      unreleased synthetic protocol, not a public dataset or reusable
+      benchmark package. This audit preserves the reported experimental
+      design and release gap without adding a benchmark family, download
+      helper, or count increase.
+
   steer_dyadic_avatar_evaluation:
     paper: https://arxiv.org/abs/2607.23840
     title: "STEER: Steerable Dyadic Head Avatars"
