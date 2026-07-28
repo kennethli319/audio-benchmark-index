@@ -217,6 +217,7 @@ scripts/download/add_2022.sh
 scripts/download/add_2023.sh
 scripts/download/codecfake.sh
 scripts/download/dfadd.sh
+scripts/download/librisevoc.sh
 scripts/download/tfcl_afe.sh
 scripts/download/diffssd.sh
 scripts/download/fake_or_real.sh

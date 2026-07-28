@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 362 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 363 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231859a9'/%3E%3Cpath d='M10 32h7l4-12 7 25 7-31 7 36 6-27 5 9h2' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="362 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="363 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -416,15 +416,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 362 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 363 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>362</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>362</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>363</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>363</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>55</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-07-27">July 27, 2026</time></strong></div>
       </div>
@@ -468,7 +468,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speaker-human" aria-pressed="false">
   <span>Speaker, identity &amp; emotion</span>
-  <strong>101</strong>
+  <strong>102</strong>
   <small>Speaker recognition, diarization, anti-spoofing, watermarking, and emotion</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality" aria-pressed="false">
@@ -496,7 +496,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 362 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 363 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -572,7 +572,7 @@
 
         <div class="browse-content">
           <div class="results-bar">
-            <p id="result-status" role="status" aria-live="polite">Showing 362 of 362 benchmarks.</p>
+            <p id="result-status" role="status" aria-live="polite">Showing 363 of 363 benchmarks.</p>
             <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
           </div>
 
@@ -11229,6 +11229,76 @@
                     <li><a href="https://raw.githubusercontent.com/JorisCos/LibriMix/master/LICENSE">Source 3 · raw.githubusercontent.com</a></li>
                     <li><a href="https://arxiv.org/abs/2005.11262">Source 4 · arxiv.org</a></li>
                     <li><a href="https://www.openslr.org/12/">Source 5 · openslr.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-librisevoc"
+  data-name="librisevoc"
+  data-families="speaker-human"
+  data-access="helper"
+  data-host="official"
+  data-terms="unspecified"
+  data-search="librisevoc librisevoc librisevoc libritts self vocoding dataset for neural vocoder artifact detection speaker verification anti spoofing audio deepfake detection audio deepfake detection synthetic speech detection vocoder artifact detection neural vocoder identification cross vocoder generalization post processing robustness not specified with libritts cc by 4 0 upstream mit the author repository s mit license explicitly covers the repository while neither the primary paper nor download instructions state a separate license for the 45 gb audio archive the author owned hugging face metadata only page declares cc by sa 4 0 but that does not clearly license the separately hosted archive bona fide speech is derived from libritts whose source release is cc by 4 0 treat archive rights as unspecified and preserve libritts attribution and upstream terms clarify generated audio redistribution and commercial use with the authors librisevoc is one english self vocoding benchmark family not six independent datasets it pairs 13 201 libritts utterances with one reconstruction from each of wavenet wavernn wavegrad diffwave melgan and parallel wavegan the paper reports 92 407 clips at 24 khz spanning 34 92 hours of bona fide and 208 74 hours of synthesized speech with non overlapping 60 20 20 train development and test splits of 55 440 18 480 and 18 487 clips evaluation covers binary detection and vocoder identification intra and cross dataset eer plus resampling noise robustness the official archive is public and approximately 45 0 gb the helper downloads only the paper page author documentation repository license api metadata and lightweight dataset card metadata by default the archive and toolkit clone are separate opt ins paper https openaccess thecvf com content cvpr2023w wmf html sun ai synthesized voice detection using neural vocoder artifacts cvprw 2023 paper html arxiv https arxiv org abs 2304 13085 repository https github com csun22 synthetic voice detection vocoder artifacts dataset https drive google com file d 1zh6b51s1wisfjdcdrtqhyw61cq0ue1lk view metadata https huggingface co datasets csun22 librisevoc recent evaluation https arxiv org abs 2607 23961 https openaccess thecvf com content cvpr2023w wmf html sun ai synthesized voice detection using neural vocoder artifacts cvprw 2023 paper html https openaccess thecvf com content cvpr2023w wmf papers sun ai synthesized voice detection using neural vocoder artifacts cvprw 2023 paper pdf https arxiv org abs 2304 13085 https github com csun22 synthetic voice detection vocoder artifacts https raw githubusercontent com csun22 synthetic voice detection vocoder artifacts main readme md https raw githubusercontent com csun22 synthetic voice detection vocoder artifacts main license https api github com repos csun22 synthetic voice detection vocoder artifacts https drive google com file d 1zh6b51s1wisfjdcdrtqhyw61cq0ue1lk view https huggingface co datasets csun22 librisevoc https huggingface co datasets csun22 librisevoc raw main readme md https huggingface co api datasets csun22 librisevoc https arxiv org abs 2607 23961">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speaker, identity &amp; emotion</span>
+      <h3>LibriSeVoc</h3>
+      <p class="benchmark-full-name">LibriSeVoc: LibriTTS Self-Vocoding Dataset for Neural Vocoder Artifact Detection</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Audio Deepfake Detection</span>
+        <span class="tag">Synthetic Speech Detection</span>
+        <span class="tag">Vocoder Artifact Detection</span>
+        <span class="tag">Neural Vocoder Identification</span>
+        <span class="tag tag-more">+2 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Official / other</strong></div>
+    <div><span>Upstream terms</span><strong>Not specified</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <div class="card-actions">
+    <a class="card-action primary" href="https://drive.google.com/file/d/1Zh6b51S1WIsFjdCDRTQhYW61CQ0Ue1lk/view">Get data</a>
+          <a class="card-action secondary" href="https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html">Read the paper</a>
+          <a class="card-action secondary" href="https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts">View code</a>
+  </div>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>not_specified_with_libritts_cc_by_4.0_upstream</dd></div>
+        <div><dt>Code license</dt><dd>mit</dd></div>
+        <div><dt>License caution</dt><dd>The author repository&#39;s MIT license explicitly covers the repository, while neither the primary paper nor download instructions state a separate license for the 45 GB audio archive. The author-owned Hugging Face metadata-only page declares CC BY-SA 4.0, but that does not clearly license the separately hosted archive. Bona fide speech is derived from LibriTTS, whose source release is CC BY 4.0. Treat archive rights as unspecified and preserve LibriTTS attribution and upstream terms; clarify generated-audio redistribution and commercial use with the authors.</dd></div>
+        <div><dt>Download notes</dt><dd>LibriSeVoc is one English self-vocoding benchmark family, not six independent datasets. It pairs 13,201 LibriTTS utterances with one reconstruction from each of WaveNet, WaveRNN, WaveGrad, DiffWave, MelGAN, and Parallel WaveGAN. The paper reports 92,407 clips at 24 kHz, spanning 34.92 hours of bona fide and 208.74 hours of synthesized speech, with non-overlapping 60/20/20 train, development, and test splits of 55,440, 18,480, and 18,487 clips. Evaluation covers binary detection and vocoder identification, intra- and cross-dataset EER, plus resampling/noise robustness. The official archive is public and approximately 45.0 GB. The helper downloads only the paper page, author documentation, repository license/API metadata, and lightweight dataset-card metadata by default; the archive and toolkit clone are separate opt-ins.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/librisevoc.sh</code></div>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/librisevoc.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/librisevoc.sh" aria-label="Copy LibriSeVoc helper path">Copy path</button>
+        </div>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html">Paper</a></li>
+                    <li><a href="https://arxiv.org/abs/2304.13085">arXiv</a></li>
+                    <li><a href="https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts">Repository</a></li>
+                    <li><a href="https://drive.google.com/file/d/1Zh6b51S1WIsFjdCDRTQhYW61CQ0Ue1lk/view">Dataset</a></li>
+                    <li><a href="https://huggingface.co/datasets/csun22/LibriSeVoc">Metadata</a></li>
+                    <li><a href="https://arxiv.org/abs/2607.23961">Recent Evaluation</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html">Source 1 · openaccess.thecvf.com</a></li>
+                    <li><a href="https://openaccess.thecvf.com/content/CVPR2023W/WMF/papers/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.pdf">Source 2 · openaccess.thecvf.com</a></li>
+                    <li><a href="https://arxiv.org/abs/2304.13085">Source 3 · arxiv.org</a></li>
+                    <li><a href="https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts">Source 4 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts/main/README.md">Source 5 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts/main/LICENSE">Source 6 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://api.github.com/repos/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts">Source 7 · api.github.com</a></li>
+                    <li><a href="https://drive.google.com/file/d/1Zh6b51S1WIsFjdCDRTQhYW61CQ0Ue1lk/view">Source 8 · drive.google.com</a></li>
+                    <li><a href="https://huggingface.co/datasets/csun22/LibriSeVoc">Source 9 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/csun22/LibriSeVoc/raw/main/README.md">Source 10 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/csun22/LibriSeVoc">Source 11 · huggingface.co</a></li>
+                    <li><a href="https://arxiv.org/abs/2607.23961">Source 12 · arxiv.org</a></li></ul></div>
     </div>
   </details>
 </article>

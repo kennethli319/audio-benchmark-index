@@ -60,7 +60,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.23961
     title: "Leveraging Gradient Reversal Loss and Multitask Learning for Datasets-Aware Audio Deepfake Detection"
     sections: 4.1 and 5.1
-    status: audited_one_new_public_family_and_existing_public_families
+    status: audited_three_new_public_families_and_existing_public_families
     last_verified: 2026-07-27
     evaluated_sets:
       - cited_as: DFADD
@@ -96,13 +96,19 @@ paper_audits:
           covering the four challenge tracks. The records were published in
           2024 after the 2023 challenge.
       - cited_as: LibriSeVoc
-        index_id: null
-        status: pending_primary_source_audit
+        index_id: librisevoc
+        status: public_ungated
+        note: >-
+          The official author repository links a public Google Drive archive.
+          The primary paper reports 92,407 24 kHz clips derived from LibriTTS:
+          13,201 bona fide utterances and six self-vocoded versions of each,
+          split 55,440/18,480/18,487 for train/development/test.
       - cited_as: SONAR
         index_id: null
         status: pending_primary_source_audit
     release_audit:
       dfadd_audio_and_labels: public_ungated_hugging_face
+      librisevoc_audio_and_splits: public_ungated_google_drive
       paper_model_checkpoints: public_ungated_hugging_face
       paper_experiment_code: not_linked_in_paper
       speech_deepfake_arena_protocol: cited_but_primary_reference_unresolved
@@ -115,6 +121,7 @@ paper_audits:
     sources:
       - https://arxiv.org/abs/2607.23961
       - https://arxiv.org/html/2607.23961v1#S4.SS1
+
       - https://arxiv.org/html/2607.23961v1#S5.SS1
       - https://arxiv.org/abs/2409.08731
       - https://arxiv.org/html/2409.08731v1#S3
@@ -126,6 +133,8 @@ paper_audits:
       - https://huggingface.co/api/datasets/isjwdu/DFADD
       - https://huggingface.co/RuiRuihigh/hyperion-grl-deepfake-detector
       - https://huggingface.co/RuiRuihigh/hyperion-mt-deepfake-detector
+      - https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html
+      - https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts
     note: >-
       The July 2026 paper evaluates 14 subsets under a cited 2025 Speech
       DeepFake Arena aggregate-EER protocol. Its arXiv HTML has an unresolved
@@ -25417,3 +25426,83 @@ benchmarks:
       - https://huggingface.co/api/datasets/isjwdu/DFADD
       - https://arxiv.org/abs/2607.23961
       - https://arxiv.org/html/2607.23961v1#S4.SS1
+
+  - id: librisevoc
+    name: LibriSeVoc
+    full_name: "LibriSeVoc: LibriTTS Self-Vocoding Dataset for Neural Vocoder Artifact Detection"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - vocoder_artifact_detection
+      - neural_vocoder_identification
+      - cross_vocoder_generalization
+      - post_processing_robustness
+    official:
+      paper: https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html
+      arxiv: https://arxiv.org/abs/2304.13085
+      repo: https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts
+      dataset: https://drive.google.com/file/d/1Zh6b51S1WIsFjdCDRTQhYW61CQ0Ue1lk/view
+      metadata: https://huggingface.co/datasets/csun22/LibriSeVoc
+      recent_evaluation: https://arxiv.org/abs/2607.23961
+    download:
+      access: public_ungated_large_archive
+      primary:
+        - https://drive.google.com/file/d/1Zh6b51S1WIsFjdCDRTQhYW61CQ0Ue1lk/view
+        - https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts
+      examples:
+        - 'scripts/download/librisevoc.sh'
+        - 'LIBRISEVOC_DOWNLOAD_ARCHIVE=1 scripts/download/librisevoc.sh'
+        - 'LIBRISEVOC_CLONE_TOOLKIT=1 scripts/download/librisevoc.sh'
+      notes: >-
+        LibriSeVoc is one English self-vocoding benchmark family, not six
+        independent datasets. It pairs 13,201 LibriTTS utterances with one
+        reconstruction from each of WaveNet, WaveRNN, WaveGrad, DiffWave,
+        MelGAN, and Parallel WaveGAN. The paper reports 92,407 clips at 24 kHz,
+        spanning 34.92 hours of bona fide and 208.74 hours of synthesized
+        speech, with non-overlapping 60/20/20 train, development, and test
+        splits of 55,440, 18,480, and 18,487 clips. Evaluation covers binary
+        detection and vocoder identification, intra- and cross-dataset EER,
+        plus resampling/noise robustness. The official archive is public and
+        approximately 45.0 GB. The helper downloads only the paper page,
+        author documentation, repository license/API metadata, and lightweight
+        dataset-card metadata by default; the archive and toolkit clone are
+        separate opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        The author repository directly links the Google Drive archive. A
+        byte-range request verified the file as a 45,046,253,997-byte ZIP on
+        2026-07-27. A separate author-owned Hugging Face dataset repository
+        contains only a dataset card, not the audio.
+    license:
+      data: not_specified_with_libritts_cc_by_4.0_upstream
+      code: mit
+      notes: >-
+        The author repository's MIT license explicitly covers the repository,
+        while neither the primary paper nor download instructions state a
+        separate license for the 45 GB audio archive. The author-owned
+        Hugging Face metadata-only page declares CC BY-SA 4.0, but that does
+        not clearly license the separately hosted archive. Bona fide speech is
+        derived from LibriTTS, whose source release is CC BY 4.0. Treat
+        archive rights as unspecified and preserve LibriTTS attribution and
+        upstream terms; clarify generated-audio redistribution and commercial
+        use with the authors.
+    sources:
+      - https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html
+      - https://openaccess.thecvf.com/content/CVPR2023W/WMF/papers/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.pdf
+      - https://arxiv.org/abs/2304.13085
+      - https://github.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts
+      - https://raw.githubusercontent.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts/main/README.md
+      - https://raw.githubusercontent.com/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts/main/LICENSE
+      - https://api.github.com/repos/csun22/Synthetic-Voice-Detection-Vocoder-Artifacts
+      - https://drive.google.com/file/d/1Zh6b51S1WIsFjdCDRTQhYW61CQ0Ue1lk/view
+      - https://huggingface.co/datasets/csun22/LibriSeVoc
+      - https://huggingface.co/datasets/csun22/LibriSeVoc/raw/main/README.md
+      - https://huggingface.co/api/datasets/csun22/LibriSeVoc
+      - https://arxiv.org/abs/2607.23961
