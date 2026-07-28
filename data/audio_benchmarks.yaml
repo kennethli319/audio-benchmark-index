@@ -9,6 +9,68 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  pathology_perception_alzheimer_speech:
+    paper: https://arxiv.org/abs/2607.23977
+    title: "Disentangling Acoustic Cues in Alzheimer's Pathology and Perception: The Roles of Language and Gender"
+    sections: 2.1, 2.3, and 4
+    status: audited_existing_restricted_challenge_data_and_unreleased_annotations
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: ADReSS-M Greek speech
+        index_id: null
+        status: existing_challenge_data_not_independently_released_by_paper
+        protocol: >-
+          The study selects 30 Greek picture-description recordings from the
+          ADReSS-M challenge, balanced as 15 Alzheimer's disease and 15 healthy
+          control samples where possible.
+      - cited_as: NCMMSC2021 Mandarin speech
+        index_id: null
+        status: existing_challenge_data_not_independently_released_by_paper
+        protocol: >-
+          The study selects 30 Mandarin picture-description recordings from
+          the NCMMSC2021 challenge, balanced as 15 Alzheimer's disease and 15
+          healthy control samples where possible.
+      - cited_as: cross-lingual pathology-perception study subset
+        index_id: null
+        status: derived_subset_and_annotations_not_released
+        protocol: >-
+          Sixteen native Mandarin listeners classify each selected Greek and
+          Mandarin recording as Alzheimer's disease or healthy control, mark
+          influential time spans, and provide free-text rationales through
+          webMUSHRA. The paper evaluates pathology classification and
+          perception-score regression with five-fold cross-validation,
+          permutation tests, SHAP feature rankings, and mixed-effects models.
+        note: >-
+          The paper identifies neither the selected source item IDs nor a
+          public archive for listener labels, timeline annotations, rationales,
+          extracted features, folds, or evaluation code.
+    release_audit:
+      adress_m_source_challenge: access_controlled_under_source_terms
+      ncmmsc2021_source_challenge: access_controlled_under_source_terms
+      selected_sixty_item_manifest: not_released
+      listener_classifications_and_timeline_annotations: not_released
+      free_text_rationales_and_perception_scores: not_released
+      experiment_code_and_fold_assignments: not_released
+    license:
+      source_challenge_audio: restricted_clinical_data_terms_apply
+      derived_perception_annotations: not_specified_unreleased
+      paper: arxiv_perpetual_nonexclusive
+    sources:
+      - https://arxiv.org/abs/2607.23977
+      - https://arxiv.org/html/2607.23977v1#S2.SS1
+      - https://arxiv.org/html/2607.23977v1#S2.SS3
+      - https://arxiv.org/html/2607.23977v1#S4
+      - https://doi.org/10.1109/OJSP.2024.3378595
+      - https://doi.org/10.1109/ICASSP49357.2023.10433923
+      - https://talkbank.org/dementia/
+    note: >-
+      This paper introduces a small perceptual study over existing clinical
+      challenge speech, not a new downloadable benchmark family. Public paper
+      descriptions do not authorize redistribution of participant recordings,
+      and the paper-specific sample selection and human annotations are not
+      reproducible from released artifacts. The study is therefore documented
+      as an audit and does not change the benchmark-family count.
+
   facialtalker_vsdd_1k:
     paper: https://arxiv.org/abs/2607.24430
     title: "Let Me Look at You: Advanced Facial Expression Modeling for Conversational Speech Synthesis"
