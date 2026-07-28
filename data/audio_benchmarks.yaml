@@ -9,6 +9,52 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  bring_music_the_horizon:
+    paper: https://arxiv.org/abs/2607.13471
+    title: "Bring Music The Horizon: Music-Driven 360-degree Video Generation"
+    sections: 2-3 and official project-page results
+    status: audited_qualitative_demo_no_released_benchmark
+    evaluated_material:
+      - cited_as: cross-genre song demonstrations
+        index_id: null
+        status: public_demo_outputs_without_evaluation_package
+        protocol: >-
+          Generate panoramic keyframes and 360-degree videos from four-bar
+          music units conditioned on predicted valence and arousal. The paper
+          reports qualitative results only; it defines no fixed test split,
+          quantitative metric, human-rating protocol, or leaderboard.
+        note: >-
+          The project page shows three primary demonstrations and three
+          side-by-side comparisons with From-Sound-To-Sight. These examples
+          use named commercial recordings and are presentation artifacts, not
+          a downloadable benchmark dataset or a licensed evaluation corpus.
+    release_audit:
+      paper_and_project_page: public
+      generated_demo_videos: publicly_viewable
+      input_song_manifest: page_names_six_examples_only
+      benchmark_split_annotations_and_scores: not_released
+      code_models_and_reproducible_pipeline: not_released
+      custom_training_data: mentioned_but_not_described_or_released
+    license:
+      paper: CC-BY-4.0
+      project_page_and_demo_media: not_specified
+      input_music: third_party_commercial_recordings
+      note: >-
+        The paper's CC BY 4.0 license does not grant rights to the named input
+        songs or establish reusable terms for project-page videos. No dataset
+        or code license is published.
+    sources:
+      - https://arxiv.org/abs/2607.13471
+      - https://arxiv.org/html/2607.13471v1#S2
+      - https://arxiv.org/html/2607.13471v1#S3
+      - https://etoile-et-toi-mp3.github.io/BMTH_Project_Page/
+      - https://export.arxiv.org/api/query?id_list=2607.13471
+    note: >-
+      This is a generation-system demonstration rather than a benchmark
+      release. The audit preserves the public qualitative evidence and its
+      access and rights limitations without adding a benchmark row, family
+      count, download helper, or fabricated dataset link.
+
   apple_decoupled_temporal_depth_audio_synthesis:
     paper: https://arxiv.org/abs/2607.23811
     title: "Memory Efficient Audio Synthesis with Decoupled Temporal Depth Diffusion Transformers"
