@@ -10103,6 +10103,85 @@ benchmarks:
       - https://zenodo.org/records/14614287
       - https://zenodo.org/api/records/14614287
 
+  - id: xares_llm
+    name: XARES-LLM
+    full_name: "The Interspeech 2026 Audio Encoder Capability Challenge for Large Audio Language Models"
+    qwen_cited_as: null
+    qwen_bucket: audio_language_model_benchmark
+    tasks:
+      - audio_encoder_evaluation
+      - large_audio_language_model_integration
+      - generative_audio_classification
+      - automatic_speech_recognition
+      - audio_captioning
+      - music_captioning
+      - speech_emotion_recognition
+      - speaker_identification
+      - spoken_language_identification
+      - keyword_spotting
+      - sound_event_classification
+      - music_genre_classification
+      - musical_instrument_classification
+      - out_of_domain_evaluation
+    official:
+      repo: https://github.com/xiaomi-research/xares-llm
+      paper: https://arxiv.org/abs/2603.22728
+      dataset: https://huggingface.co/datasets/mispeech/xares_llm_data
+      mecat_caption_dataset: https://huggingface.co/datasets/mispeech/MECAT-Caption
+      conference: Interspeech 2026 Challenge
+    download:
+      access: public_ungated_development_tracks_hidden_challenge_tracks_unreleased
+      primary:
+        - https://github.com/xiaomi-research/xares-llm
+        - https://huggingface.co/datasets/mispeech/xares_llm_data
+        - https://huggingface.co/datasets/mispeech/MECAT-Caption
+      examples:
+        - 'scripts/download/xares_llm.sh'
+        - 'XARES_LLM_CLONE_TOOLKIT=1 scripts/download/xares_llm.sh'
+        - 'XARES_LLM_DOWNLOAD_DATA=1 scripts/download/xares_llm.sh'
+      notes: >-
+        XARES-LLM is one Interspeech 2026 challenge and evaluation protocol,
+        not 20 new dataset families. It freezes a submitted encoder and trains
+        a projector plus LoRA-adapted SmolLM2-135M decoder. The current public
+        toolkit implements Track A over 15 classification tasks and Track B
+        over five understanding tasks; its ungated Hugging Face snapshot
+        repackages 20 component corpora as WebDataset archives and reports
+        about 128.7 GB of storage. MECAT-Caption is fetched from its separate
+        public repository. The paper additionally reports hidden Track A and
+        Track B challenge evaluations, but their exact shards and configs are
+        not released. Its Track A table also lists a LibriSpeech gender task
+        that is absent from the current repository configs and baseline table,
+        so it is not claimed as reproducible public coverage. The helper
+        downloads only official metadata, documentation, task configs, and
+        license text by default; toolkit cloning and the full large dataset
+        snapshots require separate explicit opt-ins.
+    license:
+      data: Apache-2.0_card_claim_with_mixed_component_terms
+      code: Apache-2.0
+      paper: not_specified
+      notes: >-
+        The repository code is Apache 2.0 and the xares_llm_data card declares
+        Apache 2.0, but the snapshot repackages independently licensed source
+        corpora such as ESC-50, FSD50K, VoxCeleb1, and Song Describer. The
+        blanket card tag should not be assumed to override component
+        licenses, consent conditions, source-media rights, or noncommercial
+        restrictions. MECAT-Caption separately declares CC BY 3.0 while
+        retaining upstream audio-source caveats. Hidden challenge assets have
+        no public artifact license because they are not released.
+    sources:
+      - https://arxiv.org/abs/2603.22728
+      - https://arxiv.org/html/2603.22728v1
+      - https://github.com/xiaomi-research/xares-llm
+      - https://raw.githubusercontent.com/xiaomi-research/xares-llm/main/README.md
+      - https://raw.githubusercontent.com/xiaomi-research/xares-llm/main/LICENSE
+      - https://api.github.com/repos/xiaomi-research/xares-llm
+      - https://raw.githubusercontent.com/xiaomi-research/xares-llm/main/src/xares_llm/tasks/task1/eval/eval_task1_config.yaml
+      - https://raw.githubusercontent.com/xiaomi-research/xares-llm/main/src/xares_llm/tasks/task2/eval/eval_task2_config.yaml
+      - https://huggingface.co/datasets/mispeech/xares_llm_data
+      - https://huggingface.co/datasets/mispeech/xares_llm_data/raw/main/README.md
+      - https://huggingface.co/api/datasets/mispeech/xares_llm_data
+      - https://huggingface.co/datasets/mispeech/MECAT-Caption
+
   - id: dynamic_superb
     name: Dynamic-SUPERB
     full_name: "Dynamic-SUPERB: A dynamic, collaborative, and comprehensive instruction-tuning benchmark for speech"

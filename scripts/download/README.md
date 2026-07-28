@@ -75,6 +75,7 @@ scripts/download/slue.sh
 scripts/download/minds14.sh
 scripts/download/hear.sh
 scripts/download/xares.sh
+scripts/download/xares_llm.sh
 scripts/download/dynamic_superb.sh
 scripts/download/maeb.sh
 scripts/download/dilemmadata.sh
