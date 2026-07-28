@@ -2243,7 +2243,7 @@ paper_audits:
   finnaffect_release_status:
     paper: https://arxiv.org/abs/2607.24155
     title: "Looking for Affect in Spontaneous Finnish Speech through Linguistic Interpretability"
-    sections: 3.1 and 6
+    sections: 3.1-3.3 and 6
     status: audited_registered_corpus_not_yet_downloadable
     last_verified: 2026-07-28
     evaluated_sets:
@@ -2279,12 +2279,15 @@ paper_audits:
     sources:
       - https://arxiv.org/abs/2607.24155
       - https://arxiv.org/html/2607.24155v1#S3.SS1
+      - https://arxiv.org/html/2607.24155v1#S3.SS2
+      - https://arxiv.org/html/2607.24155v1#S3.SS3
       - https://doi.org/10.1016/j.specom.2025.103327
       - https://zenodo.org/records/20080631
       - https://urn.fi/urn:nbn:fi:lb-2025081821
       - https://clarino.uib.no/comedi/metadata-record?identifier=lb-2025081821
       - https://github.com/SPEECHCOG/AffectClassification
       - https://raw.githubusercontent.com/SPEECHCOG/AffectClassification/main/README.md
+      - https://api.github.com/repos/SPEECHCOG/AffectClassification
       - https://github.com/SPEECHCOG/AffectCharacterization
       - https://raw.githubusercontent.com/SPEECHCOG/AffectCharacterization/main/README.md
     note: >-

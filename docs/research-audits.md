@@ -7,6 +7,19 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 FinnAffect follow-up is recorded as a release-status audit
+rather than a new downloadable benchmark family. It evaluates continuous
+valence and arousal on the 2,000-utterance Gold Standard subset of a
+12,000-utterance spontaneous Finnish corpus, with speaker-grouped training and
+validation folds over the remaining singly annotated samples. Although the
+paper calls FinnAffect newly released, the Language Bank of Finland owner
+record still says it “will be available,” marks both availability and licence
+as under negotiation, and exposes no corpus files. The linked experiment
+repository supplies older code and derived features but explicitly replaces
+withheld raw audio with dummy noise and has no detected license. The index
+therefore records the approximately 160 GB corpus, protocol, and discrepancy
+without inventing a download path or counting the family.
+
 The July 2026 Earnings25 release adds a public financial-domain ASR
 benchmark with two complementary English test tracks. Testset-full supplies
 498 hours of complete 2025 Q4 earnings calls from approximately 500 S&P 500
