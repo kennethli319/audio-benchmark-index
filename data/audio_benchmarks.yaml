@@ -9,6 +9,61 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  finnaffect_release_status:
+    paper: https://arxiv.org/abs/2607.24155
+    title: "Looking for Affect in Spontaneous Finnish Speech through Linguistic Interpretability"
+    sections: 3.1 and 6
+    status: audited_registered_corpus_not_yet_downloadable
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: FinnAffect
+        index_id: null
+        status: registered_under_negotiation_not_downloadable
+        protocol: >-
+          The paper uses the annotated portion of FinnAffect: 12,000 Finnish
+          speech excerpts lasting 1-20 seconds with transcripts and continuous
+          valence and arousal ratings. Its 2,000-item Gold Standard subset,
+          annotated by all five listeners, is used for testing; the other
+          10,000 singly annotated excerpts supply speaker-separated training
+          and validation data.
+        note: >-
+          The canonical Language Bank of Finland record resolves and describes
+          the 160 GB corpus, but its availability and license are both still
+          "underNegotiation", its resource proxy list is empty, and the record
+          says the resource will be available for download. No corpus files or
+          access application are currently linked.
+    release_audit:
+      audio_transcripts_and_affect_annotations: not_downloadable
+      language_bank_catalog_record: public_metadata_only
+      original_paper_extracted_features_and_scripts: public_ungated_github
+      original_paper_raw_audio: withheld_for_data_licensing_reasons
+      related_acoustic_characterization_features_and_labels: public_ungated_github
+      interpretability_paper_artifacts: announced_but_not_linked
+    license:
+      corpus: under_negotiation
+      source_corpora: mixed_upstream_terms
+      github_repositories: not_specified
+      original_paper: cc-by-4.0
+      interspeech_preprint: arxiv_perpetual_nonexclusive
+    sources:
+      - https://arxiv.org/abs/2607.24155
+      - https://arxiv.org/html/2607.24155v1#S3.SS1
+      - https://doi.org/10.1016/j.specom.2025.103327
+      - https://zenodo.org/records/20080631
+      - https://urn.fi/urn:nbn:fi:lb-2025081821
+      - https://clarino.uib.no/comedi/metadata-record?identifier=lb-2025081821
+      - https://github.com/SPEECHCOG/AffectClassification
+      - https://raw.githubusercontent.com/SPEECHCOG/AffectClassification/main/README.md
+      - https://github.com/SPEECHCOG/AffectCharacterization
+      - https://raw.githubusercontent.com/SPEECHCOG/AffectCharacterization/main/README.md
+    note: >-
+      Public derived features, labels, and experiment code from the original
+      and related studies do not substitute for the registered corpus or
+      establish rights to its audio and transcripts. The Interspeech paper
+      says its artifacts will be published but gives no link. FinnAffect
+      remains uncounted until the Language Bank record exposes a documented
+      access path and finalized corpus terms.
+
   codecmos_accent:
     paper: https://arxiv.org/abs/2603.14328
     title: "CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents"
