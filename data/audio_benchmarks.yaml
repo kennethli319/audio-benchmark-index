@@ -9,6 +9,66 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  long_audio_bench:
+    paper: https://arxiv.org/abs/2503.03983
+    title: "Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities"
+    sections: 4.2 and 6.1-6.2
+    status: audited_benchmark_not_publicly_released
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: LongAudioBench
+        index_id: null
+        status: paper_evaluated_contact_authors_only
+        protocol: >-
+          Evaluate long-audio captioning and question answering over speech,
+          environmental sound, and music clips lasting 30 seconds to five
+          minutes. The paper uses GPT-4o as a judge to compare each model
+          response with the reference answer on a 1-to-10 scale.
+        note: >-
+          The authors sampled about 3,000 LongAudio items proportionally across
+          question types for expert verification, discarded incorrect items,
+          and retained 2,429 instances after author quality control.
+    release_audit:
+      project_page: public
+      code_repository: public
+      longaudio_training_annotations: public_ungated_noncommercial
+      longaudio_training_audio: not_redistributed_upstream_access_required
+      long_audio_bench_annotations: not_present_contact_authors
+      long_audio_bench_audio: not_present_contact_authors
+      hugging_face_gating: false
+      note: >-
+        The current NVIDIA LongAudio card explicitly says to contact the
+        corresponding authors for LongAudioBench. Its repository file list
+        contains LongAudio and later LongAudio-XL/XXL annotation files but no
+        Bench_LongAudio.json. The public training annotations therefore do not
+        constitute a public release of the expert-verified benchmark.
+    license:
+      public_longaudio_annotations: NVIDIA-OneWay-Noncommercial-License
+      benchmark: not_published
+      source_audio: upstream_dataset_terms_apply
+      note: >-
+        The NVIDIA dataset card applies its OneWay Noncommercial License to
+        LongAudio annotations and says source audio retains its own terms.
+        Because the benchmark files and any access terms are unpublished, do
+        not infer that the training-annotation license covers LongAudioBench.
+    sources:
+      - https://arxiv.org/abs/2503.03983
+      - https://arxiv.org/html/2503.03983v1#S4.SS2
+      - https://arxiv.org/html/2503.03983v1#S6.SS1
+      - https://arxiv.org/html/2503.03983v1#S6.SS2
+      - https://research.nvidia.com/labs/adlr/AF2/
+      - https://github.com/NVIDIA/audio-flamingo
+      - https://raw.githubusercontent.com/NVIDIA/audio-flamingo/main/README.md
+      - https://api.github.com/repos/NVIDIA/audio-flamingo
+      - https://huggingface.co/datasets/nvidia/LongAudio
+      - https://huggingface.co/datasets/nvidia/LongAudio/raw/main/README.md
+      - https://huggingface.co/api/datasets/nvidia/LongAudio
+    note: >-
+      LongAudioBench is a substantive expert-verified benchmark, but no
+      benchmark row or download helper is added while both annotations and
+      audio remain contact-only. Recheck the official NVIDIA dataset
+      repository for Bench_LongAudio.json or published access terms.
+
   redvox_multilingual_speech_safety:
     paper: https://arxiv.org/abs/2606.26968
     title: "RedVox: Safety and Fairness Gaps in Speech Models Across Languages"
