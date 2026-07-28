@@ -27066,3 +27066,76 @@ benchmarks:
       - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/stancebench/metadata/category_roles.csv
       - https://raw.githubusercontent.com/YuzheWangjhu/StanceBench/main/stancebench/metadata/interactions_role_ABmapped.csv
       - https://huggingface.co/datasets/facebook/seamless-interaction
+
+  - id: lfr_benchmarking_factory
+    name: LFR Benchmarking Dataset Factory
+    full_name: "Deriving Benchmarking Datasets from Long-Form Recordings: Challenges and Opportunities"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_understanding
+      - paralinguistics
+    category: speech_understanding
+    tasks:
+      - voice_type_classification
+      - addressee_classification
+      - child_vocal_maturity_classification
+      - child_speech_recognition
+      - child_directed_speech_diarization
+    official:
+      paper: https://arxiv.org/abs/2607.03201
+      repo: https://github.com/LAAC-LSCP/benchmarking-dataset-factory
+    download:
+      access: public_pipeline_with_mixed_public_and_access_controlled_source_corpora
+      primary:
+        - https://github.com/LAAC-LSCP/benchmarking-dataset-factory
+      examples:
+        - 'scripts/download/lfr_benchmarking_factory.sh'
+        - 'LFR_FACTORY_CLONE_TOOLKIT=1 scripts/download/lfr_benchmarking_factory.sh'
+      notes: >-
+        This is one benchmark-construction family with four derived tracks,
+        not 27 separately released benchmark families. The public pipeline
+        standardizes long-form child-centered recordings in ChildProject and
+        DataLad, maps heterogeneous human annotations, and creates
+        child-disjoint train, validation, and test splits for voice type,
+        addressee, vocal maturity, and orthographic transcription tasks. The
+        paper inventories 27 contributing corpora across more than 18
+        languages and 14 countries: six source corpora are described as
+        public, while 21 require access controls. No fixed all-corpora
+        benchmark archive is publicly downloadable. Safe defaults fetch only
+        the paper, repository documentation, license, API metadata, and the
+        lightweight manual annotation-column index; cloning the pipeline is
+        opt-in and never fetches source recordings.
+    access:
+      status: public_reproducible_pipeline_with_restricted_full_benchmark
+      registration_required: true_for_many_source_corpora
+      notes: >-
+        The GitHub pipeline is public and ungated. Its documented DataLad
+        workflow points to an SSH GIN remote and warns that users will not
+        have access to every corpus. The paper's full vocal-maturity track has
+        no public contributing corpus, and the complete cross-corpus benchmark
+        depends on custodian-approved access under the proposed ELSI
+        governance model. Public source corpora can be obtained under their
+        own repository and participant-consent conditions, but the project
+        does not provide one unrestricted combined audio package.
+    license:
+      data: mixed_source_specific_and_participant_consent_terms
+      code: MIT
+      paper: CC-BY-SA-4.0
+      notes: >-
+        The repository's MIT license covers the benchmark-generation
+        software and bundled metadata, not the underlying child recordings
+        or annotations. Each contributing corpus retains its own access,
+        consent, ethics, and reuse conditions. The paper is CC BY-SA 4.0;
+        that publication license does not authorize redistribution of the
+        sensitive source audio or derived clips.
+    sources:
+      - https://arxiv.org/abs/2607.03201
+      - https://arxiv.org/html/2607.03201v1#S3
+      - https://arxiv.org/html/2607.03201v1#S4.SS1
+      - https://arxiv.org/html/2607.03201v1#S4.SS2
+      - https://arxiv.org/html/2607.03201v1#S5
+      - https://github.com/LAAC-LSCP/benchmarking-dataset-factory
+      - https://raw.githubusercontent.com/LAAC-LSCP/benchmarking-dataset-factory/main/README.md
+      - https://raw.githubusercontent.com/LAAC-LSCP/benchmarking-dataset-factory/main/LICENSE
+      - https://api.github.com/repos/LAAC-LSCP/benchmarking-dataset-factory
+      - https://raw.githubusercontent.com/LAAC-LSCP/benchmarking-dataset-factory/main/outputs/manually_annotated_metadata.json

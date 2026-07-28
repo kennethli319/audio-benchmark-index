@@ -111,6 +111,7 @@ scripts/download/fleurs.sh
 scripts/download/omnilingual_asr_corpus.sh
 scripts/download/voicecodebench.sh
 scripts/download/s_diverse.sh
+scripts/download/lfr_benchmarking_factory.sh
 scripts/download/jvs.sh
 scripts/download/librispeech.sh
 scripts/download/whisper_rirmega.sh
@@ -940,6 +941,11 @@ EARNINGS25_ACK_AUDIO_TERMS=1 EARNINGS25_DOWNLOAD_ARCHIVE=1 scripts/download/earn
 
 # Indic DiarBench downloads official paper and dataset metadata by default. The approximately 30.3 GB HF snapshot is opt-in.
 INDIC_DIARBENCH_DOWNLOAD_HF=1 scripts/download/indic_diarbench.sh
+
+# LFR Benchmarking Dataset Factory downloads public pipeline documentation and
+# lightweight annotation-column metadata only. The toolkit clone is opt-in;
+# source child recordings require corpus-specific access and are never fetched.
+LFR_FACTORY_CLONE_TOOLKIT=1 scripts/download/lfr_benchmarking_factory.sh
 
 # StanceBench downloads official docs and lightweight stance definitions by default.
 # The 9.8k-row interaction mapping is opt-in; obtain Seamless Interaction audio separately.
