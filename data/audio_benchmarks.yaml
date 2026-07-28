@@ -9376,6 +9376,88 @@ benchmarks:
       - https://huggingface.co/datasets/NJU-LINK/AVE-Compass/raw/main/README.md
       - https://huggingface.co/api/datasets/NJU-LINK/AVE-Compass
 
+  - id: seamless_interaction
+    name: Seamless Interaction
+    full_name: "Seamless Interaction: Dyadic Audiovisual Motion Modeling and Large-Scale Dataset"
+    qwen_cited_as: null
+    qwen_bucket: audio_visual_interaction
+    tasks:
+      - dyadic_audiovisual_interaction_modeling
+      - audiovisual_behavioral_motion_generation
+      - conversational_gesture_generation
+      - active_listener_motion_generation
+      - turn_taking_modeling
+      - visual_synchrony_modeling
+      - dyadic_body_motion_evaluation
+      - dyadic_facial_motion_evaluation
+      - multimodal_social_behavior_understanding
+      - internal_state_and_behavior_annotation
+    official:
+      project: https://ai.meta.com/research/seamless-interaction/
+      paper: https://ai.meta.com/research/publications/seamless-interaction-dyadic-audiovisual-motion-modeling-and-large-scale-dataset/
+      repo: https://github.com/facebookresearch/seamless_interaction
+      dataset: https://huggingface.co/datasets/facebook/seamless-interaction
+    download:
+      access: public_ungated_noncommercial_large_scale
+      primary:
+        - https://huggingface.co/datasets/facebook/seamless-interaction
+        - https://github.com/facebookresearch/seamless_interaction
+      examples:
+        - 'scripts/download/seamless_interaction.sh'
+        - 'SEAMLESS_INTERACTION_DOWNLOAD_METADATA=1 scripts/download/seamless_interaction.sh'
+        - 'SEAMLESS_INTERACTION_CLONE_TOOLKIT=1 scripts/download/seamless_interaction.sh'
+      notes: >-
+        Seamless Interaction is one source dataset and modeling/evaluation
+        family, not separate benchmark families for its improvised and
+        naturalistic configurations or annotation types. The public,
+        ungated release reports more than 4,000 hours from more than 4,000
+        participants, with 4,065.04 hours and 64,739 dyadic interactions
+        split into improvised and naturalistic train, development, and test
+        partitions.
+        It provides synchronized participant video, 48 kHz denoised audio,
+        time-aligned transcripts and VAD, body and facial features, movement
+        representations, relationship/context metadata, and limited
+        first- and third-party internal-state and behavior annotations. The
+        paper's section 6 and appendix B propose automatic metrics plus separate
+        human Dyadic Body and Dyadic Face Protocols, while the dataset card
+        does not define one mandatory leaderboard protocol. The paper also
+        describes participant-disjoint private test partitions (40.75
+        naturalistic hours and 15.32 improvised hours) held out for future
+        benchmarking; those private assets are not publicly released.
+        The helper fetches only official cards, API/repository metadata, and
+        license text by default. An explicit metadata opt-in downloads about
+        9.3 MB of CSV indexes; a separate opt-in clones the roughly 36 MB
+        toolkit. Dataset files are organized as approximately 50 GB batches
+        and the complete release is reported as roughly 27 TB, so the helper
+        deliberately does not wrap a full snapshot download. Use the official
+        browser or toolkit to select individual interactions or batches.
+    license:
+      data: CC-BY-NC-4.0
+      code: CC-BY-NC-4.0_repository_wide
+      paper: not_specified
+      notes: >-
+        The Hugging Face card and repository LICENSE declare CC BY-NC 4.0,
+        including attribution and noncommercial restrictions; the repository
+        does not provide a separate software license for its Python toolkit.
+        The release contains identifiable audiovisual recordings, participant
+        metadata, relationship information, transcripts, and behavioral
+        features. The card documents occasional timestamp and participant-ID
+        errors and says hundreds of hours of between-interaction "meta time"
+        remain unreleased. Review the official data policy and applicable
+        privacy, consent, biometric, and human-subject requirements before
+        reuse; public download access does not remove those obligations.
+    sources:
+      - https://ai.meta.com/research/seamless-interaction/
+      - https://ai.meta.com/blog/seamless-interaction-natural-conversational-dynamics/
+      - https://ai.meta.com/research/publications/seamless-interaction-dyadic-audiovisual-motion-modeling-and-large-scale-dataset/
+      - https://github.com/facebookresearch/seamless_interaction
+      - https://raw.githubusercontent.com/facebookresearch/seamless_interaction/main/README.md
+      - https://raw.githubusercontent.com/facebookresearch/seamless_interaction/main/LICENSE
+      - https://api.github.com/repos/facebookresearch/seamless_interaction
+      - https://huggingface.co/datasets/facebook/seamless-interaction
+      - https://huggingface.co/datasets/facebook/seamless-interaction/raw/main/README.md
+      - https://huggingface.co/api/datasets/facebook/seamless-interaction
+
   - id: friend_bench
     name: Friend Bench
     full_name: "Friend Bench: Social relationship recognition from thin-slice dyadic interactions"

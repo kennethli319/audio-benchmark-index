@@ -61,6 +61,7 @@ scripts/download/comind.sh
 scripts/download/video_salmonn2_caption.sh
 scripts/download/syncbench.sh
 scripts/download/ave_compass.sh
+scripts/download/seamless_interaction.sh
 scripts/download/friend_bench.sh
 scripts/download/k9_bench.sh
 scripts/download/video_mme.sh
