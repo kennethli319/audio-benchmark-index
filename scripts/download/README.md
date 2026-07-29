@@ -37,6 +37,7 @@ scripts/download/trea.sh
 scripts/download/lat_bench.sh
 scripts/download/audio_marathon.sh
 scripts/download/escucha.sh
+scripts/download/preference_asr.sh
 scripts/download/ghana_speech_eval.sh
 scripts/download/msu_bench.sh
 scripts/download/korean_speechlm_benchmarks.sh
@@ -462,6 +463,10 @@ scripts/download/fsd50k.sh
 # It does not download the URL-referenced source recordings.
 scripts/download/escucha.sh
 ESCUCHA_CLONE_REPO=1 scripts/download/escucha.sh
+
+# Preference-ASR downloads official docs and the 2,822-row JSONL manifest by
+# default. Source audio remains under its four upstream corpus terms.
+PREFERENCE_ASR_CLONE_REPO=1 scripts/download/preference_asr.sh
 
 # Ghana Speech Eval downloads official cards and API metadata by default.
 # The approximately 594 MB compressed benchmark snapshot is opt-in.

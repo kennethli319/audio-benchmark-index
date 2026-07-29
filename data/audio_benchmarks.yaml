@@ -9128,34 +9128,6 @@ paper_audits:
       - https://zenodo.org/api/records/14881818
     note: BCoughBench is recorded as an audited protocol rather than a downloadable benchmark family. Version 1 and its arXiv metadata expose no official project, repository, dataset card, archive, item manifest, derived body-coupled audio, evaluation code, or benchmark-license statement. Public availability of individual source corpora or EBEN checkpoints does not release the paper's exact selections, subject-disjoint splits, simulated clips, or evaluation artifacts, so no helper or duplicate source-corpus entry is added.
 
-  preference_asr:
-    paper: https://arxiv.org/abs/2606.29534
-    sections: 2-3 and appendix
-    status: audited_not_indexed
-    public_interfaces:
-      - https://github.com/nithinraok/preference-asr-bench
-      - https://huggingface.co/datasets/nvidia/preference-asr-bench
-    evaluated_domains:
-      - domain: preference_aware_automatic_speech_recognition
-        protocol: 3,210 English audio-instruction-reference triples plus 335 standard baseline items, derived from seven source corpora and covering normalization, entities, disfluencies, and case
-        data_status: official_dataset_endpoint_unavailable
-        note: The paper reports a two-stage LLM-assisted construction pipeline followed by human verification. Its official Hugging Face dataset endpoint currently returns HTTP 401 to unauthenticated requests, while the public companion repository contains evaluation and audio-reconstruction code but no benchmark JSONL or audio.
-    license:
-      paper: CC BY 4.0
-      annotations: CC BY-SA 4.0 according to the companion repository license
-      code: Apache-2.0
-      upstream: LibriSpeech and AMI are CC BY 4.0; Common Voice and VoxPopuli are CC0; Earnings-22 is CC BY-SA 4.0; GigaSpeech requires its agreement; SPGISpeech is gated for academic research and internal use
-    sources:
-      - https://arxiv.org/html/2606.29534#S2
-      - https://arxiv.org/html/2606.29534#S3
-      - https://github.com/nithinraok/preference-asr-bench
-      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/README.md
-      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/LICENSE
-      - https://api.github.com/repos/nithinraok/preference-asr-bench
-      - https://api.github.com/repos/nithinraok/preference-asr-bench/git/trees/master?recursive=1
-      - https://huggingface.co/datasets/nvidia/preference-asr-bench
-    note: Preference-ASR is recorded as an audited protocol rather than a downloadable benchmark family. The paper and repository describe a public Hugging Face release, but that endpoint is currently inaccessible without credentials and exposes no verifiable public dataset card or files. The GitHub repository licenses author-created annotations and provides code to reconstruct audio from seven upstream corpora, but its current tree does not include the referenced data/preference_asr_testset.jsonl. Recheck the official dataset endpoint before adding an indexed family or helper.
-
   meetingtom:
     paper: https://arxiv.org/abs/2607.19235
     sections: 3 and appendices B and G
@@ -10822,6 +10794,70 @@ paper_audits:
       downloadable benchmark or given an invented helper.
 
 benchmarks:
+  - id: preference_asr
+    name: Preference-ASR
+    full_name: "Preference-ASR: A Preference-Aware Test Set for Benchmarking ASR in the Era of Speech LLMs"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - instruction_following_asr
+      - preference_aware_asr
+      - inverse_text_normalization
+      - disfluency_preservation
+      - named_entity_transcription
+      - case_sensitive_asr
+    official:
+      paper: https://arxiv.org/abs/2606.29534
+      repo: https://github.com/nithinraok/preference-asr-bench
+      dataset: https://huggingface.co/datasets/nvidia/preference-asr-bench
+      manifest: https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/data/preference_asr_testset.jsonl
+    download:
+      access: public_annotations_mixed_source_audio_access
+      primary:
+        - https://github.com/nithinraok/preference-asr-bench
+        - https://huggingface.co/datasets/nvidia/preference-asr-bench
+      examples:
+        - 'scripts/download/preference_asr.sh'
+        - 'PREFERENCE_ASR_CLONE_REPO=1 scripts/download/preference_asr.sh'
+      notes: >-
+        The official repository now publishes a 2,822-row English JSONL
+        manifest with audio paths, source transcripts, natural-language
+        instructions, preferred transcripts, and category labels. It contains
+        1,113 case, 906 entity, 516 disfluency, 228 normalization, and 59
+        standard items drawn from VoxPopuli, LibriSpeech, AMI, and Common
+        Voice. The repository README supersedes the paper's earlier
+        3,210-preference-plus-335-standard composition and describes this
+        released manifest as the test set. The helper downloads the paper,
+        official documentation, license, repository metadata, and the 1.6 MB
+        manifest by default; cloning the evaluation normalizer and upstream
+        audio downloader is opt-in. Source audio is not redistributed and must
+        be obtained separately under each corpus's terms.
+    license:
+      data: CC-BY-SA-4.0_author_annotations_with_source_corpus_terms
+      code: Apache-2.0
+      notes: >-
+        The repository license applies CC BY-SA 4.0 to author-created
+        instruction, preference-text, and category annotations and Apache 2.0
+        to the downloader and normalizer. Audio, original transcripts, and
+        related fields retain their source-corpus terms. The current released
+        rows reference LibriSpeech and AMI (CC BY 4.0), Common Voice (CC0),
+        and VoxPopuli (CC0 with European Parliament source notice). The
+        license also documents Earnings-22, GigaSpeech, and SPGISpeech for the
+        broader construction pipeline; GigaSpeech and SPGISpeech remain gated
+        and restricted even though no rows from them appear in the current
+        public manifest.
+    sources:
+      - https://arxiv.org/abs/2606.29534
+      - https://arxiv.org/html/2606.29534#S2
+      - https://arxiv.org/html/2606.29534#S3
+      - https://github.com/nithinraok/preference-asr-bench
+      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/README.md
+      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/LICENSE
+      - https://raw.githubusercontent.com/nithinraok/preference-asr-bench/master/data/preference_asr_testset.jsonl
+      - https://api.github.com/repos/nithinraok/preference-asr-bench
+      - https://api.github.com/repos/nithinraok/preference-asr-bench/git/trees/master?recursive=1
+      - https://huggingface.co/datasets/nvidia/preference-asr-bench
+
   - id: kitchen20
     name: Kitchen20
     full_name: Kitchen20 Kitchen Sound Dataset
