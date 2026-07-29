@@ -9,6 +9,76 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  hindi_english_code_mixed_forced_alignment:
+    paper: https://arxiv.org/abs/2607.25581
+    title: "Evaluation of forced alignment of code-mixed speech: the case of Hindi-English"
+    sections: 3-5
+    status: audited_public_experiment_code_without_evaluation_data
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: Phonetically Balanced Code Mixed (PBCM) corpus
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Train Montreal Forced Aligner acoustic models on 6,941
+          Hindi-English read-speech sentences from 113 bilingual speakers.
+          Compare sentence-level code-mixed training with monolingual Hindi
+          chunks and isolated English words using absolute phoneme-boundary
+          error and the share of phones within 10-50 ms tolerances.
+        note: >-
+          The original LREC 2018 paper describes 6,126 phonetically balanced
+          utterances; the 2026 study says the corpus was subsequently expanded
+          to 6,941 sentences. Neither paper provides a public corpus archive,
+          access form, dataset card, or data license.
+      - cited_as: free-variation gold-standard pronunciation set
+        index_id: null
+        status: internal_unreleased_annotations
+        protocol: >-
+          Hand-annotate 100 words for each of two Hindi-English pronunciation
+          variation categories, then compare unmodified and bootstrapped
+          lexicons using accuracy, precision, recall, and F-score.
+      - cited_as: code-mixed English phoneme-boundary gold standard
+        index_id: null
+        status: internal_unreleased_annotations
+        protocol: >-
+          Manually annotate and cross-check English-word phone boundaries in
+          six randomly selected utterances from each speaker, then compare
+          those boundaries with three forced-alignment training conditions.
+    release_audit:
+      experiment_scripts_and_derived_text_files: public_unlicensed_repository
+      pbcm_audio_and_transcripts: not_released
+      evaluation_split_manifest: not_released
+      gold_pronunciation_labels: not_released
+      gold_textgrids_and_phone_boundaries: not_released
+      trained_acoustic_models: not_released
+    license:
+      evaluation_paper: CC-BY-NC-ND-4.0
+      original_pbcm_paper: not_specified_on_official_record
+      pbcm_corpus: not_specified_unreleased
+      experiment_repository: no_detected_license
+      note: >-
+        The evaluation paper's license does not license the underlying PBCM
+        recordings, annotations, or repository contents. Public source code
+        without a license does not establish redistribution, modification, or
+        commercial-use rights.
+    sources:
+      - https://arxiv.org/abs/2607.25581
+      - https://arxiv.org/html/2607.25581v1#S3
+      - https://arxiv.org/html/2607.25581v1#S4
+      - https://arxiv.org/html/2607.25581v1#S5
+      - https://github.com/Ayushi113/mfa-hindi-code-mixed
+      - https://api.github.com/repos/Ayushi113/mfa-hindi-code-mixed
+      - https://api.github.com/repos/Ayushi113/mfa-hindi-code-mixed/git/trees/main?recursive=1
+      - https://doi.org/10.63317/3xo52xmbi9zq
+      - https://lrec.elra.info/lrec2018-main-235
+    note: >-
+      This audit does not count PBCM as a public benchmark family or add a
+      download helper. The linked repository makes the experiment scripts and
+      several derived lexicon/result text files visible, but its current tree
+      has no README, license, audio, TextGrid, gold-boundary manifest, release,
+      or tagged version. Revisit the owner sources if the corpus and evaluation
+      annotations receive an explicit release.
+
   dav_det_general_aigc_audio_video_detection:
     paper: https://arxiv.org/abs/2607.25543
     title: "Less is More: Modality-Decoupling for General AIGC Audio-Video Detection"
