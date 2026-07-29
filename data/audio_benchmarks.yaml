@@ -9,6 +9,53 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  multi_source_ev_avas_annoyance_evaluation:
+    paper: https://arxiv.org/abs/2607.10368
+    title: "Perceived Annoyance in Multi-source Electric Vehicle AVAS Environments"
+    sections: 2-5
+    status: audited_private_listening_study_not_a_public_benchmark
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: multi-source AVAS listening-test stimuli
+        index_id: null
+        status: author_constructed_stimuli_and_ratings_not_released
+        protocol: >-
+          Present 13 binaural pass-by stimuli twice to 10 listeners and rate
+          perceived annoyance on a continuous 0-100 scale. The conditions
+          comprise three single-vehicle sounds and ten two-vehicle scenes with
+          opposing travel directions and simultaneous, one-second, or
+          two-second offsets; ratings are averaged per listener and stimulus.
+        note: >-
+          The source material combines one previously synthesized AVAS sound,
+          binaural Ford Kuga and Ford E-Transit pass-by recordings, a Cupra
+          Born tire-noise recording, and TASCAR/HRTF auralization. The paper
+          reports aggregate ratings and acoustic statistics but links no
+          audio, scene definitions, participant-level ratings, or analysis
+          code.
+    release_audit:
+      thirteen_listening_test_stimuli: not_released
+      source_vehicle_and_tire_recordings: not_released
+      participant_level_annoyance_ratings: not_released
+      tascar_scene_configuration: not_released
+      analysis_code: not_released
+      paper: public
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      recordings_stimuli_ratings_and_code: not_specified_unreleased
+      note: >-
+        The cited TASCAR renderer is public software, but that does not make
+        this study's vehicle recordings, rendered stimuli, listening-test
+        responses, or scene configuration public or reusable.
+    sources:
+      - https://arxiv.org/abs/2607.10368
+      - https://arxiv.org/pdf/2607.10368
+      - https://doi.org/10.3813/AAA.919337
+    note: >-
+      This is a small controlled perceptual experiment rather than a named
+      reusable benchmark or dataset release. The audit preserves its
+      audio-inclusive evaluation protocol and release boundary without adding
+      a benchmark family or download helper.
+
   tidyvoice_2026_language_normalization_evaluation:
     paper: https://arxiv.org/abs/2607.22923
     title: "Simple Language Normalization Wins: Cross-Lingual Speaker Verification for the TidyVoice 2026 Challenge"
