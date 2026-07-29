@@ -9,6 +9,62 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  tidyvoice_2026_language_normalization_evaluation:
+    paper: https://arxiv.org/abs/2607.22923
+    title: "Simple Language Normalization Wins: Cross-Lingual Speaker Verification for the TidyVoice 2026 Challenge"
+    sections: 2.1 and 3.1-3.3
+    status: audited_existing_public_family_with_hidden_evaluation_labels
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: TidyVoice development set
+        index_id: tidyvoice
+        status: existing_public_account_required_family
+        protocol: >-
+          Evaluate 59,443 utterances from 808 speakers across 40 languages
+          using approximately 12 million same- and cross-language target and
+          non-target verification trials, reporting EER and minDCF.
+      - cited_as: TidyVoice2026 evaluation set
+        index_id: tidyvoice
+        status: official_challenge_audio_with_hidden_labels
+        protocol: >-
+          Submit similarity scores for the 4-million-pair all-language
+          semi-supervised track and the 1.28-million-pair unseen-language
+          unsupervised track. The official challenge page describes about
+          2,000 speakers across 38 additional languages; the system paper
+          reports 2,200 evaluation speakers.
+        note: >-
+          The organizer retains evaluation labels and computes EER and minDCF
+          through CodaBench. The discrepancy in reported speaker count is
+          preserved rather than silently reconciled.
+    release_audit:
+      tidyvoice_training_and_development_package: public_account_and_api_key_required
+      tidyvoice_evaluation_audio_and_trial_lists: official_challenge_access
+      evaluation_labels: hidden
+      official_baseline: public_github
+      paper_claimed_vectorized_submission_pipeline: no_public_url_identified
+    license:
+      tidyvoice_data: CC0-1.0_with_owner_stated_speaker_verification_only_restrictions
+      baseline_code: Apache-2.0
+      paper_submission_pipeline: not_specified_not_linked
+      paper: arxiv_perpetual_nonexclusive
+    sources:
+      - https://arxiv.org/abs/2607.22923
+      - https://arxiv.org/html/2607.22923v1#S2.SS1
+      - https://arxiv.org/html/2607.22923v1#S3.SS1
+      - https://arxiv.org/html/2607.22923v1#S3.SS3
+      - https://tidyvoice2026.github.io/
+      - https://tidyvoice2026.github.io/2_dataset_download/
+      - https://tidyvoice2026.github.io/3_challenge_tracks/
+      - https://tidyvoice2026.github.io/6_evaluation_plan/
+      - https://datacollective.mozillafoundation.org/datasets/cmihtsewu023so207xot1iqqw
+      - https://github.com/areffarhadi/wespeaker/tree/master/examples/tidyvocie
+    note: >-
+      This system paper evaluates the already indexed TidyVoice family and
+      does not define or release a separate benchmark. Although it says a
+      preprocessing, scoring, and submission pipeline is released, the paper
+      does not provide a repository URL; no new download helper or code-access
+      claim is added.
+
   context_aware_preface_field_evaluation:
     paper: https://arxiv.org/abs/2607.23204
     title: "Low-Latency Turn-Taking via Context-Aware Preface Generation in a Real-World Dialogue Robot"
@@ -18735,6 +18791,7 @@ benchmarks:
       paper: https://arxiv.org/abs/2601.16358
       challenge_plan: https://arxiv.org/abs/2601.21960
       recent_evaluation: https://arxiv.org/abs/2607.16532
+      recent_language_normalization_evaluation: https://arxiv.org/abs/2607.22923
     download:
       access: public_account_and_api_key_required
       primary:
@@ -18757,7 +18814,11 @@ benchmarks:
         released TidyVoiceX_ASV challenge package. AMECxSV section 4.1
         evaluates a deterministic speaker-disjoint split derived from the
         12-million-trial TidyVoiceX development protocol, not the challenge's
-        hidden official evaluation set.
+        hidden official evaluation set. The July language-normalization paper
+        additionally reports the official 4-million-pair all-language and
+        1.28-million-pair unseen-language evaluation tracks. Its claim of a
+        released scoring/submission pipeline has no linked public repository,
+        so the index does not present that implementation as downloadable.
     license:
       data: CC0-1.0_with_use_restrictions
       code: Apache-2.0
@@ -18782,6 +18843,9 @@ benchmarks:
       - https://arxiv.org/abs/2601.21960
       - https://arxiv.org/abs/2607.16532
       - https://arxiv.org/html/2607.16532v1#S4.SS1
+      - https://arxiv.org/abs/2607.22923
+      - https://arxiv.org/html/2607.22923v1#S2.SS1
+      - https://arxiv.org/html/2607.22923v1#S3.SS3
 
   - id: hi_mia
     name: HI-MIA
