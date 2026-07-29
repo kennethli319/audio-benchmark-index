@@ -9,6 +9,86 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  dav_det_general_aigc_audio_video_detection:
+    paper: https://arxiv.org/abs/2607.25543
+    title: "Less is More: Modality-Decoupling for General AIGC Audio-Video Detection"
+    sections: 1, 3.4, and 4.1-4.4
+    status: audited_unstable_upstream_dataset_release
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: DDL-GAV / General AIGC Audio-Video Detection benchmark
+        index_id: null
+        status: challenge_protocol_over_mvad_with_hidden_test_labels
+        protocol: >-
+          Classify each sample as real-real, fake-fake, real-video/fake-audio,
+          or fake-video/real-audio. The IJCAI-ECAI 2026 DDL 2.0 challenge
+          reports a final score that averages four-class accuracy and binary
+          real/fake accuracy; official test labels are unavailable to
+          participants.
+        note: >-
+          DDL-GAV is a challenge protocol built on MVAD, not a separate source
+          dataset. The paper describes more than 200,000 general-scene
+          audio-video samples spanning realistic and anime domains, four
+          content categories, and more than 23 generation methods.
+      - cited_as: MVAD
+        index_id: null
+        status: public_repository_with_conflicting_release_warning
+        protocol: >-
+          Train audio-only, video-only, or fused detectors on four
+          real/generated modality combinations; DAV-Det extracts the waveform
+          from each video and separately labels whether its audio is real or
+          generated.
+        note: >-
+          The owner GitHub README says the training set is uploaded and the
+          test set is still being uploaded. The owner's Hugging Face card
+          instead warns that the previously released data has copyright issues,
+          recommends discontinuing its use, and promises a screened replacement.
+          The card has not been updated to confirm that replacement.
+      - cited_as: FakeAVCeleb
+        index_id: fakeavceleb
+        status: existing_public_manual_request_family
+        protocol: >-
+          Follow prior work's 70/30 train-validation/test split and report
+          binary classification accuracy and AUC for human-centric
+          audio-visual deepfake detection.
+    release_audit:
+      dav_det_training_and_inference_code: public
+      dav_det_model_weights: public
+      mvad_github_repository_and_demos: public
+      mvad_hugging_face_snapshot: public_ungated_but_owner_warns_to_discontinue
+      mvad_screened_replacement: promised_not_confirmed
+      mvad_test_set: incomplete_or_challenge_managed
+      ddl_gav_test_labels: hidden
+    license:
+      dav_det_code: MIT
+      dav_det_paper: CC-BY-4.0
+      mvad_data: not_specified_with_explicit_copyright_warning
+      note: >-
+        Neither the MVAD repository nor dataset card declares a dataset
+        license. Public, ungated storage does not override the owner card's
+        copyright warning or establish redistribution and commercial-use
+        rights.
+    sources:
+      - https://arxiv.org/abs/2607.25543
+      - https://arxiv.org/html/2607.25543v1#S3.SS4
+      - https://arxiv.org/html/2607.25543v1#S4.SS1
+      - https://arxiv.org/html/2607.25543v1#S4.SS4
+      - https://github.com/tuffy-studio/DAV-Det
+      - https://raw.githubusercontent.com/tuffy-studio/DAV-Det/main/README.md
+      - https://github.com/HuMengXue0104/MVAD
+      - https://raw.githubusercontent.com/HuMengXue0104/MVAD/main/README.md
+      - https://huggingface.co/datasets/mengxuebobo/MVAD
+      - https://huggingface.co/datasets/mengxuebobo/MVAD/raw/main/README.md
+      - https://huggingface.co/api/datasets/mengxuebobo/MVAD
+      - https://www.codabench.org/competitions/15769/
+    note: >-
+      This audit does not add DAV-Det as a dataset or count DDL-GAV separately
+      from MVAD. MVAD is withheld from the counted index until the owner
+      confirms that the warned-against version has been replaced and publishes
+      coherent access and license terms. Revisit the official cards before
+      adding a helper; do not download the current approximately 110 GB
+      Hugging Face snapshot.
+
   acme_social_navigation_dataset:
     paper: https://arxiv.org/abs/2607.21964
     title: "ACME: A Multi-Cultural, Multi-Embodiment Social-Navigation Dataset"
