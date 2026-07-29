@@ -9,6 +9,67 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  acme_social_navigation_dataset:
+    paper: https://arxiv.org/abs/2607.21964
+    title: "ACME: A Multi-Cultural, Multi-Embodiment Social-Navigation Dataset"
+    sections: 5.1, 6.3, 7.1, and 11
+    status: audited_not_public_and_not_an_audio_benchmark
+    last_verified: 2026-07-28
+    evaluated_material:
+      - cited_as: ACME onboard robot data
+        index_id: null
+        status: private_review_release_only
+        protocol: >-
+          Benchmark visual navigation policies on synchronized egocentric RGB,
+          LiDAR, odometry, and interaction metadata from 29.35 hours of robot
+          demonstrations collected across eight sites in five countries.
+      - cited_as: ACME pedestrian trajectory data
+        index_id: null
+        status: private_review_release_only
+        protocol: >-
+          Evaluate six human-trajectory prediction models on 43.5 hours of
+          human-verified bird's-eye-view trajectories, reporting minimum-of-20
+          average and final displacement errors for all pedestrians and a
+          dynamic-pedestrian subset.
+      - cited_as: robot speech
+        index_id: null
+        status: text_interaction_metadata_not_audio_evaluation
+        protocol: >-
+          Record robot utterance events as a three-column CSV containing the
+          timestamp, trajectory name, and spoken string. The paper analyzes
+          speech frequency and pedestrian reactions but defines no speech or
+          audio recognition, generation, or quality metric.
+        note: >-
+          Although one hardware table mentions a microphone, the processed
+          release schema enumerates robot speech as text metadata and does not
+          describe a released waveform stream or an audio benchmark protocol.
+    release_audit:
+      reviewer_dataset: private_password_protected_box
+      public_hugging_face_dataset: planned_not_released
+      processed_robot_speech_events: planned_text_csv
+      recorded_audio_waveforms: not_described_for_release
+      annotation_and_processing_code: planned_not_released
+    license:
+      planned_dataset: cc-by
+      planned_code: Apache-2.0
+      paper: cc-by-4.0
+      note: >-
+        The stated dataset and code licenses describe a future public release;
+        they do not make the current private reviewer package publicly
+        accessible or establish that microphone audio will be included.
+    sources:
+      - https://arxiv.org/abs/2607.21964
+      - https://arxiv.org/html/2607.21964v1#S5.SS1
+      - https://arxiv.org/html/2607.21964v1#S6.SS3
+      - https://arxiv.org/html/2607.21964v1#S7.SS1
+      - https://arxiv.org/html/2607.21964v1#S11
+    note: >-
+      ACME is a multimodal robotics and pedestrian-motion dataset with
+      speech-event metadata, not a public audio benchmark family. This audit
+      preserves the future-release boundary without adding a counted entry or
+      download helper. Revisit after the promised Hugging Face release to
+      verify its actual modalities, terms, and public access.
+
   multi_source_ev_avas_annoyance_evaluation:
     paper: https://arxiv.org/abs/2607.10368
     title: "Perceived Annoyance in Multi-source Electric Vehicle AVAS Environments"
