@@ -9,6 +9,70 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  context_aware_preface_field_evaluation:
+    paper: https://arxiv.org/abs/2607.23204
+    title: "Low-Latency Turn-Taking via Context-Aware Preface Generation in a Real-World Dialogue Robot"
+    sections: 2.2 and 3.1-3.3
+    status: audited_private_field_experiment_not_a_public_benchmark
+    last_verified: 2026-07-28
+    evaluated_sets:
+      - cited_as: real-world field experiment
+        index_id: null
+        status: private_anonymized_interaction_data_not_released
+        protocol: >-
+          Compare no-filler, fixed-filler, and contextual-preface robot
+          responses during unconstrained Japanese route-guidance interactions
+          in one shopping mall. The study retains interactions with at least
+          two turns and reports initial response latency, initial-to-main gap,
+          intent-readiness trigger position, author-annotated dialogue
+          breakdowns, and four seven-point post-interaction ratings.
+        note: >-
+          The three conditions contain 47, 52, and 75 interactions,
+          respectively, with 205, 188, and 251 response instances. The paper
+          also reports 30 questionnaires per condition. These field records
+          are study-specific observations rather than a named reusable
+          benchmark, and no audio, transcripts, logs, annotations,
+          questionnaires, split manifest, or evaluator code is linked.
+      - cited_as: intent readiness detector held-out test split
+        index_id: null
+        status: private_derived_text_classification_data_not_released
+        protocol: >-
+          Binary readiness classification over partial Japanese user
+          utterances conditioned on the preceding system turn, evaluated with
+          accuracy and macro F1.
+        note: >-
+          The paper reports 94.31 percent accuracy and 0.89 macro F1 but does
+          not describe the split size or release the underlying incremental
+          transcripts, labels, model checkpoint, or split manifest.
+    release_audit:
+      anonymized_field_interactions: not_released
+      audio_transcripts_and_system_logs: not_released
+      breakdown_annotations_and_questionnaires: not_released
+      intent_readiness_training_and_test_data: not_released
+      implementation_and_model_checkpoint: not_released
+      paper: public
+    license:
+      paper: arxiv_perpetual_nonexclusive
+      field_data: not_specified_unreleased
+      code: not_specified_unreleased
+      note: >-
+        The paper states that the university ethics board approved the study,
+        visitors received on-site notice and could opt out, and collected data
+        were anonymized. Those safeguards do not establish public access or a
+        license to reuse participant recordings, transcripts, logs, or
+        questionnaire responses.
+    sources:
+      - https://arxiv.org/abs/2607.23204
+      - https://arxiv.org/html/2607.23204v1#S2.SS2
+      - https://arxiv.org/html/2607.23204v1#S3.SS1
+      - https://arxiv.org/html/2607.23204v1#S3.SS2
+      - https://arxiv.org/html/2607.23204v1#S3.SS3
+      - https://arxiv.org/html/2607.23204v1#Sx1
+    note: >-
+      This is a system field study, not a public benchmark release. The index
+      records its audio-inclusive evaluation protocol and release boundary
+      without adding a benchmark family or download helper.
+
   taomate_long_form_audio_video_evaluation:
     paper: https://arxiv.org/abs/2607.24359
     title: "TaoMate: Anchor-Guided Memory Bridging Evolving and Reference States for Real-Time Audio-Video Digital Human Generation"

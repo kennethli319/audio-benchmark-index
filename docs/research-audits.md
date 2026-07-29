@@ -7,6 +7,18 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 context-aware-preface paper is recorded as an audio-inclusive
+field-evaluation audit rather than a benchmark family. Its Japanese
+shopping-mall study compares no-filler, fixed-filler, and contextual-preface
+robot responses across 174 interactions and 644 response instances, with 30
+questionnaires per condition. It reports latency, intent-readiness timing,
+dialogue-breakdown, and subjective measures, but releases no participant
+audio, transcripts, system logs, annotations, questionnaires, split
+manifests, evaluator code, or trained checkpoint. The paper says the study had
+ethics approval, on-site notice and opt-out, and anonymized collection; those
+safeguards do not create public access or reuse rights. The index therefore
+adds no family or helper.
+
 The July 2026 TaoMate paper is recorded as recent evaluation provenance for
 the existing VABench protocol, not as a new benchmark family. It evaluates
 60-second Mandarin and English prompt sequences with four VABench dimensions
