@@ -7,6 +7,21 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 LS-MOPD paper adds public WSYue-ASR-eval coverage and recent
+post-training provenance for WenetSpeech, KeSpeech, and LibriSpeech. Section
+4.1 evaluates an encoder-adaptor-LLM after language-specialized DAPO and
+multi-teacher on-policy distillation on seven official test subsets, including
+the Short and Long WSYue-ASR-eval tracks. The owner-hosted, ungated
+[Cantonese benchmark](https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval)
+contains 11.4 hours of manually annotated speech and about 1.06 GiB of public
+files under CC BY-NC 4.0. Its helper saves only the card and API metadata by
+default and requires explicit opt-in for audio and annotations. The companion
+21,800-hour WenetSpeech-Yue corpus is training data, not part of the benchmark
+helper. The paper's in-house 560k-hour pretrained backbone, exact 50k-item
+post-training manifest, training code, checkpoints, predictions, and scores
+remain unreleased; Apache-2.0 on the official GitHub repository applies to
+code and does not replace the benchmark's noncommercial data terms.
+
 The August 2026 HyPASE paper is recorded as LALM post-training evaluation
 provenance for the existing IEMOCAP, MELD, RAVDESS, and SAVEE families rather
 than as a new benchmark. Section 4.1 compares Qwen2-Audio-7B-Instruct PEFT on

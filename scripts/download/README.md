@@ -120,6 +120,7 @@ scripts/download/demand.sh
 scripts/download/drone_audio_dataset.sh
 scripts/download/jvs.sh
 scripts/download/librispeech.sh
+scripts/download/wsyue_asr_eval.sh
 scripts/download/libriheavy.sh
 scripts/download/whisper_rirmega.sh
 scripts/download/libri_light.sh

@@ -4,11 +4,86 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-07-28
+  last_checked: 2026-08-06
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  ls_mopd_multilingual_llm_asr:
+    paper: https://arxiv.org/abs/2608.03610
+    title: "Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR"
+    sections: 3.1-3.3 and 4.1-4.4
+    status: audited_new_public_family_and_existing_public_families
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: WenetSpeech meeting and net
+        index_id: wenetspeech
+        status: existing_form_gated_family
+        protocol: >-
+          Evaluate both offline and 640 ms streaming LLM-based ASR on the
+          official meeting and net test subsets with CER after the shared
+          WenetTextProcess normalization pipeline.
+      - cited_as: KeSpeech test
+        index_id: kespeech
+        status: existing_public_custom_terms_family
+        protocol: >-
+          Evaluate Mandarin-subdialect recognition in offline and streaming
+          modes on the official KeSpeech test set with CER.
+      - cited_as: WeNet-Yue short and long
+        index_id: wsyue_asr_eval
+        status: new_public_noncommercial_family
+        protocol: >-
+          Evaluate Cantonese recognition on the 0-10 second Short and 10-30
+          second Long WSYue-ASR-eval subsets with CER, using deterministic
+          decoding and the same text normalization as the other Chinese sets.
+      - cited_as: LibriSpeech clean and other
+        index_id: librispeech
+        status: existing_public_family
+        protocol: >-
+          Evaluate English recognition on test-clean and test-other with WER
+          in both offline and streaming modes.
+    release_audit:
+      wsyue_asr_eval_audio_and_annotations: public_ungated
+      benchmark_license: cc_by_nc_4_0
+      benchmark_size: approximately_1_06_gib
+      paper_training_pool: sampled_from_public_source_families_exact_manifest_unreleased
+      pretrained_backbone: in_house_unreleased
+      rl_and_mopd_code: not_specified_unreleased
+      trained_teachers_and_students: not_specified_unreleased
+      exact_normalization_configuration: not_specified_unreleased
+      predictions_and_per_item_scores: not_specified_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      wsyue_asr_eval: cc_by_nc_4_0
+      official_repository_code: Apache-2.0
+      other_benchmark_data: upstream_family_terms_apply
+      note: >-
+        The Hugging Face dataset card applies CC BY-NC 4.0 to WSYue-ASR-eval.
+        The GitHub repository's Apache-2.0 license covers repository code, not
+        the separate benchmark audio. The paper license does not cover the
+        upstream evaluation families or its unreleased post-training assets.
+    sources:
+      - https://arxiv.org/abs/2608.03610
+      - https://arxiv.org/html/2608.03610v1#S3.SS1
+      - https://arxiv.org/html/2608.03610v1#S4.SS1
+      - https://arxiv.org/html/2608.03610v1#S4.SS3
+      - https://arxiv.org/abs/2509.03959
+      - https://github.com/ASLP-lab/WenetSpeech-Yue
+      - https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval
+      - https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval/raw/main/README.md
+      - https://huggingface.co/api/datasets/ASLP-lab/WSYue-ASR-eval
+    note: >-
+      This post-training paper applies language-specialized DAPO reinforcement
+      learning and multi-teacher on-policy distillation to an encoder-adaptor-
+      LLM ASR model. Section 4.1 evaluates seven official subsets from four
+      families; WenetSpeech, KeSpeech, and LibriSpeech were already indexed,
+      while the owner-released WSYue-ASR-eval family was missing. The paper
+      does not release its in-house 560k-hour pretrained backbone, exact 50k
+      post-training sample manifest, training code, checkpoints, predictions,
+      or scores. This audit therefore adds only the independently verifiable
+      public Cantonese benchmark and does not treat training samples or model
+      artifacts as benchmark releases.
+
   hypase_lalm_speech_emotion_peft:
     paper: https://arxiv.org/abs/2608.04351
     title: "HyPASE: Hyperbolic Geometry for Parameter-Efficient Speech Emotion Fine-Tuning Framework for Large Audio-Language Models"
@@ -16767,6 +16842,54 @@ benchmarks:
       - https://wenet-e2e.github.io/WenetSpeech/
       - https://github.com/wenet-e2e/WenetSpeech
       - https://www.openslr.org/121/
+
+  - id: wsyue_asr_eval
+    name: WSYue-ASR-eval
+    full_name: "WSYue-ASR-eval: Cantonese ASR Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - cantonese_speech_recognition
+      - code_switched_speech_recognition
+      - long_form_speech_recognition
+      - multilingual_llm_asr_post_training_evaluation
+    official:
+      dataset: https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval
+      repo: https://github.com/ASLP-lab/WenetSpeech-Yue
+      paper: https://arxiv.org/abs/2509.03959
+      recent_evaluation: https://arxiv.org/abs/2608.03610
+    download:
+      primary:
+        - https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval
+      examples:
+        - 'scripts/download/wsyue_asr_eval.sh'
+        - 'WSYUE_ASR_EVAL_DOWNLOAD_DATA=1 scripts/download/wsyue_asr_eval.sh'
+      notes: >-
+        The public ungated Hugging Face release provides a 9.46-hour Short
+        subset and a 1.97-hour Long subset, totaling about 1.06 GiB of audio,
+        transcripts, and TextGrid annotations. The helper downloads only the
+        dataset card and API metadata by default; set
+        WSYUE_ASR_EVAL_DOWNLOAD_DATA=1 to fetch the released benchmark files.
+        The companion 21,800-hour WenetSpeech-Yue corpus is training data and
+        is not downloaded by this benchmark helper.
+    license:
+      data: cc-by-nc-4.0
+      code: Apache-2.0
+      notes: >-
+        The official Hugging Face card labels WSYue-ASR-eval CC BY-NC 4.0.
+        The repository is Apache-2.0, but that code license must not be applied
+        to the separately hosted benchmark audio. Review both sources before
+        reuse, redistribution, or commercial evaluation.
+    sources:
+      - https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval
+      - https://huggingface.co/datasets/ASLP-lab/WSYue-ASR-eval/raw/main/README.md
+      - https://huggingface.co/api/datasets/ASLP-lab/WSYue-ASR-eval
+      - https://github.com/ASLP-lab/WenetSpeech-Yue
+      - https://raw.githubusercontent.com/ASLP-lab/WenetSpeech-Yue/main/README.md
+      - https://arxiv.org/abs/2509.03959
+      - https://arxiv.org/abs/2608.03610
+      - https://arxiv.org/html/2608.03610v1#S4.SS1
 
   - id: aishell_1
     name: AISHELL-1
