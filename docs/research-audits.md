@@ -7,6 +7,21 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 HyPASE paper is recorded as LALM post-training evaluation
+provenance for the existing IEMOCAP, MELD, RAVDESS, and SAVEE families rather
+than as a new benchmark. Section 4.1 compares Qwen2-Audio-7B-Instruct PEFT on
+four-class IEMOCAP leave-one-session-out validation and the standard seven-class
+MELD split; section 4.4 transfers the MELD-trained model to IEMOCAP, RAVDESS,
+and SAVEE without target-domain adaptation. Although section 6 says code,
+pretrained weights, and training logs are publicly available, the linked
+[owner repository](https://github.com/LilSicko/HyPase) currently contains only
+a one-line README and no license, implementation, weights, logs, manifests,
+prompts, predictions, or scores. Existing access terms therefore remain
+authoritative: IEMOCAP is form-gated, RAVDESS is CC BY-NC-SA 4.0, MELD's
+GPL-3.0 release contains Friends-derived media, and SAVEE is registration-gated
+for research use without a standard public data license. No duplicate family or
+helper is added.
+
 The July 2026 context-aware-preface paper is recorded as an audio-inclusive
 field-evaluation audit rather than a benchmark family. Its Japanese
 shopping-mall study compares no-filler, fixed-filler, and contextual-preface

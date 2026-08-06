@@ -9,6 +9,86 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  hypase_lalm_speech_emotion_peft:
+    paper: https://arxiv.org/abs/2608.04351
+    title: "HyPASE: Hyperbolic Geometry for Parameter-Efficient Speech Emotion Fine-Tuning Framework for Large Audio-Language Models"
+    sections: 4.1-4.6 and 6
+    status: audited_existing_public_families_with_placeholder_reproduction_repository
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: IEMOCAP
+        index_id: iemocap
+        status: existing_form_gated_family
+        protocol: >-
+          Run four-class speech-emotion recognition with leave-one-session-out
+          cross-validation for the main Qwen2-Audio-7B-Instruct PEFT comparison,
+          reporting weighted accuracy, unweighted accuracy, and macro F1.
+          Separately evaluate the MELD-trained checkpoint on IEMOCAP without
+          target-domain adaptation as one cross-dataset generalization target.
+      - cited_as: MELD
+        index_id: meld
+        status: existing_public_family
+        protocol: >-
+          Fine-tune and select checkpoints on the standard seven-class
+          train/dev/test split, using validation weighted accuracy and a fixed
+          instruction that lists the seven emotion labels. Report weighted
+          accuracy, unweighted accuracy, and macro F1, and use the resulting
+          checkpoint for zero-shot cross-corpus transfer.
+      - cited_as: RAVDESS
+        index_id: ravdess
+        status: existing_public_noncommercial_family
+        protocol: >-
+          Evaluate the MELD-trained checkpoint without target-domain adaptation;
+          at inference time, replace the instruction's candidate list with the
+          target corpus emotion categories and report weighted accuracy.
+      - cited_as: SAVEE
+        index_id: savee
+        status: existing_registration_gated_research_use_family
+        protocol: >-
+          Evaluate the MELD-trained checkpoint without target-domain adaptation;
+          at inference time, replace the instruction's candidate list with the
+          target corpus emotion categories and report weighted accuracy.
+    release_audit:
+      paper_claimed_code_weights_and_logs: placeholder_readme_only
+      implementation: not_released_at_claimed_repository
+      pretrained_weights: not_released_at_claimed_repository
+      training_logs: not_released_at_claimed_repository
+      exact_processed_manifests: not_released_at_claimed_repository
+      prompts_and_evaluation_code: not_released_at_claimed_repository
+      predictions_and_per_item_scores: not_released_at_claimed_repository
+      benchmark_audio: available_only_from_existing_upstream_families
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      claimed_repository: not_specified
+      benchmark_data: upstream_family_terms_apply
+      note: >-
+        The paper license covers the article, not the four upstream corpora or
+        absent reproduction artifacts. IEMOCAP requires its release form,
+        RAVDESS is CC BY-NC-SA 4.0, MELD declares GPL-3.0 but contains
+        Friends-derived media, and SAVEE is registration-gated for research
+        use without a standard public data license. The one-file HyPase
+        repository declares no license, so reuse rights for future code,
+        weights, or logs cannot be inferred.
+    sources:
+      - https://arxiv.org/abs/2608.04351
+      - https://arxiv.org/html/2608.04351v1#S4.SS1
+      - https://arxiv.org/html/2608.04351v1#S4.SS2
+      - https://arxiv.org/html/2608.04351v1#S4.SS4
+      - https://arxiv.org/html/2608.04351v1#S6
+      - https://github.com/LilSicko/HyPase
+      - https://api.github.com/repos/LilSicko/HyPase
+      - https://api.github.com/repos/LilSicko/HyPase/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/LilSicko/HyPase/main/README.md
+    note: >-
+      Section 6 says code, pretrained weights, and training logs are publicly
+      available at the owner-linked repository. On the verification date, the
+      repository tree contains only a one-line `# HyPase` README: it has no
+      implementation, configuration, checkpoint, log, manifest, prompt,
+      prediction, score file, or license. This audit maps all evaluations to
+      four already indexed benchmark families, adds no duplicate family or
+      download helper, and does not treat the placeholder as a reproducible
+      release. Revisit the owner repository when substantive files appear.
+
   hiu_bench_skill_calling_audio_agent:
     paper: https://arxiv.org/abs/2608.01881
     title: "Hear, Invoke, and Understand: A Skill-Calling Multimodal Agent for Large Audio Language Models"
