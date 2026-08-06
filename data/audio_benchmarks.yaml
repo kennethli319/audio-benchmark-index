@@ -9,6 +9,74 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  afrispeech_semantics:
+    paper: https://arxiv.org/abs/2606.11219
+    title: "Afrispeech Semantics: Evaluating Audio-Semantic Reasoning in Spoken Language Models Across Domains and Accents"
+    sections: 3-6 and appendices A-F
+    status: audited_mixed_access_source_corpora_with_unreleased_semantic_benchmark_artifacts
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: AfriSpeech Semantics evaluation suite
+        index_id: null
+        status: paper_described_derived_annotations_not_publicly_released
+        protocol: >-
+          Pair speech from AfriSpeech-200, AfriSpeech-Dialog, Afri-Names, and
+          Med-Convo-Nig with human-verified textual hypotheses for five
+          zero-shot tasks: three-way audio entailment, binary semantic
+          consistency, plausibility, accent-conditioned semantic drift, and
+          accent restraint. Score hypotheses independently with accuracy,
+          precision, recall, macro F1, class-specific accuracy, and the
+          paper's restraint and drift measures. Contrastive models use
+          validation-derived similarity thresholds; generative audio-language
+          models produce free-form judgments that a lightweight language
+          model maps to discrete labels.
+        note: >-
+          The owner-hosted source-corpus pages provide original speech and
+          transcript access routes rather than the paper's generated and
+          human-corrected hypotheses, semantic labels, fixed benchmark splits,
+          or evaluator package. AfriSpeech-200 and AfriSpeech-Dialog are
+          ungated; Afri-Names and Med-Convo-Nig require manual approval.
+          Section 5.6 promises a future release and version 1 links no project
+          or code repository.
+    release_audit:
+      source_audio_and_transcripts: mixed_ungated_and_manually_gated_owner_hosted_repositories
+      generated_and_human_verified_hypotheses: announced_for_future_release
+      semantic_labels_and_fixed_splits: announced_for_future_release
+      annotation_guidelines: summarized_in_paper_appendix
+      generation_and_inference_prompts: paper_appendix_only
+      validation_subset_and_contrastive_thresholds: not_specified_unreleased
+      label_mapping_model_and_configuration: incompletely_specified_unreleased
+      executable_evaluation_scripts: announced_for_future_release
+      predictions_and_per_item_scores: not_specified_unreleased
+      aggregate_results: paper_tables_only
+    license:
+      paper: CC_BY_4.0
+      derived_benchmark_annotations: not_specified_unreleased
+      source_corpora: CC_BY_NC_SA_4.0_declared_on_current_owner_dataset_cards
+      note: >-
+        All four current owner dataset cards declare CC BY-NC-SA 4.0, with
+        Afri-Names and Med-Convo-Nig also requiring manual access approval.
+        Source access does not license the absent paper-derived hypotheses,
+        labels, split manifests, or evaluator artifacts; the article's CC BY
+        4.0 license applies only to the paper.
+    sources:
+      - https://arxiv.org/abs/2606.11219
+      - https://arxiv.org/html/2606.11219v1#S3
+      - https://arxiv.org/html/2606.11219v1#S4
+      - https://arxiv.org/html/2606.11219v1#S5.SS6
+      - https://arxiv.org/html/2606.11219v1#A1
+      - https://arxiv.org/html/2606.11219v1#A2
+      - https://huggingface.co/datasets/intronhealth/afrispeech-200
+      - https://huggingface.co/datasets/intronhealth/afrispeech-dialog
+      - https://huggingface.co/datasets/intronhealth/afri-names
+      - https://huggingface.co/datasets/intronhealth/med-convo-nig
+    note: >-
+      This is directly relevant to spoken-LLM robustness, factual grounding,
+      hallucination, and accent fairness. Because the reusable semantic
+      benchmark layer remains only promised, this audit does not count the
+      four ASR/conversation source corpora as a new public benchmark family
+      and does not add a download helper.
+
   paraintent_spoken_emotional_dialogue:
     paper: https://arxiv.org/abs/2608.03054
     title: "Towards More Expressive Spoken LLMs: Fine-Grained Intent Benchmarking and Acoustic-Lexical Decoupled Policy Optimization"

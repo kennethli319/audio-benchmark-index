@@ -7,6 +7,23 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The June 2026 AfriSpeech Semantics paper is recorded as an unreleased derived
+benchmark over four mixed-access owner-hosted speech corpora. Sections 3-6 and
+appendices A-F define five zero-shot audio-semantic tasks: entailment,
+consistency, plausibility, accent-conditioned semantic drift, and accent
+restraint. The evaluation is directly relevant to spoken-LLM grounding,
+hallucination, robustness, and accent fairness. The owner-hosted
+AfriSpeech-200 and AfriSpeech-Dialog source-corpus pages are ungated, while
+Afri-Names and Med-Convo-Nig require manual approval. They provide access
+routes for the original speech and transcripts, but not the paper's generated
+and human-corrected hypotheses, semantic labels, fixed splits, validation
+subset, thresholds, label mapper, executable scorers, predictions, or per-item
+scores. Section 5.6 promises benchmark artifacts for a future release, and
+version 1 links no project or code repository. All four current owner dataset
+cards declare CC BY-NC-SA 4.0; those source terms and the paper's CC BY 4.0
+license do not cover the absent derived benchmark. No public family or
+download helper is added.
+
 The August 2026 ParaIntent paper is recorded as an unreleased spoken-LLM
 post-training benchmark. Sections 3, 5, and 6 define a single-turn Chinese
 spoken emotional-dialogue task with 14 intents, balanced explicit and implicit
