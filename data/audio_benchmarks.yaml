@@ -9,6 +9,82 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  hiu_bench_skill_calling_audio_agent:
+    paper: https://arxiv.org/abs/2608.01881
+    title: "Hear, Invoke, and Understand: A Skill-Calling Multimodal Agent for Large Audio Language Models"
+    sections: 5.1-5.2 and 6.1-6.3
+    status: audited_benchmark_announced_for_future_release
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: HIU-Bench
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate audio agents on 1,395 held-out samples spanning 56 tasks:
+          960 samples from 24 in-distribution tasks and 435 samples from 32
+          out-of-distribution tasks. The ID and OOD splits use independent
+          audio instances, share only two tools, and contain 12 and 21 unique
+          gold tool chains respectively with no workflow overlap. The overall
+          score combines format correctness, tool interaction, and answer
+          quality with weights 0.05, 0.25, and 0.70; direct-answer evaluation
+          uses answer quality alone.
+        note: >-
+          ID tool interaction uses the training-time scoring definition. OOD
+          interaction instead applies a workflow-aware rubric that awards full
+          credit for expected tool use, partial credit for valid alternatives,
+          and limited credit for invalid calls or failed executions. This is a
+          directly relevant post-training evaluation of audio reasoning,
+          skill selection, multi-step tool coordination, and generalization.
+      - cited_as: HIU-Corpus
+        index_id: null
+        status: paper_described_training_corpus_not_publicly_released
+        protocol: >-
+          Train trajectory-based SFT and multi-turn RL over 65,492 interaction
+          trajectories, 507.6 hours of audio, 24 tasks, eight skills, and nine
+          tools. This is training data rather than a benchmark family and is
+          recorded only to distinguish it from the held-out HIU-Bench splits.
+    release_audit:
+      benchmark_audio_and_task_inputs: not_released
+      id_and_ood_manifests: not_released
+      skill_and_tool_definitions: not_released
+      gold_workflows_and_annotations: not_released
+      evaluation_code_and_rubrics: not_released
+      model_predictions_and_per_item_scores: not_released
+      training_corpus_and_trajectories: not_released
+      models_and_agent_code: not_released
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_data: not_specified_unreleased
+      training_data: not_specified_unreleased
+      code_and_models: not_specified_unreleased
+      upstream: source_dataset_and_tool_terms_require_separate_review
+      note: >-
+        The arXiv license covers the paper, not the absent benchmark audio,
+        annotations, workflows, training trajectories, code, or models. The
+        paper does not state artifact terms, so no redistribution or
+        commercial-use rights can be inferred.
+    sources:
+      - https://arxiv.org/abs/2608.01881
+      - https://arxiv.org/html/2608.01881v1#S5.SS1
+      - https://arxiv.org/html/2608.01881v1#S5.SS2
+      - https://arxiv.org/html/2608.01881v1#S6.SS1
+      - https://arxiv.org/html/2608.01881v1#S6.SS2
+      - https://arxiv.org/html/2608.01881v1#S6.SS3
+      - https://export.arxiv.org/api/query?id_list=2608.01881
+      - https://api.github.com/search/repositories?q=%22HIU-Bench%22%20OR%20%22SpeechAgent-R%22
+      - https://huggingface.co/api/datasets?search=HIU-Bench
+      - https://huggingface.co/api/models?search=SpeechAgent-R
+    note: >-
+      Version 1 provides no official project, repository, dataset card, or
+      artifact URL and concludes only that code, models, and datasets will be
+      released upon publication. Searches of public GitHub repositories and
+      Hugging Face datasets/models found no matching owner release on the
+      verification date; the similarly named third-party `hiua-bench` GitHub
+      repository concerns unauthorized agent actions and is unrelated. This
+      audit therefore does not count HIU-Bench as a public benchmark family or
+      add a helper. Revisit the paper and author-controlled sources after
+      publication or when an official artifact link appears.
+
   spoken_function_calling_sfc_bench:
     paper: https://arxiv.org/abs/2608.05126
     title: "Spoken Function Calling: A New Perspective on Spoken Language Understanding for Large Audio Language Models"
