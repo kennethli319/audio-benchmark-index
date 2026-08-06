@@ -7,6 +7,22 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 *From Semantics to Readout* paper is recorded as post-training
+and representation-evaluation provenance for the existing public
+AudioGrounding family. Sections 3-4 and appendices A and C-G convert upstream
+phrase-level intervals into 11,586 event-centered AudioGrounding-QA rows and
+fine-tune Qwen2.5-Omni-7B and Qwen2-Audio-7B-Instruct with decoder-only LoRA.
+The 992-item test protocol reports mIoU, time-level F1, and recall at three IoU
+thresholds, then diagnoses query-conditioned audio-token semantics, calibrated
+decoder readout, temporal-window probes, and residual-delta erasure. This is
+directly relevant to how post-training exposes pretrained audio evidence to an
+LLM decoder. The public CC BY 4.0 AudioGrounding release supplies source audio
+and temporal annotations, subject to upstream YouTube-media caveats, but the
+paper releases no derived QA rows, exact cleaning manifest, adapters,
+diagnostic implementation, 100-item probe/erasure selection, predictions, or
+per-item scores. The absent derived artifacts have no specified license, so no
+duplicate family or helper is added.
+
 The June 2026 AfriSpeech Semantics paper is recorded as an unreleased derived
 benchmark over four mixed-access owner-hosted speech corpora. Sections 3-6 and
 appendices A-F define five zero-shot audio-semantic tasks: entailment,

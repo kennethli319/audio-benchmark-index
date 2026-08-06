@@ -9,6 +9,76 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audio_token_semantics_to_readout:
+    paper: https://arxiv.org/abs/2607.25355
+    title: "From Semantics to Readout: Mechanistic Understanding of Audio Tokens after Fine-Tuning for Temporal Audio Grounding"
+    sections: 3-4 and appendices A and C-G
+    status: audited_existing_public_family_with_unreleased_derived_qa_and_diagnostics
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: AudioGrounding-QA
+        index_id: audiogrounding
+        status: paper_described_derived_protocol_not_publicly_released
+        protocol: >-
+          Convert the public AudioGrounding phrase-level temporal annotations
+          into event-centered questions whose answers verbalize the annotated
+          intervals. The paper reports 9,542 training, 1,052 validation, and
+          992 test questions over 4,652 source clips, following the upstream
+          split protocol. Fine-tune Qwen2.5-Omni-7B and
+          Qwen2-Audio-7B-Instruct with language-model-only LoRA, then evaluate
+          timestamp outputs with mIoU, time-level F1, and recall at IoU
+          thresholds 0.5, 0.7, and 0.9.
+        note: >-
+          The paper additionally treats temporal grounding as a diagnostic of
+          the audio-token interface. It measures query-conditioned token
+          semantics, calibrated decoder readout, annotated- and
+          predicted-window linear probes, and residual-delta erasure. The
+          output-facing probe and erasure analyses use 100 test instances;
+          their exact selection is not released.
+    release_audit:
+      upstream_audio_and_temporal_annotations: public_in_existing_AudioGrounding_release
+      derived_question_answer_rows: not_released
+      exact_qa_cleaning_and_split_manifests: not_released
+      construction_prompts_and_examples: paper_appendix_only
+      fine_tuning_and_generation_configuration: described_in_paper_appendix
+      fine_tuned_adapters_or_checkpoints: not_released
+      semantic_bank_and_matching_implementation: not_released
+      probe_and_residual_erasure_code: not_released
+      diagnostic_100_item_selection: not_released
+      predictions_and_per_item_scores: not_released
+      aggregate_results: paper_tables_and_figures_only
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      upstream_AudioGrounding_release: CC_BY_4.0_with_upstream_media_terms
+      derived_QA_and_diagnostic_artifacts: not_specified_unreleased
+      note: >-
+        AudioGrounding's Zenodo record declares CC BY 4.0, while its audio is
+        derived from AudioCaps/AudioSet YouTube clips and remains subject to
+        source-media availability and rights. Those terms do not establish a
+        license for the absent AudioGrounding-QA rows, model adapters,
+        diagnostic implementation, predictions, or score records; the arXiv
+        license covers the paper only.
+    sources:
+      - https://arxiv.org/abs/2607.25355
+      - https://arxiv.org/html/2607.25355v1#S3
+      - https://arxiv.org/html/2607.25355v1#S4
+      - https://arxiv.org/html/2607.25355v1#S4.SS1
+      - https://arxiv.org/html/2607.25355v1#A1
+      - https://arxiv.org/html/2607.25355v1#A3
+      - https://arxiv.org/html/2607.25355v1#A4
+      - https://arxiv.org/html/2607.25355v1#A5
+      - https://zenodo.org/records/7269161
+      - https://github.com/wsntxxn/TextToAudioGrounding
+      - https://api.github.com/search/repositories?q=%22AudioGrounding-QA%22
+      - https://huggingface.co/api/datasets?search=AudioGrounding-QA
+    note: >-
+      This evaluation directly studies how temporal-grounding post-training
+      changes the interface between pretrained audio representations and an
+      LLM decoder. Because its source audio and temporal labels map to the
+      already indexed AudioGrounding family and the paper-derived QA and
+      diagnostic artifacts are absent, this audit adds no duplicate benchmark
+      family or download helper. Recheck for an author-controlled release.
+
   afrispeech_semantics:
     paper: https://arxiv.org/abs/2606.11219
     title: "Afrispeech Semantics: Evaluating Audio-Semantic Reasoning in Spoken Language Models Across Domains and Accents"
