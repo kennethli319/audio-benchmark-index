@@ -7,6 +7,22 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 ParaIntent paper is recorded as an unreleased spoken-LLM
+post-training benchmark. Sections 3, 5, and 6 define a single-turn Chinese
+spoken emotional-dialogue task with 14 intents, balanced explicit and implicit
+expressions, 14,000 synthesized test examples, and 4,200 controlled
+human-recorded test examples. Its protocol separately measures intent
+fulfillment, response quality, emotion accuracy, and reference/target emotion
+similarity, then adds LLM pairwise judgments and a five-listener study. This
+directly evaluates whether SFT, DPO, GRPO, and the paper's ALPO method preserve
+both lexical intent and paralinguistic expression. However, version 1 links no
+project, repository, dataset card, or archive and releases none of the 140,000
+training examples, test rows or audio, split manifests, evaluator prompts or
+code, model checkpoints, generated responses, or per-item scores. The paper's
+arXiv distribution license does not license those absent artifacts, and its
+statement that the five speakers were authorized does not specify reusable
+consent or voice-data terms. No public family or download helper is added.
+
 The August 2026 tiered sound-source-identification paper is recorded as an
 unreleased audio-language-model evaluation protocol. It evaluates eleven
 methods on 2,242 clips and separates task-aware closed-set audio foundation

@@ -9,6 +9,81 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  paraintent_spoken_emotional_dialogue:
+    paper: https://arxiv.org/abs/2608.03054
+    title: "Towards More Expressive Spoken LLMs: Fine-Grained Intent Benchmarking and Acoustic-Lexical Decoupled Policy Optimization"
+    sections: 3, 5, and 6
+    status: audited_unreleased_spoken_llm_post_training_benchmark
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: ParaIntent synthetic test set
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate single-turn Chinese spoken emotional dialogue on 14,000
+          TTS-generated examples balanced between explicit and implicit intent
+          expressions across 14 fine-grained categories and four communicative
+          goals. Score generated response text for Intent Fulfillment with
+          GLM-5 and Response Quality with a held-out DeepSeek-V4-Pro judge;
+          score generated speech with MiDashengLM Emotion Accuracy and a
+          wav2vec2-based Emotion Similarity measure against paired references
+          and target-emotion statistics. Gemini-3.1-Pro also performs
+          round-robin pairwise comparisons of textual quality, emotional
+          expression, and overall preference.
+      - cited_as: ParaIntent human-recorded test set
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate the same task on 4,200 queries and paired reference
+          responses recorded by five trained native Chinese speakers under a
+          controlled protocol, again covering all 14 categories. Automatic
+          metrics match the synthetic track; five native Chinese annotators
+          additionally give 0-5 holistic ratings on a paper-specific sample of
+          50 synthetic and 50 human-recorded instances per evaluated system.
+    training_data:
+      - cited_as: ParaIntent synthetic training and preference data
+        status: paper_described_not_publicly_released
+        note: >-
+          The 140,000-example training set uses GLM-5-generated queries and
+          responses plus IndexTTS2 speech. Each response has two emotion-
+          intensity variants used as chosen and rejected samples. This is
+          post-training data rather than a separately counted public benchmark.
+    release_audit:
+      synthetic_training_and_test_audio: not_specified_unreleased
+      human_recorded_test_audio: not_specified_unreleased
+      query_response_text_and_annotations: not_specified_unreleased
+      split_and_item_manifests: not_specified_unreleased
+      complete_intent_taxonomy_and_response_policies: described_as_appendix_material_but_not_present_in_v1_html
+      evaluation_prompts_and_executable_scorers: not_specified_unreleased
+      alpo_code_and_model_checkpoints: not_specified_unreleased
+      generated_outputs_predictions_and_per_item_scores: not_specified_unreleased
+      aggregate_results: paper_tables_only
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_data: not_specified_unreleased
+      evaluation_artifacts: not_specified_unreleased
+      human_recordings: not_specified_unreleased
+      note: >-
+        The arXiv distribution license applies only to the article. The paper
+        says the recordings were collected by authorized personnel and contain
+        no private information, but gives no consent scope, data license, or
+        redistribution terms for the voices, text, synthesized audio, labels,
+        model outputs, or evaluator artifacts.
+    sources:
+      - https://arxiv.org/abs/2608.03054
+      - https://arxiv.org/html/2608.03054v1#Sx3
+      - https://arxiv.org/html/2608.03054v1#Sx5
+      - https://arxiv.org/html/2608.03054v1#Sx6
+    note: >-
+      Version 1 links no official project page, repository, dataset card, model
+      release, or archive. It reports the dataset sizes, construction stages,
+      metrics, aggregate automatic results, and a 100-instance human study,
+      but does not release benchmark rows, audio, manifests, prompts, metric
+      implementations, post-training artifacts, outputs, or per-item scores.
+      ParaIntent is therefore preserved as a directly relevant spoken-LLM
+      post-training and evaluation protocol without being counted as a public
+      benchmark family or receiving a download helper.
+
   tiered_closed_set_sound_source_identification:
     paper: https://arxiv.org/abs/2608.02397
     title: "Can Foundation Models Hear What Made That Sound? A Tiered Benchmark of Audio-Language Models and Traditional Classifiers for Closed-Set Sound Source Identification"
