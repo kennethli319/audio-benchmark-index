@@ -9,6 +9,79 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  eccd_tts_hallucination_decoding:
+    paper: https://arxiv.org/abs/2608.00722
+    title: "Experience-Calibrated Contrastive Decoding for Mitigating Hallucinations in LM-Based Text-to-Speech"
+    sections: 4.1-4.4 and 5-6
+    status: audited_existing_public_families_with_unreleased_paper_artifacts
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: SeedTTS-Eval test-en, test-zh, and test-hard
+        index_id: seed_tts_eval
+        status: existing_public_family
+        protocol: >-
+          Evaluate training-free contrastive decoding on CosyVoice2,
+          CosyVoice3, Llasa, and GLM-TTS with WER or CER for content fidelity,
+          CAM++ speaker similarity, and UTMOS. The test-hard CosyVoice2 study
+          also uses 25 native listeners and 30 utterances per method for
+          content-aware comparative MOS and prompt-based speaker-similarity
+          MOS.
+      - cited_as: CV3-Eval zero-shot track
+        index_id: cv3_eval
+        status: existing_public_family
+        protocol: >-
+          Evaluate each model on its supported languages: Chinese and English
+          for all four models, Japanese and Korean for CosyVoice2 and
+          CosyVoice3, and German, Spanish, French, Italian, and Russian for
+          CosyVoice3. Report WER or CER across 25 model-subset combinations.
+      - cited_as: first-error-boundary hallucination analysis
+        index_id: null
+        status: paper_specific_derived_analysis_unreleased
+        protocol: >-
+          Align native-decoder ASR transcripts to target text, approximate
+          acoustic-token spans from ASR timestamps and model token rate, and
+          compare alignment influence and decision-level alignment gain at
+          the first time-localizable error against the immediately preceding
+          correct region. The paper notes that ASR labels, timestamps, and
+          token-rate mapping are approximate.
+    release_audit:
+      seed_tts_eval: existing_public_family
+      cv3_eval: existing_public_family
+      eccd_implementation_and_configuration: not_specified_unreleased
+      exact_prompt_and_subset_manifests: not_specified_unreleased
+      generated_audio_and_asr_alignments: not_specified_unreleased
+      listening_test_stimuli_and_ratings: not_specified_unreleased
+      predictions_and_per_item_scores: not_specified_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_data: upstream_family_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The paper license covers the article, not Seed-TTS Eval, CV3-Eval, or
+        the unreleased generated outputs, alignments, listener data, and
+        implementation. Seed-TTS Eval has no repository license and derives
+        its objective set from Common Voice and DiDiSpeech-2; CV3-Eval's
+        Apache-2.0 repository license covers its release but does not grant
+        rights to this paper's absent derivatives.
+    sources:
+      - https://arxiv.org/abs/2608.00722
+      - https://arxiv.org/html/2608.00722v1#Sx4.SSx1
+      - https://arxiv.org/html/2608.00722v1#Sx4.SSx2
+      - https://arxiv.org/html/2608.00722v1#Sx4.SSx3
+      - https://arxiv.org/html/2608.00722v1#Sx5
+      - https://arxiv.org/html/2608.00722v1#Sx6
+      - https://export.arxiv.org/api/query?id_list=2608.00722
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://github.com/FunAudioLLM/CV3-Eval
+    note: >-
+      This decoding-time post-training evaluation is directly relevant to
+      hallucination and content-faithfulness control in codec-token speech
+      language models. It evaluates two already indexed public benchmark
+      families and releases no official project page, repository, exact
+      manifests, implementation, outputs, alignments, listener records, or
+      item-level scores. This audit therefore adds evaluation provenance
+      without counting a new benchmark family or adding a download helper.
+
   ls_mopd_multilingual_llm_asr:
     paper: https://arxiv.org/abs/2608.03610
     title: "Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR"
@@ -16229,6 +16302,7 @@ benchmarks:
       recent_codec_evaluation: https://arxiv.org/abs/2607.14749
       recent_robustness_evaluation: https://arxiv.org/abs/2607.19859
       qwen_audio_3_tts_evaluation: https://arxiv.org/html/2607.23938v1#S4.SS2
+      recent_hallucination_decoding_evaluation: https://arxiv.org/html/2608.00722v1#Sx4.SSx1
     download:
       primary:
         - https://github.com/BytedanceSpeech/seed-tts-eval
@@ -16256,6 +16330,8 @@ benchmarks:
       - https://arxiv.org/html/2607.19859v1#S4
       - https://arxiv.org/abs/2607.23938
       - https://arxiv.org/html/2607.23938v1#S4.SS2
+      - https://arxiv.org/abs/2608.00722
+      - https://arxiv.org/html/2608.00722v1#Sx4.SSx1
 
   - id: instruct_tts_eval
     name: InstructTTSEval
@@ -16367,6 +16443,7 @@ benchmarks:
       qwen3_tts_report: https://arxiv.org/html/2601.15621v1#S4.SS2.SSS3
       qwen3_5_omni_report: https://arxiv.org/html/2604.15804v1#S5.SS2.SSS3
       qwen_audio_3_tts_evaluation: https://arxiv.org/html/2607.23938v1#S4.SS3
+      recent_hallucination_decoding_evaluation: https://arxiv.org/html/2608.00722v1#Sx4.SSx1
     download:
       primary:
         - https://github.com/FunAudioLLM/CV3-Eval
@@ -16392,6 +16469,8 @@ benchmarks:
       - https://arxiv.org/html/2604.15804v1#S5.SS2.SSS3
       - https://arxiv.org/abs/2607.23938
       - https://arxiv.org/html/2607.23938v1#S4.SS3
+      - https://arxiv.org/abs/2608.00722
+      - https://arxiv.org/html/2608.00722v1#Sx4.SSx1
 
   - id: tts_multilingual_test_set
     name: TTS Multilingual Test Set

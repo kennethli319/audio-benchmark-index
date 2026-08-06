@@ -7,6 +7,20 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 ECCD paper adds decoding-time hallucination and
+content-faithfulness evaluation provenance for the existing public Seed-TTS
+Eval and CV3-Eval families. Sections 4-6 evaluate four codec-token TTS models
+with WER/CER, speaker similarity, and UTMOS across all three Seed-TTS Eval
+tracks and 25 supported model-language combinations on CV3-Eval. A 25-listener
+test covers 30 Seed-TTS Eval hard cases per method, and a derived analysis
+uses approximate ASR timestamps to compare alignment support at first-error
+boundaries. The paper provides no official project page or repository and
+does not release its exact manifests, implementation, generated audio, ASR
+alignments, listener records, predictions, or item-level scores. Seed-TTS
+Eval's unspecified repository license and upstream Common Voice/DiDiSpeech-2
+terms, plus CV3-Eval's mixed-media rights caveat, therefore remain
+authoritative. No duplicate benchmark family or download helper is added.
+
 The August 2026 LS-MOPD paper adds public WSYue-ASR-eval coverage and recent
 post-training provenance for WenetSpeech, KeSpeech, and LibriSpeech. Section
 4.1 evaluates an encoder-adaptor-LLM after language-specialized DAPO and
