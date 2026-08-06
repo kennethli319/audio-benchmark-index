@@ -9,6 +9,68 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  spoken_function_calling_sfc_bench:
+    paper: https://arxiv.org/abs/2608.05126
+    title: "Spoken Function Calling: A New Perspective on Spoken Language Understanding for Large Audio Language Models"
+    sections: 4-5
+    status: audited_claimed_release_missing_from_official_repository
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: SFC-Bench
+        index_id: null
+        status: paper_described_claimed_public_but_not_present
+        protocol: >-
+          Evaluate speech-native function calling at four difficulty levels:
+          L1 single-intent/single-turn, L2 multi-intent/single-turn, L3-1
+          single-intent/multi-turn, and L3-2 multi-intent/multi-turn. The paper
+          reports 4,499 training, 1,986 in-distribution test, and 593
+          out-of-distribution test samples, with function-name accuracy,
+          parameter-value F1, and overall accuracy. Its 300 functions are split
+          into 232 in-distribution and 68 out-of-distribution functions, and
+          speaker identities are isolated across training, validation, and test.
+        note: >-
+          The speech is synthesized with IndexTTS-2 using LibriSpeech speaker
+          timbre profiles. Level 3 includes ambiguous queries whose missing
+          parameters are labeled `NAN`, making the protocol directly relevant
+          to audio-LLM hallucination, instruction following, tool use, and
+          post-training evaluation.
+    release_audit:
+      paper_claimed_code_and_dataset_path: missing_http_404
+      exact_audio: not_released_at_claimed_path
+      text_queries_and_function_call_labels: not_released_at_claimed_path
+      train_validation_test_manifests: not_released_at_claimed_path
+      function_definitions: not_released_at_claimed_path
+      evaluation_code_and_prompts: not_released_at_claimed_path
+      per_item_predictions_and_scores: not_released_at_claimed_path
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      parent_repository_code: Apache-2.0
+      benchmark_data: not_specified_unavailable
+      upstream: LibriSpeech_and_IndexTTS-2_terms_require_separate_review
+      note: >-
+        The parent FunResearch repository's Apache-2.0 license covers repository
+        code, not absent SFC-Bench audio, annotations, or upstream voice
+        material. The paper's arXiv license likewise does not establish a data
+        license or redistribution permission for the claimed benchmark.
+    sources:
+      - https://arxiv.org/abs/2608.05126
+      - https://arxiv.org/html/2608.05126v1#S4
+      - https://arxiv.org/html/2608.05126v1#S4.SS2
+      - https://arxiv.org/html/2608.05126v1#S5
+      - https://github.com/QwenAudio/FunResearch/tree/main/SpokenFC
+      - https://api.github.com/repos/QwenAudio/FunResearch/contents/SpokenFC?ref=main
+      - https://api.github.com/repos/QwenAudio/FunResearch/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/QwenAudio/FunResearch/main/LICENSE
+    note: >-
+      The paper footnote says code and data are available at the official
+      FunResearch `SpokenFC` path, but that path returns HTTP 404 and the
+      repository's recursive main-branch tree contains no SpokenFC or SFC-Bench
+      files as of the verification date. GitHub's path-specific commit endpoint
+      also returns an empty list. This audit therefore does not count SFC-Bench
+      as a public benchmark family and adds no download helper. Revisit the
+      owner repository if the announced directory or another official release
+      appears.
+
   hindi_english_code_mixed_forced_alignment:
     paper: https://arxiv.org/abs/2607.25581
     title: "Evaluation of forced alignment of code-mixed speech: the case of Hindi-English"
