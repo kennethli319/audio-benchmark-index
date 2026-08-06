@@ -7,6 +7,21 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 tiered sound-source-identification paper is recorded as an
+unreleased audio-language-model evaluation protocol. It evaluates eleven
+methods on 2,242 clips and separates task-aware closed-set audio foundation
+models, fixed-vocabulary taggers, CLAP similarity, and open-vocabulary BAT
+into four tiers whose scores are not treated as one leaderboard. The article
+prints exact prompts, its 23-class taxonomy, the post-hoc AudioSet mapping,
+aggregate metrics, and confusion matrices. It also audits 8,968 Gemini
+responses and finds that 92.1-100% of wrong fine-grained answers still use
+high-confidence language, making the protocol relevant to audio-LLM
+hallucination calibration. However, version 1 links no project, repository,
+dataset card, or archive and releases no audio, labels, item provenance,
+manifest, evaluator, responses, predictions, or per-item scores. The paper's
+CC BY 4.0 license does not cover those absent artifacts, so no family or
+download helper is added.
+
 The August 2026 ECCD paper adds decoding-time hallucination and
 content-faithfulness evaluation provenance for the existing public Seed-TTS
 Eval and CV3-Eval families. Sections 4-6 evaluate four codec-token TTS models

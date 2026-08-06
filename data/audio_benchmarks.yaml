@@ -9,6 +9,69 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  tiered_closed_set_sound_source_identification:
+    paper: https://arxiv.org/abs/2608.02397
+    title: "Can Foundation Models Hear What Made That Sound? A Tiered Benchmark of Audio-Language Models and Traditional Classifiers for Closed-Set Sound Source Identification"
+    sections: 3-6 and appendices A-D
+    status: audited_unreleased_paper_specific_audio_benchmark
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: tiered closed-set sound-source identification benchmark
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate 11 methods on 2,242 short everyday-sound clips labeled as
+          23 fine-grained classes under 11 broad categories. Tier A gives five
+          audio-capable foundation models the closed candidate set and scores
+          exact matches; Tier B post-hoc maps the fixed AudioSet vocabularies
+          of four traditional taggers; Tier C ranks the same 23 class phrases
+          with CLAP; and Tier D asks BAT an open-vocabulary question and uses
+          Gemini 2.5 Flash-Lite as an answer judge. Report macro precision,
+          recall, F1, and false-negative rate within tiers, plus top-k accuracy
+          for Tier B and per-class confusion matrices.
+        note: >-
+          The paper also analyzes 8,968 Gemini responses for reasoning strategy,
+          verbosity, and confidence language. Between 92.1% and 100% of wrong
+          fine-grained answers use high-confidence language, making this a
+          directly relevant capability and hallucination-calibration protocol
+          for audio-language models even though the underlying sound task is
+          closed-set classification.
+    release_audit:
+      benchmark_audio: not_specified_unreleased
+      item_labels_and_source_provenance: not_specified_unreleased
+      split_or_item_manifest: not_specified_unreleased
+      evaluation_and_mapping_code: not_specified_unreleased
+      model_prompts: paper_appendix_only
+      model_responses_and_reasoning_traces: not_specified_unreleased
+      predictions_and_per_item_scores: not_specified_unreleased
+      aggregate_and_per_class_results: paper_tables_and_figures_only
+    license:
+      paper: CC-BY-4.0
+      benchmark_data: not_specified_unreleased
+      evaluation_artifacts: not_specified_unreleased
+      note: >-
+        CC BY 4.0 applies to the arXiv article, not to absent audio, labels,
+        manifests, model responses, or evaluation code. The paper describes
+        the clips only as a curated subset of everyday sound recordings and
+        gives no item-level source list or data terms, so no redistribution or
+        commercial-use rights can be inferred.
+    sources:
+      - https://arxiv.org/abs/2608.02397
+      - https://arxiv.org/html/2608.02397v1#S3
+      - https://arxiv.org/html/2608.02397v1#S4
+      - https://arxiv.org/html/2608.02397v1#S5.SS5
+      - https://arxiv.org/html/2608.02397v1#S6.SS3
+      - https://arxiv.org/html/2608.02397v1#A2
+      - https://export.arxiv.org/api/query?id_list=2608.02397
+    note: >-
+      Version 1 provides no official project page, repository, dataset card,
+      archive, or artifact link. It fully prints the prompts, candidate labels,
+      AudioSet mapping, aggregate results, and confusion matrices, but not the
+      2,242 audio items, labels, provenance manifest, executable evaluator,
+      responses, or per-item scores. This audit preserves the evaluation
+      design and its audio-LLM calibration findings without counting an
+      unreleased dataset as a public benchmark family or adding a helper.
+
   eccd_tts_hallucination_decoding:
     paper: https://arxiv.org/abs/2608.00722
     title: "Experience-Calibrated Contrastive Decoding for Mitigating Hallucinations in LM-Based Text-to-Speech"
