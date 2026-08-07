@@ -9,6 +9,89 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  vorch_streamer_long_form_t2av_audit:
+    paper: https://arxiv.org/abs/2608.05663
+    title: "Vorch-Streamer: Extending Human Audio-Visual Generation to Real-Time Long-Form Streaming"
+    sections: 3-4
+    status: audited_partially_released_long_form_post_training_protocol
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: held-out long-form T2AV benchmark
+        status: public_prompt_manifest_with_partial_outputs_and_unreleased_full_scoring_artifacts
+        protocol: >-
+          Evaluate native text-to-audio-video systems on continuous rollouts
+          targeting approximately two minutes from held-out prompts spanning
+          identities, languages, speaking styles, backgrounds, and utterance
+          lengths. Aggregate whole-rollout synchronization, speech, visual,
+          and throughput metrics, and sample ArcFace and CLIP-image similarity
+          against the first frame once per second to expose temporal drift.
+          The official project repository publishes a 100-row prompt manifest;
+          the paper does not state the benchmark size in prose.
+    additional_protocols:
+      task_boundary: >-
+        Compare LTX2.3, JoyAI-Echo, OmniForcing, Hallo-Live, and
+        Vorch-Streamer in their native joint T2AV setting. Treat LiveAvatar and
+        SoulX-FlashTalk plus Qwen3-TTS only as conditional TIA2V references:
+        they receive complete target audio and an LTX2.3-generated first frame,
+        so their WER comes from the shared TTS input and does not evaluate the
+        avatar generator's speech planning.
+      metrics: >-
+        Report end-to-end DiT FPS on one NVIDIA H200; Sync-C and Sync-D;
+        transcript WER; FID and FVD; VBench Dynamic Degree and Drift; VBench2
+        Human Anatomy and Identity; and ArcFace and CLIP-image first-frame
+        similarity. Temporal curves use independently computed per-video
+        trajectories, 95% confidence intervals, and terminate at each model's
+        actual maximum duration without extrapolation.
+      post_training_ablations: >-
+        Audit LLM speech planning, Stage 2 causal training, Stage 3
+        long-horizon Self Forcing with DMD distillation, and bounded causal
+        context. The selected 3+1 inference window retains three prefix blocks
+        plus the most recent block; speech-planning tokens run at 25 Hz and
+        condition matching approximately one-second audio-video blocks.
+    release_audit:
+      held_out_prompt_manifest: public_100_row_jsonl_in_official_project_repository
+      project_prompt_viewer: public_for_all_100_prompts
+      vorch_streamer_qualitative_outputs: public_26_selected_lfs_videos_with_posters
+      baseline_qualitative_outputs: public_9_selected_lfs_videos_per_each_of_six_baselines_with_posters
+      aggregate_metric_tables_and_temporal_curves: public_in_paper
+      exact_scored_output_matrix_and_per_item_scores: not_released
+      evaluation_metric_code_preprocessing_and_environment: not_released
+      model_code_and_checkpoint: not_released
+      synthetic_80000_clip_training_corpus_and_source_manifest: not_released
+      benchmark_prompt_provenance_and_split_construction_details: not_specified
+    license:
+      paper: CC_BY_4_0
+      project_repository_code_prompts_and_media: no_license_detected
+      training_corpus_model_and_unreleased_scoring_artifacts: not_specified
+      note: >-
+        CC BY 4.0 applies to the paper, not automatically to the separately
+        hosted prompt manifest, generated media, project-page code, absent
+        model artifacts, or the unreleased synthetic training corpus. The
+        official GitHub repository has no detected license; reuse therefore
+        requires owner clarification and review of underlying model and source
+        media terms.
+    sources:
+      - https://arxiv.org/abs/2608.05663
+      - https://arxiv.org/html/2608.05663v1#S3
+      - https://arxiv.org/html/2608.05663v1#S4
+      - https://arxiv.org/html/2608.05663v1#S4.SS1
+      - https://arxiv.org/html/2608.05663v1#S4.SS3
+      - https://vorch-project.github.io/Vorch-Streamer-project/
+      - https://github.com/Vorch-Project/Vorch-Streamer-project
+      - https://api.github.com/repos/Vorch-Project/Vorch-Streamer-project
+      - https://api.github.com/repos/Vorch-Project/Vorch-Streamer-project/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/Vorch-Project/Vorch-Streamer-project/main/assets/prompts.jsonl
+    note: >-
+      This is directly relevant to speech-generative post-training: the
+      controlled evaluation tests whether causal Self-Forcing, an LLM speech
+      planner, and bounded context preserve transcript progression,
+      audio-lip synchronization, and long-horizon stability after adapting a
+      bidirectional audio-video foundation model for streaming. The public
+      prompt manifest and selected demonstrations are useful provenance, but
+      they do not reproduce the paper's complete evaluation. It is therefore
+      recorded as a partial protocol audit rather than a downloadable
+      benchmark family, and no helper is added.
+
   voder_attribute_preservation_audit:
     paper: https://arxiv.org/abs/2608.00545
     title: "Beyond Prompt Adherence: Auditing Attribute-Level Voice Control in Speech Generation"

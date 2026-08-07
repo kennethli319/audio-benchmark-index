@@ -7,6 +7,26 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *Vorch-Streamer* paper is recorded as a partially released
+long-form speech-generation and post-training protocol. Sections 3-4 adapt a
+bidirectional joint audio-video foundation model with causal training,
+long-horizon Self Forcing, and a 25 Hz LLM speech planner, then evaluate
+approximately two-minute native text-to-audio-video rollouts for transcript
+WER, audio-lip synchronization, throughput, visual quality, and temporal
+identity drift. Conditional avatar baselines receive complete Qwen3-TTS audio
+and an initial frame, so their WER is explicitly not a measure of their own
+speech generation. The official project repository releases a 100-row prompt
+manifest, a viewer for every prompt, 26 selected Vorch-Streamer videos, and
+nine selected outputs for each of six baselines. It does not release the full
+scored output matrix, per-item scores, evaluation code and preprocessing,
+model code or weights, the 80,000-clip synthetic training corpus, or its source
+manifest. This directly audits post-training for causal speech progression and
+long-horizon controllability, but the partial materials cannot reproduce the
+reported tables and curves. The paper is CC BY 4.0; the separate project
+repository has no detected license, so that paper license must not be inferred
+for its prompts, media, code, or absent artifacts. No benchmark family or
+download helper is added.
+
 The August 2026 AffectDF paper adds a public emotional-speech deepfake family
 that directly tests audio-language-model safety and post-training robustness.
 Its 285,797 samples cover five emotions and 21 TTS, VC, EVC, and LALM attack
