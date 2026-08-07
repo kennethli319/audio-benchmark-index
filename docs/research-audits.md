@@ -7,6 +7,25 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *How to Recognize New Words* paper is recorded as an
+existing-family and unreleased-derived-protocol audit of speech-LLM context
+robustness. Sections 3-5 select rare-word utterances from Earnings-21,
+LibriSpeech test-clean/test-other, and English YODAS, then test Qwen3-ASR,
+Qwen3-Omni, and VibeVoice-ASR with relevant context present or absent and 0,
+10, 100, or 250 distractor terms. It reports biased, unbiased, and overall WER,
+plus a Qwen3-Omni filtering experiment and prompt-order sensitivity. This is
+directly relevant to post-training because Qwen3-ASR learns context use during
+SFT and the evaluation exposes distractor-induced degradation of 39%-570% in
+speech-LLM biased WER. Earnings-21 and LibriSpeech map to existing public
+families; YODAS is only an upstream public corpus. The exact utterance/video
+manifests, rare-word and sampled-distractor lists, seeds, prompts, order trials,
+code, checkpoints, predictions, and scores are not released. Exact-title
+GitHub and Hugging Face searches found no paper artifact release. The paper's
+arXiv license does not license those absent derivatives; Earnings-21 expressly
+licenses only transcripts and associated text under CC BY-SA 4.0, LibriSpeech
+is CC BY 4.0, and YODAS source-video/platform terms still apply. No duplicate
+family or helper is added.
+
 The August 2026 *PromptShield Home* paper is recorded as an
 announced-but-unavailable ambient multimodal prompt-injection and smart-home
 agent safety benchmark audit. Sections 2-6 define 19 scripted scenarios: 17

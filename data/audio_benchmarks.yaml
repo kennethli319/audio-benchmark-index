@@ -9,6 +9,91 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speech_llm_rare_word_context_biasing_audit:
+    paper: https://arxiv.org/abs/2608.05759
+    title: "How to Recognize New Words: A Comparison Between Context Biasing Methods and Speech LLMs"
+    sections: 3-5
+    status: audited_existing_public_families_with_unreleased_derived_context_robustness_protocol
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: Earnings-21
+        index_id: earnings_21
+        status: existing_public_family_with_unreleased_derived_selection
+        protocol: >-
+          Select 637 utterances totaling 1.23 hours whose annotations contain
+          at least one person name, acronym, or domain-specific product, event,
+          law, location, or organization term. Evaluate each utterance with its
+          relevant terms present or absent and with 0, 10, 100, or 250 randomly
+          sampled distractors from other rare words in the test set.
+      - cited_as: LibriSpeech test-clean and test-other
+        index_id: librispeech
+        status: existing_public_family_with_unreleased_derived_selection
+        protocol: >-
+          Define rare words outside the most frequent 10% of Common Voice
+          context-biasing training vocabulary, retain words occurring in at
+          least two utterances, and evaluate 726 test-clean and 821 test-other
+          utterances totaling 1.91 hours per split under the same relevant-word
+          and distractor-count conditions.
+      - cited_as: YODAS English
+        index_id: null
+        status: public_source_corpus_with_unreleased_derived_test_selection
+        protocol: >-
+          Retain English words occurring at least four times but exclusively
+          within one YouTube video, producing a paper-specific 6,363-utterance,
+          47.8-hour test set with 1,360 unique rare words. Evaluate with the
+          same relevant-word and distractor-count conditions.
+        note: >-
+          YODAS is a public source corpus, not a new benchmark created by this
+          paper. The exact English video and utterance selection is not released
+          and source-video availability and platform terms can drift.
+    metrics:
+      - biased_word_error_rate_on_words_in_the_context_list
+      - unbiased_word_error_rate_on_other_words
+      - overall_word_error_rate
+      - filtering_precision_and_recall
+    release_audit:
+      upstream_earnings_21_and_librispeech: public_existing_families
+      upstream_yodas: public_source_corpus
+      exact_utterance_and_video_manifests: not_specified_unreleased
+      rare_word_and_distractor_lists: not_specified_unreleased
+      random_seeds_and_sampled_distractors: not_specified_unreleased
+      model_prompts_and_order_sensitivity_trials: not_specified_unreleased
+      filtering_predictions_and_per_item_scores: not_specified_unreleased
+      evaluation_and_context_biasing_code: not_specified_unreleased
+      trained_context_biasing_checkpoints: not_specified_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      earnings_21: CC-BY-SA-4.0_for_transcripts_and_associated_text_only
+      librispeech: CC-BY-4.0
+      yodas: upstream_video_and_platform_terms_apply
+      derived_protocol: not_specified_unreleased
+      note: >-
+        The arXiv license covers the article, not the absent rare-word lists,
+        manifests, sampled distractors, prompts, code, checkpoints, predictions,
+        or scores. Existing upstream licenses and source-media terms remain
+        controlling and do not establish rights in the unreleased derivatives.
+    sources:
+      - https://arxiv.org/abs/2608.05759
+      - https://arxiv.org/html/2608.05759v1#S3
+      - https://arxiv.org/html/2608.05759v1#S4
+      - https://arxiv.org/html/2608.05759v1#S5
+      - https://export.arxiv.org/api/query?id_list=2608.05759
+      - https://github.com/revdotcom/speech-datasets/tree/main/earnings21
+      - https://www.openslr.org/12
+      - https://huggingface.co/datasets/espnet/yodas
+      - https://api.github.com/search/repositories?q=%222608.05759%22%20OR%20%22How%20to%20Recognize%20New%20Words%22
+      - https://huggingface.co/api/datasets?search=How%20to%20Recognize%20New%20Words
+    note: >-
+      This is directly relevant to speech-LLM post-training because Qwen3-ASR's
+      context behavior is learned during supervised fine-tuning and the protocol
+      compares it with Qwen3-Omni and VibeVoice-ASR under irrelevant-context,
+      prompt-order, and auxiliary-filtering stress. Version 1 supplies no
+      artifact link, while exact-title GitHub repository and Hugging Face
+      dataset searches found no matching release on the verification date.
+      The audit therefore maps Earnings-21 and LibriSpeech to existing entries,
+      records YODAS only as an upstream corpus, and adds no duplicate family or
+      download helper.
+
   promptshield_home_release_audit:
     paper: https://arxiv.org/abs/2608.05495
     title: "PromptShield Home: Ambient Multimodal Prompt Injection Defense for Smart-Home Agents"
