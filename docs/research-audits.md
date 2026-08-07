@@ -4,6 +4,25 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 M3-DuplexBench paper is recorded as an unreleased derived
+protocol for directly in-scope full-duplex speech-LLM evaluation. Sections
+III-V define 7,214 turn shifts, 4,624 pauses, 1,779 backchannels, and 2,635
+barge-ins across English and Japanese casual conversation and multi-turn QA.
+Its distinguishing protocol compares the same event with no history,
+user-only history, and teacher-forced user-plus-system history, measuring
+takeover and stop latency alongside GPT-5 nano judgments of relevance,
+contextual consistency, and QA accuracy. English and Japanese task audio is
+derived from TopiOCQA using Gemma 4 31B rewriting or translation,
+CosyVoice2-based synthesis, and timing sampled from Candor and a Magic Data
+Japanese duplex corpus. The paper provides no artifact URL. Exact-name GitHub
+repository and Hugging Face dataset/model searches found no owner release on
+August 7, so the event manifests, split definitions, derived audio,
+translations, evaluator, judge prompts, outputs, and per-event scores remain
+unavailable. The article uses arXiv's perpetual non-exclusive license and
+states no benchmark-artifact license; all source corpora and generated
+components retain their own terms. M3-DuplexBench is therefore not counted as
+a public family, and no download helper is added.
+
 EmphAssess is now indexed as a public, ungated emphasis-transfer benchmark
 after reviewing the primary paper's Sections 3-6 and 8 and Meta's archived
 owner repository. Its 3,652 synthetic English inputs render 913 annotated

@@ -9,6 +9,101 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  m3_duplexbench_multiturn_spoken_dialogue_release_audit:
+    paper: https://arxiv.org/abs/2607.29125
+    title: "M3-DuplexBench: A Multi-Turn, Multilingual, Multidomain Benchmark for Full-Duplex Spoken Dialogue Models"
+    sections: III-V
+    status: audited_unreleased_derived_benchmark_protocol
+    last_verified: 2026-08-07
+    benchmark:
+      name: M3-DuplexBench
+      status: paper_defined_not_publicly_released
+      languages:
+        - English
+        - Japanese
+      domains:
+        - natural_casual_conversation
+        - synthetic_multiturn_question_answering
+      source_data:
+        - name: Candor
+          role: English_chat_audio_and_timing_reference
+          status: upstream_source_not_a_paper_specific_release
+        - name: Japanese Duplex Conversation Training Dataset
+          owner: Magic Data
+          role: Japanese_chat_audio_and_timing_reference
+          status: commercial_owner_source_not_a_paper_specific_release
+        - name: TopiOCQA
+          role: English_QA_text_and_source_for_Japanese_translation
+          status: upstream_text_source_not_a_paper_specific_release
+      derived_event_counts:
+        shift: 7214
+        pause: 4624
+        backchannel: 1779
+        barge_in: 2635
+      tracks:
+        - chat_English
+        - chat_Japanese
+        - task_QA_English
+        - task_QA_Japanese
+      context_conditions:
+        - none_single_turn
+        - user_side_history
+        - teacher_forced_full_history
+      timing_metrics:
+        - takeover_rate
+        - response_latency
+        - backchannel_stop_latency
+        - barge_in_stop_latency
+      content_metrics:
+        - GPT-5_nano_response_relevance_0_to_2
+        - GPT-5_nano_context_consistency_0_to_2
+        - GPT-5_nano_QA_accuracy_0_to_2
+      protocol: >-
+        Extract SHIFT, PAUSE, backchannel, and barge-in events from continuous
+        two-channel dialogue, then compare identical target events under no
+        history, user-only history, and teacher-forced user-plus-system history.
+        English and Japanese task dialogues are derived from TopiOCQA with
+        Gemma 4 31B rewriting/translation, CosyVoice2-based synthesis, and
+        timing sampled from Candor or Magic Data references. The paper tests
+        Moshi, PersonaPlex, J-Moshi, and LLM-jp-Moshi.
+    release_audit:
+      paper_artifact_url: not_provided
+      exact_name_github_repository_search: no_matching_repository_found
+      exact_name_hugging_face_dataset_search: no_matching_dataset_found
+      exact_name_hugging_face_model_search: no_matching_model_found
+      event_manifests_and_split_definitions: not_released
+      derived_English_and_Japanese_QA_audio: not_released
+      Japanese_translations_and_spoken_rewrites: not_released
+      inference_and_scoring_code: not_released
+      judge_prompts_and_per_item_judgments: not_released
+      model_outputs_and_per_event_scores: not_released
+      download_helper: not_added_manual_required
+    license:
+      paper: arXiv_perpetual_non-exclusive_license
+      benchmark_artifacts: not_specified_and_not_released
+      source_data: upstream_terms_apply
+      note: >-
+        The article does not state a benchmark-data or code license. No license
+        can be inferred for absent event manifests, translations, synthesized
+        speech, outputs, or judge records. Candor, Magic Data, TopiOCQA,
+        CosyVoice2, and model-generated components retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2607.29125
+      - https://arxiv.org/html/2607.29125v1#S3
+      - https://arxiv.org/html/2607.29125v1#S4
+      - https://arxiv.org/html/2607.29125v1#S5
+      - https://export.arxiv.org/api/query?id_list=2607.29125
+      - https://api.github.com/search/repositories?q=%22M3-DuplexBench%22
+      - https://huggingface.co/api/datasets?search=M3-DuplexBench&limit=20
+      - https://huggingface.co/api/models?search=M3-DuplexBench&limit=20
+    note: >-
+      This is directly relevant to post-training evaluation for spoken-dialogue
+      LLMs: it tests turn taking, pause/backchannel/barge-in handling, contextual
+      consistency, and multi-turn QA across language and domain shifts. It is
+      recorded as an unreleased derived protocol rather than a public benchmark
+      family because the paper supplies neither artifacts nor an official
+      release location.
+
   speechcombine_pretraining_transfer_evaluation_audit:
     paper: https://arxiv.org/abs/2607.02214
     title: "Unlocking Speech-Text Compositional Powers: Instruction-Following Speech Language Models without Instruction Tuning"
