@@ -2522,3 +2522,20 @@ ratings. The paper is CC BY 4.0, but that article license does not license the
 project assets or absent benchmark artifacts. Selected listening examples
 therefore do not support counting TORUS as a public benchmark family or adding
 a download helper yet.
+
+The August 2026 *Vorch-Director* report is recorded as a partial-release audit
+of a directly in-scope long-horizon audio-video generation evaluation. Sections
+4.2-4.6 and Appendix F define a 16-case benchmark in which a unified LTX-2-based
+generator produces 22 consecutive subject-referenced shots with speech, music,
+and sound effects. The protocol measures speaker consistency, scripted-speech
+accuracy, audiovisual quality, and progressive drift, making it relevant to
+robust audio-visual post-training under self-generated history. The official
+project repository is an unlicensed static page with three selected long-video
+demonstrations and three reference-audio files, while code is marked “Coming
+soon.” It does not release the complete prompt/reference manifest, 352-shot
+scripts, baseline and model outputs, evaluator, metric configuration, or
+per-case score records. CC BY 4.0 covers the paper, not the project media or
+absent benchmark artifacts. ST-Bench and UnityShots rows are visual provenance
+and do not become audio benchmark families merely because they share the
+paper's evaluator. No counted family or download helper is added pending an
+independently runnable release.

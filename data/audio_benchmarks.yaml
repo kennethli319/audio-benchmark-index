@@ -9,6 +9,98 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  vorch_director_long_audio_visual_release_audit:
+    paper: https://arxiv.org/abs/2608.05776
+    project: https://vorch-project.github.io/Vorch-Director-project/
+    repository: https://github.com/Vorch-Project/Vorch-Director-project
+    title: "Vorch-Director: Interactive World Story Model via Noise-Aware Error Rectification"
+    sections: 4.2-4.6_and_appendix_F
+    status: audited_selected_public_demonstrations_with_unreleased_long_audio_visual_benchmark_and_evaluator
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: Vorch-Director long audio-visual benchmark
+        index_id: null
+        status: paper_specific_unreleased_16_case_suite_with_three_selected_public_demonstrations
+        role: long_horizon_joint_audio_video_generation_post_training_evaluation
+        protocol: >-
+          Generate 22 consecutive shots for each of 16 subject-referenced
+          cases containing synchronized speech, music, and sound effects.
+          Score video quality and text consistency, cross-shot speaker
+          similarity with 3D-Speaker, scripted-line accuracy as max(0, 1-WER)
+          with Whisper, and long-horizon Quality Drift and Anchor-relative
+          Consistency. Average pairwise metrics within each case before the
+          16-case aggregate so every case has equal weight.
+      - cited_as: ST-Bench
+        index_id: null
+        status: existing_visual_only_benchmark_outside_audio_index_scope
+        role: multi_shot_video_consistency_evaluation
+        protocol: >-
+          Re-score 30 approximately ten-shot visual-only cases with the
+          paper's unified evaluator. Because ST-Bench has no audio track, the
+          Voice and speech-accuracy metrics are omitted; this audit does not
+          treat it as an audio benchmark family.
+      - cited_as: UnityShots
+        index_id: null
+        status: existing_visual_benchmark_with_audio_metrics_not_applicable_to_visual_only_baselines
+        role: multi_shot_text_and_reference_to_video_evaluation
+        protocol: >-
+          Run 200 cases in both text-to-video and reference-to-video settings.
+          Visual-only baselines emit no audio and receive no speech scores, so
+          this evaluation is provenance context rather than a new audio family.
+    protocol_note: >-
+      The paper's new suite directly tests whether audio-visual post-training
+      remains stable when a unified LTX-2-based generator repeatedly consumes
+      its own generated video and audio history. Only the paper-specific
+      16-case suite jointly exercises minute-scale drift, voice consistency,
+      scripted speech correctness, music, and sound effects. Visual-only
+      baselines solve an easier task and are explicitly marked without speech
+      scores in Table 4.
+    release_audit:
+      paper_protocol_and_aggregate_tables: public
+      official_project_page_and_repository: public
+      project_cases_displayed: 3
+      project_long_audio_visual_mp4_files: 3
+      project_reference_audio_files: 3
+      project_repository_files: 39
+      project_repository_bytes: 159479117
+      complete_16_case_prompt_and_reference_manifest: not_released
+      complete_352_shot_script_and_conditioning_manifest: not_released
+      complete_model_and_baseline_outputs: not_released
+      unified_evaluator_and_metric_configuration: not_released
+      per_case_predictions_scores_and_validity_records: not_released
+      model_checkpoint_training_and_inference_code: marked_coming_soon
+    license:
+      paper: CC-BY-4.0
+      project_repository_code_and_assets: not_specified
+      selected_generated_video_audio_and_references: not_separately_specified
+      complete_benchmark_artifacts: not_specified_unreleased
+      source_benchmarks_and_baseline_models: upstream_terms_apply
+      note: >-
+        The arXiv article is CC BY 4.0, but the owner-controlled project
+        repository has no detected license. The article license does not
+        establish reuse or redistribution rights for the hosted reference
+        media and generated audio-video demonstrations, or for the absent
+        prompts, scripts, evaluator, full outputs, score records, and model.
+    sources:
+      - https://arxiv.org/abs/2608.05776
+      - https://arxiv.org/html/2608.05776v1#S4.SS2
+      - https://arxiv.org/html/2608.05776v1#S4.SS5
+      - https://arxiv.org/html/2608.05776v1#S4.SS6
+      - https://arxiv.org/html/2608.05776v1#A6
+      - https://vorch-project.github.io/Vorch-Director-project/
+      - https://github.com/Vorch-Project/Vorch-Director-project
+      - https://api.github.com/repos/Vorch-Project/Vorch-Director-project
+      - https://api.github.com/repos/Vorch-Project/Vorch-Director-project/git/trees/main?recursive=1
+    note: >-
+      The official project is an unlicensed static listening/viewing page. Its
+      three long audio-video MP4 demonstrations and three small reference-audio
+      files are selected examples, not the frozen 16-case benchmark. It does
+      not publish case prompts, 352-shot scripts, reference assignments, the
+      complete compared outputs, evaluator code, per-case scores, or a
+      machine-readable manifest; its code control is disabled as "Coming
+      soon." The selected demonstrations therefore cannot reproduce Table 4,
+      so this audit adds no counted benchmark family or download helper.
+
   torus_rendering_understanding_self_coherence_release_audit:
     paper: https://arxiv.org/abs/2607.28896
     project: https://torus-benchmark.github.io/
