@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 392 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 393 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231859a9'/%3E%3Cpath d='M10 32h7l4-12 7 25 7-31 7 36 6-27 5 9h2' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="392 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="393 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -416,15 +416,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 392 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 393 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>392</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>392</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>393</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>393</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>57</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-08-06">August 6, 2026</time></strong></div>
       </div>
@@ -473,7 +473,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="restoration-quality" aria-pressed="false">
   <span>Enhancement, separation &amp; quality</span>
-  <strong>46</strong>
+  <strong>47</strong>
   <small>Denoising, source separation, and perceptual quality</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="representation" aria-pressed="false">
@@ -488,7 +488,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="music" aria-pressed="false">
   <span>Music</span>
-  <strong>65</strong>
+  <strong>66</strong>
   <small>Music tagging, MIR, transcription, synthesis, and genre</small>
 </button>
       </div>
@@ -496,7 +496,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 392 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 393 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
       </div>
 
@@ -572,7 +572,7 @@
 
         <div class="browse-content">
           <div class="results-bar">
-            <p id="result-status" role="status" aria-live="polite">Showing 392 of 392 benchmarks.</p>
+            <p id="result-status" role="status" aria-live="polite">Showing 393 of 393 benchmarks.</p>
             <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
           </div>
 
@@ -20011,6 +20011,72 @@
                     <li><a href="https://arxiv.org/abs/2607.11699">Source 10 · arxiv.org</a></li>
                     <li><a href="https://arxiv.org/html/2607.11699v1#S4.SS2.SSS2">Source 11 · arxiv.org</a></li>
                     <li><a href="https://arxiv.org/html/2607.11738v1#S4.SS2.SSS3">Source 12 · arxiv.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-songbench"
+  data-name="songbench"
+  data-families="restoration-quality music"
+  data-access="helper"
+  data-host="official"
+  data-terms="unspecified"
+  data-search="songbench songbench songbench a fine grained multi aspect benchmark for song quality assessment music generation audio quality assessment reward model evaluation full song quality assessment fine grained song aesthetics assessment text to song generation evaluation music reward model evaluation long range song structure evaluation license txt resembles mit but adds an academic only restriction and a complete prohibition on commercial or production use so it is not standard mit the paper s arxiv license does not license the absent corpus that corpus includes commercial generator outputs and 1 000 copyrighted songs source song composition recording generated output service voice lyric and prompt rights remain relevant the repository names muq as an mit dependency whose terms apply separately the public repository releases a muq based seven output evaluator configuration approximately 96 1 mib checkpoint and 100 bilingual lyric style test prompts it scores vocal instrumental melody structure arrangement mixing and musicality quality the helper downloads code terms configuration prompts and official metadata by default the checkpoint requires explicit opt in the paper s core 11 717 song 683 5 hour expert rated corpus 95 5 train id split 352 song ood test set source audio annotations and exact manifests are not public qwen audio 3 0 gen preview table 7 uses the evaluator on an unspecified small set whose items and generated audio are likewise unreleased paper https arxiv org abs 2604 25937 repository https github com tencent songbench qwen evaluation https arxiv org html 2607 27011v2 s6 https arxiv org abs 2604 25937 https arxiv org html 2604 25937v1 s2 https arxiv org html 2604 25937v1 s3 https arxiv org html 2604 25937v1 s4 https github com tencent songbench https raw githubusercontent com tencent songbench main readme md https raw githubusercontent com tencent songbench main license txt https raw githubusercontent com tencent songbench main eval py https raw githubusercontent com tencent songbench main prompts test100 jsonl https api github com repos tencent songbench https api github com repos tencent songbench git trees main recursive 1 https arxiv org html 2607 27011v2 s6">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Enhancement, separation &amp; quality</span>
+      <h3>SongBench</h3>
+      <p class="benchmark-full-name">SongBench: A Fine-Grained Multi-Aspect Benchmark for Song Quality Assessment</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Full Song Quality Assessment</span>
+        <span class="tag">Fine Grained Song Aesthetics Assessment</span>
+        <span class="tag">Text To Song Generation Evaluation</span>
+        <span class="tag">Music Reward Model Evaluation</span>
+        <span class="tag tag-more">+1 more</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Official / other</strong></div>
+    <div><span>Upstream terms</span><strong>Not specified</strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <div class="card-actions">
+    <a class="card-action primary" href="https://github.com/Tencent/SongBench">Get data</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2604.25937">Read the paper</a>
+  </div>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>Not specified in the source record.</dd></div>
+        <div><dt>Code license</dt><dd>Not specified in the source record.</dd></div>
+        <div><dt>License caution</dt><dd>LICENSE.txt resembles MIT but adds an academic-only restriction and a complete prohibition on commercial or production use, so it is not standard MIT. The paper&#39;s arXiv license does not license the absent corpus. That corpus includes commercial-generator outputs and 1,000 copyrighted songs; source-song, composition, recording, generated- output, service, voice, lyric, and prompt rights remain relevant. The repository names MuQ as an MIT dependency, whose terms apply separately.</dd></div>
+        <div><dt>Download notes</dt><dd>The public repository releases a MuQ-based seven-output evaluator, configuration, approximately 96.1 MiB checkpoint, and 100 bilingual lyric/style test prompts. It scores vocal, instrumental, melody, structure, arrangement, mixing, and musicality quality. The helper downloads code, terms, configuration, prompts, and official metadata by default; the checkpoint requires explicit opt-in. The paper&#39;s core 11,717-song, 683.5-hour expert-rated corpus, 95:5 train/ID split, 352-song OOD test set, source audio, annotations, and exact manifests are not public. Qwen-Audio-3.0-Gen-Preview Table 7 uses the evaluator on an unspecified small set whose items and generated audio are likewise unreleased.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/songbench.sh</code></div>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/songbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/songbench.sh" aria-label="Copy SongBench helper path">Copy path</button>
+        </div>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://arxiv.org/abs/2604.25937">Paper</a></li>
+                    <li><a href="https://github.com/Tencent/SongBench">Repository</a></li>
+                    <li><a href="https://arxiv.org/html/2607.27011v2#S6">Qwen Evaluation</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://arxiv.org/abs/2604.25937">Source 1 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2604.25937v1#S2">Source 2 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2604.25937v1#S3">Source 3 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2604.25937v1#S4">Source 4 · arxiv.org</a></li>
+                    <li><a href="https://github.com/Tencent/SongBench">Source 5 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/Tencent/SongBench/main/README.md">Source 6 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/Tencent/SongBench/main/LICENSE.txt">Source 7 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/Tencent/SongBench/main/eval.py">Source 8 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/Tencent/SongBench/main/prompts/test100.jsonl">Source 9 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://api.github.com/repos/Tencent/SongBench">Source 10 · api.github.com</a></li>
+                    <li><a href="https://api.github.com/repos/Tencent/SongBench/git/trees/main?recursive=1">Source 11 · api.github.com</a></li>
+                    <li><a href="https://arxiv.org/html/2607.27011v2#S6">Source 12 · arxiv.org</a></li></ul></div>
     </div>
   </details>
 </article>

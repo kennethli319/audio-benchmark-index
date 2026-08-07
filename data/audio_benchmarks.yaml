@@ -127,8 +127,8 @@ paper_audits:
           Gemini-3.1-Pro-Preview and Qwen3.5-Omni-Plus judge event recall,
           temporal mIoU, and IoU at 0.3 and 0.5.
       - cited_as: SongBench small evaluation set
-        index_id: null
-        status: cited_external_benchmark_with_paper_specific_selection_unreleased
+        index_id: songbench
+        status: public_evaluator_family_with_paper_specific_selection_unreleased
         role: long_range_song_generation_evaluation
         protocol: >-
           Table 7 compares seven evaluator components--melody, arrangement,
@@ -178,14 +178,16 @@ paper_audits:
         CC BY 4.0 covers the report, not the absent in-house benchmark cases,
         derived manifests, generated audio, judgments, code, or model. The
         separately released Seed-TTS-Eval, AudioCaps/OpenSound, Song Describer,
-        and LibriSpeech materials retain their own terms. SongBench and MuChin
-        require a separate primary-source release and license audit.
+        SongBench, MuChin, and LibriSpeech materials retain their own terms.
+        SongBench's public evaluator has academic-only custom terms, and its
+        expert-rated corpus is not released.
     sources:
       - https://arxiv.org/abs/2607.27011
       - https://arxiv.org/html/2607.27011v2#S6
       - https://arxiv.org/html/2607.27011v2#S6.SS1
       - https://huggingface.co/datasets/OpenSound/AudioCaps/viewer/default/test
       - https://arxiv.org/abs/2604.25937
+      - https://github.com/Tencent/SongBench
       - https://arxiv.org/abs/2402.09871
       - https://github.com/QwenLM/Qwen-Audio
       - https://api.github.com/repos/QwenLM/Qwen-Audio/git/trees/main?recursive=1
@@ -200,9 +202,9 @@ paper_audits:
       date. This audit maps public evaluations to existing families where
       possible, keeps paper-specific and internal protocols distinct, and does
       not treat public source data as a release of the report's missing
-      manifests and outputs. SongBench remains a focused follow-up provenance
-      candidate; MuChin is now mapped to its independently audited public
-      family.
+      manifests and outputs. SongBench and MuChin are now mapped to their
+      independently audited public families, without treating the public
+      artifacts as releases of Qwen's missing evaluation selections.
 
   c3po_cross_modal_composition_counterfactual_audit:
     paper: https://arxiv.org/abs/2608.05381
@@ -26846,6 +26848,68 @@ benchmarks:
       - https://arxiv.org/html/2607.20253v2#S3.SS2
       - https://arxiv.org/abs/2607.14749
       - https://arxiv.org/html/2607.14749v3#S4.SS2
+
+  - id: songbench
+    name: SongBench
+    full_name: "SongBench: A Fine-Grained Multi-Aspect Benchmark for Song Quality Assessment"
+    qwen_cited_as: SongBench
+    qwen_bucket:
+      - music_generation
+      - audio_quality_assessment
+      - reward_model_evaluation
+    tasks:
+      - full_song_quality_assessment
+      - fine_grained_song_aesthetics_assessment
+      - text_to_song_generation_evaluation
+      - music_reward_model_evaluation
+      - long_range_song_structure_evaluation
+    official:
+      paper: https://arxiv.org/abs/2604.25937
+      repo: https://github.com/Tencent/SongBench
+      qwen_evaluation: https://arxiv.org/html/2607.27011v2#S6
+    download:
+      primary:
+        - https://github.com/Tencent/SongBench
+      examples:
+        - 'scripts/download/songbench.sh'
+        - 'SONGBENCH_DOWNLOAD_CHECKPOINT=1 scripts/download/songbench.sh'
+      notes: >-
+        The public repository releases a MuQ-based seven-output evaluator,
+        configuration, approximately 96.1 MiB checkpoint, and 100 bilingual
+        lyric/style test prompts. It scores vocal, instrumental, melody,
+        structure, arrangement, mixing, and musicality quality. The helper
+        downloads code, terms, configuration, prompts, and official metadata
+        by default; the checkpoint requires explicit opt-in. The paper's core
+        11,717-song, 683.5-hour expert-rated corpus, 95:5 train/ID split,
+        352-song OOD test set, source audio, annotations, and exact manifests
+        are not public. Qwen-Audio-3.0-Gen-Preview Table 7 uses the evaluator on
+        an unspecified small set whose items and generated audio are likewise
+        unreleased.
+    license:
+      public_artifacts: custom_academic_only_noncommercial
+      benchmark_corpus: not_released
+      notes: >-
+        LICENSE.txt resembles MIT but adds an academic-only restriction and a
+        complete prohibition on commercial or production use, so it is not
+        standard MIT. The paper's arXiv license does not license the absent
+        corpus. That corpus includes commercial-generator outputs and 1,000
+        copyrighted songs; source-song, composition, recording, generated-
+        output, service, voice, lyric, and prompt rights remain relevant. The
+        repository names MuQ as an MIT dependency, whose terms apply
+        separately.
+    sources:
+      - https://arxiv.org/abs/2604.25937
+      - https://arxiv.org/html/2604.25937v1#S2
+      - https://arxiv.org/html/2604.25937v1#S3
+      - https://arxiv.org/html/2604.25937v1#S4
+      - https://github.com/Tencent/SongBench
+      - https://raw.githubusercontent.com/Tencent/SongBench/main/README.md
+      - https://raw.githubusercontent.com/Tencent/SongBench/main/LICENSE.txt
+      - https://raw.githubusercontent.com/Tencent/SongBench/main/eval.py
+      - https://raw.githubusercontent.com/Tencent/SongBench/main/prompts/test100.jsonl
+      - https://api.github.com/repos/Tencent/SongBench
+      - https://api.github.com/repos/Tencent/SongBench/git/trees/main?recursive=1
+      - https://arxiv.org/html/2607.27011v2#S6
 
   - id: m6_music_detection
     name: M6

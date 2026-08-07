@@ -7,6 +7,26 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+SongBench is now indexed as a partially released full-song evaluator family
+after a primary-source audit of paper sections 2-4 and Tencent's official
+repository. The paper defines seven expert-rated dimensions--vocal,
+instrumental, melody, structure, arrangement, mixing, and musicality--over a
+core 11,717-song, 683.5-hour corpus, with a 95:5 train/ID split and a separate
+352-song OOD test set. At least three music-specialized annotators rate each
+song on a 1-10 scale, and predictor agreement is reported with MAE, Pearson,
+Spearman, and Kendall correlations at utterance and system levels. This is
+directly relevant to reward and post-training evaluation for long-form song
+generation. The public release contains the MuQ-based evaluator code, its
+approximately 96.1 MiB checkpoint, and 100 bilingual lyric/style prompts, but
+not the expert-rated corpus, audio, annotations, or split manifests. The 100
+released prompts also must not be conflated with the paper's 44-pair/352-song
+OOD set. Qwen-Audio-3.0-Gen-Preview Table 7 reuses SongBench on an unspecified
+small evaluation set; those inputs, outputs, and item manifest are absent. The
+repository's custom terms resemble MIT but restrict use to academic purposes
+and prohibit all commercial or production use, while absent commercial-model
+outputs and 1,000 copyrighted reference songs retain their own rights. The
+helper is lightweight by default and makes only the public checkpoint opt-in.
+
 The August 2026 *FormBharo* paper is recorded as an announced-but-unreleased
 spoken-agent benchmark audit. Sections 3-5 and appendices A-C define
 FormVoiceAgentBench: 380 human-recorded Hindi utterances, 3,760 deduplicated
