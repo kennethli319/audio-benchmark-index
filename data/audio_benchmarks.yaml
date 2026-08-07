@@ -11892,14 +11892,14 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.04383
     sections: abstract, 3.3, 4, and appendix K
     status: audited_not_indexed
-    last_verified: 2026-07-25
+    last_verified: 2026-08-06
     public_interfaces:
       - https://huggingface.co/datasets/zihan-audio/AEGBench
     evaluated_domains:
       - domain: open_vocabulary_audio_event_grounding
         protocol: 3,427 human-verified audio items and 9,790 natural-language queries from AudioSet Strong Labels, FSD50K eval, BBC Sound Effects, and nine YouTube life-sound clips, with list-all temporal interval answers and six difficulty tags
-        data_status: announced_unreleased_empty_repository
-        note: The paper reports 10-120-second clips, 0.5-60-second target events, and strict disjointness from its Auto-AEG training corpus, but the linked public Hugging Face repository currently contains only .gitattributes and reports zero bytes of dataset storage.
+        data_status: announced_unreleased_metadata_only_repository
+        note: The paper reports 10-120-second clips, 0.5-60-second target events, and strict disjointness from its Auto-AEG training corpus. The linked public Hugging Face repository now contains .gitattributes and a 660-byte dataset card describing the task, but still reports zero bytes of dataset storage and exposes no benchmark records or evaluation artifacts.
     license:
       paper: CC BY 4.0
       benchmark_data: promised_CC_BY_4.0_but_not_yet_released
@@ -11911,8 +11911,23 @@ paper_audits:
       - https://arxiv.org/html/2607.04383v3#Sx5
       - https://arxiv.org/html/2607.04383v3#A11
       - https://huggingface.co/datasets/zihan-audio/AEGBench
+      - https://huggingface.co/datasets/zihan-audio/AEGBench/raw/main/README.md
       - https://huggingface.co/api/datasets/zihan-audio/AEGBench
-    note: The abstract calls AEGBench released, but appendix K says the benchmark, audio, annotations, difficulty tags, and scripts will be released upon acceptance. Rechecked on 2026-07-25, the linked Hugging Face repository remained at revision b4e9fa95ad99d701b6e788c2aa51d7642ed61a75 with only .gitattributes and zero bytes of dataset storage; it still had no dataset card, benchmark records, audio, annotations, or evaluation code. AEGBench is therefore recorded as an announced protocol rather than a downloadable benchmark family. The promised CC BY 4.0 and MIT terms do not license absent artifacts, and appendix K also preserves third-party audio terms while describing research-only use, so the eventual release terms require careful rechecking.
+    note: >-
+      The abstract calls AEGBench released, but appendix K says the benchmark,
+      audio, annotations, difficulty tags, and scripts will be released upon
+      acceptance. Rechecked on 2026-08-06, the linked Hugging Face repository
+      had advanced to revision 33fc457054edd438eb4242022f9db5a1d3fef24c and
+      added a 660-byte dataset card that describes AEGBench and its
+      large-audio-language-model grounding task. Its complete visible tree
+      still contains only that README and .gitattributes, however, and the Hub
+      API reports zero bytes of dataset storage: there are no benchmark
+      records, audio, annotations, difficulty tags, or evaluation scripts.
+      AEGBench therefore remains an announced protocol rather than a
+      downloadable benchmark family. The promised CC BY 4.0 and MIT terms do
+      not license absent artifacts, and appendix K also preserves third-party
+      audio terms while describing research-only use, so the eventual release
+      terms require careful rechecking.
 
   tf_mossformer:
     paper: https://arxiv.org/abs/2607.21128

@@ -7,6 +7,18 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 AEGBench recheck records a metadata-only change, not a public
+benchmark release. The official Hugging Face repository added a 660-byte
+dataset card describing open-vocabulary temporal grounding for large
+audio-language models, but its complete visible tree still contains only that
+README and `.gitattributes`, and the Hub API reports zero bytes of dataset
+storage. The paper's 3,427 human-verified audio items, 9,790 queries, interval
+answers, six difficulty tags, and evaluation scripts therefore remain absent.
+Appendix K promises CC BY 4.0 data and MIT code upon acceptance, but those
+future terms do not license unavailable artifacts or override the terms of
+AudioSet, FSD50K, BBC Sound Effects, and YouTube sources. AEGBench remains an
+audited announced protocol with no download helper.
+
 The August 2026 *KVAE* report is recorded as an audio-tokenizer interface and
 partial-release audit. Sections 6.5-6.7 compare posterior-mean reconstruction
 on the existing AudioSet eval, MUSDB18-HQ, and EARS families, then train the
