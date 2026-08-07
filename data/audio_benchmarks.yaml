@@ -9,6 +9,109 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  latent_im_interaction_management_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.26928
+    title: "Latent-IM: Latent Interaction Management for Speech LLMs"
+    sections: 3-7 and appendices A-C,G
+    status: audited_existing_corpora_unreleased_derived_protocol
+    last_verified: 2026-08-07
+    evaluation:
+      focus: conversational_move_selection_realization_and_turn_completion
+      target_moves:
+        - acknowledge
+        - check
+        - explain
+        - query
+        - reply
+      source_corpora:
+        - name: MapTask
+          modality: audio_and_text
+          dialogues: 128
+          retained_follower_turns: 11581
+          train_turns: 8876
+          test_turns: 2705
+          role: controller_training_steering_direction_estimation_and_evaluation
+          status: existing_upstream_corpus_not_a_paper_specific_release
+        - name: FindTask
+          modality: text
+          dialogues: 133
+          retained_follower_turns: 642
+          train_turns: 486
+          test_turns: 156
+          role: cross_corpus_transfer_evaluation
+          status: existing_upstream_corpus_not_a_paper_specific_release
+        - name: CReST
+          full_name: Cooperative Remote Search Task corpus
+          modality: audio_and_text
+          dialogues: 17
+          retained_follower_turns: 2005
+          train_turns: 1686
+          test_turns: 319
+          role: cross_corpus_transfer_evaluation
+          status: existing_upstream_corpus_not_a_paper_specific_release
+      split_protocol: >-
+        Map each corpus's dialogue-act labels into the shared five-move
+        taxonomy, retain mapped follower turns, group by dialogue, and hold out
+        20% of sorted dialogue identifiers with numpy.default_rng seed 42. The
+        reported test split contains 25 MapTask, 26 FindTask, and only 3 CReST
+        dialogues. Steering directions are estimated only from MapTask
+        training dialogues and transferred without re-estimation.
+      tracks:
+        - next_move_selection_macro_F1
+        - oracle_target_move_realization_accuracy
+        - end_to_end_move_accuracy_and_BLEU
+        - turn_boundary_prediction_AUROC
+      evaluated_models:
+        - Qwen2.5-Omni-7B
+        - Qwen3-Omni-30B-A3B-Instruct
+        - Phi-4-multimodal-instruct
+      automatic_judge: >-
+        A prompted Qwen2.5-72B classifier assigns one of the five moves to a
+        generated response conditioned on dialogue context. Its validation
+        uses 500 generated responses, balanced by target move and distributed
+        approximately across the three corpora and backbones, with three
+        blinded MTurk annotations per response; overall classifier-majority
+        agreement is 73.9% and human Fleiss' kappa is 0.682.
+    release_audit:
+      paper_artifact_url: not_provided
+      exact_name_github_repository_search: no_matching_owner_repository_found
+      exact_name_hugging_face_dataset_search: no_matching_release_found
+      exact_name_hugging_face_model_search: no_matching_release_found
+      frozen_dialogue_and_turn_manifest: not_released
+      corpus_label_mapping_and_preprocessing_code: not_released
+      controller_and_steering_implementation: not_released
+      generated_responses_and_per_item_predictions: not_released
+      automatic_judge_prompt_is_printed_but_executable_evaluator_is_not_released: true
+      mturk_item_selection_and_individual_annotations: not_released
+      download_helper: not_added_manual_required
+    license:
+      paper: CC-BY-4.0
+      paper_specific_artifacts: not_specified_and_not_released
+      source_corpora: upstream_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not absent derived splits, generations,
+        annotations, or code and not the three upstream dialogue corpora.
+    sources:
+      - https://arxiv.org/abs/2607.26928
+      - https://arxiv.org/html/2607.26928v1#Sx3
+      - https://arxiv.org/html/2607.26928v1#Sx5
+      - https://arxiv.org/html/2607.26928v1#Sx6
+      - https://arxiv.org/html/2607.26928v1#Sx7
+      - https://arxiv.org/html/2607.26928v1#A1
+      - https://arxiv.org/html/2607.26928v1#A3
+      - https://arxiv.org/html/2607.26928v1#A7
+      - https://export.arxiv.org/api/query?id_list=2607.26928
+      - https://api.github.com/search/repositories?q=%22Latent-IM%22
+      - https://huggingface.co/api/datasets?search=Latent-IM&limit=20
+      - https://huggingface.co/api/models?search=Latent-IM&limit=20
+    note: >-
+      This directly audits post-training and inference-time control for spoken
+      dialogue LLMs: it measures whether a frozen audio-capable model selects
+      and realizes interaction moves and predicts when to yield the floor.
+      Because all evaluated rows derive from existing corpora and the paper
+      releases no paper-specific artifacts, it is not counted as a new public
+      benchmark family.
+
   m3_duplexbench_multiturn_spoken_dialogue_release_audit:
     paper: https://arxiv.org/abs/2607.29125
     title: "M3-DuplexBench: A Multi-Turn, Multilingual, Multidomain Benchmark for Full-Duplex Spoken Dialogue Models"

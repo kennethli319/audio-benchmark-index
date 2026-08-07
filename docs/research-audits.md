@@ -4,6 +4,27 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *Latent-IM* paper is recorded as an existing-corpora and
+unreleased-derived-protocol audit of interaction-management control for speech
+LLMs. Sections 3-7 and Appendices A-C and G map MapTask, FindTask, and CReST
+follower turns into five conversational moves—acknowledge, check, explain,
+query, and reply—and evaluate next-move selection, oracle realization,
+end-to-end response control, and turn-boundary prediction with Qwen2.5-Omni,
+Qwen3-Omni, and Phi-4 Multimodal. Appendix C reports 2,705, 156, and 319 test
+turns respectively, from dialogue-grouped 20% holdouts; notably, the CReST
+test set contains only three dialogues. A Qwen2.5-72B move classifier is
+validated against three blinded MTurk labels on 500 generated responses,
+reaching 73.9% majority agreement with human Fleiss' kappa of 0.682. This is
+directly relevant to post-training and inference-time control because it tests
+whether frozen speech LLM representations can select and causally realize
+dialogue actions and determine when to yield the floor. The article provides
+no artifact URL, and exact-name GitHub and Hugging Face searches found no
+owner release on August 7. Frozen row manifests, mapping and preprocessing
+code, controller and steering code, generations, predictions, and individual
+human ratings therefore remain unavailable. CC BY 4.0 covers the paper, not
+the absent artifacts or upstream corpora. No new public family is counted and
+no download helper is added.
+
 The July 2026 M3-DuplexBench paper is recorded as an unreleased derived
 protocol for directly in-scope full-duplex speech-LLM evaluation. Sections
 III-V define 7,214 turn shifts, 4,624 pauses, 1,779 backchannels, and 2,635
