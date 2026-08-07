@@ -1836,7 +1836,7 @@ paper_audits:
     title: "Spoken Function Calling: A New Perspective on Spoken Language Understanding for Large Audio Language Models"
     sections: 4-5
     status: audited_claimed_release_missing_from_official_repository
-    last_verified: 2026-08-06
+    last_verified: 2026-08-07
     evaluated_sets:
       - cited_as: SFC-Bench
         index_id: null
@@ -1858,6 +1858,9 @@ paper_audits:
           post-training evaluation.
     release_audit:
       paper_claimed_code_and_dataset_path: missing_http_404
+      path_specific_commit_history: empty
+      owner_repository_recursive_tree: no_SpokenFC_or_SFC_Bench_artifacts
+      hugging_face_exact_name_dataset_and_model_searches: no_results
       exact_audio: not_released_at_claimed_path
       text_queries_and_function_call_labels: not_released_at_claimed_path
       train_validation_test_manifests: not_released_at_claimed_path
@@ -1882,16 +1885,21 @@ paper_audits:
       - https://github.com/QwenAudio/FunResearch/tree/main/SpokenFC
       - https://api.github.com/repos/QwenAudio/FunResearch/contents/SpokenFC?ref=main
       - https://api.github.com/repos/QwenAudio/FunResearch/git/trees/main?recursive=1
+      - https://api.github.com/repos/QwenAudio/FunResearch/commits?path=SpokenFC
+      - https://huggingface.co/api/datasets?search=SFC-Bench
+      - https://huggingface.co/api/models?search=SpokenFC
       - https://raw.githubusercontent.com/QwenAudio/FunResearch/main/LICENSE
     note: >-
       The paper footnote says code and data are available at the official
       FunResearch `SpokenFC` path, but that path returns HTTP 404 and the
       repository's recursive main-branch tree contains no SpokenFC or SFC-Bench
-      files as of the verification date. GitHub's path-specific commit endpoint
-      also returns an empty list. This audit therefore does not count SFC-Bench
-      as a public benchmark family and adds no download helper. Revisit the
-      owner repository if the announced directory or another official release
-      appears.
+      files as of 2026-08-07. GitHub's path-specific commit endpoint returns an
+      empty list, and exact-name Hugging Face dataset and model searches return
+      no results. An unrelated 2014 GitHub repository named `sfc-benchmark`
+      concerns space-filling curves and is not an alternative release. This
+      audit therefore does not count SFC-Bench as a public benchmark family or
+      add a download helper. Revisit the owner repository if the announced
+      directory or another official release appears.
 
   hindi_english_code_mixed_forced_alignment:
     paper: https://arxiv.org/abs/2607.25581

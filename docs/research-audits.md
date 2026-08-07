@@ -142,6 +142,26 @@ The paper has arXiv's perpetual non-exclusive license, which does not license
 those absent artifacts; paid recording and the exclusion of real caller data
 do not establish benchmark reuse terms. No public family or helper is added.
 
+The August 2026 *Spoken Function Calling* paper is recorded as an unavailable
+claimed-release audit of SFC-Bench. Sections 4-5 define 7,078 synthetic spoken
+function-calling examples across four levels: single- or multi-intent requests
+in single- or multi-turn form. The fixed split contains 4,499 training, 1,986
+in-distribution test, and 593 out-of-distribution test examples over 300
+functions, with function-name accuracy, parameter-value F1, and exact overall
+accuracy. Missing multi-turn parameters are labeled `NAN`, making the protocol
+directly relevant to audio-LLM tool use, hallucination, structured instruction
+following, and GRPO post-training. The paper says code and data are available
+in the official QwenAudio FunResearch repository, but the claimed `SpokenFC`
+path returns 404, its path-specific commit history is empty, and the complete
+main-branch tree contains no matching artifacts as of August 7. Exact-name
+Hugging Face dataset and model searches also return no results; a similarly
+named 2014 GitHub project concerns space-filling curves and is unrelated. The
+benchmark audio, function definitions, queries, labels, manifests, evaluation
+code, predictions, and scores therefore remain unavailable. Apache 2.0 covers
+the parent repository code, not absent SFC-Bench data or IndexTTS-2-generated
+audio, and the paper's arXiv license grants no data reuse rights. No public
+family or download helper is added.
+
 MuChin is now indexed as a released music-language benchmark family after a
 primary-source audit of the IJCAI 2024 paper, official repositories, and Hugging
 Face releases. The public, ungated V1 pairs 1,000 songs with amateur and
