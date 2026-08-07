@@ -2281,3 +2281,18 @@ paper-specific outputs, refined MER2025 labels, or judge records. The index
 therefore adds the independently released Full-Duplex-Bench v1-v3 source
 family, maps the Joy-Duplex result to v1.5, and does not manufacture separate
 tool-calling benchmark families from untraceable table labels.
+
+The July 2026 Context-Speech Bench audit has been updated against paper version
+2. Sections 3-4 define an in-scope post-training evaluation of whether
+audio-language models internalize audio-grounded scaffold clues without copying
+answer-bearing text, including silent-audio controls, no-clue transcription,
+overlap and noise robustness, clue maturity, and GDPO-trained streaming gates.
+Version 2 now says AGSC code, benchmark manifests, result evidence, and
+public-corpus audio recipes are released with the paper. It supplies no artifact
+URL, however; the arXiv source bundle contains manuscript files and figures
+only, while exact-name GitHub repository and Hugging Face dataset/model searches
+found no owner release on August 7. CSB therefore remains an unavailable claimed
+release rather than a counted public family. Its LibriSpeech, LibriMix,
+AISHELL-3, WHAM!, MUSAN, and AMI inputs retain their separate upstream terms,
+and no license can be inferred for the absent derived mixtures, manifests,
+labels, code, or result records. No download helper is added.

@@ -4229,9 +4229,9 @@ paper_audits:
   context_speech_bench:
     paper: https://arxiv.org/abs/2607.21943
     title: "Listen, Do Not Copy: Internalizing Audio-Grounded Scaffold Context for Robust Omni-Model Speech Understanding"
-    sections: introduction and experiments
-    status: audited_announced_benchmark_not_released
-    last_verified: 2026-07-28
+    sections: version_2_sections_1_3_4_and_supplement
+    status: audited_claimed_release_without_public_artifact_location
+    last_verified: 2026-08-07
     evaluated_sets:
       - cited_as: Context-Speech Bench (CSB)
         index_id: null
@@ -4248,9 +4248,10 @@ paper_audits:
         note: >-
           The benchmark is constructed from LibriSpeech, SparseLibriMix2,
           AISHELL-3 mixes, WHAM!, MUSAN, and AMI. The paper says the AGSC code,
-          benchmark manifests, and result evidence will be open-sourced
-          following acceptance, but provides no repository, archive, dataset
-          card, DOI, manifest, access form, or license for those artifacts.
+          benchmark manifests, result evidence, and public-corpus audio recipes
+          are released with the paper, but provides no repository, archive,
+          dataset card, DOI, manifest, access form, or license for those
+          artifacts.
       - cited_as: LibriSpeech
         index_id: librispeech
         status: existing_public_family
@@ -4274,9 +4275,11 @@ paper_audits:
         status: existing_public_family
     release_audit:
       context_speech_bench_audio_and_labels: not_released
-      benchmark_manifests: announced_after_acceptance_not_released
-      agsc_code: announced_after_acceptance_not_released
-      result_evidence: announced_after_acceptance_not_released
+      benchmark_manifests: claimed_released_but_no_public_location_found
+      agsc_code: claimed_released_but_no_public_location_found
+      result_evidence: claimed_released_but_no_public_location_found
+      public_corpus_audio_recipes: claimed_released_but_no_public_location_found
+      arxiv_source_bundle: public_manuscript_sources_and_figures_only
       source_corpora: public_under_separate_upstream_terms
     license:
       context_speech_bench: not_specified
@@ -4284,8 +4287,15 @@ paper_audits:
       source_corpora: mixed_upstream_terms
     sources:
       - https://arxiv.org/abs/2607.21943
-      - https://arxiv.org/html/2607.21943v1#Sx1
-      - https://arxiv.org/html/2607.21943v1#Sx4
+      - https://arxiv.org/html/2607.21943v2#Sx1
+      - https://arxiv.org/html/2607.21943v2#Sx3
+      - https://arxiv.org/html/2607.21943v2#Sx4
+      - https://export.arxiv.org/api/query?id_list=2607.21943
+      - https://export.arxiv.org/e-print/2607.21943v2
+      - https://api.github.com/search/repositories?q=%22Context-Speech%20Bench%22
+      - https://api.github.com/search/repositories?q=%22Audio-Grounded%20Scaffold%20Context%22
+      - https://huggingface.co/api/datasets?search=Context-Speech%20Bench
+      - https://huggingface.co/api/models?search=Context-Speech%20Bench
       - https://www.openslr.org/12
       - https://github.com/JorisCos/LibriMix
       - https://www.openslr.org/93
@@ -4294,10 +4304,15 @@ paper_audits:
       - https://groups.inf.ed.ac.uk/ami/corpus/
     note: >-
       CSB is not counted as a public benchmark family until an official
-      benchmark manifest or documented access route is released. Public access
-      to its component corpora does not reproduce the paper's synthesized
-      mixtures, gold answers, predicted clues, split assignments, or streaming
-      protocols, and does not supply a license for the derived benchmark.
+      benchmark manifest or documented access route is located. Version 2 now
+      says the code, manifests, evidence, and public-corpus audio recipes are
+      released with the paper, but it contains no artifact link; its arXiv
+      source bundle contains only manuscript sources and figures, and exact-name
+      GitHub repository and Hugging Face dataset/model searches found no owner
+      release on the verification date. Public access to the component corpora
+      does not reproduce the paper's synthesized mixtures, gold answers,
+      predicted clues, split assignments, or streaming protocols, and does not
+      supply a license for the derived benchmark.
 
   msst_music_source_separation_training:
     paper: https://arxiv.org/abs/2607.23395
