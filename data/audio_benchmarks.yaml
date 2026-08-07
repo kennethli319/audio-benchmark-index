@@ -28,8 +28,8 @@ paper_audits:
           unsafe-ambient track uses Yes/No accuracy. ParaBridge reports both
           scaffold-free results and the benchmark's two fixed scaffold prompts.
       - cited_as: EchoMind
-        index_id: null
-        status: public_family_candidate_requires_primary_release_audit
+        index_id: echomind
+        status: existing_public_family
         protocol: >-
           Evaluate open-ended empathetic spoken dialogue with GPT-4o ratings
           from 1-5 for context fit, response naturalness, colloquialism, and
@@ -121,8 +121,9 @@ paper_audits:
       will be released. Exact-name public searches found no owner-verifiable
       release. No new benchmark family or helper is therefore added; next
       VoxSafeBench is now independently indexed from its primary paper,
-      owner repository, and auto-gated Hugging Face release. EchoMind remains
-      the next public-family candidate requiring a primary release audit.
+      owner repository, and auto-gated Hugging Face release. EchoMind is now
+      independently indexed from its primary paper, owner repository, and
+      ungated Hugging Face release.
 
   hive_voice_keyboard_input_perturbation_release_audit:
     paper: https://arxiv.org/abs/2608.03970
@@ -17619,6 +17620,80 @@ benchmarks:
       - https://api.github.com/repos/AmphionTeam/VoxSafeBench/git/trees/main?recursive=1
       - https://huggingface.co/datasets/YuxiangW/VoxSafeBench
       - https://huggingface.co/api/datasets/YuxiangW/VoxSafeBench
+
+  - id: echomind
+    name: EchoMind
+    full_name: "EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - end_to_end_speech_dialogue
+      - audio_language_model_benchmark
+      - paralinguistic_understanding
+    tasks:
+      - empathetic_spoken_dialogue_evaluation
+      - spoken_content_understanding
+      - vocal_cue_perception
+      - paralinguistic_reasoning
+      - context_and_emotion_grounded_response_generation
+      - speech_llm_instruction_following
+      - synthetic_to_human_speech_robustness
+      - speech_response_quality_and_emotion_alignment
+    official:
+      project: https://hlt-cuhksz.github.io/EchoMind/
+      repo: https://github.com/hlt-cuhksz/EchoMind
+      dataset: https://huggingface.co/datasets/hlt-cuhksz/EchoMind
+      paper: https://arxiv.org/abs/2510.22758
+    download:
+      access: public_ungated_hugging_face_large_snapshot
+      primary:
+        - https://huggingface.co/datasets/hlt-cuhksz/EchoMind
+        - https://github.com/hlt-cuhksz/EchoMind
+      examples:
+        - 'scripts/download/echomind.sh'
+        - 'ECHOMIND_DOWNLOAD_HF=1 scripts/download/echomind.sh'
+      notes: >-
+        EchoMind links three evaluation levels over shared, semantically
+        neutral English scripts: content ASR and vocal-cue MCQs; MCQ reasoning
+        that integrates lexical and acoustic evidence; and open-ended
+        empathetic response generation. The paper reports 1,137 scripts and
+        3,356 synthetic target, neutral, and alternative-expression inputs
+        across 39 vocal attributes, plus 1,453 human-recorded inputs from a
+        balanced 491-script subset. Released artifacts include input and
+        reference-response audio, script metadata, understanding/reasoning
+        MCQs, model runners, and evaluation code. The Hugging Face API exposes
+        8,238 files and reports 7,399,956,191 bytes of storage, so the helper
+        fetches only the paper, project/repository documentation, GitHub
+        metadata, and Hugging Face metadata by default. Set
+        ECHOMIND_DOWNLOAD_HF=1 to explicitly download the full ungated
+        snapshot.
+    license:
+      data: CC-BY-NC-SA-4.0_dataset_card_with_source_and_consent_caveats
+      code: not_specified
+      notes: >-
+        The Hugging Face dataset card declares CC BY-NC-SA 4.0. The GitHub
+        repository has no detected root license, so do not infer a code
+        license from bundled third-party model files. Environmental mixtures
+        use AudioCaps sounds; synthesis also uses Doubao, GPT-4o-mini-TTS, and
+        one voice cloned from a YouTube creator, while the human subset comes
+        from two compensated speakers. The aggregate card label should not be
+        assumed to override source-media rights, service terms, voice rights,
+        consent constraints, or other upstream conditions. The arXiv license
+        covers the article, not the separately released benchmark artifacts.
+    sources:
+      - https://arxiv.org/abs/2510.22758
+      - https://arxiv.org/html/2510.22758v2#S3.SS1
+      - https://arxiv.org/html/2510.22758v2#S3.SS2
+      - https://arxiv.org/html/2510.22758v2#S3.SS3
+      - https://arxiv.org/html/2510.22758v2#A1.SS1
+      - https://arxiv.org/html/2510.22758v2#A1.SS3
+      - https://hlt-cuhksz.github.io/EchoMind/
+      - https://github.com/hlt-cuhksz/EchoMind
+      - https://raw.githubusercontent.com/hlt-cuhksz/EchoMind/main/README.md
+      - https://api.github.com/repos/hlt-cuhksz/EchoMind
+      - https://api.github.com/repos/hlt-cuhksz/EchoMind/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/hlt-cuhksz/EchoMind
+      - https://huggingface.co/datasets/hlt-cuhksz/EchoMind/raw/main/README.md
+      - https://huggingface.co/api/datasets/hlt-cuhksz/EchoMind
 
   - id: uro_bench_pro
     name: URO-Bench-pro

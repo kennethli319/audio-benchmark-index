@@ -4,6 +4,27 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+EchoMind is now indexed as a public, ungated empathetic speech-language-model
+benchmark after reviewing the primary paper's Sections 3.1-3.3 and Appendices
+A.1, A.3, and B.2-B.4. Its 1,137 English scripts are rendered as 3,356
+synthetic target, neutral, and alternative-expression inputs spanning 39 vocal
+attributes; a parallel 491-script subset supplies 1,453 human-recorded inputs.
+The linked tasks progress from ASR and vocal-cue MCQs through integrated
+reasoning MCQs to open-ended empathetic response generation. Conversation
+outputs are scored with reference text metrics, four GPT-4o ratings, speech
+quality metrics, emotion alignment, and Gemini-based Vocal Empathy Score, with
+sampled human validation. This directly evaluates whether speech-LLM
+post-training turns paralinguistic perception into contextually appropriate
+dialogue behavior, as later used by ParaBridge and SASLM. The owner Hugging
+Face repository is ungated and exposes 8,238 files using about 7.4 GB,
+including input and reference-response audio, MCQs, and script metadata; the
+GitHub repository provides inference and evaluation code but no root license.
+The dataset card declares CC BY-NC-SA 4.0. That label should not be assumed to
+override AudioCaps background-audio rights, TTS-service terms, cloned-source
+voice rights, or participant consent constraints. The helper downloads only
+official documentation and API metadata by default and requires explicit
+opt-in for the full snapshot.
+
 The June 2026 *ParaBridge* paper is recorded as an existing-coverage and
 unreleased-artifact audit of paralinguistic speech-LLM post-training. Sections
 4.1-4.5 and Appendices A-C, E, and K-L evaluate whether on-policy
@@ -14,8 +35,9 @@ symbolic sounds, and unsafe ambient conditions; EchoMind scores context fit,
 naturalness, colloquialism, and speech grounding. Capability-retention rows map
 to the existing MMAU-Pro, VoiceBench, and MMSU families, while GPQA is a
 text-only control. VoxSafeBench is now independently indexed from its primary
-paper, owner code repository, and auto-gated Hugging Face release; EchoMind
-remains a candidate pending its own primary-source audit. The three
+paper, owner code repository, and auto-gated Hugging Face release; EchoMind is
+now independently indexed from its primary paper, owner repository, and
+ungated Hugging Face release. The three
 1,000-query ParaBridge training pools are post-training data rather than new
 benchmarks. Version 1 gives no project or repository URL and says LoRA adapters
 and evaluation code will be released. Exact-name GitHub and Hugging Face
@@ -43,7 +65,8 @@ declares Apache-2.0, but the paper describes adapted and off-the-shelf sources,
 so the aggregate label should not be treated as overriding upstream rights.
 The paper's responsible-use guidance identifies the intended use as alignment
 auditing, red-teaming, and mitigation and warns against re-identification or
-voice profiling. EchoMind is the next focused provenance candidate.
+voice profiling. EchoMind is now independently indexed; SASLM's EchoMind
+post-training protocol is the next focused evaluation-provenance candidate.
 
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
