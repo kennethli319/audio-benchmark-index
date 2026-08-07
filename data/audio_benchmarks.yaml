@@ -47,8 +47,8 @@ paper_audits:
           one minus WER. The official release provides a 679,695,778-byte
           URO-Bench archive plus inference and scoring code.
       - cited_as: EmphAssess
-        index_id: null
-        status: public_upstream_family_with_released_paper_specific_derivatives_pending_independent_audit
+        index_id: emphassess
+        status: existing_public_family_with_released_paper_specific_derivatives
         tracks:
           - emphasis_understanding
           - emphasis_generation
@@ -60,9 +60,10 @@ paper_audits:
           with CosyVoice, and scores generated speech with the provided
           emphasis detector. Both report word-level precision, recall, and F1.
           The official release provides a 191,752,063-byte derived-data archive,
-          evaluator checkpoint, and evaluation code. EmphAssess requires an
-          independent primary-source audit before it can become a counted
-          family.
+          evaluator checkpoint, and evaluation code. The independently audited
+          family below covers the original preservation benchmark; these
+          understanding and generation adaptations remain paper-specific
+          protocols rather than separate families.
     training_data:
       - cited_as: SpeechCombine continuous-pretraining mixture
         status: training_mixture_not_a_benchmark
@@ -120,8 +121,9 @@ paper_audits:
       probe combination weight, long thinking, pretraining-data structure,
       format forcing, and transfer across Qwen, OLMo, and Llama bases. Public
       paper-specific evaluation assets improve reproducibility, but all rows
-      map to existing families or an EmphAssess candidate needing its own
-      primary audit, so no duplicate counted family or helper is added.
+      map to existing families. The separately indexed EmphAssess family now
+      supplies primary provenance for that adaptation, so this paper audit does
+      not create another counted family.
 
   parabridge_paralinguistic_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2606.10581
@@ -34351,3 +34353,84 @@ benchmarks:
       - https://arxiv.org/html/2607.26410v1#S6
       - https://huggingface.co/huckiyang/voice-memory
       - https://huggingface.co/api/models/huckiyang/voice-memory
+
+  - id: emphassess
+    name: EmphAssess
+    full_name: "EmphAssess: A Prosodic Benchmark on Assessing Emphasis Transfer in Speech-to-Speech Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - paralinguistic_speech_evaluation
+    category: speech_to_speech_emphasis_transfer
+    tasks:
+      - speech_resynthesis_emphasis_preservation
+      - speech_to_speech_translation_emphasis_preservation
+      - word_level_emphasis_detection
+      - prosody_transfer_evaluation
+      - multilingual_output_alignment
+    official:
+      paper: https://arxiv.org/abs/2312.14069
+      arxiv_html: https://arxiv.org/html/2312.14069v2
+      repository: https://github.com/facebookresearch/emphassess
+      dataset: https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphAssess_Dataset.tar.gz
+      classifier: https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphaClass/EmphaClass-en.tar.gz
+    download:
+      access: public_ungated_large_archives
+      primary:
+        - https://github.com/facebookresearch/emphassess
+        - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphAssess_Dataset.tar.gz
+      examples:
+        - 'scripts/download/emphassess.sh'
+        - 'EMPHASSESS_DOWNLOAD_DATASET=1 scripts/download/emphassess.sh'
+        - 'EMPHASSESS_DOWNLOAD_CLASSIFIER=1 scripts/download/emphassess.sh'
+        - 'EMPHASSESS_CLONE_REPO=1 scripts/download/emphassess.sh'
+      notes: >-
+        The public benchmark archive contains 3,652 synthetic English speech
+        samples generated from 913 emphasis-annotated transcripts in four
+        Expresso voices, plus tokenized text, emphasized-word indices, and
+        voice identifiers. Evaluated systems resynthesize or translate every
+        input; WhisperX transcribes and force-aligns the output, EmphaClass
+        detects emphasized words, and SimAlign maps source emphasis to
+        paraphrased or translated output. Precision, recall, and F1 are
+        reported over the dataset. The helper saves the official paper,
+        README, license, and repository metadata by default. The 226,646,154-
+        byte dataset, 3,571,288,236-byte English EmphaClass checkpoint, and
+        archived code repository require separate explicit opt-ins. The host
+        publishes ETags but no cryptographic checksums, so the helper does not
+        claim checksum verification.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        The English benchmark data, English classifier checkpoint, and
+        evaluation code are directly downloadable. The paper's Spanish
+        topline was synthesized with internal voices, and its Spanish
+        classifier and translated evaluation audio are not released. Internal
+        classifier-training speech from six additional speakers and the
+        multilingual Appendix A test sets are likewise not public benchmark
+        assets.
+    license:
+      data: CC-BY-NC-4.0
+      classifier: CC-BY-NC-4.0
+      code: CC-BY-NC-4.0_with_separately_licensed_dependencies
+      notes: >-
+        The owner README explicitly applies CC BY-NC 4.0 to the benchmark data
+        and EmphaClass checkpoint, and the repository LICENSE is CC BY-NC 4.0.
+        SimAlign and Whisper are MIT and WhisperX is BSD-4-Clause according to
+        the repository. The benchmark speech uses synthetic Expresso voices;
+        retain source attribution and do not assume the aggregate license
+        overrides voice-model, recording, or other upstream rights.
+    sources:
+      - https://arxiv.org/abs/2312.14069
+      - https://arxiv.org/html/2312.14069v2#S3
+      - https://arxiv.org/html/2312.14069v2#S4
+      - https://arxiv.org/html/2312.14069v2#S5
+      - https://arxiv.org/html/2312.14069v2#S6
+      - https://arxiv.org/html/2312.14069v2#S8
+      - https://github.com/facebookresearch/emphassess
+      - https://raw.githubusercontent.com/facebookresearch/emphassess/main/README.md
+      - https://raw.githubusercontent.com/facebookresearch/emphassess/main/LICENSE.md
+      - https://api.github.com/repos/facebookresearch/emphassess
+      - https://api.github.com/repos/facebookresearch/emphassess/git/trees/main?recursive=1
+      - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphAssess_Dataset.tar.gz
+      - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphaClass/EmphaClass-en.tar.gz

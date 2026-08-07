@@ -4,16 +4,37 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+EmphAssess is now indexed as a public, ungated emphasis-transfer benchmark
+after reviewing the primary paper's Sections 3-6 and 8 and Meta's archived
+owner repository. Its 3,652 synthetic English inputs render 913 annotated
+transcripts in four Expresso voices. Evaluated speech-to-speech systems
+resynthesize or translate each input; WhisperX transcribes and force-aligns
+the output, EmphaClass detects emphasized words, and SimAlign maps the source
+target to paraphrased or translated output before word-level precision,
+recall, and F1 scoring. This directly evaluates whether pretrained speech
+representations and speech-generation interfaces preserve meaning-bearing
+prosody, and it supplies primary provenance for SpeechCombine's later
+speech-LLM understanding and controlled-generation adaptations. The English
+dataset (226,646,154 bytes), English classifier (3,571,288,236 bytes), and code
+are public. The Spanish topline audio and classifier, internal classifier-
+training recordings, and Appendix A multilingual tests are not released. The
+owner applies CC BY-NC 4.0 to the dataset and classifier; separately licensed
+dependencies and synthetic-voice/upstream rights remain applicable. The
+helper downloads lightweight official metadata by default and keeps the data,
+classifier, and repository clone behind independent opt-ins.
+
 The July 2026 *SpeechCombine* paper is recorded as an existing-family and
 public-derived-artifact audit of speech-LLM pretraining transfer. Sections
 4.1-4.6 and Appendices B-C evaluate whether one round of prosody-aware
 continuous pretraining plus weight combination transfers text-LLM instruction
 following into spoken QA and reasoning, emotion and emphasis understanding,
 and controlled emotion and emphasis generation. VoiceBench and URO-Bench map
-to existing indexed families. The paper also adapts EmphAssess by retaining
-speaker ex04 for emphasis detection and converting the same labels into
-CosyVoice-rendered generation instructions; that family still needs its own
-primary-source audit. The owner GitHub repository releases evaluation code,
+to existing indexed families. The paper also adapts the separately indexed
+EmphAssess family by retaining speaker ex04 for emphasis detection and
+converting the same labels into CosyVoice-rendered generation instructions;
+those understanding and generation variants are paper-specific protocols, not
+separate benchmark families. The owner GitHub repository releases evaluation
+code,
 and its linked, ungated Hugging Face model repository packages the paper's
 MMSU and OpenBookQA selections, a 679.7 MB URO-Bench archive, and a 191.8 MB
 EmphAssess-derived archive plus evaluator. It does not package the cited SDQA

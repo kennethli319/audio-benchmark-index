@@ -106,6 +106,7 @@ scripts/download/sonic_seasoning.sh
 scripts/download/audiobook_narration_appeal.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
+scripts/download/emphassess.sh
 scripts/download/voxsafebench.sh
 scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh
