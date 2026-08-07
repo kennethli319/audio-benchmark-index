@@ -106,6 +106,7 @@ scripts/download/sonic_seasoning.sh
 scripts/download/audiobook_narration_appeal.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
+scripts/download/voxsafebench.sh
 scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
@@ -645,6 +646,10 @@ K9BENCH_ACK_TERMS=1 K9BENCH_DOWNLOAD_METADATA=1 scripts/download/k9_bench.sh
 
 # IFEval-Audio downloads official docs/metadata by default. Accept the gated HF terms before opting in.
 IFEVAL_AUDIO_DOWNLOAD_HF=1 scripts/download/ifeval_audio.sh
+
+# VoxSafeBench downloads public docs/API metadata by default. Its approximately
+# 23.6 GiB HF release is auto-gated and requires accepted terms plus explicit acknowledgement.
+VOXSAFEBENCH_ACK_TERMS=1 VOXSAFEBENCH_DOWNLOAD_HF=1 scripts/download/voxsafebench.sh
 
 # OmniVideoBench downloads public docs/API metadata by default. Apply for gated
 # HF access before opting into the approximately 114 GB snapshot.

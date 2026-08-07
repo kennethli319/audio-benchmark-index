@@ -17,8 +17,8 @@ paper_audits:
     last_verified: 2026-08-07
     evaluated_sets:
       - cited_as: VoxSafeBench Tier-2
-        index_id: null
-        status: public_family_candidate_requires_primary_release_audit
+        index_id: voxsafebench
+        status: existing_auto_gated_public_family
         protocol: >-
           Evaluate whether child voice, emotion, impaired capacity, child
           presence, symbolic background sounds, and unsafe ambient conditions
@@ -73,7 +73,7 @@ paper_audits:
           separately counted benchmarks; the paper reports prompt-overlap and
           WavLM embedding checks against the VoxSafeBench test split.
     release_audit:
-      upstream_benchmark_test_splits: referenced_as_public
+      upstream_benchmark_test_splits: public_with_voxsafebench_auto_gated
       parabridge_training_audio_queries_and_manifests: not_released
       exact_source_corpora_and_item_provenance: not_specified
       lora_adapters: promised_for_future_release_without_url
@@ -120,7 +120,9 @@ paper_audits:
       ParaBridge project or repository and says adapters and evaluation code
       will be released. Exact-name public searches found no owner-verifiable
       release. No new benchmark family or helper is therefore added; next
-      audit the original VoxSafeBench release independently.
+      VoxSafeBench is now independently indexed from its primary paper,
+      owner repository, and auto-gated Hugging Face release. EchoMind remains
+      the next public-family candidate requiring a primary release audit.
 
   hive_voice_keyboard_input_perturbation_release_audit:
     paper: https://arxiv.org/abs/2608.03970
@@ -17540,6 +17542,83 @@ benchmarks:
     sources:
       - https://github.com/MatthewCYM/VoiceBench
       - https://huggingface.co/datasets/hlt-lab/voicebench
+
+  - id: voxsafebench
+    name: VoxSafeBench
+    full_name: "VoxSafeBench: Not Just What Is Said, but Who, How, and Where"
+    qwen_cited_as: null
+    qwen_bucket:
+      - end_to_end_speech_dialogue
+      - audio_language_model_benchmark
+    tasks:
+      - speech_llm_safety_evaluation
+      - audio_conditioned_safety
+      - spoken_jailbreak_robustness
+      - agentic_action_safety
+      - paralinguistic_safety_grounding
+      - acoustic_instruction_injection
+      - speech_llm_fairness_evaluation
+      - acoustic_demographic_bias
+      - speech_privacy_evaluation
+      - bilingual_social_alignment
+    official:
+      project: https://amphionteam.github.io/VoxSafeBench_demopage/
+      repo: https://github.com/AmphionTeam/VoxSafeBench
+      dataset: https://huggingface.co/datasets/YuxiangW/VoxSafeBench
+      paper: https://arxiv.org/abs/2604.14548
+    download:
+      access: auto_gated_hugging_face_terms_and_authentication
+      primary:
+        - https://huggingface.co/datasets/YuxiangW/VoxSafeBench
+        - https://github.com/AmphionTeam/VoxSafeBench
+      examples:
+        - 'scripts/download/voxsafebench.sh'
+        - 'VOXSAFEBENCH_ACK_TERMS=1 VOXSAFEBENCH_DOWNLOAD_HF=1 scripts/download/voxsafebench.sh'
+      notes: >-
+        The owner-linked, auto-gated Hugging Face release packages 17 splits
+        across Safety Tier 1/2, Fairness Tier 1/2, and Privacy Tier 1/2 as raw
+        JSONL plus audio. The paper defines 22 bilingual English/Chinese task
+        families: Tier 1 compares matched text, clean speech, and diverse
+        speech for content-centric risks, while Tier 2 holds benign transcripts
+        fixed and tests whether speaker, paralinguistic, background, or overlap
+        cues change safe, fair, or privacy-preserving behavior. The repository
+        releases model runners, judge prompts, and evaluation code. Its README
+        directs inferential-privacy evaluation to the separate HearSay family,
+        which is not packaged as a VoxSafeBench split. The Hub API reports
+        25,357,365,873 bytes (about 23.6 GiB) of storage and 39,804 files, so
+        the helper fetches only public paper, code, license, project, and Hub
+        metadata by default; benchmark assets require accepted access terms,
+        authentication, an acknowledgement flag, and an explicit download
+        opt-in.
+    license:
+      data: apache_2.0_dataset_card_with_upstream_and_responsible_use_caveats
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares Apache-2.0 and the official code
+        repository includes Apache-2.0. The paper says VoxSafeBench adapts and
+        extends prior benchmarks, constructs new items, and uses some
+        off-the-shelf data; its ethics statement identifies the intended use
+        as auditing, red-teaming, and mitigation research and warns against
+        re-identification or voice profiling. Do not assume the aggregate
+        labels override upstream source rights or remove these safety and
+        privacy obligations. The arXiv perpetual license covers the article,
+        not third-party source material.
+    sources:
+      - https://arxiv.org/abs/2604.14548
+      - https://arxiv.org/html/2604.14548v2#S2
+      - https://arxiv.org/html/2604.14548v2#A1
+      - https://arxiv.org/html/2604.14548v2#A4
+      - https://arxiv.org/html/2604.14548v2#A6
+      - https://arxiv.org/html/2604.14548v2#A7
+      - https://arxiv.org/html/2604.14548v2#A8
+      - https://amphionteam.github.io/VoxSafeBench_demopage/
+      - https://github.com/AmphionTeam/VoxSafeBench
+      - https://raw.githubusercontent.com/AmphionTeam/VoxSafeBench/main/README.md
+      - https://raw.githubusercontent.com/AmphionTeam/VoxSafeBench/main/LICENSE
+      - https://api.github.com/repos/AmphionTeam/VoxSafeBench
+      - https://api.github.com/repos/AmphionTeam/VoxSafeBench/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/YuxiangW/VoxSafeBench
+      - https://huggingface.co/api/datasets/YuxiangW/VoxSafeBench
 
   - id: uro_bench_pro
     name: URO-Bench-pro

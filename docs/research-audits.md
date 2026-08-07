@@ -13,8 +13,9 @@ across child voice, emotion, impaired capacity, background child presence,
 symbolic sounds, and unsafe ambient conditions; EchoMind scores context fit,
 naturalness, colloquialism, and speech grounding. Capability-retention rows map
 to the existing MMAU-Pro, VoiceBench, and MMSU families, while GPQA is a
-text-only control. VoxSafeBench and EchoMind remain named public-family
-candidates pending independent audits of their primary releases. The three
+text-only control. VoxSafeBench is now independently indexed from its primary
+paper, owner code repository, and auto-gated Hugging Face release; EchoMind
+remains a candidate pending its own primary-source audit. The three
 1,000-query ParaBridge training pools are post-training data rather than new
 benchmarks. Version 1 gives no project or repository URL and says LoRA adapters
 and evaluation code will be released. Exact-name GitHub and Hugging Face
@@ -22,8 +23,27 @@ searches found no owner-verifiable release; an unlinked Hugging Face account
 publishes a full checkpoint with an empty Apache-2.0 card but no paper citation
 or ownership evidence. Appendix K's upstream license summary does not license
 the absent ParaBridge pools, manifests, outputs, judge records, or code. No
-counted family or helper is added; VoxSafeBench is the next focused provenance
-candidate.
+counted ParaBridge family or helper is added.
+
+VoxSafeBench is now indexed as a public, auto-gated speech-LLM social-alignment
+benchmark after reviewing the primary paper's Sections 2-5 and Appendices A,
+D, and F-H. Its 22 bilingual task families separate content-centric Tier 1
+from audio-conditioned Tier 2 across safety, fairness, and privacy, including
+spoken jailbreaks, agentic risks, cue-grounded warnings/refusals, overlapping
+instruction injection, minimal-pair acoustic bias, and privacy-aware response
+behavior. The owner repository releases inference runners, judge prompts, and
+evaluation code under Apache-2.0. The linked Hugging Face dataset is auto-gated
+and exposes 17 packaged JSONL/audio splits; its API reports about 23.6 GiB of
+storage across 39,804 files. Inferential privacy instead delegates to the
+separate HearSay benchmark and is not a packaged VoxSafeBench split. The helper
+therefore downloads only public documentation, code/license, project, and Hub
+metadata by default and requires accepted terms, authentication,
+acknowledgement, and explicit opt-in for the full snapshot. The dataset card
+declares Apache-2.0, but the paper describes adapted and off-the-shelf sources,
+so the aggregate label should not be treated as overriding upstream rights.
+The paper's responsible-use guidance identifies the intended use as alignment
+auditing, red-teaming, and mitigation and warns against re-identification or
+voice profiling. EchoMind is the next focused provenance candidate.
 
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
