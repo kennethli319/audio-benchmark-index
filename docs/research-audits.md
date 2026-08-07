@@ -344,6 +344,25 @@ CC BY-NC-SA 4.0, WorldSense has conflicting CC BY and CC BY-NC-SA statements,
 and Video-MME retains custom academic-use and redistribution restrictions. No
 duplicate family or new download helper is added.
 
+The August 2026 *OmniPack* paper is recorded as an existing-family protocol
+and release audit of training-free token compression for pretrained
+OmniLLMs. Sections 4.1-4.4 and Appendix A evaluate Qwen2.5-Omni-7B/3B and
+MiniCPM-o-2.6 on AVUT, WorldSense, Daily-Omni, Video-MME, and LVOmniBench
+through LMMs-Eval, combining pre-LLM importance, coverage, and merging with
+later query-conditioned audio-visual selection. The AVUT run is specifically
+the public 691-video, 1,734-question human-annotated subset, not the full
+family; the other evaluations map to existing entries. This directly audits
+pretrained audio-language-model interfaces by measuring retained accuracy,
+FLOPs, prefill latency, and peak memory under model-specific visual/audio
+budgets down to 10% pre-LLM retention and a further 50% inner-LLM reduction.
+The official repository contained only a two-line implementation announcement
+on August 7, with no code, license, configurations, exact LMMs-Eval revision,
+paper-specific AVUT manifest, predictions, token-selection records, or runtime
+logs. Upstream terms remain controlling: AVUT is unspecified, Daily-Omni is CC
+BY-NC-SA 4.0, WorldSense has conflicting license statements, Video-MME uses
+custom academic restrictions, and LVOmniBench is gated with no benchmark-level
+license stated. No duplicate benchmark family or helper is added.
+
 The August 2026 *KVAE* report is recorded as an audio-tokenizer interface and
 partial-release audit. Sections 6.5-6.7 compare posterior-mean reconstruction
 on the existing AudioSet eval, MUSDB18-HQ, and EARS families, then train the

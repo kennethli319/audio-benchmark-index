@@ -298,6 +298,101 @@ paper_audits:
       calibration split, task revisions, predictions, or score records; no new
       download helper is added.
 
+  omnipack_unified_token_compression_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.03812
+    title: "OmniPack: Unified Token Compression for Efficient Omni-modal Large Language Models"
+    sections: 4.1-4.4_and_appendix_A.1-A.7
+    status: audited_existing_public_families_with_unreleased_compression_implementation_and_score_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: AVUT human-annotated subset
+        index_id: avut
+        status: existing_public_family_with_paper_specific_public_subset_selection
+        role: audio_centric_token_compression_evaluation
+        protocol: >-
+          Evaluate the 691-video, 1,734-question human-annotated AVUT subset,
+          rather than the full 2,662-video, 11,609-question family. Report
+          accuracy under model-specific visual/audio token allocations at
+          25%, 20%, 15%, and 10% pre-LLM retention, with an additional 50%
+          inner-LLM reduction for OmniPack and matched progressive baselines.
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: existing_public_family
+        role: synchronized_audio_visual_reasoning_and_ablation_evaluation
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: existing_public_family
+        role: temporal_audio_visual_alignment_evaluation
+      - cited_as: VideoMME
+        index_id: video_mme
+        status: existing_public_restricted_family
+        role: short_medium_and_long_video_duration_control
+      - cited_as: LVOmniBench
+        index_id: lvomnibench
+        status: existing_gated_family
+        role: long_context_audio_visual_retention_evaluation
+    protocol_note: >-
+      OmniPack is training-free. Before the LLM it combines modality-specific
+      importance selection, global coverage selection, and similarity-aware
+      merging; after layer 18 for the two 28-layer backbones or layer 26 for
+      Qwen2.5-Omni-3B, it applies text-guided audio-visual collaborative
+      selection. The paper evaluates Qwen2.5-Omni-7B, Qwen2.5-Omni-3B, and
+      MiniCPM-o-2.6 through LMMs-Eval, reports benchmark accuracy, and measures
+      FLOPs with 100 generated tokens while excluding encoders, projectors,
+      text tokens, selection operations, and the language-model head. The
+      exact model-specific visual/audio allocations are tabulated in Appendix
+      A.2; the main 7B comparisons additionally report prefill latency and peak
+      GPU memory on NVIDIA H20 hardware.
+    release_audit:
+      upstream_benchmark_families: public_or_gated_with_existing_family_specific_terms
+      paper_and_aggregate_tables: public
+      official_repository: public_placeholder_only
+      omnipack_implementation_and_configuration_files: announced_not_released
+      exact_lmms_eval_revision_and_task_adapter_patches: not_released
+      exact_avut_691_video_item_manifest: not_separately_released_by_paper
+      predictions_and_per_item_scores: not_released
+      token_selection_records_and_compressed_sequences: not_released
+      runtime_memory_and_flops_logs: not_released
+      baseline_reproduction_configurations: not_released
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      repository_code: not_specified_placeholder_only
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: family_specific_terms_apply
+      note: >-
+        The article license does not license the announced implementation or
+        absent configurations, predictions, token selections, and logs. AVUT
+        states no benchmark data license; Daily-Omni is CC BY-NC-SA 4.0;
+        WorldSense has conflicting CC BY 4.0 and CC BY-NC-SA 4.0 statements;
+        Video-MME imposes custom academic-use and redistribution restrictions;
+        and LVOmniBench has no stated benchmark-level license and requires
+        gated access. The OmniPack repository has no detected license.
+    sources:
+      - https://arxiv.org/abs/2608.03812
+      - https://arxiv.org/html/2608.03812v1#S4.SS1
+      - https://arxiv.org/html/2608.03812v1#S4.SS2
+      - https://arxiv.org/html/2608.03812v1#S4.SS3
+      - https://arxiv.org/html/2608.03812v1#S4.SS4
+      - https://arxiv.org/html/2608.03812v1#A1.SS1
+      - https://arxiv.org/html/2608.03812v1#A1.SS2
+      - https://arxiv.org/html/2608.03812v1#A1.SS7
+      - https://github.com/RowanSu/OmniPack
+      - https://api.github.com/repos/RowanSu/OmniPack
+      - https://api.github.com/repos/RowanSu/OmniPack/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/RowanSu/OmniPack/main/README.md
+      - https://export.arxiv.org/api/query?id_list=2608.03812
+    note: >-
+      This evaluation is directly relevant to pretrained audio-language-model
+      interfaces because it tests how much audio and video evidence can be
+      removed before and within an OmniLLM while retaining audio-grounded and
+      long-context cross-modal reasoning. All five source families and their
+      existing access helpers are already indexed, so the paper-specific
+      protocol is not counted as another benchmark. On August 7, the official
+      repository contained only a two-line README announcing an official
+      implementation; no executable code, license, configuration, manifest,
+      predictions, or score package was present. No new download helper is
+      added.
+
   vorch_omni_multitask_human_evaluation_audit:
     paper: https://arxiv.org/abs/2608.05803
     title: "Vorch-Omni: Multi-Task Orchestration of Sight and Sound"
