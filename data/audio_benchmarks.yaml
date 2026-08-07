@@ -9,6 +9,104 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  lilac_idempotent_codec_interface:
+    paper: https://arxiv.org/abs/2608.05727
+    title: "LILAC: An Idempotent Neural Speech Codec"
+    sections: 5-6 and supplementary sections 2-6
+    status: audited_existing_public_corpora_with_unreleased_codec_artifacts_and_protocol_outputs
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: LibriSpeech test-clean
+        index_id: librispeech
+        status: public_existing_family
+        protocol: >-
+          Score all 2,620 test-clean utterances after one codec pass using
+          UTMOS, Whisper-large-v3 delta WER, SCOREQ, PESQ, STOI, SI-SNR,
+          mel-cepstral distortion, mel-spectrogram L1 distance, and WavLM
+          speaker-embedding cosine similarity. Verify exact token recovery
+          after one decode-re-encode pass on the full split, then run 100
+          cycles on a random reader-balanced 100-clip selection.
+      - cited_as: LibriTTS-R test
+        index_id: libritts
+        status: public_derivative_of_existing_family
+        protocol: >-
+          Apply the same single-pass quality panel to 4,837 test utterances
+          and verify one-pass token recovery on the full split. LibriTTS-R is
+          a restored-speech derivative of LibriTTS rather than a separately
+          counted benchmark family in this index.
+      - cited_as: VCTK
+        index_id: vctk
+        status: public_existing_family
+        protocol: >-
+          Apply the same single-pass quality panel to 3,094 utterances as a
+          corpus-disjoint generalization test. Three held-out VCTK items also
+          appear in the paper's listening study.
+      - cited_as: HiFiTTS-2 held-out evaluation panel
+        index_id: null
+        status: paper_specific_unreleased_training_corpus_holdout
+        protocol: >-
+          Evaluate the single-pass quality panel on 585 clips from 40
+          randomly selected readers held out from the paper's 31,700-hour
+          HiFiTTS-2 training corpus.
+    additional_protocols:
+      repeated_downstream_stability: >-
+        On 600 LibriSpeech utterances balanced across 60 speakers, compare
+        speaker-verification EER and Whisper delta WER after 1, 10, and 100
+        self-encoding cycles for LILAC, FocalCodec, Mimi, EnCodec, and DAC.
+      listening_test: >-
+        Forty retained paid-platform listeners rate nine held-out items,
+        three each from LibriSpeech test-clean, LibriTTS-R test, and VCTK,
+        across eight MUSHRA-style conditions. Playback is uncontrolled and
+        the authors explicitly state that the study is not strictly
+        BS.1534-conformant.
+    release_audit:
+      upstream_librispeech_libritts_and_vctk: available_from_existing_public_families
+      hifitts_2_training_corpus_and_585_item_holdout: not_released
+      exact_random_100_clip_drift_manifest: not_released
+      exact_600_utterance_downstream_manifest: not_released
+      nine_item_listening_study_manifest: not_released
+      codec_outputs_tokens_predictions_and_per_item_scores: not_released
+      listening_assignments_and_raw_ratings: not_released
+      aggregate_results_and_protocol_details: paper_and_supplement_only
+      claimed_github_repository: returns_404
+      claimed_hugging_face_checkpoint: returns_401_invalid_username_or_password
+      claimed_demo_page: returns_404
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      upstream_evaluation_audio: upstream_family_terms_apply
+      hifitts_2_and_paper_specific_manifests: not_specified_unreleased
+      codec_code_and_checkpoint: not_verifiable_unavailable
+      listening_data_and_model_outputs: not_specified_unreleased
+      note: >-
+        The arXiv distribution license covers the article, not the absent
+        codec implementation, checkpoint, demo audio, held-out HiFiTTS-2
+        material, evaluation manifests, reconstructed outputs, tokens,
+        predictions, scores, or listener records. LibriSpeech and VCTK are
+        CC BY 4.0; LibriTTS-R inherits LibriTTS and source-material terms.
+    sources:
+      - https://arxiv.org/abs/2608.05727
+      - https://arxiv.org/html/2608.05727v1#Sx5
+      - https://arxiv.org/html/2608.05727v1#Sx6
+      - https://arxiv.org/html/2608.05727v1#S2
+      - https://arxiv.org/html/2608.05727v1#S4
+      - https://arxiv.org/html/2608.05727v1#S5
+      - https://arxiv.org/html/2608.05727v1#S6
+      - https://github.com/Rick-McCoy/lilac-codec
+      - https://api.github.com/search/repositories?q=lilac-codec
+      - https://huggingface.co/julianyi/lilac
+      - https://rick-mccoy.github.io/lilac-demo
+    note: >-
+      This is directly relevant to speech-codec tokenizers as interfaces for
+      speech LLM and generation pipelines: the paper measures whether
+      discrete tokens, intelligibility, and speaker identity survive repeated
+      decode-re-encode operations. It introduces a useful protocol rather
+      than a new public evaluation dataset. On 2026-08-06 the article's
+      claimed code and demo URLs returned 404, the checkpoint URL returned
+      401 with an invalid-username-or-password response, and an exact-name
+      GitHub repository search found no result. Because the implementation,
+      fixed selections, outputs, and per-item records cannot be reproduced,
+      this audit adds no benchmark family or download helper.
+
   audioscape_tta_structured_soundscape:
     paper: https://arxiv.org/abs/2608.04479
     title: "AudioScape-TTA: A Structured Soundscape Benchmark for Fine-Grained Text-to-Audio Evaluation"

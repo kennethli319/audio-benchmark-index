@@ -7,6 +7,26 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *LILAC* paper is recorded as a speech-codec token-interface
+and release-status audit. Sections 5-6 and supplementary sections 2-6 score
+one-pass reconstruction on the existing LibriSpeech test-clean, LibriTTS-R,
+and VCTK families, plus an unreleased 585-item HiFiTTS-2 holdout. Its central
+evaluation checks exact token recovery across all 7,457 LibriSpeech and
+LibriTTS-R utterances, runs 100 decode-re-encode cycles on a random balanced
+100-clip LibriSpeech selection, and measures speaker EER and Whisper delta WER
+through 100 cycles on 600 utterances. A separate uncontrolled MUSHRA-style
+study has 40 retained listeners rate nine items from the three public
+families. These protocols directly test whether a speech tokenizer remains a
+stable interface for speech-LLM and generation pipelines. However, the paper's
+claimed GitHub repository and demo page returned 404 on 2026-08-06, its
+claimed Hugging Face checkpoint returned 401 with an invalid-username-or-
+password response, and an exact-name GitHub repository search found no
+result. Fixed random selections, HiFiTTS-2 data, reconstructed outputs,
+tokens, predictions, per-item scores, and raw listener records are likewise
+unreleased. The arXiv distribution license does not license those absent
+artifacts; upstream corpus terms still apply. No new benchmark family or
+download helper is added.
+
 The August 2026 *AudioScape-TTA* paper is recorded as an unreleased
 text-to-audio instruction-following and evaluator audit. Sections 3-4 and
 supplementary sections A-E define 2,258 roughly 9.95-second
