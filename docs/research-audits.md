@@ -7,6 +7,21 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 AffectDF paper adds a public emotional-speech deepfake family
+that directly tests audio-language-model safety and post-training robustness.
+Its 285,797 samples cover five emotions and 21 TTS, VC, EVC, and LALM attack
+conditions, with speaker-disjoint train, development, and test partitions and
+acted-versus-spontaneous test conditions. The ungated Hugging Face release
+provides approximately 40.2 GB of audio plus protocol rows identifying speaker,
+attack, emotion, generation method/model, and real/spoof status. The paper also
+benchmarks prompted Qwen2.5-Omni, Qwen3-Omni, and Voxtral, plus LoRA-tuned
+Voxtral; the owner GitHub repository publishes evaluation outputs and
+checkpoints. AffectDF declares CC BY-NC 4.0 for research and non-commercial use
+subject to the ESD, MSP-Podcast, and generation-model terms, while the separate
+evaluation-output repository states no license. The helper therefore fetches
+only documentation and metadata by default, with independent opt-ins for the
+small protocol archive and explicitly selected large audio partitions.
+
 The August 2026 *Beyond Prompt Adherence* paper is recorded as a released-
 protocol audit of attribute preservation in instruction-controlled speech
 generation. Sections 3, 5-6, and supplementary sections 9-13 pair neutral and

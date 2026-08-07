@@ -1211,6 +1211,12 @@ ADD2023_DOWNLOAD_ARCHIVES=1 ADD2023_RECORDS="track1_1 track2_eval" scripts/downl
 # CC BY-NC-ND 4.0; select records explicitly.
 CODECFAKE_DOWNLOAD_ARCHIVES=1 CODECFAKE_RECORDS="dev test_unseen" scripts/download/codecfake.sh
 
+# AffectDF saves owner documentation and release metadata by default. Its
+# approximately 1.0 MB protocols and approximately 40.2 GB audio are separate
+# opt-ins; select audio partitions explicitly.
+AFFECTDF_DOWNLOAD_PROTOCOLS=1 scripts/download/affectdf.sh
+AFFECTDF_DOWNLOAD_AUDIO=1 AFFECTDF_SPLITS="Dev" scripts/download/affectdf.sh
+
 # DFADD downloads official paper/repository/dataset metadata by default. The
 # approximately 28.6 GB dataset-viewer snapshot and corrected component ZIPs
 # are separate explicit opt-ins.

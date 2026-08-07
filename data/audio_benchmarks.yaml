@@ -24909,6 +24909,76 @@ benchmarks:
       - https://arxiv.org/abs/2210.02437
       - https://www.isca-archive.org/asvspoof_2021/yamagishi21_asvspoof.pdf
 
+  - id: affectdf
+    name: AffectDF
+    full_name: "AffectDF: The Most Comprehensive Benchmark for Speech Deepfake Detection against Emotionally Expressive Attacks"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speaker_verification_anti_spoofing
+      - audio_deepfake_detection
+    category: speech_deepfake_detection
+    tasks:
+      - emotional_speech_deepfake_detection
+      - audio_deepfake_detection
+      - synthetic_speech_detection
+      - audio_language_model_output_detection
+      - cross_attack_generalization
+      - cross_emotion_robustness
+      - acted_vs_spontaneous_speech_robustness
+    official:
+      paper: https://arxiv.org/abs/2608.05507
+      project_page: https://affectdf33-data.github.io/AffectDF-Data/
+      dataset: https://huggingface.co/datasets/AffectDF/AffectDF_EmotionSDD
+      evaluation_outputs: https://github.com/affectdf33-data/codes
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/AffectDF/AffectDF_EmotionSDD
+        - https://huggingface.co/datasets/AffectDF/AffectDF_EmotionSDD/resolve/main/Protocols.tar.gz
+      examples:
+        - 'scripts/download/affectdf.sh'
+        - 'AFFECTDF_DOWNLOAD_PROTOCOLS=1 scripts/download/affectdf.sh'
+        - 'AFFECTDF_DOWNLOAD_AUDIO=1 AFFECTDF_SPLITS="Dev" scripts/download/affectdf.sh'
+      notes: >-
+        The English benchmark contains 285,797 samples across five emotions
+        and 21 TTS, VC, EVC, and large audio-language-model attack conditions.
+        Its speaker-disjoint partitions contain 86,999 training, 23,330
+        development, and 175,468 test samples; the test set includes both
+        acted ESD and spontaneous MSP-Podcast source speech. Protocol rows
+        expose speaker, audio, attack, emotion, generation method and model,
+        and real/spoof labels, supporting EER plus emotion-, attack-, and
+        speaking-style robustness analysis. The paper also evaluates prompted
+        Qwen2.5-Omni, Qwen3-Omni, and Voxtral and LoRA-tuned Voxtral. The helper
+        saves owner documentation and release metadata by default. The
+        approximately 1.0 MB protocol archive and approximately 40.2 GB of
+        train/development/test audio are separate explicit opt-ins.
+    license:
+      data: cc-by-nc-4.0_with_source_corpus_and_generation_model_terms
+      code: not_specified
+      notes: >-
+        The paper and Hugging Face card declare AffectDF CC BY-NC 4.0 for
+        research and non-commercial use, subject to the original ESD,
+        MSP-Podcast, and generation-model terms. The evaluation-output
+        repository exposes no detected license, so public score files,
+        checkpoints, and implementation material must not be assumed to share
+        the dataset license. Review every incorporated source and model term
+        before use or redistribution.
+    sources:
+      - https://arxiv.org/abs/2608.05507
+      - https://arxiv.org/html/2608.05507v1#S3
+      - https://arxiv.org/html/2608.05507v1#S4
+      - https://arxiv.org/html/2608.05507v1#S5.SS3
+      - https://arxiv.org/html/2608.05507v1#A1
+      - https://arxiv.org/html/2608.05507v1#A11
+      - https://affectdf33-data.github.io/AffectDF-Data/
+      - https://huggingface.co/datasets/AffectDF/AffectDF_EmotionSDD
+      - https://huggingface.co/datasets/AffectDF/AffectDF_EmotionSDD/raw/main/README.md
+      - https://huggingface.co/api/datasets/AffectDF/AffectDF_EmotionSDD
+      - https://huggingface.co/api/datasets/AffectDF/AffectDF_EmotionSDD/tree/main?recursive=false&expand=true
+      - https://github.com/affectdf33-data/codes
+      - https://raw.githubusercontent.com/affectdf33-data/codes/main/README.md
+      - https://api.github.com/repos/affectdf33-data/codes
+
   - id: codecfake
     name: Codecfake
     full_name: "The Codecfake Dataset and Countermeasures for the Universally Detection of Deepfake Audio"
