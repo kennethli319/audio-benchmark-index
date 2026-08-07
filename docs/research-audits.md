@@ -4,6 +4,27 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The June 2026 *ParaBridge* paper is recorded as an existing-coverage and
+unreleased-artifact audit of paralinguistic speech-LLM post-training. Sections
+4.1-4.5 and Appendices A-C, E, and K-L evaluate whether on-policy
+self-distillation makes scaffold-free models act on safety- and empathy-relevant
+acoustic cues. VoxSafeBench Tier-2 measures cue-grounded warnings and refusals
+across child voice, emotion, impaired capacity, background child presence,
+symbolic sounds, and unsafe ambient conditions; EchoMind scores context fit,
+naturalness, colloquialism, and speech grounding. Capability-retention rows map
+to the existing MMAU-Pro, VoiceBench, and MMSU families, while GPQA is a
+text-only control. VoxSafeBench and EchoMind remain named public-family
+candidates pending independent audits of their primary releases. The three
+1,000-query ParaBridge training pools are post-training data rather than new
+benchmarks. Version 1 gives no project or repository URL and says LoRA adapters
+and evaluation code will be released. Exact-name GitHub and Hugging Face
+searches found no owner-verifiable release; an unlinked Hugging Face account
+publishes a full checkpoint with an empty Apache-2.0 card but no paper citation
+or ownership evidence. Appendix K's upstream license summary does not license
+the absent ParaBridge pools, manifests, outputs, judge records, or code. No
+counted family or helper is added; VoxSafeBench is the next focused provenance
+candidate.
+
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 

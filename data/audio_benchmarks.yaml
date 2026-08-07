@@ -9,6 +9,119 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  parabridge_paralinguistic_post_training_evaluation_audit:
+    paper: https://arxiv.org/abs/2606.10581
+    title: "ParaBridge: Bridging Paralinguistic Perception and Dialogue Behavior in Speech Language Models"
+    sections: 4.1-4.5_and_appendices_A-C_E_K-L
+    status: audited_existing_and_candidate_public_benchmarks_with_unreleased_post_training_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: VoxSafeBench Tier-2
+        index_id: null
+        status: public_family_candidate_requires_primary_release_audit
+        protocol: >-
+          Evaluate whether child voice, emotion, impaired capacity, child
+          presence, symbolic background sounds, and unsafe ambient conditions
+          alter safety-sensitive spoken responses. Five open-ended tracks use
+          a DeepSeek-chat judge to assign direct answer, warning, refusal, or
+          skip labels and report cue-grounded Safety-Awareness Rate; the
+          unsafe-ambient track uses Yes/No accuracy. ParaBridge reports both
+          scaffold-free results and the benchmark's two fixed scaffold prompts.
+      - cited_as: EchoMind
+        index_id: null
+        status: public_family_candidate_requires_primary_release_audit
+        protocol: >-
+          Evaluate open-ended empathetic spoken dialogue with GPT-4o ratings
+          from 1-5 for context fit, response naturalness, colloquialism, and
+          grounding in speech and paralinguistic information. ParaBridge uses
+          the official no-scaffold and enhanced-scaffold conditions and reports
+          each dimension plus their unweighted average.
+      - cited_as: MMAU-Pro
+        index_id: mmau_pro
+        status: existing_public_family
+        protocol: >-
+          Check preservation of general audio understanding after post-training
+          with the benchmark's official closed-ended and Audio Instruction
+          Following scoring rules in the scaffold-free setting.
+      - cited_as: VoiceBench
+        index_id: voicebench
+        status: existing_public_family
+        protocol: >-
+          Check preservation of voice-assistant capability with the official
+          leaderboard aggregation: GPT-judge ratings for AlpacaEval,
+          CommonEval, and WildVoice, and accuracy for OpenBookQA, MMSU, and BBH.
+      - cited_as: MMSU
+        index_id: mmsu
+        status: existing_public_family
+        protocol: >-
+          Use official accuracy both as a standalone capability-preservation
+          measure and for the paper's paralinguistic-perception analysis.
+      - cited_as: GPQA
+        index_id: null
+        status: public_text_benchmark_out_of_audio_index_scope
+        protocol: >-
+          Use official accuracy as a text-reasoning retention check; GPQA does
+          not become an audio benchmark merely because it appears beside the
+          speech evaluations.
+    training_data:
+      - cited_as: ParaBridge child-voice, child-presence, and emotion pools
+        status: paper_described_not_publicly_released
+        note: >-
+          Three disjoint 1,000-query pools follow the VoxSafeBench construction
+          pipeline but use newly authored prompts and separate child speech,
+          background, and emotion sources. They are post-training data, not
+          separately counted benchmarks; the paper reports prompt-overlap and
+          WavLM embedding checks against the VoxSafeBench test split.
+    release_audit:
+      upstream_benchmark_test_splits: referenced_as_public
+      parabridge_training_audio_queries_and_manifests: not_released
+      exact_source_corpora_and_item_provenance: not_specified
+      lora_adapters: promised_for_future_release_without_url
+      training_and_evaluation_code: promised_for_future_release_without_url
+      scaffold_prompts_and_judge_schemas: specified_in_paper_appendix
+      model_outputs_judge_records_and_per_item_scores: not_released
+      exact_name_github_repository_search: no_matching_repository
+      exact_name_hugging_face_dataset_search: no_results
+      exact_name_hugging_face_model_search: one_unlinked_empty_card_full_checkpoint_not_verified_as_owner_release
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      parabridge_artifacts: not_specified_unreleased
+      upstream_benchmarks: upstream_terms_apply
+      note: >-
+        Appendix K states Apache-2.0 for VoxSafeBench and VoiceBench, MIT for
+        MMSU and GPQA, and no explicit SPDX license for EchoMind and MMAU-Pro.
+        Those statements require verification at each primary release and do
+        not license ParaBridge's absent training pools, manifests, outputs, or
+        evaluation records. The unlinked Hugging Face checkpoint card declares
+        Apache-2.0 but contains no paper citation or ownership evidence, so it
+        is not treated as the promised official adapter or code release.
+    sources:
+      - https://arxiv.org/abs/2606.10581
+      - https://arxiv.org/html/2606.10581v1#S4.SS1
+      - https://arxiv.org/html/2606.10581v1#S4.SS2
+      - https://arxiv.org/html/2606.10581v1#S4.SS3
+      - https://arxiv.org/html/2606.10581v1#S4.SS4
+      - https://arxiv.org/html/2606.10581v1#S4.SS5
+      - https://arxiv.org/html/2606.10581v1#A1.SS4
+      - https://arxiv.org/html/2606.10581v1#A3
+      - https://arxiv.org/html/2606.10581v1#A11
+      - https://export.arxiv.org/api/query?id_list=2606.10581
+      - https://api.github.com/search/repositories?q=ParaBridge%20speech%20language%20model
+      - https://huggingface.co/api/datasets?search=ParaBridge
+      - https://huggingface.co/api/models?search=ParaBridge
+      - https://huggingface.co/api/models/Parabridge/MainCheckpoint
+    note: >-
+      ParaBridge is a directly relevant post-training evaluation: it tests
+      whether on-policy self-distillation makes speech language models act on
+      safety- and empathy-relevant acoustic cues while retaining general audio
+      capability. All reported benchmark rows map either to existing indexed
+      families, two public-family candidates needing their own primary release
+      audits, or the out-of-scope text-only GPQA family. Version 1 links no
+      ParaBridge project or repository and says adapters and evaluation code
+      will be released. Exact-name public searches found no owner-verifiable
+      release. No new benchmark family or helper is therefore added; next
+      audit the original VoxSafeBench release independently.
+
   hive_voice_keyboard_input_perturbation_release_audit:
     paper: https://arxiv.org/abs/2608.03970
     title: "Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations"
