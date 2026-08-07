@@ -7,6 +7,27 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 *Qwen-Audio-3.0-Gen-Preview* report is inventoried across
+sections 6-6.1 and Tables 2-11 as a mixed public-family and unreleased-protocol
+audit. Public evaluations map to the existing Seed-TTS Eval, AudioCaps, Song
+Describer, and LibriSpeech families; the cited MuChin and SongBench sources are
+retained as focused provenance follow-ups rather than inferred additions. The report also
+defines an in-house reference-conditioned multi-speaker benchmark with a few
+hundred English and Chinese cases and an in-house rich-timeline benchmark with
+on the order of one hundred temporally specified scenes. Neither is released.
+The AudioCaps fixed random judge subset, SongBench small-set selection, and
+LibriSpeech-PC-200 manifest are likewise absent, as are generated comparison
+audio, judge prompts and item-level records, evaluation code, and model
+weights. This inventory is directly relevant to audio-foundation-model
+pretraining and post-training: it separates VAE reconstruction and controlled
+representation probes from evaluations of speaker consistency, caption
+fulfillment, long-range generation, and temporal instruction following.
+Version 2 provides no project or artifact link, and the established Qwen-Audio
+repository plus exact-name GitHub and Hugging Face searches expose no matching
+3.0 Gen Preview release. The paper is CC BY 4.0, but that does not license the
+absent benchmarks, manifests, outputs, code, model, or upstream media. No
+public family or download helper is added.
+
 The August 2026 *C3PO* paper is recorded as an unreleased omnimodal
 audio-reasoning and post-training audit. Sections 3-4 and appendices A-F define
 25 templates for Information Composition and Counterfactual Conflict over

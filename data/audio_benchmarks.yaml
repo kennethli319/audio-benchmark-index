@@ -9,6 +9,127 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  qwen_audio_3_gen_preview_evaluation:
+    paper: https://arxiv.org/abs/2607.27011
+    title: "Qwen-Audio-3.0-Gen-Preview Technical Report"
+    sections: 6-6.1_and_tables_2-11
+    status: audited_mixed_existing_public_families_and_internal_unreleased_protocols
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: Seed-TTS-Eval
+        index_id: seed_tts_eval
+        status: public_family_with_external_manual_download
+        role: reference_conditioned_generation_and_vae_reconstruction
+        protocol: >-
+          Table 2 evaluates zero-shot English, Chinese, and Hard-ZH speech
+          generation with WER or CER and WavLM speaker similarity. Table 8
+          separately evaluates VAE reconstruction on the English and Chinese
+          subsets with perceptual, spectral, signal, and intelligibility
+          metrics.
+      - cited_as: reference-conditioned multi-speaker benchmark
+        index_id: null
+        status: internal_unreleased
+        role: post_training_multi_speaker_consistency_evaluation
+        protocol: >-
+          Table 3 evaluates a few hundred English and Chinese cases drawn from
+          Seed-TTS-Eval, with roughly one hundred reference speakers per
+          language. Each case supplies multiple reference utterances and a
+          speaker-attributed script; WER or CER, reference similarity, and
+          within-speaker cross-turn consistency are reported.
+      - cited_as: AudioCaps OpenSound test release
+        index_id: audiocaps
+        status: public_source_family_with_unreleased_generated_outputs_and_fixed_subset
+        role: text_conditioned_generation_and_vae_reconstruction
+        protocol: >-
+          Tables 4-5 use all 4,411 OpenSound test caption instances for
+          LAION-CLAP, MS-CLAP, Qwen3-Omni judging, and AudioBox perceptual
+          metrics. A fixed random subset on the order of one hundred prompts
+          adds Qwen3.5-Omni-Plus and Gemini-3.1-Pro-Preview judges. Table 10
+          also evaluates VAE reconstruction on AudioCaps.
+        note: >-
+          The report links the public OpenSound viewer, but does not release
+          the random-subset row IDs or seed, generated audio, judge prompts,
+          per-item judgments, or score records.
+      - cited_as: rich-timeline audio benchmark
+        index_id: null
+        status: internal_unreleased
+        role: post_training_compositional_and_temporal_instruction_following
+        protocol: >-
+          Table 6 evaluates on the order of one hundred multi-event scenes,
+          each tens of seconds long with requested start and end times.
+          Gemini-3.1-Pro-Preview and Qwen3.5-Omni-Plus judge event recall,
+          temporal mIoU, and IoU at 0.3 and 0.5.
+      - cited_as: SongBench small evaluation set
+        index_id: null
+        status: cited_external_benchmark_with_paper_specific_selection_unreleased
+        role: long_range_song_generation_evaluation
+        protocol: >-
+          Table 7 compares seven evaluator components--melody, arrangement,
+          musicality, vocal quality, instrumental quality, mixing, and
+          structure--on the same unspecified small sample. Parenthesized
+          reward-post-trained baseline scores come from a larger separate
+          benchmark and are explicitly not comparable.
+      - cited_as: Song Describer Dataset
+        index_id: song_describer
+        status: public
+        role: vae_reconstruction_evaluation
+      - cited_as: MuChin
+        index_id: null
+        status: cited_external_source_release_not_yet_provenance_audited
+        role: vae_reconstruction_evaluation
+      - cited_as: LibriSpeech-PC-200
+        index_id: librispeech
+        status: public_source_family_with_unreleased_derived_selection
+        role: controlled_downstream_vae_probe
+        protocol: >-
+          Table 11 trains the same F5-style generator against alternative
+          target representations and reports WER, speaker similarity, and
+          UTMOS. The exact 200-case manifest and training configuration are
+          not released.
+    release_audit:
+      in_house_multi_speaker_inputs_and_manifest: not_released
+      rich_timeline_prompts_references_and_manifest: not_released
+      audiocaps_fixed_subset_ids_and_seed: not_released
+      songbench_small_set_manifest: not_released
+      librispeech_pc_200_manifest: not_released
+      generated_comparison_audio: not_released
+      judge_prompts_predictions_and_per_item_scores: not_released
+      evaluation_and_preprocessing_code: not_released
+      model_code_and_weights: not_released
+      public_project_or_model_page: not_provided
+    license:
+      paper: CC-BY-4.0
+      model_code_and_weights: not_specified_unreleased
+      internal_benchmarks_and_outputs: not_specified_unreleased
+      public_source_data: upstream_family_terms_apply
+      note: >-
+        CC BY 4.0 covers the report, not the absent in-house benchmark cases,
+        derived manifests, generated audio, judgments, code, or model. The
+        separately released Seed-TTS-Eval, AudioCaps/OpenSound, Song Describer,
+        and LibriSpeech materials retain their own terms. SongBench and MuChin
+        require a separate primary-source release and license audit.
+    sources:
+      - https://arxiv.org/abs/2607.27011
+      - https://arxiv.org/html/2607.27011v2#S6
+      - https://arxiv.org/html/2607.27011v2#S6.SS1
+      - https://huggingface.co/datasets/OpenSound/AudioCaps/viewer/default/test
+      - https://arxiv.org/abs/2604.25937
+      - https://github.com/QwenLM/Qwen-Audio
+      - https://api.github.com/repos/QwenLM/Qwen-Audio/git/trees/main?recursive=1
+      - https://api.github.com/search/repositories?q=%22Qwen-Audio-3.0-Gen-Preview%22
+      - https://huggingface.co/api/models?search=Qwen-Audio-3.0-Gen-Preview
+      - https://huggingface.co/api/datasets?search=Qwen-Audio-3.0-Gen-Preview
+    note: >-
+      Version 2 gives no project page, artifact repository, model card, or
+      release commitment. The established Qwen-Audio repository contains no
+      3.0 Gen Preview materials, and exact-name GitHub and Hugging Face model
+      and dataset searches found no matching release on the verification
+      date. This audit maps public evaluations to existing families where
+      possible, keeps paper-specific and internal protocols distinct, adds no
+      benchmark family or helper, and does not treat public source data as a
+      release of the report's missing manifests and outputs. SongBench and
+      MuChin remain focused follow-up provenance candidates.
+
   c3po_cross_modal_composition_counterfactual_audit:
     paper: https://arxiv.org/abs/2608.05381
     title: "C3PO: Evaluating Cross-Modal Composition and Counterfactual Performance in Omnimodal Models"
