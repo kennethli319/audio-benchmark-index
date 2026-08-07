@@ -9,6 +9,120 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speechcombine_pretraining_transfer_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.02214
+    title: "Unlocking Speech-Text Compositional Powers: Instruction-Following Speech Language Models without Instruction Tuning"
+    sections: 4.1-4.6_appendices_B-C
+    status: audited_existing_public_families_and_public_derived_evaluation_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: VoiceBench
+        index_id: voicebench
+        status: existing_public_family_with_released_paper_selection
+        tracks:
+          - OpenBookQA
+          - SDQA
+          - MMSU
+        protocol: >-
+          Evaluate speech-input question answering with answer accuracy. The
+          paper applies an explicit multiple-choice output template to
+          OpenBookQA and MMSU; its official Hugging Face model repository
+          releases the selected MMSU and OpenBookQA parquet data and reference
+          dictionaries, but does not package SDQA in the listed snapshot.
+      - cited_as: URO-Bench
+        index_id: uro_bench_pro
+        status: existing_public_family_with_released_paper_snapshot
+        tracks:
+          - GSM8kEval
+          - MLCpro-en
+          - TruthfulEval
+          - MLC
+          - UnderEmotion-en
+          - GenEmotion-en
+        protocol: >-
+          Test spoken math, logic, truthfulness, general reasoning, emotion
+          understanding, and constrained emotional speech generation. The
+          reasoning and understanding tracks use accuracy or an LLM judge;
+          GenEmotion-en weights an Emotion2Vec target-emotion probability by
+          one minus WER. The official release provides a 679,695,778-byte
+          URO-Bench archive plus inference and scoring code.
+      - cited_as: EmphAssess
+        index_id: null
+        status: public_upstream_family_with_released_paper_specific_derivatives_pending_independent_audit
+        tracks:
+          - emphasis_understanding
+          - emphasis_generation
+        protocol: >-
+          Adapt the original emphasis-transfer benchmark into two
+          instruction-following tasks. Understanding retains speaker ex04's
+          reference audio and predicts emphasized words; generation converts
+          ex04 emphasis labels into constraints, renders spoken task prompts
+          with CosyVoice, and scores generated speech with the provided
+          emphasis detector. Both report word-level precision, recall, and F1.
+          The official release provides a 191,752,063-byte derived-data archive,
+          evaluator checkpoint, and evaluation code. EmphAssess requires an
+          independent primary-source audit before it can become a counted
+          family.
+    training_data:
+      - cited_as: SpeechCombine continuous-pretraining mixture
+        status: training_mixture_not_a_benchmark
+        note: >-
+          About 30,000 hours combine LibriLight, BEAT, CREMA-D, ESD, JL Corpus,
+          EmoV-DB, Expresso, MEAD, and TESS after extraction failures. Prosody
+          tokens, Whisper transcripts, and generated captions form speech,
+          caption, and text sections. These corpora are not benchmark additions
+          merely because they support the pretraining ablation.
+    release_audit:
+      owner_github_repository: public_ungated_with_119_file_and_directory_nodes
+      evaluation_code: public_for_voicebench_uro_bench_and_emphassess
+      voicebench_paper_selection: public_ungated_mmsu_and_openbookqa_only
+      uro_bench_paper_snapshot: public_ungated_archive
+      emphassess_paper_derivatives: public_ungated_archive
+      model_checkpoint_and_training_sample: public_ungated_large_model_repository
+      model_outputs_predictions_and_per_item_scores: not_released
+      github_root_license: not_present
+    license:
+      paper: CC-BY-4.0
+      hugging_face_aggregate_card: CC-BY-NC-4.0
+      github_code: not_specified
+      upstream_benchmarks: upstream_terms_apply
+      note: >-
+        The Hugging Face model card's CC BY-NC 4.0 declaration covers the
+        aggregate release as stated by its owner, but should not be read as
+        overriding VoiceBench, URO-Bench, EmphAssess, generated-speech, model,
+        or other upstream terms. The GitHub repository has no root LICENSE, so
+        the card label is not inferred to license the separately hosted code.
+        CC BY 4.0 on arXiv covers the article, not those release artifacts.
+    sources:
+      - https://arxiv.org/abs/2607.02214
+      - https://arxiv.org/html/2607.02214v1#S4.SS1
+      - https://arxiv.org/html/2607.02214v1#S4.SS2
+      - https://arxiv.org/html/2607.02214v1#S4.SS3
+      - https://arxiv.org/html/2607.02214v1#S4.SS4
+      - https://arxiv.org/html/2607.02214v1#S4.SS6
+      - https://arxiv.org/html/2607.02214v1#A2
+      - https://arxiv.org/html/2607.02214v1#A3
+      - https://export.arxiv.org/api/query?id_list=2607.02214
+      - https://github.com/CongruiDu/SpeechCombine
+      - https://raw.githubusercontent.com/CongruiDu/SpeechCombine/main/README.md
+      - https://raw.githubusercontent.com/CongruiDu/SpeechCombine/main/download.py
+      - https://api.github.com/repos/CongruiDu/SpeechCombine
+      - https://api.github.com/repos/CongruiDu/SpeechCombine/git/trees/main?recursive=1
+      - https://huggingface.co/speechCombine/SpeechCombine
+      - https://huggingface.co/speechCombine/SpeechCombine/raw/main/README.md
+      - https://huggingface.co/api/models/speechCombine/SpeechCombine
+    note: >-
+      This is directly relevant to speech-LLM pretraining evaluation: the
+      benchmark suite measures whether one round of prosody-aware continuous
+      pretraining plus weight combination transfers text-LLM instruction
+      following into spoken QA, reasoning, paralinguistic understanding, and
+      controllable speech generation. Tables 1-7 also use the same families to
+      probe combination weight, long thinking, pretraining-data structure,
+      format forcing, and transfer across Qwen, OLMo, and Llama bases. Public
+      paper-specific evaluation assets improve reproducibility, but all rows
+      map to existing families or an EmphAssess candidate needing its own
+      primary audit, so no duplicate counted family or helper is added.
+
   parabridge_paralinguistic_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2606.10581
     title: "ParaBridge: Bridging Paralinguistic Perception and Dialogue Behavior in Speech Language Models"

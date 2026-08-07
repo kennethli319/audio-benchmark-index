@@ -4,6 +4,25 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *SpeechCombine* paper is recorded as an existing-family and
+public-derived-artifact audit of speech-LLM pretraining transfer. Sections
+4.1-4.6 and Appendices B-C evaluate whether one round of prosody-aware
+continuous pretraining plus weight combination transfers text-LLM instruction
+following into spoken QA and reasoning, emotion and emphasis understanding,
+and controlled emotion and emphasis generation. VoiceBench and URO-Bench map
+to existing indexed families. The paper also adapts EmphAssess by retaining
+speaker ex04 for emphasis detection and converting the same labels into
+CosyVoice-rendered generation instructions; that family still needs its own
+primary-source audit. The owner GitHub repository releases evaluation code,
+and its linked, ungated Hugging Face model repository packages the paper's
+MMSU and OpenBookQA selections, a 679.7 MB URO-Bench archive, and a 191.8 MB
+EmphAssess-derived archive plus evaluator. It does not package the cited SDQA
+selection or release complete model outputs, predictions, and per-item scores.
+The Hugging Face card declares CC BY-NC 4.0 for its aggregate release, but
+that label should not be treated as overriding upstream benchmark, generated-
+speech, or model terms. The GitHub repository has no root license, while CC BY
+4.0 covers the article only. No duplicate family or helper is added.
+
 EchoMind is now indexed as a public, ungated empathetic speech-language-model
 benchmark after reviewing the primary paper's Sections 3.1-3.3 and Appendices
 A.1, A.3, and B.2-B.4. Its 1,137 English scripts are rendered as 3,356
