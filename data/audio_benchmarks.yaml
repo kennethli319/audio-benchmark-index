@@ -9,6 +9,90 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  grow_speech_rl_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.03215
+    title: "GROW: Group-Relative Advantage-Weighted On-Policy Reinforcement Learning of Autoregressive-Diffusion Text-to-Speech Model"
+    sections: 3-4
+    status: audited_existing_public_families_with_unreleased_post_training_outputs
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: LibriSpeech-PC test-clean
+        index_id: librispeech
+        status: existing_public_source_family_with_paper_specific_derived_protocol
+        protocol: >-
+          Evaluate zero-shot cross-sentence synthesis on the 1,127-item
+          LibriSpeech-PC test-clean subset attributed to F5-TTS, using
+          Whisper-large-v3 WER, WavLM-large speaker-embedding cosine
+          similarity, and UTMOS.
+        note: >-
+          The paper does not publish the exact prompt-target manifest, generated
+          speech, or item-level scores. The subset is therefore not treated as
+          a separately released benchmark family.
+      - cited_as: Seed-TTS EN
+        index_id: seed_tts_eval
+        status: existing_public_family_with_reported_count_discrepancy
+        paper_reported_samples: 1088
+        official_release_stated_samples: 1000
+        protocol: >-
+          Evaluate zero-shot English synthesis with Whisper-large-v3 WER,
+          WavLM-large speaker similarity, and UTMOS.
+      - cited_as: Seed-TTS ZH
+        index_id: seed_tts_eval
+        status: existing_public_family_with_reported_count_discrepancy
+        paper_reported_samples: 2020
+        official_release_stated_samples: 2000
+        protocol: >-
+          Evaluate zero-shot Mandarin synthesis with Paraformer-zh WER,
+          WavLM-large speaker similarity, and UTMOS.
+    protocol_note: >-
+      Table 1 compares the pretrained DiTAR model, a paper-implemented
+      DiTAR-GRPO baseline, and GROW at 32, 10, and 5 rollout function
+      evaluations while fixing final evaluation at 32. Tables 2-5 ablate
+      linear versus exponential reward weighting, classifier-free guidance,
+      learning rate and Wasserstein-2 anchoring, and intelligibility versus
+      speaker-similarity rewards. The reward ASR and speaker models are reused
+      for final WER and similarity evaluation; UTMOS is held out from the
+      reward and serves as a non-human perceptual-quality check.
+    release_audit:
+      upstream_librispeech_and_seed_tts_eval: public_existing_families
+      exact_librispeech_pc_manifest: not_released_by_grow
+      seed_tts_extra_88_en_and_20_zh_rows: not_identified
+      grow_code_repository: public_empty_placeholder
+      ditar_reproduction_and_grow_code: announced_not_released
+      pretrained_and_post_trained_checkpoints: announced_not_released
+      generated_evaluation_audio: not_specified_unreleased
+      predictions_and_item_level_scores: not_specified_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      grow_repository: no_license_detected_empty_repository
+      librispeech: CC-BY-4.0
+      seed_tts_eval: not_specified_with_component_source_terms
+      derived_protocol_and_outputs: not_specified_unreleased
+      note: >-
+        The article license does not cover the announced code and checkpoints
+        or the absent manifests, generated speech, predictions, and scores.
+        Seed-TTS Eval has no repository license and derives its objective set
+        from Common Voice and DiDiSpeech-2, whose terms remain controlling.
+    sources:
+      - https://arxiv.org/abs/2608.03215
+      - https://arxiv.org/html/2608.03215v1#Sx3
+      - https://arxiv.org/html/2608.03215v1#Sx4
+      - https://github.com/yanghaha0908/GROW
+      - https://api.github.com/repos/yanghaha0908/GROW
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://raw.githubusercontent.com/BytedanceSpeech/seed-tts-eval/main/README.md
+      - https://www.openslr.org/12
+    note: >-
+      This is directly relevant to speech-LLM post-training because GROW
+      optimizes a Qwen3-backed autoregressive-diffusion speech generator with
+      group-relative on-policy intelligibility and speaker-similarity rewards.
+      The evaluation maps to existing LibriSpeech and Seed-TTS Eval coverage;
+      the paper again reports 1,088 English and 2,020 Chinese Seed-TTS cases,
+      while the official release states 1,000 and 2,000. On August 7 the linked
+      GROW repository existed but was an empty, unlicensed placeholder, despite
+      the paper promising complete code, a DiTAR reproduction, and all model
+      checkpoints. No new benchmark family or download helper is added.
+
   speech_llm_rare_word_context_biasing_audit:
     paper: https://arxiv.org/abs/2608.05759
     title: "How to Recognize New Words: A Comparison Between Context Biasing Methods and Speech LLMs"

@@ -7,6 +7,26 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 GROW paper is recorded as an existing-family and unreleased-
+output audit of on-policy reward optimization for speech generation. Sections
+3-4 and Tables 1-5 evaluate a Qwen3-backed autoregressive-diffusion TTS model
+on the 1,127-item LibriSpeech-PC test-clean protocol and Seed-TTS EN/ZH with
+WER, WavLM speaker similarity, and UTMOS. The comparison covers pretrained
+DiTAR, a paper-implemented DiTAR-GRPO baseline, rollout budgets, reward-
+weighting rules, classifier-free guidance, reference anchoring, and single-
+versus multi-objective rewards. This directly audits speech-LLM post-training:
+the ASR and speaker models act both as rollout rewards and final WER/SIM
+evaluators, while UTMOS is held out as a non-human quality check. The public
+source families remain indexed, but GROW again reports 1,088 English and 2,020
+Chinese Seed-TTS cases where the official release states 1,000 and 2,000, and
+publishes no mapping for the extra rows. Its linked GitHub repository existed
+as an empty, unlicensed placeholder on August 7 despite the paper promising
+complete code, a DiTAR reproduction, and all checkpoints. Exact LibriSpeech-PC
+rows, generated audio, predictions, and item-level scores are also absent, so
+no new benchmark family or helper is added. The arXiv license covers only the
+article; LibriSpeech remains CC BY 4.0, and Seed-TTS Eval's unspecified license
+and Common Voice/DiDiSpeech-2 component terms remain controlling.
+
 HyPoradise is now indexed as a public generative speech-recognition correction
 benchmark family after reviewing the NeurIPS 2023 paper's Sections 3-5, the
 ICLR 2024 Robust HyPoradise extension, and the 2026 *Voice Memory* evaluation.
