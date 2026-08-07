@@ -12040,7 +12040,8 @@ paper_audits:
   meetingtom:
     paper: https://arxiv.org/abs/2607.19235
     sections: 3 and appendices B and G
-    status: audited_not_indexed
+    status: audited_placeholder_repositories_without_benchmark_artifacts
+    last_verified: 2026-08-07
     public_interfaces:
       - https://oliviaziyi.github.io/MeetingToM-Project-Page/
       - https://github.com/oliviaziyi/MeetingToM
@@ -12050,18 +12051,46 @@ paper_audits:
         protocol: 1,800 English AMI Meeting Corpus clips from 60 sessions, split evenly across subject-level mental-state prediction, dyadic referential reasoning, and group-level consensus reasoning
         data_status: announced_unreleased
         note: The paper describes synchronized 5-second and approximately 50-second video, audio, and transcript inputs, but the official repositories currently contain no benchmark annotations, splits, clips, or evaluation code.
+    release_audit:
+      paper_protocol_and_aggregate_results: public
+      github_repository: public_placeholder
+      github_tree_sha: f67b392863a1cc8948067c95e4ae385ecd1d4859
+      github_tree_files: 5
+      github_substantive_benchmark_files: 0
+      hugging_face_repository: public_ungated_placeholder
+      hugging_face_last_modified: 2026-07-19
+      hugging_face_files: 2
+      hugging_face_used_storage_bytes: 0
+      annotations_and_labels: not_released
+      official_split_manifests: not_released
+      derived_clip_timestamps_or_media: not_released
+      evaluation_scripts_and_prompts: not_released
+      model_predictions_and_item_scores: not_released
     license:
       paper: CC BY-NC-SA 4.0
       benchmark_data: not_specified_unreleased
       upstream: AMI Meeting Corpus terms apply to the source recordings
     sources:
+      - https://arxiv.org/abs/2607.19235
       - https://arxiv.org/html/2607.19235v1#S3
       - https://arxiv.org/html/2607.19235v1#A2
       - https://raw.githubusercontent.com/oliviaziyi/MeetingToM/main/README.md
       - https://api.github.com/repos/oliviaziyi/MeetingToM
+      - https://api.github.com/repos/oliviaziyi/MeetingToM/git/trees/main?recursive=1
       - https://huggingface.co/datasets/OliviaWang1101/MeetingToM/raw/main/README.md
-      - https://huggingface.co/api/datasets/OliviaWang1101/MeetingToM
-    note: The official GitHub README promises code, benchmark files, evaluation scripts, and documentation "Coming Soon," while the Hugging Face repository contains only a README and zero bytes of dataset storage. MeetingToM is therefore an audited announced protocol, not a downloadable benchmark family. Recheck the official repositories before adding an indexed dataset or download helper.
+      - https://huggingface.co/api/datasets/OliviaWang1101/MeetingToM?blobs=true
+    note: >-
+      The official GitHub README promises code, benchmark files, evaluation
+      scripts, and documentation "Coming Soon." Its complete main-branch tree
+      contains only README placeholders, one empty `.gitkeep`, and no benchmark
+      artifact. The public, ungated Hugging Face repository was last modified
+      on July 19 and still contains only `.gitattributes` and a 495-byte README,
+      with zero bytes of dataset storage. MeetingToM is therefore an audited
+      announced protocol, not a downloadable benchmark family. Public access
+      to the AMI source corpus does not release MeetingToM's selections,
+      derived clip boundaries, labels, official splits, prompts, or scorer, so
+      no counted family or download helper is added. Recheck the owner
+      repositories before indexing it.
 
   vip_mingle:
     paper: https://arxiv.org/abs/2607.13614
