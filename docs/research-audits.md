@@ -4,6 +4,30 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+SpeechJBB is now indexed as a public, ungated multilingual spoken-safety
+benchmark after reviewing Sections 3-6 and Appendices A-E of the June 2026
+paper and the owner releases. It renders 100 harmful and 100 benign
+JailbreakBench prompts with XTTS across English, German, Spanish, French, and
+Italian: five monolingual settings and ten code-switched pairs produce 1,500
+clean harmful and 1,500 clean benign files. Three additional 1,500-file tracks
+insert phonologically plausible pseudo-words around safety-critical terms at
+10%, 30%, or 50%. The protocol classifies audio-LLM responses as refusal,
+deflection, or jailbroken with GPT-4.1, and also tests a multilingual
+normalization and intent-verification defense. This directly evaluates
+post-training safety alignment and over-refusal under multilingual spoken
+inputs. The ungated Hub publishes all 7,500 core WAVs plus 4,118 Speech-MGSM,
+FLEURS ASR, and FLEURS-SLU control WAVs, reporting 6.82 GB total. The GitHub
+repository publishes evaluation code and selected Qwen2.5-Omni, Qwen3-Omni,
+and Voxtral outputs and judgments, but not all nine models' records. No
+structured prompt/label manifest is released, and the Hub card's loader
+examples retain a stale namespace and train split. Most importantly, the card
+labels the aggregate dataset only as “other” and publishes no custom terms;
+the repository has no license file. The paper's CC BY 4.0 and its Appendix E
+source-license inventory do not by themselves license the derived prompts,
+synthetic audio, or code. The helper therefore fetches only lightweight
+official metadata by default and keeps the audio snapshot and repository clone
+behind separate opt-ins.
+
 The June 2026 *AudioProcessBench* paper is recorded as an announced-but-
 unreleased derived benchmark for audio reasoning critics and process reward
 models. Sections 3-4 and Appendices A-H define 3,872 reasoning traces and

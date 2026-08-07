@@ -9,6 +9,104 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  speechjbb_release_audit:
+    paper: https://arxiv.org/abs/2606.06037
+    title: "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech"
+    sections: 3-6_and_appendices_A-E
+    status: audited_public_ungated_benchmark_with_partial_evaluation_release
+    last_verified: 2026-08-07
+    benchmark:
+      index_id: speechjbb
+      role: multilingual_code_switched_spoken_jailbreak_and_safety_evaluation
+      source_benchmark: JailbreakBench
+      source_prompts:
+        harmful: 100
+        benign: 100
+      languages:
+        - English
+        - German
+        - Spanish
+        - French
+        - Italian
+      language_settings:
+        monolingual: 5
+        english_other_code_switched: 4
+        non_english_code_switched: 6
+      released_core_audio:
+        clean_benign: 1500
+        clean_malicious: 1500
+        pseudo_word_10_percent: 1500
+        pseudo_word_30_percent: 1500
+        pseudo_word_50_percent: 1500
+      synthesis: XTTS
+      evaluation:
+        judge: GPT-4.1
+        response_classes:
+          - refusal
+          - deflection
+          - jailbroken
+        metrics:
+          - refusal_rate
+          - deflection_rate
+          - jailbreak_success_rate
+        defense_track: multilingual_normalization_and_intent_verification_prompt
+      comprehension_controls:
+        - Speech-MGSM
+        - FLEURS_ASR
+        - FLEURS-SLU_SIB
+    release_audit:
+      hugging_face_dataset: public_ungated
+      hugging_face_wav_files: 11618
+      hugging_face_reported_storage_bytes: 6822793697
+      core_safety_audio_files: 7500
+      comprehension_control_audio_files: 4118
+      github_repository: public
+      github_evaluation_code: public
+      github_selected_model_outputs_and_judgments: public_for_Qwen2.5_Omni_Qwen3_Omni_and_Voxtral
+      complete_nine_model_outputs_and_judgments: not_released
+      prompt_text_and_audio_metadata_manifest: not_released_as_structured_file
+      paper_prompts: figures_only
+      download_helper: scripts/download/speechjbb.sh
+    access: public_ungated_large_audio_download_requires_opt_in
+    license:
+      paper: CC-BY-4.0
+      hugging_face_dataset: other_no_custom_terms_published
+      github_repository: no_license_file_detected
+      upstream:
+        JailbreakBench: MIT
+        MGSM_and_FLEURS_SLU_SIB: CC-BY-SA-4.0_as_reported_by_paper
+        FLEURS: CC-BY-4.0
+      note: >-
+        The paper lists licenses for the source benchmarks, but the Hugging
+        Face card labels the aggregate SpeechJBB release only as "other" and
+        states no separate terms for translated prompts, code-switched text,
+        pseudo-words, or XTTS-rendered audio. The repository has no license
+        file. Do not infer that the article's CC BY 4.0 license covers these
+        dataset or code artifacts.
+    sources:
+      - https://arxiv.org/abs/2606.06037
+      - https://arxiv.org/html/2606.06037v1#S3
+      - https://arxiv.org/html/2606.06037v1#S4
+      - https://arxiv.org/html/2606.06037v1#S5
+      - https://arxiv.org/html/2606.06037v1#S6
+      - https://arxiv.org/html/2606.06037v1#Sx5
+      - https://github.com/virginiaceccatelli/speechJBB
+      - https://api.github.com/repos/virginiaceccatelli/speechJBB
+      - https://api.github.com/repos/virginiaceccatelli/speechJBB/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/McGill-NLP/SpeechJBB
+      - https://huggingface.co/datasets/McGill-NLP/SpeechJBB/raw/main/README.md
+      - https://huggingface.co/api/datasets/McGill-NLP/SpeechJBB
+    note: >-
+      This directly evaluates audio-LLM post-training safety alignment under
+      multilingual and code-switched spoken inputs, including localized
+      pseudo-word obfuscation and a prompt-only defense. The public audio is
+      sufficient to count a benchmark family, but users must reconstruct
+      prompt identity from filenames/audio because no structured text manifest
+      is present in the Hub release. The card's loading examples also retain a
+      stale virginiaceccatelli/SpeechJBB namespace and "train" split even
+      though the published repository is McGill-NLP/SpeechJBB and declares
+      test splits.
+
   audio_process_bench_release_audit:
     paper: https://arxiv.org/abs/2606.09925
     title: "AudioProcessBench: Benchmark for Identifying Process Errors in Audio-Grounded Reasoning"
@@ -14580,6 +14678,70 @@ paper_audits:
       downloadable benchmark or given an invented helper.
 
 benchmarks:
+  - id: speechjbb
+    name: SpeechJBB
+    full_name: "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_safety
+      - audio_understanding
+    tasks:
+      - spoken_jailbreak_evaluation
+      - multilingual_speech_safety
+      - code_switched_speech_robustness
+      - pseudo_word_obfuscation_robustness
+      - refusal_and_over_refusal_evaluation
+    official:
+      paper: https://arxiv.org/abs/2606.06037
+      repo: https://github.com/virginiaceccatelli/speechJBB
+      dataset: https://huggingface.co/datasets/McGill-NLP/SpeechJBB
+    download:
+      access: public_ungated_large_download_opt_in
+      primary:
+        - https://huggingface.co/datasets/McGill-NLP/SpeechJBB
+        - https://github.com/virginiaceccatelli/speechJBB
+      examples:
+        - 'scripts/download/speechjbb.sh'
+        - 'SPEECHJBB_DOWNLOAD_HF=1 scripts/download/speechjbb.sh'
+        - 'SPEECHJBB_CLONE_REPO=1 scripts/download/speechjbb.sh'
+      notes: >-
+        The public Hub contains 11,618 WAV files and reports approximately
+        6.82 GB of storage. The core safety benchmark has 7,500 files: 1,500
+        clean benign, 1,500 clean harmful, and 1,500 each at 10%, 30%, and 50%
+        pseudo-word insertion. It covers five monolingual and ten code-switched
+        settings derived from 100 harmful and 100 benign JailbreakBench prompts.
+        The remaining 4,118 WAV files are Speech-MGSM, FLEURS ASR, and
+        FLEURS-SLU comprehension controls. The helper downloads official cards
+        and repository metadata by default; the full audio snapshot and the
+        roughly 44 MB GitHub repository are separate opt-ins. The Hub publishes
+        audio only, without a structured prompt/label manifest; its card also
+        contains stale namespace and split examples, so use the eight declared
+        test configurations in McGill-NLP/SpeechJBB.
+    license:
+      data: other_no_aggregate_terms_published
+      code: no_license_file_detected
+      notes: >-
+        The article is CC BY 4.0 and Appendix E reports MIT for JailbreakBench,
+        CC BY-SA 4.0 for MGSM and FLEURS-SLU SIB, and CC BY 4.0 for FLEURS.
+        Those source licenses do not establish terms for the translated and
+        code-switched prompts, pseudo-word annotations, or XTTS-rendered audio.
+        The Hub card says only "other," and the GitHub repository has no
+        license file. Confirm artifact rights with the owners before reuse or
+        redistribution.
+    sources:
+      - https://arxiv.org/abs/2606.06037
+      - https://arxiv.org/html/2606.06037v1#S3
+      - https://arxiv.org/html/2606.06037v1#S4.SS2
+      - https://arxiv.org/html/2606.06037v1#S6
+      - https://arxiv.org/html/2606.06037v1#Sx5
+      - https://github.com/virginiaceccatelli/speechJBB
+      - https://raw.githubusercontent.com/virginiaceccatelli/speechJBB/main/README.md
+      - https://api.github.com/repos/virginiaceccatelli/speechJBB
+      - https://api.github.com/repos/virginiaceccatelli/speechJBB/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/McGill-NLP/SpeechJBB
+      - https://huggingface.co/datasets/McGill-NLP/SpeechJBB/raw/main/README.md
+      - https://huggingface.co/api/datasets/McGill-NLP/SpeechJBB
+
   - id: preference_asr
     name: Preference-ASR
     full_name: "Preference-ASR: A Preference-Aware Test Set for Benchmarking ASR in the Era of Speech LLMs"
