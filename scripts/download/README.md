@@ -1458,6 +1458,12 @@ AI_COVER_SONG_DIAGNOSTICS_CLONE_REPO=1 scripts/download/ai_cover_song_diagnostic
 MADB_DOWNLOAD_ANNOTATIONS=1 scripts/download/madb.sh
 MADB_DOWNLOAD_HF=1 scripts/download/madb.sh
 
+# MuChin downloads V1/V2 provenance metadata by default. V1 annotations and
+# audio are independent opt-ins; the approximately 31.3 GB V2 is gated.
+MUCHIN_DOWNLOAD_V1_ANNOTATIONS=1 scripts/download/muchin.sh
+MUCHIN_DOWNLOAD_V1_AUDIO=1 scripts/download/muchin.sh
+MUCHIN_DOWNLOAD_V2=1 scripts/download/muchin.sh
+
 # Concerto Accompaniment Benchmark downloads public metadata and downbeat
 # annotations by default. The code clone is opt-in; commercial orchestra
 # recordings and absent solo-piano audio are never downloaded.

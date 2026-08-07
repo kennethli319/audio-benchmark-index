@@ -74,9 +74,14 @@ paper_audits:
         status: public
         role: vae_reconstruction_evaluation
       - cited_as: MuChin
-        index_id: null
-        status: cited_external_source_release_not_yet_provenance_audited
+        index_id: muchin
+        status: public_family_with_paper_specific_version_manifest_unspecified
         role: vae_reconstruction_evaluation
+        note: >-
+          The report cites the 2024 MuChin paper but does not state whether
+          Table 9 uses the original 1,000-item benchmark, the later 6,066-song
+          release, or a paper-specific selection. No reconstruction manifest
+          or generated audio is released.
       - cited_as: LibriSpeech-PC-200
         index_id: librispeech
         status: public_source_family_with_unreleased_derived_selection
@@ -114,6 +119,7 @@ paper_audits:
       - https://arxiv.org/html/2607.27011v2#S6.SS1
       - https://huggingface.co/datasets/OpenSound/AudioCaps/viewer/default/test
       - https://arxiv.org/abs/2604.25937
+      - https://arxiv.org/abs/2402.09871
       - https://github.com/QwenLM/Qwen-Audio
       - https://api.github.com/repos/QwenLM/Qwen-Audio/git/trees/main?recursive=1
       - https://api.github.com/search/repositories?q=%22Qwen-Audio-3.0-Gen-Preview%22
@@ -125,10 +131,11 @@ paper_audits:
       3.0 Gen Preview materials, and exact-name GitHub and Hugging Face model
       and dataset searches found no matching release on the verification
       date. This audit maps public evaluations to existing families where
-      possible, keeps paper-specific and internal protocols distinct, adds no
-      benchmark family or helper, and does not treat public source data as a
-      release of the report's missing manifests and outputs. SongBench and
-      MuChin remain focused follow-up provenance candidates.
+      possible, keeps paper-specific and internal protocols distinct, and does
+      not treat public source data as a release of the report's missing
+      manifests and outputs. SongBench remains a focused follow-up provenance
+      candidate; MuChin is now mapped to its independently audited public
+      family.
 
   c3po_cross_modal_composition_counterfactual_audit:
     paper: https://arxiv.org/abs/2608.05381
@@ -15463,6 +15470,75 @@ benchmarks:
       - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/data/annotations/evaluation_scores.csv
       - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/data/sample_list.csv
       - https://raw.githubusercontent.com/TiaaL/songecho-cover-metrics/main/features/extracted_features.csv
+
+  - id: muchin
+    name: MuChin
+    full_name: "MuChin: A Chinese Colloquial Description Benchmark for Evaluating Language Models in the Field of Music"
+    qwen_cited_as: MuChin
+    qwen_bucket: music_understanding
+    tasks:
+      - multimodal_music_understanding
+      - colloquial_music_description
+      - professional_music_description
+      - structured_lyric_generation
+      - music_representation_evaluation
+      - audio_tokenizer_reconstruction_evaluation
+    official:
+      repo: https://github.com/CarlWangChina/MuChin
+      dataset: https://huggingface.co/datasets/karl-wang/MuChin1k
+      paper: https://arxiv.org/abs/2402.09871
+      ijcai_paper: https://www.ijcai.org/proceedings/2024/0860.pdf
+      expanded_repo: https://github.com/CarlWangChina/MuChin-V2-6066
+      expanded_dataset: https://huggingface.co/datasets/karl-wang/MuChin-v2-6066
+    download:
+      primary:
+        - https://huggingface.co/datasets/karl-wang/MuChin1k
+        - https://huggingface.co/datasets/karl-wang/MuChin1k/resolve/main/MuChin-1k-%E5%BC%80%E6%BA%90%E6%96%87%E6%9C%AC%E6%A0%87%E6%B3%A8.zip
+      examples:
+        - 'scripts/download/muchin.sh'
+        - 'MUCHIN_DOWNLOAD_V1_ANNOTATIONS=1 scripts/download/muchin.sh'
+        - 'MUCHIN_DOWNLOAD_V1_AUDIO=1 scripts/download/muchin.sh'
+        - 'MUCHIN_DOWNLOAD_V2=1 scripts/download/muchin.sh'
+      notes: >-
+        MuChin V1 is a public, ungated 1,000-song benchmark with paired amateur
+        and professional Chinese descriptions, musical sections, rhyme
+        structures, lyrics, and metadata. The IJCAI paper evaluates five
+        pretrained music encoders through fixed shallow tag predictors and
+        uses a weighted six-part Gestalt-based protocol for structured-lyric
+        generation by four LLM families. The helper downloads official cards,
+        repository metadata, and license text by default; the approximately
+        20.9 MB V1 annotation archive and 3.59 GB V1 MP3 archive are separate
+        opt-ins. The expanded 6,066-song V2 is auto-gated on Hugging Face,
+        about 31.3 GB, overlaps V1 on 724 songs, and requires explicit opt-in
+        plus accepted access. Qwen-Audio-3.0-Gen-Preview Table 9 reuses MuChin
+        for VAE reconstruction but does not identify the version or item
+        manifest, so that derived protocol is not represented as a new split.
+    license:
+      data: MIT_metadata_with_restricted_commercial_audio_use_and_upstream_song_rights
+      code: MIT_for_v1_repository
+      notes: >-
+        The V1 repository and Hugging Face card declare MIT, but the owner
+        separately says scholars should obtain song audio legally, use it for
+        academic purposes only, and not use it for commercial model training
+        without copyright-holder authorization. Treat those express audio
+        restrictions and underlying song, recording, lyric, artist, and album
+        rights as controlling caveats; MIT must not be read as relicensing
+        commercial music. V2 repeats the same audio restrictions and is gated.
+    sources:
+      - https://arxiv.org/abs/2402.09871
+      - https://www.ijcai.org/proceedings/2024/0860.pdf
+      - https://github.com/CarlWangChina/MuChin
+      - https://raw.githubusercontent.com/CarlWangChina/MuChin/main/README.md
+      - https://raw.githubusercontent.com/CarlWangChina/MuChin/main/dataset/README.md
+      - https://raw.githubusercontent.com/CarlWangChina/MuChin/main/LICENSE
+      - https://api.github.com/repos/CarlWangChina/MuChin
+      - https://huggingface.co/datasets/karl-wang/MuChin1k
+      - https://huggingface.co/api/datasets/karl-wang/MuChin1k
+      - https://github.com/CarlWangChina/MuChin-V2-6066
+      - https://raw.githubusercontent.com/CarlWangChina/MuChin-V2-6066/main/README.md
+      - https://huggingface.co/datasets/karl-wang/MuChin-v2-6066
+      - https://huggingface.co/api/datasets/karl-wang/MuChin-v2-6066
+      - https://arxiv.org/html/2607.27011v2#S6.SS1
 
   - id: madb
     name: MADB

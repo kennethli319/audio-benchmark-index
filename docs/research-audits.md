@@ -7,11 +7,34 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+MuChin is now indexed as a released music-language benchmark family after a
+primary-source audit of the IJCAI 2024 paper, official repositories, and Hugging
+Face releases. The public, ungated V1 pairs 1,000 songs with amateur and
+professional Chinese descriptions, section and rhyme structure, lyrics, and
+metadata. Sections 3-4 define two distinct protocols: shallow predictors over
+five pretrained music encoders score ten professional and ten amateur
+description dimensions with BGE semantic similarity, while structured-lyric
+generation uses six weighted Gestalt-based structure and rhyme measures for
+four LLM families. The later 6,066-song V2 is an expanded instruction-tuning
+and alignment resource, not a replacement for the fixed V1 benchmark; it is
+auto-gated, overlaps V1 on 724 songs, and warns about duplicate annotations.
+Qwen-Audio-3.0-Gen-Preview section 6.1 reuses MuChin for VAE reconstruction,
+directly connecting the family to audio-tokenizer pretraining evaluation, but
+does not identify which release or rows were used. The index therefore maps
+that citation to the family without inventing a derived split. V1 annotations
+and audio are public, V2 is gated, and no Qwen reconstruction outputs or
+manifest are released. Although the V1 repository and Hub card say MIT, the
+owner separately restricts song audio to legally obtained academic use and
+prohibits commercial model training without copyright-holder authorization;
+underlying commercial-song, recording, lyric, and metadata rights remain.
+The helper is metadata-only by default, with separate opt-ins for the 20.9 MB
+V1 annotations, 3.59 GB V1 audio, and gated 31.3 GB V2 snapshot.
+
 The July 2026 *Qwen-Audio-3.0-Gen-Preview* report is inventoried across
 sections 6-6.1 and Tables 2-11 as a mixed public-family and unreleased-protocol
 audit. Public evaluations map to the existing Seed-TTS Eval, AudioCaps, Song
-Describer, and LibriSpeech families; the cited MuChin and SongBench sources are
-retained as focused provenance follow-ups rather than inferred additions. The report also
+Describer, MuChin, and LibriSpeech families; the cited SongBench source is
+retained as a focused provenance follow-up rather than an inferred addition. The report also
 defines an in-house reference-conditioned multi-speaker benchmark with a few
 hundred English and Chinese cases and an in-house rich-timeline benchmark with
 on the order of one hundred temporally specified scenes. Neither is released.
