@@ -7,6 +7,26 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *KVAE* report is recorded as an audio-tokenizer interface and
+partial-release audit. Sections 6.5-6.7 compare posterior-mean reconstruction
+on the existing AudioSet eval, MUSDB18-HQ, and EARS families, then train the
+same 0.6B text-to-audio DiT separately over four frozen tokenizers and evaluate
+generation on AudioCaps, Song Describer, and LibriSpeech test-clean. This
+controlled swap is directly relevant to audio foundation-model pretraining
+because it tests whether the tokenizer latent, rather than reconstruction
+quality alone, supports prompt-conditioned generation. The public MIT
+repository and ungated Hugging Face checkpoint support inference, and the
+repository includes a generic reconstruction metric script plus three
+qualitative same-prompt examples for four systems. However, it releases no
+fixed dataset manifests, generation training or evaluation pipeline,
+generator checkpoints, full benchmark outputs, or raw human-study records.
+The public metric script also computes at 48 kHz, whereas the report states
+that its reconstruction table was computed at 44.1 kHz. Human-study item and
+annotator counts are not reported, and the internal ablation set is absent.
+Repository and model-card MIT declarations do not relicense the six upstream
+families, undisclosed proprietary training audio, generated outputs, or
+listener records. No duplicate benchmark family or download helper is added.
+
 The August 2026 *LILAC* paper is recorded as a speech-codec token-interface
 and release-status audit. Sections 5-6 and supplementary sections 2-6 score
 one-pass reconstruction on the existing LibriSpeech test-clean, LibriTTS-R,

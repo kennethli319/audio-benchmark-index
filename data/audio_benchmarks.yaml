@@ -9,6 +9,114 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  kvae_audio_tokenizer_swap_evaluation:
+    paper: https://arxiv.org/abs/2608.05798
+    title: "KVAE: Family of Tokenizers for Multimodal Generative Models"
+    sections: 6.5-6.7
+    status: audited_existing_public_families_with_partial_reconstruction_code_and_unreleased_generation_protocol
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: AudioSet eval
+        index_id: audioset
+        status: public_existing_family
+        protocol: >-
+          Compare posterior-mean reconstructions from KVAE-Audio, MMAudio,
+          MovieGen DACVAE, and SAME-L after resampling every output to 44.1
+          kHz. Report mel, STFT, waveform, SI-SDR, SDR, and SNR metrics.
+      - cited_as: MUSDB18-HQ
+        index_id: musdb18
+        status: public_existing_family_with_restricted_source_terms
+        protocol: >-
+          Apply the same posterior-mean, 44.1 kHz reconstruction comparison
+          to the high-quality MUSDB18 release.
+      - cited_as: EARS
+        index_id: ears
+        status: public_existing_noncommercial_family
+        protocol: >-
+          Apply the same reconstruction comparison to full-band speech and
+          additionally report wideband PESQ.
+      - cited_as: AudioCaps test set
+        index_id: audiocaps
+        status: public_metadata_existing_family_with_upstream_audio_constraints
+        protocol: >-
+          Train the same 0.6B one-dimensional Kandinsky-5 DiT once per frozen
+          tokenizer, holding architecture, training data, and optimizer-step
+          count fixed. Score generated audio with CLAP, Audiobox Aesthetics
+          CE and PQ, and FAD using PANNs, PaSST, and VGGish backbones.
+      - cited_as: Song Describer
+        index_id: song_describer
+        status: public_metadata_existing_family_with_audio_access_constraints
+        protocol: >-
+          Apply the same fixed-generator tokenizer swap and objective metric
+          panel to text-conditioned music generation.
+      - cited_as: LibriSpeech test-clean
+        index_id: librispeech
+        status: public_existing_family
+        protocol: >-
+          Apply the fixed-generator tokenizer swap to zero-shot speech
+          synthesis, adding WER and CER to the generation metric panel.
+    additional_protocols:
+      blind_side_by_side: >-
+        For each of the three baselines, annotators compare same-prompt
+        generations against KVAE-Audio independently for prompt following,
+        technical quality, and aesthetic quality. Equally-good pairs pull the
+        win rate toward parity and equally-bad pairs are excluded; reported
+        KVAE-Audio win rates span 0.54 to 0.74.
+      internal_ablation: >-
+        Measure relative reconstruction changes from bottleneck attention,
+        perceptual loss, and decoder-only fine-tuning on an internal test set
+        covering speech, music, and general audio. The set, absolute scores,
+        and item manifest are not released.
+    release_audit:
+      upstream_six_evaluation_families: available_under_upstream_access_and_license_terms
+      tokenizer_inference_code: public_mit
+      tokenizer_weights: public_ungated_hugging_face_card_declares_mit
+      generic_reconstruction_metric_script: public_but_currently_computes_48khz_not_papers_44_1khz_table_protocol
+      fixed_evaluation_manifests_and_preprocessing: not_released
+      generator_training_and_evaluation_code: not_released
+      generator_checkpoints_and_full_benchmark_outputs: not_released
+      three_prompt_four_system_qualitative_demo: public_in_repository
+      human_study_prompts_assignments_counts_and_raw_judgments: not_released
+      internal_ablation_set_and_absolute_results: not_released
+      mixed_open_and_proprietary_10000_hour_training_mixture: not_identified_or_released
+      aggregate_tables_and_side_by_side_figures: public_in_paper_and_repository
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      tokenizer_code: MIT
+      tokenizer_weights: hugging_face_card_declares_mit
+      evaluation_datasets: upstream_family_terms_apply
+      generated_outputs_and_human_judgments: not_specified
+      training_mixture: mixed_open_and_proprietary_terms_not_disclosed
+      note: >-
+        The repository MIT license covers the released software, and the
+        model card declares MIT for the checkpoint; neither declaration
+        relicenses AudioSet media, MUSDB18-HQ, EARS, AudioCaps source audio,
+        Song Describer audio, LibriSpeech, the undisclosed proprietary
+        training mixture, or absent evaluation and listener records.
+    sources:
+      - https://arxiv.org/abs/2608.05798
+      - https://arxiv.org/html/2608.05798v1#S6.SS5
+      - https://arxiv.org/html/2608.05798v1#S6.SS6
+      - https://arxiv.org/html/2608.05798v1#S6.SS7
+      - https://github.com/kandinskylab/kvae-audio
+      - https://github.com/kandinskylab/kvae-audio/blob/main/scripts/eval.py
+      - https://api.github.com/repos/kandinskylab/kvae-audio
+      - https://api.github.com/repos/kandinskylab/kvae-audio/git/trees/main?recursive=1
+      - https://huggingface.co/kandinskylab/KVAE-Audio
+      - https://huggingface.co/api/models/kandinskylab/KVAE-Audio
+    note: >-
+      This protocol is directly relevant to pretraining interfaces for audio
+      foundation models: it tests both reconstruction and whether a frozen
+      continuous audio tokenizer produces a useful latent space for an
+      otherwise controlled text-to-audio generator. All six named evaluation
+      families are already indexed, so no duplicate benchmark family is
+      added. The released repository supports tokenizer inference and generic
+      reconstruction scoring, but it contains no dataset manifests or
+      generation pipeline, and its current evaluation script computes at 48
+      kHz while the paper says Table 3 was computed at 44.1 kHz. The fixed
+      tokenizer-swap experiment and human comparison therefore remain only
+      partially reproducible, and no download helper is added.
+
   lilac_idempotent_codec_interface:
     paper: https://arxiv.org/abs/2608.05727
     title: "LILAC: An Idempotent Neural Speech Codec"
