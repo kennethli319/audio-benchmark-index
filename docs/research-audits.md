@@ -295,6 +295,22 @@ future terms do not license unavailable artifacts or override the terms of
 AudioSet, FSD50K, BBC Sound Effects, and YouTube sources. AEGBench remains an
 audited announced protocol with no download helper.
 
+The August 2026 Macer paper is recorded as an existing-family protocol audit of
+decoder-side audio/video token compression in pretrained OmniLLMs. Sections
+5.1-5.2 and Appendix A run the full AVUTBench, Daily-Omni, WorldSense, and
+no-subtitle Video-MME evaluations through LMMs-Eval with fixed greedy decoding
+at 25%, 35%, and 45% multimodal-token retention. This is relevant to pretrained
+audio-language-model interfaces because it tests whether audio-grounded and
+cross-modal reasoning survives aggressive token pruning. All four benchmark
+families and their access helpers are already indexed. The paper promises Macer
+code and calibrated configurations upon publication, but version 1 supplies no
+artifact URL, exact LMMs-Eval task revisions, calibration-split rows, published
+random-baseline seed, predictions, runtime logs, or per-item scores. The arXiv
+license covers only the article; AVUT has no stated data license, Daily-Omni is
+CC BY-NC-SA 4.0, WorldSense has conflicting CC BY and CC BY-NC-SA statements,
+and Video-MME retains custom academic-use and redistribution restrictions. No
+duplicate family or new download helper is added.
+
 The August 2026 *KVAE* report is recorded as an audio-tokenizer interface and
 partial-release audit. Sections 6.5-6.7 compare posterior-mean reconstruction
 on the existing AudioSet eval, MUSDB18-HQ, and EARS families, then train the

@@ -9,6 +9,99 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  macer_omnillm_token_compression_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.01665
+    title: "Allocation Before Ranking: Decoupled Token Compression for OmniLLMs"
+    sections: 5.1-5.2_and_appendix_A.1-A.5
+    status: audited_existing_public_families_with_unreleased_compression_protocol_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: AVUTBench
+        index_id: avut
+        status: existing_public_family
+        role: audio_grounded_omnimodal_token_retention_evaluation
+        protocol: >-
+          Run the full AVUT evaluation through LMMs-Eval with Qwen2.5-Omni-7B
+          and 3B at 25%, 35%, and 45% decoder-side multimodal-token retention.
+          Text tokens are always retained, decoding is greedy, and the paper
+          reports benchmark accuracy and a normalized aggregate score.
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: existing_public_family
+        role: audio_video_joint_temporal_alignment_evaluation
+        protocol: >-
+          Apply the same fixed compression and decoding protocol to the full
+          Daily-Omni evaluation set, which the paper uses for audio-video event
+          alignment, temporal ordering, and cross-modal grounding.
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: existing_public_family
+        role: visual_dominant_audio_augmented_robustness_evaluation
+        protocol: >-
+          Apply the same fixed compression settings to the full WorldSense
+          evaluation set. The paper also uses WorldSense for measured latency,
+          memory, and token-count comparisons.
+      - cited_as: Video-MME without subtitles
+        index_id: video_mme
+        status: existing_public_restricted_family
+        role: video_centric_preservation_control
+        protocol: >-
+          Evaluate the no-subtitle condition as a video-centric control for
+          whether audio-video token compression preserves primarily visual
+          evidence. The paper does not state that this run changes Video-MME's
+          existing academic-use and redistribution restrictions.
+    protocol_note: >-
+      Macer explicitly allocates an audio/video capacity split before ranking
+      tokens within each modality at different shallow decoder layers. Main
+      tables compare full tokens, random retention, FastV, OmniZip, and Macer
+      at matched retention ratios on Qwen2.5-Omni-7B and 3B; Appendix F adds
+      AVUTBench, DailyOmni, and WorldSense transfer results on OmniVinci-9B.
+      The Qwen configurations are selected once on an unspecified held-out
+      split disjoint from all evaluation sets, then frozen across benchmarks.
+      Main accuracy runs are deterministic; the random-retention baseline uses
+      a fixed seed. Appendix A.5 says code and calibrated configurations will
+      be released upon publication.
+    release_audit:
+      upstream_benchmark_families: public_with_existing_family_specific_terms
+      paper_and_aggregate_tables: public
+      exact_lmms_eval_task_revisions_and_adapter_patches: not_released
+      held_out_calibration_split_and_selection_records: not_released
+      macer_and_baseline_implementation: announced_not_released
+      calibrated_configuration_files: announced_not_released
+      fixed_random_baseline_seed: value_not_published
+      predictions_and_paired_per_example_records: not_released
+      runtime_logs_and_score_records: not_released
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      macer_code_and_configurations: not_specified_unreleased
+      derived_evaluation_artifacts: not_specified_unreleased
+      upstream: family_specific_terms_apply
+      note: >-
+        The article license does not cover the announced code and calibrated
+        configurations or absent calibration rows, predictions, logs, and
+        scores. AVUT states no data license; Daily-Omni is CC BY-NC-SA 4.0;
+        WorldSense has conflicting CC BY 4.0 and CC BY-NC-SA 4.0 statements;
+        and Video-MME imposes custom academic-use and redistribution limits.
+    sources:
+      - https://arxiv.org/abs/2608.01665
+      - https://arxiv.org/html/2608.01665v1#S5.SS1
+      - https://arxiv.org/html/2608.01665v1#S5.SS2
+      - https://arxiv.org/html/2608.01665v1#A1.SS1
+      - https://arxiv.org/html/2608.01665v1#A1.SS5
+      - https://github.com/lark-png/AVUT
+      - https://github.com/Lliar-liar/Daily-Omni
+      - https://github.com/JaaackHongggg/WorldSense
+      - https://github.com/MME-Benchmarks/Video-MME
+    note: >-
+      This is directly relevant to pretrained audio-language-model interfaces:
+      it tests how aggressively an OmniLLM can prune audio and video tokens
+      while retaining audio-grounded and cross-modal reasoning accuracy. All
+      four evaluation families and their download helpers already exist in the
+      index, so this audit adds no duplicate benchmark family. The paper
+      releases aggregate protocol details but not the promised implementation,
+      calibration split, task revisions, predictions, or score records; no new
+      download helper is added.
+
   vorch_omni_multitask_human_evaluation_audit:
     paper: https://arxiv.org/abs/2608.05803
     title: "Vorch-Omni: Multi-Task Orchestration of Sight and Sound"
