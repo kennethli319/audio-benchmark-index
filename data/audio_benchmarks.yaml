@@ -9,6 +9,113 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  dotebench_precise_speech_editing_release_audit:
+    paper: https://arxiv.org/abs/2608.02673
+    project: https://huggingface.co/spaces/dots-studio/dots.tts.edit
+    demo: https://huggingface.co/spaces/dots-studio/dots.tts.edit-demo
+    title: "dots.tts.edit: Precisely Controlled Speech Editing with a Continuous Autoregressive Model"
+    sections: 3.1-3.2_6.1.2-6.4_and_appendix_A
+    status: audited_selected_public_demonstrations_with_unreleased_complete_benchmark_and_scorer
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: doteBench single-task editing suite
+        index_id: null
+        status: paper_specific_unreleased_complete_manifests_with_selected_public_demonstrations
+        role: bilingual_precisely_localized_speech_editing_post_training_evaluation
+        protocol: >-
+          Evaluate 1,541 single-speaker English and Chinese cases: 569 text
+          edits split into Easy and Hard, 312 emotion edits, 360 prosody edits,
+          and 300 pause edits. Each structural instruction uses XML-style tags
+          to specify an operation and its transcript span or word boundary.
+          Score edited-region recognition or task-specific emotion, duration,
+          pitch, and pause execution; preservation outside the edited region
+          with WER/CER, WDTW-Dur, WDTW-F0, and speaker similarity; and complete
+          output quality with UTMOS.
+      - cited_as: doteBench compositional editing
+        index_id: null
+        status: paper_specific_unreleased_complete_manifest_with_five_public_demonstrations
+        role: multi_operation_speech_editing_instruction_following_evaluation
+        protocol: >-
+          Evaluate 240 instructions containing two, three, or four
+          non-overlapping text, emotion, prosody, or pause operations. Report
+          both component-wise success and strict all-component success, plus
+          the same recognition, duration, pitch, speaker, and quality
+          preservation measures. Learned editors run once, while the
+          task-specific pipeline baseline composes multiple passes.
+      - cited_as: Seed-TTS-Eval retention panel
+        index_id: seed_tts_eval
+        status: existing_public_family
+        role: zero_shot_tts_capability_retention_after_editing_post_training
+        protocol: >-
+          Run the existing official 1,088-English, 2,020-Chinese, and
+          400-Chinese-Hard shards with WER/CER and speaker similarity to test
+          whether editing post-training preserves the base model's synthesis
+          capability. This is mapped to the existing Seed-TTS-Eval family and
+          is not counted again.
+    protocol_note: >-
+      doteBench directly measures post-training instruction following,
+      controllability, localization, compositional execution, and preservation
+      for a speech language model that generates continuous audio latents. Its
+      five task families share frozen manifests and explicitly keep generation
+      failures in metric denominators. WDTW items are skipped only when the
+      manifest defines no eligible preserved region, making the skip set
+      independent of the evaluated system.
+    release_audit:
+      paper_protocol_and_aggregate_tables: public
+      official_static_project_page: public
+      official_selected_demo_repository: public
+      selected_demo_samples: 29
+      selected_demo_audio_files: 136
+      selected_demo_audio_bytes: 74417478
+      selected_demo_inventory_and_hashes: public
+      complete_1541_single_task_case_manifests: not_released
+      complete_240_compositional_case_manifest: not_released
+      all_source_target_transcripts_and_structural_instructions: not_released
+      complete_source_reference_baseline_and_model_audio: not_released
+      evaluation_code_metric_configuration_and_scorer: not_released
+      per_item_predictions_scores_and_skip_records: not_released
+      gemini_emotion_judge_prompt_revision_and_records: not_released
+      editing_model_checkpoint_training_code_and_inference_code: announced_for_future_release
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      static_demo_repository: Apache-2.0_declared_in_space_card
+      demo_audio_and_benchmark_content: not_separately_specified
+      complete_benchmark_artifacts: not_specified_unreleased
+      seed_tts_eval: upstream_family_terms_apply
+      note: >-
+        The Space card declares Apache-2.0 and its README describes static
+        academic demo code, figures, and approved listening assets, but it does
+        not separately state redistribution terms for the hosted source,
+        reference, or generated audio. The code-oriented Space license and the
+        article license do not establish a license for the absent complete
+        manifests, annotations, evaluator, outputs, or model artifacts.
+    sources:
+      - https://arxiv.org/abs/2608.02673
+      - https://arxiv.org/html/2608.02673v1#S3.SS2
+      - https://arxiv.org/html/2608.02673v1#S6.SS1.SSS2
+      - https://arxiv.org/html/2608.02673v1#S6.SS2
+      - https://arxiv.org/html/2608.02673v1#S6.SS3
+      - https://arxiv.org/html/2608.02673v1#S6.SS4
+      - https://arxiv.org/html/2608.02673v1#A1
+      - https://huggingface.co/spaces/dots-studio/dots.tts.edit
+      - https://huggingface.co/spaces/dots-studio/dots.tts.edit-demo
+      - https://huggingface.co/spaces/dots-studio/dots.tts.edit-demo/blob/main/README.md
+      - https://huggingface.co/spaces/dots-studio/dots.tts.edit-demo/blob/main/data/inventory.json
+      - https://huggingface.co/spaces/dots-studio/dots.tts.edit-demo/blob/main/data/samples.json
+      - https://huggingface.co/api/spaces/dots-studio/dots.tts.edit-demo
+      - https://export.arxiv.org/api/query?id_list=2608.02673
+    note: >-
+      The paper says the model will be released, while the owner-published
+      static Space is explicitly a curated listening page without the model,
+      training code, or inference source. Its inventory exposes 29 selected
+      cases and 136 audio files (about 74.4 MB), including six text and five
+      each emotion, prosody, pause, and compositional cases; two noise and one
+      multispeaker example are demonstrations outside the five scored
+      doteBench categories. These selected assets do not reconstruct the
+      1,781-case frozen evaluation, its metrics, or reported tables. The audit
+      therefore adds no counted benchmark family or download helper pending a
+      complete, independently runnable release.
+
   wer_trap_dynamic_tokenizer_dual_probing_audit:
     paper: https://arxiv.org/abs/2605.29209
     title: "The WER Trap: Shattering the Illusion of Unified Tokens in Speech Language Models"

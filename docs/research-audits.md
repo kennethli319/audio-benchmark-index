@@ -2484,3 +2484,23 @@ material, or generated media. The paper's four-domain SwanVAE reconstruction
 panel maps VCTK, FSD50K, and MUSDB18-HQ to existing families, while its exact
 selections and internal SwanVerifier held-out split remain unreleased. No
 public benchmark family or helper is added from demonstrations alone.
+
+The August 2026 dots.tts.edit report is recorded as a partial-release audit of
+doteBench, a directly in-scope post-training evaluation for precisely
+controlled speech editing. Sections 3.2 and 6 define 1,541 English and Chinese
+single-task cases across text, emotion, prosody, and pause editing, plus 240
+two-to-four-operation compositional cases. Structural instructions localize
+operations with transcript tags, and the protocol separately measures
+instruction execution, preservation outside the edit, and complete-output
+quality. The owner-published
+[static demo Space](https://huggingface.co/spaces/dots-studio/dots.tts.edit-demo)
+contains 29 selected cases, 136 audio files, and a hash inventory, but its
+README explicitly excludes the model, training code, and inference source. It
+does not publish the complete frozen manifests, structural instructions,
+scorer, metric configuration, full outputs, per-item scores, or Gemini emotion
+judge records. The Space card declares Apache-2.0, but no separate terms are
+stated for its source, reference, or generated audio, and that code-oriented
+license cannot be extended to absent benchmark artifacts. Seed-TTS-Eval
+retention results map to the existing indexed family. Selected listening
+examples therefore do not support counting doteBench as a downloadable family
+or adding a helper yet.
