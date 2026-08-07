@@ -7,6 +7,28 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *PromptShield Home* paper is recorded as an
+announced-but-unavailable ambient multimodal prompt-injection and smart-home
+agent safety benchmark audit. Sections 2-6 define 19 scripted scenarios: 17
+audio-video action cases and two still-image occupancy queries. The action set
+contains 14 no-action and three action-required cases spanning addressee
+ambiguity, screen/audio injection, health false triggers, mixed occupancy, and
+legitimate commands. Models choose execute, block, or ask the user, and the
+protocol separates unsafe-execution rate from safe-completion rate so an
+always-block policy's 82.4% aggregate accuracy is not mistaken for useful
+safety. It compares an idealized detector proxy with Qwen3-VL-30B vision and
+vision-plus-ASR inputs, Qwen2.5-Omni-7B native audio-video input, and voting,
+role-specialist, and cross-model arbitration variants. This is directly
+relevant to post-training alignment, source attribution, refusal calibration,
+and audio-enabled agent safety. The paper reports that the scenario manifest
+and model outputs are released, but gives no artifact URL; the arXiv source
+bundle contains only manuscript assets, and exact-name GitHub and Hugging Face
+searches found no release on the verification date. Raw media is expressly
+withheld because it exposes laboratory interiors and team voices and is only
+described as potentially available on reasonable request. CC BY 4.0 covers the
+paper, not the absent manifest, outputs, prompts, code, or request-only media.
+The benchmark is therefore not counted as a public family and has no helper.
+
 SongBench is now indexed as a partially released full-song evaluator family
 after a primary-source audit of paper sections 2-4 and Tencent's official
 repository. The paper defines seven expert-rated dimensions--vocal,

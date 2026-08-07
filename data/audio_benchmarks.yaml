@@ -4,11 +4,85 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-08-06
+  last_checked: 2026-08-07
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  promptshield_home_release_audit:
+    paper: https://arxiv.org/abs/2608.05495
+    title: "PromptShield Home: Ambient Multimodal Prompt Injection Defense for Smart-Home Agents"
+    sections: 2-6_and_acknowledgements
+    status: audited_announced_but_unavailable_ambient_audio_visual_agent_safety_benchmark
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: PromptShield-Home
+        index_id: null
+        status: paper_described_manifest_and_outputs_claimed_released_but_unavailable
+        role: post_training_audio_visual_agent_alignment_safety_and_prompt_injection_evaluation
+        protocol: >-
+          Evaluate whether smart-home agents treat ambient speech, television
+          audio, on-screen text, bystander conversation, health-monitor cues,
+          and genuine commands as executable user intent. Seventeen audio-video
+          clips receive a candidate device/action and a gold execute, block, or
+          ask-user decision; two still images separately test occupancy-state
+          perception. The paper compares an idealized traditional-detector
+          proxy, Qwen3-VL-30B under vision and vision-plus-ASR inputs,
+          Qwen2.5-Omni-7B with native audio-video, and voting, role-specialist,
+          and cross-model arbitration variants.
+        note: >-
+          The 17 action cases contain 14 no-action and three action-required
+          examples, so the paper separates unsafe-execution rate from
+          safe-completion rate and also reports false-block, human-confirmation,
+          and overall accuracy. The full pilot has 19 scenarios across six
+          categories. Five or more authors unanimously checked each scripted
+          case and gold decision; this is construction-time consensus, not an
+          independent inter-annotator agreement study. The reported 94.1%
+          L0/vision complementarity result is an oracle upper bound, not an
+          implemented router.
+    release_audit:
+      paper_and_protocol_description: public
+      scenario_manifest: claimed_released_but_no_public_location_found
+      model_outputs_and_per_case_decisions: claimed_released_but_no_public_location_found
+      prompts_and_evaluation_code: not_specified_unreleased
+      raw_audio_video_and_images: withheld_for_privacy_request_only
+      request_process_and_reuse_terms: not_specified
+      arxiv_source_bundle: public_paper_source_and_figures_only
+    license:
+      paper: CC-BY-4.0
+      scenario_manifest: not_specified_unavailable
+      model_outputs: not_specified_unavailable
+      code: not_specified_unreleased
+      raw_media: not_specified_request_only
+      note: >-
+        CC BY 4.0 covers the paper, not the absent manifest, model outputs,
+        prompts, code, or raw recordings. The authors withhold raw audio and
+        video because these expose identifiable laboratory interiors and team
+        voices, and say media may be shared with researchers on reasonable
+        request; this is neither a public release nor a license or permission
+        to redistribute the recordings.
+    sources:
+      - https://arxiv.org/abs/2608.05495
+      - https://arxiv.org/html/2608.05495v1#S2
+      - https://arxiv.org/html/2608.05495v1#S3
+      - https://arxiv.org/html/2608.05495v1#S4
+      - https://arxiv.org/html/2608.05495v1#S5
+      - https://arxiv.org/html/2608.05495v1#S6
+      - https://arxiv.org/html/2608.05495v1#Sx1.acknowledgements1
+      - https://export.arxiv.org/api/query?id_list=2608.05495
+      - https://api.github.com/search/repositories?q=%22PromptShield-Home%22
+      - https://huggingface.co/api/datasets?search=PromptShield-Home
+      - https://huggingface.co/api/models?search=PromptShield-Home
+    note: >-
+      The acknowledgements claim that a scenario manifest and model outputs are
+      released, but the paper supplies no artifact URL. Its arXiv source bundle
+      contains only manuscript sources and figures, while exact-name GitHub
+      repository search and Hugging Face dataset/model searches returned no
+      matching release on the verification date. This directly in-scope audit
+      preserves a useful post-training safety protocol without counting the
+      unavailable benchmark as a public family or adding a download helper.
+      Revisit the paper record and author channels if an artifact link appears.
+
   formvoiceagentbench_release_audit:
     paper: https://arxiv.org/abs/2608.06027
     title: "FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India"
