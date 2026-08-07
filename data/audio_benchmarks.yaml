@@ -9,6 +9,81 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  hive_voice_keyboard_input_perturbation_release_audit:
+    paper: https://arxiv.org/abs/2608.03970
+    title: "Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations"
+    sections: 3-6_appendices_A-C
+    status: audited_claimed_release_unlocated_with_text_only_synthetic_voice_protocol
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: HIVE
+        index_id: null
+        status: paper_specific_claimed_released_but_unlocated_text_perturbation_suite
+        role: speech_transcription_and_typed_input_robustness_evaluation_for_llm_agents
+        protocol: >-
+          Apply 11 voice-transcription operators, six seeded QWERTY keyboard
+          operators, and two controls to fixed subsets of GSM8K,
+          GSM-Symbolic, GSM1k, HumanEval, MMLU-Pro STEM, and TruthfulQA MC1.
+          Evaluate five open instruction-tuned text LLMs at five seeds with
+          greedy decoding and matched item IDs, reporting clean accuracy,
+          paired accuracy deltas, geometric-mean accuracy ratios, McNemar
+          tests, bootstrap intervals, and Holm-Bonferroni corrections. The
+          complete matrix comprises 550,000 scored generations.
+        note: >-
+          The voice arm models disfluency, register, dictation rewriting,
+          fillers, homophones, function-word deletion, and formatting loss
+          through deterministic text transforms or Qwen2.5-7B text-to-text
+          style transfer. It contains no recorded speech or ASR evaluation;
+          the paper explicitly leaves its implemented synthetic TTS-to-ASR
+          branch out of the reported runs. HIVE is therefore a protocol audit
+          for post-transcription robustness, not a public audio dataset.
+    release_audit:
+      paper_protocol_operator_specification_and_aggregate_results: public
+      paper_claimed_code_prompts_and_analysis: release_url_not_provided
+      exact_operator_implementation: not_located
+      few_shot_register_examples_and_verbalizer_prompts: specified_in_paper_appendix
+      transformed_item_manifests: not_located
+      cached_verbalizations: not_located
+      model_generations_predictions_and_per_item_scores: not_located
+      acoustic_recordings_or_human_asr_transcripts: not_part_of_reported_evaluation
+      synthetic_tts_asr_branch_results: implemented_but_omitted_from_reported_runs
+      exact_name_github_repository_search: no_results
+      exact_name_hugging_face_dataset_and_model_searches: no_results
+    license:
+      paper: CC-BY-4.0
+      claimed_code_prompts_and_analysis: not_specified_unavailable
+      transformed_benchmark_artifacts: not_specified_unavailable
+      source_benchmarks_and_models: upstream_terms_apply
+      note: >-
+        CC BY 4.0 covers the arXiv article, not absent code, transformed
+        benchmark stems, cached verbalizations, model outputs, or upstream
+        benchmark data. No reuse or redistribution terms can be inferred for
+        the claimed but unlocated release.
+    sources:
+      - https://arxiv.org/abs/2608.03970
+      - https://arxiv.org/html/2608.03970v1#S3
+      - https://arxiv.org/html/2608.03970v1#S4
+      - https://arxiv.org/html/2608.03970v1#S6
+      - https://arxiv.org/html/2608.03970v1#A1
+      - https://arxiv.org/html/2608.03970v1#A2
+      - https://arxiv.org/html/2608.03970v1#A3
+      - https://export.arxiv.org/api/query?id_list=2608.03970
+      - https://api.github.com/search/repositories?q=%22Human%20Input-Variation%20Engine%22
+      - https://api.github.com/search/repositories?q=%22Should%20We%20Type%20or%20Talk%22
+      - https://huggingface.co/api/datasets?search=Human%20Input-Variation%20Engine
+      - https://huggingface.co/api/models?search=Human%20Input-Variation%20Engine
+    note: >-
+      Sections 3-6 and Appendices A-C fully specify the perturbation taxonomy,
+      evaluation matrix, and reported statistics and state that code, prompts,
+      and analysis are released, but the paper and arXiv metadata provide no
+      artifact URL. Exact-title and exact-name GitHub repository searches and
+      Hugging Face dataset/model searches found no matching owner release on
+      2026-08-07. Because the actual reported evaluation never processes
+      audio, this audit documents a useful speech-interface robustness
+      protocol without presenting it as an audio benchmark family. No helper
+      is added; revisit if the authors publish the claimed implementation or
+      a human-speech/ASR branch.
+
   vorch_director_long_audio_visual_release_audit:
     paper: https://arxiv.org/abs/2608.05776
     project: https://vorch-project.github.io/Vorch-Director-project/

@@ -2545,3 +2545,21 @@ absent benchmark artifacts. ST-Bench and UnityShots rows are visual provenance
 and do not become audio benchmark families merely because they share the
 paper's evaluator. No counted family or download helper is added pending an
 independently runnable release.
+
+The August 2026 *Should We Type or Talk to LLM Agents?* paper is recorded as a
+claimed-release audit of HIVE, a post-transcription robustness protocol for LLM
+agents. Sections 3-6 and Appendices A-C define 11 voice-transcription
+perturbations, six seeded QWERTY operators, and two controls over fixed subsets
+of GSM8K, GSM-Symbolic, GSM1k, HumanEval, MMLU-Pro STEM, and TruthfulQA MC1.
+Five open instruction-tuned text LLMs, five seeds, and 19 conditions yield
+550,000 matched generations with paired accuracy deltas and corrected
+significance tests. The voice arm is important but easy to misclassify: it uses
+deterministic transformations and Qwen2.5-7B text-to-text style transfer to
+model disfluency, register, dictation rewriting, homophones, and surface loss;
+it contains no recorded speech or reported ASR run. The paper says code,
+prompts, and analysis are released but supplies no artifact URL, and exact-name
+GitHub and Hugging Face searches found no matching owner release on August 7.
+CC BY 4.0 covers the article, not absent implementations, transformed stems,
+cached verbalizations, outputs, or upstream benchmark data. HIVE is therefore
+documented as an unavailable speech-interface protocol, not counted as a
+public audio benchmark family, and receives no download helper.
