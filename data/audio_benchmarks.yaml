@@ -125,6 +125,125 @@ paper_audits:
       independently indexed from its primary paper, owner repository, and
       ungated Hugging Face release.
 
+  saslm_expressive_post_training_evaluation_audit:
+    paper: https://arxiv.org/abs/2604.11424
+    title: "Bridging What the Model Thinks and How It Speaks: Expressive Speech Generation via Self-Aware Intent-Realization Alignment"
+    sections: 4.1-4.3_5.1-5.3_appendices_A_C.3_D.1-D.2
+    status: audited_existing_public_benchmarks_with_unreleased_evaluation_records_and_partial_model_training_release
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: EchoMind
+        index_id: echomind
+        status: existing_public_family_with_paper_specific_generation_protocol
+        role: primary_expressive_speech_generation_and_empathetic_dialogue_evaluation
+        protocol: >-
+          Generate English spoken responses for EchoMind dialogues spanning
+          seven emotion categories. Table 2 evaluates response intelligibility
+          with WER, pitch variance, text-speech emotion agreement with
+          emotion2vec, Audiobox-Aesthetics CE/CU/PC/PQ scores, and
+          Gemini-2.5-Flash ratings from 1-5 for context-appropriate emotion,
+          prosody, naturalness, and overall interaction quality. Controllable
+          TTS baselines synthesize the reference replies with predefined
+          expressive prompts, while speech language models answer end to end.
+          The paper does not state the exact evaluated item count or publish a
+          frozen row manifest.
+      - cited_as: EchoMind empathetic response evaluation
+        index_id: echomind
+        status: existing_public_family_official_semantic_protocol
+        role: semantic_capability_retention_after_expressive_post_training
+        protocol: >-
+          Appendix C.3 separately applies EchoMind's four 1-5 empathetic
+          response dimensions: Context Fit, Response Naturalness,
+          Colloquialism, and Implicit Recognition. These are reported for
+          SASLM-3B and two Qwen2.5-Omni baselines to check whether expressive
+          post-training preserves empathetic dialogue behavior.
+      - cited_as: MMAU-v05.15.25
+        index_id: mmau
+        status: existing_public_family_versioned_release
+        role: general_audio_understanding_retention_after_expressive_post_training
+        protocol: >-
+          Appendix C.3 reports single-choice accuracy for the sound, music,
+          and speech domains plus their average. This is a capability-retention
+          evaluation, not a new SASLM benchmark family.
+    human_evaluation:
+      speech_performance: >-
+        Three English-proficient annotators compare SASLM with GPT-4o-mini-TTS
+        and Qwen3-Omni-30B on emotion, prosody, and quality using blinded
+        Win/Tie/Loss judgments. The appendix reports only aggregate plots and
+        net-win summaries and does not state the number of sampled utterances.
+      reward_model_validation: >-
+        The same appendix describes randomized RM-high versus RM-low pairwise
+        judgments for emotion, prosody, and quality, but does not publish the
+        pair manifest, sample count, individual ratings, or agreement results.
+    training_data:
+      - cited_as: InstructS2S
+        status: upstream_training_corpus_not_a_benchmark
+        note: Approximately 200,000 samples and 2,000 hours used for acoustic bootstrapping.
+      - cited_as: Genshin Dataset and EmoVoice-DB
+        status: upstream_and_derived_sft_data_not_benchmarks
+        note: Approximately 286,000 samples and 795 hours used for expressive intent grounding.
+      - cited_as: EmoNet English subset
+        status: upstream_questions_with_public_but_undocumented_derived_release
+        note: >-
+          About 200,000 samples and 263 hours support closed-loop self-reward
+          alignment. Owner Hugging Face repositories expose expressive SFT
+          archives, but have no dataset cards or declared licenses; the two
+          self-reward repositories currently contain only LFS attributes.
+    release_audit:
+      upstream_echomind_and_mmau_benchmarks: public_with_upstream_terms
+      exact_evaluation_split_and_row_manifest: not_released
+      generated_baseline_and_saslm_audio: selected_project_page_demos_only
+      model_predictions_metric_inputs_and_per_item_scores: not_released
+      gemini_judge_outputs_and_configuration_beyond_prompts: not_released
+      human_evaluation_items_randomization_and_individual_ratings: not_released
+      evaluation_and_inference_code: github_todo_only_not_released
+      saslm_3b_checkpoint: public_ungated_hugging_face_approximately_11.55_GB
+      expressive_sft_archives: public_ungated_without_dataset_cards_or_license_metadata
+      self_reward_dataset_repositories: public_but_empty_except_lfs_attributes
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      github_repository: no_license_file_or_detected_license
+      saslm_3b_checkpoint: Apache-2.0_model_card
+      expressive_and_self_reward_datasets: not_specified
+      benchmark_and_training_sources: upstream_terms_apply
+      note: >-
+        The GitHub README displays an MIT badge but the one-file repository has
+        no LICENSE, so the badge is not treated as a released code license.
+        Apache-2.0 on the checkpoint card does not license upstream benchmark
+        data, training archives, generated evaluation audio, or human and
+        model-judge records. The public training archives provide neither
+        dataset cards nor per-source rights manifests.
+    sources:
+      - https://arxiv.org/abs/2604.11424
+      - https://arxiv.org/html/2604.11424v2#S4.SS1
+      - https://arxiv.org/html/2604.11424v2#S4.SS2
+      - https://arxiv.org/html/2604.11424v2#S4.SS3
+      - https://arxiv.org/html/2604.11424v2#A3.SS3
+      - https://arxiv.org/html/2604.11424v2#A4.SS1
+      - https://arxiv.org/html/2604.11424v2#A4.SS2
+      - https://wangkevin02.github.io/SASLM/
+      - https://github.com/wangkevin02/SASLM
+      - https://raw.githubusercontent.com/wangkevin02/SASLM/main/README.md
+      - https://api.github.com/repos/wangkevin02/SASLM
+      - https://api.github.com/repos/wangkevin02/SASLM/git/trees/main?recursive=1
+      - https://huggingface.co/collections/wangkevin02/saslm-69da8725935add6fc3ac806e
+      - https://huggingface.co/api/collections/wangkevin02/saslm-69da8725935add6fc3ac806e
+      - https://huggingface.co/wangkevin02/SASLM-3B
+      - https://huggingface.co/api/models/wangkevin02/SASLM-3B
+      - https://huggingface.co/api/datasets/wangkevin02/expressive_s2s_en
+      - https://huggingface.co/api/datasets/wangkevin02/expressive_s2s_zh
+      - https://huggingface.co/api/datasets/wangkevin02/self_reward_s2s_3b_en
+      - https://huggingface.co/api/datasets/wangkevin02/self_reward_s2s_30b_en
+    note: >-
+      SASLM is directly relevant to audio-LLM post-training because its final
+      stage optimizes preference pairs selected by self or oracle speech
+      reward models, and its evaluation asks whether that alignment improves
+      acoustic realization without degrading audio understanding or empathetic
+      response quality. All named benchmark rows map to the existing EchoMind
+      and MMAU families. The paper-specific generation, judge, and human
+      protocols are not independently reproducible from released artifacts,
+      so no new counted family or download helper is added.
+
   hive_voice_keyboard_input_perturbation_release_audit:
     paper: https://arxiv.org/abs/2608.03970
     title: "Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations"

@@ -25,6 +25,27 @@ voice rights, or participant consent constraints. The helper downloads only
 official documentation and API metadata by default and requires explicit
 opt-in for the full snapshot.
 
+The April 2026 SASLM paper is recorded as an existing-family and unreleased-
+evaluation-artifact audit of self-reward post-training for expressive speech
+language models. Sections 4.1-4.3 and Appendices C.3 and D evaluate EchoMind in
+two roles: its standard four-dimension empathetic-response protocol checks
+semantic retention, while a paper-specific generation protocol scores WER,
+pitch variance, emotion2vec alignment, Audiobox-Aesthetics, and four
+Gemini-2.5-Flash ratings. MMAU-v05.15.25 sound, music, and speech accuracy is a
+second retention check. Both source families are already indexed. The paper
+does not state the exact EchoMind generation-panel size, and releases no frozen
+row manifest, complete baseline/model audio, predictions, metric inputs,
+per-item scores, or Gemini judge records. Its human appendix likewise reports
+aggregate Win/Tie/Loss plots from three annotators without the sample count,
+item selection, individual ratings, or agreement statistics. The owner project
+page provides selected demos. A public, ungated SASLM-3B checkpoint is about
+11.55 GB and declares Apache-2.0, while public expressive-SFT archives have no
+dataset cards or license metadata and the two self-reward dataset repositories
+contain only LFS attributes. The GitHub repository remains a one-file TODO and
+has no LICENSE despite displaying an MIT badge. These model and training-data
+releases do not make the absent evaluation records public and are not new
+benchmarks. No counted family or helper is added.
+
 The June 2026 *ParaBridge* paper is recorded as an existing-coverage and
 unreleased-artifact audit of paralinguistic speech-LLM post-training. Sections
 4.1-4.5 and Appendices A-C, E, and K-L evaluate whether on-policy
@@ -65,8 +86,8 @@ declares Apache-2.0, but the paper describes adapted and off-the-shelf sources,
 so the aggregate label should not be treated as overriding upstream rights.
 The paper's responsible-use guidance identifies the intended use as alignment
 auditing, red-teaming, and mitigation and warns against re-identification or
-voice profiling. EchoMind is now independently indexed; SASLM's EchoMind
-post-training protocol is the next focused evaluation-provenance candidate.
+voice profiling. EchoMind is now independently indexed; SASLM's use of it for
+expressive self-reward post-training is audited above.
 
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
