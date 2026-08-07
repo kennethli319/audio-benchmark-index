@@ -28,6 +28,7 @@ scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh
 scripts/download/multichallenge_audio.sh
+scripts/download/ihbench.sh
 scripts/download/nyra_verbatim_speech_benchmark.sh
 scripts/download/thorsten_voice.sh
 scripts/download/daps.sh
@@ -443,6 +444,12 @@ and exit with code `2`.
 ## Useful Options
 
 ```bash
+# IHBench downloads cards, paper/toolkit docs, licenses, and API metadata by
+# default. Baseline responses, embedded audio, and the toolkit are opt-in.
+IHBENCH_DOWNLOAD_BASELINE=1 scripts/download/ihbench.sh
+IHBENCH_DOWNLOAD_AUDIO=1 scripts/download/ihbench.sh
+IHBENCH_CLONE_TOOLKIT=1 scripts/download/ihbench.sh
+
 # DCASE 2026 Task 1 downloads official docs and development metadata by default.
 # Precomputed CLAP features and roughly 47 GB of audio/evaluation data are opt-in.
 DCASE2026_TASK1_DOWNLOAD_FEATURES=1 scripts/download/dcase2026_task1_hac.sh

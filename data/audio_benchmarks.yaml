@@ -13705,6 +13705,85 @@ benchmarks:
       - https://huggingface.co/datasets/ScaleAI/MultiChallenge
       - https://huggingface.co/datasets/ScaleAI/MultiChallenge/raw/main/README.md
 
+  - id: ihbench
+    name: IHBench
+    full_name: "IHBench: Interruption Handling Benchmark"
+    qwen_cited_as: null
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - post_interruption_recovery
+      - structured_workflow_dialogue
+      - multi_turn_spoken_dialogue
+      - speech_instruction_following
+      - spoken_agent_robustness
+      - audio_text_modality_robustness
+      - llm_as_judge_evaluation
+    official:
+      dataset: https://huggingface.co/datasets/bosonai/IHBench
+      repo: https://github.com/boson-ai/ihbench
+      paper: https://arxiv.org/abs/2606.19595
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/bosonai/IHBench
+        - https://github.com/boson-ai/ihbench
+      examples:
+        - 'scripts/download/ihbench.sh'
+        - 'IHBENCH_DOWNLOAD_BASELINE=1 scripts/download/ihbench.sh'
+        - 'IHBENCH_DOWNLOAD_AUDIO=1 scripts/download/ihbench.sh'
+        - 'IHBENCH_CLONE_TOOLKIT=1 scripts/download/ihbench.sh'
+      notes: >-
+        The helper saves the dataset card, Hugging Face API metadata, paper
+        page, toolkit README, license, and repository metadata by default. The
+        79,236-byte GPT-4o Audio baseline-response table is a separate opt-in;
+        the 216,471,312-byte conversation table with embedded 16 kHz user audio
+        is another opt-in. Cloning the evaluation toolkit is also opt-in. Full
+        inference and LLM judging require model access and provider credentials;
+        the helper does not collect or configure API keys.
+    license:
+      data: CC-BY-4.0
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares CC BY 4.0 for the released conversations,
+        embedded synthesized audio, rubrics, and baseline responses. The
+        evaluation repository is Apache 2.0. The paper says its per-conversation
+        voices come from Common Voice, but does not identify the Common Voice
+        release or voice records, the TTS system, or separate synthesis terms;
+        retain attribution and review voice, privacy, and upstream conditions
+        before redistribution or commercial use.
+    access:
+      status: public_ungated
+      requirements:
+        - No account is required to fetch the released data files.
+        - Reproducing official judged scores requires supported model endpoints and API credentials.
+      notes: >-
+        The release contains 45 English synthetic conversations across ten
+        enterprise domains and 428 controlled interruption points. Six tracks
+        cover normal, impatient, correction, topic-switch, filler, and pushback
+        interruptions. Each item supplies one task-fulfillment rubric and two
+        to four recovery-quality criteria. Task fulfillment is a randomized
+        comparative win rate against the released GPT-4o Audio response;
+        recovery quality passes only when every criterion passes. The paper
+        evaluates textual response content after interruption rather than
+        barge-in timing or response prosody, runs three epochs, and bootstraps
+        confidence intervals over per-item epoch means. Audio-versus-transcript
+        comparisons are a separate modality-robustness protocol.
+    sources:
+      - https://arxiv.org/abs/2606.19595
+      - https://arxiv.org/html/2606.19595v1#S3
+      - https://arxiv.org/html/2606.19595v1#S4
+      - https://arxiv.org/html/2606.19595v1#S5
+      - https://arxiv.org/html/2606.19595v1#A1
+      - https://huggingface.co/datasets/bosonai/IHBench
+      - https://huggingface.co/datasets/bosonai/IHBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/bosonai/IHBench
+      - https://huggingface.co/api/datasets/bosonai/IHBench/tree/main?recursive=true&expand=false
+      - https://github.com/boson-ai/ihbench
+      - https://raw.githubusercontent.com/boson-ai/ihbench/main/README.md
+      - https://raw.githubusercontent.com/boson-ai/ihbench/main/LICENSE
+      - https://api.github.com/repos/boson-ai/ihbench
+      - https://api.github.com/repos/boson-ai/ihbench/git/trees/main?recursive=1
+
   - id: mmau_pro
     name: MMAU-Pro
     full_name: "MMAU-Pro: A Challenging and Comprehensive Benchmark for Holistic Evaluation of Audio General Intelligence"
