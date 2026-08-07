@@ -7,6 +7,28 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *Beyond Prompt Adherence* paper is recorded as a released-
+protocol audit of attribute preservation in instruction-controlled speech
+generation. Sections 3, 5-6, and supplementary sections 9-13 pair neutral and
+descriptor-conditioned outputs from CosyVoice3, VoxCPM2, and Fish-Speech-S2
+over six LibriTTS-R reference speakers, ten texts, three seeds, and eleven
+conditions, yielding 5,940 generated outputs. The protocol measures target
+response and off-target acoustic movement while gating on ASR content and
+speaker similarity, then compares VoDER-Cal with single-sample, target-only,
+and oracle policies under a matched three-candidate budget. Two blinded
+45-sample studies provide a limited perceptual check. This directly evaluates
+post-training controllability and inference-time selection rather than merely
+prompt adherence. The official MIT repository releases the six-item reference
+manifest, frozen texts, descriptors, controls, prompt templates, model IDs,
+generation and scoring scripts, and calibration-aware analysis code. The
+LibriTTS-R audio remains an upstream download, however, and the 5,940 outputs,
+candidate audio, derived features, ASR and embedding records, frozen split
+assignments, per-item scores, listening stimuli, assignments, and raw ratings
+are not released. MIT covers the VoDER code and configurations; the paper's
+CC BY 4.0 license does not relicense LibriTTS-R, third-party models, or absent
+evaluation records. LibriTTS is already indexed, so no duplicate family or
+download helper is added.
+
 The August 2026 AEGBench recheck records a metadata-only change, not a public
 benchmark release. The official Hugging Face repository added a 660-byte
 dataset card describing open-vocabulary temporal grounding for large

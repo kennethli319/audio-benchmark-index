@@ -9,6 +9,95 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  voder_attribute_preservation_audit:
+    paper: https://arxiv.org/abs/2608.00545
+    title: "Beyond Prompt Adherence: Auditing Attribute-Level Voice Control in Speech Generation"
+    sections: 3, 5-6, and supplementary sections 9-13
+    status: audited_existing_public_family_with_released_protocol_and_unreleased_outputs
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: LibriTTS-R test-clean reference speakers
+        index_id: libritts
+        status: public_derivative_of_existing_family
+        protocol: >-
+          Use six released LibriTTS-R test-clean utterances as reference voices
+          for CosyVoice3, VoxCPM2, and Fish-Speech-S2. Cross each speaker with
+          ten frozen English texts, three seeds, one neutral baseline, six
+          voice descriptors, and four controls, producing 1,980 outputs per
+          system and 5,940 outputs overall.
+    additional_protocols:
+      paired_attribute_preservation: >-
+        Pair every descriptor-conditioned output with the same system,
+        speaker, text, and nominal-seed neutral output. Measure changes in F0,
+        speaking rate, duration, RMS energy, spectral centroid, 85% roll-off,
+        spectral flatness, and zero-crossing rate; treat features outside each
+        descriptor's frozen target set as off-target movement. Gate on ASR
+        content preservation and ECAPA speaker similarity, average seeds
+        within each request, and form confidence intervals with 10,000
+        request-block bootstrap replicates.
+      voder_cal_candidate_selection: >-
+        For deep, bright, and rough requests, compare single-sample Direct and
+        Random policies with Target-only, VoDER-Cal, and Oracle selection from
+        the same three-candidate pool. Thresholds, normalization scales, and
+        disjoint selector/evaluator feature partitions are fixed on a
+        calibration split. The primary operating point retains at least 75%
+        of the strongest target response and abstains when no candidate also
+        passes content and speaker checks.
+      auxiliary_listening_studies: >-
+        Ten adult listeners complete two blinded 45-sample studies, with
+        three independent ratings per sample-task pair. H1 separately judges
+        requested and non-target changes against a matched baseline; H2
+        compares VoDER-Cal and Target-only outputs for preservation and target
+        expression.
+    release_audit:
+      upstream_libritts_r_audio: public_under_upstream_terms_not_redistributed_by_voder
+      six_reference_item_manifest_and_transcripts: public_in_owner_repository
+      ten_texts_descriptors_controls_seeds_and_prompt_templates: public_in_frozen_configs
+      generation_feature_extraction_scoring_and_analysis_code: public_mit
+      model_identifiers_and_backend_interfaces: public_in_repository
+      generated_5940_output_matrix_and_candidate_audio: not_released
+      derived_feature_tables_asr_records_embeddings_and_per_item_scores: not_released
+      calibration_evaluation_assignment_records: reproducible_in_code_but_frozen_assignments_not_released
+      listening_stimuli_assignments_and_raw_ratings: not_released
+      aggregate_results: public_in_paper
+    license:
+      paper: CC_BY_4_0
+      voder_code_and_configs: MIT
+      libritts_r_reference_audio: upstream_LibriTTS_R_terms_apply
+      generated_audio_and_derived_records: not_specified_unreleased
+      listener_records: not_specified_unreleased
+      note: >-
+        The repository's MIT license covers VoDER code and frozen
+        configurations, not the separately downloaded LibriTTS-R recordings,
+        third-party model code or checkpoints, absent generated speech,
+        derived measurements, or listener records. The paper's CC BY 4.0
+        license likewise does not relicense those artifacts.
+    sources:
+      - https://arxiv.org/abs/2608.00545
+      - https://arxiv.org/html/2608.00545v1#S3
+      - https://arxiv.org/html/2608.00545v1#S5
+      - https://arxiv.org/html/2608.00545v1#S6
+      - https://arxiv.org/html/2608.00545v1#S9
+      - https://github.com/intelland/VoDER
+      - https://api.github.com/repos/intelland/VoDER
+      - https://api.github.com/repos/intelland/VoDER/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/intelland/VoDER/main/README.md
+      - https://raw.githubusercontent.com/intelland/VoDER/main/docs/reproduction.md
+      - https://raw.githubusercontent.com/intelland/VoDER/main/data/reference_speakers_manifest_final.csv
+      - https://raw.githubusercontent.com/intelland/VoDER/main/configs/descriptors_speaker_robustness_final.yaml
+      - https://www.openslr.org/141/
+    note: >-
+      This is directly relevant to post-training evaluation of
+      instruction-controlled speech generation: it tests whether a requested
+      voice attribute changes while content, speaker identity, and unrelated
+      acoustic properties remain stable, and it evaluates inference-time
+      reranking under a matched candidate budget. The source audio belongs to
+      the already indexed LibriTTS family, so no duplicate benchmark family or
+      download helper is added. The official repository makes the protocol
+      substantially reproducible from upstream audio and model dependencies,
+      but does not publish the generated evaluation matrix, derived records,
+      or human-study artifacts.
+
   kvae_audio_tokenizer_swap_evaluation:
     paper: https://arxiv.org/abs/2608.05798
     title: "KVAE: Family of Tokenizers for Multimodal Generative Models"
