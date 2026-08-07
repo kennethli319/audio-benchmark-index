@@ -4863,6 +4863,7 @@ paper_audits:
     title: "Rethinking Speech Foundation Model Fine-tuning: Better SFT or Better Match?"
     sections: 3.1-3.6 and 4
     status: audited_existing_public_and_request_gated_superb_families
+    last_verified: 2026-08-06
     evaluated_sets:
       - cited_as: SUPERB intent classification (IC)
         index_id: fluent_speech_commands
@@ -4890,7 +4891,10 @@ paper_audits:
       fluent_speech_commands: manual_academic_access
       iemocap: owner_request_and_signed_terms_required
       voxceleb1_original_audio: no_longer_distributed_by_owner
-      paper_code_configs_checkpoints_predictions_and_scores: not_released
+      paper_code_and_exact_run_configs: not_released
+      paper_trained_checkpoints: not_released
+      paired_prediction_and_truth_files: used_for_mcnemar_tests_but_not_released
+      aggregate_scores: paper_tables_only
     license:
       paper: arxiv_perpetual_nonexclusive
       superb_toolkit: Apache-2.0_with_repository_exceptions
@@ -4908,6 +4912,7 @@ paper_audits:
       - https://arxiv.org/html/2607.13864v1#S3.SS4
       - https://arxiv.org/html/2607.13864v1#S3.SS5
       - https://arxiv.org/html/2607.13864v1#S3.SS6
+      - https://arxiv.org/html/2607.13864v1#S4
       - https://github.com/s3prl/s3prl
       - https://github.com/s3prl/s3prl/blob/main/s3prl/downstream/docs/superb.md
       - https://fluent.ai/fluent-speech-commands-a-dataset-for-spoken-language-understanding-research/
@@ -4917,9 +4922,13 @@ paper_audits:
       This is an existing-coverage audit of three indexed source families, not
       a new benchmark family. The paper varies pretrained checkpoints,
       fine-tuning modes, and random seeds while keeping the official SUPERB
-      task pipelines fixed; it does not publish the resulting checkpoints,
-      paired predictions, score matrix, or exact run configuration bundle.
-      Existing family helpers remain the authoritative access paths.
+      task pipelines fixed. Section 3.5 specifies seed 1337 for the full
+      matrix and seeds 2048 and 7395 for three base checkpoints; sections 3.6
+      and 4 say paired prediction/truth files support exact McNemar tests, but
+      only aggregate tables are in the paper. No author project or repository
+      is linked, and the resulting checkpoints, paired files, or exact run
+      configuration bundle are not published. Existing family helpers remain
+      the authoritative access paths.
 
   efficient_audioldm_pruning:
     paper: https://arxiv.org/abs/2607.13330

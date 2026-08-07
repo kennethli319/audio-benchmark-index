@@ -1761,11 +1761,14 @@ The July 2026 *Rethinking Speech Foundation Model Fine-tuning: Better SFT or
 Better Match?* paper is recorded as an existing-coverage audit of three
 official SUPERB tasks: Fluent Speech Commands intent classification, IEMOCAP
 emotion recognition, and VoxCeleb1 speaker identification. Sections 3-4 vary
-nine pretrained checkpoints, eight fine-tuning configurations, and multiple
-random seeds while keeping the official SUPERB task pipelines fixed. The
-public Apache-2.0 S3PRL toolkit documents the component protocols, but the
-paper releases no experiment-specific configs, checkpoints, paired
-predictions, or score matrix. Component access and terms remain authoritative:
+nine pretrained checkpoints and eight fine-tuning configurations while
+keeping the official SUPERB task pipelines fixed. Section 3.5 gives seed 1337
+for the full matrix and two additional seeds, 2048 and 7395, for three base
+checkpoints. Sections 3.6 and 4 say paired prediction/truth files underlie the
+exact McNemar tests, but only aggregate tables are published. The public
+Apache-2.0 S3PRL toolkit documents the component protocols; no author project
+or repository supplies the paper's exact configs, trained checkpoints, paired
+files, or score matrix. Component access and terms remain authoritative:
 Fluent Speech Commands is manual academic access under CC BY-NC-ND 4.0,
 IEMOCAP requires an owner request and signed research terms, and the VoxCeleb
 owner page no longer distributes the original audio. No duplicate family or
