@@ -4,6 +4,26 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *Audio-Cogito* revision is recorded as a public-training-release
+and existing-benchmark evaluation audit of chain-of-thought SFT for audio
+LLMs. Sections 2-3 construct a claimed 545,000 examples from ten sound,
+speech, and music sources using Qwen3-Omni-Instruct for QA generation,
+Qwen3-Omni-Thinking for self-distilled reasoning traces, and a two-stage
+consistency and LLM-judge filter. Evaluation exclusively uses the already
+indexed MMAR family and the Interspeech 2026 Audio Reasoning Challenge
+protocol: answer accuracy, GPT-4o judgments against five Gemini-generated
+instance rubric items, and Correct Reasoning Score, with five judging runs
+and the middle three averaged. The public, ungated Hugging Face repository
+contains one 1,001,617,560-byte JSONL file with messages, reasoning, answers,
+and upstream audio path identifiers, but no audio media. The owner GitHub
+repository contains only a README and two pipeline figures; Cogito-Pipe code,
+the seed pool, prompts, verification implementation, model adapter or
+checkpoint, predictions, and per-item evaluation scores are not released.
+The dataset card declares CC BY-NC 4.0 for the aggregate annotation file, not
+the omitted upstream audio or absent artifacts; the GitHub repository has no
+detected license. Because this is training data without an independent test
+split or evaluation protocol, no new family or download helper is added.
+
 The July 2026 *Latent-IM* paper is recorded as an existing-corpora and
 unreleased-derived-protocol audit of interaction-management control for speech
 LLMs. Sections 3-7 and Appendices A-C and G map MapTask, FindTask, and CReST

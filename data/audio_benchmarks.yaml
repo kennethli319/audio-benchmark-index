@@ -9,6 +9,108 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audio_cogito_sft_and_mmar_evaluation_audit:
+    paper: https://arxiv.org/abs/2604.12527
+    title: "Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models"
+    sections: 2-3
+    status: audited_public_training_annotations_existing_benchmark_evaluation
+    last_verified: 2026-08-07
+    training_release:
+      name: Audio-Cogito
+      role: supervised_finetuning_data_not_benchmark
+      claimed_samples: 545000
+      domains:
+        - sound
+        - speech
+        - music
+        - mixed_audio_domains
+      upstream_sources:
+        - AudioSet
+        - Clotho
+        - AudioCaps
+        - ComplexAudio
+        - MELD
+        - CoVoST2
+        - DailyTalk
+        - MusicBench
+        - FMA
+        - Medley-solos-DB
+      construction:
+        seed_questions: approximately_500_llm_generated_and_expert_refined
+        qa_annotator: Qwen3-Omni-Instruct
+        questions_per_audio: 1_to_3
+        cot_generator: Qwen3-Omni-Thinking
+        verification:
+          - answer_consistency_check
+          - Qwen3-Omni-Instruct_hallucination_and_logic_judge
+      public_artifact:
+        repository: https://huggingface.co/datasets/lilonghao/Audio-Cogito
+        access: public_ungated
+        format: one_JSONL_file
+        size_bytes: 1001617560
+        contents:
+          - conversation_messages
+          - chain_of_thought_annotations
+          - final_answers
+          - upstream_audio_path_identifiers
+        audio_media: not_included
+        dataset_card_license: CC-BY-NC-4.0
+    evaluation:
+      benchmark:
+        name: MMAR
+        index_id: mmar
+        status: existing_public_family_not_a_new_Audio_Cogito_benchmark
+      protocol: Interspeech_2026_Audio_Reasoning_Challenge
+      metrics:
+        - average_answer_accuracy
+        - five_item_instance_rubric_score_conditioned_on_correct_answer
+        - correct_reasoning_score
+      rubric_source: Gemini-2.5-Pro_generated_MMAR_instance_rubrics
+      judge: GPT-4o
+      repeated_judging: five_runs_report_mean_of_middle_three
+      evaluated_model: Audio-Cogito_30B-A3B
+    release_audit:
+      github_repository_contents:
+        - README
+        - pipeline_figure_PNG
+        - pipeline_figure_SVG
+      cogito_pipe_code: not_released
+      seed_question_pool: not_released
+      qa_and_cot_generation_prompts: not_released
+      verification_prompts_and_code: not_released
+      model_checkpoint_or_adapter: not_released
+      evaluation_predictions_and_per_item_scores: not_released
+      download_helper: not_added_training_data_is_out_of_index_scope
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      released_annotation_file: CC-BY-NC-4.0_per_dataset_card
+      github_code: no_license_detected_and_no_executable_code_released
+      upstream_audio: upstream_terms_apply_and_media_not_included
+      note: >-
+        The dataset-card label applies to the released aggregate annotation
+        file. It should not be read as relicensing upstream audio, metadata,
+        synthetic annotations whose provenance may carry additional terms, or
+        absent pipeline and model artifacts.
+    sources:
+      - https://arxiv.org/abs/2604.12527
+      - https://arxiv.org/html/2604.12527v3#S2
+      - https://arxiv.org/html/2604.12527v3#S3
+      - https://github.com/llh666521/Audio-Cogito
+      - https://raw.githubusercontent.com/llh666521/Audio-Cogito/main/README.md
+      - https://api.github.com/repos/llh666521/Audio-Cogito
+      - https://api.github.com/repos/llh666521/Audio-Cogito/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/lilonghao/Audio-Cogito
+      - https://huggingface.co/datasets/lilonghao/Audio-Cogito/raw/main/README.md
+      - https://huggingface.co/api/datasets/lilonghao/Audio-Cogito
+      - https://huggingface.co/api/datasets/lilonghao/Audio-Cogito/tree/main?recursive=true&expand=false
+      - https://audio-reasoning-challenge.github.io/
+    note: >-
+      This directly audits audio-LLM post-training: the paper studies
+      self-distilled chain-of-thought SFT and evaluates the resulting model on
+      MMAR. Audio-Cogito is training data without an independent evaluation
+      split or protocol, so it is not counted as a benchmark family and no
+      download helper is added.
+
   latent_im_interaction_management_evaluation_audit:
     paper: https://arxiv.org/abs/2607.26928
     title: "Latent-IM: Latent Interaction Management for Speech LLMs"
