@@ -9,6 +9,92 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  vorch_omni_multitask_human_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.05803
+    title: "Vorch-Omni: Multi-Task Orchestration of Sight and Sound"
+    sections: 5.2-5.3_and_appendix_A.5
+    status: audited_unreleased_human_evaluation_protocol_with_public_selected_demonstrations
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: Vorch-Omni human-evaluation benchmark
+        index_id: null
+        status: paper_specific_unreleased_prompt_condition_and_output_set
+        role: post_training_instruction_following_reference_control_and_audio_visual_generation_evaluation
+        protocol: >-
+          Compare anonymized Vorch-Omni and Wan 2.7 outputs under matched task
+          inputs, randomizing model order independently per sample. Expert
+          raters with film, advertising, and content-production experience
+          assign Good, Same, or Bad for each applicable secondary dimension.
+          The two broad tracks are text-to-audio-video generation and
+          reference-conditioned generation or manipulation; the latter spans
+          image, video, keyframe, audio-video, and voice references plus
+          character replacement, camera control, transformation, editing, and
+          temporal continuation.
+        note: >-
+          Section 5.2 first states that the final benchmark contains 537 paired
+          sample groups, but the comparison paragraph, Section 6, and the
+          reported 11,361 dimension-level judgments say 527 groups. No item
+          manifest is released to resolve this ten-group discrepancy.
+    metrics:
+      - hierarchical_prompt_adherence
+      - reference_inheritance_and_fidelity
+      - intrinsic_motion_and_visual_quality
+      - audio_prompt_following
+      - audio_quality
+      - audio_visual_and_lip_synchronization
+      - good_same_bad_distribution
+      - net_win_rate_good_minus_bad_over_all_judgments
+    protocol_note: >-
+      Appendix A.5 publishes the complete criterion descriptions and labels
+      each secondary dimension by Prompt, Reference, or Video evidence. The
+      paper reports 81.4% Same, 7.7% Good, and 8.0% Bad at aggregate level,
+      although those rounded shares sum to 97.1%, and reports a -1.9% aggregate
+      net win rate. Capability-specific net win rates are positive for
+      audio-visual synchronization, reference alignment, audio prompt
+      following, and audio quality. These are aggregate paper results, not a
+      reproducible public score package.
+    release_audit:
+      paper_and_full_dimension_rubric: public
+      aggregate_and_selected_task_level_results: public_in_paper
+      project_page_and_selected_qualitative_media: public_ungated
+      benchmark_prompts_and_conditions: not_released
+      exact_527_or_537_item_manifest: not_released
+      matched_wan_2_7_and_vorch_omni_output_matrix: not_released
+      rater_assignments_and_dimension_level_judgments: not_released
+      evaluation_interface_code_and_randomization_seeds: not_released
+      model_code_and_checkpoint: not_released
+      training_corpus_source_manifest_and_mixture: not_released
+    license:
+      paper: CC-BY-4.0
+      project_repository_code_and_media: no_license_detected
+      benchmark_protocol_assets_and_outputs: not_specified_unreleased
+      model_and_training_corpus: not_specified_unreleased
+      note: >-
+        CC BY 4.0 applies to the article, not automatically to the separately
+        hosted project-page code, reference media, generated demonstrations,
+        or absent evaluation and model artifacts. The official project
+        repository has no detected license, so public viewing does not establish
+        redistribution or commercial-use permission.
+    sources:
+      - https://arxiv.org/abs/2608.05803
+      - https://arxiv.org/html/2608.05803v1#S5.SS2
+      - https://arxiv.org/html/2608.05803v1#S5.SS3
+      - https://arxiv.org/html/2608.05803v1#A1.SS5
+      - https://vorch-project.github.io/Vorch-Omni-project/
+      - https://github.com/Vorch-Project/Vorch-Omni-project
+      - https://api.github.com/repos/Vorch-Project/Vorch-Omni-project
+      - https://api.github.com/repos/Vorch-Project/Vorch-Omni-project/git/trees/main?recursive=1
+    note: >-
+      This evaluation is directly relevant to post-training of a multimodal
+      audio-language-conditioned generator because it tests instruction
+      following, reference and voice control, editing, audio quality, and
+      cross-modal synchronization after unified multi-task fine-tuning of an
+      LTX-2.3 audio-video backbone. The public project repository contains
+      selected demonstrations but no benchmark manifest, complete paired
+      outputs, judgments, scorer, model code, or checkpoint. The protocol is
+      therefore audited without counting a public benchmark family or adding a
+      download helper.
+
   grow_speech_rl_evaluation_audit:
     paper: https://arxiv.org/abs/2608.03215
     title: "GROW: Group-Relative Advantage-Weighted On-Policy Reinforcement Learning of Autoregressive-Diffusion Text-to-Speech Model"

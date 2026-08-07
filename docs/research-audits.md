@@ -7,6 +7,24 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *Vorch-Omni* report is recorded as an unreleased human-
+evaluation protocol audit for instruction-conditioned audio-video generation
+and manipulation. Sections 5.2-5.3 and Appendix A.5 compare anonymized
+Vorch-Omni and Wan 2.7 outputs across text-to-audio-video and reference-
+conditioned tracks using expert Good/Same/Bad judgments for prompt adherence,
+reference fidelity, motion and visual quality, audio quality, and audio-visual
+synchronization. This directly audits multimodal post-training: the model is a
+multi-task-fine-tuned LTX-2.3 audio-video backbone, and the protocol tests
+instruction following, voice/reference control, editing, and synchronization.
+The paper inconsistently reports 537 paired groups during benchmark
+construction but 527 groups in the judgment paragraph and conclusion; no
+manifest is available to resolve the difference. The official, unlicensed
+project repository exposes selected qualitative reference media and outputs,
+but not the benchmark prompts and conditions, complete paired outputs, 11,361
+dimension-level judgments, evaluator code, randomization seeds, model code,
+checkpoint, or training-corpus manifest. CC BY 4.0 covers the article, not
+those separate or absent artifacts. No public family or helper is added.
+
 The August 2026 GROW paper is recorded as an existing-family and unreleased-
 output audit of on-policy reward optimization for speech generation. Sections
 3-4 and Tables 1-5 evaluate a Qwen3-backed autoregressive-diffusion TTS model
