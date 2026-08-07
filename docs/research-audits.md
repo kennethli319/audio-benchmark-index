@@ -296,7 +296,8 @@ families, undisclosed proprietary training audio, generated outputs, or
 listener records. No duplicate benchmark family or download helper is added.
 
 The August 2026 *LILAC* paper is recorded as a speech-codec token-interface
-and release-status audit. Sections 5-6 and supplementary sections 2-6 score
+and release-status audit, updated after its public artifacts appeared on
+August 7. Sections 5-6 and supplementary sections 2-6 score
 one-pass reconstruction on the existing LibriSpeech test-clean, LibriTTS-R,
 and VCTK families, plus an unreleased 585-item HiFiTTS-2 holdout. Its central
 evaluation checks exact token recovery across all 7,457 LibriSpeech and
@@ -305,15 +306,18 @@ LibriTTS-R utterances, runs 100 decode-re-encode cycles on a random balanced
 through 100 cycles on 600 utterances. A separate uncontrolled MUSHRA-style
 study has 40 retained listeners rate nine items from the three public
 families. These protocols directly test whether a speech tokenizer remains a
-stable interface for speech-LLM and generation pipelines. However, the paper's
-claimed GitHub repository and demo page returned 404 on 2026-08-06, its
-claimed Hugging Face checkpoint returned 401 with an invalid-username-or-
-password response, and an exact-name GitHub repository search found no
-result. Fixed random selections, HiFiTTS-2 data, reconstructed outputs,
-tokens, predictions, per-item scores, and raw listener records are likewise
-unreleased. The arXiv distribution license does not license those absent
-artifacts; upstream corpus terms still apply. No new benchmark family or
-download helper is added.
+stable interface for speech-LLM and generation pipelines. The official
+Apache-2.0 GitHub repository now publishes a small PyTorch reproduction with
+inference, training, and structural self-check code; its README corrects the
+paper's stale `julianyi/lilac` URL to an ungated `julianyi1/lilac` repository
+containing an approximately 224.6 MiB checkpoint. The public demo exposes
+eight selected LibriSpeech items for five codecs at cycles 1, 10, and 100.
+The fixed random 100-clip and 600-utterance selections, nine listening items,
+HiFiTTS-2 holdout, benchmark metric and listening-test code, full outputs,
+tokens, predictions, per-item scores, and raw listener records remain
+unreleased. Apache 2.0 covers released code and checkpoint files, not upstream
+audio or separate generated-output rights; upstream corpus terms still apply.
+No new benchmark family or download helper is added.
 
 The August 2026 *AudioScape-TTA* paper is recorded as an unreleased
 text-to-audio instruction-following and evaluator audit. Sections 3-4 and

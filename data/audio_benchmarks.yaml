@@ -894,8 +894,8 @@ paper_audits:
     paper: https://arxiv.org/abs/2608.05727
     title: "LILAC: An Idempotent Neural Speech Codec"
     sections: 5-6 and supplementary sections 2-6
-    status: audited_existing_public_corpora_with_unreleased_codec_artifacts_and_protocol_outputs
-    last_verified: 2026-08-06
+    status: audited_existing_public_corpora_with_released_codec_and_selected_demonstrations_but_unreleased_protocol_outputs
+    last_verified: 2026-08-07
     evaluated_sets:
       - cited_as: LibriSpeech test-clean
         index_id: librispeech
@@ -949,21 +949,28 @@ paper_audits:
       codec_outputs_tokens_predictions_and_per_item_scores: not_released
       listening_assignments_and_raw_ratings: not_released
       aggregate_results_and_protocol_details: paper_and_supplement_only
-      claimed_github_repository: returns_404
-      claimed_hugging_face_checkpoint: returns_401_invalid_username_or_password
-      claimed_demo_page: returns_404
+      pytorch_reproduction_and_training_code: public_ungated
+      self_check: public_code_checks_rate_topology_idempotence_objective_finiteness_and_shard_resume
+      corrected_hugging_face_checkpoint: public_ungated_approximately_224_6_mib
+      selected_demo_page: public_ungated_eight_librispeech_items_with_five_codecs_at_cycles_1_10_and_100
+      paper_printed_hugging_face_url: stale_username_returns_401
+      benchmark_metric_and_listening_test_code: not_released
     license:
       paper: arXiv_perpetual_non_exclusive_license
       upstream_evaluation_audio: upstream_family_terms_apply
       hifitts_2_and_paper_specific_manifests: not_specified_unreleased
-      codec_code_and_checkpoint: not_verifiable_unavailable
+      codec_code_and_corrected_checkpoint: Apache-2.0
+      selected_demo_audio: no_separate_data_or_output_license_detected
       listening_data_and_model_outputs: not_specified_unreleased
       note: >-
-        The arXiv distribution license covers the article, not the absent
-        codec implementation, checkpoint, demo audio, held-out HiFiTTS-2
-        material, evaluation manifests, reconstructed outputs, tokens,
-        predictions, scores, or listener records. LibriSpeech and VCTK are
-        CC BY 4.0; LibriTTS-R inherits LibriTTS and source-material terms.
+        The arXiv distribution license covers the article, not separately
+        hosted code, checkpoint, demo audio, held-out HiFiTTS-2 material,
+        evaluation manifests, reconstructed outputs, tokens, predictions,
+        scores, or listener records. Apache 2.0 covers the released code and
+        corrected checkpoint repository, but does not relicense upstream
+        audio or establish separate rights for generated demo outputs.
+        LibriSpeech and VCTK are CC BY 4.0; LibriTTS-R inherits LibriTTS and
+        source-material terms.
     sources:
       - https://arxiv.org/abs/2608.05727
       - https://arxiv.org/html/2608.05727v1#Sx5
@@ -973,20 +980,28 @@ paper_audits:
       - https://arxiv.org/html/2608.05727v1#S5
       - https://arxiv.org/html/2608.05727v1#S6
       - https://github.com/Rick-McCoy/lilac-codec
-      - https://api.github.com/search/repositories?q=lilac-codec
+      - https://api.github.com/repos/Rick-McCoy/lilac-codec
+      - https://api.github.com/repos/Rick-McCoy/lilac-codec/git/trees/main?recursive=1
       - https://huggingface.co/julianyi/lilac
+      - https://huggingface.co/julianyi1/lilac
+      - https://huggingface.co/api/models/julianyi1/lilac
       - https://rick-mccoy.github.io/lilac-demo
     note: >-
       This is directly relevant to speech-codec tokenizers as interfaces for
       speech LLM and generation pipelines: the paper measures whether
       discrete tokens, intelligibility, and speaker identity survive repeated
       decode-re-encode operations. It introduces a useful protocol rather
-      than a new public evaluation dataset. On 2026-08-06 the article's
-      claimed code and demo URLs returned 404, the checkpoint URL returned
-      401 with an invalid-username-or-password response, and an exact-name
-      GitHub repository search found no result. Because the implementation,
-      fixed selections, outputs, and per-item records cannot be reproduced,
-      this audit adds no benchmark family or download helper.
+      than a new public evaluation dataset. On 2026-08-07 the official GitHub
+      repository and demo became public, and the repository corrected the
+      article's stale `julianyi/lilac` checkpoint URL to the public, ungated
+      `julianyi1/lilac` model repository. The Apache-2.0 PyTorch reproduction
+      provides inference, training, and structural self-check code plus an
+      approximately 224.6 MiB checkpoint; the demo exposes eight selected
+      LibriSpeech items across five codecs and three cycle depths. It still
+      provides no fixed 100-clip, 600-utterance, nine-item, or HiFiTTS-2
+      holdout manifests, benchmark metric or listening-test code, full
+      outputs, predictions, scores, or listener records. This remains a
+      release audit, so no benchmark family or download helper is added.
 
   audioscape_tta_structured_soundscape:
     paper: https://arxiv.org/abs/2608.04479
