@@ -3473,7 +3473,7 @@ paper_audits:
     title: "Hear, Invoke, and Understand: A Skill-Calling Multimodal Agent for Large Audio Language Models"
     sections: 5.1-5.2 and 6.1-6.3
     status: audited_benchmark_announced_for_future_release
-    last_verified: 2026-08-06
+    last_verified: 2026-08-07
     evaluated_sets:
       - cited_as: HIU-Bench
         index_id: null

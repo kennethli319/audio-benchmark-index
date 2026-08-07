@@ -28,6 +28,27 @@ synthetic audio, or code. The helper therefore fetches only lightweight
 official metadata by default and keeps the audio snapshot and repository clone
 behind separate opt-ins.
 
+The August 2026 *Hear, Invoke, and Understand* paper is recorded as an
+announced-but-unreleased HIU-Bench audit after reviewing Sections 5.1-5.2 and
+6.1-6.3. The held-out benchmark directly evaluates post-trained audio agents:
+its 1,395 samples span 56 tasks, with 960 samples from 24 in-distribution tasks
+and 435 from 32 out-of-distribution tasks. The splits use independent audio,
+share only two tools, and have disjoint annotated workflow sets. Evaluation
+combines answer quality, tool interaction, and format correctness with weights
+of 0.70, 0.25, and 0.05; the OOD interaction rubric gives partial credit for
+valid alternative workflows. This tests whether trajectory SFT and multi-turn
+RL produce generalizable acoustic skill selection and multi-step tool
+coordination, rather than merely improving fixed-input audio question
+answering. HIU-Corpus's 65,492 trajectories and 507.6 hours are training data,
+not a separate benchmark. Version 1 promises code, models, and datasets only
+upon publication and supplies no artifact URL. GitHub and Hugging Face checks
+on August 7 found no owner release; the sole similar GitHub result is an
+unrelated agent-safety project. The audio, task manifests, skill/tool
+definitions, gold workflows, rubrics, predictions, and per-item scores remain
+unreleased with no stated artifact license. The article's arXiv license does
+not license those absent materials, so HIU-Bench is not counted as a public
+family and receives no download helper.
+
 The June 2026 *AudioProcessBench* paper is recorded as an announced-but-
 unreleased derived benchmark for audio reasoning critics and process reward
 models. Sections 3-4 and Appendices A-H define 3,872 reasoning traces and
