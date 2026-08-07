@@ -7,6 +7,25 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *AudioScape-TTA* paper is recorded as an unreleased
+text-to-audio instruction-following and evaluator audit. Sections 3-4 and
+supplementary sections A-E define 2,258 roughly 9.95-second
+movie/television-derived scenes, structured prompts, and 25,707 fixed binary
+rubrics for event presence, acoustic attributes, and speech content.
+Qwen3-Omni-Instruct judges event and attribute requirements, Qwen3-ASR checks
+target utterances, and results are grouped by modality, composition, and
+Easy/Medium/Hard complexity. A 26-participant study rates 130 generated
+outputs and validates the automatic metrics at model level. This directly
+evaluates fine-grained controllability, speech preservation, and
+audio-language-model judging for generative post-training. However, version 1
+links no project, repository, dataset card, archive, or artifact. Exact-name
+GitHub and Hugging Face searches found no release, despite the paper calling
+the benchmark final or released. The copyrighted production clips, prompts,
+rubrics, splits, provenance, evaluator code, outputs, ratings, predictions,
+and per-item scores remain unavailable. The paper is CC BY-NC-ND 4.0, which
+does not license any absent benchmark artifact or underlying production
+audio. No public family or download helper is added.
+
 The August 2026 *AudioRubrics* paper is recorded as a post-training,
 reward-modeling, and existing-coverage audit. Sections 3-4 and appendices A,
 C, and D train Qwen2.5-Omni with GRPO using audio-grounded per-question

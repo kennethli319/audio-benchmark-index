@@ -9,6 +9,78 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audioscape_tta_structured_soundscape:
+    paper: https://arxiv.org/abs/2608.04479
+    title: "AudioScape-TTA: A Structured Soundscape Benchmark for Fine-Grained Text-to-Audio Evaluation"
+    sections: 3-4 and supplementary sections A-E
+    status: audited_unreleased_copyrighted_source_benchmark_and_evaluator
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: AudioScape-TTA
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate text-to-audio instruction following on 2,258 approximately
+          9.95-second movie- and television-derived audio scenes paired with
+          structured prompts and 25,707 fixed positive binary QA rubrics.
+          Rubrics verify event presence, event attributes, and speech content;
+          Qwen3-Omni-Instruct judges event and attribute items, while Qwen3-ASR
+          verifies target utterances. Report micro-averaged Semantic
+          Satisfaction Rate overall and by sound, music, speech, modality
+          composition, and Easy/Medium/Hard complexity, with speech-content
+          satisfaction at a 0.60 mixed-unit coverage threshold.
+        note: >-
+          Thirteen open-source text-to-audio systems are evaluated. The paper
+          also reports CLAP, aesthetic, and distributional diagnostics, plus a
+          130-output human study: 26 participants rate ten prompts crossed
+          with all thirteen models on event completeness, attribute
+          satisfaction, and audio quality using five-point scales.
+    release_audit:
+      source_movie_and_television_audio: not_released_and_rights_not_specified
+      structured_prompts_and_annotations: not_released
+      fixed_25707_QA_rubrics_and_evidence: not_released
+      easy_medium_hard_item_assignments: not_released
+      source_and_provenance_manifest: not_released
+      rubric_construction_and_validation_code: not_released
+      qwen3_omni_and_qwen3_asr_evaluator_code: not_released
+      generation_and_scoring_configuration: described_in_paper_and_supplement
+      generated_model_outputs_and_transcripts: not_released
+      human_study_assignments_and_ratings: not_released
+      predictions_and_per_item_scores: not_released
+      aggregate_results: paper_tables_and_figures_only
+      official_project_repository_or_dataset_card: not_found
+    license:
+      paper: CC_BY_NC_ND_4.0
+      benchmark_audio: not_specified_unreleased_copyrighted_productions
+      annotations_rubrics_and_code: not_specified_unreleased
+      evaluated_model_outputs: upstream_model_terms_and_source_rights_would_apply
+      note: >-
+        CC BY-NC-ND 4.0 applies to the arXiv article, not to absent benchmark
+        audio, annotations, rubrics, evaluator code, generated outputs, or
+        participant ratings. Because the source clips come from unspecified
+        movie and television productions, no right to download, redistribute,
+        modify, or commercially use them can be inferred.
+    sources:
+      - https://arxiv.org/abs/2608.04479
+      - https://arxiv.org/html/2608.04479v1#Sx3
+      - https://arxiv.org/html/2608.04479v1#Sx4
+      - https://arxiv.org/html/2608.04479v1#Sx6
+      - https://arxiv.org/html/2608.04479v1#Sx7
+      - https://arxiv.org/html/2608.04479v1#Sx8
+      - https://arxiv.org/html/2608.04479v1#Sx9
+      - https://arxiv.org/html/2608.04479v1#Sx10
+      - https://api.github.com/search/repositories?q=%22AudioScape-TTA%22
+      - https://huggingface.co/api/datasets?search=AudioScape-TTA
+    note: >-
+      This is directly relevant to audio-generation post-training,
+      instruction following, controllability, speech-content preservation,
+      and audio-language-model judging. Version 1 repeatedly calls the
+      benchmark final or released but provides no project, repository,
+      dataset card, archive, or artifact URL. Exact-name searches of GitHub
+      repositories and Hugging Face datasets returned no matching release on
+      2026-08-06. The paper alone therefore cannot support reproducible public
+      access, so this audit adds no benchmark family or download helper.
+
   audiorubrics_evolving_reward_post_training:
     paper: https://arxiv.org/abs/2608.02831
     title: "Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning"
