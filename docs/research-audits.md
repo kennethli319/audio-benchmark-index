@@ -7,6 +7,21 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The May 2026 *The WER Trap* paper is recorded as an existing-family and
+unreleased-artifact audit of speech tokenizers as LLM interfaces. Sections
+5-6 and Appendices B-C define a dual-probing protocol: WenetSpeech Test_Net
+and Test_Meeting CER plus frozen-Llama-3.1-8B multiple-choice audio reasoning
+measure semantic preservation, while an oracle-duration flow-matching decoder
+measures acoustic preservation for the identical ultra-low-rate tokens. The
+paper reports reconstruction statistics over 495 Mandarin utterances and uses
+the label AVQA while citing MMAU, but releases neither exact item manifest nor
+enough provenance to establish a separate frozen AVQA family. It also provides
+no owner repository, tokenizer or probe code, checkpoints, reconstructed
+audio, predictions, or item-level scores. WenetSpeech and MMAU remain mapped
+to their existing entries; the paper-specific protocol is not counted as a
+public benchmark and receives no helper. The arXiv license covers the article,
+not upstream data or the absent derived artifacts, whose license is unstated.
+
 The July 2026 *Prosody-driven Jailbreaks in Audio LLMs* paper is recorded as
 an internal, unreleased safety-benchmark audit. Sections 3.1-3.5 and 4.1-4.10
 define PJ-Break and AdvAudio-Prosody: 100 English harmful seed instructions

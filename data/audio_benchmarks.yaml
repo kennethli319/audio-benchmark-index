@@ -9,6 +9,93 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  wer_trap_dynamic_tokenizer_dual_probing_audit:
+    paper: https://arxiv.org/abs/2605.29209
+    title: "The WER Trap: Shattering the Illusion of Unified Tokens in Speech Language Models"
+    sections: 5_6.1-6.3_and_appendices_B-C
+    status: audited_existing_public_families_with_unreleased_tokenizer_and_dual_probing_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: WenetSpeech Test_Net and Test_Meeting
+        index_id: wenetspeech
+        status: existing_form_gated_family
+        role: discriminative_tokenizer_semantic_probe
+        protocol: >-
+          Compare dynamic and fixed-stride speech tokenizers at approximately
+          4-6 Hz with higher-rate tokenizer baselines, reporting CER on the
+          23-hour Test_Net and 15-hour Test_Meeting official test subsets.
+      - cited_as: AVQA
+        status: existing_public_family_name_with_unreleased_exact_selection
+        role: frozen_llm_audio_reasoning_probe
+        protocol: >-
+          Map each tokenizer's discrete codes through a trainable audio
+          projector into a frozen Llama 3.1 8B, concatenate the projected
+          audio with a multiple-choice audio-question prompt, and train only
+          the projector and classification head. Report answer accuracy as a
+          semantic-information probe. The paper cites MMAU for this probe but
+          does not publish an exact item manifest or clearly identify a
+          separately frozen AVQA release, so the audit does not infer a new
+          benchmark family or alias.
+      - cited_as: 495 dynamic-tokenizer reconstruction cases
+        status: paper_specific_unreleased_subset
+        role: generative_acoustic_probe
+        protocol: >-
+          Upsample the same ultra-low-rate tokens with oracle token-duration
+          alignments and condition a continuous flow-matching decoder. Report
+          median and interquartile range for Mel MAE, Mel correlation,
+          delta-Mel MAE, flux MAE, and duration ratio over 495 Mandarin
+          utterances; no subjective MOS panel is run.
+    protocol_note: >-
+      The dual-probing protocol is a controlled tokenizer evaluation rather
+      than a standalone dataset. Its discriminative arm asks whether tokens
+      preserve speech semantics for frozen-LLM reasoning, while its
+      generative arm asks whether the identical tokens preserve local
+      acoustic trajectories. The headline 5 Hz comparison reports strong CER
+      and audio-question accuracy despite poor reconstruction, challenging
+      the use of recognition error alone as evidence that one token stream is
+      suitable for both understanding and generation.
+    release_audit:
+      paper_and_aggregate_tables: public
+      wenetspeech_source_family: existing_form_gated_release
+      cited_audio_question_family: third_party_public_source
+      exact_avqa_item_and_split_manifest: not_released
+      exact_495_utterance_reconstruction_manifest: not_released
+      dynamic_compression_tokenizer_code_and_checkpoints: not_released
+      baseline_tokenizer_configurations_and_checkpoints: not_released
+      trained_audio_projectors_and_classification_heads: not_released
+      flow_matching_probe_code_and_checkpoint: not_released
+      reconstructed_audio_and_metric_records: not_released
+      predictions_and_per_item_scores: not_released
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      wenetspeech: upstream_access_and_license_terms_apply
+      cited_audio_question_data: upstream_family_terms_apply
+      tokenizer_probe_artifacts: not_specified_unreleased
+      note: >-
+        The arXiv license applies to the article, not to WenetSpeech, the
+        cited audio-question data, or the absent tokenizer, checkpoint,
+        reconstruction, and evaluation artifacts. No data or code license is
+        stated for those unreleased derivatives.
+    sources:
+      - https://arxiv.org/abs/2605.29209
+      - https://arxiv.org/html/2605.29209v1#S5
+      - https://arxiv.org/html/2605.29209v1#S6.SS1
+      - https://arxiv.org/html/2605.29209v1#S6.SS2
+      - https://arxiv.org/html/2605.29209v1#S6.SS3
+      - https://arxiv.org/html/2605.29209v1#A2
+      - https://arxiv.org/html/2605.29209v1#A3
+      - https://export.arxiv.org/api/query?id_list=2605.29209
+    note: >-
+      This is directly relevant to audio/speech LLM pretraining because it
+      tests whether aggressively compressed speech tokens remain useful as
+      frozen-LLM inputs and as conditions for speech generation. WenetSpeech
+      and MMAU are already represented in the index. The paper provides no
+      owner repository, project page, dataset card, artifact archive, or
+      executable scorer, and it leaves the exact AVQA provenance and both
+      paper-specific manifests unresolved. This audit therefore records the
+      evaluation protocol and release gap without counting another public
+      benchmark family or adding a download helper.
+
   pj_break_advaudio_prosody_release_audit:
     paper: https://arxiv.org/abs/2607.26541
     doi: https://doi.org/10.1145/3767308.3835306
