@@ -9,6 +9,96 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audiorubrics_evolving_reward_post_training:
+    paper: https://arxiv.org/abs/2608.02831
+    title: "Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning"
+    sections: 3-4 and appendices A, C, and D
+    status: audited_existing_public_families_with_public_training_rubrics
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: MMAU Test-mini
+        index_id: mmau
+        status: public_existing_family
+        protocol: >-
+          Evaluate 1,000 multiple-choice questions over 27 speech, sound, and
+          music tasks with greedy decoding at temperature zero and exact-answer
+          accuracy. The paper reports overall and Sound, Music, Speech, and
+          Mix category results.
+      - cited_as: MMAR
+        index_id: mmar
+        status: public_existing_family
+        protocol: >-
+          Evaluate 1,000 real-video-derived question-answer pairs across four
+          reasoning layers and speech, sound, music, and mixed-modality
+          categories. The paper reports exact-answer accuracy overall and by
+          reasoning layer and modality.
+      - cited_as: MMSU
+        index_id: mmsu
+        status: public_existing_family
+        protocol: >-
+          Evaluate 5,000 triplets over 47 spoken-language tasks, including
+          fine-grained prosody, emotion, speaker-trait, and phonological cues.
+          The paper reports exact-answer accuracy for perception, cognition,
+          and reasoning dimensions and their subcategories.
+    training_data:
+      - cited_as: AVQA Audio-Reasoning Rubrics
+        status: public_annotations_only_not_a_benchmark_family
+        note: >-
+          The public Hugging Face release contains 40,380 AVQA training rows
+          with five audio-grounded, weighted rubric criteria per question.
+          It is process-reward and judge-training data for post-training, not
+          an evaluation split. Audio is not bundled and must be obtained from
+          an upstream AVQA release and joined by the referenced path or ID.
+    public_components:
+      training_rubric_annotations: released
+      training_and_evaluation_code: released
+      rubric_generation_and_judging_prompts: released
+      sample_rubric_evolution_logs: released
+      trained_model: released
+      evaluation_benchmark_assets: available_from_existing_upstream_families
+    release_audit:
+      exact_upstream_benchmark_revisions_and_manifests: not_frozen_separately
+      benchmark_audio_and_annotations: not_republished
+      model_predictions_and_per_item_scores: not_released
+      aggregate_results: paper_tables_only
+      evaluation_generator_and_accuracy_code: released
+      checkpoint_loop_for_three_benchmarks: released
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      training_rubric_annotations: CC_BY_4.0
+      repository_code: not_specified
+      benchmark_data: upstream_family_terms_apply
+      upstream_training_audio: AVQA_and_source_video_terms_apply
+      note: >-
+        The dataset card's CC BY 4.0 declaration covers the released rubric
+        annotations, not separately obtained AVQA audio or source videos. The
+        code repository has no detected license, so public availability does
+        not establish reuse rights for its evaluator, training code, prompts,
+        or logs. MMAU, MMAR, and MMSU retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2608.02831
+      - https://arxiv.org/html/2608.02831v1#S3
+      - https://arxiv.org/html/2608.02831v1#S4.SS1
+      - https://arxiv.org/html/2608.02831v1#S4.SS2
+      - https://arxiv.org/html/2608.02831v1#A1
+      - https://arxiv.org/html/2608.02831v1#A4
+      - https://audiorubrics.github.io/
+      - https://github.com/tianyi-lab/AudioRubrics
+      - https://api.github.com/repos/tianyi-lab/AudioRubrics/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/umd-zhou-lab/AVQA-Audio-Rubrics
+      - https://huggingface.co/api/datasets/umd-zhou-lab/AVQA-Audio-Rubrics
+      - https://huggingface.co/umd-zhou-lab/AudioRubrics
+    note: >-
+      This is directly relevant to audio-LLM post-training, reward modeling,
+      judging, hallucination-resistant acoustic grounding, and reasoning. It
+      trains Qwen2.5-Omni with GRPO using per-sample rubrics that are generated
+      from raw audio, filtered and evolved from current rollouts, combined
+      with answer correctness, and regularized by an overthinking penalty.
+      The evaluation introduces no new family: all three test sets are already
+      indexed and remain obtainable from their owners. The released AVQA
+      rubrics are training annotations rather than a benchmark, so this audit
+      adds neither a duplicate family nor a download helper.
+
   cocktail_talker_turn_action_grpo:
     paper: https://arxiv.org/abs/2607.27756
     title: "Cocktail-Talker: Multi-Speaker Dialog Modeling in Noisy Social Environments with Turn Action GRPO"

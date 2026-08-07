@@ -7,6 +7,23 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *AudioRubrics* paper is recorded as a post-training,
+reward-modeling, and existing-coverage audit. Sections 3-4 and appendices A,
+C, and D train Qwen2.5-Omni with GRPO using audio-grounded per-question
+rubrics that evolve from current rollouts, answer correctness, and an
+overthinking penalty. Evaluation uses the already indexed public MMAU
+Test-mini, MMAR, and MMSU families: respectively 1,000, 1,000, and 5,000
+questions covering speech, sound, music, mixed audio, and fine-grained spoken
+cues. The official repository releases training and evaluation code, prompts,
+sample evolution logs, and a checkpoint. Its separate public Hugging Face
+dataset contains 40,380 AVQA training rows with five weighted rubric criteria
+per question, but no audio; it is reward/training annotation data rather than
+an evaluation set. The card declares those annotations CC BY 4.0, while AVQA
+media and all three evaluation families retain upstream terms. The code
+repository has no detected license, and exact benchmark revisions, frozen
+manifests, predictions, and per-item scores are not released. No duplicate
+benchmark family or download helper is added.
+
 The July 2026 *Cocktail-Talker* paper is recorded as a spoken-LLM
 post-training and release-status audit. Sections 3-5 use Cocktail-DialogGen to
 evaluate selective participation in noisy three- and four-speaker dialogs:
