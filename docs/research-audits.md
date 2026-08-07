@@ -4,6 +4,27 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The June 2026 *AudioProcessBench* paper is recorded as an announced-but-
+unreleased derived benchmark for audio reasoning critics and process reward
+models. Sections 3-4 and Appendices A-H define 3,872 reasoning traces and
+23,497 steps derived from the already indexed MMAR, MMSU, and MMAU-Pro
+families. Six audio/omni models generate the traces; DeepSeek V3.2 segments
+them, Gemini 3.1 Pro and Qwen3.5 Omni Plus independently label them, and human
+review spot-checks or adjudicates results by model-agreement tier. The 9,693
+erroneous steps are divided among existence, semantic, temporal, acoustic-
+attribute, cross-modal-binding, and reasoning errors. Evaluation covers binary
+step correctness and first-error location, error-type-conditioned detection,
+and Best-of-N or score-aggregated majority-vote answer selection. This directly
+targets post-training evaluation because it measures audio-capable critics and
+prospective process reward models rather than final answers alone. The paper
+provides prompts in figures and says the benchmark and derived annotations
+will be released under CC BY-NC 4.0, but provides no artifact URL. Exact-name
+GitHub repository and Hugging Face dataset searches found no release on August
+7. Frozen manifests, traces, labels, review records, evaluation code,
+predictions, and per-item scores therefore remain unavailable. Upstream terms
+still apply to source audio and benchmark components. No public family is
+counted and no download helper is added.
+
 The July 2026 *Audio-Cogito* revision is recorded as a public-training-release
 and existing-benchmark evaluation audit of chain-of-thought SFT for audio
 LLMs. Sections 2-3 construct a claimed 545,000 examples from ten sound,

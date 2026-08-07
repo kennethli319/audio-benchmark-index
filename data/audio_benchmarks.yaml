@@ -9,6 +9,113 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audio_process_bench_release_audit:
+    paper: https://arxiv.org/abs/2606.09925
+    title: "AudioProcessBench: Benchmark for Identifying Process Errors in Audio-Grounded Reasoning"
+    sections: 3-4_and_appendices_A-H
+    status: audited_announced_but_unreleased_derived_benchmark
+    last_verified: 2026-08-07
+    benchmark:
+      role: audio_reasoning_process_verifier_and_reward_model_evaluation
+      source_benchmarks:
+        - name: MMAR
+          index_id: mmar
+        - name: MMSU
+          index_id: mmsu
+        - name: MMAU-Pro
+          index_id: mmau_pro
+      reasoning_traces: 3872
+      annotated_steps: 23497
+      erroneous_steps: 9693
+      erroneous_step_fraction: 0.4127
+      average_steps_per_trace: 6.07
+      median_steps_per_trace: 5
+      generator_final_answer_accuracy_percent: 46.64
+      trace_generators:
+        - Qwen2.5-Omni-7B
+        - Gemma-3n-E4B
+        - Phi-4-Multimodal
+        - Gemma-4-E4B
+        - Qwen3-Omni-30B-A3B
+        - Step-Audio-R1
+      error_types:
+        - existence
+        - semantic
+        - temporal
+        - acoustic_attribute
+        - cross_modal_binding
+        - reasoning
+      evaluation_tracks:
+        step_correctness:
+          outputs:
+            - per_step_binary_correctness
+            - first_error_location
+          metric: PRMScore
+        error_type_conditioned_detection:
+          prediction_target: binary_step_correctness_not_error_type
+          metrics:
+            - type_conditioned_PRMScore
+            - balanced_accuracy
+            - AUROC
+        chain_level_aggregation:
+          protocols:
+            - best_of_N
+            - score_aggregated_majority_voting
+          metric: final_answer_accuracy
+      annotation:
+        step_parser: DeepSeek-V3.2
+        independent_annotators:
+          - Gemini-3.1-Pro
+          - Qwen3.5-Omni-Plus
+        human_review:
+          passed_group: two_annotator_spot_check_of_200_traces
+          low_disagreement_group: complete_double_annotation_with_third_annotator_adjudication
+          high_disagreement_group: quality_screen_then_complete_double_annotation_with_third_annotator_adjudication
+          reported_spot_check_agreement:
+            step_error_positions: over_95_percent
+            error_types: over_85_percent
+    release_audit:
+      paper_artifact_url: not_provided
+      github_exact_name_search: no_repository_found
+      hugging_face_exact_name_search: no_dataset_found
+      frozen_source_item_manifest: not_released
+      reasoning_traces_and_step_labels: not_released
+      human_review_records: not_released
+      evaluation_code_and_critic_prompts: not_released_as_files
+      model_predictions_and_per_item_scores: not_released
+      paper_prompts: figures_only
+      download_helper: not_added_no_public_artifact
+    access: announced_public_release_not_available_as_of_2026_08_07
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      announced_benchmark: CC-BY-NC-4.0
+      upstream:
+        MMAR: CC-BY-NC-4.0_as_reported_by_paper
+        MMAU-Pro: CC-BY-NC-4.0_as_reported_by_paper
+        MMSU: MIT_as_reported_by_paper
+      note: >-
+        The paper says the derived annotations will be released under CC BY-NC
+        4.0 for non-commercial research, but this is an announced future
+        license, not evidence that an artifact is currently available. Source
+        audio and benchmark components retain their upstream terms.
+    sources:
+      - https://arxiv.org/abs/2606.09925
+      - https://arxiv.org/html/2606.09925v1#S3
+      - https://arxiv.org/html/2606.09925v1#S4
+      - https://arxiv.org/html/2606.09925v1#A1
+      - https://arxiv.org/html/2606.09925v1#A5
+      - https://arxiv.org/html/2606.09925v1#Sx2
+      - https://export.arxiv.org/api/query?id_list=2606.09925
+      - https://api.github.com/search/repositories?q=%22AudioProcessBench%22+in:name,description,readme
+      - https://huggingface.co/api/datasets?search=AudioProcessBench&limit=100&full=true
+    note: >-
+      This directly audits audio-LLM post-training evaluation: it tests whether
+      audio-capable critics and prospective process reward models identify
+      perception, grounding, and reasoning failures and improve answer
+      selection. The paper defines a distinct derived benchmark, but no public
+      release was located, so it is not counted as a public family and no
+      helper is added.
+
   audio_cogito_sft_and_mmar_evaluation_audit:
     paper: https://arxiv.org/abs/2604.12527
     title: "Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models"
