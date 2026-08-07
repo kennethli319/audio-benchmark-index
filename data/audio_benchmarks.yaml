@@ -393,6 +393,125 @@ paper_audits:
       predictions, or score package was present. No new download helper is
       added.
 
+  swantale_post_training_evaluation_release_audit:
+    paper: https://arxiv.org/abs/2608.02023
+    project: https://swanaigc.github.io/#swantale
+    title: "SwanTale: Unified Multi-Speaker Speech and Audio Generation for Instruct and Zero-Shot Tasks"
+    sections: 3.5_4.2-4.6_and_appendix_7
+    status: audited_partially_demonstrated_benchmarks_with_unreleased_complete_manifests_and_judging_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: SwanBench-Speech
+        index_id: null
+        status: public_selected_demonstrations_with_unreleased_complete_test_manifest
+        role: zero_shot_monologue_and_dialogue_speech_generation_evaluation
+        protocol: >-
+          Evaluate reference-conditioned monologue and two-speaker dialogue
+          generation with timbre consistency, reverb consistency, reference-free
+          sound fidelity, Chinese CER and English WER, SpeechJudge prosodic
+          coherence, and Gemini 3 Pro expressive-richness and hierarchy scores.
+          The owner project publishes selected reference text, model outputs,
+          and radar/table visualizations, but not a complete fixed test manifest.
+      - cited_as: SwanBench-Scene
+        index_id: null
+        status: paper_specific_unreleased_evaluation_set_with_selected_model_demos
+        role: instruct_tts_human_evaluation
+        protocol: >-
+          Score 180 instructions split equally among advertising, comic-drama,
+          and general-scene tracks. Five professional annotators rate overall
+          expressiveness, prosodic naturalness, audio fullness, and scene
+          appropriateness from 1 to 5; mean MOS is the arithmetic mean of the
+          four dimension scores. The project exposes five SwanTale examples
+          from each track, not the complete prompts, comparison outputs, or
+          rating records.
+      - cited_as: SwanBench-Caption
+        index_id: null
+        status: paper_specific_unreleased_evaluation_set_with_five_public_demonstrations
+        role: heterogeneous_speech_and_audio_instruction_following_evaluation
+        protocol: >-
+          Evaluate 64 cases spanning ambient and localized effects, singing,
+          background music, multilingual speech, and multi-speaker dialogue.
+          Gemini 3.5 Flash assigns 1-to-5 scores for instruction accuracy,
+          acoustic quality, and overall expressiveness. The public project
+          provides five caption-output demonstrations only.
+      - cited_as: SwanVAE four-domain reconstruction panel
+        status: mixed_existing_public_families_and_unindexed_source
+        role: low_rate_audio_llm_interface_reconstruction_evaluation
+        protocol: >-
+          Draw 1,000 clips each from VCTK, GTSinger, FSD50K, and the MUSDB18-HQ
+          test set, excluding clips that fail the paper's duration and quality
+          rules, then report domain-appropriate PESQ, STOI, MCD, ViSQOL, and LSD.
+          VCTK, FSD50K, and MUSDB18 are existing index families; the exact
+          selections and exclusions are not released, and GTSinger is a source
+          dataset rather than a new paper-specific benchmark release.
+      - cited_as: SwanVerifier held-out labeled split
+        index_id: null
+        status: internal_unreleased_training_pipeline_diagnostic
+        role: demographic_and_emotion_caption_filter_validation
+        protocol: >-
+          Report utterance-level age, gender, and emotion accuracy on an
+          unspecified held-out labeled split. This validates an internal data
+          filter and is not treated as a public tagging benchmark.
+    protocol_note: >-
+      SwanTale is pretrained and supervised-fine-tuned on internal mixtures,
+      then uses SwanVerifier-guided filtering and reward-guided GRPO to improve
+      pronunciation, stability, and caption-conditioned speaker control. The
+      three named SwanBench evaluations therefore directly measure post-training
+      instruction following, controllability, expressiveness, and zero-shot
+      transfer. InstructTTSEval is independently public and already indexed;
+      it is not duplicated by this audit.
+    release_audit:
+      paper_and_aggregate_tables: public
+      official_project_and_source_repository: public
+      swanbench_speech_selected_demo_inputs_and_outputs: public
+      swanbench_scene_selected_swantale_demonstrations: public
+      swanbench_caption_five_demonstrations: public
+      complete_benchmark_prompt_and_reference_manifests: not_released
+      all_baseline_and_ablation_outputs: not_released
+      human_annotation_instructions_assignments_and_ratings: not_released
+      gemini_and_speechjudge_prompts_model_revisions_and_judge_records: not_released
+      exact_swanvae_clip_selections_and_exclusion_manifest: not_released
+      swanverifier_held_out_split_labels_and_predictions: internal_unreleased
+      model_code_weights_and_evaluation_runner: not_released
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      project_source_code: MIT
+      benchmark_prompts_references_and_demo_media: not_separately_specified
+      unreleased_evaluation_artifacts: not_specified
+      upstream_reconstruction_sources: family_specific_terms_apply
+      note: >-
+        The website repository's MIT license covers its software and
+        documentation but does not clearly establish reuse rights for hosted
+        benchmark reference material, prompts, or generated audio. The article
+        license does not license absent manifests, annotations, ratings, judge
+        records, internal data, or model artifacts. Existing source-family
+        terms remain controlling for VCTK, FSD50K, and MUSDB18-HQ.
+    sources:
+      - https://arxiv.org/abs/2608.02023
+      - https://arxiv.org/html/2608.02023v2#S3.SS5
+      - https://arxiv.org/html/2608.02023v2#S4.SS2
+      - https://arxiv.org/html/2608.02023v2#S4.SS4
+      - https://arxiv.org/html/2608.02023v2#S4.SS5
+      - https://arxiv.org/html/2608.02023v2#S4.SS6
+      - https://arxiv.org/html/2608.02023v2#S7.SS7
+      - https://swanaigc.github.io/#swantale
+      - https://swanaigc.github.io/#bench
+      - https://github.com/SwanAIGC/SwanAIGC.github.io
+      - https://raw.githubusercontent.com/SwanAIGC/SwanAIGC.github.io/main/swantale-demo-data.js
+      - https://raw.githubusercontent.com/SwanAIGC/SwanAIGC.github.io/main/swanbench-demo-data.js
+      - https://raw.githubusercontent.com/SwanAIGC/SwanAIGC.github.io/main/LICENSE
+      - https://api.github.com/repos/SwanAIGC/SwanAIGC.github.io/git/trees/main?recursive=1
+      - https://export.arxiv.org/api/query?id_list=2608.02023
+    note: >-
+      This audit preserves three directly in-scope evaluation protocols for a
+      GRPO-post-trained speech/audio generator without presenting selected
+      website demonstrations as complete public datasets. The owner repository
+      contains the website, 103 SwanBench-Speech comparison audio links, and 20
+      SwanTale demonstrations, including five SwanBench-Caption examples, but
+      no complete benchmark manifests, scorer, rating package, model artifacts,
+      or data-specific license. No benchmark family or download helper is added
+      until a complete, independently runnable release can be verified.
+
   vorch_omni_multitask_human_evaluation_audit:
     paper: https://arxiv.org/abs/2608.05803
     title: "Vorch-Omni: Multi-Task Orchestration of Sight and Sound"

@@ -2463,3 +2463,24 @@ release rather than a counted public family. Its LibriSpeech, LibriMix,
 AISHELL-3, WHAM!, MUSAN, and AMI inputs retain their separate upstream terms,
 and no license can be inferred for the absent derived mixtures, manifests,
 labels, code, or result records. No download helper is added.
+
+The August 2026 SwanTale report is recorded as a partial-release audit of
+three post-training evaluations for a GRPO-tuned unified speech/audio
+generator. Section 4 evaluates reference-conditioned monologue and dialogue
+generation on SwanBench-Speech; 180 instruct-TTS prompts across advertising,
+comic drama, and general scenes on SwanBench-Scene; and 64 heterogeneous
+speech/audio instructions on SwanBench-Caption. The protocols cover
+pronunciation, timbre and reverb consistency, expressiveness, scene
+appropriateness, acoustic quality, and instruction accuracy through automatic
+metrics, Gemini and SpeechJudge scoring, and five-rater professional MOS.
+They directly test whether post-training improves controllability, stability,
+and complex instruction realization. The owner project publishes selected
+demonstrations—103 SwanBench-Speech comparison audio links and 20 SwanTale
+examples, including five Caption cases—but no complete fixed manifests,
+baseline/ablation output set, human ratings, judge records, scorer, model
+artifacts, or benchmark-data license. Its MIT repository license covers the
+website software and documentation, not clearly the hosted prompts, reference
+material, or generated media. The paper's four-domain SwanVAE reconstruction
+panel maps VCTK, FSD50K, and MUSDB18-HQ to existing families, while its exact
+selections and internal SwanVerifier held-out split remain unreleased. No
+public benchmark family or helper is added from demonstrations alone.
