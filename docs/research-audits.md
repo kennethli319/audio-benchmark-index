@@ -7,6 +7,26 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *C3PO* paper is recorded as an unreleased omnimodal
+audio-reasoning and post-training audit. Sections 3-4 and appendices A-F define
+25 templates for Information Composition and Counterfactual Conflict over
+audio, video, image, and text, graded by normalized exact match followed by a
+Qwen3-Omni semantic-equivalence judge. Base audio comes from HowTo100M, while
+Qwen3-TTS and AudioLDM2 synthesize complementary speech and non-speech audio.
+The protocol directly probes whether audio-capable models fuse acoustic
+evidence or follow conflicting text and visual priors, and it adds mechanistic
+attention, latent-recovery, and caption-fidelity diagnostics. The abstract and
+internally additive Appendix Table 13 report 3,404 samples, but main Table 1
+reports 3,342 and its four printed row totals do not equal their category
+columns. The missing manifest leaves those count inconsistencies unresolved.
+Version 1 gives no project, repository, dataset card, artifact URL, or release
+commitment, and exact-title GitHub and Hugging Face searches found no matching
+release. The
+benchmark media, questions, answers, code, outputs, probe records, and
+single-rating 250-item human subset therefore remain unreleased. The arXiv
+license covers only the paper; upstream dataset and generation-model terms
+require separate review. No public family or download helper is added.
+
 The August 2026 *Vorch-Streamer* paper is recorded as a partially released
 long-form speech-generation and post-training protocol. Sections 3-4 adapt a
 bidirectional joint audio-video foundation model with causal training,

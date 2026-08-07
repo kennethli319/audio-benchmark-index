@@ -9,6 +9,81 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  c3po_cross_modal_composition_counterfactual_audit:
+    paper: https://arxiv.org/abs/2608.05381
+    title: "C3PO: Evaluating Cross-Modal Composition and Counterfactual Performance in Omnimodal Models"
+    sections: 3-4_and_appendices_A-F
+    status: audited_unreleased_omnimodal_audio_reasoning_benchmark
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: C3PO
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate free-form answers to co-located audio, video, image, and
+          text inputs across 25 templates. Information Composition requires
+          fusing evidence distributed across modalities; Counterfactual
+          Conflict requires resolving deliberate contradictions. Four tiers
+          vary modality combinations, and scoring uses normalized exact match
+          followed by a Qwen3-Omni semantic-equivalence judge.
+        note: >-
+          The abstract and internally additive Appendix Table 13 report 3,404
+          samples, while main Table 1 reports 3,342 and 1,979 Counterfactual
+          Conflict items rather than the appendix's 2,041. Main Table 1's four
+          printed row totals also do not equal their category columns. The
+          exact manifest is needed to resolve these inconsistencies rather
+          than assuming the appendix is authoritative. Base audio comes from
+          HowTo100M; complementary speech and non-speech audio are generated
+          with Qwen3-TTS and AudioLDM2.
+      - cited_as: human validation subset
+        index_id: null
+        status: paper_specific_unreleased_subset
+        protocol: >-
+          Three evaluators each answer a disjoint share of 250 samples selected
+          by category, template, and automatically assigned difficulty tier;
+          each item receives one human response and is graded by the same
+          model-judge protocol.
+    release_audit:
+      benchmark_media_and_questions: not_specified_unreleased
+      ground_truth_answers_and_template_labels: not_specified_unreleased
+      split_and_item_manifest: not_specified_unreleased
+      generation_filtering_and_evaluation_code: not_specified_unreleased
+      model_outputs_and_per_item_scores: not_specified_unreleased
+      human_subset_assignments_and_responses: not_specified_unreleased
+      mechanistic_probe_code_and_records: not_specified_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      upstream: >-
+        Ego4D_HowTo100M_EPIC-Kitchens_OOPS_Visual_Genome_COCO_TextVQA_and_Visual_Counterfact_terms_require_separate_review
+      generated_media: Qwen3-TTS_AudioLDM2_and_Nano_Banana_Pro_terms_require_separate_review
+      note: >-
+        The arXiv license covers the paper, not the absent benchmark media,
+        annotations, code, model outputs, or human records. No data or code
+        license is stated, and the source-dataset and generation-model terms
+        cannot be inferred or collapsed into a single benchmark license.
+    sources:
+      - https://arxiv.org/abs/2608.05381
+      - https://arxiv.org/html/2608.05381v1#S3.SS1.SSS1
+      - https://arxiv.org/html/2608.05381v1#S3.SS2
+      - https://arxiv.org/html/2608.05381v1#S4
+      - https://arxiv.org/html/2608.05381v1#A1
+      - https://arxiv.org/html/2608.05381v1#A4
+      - https://arxiv.org/html/2608.05381v1#A5
+      - https://arxiv.org/html/2608.05381v1#A6
+      - https://export.arxiv.org/api/query?id_list=2608.05381
+      - https://api.github.com/search/repositories?q=%22C3PO%22%20%22Cross-Modal%20Composition%22
+      - https://huggingface.co/api/datasets?search=C3PO%20cross-modal
+    note: >-
+      Version 1 gives no project page, repository, dataset card, artifact URL,
+      or release commitment. Exact-title GitHub repository search and Hugging
+      Face dataset search found no matching release on the verification date.
+      Because no official media, questions, answers, manifests, or executable
+      scorer are available, this audit does not count C3PO as a public
+      benchmark family and adds no download helper. Revisit owner-controlled
+      sources if a release is announced.
+
   vorch_streamer_long_form_t2av_audit:
     paper: https://arxiv.org/abs/2608.05663
     title: "Vorch-Streamer: Extending Human Audio-Visual Generation to Real-Time Long-Form Streaming"
