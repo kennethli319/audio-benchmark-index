@@ -2504,3 +2504,21 @@ license cannot be extended to absent benchmark artifacts. Seed-TTS-Eval
 retention results map to the existing indexed family. Selected listening
 examples therefore do not support counting doteBench as a downloadable family
 or adding a helper yet.
+
+The July 2026 TORUS report is recorded as a partial-release audit of a directly
+in-scope evaluation for unified audio language models. TORUS tests whether a
+model's generation/editing and understanding heads agree about the same audio:
+48 human-verified tests each progress through generation, edit, and
+counterfactual-edit stages, with three six-option audio-grounded questions per
+stage, totaling 144 rendered clips and 432 questions across speech, sound, and
+music. The protocol measures coherence accuracy and also reports modality,
+speech-recognition, distributional-generation, and human-preference checks.
+The [official project repository](https://github.com/TORUS-benchmark/torus-benchmark.github.io)
+is an unlicensed static demonstration page. It contains 90 MP3 outputs for five
+selected tests—one per task family—but no complete seed/metadata manifest,
+generation or edit prompts, questions, answer keys, authored transcripts,
+evaluator, full model outputs, per-item scores, bootstrap records, or human
+ratings. The paper is CC BY 4.0, but that article license does not license the
+project assets or absent benchmark artifacts. Selected listening examples
+therefore do not support counting TORUS as a public benchmark family or adding
+a download helper yet.

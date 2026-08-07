@@ -9,6 +9,86 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  torus_rendering_understanding_self_coherence_release_audit:
+    paper: https://arxiv.org/abs/2607.28896
+    project: https://torus-benchmark.github.io/
+    repository: https://github.com/TORUS-benchmark/torus-benchmark.github.io
+    title: "TORUS: A Test of Rendering-Understanding Self-Coherence for Unified Audio Models"
+    sections: 3-4_6_and_appendices_A_D-E
+    status: audited_selected_public_demonstrations_with_unreleased_complete_benchmark_and_evaluator
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: TORUS
+        index_id: null
+        status: paper_specific_unreleased_complete_test_suite_with_selected_public_outputs
+        role: unified_audio_model_generation_editing_understanding_and_reasoning_self_coherence_evaluation
+        protocol: >-
+          Run 48 human-authored and human-verified tests spanning speech,
+          sound, and music across source composition, physical causality,
+          scene acoustics, temporal ordering, and interaction/congruence. Each
+          test has generation, edit, and counterfactual-edit stages; the model
+          renders one clip and answers three six-option audio-grounded MCQs at
+          every stage, for 144 rendered clips and 432 questions in total.
+          Models without native audio editing use a documented self-caption
+          edit chain. Report stage, family, audio-type, and aggregate coherence
+          accuracy with 95% test-cluster bootstrap intervals.
+    protocol_note: >-
+      TORUS directly evaluates whether the generation/editing and audio
+      understanding heads of a unified audio language model agree about its
+      own outputs. In addition to coherence, the paper reports a CLAP modality
+      check, speech WER against authored transcripts, and KL, FAD, and FD
+      generation measures against the 144-clip cascaded-baseline set. A blind
+      human A/B study compares the two strongest unified models with that
+      baseline, but its trial assignments and ratings are not public.
+    release_audit:
+      paper_protocol_and_aggregate_tables: public
+      official_project_page: public
+      official_project_repository: public
+      selected_project_examples: 5
+      selected_project_audio_files: 90
+      selected_project_audio_bytes: 4136118
+      complete_48_test_seed_and_metadata_manifest: not_released
+      complete_generation_edit_and_counterfactual_prompts: not_released
+      complete_432_questions_options_and_answer_keys: not_released
+      complete_authored_stage_transcripts_and_audio_specifications: not_released
+      complete_model_and_cascaded_baseline_outputs: not_released
+      evaluator_inference_and_metric_code: not_released
+      per_item_predictions_scores_and_bootstrap_records: not_released
+      human_preference_assignments_and_ratings: not_released
+    license:
+      paper: CC-BY-4.0
+      project_repository_code_and_assets: not_specified
+      selected_model_outputs: not_separately_specified
+      complete_benchmark_artifacts: not_specified_unreleased
+      note: >-
+        The arXiv article is CC BY 4.0, but the owner-controlled project
+        repository has no detected license. The article license does not
+        establish reuse or redistribution rights for the selected generated
+        audio or the absent benchmark prompts, questions, answers, metadata,
+        evaluator, outputs, and human-study records.
+    sources:
+      - https://arxiv.org/abs/2607.28896
+      - https://arxiv.org/html/2607.28896v1#S3
+      - https://arxiv.org/html/2607.28896v1#S4
+      - https://arxiv.org/html/2607.28896v1#S6
+      - https://arxiv.org/html/2607.28896v1#A1
+      - https://arxiv.org/html/2607.28896v1#A4
+      - https://arxiv.org/html/2607.28896v1#A5
+      - https://torus-benchmark.github.io/
+      - https://github.com/TORUS-benchmark/torus-benchmark.github.io
+      - https://api.github.com/repos/TORUS-benchmark/torus-benchmark.github.io
+      - https://api.github.com/repos/TORUS-benchmark/torus-benchmark.github.io/git/trees/main?recursive=1
+    note: >-
+      The project repository publishes a static page with five selected tests,
+      one illustrating each task family. For each it hosts the three stage
+      outputs from the cascaded baseline and five displayed unified-model
+      configurations, yielding 90 small MP3 demonstrations (about 4.14 MB).
+      It does not publish the other 43 test definitions, any MCQs or answer
+      keys, a machine-readable manifest, evaluation code, full outputs, or
+      score records. The selected listening examples cannot reconstruct or
+      independently run the 48-test benchmark, so this audit adds no counted
+      family or download helper pending an official complete release.
+
   dotebench_precise_speech_editing_release_audit:
     paper: https://arxiv.org/abs/2608.02673
     project: https://huggingface.co/spaces/dots-studio/dots.tts.edit
