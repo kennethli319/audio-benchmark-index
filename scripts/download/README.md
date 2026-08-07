@@ -155,6 +155,7 @@ scripts/download/golos.sh
 scripts/download/ksc2.sh
 scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
+scripts/download/full_duplex_bench.sh
 scripts/download/duplexchat.sh
 scripts/download/biotalk_3d.sh
 scripts/download/av_gc_aad.sh
@@ -1565,6 +1566,11 @@ WSJ0_2MIX_RUN_GENERATION=1 WSJ0_PATH=/path/to/wsj0 WSJ0_2MIX_OUTPUT=/large/stora
 # VCTK downloads the official README and license by default. The corpus ZIP is large and opt-in.
 VCTK_DOWNLOAD_ARCHIVE=1 scripts/download/vctk.sh
 VCTK_ARCHIVE_URL=https://datashare.ed.ac.uk/bitstreams/535f4286-e54c-4038-838c-a02285e32cb2/download scripts/download/vctk.sh
+
+# Full-Duplex-Bench downloads official paper, release, and license documentation
+# by default. The code clone is opt-in; v1/v1.5 and v3 audio remain manual
+# Google Drive downloads because their version-specific terms differ.
+FULL_DUPLEX_BENCH_CLONE_REPO=1 scripts/download/full_duplex_bench.sh
 
 # DuplexChat downloads documentation and manifest counts by default. The
 # approximately 791.5 MB metadata snapshot and toolkit clone are separate

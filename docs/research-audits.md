@@ -2267,3 +2267,17 @@ structured license field says CC BY 4.0; the helper therefore treats the
 specific share-alike statement as controlling, downloads only metadata and
 the technical description by default, and requires an explicit scene and
 sample rate for audio.
+
+The August 2026 JoyAI-Talker technical report adds current evaluation
+provenance for the Full-Duplex-Bench family. Section 6 evaluates Joy-Duplex on
+the public v1.5 overlap tracks and reports separate respond/resume behavior for
+user interruption, backchannel, talking-to-other, and background-speech
+conditions. The same section reuses indexed AIR-Bench and MER2025 sources for
+speaker-attribute perception and derives three empathetic-response subsets
+from EchoMind, while its Speech-ACEBench, Speech-BFCL, and
+Speech-SmartInteract rows provide no citations, fixed manifests, or artifact
+links. The report itself releases no JoyAI-Talker repository, weights,
+paper-specific outputs, refined MER2025 labels, or judge records. The index
+therefore adds the independently released Full-Duplex-Bench v1-v3 source
+family, maps the Joy-Duplex result to v1.5, and does not manufacture separate
+tool-calling benchmark families from untraceable table labels.

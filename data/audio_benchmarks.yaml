@@ -30813,6 +30813,82 @@ benchmarks:
       - https://huggingface.co/datasets/sarvamai/indic-diarbench/raw/main/README.md
       - https://huggingface.co/api/datasets/sarvamai/indic-diarbench
 
+  - id: full_duplex_bench
+    name: Full-Duplex-Bench
+    full_name: "Full-Duplex-Bench: Evaluation Suite for Full-Duplex Spoken Dialogue Models and Voice Agents"
+    qwen_cited_as: null
+    qwen_bucket: end_to_end_speech_dialogue
+    tasks:
+      - full_duplex_spoken_dialogue_evaluation
+      - turn_taking_and_pause_handling
+      - interruption_and_backchannel_handling
+      - overlap_robustness_and_addressee_detection
+      - multi_turn_dialogue_evaluation
+      - spoken_tool_use_under_disfluency
+    official:
+      repo: https://github.com/DanielLin94144/Full-Duplex-Bench
+      v1_paper: https://arxiv.org/abs/2503.04721
+      v1_5_paper: https://arxiv.org/abs/2507.23159
+      v2_paper: https://arxiv.org/abs/2510.07838
+      v3_paper: https://arxiv.org/abs/2604.04847
+      v1_v1_5_data: https://drive.google.com/drive/folders/1DtoxMVO9_Y_nDs2peZtx3pw-U2qYgpd3?usp=sharing
+      v3_data: https://drive.google.com/file/d/1SO_4MTazWQ_jvCx0dtmpQ-t40bdd07yz/view?usp=sharing
+      v3_demo: https://daniellin94144.github.io/FDB-v3-demo/
+    download:
+      access: public_ungated_manual_google_drive_with_public_code
+      primary:
+        - https://github.com/DanielLin94144/Full-Duplex-Bench
+        - https://drive.google.com/drive/folders/1DtoxMVO9_Y_nDs2peZtx3pw-U2qYgpd3?usp=sharing
+        - https://drive.google.com/file/d/1SO_4MTazWQ_jvCx0dtmpQ-t40bdd07yz/view?usp=sharing
+      examples:
+        - 'scripts/download/full_duplex_bench.sh'
+        - 'FULL_DUPLEX_BENCH_CLONE_REPO=1 scripts/download/full_duplex_bench.sh'
+      notes: >-
+        This is one evolving benchmark family, not four unrelated datasets.
+        Versions 1 and 1.5 provide static offline audio tests: v1 covers pause
+        handling, smooth turn-taking, backchannels, and interruption, while
+        v1.5 adds 499 paired overlap trials across user interruption,
+        backchannel, talking-to-other, and background-speech conditions. Its
+        evaluator classifies respond, resume, uncertain, and unknown behavior
+        from ASR transcripts and also measures stop/response latency and
+        prosodic change. Version 2 instead runs dynamic multi-turn conversations
+        between an examinee and automated examiner. Version 3 evaluates 100
+        human-recorded disfluent tool-use examples over 79 scenarios and 12
+        speakers. The helper downloads official documentation and repository
+        metadata by default; cloning the approximately 47 MB repository is
+        opt-in. Benchmark audio remains a manual Google Drive download. The
+        JoyAI-Talker report, section 6, independently evaluates Joy-Duplex on
+        the public v1.5 protocol; it does not define a separate benchmark.
+    license:
+      data: mixed_by_version
+      code: CC-BY-NC-4.0_repository_license
+      notes: >-
+        The v1/v1.5 data README applies CC BY-NC 4.0 to v1 Candor/ICC-derived
+        subsets and requires compliance with their upstream terms; it labels
+        the owner-generated v1 synthetic subsets and v1.5 data MIT. The root
+        repository carries CC BY-NC 4.0, despite GitHub reporting NOASSERTION.
+        No separate license statement was found in the v2 README or for the
+        external v3 Google Drive archive, so do not assume the repository
+        license or the v1.5 MIT statement broadens rights in those assets.
+        Review each version and source corpus before redistribution or
+        commercial use.
+    sources:
+      - https://arxiv.org/abs/2503.04721
+      - https://arxiv.org/abs/2507.23159
+      - https://arxiv.org/html/2507.23159v4#S3
+      - https://arxiv.org/html/2507.23159v4#S4
+      - https://arxiv.org/abs/2510.07838
+      - https://arxiv.org/abs/2604.04847
+      - https://github.com/DanielLin94144/Full-Duplex-Bench
+      - https://raw.githubusercontent.com/DanielLin94144/Full-Duplex-Bench/main/README.md
+      - https://raw.githubusercontent.com/DanielLin94144/Full-Duplex-Bench/main/LICENSE
+      - https://raw.githubusercontent.com/DanielLin94144/Full-Duplex-Bench/main/v1_v1.5/dataset/README.md
+      - https://raw.githubusercontent.com/DanielLin94144/Full-Duplex-Bench/main/v2/README.md
+      - https://raw.githubusercontent.com/DanielLin94144/Full-Duplex-Bench/main/v3/README.md
+      - https://api.github.com/repos/DanielLin94144/Full-Duplex-Bench
+      - https://arxiv.org/abs/2608.01119
+      - https://arxiv.org/html/2608.01119v1#S6.SS4
+
   - id: duplexchat
     name: DuplexChat
     full_name: "DuplexChat: Constructing Speaker-Separated Full-Duplex Dialogue Speech at Scale for Spoken Dialogue Language Modeling"
