@@ -9,6 +9,73 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  formvoiceagentbench_release_audit:
+    paper: https://arxiv.org/abs/2608.06027
+    title: "FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India"
+    sections: 3-5_and_appendices_A-C
+    status: audited_announced_but_unreleased_spoken_agent_benchmark
+    last_verified: 2026-08-06
+    evaluated_sets:
+      - cited_as: FormVoiceAgentBench
+        index_id: null
+        status: paper_described_owner_repository_unavailable
+        role: post_training_spoken_agent_and_end_to_end_tool_workflow_evaluation
+        protocol: >-
+          Evaluate a Hindi voice-agent pipeline on 380 human recordings and
+          3,760 deduplicated unit tests assembled into 960 simulated multi-turn
+          calls over a 12-field maternal-health enrollment form. Five simulated
+          user profiles each traverse 48 branching call paths under ideal,
+          background-noise, microphone-distance, or speaking-pace conditions.
+          Unit tracks score speech transcription, structured value extraction,
+          reply generation, and end-call decisions; integration tracks measure
+          complete-form accuracy after transcription and extraction errors flow
+          through the rule-based validation and dialogue-control layer.
+        note: >-
+          The audio is 16 kHz mono 16-bit PCM recorded one turn at a time by
+          five paid native-Hindi female speakers from Uttar Pradesh and
+          Maharashtra. The benchmark contains simulated profiles rather than
+          real pilot callers or their PII. Exact match scores closed fields and
+          tool decisions, while calibrated GPT-5.4-mini binary judges score
+          open text, acknowledgements, and five reply-quality dimensions.
+    release_audit:
+      paper_and_full_protocol: public
+      benchmark_audio_transcripts_and_expected_form_values: announced_but_unavailable
+      call_and_unit_test_manifests: announced_but_unavailable
+      evaluation_and_judge_code: announced_but_unavailable
+      model_outputs_per_item_scores_and_cost_latency_records: not_specified_unreleased
+      claimed_owner_repository: returns_404
+      hugging_face_dataset_release: not_found
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_data: not_specified_unreleased
+      code: not_specified_unreleased
+      speaker_recordings: terms_and_consent_scope_not_specified
+      note: >-
+        The arXiv license covers the paper, not the absent recordings,
+        transcripts, simulated profiles, annotations, manifests, code, model
+        outputs, or judge records. Paid annotation and the statement that no
+        real caller data was used do not establish reuse or redistribution
+        terms for the benchmark audio.
+    sources:
+      - https://arxiv.org/abs/2608.06027
+      - https://arxiv.org/html/2608.06027v1#S3
+      - https://arxiv.org/html/2608.06027v1#S4
+      - https://arxiv.org/html/2608.06027v1#S5
+      - https://arxiv.org/html/2608.06027v1#A2
+      - https://arxiv.org/html/2608.06027v1#A3
+      - https://export.arxiv.org/api/query?id_list=2608.06027
+      - https://github.com/dalmia/AAAI-FormBharo-final/tree/main/code
+      - https://api.github.com/search/repositories?q=%22FormVoiceAgentBench%22
+      - https://huggingface.co/api/datasets?search=FormVoiceAgentBench
+    note: >-
+      Version 1 says code and data "will be made available" at an owner GitHub
+      path, but both that path and its parent repository returned 404 on the
+      verification date. Exact-name GitHub repository search and Hugging Face
+      dataset search found no alternative release. The paper is therefore a
+      useful, directly in-scope post-training protocol audit, but the public
+      index does not count FormVoiceAgentBench as a released benchmark family
+      and adds no download helper. Revisit the cited owner path after release.
+
   qwen_audio_3_gen_preview_evaluation:
     paper: https://arxiv.org/abs/2607.27011
     title: "Qwen-Audio-3.0-Gen-Preview Technical Report"

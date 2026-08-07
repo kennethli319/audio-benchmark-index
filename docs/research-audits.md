@@ -7,6 +7,24 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The August 2026 *FormBharo* paper is recorded as an announced-but-unreleased
+spoken-agent benchmark audit. Sections 3-5 and appendices A-C define
+FormVoiceAgentBench: 380 human-recorded Hindi utterances, 3,760 deduplicated
+unit tests, and 960 simulated multi-turn calls through a branching 12-field
+maternal-health enrollment form. Its unit tracks evaluate transcription,
+structured extraction, reply generation, and end-call tool decisions, while
+integration tests measure complete-form accuracy after speech and extraction
+errors propagate through rule-based validation and dialogue control. This is
+directly relevant to post-training evaluation of spoken interaction, tool use,
+robustness, and end-to-end task completion. The paper says code and data will
+be released at an owner GitHub path, but that path and its parent repository
+returned 404 on the verification date; exact-name GitHub and Hugging Face
+searches found no alternative release. The audio, transcripts, profiles,
+manifests, scorer, outputs, and per-item records therefore remain unavailable.
+The paper has arXiv's perpetual non-exclusive license, which does not license
+those absent artifacts; paid recording and the exclusion of real caller data
+do not establish benchmark reuse terms. No public family or helper is added.
+
 MuChin is now indexed as a released music-language benchmark family after a
 primary-source audit of the IJCAI 2024 paper, official repositories, and Hugging
 Face releases. The public, ungated V1 pairs 1,000 songs with amateur and
