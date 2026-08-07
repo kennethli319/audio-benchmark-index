@@ -7,6 +7,24 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+HyPoradise is now indexed as a public generative speech-recognition correction
+benchmark family after reviewing the NeurIPS 2023 paper's Sections 3-5, the
+ICLR 2024 Robust HyPoradise extension, and the 2026 *Voice Memory* evaluation.
+V0 publishes five-best hypotheses and references for 316,881 training and
+17,383 test utterances across ten conditions from nine source families and
+defines zero-shot, few-shot, full-fine-tuning, and LoRA tracks scored by WER
+against 1-best and oracle reranking. Robust HyPoradise adds about 113,000 pairs
+over five noisy-speech families. Voice Memory directly connects these releases
+to current LLM post-training and agentic evaluation by adding act-or-abstain,
+Recoverable Information Ratio, and Harmful Edit Rate protocols. The benchmark
+data are public and ungated, but contain derived text and some serialized
+features rather than redistributed source audio; audio remains subject to each
+upstream corpus's access and license. V0 and the GigaSpeech subset declare MIT,
+Robust HyPoradise and RobustGER declare Apache 2.0, and the separate auto-gated
+Voice Memory artifacts declare CC BY-NC-SA 4.0. The lightweight helper keeps
+the approximately 384 MB v0, 40.8 MB GigaSpeech subset, and 115 MB Robust
+snapshots behind independent opt-ins.
+
 The August 2026 *How to Recognize New Words* paper is recorded as an
 existing-family and unreleased-derived-protocol audit of speech-LLM context
 robustness. Sections 3-5 select rare-word utterances from Earnings-21,

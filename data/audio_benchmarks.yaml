@@ -32595,3 +32595,101 @@ benchmarks:
       - https://raw.githubusercontent.com/shulm/echohawk/main/LICENSE
       - https://raw.githubusercontent.com/shulm/echohawk/main/data/README.md
       - https://api.github.com/repos/shulm/echohawk
+
+  - id: hyporadise
+    name: HyPoradise
+    full_name: "HyPoradise: Generative Speech Recognition Error Correction with Large Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_recognition
+      - audio_robustness
+    category: llm_asr_error_correction
+    tasks:
+      - generative_speech_recognition_error_correction
+      - n_best_hypothesis_correction
+      - zero_shot_llm_evaluation
+      - few_shot_in_context_learning
+      - parameter_efficient_fine_tuning
+      - noise_robust_asr_correction
+      - agentic_act_or_abstain_evaluation
+    official:
+      repository: https://github.com/Hypotheses-Paradise/Hypo2Trans
+      dataset_v0: https://huggingface.co/datasets/PeacefulData/HyPoradise-v0
+      dataset_v1_gigaspeech: https://huggingface.co/datasets/PeacefulData/HyPoradise-v1-GigaSpeech
+      robust_dataset: https://huggingface.co/datasets/PeacefulData/Robust-HyPoradise
+      paper: https://arxiv.org/abs/2309.15701
+      robust_paper: https://arxiv.org/abs/2401.10446
+      recent_agentic_evaluation: https://arxiv.org/abs/2607.26410
+      recent_agentic_code: https://huggingface.co/huckiyang/voice-memory
+    download:
+      access: public_ungated_text_and_serialized_features
+      primary:
+        - https://huggingface.co/datasets/PeacefulData/HyPoradise-v0
+        - https://huggingface.co/datasets/PeacefulData/Robust-HyPoradise
+      examples:
+        - 'scripts/download/hyporadise.sh'
+        - 'HYPORADISE_DOWNLOAD_V0=1 scripts/download/hyporadise.sh'
+        - 'HYPORADISE_DOWNLOAD_ROBUST=1 scripts/download/hyporadise.sh'
+      notes: >-
+        HyPoradise v0 releases five-best ASR hypotheses paired with reference
+        transcripts for 316,881 training and 17,383 test utterances across ten
+        test conditions from nine source families: LibriSpeech clean/other,
+        CHiME-4, WSJ, Switchboard, Common Voice, TED-LIUM 3, LRS2, ATIS, and
+        CORAAL. The fixed protocol compares zero-shot prompting, few-shot
+        in-context learning, full fine-tuning, and LoRA against 1-best and
+        oracle reranking using WER. The separate Robust HyPoradise extension
+        adds approximately 113,000 pairs for CHiME-4, VoiceBank-DEMAND,
+        LibriSpeech-FreeSound, NOIZEUS, and RATS noise conditions. A GigaSpeech
+        v1 subset supports later cross-modal error-correction work but is not
+        a replacement for v0. The 2026 Voice Memory report reuses v0 and Robust
+        test sets for LLM act-or-abstain evaluation, Recoverable Information
+        Ratio, and Harmful Edit Rate. The helper saves cards, repository
+        metadata, and papers by default; the approximately 384 MB v0, 40.8 MB
+        GigaSpeech v1, and 115 MB Robust snapshots each require explicit opt-in.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        The releases contain text hypotheses, references, scores, and in some
+        Robust files serialized Whisper features; they do not redistribute the
+        underlying source-corpus audio. Robust training feature regeneration
+        requires separately obtaining the cited source speech under its own
+        access terms. The recent Voice Memory model repository is auto-gated,
+        although its public API exposes the file inventory and license tag.
+    license:
+      v0_and_v1: MIT
+      robust_dataset_and_code: Apache-2.0
+      voice_memory_artifacts: CC-BY-NC-SA-4.0
+      source_audio: upstream_dataset_terms_apply_not_redistributed
+      notes: >-
+        Hugging Face declares MIT for v0 and the GigaSpeech subset, while the
+        robust card and RobustGER repository declare Apache 2.0. These terms
+        cover the released derived artifacts and code, not the absent source
+        audio or every upstream corpus. Voice Memory separately declares
+        CC BY-NC-SA 4.0 and is auto-gated; do not apply that later license to
+        HyPoradise or apply HyPoradise's licenses to Voice Memory artifacts.
+    sources:
+      - https://arxiv.org/abs/2309.15701
+      - https://arxiv.org/html/2309.15701v2#S3
+      - https://github.com/Hypotheses-Paradise/Hypo2Trans
+      - https://raw.githubusercontent.com/Hypotheses-Paradise/Hypo2Trans/main/LICENSE
+      - https://api.github.com/repos/Hypotheses-Paradise/Hypo2Trans
+      - https://huggingface.co/datasets/PeacefulData/HyPoradise-v0
+      - https://huggingface.co/datasets/PeacefulData/HyPoradise-v0/raw/main/README.md
+      - https://huggingface.co/api/datasets/PeacefulData/HyPoradise-v0
+      - https://huggingface.co/datasets/PeacefulData/HyPoradise-v1-GigaSpeech
+      - https://huggingface.co/api/datasets/PeacefulData/HyPoradise-v1-GigaSpeech
+      - https://arxiv.org/abs/2401.10446
+      - https://arxiv.org/html/2401.10446v1#S3
+      - https://github.com/YUCHEN005/RobustGER
+      - https://raw.githubusercontent.com/YUCHEN005/RobustGER/master/README.md
+      - https://raw.githubusercontent.com/YUCHEN005/RobustGER/master/LICENSE
+      - https://huggingface.co/datasets/PeacefulData/Robust-HyPoradise
+      - https://huggingface.co/datasets/PeacefulData/Robust-HyPoradise/raw/main/README.md
+      - https://huggingface.co/api/datasets/PeacefulData/Robust-HyPoradise
+      - https://arxiv.org/abs/2607.26410
+      - https://arxiv.org/html/2607.26410v1#S3
+      - https://arxiv.org/html/2607.26410v1#S4
+      - https://arxiv.org/html/2607.26410v1#S6
+      - https://huggingface.co/huckiyang/voice-memory
+      - https://huggingface.co/api/models/huckiyang/voice-memory
