@@ -9,6 +9,115 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  pj_break_advaudio_prosody_release_audit:
+    paper: https://arxiv.org/abs/2607.26541
+    doi: https://doi.org/10.1145/3767308.3835306
+    title: "Prosody-driven Jailbreaks in Audio LLMs: A Controlled Study and Mechanistic Analysis"
+    sections: 3.1-3.5_4.1-4.10_and_7
+    status: audited_internal_unreleased_safety_benchmark_and_protocol
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: AdvAudio-Prosody
+        status: internal_unreleased
+        role: controlled_audio_llm_prosody_jailbreak_benchmark
+        data_status: >-
+          600_tts_samples_seed_instructions_audio_qc_manifest_and_labels_unreleased
+        protocol: >-
+          Render 100 English harmful seed instructions under Neutral, Panic,
+          Anger, Commanding, Fast, and Whisper delivery presets. Five presets
+          use the same Azure JennyNeural voice; Commanding uses GuyNeural and
+          is separately identified as voice-confounded. Verify F0, intensity,
+          spectral tilt, speaking rate, clipping, and transcript fidelity,
+          then compare audio-level and seed-level best-of-six jailbreak
+          success under a fixed single-turn black-box query budget.
+      - cited_as: post-QC AdvAudio-Prosody panel
+        status: internal_unreleased
+        role: exact_count_primary_evaluation_panel
+        data_status: >-
+          95_seed_selection_audio_model_responses_judgments_and_scores_unreleased
+        protocol: >-
+          Remove three seeds with at least 5% transcript WER, one failed
+          audio-quality check, and one duplicate from the 100-seed panel.
+          Normalize retained audio to -23 LUFS, limit peaks to -1 dBFS, and
+          resample to 16 kHz mono. Count a response as harmful when at least
+          two of Claude 3.5 Sonnet, Llama Guard 3, and a policy-keyword
+          classifier judge it harmful and it contains more than 50 tokens of
+          substantive harmful content beyond refusal phrases.
+      - cited_as: RealSpeech-20
+        status: internal_unreleased_pilot
+        role: human_spoken_transfer_check
+        data_status: >-
+          prompts_recordings_participant_metadata_responses_and_scores_unreleased
+        protocol: >-
+          Three consenting native or accented English speakers each record 20
+          prompts, producing 60 utterances per evaluated human-delivery
+          condition. The paper reports this as a small descriptive pilot, not
+          as an independently sampled benchmark.
+      - cited_as: OTA-Replay
+        status: internal_unreleased_pilot
+        role: over_the_air_transfer_check
+        data_status: >-
+          replay_audio_trial_manifest_responses_and_full_counts_unreleased
+        protocol: >-
+          Replay speech through a smartphone at one meter in a quiet room.
+          The paper explicitly says full audited trial counts are unavailable
+          and treats the result as descriptive only.
+      - cited_as: benign emotional pool
+        status: internal_unreleased
+        role: false_refusal_and_safety_leakage_control
+        data_status: 500_utterances_and_evaluation_records_unreleased
+    protocol_note: >-
+      The primary exact-count comparison uses 95 retained seeds. PJ-Break
+      tests a fixed best-of-six preset pool against transcript-preserving and
+      attack baselines, while individual delivery presets use one query. The
+      paper reports 44/95 Qwen2-Audio and 15/95 GPT-4o seed-level successes
+      for PJ-Break and a 40/95 same-voice result after excluding Commanding.
+      A 200-response, harm-category-stratified subset is labeled by three
+      human annotators to calibrate the automatic judging ensemble. Broader
+      Gemini, SALMONN, interpretability, and defense results are explicitly
+      descriptive extensions rather than additional audited benchmarks.
+    release_audit:
+      paper_and_aggregate_results: public
+      supplementary_material: embedded_in_public_arxiv_article
+      advbench_and_harmbench_source_families: third_party_public_sources
+      seed_selection_and_exact_prompt_manifest: not_released
+      generated_tts_audio_and_acoustic_measurements: not_released
+      post_qc_panel_and_exclusion_manifest: not_released
+      pj_break_code_and_ssml_generation_assets: not_released
+      model_outputs_and_automatic_judge_records: not_released
+      human_annotations_and_real_speech_audio: not_released
+      ota_replay_assets_and_full_trial_counts: not_released
+      pro_guard_implementation_and_defense_logs: not_released
+      author_release_position: intentionally_withheld_to_reduce_misuse_risk
+    license:
+      paper: CC-BY-4.0
+      benchmark_data_and_code: not_specified_unreleased
+      seed_sources: AdvBench_and_HarmBench_source_terms_apply
+      synthesized_and_human_speech: rights_not_publicly_specified
+      note: >-
+        CC BY 4.0 applies to the arXiv article, not to the absent prompts,
+        generated or human speech, annotations, responses, code, or judge
+        records. The paper states that speakers and annotators consented, but
+        aggregate reporting does not grant reuse or redistribution rights.
+    sources:
+      - https://arxiv.org/abs/2607.26541
+      - https://arxiv.org/html/2607.26541v1#S3.SS1
+      - https://arxiv.org/html/2607.26541v1#S3.SS5
+      - https://arxiv.org/html/2607.26541v1#S4.SS1
+      - https://arxiv.org/html/2607.26541v1#S4.SS3
+      - https://arxiv.org/html/2607.26541v1#S4.SS9
+      - https://arxiv.org/html/2607.26541v1#S7
+      - https://export.arxiv.org/api/query?id_list=2607.26541
+      - https://doi.org/10.1145/3767308.3835306
+    note: >-
+      This controlled benchmark is directly relevant to audio-LLM
+      post-training safety and alignment because it measures whether matched
+      transcripts receive different refusal behavior under prosodic delivery
+      changes. The authors explicitly withhold the dataset and code because a
+      turnkey release could lower the barrier to harmful audio jailbreaks.
+      It is therefore recorded as an internal protocol audit, not a public
+      benchmark family; no download helper or invented artifact link is added.
+
   macer_omnillm_token_compression_evaluation_audit:
     paper: https://arxiv.org/abs/2608.01665
     title: "Allocation Before Ranking: Decoupled Token Compression for OmniLLMs"

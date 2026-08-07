@@ -7,6 +7,24 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 *Prosody-driven Jailbreaks in Audio LLMs* paper is recorded as
+an internal, unreleased safety-benchmark audit. Sections 3.1-3.5 and 4.1-4.10
+define PJ-Break and AdvAudio-Prosody: 100 English harmful seed instructions
+rendered under six matched-text delivery presets, with a 95-seed post-QC panel
+scored by audio-level and fixed best-of-six seed-level jailbreak success. Five
+presets retain one Azure voice, while Commanding changes voice and is reported
+as confounded; the protocol also includes a three-judge ensemble calibrated on
+200 human-labeled responses, RealSpeech-20 and over-the-air pilots, and a
+500-utterance benign emotional control. This directly audits audio-LLM
+post-training safety because it tests whether prosody changes refusal behavior
+without lexical rewriting. Section 7 explicitly says the dataset and code are
+withheld to avoid lowering the barrier to harmful audio jailbreaks. Prompts,
+audio, QC manifests, model responses, judgments, human recordings, code, and
+trial logs are therefore not public, and no helper or public benchmark family
+is added. CC BY 4.0 covers the article, not those absent artifacts; AdvBench
+and HarmBench source terms and unspecified speech/output rights remain
+applicable.
+
 The August 2026 *Vorch-Omni* report is recorded as an unreleased human-
 evaluation protocol audit for instruction-conditioned audio-video generation
 and manipulation. Sections 5.2-5.3 and Appendix A.5 compare anonymized
