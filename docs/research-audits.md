@@ -7,6 +7,24 @@ recorded as unreleased, or excluded from the downloadable index.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The July 2026 *Cocktail-Talker* paper is recorded as a spoken-LLM
+post-training and release-status audit. Sections 3-5 use Cocktail-DialogGen to
+evaluate selective participation in noisy three- and four-speaker dialogs:
+models must respond, listen, or ignore, and are scored for binary
+Respond/Silent decisions and response quality across 7,200 seen-environment
+and 4,000 unseen-environment mixtures. This directly tests multi-party turn
+control and robustness after SFT and action/format-reward GRPO. The owner
+repository publicly provides generator and inference code, processor files,
+180 Freesound-derived background previews, and ten worked dialog examples,
+but not the fixed 1,440/800-dialog evaluation sets, condition manifests,
+complete evaluator, predictions, or per-item scores. It has no LICENSE file;
+the background manifest also omits the per-clip author and license metadata
+needed to interpret mixed Freesound terms. The README claims a roughly 2.4 GB
+LoRA adapter, but its stated repository path is currently absent. The fixed
+benchmark therefore remains unreleased, so no public family or download helper
+is added; the generator and examples are documented only as public protocol
+components.
+
 The July 2026 *From Semantics to Readout* paper is recorded as post-training
 and representation-evaluation provenance for the existing public
 AudioGrounding family. Sections 3-4 and appendices A and C-G convert upstream
