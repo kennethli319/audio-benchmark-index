@@ -2962,3 +2962,20 @@ internal audio and annotations, MFA or human timestamp references, baseline
 outputs, per-item scores, or raw timing logs. Apache-2.0 covers released code
 and models, not absent internal artifacts or separately licensed upstream
 datasets. No duplicate family, count increase, or download helper is added.
+
+The May 2026 StepAudio 2.5 technical report is recorded as an existing-family,
+public-derived-recipe, and internal-protocol inventory of unified audio-LLM
+pretraining and post-training. Sections 3-6 evaluate ASR on indexed AISHELL-1,
+WenetSpeech, FLEURS, LibriSpeech, Common Voice, VoxPopuli, and Earnings22
+families; the owner-linked WenetSpeech TestNet Long repository releases a
+7,385-row derived manifest and preparation script but no source audio or
+license file. The report's distinctive post-training evaluations remain
+unreleased: a 774-prompt human TTS arena against three commercial baselines
+and five realtime spoken-dialogue suites spanning mobile human sessions,
+general and in-car dialogue, 87 acoustic-attribute samples, and Step-SPQA.
+No official StepAudio 2.5 model or evaluation release was identified, and the
+exact ASR manifests and runner, TTS prompts and generations, realtime inputs
+and harness, human judgments, outputs, and per-item scores are absent. The
+article's arXiv license does not cover those missing materials; WenetSpeech
+retains separate upstream terms, and the public derived repository supplies no
+reuse license. No duplicate family, count increase, or helper is added.

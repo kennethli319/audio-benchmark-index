@@ -15356,6 +15356,119 @@ paper_audits:
       benchmark family or adding a download helper. Revisit if the owners
       publish a complete, licensed benchmark release.
 
+  stepaudio_2_5_evaluation_release_audit:
+    paper: https://arxiv.org/abs/2605.23463
+    title: "StepAudio 2.5 Technical Report"
+    sections: 3.1-3.2_4.1-4.3_5.1-5.3_and_6.1-6.3
+    status: audited_existing_public_families_public_derived_recipe_and_internal_unreleased_protocols
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: multilingual_short_form_ASR_suite
+        status: existing_public_dataset_families
+        index_ids:
+          - aishell_1
+          - wenetspeech
+          - fleurs
+          - librispeech
+          - common_voice
+          - voxpopuli
+        protocol: >-
+          Table 1 reports CER on Mandarin rows and WER on English rows for
+          AISHELL-1, AISHELL-2 iOS, WenetSpeech testnet and testmeeting,
+          FLEURS zh/en, LibriSpeech clean/other, Common Voice v11 en, and
+          VoxPopuli cleaned AA. The report compares VibeVoice-ASR,
+          FunASR-Nano, Doubao-ASR-2603, Qwen3-ASR-1.7B, and StepAudio 2.5 with
+          and without multi-token-prediction training. These are existing
+          corpus families, not a new StepAudio benchmark.
+      - cited_as: long_form_ASR_suite
+        status: mixed_existing_families_and_public_derived_recipe
+        index_ids:
+          - librispeech
+          - wenetspeech
+          - earnings_22
+        protocol: >-
+          Table 1 evaluates LibriSpeech clean/other long, Earnings22 cleaned
+          AA, and WenetSpeech testnet long. The owner-linked
+          wenetspeech-testnet-long repository publicly releases a 7,385-row,
+          approximately 5 MB JSON manifest and preparation script that merge
+          adjacent TestNet segments from 124 WenetSpeech audio files. It does
+          not redistribute source audio and requires separately obtained
+          WenetSpeech TestNet data.
+      - cited_as: ASR_inference_efficiency_and_MTP_acceptance
+        status: paper_specific_protocol_partially_reproducible
+        protocol: >-
+          Table 2 measures real-time factor on 100 thirty-second clips using a
+          single NVIDIA H800 at concurrency one, except the API-only Doubao
+          baseline. Table 3 measures strict per-position MTP acceptance and
+          average accepted length for MTP-3, MTP-5, and MTP-7 on WenetSpeech
+          testmeeting. The exact 100-clip timing manifest, launch settings,
+          transcripts, raw timings, and per-position records are not released.
+      - cited_as: StepAudio_2_5_TTS_Arena
+        status: internal_unreleased_human_preference_protocol
+        prompts: 774
+        protocol: >-
+          Section 5.3 uses randomized arena-style pairwise human preferences
+          against MiniMax-2.8-HD, ElevenLabs-v3, and Gemini-3.1-Flash-TTS.
+          Evaluators pass a listening-sensitivity screen, remain fixed for one
+          continuous evaluation period, justify judgments, undergo spot checks,
+          and re-review high-disagreement cases. The prompt manifest, voice
+          presets, generated audio, pair assignments, evaluator counts and
+          instructions, reasons, ratings, and aggregation records are absent.
+      - cited_as: StepAudio_2_5_Realtime_five_suite_evaluation
+        status: internal_and_unreleased_derived_protocols
+        protocol: >-
+          Section 6.3 combines mobile-app human sessions and API evaluation on
+          Step-Dialogue-Human-Eval, step_Dialogue_general, step-Dialogue-car,
+          an 87-sample Step-Dialogue-Understanding acoustic-attribute set, and
+          the 11-category Step-SPQA protocol introduced by Step-Audio 2. The
+          report provides aggregate scores but no public manifests, audio,
+          dialogue harness, judge prompts, human-rating records, outputs, or
+          per-item scores for these exact suites.
+    release_audit:
+      official_model_or_evaluation_repository_for_2_5: not_identified
+      official_hugging_face_2_5_model_or_dataset: not_identified
+      owner_linked_wenetspeech_testnet_long_repository: public_ungated
+      wenetspeech_testnet_long_manifest_and_preparation_script: released
+      wenetspeech_source_audio: not_redistributed_upstream_access_required
+      frozen_short_form_ASR_manifests_and_runner: not_released
+      TTS_arena_prompts_outputs_and_human_judgments: not_released
+      realtime_suite_inputs_harness_outputs_and_scores: not_released
+      model_training_data: mixed_public_and_in_house_not_benchmark_releases
+      download_helper: not_added_no_new_independent_family_or_complete_evaluation_release
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      wenetspeech_testnet_long_repository: no_license_file_detected
+      wenetspeech_source_data: upstream_terms_apply
+      paper_specific_evaluation_artifacts: not_specified_unreleased
+      note: >-
+        The owner-linked long-form repository publishes code and a derived
+        manifest without a detected license file, so public visibility is not
+        treated as permission to redistribute or reuse them. WenetSpeech audio
+        retains its own terms. The article license does not license absent TTS
+        prompts, model outputs, human judgments, realtime inputs, or scores.
+    sources:
+      - https://arxiv.org/abs/2605.23463
+      - https://arxiv.org/html/2605.23463v1#S3
+      - https://arxiv.org/html/2605.23463v1#S4.SS3
+      - https://arxiv.org/html/2605.23463v1#S5.SS3
+      - https://arxiv.org/html/2605.23463v1#S6.SS3
+      - https://github.com/lawlict/wenetspeech-testnet-long
+      - https://raw.githubusercontent.com/lawlict/wenetspeech-testnet-long/main/README.md
+      - https://api.github.com/repos/lawlict/wenetspeech-testnet-long
+      - https://api.github.com/repos/lawlict/wenetspeech-testnet-long/git/trees/main?recursive=1
+      - https://api.github.com/search/repositories?q=%22StepAudio%202.5%22
+      - https://huggingface.co/api/models?search=StepAudio%202.5&limit=20
+      - https://huggingface.co/api/datasets?search=StepAudio%202.5&limit=20
+    note: >-
+      This inventory is directly relevant to audio-LLM pretraining transfer and
+      post-training: StepAudio 2.5 continually pretrains one shared foundation
+      on text and speech, then specializes ASR with SFT and verifiable
+      multi-token decoding, TTS with instruction SFT and preference RLHF, and
+      realtime dialogue with progressive SFT and generative-reward RLHF. The
+      public evaluation rows map to existing families, while the distinctive
+      TTS and realtime protocols remain internal. No duplicate benchmark
+      family, count increase, or helper is added.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
