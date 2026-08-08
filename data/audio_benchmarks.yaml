@@ -343,60 +343,49 @@ paper_audits:
       - https://huggingface.co/api/datasets/moonshotai/Kimi-Audio-GenTest
 
   audioagentsecurity_release_audit:
-    id: audioagentsecurity
-    name: AudioAgentSecurity
-    full_name: "AudioAgentSecurity: Stealthy Concurrent Audio Prompt Injection against Multimodal LLM Agents"
-    qwen_cited_as: null
-    qwen_bucket:
-      - audio_language_model_benchmark
-      - end_to_end_speech_dialogue
-    tasks:
-      - audio_llm_safety_evaluation
-      - concurrent_audio_prompt_injection
-      - spoken_agent_tool_use_safety
-      - adversarial_audio_robustness
-      - benign_instruction_retention
-      - audio_attack_detection
-      - physical_channel_robustness
-      - human_perceptual_stealth_evaluation
-    official:
-      repo: https://github.com/Limax666/AudioAgentSecurity
-      dataset: https://huggingface.co/datasets/Limax11/AudioAgentSecurity
-      paper: https://arxiv.org/abs/2607.28165
-    download:
-      access: auto_gated_hugging_face_dataset_with_public_code_and_physical_examples
-      primary:
-        - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
-        - https://github.com/Limax666/AudioAgentSecurity
-      examples:
-        - 'scripts/download/audioagentsecurity.sh'
-        - 'AUDIOAGENTSECURITY_CLONE_REPO=1 scripts/download/audioagentsecurity.sh'
-        - 'AUDIOAGENTSECURITY_ACK_TERMS=1 AUDIOAGENTSECURITY_DOWNLOAD_HF=1 scripts/download/audioagentsecurity.sh'
-      notes: >-
-        Section IV constructs 200 manually verified benign/malicious
-        instruction pairs across eight agent scenarios, then applies ten
-        inaudible, low-intelligibility, and semantic-confusion attacks. The
-        paper reports 2,160 generated attack audio samples and evaluates eleven
-        audio-capable agents in a sandboxed tool-trace environment with attack
-        success and benign instruction-correctness metrics. It also defines
-        CADV and prompt-defense comparisons, DEMAND-noise false-positive tests,
-        physical distance/angle/overlap studies, and a 20-participant,
-        600-judgment perceptual study. The live auto-gated Hub snapshot reports
-        23,396,170,922 bytes and lists 200 benign WAVs, 1,997 mixed-attack WAVs,
-        and three JSON manifests; this does not exactly match the paper's
-        2,160-attack count. The public repository releases the evaluator,
-        attack generation and defense code plus selected distance and angle
-        recordings, but not the paper's claimed generated-output logs. The
-        repository README calls the suite AttackBench, so treat that as a
-        release alias rather than a separate family. The helper fetches only
-        primary documentation and live metadata by default. Repository cloning
-        is opt-in; the large gated Hub snapshot additionally requires accepted
-        access terms, authentication, an acknowledgement flag, and a separate
-        download opt-in.
+    paper: https://arxiv.org/abs/2607.28165
+    repository: https://github.com/Limax666/AudioAgentSecurity
+    dataset: https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+    title: "AudioAgentSecurity: Stealthy Concurrent Audio Prompt Injection against Multimodal LLM Agents"
+    sections: 4_and_6_and_appendix_C
+    status: audited_auto_gated_benchmark_with_public_code_and_partial_physical_recordings
+    last_verified: 2026-08-08
+    benchmark:
+      index_id: audioagentsecurity
+      release_alias: AttackBench
+      role: concurrent_audio_prompt_injection_safety_and_spoken_agent_tool_use_evaluation
+      scenarios: 8
+      manually_verified_benign_malicious_instruction_pairs: 200
+      paper_generated_attack_audio: 2160
+      attack_methods: 10
+      evaluated_audio_agents: 11
+      execution_environment: sandboxed_tool_trace
+      evaluation:
+        primary_metrics:
+          - attack_success_rate
+          - instruction_correct_rate
+        additional_protocols:
+          - CADV_and_prompt_defense_comparison
+          - DEMAND_noise_false_positive_testing
+          - physical_distance_angle_and_overlap_robustness
+          - 20_participant_600_judgment_perceptual_stealth_study
+    release_audit:
+      hugging_face_dataset: auto_gated_approximately_21_8_GiB
+      live_snapshot_benign_wavs: 200
+      live_snapshot_mixed_attack_wavs: 1997
+      paper_and_snapshot_attack_count_match: false
+      public_repository: attack_generation_evaluation_and_defense_code
+      partial_physical_recordings: released_for_distance_and_angle_tests
+      frozen_paper_outputs_tool_traces_and_judge_labels: not_identified
+      download_helper: scripts/download/audioagentsecurity.sh
+      helper_default: primary_documentation_and_live_metadata_only
+      helper_large_dataset: explicit_terms_acknowledgement_authentication_and_opt_in_required
+    access: auto_gated_dataset_with_public_ungated_repository
     license:
-      data: not_stated_auto_gated_access_conditions_apply
-      code: not_specified
-      notes: >-
+      dataset: not_stated_auto_gated_access_conditions_apply
+      repository: not_specified
+      paper: arXiv_perpetual_non_exclusive_license
+      note: >-
         Neither the Hugging Face API metadata nor the public GitHub repository
         declares a reusable license, and the gated dataset card was not
         publicly readable during verification. The arXiv perpetual
@@ -421,6 +410,14 @@ paper_audits:
       - https://api.github.com/repos/Limax666/AudioAgentSecurity/git/trees/main?recursive=1
       - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
       - https://huggingface.co/api/datasets/Limax11/AudioAgentSecurity
+    note: >-
+      AudioAgentSecurity directly evaluates audio-LLM post-training outcomes:
+      instruction hierarchy, tool-use safety, robustness to concurrent spoken
+      injection, benign-task retention, defense behavior, and perceptual
+      stealth. AttackBench is a repository alias for the same family, not a
+      second benchmark. This normalized audit record points to the separately
+      maintained benchmark entry instead of duplicating its full catalog
+      schema; no family count change is required.
 
   common_sense_facts_audio_release_audit:
     paper: https://arxiv.org/abs/2606.22473
