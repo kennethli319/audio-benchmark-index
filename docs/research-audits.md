@@ -2905,3 +2905,25 @@ manifests, evaluator, baseline outputs, or per-item scores. The paper is CC BY
 the Audio2Tool paper/repository” statement does not clearly license hosted
 recordings or metadata. Audio2Tool therefore remains uncounted and receives no
 helper until a complete, licensed benchmark release appears.
+
+The May 2026 *Do Factual Recall Mechanisms Carry over from Text to Speech in
+Multimodal Language Models?* paper is recorded as an unreleased derived
+pretraining-transfer protocol audit. Sections 2.1-2.4, Section 3, and Appendix
+A synthesize the public Known 1000 factual prompts with MeloTTS, filter
+separate Known-t2t and Known-s2t sets by SpiritLM answer correctness, and use
+causal mediation analysis to compare text- and speech-triggered factual recall.
+Clean, subject-corrupted, and activation-restored runs patch hidden states,
+five-layer MLP windows, and five-layer attention windows; HuBERT-LARGE CTC
+alignment maps spoken subjects to SpiritLM speech-token ranges. Figure 2
+reports aggregation over 754 filtered prompts, but the paper does not publish
+separate frozen manifests or counts for its two conditions. This directly
+tests whether knowledge learned by a text-pretrained backbone transfers into
+an interleaved speech-token interface, with implications for spoken factuality
+and hallucination. The authors explicitly state that they release no new model
+or dataset, and exact-title/arXiv-ID GitHub plus arXiv-ID Hugging Face searches
+found no owner artifacts on August 7. The synthesized WAVs, filtered row lists,
+accepted close-answer annotations, alignment/causal-tracing code, intervention
+configuration, activations, and per-prompt scores therefore remain
+unreleased. CC BY-SA 4.0 covers the article, not those absent artifacts or the
+separately licensed upstream components. No benchmark family or download
+helper is added.

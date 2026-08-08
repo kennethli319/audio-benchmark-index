@@ -14956,6 +14956,88 @@ paper_audits:
       benchmark family. No helper is added; revisit an author-controlled
       release if one is linked later.
 
+  spiritlm_factual_recall_mechanism_audit:
+    paper: https://arxiv.org/abs/2605.22170
+    title: "Do Factual Recall Mechanisms Carry over from Text to Speech in Multimodal Language Models?"
+    venue: "*SEM 2026"
+    sections: 2.1-2.4_3_and_appendix_A
+    status: audited_unreleased_derived_pretraining_transfer_protocol
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: Known-t2t
+        status: paper_filtered_text_protocol_not_released
+        source: Known_1000
+        input_output: text_to_text
+      - cited_as: Known-s2t
+        status: paper_synthesized_and_filtered_speech_protocol_not_released
+        source: Known_1000
+        input_output: speech_to_text
+        synthesis: MeloTTS
+        prompt_transcription_check:
+          model: Whisper-small
+          word_error_rate_percent: 19
+    benchmark_protocol:
+      model: SpiritLM
+      reported_filtered_prompts_in_figure_2: 754
+      selection: >-
+        Retain prompts for which SpiritLM produces the exact expected object or
+        an accepted close variant separately in text-to-text and speech-to-text
+        conditions. The paper does not report separate released manifests or
+        counts for Known-t2t and Known-s2t.
+      intervention:
+        - clean_run
+        - subject_token_noise_corruption
+        - corrupted_run_with_clean_activation_restoration
+      patched_components:
+        - transformer_hidden_state
+        - five_layer_MLP_window
+        - five_layer_attention_window
+      metric: average_indirect_effect_on_expected_object_probability
+      speech_alignment: >-
+        HuBERT-LARGE CTC forced alignment maps transcript words to waveform
+        frames and then to SpiritLM HuBERT speech-token ranges before causal
+        traces are aggregated at corresponding word positions.
+    release_audit:
+      upstream_known_1000_text_json: public_ungated
+      paper_specific_synthesized_audio: not_released
+      Known_t2t_and_Known_s2t_filtered_manifests: not_released
+      accepted_close_variant_annotations: not_released
+      causal_tracing_and_alignment_code: not_released
+      intervention_configuration_and_randomness: not_released
+      activations_outputs_and_per_prompt_scores: not_released
+      paper_statement: authors_do_not_release_any_new_models_or_datasets
+      exact_title_and_arxiv_id_github_repository_searches: no_results
+      hugging_face_arxiv_id_dataset_and_model_searches: no_results
+      download_helper: not_added_manual_required
+    license:
+      paper: CC-BY-SA-4.0
+      paper_specific_artifacts: not_specified_and_not_released
+      upstream_components: separate_terms_apply
+      note: >-
+        CC BY-SA 4.0 covers the article, not the absent synthesized speech,
+        filtered manifests, annotations, activations, or code. Known 1000,
+        MeloTTS, SpiritLM, Whisper-small, and HuBERT retain separate terms.
+    sources:
+      - https://arxiv.org/abs/2605.22170
+      - https://arxiv.org/html/2605.22170v1#S2.SS3
+      - https://arxiv.org/html/2605.22170v1#S2.SS4
+      - https://arxiv.org/html/2605.22170v1#S3
+      - https://arxiv.org/html/2605.22170v1#A1
+      - https://rome.baulab.info/data/dsets/known_1000.json
+      - https://export.arxiv.org/api/query?id_list=2605.22170
+      - https://api.github.com/search/repositories?q=%222605.22170%22
+      - https://api.github.com/search/repositories?q=%22Do%20Factual%20Recall%20Mechanisms%20Carry%20over%22
+      - https://huggingface.co/api/datasets?search=2605.22170&limit=20
+      - https://huggingface.co/api/models?search=2605.22170&limit=20
+    note: >-
+      This directly audits pretraining transfer from SpiritLM's text backbone
+      into its interleaved speech-token interface and probes speech-triggered
+      factual recall, a mechanism relevant to spoken hallucination and factual
+      reliability. Because the authors explicitly release no new dataset and
+      the exact synthesized/filtered evaluation is not reconstructible from
+      Known 1000 alone, it is recorded as an unreleased derived protocol rather
+      than counted as a public benchmark family.
+
   audio2tool_release_audit:
     paper: https://arxiv.org/abs/2604.22821
     title: "Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use"
