@@ -991,9 +991,11 @@ four-class IEMOCAP leave-one-session-out validation and the standard seven-class
 MELD split; section 4.4 transfers the MELD-trained model to IEMOCAP, RAVDESS,
 and SAVEE without target-domain adaptation. Although section 6 says code,
 pretrained weights, and training logs are publicly available, the linked
-[owner repository](https://github.com/LilSicko/HyPase) currently contains only
-a one-line README and no license, implementation, weights, logs, manifests,
-prompts, predictions, or scores. Existing access terms therefore remain
+[owner repository](https://github.com/LilSicko/HyPase) still contains only an
+eight-byte, one-line README and no license, implementation, weights, logs,
+manifests, prompts, predictions, or scores. Its complete tree was frozen at
+`419c7b0f8203c54fa36ecaf7c0ec8dab21dc5cfb` on August 8, and GitHub reports no
+push after August 1. Existing access terms therefore remain
 authoritative: IEMOCAP is form-gated, RAVDESS is CC BY-NC-SA 4.0, MELD's
 GPL-3.0 release contains Friends-derived media, and SAVEE is registration-gated
 for research use without a standard public data license. No duplicate family or
