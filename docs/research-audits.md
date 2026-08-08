@@ -2998,3 +2998,22 @@ vision-only, and it does not report a released full-duplex audio-interaction
 benchmark. Apache-2.0 does not relicense external benchmark assets or absent
 evaluation artifacts, so upstream terms remain controlling. No duplicate
 family, count increase, or download helper is added.
+
+The August 2026 *EmpaAva* paper is recorded as an existing-family and
+unreleased-derived-evaluation audit of spoken-agent empathetic post-training.
+Sections 5.1-5.3 and Appendix E evaluate a text-only 5,255-item
+EmpatheticDialogues track, end-to-end emotional-speech and avatar responses
+derived from 6,288 filtered AvaMERG instances, a 100-output cross-modal subset,
+a ten-participant questionnaire over five turns and four systems, and a 2,308-
+item embodied-expression subset. The latter tracks measure response empathy,
+emotion and cause understanding, lip synchronization, and speech-expression
+consistency, directly testing an LLM planner that controls emotional speech
+and embodied dialogue from acoustic-affect evidence. The Apache-2.0 owner
+repository releases the complete agent system and separately packaged runtime
+assets, but its non-truncated main tree at commit
+`19e2d7f2309e7d716d61a8d9d01a6d2d9a2da411` contains no paper-level evaluation
+runner, frozen 5,255/6,288/100/2,308-item manifests, comparison outputs, human
+ratings, or per-item scores; the project page's Dataset control remains
+disabled as “Coming soon.” Apache-2.0 covers first-party code, not upstream
+datasets, absent ratings, or generated avatar media. No duplicate benchmark
+family, count increase, or download helper is added.

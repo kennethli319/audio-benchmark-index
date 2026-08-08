@@ -15590,6 +15590,90 @@ paper_audits:
       cross-suite, and efficiency recipes are not released. No duplicate
       benchmark family, count increase, or helper is added.
 
+  empaava_spoken_agent_evaluation_release_audit:
+    paper: https://arxiv.org/abs/2608.04709
+    title: "EmpaAva: An Open-source Agentic 3D-Avatar Empathetic Live Chatbot"
+    sections: 5.1-5.3_and_appendix_E
+    status: audited_existing_families_with_unreleased_derived_spoken_agent_evaluation_artifacts
+    last_verified: 2026-08-08
+    evaluated_sets:
+      - cited_as: EmpatheticDialogues_full_test
+        status: existing_public_text_dialogue_family_outside_audio_release_scope
+        samples: 5255
+        protocol: >-
+          Generate one deterministic response per text-only test example and
+          report emotion-cue accuracy plus Dist-1 and Dist-2 against non-LLM,
+          LLM, and avatar-system response baselines. This track does not use
+          spoken input and is not counted as an audio benchmark addition.
+      - cited_as: AvaMERG_end_to_end_avatar_evaluation
+        status: existing_public_family_with_unreleased_paper_specific_outputs_and_selections
+        source_instances_after_filtering: 6288
+        protocol: >-
+          Compare complete text, emotional-speech, and avatar-video responses
+          from EmpaAva, BlenderBot, EmpathyEar, and AvaMERG. Automatic scoring
+          reports Dist-2, emotion understanding accuracy, and emotion-cause
+          modeling. A 100-output subset adds multimodal emotion-consistency
+          and audio-visual agreement diagnostics; ten participants each rate
+          five turns with four anonymized responses for empathy, relevance,
+          specificity, and overall preference.
+      - cited_as: AvaMERG_embodied_expression_subset
+        status: existing_public_family_with_unreleased_derived_selection_and_generations
+        samples: 2308
+        protocol: >-
+          Hold response text, target emotion, speech input, avatar identity,
+          and video format fixed while comparing TTS-only, Wav2Lip,
+          SadTalker, DEEPTalk, a 3D Gaussian avatar, and EmpaAva. Report
+          SyncNet LSE-C and LSE-D for lip synchronization and audio-video
+          embedding cosine similarity for speech-expression consistency.
+    release_audit:
+      official_project_page_and_live_demo: public_ungated
+      official_system_repository: public_ungated
+      system_code_and_runtime_assets: released
+      project_page_dataset_link: disabled_coming_soon
+      frozen_5255_6288_2308_and_100_item_manifests: not_identified
+      evaluation_runner_and_metric_configuration: not_identified
+      baseline_and_empaava_generated_outputs: not_released
+      human_pair_assignments_ratings_and_per_item_scores: not_released
+      repository_tree_checked: 19e2d7f2309e7d716d61a8d9d01a6d2d9a2da411
+      download_helper: not_added_no_new_independent_or_complete_evaluation_release
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      first_party_system_code: apache-2.0
+      bundled_third_party_components: separate_terms_apply
+      source_datasets: separate_terms_apply
+      derived_manifests_outputs_and_scores: not_specified_unreleased
+      note: >-
+        Apache-2.0 covers first-party repository code, while the repository
+        separately inventories third-party components and runtime assets. It
+        does not relicense AvaMERG, EmpatheticDialogues, participant ratings,
+        generated avatar media, or absent evaluation records. The project
+        page's public demo and disabled dataset link do not establish dataset
+        reuse rights.
+    sources:
+      - https://arxiv.org/abs/2608.04709
+      - https://arxiv.org/html/2608.04709v1#S5.SS1
+      - https://arxiv.org/html/2608.04709v1#S5.SS2
+      - https://arxiv.org/html/2608.04709v1#S5.SS3
+      - https://arxiv.org/html/2608.04709v1#A5
+      - https://empaava.top/
+      - https://empaava.top/demo/
+      - https://github.com/1114531938/EmpaAva_System
+      - https://raw.githubusercontent.com/1114531938/EmpaAva_System/main/README.md
+      - https://raw.githubusercontent.com/1114531938/EmpaAva_System/main/LICENSE
+      - https://api.github.com/repos/1114531938/EmpaAva_System
+      - https://api.github.com/repos/1114531938/EmpaAva_System/git/trees/main?recursive=1
+    note: >-
+      This is directly relevant to spoken-agent post-training because an LLM
+      converts ASR, acoustic-emotion, optional visual, and dialogue-history
+      evidence into a structured empathetic reply plan controlling response
+      text, emotional speech, avatar expression, and rendering. The paper's
+      distinctive evaluation is derived from existing AvaMERG and
+      EmpatheticDialogues families. Although the complete agent system is
+      public, the repository tree contains no paper-level evaluation runner,
+      frozen selections, generated comparison matrix, human judgments, or
+      per-item scores. No duplicate benchmark family, count increase, or
+      helper is added.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
