@@ -2945,3 +2945,20 @@ per-item scores. Apache-2.0 on the model cards covers those released model
 repositories, not absent evaluation artifacts or third-party benchmark data.
 The audit therefore adds no duplicate family, count increase, or download
 helper.
+
+The January 2026 Qwen3-ASR technical report is recorded as an existing-family
+and internal-protocol inventory of speech-foundation-model transfer and
+post-training. Sections 2-4 and Tables 2-9 trace continuous pretraining from
+Qwen3-Omni through ASR SFT with context-biasing and streaming-enhancement data
+and long-context fine-tuning, then evaluate public LibriSpeech, GigaSpeech,
+Common Voice, FLEURS, MLS, VoxPopuli, WenetSpeech, KeSpeech, MLC-SLM Eval,
+MIR-1K, and Opencpop families. The report also defines internal robustness,
+15-language news, long-form English/Chinese song, forced-alignment timestamp,
+and efficiency protocols. The official Apache-2.0 repository and ungated
+Hugging Face collection release two ASR models, the forced aligner, inference,
+streaming, alignment, and fine-tuning code, plus aggregate evaluation tables.
+They do not release frozen public-benchmark manifests or an evaluation runner,
+internal audio and annotations, MFA or human timestamp references, baseline
+outputs, per-item scores, or raw timing logs. Apache-2.0 covers released code
+and models, not absent internal artifacts or separately licensed upstream
+datasets. No duplicate family, count increase, or download helper is added.
