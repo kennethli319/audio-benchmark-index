@@ -15469,6 +15469,124 @@ paper_audits:
       TTS and realtime protocols remain internal. No duplicate benchmark
       family, count increase, or helper is added.
 
+  minicpm_o_4_5_evaluation_release_audit:
+    paper: https://arxiv.org/abs/2604.27393
+    title: "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction"
+    sections: 4.1_5.1-5.4_6.1_6.3_6.5-6.6_and_7
+    status: audited_existing_public_families_and_paper_specific_unreleased_protocols
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: speech_and_audio_understanding_suite
+        status: mixed_existing_public_families_and_unfrozen_paper_protocols
+        index_ids:
+          - aishell_1
+          - wenetspeech
+          - librispeech
+          - gigaspeech
+          - voxpopuli
+          - covost2
+          - mmau
+          - meld
+          - voicebench
+        protocol: >-
+          Section 6.3 and Table 4 report CER/WER on AISHELL-1, AISHELL-2,
+          WenetSpeech test-net/test-meeting, LibriSpeech test-clean/test-other,
+          GigaSpeech test, and VoxPopuli V1-En; BLEU on CoVoST 2 en-to-zh and
+          zh-to-en; and scores on MMAU, MELD, VoiceBench AlpacaEval, Speech
+          TriviaQA, Speech Web Questions, and Speech CMMLU. The report does not
+          publish the exact manifests, dataset revisions, preprocessing,
+          prompts, decoding settings, judge configuration, outputs, or
+          per-item scores used for its aggregate table. AISHELL-2 and the three
+          named speech-QA rows are therefore recorded only as paper citations,
+          not new public benchmark releases from MiniCPM-o.
+      - cited_as: speech_generation_suite
+        status: existing_corpus_families_with_paper_specific_unreleased_recipe
+        protocol: >-
+          Section 6.3 and Table 5 evaluate SeedTTS Test-ZH/Test-EN with
+          CER/WER and speaker similarity, LongTTS English/Chinese with WER/CER,
+          and Expresso and ESD emotion/style control using neutral reference
+          audio. Table 10 reuses the SeedTTS test set to compare no-interleave,
+          fixed-text interleaving, and dynamic-text TAIL generation. The exact
+          text and reference-audio selections, LongTTS definition, synthesis
+          settings, ASR and similarity backends, emotion/style classifier,
+          generated waveforms, and case-level measurements are not released.
+      - cited_as: omni_modal_simplex_suite
+        status: existing_public_benchmark_families
+        index_ids:
+          - daily_omni
+          - worldsense
+          - avut
+          - video_mme
+        protocol: >-
+          Section 6.5 and Table 7 compare Gemini 2.5 Flash, Qwen3-Omni, and
+          MiniCPM-o 4.5 on Daily-Omni, WorldSense, Video-Holmes, JointAVBench,
+          AVUT-Human, FutureOmni, and Video-MME-Short with audio. These are
+          externally defined benchmark families rather than a MiniCPM-o 4.5
+          release; the paper and owner repository do not provide a frozen
+          cross-suite runner, inputs, outputs, or per-item result bundle.
+      - cited_as: LiveSports_3K_CC_full_duplex_evaluation
+        status: cited_external_vision_only_protocol_not_audio_benchmark_release
+        protocol: >-
+          Section 6.5 and Table 8 report a win rate for continuous visual input
+          against LiveCC and StreamingVLM. This is a vision-only full-duplex
+          evaluation, so it is useful context for the interaction architecture
+          but is outside the index's audio benchmark focus and is not counted.
+      - cited_as: inference_efficiency
+        status: paper_specific_protocol_not_released_as_benchmark
+        protocol: >-
+          Section 7 and Tables 11-12 compare generation throughput,
+          first-token latency, real-time factor, and memory on an RTX 4090 and
+          DGX Spark. The exact request corpus, run counts, warmup, software
+          revisions, launch commands, raw measurements, and timing logs are
+          absent, so this is not treated as a reproducible benchmark release.
+    release_audit:
+      official_model_repository: public_ungated
+      official_model_weights: public_ungated
+      model_and_repository_license: apache-2.0
+      owner_repository_audio_evaluation_runner: not_identified
+      owner_repository_visual_evaluation_code: released_but_not_audio_suite
+      frozen_audio_manifests_prompts_and_preprocessing: not_released
+      speech_generation_references_outputs_and_case_scores: not_released
+      omni_modal_cross_suite_outputs_and_scores: not_released
+      full_duplex_audio_interaction_benchmark: not_reported
+      model_training_data: mixed_collected_generated_and_public_not_benchmark_releases
+      download_helper: not_added_no_new_independent_or_complete_evaluation_release
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      model_and_repository: apache-2.0
+      upstream_benchmarks_and_corpora: separate_terms_apply
+      paper_specific_evaluation_artifacts: not_specified_unreleased
+      note: >-
+        Apache-2.0 covers the released owner repository and model according to
+        their official pages; it does not relicense external benchmark audio,
+        annotations, or absent evaluation artifacts. Apply each upstream
+        dataset's access and license terms independently.
+    sources:
+      - https://arxiv.org/abs/2604.27393
+      - https://arxiv.org/html/2604.27393v1#S4.SS1
+      - https://arxiv.org/html/2604.27393v1#S5
+      - https://arxiv.org/html/2604.27393v1#S6.SS3
+      - https://arxiv.org/html/2604.27393v1#S6.SS5
+      - https://arxiv.org/html/2604.27393v1#S6.SS6
+      - https://arxiv.org/html/2604.27393v1#S7
+      - https://github.com/OpenBMB/MiniCPM-o
+      - https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/README.md
+      - https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/LICENSE
+      - https://api.github.com/repos/OpenBMB/MiniCPM-o
+      - https://api.github.com/repos/OpenBMB/MiniCPM-o/git/trees/main?recursive=1
+      - https://huggingface.co/openbmb/MiniCPM-o-4_5
+      - https://huggingface.co/openbmb/MiniCPM-o-4_5/raw/main/README.md
+      - https://huggingface.co/api/models/openbmb/MiniCPM-o-4_5
+    note: >-
+      This audit is directly relevant to audio-LLM pretraining and
+      post-training: the report freezes pretrained components for initial
+      speech alignment, jointly pretrains vision-language, speech, and
+      omni-modal streams, performs joint instruction tuning, and then applies
+      GRPO, a general reward model, and RLAIF-V. Its reported audio results map
+      mostly to existing benchmark families, while its exact speech-generation,
+      cross-suite, and efficiency recipes are not released. No duplicate
+      benchmark family, count increase, or helper is added.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio

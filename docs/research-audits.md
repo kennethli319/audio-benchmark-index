@@ -2979,3 +2979,20 @@ and harness, human judgments, outputs, and per-item scores are absent. The
 article's arXiv license does not cover those missing materials; WenetSpeech
 retains separate upstream terms, and the public derived repository supplies no
 reuse license. No duplicate family, count increase, or helper is added.
+
+The April 2026 MiniCPM-o 4.5 report is recorded as an existing-family and
+paper-specific protocol inventory for speech alignment, joint omni-modal
+pretraining, instruction tuning, GRPO/reward-model post-training, and
+full-duplex interaction. Sections 6.3 and 6.5 evaluate indexed AISHELL-1,
+WenetSpeech, LibriSpeech, GigaSpeech, VoxPopuli, CoVoST 2, MMAU, MELD,
+VoiceBench, Daily-Omni, WorldSense, AVUT, and Video-MME families alongside
+additional cited speech-QA, speech-generation, and audio-video suites. The
+official Apache-2.0 repository and ungated model weights are public, but the
+repository's evaluation code is vision-oriented: no audio-suite runner,
+frozen manifests or revisions, preprocessing and prompts, judge configuration,
+speech-generation references and outputs, cross-suite result bundle, per-item
+scores, or timing logs were identified. The report's LiveSports-3K-CC row is
+vision-only, and it does not report a released full-duplex audio-interaction
+benchmark. Apache-2.0 does not relicense external benchmark assets or absent
+evaluation artifacts, so upstream terms remain controlling. No duplicate
+family, count increase, or download helper is added.
