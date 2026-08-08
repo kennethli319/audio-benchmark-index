@@ -3141,6 +3141,28 @@ terms, but that does not license the entire checkpoint, code, copied FLEURS
 audio, or example manifest; upstream FLEURS and CoVoST 2 terms still apply.
 The audit therefore adds no duplicate family, count increase, or helper.
 
+The July 2026 *SimulS2ST-Omni* paper is recorded as an existing-family,
+selected-demo, and incomplete-evaluation audit of streaming speech-to-speech
+post-training. Section 4 and Appendices D, F, and H evaluate public CVSS-T;
+indexed RealSI, LibriSpeech, WenetSpeech, CoVoST 2, and Seed-TTS families; and
+the paper-specific, unreleased ACL60/60-dev protocol. The paper's distinctive
+protocols compare Thinker–Talker and unified
+decoders, full and 10% paired-S2ST budgets, auxiliary multitask supervision,
+monotonicity-filtered trajectories, latency sampling schedules, three training
+seeds, alternate ASR backends, computation-aware latency, a 15-item-per-
+direction human study, and DeepSeek-V4-Pro VIP judging. This directly traces
+post-training of a Qwen2.5-Omni-derived speech LM for joint text-code
+read/wait/write behavior and tests quality, latency, long-form stability,
+speech fidelity, and data efficiency. The public project repository exposes
+selected sentence-level and long-form audio demonstrations, but its GitHub
+control is still marked “Coming soon”; no model code or checkpoints, frozen
+manifests, complete generations and baseline outputs, runtime logs, human
+ratings, VIP prompts and records, or per-item scores are released. The paper
+is CC BY 4.0, while the roughly 290 MB static demo repository has no detected
+license file and does not separately state rights for source or generated
+audio. Upstream benchmark terms remain controlling, so no duplicate family,
+count increase, or helper is added.
+
 The July 2026 *SpeechLLM Meets Federated Learning for End-to-End ASR* paper is
 recorded as an existing-family and incomplete-protocol audit of decentralized
 audio-encoder transfer. Sections 3-5 and Tables 1-2 connect frozen WavLM-Large

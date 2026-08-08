@@ -16292,6 +16292,129 @@ paper_audits:
       federated protocol cannot be reproduced exactly and no duplicate family,
       count increase, or helper is added.
 
+  simuls2st_omni_streaming_post_training_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.19810
+    title: "SimulS2ST-Omni: Data-Efficient Streaming Speech-to-Speech Translation via Explicit Trajectory Supervision"
+    sections: 4_appendices_D_F_H_and_tables_1_3-5_9-16
+    status: audited_existing_public_families_with_selected_demos_and_unreleased_complete_evaluation_artifacts
+    last_verified: 2026-08-08
+    relevance:
+      area: streaming_speech_to_speech_post_training_and_quality_latency_evaluation
+      note: >-
+        The paper directly studies post-training a Qwen2.5-Omni-derived speech
+        language model with joint text-code read/wait/write trajectories. Its
+        controlled evaluations test paired-S2ST data efficiency, auxiliary
+        multitask transfer, trajectory filtering, architecture, latency,
+        long-form stability, speech fidelity, and judge-based adequacy.
+    evaluated_sets:
+      - cited_as: CVSS-T
+        index_id: null
+        status: public_upstream_family_not_separately_indexed_with_paper_specific_bidirectional_protocol
+        protocol: >-
+          Evaluate offline English-to-Chinese and Chinese-to-English S2ST on
+          the Chinese and English test sets, totaling 4,897 utterance pairs
+          and 8.2 and 6.3 hours respectively, with Text-BLEU, ASR-BLEU,
+          SIM-O, and AutoPCP under the UniSS preprocessing protocol.
+      - cited_as: RealSI
+        index_id: realsi
+        status: existing_public_family_with_unreleased_model_outputs_and_runtime_logs
+        protocol: >-
+          Evaluate sentence-level and long-form bidirectional streaming S2TT
+          and S2ST over 431 English-to-Chinese and 347 Chinese-to-English
+          segments across ten domains. Report BLEU or ASR-BLEU, LAAL and
+          computation-aware LAAL, StreamLAAL, SIM-O, AutoPCP, RTF, human MOS,
+          and VIP judge pass rate across latency multipliers.
+      - cited_as: ACL60/60-dev
+        index_id: null
+        status: paper_specific_protocol_not_publicly_released
+        protocol: >-
+          Evaluate long-form English-to-Chinese S2TT on five ACL 2022 talks,
+          roughly one hour, with stream-side BLEU and StreamLAAL under the
+          IWSLT realistic-condition setting.
+      - cited_as: LibriSpeech test-clean
+        index_id: librispeech
+        status: existing_public_family
+        role: supplementary_offline_English_ASR
+      - cited_as: WenetSpeech TestNet
+        index_id: wenetspeech
+        status: existing_public_family
+        role: supplementary_offline_Mandarin_ASR
+      - cited_as: CoVoST 2
+        index_id: covost2
+        status: existing_public_family_with_paper_specific_English_Chinese_directions
+        role: supplementary_offline_speech_to_text_translation
+      - cited_as: Seed-TTS evaluation protocol
+        index_id: seed_tts_eval
+        status: existing_public_protocol_family_with_unreleased_exact_manifest
+        role: supplementary_zero_shot_English_and_Chinese_speech_generation
+    controlled_post_training_protocols:
+      - thinker_talker_vs_unified_decoder_architecture
+      - full_vs_10_percent_paired_S2ST_budget
+      - auxiliary_multitask_supervision_ablation
+      - random_vs_NIR_monotonicity_filtered_trajectory_selection
+      - uniform_linear_and_Gaussian_latency_multiplier_sampling
+      - three_seed_low_resource_reproducibility
+      - alternate_ASR_backend_robustness
+    human_and_judge_evaluation:
+      human_study: >-
+        Fifteen RealSI sentence-level items per direction compare two model
+        latency tiers, LiveInterpret 2.0, and Seamless-Streaming on 1-5
+        naturalness, fidelity, translation adequacy, and overall MOS. Five
+        raters score each item; Table 15 reports paired Wilcoxon tests and the
+        text reports Krippendorff alpha and ICC agreement.
+      judge: DeepSeek-V4-Pro
+      judge_protocol: >-
+        VIP rates key-information recognition, correctness, and expressiveness
+        over ASR transcripts and reports pass rate for eight latency tiers and
+        three LiveInterpret API runs.
+    release_audit:
+      project_page: public_ungated
+      selected_sentence_level_and_long_form_audio_demos: public_ungated
+      project_repository: public_ungated_static_demo_only
+      complete_benchmark_manifests_and_frozen_revisions: not_released
+      model_code_checkpoints_and_inference_runner: announced_coming_soon
+      trajectory_generation_filtering_and_training_code: not_released
+      exact_training_and_evaluation_item_manifests: not_released
+      complete_generated_outputs_and_baseline_outputs: not_released
+      latency_and_compute_logs: not_released
+      individual_human_ratings_and_assignments: not_released
+      VIP_prompt_parser_judge_records_and_per_item_scores: not_released
+      download_helper: none_selected_demo_repository_is_about_290_MB_and_not_a_complete_evaluation_release
+    license:
+      paper: CC-BY-4.0
+      project_repository: no_detected_license
+      demo_page_footer: CC-BY-SA-4.0_link_without_artifact_scope
+      benchmark_data: upstream_family_terms_apply
+      generated_and_baseline_audio: rights_not_separately_stated
+      note: >-
+        The article's CC BY 4.0 license covers the paper. The demo repository
+        has no detected license file, and its template footer does not clearly
+        establish reuse rights for source speech, third-party baseline audio,
+        generated outputs, or absent evaluation records. CVSS-T, RealSI,
+        ACL60/60-dev, LibriSpeech, WenetSpeech, CoVoST 2, and Seed-TTS retain
+        their own terms.
+    sources:
+      - https://arxiv.org/abs/2607.19810
+      - https://arxiv.org/html/2607.19810v1#S4
+      - https://arxiv.org/html/2607.19810v1#A4
+      - https://arxiv.org/html/2607.19810v1#A6
+      - https://arxiv.org/html/2607.19810v1#A8
+      - https://hasaki321.github.io/SimulS2ST-Omni.demo/
+      - https://github.com/hasaki321/SimulS2ST-Omni.demo
+      - https://api.github.com/repos/hasaki321/SimulS2ST-Omni.demo
+      - https://api.github.com/repos/hasaki321/SimulS2ST-Omni.demo/git/trees/main?recursive=1
+      - https://api.github.com/search/repositories?q=%22SimulS2ST-Omni%22
+      - https://huggingface.co/api/models?search=SimulS2ST-Omni
+      - https://huggingface.co/api/datasets?search=SimulS2ST-Omni
+      - https://export.arxiv.org/api/query?id_list=2607.19810
+    note: >-
+      This audit maps the reported evaluations to indexed families where an
+      audited entry exists, records public CVSS-T conservatively without
+      creating a duplicate download path, and preserves ACL60/60-dev as an
+      unreleased paper-specific protocol. The official project exposes
+      selected demonstrations but not a runnable or complete evaluation
+      release, so no benchmark count, duplicate family, or helper is added.
+
 benchmarks:
   - id: voxparadox
     name: VoxParadox
