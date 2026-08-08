@@ -3078,3 +3078,25 @@ or top-level model repository. A nested language-model README invokes Gemma
 terms, but that does not license the entire checkpoint, code, copied FLEURS
 audio, or example manifest; upstream FLEURS and CoVoST 2 terms still apply.
 The audit therefore adds no duplicate family, count increase, or helper.
+
+The May 2026 *jina-embeddings-v5-omni* paper is recorded as an existing-family
+and released-model audit of frozen audio-encoder transfer into a language
+embedding model. Sections 3-6 and Tables 1-5 connect the frozen Qwen2.5-Omni
+audio encoder to frozen Jina v5 text backbones by training only one linear
+audio projector and delimiter-token rows, then evaluate the Nano and Small
+models on the indexed 30-task MAEB suite. Figure 8 additionally compares
+projector-only, immediate encoder-unfreezing, and two-stage continuation on an
+eight-task MAEB subset: UrbanSound8K, CommonVoiceMini21, MACS, GigaSpeech,
+SpokenSQuAD, Clotho, JamAlt Artist, and JamAlt Lyric. This directly tests
+whether an audio encoder already aligned through an audio LLM can transfer
+through a compact learned interface while preserving the frozen language
+space. The public, ungated [Hugging Face collection](https://huggingface.co/collections/jinaai/jina-embeddings-v5-omni-69f336b985c156b1d757029e)
+releases two base models, eight pre-merged task variants, processors, and
+inference code under model-card CC BY-NC 4.0 declarations; upstream MTEB
+provides MAEB's public registry and runner. The release does not identify the
+projector-training source datasets or item manifests, freeze the paper's MTEB
+revision and environment, or supply baseline outputs, predictions, per-item
+scores, per-task ablation values, or training logs. Model-card terms do not
+relicense MAEB components or undisclosed training sources, and MTEB's
+Apache-2.0 applies to code and registry rather than component media. No new
+family, count increase, or helper is added.

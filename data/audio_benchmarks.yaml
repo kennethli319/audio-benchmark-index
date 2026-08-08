@@ -15962,6 +15962,102 @@ paper_audits:
       not reproduce the full FLEURS or CoVoST-2 evaluations reported in the
       paper. No count increase or new download helper is warranted.
 
+  jina_v5_omni_frozen_audio_tower_transfer_audit:
+    paper: https://arxiv.org/abs/2605.08384
+    title: "jina-embeddings-v5-omni: Geometry-preserving Embeddings via Locked Aligned Towers"
+    sections: 3-6_and_tables_1-5
+    status: audited_existing_public_family_and_released_models_with_incomplete_evaluation_artifacts
+    last_verified: 2026-08-08
+    evaluated_sets:
+      - cited_as: MAEB
+        index_id: maeb
+        status: existing_public_mixed_terms_benchmark_family
+        protocol: >-
+          Evaluate the Nano and Small base models across the public 30-task
+          Massive Audio Embedding Benchmark, grouped into ten retrieval or
+          reranking, fourteen classification or zero-shot, three text-
+          matching, and three clustering tasks. Table 1 reports the overall
+          MAEB aggregate; Table 4 separates those four task groups, and Figure
+          6 reports shared CommonVoiceMini21 and FLEURS language slices.
+      - cited_as: MAEB eight-task audio ablation subset
+        index_id: maeb
+        status: existing_public_families_with_unreleased_paper_configuration
+        protocol: >-
+          Compare projector-only training, immediate audio-encoder unfreezing,
+          and a two-stage continuation on UrbanSound8K, CommonVoiceMini21,
+          MACS, GigaSpeech, SpokenSQuAD, Clotho, JamAlt Artist, and JamAlt
+          Lyric. Figure 8 reports only the eight-task mean training curves;
+          the exact task revisions, runner configuration, and per-task values
+          are not released with the model repositories.
+    pretraining_interface:
+      frozen_audio_encoder: Qwen2.5_Omni_audio_encoder_adapted_from_Whisper_large_v3
+      frozen_text_backbones:
+        - jina_embeddings_v5_text_nano
+        - jina_embeddings_v5_text_small
+      released_recipe_trainable_components:
+        - single_linear_fc_audio_projector
+        - audio_modality_delimiter_token_rows
+      task_specific_variants:
+        - retrieval
+        - classification
+        - clustering
+        - text_matching
+      objective: bidirectional_in_batch_InfoNCE_with_Matryoshka_prefixes
+      audio_training_mixture_disclosure: >-
+        Figure 3 reports token-share categories—55.0% music, 25.5%
+        environmental sounds, 14.2% English speech, 3.1% multilingual speech,
+        1.9% animal sounds, and 0.2% emotional speech—but does not identify a
+        reproducible source-dataset or item manifest.
+      relevance: >-
+        Directly evaluates whether a speech encoder already aligned through an
+        audio LLM can be connected to a frozen language embedding model using
+        only a compact learned interface while preserving text geometry.
+    release_audit:
+      hugging_face_collection: public_ungated
+      released_base_models: 2
+      released_premerged_task_variants: 8
+      weights_processors_and_inference_code: public
+      model_cards_and_usage_examples: public
+      MAEB_registry_and_runner: public_in_upstream_MTEB_repository
+      exact_training_source_datasets_and_item_manifests: not_released
+      paper_evaluation_MTEB_revision_and_environment: not_released
+      exact_ablation_subset_configuration_and_task_revisions: not_released
+      baseline_outputs_predictions_and_per_item_scores: not_released
+      per_task_ablation_values_and_training_logs: not_released
+      download_helper: none_existing_MAEB_family_already_has_safe_helper
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      released_model_repositories: CC-BY-NC-4.0_declared_in_model_cards
+      standalone_license_file: not_identified_in_reviewed_base_repositories
+      benchmark_data: upstream_MAEB_component_terms_apply
+      training_data: source_terms_not_enumerated
+      note: >-
+        The model cards declare CC BY-NC 4.0 for the released weights and
+        repository files, but that declaration does not relicense MAEB's
+        component datasets or the undisclosed projector-training sources.
+        The MTEB Apache-2.0 license covers its code and registry, not each
+        underlying speech, music, or environmental-audio asset.
+    sources:
+      - https://arxiv.org/abs/2605.08384
+      - https://arxiv.org/html/2605.08384v3#S3
+      - https://arxiv.org/html/2605.08384v3#S4
+      - https://arxiv.org/html/2605.08384v3#S5
+      - https://arxiv.org/html/2605.08384v3#S6
+      - https://huggingface.co/collections/jinaai/jina-embeddings-v5-omni-69f336b985c156b1d757029e
+      - https://huggingface.co/jinaai/jina-embeddings-v5-omni-nano
+      - https://huggingface.co/api/models/jinaai/jina-embeddings-v5-omni-nano
+      - https://huggingface.co/jinaai/jina-embeddings-v5-omni-small
+      - https://huggingface.co/api/models/jinaai/jina-embeddings-v5-omni-small
+      - https://github.com/embeddings-benchmark/mteb
+      - https://arxiv.org/abs/2602.16008
+    note: >-
+      This is an evaluation inventory over the existing MAEB family, not a new
+      benchmark. The public models make the frozen-tower interface runnable,
+      while the upstream MTEB release supplies MAEB's task registry. The paper
+      does not freeze the exact evaluation environment or release predictions,
+      scores, training manifests, or ablation logs, so no count increase or
+      duplicate helper is warranted.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
