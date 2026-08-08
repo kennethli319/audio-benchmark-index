@@ -76,6 +76,7 @@ scripts/download/superb.sh
 scripts/download/codec_superb.sh
 scripts/download/emo_superb.sh
 scripts/download/slurp.sh
+scripts/download/speech_massive.sh
 scripts/download/slue.sh
 scripts/download/minds14.sh
 scripts/download/hear.sh
@@ -1621,6 +1622,13 @@ KIMI_AUDIO_GENTEST_CLONE_TOOLKIT=1 scripts/download/kimi_audio_gentest.sh
 SPEECHPARALING_BENCH_DOWNLOAD_MANIFESTS=1 scripts/download/speechparaling_bench.sh
 SPEECHPARALING_BENCH_DOWNLOAD_HF=1 scripts/download/speechparaling_bench.sh
 SPEECHPARALING_BENCH_CLONE_REPO=1 scripts/download/speechparaling_bench.sh
+
+# Speech-MASSIVE downloads cards, live metadata, and the code license by
+# default. Its roughly 23.7 GB main and 35.8 GB auto-gated test Hub snapshots
+# are opt-in; the evaluation-code clone is a separate opt-in.
+SPEECH_MASSIVE_DOWNLOAD_HF=1 SPEECH_MASSIVE_PARTS="main" scripts/download/speech_massive.sh
+SPEECH_MASSIVE_DOWNLOAD_HF=1 SPEECH_MASSIVE_PARTS="test" scripts/download/speech_massive.sh
+SPEECH_MASSIVE_CLONE_REPO=1 scripts/download/speech_massive.sh
 
 # VoxParadox downloads the official card, custom terms, 2,000-row manifests,
 # scorer, and repository metadata by default. The approximately 1.34 GB Hub

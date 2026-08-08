@@ -943,9 +943,31 @@ card, model release, or archive, and does not release its approximately
 speech-LLM training manifest, exact evaluation selections, code, checkpoints,
 inference seeds, predictions, or item-level scores. The article's arXiv
 distribution license does not cover upstream data or those absent derivatives;
-each public family retains its own terms. Four tracks map to existing index
-entries, Speech-MASSIVE remains a future primary-release candidate, and no
-duplicate family, count increase, or helper is added.
+each public family retains its own terms. All five tracks map to existing index
+entries, including the independently audited Speech-MASSIVE family, and no
+duplicate paper-specific family or helper is added.
+
+The 2024 Speech-MASSIVE primary release now contributes a public multilingual
+spoken-language-understanding evaluation family. Sections 2-4 and the appendix
+define native-speaker recordings in 12 languages, retaining MASSIVE's 18
+domains, 60 intents, and 55 slots. Every language has 2,033 validation and
+2,974 test items plus a 115-item few-shot selection; French and German also
+have 11,514-item full training splits. The paper compares cascaded mT5 systems
+and end-to-end Whisper-large-v3 models under zero-shot and few-shot transfer,
+reporting intent accuracy over three seeds with supplementary exact match,
+slot micro-F1, slot-type F1, and slot-value CER. It also publishes ASR,
+language-identification, and speech-translation baselines. This is directly
+relevant to audio/speech LLM pretraining and post-training evaluation because
+it tests whether pretrained speech encoders and language-model interfaces
+transfer semantic intent and structured slots across languages and adaptation
+budgets; a June 2026 study already uses its German test subset to isolate
+speech-encoder pretraining objectives. The main Hugging Face repository is
+ungated, while the separate test repository is auto-gated. Both are large, so
+the helper fetches cards, live metadata, and the Apache-2.0 code license by
+default and requires explicit opt-in for either snapshot or the code clone.
+The dataset is explicitly CC BY-NC-SA 4.0; Apache-2.0 applies only to released
+first-party code, and inherited MASSIVE annotations retain their upstream
+terms.
 
 The August 2026 LS-MOPD paper adds public WSYue-ASR-eval coverage and recent
 post-training provenance for WenetSpeech, KeSpeech, and LibriSpeech. Section

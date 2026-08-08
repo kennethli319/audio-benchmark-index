@@ -3741,8 +3741,8 @@ paper_audits:
           speech LLM. Table 2 compares the three pretraining objectives after
           the shared approximately 6,200-hour multitask adaptor-training stage.
       - cited_as: German subset of Speech-MASSIVE
-        index_id: null
-        status: public_upstream_family_not_yet_independently_audited_with_unreleased_exact_selection
+        index_id: speech_massive
+        status: indexed_public_family_with_unreleased_exact_selection
         protocol: >-
           Measure German intent-classification accuracy with the frozen 3B
           speech LLM and the same objective contrast. The paper identifies the
@@ -3799,9 +3799,9 @@ paper_audits:
       artifact archive. Exact data selections, generated translations,
       training mixtures, evaluation manifests, implementation, checkpoints,
       inference seeds, predictions, and item-level scores are unavailable.
-      The audit maps four evaluations to existing index entries, leaves
-      Speech-MASSIVE as a future primary-release candidate, and adds no
-      duplicate benchmark family or download helper.
+      The audit maps all five evaluations to existing index entries, including
+      the independently audited Speech-MASSIVE family. It adds no duplicate
+      benchmark family or paper-specific download helper.
 
   ls_mopd_multilingual_llm_asr:
     paper: https://arxiv.org/abs/2608.03610
@@ -19366,6 +19366,82 @@ benchmarks:
       - https://zenodo.org/records/4274930
       - https://aclanthology.org/2020.emnlp-main.588/
       - https://arxiv.org/abs/2011.13205
+
+  - id: speech_massive
+    name: Speech-MASSIVE
+    full_name: "Speech-MASSIVE: A Multilingual Speech Dataset for SLU and Beyond"
+    qwen_cited_as: null
+    qwen_bucket:
+      - spoken_language_understanding
+      - speech_representation_evaluation
+      - speech_language_model_pretraining
+    tasks:
+      - multilingual_spoken_language_understanding
+      - intent_classification
+      - slot_filling
+      - zero_shot_and_few_shot_transfer
+      - automatic_speech_recognition
+      - spoken_language_identification
+      - speech_to_text_translation
+      - speech_encoder_and_llm_interface_evaluation
+    official:
+      homepage: https://mt.fbk.eu/speech-massive
+      repo: https://github.com/hlt-mt/Speech-MASSIVE
+      paper: https://arxiv.org/abs/2408.03900
+      dataset: https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE
+      test_dataset: https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE-test
+    download:
+      access: public_ungated_train_and_validation_auto_gated_test_large_audio_opt_in
+      primary:
+        - https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE
+        - https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE-test
+        - https://github.com/hlt-mt/Speech-MASSIVE
+        - https://mt.fbk.eu/speech-massive
+      examples:
+        - 'scripts/download/speech_massive.sh'
+        - 'SPEECH_MASSIVE_DOWNLOAD_HF=1 SPEECH_MASSIVE_PARTS="main" scripts/download/speech_massive.sh'
+        - 'SPEECH_MASSIVE_DOWNLOAD_HF=1 SPEECH_MASSIVE_PARTS="test" scripts/download/speech_massive.sh'
+        - 'SPEECH_MASSIVE_CLONE_REPO=1 scripts/download/speech_massive.sh'
+      notes: >-
+        Speech-MASSIVE records native-speaker readings of a portion of the
+        textual MASSIVE corpus in Arabic, German, Spanish, French, Hungarian,
+        Korean, Dutch, Polish, European Portuguese, Russian, Turkish, and
+        Vietnamese. Each language has 2,033 validation and 2,974 test items;
+        French and German also have 11,514-item full training splits, while
+        every language has a 115-item few-shot selection. Labels retain 18
+        domains, 60 intents, and 55 slots. The paper establishes cascaded and
+        end-to-end SLU protocols under zero-shot and few-shot settings, plus
+        ASR, language-identification, and speech-translation baselines. The
+        owner repository releases training/evaluation code and supplementary
+        metrics. The helper saves lightweight cards, current Hub metadata, and
+        the code license by default; the roughly 23.7 GB main snapshot, 35.8
+        GB auto-gated test snapshot, and code clone require explicit opt-in.
+    license:
+      data: CC-BY-NC-SA-4.0
+      code: Apache-2.0
+      notes: >-
+        The owner repository and dataset card explicitly declare the audio
+        dataset CC BY-NC-SA 4.0, which requires attribution, restricts
+        commercial use, and applies share-alike to adaptations. Apache-2.0
+        covers the released first-party code, not the audio or inherited
+        MASSIVE annotations under a different grant. Confirm the upstream
+        MASSIVE terms and Hugging Face gating conditions before redistribution
+        or derived releases.
+    sources:
+      - https://arxiv.org/abs/2408.03900
+      - https://arxiv.org/pdf/2408.03900
+      - https://export.arxiv.org/e-print/2408.03900
+      - https://github.com/hlt-mt/Speech-MASSIVE
+      - https://raw.githubusercontent.com/hlt-mt/Speech-MASSIVE/main/README.md
+      - https://raw.githubusercontent.com/hlt-mt/Speech-MASSIVE/main/LICENSE
+      - https://api.github.com/repos/hlt-mt/Speech-MASSIVE
+      - https://api.github.com/repos/hlt-mt/Speech-MASSIVE/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE
+      - https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE/raw/main/README.md
+      - https://huggingface.co/api/datasets/FBK-MT/Speech-MASSIVE
+      - https://huggingface.co/datasets/FBK-MT/Speech-MASSIVE-test
+      - https://huggingface.co/api/datasets/FBK-MT/Speech-MASSIVE-test
+      - https://mt.fbk.eu/speech-massive
 
   - id: slue
     name: SLUE
