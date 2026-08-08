@@ -14677,6 +14677,76 @@ paper_audits:
       Audio-Alpaca selection remains unreleased and is not represented as a
       downloadable benchmark or given an invented helper.
 
+  hybridcodec_speech_language_model_evaluation:
+    paper: https://arxiv.org/abs/2606.27627
+    title: "HybridCodec: Modeling Discrete and Continuous Representations for Efficient Speech Language Models"
+    sections: 3.2-5
+    status: audited_existing_public_family_announced_code_and_models_unreleased
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: LibriTTS test-clean
+        index_id: libritts
+        status: existing_public_family_paper_specific_selection_unreleased
+        protocol: >-
+          Train HybridCodec and HybridLM on the 960-hour LibriTTS clean and
+          other subsets, exclude utterances longer than 20 seconds, and
+          evaluate only on test-clean. Codec resynthesis compares discrete and
+          hybrid representations at 50, 25, 12.5, and 6.25 Hz using UTMOS,
+          decoder WER, and WavLM speaker similarity. The unified speech LM is
+          then evaluated on full-set greedy ASR with WER/CER and zero-shot TTS
+          on one uniformly sampled 1,000-utterance subset with UTMOS, decoder
+          WER, and speaker similarity.
+        relevance: >-
+          This directly tests whether an ultra-low-rate discrete codec plus a
+          one-pass continuous residual preserves semantic and acoustic
+          information when used as the input/output interface of a speech
+          language model, rather than evaluating a codec only as a waveform
+          compressor.
+        note: >-
+          The public LibriTTS test-clean archive does not identify the paper's
+          uniformly sampled 1,000 TTS utterances, the random seed, generated
+          audio, or per-item metric records.
+    release_audit:
+      official_artifact_url_in_paper: SpeechBrain_project_homepage_only
+      paper_specific_recipe_and_configuration: announced_not_released
+      hybridcodec_and_hybridlm_models: announced_not_released
+      sampled_tts_manifest: not_released
+      generated_audio_predictions_and_per_item_scores: not_released
+      speechbrain_develop_tree_hybridcodec_paths: no_results
+      exact_arxiv_id_github_repository_search: no_results
+      hugging_face_hybridcodec_model_and_dataset_searches: no_results
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      upstream_libritts: CC_BY_4_0
+      paper_specific_code_models_and_outputs: not_specified_unreleased
+      note: >-
+        LibriTTS's CC BY 4.0 terms cover the public source corpus, not absent
+        HybridCodec recipes, weights, generated speech, or evaluation records.
+        The article license likewise does not establish reuse terms for those
+        promised artifacts.
+    sources:
+      - https://arxiv.org/abs/2606.27627
+      - https://arxiv.org/html/2606.27627v1#S3.SS2
+      - https://arxiv.org/html/2606.27627v1#S3.SS3
+      - https://arxiv.org/html/2606.27627v1#S4
+      - https://arxiv.org/html/2606.27627v1#S5
+      - https://export.arxiv.org/api/query?id_list=2606.27627
+      - https://speechbrain.github.io/
+      - https://api.github.com/repos/speechbrain/speechbrain/git/trees/develop?recursive=1
+      - https://api.github.com/search/repositories?q=%222606.27627%22
+      - https://huggingface.co/api/models?search=HybridCodec&limit=20
+      - https://huggingface.co/api/datasets?search=HybridCodec&limit=20
+      - https://www.openslr.org/60/
+    note: >-
+      Version 1 says all source code and models will be made public within
+      SpeechBrain, but links only the general SpeechBrain homepage. The live
+      SpeechBrain develop tree contains no HybridCodec-named path, and exact
+      arXiv-ID GitHub plus HybridCodec Hugging Face model/dataset searches found
+      no matching release on the verification date. This is therefore recorded
+      as a speech-LLM codec-interface evaluation audit over the already indexed
+      LibriTTS family, not as a new benchmark or downloadable artifact. The
+      existing LibriTTS helper remains the authoritative public-data path.
+
   lalm_temporal_failure_modes_benchmark:
     paper: https://arxiv.org/abs/2606.17417
     title: "A Closer Look at Failure Modes in Temporal Understanding of Large Audio-Language Models"

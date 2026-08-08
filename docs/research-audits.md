@@ -255,6 +255,25 @@ auditing, red-teaming, and mitigation and warns against re-identification or
 voice profiling. EchoMind is now independently indexed; SASLM's use of it for
 expressive self-reward post-training is audited above.
 
+The June 2026 *HybridCodec* paper is recorded as an existing-family and
+announced-release audit of a codec used directly as a speech-language-model
+interface. Sections 3.2-5 train HybridCodec and its unified autoregressive and
+non-autoregressive HybridLM on LibriTTS, then evaluate test-clean resynthesis,
+full-set greedy ASR, and zero-shot TTS on one uniformly sampled 1,000-utterance
+subset. The protocol compares discrete and hybrid representations from 50 down
+to 6.25 Hz with UTMOS, decoder WER, character error rate, and WavLM speaker
+similarity. This directly tests whether a low-rate discrete stream plus a
+one-pass continuous residual preserves semantic and acoustic information at an
+LLM interface. LibriTTS is already indexed and public under CC BY 4.0, but it
+does not identify the paper's 1,000 TTS items or provide its generated audio,
+predictions, or per-item scores. Version 1 says code and models will be released
+within SpeechBrain yet links only its general homepage; the current SpeechBrain
+develop tree has no HybridCodec-named path, and exact arXiv-ID GitHub plus
+HybridCodec Hugging Face searches found no release on August 7. The paper's
+arXiv license and LibriTTS terms do not license the absent recipes, weights, or
+outputs. No duplicate family or helper is added; the existing LibriTTS helper
+remains the public source-data path.
+
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
