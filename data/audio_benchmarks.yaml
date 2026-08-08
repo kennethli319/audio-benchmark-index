@@ -9299,11 +9299,12 @@ paper_audits:
     paper: https://arxiv.org/abs/2601.13539
     title: "LongSpeech: A Scalable Benchmark for Transcription, Translation and Understanding in Long Speech"
     sections: 2-3
-    status: audited_announced_benchmark_unreleased
+    status: audited_public_paper_linked_candidate_with_broken_code_link_and_unresolved_upstream_terms
+    last_verified: 2026-08-08
     evaluated_sets:
       - cited_as: LongSpeech
         index_id: null
-        status: announced_unreleased
+        status: public_ungated_paper_linked_candidate_not_yet_counted
         protocol: >-
           The paper describes more than 100,000 approximately ten-minute
           segments and eight task families: ASR, speech translation,
@@ -9315,30 +9316,57 @@ paper_audits:
     release_audit:
       paper_source: public_ungated_arxiv
       source_corpora: mixed_public_and_restricted
-      benchmark_audio_and_annotations: not_released
-      construction_and_evaluation_code: not_released
-      split_and_source_manifests: not_released
-      official_project_or_dataset_page: not_found
+      paper_linked_hugging_face_snapshot: https://huggingface.co/datasets/ATH-MaaS/Marco_Longspeech
+      snapshot_revision: bb50d8c11fe9aa9fc5e899a0d941e3b40acbc740
+      snapshot_access: public_ungated
+      snapshot_used_storage_bytes: 1942232458253
+      snapshot_contents: >-
+        101,822 WAV files split across three audio parts plus train, validation,
+        and test JSONL files for all eight task families
+      snapshot_card_total_task_rows: 204881
+      paper_total_task_rows: 202400
+      count_difference_note: >-
+        The live card reports 143,412 train, 30,728 validation, and 30,741 test
+        rows, whereas paper Section 2.3 reports 142,200, 30,100, and 30,100.
+        The snapshot history includes later audio deletions and path fixes, but
+        does not publish a version-to-paper reconciliation.
+      construction_and_evaluation_code: not_identified
+      linked_github_repository: https://github.com/AIDC-AI/Marco-Longspeech
+      linked_github_repository_status: HTTP_404_on_verification_date
+      owner_relationship: >-
+        The dataset card cites arXiv:2601.13539 and presents itself as the
+        Marco-LongSpeech release, but arXiv v1 predates it, names no artifact
+        host, and does not identify the ATH-MaaS organization.
+      download_helper: none_candidate_snapshot_approximately_1_94_TB
+    access: public_ungated_candidate_snapshot
     license:
       paper: CC_BY_NC_ND_4_0
-      benchmark_data_and_code: not_stated
+      dataset_card: Apache-2.0
+      benchmark_data_and_code: unresolved
       upstream_sources: mixed_source_specific_terms
+      note: >-
+        The card's Apache-2.0 declaration is not evidence that the uploader can
+        relicense incorporated speech from every named public, restricted, and
+        custom source. Apply each upstream corpus's access, attribution,
+        redistribution, privacy, and commercial-use terms; the absent linked
+        repository provides no separate code license or provenance ledger.
     sources:
       - https://arxiv.org/abs/2601.13539
       - https://arxiv.org/html/2601.13539v1#S2
       - https://arxiv.org/html/2601.13539v1#S3
-      - https://export.arxiv.org/e-print/2601.13539v1
+      - https://huggingface.co/datasets/ATH-MaaS/Marco_Longspeech
+      - https://huggingface.co/datasets/ATH-MaaS/Marco_Longspeech/raw/main/README.md
+      - https://huggingface.co/api/datasets/ATH-MaaS/Marco_Longspeech
+      - https://huggingface.co/api/datasets/ATH-MaaS/Marco_Longspeech/commits/main
+      - https://github.com/AIDC-AI/Marco-Longspeech
     note: >-
-      Version 1 says the benchmark "will be made publicly available" but gives
-      no project page, repository, dataset card, DOI-backed archive, or
-      download link. Public access to named source families such as
-      LibriSpeech, TED-LIUM 3, VoxPopuli, and Common Voice does not reproduce
-      LongSpeech: the paper also uses SPGISpeech, AISHELL-2, IWSLT, and a
-      custom movie-dialogue corpus, and releases no source-row mapping,
-      concatenation recipe, synthetic-content records, generated annotations,
-      split manifests, or checksums. LongSpeech is therefore retained as an
-      unreleased protocol audit rather than counted as a downloadable
-      benchmark family. Recheck after an owner-controlled release appears.
+      Version 1 only promised a future release, but the later Marco-LongSpeech
+      Hub snapshot now exposes audio and task manifests and cites the exact
+      paper. It is not counted yet because the paper does not identify this
+      host, the card's linked owner repository returns 404, live row totals
+      differ from Section 2.3, and no source-level rights ledger or construction
+      and evaluation code was identified. Revisit family promotion after an
+      author-controlled page or repository confirms provenance and versions.
 
   local_information_disclosure_voiceprivacy_evaluation:
     paper: https://arxiv.org/abs/2607.06259

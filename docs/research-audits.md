@@ -1354,17 +1354,20 @@ scores. The cited HyenaSET bioRxiv identifier also returned HTTP 404 through
 its DOI resolver on 2026-07-25, so the index does not invent a dataset link or
 license and will recheck for an owner-controlled release.
 
-The ICASSP 2026 LongSpeech paper is recorded as an announced-but-unreleased
-benchmark rather than a downloadable family. It describes more than 100,000
-approximately ten-minute segments spanning ASR, speech translation,
-summarization, language detection, speaker counting, content separation,
-spoken QA, and temporal localization, but version 1 only says the benchmark
-"will be made publicly available." It provides no owner project, repository,
-dataset card, archive, item/source manifest, construction code, annotations,
-or fixed evaluation files. The named source corpora have mixed terms and do
-not reconstruct the paper's custom movie-dialogue, synthetic-content, split,
-or task-annotation pipeline, so no download link or benchmark-family count is
-invented.
+The ICASSP 2026 LongSpeech paper now has a public but provenance-qualified
+release candidate rather than a wholly unreleased record. The ungated
+[Marco-LongSpeech snapshot](https://huggingface.co/datasets/ATH-MaaS/Marco_Longspeech)
+cites the exact paper and exposes 101,822 WAV files plus train, validation, and
+test JSONL manifests for all eight long-context speech tasks. Hugging Face
+reports about 1.94 TB at revision `bb50d8c11fe9aa9fc5e899a0d941e3b40acbc740`.
+It is not yet counted as a benchmark family: arXiv v1 names no artifact host,
+the card's linked [GitHub repository](https://github.com/AIDC-AI/Marco-Longspeech)
+returns 404, and the card's 204,881 task rows differ from Section 2.3's 202,400
+without a release-version reconciliation. The card declares Apache-2.0, but
+that does not establish relicensing authority over every incorporated public,
+restricted, and custom speech source. No bulk helper is added for this
+approximately 1.94 TB candidate; revisit after an author-controlled page or
+repository confirms provenance, versions, and source-level terms.
 
 The July 2026 Local Information Disclosure paper adds coverage of the
 [VoicePrivacy Challenge 2024](https://www.voiceprivacychallenge.org/vp2024/)
