@@ -20945,6 +20945,92 @@ benchmarks:
       - https://raw.githubusercontent.com/thomasthebaud/SPEAR-benchmark-website/main/LICENSE
       - https://api.github.com/repos/thomasthebaud/SPEAR-benchmark-website
 
+  - id: zerospeech_2021_slm
+    name: ZeroSpeech 2021 Spoken Language Modeling Benchmark
+    full_name: "The Zero Resource Speech Benchmark 2021: Metrics and Baselines for Unsupervised Spoken Language Modeling"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_language_model_pretraining
+      - speech_tokenizer_evaluation
+      - representation_learning
+    category: zero_shot_spoken_language_model_evaluation
+    tasks:
+      - acoustic_phonetic_discrimination
+      - spoken_word_nonword_discrimination
+      - spoken_grammaticality_judgment
+      - spoken_lexical_semantic_similarity
+    tracks:
+      - name: Libri-light ABX
+        level: phonetic
+        protocol: within_and_across_speaker_minimal_triphone_discrimination
+        metric: ABX_error_rate
+      - name: sWUGGY
+        level: lexical
+        protocol: word_vs_matched_nonword_pseudo_probability
+        metric: pairwise_accuracy
+      - name: sBLIMP
+        level: syntactic
+        protocol: grammatical_vs_ungrammatical_sentence_pseudo_probability
+        metric: pairwise_accuracy
+      - name: sSIMI
+        level: semantic
+        protocol: spoken_word_pair_embedding_similarity_vs_human_judgments
+        metric: Spearman_rank_correlation
+    official:
+      paper: https://arxiv.org/abs/2011.11588
+      baseline_repo: https://github.com/zerospeech/zerospeech2021_baseline
+      dataset_archive: https://download.zerospeech.com/datasets/sLM21.dataset.zip
+      recent_tokenizer_evaluation: https://arxiv.org/abs/2607.04064
+      recent_tokenizer_repo: https://github.com/ryota-komatsu/speaker_disentangled_hubert
+    download:
+      access: public_ungated_large_archive
+      primary:
+        - https://download.zerospeech.com/datasets/sLM21.dataset.zip
+        - https://github.com/zerospeech/zerospeech2021_baseline
+      examples:
+        - 'scripts/download/zerospeech_2021_slm.sh'
+        - 'ZEROSPEECH2021_DOWNLOAD_DATA=1 scripts/download/zerospeech_2021_slm.sh'
+        - 'ZEROSPEECH2021_CLONE_BASELINE=1 scripts/download/zerospeech_2021_slm.sh'
+      notes: >-
+        The official server exposes one approximately 30.61 GB ZIP archive.
+        The helper saves the paper, baseline documentation, repository tree,
+        and live archive headers by default; downloading the large archive and
+        cloning the baseline repository are separate opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Section 3.2 defines four zero-shot black-box tracks. ABX uses the
+        Libri-light dev/test sets; sWUGGY contains 5,000 development and 20,000
+        test word/nonword pairs in each in-vocabulary and OOV condition;
+        sBLIMP contains 6,300 development and 63,000 test grammaticality pairs;
+        and sSIMI provides synthetic and LibriSpeech-extracted word-pair audio.
+        The archive also includes evaluation assets beyond the sWUGGY and
+        sBLIMP tracks commonly reused by later speech-language-model papers.
+    license:
+      data: not_specified
+      code: no_detected_license
+      notes: >-
+        Neither the archive endpoint nor the baseline repository states a
+        standalone data license, and the repository has no detected license
+        file. The suite includes Libri-light/LibriSpeech-derived recordings,
+        synthetic stimuli produced with Google text-to-speech voices, and
+        human similarity judgments compiled from thirteen source datasets.
+        Public download access does not relicense those components; verify all
+        upstream and service terms before reuse or redistribution.
+    sources:
+      - https://arxiv.org/abs/2011.11588
+      - https://ar5iv.labs.arxiv.org/html/2011.11588#S3.SS2
+      - https://github.com/zerospeech/zerospeech2021_baseline
+      - https://raw.githubusercontent.com/zerospeech/zerospeech2021_baseline/master/README.md
+      - https://api.github.com/repos/zerospeech/zerospeech2021_baseline
+      - https://api.github.com/repos/zerospeech/zerospeech2021_baseline/git/trees/master?recursive=1
+      - https://download.zerospeech.com/datasets/sLM21.dataset.zip
+      - https://arxiv.org/abs/2607.04064
+      - https://arxiv.org/html/2607.04064v1#S6.SS6
+      - https://github.com/ryota-komatsu/speaker_disentangled_hubert
+      - https://raw.githubusercontent.com/ryota-komatsu/speaker_disentangled_hubert/main/src/speechlm/eval.py
+
   - id: fleurs
     name: FLEURS
     full_name: "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech"

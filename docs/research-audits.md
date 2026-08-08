@@ -3295,3 +3295,19 @@ release the author-operated Veris benchmark platform, frozen paper snapshot,
 audio, transcripts, per-call verdicts, or timing and cost records. The paper's
 CC BY 4.0 and repository's MIT/BSD notices do not cover those absent artifacts
 or override vendor service terms. No counted family or helper is added.
+
+The ZeroSpeech 2021 spoken-language-model benchmark is now indexed as a public,
+ungated pretraining and tokenizer-evaluation family. Section 3.2 of the primary
+paper defines four black-box, zero-shot levels: Libri-light ABX phonetic error,
+sWUGGY word/nonword accuracy, sBLIMP grammaticality accuracy, and sSIMI
+correlation with human lexical-semantic judgments. The official server still
+exposes the approximately 30.61 GB `sLM21.dataset.zip`, and the owner baseline
+repository supplies CPC, clustering, LSTM/BERT scoring, and submission code.
+This family remains directly current: Section 6.6 of the July 2026 SylReg paper
+uses sWUGGY and sBLIMP to compare syllabic speech-token interfaces, and its MIT
+repository releases the corresponding evaluation implementation. No standalone
+license was identified for the ZeroSpeech archive, while the baseline repository
+has no detected license file; Libri-light/LibriSpeech, Google-synthesized voices,
+and the thirteen source similarity datasets retain separate terms. The safe
+helper fetches primary documentation and live archive headers by default and
+requires explicit opt-in for the large archive or baseline clone.

@@ -117,6 +117,7 @@ scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
 scripts/download/spearbench.sh
+scripts/download/zerospeech_2021_slm.sh
 scripts/download/stancebench.sh
 scripts/download/fleurs.sh
 scripts/download/fleurs_slu.sh
