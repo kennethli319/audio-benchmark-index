@@ -21031,6 +21031,94 @@ benchmarks:
       - https://github.com/ryota-komatsu/speaker_disentangled_hubert
       - https://raw.githubusercontent.com/ryota-komatsu/speaker_disentangled_hubert/main/src/speechlm/eval.py
 
+  - id: zerospeech_2019
+    name: ZeroSpeech 2019 TTS without T
+    full_name: "The Zero Resource Speech Challenge 2019: TTS Without T"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_language_model_pretraining
+      - speech_tokenizer_evaluation
+      - representation_learning
+      - speech_generation
+    category: unsupervised_discrete_speech_representation_evaluation
+    tasks:
+      - acoustic_unit_discovery
+      - speaker_invariant_representation_learning
+      - discrete_speech_tokenization
+      - zero_resource_voice_conversion
+      - speech_resynthesis
+    tracks:
+      - name: Symbolic embedding evaluation
+        protocol: evaluate_submitted_intermediate_embeddings_on_novel_speakers
+        metrics:
+          - minimal_pair_ABX_error_rate
+          - entropy_based_bitrate
+      - name: Resynthesis evaluation
+        protocol: resynthesize_novel_utterances_in_the_target_voice_from_discovered_units
+        metrics:
+          - mean_opinion_score
+          - human_transcription_character_error_rate
+          - target_voice_similarity
+      - name: Parallel-data ranking
+        protocol: optional_parallel_voice_conversion_data_permitted
+        metrics:
+          - separate_leaderboard_ranking
+    official:
+      challenge: https://zerospeech.com/challenge_archive/2019/tasks/
+      data: https://zerospeech.com/challenge_archive/2019/data/
+      results: https://zerospeech.com/challenge_archive/2019/results/
+      paper: https://doi.org/10.21437/Interspeech.2019-2904
+      paper_archive: https://www.isca-archive.org/interspeech_2019/dunbar19_interspeech.html
+    download:
+      access: mixed_public_and_agreement_password_protected
+      primary:
+        - https://zerospeech.com/challenge_archive/2019/data/
+        - https://download.zerospeech.com/archive/2019/english.tgz
+        - https://download.zerospeech.com/archive/2019/english_small.tgz
+        - https://download.zerospeech.com/archive/2019/surprise.zip
+      examples:
+        - 'scripts/download/zerospeech_2019.sh'
+        - 'ZEROSPEECH2019_DOWNLOAD_ENGLISH_SMALL=1 scripts/download/zerospeech_2019.sh'
+        - 'ZEROSPEECH2019_DOWNLOAD_ENGLISH=1 scripts/download/zerospeech_2019.sh'
+      notes: >-
+        The helper saves official challenge, paper, data, and results pages plus
+        live archive headers by default. The 156 MB toy and 2.5 GB English
+        archives require separate opt-ins. The 1.5 GB surprise-language ZIP is
+        password protected and governed by challenge-only, no-redistribution
+        terms, so the helper marks it manual_required rather than automating it.
+    access:
+      status: mixed_public_and_restricted
+      registration_required: false_for_english_agreement_required_for_surprise
+      notes: >-
+        The development language is English and the held-out test language is
+        an Austronesian surprise language. For each language, the protocol
+        separates Voice data for the target synthesizer, multi-speaker Unit
+        Discovery data, optional Parallel data, and novel-speaker Test data.
+        English has public direct archives. The surprise archive is publicly
+        linked but password protected; access requires accepting the agreement
+        displayed on the official data page. Human and surprise-language ABX
+        evaluations were organizer-run rather than fully reproducible locally.
+    license:
+      data: mixed_unspecified_and_challenge_only_custom_terms
+      paper: ISCA_archive_terms
+      notes: >-
+        No standalone license is stated for the public English archives. The
+        official surprise-data agreement limits use to the Zero Resource Speech
+        Challenge, prohibits research and commercial uses outside the challenge,
+        and prohibits redistribution while allowing cited examples in research
+        reports. Public URLs do not relax these terms; review the current owner
+        page and source-corpus conditions before use.
+    sources:
+      - https://zerospeech.com/challenge_archive/2019/tasks/
+      - https://zerospeech.com/challenge_archive/2019/data/
+      - https://zerospeech.com/challenge_archive/2019/results/
+      - https://www.isca-archive.org/interspeech_2019/dunbar19_interspeech.html
+      - https://www.isca-archive.org/interspeech_2019/dunbar19_interspeech.pdf
+      - https://doi.org/10.21437/Interspeech.2019-2904
+      - https://download.zerospeech.com/archive/2019/english.tgz
+      - https://download.zerospeech.com/archive/2019/english_small.tgz
+      - https://download.zerospeech.com/archive/2019/surprise.zip
+
   - id: fleurs
     name: FLEURS
     full_name: "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech"

@@ -3311,3 +3311,19 @@ has no detected license file; Libri-light/LibriSpeech, Google-synthesized voices
 and the thirteen source similarity datasets retain separate terms. The safe
 helper fetches primary documentation and live archive headers by default and
 requires explicit opt-in for the large archive or baseline clone.
+
+The ZeroSpeech 2019 “TTS without T” challenge is now indexed as a mixed-access
+pretraining, discrete-token, and resynthesis benchmark family. The primary
+Interspeech paper and official Tasks page define an end-to-end zero-resource
+protocol: discover speaker-invariant subword units from untranscribed speech,
+measure submitted intermediate embeddings with minimal-pair ABX error and
+entropy-based bitrate, then resynthesize novel-speaker utterances in a target
+voice and score MOS, human-transcription CER, and voice similarity. English is
+the development language and an Austronesian surprise language is the held-out
+test, with the same model and hyperparameters required for both. The official
+Data page still exposes direct 156 MB toy and 2.5 GB English archives; their
+page states no standalone license. Its 1.5 GB surprise archive is password
+protected and requires acceptance of custom terms limiting use to the challenge
+and prohibiting redistribution and other research or commercial uses. The safe
+helper therefore fetches owner pages and archive headers by default, makes only
+the English archives opt-in, and leaves surprise-data access manual.

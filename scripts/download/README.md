@@ -1641,4 +1641,11 @@ SPEECH_MASSIVE_CLONE_REPO=1 scripts/download/speech_massive.sh
 # snapshot and larger evaluation/probing code clone are separate opt-ins.
 VOXPARADOX_DOWNLOAD_HF=1 scripts/download/voxparadox.sh
 VOXPARADOX_CLONE_REPO=1 scripts/download/voxparadox.sh
+
+# ZeroSpeech 2019 saves official pages and archive headers by default. The
+# public 156 MB toy and 2.5 GB English archives are separate opt-ins. The
+# password-protected surprise set has challenge-only, no-redistribution terms
+# and must be obtained manually after reviewing and accepting its agreement.
+ZEROSPEECH2019_DOWNLOAD_ENGLISH_SMALL=1 scripts/download/zerospeech_2019.sh
+ZEROSPEECH2019_DOWNLOAD_ENGLISH=1 scripts/download/zerospeech_2019.sh
 ```
