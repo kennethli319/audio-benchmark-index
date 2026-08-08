@@ -15745,6 +15745,119 @@ paper_audits:
       runnable, but its Gemini-based judge requires a commercial API and the
       code/result repository lacks explicit reuse terms.
 
+  bossa_cross_modal_music_style_pretraining:
+    paper: https://arxiv.org/abs/2608.03050
+    title: "Learning Music Style for Piano Arrangement Through Cross-Modal Bootstrapping"
+    sections: 4.1-4.4, 5.1-5.2, and appendices B-C
+    status: audited_existing_family_and_unreleased_derived_pretraining_evaluations
+    last_verified: 2026-08-08
+    evaluated_sets:
+      - cited_as: POP909
+        index_id: pop909
+        status: existing_public_family_with_unreleased_paper_split
+        protocol: >-
+          Split songs 90/5/5, then evaluate piano-cover generation on the
+          approximately 45-song test partition over ten sampling rounds with
+          melody and chord accuracy plus groove, velocity, and tempo
+          coherence. Separately use 64 POP909 pairs per resampled retrieval
+          pool and test cross-modal style transfer with randomly paired PIAST
+          references.
+      - cited_as: GTZAN
+        index_id: gtzan
+        status: existing_public_family_with_unreleased_paper_selection
+        protocol: >-
+          Draw part of a combined 100-track out-of-distribution selection from
+          GTZAN and Ballroom, generate ten piano covers per track, and report
+          melody accuracy, chord accuracy, and tempo accuracy. Six selected
+          tracks across the two sources also seed the listening study.
+      - cited_as: PIAST
+        index_id: null
+        status: upstream_training_dataset_and_unreleased_derived_evaluation
+        protocol: >-
+          Use a paper-specific 90/5/5 song split for cross-modal pretraining;
+          sample 64 audio-MIDI pairs per 128-candidate retrieval pool across
+          ten runs, and draw style references for 450 reported style-transfer
+          pairs. The frozen selections and paired manifests are not released.
+      - cited_as: Ballroom
+        index_id: null
+        status: upstream_classic_music_dataset_and_unreleased_paper_selection
+        protocol: >-
+          Contribute an unspecified share of the combined 100-track
+          out-of-distribution objective evaluation and six-track listening-
+          study selection; the exact rows and source balance are not reported.
+    pretraining_interface:
+      frozen_audio_lm: MusicGen-Large
+      extracted_layer: 25
+      bridge: 32-query_Q-Former_initialized_from_MusicBERT-Base
+      frozen_symbolic_lm: MuseCoco-xLarge
+      stage_1_objective:
+        - audio_symbolic_contrastive_learning
+        - audio_symbolic_matching
+        - symbolic_generation_conditioned_on_audio_queries
+      transfer_tasks:
+        - piano_cover_generation
+        - cross_modal_style_transfer
+        - audio_to_MIDI_retrieval
+      retrieval_metrics:
+        - accuracy_at_1
+        - accuracy_at_5
+        - mean_rank
+      listening_study:
+        participants: 21
+        test_pieces: 6
+        systems_per_piece: 4
+        generated_candidates_per_system: 3
+        selection: best_candidate_selected_before_rating
+        scale: five_point_Likert
+        dimensions:
+          - audio_to_symbolic_coherence
+          - naturalness
+          - creativity
+          - overall_musicality
+    release_audit:
+      project_page: public_ungated_selected_demos
+      selected_piano_cover_audio: public_on_project_page
+      selected_style_transfer_audio: public_on_project_page
+      paper_linked_code_repository: HTTP_404_on_verification_date
+      frozen_train_validation_test_manifests: not_released
+      retrieval_pools_and_transpositions: not_released
+      objective_evaluation_outputs_and_per_item_scores: not_released
+      listening_study_stimuli_manifest_and_ratings: not_released
+      model_weights_and_evaluation_code: not_released
+      download_helper: none_partial_demo_not_reproducible_benchmark
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      project_page_and_demo_media: no_license_identified
+      benchmark_data: upstream_family_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The article license does not license the project-page media, absent
+        code, generated MIDI/audio, participant ratings, or upstream POP909,
+        PIAST, GTZAN, and Ballroom data. The public demo page provides no
+        detected reuse license, and the linked GitHub repository returned 404
+        on the verification date.
+    sources:
+      - https://arxiv.org/abs/2608.03050
+      - https://arxiv.org/html/2608.03050v1#S4.SS1
+      - https://arxiv.org/html/2608.03050v1#S4.SS3
+      - https://arxiv.org/html/2608.03050v1#S4.SS4
+      - https://arxiv.org/html/2608.03050v1#S5.SS1
+      - https://arxiv.org/html/2608.03050v1#S5.SS2.SSS1
+      - https://arxiv.org/html/2608.03050v1#S5.SS2.SSS2
+      - https://arxiv.org/html/2608.03050v1#A3
+      - https://zhaojw1998.github.io/bossa/
+      - https://github.com/zhaojw1998/bossa-piano-cover-arrangement
+      - https://api.github.com/repos/zhaojw1998/bossa-piano-cover-arrangement
+    note: >-
+      This is directly relevant to audio-language pretraining because it
+      evaluates whether a lightweight bridge can read implicit musical style
+      from a frozen MusicGen audio-token interface and transfer it into a
+      frozen symbolic language model. POP909 and GTZAN already have index
+      entries; the other inputs are classic upstream datasets, while every
+      paper-specific split, selection, output bundle, rating record, and
+      evaluator remains unavailable. The audit therefore adds provenance
+      without counting a new public family or adding a helper.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio

@@ -3037,3 +3037,22 @@ rights-unspecified; individual human ratings and their frozen pair manifest
 were not identified. A safe helper downloads documentation and live metadata
 by default, with manifests, the approximately 1.66 GB Hub snapshot, and the
 repository clone behind separate opt-ins.
+
+The August 2026 BOSSA paper is recorded as an existing-family and unavailable-
+derived-protocol audit of cross-modal music-language pretraining. Sections
+4.1-5.2 and Appendices B-C evaluate a 32-query bridge that reads layer 25 of
+frozen MusicGen-Large and conditions frozen MuseCoco-xLarge. The evaluations
+include ten-round piano-cover generation on a paper-specific POP909 split,
+100 randomly selected Ballroom/GTZAN tracks, ten resampled audio-to-MIDI
+retrieval pools of 64 PIAST and 64 POP909 pairs, 450 randomly paired style-
+transfer cases, and a 21-participant listening study over six selected pieces.
+This directly tests whether audio-LM pretraining exposes implicit style that
+can transfer into a symbolic LM. POP909 and GTZAN map to existing entries;
+PIAST and Ballroom are upstream classic datasets rather than newly released
+benchmark families here. The public [project page](https://zhaojw1998.github.io/bossa/)
+hosts selected listening demos but no frozen split or selection manifests,
+retrieval pools, evaluator, complete generated outputs, per-item scores,
+participant ratings, model weights, or evaluation code. Its linked owner code
+repository returned HTTP 404 on August 8, and no reuse license was identified
+for the demo media. The article license does not cover those assets or the
+separately governed upstream datasets, so no family or helper is added.
