@@ -2927,3 +2927,21 @@ configuration, activations, and per-prompt scores therefore remain
 unreleased. CC BY-SA 4.0 covers the article, not those absent artifacts or the
 separately licensed upstream components. No benchmark family or download
 helper is added.
+
+The June 2026 MOSS-Audio technical report is recorded as an existing-family
+and unreleased-protocol audit of audio-language pretraining and post-training.
+Sections 6.1-6.4 evaluate Instruct and reasoning-oriented Thinking variants on
+the indexed MMAU, MMAU-Pro, MMAR, and MMSU families; a new internal 2,000-item
+speech-captioning set with 13 human-reference dimensions; a 12-condition ASR
+suite detailed as 38 dataset positions in Appendix Table 5; and CTC-derived
+timestamp-ASR tests over indexed AISHELL-1 and LibriSpeech. Appendix Tables 6-8
+add directly relevant encoder-pretraining and transfer ablations through the
+indexed XARES-LLM framework, a controlled Qwen3-1.7B interface, and
+MECAT-Caption. The official project and Hugging Face collection publicly
+release four model repositories and inference implementation, but no complete
+speech-captioning manifest or references, judge identity/prompt/parser, exact
+ASR manifests and runner, derived timestamp alignments, baseline outputs, or
+per-item scores. Apache-2.0 on the model cards covers those released model
+repositories, not absent evaluation artifacts or third-party benchmark data.
+The audit therefore adds no duplicate family, count increase, or download
+helper.

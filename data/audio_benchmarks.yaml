@@ -15038,6 +15038,112 @@ paper_audits:
       Known 1000 alone, it is recorded as an unreleased derived protocol rather
       than counted as a public benchmark family.
 
+  moss_audio_evaluation_release_audit:
+    paper: https://arxiv.org/abs/2606.01802
+    title: "MOSS-Audio Technical Report"
+    sections: 6.1-6.4_and_appendix_A.3-A.4
+    status: audited_existing_public_families_and_unreleased_derived_protocols
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: general_audio_understanding_suite
+        status: existing_public_benchmark_families
+        index_ids:
+          - mmau
+          - mmau_pro
+          - mmar
+          - mmsu
+        protocol: >-
+          Report accuracy on each family and their unweighted arithmetic mean
+          for Instruct and reasoning-oriented Thinking models. These are
+          existing independently released benchmarks, not a new MOSS-Audio
+          dataset.
+      - cited_as: MOSS-Audio_speech_captioning_benchmark
+        status: paper_specific_internal_benchmark_not_released
+        samples: 2000
+        protocol: >-
+          Balance speech clips using preliminary audio-language-model tags,
+          then have human annotators write and quality-control references for
+          gender, age, accent, pitch, volume, speed, voice texture, clarity,
+          fluency, emotion, tone, personality, and utterance summary. A
+          text-based judge compares each model caption with the human reference
+          on all 13 dimensions and the final score averages dimension-level
+          matches over the evaluation set.
+      - cited_as: 12_dimension_ASR_suite
+        status: mixed_existing_families_and_unreleased_exact_selection
+        protocol: >-
+          Appendix Table 5 reports dataset-level CER across 12 grouped
+          conditions and 38 dataset positions, including health-condition,
+          dialect, singing, non-speech vocalization, code-switching, clean and
+          noisy, whisper, far/near-field, multi-speaker, age, and semantic
+          content. The report names sources such as AISHELL-1/2/4/6,
+          THCHS-30, MAGICDATA-READ, AliMeeting, WenetSpeech, FLEURS, KeSpeech,
+          MIR-1K, and Opencpop, but does not publish the exact row manifests or
+          a unified evaluation package.
+      - cited_as: timestamp_ASR
+        status: unreleased_derived_annotations_over_existing_public_families
+        index_ids:
+          - aishell_1
+          - librispeech
+        protocol: >-
+          Apply an unspecified CTC aligner to official AISHELL-1 and LibriSpeech
+          test audio/transcript pairs, then score predicted timestamp slots with
+          Accumulated Average Shift in milliseconds. The derived word-level
+          reference timestamps and alignment configuration are not released.
+      - cited_as: XARES-LLM_audio_encoder_ablation
+        status: existing_public_evaluation_framework
+        index_id: xares_llm
+        protocol: >-
+          Appendix Table 6 compares frozen audio encoders through XARES-LLM on
+          15 classification/understanding families and six speech/generation
+          positions. Tables 7-8 add controlled pretraining and DeepStack
+          ablations over the report's ASR suite and the existing MECAT-Caption
+          test family.
+    release_audit:
+      official_project_page: public_ungated
+      official_model_collection: public_ungated
+      model_weights_and_inference_implementation: released
+      complete_speech_captioning_audio_manifest: not_released
+      human_reference_captions_and_quality_control_records: not_released
+      speech_captioning_judge_identity_prompt_parser_and_scores: not_released
+      exact_ASR_manifests_and_evaluation_runner: not_released
+      timestamp_ASR_reference_alignments_and_CTC_configuration: not_released
+      baseline_outputs_and_per_item_scores: not_released
+      xares_llm_framework: independently_public
+      download_helper: not_added_no_new_public_benchmark_artifact
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      released_models_and_model_repository_files: apache-2.0
+      paper_specific_evaluation_artifacts: not_specified_unreleased
+      upstream_benchmarks: separate_terms_apply
+      note: >-
+        The Hugging Face card's Apache-2.0 declaration covers the released
+        model repositories. It does not establish rights for the absent
+        evaluation audio, human references, derived timestamps, judge records,
+        or third-party benchmark inputs.
+    sources:
+      - https://arxiv.org/abs/2606.01802
+      - https://arxiv.org/html/2606.01802v3#S6
+      - https://arxiv.org/html/2606.01802v3#S6.SS1
+      - https://arxiv.org/html/2606.01802v3#S6.SS2
+      - https://arxiv.org/html/2606.01802v3#S6.SS3
+      - https://arxiv.org/html/2606.01802v3#S6.SS4
+      - https://arxiv.org/html/2606.01802v3#A1.SS3
+      - https://arxiv.org/html/2606.01802v3#A1.SS4
+      - https://openmoss.ai/MOSS-Audio/
+      - https://huggingface.co/collections/OpenMOSS-Team/moss-audio
+      - https://huggingface.co/api/collections/OpenMOSS-Team/moss-audio
+      - https://huggingface.co/OpenMOSS-Team/MOSS-Audio-4B-Instruct
+      - https://huggingface.co/OpenMOSS-Team/MOSS-Audio-4B-Instruct/raw/main/README.md
+      - https://huggingface.co/api/models/OpenMOSS-Team/MOSS-Audio-4B-Instruct
+    note: >-
+      This is a technical-report inventory directly relevant to audio-language
+      pretraining and post-training: Tables 1-4 compare instruction and
+      reasoning variants, while Appendix Tables 6-8 probe encoder pretraining,
+      controlled transfer into an LLM, and DeepStack fine-tuning. The only new
+      report-defined evaluation artifacts are internal or unreleased, so this
+      audit maps public rows to existing families and does not add a benchmark,
+      helper, or count increase.
+
   audio2tool_release_audit:
     paper: https://arxiv.org/abs/2604.22821
     title: "Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use"
