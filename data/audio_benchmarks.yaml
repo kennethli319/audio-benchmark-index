@@ -18652,6 +18652,69 @@ benchmarks:
       - https://arxiv.org/html/2503.19356v3#A1.SS2
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
 
+  - id: streamarena
+    name: StreamArena
+    full_name: "StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic Streaming Video Understanding"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_interaction
+      - multimodal_agent_evaluation
+    tasks:
+      - continuous_audio_visual_understanding
+      - real_time_audio_visual_question_answering
+      - long_horizon_multimodal_memory
+      - proactive_interaction
+      - multimodal_tool_use
+      - spoken_content_understanding
+    official:
+      project: https://hkuzxc.github.io/StreamArena_web/
+      paper: https://arxiv.org/abs/2608.05703
+      repo: https://github.com/JIA-Lab-research/StreamArena
+      dataset: https://huggingface.co/datasets/hkuzxc/StreamArena
+    download:
+      primary:
+        - https://huggingface.co/datasets/hkuzxc/StreamArena
+        - https://hkuzxc.github.io/StreamArena_web/
+      examples:
+        - 'scripts/download/streamarena.sh'
+        - 'STREAMARENA_DOWNLOAD_VIDEOS=1 scripts/download/streamarena.sh'
+      notes: >-
+        The public, ungated release contains 243 hour-scale videos averaging
+        88.8 minutes and 3,646 bilingual open-ended tasks. Its 263 real-time
+        perception, 877 historical-retrospection, 1,732 external-tool, and 774
+        proactive-interaction questions carry causal query and evidence
+        timestamps; the paper evaluates raw-audio and ASR-assisted omni-modal
+        systems and separately measures factual accuracy and proactive timing.
+        The helper downloads the project page, live Hub metadata, and four
+        lightweight annotation/metadata JSONL files by default. The dataset
+        card reports roughly 300 GB of 243 per-video tar files, so media require
+        STREAMARENA_DOWNLOAD_VIDEOS=1. The paper promises an Apache-2.0 code
+        release, but its linked GitHub repository returned HTTP 404 on
+        2026-08-08; the helper therefore does not guess an alternate code URL.
+    license:
+      data: conflicting_CC-BY-4.0_and_CC-BY-NC-4.0_with_upstream_video_rights
+      code: announced_Apache-2.0_but_repository_unavailable
+      notes: >-
+        Appendix C.7 says the annotations are CC BY 4.0, while the live Hugging
+        Face card declares CC BY-NC 4.0; apply the stricter non-commercial terms
+        pending clarification. The paper says original YouTube videos are not
+        redistributed, but the dataset card says it ships about 300 GB of MP4,
+        metadata, and subtitles under a research fair-use rationale. Neither
+        Creative Commons declaration establishes rights to third-party source
+        videos, music, speech, subtitles, or archived copies. Review per-video
+        rights and platform terms before downloading, use, or redistribution.
+    sources:
+      - https://hkuzxc.github.io/StreamArena_web/
+      - https://arxiv.org/abs/2608.05703
+      - https://arxiv.org/html/2608.05703v1#S2.SS1
+      - https://arxiv.org/html/2608.05703v1#A2.SS2
+      - https://arxiv.org/html/2608.05703v1#A3.SS7
+      - https://export.arxiv.org/api/query?id_list=2608.05703
+      - https://github.com/JIA-Lab-research/StreamArena
+      - https://huggingface.co/datasets/hkuzxc/StreamArena
+      - https://huggingface.co/datasets/hkuzxc/StreamArena/raw/main/README.md
+      - https://huggingface.co/api/datasets/hkuzxc/StreamArena
+
   - id: omnigaia
     name: OmniGAIA
     full_name: "OmniGAIA: Towards Native Omni-Modal AI Agents"

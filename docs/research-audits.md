@@ -3345,3 +3345,22 @@ license, the gated card was not publicly readable, and the paper license does
 not cover data or code. The safe helper downloads only primary documentation
 and live metadata by default, with the code clone and gated snapshot behind
 separate explicit opt-ins.
+
+StreamArena is now indexed as a public, ungated audio-visual agent benchmark
+after reviewing Sections 2.1-2.3 and Appendices B-C of the August 2026 primary
+paper. Its 243 hour-scale streams average 88.8 minutes and support 3,646
+bilingual open-ended tasks: 263 real-time-perception, 877 historical-recall,
+1,732 external-tool, and 774 proactive-interaction questions. Query, evidence,
+and expected proactive-response timestamps enforce causal access, while binary
+LLM judging and timing-aware proactive accuracy test factuality, long-horizon
+memory, tool use, and when to speak. This directly evaluates post-training
+outcomes for always-on omni-modal agents that consume raw audio or ASR alongside
+video. The ungated Hugging Face release supplies lightweight annotations and
+metadata plus roughly 300 GB of per-video tar files. Release provenance is
+internally inconsistent: Appendix C.7 says annotations are CC BY 4.0 and that
+original YouTube videos are not redistributed, while the live card declares CC
+BY-NC 4.0 and says it ships MP4s, subtitles, and source metadata under a fair-use
+rationale. The paper-promised Apache-2.0 code repository also returned HTTP 404
+on August 8. The helper therefore fetches only primary documentation, live Hub
+metadata, and the four small JSONL files by default; media require explicit
+opt-in, and no alternate code URL or media license is inferred.
