@@ -348,6 +348,7 @@ scripts/download/bvcc.sh
 scripts/download/vctk.sh
 scripts/download/adqa_bench.sh
 scripts/download/multiref_compass.sh
+scripts/download/av_syncbench.sh
 scripts/download/clotho_moment.sh
 scripts/download/castella.sh
 ```
@@ -362,6 +363,10 @@ OMNIBENCH_CLONE_REPO=1 scripts/download/omnibench.sh
 # are separate opt-ins.
 MULTIREF_COMPASS_DOWNLOAD_HF=1 scripts/download/multiref_compass.sh
 MULTIREF_COMPASS_CLONE_REPO=1 scripts/download/multiref_compass.sh
+
+# AV-SyncBench downloads paper/project and official release metadata by default.
+# Its approximately 68.2 GB ModelScope Git-LFS archive is explicit opt-in.
+AV_SYNCBENCH_DOWNLOAD_DATA=1 scripts/download/av_syncbench.sh
 
 # MMAR downloads its released MMAR-Rubrics metadata, docs, and evaluation
 # scripts by default. The approximately 2.99 GB Hugging Face audio snapshot is

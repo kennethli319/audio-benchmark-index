@@ -2680,15 +2680,20 @@ released. Its Androids Corpus and TORGO sources are also indexed. The TORGO
 entry preserves the paper's headMic-only, leave-one-speaker-out protocol
 without claiming that this derived split is separately released.
 
-The July 2026 AV-SyncBench paper is recorded as an announced audiovisual
-synchronization protocol, not a downloadable family. It describes 3,269
-in-the-wild videos and 38,390 temporal and semantic challenge samples, but the
-official [GitHub repository](https://github.com/fgt7t6g/AV-SyncBench) says the
-evaluation code and dataset will be released soon, while the official
-[Hugging Face repository](https://huggingface.co/datasets/coming245/AV-SyncBench)
-still contains only README metadata and zero bytes of dataset storage as of
-July 25. Its MIT card tag therefore does not establish reuse rights for the
-unreleased benchmark or source videos.
+The July 2026 AV-SyncBench paper now contributes a public audiovisual
+synchronization benchmark family. It describes 3,269 in-the-wild videos and
+38,390 temporal and semantic challenge samples evaluated through pairwise
+accuracy over non-overlapping 0.64-second chunks. On August 8, the official
+[ModelScope release](https://modelscope.cn/datasets/coming245/AVSyncBench)
+exposed seven split tar-gzip parts totaling approximately 68.2 GB at revision
+`86c06579529a6e7b2cafb0dc386a50152a37fb98`. The official
+[GitHub repository](https://github.com/fgt7t6g/AV-SyncBench) still says its
+evaluation code and dataset will be released soon and contains no runner,
+while the [Hugging Face repository](https://huggingface.co/datasets/coming245/AV-SyncBench)
+remains a zero-storage placeholder. ModelScope declares MIT for its dataset
+repository, but the source videos' copyright and platform terms remain
+separately applicable. The safe helper downloads only metadata by default and
+keeps the roughly 68.2 GB Git-LFS clone behind explicit opt-in.
 
 The July 2026 MultiRef-Compass release is now indexed as a public benchmark
 family. Its official Hugging Face repository provides 350 prompts, image

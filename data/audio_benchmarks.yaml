@@ -13977,9 +13977,10 @@ paper_audits:
 
   av_syncbench:
     paper: https://arxiv.org/abs/2607.00726
+    title: "AV-SyncBench: Decoupled Benchmarking of Temporal and Semantic Audio-Visual Synchronization"
     sections: 2.1-2.3
-    status: audited_not_indexed
-    last_verified: 2026-07-25
+    status: audited_public_dataset_archive_without_released_evaluation_code
+    last_verified: 2026-08-08
     public_interfaces:
       - https://fgt7t6g.github.io/AV-SyncBench/
       - https://github.com/fgt7t6g/AV-SyncBench
@@ -13988,13 +13989,28 @@ paper_audits:
     evaluated_domains:
       - domain: audio_visual_synchronization
         protocol: 3,269 in-the-wild videos expanded into 38,390 samples across voice, music, and sound, with global-offset, local-jitter, global-speed-change, timbre-replacement, and sound-source-replacement challenges
-        data_status: announced_unreleased
-        note: The paper reports 10 scenarios and binary original-versus-perturbed accuracy on non-overlapping 0.64-second chunks, but the official repositories currently contain no videos, annotations, benchmark samples, or evaluation code.
+        data_status: public_modelscope_archive_evaluation_code_unreleased
+        index_id: av_syncbench
+        note: The paper reports 10 scenarios and binary original-versus-perturbed accuracy on non-overlapping 0.64-second chunks. ModelScope now exposes the benchmark as a seven-part archive, but the official GitHub repository still contains no evaluation implementation.
+    release_audit:
+      modelscope_dataset: public_ungated
+      modelscope_revision: 86c06579529a6e7b2cafb0dc386a50152a37fb98
+      modelscope_storage_bytes_reported_by_api: 68191844533
+      archive_layout: seven_split_tar_gzip_parts
+      archive_parts_and_sizes_visible_in_public_api: true
+      archive_internal_manifest: not_inspected_large_download_required
+      hugging_face_dataset: placeholder_only_zero_storage
+      hugging_face_revision: 23329259e882f92acdfb8c0133e46b3a1c70cd0c
+      github_evaluation_code: announced_unreleased
+      github_tree_revision: 6d690c415914c16c3300473aaf9fb002bb741953
+      baseline_outputs_and_per_item_scores: not_released
+      download_helper: scripts/download/av_syncbench.sh
     license:
       paper: arXiv perpetual non-exclusive license
-      benchmark_data: not_specified_unreleased
-      placeholder_card: MIT metadata tag only; no released benchmark files are present
-      upstream: Rights and reuse terms for the public-online-platform source videos are unspecified
+      modelscope_dataset_card: MIT License
+      hugging_face_placeholder_card: MIT metadata tag only
+      github_repository: no_detected_license
+      upstream: Rights and reuse terms for the public-online-platform source videos remain separately applicable and unspecified by the paper
     sources:
       - https://arxiv.org/html/2607.00726v1#S2.SS2
       - https://fgt7t6g.github.io/AV-SyncBench/
@@ -14004,7 +14020,9 @@ paper_audits:
       - https://huggingface.co/datasets/coming245/AV-SyncBench/raw/main/README.md
       - https://huggingface.co/api/datasets/coming245/AV-SyncBench
       - https://modelscope.cn/datasets/coming245/AVSyncBench
-    note: Rechecked on 2026-07-25. The paper and project page say that code and data are available, but the official GitHub README still says they "will be released soon"; its four-file tree contains only the README and project-site assets. The public Hugging Face repository remains at revision 23329259e882f92acdfb8c0133e46b3a1c70cd0c with only README metadata and zero bytes of dataset storage. The official ModelScope landing page likewise provides no verifiable benchmark archive or item manifest. AV-SyncBench is therefore recorded as an audited announced protocol rather than a downloadable benchmark family; the card's MIT tag must not be treated as licensing unreleased or third-party source videos.
+      - https://modelscope.cn/api/v1/datasets/coming245/AVSyncBench
+      - https://modelscope.cn/api/v1/datasets/coming245/AVSyncBench/repo/tree?Revision=master&Root=
+    note: Rechecked on 2026-08-08. The official ModelScope API now exposes seven AV_SyncBench.tar.gz parts totaling approximately 68.2 GB at revision 86c06579529a6e7b2cafb0dc386a50152a37fb98, so the released dataset is now counted. The Hugging Face repository remains a zero-storage placeholder, and the four-file GitHub tree still says evaluation code and data will be released soon; no runner, baseline outputs, or per-item scores are present there. The ModelScope card declares MIT, but that declaration does not extinguish copyright or platform terms for source videos collected online. The helper therefore fetches only official metadata by default and keeps the large archive behind explicit opt-in.
 
   multiref_compass:
     paper: https://arxiv.org/abs/2607.14189
@@ -16713,6 +16731,70 @@ paper_audits:
       release, so no benchmark count, duplicate family, or helper is added.
 
 benchmarks:
+  - id: av_syncbench
+    name: AV-SyncBench
+    full_name: "AV-SyncBench: Decoupled Benchmarking of Temporal and Semantic Audio-Visual Synchronization"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - multimodal_representation_learning
+      - audio_visual_alignment
+    tasks:
+      - audio_visual_temporal_synchronization
+      - audio_visual_semantic_consistency
+      - global_offset_detection
+      - local_jitter_detection
+      - global_speed_change_detection
+      - voice_timbre_replacement_detection
+      - sound_source_replacement_detection
+    official:
+      paper: https://arxiv.org/abs/2607.00726
+      project_page: https://fgt7t6g.github.io/AV-SyncBench/
+      dataset: https://modelscope.cn/datasets/coming245/AVSyncBench
+      repo: https://github.com/fgt7t6g/AV-SyncBench
+      hugging_face_placeholder: https://huggingface.co/datasets/coming245/AV-SyncBench
+    download:
+      access: public_ungated_large_modelscope_archive_opt_in
+      primary:
+        - https://modelscope.cn/datasets/coming245/AVSyncBench
+      examples:
+        - 'scripts/download/av_syncbench.sh'
+        - 'AV_SYNCBENCH_DOWNLOAD_DATA=1 scripts/download/av_syncbench.sh'
+      notes: >-
+        The public ModelScope release contains seven split tar-gzip parts at
+        revision 86c06579529a6e7b2cafb0dc386a50152a37fb98; its API reports
+        approximately 68.2 GB of storage. The paper defines 38,390 samples
+        derived from 3,269 three-to-thirteen-second videos across Voice,
+        Music, and Sound, with three temporal and two semantic challenge
+        types. Pairwise accuracy compares the original and perturbed audio
+        against visual embeddings computed over non-overlapping 0.64-second
+        chunks. The helper downloads paper, project, repository, and release
+        metadata by default; the full ModelScope Git-LFS clone requires
+        explicit opt-in. Evaluation code remains announced but unreleased.
+    license:
+      dataset_card: MIT
+      github_code: not_released_no_detected_license
+      source_videos: upstream_copyright_and_platform_terms_apply
+      notes: >-
+        ModelScope declares MIT for the dataset repository, but the benchmark
+        was collected from public online platforms and neither the paper nor
+        card identifies per-video source rights. Treat those underlying rights
+        and platform terms as separately controlling; do not infer that the
+        paper license or GitHub placeholder licenses source media.
+    sources:
+      - https://arxiv.org/abs/2607.00726
+      - https://arxiv.org/html/2607.00726v1#S2.SS1
+      - https://arxiv.org/html/2607.00726v1#S2.SS2
+      - https://arxiv.org/html/2607.00726v1#S2.SS3
+      - https://fgt7t6g.github.io/AV-SyncBench/
+      - https://modelscope.cn/datasets/coming245/AVSyncBench
+      - https://modelscope.cn/api/v1/datasets/coming245/AVSyncBench
+      - https://modelscope.cn/api/v1/datasets/coming245/AVSyncBench/repo/tree?Revision=master&Root=
+      - https://github.com/fgt7t6g/AV-SyncBench
+      - https://raw.githubusercontent.com/fgt7t6g/AV-SyncBench/main/README.md
+      - https://api.github.com/repos/fgt7t6g/AV-SyncBench/git/trees/main?recursive=1
+      - https://huggingface.co/api/datasets/coming245/AV-SyncBench
+
   - id: voxparadox
     name: VoxParadox
     full_name: "VoxParadox: Adversarial Paralinguistic Speech QA under Linguistic-Acoustic Contradiction"
