@@ -16212,6 +16212,80 @@ paper_audits:
       count increase, or helper is added.
 
 benchmarks:
+  - id: voxparadox
+    name: VoxParadox
+    full_name: "VoxParadox: Adversarial Paralinguistic Speech QA under Linguistic-Acoustic Contradiction"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - speech_post_training
+      - robustness
+    tasks:
+      - adversarial_paralinguistic_speech_qa
+      - acoustic_vs_lexical_evidence_grounding
+      - speech_emotion_recognition
+      - speaker_attribute_and_identity_reasoning
+      - prosody_and_voice_comparison
+      - preference_optimization_evaluation
+      - inference_time_audio_encoder_intervention
+    official:
+      paper: https://arxiv.org/abs/2605.27772
+      project_page: https://voxparadox.github.io/
+      dataset: https://huggingface.co/datasets/IHP-Lab/VoxParadox
+      repo: https://github.com/ihp-lab/VoxParadox
+      recent_encoder_intervention_evaluation: https://arxiv.org/abs/2607.11801
+    download:
+      access: public_ungated_research_only_full_audio_opt_in
+      primary:
+        - https://huggingface.co/datasets/IHP-Lab/VoxParadox
+        - https://github.com/ihp-lab/VoxParadox
+      examples:
+        - 'scripts/download/voxparadox.sh'
+        - 'VOXPARADOX_DOWNLOAD_HF=1 scripts/download/voxparadox.sh'
+        - 'VOXPARADOX_CLONE_REPO=1 scripts/download/voxparadox.sh'
+      notes: >-
+        The public test-only release contains 2,000 verified English MCQs and
+        2,000 WAV files, with 200 items for each of ten tasks: age, gender,
+        emotion, intonation, speaker identity, speaker counting, pitch,
+        volume, speaking rate, and vocal range. Each transcript asserts a
+        label that conflicts with the acoustic ground truth. The released
+        scorer reports ground-truth accuracy and adversarial-label agreement;
+        the code repository supplies Audio-Flamingo-3 and Qwen2-Audio runners,
+        probing code, and PCLM/DPO model links. The helper downloads cards,
+        terms, repository metadata, the JSONL/JSON manifests, and scorer by
+        default. The Hugging Face API reports approximately 1.34 GB of used
+        repository storage, so the full snapshot requires explicit opt-in;
+        the larger code clone is a separate opt-in.
+    license:
+      data_and_code: USC_Research_License
+      commercial_use: separate_license_required
+      notes: >-
+        The custom USC Research License permits educational, research, and
+        non-profit use with notice retention; commercial use requires a
+        separate USC license. The card says audio was synthesized with
+        ElevenLabs, GPT-4o, and Microsoft Azure and warns that commercial
+        reuse is additionally subject to those vendors' terms. Do not treat
+        public Hub access as an unrestricted or open-data grant.
+    sources:
+      - https://arxiv.org/abs/2605.27772
+      - https://arxiv.org/html/2605.27772v1#S3
+      - https://arxiv.org/html/2605.27772v1#S3.SS3
+      - https://arxiv.org/html/2605.27772v1#S3.SS4
+      - https://voxparadox.github.io/
+      - https://huggingface.co/datasets/IHP-Lab/VoxParadox
+      - https://huggingface.co/datasets/IHP-Lab/VoxParadox/raw/main/README.md
+      - https://huggingface.co/datasets/IHP-Lab/VoxParadox/raw/main/LICENSE
+      - https://huggingface.co/api/datasets/IHP-Lab/VoxParadox
+      - https://github.com/ihp-lab/VoxParadox
+      - https://raw.githubusercontent.com/ihp-lab/VoxParadox/main/README.md
+      - https://raw.githubusercontent.com/ihp-lab/VoxParadox/main/LICENSE
+      - https://api.github.com/repos/ihp-lab/VoxParadox
+      - https://api.github.com/repos/ihp-lab/VoxParadox/git/trees/main?recursive=1
+      - https://arxiv.org/abs/2607.11801
+      - https://arxiv.org/html/2607.11801v1#S4.SS1
+      - https://arxiv.org/html/2607.11801v1#S4.SS2
+      - https://arxiv.org/html/2607.11801v1#S4.SS3
+
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
     full_name: "Common-Sense Facts Audio: Spoken Fact-Completion Evaluation for Speech Language Models"

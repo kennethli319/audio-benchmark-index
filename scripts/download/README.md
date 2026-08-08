@@ -108,6 +108,7 @@ scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/emphassess.sh
 scripts/download/speechparaling_bench.sh
+scripts/download/voxparadox.sh
 scripts/download/voxsafebench.sh
 scripts/download/speechjbb.sh
 scripts/download/common_sense_facts_audio.sh
@@ -1620,4 +1621,10 @@ KIMI_AUDIO_GENTEST_CLONE_TOOLKIT=1 scripts/download/kimi_audio_gentest.sh
 SPEECHPARALING_BENCH_DOWNLOAD_MANIFESTS=1 scripts/download/speechparaling_bench.sh
 SPEECHPARALING_BENCH_DOWNLOAD_HF=1 scripts/download/speechparaling_bench.sh
 SPEECHPARALING_BENCH_CLONE_REPO=1 scripts/download/speechparaling_bench.sh
+
+# VoxParadox downloads the official card, custom terms, 2,000-row manifests,
+# scorer, and repository metadata by default. The approximately 1.34 GB Hub
+# snapshot and larger evaluation/probing code clone are separate opt-ins.
+VOXPARADOX_DOWNLOAD_HF=1 scripts/download/voxparadox.sh
+VOXPARADOX_CLONE_REPO=1 scripts/download/voxparadox.sh
 ```

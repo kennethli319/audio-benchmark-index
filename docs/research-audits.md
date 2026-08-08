@@ -4,6 +4,28 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The May 2026 *VoxParadox* paper now contributes a public adversarial
+paralinguistic speech-QA family. Section 3 defines 2,000 verified English MCQs,
+200 each for age, gender, emotion, intonation, speaker identity, speaker count,
+pitch, volume, speaking rate, and vocal range. Every item deliberately makes
+the transcript assert a label that conflicts with the acoustic ground truth;
+ground-truth accuracy measures listening, while adversarial-label agreement
+measures lexical shortcutting. This directly evaluates post-training for
+acoustic grounding: the primary paper releases PCLM and DPO adaptations, and
+the July 2026 IAAN paper reuses the benchmark to test training-free audio-
+encoder neuron intervention, selecting hyperparameters on 190 external LISTEN
+clips rather than the VoxParadox test set. The ungated
+[Hub release](https://huggingface.co/datasets/IHP-Lab/VoxParadox) supplies all
+2,000 WAVs, manifests, labels, and the scorer; the
+[repository](https://github.com/ihp-lab/VoxParadox) supplies evaluation and
+probing code plus links to released PCLM/DPO checkpoints. The custom USC
+Research License allows educational, research, and non-profit use but requires
+a separate commercial license. The card additionally warns that commercial
+reuse of ElevenLabs-, GPT-4o-, and Azure-synthesized audio remains subject to
+vendor terms. A safe helper fetches documentation, terms, manifests, and the
+scorer by default; the approximately 1.34 GB Hub snapshot and larger code
+clone require separate opt-ins.
+
 The July 2026 *Teffic-Audio* technical report is recorded as data-mixture and
 existing-family evaluation provenance after reviewing Sections 3-4 and Tables
 1-3. Its pretrained Conformer detector is adapted with a disclosed mixture of
