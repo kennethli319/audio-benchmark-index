@@ -14956,6 +14956,90 @@ paper_audits:
       benchmark family. No helper is added; revisit an author-controlled
       release if one is linked later.
 
+  audio2tool_release_audit:
+    paper: https://arxiv.org/abs/2604.22821
+    title: "Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use"
+    sections: version_2_sections_3_5
+    status: audited_claimed_public_benchmark_with_demo_subset_only
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: Audio2Tool
+        index_id: null
+        status: full_benchmark_not_publicly_released
+        protocol: >-
+          Evaluate approximately 30,000 English speech-to-tool queries over 152
+          functions and 23 categories in Smart Car, Smart Home, and Wearables.
+          Eight tiers progress from direct and parametric commands through
+          multi-intent, implicit-reasoning, long-context, correction,
+          multi-turn, and intent-blending cases. Tool Accuracy requires the
+          ordered tool sequence to match, Exact Match additionally requires all
+          normalized arguments, and Slot F1 measures micro-averaged argument
+          extraction. Noise ablations use babble, mechanical-hum, and impulsive
+          MS-SNSD noise at +15, +5, and -5 dB SNR.
+        relevance: >-
+          This directly evaluates post-training for audio-native tool use,
+          compositional instruction following, argument grounding, dialogue
+          state, speaker-conditioned intent selection, and acoustic robustness
+          in end-to-end SpeechLMs and cascaded ASR-LLM baselines.
+    source_data:
+      speaker_pools:
+        - SPGISpeech_2.0
+        - Emilia_YODAS
+        - 3D_Speaker
+        - VoxPopuli
+      noise_source: MS_SNSD
+      synthesis:
+        - Qwen3_TTS
+        - CosyVoice_3
+      note: >-
+        These upstream corpora and synthesizers are construction inputs, not a
+        release of Audio2Tool's fixed prompts, tool schemas, split assignments,
+        audio, or answer keys. Their separate access and license terms remain
+        authoritative.
+    release_audit:
+      paper_claim: code_and_dataset_public_on_project_page
+      owner_project_repository: public_ungated_static_demo
+      demo_metadata_examples: 23
+      demo_wav_files: 29
+      demo_tier_coverage: all_eight_tiers
+      full_query_and_audio_release: not_released
+      complete_tool_taxonomy_and_schemas: not_released
+      frozen_splits_and_generation_manifests: not_released
+      evaluator_normalization_and_scoring_code: not_released
+      baseline_outputs_and_per_item_scores: not_released
+      download_helper: none_demo_subset_is_not_the_claimed_benchmark
+    license:
+      paper: cc-by-4.0
+      demo_repository: not_specified
+      full_benchmark: not_specified_unreleased
+      upstream_sources: mixed_separate_terms
+      note: >-
+        CC BY 4.0 covers the article. The owner repository has no detected
+        license file or GitHub license declaration, and its README's "same as
+        the Audio2Tool paper/repository" statement does not clearly license the
+        hosted recordings, metadata, or absent benchmark artifacts.
+    sources:
+      - https://arxiv.org/abs/2604.22821
+      - https://arxiv.org/html/2604.22821v2#S3
+      - https://arxiv.org/html/2604.22821v2#S4
+      - https://arxiv.org/html/2604.22821v2#S5
+      - https://arxiv.org/html/2604.22821v2#S5.SS2
+      - https://audio2tool.github.io/
+      - https://github.com/audio2tool/audio2tool.github.io
+      - https://raw.githubusercontent.com/audio2tool/audio2tool.github.io/main/README.md
+      - https://api.github.com/repos/audio2tool/audio2tool.github.io
+      - https://api.github.com/repos/audio2tool/audio2tool.github.io/git/trees/main?recursive=1
+    note: >-
+      Paper version 2 says the code and dataset are public on the project page,
+      but the linked owner repository is a demonstration site. Its eight JSON
+      files expose 23 selected examples referencing 29 WAVs: three examples in
+      each of Tiers 1-7 and two in Tier 8, with Tier 7 represented by nine
+      turn-level WAVs. It does not expose the complete approximately 30,000-row
+      benchmark or the artifacts needed to reproduce Table 3 and Figure 3. Selected
+      demonstrations therefore do not support counting Audio2Tool as a public
+      benchmark family or adding a download helper. Revisit if the owners
+      publish a complete, licensed benchmark release.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
