@@ -3056,3 +3056,25 @@ participant ratings, model weights, or evaluation code. Its linked owner code
 repository returned HTTP 404 on August 8, and no reuse license was identified
 for the demo media. The article license does not cover those assets or the
 separately governed upstream datasets, so no family or helper is added.
+
+The August 2026 MSRT paper is recorded as an existing-family, public-example,
+and incomplete-evaluation audit of pretrained speech-encoder transfer into an
+LLM. Sections 3-5, Tables 3-7, and Figure 5 route 45 source languages between
+frozen and trainable Whisper experts, compress speech through an 80-query
+Q-Former, and condition a MiLMMT-4B language model. The main evaluation covers
+all 1,980 non-identity FLEURS translation directions with spBLEU and COMET;
+CoVoST 2 supplies an 11-direction cross-dataset and data-scaling evaluation,
+while Common Voice 24 is ASR-pretraining data rather than an evaluation track.
+This directly tests whether a pretrained high-resource speech interface can
+be preserved while a second encoder specializes for medium- and low-resource
+speech. The public [repository](https://github.com/yxduir/MSRT) releases
+inference code, and the ungated [model repository](https://huggingface.co/yxdu/MSRT-4B)
+releases approximately 13.1 GB of weights plus a 1,980-row format example made
+from only 45 FLEURS test utterances—one source utterance crossed with all 44
+targets. It does not release the full paper manifests, training recipe and
+stage manifests, metric environment, baseline/API outputs, complete model
+outputs, or per-item scores. No license was identified for the code repository
+or top-level model repository. A nested language-model README invokes Gemma
+terms, but that does not license the entire checkpoint, code, copied FLEURS
+audio, or example manifest; upstream FLEURS and CoVoST 2 terms still apply.
+The audit therefore adds no duplicate family, count increase, or helper.

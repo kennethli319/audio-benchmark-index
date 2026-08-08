@@ -15858,6 +15858,110 @@ paper_audits:
       evaluator remains unavailable. The audit therefore adds provenance
       without counting a new public family or adding a helper.
 
+  msrt_resource_aware_speech_encoder_transfer_audit:
+    paper: https://arxiv.org/abs/2608.04586
+    title: "Breaking the Curse of Multilinguality in Many-to-Many Speech-to-Text Translation via a Resource-Aware Mixture of Speech Encoders"
+    sections: 3-5, Tables 3-7, and Figure 5
+    status: audited_existing_families_with_public_example_manifest_and_incomplete_evaluation_release
+    last_verified: 2026-08-08
+    evaluated_sets:
+      - cited_as: FLEURS
+        index_id: fleurs
+        status: existing_public_family_used_for_training_and_evaluation
+        protocol: >-
+          Train on approximately ten hours of paired speech-to-text
+          translation data per language, then evaluate every non-identity
+          direction among 45 languages (1,980 directions). Tables 4-6 report
+          spBLEU with the FLORES-200 tokenizer and COMET, including detailed
+          11-by-44 and 44-by-11 summaries, all-direction score bins, and
+          resource-level comparisons. Table 7 ablates one, two, and three
+          speech encoders plus LLM LoRA on six source languages.
+      - cited_as: CoVoST-2
+        index_id: covost2
+        status: existing_public_family_used_for_cross_dataset_evaluation_and_scaling
+        protocol: >-
+          Figure 5 evaluates 11 English-to-X directions for cross-dataset
+          generalization and contrasts MSRT-4B trained on 7.5 hours of FLEURS
+          speech with an MSRT-4B-SFT variant trained on 429.6 hours of CoVoST-2
+          speech, using average COMET for the scaling comparison.
+      - cited_as: Common Voice 24
+        index_id: common_voice
+        status: existing_public_family_used_only_as_upstream_training_corpus
+        protocol: >-
+          Used with FLEURS for multilingual ASR pretraining; the paper does
+          not define or report a Common Voice 24 evaluation track.
+    pretraining_interface:
+      speech_encoders: two_Whisper_experts_with_explicit_language_router
+      frozen_expert: 15_high_resource_languages
+      trainable_expert: 18_medium_and_12_low_resource_languages
+      adapter: 80_query_Q_Former_plus_MLP
+      language_model: MiLMMT_4B
+      curriculum:
+        - multilingual_ASR_alignment
+        - resource_aware_encoder_specialization
+        - speech_guided_machine_translation
+        - joint_speech_recognition_and_translation
+        - final_LLM_LoRA_adaptation
+      relevance: >-
+        Directly evaluates transfer from pretrained Whisper encoders through
+        a compact learned interface into an LLM, including whether freezing
+        one expert prevents high-resource forgetting while another adapts to
+        lower-resource speech.
+    release_audit:
+      code_repository: public_ungated_inference_only
+      model_repository: public_ungated_approximately_13_1_GB
+      model_weights: public
+      inference_code: public
+      full_training_recipe_and_stage_data_manifests: not_released
+      full_FLEURS_1980_direction_evaluation_manifests: not_released
+      released_example_manifest:
+        path: data/srt_test_1.jsonl
+        rows: 1980
+        unique_source_audio_files: 45
+        note: >-
+          One FLEURS test utterance per source language is paired with all 44
+          target languages. This is a runnable format example, not the full
+          paper evaluation set.
+      released_example_audio: 45_FLEURS_WAV_files
+      metric_implementation_and_environment: not_released
+      baseline_outputs_and_API_configuration: not_released
+      complete_model_outputs_and_per_item_scores: not_released
+      download_helper: none_existing_FLEURS_and_CoVoST2_families_already_have_helpers
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      code_repository: no_license_identified
+      top_level_model_repository: no_license_or_model_card_identified
+      nested_LLM_component: Gemma_terms_declared_in_nested_README
+      example_manifest_and_audio: no_first_party_license_declaration
+      benchmark_data: upstream_FLEURS_and_CoVoST2_terms_apply
+      note: >-
+        The nested language-model README points to Gemma terms, but it does
+        not license the complete MSRT repository, inference code, speech
+        encoders, checkpoint, example manifest, or copied FLEURS audio. The
+        article license likewise does not cover those assets. Preserve the
+        indexed upstream terms for FLEURS and CoVoST 2 and do not infer reuse
+        rights from public access.
+    sources:
+      - https://arxiv.org/abs/2608.04586
+      - https://arxiv.org/html/2608.04586v2#Sx3
+      - https://arxiv.org/html/2608.04586v2#Sx4
+      - https://arxiv.org/html/2608.04586v2#Sx5
+      - https://arxiv.org/html/2608.04586v2#Sx5.SSx4
+      - https://github.com/yxduir/MSRT
+      - https://raw.githubusercontent.com/yxduir/MSRT/main/README.md
+      - https://api.github.com/repos/yxduir/MSRT
+      - https://api.github.com/repos/yxduir/MSRT/git/trees/main?recursive=1
+      - https://huggingface.co/yxdu/MSRT-4B
+      - https://huggingface.co/api/models/yxdu/MSRT-4B
+      - https://huggingface.co/yxdu/MSRT-4B/resolve/main/data/srt_test_1.jsonl
+      - https://huggingface.co/yxdu/MSRT-4B/resolve/main/MSRT-4B-LLM/README.md
+    note: >-
+      This is an evaluation inventory over existing public benchmark families,
+      not a new family. The public release makes the model and inference path
+      inspectable and supplies a 1,980-row, 45-audio example grid, but it does
+      not reproduce the full FLEURS or CoVoST-2 evaluations reported in the
+      paper. No count increase or new download helper is warranted.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
