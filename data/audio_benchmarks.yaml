@@ -9,6 +9,108 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audioder_post_training_and_release_audit:
+    paper: https://arxiv.org/abs/2606.14591
+    title: "AudioDER: A Deduplication-Enhanced Reasoning Dataset for Post-Training Large Audio-Language Models"
+    sections: 3-4
+    status: audited_post_training_dataset_with_private_or_unavailable_data_release_and_existing_benchmark_coverage
+    last_verified: 2026-08-08
+    training_dataset:
+      cited_as: AudioDER
+      role: reasoning_oriented_supervised_fine_tuning_data
+      samples: approximately_191000
+      domains:
+        - sound
+        - speech
+        - music
+      fields:
+        - audio
+        - multiple_choice_question
+        - four_answer_candidates
+        - answer
+        - caption
+        - chain_of_thought_rationale
+      source_families:
+        - Clotho
+        - CompA-R
+        - AVQA
+        - LibriTTS-R
+        - MusicCaps
+        - LP-MusicCaps-MTT
+        - MusicBench
+      construction: >-
+        Section 3 describes CLAP-embedding similarity filtering followed by
+        integration of source captions and question-answer annotations into a
+        common multiple-choice format and Qwen3-30B rationale generation. The
+        linked repository instead describes Qwen3-30B caption and question-
+        answer generation before an additional AVQA-focused quality filter, so
+        the exact released construction version cannot be reconciled without a
+        manifest, scripts, or accessible dataset card.
+    evaluated_sets:
+      - cited_as: MMAU-mini
+        index_id: mmau
+        status: existing_public_family
+        protocol: Section 4.1 reports sound, music, speech, and overall accuracy.
+      - cited_as: MMSU
+        index_id: mmsu
+        status: existing_public_family
+        protocol: Section 4.1 reports multiple-choice accuracy.
+      - cited_as: MMAR
+        index_id: mmar
+        status: existing_public_family
+        protocol: Section 4.1 reports multiple-choice accuracy.
+    experiment:
+      backbone: Qwen2-Audio-7B-Instruct
+      post_training: full_parameter_sft_for_2_epochs
+      headline_result: >-
+        Table 3 reports that AudioDER SFT raises the backbone's MMAU-mini
+        overall accuracy from 59.60 to 66.70, with reported MMSU and MMAR
+        accuracies of 56.49 and 50.10.
+      training_checkpoint: not_released
+      frozen_evaluation_environment: not_released
+      predictions_reasoning_outputs_and_per_item_scores: not_released
+    release_audit:
+      paper_linked_repository: https://github.com/MyVision666/AudioDER
+      canonical_redirect: https://github.com/anonycode26/AudioDER
+      repository_contents: README_and_three_images_only
+      repository_code_and_manifests: not_released
+      repository_license: not_stated
+      repository_linked_dataset: https://huggingface.co/datasets/genggenggeng/AudioDER
+      dataset_access_on_verification_date: HTTP_401_authentication_required
+      public_dataset_card_metadata_and_file_tree: unavailable
+      download_helper: none_manual_required
+    access: public_paper_and_documentation_private_or_unavailable_dataset
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      dataset: not_publicly_verifiable
+      repository: no_detected_license
+      source_audio_and_annotations: source_specific_terms
+      generated_rationales_and_model_outputs: not_stated
+      note: >-
+        The paper's article license is not a grant for AudioDER. The repository
+        contains no license file, and the linked Hugging Face release cannot be
+        inspected without authentication. Do not infer redistribution or model-
+        training rights for incorporated Clotho, CompA-R, AVQA, LibriTTS-R,
+        MusicCaps, MTT, MusicBench, or Qwen-generated annotations.
+    sources:
+      - https://arxiv.org/abs/2606.14591
+      - https://arxiv.org/html/2606.14591v1#S3
+      - https://arxiv.org/html/2606.14591v1#S4
+      - https://arxiv.org/html/2606.14591v1#S4.SS1
+      - https://arxiv.org/html/2606.14591v1#S4.SS2
+      - https://github.com/MyVision666/AudioDER
+      - https://github.com/anonycode26/AudioDER
+      - https://raw.githubusercontent.com/anonycode26/AudioDER/master1/README.md
+      - https://api.github.com/repos/anonycode26/AudioDER
+      - https://api.github.com/repos/anonycode26/AudioDER/git/trees/master1?recursive=1
+      - https://huggingface.co/datasets/genggenggeng/AudioDER
+    note: >-
+      AudioDER is directly relevant to audio-LLM post-training data quality,
+      diversity, and reasoning SFT, but it is a training corpus rather than a
+      new benchmark. Its complete evaluation inventory maps to three existing
+      indexed families, and the paper-specific outputs are unreleased. This
+      audit therefore adds no benchmark family or helper.
+
   rail_release_audit:
     paper: https://arxiv.org/abs/2606.11260
     title: "RAIL: Rethinking Auditory Intelligence in Large Audio-Language Models with a CHC-Grounded Benchmark"

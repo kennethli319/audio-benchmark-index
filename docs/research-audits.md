@@ -4,6 +4,23 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The June 2026 *AudioDER* paper is recorded as a post-training-data and
+existing-benchmark coverage audit after reviewing Sections 3-4 and Table 3.
+It constructs approximately 191,000 sound, speech, and music examples with
+audio, multiple-choice questions, captions, and Qwen3-30B chain-of-thought
+rationales, then fully fine-tunes Qwen2-Audio-7B-Instruct for two epochs. The
+evaluation uses only the already indexed MMAU-mini, MMSU, and MMAR families;
+the paper reports an MMAU-mini overall increase from 59.60 to 66.70 and final
+MMSU and MMAR accuracies of 56.49 and 50.10. The paper-linked GitHub URL now
+redirects to an anonymous repository containing only a README and three
+images, with no code, manifests, checkpoint, outputs, or license. Its linked
+Hugging Face dataset returns HTTP 401 and exposes no public card or file tree.
+The paper and README also differ on whether captions and questions were
+integrated from source annotations or generated with Qwen3-30B. AudioDER is a
+post-training corpus, not a new benchmark; source-family terms and generated-
+annotation rights remain separately unresolved. No family, count increase, or
+download helper is added pending an accessible, licensed release snapshot.
+
 The July 2026 *MMAC: A Massive Multi-dimensional Benchmark for Audio
 Captioning* paper is recorded as an announced-but-unreleased AudioLLM
 evaluation audit after reviewing Sections 2-3. MMAC defines 5,638 clips (13.04
