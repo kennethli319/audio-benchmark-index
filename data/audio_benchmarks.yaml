@@ -3625,6 +3625,86 @@ paper_audits:
       item-level scores. This audit therefore adds evaluation provenance
       without counting a new benchmark family or adding a download helper.
 
+  perceptual_narrowing_ssl_objective_evaluation:
+    paper: https://arxiv.org/abs/2608.00507
+    title: "The Learning Objective Governs Perceptual Narrowing: A Cross-Lingual, Layer-Wise, Ten-Seed Study of Self-Supervised Speech Encoders"
+    sections: 3, 4.1-4.9, 5-6, and reproducibility statement
+    status: audited_public_source_corpora_with_unreleased_paper_specific_protocol
+    last_verified: 2026-08-08
+    evaluated_sets:
+      - cited_as: ZeroSpeech 2017 English, French, and Mandarin read speech
+        index_id: null
+        status: public_source_corpus_paper_specific_selection_unreleased
+        protocol: >-
+          Train the same approximately 7.1M-parameter four-layer Transformer
+          encoder for 10,000 steps on one-second crops under masked-mel
+          reconstruction or frame-contrastive prediction, then evaluate every
+          layer on 5,000 within-context cross-speaker phoneme-ABX triplets per
+          language arm using DTW-aggregated frame-cosine scores. The primary
+          objective contrast and the three-language reconstruction crossover
+          use ten seeds, with the seed as the replication unit.
+      - cited_as: Providence child-directed speech from CHILDES
+        index_id: null
+        status: public_source_corpus_paper_specific_selection_unreleased
+        protocol: >-
+          Use 176.7 hours of English child-directed speech for the register
+          comparison against English read speech, holding the 10,000-step,
+          batch-four, one-second-crop exposure budget fixed. Report that read
+          speech produces a 3.6-times steeper first-layer non-native decline,
+          while noting that register and corpus remain confounded.
+      - cited_as: objective and representation-geometry probes
+        index_id: null
+        status: paper_specific_protocol_and_outputs_unreleased
+        protocol: >-
+          Compare reconstruction and prediction against a raw-mel ABX floor;
+          test sharpening, compression, consolidation, composed, and two
+          semantic-grounding configurations; probe a matched-scale dual-code
+          architecture; and enumerate all three-seed subsets of the ten-seed
+          result to quantify significance instability. Supporting geometry and
+          architecture probes use three seeds, and parts of the divergence
+          search use single-seed gates with selective confirmations.
+    release_audit:
+      paper_and_aggregate_results: public
+      providence_and_zerospeech_source_corpora: described_as_public_upstream_assets
+      training_and_evaluation_code: not_linked_or_released
+      exact_corpus_selections_preprocessing_and_abx_triplet_manifests: not_released
+      fixed_seed_values_and_complete_run_configuration: not_released
+      checkpoints_and_learned_representations: not_released
+      retained_per_triplet_scores: described_but_not_released
+      predictions_bootstrap_records_and_item_level_results: not_released
+      download_helper: none_paper_specific_artifacts_unreleased
+    license:
+      paper: CC-BY-4.0
+      source_speech_and_word_vectors: upstream_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        CC BY 4.0 covers the article, not the upstream CHILDES, ZeroSpeech, or
+        GloVe assets and not the absent corpus selections, triplet manifests,
+        code, checkpoints, representations, or score records. Public source
+        availability must not be read as one shared license for those inputs
+        or as a release of the paper-specific evaluation protocol.
+    sources:
+      - https://arxiv.org/abs/2608.00507
+      - https://arxiv.org/html/2608.00507v1#S3
+      - https://arxiv.org/html/2608.00507v1#S4.SS1
+      - https://arxiv.org/html/2608.00507v1#S4.SS4
+      - https://arxiv.org/html/2608.00507v1#S4.SS7
+      - https://arxiv.org/html/2608.00507v1#S4.SS9
+      - https://arxiv.org/html/2608.00507v1#S5
+      - https://arxiv.org/html/2608.00507v1#S6
+      - https://export.arxiv.org/api/query?id_list=2608.00507
+    note: >-
+      This is a directly relevant pretraining evaluation of how the
+      self-supervised objective, language, register, layer, and seed budget
+      alter cross-lingual speech representations. Version 1 links no official
+      project page, repository, dataset card, or artifact archive. Although
+      its reproducibility statement says the source corpora are public and
+      the setup is specified, the exact selections, preprocessing, ABX
+      triplets, seed list, implementation, checkpoints, and retained
+      per-triplet scores are not public. The audit therefore preserves the
+      protocol and its ten-seed methodological warning without counting a new
+      benchmark family or adding a download helper.
+
   ls_mopd_multilingual_llm_asr:
     paper: https://arxiv.org/abs/2608.03610
     title: "Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR"

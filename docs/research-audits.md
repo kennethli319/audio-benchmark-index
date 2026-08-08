@@ -908,6 +908,24 @@ Eval's unspecified repository license and upstream Common Voice/DiDiSpeech-2
 terms, plus CV3-Eval's mixed-media rights caveat, therefore remain
 authoritative. No duplicate benchmark family or download helper is added.
 
+The August 2026 perceptual-narrowing study is recorded as an unreleased
+paper-specific pretraining evaluation protocol over public source corpora.
+Sections 3-6 hold a 7.1M-parameter four-layer speech encoder and its data
+pipeline fixed while comparing masked-mel reconstruction with frame-contrastive
+prediction. The primary and three-language crossover experiments use ten seeds
+and 5,000 within-context cross-speaker phoneme-ABX triplets per English, French,
+and Mandarin arm; supporting probes test layer choice, a raw-mel floor,
+child-directed versus read speech, six objective configurations, and the
+instability of three-seed significance. This directly audits speech foundation-
+model pretraining because it isolates the learning objective's effect on
+cross-lingual representation transfer. The article identifies Providence
+CHILDES and ZeroSpeech 2017 as public inputs and says per-triplet scores were
+retained, but version 1 links no project or repository and releases no exact
+corpus selections, preprocessing, ABX manifests, fixed seed list, code,
+checkpoints, representations, or score records. CC BY 4.0 covers the paper,
+not those absent artifacts or the separately governed source assets. No new
+public benchmark family, count increase, or download helper is added.
+
 The August 2026 LS-MOPD paper adds public WSYue-ASR-eval coverage and recent
 post-training provenance for WenetSpeech, KeSpeech, and LibriSpeech. Section
 4.1 evaluates an encoder-adaptor-LLM after language-specialized DAPO and
