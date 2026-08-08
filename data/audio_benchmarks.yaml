@@ -3687,7 +3687,7 @@ paper_audits:
     title: "Spoken Function Calling: A New Perspective on Spoken Language Understanding for Large Audio Language Models"
     sections: 4-5
     status: audited_claimed_release_missing_from_official_repository
-    last_verified: 2026-08-07
+    last_verified: 2026-08-08
     evaluated_sets:
       - cited_as: SFC-Bench
         index_id: null
@@ -3711,6 +3711,7 @@ paper_audits:
       paper_claimed_code_and_dataset_path: missing_http_404
       path_specific_commit_history: empty
       owner_repository_recursive_tree: no_SpokenFC_or_SFC_Bench_artifacts
+      owner_repository_tree_snapshot: a3708fd41d5dd2a2665c5f281cbfc9242b7642e1
       hugging_face_exact_name_dataset_and_model_searches: no_results
       exact_audio: not_released_at_claimed_path
       text_queries_and_function_call_labels: not_released_at_claimed_path
@@ -3743,10 +3744,12 @@ paper_audits:
     note: >-
       The paper footnote says code and data are available at the official
       FunResearch `SpokenFC` path, but that path returns HTTP 404 and the
-      repository's recursive main-branch tree contains no SpokenFC or SFC-Bench
-      files as of 2026-08-07. GitHub's path-specific commit endpoint returns an
-      empty list, and exact-name Hugging Face dataset and model searches return
-      no results. An unrelated 2014 GitHub repository named `sfc-benchmark`
+      repository's complete, non-truncated main-branch tree at commit
+      `a3708fd41d5dd2a2665c5f281cbfc9242b7642e1` contains no SpokenFC or
+      SFC-Bench files as of 2026-08-08. GitHub's path-specific commit endpoint
+      returns an empty list, and exact-name Hugging Face dataset and model
+      searches return no results. An unrelated 2014 GitHub repository named
+      `sfc-benchmark`
       concerns space-filling curves and is not an alternative release. This
       audit therefore does not count SFC-Bench as a public benchmark family or
       add a download helper. Revisit the owner repository if the announced

@@ -491,8 +491,10 @@ directly relevant to audio-LLM tool use, hallucination, structured instruction
 following, and GRPO post-training. The paper says code and data are available
 in the official QwenAudio FunResearch repository, but the claimed `SpokenFC`
 path returns 404, its path-specific commit history is empty, and the complete
-main-branch tree contains no matching artifacts as of August 7. Exact-name
-Hugging Face dataset and model searches also return no results; a similarly
+non-truncated main-branch tree at commit
+`a3708fd41d5dd2a2665c5f281cbfc9242b7642e1` contains no matching artifacts as
+of August 8. Exact-name Hugging Face dataset and model searches also return no
+results; a similarly
 named 2014 GitHub project concerns space-filling curves and is unrelated. The
 benchmark audio, function definitions, queries, labels, manifests, evaluation
 code, predictions, and scores therefore remain unavailable. Apache 2.0 covers
