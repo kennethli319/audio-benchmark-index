@@ -4,6 +4,21 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The April 2025 Kimi-Audio technical report now has a release audit for its
+speech-conversation evaluation in Sections 6.1 and 6.2.4 and Table 7. The
+owner-published Kimi-Audio-GenTest release contains 191 Chinese spoken prompts:
+12 speed, 51 accent, 60 explicit-emotion, 48 empathy or implicit-emotion, 10
+storytelling, and 10 tongue-twister cases. Models generate spoken responses,
+which the paper compares using 1-5 human ratings for speed, accent, emotion,
+empathy, and style control. This directly evaluates post-trained audio LLM
+instruction following, paralinguistic controllability, and spoken-dialogue
+quality. The prompt WAVs and metadata are public and ungated, while the full
+audio snapshot is opt-in in the helper. The paper's baseline outputs,
+individual ratings, annotator details, and full subjective protocol are not in
+the dataset, so Table 7 is only partially reproducible. The dataset card
+declares MIT but does not separately document prompt-audio provenance or
+recording rights; the eval toolkit's MIT license covers software only.
+
 Common-Sense Facts Audio is now indexed as a public, ungated pretraining
 evaluation after reviewing Sections 3-4 and Appendix A of *Interleaved Speech
 Language Models Latently Work In Text* and the owner releases. The protocol

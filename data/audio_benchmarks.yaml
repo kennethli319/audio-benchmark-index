@@ -9,6 +9,67 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  kimi_audio_gentest_release_audit:
+    paper: https://arxiv.org/abs/2504.18425
+    title: "Kimi-Audio Technical Report"
+    sections: 6.1_and_6.2.4_table_7
+    status: audited_public_ungated_post_training_speech_conversation_benchmark
+    last_verified: 2026-08-07
+    benchmark:
+      index_id: kimi_audio_gentest
+      role: instruction_conditioned_spoken_response_generation
+      released_prompts: 191
+      language: Chinese
+      tracks:
+        speed_control: 12
+        accent_control: 51
+        explicit_emotion: 60
+        empathy_or_implicit_emotion: 48
+        storytelling: 10
+        tongue_twister: 10
+      evaluation:
+        protocol: human_subjective_rating
+        scale: 1_to_5_higher_is_better
+        reported_dimensions:
+          - speed_control
+          - accent_control
+          - emotion_control
+          - empathy
+          - style_control
+        baselines:
+          - GPT-4o
+          - Step-Audio-chat
+          - GLM-4-Voice
+          - GPT-4o-mini
+          - Kimi-Audio
+    release_audit:
+      hugging_face_dataset: public_ungated
+      prompt_audio_and_metadata: released
+      baseline_outputs: not_released_in_dataset
+      human_ratings_and_rater_protocol: not_released_in_dataset
+      evaluation_toolkit: public_MIT_but_no_subjective_rating_runner_identified
+      download_helper: scripts/download/kimi_audio_gentest.sh
+    access: public_ungated_full_audio_snapshot_requires_opt_in
+    license:
+      dataset_card: MIT
+      evaluation_toolkit: MIT
+      note: >-
+        The dataset card declares MIT but does not separately document the
+        provenance or recording rights for the prompt audio. The evaluation
+        toolkit's MIT license covers its software, not third-party model
+        outputs or absent human-rating records.
+    sources:
+      - https://arxiv.org/abs/2504.18425
+      - https://arxiv.org/html/2504.18425v1#S6.SS1
+      - https://arxiv.org/html/2504.18425v1#S6.SS2.SSS4
+      - https://arxiv.org/html/2504.18425v1#S6.T7
+      - https://github.com/MoonshotAI/Kimi-Audio-Evalkit
+      - https://raw.githubusercontent.com/MoonshotAI/Kimi-Audio-Evalkit/master/README.md
+      - https://raw.githubusercontent.com/MoonshotAI/Kimi-Audio-Evalkit/master/LICENSE
+      - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest
+      - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest/raw/main/README.md
+      - https://huggingface.co/api/datasets/moonshotai/Kimi-Audio-GenTest
+
   common_sense_facts_audio_release_audit:
     paper: https://arxiv.org/abs/2606.22473
     title: "Interleaved Speech Language Models Latently Work In Text"
@@ -35280,3 +35341,76 @@ benchmarks:
       - https://api.github.com/repos/facebookresearch/emphassess/git/trees/main?recursive=1
       - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphAssess_Dataset.tar.gz
       - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphaClass/EmphaClass-en.tar.gz
+
+  - id: kimi_audio_gentest
+    name: Kimi-Audio-GenTest
+    full_name: "Kimi-Audio Generation Test Set for Speech Conversation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - spoken_dialogue
+      - paralinguistic_speech_evaluation
+    category: instruction_conditioned_spoken_response_generation
+    tasks:
+      - end_to_end_speech_conversation
+      - spoken_instruction_following
+      - speech_emotion_control
+      - speech_speed_control
+      - speech_accent_control
+      - empathetic_spoken_dialogue
+      - speech_style_control
+    official:
+      dataset: https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest
+      toolkit: https://github.com/MoonshotAI/Kimi-Audio-Evalkit
+      paper: https://arxiv.org/abs/2504.18425
+    download:
+      access: public_ungated_audio_snapshot
+      primary:
+        - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest
+        - https://github.com/MoonshotAI/Kimi-Audio-Evalkit
+      examples:
+        - 'scripts/download/kimi_audio_gentest.sh'
+        - 'KIMI_AUDIO_GENTEST_DOWNLOAD_HF=1 scripts/download/kimi_audio_gentest.sh'
+        - 'KIMI_AUDIO_GENTEST_CLONE_TOOLKIT=1 scripts/download/kimi_audio_gentest.sh'
+      notes: >-
+        The owner release contains 191 Chinese spoken instructions and a
+        metadata JSONL with transcript, ability, and audio filename. Its six
+        released ability labels are speed (12), accent (51), explicit emotion
+        (60), empathy or implicit emotion (48), storytelling (10), and tongue
+        twister (10). Section 6.2.4 and Table 7 compare Kimi-Audio with GPT-4o,
+        Step-Audio-chat, GLM-4-Voice, and GPT-4o-mini using 1-5 human ratings
+        for speed, accent, emotion, empathy, and style control. The helper
+        downloads official documentation and the 28,488-byte prompt manifest
+        by default; the full 191-WAV Hub snapshot and toolkit clone require
+        separate opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Input prompt audio and metadata are public. The released dataset does
+        not include the paper's baseline generations, individual human
+        ratings, annotator instructions or counts, aggregation records, or a
+        subjective-rating runner, so Table 7 is not fully reproducible from
+        the public test set alone.
+    license:
+      data: MIT_declared_by_dataset_card
+      code: MIT
+      baseline_outputs_and_ratings: not_released
+      notes: >-
+        The Hugging Face card declares MIT for the dataset, but it does not
+        separately document prompt-audio provenance or recording rights.
+        The toolkit's MIT license applies to its code and does not license
+        third-party model outputs or absent human judgments. Review voice,
+        content, and downstream model terms before redistribution or reuse.
+    sources:
+      - https://arxiv.org/abs/2504.18425
+      - https://arxiv.org/html/2504.18425v1#S6.SS1
+      - https://arxiv.org/html/2504.18425v1#S6.SS2.SSS4
+      - https://arxiv.org/html/2504.18425v1#S6.T7
+      - https://github.com/MoonshotAI/Kimi-Audio-Evalkit
+      - https://raw.githubusercontent.com/MoonshotAI/Kimi-Audio-Evalkit/master/README.md
+      - https://raw.githubusercontent.com/MoonshotAI/Kimi-Audio-Evalkit/master/LICENSE
+      - https://api.github.com/repos/MoonshotAI/Kimi-Audio-Evalkit
+      - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest
+      - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest/raw/main/README.md
+      - https://huggingface.co/api/datasets/moonshotai/Kimi-Audio-GenTest

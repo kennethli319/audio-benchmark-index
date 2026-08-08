@@ -1606,4 +1606,10 @@ AV_GC_AAD_DOWNLOAD_DATA=1 AV_GC_AAD_SUBJECTS="01 14" scripts/download/av_gc_aad.
 # default. Official audio access requires registration and Dropbox; the
 # multi-terabyte third-party mirror is a separate explicit opt-in.
 IMDA_NSC_DOWNLOAD_MIRROR=1 scripts/download/imda_nsc.sh
+
+# Kimi-Audio-GenTest downloads owner documentation and its 28 KB, 191-row
+# prompt manifest by default. The WAV snapshot and evaluation toolkit are
+# separate opt-ins; paper baseline outputs and human ratings are unreleased.
+KIMI_AUDIO_GENTEST_DOWNLOAD_HF=1 scripts/download/kimi_audio_gentest.sh
+KIMI_AUDIO_GENTEST_CLONE_TOOLKIT=1 scripts/download/kimi_audio_gentest.sh
 ```
