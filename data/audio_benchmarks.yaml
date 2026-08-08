@@ -9,6 +9,83 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  common_sense_facts_audio_release_audit:
+    paper: https://arxiv.org/abs/2606.22473
+    title: "Interleaved Speech Language Models Latently Work In Text"
+    sections: 3-4_and_appendix_A
+    status: audited_public_ungated_pretraining_probe_with_incomplete_reproduction_release
+    last_verified: 2026-08-07
+    benchmark:
+      index_id: common_sense_facts_audio
+      role: spoken_fact_completion_and_cross_modal_pretraining_transfer_probe
+      paper_examples: 282
+      released_examples: 281
+      categories: 13
+      synthesis: Kokoro-82M
+      alignment: Whisper_large-v3
+      paired_inputs:
+        - incomplete_spoken_prompt
+        - correct_spoken_fact
+        - same_category_counterfactual_spoken_fact
+      evaluation:
+        primary_metric: percent_correct_pairwise_likelihood
+        decision_rule: log_probability_correct_fact_greater_than_counterfactual
+        interpretability_metrics:
+          - current_word_transcription_recall_at_k
+          - next_word_transcription_recall_at_k
+          - layerwise_speech_and_text_token_probability_mass
+      pretraining_ablation:
+        initialization:
+          - pretrained_text_LM
+          - random
+        data_mixtures:
+          - speech_only
+          - balanced_speech_and_text
+          - interleaved_fraction_1_3
+          - interleaved_fraction_2_3
+          - interleaved_fraction_5_6
+    release_audit:
+      hugging_face_dataset: public_ungated
+      released_split: data
+      released_rows: 281
+      paper_reported_rows: 282
+      parquet_bytes: 52788867
+      expanded_dataset_bytes: 63595363
+      released_fields: text_pairs_audio_triplets_and_prompt_word_timings
+      exact_missing_paper_item_or_reason: not_documented
+      evaluation_code: announced_coming_soon_not_released
+      model_checkpoints: not_linked_from_project_or_dataset
+      predictions_and_per_item_scores: not_released
+      download_helper: scripts/download/common_sense_facts_audio.sh
+    access: public_ungated_full_parquet_requires_opt_in
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      dataset: other_no_custom_terms_published
+      code: not_released
+      note: >-
+        The Hub card uses the generic "other" tag but supplies no custom
+        license text or file. The paper license does not establish reuse terms
+        for the curated facts, counterfactuals, timings, or Kokoro-generated
+        audio. Confirm artifact rights with the owners before redistribution.
+    sources:
+      - https://arxiv.org/abs/2606.22473
+      - https://arxiv.org/html/2606.22473v1#S3
+      - https://arxiv.org/html/2606.22473v1#S4
+      - https://arxiv.org/html/2606.22473v1#A1
+      - https://pages.cs.huji.ac.il/adiyoss-lab/slm_work_in_text/
+      - https://huggingface.co/datasets/slprl/common-sense-facts-audio
+      - https://huggingface.co/datasets/slprl/common-sense-facts-audio/raw/main/README.md
+      - https://huggingface.co/api/datasets/slprl/common-sense-facts-audio
+      - https://huggingface.co/api/datasets/slprl/common-sense-facts-audio/tree/main?recursive=true&expand=true
+    note: >-
+      This is a released evaluation family rather than training data. It
+      directly probes whether speech-text interleaving and text-LM
+      initialization make factual knowledge learned during pretraining
+      accessible from speech. The release is sufficient for likelihood and
+      representation probes, but it has one fewer row than the paper's table
+      and does not include the promised evaluation code, evaluated model
+      outputs, or score records.
+
   speechjbb_release_audit:
     paper: https://arxiv.org/abs/2606.06037
     title: "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech"
@@ -14819,6 +14896,65 @@ paper_audits:
       release if one is linked later.
 
 benchmarks:
+  - id: common_sense_facts_audio
+    name: Common-Sense Facts Audio
+    full_name: "Common-Sense Facts Audio: Spoken Fact-Completion Evaluation for Speech Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - speech_language_model_pretraining
+    tasks:
+      - spoken_fact_completion
+      - factual_knowledge_retrieval
+      - cross_modal_pretraining_transfer
+      - speech_text_interleaving_ablation
+      - latent_transcription_interpretability
+    official:
+      paper: https://arxiv.org/abs/2606.22473
+      project: https://pages.cs.huji.ac.il/adiyoss-lab/slm_work_in_text/
+      dataset: https://huggingface.co/datasets/slprl/common-sense-facts-audio
+    download:
+      access: public_ungated_parquet_download_opt_in
+      primary:
+        - https://huggingface.co/datasets/slprl/common-sense-facts-audio
+      examples:
+        - 'scripts/download/common_sense_facts_audio.sh'
+        - 'COMMON_SENSE_FACTS_AUDIO_DOWNLOAD_HF=1 scripts/download/common_sense_facts_audio.sh'
+      notes: >-
+        The public Hub release contains one 52,788,867-byte Parquet file with
+        281 English examples. Each row provides an incomplete prompt, a correct
+        fact, a same-category counterfactual, all three audio renderings, and
+        word-level prompt timings. The paper reports 282 examples across 13
+        categories, but the card declares 281 and does not identify the
+        omitted item. Likelihood accuracy compares the correct and
+        counterfactual spoken facts; prompt alignments also support layerwise
+        transcription Recall@k analysis. The helper fetches official paper,
+        project, card, API, and file-tree metadata by default; the approximately
+        52.8 MB Parquet snapshot requires explicit opt-in. The project marks
+        code as coming soon, so no evaluation implementation is currently
+        downloaded.
+    license:
+      data: other_no_custom_terms_published
+      code: not_released
+      notes: >-
+        The Hub card declares only the generic "other" license tag and provides
+        no custom terms or license file. The article's arXiv license does not
+        license the curated facts, counterfactual annotations, timings, or
+        Kokoro-generated audio. Confirm reuse and redistribution rights with
+        the dataset owners.
+    sources:
+      - https://arxiv.org/abs/2606.22473
+      - https://arxiv.org/html/2606.22473v1#S3.SS2
+      - https://arxiv.org/html/2606.22473v1#S3.SS3
+      - https://arxiv.org/html/2606.22473v1#S4.SS4
+      - https://arxiv.org/html/2606.22473v1#S4.SS5
+      - https://arxiv.org/html/2606.22473v1#A1.T2
+      - https://pages.cs.huji.ac.il/adiyoss-lab/slm_work_in_text/
+      - https://huggingface.co/datasets/slprl/common-sense-facts-audio
+      - https://huggingface.co/datasets/slprl/common-sense-facts-audio/raw/main/README.md
+      - https://huggingface.co/api/datasets/slprl/common-sense-facts-audio
+      - https://huggingface.co/api/datasets/slprl/common-sense-facts-audio/tree/main?recursive=true&expand=true
+
   - id: speechjbb
     name: SpeechJBB
     full_name: "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech"

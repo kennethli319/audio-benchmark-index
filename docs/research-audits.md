@@ -4,6 +4,26 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+Common-Sense Facts Audio is now indexed as a public, ungated pretraining
+evaluation after reviewing Sections 3-4 and Appendix A of *Interleaved Speech
+Language Models Latently Work In Text* and the owner releases. The protocol
+pairs incomplete spoken prompts with correct and same-category counterfactual
+spoken facts, scoring whether a speech LM assigns higher likelihood to the
+correct completion. Prompt word timings also support layerwise current- and
+next-word transcription Recall@k probes. Controlled Llama 3.2 ablations vary
+text-LM versus random initialization and speech-only, balanced speech-text, or
+three interleaving mixtures, directly testing whether speech-text interleaving
+makes text-pretrained factual knowledge accessible from speech. The public Hub
+provides a 52,788,867-byte Parquet with text, three audio renderings, and prompt
+timings for 281 examples. This is one fewer than the paper's 282 examples
+across 13 categories, and the omitted item is not identified. The project marks
+code as coming soon and releases no evaluated-model predictions or per-item
+scores. The Hub card declares only the generic “other” license tag without
+custom terms; the article license does not license the curated facts,
+counterfactuals, timings, or generated audio. The helper therefore fetches
+lightweight official metadata by default and keeps the Parquet behind an
+explicit opt-in.
+
 SpeechJBB is now indexed as a public, ungated multilingual spoken-safety
 benchmark after reviewing Sections 3-6 and Appendices A-E of the June 2026
 paper and the owner releases. It renders 100 harmful and 100 benign

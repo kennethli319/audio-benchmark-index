@@ -109,6 +109,7 @@ scripts/download/voicebench.sh
 scripts/download/emphassess.sh
 scripts/download/voxsafebench.sh
 scripts/download/speechjbb.sh
+scripts/download/common_sense_facts_audio.sh
 scripts/download/uro_bench_pro.sh
 scripts/download/speechrole.sh
 scripts/download/wildspeech_bench.sh
