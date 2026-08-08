@@ -107,6 +107,7 @@ scripts/download/audiobook_narration_appeal.sh
 scripts/download/chartgeneval.sh
 scripts/download/voicebench.sh
 scripts/download/emphassess.sh
+scripts/download/speechparaling_bench.sh
 scripts/download/voxsafebench.sh
 scripts/download/speechjbb.sh
 scripts/download/common_sense_facts_audio.sh
@@ -1612,4 +1613,11 @@ IMDA_NSC_DOWNLOAD_MIRROR=1 scripts/download/imda_nsc.sh
 # separate opt-ins; paper baseline outputs and human ratings are unreleased.
 KIMI_AUDIO_GENTEST_DOWNLOAD_HF=1 scripts/download/kimi_audio_gentest.sh
 KIMI_AUDIO_GENTEST_CLONE_TOOLKIT=1 scripts/download/kimi_audio_gentest.sh
+
+# SpeechParaling-Bench downloads documentation and live release metadata by
+# default. Its two metadata manifests, approximately 1.66 GB audio snapshot,
+# and unlicensed code/result repository clone are separate explicit opt-ins.
+SPEECHPARALING_BENCH_DOWNLOAD_MANIFESTS=1 scripts/download/speechparaling_bench.sh
+SPEECHPARALING_BENCH_DOWNLOAD_HF=1 scripts/download/speechparaling_bench.sh
+SPEECHPARALING_BENCH_CLONE_REPO=1 scripts/download/speechparaling_bench.sh
 ```

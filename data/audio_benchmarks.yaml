@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-08-07
+  last_checked: 2026-08-08
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -15673,6 +15673,77 @@ paper_audits:
       frozen selections, generated comparison matrix, human judgments, or
       per-item scores. No duplicate benchmark family, count increase, or
       helper is added.
+
+  speechparaling_bench_release_audit:
+    paper: https://arxiv.org/abs/2604.20842
+    title: "SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation"
+    sections: 3-4_and_appendices_A-C
+    status: audited_public_ungated_post_training_speech_generation_benchmark
+    last_verified: 2026-08-08
+    benchmark:
+      index_id: speechparaling_bench
+      role: bilingual_paralinguistic_speech_generation_and_spoken_adaptation
+      parallel_queries_per_language: 1001
+      released_audio_files: 2002
+      languages:
+        - Chinese
+        - English
+      paralinguistic_dimensions: 13
+      paralinguistic_features: 101
+      tracks:
+        paralanguage_control: 691
+        dynamic_variation: 120
+        situational_adaptation: 190
+      evaluation:
+        protocol: candidate_vs_fixed_baseline_pairwise_LALM_judging
+        judge: Gemini_3_0_Pro
+        chinese_baseline: Doubao_Realtime_Voice
+        english_baseline: Gemini_Audio
+        per_dimension_scale: 0_to_3
+        winner_points: win_1_tie_0_5_loss_0
+        output_scale: normalized_0_to_100
+    release_audit:
+      hugging_face_dataset: public_ungated
+      dataset_storage_bytes_reported_by_api: 1662606941
+      input_audio_and_metadata: released
+      repository_code_and_prompts: released
+      baseline_outputs_and_judge_records: released_in_repository
+      human_agreement_audio_pairs_reported: 416
+      human_agreement_pair_manifest_and_ratings: not_identified
+      download_helper: scripts/download/speechparaling_bench.sh
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      dataset_card: apache-2.0
+      code_repository: no_detected_license
+      baseline_outputs_and_judge_records: no_separate_terms_identified
+      note: >-
+        The Hub card declares Apache-2.0 for the dataset. The owner code
+        repository has no detected license, so do not infer software or result
+        reuse rights from the dataset card. The paper license and project
+        site's CC BY-SA notice cover those publications, not automatically
+        the repository's model outputs or judge records.
+    sources:
+      - https://arxiv.org/abs/2604.20842
+      - https://arxiv.org/html/2604.20842v1#S3
+      - https://arxiv.org/html/2604.20842v1#S3.SS1
+      - https://arxiv.org/html/2604.20842v1#S3.SS2
+      - https://arxiv.org/html/2604.20842v1#S3.SS3
+      - https://arxiv.org/html/2604.20842v1#S4
+      - https://arxiv.org/html/2604.20842v1#A1
+      - https://speechparaling-bench.github.io/
+      - https://github.com/Northern-byte-bit/SpeechParaling-Bench
+      - https://raw.githubusercontent.com/Northern-byte-bit/SpeechParaling-Bench/main/README.md
+      - https://api.github.com/repos/Northern-byte-bit/SpeechParaling-Bench
+      - https://api.github.com/repos/Northern-byte-bit/SpeechParaling-Bench/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Ruohan2/SpeechParaling-Bench
+      - https://huggingface.co/datasets/Ruohan2/SpeechParaling-Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/Ruohan2/SpeechParaling-Bench
+    note: >-
+      This benchmark directly evaluates audio-LLM post-training for explicit
+      vocal control, within-utterance modulation, empathetic adaptation, and
+      spoken instruction following. The public release is substantially
+      runnable, but its Gemini-based judge requires a commercial API and the
+      code/result repository lacks explicit reuse terms.
 
 benchmarks:
   - id: common_sense_facts_audio
@@ -36059,6 +36130,85 @@ benchmarks:
       - https://api.github.com/repos/facebookresearch/emphassess/git/trees/main?recursive=1
       - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphAssess_Dataset.tar.gz
       - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphaClass/EmphaClass-en.tar.gz
+
+  - id: speechparaling_bench
+    name: SpeechParaling-Bench
+    full_name: "SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - spoken_dialogue
+      - paralinguistic_speech_evaluation
+    category: bilingual_paralinguistic_speech_generation
+    tasks:
+      - paralinguistic_speech_generation
+      - spoken_instruction_following
+      - fine_grained_voice_control
+      - intra_utterance_paralinguistic_variation
+      - situational_speech_adaptation
+      - empathetic_spoken_response_generation
+      - LALM_as_a_judge_evaluation
+    official:
+      paper: https://arxiv.org/abs/2604.20842
+      project_page: https://speechparaling-bench.github.io/
+      repository: https://github.com/Northern-byte-bit/SpeechParaling-Bench
+      dataset: https://huggingface.co/datasets/Ruohan2/SpeechParaling-Bench
+    download:
+      access: public_ungated_large_audio_snapshot
+      primary:
+        - https://huggingface.co/datasets/Ruohan2/SpeechParaling-Bench
+        - https://github.com/Northern-byte-bit/SpeechParaling-Bench
+      examples:
+        - 'scripts/download/speechparaling_bench.sh'
+        - 'SPEECHPARALING_BENCH_DOWNLOAD_MANIFESTS=1 scripts/download/speechparaling_bench.sh'
+        - 'SPEECHPARALING_BENCH_DOWNLOAD_HF=1 scripts/download/speechparaling_bench.sh'
+        - 'SPEECHPARALING_BENCH_CLONE_REPO=1 scripts/download/speechparaling_bench.sh'
+      notes: >-
+        The release contains 1,001 aligned Chinese-English queries, yielding
+        2,002 input WAVs across 691 paralanguage-control, 120 dynamic-variation,
+        and 190 situational-adaptation cases per language. It covers 101
+        features in 13 dimensions. The helper saves owner documentation and
+        live repository/Hub metadata by default; the two compact metadata
+        manifests, approximately 1.66 GB Hub snapshot, and code/result clone
+        are separate opt-ins.
+    access:
+      status: public_ungated
+      registration_required: false
+      notes: >-
+        Input audio and metadata are public. The repository releases prompts,
+        API adapters, Gemini judge scripts, score calculators, baseline model
+        audio, and paper-era judge records. Re-running the complete protocol
+        requires model API credentials and may not reproduce historical API
+        behavior. The paper's 416-pair human-agreement study is reported in
+        aggregate; annotator assignments and individual ratings were not
+        identified in the public release.
+    license:
+      data: Apache-2.0_declared_by_dataset_card
+      code: no_detected_license
+      baseline_outputs_and_judge_records: no_separate_terms_identified
+      notes: >-
+        The Hugging Face card declares Apache-2.0 for the dataset. The GitHub
+        repository has no detected license, so the dataset declaration should
+        not be assumed to license its software, third-party model generations,
+        or judge records. The arXiv and project-site publication licenses do
+        not resolve those artifact rights.
+    sources:
+      - https://arxiv.org/abs/2604.20842
+      - https://arxiv.org/html/2604.20842v1#S3
+      - https://arxiv.org/html/2604.20842v1#S3.SS1
+      - https://arxiv.org/html/2604.20842v1#S3.SS2
+      - https://arxiv.org/html/2604.20842v1#S3.SS3
+      - https://arxiv.org/html/2604.20842v1#S4.SS2
+      - https://arxiv.org/html/2604.20842v1#A1
+      - https://arxiv.org/html/2604.20842v1#A2.SS2
+      - https://speechparaling-bench.github.io/
+      - https://github.com/Northern-byte-bit/SpeechParaling-Bench
+      - https://raw.githubusercontent.com/Northern-byte-bit/SpeechParaling-Bench/main/README.md
+      - https://api.github.com/repos/Northern-byte-bit/SpeechParaling-Bench
+      - https://api.github.com/repos/Northern-byte-bit/SpeechParaling-Bench/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Ruohan2/SpeechParaling-Bench
+      - https://huggingface.co/datasets/Ruohan2/SpeechParaling-Bench/raw/main/README.md
+      - https://huggingface.co/api/datasets/Ruohan2/SpeechParaling-Bench
 
   - id: kimi_audio_gentest
     name: Kimi-Audio-GenTest

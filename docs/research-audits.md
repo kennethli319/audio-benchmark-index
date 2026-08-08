@@ -3017,3 +3017,23 @@ ratings, or per-item scores; the project page's Dataset control remains
 disabled as “Coming soon.” Apache-2.0 covers first-party code, not upstream
 datasets, absent ratings, or generated avatar media. No duplicate benchmark
 family, count increase, or download helper is added.
+
+The April 2026 SpeechParaling-Bench paper now contributes a public bilingual
+paralinguistic speech-generation family. Sections 3-4 and Appendices A-C define
+1,001 aligned Chinese-English queries (2,002 released input WAVs) spanning 691
+paralanguage-control, 120 within-utterance dynamic-variation, and 190
+situational-adaptation cases per language, with 101 features across 13 vocal
+dimensions. Candidate responses are compared with fixed Chinese and English
+baselines by a Gemini audio judge using randomized order, 0-3 dimension scores,
+winner/tie decisions, and normalized task scores; Section 4.2 reports human
+agreement over 416 response pairs. This directly evaluates post-training for
+spoken instruction following, controllability, empathetic adaptation, and
+paralinguistic alignment. The ungated Hugging Face release supplies inputs and
+metadata under an Apache-2.0 card declaration, while the owner repository
+supplies API adapters, judge prompts and runners, baseline outputs, score code,
+and paper-era judge records. The code repository has no detected license, so
+its software, third-party generations, and result records remain
+rights-unspecified; individual human ratings and their frozen pair manifest
+were not identified. A safe helper downloads documentation and live metadata
+by default, with manifests, the approximately 1.66 GB Hub snapshot, and the
+repository clone behind separate opt-ins.
