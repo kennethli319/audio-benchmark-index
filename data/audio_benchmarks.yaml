@@ -3705,6 +3705,104 @@ paper_audits:
       protocol and its ten-seed methodological warning without counting a new
       benchmark family or adding a download helper.
 
+  translation_enhanced_speech_encoder_pretraining_evaluation:
+    paper: https://arxiv.org/abs/2606.25444
+    title: "Does Translation-Enhanced Speech Encoder Pre-training Affect Speech LLMs?"
+    sections: 3.1-3.3 and 4.1-4.4
+    status: audited_existing_public_families_with_unreleased_pretraining_and_derived_evaluation_artifacts
+    last_verified: 2026-08-08
+    evaluated_sets:
+      - cited_as: FLEURS
+        index_id: fleurs
+        status: existing_public_family_with_unreleased_exact_evaluation_manifest
+        protocol: >-
+          Evaluate English and German ASR with WER and Japanese and Chinese
+          ASR with CER. Evaluate speech translation with BLEU from Japanese,
+          Chinese, and German into English and from English into those three
+          pretraining languages plus Persian, Indonesian, Swedish, and Turkish,
+          which appear only during speech-LLM training. Compare ASR-only,
+          non-English-to-English translation, and bidirectional-English
+          encoder-pretraining objectives with frozen Llama-3.2-1B-Instruct and
+          3B-Instruct backends, then repeat translation with the encoder
+          unfrozen. Tables 1 and 3 report averages over three inference runs.
+      - cited_as: CoVoST 2
+        index_id: covost2
+        status: existing_public_family_with_unreleased_exact_evaluation_manifest
+        protocol: >-
+          Evaluate English-to-Japanese, Chinese, German, Persian, Indonesian,
+          Swedish, and Turkish speech translation with BLEU under the same
+          three encoder-pretraining objectives. Table 1 reports frozen-encoder
+          1B and 3B results, and Table 3 reports the 3B unfrozen-encoder study.
+      - cited_as: SLURP
+        index_id: slurp
+        status: existing_public_family_with_unreleased_exact_evaluation_manifest
+        protocol: >-
+          Measure English intent-classification accuracy with the frozen 3B
+          speech LLM. Table 2 compares the three pretraining objectives after
+          the shared approximately 6,200-hour multitask adaptor-training stage.
+      - cited_as: German subset of Speech-MASSIVE
+        index_id: null
+        status: public_upstream_family_not_yet_independently_audited_with_unreleased_exact_selection
+        protocol: >-
+          Measure German intent-classification accuracy with the frozen 3B
+          speech LLM and the same objective contrast. The paper identifies the
+          language subset but not an exact item manifest or release snapshot.
+      - cited_as: MELD
+        index_id: meld
+        status: existing_public_family_with_unreleased_exact_evaluation_manifest
+        protocol: >-
+          Measure English emotion-recognition accuracy with the frozen 3B
+          speech LLM. MELD is oversampled fivefold during adaptor training;
+          Table 2 uses it to test whether translation-driven semantic
+          abstraction damages acoustic-dependent paralinguistic performance.
+    release_audit:
+      paper_and_aggregate_tables: public
+      upstream_evaluation_families: public_or_mixed_access_under_their_own_terms
+      exact_evaluation_item_and_direction_manifests: not_specified_unreleased
+      approximately_130k_hour_pretraining_mixture_manifest: not_released
+      synthetic_Qwen2_5_32B_translation_pairs_and_generation_configuration: not_released
+      approximately_6200_hour_speech_llm_training_manifest: not_released
+      training_and_evaluation_code: not_linked_or_released
+      pretrained_encoders_adaptors_and_checkpoints: not_linked_or_released
+      inference_seeds_predictions_and_item_level_scores: not_released
+      official_project_repository_or_artifact_archive: not_identified
+      download_helper: none_paper_specific_artifacts_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      evaluation_data: upstream_family_terms_apply
+      paper_specific_artifacts: not_specified_unreleased
+      note: >-
+        The arXiv license covers the article, not FLEURS, CoVoST 2, SLURP,
+        Speech-MASSIVE, MELD, the source pretraining corpora, synthetic
+        translations, derived manifests, model artifacts, or score records.
+        Those upstream families have separate and sometimes mixed terms;
+        public source availability does not create one shared license for the
+        paper-specific training or evaluation construction.
+    sources:
+      - https://arxiv.org/abs/2606.25444
+      - https://arxiv.org/html/2606.25444v1#S3.SS2
+      - https://arxiv.org/html/2606.25444v1#S4.SS1
+      - https://arxiv.org/html/2606.25444v1#S4.SS2
+      - https://arxiv.org/html/2606.25444v1#S4.SS3
+      - https://arxiv.org/html/2606.25444v1#S4.SS4
+      - https://export.arxiv.org/api/query?id_list=2606.25444
+      - https://api.github.com/search/repositories?q=%222606.25444%22%20OR%20%22Translation-Enhanced%20Speech%20Encoder%22
+      - https://huggingface.co/api/models?search=2606.25444
+      - https://huggingface.co/api/datasets?search=2606.25444
+    note: >-
+      This is a directly relevant pretraining-transfer evaluation: it isolates
+      whether transcription-only, unidirectional-translation, or symmetric
+      translation objectives produce speech representations that align more
+      effectively with a frozen LLM across recognition, translation, intent,
+      and emotion tasks. Version 1 identifies public source families but links
+      no official project page, repository, dataset card, model release, or
+      artifact archive. Exact data selections, generated translations,
+      training mixtures, evaluation manifests, implementation, checkpoints,
+      inference seeds, predictions, and item-level scores are unavailable.
+      The audit maps four evaluations to existing index entries, leaves
+      Speech-MASSIVE as a future primary-release candidate, and adds no
+      duplicate benchmark family or download helper.
+
   ls_mopd_multilingual_llm_asr:
     paper: https://arxiv.org/abs/2608.03610
     title: "Language-Specialized Multi-Teacher On-Policy Distillation for Multilingual LLM-Based ASR"

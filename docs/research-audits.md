@@ -926,6 +926,27 @@ checkpoints, representations, or score records. CC BY 4.0 covers the paper,
 not those absent artifacts or the separately governed source assets. No new
 public benchmark family, count increase, or download helper is added.
 
+The June 2026 translation-enhanced speech-encoder study is recorded as
+pretraining-transfer provenance over existing public evaluation families.
+Sections 3-4 compare transcription-only, non-English-to-English translation,
+and bidirectional-English encoder pretraining while holding the Whisper-medium
+architecture and downstream adaptor recipe fixed. FLEURS and CoVoST 2 measure
+ASR and translation across pretrained and unseen languages; SLURP and the
+German Speech-MASSIVE subset measure intent classification; MELD checks whether
+semantic abstraction harms acoustic emotion cues. Frozen Llama-3.2 1B/3B
+backends isolate encoder quality, and an unfrozen-encoder translation study
+tests whether the advantage survives joint adaptation. This directly evaluates
+how a foundation-model pretraining objective transfers through a speech
+interface into an LLM. Version 1 links no official project, repository, dataset
+card, model release, or archive, and does not release its approximately
+130,000-hour mixture manifest, synthetic translation pairs, 6,200-hour
+speech-LLM training manifest, exact evaluation selections, code, checkpoints,
+inference seeds, predictions, or item-level scores. The article's arXiv
+distribution license does not cover upstream data or those absent derivatives;
+each public family retains its own terms. Four tracks map to existing index
+entries, Speech-MASSIVE remains a future primary-release candidate, and no
+duplicate family, count increase, or helper is added.
+
 The August 2026 LS-MOPD paper adds public WSYue-ASR-eval coverage and recent
 post-training provenance for WenetSpeech, KeSpeech, and LibriSpeech. Section
 4.1 evaluates an encoder-adaptor-LLM after language-specialized DAPO and
