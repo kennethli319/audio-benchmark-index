@@ -9,6 +9,114 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  gsrm_speech_reward_model_and_online_rlhf_audit:
+    paper: https://arxiv.org/abs/2602.13891
+    title: "GSRM: Generative Speech Reward Model for Speech RLHF"
+    sections: 2_and_6-7_with_appendix_3-4
+    status: audited_internal_reward_benchmarks_and_unreleased_online_rlhf_evaluation
+    last_verified: 2026-08-08
+    reward_model_evaluations:
+      - cited_as: ConvTTS
+        role: in_domain_conversational_speech_naturalness_benchmark
+        status: internal_unreleased
+        system_source: in_house_two_channel_conversational_tts
+        samples: 6579
+        splits:
+          train: {samples: 4579, hours: 62.8}
+          development: {samples: 1000, hours: 13.7}
+          test: {samples: 1000, hours: 13.8}
+        mean_duration_seconds: 49.4
+        assistant_response_rated_subset:
+          train: 3263
+          development: 711
+          test: 717
+        mean_raters_per_recording: 6.8
+      - cited_as: FDX-Conv
+        role: out_of_domain_full_duplex_speech_naturalness_benchmark
+        status: internal_unreleased
+        system_source: separate_in_house_full_duplex_speech_llm
+        samples: 490
+        mean_duration_seconds: 41.1
+        minimum_raters_per_recording: 5
+    naturalness_protocol:
+      dimensions:
+        - expressive_intensity
+        - expressive_correctness
+        - intonation
+        - non_speech_vocalizations_and_fillers
+        - mispronunciation
+        - pacing
+        - overall_human_likeness
+      main_metrics:
+        - pearson_correlation
+        - spearman_correlation
+        - mean_squared_error
+      inference_samples_per_item: 16
+      headline_result: >-
+        Table 4 reports GSRM Pearson correlations of 0.401 on the ConvTTS
+        validation set and 0.465 on FDX-Conv, against human split-half
+        inter-rater correlations of 0.533 and 0.532 respectively.
+    post_training_evaluation:
+      base_model: in_house_full_duplex_speech_llm_after_sft
+      algorithm: online_grpo
+      reward_model: GSRM_acoustic_and_semantic_scores
+      rl_training_prompts: 9200
+      prompts_per_rollout_group: 1
+      candidate_responses_per_prompt: 4
+      evaluation_prompts: 50
+      evaluation_prompt_status: internal_unreleased
+      prompt_categories:
+        - chitchat
+        - paralinguistics
+        - steerability
+        - emotional_well_being
+      raters_per_response_pair: 5
+      pairwise_dimensions:
+        - tone
+        - pacing
+        - intonation
+        - overall_naturalness
+      headline_result: >-
+        Table 5 reports that the RLHF model wins 82 percent of overall-
+        naturalness comparisons against the SFT base, with 6 percent ties and
+        12 percent base-model wins.
+    release_audit:
+      paper_metadata_code_link: none
+      exact_title_github_search_on_verification_date: no_author_owned_release_found
+      hugging_face_model_search_on_verification_date: no_GSRM_release_found
+      hugging_face_dataset_search_on_verification_date: no_GSRM_release_found
+      model_and_checkpoint: not_released
+      ConvTTS_audio_splits_annotations_and_manifests: not_released
+      FDX_Conv_audio_annotations_and_manifests: not_released
+      online_RLHF_prompts_outputs_pairings_and_ratings: not_released
+      training_code_and_frozen_environment: not_released
+      download_helper: none_manual_required
+    access: public_paper_internal_unreleased_data_models_and_evaluations
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      datasets_and_annotations: not_stated
+      model_and_code: not_released
+      generated_audio_and_human_voice_prompts: not_stated
+      note: >-
+        The arXiv article license does not grant access to or reuse rights for
+        ConvTTS, FDX-Conv, GSRM weights, internal speech-LLM outputs, volunteer
+        recordings, annotations, or RLHF evaluation rows.
+    sources:
+      - https://arxiv.org/abs/2602.13891
+      - https://arxiv.org/pdf/2602.13891
+      - https://arxiv.org/html/2602.13891v1#S3
+      - https://arxiv.org/html/2602.13891v1#S4
+      - https://export.arxiv.org/e-print/2602.13891
+      - https://api.github.com/search/repositories?q=GSRM+speech+reward+model
+      - https://huggingface.co/api/models?search=GSRM
+      - https://huggingface.co/api/datasets?search=GSRM
+    note: >-
+      This work is directly relevant to speech-LLM reward modeling, judging,
+      and online post-training, but every paper-specific evaluation asset is
+      internal and unreleased. ConvTTS and FDX-Conv are therefore documented
+      as protocols, not counted as public benchmark families, and no helper is
+      provided.
+
   audioder_post_training_and_release_audit:
     paper: https://arxiv.org/abs/2606.14591
     title: "AudioDER: A Deduplication-Enhanced Reasoning Dataset for Post-Training Large Audio-Language Models"

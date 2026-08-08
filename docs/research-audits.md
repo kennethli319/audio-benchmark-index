@@ -4,6 +4,26 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The February 2026 *GSRM* paper is recorded as an internal reward-benchmark and
+online-RLHF evaluation audit after reviewing Sections 2 and 6-7 and Appendices
+3-4. It trains a Qwen2.5-Omni-7B generative speech reward model on ConvTTS, an
+internal set of 6,579 two-channel synthetic dialogues with approximately
+31,000 human ratings, and tests both its in-domain split and the internal
+490-dialogue FDX-Conv out-of-domain set. The naturalness protocol scores six
+fine-grained attributes plus human-likeness and reports Pearson and Spearman
+correlation and MSE against averaged human ratings. The paper then uses GSRM
+as the verifier for online GRPO on 9,200 prompts and compares the resulting
+full-duplex speech LLM with its SFT base on 50 held-out volunteer-recorded
+prompts; five raters per pair judge tone, pacing, intonation, and naturalness,
+with the RLHF model winning 82% of overall-naturalness comparisons. This is
+directly relevant to speech-LLM reward modeling, judging, and post-training,
+but the models, code, data splits, manifests, prompts, outputs, ratings, and
+per-item scores are unreleased. The paper supplies no code or data URL, and
+exact-title GitHub plus Hugging Face model/dataset searches found no owner
+release on August 8. The arXiv non-exclusive article license does not cover
+those internal assets or human recordings, so no counted family or helper is
+added.
+
 The June 2026 *AudioDER* paper is recorded as a post-training-data and
 existing-benchmark coverage audit after reviewing Sections 3-4 and Table 3.
 It constructs approximately 191,000 sound, speech, and music examples with
