@@ -244,6 +244,86 @@ paper_audits:
       - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest/raw/main/README.md
       - https://huggingface.co/api/datasets/moonshotai/Kimi-Audio-GenTest
 
+  audioagentsecurity_release_audit:
+    id: audioagentsecurity
+    name: AudioAgentSecurity
+    full_name: "AudioAgentSecurity: Stealthy Concurrent Audio Prompt Injection against Multimodal LLM Agents"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - end_to_end_speech_dialogue
+    tasks:
+      - audio_llm_safety_evaluation
+      - concurrent_audio_prompt_injection
+      - spoken_agent_tool_use_safety
+      - adversarial_audio_robustness
+      - benign_instruction_retention
+      - audio_attack_detection
+      - physical_channel_robustness
+      - human_perceptual_stealth_evaluation
+    official:
+      repo: https://github.com/Limax666/AudioAgentSecurity
+      dataset: https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+      paper: https://arxiv.org/abs/2607.28165
+    download:
+      access: auto_gated_hugging_face_dataset_with_public_code_and_physical_examples
+      primary:
+        - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+        - https://github.com/Limax666/AudioAgentSecurity
+      examples:
+        - 'scripts/download/audioagentsecurity.sh'
+        - 'AUDIOAGENTSECURITY_CLONE_REPO=1 scripts/download/audioagentsecurity.sh'
+        - 'AUDIOAGENTSECURITY_ACK_TERMS=1 AUDIOAGENTSECURITY_DOWNLOAD_HF=1 scripts/download/audioagentsecurity.sh'
+      notes: >-
+        Section IV constructs 200 manually verified benign/malicious
+        instruction pairs across eight agent scenarios, then applies ten
+        inaudible, low-intelligibility, and semantic-confusion attacks. The
+        paper reports 2,160 generated attack audio samples and evaluates eleven
+        audio-capable agents in a sandboxed tool-trace environment with attack
+        success and benign instruction-correctness metrics. It also defines
+        CADV and prompt-defense comparisons, DEMAND-noise false-positive tests,
+        physical distance/angle/overlap studies, and a 20-participant,
+        600-judgment perceptual study. The live auto-gated Hub snapshot reports
+        23,396,170,922 bytes and lists 200 benign WAVs, 1,997 mixed-attack WAVs,
+        and three JSON manifests; this does not exactly match the paper's
+        2,160-attack count. The public repository releases the evaluator,
+        attack generation and defense code plus selected distance and angle
+        recordings, but not the paper's claimed generated-output logs. The
+        repository README calls the suite AttackBench, so treat that as a
+        release alias rather than a separate family. The helper fetches only
+        primary documentation and live metadata by default. Repository cloning
+        is opt-in; the large gated Hub snapshot additionally requires accepted
+        access terms, authentication, an acknowledgement flag, and a separate
+        download opt-in.
+    license:
+      data: not_stated_auto_gated_access_conditions_apply
+      code: not_specified
+      notes: >-
+        Neither the Hugging Face API metadata nor the public GitHub repository
+        declares a reusable license, and the gated dataset card was not
+        publicly readable during verification. The arXiv perpetual
+        non-exclusive license covers the article only. Do not infer rights for
+        generated speech, source instructions adapted from MobileAgentBench,
+        AndroidWorld, OSWorld, BrowserGym, and WebVoyager, physical recordings,
+        model outputs, or third-party dependencies. Accept the live Hub terms
+        and review upstream licenses and responsible security-research
+        obligations before downloading or redistributing any assets.
+    sources:
+      - https://arxiv.org/abs/2607.28165
+      - https://arxiv.org/html/2607.28165v1#S4
+      - https://arxiv.org/html/2607.28165v1#S4.SS1
+      - https://arxiv.org/html/2607.28165v1#S4.SS4
+      - https://arxiv.org/html/2607.28165v1#S6.SS1
+      - https://arxiv.org/html/2607.28165v1#S6.SS4
+      - https://arxiv.org/html/2607.28165v1#S6.SS5
+      - https://arxiv.org/html/2607.28165v1#A3
+      - https://github.com/Limax666/AudioAgentSecurity
+      - https://raw.githubusercontent.com/Limax666/AudioAgentSecurity/main/README.md
+      - https://api.github.com/repos/Limax666/AudioAgentSecurity
+      - https://api.github.com/repos/Limax666/AudioAgentSecurity/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+      - https://huggingface.co/api/datasets/Limax11/AudioAgentSecurity
+
   common_sense_facts_audio_release_audit:
     paper: https://arxiv.org/abs/2606.22473
     title: "Interleaved Speech Language Models Latently Work In Text"
@@ -37655,3 +37735,82 @@ benchmarks:
       - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest
       - https://huggingface.co/datasets/moonshotai/Kimi-Audio-GenTest/raw/main/README.md
       - https://huggingface.co/api/datasets/moonshotai/Kimi-Audio-GenTest
+
+  - id: audioagentsecurity
+    name: AudioAgentSecurity
+    full_name: "AudioAgentSecurity: Stealthy Concurrent Audio Prompt Injection against Multimodal LLM Agents"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - end_to_end_speech_dialogue
+    tasks:
+      - audio_llm_safety_evaluation
+      - concurrent_audio_prompt_injection
+      - spoken_agent_tool_use_safety
+      - adversarial_audio_robustness
+      - benign_instruction_retention
+      - audio_attack_detection
+      - physical_channel_robustness
+      - human_perceptual_stealth_evaluation
+    official:
+      repo: https://github.com/Limax666/AudioAgentSecurity
+      dataset: https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+      paper: https://arxiv.org/abs/2607.28165
+    download:
+      access: auto_gated_hugging_face_dataset_with_public_code_and_physical_examples
+      primary:
+        - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+        - https://github.com/Limax666/AudioAgentSecurity
+      examples:
+        - 'scripts/download/audioagentsecurity.sh'
+        - 'AUDIOAGENTSECURITY_CLONE_REPO=1 scripts/download/audioagentsecurity.sh'
+        - 'AUDIOAGENTSECURITY_ACK_TERMS=1 AUDIOAGENTSECURITY_DOWNLOAD_HF=1 scripts/download/audioagentsecurity.sh'
+      notes: >-
+        Section IV constructs 200 manually verified benign/malicious
+        instruction pairs across eight agent scenarios, then applies ten
+        inaudible, low-intelligibility, and semantic-confusion attacks. The
+        paper reports 2,160 generated attack audio samples and evaluates eleven
+        audio-capable agents in a sandboxed tool-trace environment with attack
+        success and benign instruction-correctness metrics. It also defines
+        CADV and prompt-defense comparisons, DEMAND-noise false-positive tests,
+        physical distance/angle/overlap studies, and a 20-participant,
+        600-judgment perceptual study. The live auto-gated Hub snapshot reports
+        23,396,170,922 bytes and lists 200 benign WAVs, 1,997 mixed-attack WAVs,
+        and three JSON manifests; this does not exactly match the paper's
+        2,160-attack count. The public repository releases the evaluator,
+        attack generation and defense code plus selected distance and angle
+        recordings, but not the paper's claimed generated-output logs. The
+        repository README calls the suite AttackBench, so treat that as a
+        release alias rather than a separate family. The helper fetches only
+        primary documentation and live metadata by default. Repository cloning
+        is opt-in; the large gated Hub snapshot additionally requires accepted
+        access terms, authentication, an acknowledgement flag, and a separate
+        download opt-in.
+    license:
+      data: not_stated_auto_gated_access_conditions_apply
+      code: not_specified
+      notes: >-
+        Neither the Hugging Face API metadata nor the public GitHub repository
+        declares a reusable license, and the gated dataset card was not
+        publicly readable during verification. The arXiv perpetual
+        non-exclusive license covers the article only. Do not infer rights for
+        generated speech, source instructions adapted from MobileAgentBench,
+        AndroidWorld, OSWorld, BrowserGym, and WebVoyager, physical recordings,
+        model outputs, or third-party dependencies. Accept the live Hub terms
+        and review upstream licenses and responsible security-research
+        obligations before downloading or redistributing any assets.
+    sources:
+      - https://arxiv.org/abs/2607.28165
+      - https://arxiv.org/html/2607.28165v1#S4
+      - https://arxiv.org/html/2607.28165v1#S4.SS1
+      - https://arxiv.org/html/2607.28165v1#S4.SS4
+      - https://arxiv.org/html/2607.28165v1#S6.SS1
+      - https://arxiv.org/html/2607.28165v1#S6.SS4
+      - https://arxiv.org/html/2607.28165v1#S6.SS5
+      - https://arxiv.org/html/2607.28165v1#A3
+      - https://github.com/Limax666/AudioAgentSecurity
+      - https://raw.githubusercontent.com/Limax666/AudioAgentSecurity/main/README.md
+      - https://api.github.com/repos/Limax666/AudioAgentSecurity
+      - https://api.github.com/repos/Limax666/AudioAgentSecurity/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
+      - https://huggingface.co/api/datasets/Limax11/AudioAgentSecurity

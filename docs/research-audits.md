@@ -3327,3 +3327,21 @@ protected and requires acceptance of custom terms limiting use to the challenge
 and prohibiting redistribution and other research or commercial uses. The safe
 helper therefore fetches owner pages and archive headers by default, makes only
 the English archives opt-in, and leaves surprise-data access manual.
+
+AudioAgentSecurity is now indexed as a gated audio-LLM safety and spoken-agent
+benchmark family after reviewing Sections IV and VI and Appendix C of the July
+2026 primary paper. It builds 200 verified benign/malicious instruction pairs
+across eight tool-use scenarios and ten concurrent audio-injection methods,
+then measures attack success, retained benign-task correctness, defenses,
+physical-channel robustness, and human perceptual stealth on eleven audio
+agents. This directly evaluates post-training safety, robustness, instruction
+hierarchy, and tool-use behavior under adversarial speech. The public owner
+repository releases evaluation, attack-generation, and CADV defense code plus
+selected physical distance and angle recordings; its README uses AttackBench
+as an alias. The approximately 21.8 GiB Hugging Face snapshot is auto-gated and
+currently lists 200 benign and 1,997 mixed-attack WAVs, which does not exactly
+match the paper's 2,160 generated-attack count. Neither release states a reuse
+license, the gated card was not publicly readable, and the paper license does
+not cover data or code. The safe helper downloads only primary documentation
+and live metadata by default, with the code clone and gated snapshot behind
+separate explicit opt-ins.
