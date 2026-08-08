@@ -14677,6 +14677,77 @@ paper_audits:
       Audio-Alpaca selection remains unreleased and is not represented as a
       downloadable benchmark or given an invented helper.
 
+  lalm_temporal_failure_modes_benchmark:
+    paper: https://arxiv.org/abs/2606.17417
+    title: "A Closer Look at Failure Modes in Temporal Understanding of Large Audio-Language Models"
+    sections: 3-5
+    status: audited_benchmark_described_without_public_artifacts
+    last_verified: 2026-08-07
+    evaluated_sets:
+      - cited_as: unnamed_TACOS_derived_temporal_reasoning_benchmark
+        index_id: null
+        status: paper_described_not_publicly_released
+        protocol: >-
+          Evaluate 1,657 four-option questions derived from temporally aligned
+          TACOS event annotations: 528 Earliest Onset, 499 Latest Offset, and
+          630 Longest Duration cases. Correct onset/offset boundaries or
+          durations differ from every distractor by at least one second; all
+          answer choices use distinct sound categories and the correct option
+          is balanced across A-D. Compare audio-only, weak-caption-only, and
+          audio-plus-caption inputs, with silence ablations and exact-answer
+          accuracy, then probe attention interventions on open LALMs.
+        relevance: >-
+          This directly diagnoses temporal reasoning, audio-text reliance, and
+          robustness failure modes in pretrained or instruction-tuned large
+          audio-language models, including whether inference-time attention
+          redistribution can improve performance without fine-tuning.
+    source_data:
+      cited_as: TACOS
+      role: upstream_temporally_aligned_audio_and_event_annotations
+      status: paper_cited_source_not_a_release_of_the_derived_questions
+      note: >-
+        Access to an upstream source does not reconstruct the paper-specific
+        filters, sampled distractors, answer ordering, weak-caption mapping,
+        or evaluated item manifest.
+    release_audit:
+      official_artifact_url_in_paper: not_provided
+      derived_question_manifest: not_released
+      answer_keys_and_source_clip_mapping: not_released
+      construction_and_filtering_code: not_released
+      evaluation_prompts_and_parser: not_released
+      attention_intervention_code_and_configuration: not_released
+      model_outputs_and_per_item_scores: not_released
+      exact_title_and_arxiv_id_github_repository_searches: no_results
+      hugging_face_arxiv_id_dataset_search: no_results
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      derived_benchmark: not_specified_unreleased
+      upstream: TACOS_and_Freesound_item_terms_require_separate_review
+      note: >-
+        The article license covers the paper, not absent derived questions,
+        annotations, code, or audio. No reuse or redistribution terms are
+        stated for the unreleased benchmark, and per-clip Freesound terms
+        cannot be inferred from the paper.
+    sources:
+      - https://arxiv.org/abs/2606.17417
+      - https://arxiv.org/html/2606.17417v1#S3
+      - https://arxiv.org/html/2606.17417v1#S3.SS1
+      - https://arxiv.org/html/2606.17417v1#S3.SS2
+      - https://arxiv.org/html/2606.17417v1#S4
+      - https://arxiv.org/html/2606.17417v1#S5
+      - https://export.arxiv.org/api/query?id_list=2606.17417
+      - https://api.github.com/search/repositories?q=%22A%20Closer%20Look%20at%20Failure%20Modes%20in%20Temporal%20Understanding%22
+      - https://api.github.com/search/repositories?q=%222606.17417%22
+      - https://huggingface.co/api/datasets?search=2606.17417
+    note: >-
+      Version 1 names no project, repository, dataset card, or benchmark
+      release. Exact-title and arXiv-ID GitHub repository searches and an
+      arXiv-ID Hugging Face dataset search found no matching release on the
+      verification date. The 1,657-question protocol is therefore documented
+      as an unavailable derived evaluation rather than counted as a public
+      benchmark family. No helper is added; revisit an author-controlled
+      release if one is linked later.
+
 benchmarks:
   - id: speechjbb
     name: SpeechJBB

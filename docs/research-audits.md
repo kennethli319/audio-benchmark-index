@@ -2814,3 +2814,22 @@ CC BY 4.0 covers the article, not absent implementations, transformed stems,
 cached verbalizations, outputs, or upstream benchmark data. HIVE is therefore
 documented as an unavailable speech-interface protocol, not counted as a
 public audio benchmark family, and receives no download helper.
+
+The June 2026 *A Closer Look at Failure Modes in Temporal Understanding of
+Large Audio-Language Models* paper is recorded as an unavailable derived-
+benchmark audit. Sections 3-5 define 1,657 four-option questions from TACOS:
+528 Earliest Onset, 499 Latest Offset, and 630 Longest Duration cases. Correct
+temporal boundaries or durations are separated from every distractor by at
+least one second, answer categories are distinct, and correct positions are
+balanced. Audio-only, weak-caption-only, audio-plus-caption, and silence
+conditions expose text reliance, while attention upweighting and scaling probe
+whether inference-time redistribution repairs temporal reasoning failures.
+This is directly relevant to pretraining and post-training evaluation of LALM
+temporal robustness, but version 1 provides no artifact URL. The derived
+question manifest, answer keys and clip mapping, construction code, prompts,
+intervention configuration, outputs, and per-item scores are unavailable;
+access to upstream TACOS does not reconstruct them. Exact-title and arXiv-ID
+GitHub searches and an arXiv-ID Hugging Face dataset search found no matching
+release on August 7. The article's arXiv license does not license the absent
+benchmark, and TACOS/Freesound item terms require separate review. No public
+family or download helper is added pending an author-controlled release.
