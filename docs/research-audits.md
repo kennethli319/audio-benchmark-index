@@ -3079,6 +3079,23 @@ terms, but that does not license the entire checkpoint, code, copied FLEURS
 audio, or example manifest; upstream FLEURS and CoVoST 2 terms still apply.
 The audit therefore adds no duplicate family, count increase, or helper.
 
+The July 2026 *SpeechLLM Meets Federated Learning for End-to-End ASR* paper is
+recorded as an existing-family and incomplete-protocol audit of decentralized
+audio-encoder transfer. Sections 3-5 and Tables 1-2 connect frozen WavLM-Large
+or Whisper-Medium to TinyLlama with a trainable projector and LoRA, then compare
+centralized and 100-round federated adaptation on LibriSpeech train-clean-100 /
+test-clean and an Italian Multilingual LibriSpeech selection. Speakers act as
+clients, 30% are sampled per round, and WER tracks encoder choice, Adaptive
+FedAvg, parameter-efficient alternatives, and monolingual versus joint-client
+training. This directly tests whether pretrained speech representations survive
+decentralized post-training, but it defines no new evaluation family. The
+public [owner repository](https://github.com/mnabihali/Fed-SpeechLLM) contains
+only a short README and MIT license: it has no implementation, exact Italian
+selection or client manifests, seeds, checkpoints, outputs, or per-item scores.
+MIT therefore covers only the released repository files, while LibriSpeech and
+MLS retain their upstream terms. No duplicate family, count increase, or helper
+is added.
+
 The May 2026 *jina-embeddings-v5-omni* paper is recorded as an existing-family
 and released-model audit of frozen audio-encoder transfer into a language
 embedding model. Sections 3-6 and Tables 1-5 connect the frozen Qwen2.5-Omni

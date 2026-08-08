@@ -16058,6 +16058,74 @@ paper_audits:
       scores, training manifests, or ablation logs, so no count increase or
       duplicate helper is warranted.
 
+  federated_speechllm_asr_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.25716
+    title: "SpeechLLM Meets Federated Learning for End-to-End ASR: English and Italian Case Studies"
+    sections: 3-5 and Tables 1-2
+    status: audited_existing_families_incomplete_protocol_release
+    relevance:
+      area: pretrained_audio_encoder_transfer_and_parameter_efficient_post_training
+      note: >-
+        The study compares frozen WavLM-Large and Whisper-Medium speech
+        interfaces to TinyLlama through a trainable projector and LoRA, testing
+        whether pretrained audio representations remain useful under
+        decentralized parameter-efficient adaptation.
+    evaluated_families:
+      - index_id: librispeech
+        cited_as: LibriSpeech-100
+        split: train-clean-100 for training and test-clean for evaluation
+        role: English federated and centralized ASR evaluation
+      - index_id: mls
+        cited_as: Multilingual LibriSpeech Italian
+        split: paper-specific 247.38-hour, 65-speaker train selection and 5.27-hour, 10-speaker test selection
+        role: Italian federated and centralized ASR evaluation
+    protocol:
+      client_definition: one dataset speaker per simulated client
+      client_sampling: 30_percent_per_round
+      local_training: 10_epochs
+      aggregation: FedAvg_or_exponential_decay_Adaptive_FedAvg
+      rounds: 100
+      metric: word_error_rate
+      comparisons:
+        - centralized_versus_federated_training
+        - WavLM_Large_versus_Whisper_Medium_encoder
+        - full_WavLM_finetuning_versus_EL_adapters_versus_SpeechLLM_projector_and_LoRA
+        - monolingual_versus_joint_English_Italian_clients
+    release_audit:
+      paper_repository: public_ungated
+      repository_contents: README_and_MIT_license_only
+      implementation: not_released
+      exact_MLS_selection_and_client_manifests: not_released
+      random_client_samples_and_seeds: not_released
+      checkpoints_outputs_and_per_item_scores: not_released
+      download_helper: none_existing_source_families_already_indexed
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      repository: MIT_for_the_two_released_repository_files
+      evaluation_artifacts: not_specified_unreleased
+      upstream: LibriSpeech and MLS terms remain applicable
+      note: >-
+        The repository's MIT license covers its present README and license
+        file; it does not license absent implementations, derived split
+        manifests, model outputs, or the upstream speech corpora.
+    sources:
+      - https://arxiv.org/abs/2607.25716
+      - https://arxiv.org/html/2607.25716v1#S3
+      - https://arxiv.org/html/2607.25716v1#S4.SS1
+      - https://arxiv.org/html/2607.25716v1#S4.SS3
+      - https://arxiv.org/html/2607.25716v1#S5
+      - https://export.arxiv.org/api/query?id_list=2607.25716
+      - https://github.com/mnabihali/Fed-SpeechLLM
+      - https://api.github.com/repos/mnabihali/Fed-SpeechLLM
+      - https://api.github.com/repos/mnabihali/Fed-SpeechLLM/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/mnabihali/Fed-SpeechLLM/main/LICENSE
+    note: >-
+      This is evaluation provenance over the existing LibriSpeech and MLS
+      families, not a new benchmark. The owner repository exposes no runnable
+      paper implementation or frozen evaluation artifacts, so the reported
+      federated protocol cannot be reproduced exactly and no duplicate family,
+      count increase, or helper is added.
+
 benchmarks:
   - id: common_sense_facts_audio
     name: Common-Sense Facts Audio
