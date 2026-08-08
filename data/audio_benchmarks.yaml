@@ -15962,6 +15962,91 @@ paper_audits:
       not reproduce the full FLEURS or CoVoST-2 evaluations reported in the
       paper. No count increase or new download helper is warranted.
 
+  teffic_audio_data_mixture_and_speech_df_arena_audit:
+    paper: https://arxiv.org/abs/2607.28351
+    title: "Teffic-Audio: Tell Fact from Fiction"
+    sections: 3-4_and_tables_1-3
+    status: audited_existing_public_family_with_proprietary_model_and_incomplete_training_release
+    last_verified: 2026-08-08
+    relevance:
+      area: pretrained_speech_representation_transfer_data_mixture_and_robustness
+      note: >-
+        The report isolates how multi-source corpus construction, attack- and
+        source-balanced sampling, and augmentation affect cross-domain
+        deepfake detection after end-to-end adaptation of a pretrained
+        Conformer speech encoder. This makes its evaluation relevant to
+        pretraining data quality and transfer robustness, although the system
+        is a detector rather than an audio LLM.
+    evaluated_family:
+      cited_as: Speech-DF-Arena
+      index_id: speech_df_arena
+      status: existing_public_cross_dataset_benchmark_family
+      protocol: >-
+        Evaluate the same submission over 14 arena test sets: In-the-Wild;
+        ASVspoof 2019, 2021-LA, 2021-DF, and 2024-Eval; Fake-or-Real;
+        CodecFake; ADD 2022 Tracks 1 and 3; ADD 2023 Rounds 1 and 2; DFADD;
+        LibriSeVoc; and SONAR. Report dataset-level, pooled, and unweighted
+        dataset-average EER, accuracy, and F1; the public leaderboard ranks by
+        pooled EER under one threshold over merged scores.
+    training_data_role:
+      status: upstream_training_corpora_not_new_benchmarks
+      disclosed_scope: >-
+        Table 1 enumerates public deepfake and supplementary bona-fide sources
+        spanning TTS, voice conversion, neural-vocoder reconstruction, and
+        neural-codec resynthesis. They are training inputs only and are not
+        counted again as evaluation families.
+      balancing: attack_type_then_dataset_source_balanced_sampling
+      augmentations:
+        - rawboost
+        - room_impulse_response
+        - MUSAN_noise_speech_and_music_mixing
+        - pitch_shift
+        - frequency_filtering
+        - time_masking
+        - codec_compression
+        - packet_loss
+      note: >-
+        The paper gives corpus-level counts and generator categories but does
+        not release the exact item manifest, preprocessing decisions, sampling
+        stream, random seeds, or augmented examples needed to recreate the
+        training mixture.
+    release_audit:
+      owner_demo_page: public_ungated
+      speech_df_arena_toolkit_and_leaderboard: public_ungated_existing_family
+      teffic_audio_model: proprietary_per_paper_table_3
+      model_weights_and_checkpoint: not_released
+      training_and_evaluation_code: not_released
+      exact_training_manifest_and_sampling_stream: not_released
+      arena_submission_scores: public_through_existing_leaderboard
+      standalone_predictions_and_per_item_scores: not_released
+      download_helper: none_existing_speech_df_arena_helper_covers_public_protocol
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      owner_demo_page: no_artifact_license_identified
+      model: proprietary_per_paper_table_3
+      training_corpora: upstream_dataset_terms_apply
+      evaluation_data: component_terms_and_arena_access_conditions_apply
+      note: >-
+        The paper's statement that training used open-source data does not
+        grant a unified license for the derived mixture. The article license
+        does not cover upstream audio, absent manifests, scores, code, or the
+        proprietary Teffic-Audio model.
+    sources:
+      - https://arxiv.org/abs/2607.28351
+      - https://arxiv.org/html/2607.28351v1#S3.SS1
+      - https://arxiv.org/html/2607.28351v1#S3.SS2
+      - https://arxiv.org/html/2607.28351v1#S3.SS3
+      - https://arxiv.org/html/2607.28351v1#S4.SS1
+      - https://arxiv.org/html/2607.28351v1#S4.SS2
+      - https://tefficlabs.com/teffic-audio
+      - https://huggingface.co/spaces/Speech-Arena-2025/Speech-DF-Arena
+      - https://github.com/Speech-Arena/speech_df_arena
+    note: >-
+      This technical report supplies useful evaluation provenance for the
+      existing Speech DF Arena family and a data-mixture robustness study, not
+      a new benchmark. Because the model and exact experiment artifacts are
+      unavailable, no family count increase or duplicate helper is warranted.
+
   jina_v5_omni_frozen_audio_tower_transfer_audit:
     paper: https://arxiv.org/abs/2605.08384
     title: "jina-embeddings-v5-omni: Geometry-preserving Embeddings via Locked Aligned Towers"

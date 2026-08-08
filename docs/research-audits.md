@@ -4,6 +4,24 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *Teffic-Audio* technical report is recorded as data-mixture and
+existing-family evaluation provenance after reviewing Sections 3-4 and Tables
+1-3. Its pretrained Conformer detector is adapted with a disclosed mixture of
+public bona-fide and spoofed speech spanning TTS, voice conversion, neural
+vocoder reconstruction, and neural-codec resynthesis. Attack/source-balanced
+sampling and eight waveform augmentation types are evaluated across the already
+indexed Speech DF Arena's 14 test sets using dataset-level, pooled, and average
+EER, accuracy, and F1. This directly informs speech-representation transfer,
+data-mixture quality, and cross-domain robustness, but defines no new benchmark
+family. The [owner page](https://tefficlabs.com/teffic-audio) is public, and the
+existing arena toolkit and leaderboard expose the evaluation protocol and
+submitted scores. However, Table 3 labels Teffic-Audio proprietary, and no
+weights, training or evaluation code, exact item manifest, sampling stream,
+seeds, predictions, or per-item scores are released. “Open-source data” is not
+a unified license grant: every training and evaluation component retains its
+upstream terms, while the article license does not cover the absent artifacts
+or proprietary model. No count increase or duplicate helper is added.
+
 The April 2025 Kimi-Audio technical report now has a release audit for its
 speech-conversation evaluation in Sections 6.1 and 6.2.4 and Table 7. The
 owner-published Kimi-Audio-GenTest release contains 191 Chinese spoken prompts:
