@@ -9,6 +9,123 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  lychee_fd_hierarchical_acoustic_semantic_modeling_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.06540
+    title: "Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs"
+    sections: 3.1_and_4.1-4.6_with_appendices_7-11
+    status: audited_existing_public_family_and_released_model_with_incomplete_evaluation_artifacts
+    last_verified: 2026-08-08
+    pretraining_and_post_training_relevance: >-
+      Lychee-FD studies catastrophic interference between acoustic-token and
+      semantic objectives when adapting a half-duplex speech foundation model
+      into a native full-duplex SLM. Its layerwise gradient analysis motivates
+      separate deep semantic, acoustic, and control heads plus a continuous
+      semantic-alignment channel; the resulting model is then evaluated for
+      retained spoken knowledge, speech generation, and interruption,
+      backchannel, pause, and turn-taking behavior.
+    evaluation_inventory:
+      - cited_as: spoken_question_answering_suite
+        status: derived_spoken_versions_with_unreleased_frozen_manifests
+        protocols:
+          - LlamaQ
+          - WebQ
+          - TriviaQA
+        metrics:
+          - speech_to_text_accuracy
+          - speech_to_speech_accuracy_after_Whisper_large_v3_transcription
+          - takeover_rate
+        note: >-
+          Table 1 evaluates the same three knowledge-QA suites in speech-to-text
+          and speech-to-speech modes. The paper does not identify frozen item
+          manifests, speech renderings, prompts, scoring code, or per-item
+          outputs, so these labels are retained as evaluation provenance rather
+          than treated as newly released benchmark datasets.
+      - cited_as: FD-Bench
+        status: external_published_protocol_without_owner_release_identified
+        paper: https://doi.org/10.21437/Interspeech.2025-739
+        metrics:
+          - success_replies_rate
+          - success_interrupts_rate
+          - early_interrupts_rate
+          - success_replies_to_interrupts_rate
+          - first_speech_emit_delay
+          - interrupt_response_delay
+        note: >-
+          Section 4.5 follows the external Interspeech 2025 protocol. The
+          Lychee-FD repositories do not redistribute its cases, evaluator, or
+          outputs, and an exact-name GitHub repository search found no public
+          owner release on the verification date.
+      - cited_as: FullDuplexBench_1.0_and_1.5
+        status: existing_public_family
+        index_id: full_duplex_bench
+        metrics:
+          - interruption_takeover_rate
+          - backchannel_frequency
+          - backchannel_takeover_rate
+          - turn_taking_takeover_rate
+          - pause_takeover_rate
+          - interruption_stop_delay
+          - interruption_response_rate
+          - backchannel_resume_rate
+          - response_latency
+        note: >-
+          Table 2 reuses the already indexed Full-Duplex-Bench v1/v1.5 family;
+          it does not define or release a distinct Lychee-FD benchmark.
+      - cited_as: LlamaQ_speech_generation_check
+        status: paper_specific_unreleased_outputs
+        metrics:
+          - word_error_rate_between_generated_text_and_transcribed_speech
+          - UTMOS_naturalness
+        note: >-
+          Section 4.6 evaluates content consistency and synthesized-speech
+          naturalness on LlamaQ, but generated audio and case-level scores are
+          not included in the public repositories.
+    release_audit:
+      github_commit: 259a068317e21393fd27b1e8c85cb79faa4e5eae
+      github_code_and_training_package: public_ungated
+      hugging_face_model: public_ungated
+      model_card_license: Apache-2.0
+      frozen_QA_audio_and_manifests: not_released
+      FD_Bench_cases_and_evaluator: not_released_by_Lychee_FD
+      FullDuplexBench_inputs: external_existing_family_not_redistributed
+      benchmark_runner_and_prompts: not_released
+      baseline_and_ablation_outputs: not_released
+      generated_audio_predictions_and_per_item_scores: not_released
+      download_helper: none_model_repository_not_benchmark_asset
+    access: public_paper_code_and_model_external_or_unreleased_evaluation_assets
+    license:
+      paper: CC-BY-4.0
+      repository_and_model: Apache-2.0
+      evaluation_assets: mixed_external_or_not_stated
+      note: >-
+        Apache-2.0 covers the released Lychee-FD code and model repository, not
+        absent QA speech renderings, benchmark inputs, model outputs, or human
+        and automated evaluation rows. Full-Duplex-Bench and FD-Bench retain
+        their own terms, and the separately required Step-Audio-2 Token2Wav
+        component must be reviewed under its upstream license.
+    sources:
+      - https://arxiv.org/abs/2607.06540
+      - https://arxiv.org/html/2607.06540v1#S3.SS1
+      - https://arxiv.org/html/2607.06540v1#S4.SS4
+      - https://arxiv.org/html/2607.06540v1#S4.SS5
+      - https://arxiv.org/html/2607.06540v1#S4.SS6
+      - https://export.arxiv.org/e-print/2607.06540
+      - https://github.com/HITsz-TMG/Lychee-FD
+      - https://raw.githubusercontent.com/HITsz-TMG/Lychee-FD/main/README.md
+      - https://raw.githubusercontent.com/HITsz-TMG/Lychee-FD/main/LICENSE
+      - https://api.github.com/repos/HITsz-TMG/Lychee-FD/git/trees/main?recursive=1
+      - https://huggingface.co/HIT-TMG/Lychee-FD
+      - https://huggingface.co/HIT-TMG/Lychee-FD/raw/main/README.md
+      - https://huggingface.co/api/models/HIT-TMG/Lychee-FD
+      - https://doi.org/10.21437/Interspeech.2025-739
+      - https://api.github.com/search/repositories?q=%22FD-Bench%22+%22Full-Duplex%22
+    note: >-
+      This audit inventories a current native full-duplex SLM report without
+      counting model repositories as benchmarks or duplicating the existing
+      Full-Duplex-Bench family. The owner releases are useful for reproducing
+      the model and runtime, but not the paper's complete evaluation tables;
+      no benchmark download helper or count increase is added.
+
   gsrm_speech_reward_model_and_online_rlhf_audit:
     paper: https://arxiv.org/abs/2602.13891
     title: "GSRM: Generative Speech Reward Model for Speech RLHF"

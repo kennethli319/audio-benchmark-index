@@ -4,6 +4,25 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *Hierarchical Acoustic-Semantic Modeling* paper is recorded as a
+pretraining-transfer and full-duplex post-training evaluation audit after
+reviewing Sections 3.1 and 4.1-4.6 and Appendices 7-11. Lychee-FD analyzes
+gradient conflict between acoustic-token and semantic objectives while adapting
+a half-duplex speech foundation model, then evaluates whether hierarchical
+semantic, acoustic, and control heads retain spoken knowledge and improve
+interruption, backchannel, pause, and turn-taking behavior. Table 1 uses LlamaQ,
+WebQ, and TriviaQA in speech-to-text and speech-to-speech modes; Table 2 uses
+FD-Bench and the already indexed Full-Duplex-Bench v1/v1.5 family; Section 4.6
+also reports WER and UTMOS on generated LlamaQ speech. The owner GitHub repository
+and ungated Hugging Face checkpoint are Apache-2.0 and public, but their complete
+non-truncated tree contains no frozen QA audio/manifests, benchmark runner,
+prompts, FD-Bench cases, baseline outputs, generated evaluation audio, or
+per-item scores. Those omissions keep the paper's aggregate tables only
+partially reproducible. Apache-2.0 covers the released code and model, not
+absent evaluation assets or external benchmarks; the separately required
+Step-Audio-2 Token2Wav component retains its upstream terms. No benchmark
+family, count increase, or model-download helper is added.
+
 The February 2026 *GSRM* paper is recorded as an internal reward-benchmark and
 online-RLHF evaluation audit after reviewing Sections 2 and 6-7 and Appendices
 3-4. It trains a Qwen2.5-Omni-7B generative speech reward model on ConvTTS, an
