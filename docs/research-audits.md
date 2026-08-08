@@ -1373,15 +1373,22 @@ owner request. The paper's selected anonymized outputs, similarity matrices,
 calibration artifacts, and LID implementation are not publicly released.
 
 The July 2026 PINT invariant-speech-tokenization paper is recorded as a
-coverage audit over the existing LibriSpeech, VCTK, RAVDESS, and TIMIT
-families. It reports LibriSpeech WER/CER and ABX, VCTK speaker and
+coverage audit over the existing LibriSpeech, Libri-Light, VCTK, RAVDESS, and
+TIMIT families. It reports LibriSpeech WER/CER and ABX, VCTK speaker and
 parallel-invariance probes, RAVDESS emotion leakage, TIMIT-fitted baseline
-tokenizers, and an underspecified 10,000-item noise evaluation. The model URL
-given in the paper currently returns HTTP 404, and version 1 releases no code,
-checkpoints, exact VCTK speaker holdout, noise-item manifest, trained probes,
-predictions, or artifact license. Source-family access therefore does not
-reproduce the paper-specific protocol, and no duplicate family or invented
-download route is added.
+tokenizers, and an underspecified 10,000-item noise evaluation. Section 3.3
+also trains matched 85M-parameter autoregressive language models on token
+streams from 6,000 hours of clean Libri-Light, reporting PINT perplexity 1.95
+versus 2.78 for HuBERT and 2.67 for WavLM and roughly 23-times-faster
+convergence to WavLM's final perplexity. This makes the protocol directly
+relevant to speech-LLM pretraining efficiency rather than only codec analysis.
+The model URL given in the paper still returned HTTP 404 on August 8; owner
+repository, exact-title/arXiv-ID GitHub, and Hugging Face searches found no
+release. Version 1 publishes no code, checkpoints, exact VCTK speaker holdout,
+noise-item manifest, Libri-Light selection or token streams, LM split and
+optimization recipe, trained probes, predictions, or artifact license.
+Source-family access therefore does not reproduce the paper-specific protocol,
+and no duplicate family or invented download route is added.
 
 The July 2026 discrete-audio-token speaker-verification paper is recorded as
 existing VoxCeleb coverage. It trains most systems on VoxCeleb1 development

@@ -9120,6 +9120,7 @@ paper_audits:
     title: "Content is What Remains: Invariant Speech Tokenization from Parallel Utterances"
     sections: 2.1 and 3
     status: audited_existing_public_families_unreleased_artifacts
+    last_verified: 2026-08-08
     evaluated_sets:
       - cited_as: LibriSpeech
         index_id: librispeech
@@ -9151,6 +9152,21 @@ paper_audits:
           Section 3 fits the 200-cluster k-means tokenizers used by baseline
           systems on TIMIT. This is an evaluation-pipeline dependency rather
           than a separately reported TIMIT score.
+      - cited_as: Libri-Light clean subset
+        index_id: libri_light
+        status: existing_public_family_with_unreleased_paper_specific_token_streams
+        protocol: >-
+          Section 3.3 trains identical 85M-parameter decoder-only Transformers
+          on PINT, HuBERT-layer-9, and WavLM-layer-12 token streams derived from
+          6,000 hours of clean Libri-Light speech. Report test perplexity and
+          convergence curves under a shared 12-layer, 1,024-hidden-dimension,
+          16-head, 3,072-token-context architecture; PINT reports perplexity
+          1.95 versus 2.78 and 2.67 for the two baselines and reaches WavLM's
+          final perplexity in roughly 23 times fewer steps. This directly
+          evaluates whether speech-tokenizer invariance reduces the
+          pretraining burden on an autoregressive language model, but the
+          exact Libri-Light selection, token streams, train/test partition,
+          and optimization recipe are not released.
       - cited_as: Noise
         index_id: null
         status: cited_source_family_and_selection_inconclusive
@@ -9168,13 +9184,21 @@ paper_audits:
       training_code: not_released
       evaluation_code: not_released
       split_and_trial_manifests: not_released
+      librilight_selection_token_streams_and_lm_recipe: not_released
       checkpoints_and_predictions: not_released
+      owner_repository_api: HTTP_404_verified_2026_08_08
+      exact_title_and_arxiv_id_github_search: no_matching_repository_found_2026_08_08
+      hugging_face_model_and_dataset_search: no_matching_release_found_2026_08_08
     sources:
       - https://arxiv.org/abs/2607.19033
       - https://arxiv.org/html/2607.19033v1#S2.SS1
       - https://arxiv.org/html/2607.19033v1#S3
       - https://export.arxiv.org/e-print/2607.19033v1
       - https://github.com/nyrahealth/PINT
+      - https://api.github.com/repos/nyrahealth/PINT
+      - https://api.github.com/search/repositories?q=%222607.19033%22%20OR%20%22Invariant%20Speech%20Tokenization%22%20OR%20PINT%20org%3Anyrahealth
+      - https://huggingface.co/api/models?search=nyra%20PINT&limit=100&full=true
+      - https://huggingface.co/api/datasets?search=nyra%20PINT&limit=100&full=true
       - https://doi.org/10.7488/ds/2645
       - https://zenodo.org/records/1188976
       - https://www.openslr.org/12
@@ -9182,12 +9206,14 @@ paper_audits:
     note: >-
       The paper introduces an evaluation protocol over source families already
       represented in the index, not a released benchmark dataset. Its model
-      footnote points to an author-organization GitHub URL that returned HTTP
-      404 on 2026-07-25, and the arXiv source package contains no alternative
-      artifact URL or artifact license. Public access to LibriSpeech, VCTK,
-      or RAVDESS therefore does not reproduce the paper-specific speaker
-      holdout, noise selection, trained probes, tokenizer checkpoints, or
-      score records. TIMIT remains separately licensed through LDC.
+      footnote points to an author-organization GitHub URL that still returned
+      HTTP 404 on 2026-08-08; exact-title/arXiv-ID GitHub and Hugging Face
+      searches found no alternative artifact. The arXiv source package
+      contains no other release URL or artifact license. Public access to
+      LibriSpeech, Libri-Light, VCTK, or RAVDESS therefore does not reproduce
+      the paper-specific speaker holdout, noise selection, Libri-Light token
+      streams and LM split, trained probes, tokenizer checkpoints, or score
+      records. TIMIT remains separately licensed through LDC.
 
   audio_cross_verification_evaluation:
     paper: https://arxiv.org/abs/2607.18190
