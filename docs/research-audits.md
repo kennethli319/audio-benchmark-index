@@ -3201,3 +3201,24 @@ scores, per-task ablation values, or training logs. Model-card terms do not
 relicense MAEB components or undisclosed training sources, and MTEB's
 Apache-2.0 applies to code and registry rather than component media. No new
 family, count increase, or helper is added.
+
+The July 2026 *VAmoS Bench* paper is recorded as a public-agent-code but
+unreleased-benchmark audit of tool-using spoken-agent post-training outcomes.
+Sections 3-6 and Appendix A define 100 synthetic banking scenarios partitioned
+into 30 simple, 38 complex, and 32 adversarial or guardrail cases. Each case
+seeds an isolated PostgreSQL backend, gives an interactive audio caller a
+private goal, exposes five card-operation tools, and fixes binary assertions.
+The grader reads the dialogue together with tool calls, arguments, and returned
+rows, so completion requires both a correct spoken response and correct state
+change while preserving verification, confidentiality, and action order. The
+paper compares eleven production voice agents over three runs each, totaling
+3,300 calls, and reports completion plus connection, latency, call-duration,
+turn, interruption, and cost measures. This directly evaluates spoken-agent
+tool use, robustness, safety, and policy adherence. The public MIT-licensed
+[Riley repository](https://github.com/veris-ai/riley-agent) supplies synthetic
+database schemas and sixteen live agent implementations, but it does not
+release the author-operated Veris benchmark platform, frozen paper snapshot,
+100 scenarios and assertions, caller configuration, grader, call traces,
+audio, transcripts, per-call verdicts, or timing and cost records. The paper's
+CC BY 4.0 and repository's MIT/BSD notices do not cover those absent artifacts
+or override vendor service terms. No counted family or helper is added.

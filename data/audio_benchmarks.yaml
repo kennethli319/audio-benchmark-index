@@ -9,6 +9,99 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  vamos_bench_release_audit:
+    paper: https://arxiv.org/abs/2607.27453
+    repository: https://github.com/veris-ai/riley-agent
+    title: "VAmoS Bench: Voice Agent Simulation Bench"
+    sections: 3-6_and_appendix_A
+    status: audited_public_agent_implementations_with_unreleased_benchmark_platform_and_scenarios
+    last_verified: 2026-08-08
+    benchmark:
+      cited_as: VAmoS Bench
+      role: end_to_end_tool_using_voice_agent_task_completion_and_safety_evaluation
+      domain: synthetic_credit_card_customer_support
+      scenarios: 100
+      scenario_partition:
+        simple: 30
+        complex: 38
+        adversarial_and_guardrail: 32
+      tools: 5
+      evaluated_voice_agents: 11
+      repeated_runs_per_agent: 3
+      total_phone_calls: 3300
+      evaluation:
+        primary_metric: all_assertions_pass_task_completion_rate
+        evidence_read_by_grader:
+          - caller_and_agent_conversation
+          - tool_invocations
+          - tool_arguments
+          - returned_database_rows
+        operational_metrics:
+          - connect_rate
+          - response_latency_median_mean_and_p90
+          - call_duration
+          - conversation_turns
+          - interruptions_per_100_calls
+          - estimated_cost_per_call
+        note: >-
+          Each scenario seeds an isolated PostgreSQL backend, assigns a private
+          goal to an interactive simulated caller, and fixes binary assertions
+          before comparison. A call succeeds only if every assertion passes,
+          allowing the protocol to distinguish correct spoken claims from
+          actual state changes and to test verification, confidentiality,
+          action order, prompt injection, and refusal behavior.
+    release_audit:
+      paper_protocol_and_aggregate_results: public
+      agent_implementations_and_synthetic_database_schema: public_MIT_repository
+      implementation_count_in_live_repository: 16_as_of_verification
+      paper_evaluated_implementation_snapshot: not_frozen
+      benchmark_platform: author_operated_not_publicly_released
+      scenario_generation_engine: not_publicly_released
+      frozen_100_scenario_definitions_and_assertions: not_publicly_released
+      interactive_caller_configuration_and_prompts: not_publicly_released
+      grader_prompt_model_configuration_and_harness: not_publicly_released
+      evaluation_traces_audio_transcripts_and_tool_records: not_publicly_released
+      per_call_verdicts_justifications_latency_and_cost_records: not_publicly_released
+      download_helper: none_manual_required_unreleased_benchmark_assets
+    access: public_agent_code_but_benchmark_manual_required_unreleased
+    license:
+      paper: CC-BY-4.0
+      agent_repository: MIT
+      third_party_component: BSD-2-Clause_NVIDIA_derived_text_filter
+      benchmark_scenarios_platform_and_evaluation_records: not_stated_or_released
+      note: >-
+        CC BY 4.0 covers the article, and MIT covers the released Riley agent
+        implementations except for the separately noticed BSD-2-Clause file.
+        Those licenses do not grant access to or reuse rights for the absent
+        Veris platform, scenario and assertion set, simulated-caller assets,
+        grader configuration, vendor call recordings, transcripts, traces, or
+        score records. Vendor APIs also retain their own service terms.
+    sources:
+      - https://arxiv.org/abs/2607.27453
+      - https://arxiv.org/html/2607.27453v1#S3
+      - https://arxiv.org/html/2607.27453v1#S3.SS3
+      - https://arxiv.org/html/2607.27453v1#S3.SS5
+      - https://arxiv.org/html/2607.27453v1#S3.SS7
+      - https://arxiv.org/html/2607.27453v1#S4
+      - https://arxiv.org/html/2607.27453v1#S6
+      - https://arxiv.org/html/2607.27453v1#A1
+      - https://export.arxiv.org/api/query?id_list=2607.27453
+      - https://github.com/veris-ai/riley-agent
+      - https://raw.githubusercontent.com/veris-ai/riley-agent/main/README.md
+      - https://raw.githubusercontent.com/veris-ai/riley-agent/main/LICENSE
+      - https://raw.githubusercontent.com/veris-ai/riley-agent/main/THIRD_PARTY_NOTICES.md
+      - https://api.github.com/repos/veris-ai/riley-agent
+      - https://api.github.com/repos/veris-ai/riley-agent/git/trees/main?recursive=1
+    note: >-
+      VAmoS Bench directly evaluates post-training outcomes for spoken agents:
+      whether a voice system can follow policy, use tools, preserve privacy,
+      resist adversarial caller pressure, and complete a stateful task across
+      an audio interaction. The released repository is a valuable collection
+      of agent implementations, but it is not the benchmark release described
+      in the paper. This audit therefore adds no counted benchmark family or
+      download helper and should be revisited if Veris publishes the scenario
+      set, simulator, grader, or evaluation traces.
+
   mmac_audio_captioning_release_audit:
     paper: https://arxiv.org/abs/2607.27109
     title: "MMAC: A Massive Multi-dimensional Benchmark for Audio Captioning"
