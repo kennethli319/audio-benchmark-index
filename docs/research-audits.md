@@ -3364,3 +3364,24 @@ rationale. The paper-promised Apache-2.0 code repository also returned HTTP 404
 on August 8. The helper therefore fetches only primary documentation, live Hub
 metadata, and the four small JSONL files by default; media require explicit
 opt-in, and no alternate code URL or media license is inferred.
+
+The March 2026 *StyleBench* paper is recorded as a public-candidate but
+owner-unverified release audit of speech-LLM post-training evaluation. Sections
+2-3 define 14,400 bilingual three-turn dialogues and 86,400 synthesized
+utterances across emotion, speed, volume, and pitch. Each dialogue preserves
+answer text while moving from neutral speech through stronger or weaker style
+instructions. The protocol filters on Qwen3-4B-Instruct single- and multi-turn
+semantic relevance, then reports Valid Sample Percentage, Style Variation
+Degree from syllable rate, RMS energy, or voiced F0, and manual emotion-
+intensity judgments. It directly evaluates multi-turn instruction following
+and controllability, while the paper also relates results to post-training data
+mixtures and speech-tokenizer design. The paper says the dataset will be
+released after acceptance and provides no artifact link. An ungated
+[14.51 GB candidate snapshot](https://huggingface.co/datasets/ak0255/StyleBench)
+reproduces the paper's semantic and emotion-annotation instructions, but
+neither source links the `ak0255` account to the authors or identifies it as
+the promised official release; an exact-name GitHub search found no matching
+repository. Its card declares CC BY 4.0, which does not establish provenance or
+override terms for CosyVoice2 outputs, RAVDESS-derived conditioning, responder
+timbres, or other incorporated material. No family, count increase, or helper
+is added pending primary owner confirmation.

@@ -9,6 +9,104 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  stylebench_release_provenance_audit:
+    paper: https://arxiv.org/abs/2603.07599
+    candidate_dataset: https://huggingface.co/datasets/ak0255/StyleBench
+    title: "StyleBench: Evaluating Speech Language Models on Conversational Speaking Style Control"
+    sections: 2-3
+    status: audited_public_candidate_snapshot_with_unverified_owner_provenance
+    last_verified: 2026-08-08
+    benchmark:
+      cited_as: StyleBench
+      role: multi_turn_speech_llm_style_intensity_control_evaluation
+      languages:
+        - English
+        - Chinese
+      dialogue_turns: 3
+      dimensions:
+        emotion:
+          utterances: 57600
+          duration_hours: 84.88
+          evaluation: manual_valid_sample_percentage
+        speed:
+          utterances: 9600
+          duration_hours: 11.76
+          evaluation: syllables_per_minute_valid_sample_percentage_and_style_variation_degree
+        volume:
+          utterances: 9600
+          duration_hours: 9.54
+          evaluation: root_mean_square_energy_valid_sample_percentage_and_style_variation_degree
+        pitch:
+          utterances: 9600
+          duration_hours: 9.35
+          evaluation: mean_voiced_f0_valid_sample_percentage_and_style_variation_degree
+      construction: >-
+        Each dialogue fixes answer text across a neutral first turn and two
+        stronger or weaker style instructions. CosyVoice2 synthesizes all
+        answers; emotion uses RAVDESS reference speech, while FFmpeg produces
+        controlled speed, volume, and pitch variations. Eight English/Chinese
+        responder timbres are randomly assigned within each subset.
+      protocol: >-
+        The paper reserves ten percent for evaluation. Qwen3-4B-Instruct
+        judges single- and multi-turn semantic relevance; models with
+        multi-turn relevance above forty percent proceed to style evaluation.
+        Valid Sample Percentage records intended distinct responses, and
+        Style Variation Degree measures consecutive-turn percentage changes
+        for speed, volume, and pitch. Emotion intensity is judged manually.
+    release_audit:
+      paper_protocol_and_aggregate_tables: public
+      paper_release_statement: dataset_will_be_released_after_acceptance
+      paper_link_to_dataset_repository_or_project: none
+      exact_name_github_repository_search: no_matching_repository
+      candidate_hugging_face_snapshot: public_ungated_approximately_14_51_GB
+      candidate_visible_files:
+        - README.md
+        - eval.tar.gz
+      candidate_card_protocol_match: >-
+        The card reproduces the paper's semantic-relevance, semantic-
+        consistency, VSP, and manual emotion-annotation instructions.
+      candidate_owner_relationship_to_paper: not_stated_or_verifiable
+      frozen_paper_split_manifest: not_independently_verified
+      paper_model_outputs_predictions_and_per_item_scores: not_identified
+      download_helper: none_pending_primary_owner_provenance
+    access: public_ungated_candidate_but_official_release_status_unresolved
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      candidate_dataset_card: CC-BY-4.0
+      source_and_synthetic_audio: provenance_and_upstream_terms_require_review
+      paper_outputs_and_evaluation_records: not_specified_or_not_identified
+      note: >-
+        The candidate Hub card declares CC BY 4.0, but neither the paper nor
+        the card links the `ak0255` account to the authors or states that this
+        is the promised official release. That tag also does not by itself
+        establish rights for CosyVoice2 outputs, RAVDESS-derived voice
+        conditioning, responder timbres, or other incorporated material. The
+        arXiv license covers only the article.
+    sources:
+      - https://arxiv.org/abs/2603.07599
+      - https://arxiv.org/html/2603.07599v1#S2
+      - https://arxiv.org/html/2603.07599v1#S2.SS1
+      - https://arxiv.org/html/2603.07599v1#S2.SS3
+      - https://arxiv.org/html/2603.07599v1#S3.SS1
+      - https://arxiv.org/html/2603.07599v1#S3.SS2
+      - https://arxiv.org/html/2603.07599v1#S3.SS3
+      - https://export.arxiv.org/api/query?id_list=2603.07599
+      - https://huggingface.co/datasets/ak0255/StyleBench
+      - https://huggingface.co/datasets/ak0255/StyleBench/raw/main/README.md
+      - https://huggingface.co/api/datasets/ak0255/StyleBench
+      - https://api.github.com/search/repositories?q=%22StyleBench%22%20%22Conversational%20Speaking%20Style%22
+      - https://huggingface.co/api/datasets?search=StyleBench
+    note: >-
+      StyleBench is directly relevant to speech-LLM post-training because it
+      evaluates multi-turn instruction following and controllable emotion,
+      speed, volume, and pitch, and the paper analyzes how training mixtures
+      and speech tokenizers affect those capabilities. A public Hub snapshot
+      strongly matches the described protocol, but primary owner provenance
+      is unresolved and the paper still promises a future post-acceptance
+      release without linking it. This audit therefore adds no counted
+      benchmark family or helper; revisit when the paper or authors publish an
+      official link or the Hub card states its ownership and paper provenance.
+
   vamos_bench_release_audit:
     paper: https://arxiv.org/abs/2607.27453
     repository: https://github.com/veris-ai/riley-agent
