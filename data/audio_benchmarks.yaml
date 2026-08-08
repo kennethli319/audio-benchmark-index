@@ -9,6 +9,98 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  rail_release_audit:
+    paper: https://arxiv.org/abs/2606.11260
+    title: "RAIL: Rethinking Auditory Intelligence in Large Audio-Language Models with a CHC-Grounded Benchmark"
+    sections: 3-5_and_appendices_A-D
+    status: audited_claimed_anonymous_release_without_public_artifact_link
+    last_verified: 2026-08-08
+    benchmark:
+      cited_as: RAIL
+      role: chc_grounded_audio_language_model_cognitive_capability_evaluation
+      samples: 5306
+      duration_hours: 30.6
+      newly_constructed_samples: 3614
+      capabilities:
+        auditory_processing: {samples: 1170, tasks: 7}
+        fluid_reasoning: {samples: 322, tasks: 3}
+        memory: {samples: 1000, tasks: 6}
+        processing_efficiency: {samples: 1800, tasks: 9}
+        acquired_knowledge: {samples: 1014, tasks: 7}
+      evaluated_audio_language_models: 26
+      scoring:
+        - exact_or_task_specific_accuracy
+        - llm_as_judge
+        - reasoning_token_budget_area_under_accuracy_curve
+      human_baseline:
+        samples: 640
+        participants: 24
+        responses_per_item: 2-5
+      construction: >-
+        The paper maps five broad Cattell-Horn-Carroll cognitive abilities to
+        32 auditory tasks spanning speech, sound, and music. It selects source
+        clips from existing corpora or synthesizes new audio, creates
+        rule-based or LLM-assisted question-answer templates, and reports
+        human and cognitive-expert verification for answerability, ambiguity,
+        auditory dependence, and capability alignment.
+      protocol: >-
+        Models answer multiple-choice and open-ended audio questions under a
+        shared prompt. Exact and task-specific scorers are reported alongside
+        an LLM judge; Processing Efficiency additionally uses B-AUC, the area
+        under accuracy as a function of the allowed reasoning-token budget.
+        The 640-item human subset selects 20 examples from each narrow ability.
+    release_audit:
+      paper_protocol_and_aggregate_results: public
+      paper_claim: >-
+        The NeurIPS checklist says benchmark data, metadata, evaluation code,
+        licensing information, and reproduction instructions were available
+        through an anonymized repository at submission time.
+      article_link_to_anonymous_or_public_repository: none
+      arxiv_source_bundle_link_to_repository: none
+      exact_title_github_repository_search: no_matching_repository
+      hugging_face_dataset_search: no_matching_repository
+      benchmark_rows_audio_qa_and_source_manifest: not_identified
+      evaluation_code_prompts_and_judge_configuration: not_identified
+      model_outputs_reasoning_traces_and_item_scores: not_identified
+      human_response_rows_and_latency_records: not_identified
+      count_consistency: >-
+        Section 3.2 and Table 2 specify 5,306 items, while Appendix D calls the
+        full benchmark approximately 6,000 samples; no frozen manifest is
+        available to resolve the wording.
+      download_helper: none_manual_required_unreleased
+    access: paper_public_benchmark_artifacts_unreleased_or_unlocatable
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_data_code_and_metadata: claimed_documented_but_not_publicly_identified
+      source_audio_and_synthetic_assets: upstream_and_generation_terms_not_publicly_enumerated
+      human_responses_and_model_outputs: not_stated_or_released
+      note: >-
+        The checklist's statement that licensing information accompanied an
+        anonymous package is not a license grant. The article license covers
+        only the paper, and no public artifact was identified from which the
+        benchmark-level or incorporated-audio terms could be verified.
+    sources:
+      - https://arxiv.org/abs/2606.11260
+      - https://arxiv.org/html/2606.11260v1#S3
+      - https://arxiv.org/html/2606.11260v1#S3.SS2
+      - https://arxiv.org/html/2606.11260v1#S4
+      - https://arxiv.org/html/2606.11260v1#S5
+      - https://arxiv.org/html/2606.11260v1#A1.SS2
+      - https://arxiv.org/html/2606.11260v1#A1.SS4
+      - https://arxiv.org/html/2606.11260v1#A4.SS1
+      - https://export.arxiv.org/api/query?id_list=2606.11260
+      - https://api.github.com/search/repositories?q=%22RAIL%22%20%22Rethinking%20Auditory%20Intelligence%22
+      - https://huggingface.co/api/datasets?search=RAIL%20auditory
+    note: >-
+      RAIL is directly relevant to audio-LLM pretraining and post-training
+      evaluation because it separates sensory encoding, auditory reasoning,
+      long-context memory, knowledge access, and reasoning efficiency, and
+      analyzes their relationship to audio-encoder design and chain-of-thought
+      behavior. The protocol is substantive, but the claimed anonymous release
+      cannot be independently accessed or licensed. This audit therefore adds
+      no counted benchmark family or helper; revisit when the authors expose a
+      stable official repository or dataset card.
+
   stylebench_release_provenance_audit:
     paper: https://arxiv.org/abs/2603.07599
     candidate_dataset: https://huggingface.co/datasets/ak0255/StyleBench

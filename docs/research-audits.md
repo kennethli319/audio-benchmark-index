@@ -3385,3 +3385,23 @@ repository. Its card declares CC BY 4.0, which does not establish provenance or
 override terms for CosyVoice2 outputs, RAVDESS-derived conditioning, responder
 timbres, or other incorporated material. No family, count increase, or helper
 is added pending primary owner confirmation.
+
+The June 2026 *RAIL* paper is recorded as a claimed-release but presently
+unlocatable audio-LLM benchmark audit after reviewing Sections 3-5 and
+Appendices A-D. It defines 5,306 audio questions (30.6 hours) across 32
+Cattell-Horn-Carroll-aligned tasks: seven auditory-processing, three fluid-
+reasoning, six memory, nine processing-efficiency, and seven acquired-
+knowledge abilities. Its protocol compares 26 large audio-language models
+with exact or task-specific accuracy, an LLM judge, and reasoning-token-budget
+B-AUC; a 640-item subset also has responses from 24 human participants. This
+directly evaluates outcomes of audio-encoder pretraining and reasoning-oriented
+post-training by separating perception, stateful auditory reasoning, memory,
+knowledge access, and efficient chain-of-thought behavior. The NeurIPS
+checklist claims that benchmark data, metadata, code, instructions, and
+licensing information were supplied through an anonymous repository, but the
+paper and its arXiv source bundle contain no artifact URL. Exact-title GitHub
+and Hugging Face dataset searches returned no match on August 8. The article
+also calls the full set approximately 6,000 items in Appendix D despite Table
+2's exact 5,306. With no frozen manifest, evaluation package, model outputs,
+human-response rows, or verifiable benchmark license, RAIL remains an
+unreleased/unlocatable protocol and adds no counted family or helper.
