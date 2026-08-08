@@ -4,6 +4,28 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *MMAC: A Massive Multi-dimensional Benchmark for Audio
+Captioning* paper is recorded as an announced-but-unreleased AudioLLM
+evaluation audit after reviewing Sections 2-3. MMAC defines 5,638 clips (13.04
+hours) from more than 20 sources across content, background, persona,
+paralinguistic, dynamic, and implication capabilities, further divided into 15
+dimensions. Models answer the common prompt “Describe this audio in detail,”
+and Qwen3.6-27B judges coverage, precision over mentioned information, and
+accuracy with omissions scored zero; dimensions are aggregated within each
+capability before an equal six-category macro-average. This directly evaluates
+whether audio-LLM pretraining and post-training support reliable fine-grained
+free-form captioning, including speech content, speaker traits, delivery,
+temporal change, and implied meaning. Version 2 still says the authors “will
+release” the benchmark and evaluation code, but links no owner repository or
+dataset, and no audio, labels, source/split manifests, judge implementation,
+baseline outputs, or per-item scores were identified. The public
+[ZWHTXY/MMAC-Bench](https://huggingface.co/datasets/ZWHTXY/MMAC-Bench) is an
+unrelated ACL 2026 cultural-grounding benchmark and is explicitly recorded as
+an alias collision, not a release of this audio-captioning MMAC. The article's
+arXiv distribution license does not cover absent benchmark artifacts or
+third-party source audio. No benchmark family, count increase, or helper is
+added.
+
 The May 2026 *VoxParadox* paper now contributes a public adversarial
 paralinguistic speech-QA family. Section 3 defines 2,000 verified English MCQs,
 200 each for age, gender, emotion, intonation, speaker identity, speaker count,

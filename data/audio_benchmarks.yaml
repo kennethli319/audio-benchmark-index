@@ -9,6 +9,87 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  mmac_audio_captioning_release_audit:
+    paper: https://arxiv.org/abs/2607.27109
+    title: "MMAC: A Massive Multi-dimensional Benchmark for Audio Captioning"
+    sections: 2-3
+    status: audited_announced_unreleased_audio_llm_captioning_benchmark
+    last_verified: 2026-08-08
+    benchmark:
+      cited_as: MMAC
+      role: fine_grained_free_form_audio_captioning_diagnostics
+      samples: 5638
+      total_duration_hours: 13.04
+      source_count: more_than_20
+      capability_categories:
+        content:
+          dimensions: 1
+          samples: 1000
+        background:
+          dimensions: 1
+          samples: 981
+        persona:
+          dimensions: 2
+          samples: 1000
+        paralinguistic:
+          dimensions: 6
+          samples: 1198
+        dynamic:
+          dimensions: 4
+          samples: 615
+        implication:
+          dimensions: 1
+          samples: 844
+      evaluation:
+        prompt: Describe_this_audio_in_detail
+        judge: Qwen3.6-27B
+        metrics:
+          - coverage
+          - precision_over_mentioned_samples
+          - accuracy_with_omissions_scored_zero
+        aggregation: dimension_to_category_then_equal_macro_average_over_6_categories
+    release_audit:
+      paper_language: will_release_benchmark_and_evaluation_code
+      benchmark_audio_and_labels: not_released_or_owner_linked
+      split_and_source_manifests: not_released
+      judge_prompts_and_parser: not_released
+      baseline_outputs_and_per_item_scores: not_released
+      human_review_records: not_released
+      official_repository: not_identified
+      official_dataset: not_identified
+      download_helper: none_manual_required_unreleased
+      alias_collision: >-
+        The public ZWHTXY/MMAC-Bench repository is the unrelated ACL 2026
+        Multilingual, Multimodal Alignment Framework for Cultural Grounding
+        Evaluation. It must not be treated as the audio-captioning MMAC release.
+    access: announced_unreleased_manual_required
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_and_code: not_stated_or_released
+      note: >-
+        The article's arXiv distribution license does not grant reuse rights
+        for the absent benchmark, derived labels, synthesized audio, source
+        recordings, evaluator implementation, or model outputs. More than 20
+        source datasets contribute audio, so their upstream terms will remain
+        relevant if an official release appears.
+    sources:
+      - https://arxiv.org/abs/2607.27109
+      - https://arxiv.org/html/2607.27109v2#S2
+      - https://arxiv.org/html/2607.27109v2#S2.SS3
+      - https://arxiv.org/html/2607.27109v2#S3.SS1
+      - https://arxiv.org/html/2607.27109v2#S3.SS2
+      - https://export.arxiv.org/api/query?id_list=2607.27109
+      - https://api.github.com/search/repositories?q=%22MMAC%22+%22audio+captioning%22
+      - https://huggingface.co/api/datasets?search=MMAC
+      - https://huggingface.co/datasets/ZWHTXY/MMAC-Bench/raw/main/README.md
+    note: >-
+      MMAC is directly relevant to AudioLLM pretraining and post-training
+      evaluation because it diagnoses whether open-ended captions cover and
+      correctly describe speech, acoustic scenes, speaker attributes,
+      paralinguistics, temporal changes, and implied meaning. It remains a
+      paper-defined protocol rather than a downloadable benchmark family, so
+      this audit adds no benchmark count or helper.
+
   kimi_audio_gentest_release_audit:
     paper: https://arxiv.org/abs/2504.18425
     title: "Kimi-Audio Technical Report"
