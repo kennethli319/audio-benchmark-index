@@ -10606,6 +10606,8 @@ paper_audits:
       q_trim_repository_head: 604f17f9b93e99ffbb920295ac33542a444a3082
       q_trim_repository_tree: four_files_readme_gitignore_figure_and_gitkeep
       q_trim_repository_last_commit: "2026-06-22T12:24:31Z"
+      q_trim_repository_paper_link: unresolved_YOUR_PAPER_LINK_placeholder
+      arxiv_version: v1_only
       q_trim_implementation_checkpoint_configs_and_outputs: not_released
       music_avqa_r_annotations_and_evaluation_code: public_ungated_github_repository
       music_avqa_r_source_media: inherited_from_music_avqa_not_redistributed
@@ -10645,8 +10647,10 @@ paper_audits:
       README, .gitignore, one figure, and an images directory placeholder. The
       README still says code will be released soon and provides no
       implementation, configuration, checkpoint, predictions, or per-item
-      scores. The Q-TriM repository therefore remains documentation-only; this
-      does not change the public status of the separately owner-released
+      scores. Its nominal Paper hyperlink also remains the literal
+      YOUR_PAPER_LINK placeholder, while arXiv still exposes only version 1.
+      The Q-TriM repository therefore remains documentation-only; this does
+      not change the public status of the separately owner-released
       MUSIC-AVQA-R and MUSIC-AVQA-v2.0 benchmark families.
 
   ibr_power_waveform_scope_audit:

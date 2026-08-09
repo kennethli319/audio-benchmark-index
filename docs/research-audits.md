@@ -3776,3 +3776,8 @@ configuration, checkpoint, predictions, or per-item scores, and the repository
 has no license. This leaves Q-TriM's model-specific artifacts unreleased while
 preserving the public status and separate provenance of MUSIC-AVQA-R and
 MUSIC-AVQA-v2.0. No benchmark count or helper changes.
+A focused August 9 recheck also found that the README's nominal Paper link is
+still the literal `YOUR_PAPER_LINK` placeholder and arXiv exposes only version
+1. The repository head remains `604f17f9b93e99ffbb920295ac33542a444a3082`
+from June 22, so neither channel supplies a newer implementation or evaluation
+artifact.
