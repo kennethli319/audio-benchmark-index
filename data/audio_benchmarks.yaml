@@ -12048,7 +12048,7 @@ paper_audits:
     title: "A Reliability Assessment of LALM Audio Judges for Full-Duplex Voice Agents"
     sections: 3-4 and appendices A-E
     status: audited_claimed_public_supplement_currently_unavailable
-    last_verified: 2026-08-08
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: LALM Judge Validation on Full-Duplex Voice Agents
         index_id: null
@@ -12068,14 +12068,15 @@ paper_audits:
       its headline results.
     release_note: >-
       Appendix E cites a Hugging Face dataset and labels its tabular artifacts
-      public. A focused recheck on 2026-08-08 found that the canonical dataset
-      page still redirects to sign-in, while both the Hub API and raw README
-      endpoint return HTTP 401 and expose no public card, files, sizes, license,
-      or revision metadata. Appendix E says the 152 production-session
-      recordings will not be public and the nominal 60 adversarial WAVs await
-      a later v0.2 clearance review; only 57 successfully rendered clips enter
-      the reported analysis. No benchmark family or download helper is added
-      until the claimed tabular supplement is publicly verifiable.
+      public. A focused recheck on 2026-08-09 found that the canonical dataset
+      page, Hub API, and raw README endpoint all still return HTTP 401 and expose
+      no public card, files, sizes, license, or revision metadata. This matches
+      the inaccessible state observed on August 8. Appendix E says the 152
+      production-session recordings will not be public and the nominal 60
+      adversarial WAVs await a later v0.2 clearance review; only 57 successfully
+      rendered clips enter the reported analysis. No benchmark family or
+      download helper is added until the claimed tabular supplement is publicly
+      verifiable.
     license_note: >-
       The paper is CC BY 4.0 and says the supplement's data and figures are CC
       BY 4.0 while scripts and prompts are Apache-2.0. Those claims cannot
