@@ -1417,13 +1417,17 @@ cites the exact paper and exposes 101,822 WAV files plus train, validation, and
 test JSONL manifests for all eight long-context speech tasks. Hugging Face
 reports about 1.94 TB at revision `bb50d8c11fe9aa9fc5e899a0d941e3b40acbc740`.
 It is not yet counted as a benchmark family: arXiv v1 names no artifact host,
-the card's linked [GitHub repository](https://github.com/AIDC-AI/Marco-Longspeech)
-returns 404, and the card's 204,881 task rows differ from Section 2.3's 202,400
-without a release-version reconciliation. The card declares Apache-2.0, but
-that does not establish relicensing authority over every incorporated public,
-restricted, and custom speech source. No bulk helper is added for this
-approximately 1.94 TB candidate; revisit after an author-controlled page or
-repository confirms provenance, versions, and source-level terms.
+and the card's linked [AIDC-AI repository](https://github.com/AIDC-AI/Marco-Longspeech)
+returns 404. A same-name [ATH-MaaS repository](https://github.com/ATH-MaaS/Marco-Longspeech)
+now establishes a same-organization release path, but its complete public tree
+contains only an Apache-2.0 license and no README, code, manifests, or provenance
+ledger. The card's 204,881 task rows also differ from Section 2.3's 202,400
+without a release-version reconciliation. Apache-2.0 covers the repository's
+released file and is the card's declaration, but does not establish relicensing
+authority over every incorporated public, restricted, and custom speech source.
+No bulk helper is added for this approximately 1.94 TB candidate; revisit after
+a substantive owner repository confirms provenance, versions, and source-level
+terms.
 
 The July 2026 Local Information Disclosure paper adds coverage of the
 [VoicePrivacy Challenge 2024](https://www.voiceprivacychallenge.org/vp2024/)

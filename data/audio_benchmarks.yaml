@@ -9626,7 +9626,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2601.13539
     title: "LongSpeech: A Scalable Benchmark for Transcription, Translation and Understanding in Long Speech"
     sections: 2-3
-    status: audited_public_paper_linked_candidate_with_broken_code_link_and_unresolved_upstream_terms
+    status: audited_public_paper_linked_candidate_with_relocated_placeholder_repository_and_unresolved_upstream_terms
     last_verified: 2026-08-08
     evaluated_sets:
       - cited_as: LongSpeech
@@ -9657,13 +9657,19 @@ paper_audits:
         rows, whereas paper Section 2.3 reports 142,200, 30,100, and 30,100.
         The snapshot history includes later audio deletions and path fixes, but
         does not publish a version-to-paper reconciliation.
-      construction_and_evaluation_code: not_identified
-      linked_github_repository: https://github.com/AIDC-AI/Marco-Longspeech
-      linked_github_repository_status: HTTP_404_on_verification_date
+      construction_and_evaluation_code: not_released
+      dataset_card_linked_github_repository: https://github.com/AIDC-AI/Marco-Longspeech
+      dataset_card_linked_github_repository_status: HTTP_404_on_verification_date
+      relocated_same_organization_github_repository: https://github.com/ATH-MaaS/Marco-Longspeech
+      relocated_repository_commit: ac8fec11085ddac2f9712f9d4cba5e2813271f1f
+      relocated_repository_status: public_ungated_placeholder_with_Apache_2_0_LICENSE_only
       owner_relationship: >-
         The dataset card cites arXiv:2601.13539 and presents itself as the
-        Marco-LongSpeech release, but arXiv v1 predates it, names no artifact
-        host, and does not identify the ATH-MaaS organization.
+        Marco-LongSpeech release. A same-name GitHub repository now exists
+        under the same ATH-MaaS organization as the Hub dataset, making the
+        card's AIDC-AI URL look like a stale owner-path error; however, arXiv
+        v1 predates both hosts and does not identify ATH-MaaS, and the relocated
+        repository contains only a license file.
       download_helper: none_candidate_snapshot_approximately_1_94_TB
     access: public_ungated_candidate_snapshot
     license:
@@ -9686,14 +9692,20 @@ paper_audits:
       - https://huggingface.co/api/datasets/ATH-MaaS/Marco_Longspeech
       - https://huggingface.co/api/datasets/ATH-MaaS/Marco_Longspeech/commits/main
       - https://github.com/AIDC-AI/Marco-Longspeech
+      - https://github.com/ATH-MaaS/Marco-Longspeech
+      - https://api.github.com/repos/ATH-MaaS/Marco-Longspeech
+      - https://api.github.com/repos/ATH-MaaS/Marco-Longspeech/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/ATH-MaaS/Marco-Longspeech/main/LICENSE
     note: >-
       Version 1 only promised a future release, but the later Marco-LongSpeech
       Hub snapshot now exposes audio and task manifests and cites the exact
       paper. It is not counted yet because the paper does not identify this
-      host, the card's linked owner repository returns 404, live row totals
-      differ from Section 2.3, and no source-level rights ledger or construction
-      and evaluation code was identified. Revisit family promotion after an
-      author-controlled page or repository confirms provenance and versions.
+      host, the card's linked AIDC-AI repository returns 404, and the relocated
+      same-organization ATH-MaaS repository contains only Apache-2.0 text.
+      Live row totals also differ from Section 2.3, and no source-level rights
+      ledger or construction and evaluation code was identified. Revisit family
+      promotion after an author-controlled page or substantive repository
+      confirms provenance and versions.
 
   local_information_disclosure_voiceprivacy_evaluation:
     paper: https://arxiv.org/abs/2607.06259
