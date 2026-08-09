@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-08-08
+  last_checked: 2026-08-09
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -9901,11 +9901,12 @@ paper_audits:
     paper: https://arxiv.org/abs/2606.02642
     title: "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"
     sections: 2.1-2.5
-    status: audited_announced_benchmark_unreleased
+    status: audited_public_ungated_benchmark_with_annotations_and_media
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: SVHalluc
-        index_id: null
-        status: announced_unreleased
+        index_id: svhalluc
+        status: public_ungated
         protocol: >-
           The paper derives 2,405 balanced, human-verified video-question
           pairs from the YouCook2 validation set. Its six diagnostic tasks
@@ -9914,30 +9915,50 @@ paper_audits:
           cross-modal temporal binding.
     release_audit:
       paper_and_project_page: public_ungated
-      benchmark_video_question_pairs: not_released
-      selected_youcook2_segments: not_released
-      construction_and_evaluation_code: not_released
+      benchmark_video_question_pairs: public_ungated_2405_rows
+      selected_youcook2_media: public_ungated_872_mp4_files
+      hugging_face_revision: 211b4f14ab66ae9557b69e302d1f090e0e610839
+      hugging_face_snapshot_bytes: 6260911980
+      annotation_bytes: 771426
+      construction_code: not_released
+      evaluation_code: not_released_accuracy_protocol_only
       prompts_and_human_verification_records: not_released
+      project_page_code_link: broken_generic_github_homepage
+      project_page_data_link: self_link_not_dataset
+      official_repository: https://github.com/kaist-ami/SVHalluc
+      official_dataset: https://huggingface.co/datasets/zcs15/SVHalluc
+      download_helper: scripts/download/svhalluc.sh
     license:
       paper: arxiv_perpetual_nonexclusive
-      benchmark_data_and_code: not_stated
-      upstream_source: YouCook2_terms_apply
+      benchmark_data_and_code: custom_research_purposes_notice_no_standard_open_license
+      upstream_source: YouCook2_YouTube_and_source_video_terms_apply
     sources:
       - https://arxiv.org/abs/2606.02642
       - https://arxiv.org/html/2606.02642v1#S2
       - https://arxiv.org/html/2606.02642v1#S2.SS4
       - https://arxiv.org/html/2606.02642v1#S2.SS5
       - https://chenshuang-zhang.github.io/projects/svhalluc/
+      - https://github.com/kaist-ami/SVHalluc
+      - https://raw.githubusercontent.com/kaist-ami/SVHalluc/main/README.md
+      - https://raw.githubusercontent.com/kaist-ami/SVHalluc/main/LICENSE_NOTICE.md
+      - https://api.github.com/repos/kaist-ami/SVHalluc
+      - https://api.github.com/repos/kaist-ami/SVHalluc/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/zcs15/SVHalluc
+      - https://huggingface.co/datasets/zcs15/SVHalluc/raw/main/README.md
+      - https://huggingface.co/api/datasets/zcs15/SVHalluc
+      - https://huggingface.co/datasets/zcs15/SVHalluc/resolve/main/samples.json
     note: >-
-      The official project page says the paper, code, dataset, poster, and
-      slides "will be released here" but currently links only the paper and
-      exposes no repository, dataset card, archive, item manifest, selected
-      YouCook2 segment IDs, generated questions, answers, or evaluation code.
-      Public access to YouCook2 does not reproduce the paper's audio swaps,
-      GPT-derived objects and events, temporal assignments, filtering, or
-      human verification. SVHalluc is therefore retained as an unreleased
-      protocol audit rather than counted as a downloadable benchmark family.
-      Recheck the owner project page after an official artifact release.
+      The author-linked public release now supplies all 2,405 question-answer
+      rows and 872 referenced MP4 files. The manifest exactly reproduces the
+      paper's per-task counts and every referenced path exists in the Hub
+      snapshot. The released abbreviation CSMB differs from CMSB in the paper
+      text, so consumers should preserve the manifest value. The repository
+      supplies a downloader and documents option-letter accuracy, but no model
+      adapters, response parser, construction pipeline, GPT prompts, human
+      verification records, baseline outputs, or per-item predictions. The
+      official project page remains stale: its code button points to GitHub's
+      homepage and its data button links back to the project page. Use the
+      owner repository and author-linked Hub URLs recorded here instead.
 
   longspeech_release_audit:
     paper: https://arxiv.org/abs/2601.13539
@@ -17805,6 +17826,77 @@ paper_audits:
       release, so no benchmark count, duplicate family, or helper is added.
 
 benchmarks:
+  - id: svhalluc
+    name: SVHalluc
+    full_name: "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - speech_understanding
+      - multimodal_reasoning
+      - hallucination_evaluation
+    tasks:
+      - speech_vision_semantic_hallucination
+      - speech_vision_temporal_hallucination
+      - global_semantic_alignment
+      - fine_grained_semantic_alignment
+      - cross_modal_semantic_binding
+      - temporal_alignment
+      - temporal_forecasting
+      - cross_modal_temporal_binding
+    official:
+      paper: https://arxiv.org/abs/2606.02642
+      project: https://chenshuang-zhang.github.io/projects/svhalluc/
+      repo: https://github.com/kaist-ami/SVHalluc
+      dataset: https://huggingface.co/datasets/zcs15/SVHalluc
+    download:
+      access: public_ungated_research_purpose_only
+      primary:
+        - https://huggingface.co/datasets/zcs15/SVHalluc
+        - https://github.com/kaist-ami/SVHalluc
+      examples:
+        - 'scripts/download/svhalluc.sh'
+        - 'SVHALLUC_DOWNLOAD_HF=1 scripts/download/svhalluc.sh'
+        - 'SVHALLUC_CLONE_REPO=1 scripts/download/svhalluc.sh'
+      notes: >-
+        The ungated test release contains 2,405 balanced multiple-choice rows
+        referencing 872 MP4 files: 1,422 semantic items over GSA, FGSA, and
+        CSMB, and 983 temporal items over TA, TF, and CMTB. The manifest is
+        approximately 771 KB and all referenced paths are present in the
+        approximately 6.26 GB Hub snapshot. The helper downloads primary
+        documentation, terms, live repository metadata, the dataset card, and
+        the complete question-answer manifest by default. Media require
+        SVHALLUC_DOWNLOAD_HF=1; cloning the small owner repository is a
+        separate opt-in. The release documents option-letter accuracy but
+        supplies no model adapters or general response parser.
+    license:
+      data: custom_research_purposes_notice
+      code: no_standard_open_source_license
+      notes: >-
+        The repository and dataset card deliberately use a custom notice, not
+        a standard open license. They state that the release is for research
+        purposes, transfer no ownership of third-party video, and require
+        users to follow SVHalluc, YouCook2, YouTube, and source-video terms.
+        The article's arXiv license covers only the paper. Obtain clarification
+        before redistribution, modification, or commercial use.
+    sources:
+      - https://arxiv.org/abs/2606.02642
+      - https://arxiv.org/html/2606.02642v1#S2.SS1
+      - https://arxiv.org/html/2606.02642v1#S2.SS2
+      - https://arxiv.org/html/2606.02642v1#S2.SS3
+      - https://arxiv.org/html/2606.02642v1#S2.SS4
+      - https://arxiv.org/html/2606.02642v1#S2.SS5
+      - https://chenshuang-zhang.github.io/projects/svhalluc/
+      - https://github.com/kaist-ami/SVHalluc
+      - https://raw.githubusercontent.com/kaist-ami/SVHalluc/main/README.md
+      - https://raw.githubusercontent.com/kaist-ami/SVHalluc/main/LICENSE_NOTICE.md
+      - https://api.github.com/repos/kaist-ami/SVHalluc
+      - https://api.github.com/repos/kaist-ami/SVHalluc/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/zcs15/SVHalluc
+      - https://huggingface.co/datasets/zcs15/SVHalluc/raw/main/README.md
+      - https://huggingface.co/api/datasets/zcs15/SVHalluc
+      - https://huggingface.co/datasets/zcs15/SVHalluc/resolve/main/samples.json
+
   - id: av_syncbench
     name: AV-SyncBench
     full_name: "AV-SyncBench: Decoupled Benchmarking of Temporal and Semantic Audio-Visual Synchronization"

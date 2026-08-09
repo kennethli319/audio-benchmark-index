@@ -62,6 +62,7 @@ scripts/download/avscapbench.sh
 scripts/download/vabench.sh
 scripts/download/comind.sh
 scripts/download/video_salmonn2_caption.sh
+scripts/download/svhalluc.sh
 scripts/download/syncbench.sh
 scripts/download/ave_compass.sh
 scripts/download/seamless_interaction.sh
