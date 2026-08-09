@@ -670,8 +670,14 @@ errors propagate through rule-based validation and dialogue control. This is
 directly relevant to post-training evaluation of spoken interaction, tool use,
 robustness, and end-to-end task completion. The paper says code and data will
 be released at an owner GitHub path, but that path and its parent repository
-returned 404 on the verification date; exact-name GitHub and Hugging Face
-searches found no alternative release. The audio, transcripts, profiles,
+returned 404 on the verification date. A focused August 9 recheck found a new
+ungated `SAHAI-artpark/FormVoiceAgentBench` Hugging Face repository created on
+August 7. Its organization name matches the paper's SAHAI/ARTPARK affiliation,
+but neither the paper nor the repository links the two, the organization is
+unverified, and the repository has no card. Its complete tree at revision
+`a813930bb443ead374d505bd257704a8f012f956` contains only `.gitattributes`,
+with no benchmark files or license; exact-name GitHub search still finds no
+release. The audio, transcripts, profiles,
 manifests, scorer, outputs, and per-item records therefore remain unavailable.
 The paper has arXiv's perpetual non-exclusive license, which does not license
 those absent artifacts; paid recording and the exclusion of real caller data
