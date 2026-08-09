@@ -111,6 +111,7 @@ scripts/download/emphassess.sh
 scripts/download/speechparaling_bench.sh
 scripts/download/voxparadox.sh
 scripts/download/voxsafebench.sh
+scripts/download/redvox.sh
 scripts/download/audioagentsecurity.sh
 scripts/download/speechjbb.sh
 scripts/download/common_sense_facts_audio.sh

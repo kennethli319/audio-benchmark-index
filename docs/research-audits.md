@@ -408,6 +408,25 @@ auditing, red-teaming, and mitigation and warns against re-identification or
 voice profiling. EchoMind is now independently indexed; SASLM's use of it for
 expressive self-reward post-training is audited above.
 
+RedVox is now indexed as a manually gated multilingual speech-LLM safety and
+fairness benchmark after a focused release-status recheck. Sections 3-4 and
+Appendix B define open-ended safety, stereotype-fairness, and response-
+relatedness evaluation across English, French, Italian, Spanish, and German,
+with spoken harmful requests, matched text-only inputs, and non-speech audio
+controls using silence, ambient noise, and babble. The planned public subset
+contains 3,414 entries from 26 consenting voices; the full 6,118-entry,
+52-participant collection remains private. The owner Hub changed from an empty
+placeholder to a manually gated release on August 5: its public API exposes
+five language configurations, 854 WAVs, five metadata JSONL files, and about
+414.5 MB of storage. The safe helper fetches only the paper, live API metadata,
+and public file listings unless the user has owner approval, authenticates,
+acknowledges the terms, and explicitly opts into the snapshot. The card labels
+the license only as `other`, while README and dataset-info content return HTTP
+401 before approval, so exact custom terms must be reviewed during access; the
+paper's CC BY 4.0 does not license recordings or override MUSAN terms. The
+paper-linked code repository still returns HTTP 404, so no public evaluator or
+Apache-2.0 code release is claimed.
+
 The June 2026 *HybridCodec* paper is recorded as an existing-family and
 announced-release audit of a codec used directly as a speech-language-model
 interface. Sections 3.2-5 train HybridCodec and its unified autoregressive and

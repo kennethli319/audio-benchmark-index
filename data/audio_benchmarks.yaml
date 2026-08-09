@@ -5993,12 +5993,12 @@ paper_audits:
     paper: https://arxiv.org/abs/2606.26968
     title: "RedVox: Safety and Fairness Gaps in Speech Models Across Languages"
     sections: 3-4, ethical considerations, and appendix B
-    status: audited_announced_gated_release_currently_placeholder_only
-    last_verified: 2026-07-28
+    status: audited_manually_gated_public_subset_with_code_still_unreleased
+    last_verified: 2026-08-08
     evaluated_material:
       - cited_as: RedVox released subset
-        index_id: null
-        status: paper_evaluated_release_announced_but_not_yet_published
+        index_id: redvox
+        status: manually_gated_public_subset
         protocol: >-
           Evaluate open-ended safety, stereotype fairness, and response
           relatedness for speech, non-speech-audio-plus-text, and text-only
@@ -6014,23 +6014,26 @@ paper_audits:
           unsafe/unfair, and related/unrelated judgments.
     release_audit:
       paper: public_CC-BY-4.0
-      hugging_face_repository: public_placeholder_only
-      hugging_face_gating: currently_false_despite_paper_announcing_gated_access
-      hugging_face_data_files: not_present
-      hugging_face_reported_storage_bytes: 0
+      hugging_face_repository: public_metadata_with_manually_gated_files
+      hugging_face_gating: manual_approval_required
+      hugging_face_data_files: 854_wav_files_plus_five_language_metadata_jsonl_files
+      hugging_face_reported_storage_bytes: 414474464
+      hugging_face_revision: 74e32447ca6bee2d88ab7f3be3532eb5273648be
       code_repository: linked_by_paper_but_currently_returns_404
       full_6118_entry_collection: private_not_for_release
-      planned_3414_entry_subset: not_yet_released
+      planned_3414_entry_subset: released_with_manual_gating
     license:
       paper: CC-BY-4.0
-      planned_dataset: customized_research_only_gated_terms_not_yet_published
+      dataset: other_with_manual_access_terms_not_publicly_readable
       planned_code: Apache-2.0_not_yet_verifiable
       musan_noise: upstream_terms_apply
       note: >-
         The paper says access will require acceptance of a customized license
-        and binding intended-use terms. The current Hub card labels the
-        license only as "other" and publishes no terms or data. The paper's
-        CC BY 4.0 license does not license participant recordings.
+        and binding intended-use terms. The live Hub metadata labels the
+        license only as "other"; its README and dataset-info files return
+        HTTP 401 until access is approved, so the exact terms must be reviewed
+        during the manual access flow. The paper's CC BY 4.0 license does not
+        license participant recordings.
     sources:
       - https://arxiv.org/abs/2606.26968
       - https://arxiv.org/html/2606.26968v1#S3
@@ -6039,13 +6042,19 @@ paper_audits:
       - https://huggingface.co/datasets/FBK-MT/RedVox
       - https://huggingface.co/datasets/FBK-MT/RedVox/raw/main/README.md
       - https://huggingface.co/api/datasets/FBK-MT/RedVox
+      - https://huggingface.co/api/datasets/FBK-MT/RedVox/tree/main?recursive=true&expand=true
       - https://github.com/hlt-mt/redvox
       - https://api.github.com/repos/hlt-mt/redvox
     note: >-
-      RedVox appears to be a substantive benchmark family, but no benchmark
-      row or download helper is added until the promised gated subset and its
-      customized terms are actually published. Recheck the official Hub and
-      repository after paper acceptance.
+      The owner Hub changed from an empty placeholder to a manually gated
+      release on 2026-08-05. Its public API now exposes five language
+      configurations, 864 repository files, and about 414.5 MB of storage;
+      the file inventory contains 854 WAVs, five metadata JSONL files, and
+      repository metadata. The gated metadata tables expand those files into
+      the paper's 3,414 evaluation entries. RedVox is therefore indexed with a
+      metadata-only safe helper and manual access instructions. The paper-
+      linked code repository still returns HTTP 404, so no evaluator or
+      Apache-2.0 code release is claimed.
 
   output_based_multi_microphone_speech_enhancement:
     paper: https://arxiv.org/abs/2607.12529
@@ -21639,6 +21648,67 @@ benchmarks:
       - https://api.github.com/repos/AmphionTeam/VoxSafeBench/git/trees/main?recursive=1
       - https://huggingface.co/datasets/YuxiangW/VoxSafeBench
       - https://huggingface.co/api/datasets/YuxiangW/VoxSafeBench
+
+  - id: redvox
+    name: RedVox
+    full_name: "RedVox: Safety and Fairness Gaps in Speech Models Across Languages"
+    qwen_cited_as: null
+    qwen_bucket:
+      - end_to_end_speech_dialogue
+      - audio_language_model_benchmark
+    tasks:
+      - multilingual_speech_llm_safety
+      - speech_llm_fairness_evaluation
+      - stereotype_and_harmful_request_robustness
+      - modality_conditioned_safety
+      - non_speech_audio_robustness
+      - response_relatedness_evaluation
+    official:
+      dataset: https://huggingface.co/datasets/FBK-MT/RedVox
+      paper: https://arxiv.org/abs/2606.26968
+    download:
+      access: manually_gated_hugging_face_custom_terms_and_authentication
+      primary:
+        - https://huggingface.co/datasets/FBK-MT/RedVox
+      examples:
+        - 'scripts/download/redvox.sh'
+        - 'REDVOX_ACK_TERMS=1 REDVOX_DOWNLOAD_HF=1 scripts/download/redvox.sh'
+      notes: >-
+        The manually gated owner release supplies the planned 3,414-entry
+        subset from 26 consenting speakers in English, French, Italian,
+        Spanish, and German. It evaluates open-ended safety, stereotype
+        fairness, and response relatedness for spoken harmful requests,
+        non-speech-audio-plus-text requests, and matched text-only controls.
+        Public Hub metadata exposes five language configurations, 854 WAV
+        files, five metadata JSONL files, and about 414.5 MB of storage. The
+        helper fetches the paper, live API metadata, and a paginated public
+        file listing by default; dataset files require owner approval,
+        authentication, acknowledgement of the terms, and explicit opt-in.
+        The separate full 6,118-entry collection from 52 participants remains
+        private and is not represented as public. The paper-linked code
+        repository still returns HTTP 404, so the released family currently
+        has no verified public evaluator.
+    license:
+      data: other_manual_custom_terms_not_publicly_readable
+      code: announced_Apache_2_0_but_not_released
+      notes: >-
+        The Hub card declares only "other" and requires manual approval; its
+        README and dataset-info files return HTTP 401 before approval. Review
+        the customized research-use and intended-use terms in the access flow.
+        The article's CC BY 4.0 license does not cover participant recordings,
+        and MUSAN-derived silence, ambient-noise, and babble controls retain
+        upstream terms. Do not infer Apache-2.0 code terms while the linked
+        repository remains unavailable.
+    sources:
+      - https://arxiv.org/abs/2606.26968
+      - https://arxiv.org/html/2606.26968v1#S3
+      - https://arxiv.org/html/2606.26968v1#S4
+      - https://arxiv.org/html/2606.26968v1#Sx2
+      - https://huggingface.co/datasets/FBK-MT/RedVox
+      - https://huggingface.co/api/datasets/FBK-MT/RedVox
+      - https://huggingface.co/api/datasets/FBK-MT/RedVox/tree/main?recursive=true&expand=true
+      - https://github.com/hlt-mt/redvox
+      - https://api.github.com/repos/hlt-mt/redvox
 
   - id: echomind
     name: EchoMind
