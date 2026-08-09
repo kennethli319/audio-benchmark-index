@@ -3259,6 +3259,15 @@ CC BY 4.0 covers the article, not absent implementations, transformed stems,
 cached verbalizations, outputs, or upstream benchmark data. HIVE is therefore
 documented as an unavailable speech-interface protocol, not counted as a
 public audio benchmark family, and receives no download helper.
+A focused August 9 owner-provenance recheck found no matching release among
+first author Zizhao Hu's 91 public GitHub repositories or on the author's
+public project site. ArXiv still exposes only version 1, whose limitation
+section explicitly says the reported spoken registers are text-to-text
+synthetic verbalizations, not recorded speech or a real ASR distribution; an
+implemented TTS-to-ASR branch was excluded from the reported runs. The claimed
+code, transformed stems, cached verbalizations, generations, and score rows
+therefore remain unavailable, and HIVE remains an audit rather than a counted
+audio benchmark family.
 
 The June 2026 *A Closer Look at Failure Modes in Temporal Understanding of
 Large Audio-Language Models* paper is recorded as an unavailable derived-
