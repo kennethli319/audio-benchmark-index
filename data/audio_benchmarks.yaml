@@ -16416,7 +16416,7 @@ paper_audits:
     title: "Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use"
     sections: version_2_sections_3_5
     status: audited_claimed_public_benchmark_with_demo_subset_only
-    last_verified: 2026-08-07
+    last_verified: 2026-08-08
     evaluated_sets:
       - cited_as: Audio2Tool
         index_id: null
@@ -16457,6 +16457,10 @@ paper_audits:
       demo_metadata_examples: 23
       demo_wav_files: 29
       demo_tier_coverage: all_eight_tiers
+      repository_tree_files: 96
+      repository_tree_complete: true
+      bundled_downloader: author_S3_sample_extractor_requires_configured_AWS_access
+      referenced_author_S3_benchmark_bucket: not_publicly_accessible_or_documented
       full_query_and_audio_release: not_released
       complete_tool_taxonomy_and_schemas: not_released
       frozen_splits_and_generation_manifests: not_released
@@ -16484,6 +16488,7 @@ paper_audits:
       - https://raw.githubusercontent.com/audio2tool/audio2tool.github.io/main/README.md
       - https://api.github.com/repos/audio2tool/audio2tool.github.io
       - https://api.github.com/repos/audio2tool/audio2tool.github.io/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/audio2tool/audio2tool.github.io/main/scripts/download_tier_samples.js
     note: >-
       Paper version 2 says the code and dataset are public on the project page,
       but the linked owner repository is a demonstration site. Its eight JSON
@@ -16492,8 +16497,11 @@ paper_audits:
       turn-level WAVs. It does not expose the complete approximately 30,000-row
       benchmark or the artifacts needed to reproduce Table 3 and Figure 3. Selected
       demonstrations therefore do not support counting Audio2Tool as a public
-      benchmark family or adding a download helper. Revisit if the owners
-      publish a complete, licensed benchmark release.
+      benchmark family or adding a download helper. The repository's bundled
+      `download_tier_samples.js` uses author-development S3 paths and configured
+      AWS CLI credentials to select three examples per Tier 1-7 for the demo;
+      it is not a public downloader for the claimed benchmark or Tier 8.
+      Revisit if the owners publish a complete, licensed release.
 
   stepaudio_2_5_evaluation_release_audit:
     paper: https://arxiv.org/abs/2605.23463

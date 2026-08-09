@@ -3124,10 +3124,11 @@ release on August 7. The article's arXiv license does not license the absent
 benchmark, and TACOS/Freesound item terms require separate review. No public
 family or download helper is added pending an author-controlled release.
 
-The April 2026 Audio2Tool paper is recorded as a claimed-public but
-partial-release audit of speech-language-model tool use. Version 2 Sections
-3-5 define approximately 30,000 English queries over 152 functions, 23
-categories, three device domains, and eight difficulty tiers, evaluated with
+The April 2026 Audio2Tool paper now has a focused release-completeness audit of
+the claimed-public but partial speech-language-model tool-use release. Version
+2 Sections 3-5 and the repository's complete 96-entry tree show approximately
+30,000 English queries over 152 functions, 23 categories, three device domains,
+and eight difficulty tiers, evaluated with
 ordered Tool Accuracy, normalized Exact Match, and Slot F1. Noise ablations
 cover babble, mechanical hum, and impulsive MS-SNSD noise at +15, +5, and -5
 dB SNR. This directly tests post-training for audio-native function calling,
@@ -3136,8 +3137,11 @@ intent selection, and acoustic robustness. Although version 2 says code and
 data are public on the project page, the linked owner repository is a static
 demo: its tier metadata exposes 23 selected examples referencing 29 WAVs, but
 not the complete query/audio release, tool schemas, fixed splits, generation
-manifests, evaluator, baseline outputs, or per-item scores. The paper is CC BY
-4.0; the demo repository has no detected license, and its ambiguous “same as
+manifests, evaluator, baseline outputs, or per-item scores. Its bundled
+`download_tier_samples.js` requires configured AWS CLI access to author-
+development S3 paths and selects only three examples per Tier 1-7 for the demo;
+it neither handles Tier 8 nor provides public benchmark access. The paper is CC
+BY 4.0; the demo repository has no detected license, and its ambiguous “same as
 the Audio2Tool paper/repository” statement does not clearly license hosted
 recordings or metadata. Audio2Tool therefore remains uncounted and receives no
 helper until a complete, licensed benchmark release appears.
