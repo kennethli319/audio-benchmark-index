@@ -673,21 +673,21 @@ The paper has arXiv's perpetual non-exclusive license, which does not license
 those absent artifacts; paid recording and the exclusion of real caller data
 do not establish benchmark reuse terms. No public family or helper is added.
 
-The August 2026 *Spoken Function Calling* paper is recorded as an unavailable
-claimed-release audit of SFC-Bench. Sections 4-5 define 7,078 synthetic spoken
-function-calling examples across four levels: single- or multi-intent requests
-in single- or multi-turn form. The fixed split contains 4,499 training, 1,986
-in-distribution test, and 593 out-of-distribution test examples over 300
-functions, with function-name accuracy, parameter-value F1, and exact overall
-accuracy. Missing multi-turn parameters are labeled `NAN`, making the protocol
-directly relevant to audio-LLM tool use, hallucination, structured instruction
-following, and GRPO post-training. The paper says code and data are available
-in the official QwenAudio FunResearch repository, but the claimed `SpokenFC`
-path returns 404, its path-specific commit history is empty, and the complete
-non-truncated main-branch tree at commit
-`a3708fd41d5dd2a2665c5f281cbfc9242b7642e1` contains no matching artifacts as
-of August 8. Exact-name Hugging Face dataset and model searches also return no
-results; a similarly
+The August 2026 *Spoken Function Calling* paper's claimed SFC-Bench release was
+rechecked on August 9. Sections 4-5 define 7,078 synthetic spoken function-
+calling examples across four levels: single- or multi-intent requests in
+single- or multi-turn form. The fixed split contains 4,499 training, 1,986 in-
+distribution test, and 593 out-of-distribution test examples over 300 functions;
+Table 1 further gives the complete per-level split counts. Function-name
+accuracy, parameter-value F1, and exact overall accuracy measure performance.
+Missing multi-turn parameters are labeled `NAN`, making the protocol directly
+relevant to audio-LLM tool use, hallucination, structured instruction following,
+and GRPO post-training. The paper says code and data are available in the
+official QwenAudio FunResearch repository, but the claimed `SpokenFC` path still
+returns HTTP 404, its path-specific commit history is empty, and the complete
+non-truncated main-branch tree remains at commit
+`a3708fd41d5dd2a2665c5f281cbfc9242b7642e1` with no matching artifacts. Exact-
+name Hugging Face dataset and model searches also return no results; a similarly
 named 2014 GitHub project concerns space-filling curves and is unrelated. The
 benchmark audio, function definitions, queries, labels, manifests, evaluation
 code, predictions, and scores therefore remain unavailable. Apache 2.0 covers

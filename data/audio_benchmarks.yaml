@@ -4917,7 +4917,7 @@ paper_audits:
     title: "Spoken Function Calling: A New Perspective on Spoken Language Understanding for Large Audio Language Models"
     sections: 4-5
     status: audited_claimed_release_missing_from_official_repository
-    last_verified: 2026-08-08
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: SFC-Bench
         index_id: null
@@ -4927,10 +4927,13 @@ paper_audits:
           L1 single-intent/single-turn, L2 multi-intent/single-turn, L3-1
           single-intent/multi-turn, and L3-2 multi-intent/multi-turn. The paper
           reports 4,499 training, 1,986 in-distribution test, and 593
-          out-of-distribution test samples, with function-name accuracy,
-          parameter-value F1, and overall accuracy. Its 300 functions are split
-          into 232 in-distribution and 68 out-of-distribution functions, and
-          speaker identities are isolated across training, validation, and test.
+          out-of-distribution test samples. L1/L2/L3-1/L3-2 respectively contain
+          2,647/817/447/588 training, 902/480/317/287 in-distribution test, and
+          321/94/126/52 out-of-distribution test examples. Metrics are function-
+          name accuracy, parameter-value F1, and exact overall accuracy. Its 300
+          functions are split into 232 in-distribution and 68 out-of-distribution
+          functions, and speaker identities are isolated across training,
+          validation, and test.
         note: >-
           The speech is synthesized with IndexTTS-2 using LibriSpeech speaker
           timbre profiles. Level 3 includes ambiguous queries whose missing
@@ -4976,9 +4979,10 @@ paper_audits:
       FunResearch `SpokenFC` path, but that path returns HTTP 404 and the
       repository's complete, non-truncated main-branch tree at commit
       `a3708fd41d5dd2a2665c5f281cbfc9242b7642e1` contains no SpokenFC or
-      SFC-Bench files as of 2026-08-08. GitHub's path-specific commit endpoint
-      returns an empty list, and exact-name Hugging Face dataset and model
-      searches return no results. An unrelated 2014 GitHub repository named
+      SFC-Bench files as of 2026-08-09. An August 9 recheck found the same tree
+      revision and HTTP 404. GitHub's path-specific commit endpoint returns an
+      empty list, and exact-name Hugging Face dataset and model searches return
+      no results. An unrelated 2014 GitHub repository named
       `sfc-benchmark`
       concerns space-filling curves and is not an alternative release. This
       audit therefore does not count SFC-Bench as a public benchmark family or
