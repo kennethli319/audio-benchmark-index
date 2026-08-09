@@ -1948,13 +1948,25 @@ validation ratings remain unreleased. The paper uses arXiv's non-exclusive
 license rather than CC BY 4.0, and source-media rights remain controlling. STEB
 is not counted as a public family, and no helper or invented data link is added.
 
-The July 2026 Sound Scene Story Benchmark (S3Bench) for narrative
-text-to-audio instruction following is also release-audited but not counted as
-a downloadable family. The paper defines 1,200 multi-event and overlapping
-temporal prompts. Its public project page provides selected prompt/output demos
-and aggregate results, but not the complete prompt manifest or evaluation
-assets; the linked GitHub repository is not public, and no data or demo license
-is stated.
+The July 2026 Sound Scene Story Benchmark (S3Bench) now has a consolidated
+release-completeness audit after reviewing Sections 3.2, 3.5, 4.1-4.5, and
+5.2-5.4 of version 2. Its 1,200 evaluation-only narrative prompts cover 300
+two-event, 500 three-event, 200 four-event, and 200 overlapping-event cases;
+an audio-language-model judge measures event exact match and micro accuracy,
+temporal exact match, pairwise accuracy, Kendall's tau, and joint accuracy.
+This directly evaluates post-training instruction following: the paper uses
+S3Bench to compare online ALLM-guided DPO with CLAP-DPO, caption feedback, and
+static preference datasets. The independently built public project page exposes
+only 11 regenerated prompt demonstrations, each with outputs from six systems,
+plus small JSON files with displayed demo scores and seven-system aggregate
+perceptual metrics. It explicitly says it used no internal prompts, samples,
+logs, or non-public training data. The full prompt and event manifest, judge
+prompts and code, preference pairs, model checkpoints, generated evaluation
+set, human-verification rows, and per-item results remain unreleased, while the
+commented code repository still returns HTTP 404. The paper uses arXiv's
+non-exclusive license, and the project states no separate license for its
+metadata or audio. The overlapping duplicate YAML audit has been removed;
+S3Bench remains uncounted and has no download helper.
 
 The June 2026 CASU paper is likewise recorded as an audited protocol rather
 than a downloadable family. It describes semi-synthetic scenes combining

@@ -6780,9 +6780,15 @@ paper_audits:
   s3bench_and_multievent_temporal:
     paper: https://arxiv.org/abs/2607.13408
     title: "Improving Text-to-Audio Instruction Following via Fine-Grained Feedback from Audio-Aware Large Language Models"
-    sections: 3.2, 3.5, 4.1, and 5.2
-    status: audited_unreleased_paper_specific_generation_benchmarks
-    last_verified: 2026-07-28
+    sections: 3.2, 3.5, 4.1-4.5, and 5.2-5.4
+    status: audited_partial_demo_full_paper_specific_generation_benchmarks_unreleased
+    last_verified: 2026-08-08
+    post_training_relevance: >-
+      S3Bench directly evaluates whether preference-optimized text-to-audio
+      models follow compositional instructions by generating every requested
+      event in the requested temporal order. The paper uses the benchmark to
+      compare online ALLM-guided DPO with CLAP-DPO, caption-based feedback,
+      and static Audio-Alpaca and Baton preference data.
     evaluated_sets:
       - cited_as: Sound Scene Story Benchmark (S3Bench)
         status: paper_specific_prompt_set_not_released
@@ -6797,9 +6803,11 @@ paper_audits:
         note: >-
           The paper does not publish the event-label vocabulary, 1,200
           prompts, event assignments, temporal annotations, generation
-          outputs, judge prompts, or per-item results. The public project
-          page contains selected independently regenerated demonstrations and
-          aggregate metrics, not the benchmark package.
+          outputs, judge prompts, or complete per-item results. The public
+          project page contains 11 independently regenerated prompt examples,
+          each with outputs from six systems and displayed event-accuracy and
+          Kendall-tau values, plus aggregate perceptual scores for seven
+          systems. These demonstrations are not the benchmark package.
       - cited_as: MultiEvent-Temporal-2/3/4
         index_id: esc_50
         status: unreleased_derived_evaluation_sets
@@ -6826,7 +6834,8 @@ paper_audits:
           human-verification sample, and per-item results are not released.
     release_audit:
       paper_and_aggregate_results: public
-      selected_independently_regenerated_web_examples: public
+      selected_independently_regenerated_web_examples: public_11_prompt_examples_with_six_system_outputs_each
+      selected_demo_metadata_and_aggregate_perceptual_scores: public_ungated_json
       s3bench_prompts_and_annotations: not_released
       multievent_temporal_recipes_and_manifests: not_released
       preference_training_pairs: not_released
@@ -6843,8 +6852,13 @@ paper_audits:
       - https://arxiv.org/html/2607.13408v2#S3.SS2
       - https://arxiv.org/html/2607.13408v2#S3.SS5
       - https://arxiv.org/html/2607.13408v2#S4.SS1
+      - https://arxiv.org/html/2607.13408v2#S4.SS5
       - https://arxiv.org/html/2607.13408v2#S5.SS2
+      - https://arxiv.org/html/2607.13408v2#S5.SS4
       - https://kuan2jiu99.github.io/allm-feedback-tta/
+      - https://kuan2jiu99.github.io/allm-feedback-tta/merged-demo-metadata/S3-Bench-demo-baseline-models.json
+      - https://kuan2jiu99.github.io/allm-feedback-tta/evaluation-results/metrics-data-S3Bench.json
+      - https://api.github.com/repos/kuan2jiu99/allm-feedback-tta
     note: >-
       S3Bench and MultiEvent-Temporal are evaluation protocols introduced by
       the paper, but neither is currently a reproducible public benchmark
@@ -13749,48 +13763,6 @@ paper_audits:
       - https://arxiv.org/html/2607.03920v2#S5
       - https://arxiv.org/html/2607.03920v2#A1.SS2
       - https://export.arxiv.org/e-print/2607.03920v2
-
-  s3bench_text_to_audio_generation:
-    paper: https://arxiv.org/abs/2607.13408
-    sections: 3.5, 4.1-4.2, and 5.2
-    status: audited_not_indexed_partial_demo_only
-    evaluated_sets:
-      - cited_as: Sound Scene Story Benchmark (S3Bench)
-        index_id: null
-        status: partial_public_demo_full_benchmark_unreleased
-        note: >-
-          The paper describes 1,200 narrative instructions: 300 with two
-          events, 500 with three events, 200 with four events, and 200 with
-          overlapping events. The public project page exposes a small selection
-          of instructions, event labels, generated model outputs, and aggregate
-          results, but not the complete evaluation manifest or judging
-          protocol assets.
-    protocol_note: >-
-      S3Bench evaluates text-to-audio instruction following for sound-event
-      existence and temporal order, including strict sequences and overlapping
-      partial-order cases. Event existence uses exact match and micro accuracy;
-      temporal evaluation uses exact match, pairwise accuracy, and Kendall's
-      tau, conditioned on all requested events being judged present. The
-      benchmark prompts are generated from an ESC-50- and AudioCaps-derived
-      event vocabulary and are used only for evaluation. This audit does not
-      count S3Bench as a downloadable benchmark family until the complete
-      1,200-item prompt manifest and evaluation assets are released.
-    license_note: >-
-      The arXiv article uses arXiv's non-exclusive distribution license. The
-      independently built project page states no license for its demo metadata
-      or generated audio, and the linked GitHub repository is not public as of
-      this audit. ESC-50 and AudioCaps-derived vocabulary provenance does not
-      establish terms for the unreleased S3Bench instructions.
-    sources:
-      - https://arxiv.org/abs/2607.13408
-      - https://arxiv.org/html/2607.13408v1#S3.SS5
-      - https://arxiv.org/html/2607.13408v1#S4.SS1
-      - https://arxiv.org/html/2607.13408v1#S4.SS2
-      - https://arxiv.org/html/2607.13408v1#S5.SS2
-      - https://kuan2jiu99.github.io/allm-feedback-tta/
-      - https://kuan2jiu99.github.io/allm-feedback-tta/merged-demo-metadata/S3-Bench-demo-baseline-models.json
-      - https://kuan2jiu99.github.io/allm-feedback-tta/evaluation-results/metrics-data-S3Bench.json
-      - https://api.github.com/repos/kuan2jiu99/allm-feedback-tta
 
   casu_context_aware_auditory_scene_understanding:
     paper: https://arxiv.org/abs/2606.25391
