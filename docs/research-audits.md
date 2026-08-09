@@ -3314,6 +3314,10 @@ BY 4.0; the demo repository has no detected license, and its ambiguous “same a
 the Audio2Tool paper/repository” statement does not clearly license hosted
 recordings or metadata. Audio2Tool therefore remains uncounted and receives no
 helper until a complete, licensed benchmark release appears.
+A focused August 9 recheck found that the owner repository still resolves to
+March 5 commit `9348131db97eea1e8cfedab4c034f61116cda17d`; its 96-entry tree,
+missing GitHub license declaration, demo-only contents, and absent evaluator
+are unchanged.
 
 The May 2026 *Do Factual Recall Mechanisms Carry over from Text to Speech in
 Multimodal Language Models?* paper is recorded as an unreleased derived

@@ -16949,6 +16949,8 @@ paper_audits:
     release_audit:
       paper_claim: code_and_dataset_public_on_project_page
       owner_project_repository: public_ungated_static_demo
+      owner_repository_head: 9348131db97eea1e8cfedab4c034f61116cda17d
+      owner_repository_last_commit: 2026-03-05
       demo_metadata_examples: 23
       demo_wav_files: 29
       demo_tier_coverage: all_eight_tiers
@@ -16982,6 +16984,7 @@ paper_audits:
       - https://github.com/audio2tool/audio2tool.github.io
       - https://raw.githubusercontent.com/audio2tool/audio2tool.github.io/main/README.md
       - https://api.github.com/repos/audio2tool/audio2tool.github.io
+      - https://api.github.com/repos/audio2tool/audio2tool.github.io/commits/main
       - https://api.github.com/repos/audio2tool/audio2tool.github.io/git/trees/main?recursive=1
       - https://raw.githubusercontent.com/audio2tool/audio2tool.github.io/main/scripts/download_tier_samples.js
     note: >-
@@ -16996,6 +16999,9 @@ paper_audits:
       `download_tier_samples.js` uses author-development S3 paths and configured
       AWS CLI credentials to select three examples per Tier 1-7 for the demo;
       it is not a public downloader for the claimed benchmark or Tier 8.
+      A focused August 9 recheck found that the owner repository still resolves
+      to its March 5 head commit, with the same 96-entry demo tree, no GitHub
+      license declaration, and no complete benchmark or evaluator release.
       Revisit if the owners publish a complete, licensed release.
 
   stepaudio_2_5_evaluation_release_audit:
