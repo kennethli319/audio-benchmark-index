@@ -3655,3 +3655,23 @@ audio, synthesis configuration, prompts, code, checkpoints, predictions, or
 item scores, and it links no project or artifact repository. The article's
 arXiv perpetual non-exclusive license does not cover CPJD or the absent derived
 materials. No counted family or helper is added.
+
+The July 2026 *Just A Rather Very Intelligent Spoken Agent* paper is recorded
+as an unreleased JarvisBench protocol audit after reviewing Sections 2-5 and
+the official project site. Its agent-collaboration track compares the same
+worker with and without sparse spoken mediation on 34 text-only WildClawBench
+tasks, using failure-sensitive checkpoints, simulated expert guidance, and the
+original WildClaw task score. Its user-interaction track fixes a worker, varies
+the mediator brain, and measures end-of-question to start-of-response latency
+plus one-to-five LLM-judge scores for trace-grounded progress answers and
+task-consistent topic answers. This directly evaluates spoken-agent
+transparency, controllability, interaction, and human feedback injection during
+long-horizon tool use. The public site supplies descriptions, aggregate tables,
+and selected streaming demos, but no frozen 34-task manifest, reference
+mediator implementation, checkpoint schedule, simulator or judge prompts,
+worker traces, interventions, ratings, or per-item scores. Exact-name GitHub
+and Hugging Face searches found no JarvisBench release on August 9. The paper
+is CC BY 4.0, but that article license does not cover absent evaluation
+artifacts; the project site states no separate artifact license, and upstream
+WildClawBench and vendor-service terms remain applicable. No counted family or
+download helper is added.
