@@ -545,7 +545,7 @@ paper_audits:
     title: "RAIL: Rethinking Auditory Intelligence in Large Audio-Language Models with a CHC-Grounded Benchmark"
     sections: 3-5_and_appendices_A-D
     status: audited_claimed_anonymous_release_without_public_artifact_link
-    last_verified: 2026-08-08
+    last_verified: 2026-08-09
     benchmark:
       cited_as: RAIL
       role: chc_grounded_audio_language_model_cognitive_capability_evaluation
@@ -601,15 +601,16 @@ paper_audits:
       download_helper: none_manual_required_unreleased
     access: paper_public_benchmark_artifacts_unreleased_or_unlocatable
     license:
-      paper: arXiv_perpetual_non_exclusive_license
+      paper: CC-BY-4.0
       benchmark_data_code_and_metadata: claimed_documented_but_not_publicly_identified
       source_audio_and_synthetic_assets: upstream_and_generation_terms_not_publicly_enumerated
       human_responses_and_model_outputs: not_stated_or_released
       note: >-
         The checklist's statement that licensing information accompanied an
-        anonymous package is not a license grant. The article license covers
-        only the paper, and no public artifact was identified from which the
-        benchmark-level or incorporated-audio terms could be verified.
+        anonymous package is not a license grant. CC BY 4.0 covers the article,
+        not absent benchmark artifacts, and no public release was identified
+        from which benchmark-level or incorporated-audio terms could be
+        verified.
     sources:
       - https://arxiv.org/abs/2606.11260
       - https://arxiv.org/html/2606.11260v1#S3
@@ -621,6 +622,8 @@ paper_audits:
       - https://arxiv.org/html/2606.11260v1#A4.SS1
       - https://export.arxiv.org/api/query?id_list=2606.11260
       - https://api.github.com/search/repositories?q=%22RAIL%22%20%22Rethinking%20Auditory%20Intelligence%22
+      - https://api.github.com/search/repositories?q=RAIL%20audio%20benchmark%20language%20model
+      - https://huggingface.co/api/datasets?search=Rethinking%20Auditory%20Intelligence
       - https://huggingface.co/api/datasets?search=RAIL%20auditory
     note: >-
       RAIL is directly relevant to audio-LLM pretraining and post-training

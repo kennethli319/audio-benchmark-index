@@ -3614,6 +3614,10 @@ also calls the full set approximately 6,000 items in Appendix D despite Table
 2's exact 5,306. With no frozen manifest, evaluation package, model outputs,
 human-response rows, or verifiable benchmark license, RAIL remains an
 unreleased/unlocatable protocol and adds no counted family or helper.
+A focused August 9 recheck found that arXiv still exposes only version 1 and
+that exact-title and broader benchmark searches on GitHub and Hugging Face
+still return no matching release. The audit also corrects the paper license to
+CC BY 4.0; that article license does not license the absent benchmark package.
 
 The July 2026 SPEARBench family now has a focused release-completeness audit
 after reviewing Sections 3-5 and the complete public repository tree. Its
