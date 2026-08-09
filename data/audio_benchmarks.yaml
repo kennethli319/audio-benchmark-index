@@ -18160,6 +18160,14 @@ benchmarks:
         chunks. The helper downloads paper, project, repository, and release
         metadata by default; the full ModelScope Git-LFS clone requires
         explicit opt-in. Evaluation code remains announced but unreleased.
+        A focused 2026-08-09 recheck found the official GitHub repository
+        unchanged at four files, with no push after 2026-03-21: its README
+        still promises evaluation code later, and the tree contains only the
+        project page, two images, and that README. The Hugging Face placeholder
+        is likewise unchanged at revision
+        23329259e882f92acdfb8c0133e46b3a1c70cd0c and contains only a README
+        and .gitattributes, so neither host releases an evaluation runner,
+        model adapters, configurations, predictions, or per-item scores.
     license:
       dataset_card: MIT
       github_code: not_released_no_detected_license

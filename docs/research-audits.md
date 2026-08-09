@@ -2938,6 +2938,16 @@ remains a zero-storage placeholder. ModelScope declares MIT for its dataset
 repository, but the source videos' copyright and platform terms remain
 separately applicable. The safe helper downloads only metadata by default and
 keeps the roughly 68.2 GB Git-LFS clone behind explicit opt-in.
+A focused August 9 release recheck found no evaluation-code change. GitHub's
+complete four-file tree still contains only the project page, two images, and
+the README promise, with no push after March 21 and no detected license. The
+Hugging Face placeholder remains at revision
+`23329259e882f92acdfb8c0133e46b3a1c70cd0c` with only a README and
+`.gitattributes`. The paper's Section 3.1 specifies five upstream model
+codebases, 25 FPS video, 16 kHz audio, 0.64-second non-overlapping chunks, and
+one pairwise decision criterion, but those prose settings do not replace the
+missing common runner, preprocessing adapters, configurations, predictions,
+or per-item scores.
 
 The July 2026 MultiRef-Compass release is now indexed as a public benchmark
 family. Its official Hugging Face repository provides 350 prompts, image
