@@ -210,7 +210,7 @@ paper_audits:
     title: "Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs"
     sections: 3.1_and_4.1-4.6_with_appendices_7-11
     status: audited_existing_public_family_and_released_model_with_incomplete_evaluation_artifacts
-    last_verified: 2026-08-08
+    last_verified: 2026-08-09
     pretraining_and_post_training_relevance: >-
       Lychee-FD studies catastrophic interference between acoustic-token and
       semantic objectives when adapting a half-duplex speech foundation model
@@ -278,8 +278,12 @@ paper_audits:
           not included in the public repositories.
     release_audit:
       github_commit: 259a068317e21393fd27b1e8c85cb79faa4e5eae
+      github_last_push: "2026-07-30T12:36:32Z"
+      github_recursive_tree: complete_2024_entries
       github_code_and_training_package: public_ungated
+      benchmark_named_files: two_duplicate_result_table_SVGs_only
       hugging_face_model: public_ungated
+      hugging_face_last_modified: "2026-07-13T07:37:28Z"
       model_card_license: Apache-2.0
       frozen_QA_audio_and_manifests: not_released
       FD_Bench_cases_and_evaluator: not_released_by_Lychee_FD
@@ -320,7 +324,11 @@ paper_audits:
       counting model repositories as benchmarks or duplicating the existing
       Full-Duplex-Bench family. The owner releases are useful for reproducing
       the model and runtime, but not the paper's complete evaluation tables;
-      no benchmark download helper or count increase is added.
+      no benchmark download helper or count increase is added. An August 9
+      recheck found the same complete 2,024-entry GitHub tree and commit. Its
+      only benchmark-named owner files are two copies of an SVG rendering of
+      the aggregate result table, not benchmark cases, manifests, or an
+      evaluator; the Hugging Face model snapshot also remains unchanged.
 
   gsrm_speech_reward_model_and_online_rlhf_audit:
     paper: https://arxiv.org/abs/2602.13891

@@ -77,7 +77,11 @@ per-item scores. Those omissions keep the paper's aggregate tables only
 partially reproducible. Apache-2.0 covers the released code and model, not
 absent evaluation assets or external benchmarks; the separately required
 Step-Audio-2 Token2Wav component retains its upstream terms. No benchmark
-family, count increase, or model-download helper is added.
+family, count increase, or model-download helper is added. An August 9 recheck
+found the same complete 2,024-entry GitHub tree at commit
+`259a068317e21393fd27b1e8c85cb79faa4e5eae`; the only benchmark-named owner
+files are duplicate SVG renderings of the aggregate table, not evaluation
+inputs or code. The Hugging Face model snapshot was likewise unchanged.
 
 The February 2026 *GSRM* paper is recorded as an internal reward-benchmark and
 online-RLHF evaluation audit after reviewing Sections 2 and 6-7 and Appendices
