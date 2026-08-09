@@ -2429,6 +2429,13 @@ does not make MeetingToM's exact selections, clip boundaries, labels, official
 splits, prompts, scorer, or per-item results public. The paper is CC BY-NC-SA
 4.0, but that does not establish reuse terms for absent derived benchmark
 artifacts. No counted family or helper is added.
+A focused August 9 recheck found the GitHub tree unchanged at
+`f67b392863a1cc8948067c95e4ae385ecd1d4859`: eight total tree entries but only
+five blobs, all placeholders or scaffolding, and no repository push after July
+18. The Hugging Face repository likewise remains at revision
+`52725e1dbdd69524a9040a41b6378383aa10ce8c`, with the same two small files and
+zero bytes of dataset storage. Neither channel now supplies annotations,
+clips, splits, prompts, evaluation code, results, or benchmark-specific terms.
 
 The July 2026 VIP-MINGLE paper is also recorded as an announced multimodal
 conversation corpus rather than a downloadable family. It describes roughly

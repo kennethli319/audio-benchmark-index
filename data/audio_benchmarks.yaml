@@ -14783,9 +14783,12 @@ paper_audits:
       paper_protocol_and_aggregate_results: public
       github_repository: public_placeholder
       github_tree_sha: f67b392863a1cc8948067c95e4ae385ecd1d4859
-      github_tree_files: 5
+      github_last_push: 2026-07-18
+      github_tree_entries: 8
+      github_blob_files: 5
       github_substantive_benchmark_files: 0
       hugging_face_repository: public_ungated_placeholder
+      hugging_face_revision: 52725e1dbdd69524a9040a41b6378383aa10ce8c
       hugging_face_last_modified: 2026-07-19
       hugging_face_files: 2
       hugging_face_used_storage_bytes: 0
@@ -14818,7 +14821,11 @@ paper_audits:
       to the AMI source corpus does not release MeetingToM's selections,
       derived clip boundaries, labels, official splits, prompts, or scorer, so
       no counted family or download helper is added. Recheck the owner
-      repositories before indexing it.
+      repositories before indexing it. A focused August 9 recheck found the
+      same GitHub tree: eight total tree entries but only five blobs, all
+      placeholders or scaffolding, with no push after July 18. The unchanged
+      Hugging Face revision still exposes exactly two small repository files
+      and reports zero bytes of dataset storage.
 
   vip_mingle:
     paper: https://arxiv.org/abs/2607.13614
