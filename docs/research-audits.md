@@ -747,7 +747,12 @@ Version 2 provides no project or artifact link, and the established Qwen-Audio
 repository plus exact-name GitHub and Hugging Face searches expose no matching
 3.0 Gen Preview release. The paper is CC BY 4.0, but that does not license the
 absent benchmarks, manifests, outputs, code, model, or upstream media. No
-public family or download helper is added.
+public family or download helper is added. A focused August 9 recheck confirms
+that arXiv remains at version 2, last revised July 30. The established
+Qwen-Audio repository's complete non-truncated main tree remains at
+`b50fb958438081d36e1a14e93dbbc2f329c7f10e` and reports no push since July 5,
+2024; it has no 3.0 Gen Preview materials. Exact-name GitHub and Hugging Face
+model and dataset searches still return no matching owner release.
 
 The August 2026 *C3PO* paper is recorded as an unreleased omnimodal
 audio-reasoning and post-training audit. Sections 3-4 and appendices A-F define

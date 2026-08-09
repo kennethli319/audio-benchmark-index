@@ -3262,8 +3262,8 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.27011
     title: "Qwen-Audio-3.0-Gen-Preview Technical Report"
     sections: 6-6.1_and_tables_2-11
-    status: audited_mixed_existing_public_families_and_internal_unreleased_protocols
-    last_verified: 2026-08-06
+    status: audited_mixed_existing_public_families_and_internal_unreleased_protocols_with_focused_release_recheck
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: Seed-TTS-Eval
         index_id: seed_tts_eval
@@ -3351,6 +3351,11 @@ paper_audits:
       evaluation_and_preprocessing_code: not_released
       model_code_and_weights: not_released
       public_project_or_model_page: not_provided
+      arxiv_current_version: v2_unchanged_since_2026-07-30
+      established_qwen_audio_repository_main_tree: b50fb958438081d36e1a14e93dbbc2f329c7f10e
+      established_qwen_audio_repository_last_push: "2024-07-05T09:17:49Z"
+      exact_name_github_repository_search: no_matches
+      exact_name_hugging_face_model_and_dataset_search: no_matches
     license:
       paper: CC-BY-4.0
       model_code_and_weights: not_specified_unreleased
@@ -3367,26 +3372,31 @@ paper_audits:
       - https://arxiv.org/abs/2607.27011
       - https://arxiv.org/html/2607.27011v2#S6
       - https://arxiv.org/html/2607.27011v2#S6.SS1
+      - https://export.arxiv.org/api/query?id_list=2607.27011
       - https://huggingface.co/datasets/OpenSound/AudioCaps/viewer/default/test
       - https://arxiv.org/abs/2604.25937
       - https://github.com/Tencent/SongBench
       - https://arxiv.org/abs/2402.09871
       - https://github.com/QwenLM/Qwen-Audio
+      - https://api.github.com/repos/QwenLM/Qwen-Audio
       - https://api.github.com/repos/QwenLM/Qwen-Audio/git/trees/main?recursive=1
       - https://api.github.com/search/repositories?q=%22Qwen-Audio-3.0-Gen-Preview%22
       - https://huggingface.co/api/models?search=Qwen-Audio-3.0-Gen-Preview
       - https://huggingface.co/api/datasets?search=Qwen-Audio-3.0-Gen-Preview
     note: >-
       Version 2 gives no project page, artifact repository, model card, or
-      release commitment. The established Qwen-Audio repository contains no
-      3.0 Gen Preview materials, and exact-name GitHub and Hugging Face model
-      and dataset searches found no matching release on the verification
-      date. This audit maps public evaluations to existing families where
-      possible, keeps paper-specific and internal protocols distinct, and does
-      not treat public source data as a release of the report's missing
-      manifests and outputs. SongBench and MuChin are now mapped to their
-      independently audited public families, without treating the public
-      artifacts as releases of Qwen's missing evaluation selections.
+      release commitment. A focused August 9 recheck confirms that arXiv still
+      exposes version 2, last revised July 30. The established Qwen-Audio
+      repository's complete non-truncated main tree remains at
+      `b50fb958438081d36e1a14e93dbbc2f329c7f10e`, and the repository reports no
+      push since July 5, 2024; it contains no 3.0 Gen Preview materials.
+      Exact-name GitHub and Hugging Face model and dataset searches still find
+      no matching release. This audit maps public evaluations to existing
+      families where possible, keeps paper-specific and internal protocols
+      distinct, and does not treat public source data as a release of the
+      report's missing manifests and outputs. SongBench and MuChin are mapped
+      to their independently audited public families, without treating the
+      public artifacts as releases of Qwen's missing evaluation selections.
 
   c3po_cross_modal_composition_counterfactual_audit:
     paper: https://arxiv.org/abs/2608.05381
