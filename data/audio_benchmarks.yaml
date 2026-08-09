@@ -4228,7 +4228,7 @@ paper_audits:
     title: "Towards More Expressive Spoken LLMs: Fine-Grained Intent Benchmarking and Acoustic-Lexical Decoupled Policy Optimization"
     sections: 3, 5, and 6
     status: audited_unreleased_spoken_llm_post_training_benchmark
-    last_verified: 2026-08-06
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: ParaIntent synthetic test set
         index_id: null
@@ -4272,6 +4272,9 @@ paper_audits:
       alpo_code_and_model_checkpoints: not_specified_unreleased
       generated_outputs_predictions_and_per_item_scores: not_specified_unreleased
       aggregate_results: paper_tables_only
+      arxiv_version_recheck: v1_unchanged_2026-08-09
+      exact_title_and_identifier_github_search: no_matching_repository_2026-08-09
+      exact_name_and_identifier_hugging_face_dataset_search: no_matching_dataset_2026-08-09
     license:
       paper: arXiv_perpetual_non_exclusive_license
       benchmark_data: not_specified_unreleased
@@ -4288,15 +4291,22 @@ paper_audits:
       - https://arxiv.org/html/2608.03054v1#Sx3
       - https://arxiv.org/html/2608.03054v1#Sx5
       - https://arxiv.org/html/2608.03054v1#Sx6
+      - https://export.arxiv.org/api/query?id_list=2608.03054
+      - https://api.github.com/search/repositories?q=%22ParaIntent%22%20OR%20%222608.03054%22
+      - https://huggingface.co/api/datasets?search=ParaIntent
+      - https://huggingface.co/api/datasets?search=2608.03054
     note: >-
-      Version 1 links no official project page, repository, dataset card, model
-      release, or archive. It reports the dataset sizes, construction stages,
-      metrics, aggregate automatic results, and a 100-instance human study,
-      but does not release benchmark rows, audio, manifests, prompts, metric
-      implementations, post-training artifacts, outputs, or per-item scores.
-      ParaIntent is therefore preserved as a directly relevant spoken-LLM
-      post-training and evaluation protocol without being counted as a public
-      benchmark family or receiving a download helper.
+      A focused August 9 recheck found that arXiv still exposes only version 1,
+      which links no official project page, repository, dataset card, model
+      release, or archive. Exact-name and paper-identifier searches on GitHub
+      and Hugging Face returned no matching repository or dataset. The paper
+      reports dataset sizes, construction stages, metrics, aggregate automatic
+      results, and a 100-instance human study, but does not release benchmark
+      rows, audio, manifests, prompts, metric implementations, post-training
+      artifacts, outputs, or per-item scores. ParaIntent is therefore
+      preserved as a directly relevant spoken-LLM post-training and evaluation
+      protocol without being counted as a public benchmark family or receiving
+      a download helper.
 
   tiered_closed_set_sound_source_identification:
     paper: https://arxiv.org/abs/2608.02397

@@ -1013,6 +1013,9 @@ code, model checkpoints, generated responses, or per-item scores. The paper's
 arXiv distribution license does not license those absent artifacts, and its
 statement that the five speakers were authorized does not specify reusable
 consent or voice-data terms. No public family or download helper is added.
+A focused August 9 recheck found that arXiv still exposes only version 1 and
+that exact-name and paper-identifier searches on GitHub and Hugging Face return
+no matching repository or dataset, so the release classification is unchanged.
 
 The August 2026 tiered sound-source-identification paper is recorded as an
 unreleased audio-language-model evaluation protocol. It evaluates eleven
