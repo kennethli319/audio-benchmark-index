@@ -282,6 +282,11 @@ GitHub repository and Hugging Face dataset searches found no release on August
 predictions, and per-item scores therefore remain unavailable. Upstream terms
 still apply to source audio and benchmark components. No public family is
 counted and no download helper is added.
+A focused August 9 recheck found only arXiv version 1, zero exact-name GitHub
+repository results, and no exact-name Hugging Face dataset or model results.
+Appendix A's release statement still uses future tense and supplies no artifact
+URL, so the announced CC BY-NC 4.0 remains a license intention rather than a
+verifiable released package.
 
 The July 2026 *Audio-Cogito* revision is recorded as a public-training-release
 and existing-benchmark evaluation audit of chain-of-thought SFT for audio
