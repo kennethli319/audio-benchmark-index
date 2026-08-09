@@ -417,7 +417,7 @@ controls using silence, ambient noise, and babble. The planned public subset
 contains 3,414 entries from 26 consenting voices; the full 6,118-entry,
 52-participant collection remains private. The owner Hub changed from an empty
 placeholder to a manually gated release on August 5: its public API exposes
-five language configurations, 854 WAVs, five metadata JSONL files, and about
+five language configurations, 856 WAVs, five metadata JSONL files, and about
 414.5 MB of storage. The safe helper fetches only the paper, live API metadata,
 and public file listings unless the user has owner approval, authenticates,
 acknowledges the terms, and explicitly opts into the snapshot. The card labels

@@ -6016,7 +6016,7 @@ paper_audits:
       paper: public_CC-BY-4.0
       hugging_face_repository: public_metadata_with_manually_gated_files
       hugging_face_gating: manual_approval_required
-      hugging_face_data_files: 854_wav_files_plus_five_language_metadata_jsonl_files
+      hugging_face_data_files: 856_wav_files_plus_five_language_metadata_jsonl_files
       hugging_face_reported_storage_bytes: 414474464
       hugging_face_revision: 74e32447ca6bee2d88ab7f3be3532eb5273648be
       code_repository: linked_by_paper_but_currently_returns_404
@@ -6049,7 +6049,7 @@ paper_audits:
       The owner Hub changed from an empty placeholder to a manually gated
       release on 2026-08-05. Its public API now exposes five language
       configurations, 864 repository files, and about 414.5 MB of storage;
-      the file inventory contains 854 WAVs, five metadata JSONL files, and
+      the file inventory contains 856 WAVs, five metadata JSONL files, and
       repository metadata. The gated metadata tables expand those files into
       the paper's 3,414 evaluation entries. RedVox is therefore indexed with a
       metadata-only safe helper and manual access instructions. The paper-
@@ -21679,7 +21679,7 @@ benchmarks:
         Spanish, and German. It evaluates open-ended safety, stereotype
         fairness, and response relatedness for spoken harmful requests,
         non-speech-audio-plus-text requests, and matched text-only controls.
-        Public Hub metadata exposes five language configurations, 854 WAV
+        Public Hub metadata exposes five language configurations, 856 WAV
         files, five metadata JSONL files, and about 414.5 MB of storage. The
         helper fetches the paper, live API metadata, and a paginated public
         file listing by default; dataset files require owner approval,
