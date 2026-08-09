@@ -2275,6 +2275,21 @@ evaluation as four private sets and does not release the fixed TTS prompts,
 speech-to-speech scenarios, speech-understanding clips and labels, source-item
 manifests, generations, human ratings, or standalone data terms.
 
+A focused August 9 release recheck confirms that those public applications are
+interfaces to private or otherwise unidentified evaluation assets, not a
+benchmark download. The consolidated Space remains at revision
+`099d00123d14ccb80b6eaef514676838091f758a` and explicitly loads its leaderboard
+JSON files and optional sample audio through a `LEADERBOARD_DATASET` runtime
+setting; its source comments note that a private dataset requires an
+`HF_TOKEN`, while neither the setting's value nor a dataset ID is published.
+The separate ASR Space remains at revision
+`740872a592296b28f407688eb551859af9e42691`. Their public trees still contain no
+benchmark JSON tables, prompt or clip manifests, reference audio or
+transcripts, generations, or human ratings, and an exact-name Hugging Face
+dataset search returned no result. The paper remains CC BY 4.0 and the
+applications Apache-2.0, but neither license covers the absent evaluation
+data. No counted family or helper is added.
+
 The July 2026 SongSQA paper is also audited as a mixed public/internal
 evaluation. Its public Lyra-SA component maps to the indexed, application-based
 Tencent Music release, but the paper's separate 2,035-recording expert-rated

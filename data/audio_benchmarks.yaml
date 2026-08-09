@@ -14417,6 +14417,7 @@ paper_audits:
     title: "RW-Voice-EQ Bench: A Real World Benchmark for Evaluating Voice AI Systems"
     sections: 2 and 4-7
     status: audited_public_leaderboard_private_benchmark_data
+    last_verified: 2026-08-09
     public_interfaces:
       - https://huggingface.co/spaces/HumeAI/rw-voice-eq
       - https://huggingface.co/spaces/HumeAI/asr-leaderboard
@@ -14454,6 +14455,19 @@ paper_audits:
           conversational track derives from the Hume-DaiKon corpus. The paper
           calls all four datasets private and does not publish item URLs,
           transcripts, labels, or a reproducible selection manifest.
+    release_audit:
+      consolidated_leaderboard_space: public_ungated
+      consolidated_space_revision: 099d00123d14ccb80b6eaef514676838091f758a
+      separate_asr_leaderboard_space: public_ungated
+      separate_asr_space_revision: 740872a592296b28f407688eb551859af9e42691
+      leaderboard_application_code: public_Apache_2_0
+      runtime_leaderboard_dataset: separately_configured_not_publicly_identified
+      benchmark_json_tables: not_present_in_public_space_trees
+      prompt_scenario_and_clip_manifests: not_released
+      reference_audio_and_transcripts: not_released
+      system_generations_and_human_ratings: not_released
+      exact_name_Hugging_Face_dataset_search: no_results_2026_08_09
+      download_helper: none_public_interfaces_expose_aggregate_results_not_benchmark_assets
     license:
       paper: CC BY 4.0
       leaderboard_code: Apache-2.0
@@ -14488,6 +14502,15 @@ paper_audits:
       human ratings, or standalone data terms. RW-Voice-EQ is therefore
       recorded as a private evaluation protocol rather than an indexed
       downloadable benchmark family, and no helper is added.
+      A focused August 9 recheck found the public Spaces unchanged at revisions
+      `099d00123d14ccb80b6eaef514676838091f758a` and
+      `740872a592296b28f407688eb551859af9e42691`. The consolidated application
+      explicitly reads leaderboard JSON and optional sample audio from the
+      `LEADERBOARD_DATASET` runtime setting and notes that private datasets
+      require an `HF_TOKEN`; it does not reveal that configured dataset ID.
+      Its public tree still contains only application assets, and an exact-name
+      Hugging Face dataset search returned no release. This strengthens the
+      public-interface/private-evaluation distinction without changing counts.
 
   song_sqa:
     paper: https://arxiv.org/abs/2607.16599
