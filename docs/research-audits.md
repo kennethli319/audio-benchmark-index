@@ -3202,6 +3202,14 @@ material, or generated media. The paper's four-domain SwanVAE reconstruction
 panel maps VCTK, FSD50K, and MUSDB18-HQ to existing families, while its exact
 selections and internal SwanVerifier held-out split remain unreleased. No
 public benchmark family or helper is added from demonstrations alone.
+A focused August 9 recheck found that arXiv version 2 remains current and the
+complete, non-truncated 65-path owner repository tree remains at commit
+`7363bb96f0788b2000c0da120439b8cc0e9aaf33`. It still contains only the static
+site, selected demonstrations, and aggregate visualizations. Exact-name
+Hugging Face model and dataset searches returned no SwanTale release, while
+broader GitHub results contained no additional owner repository; the complete
+manifests, evaluator, judging records, model artifacts, and data-specific
+license therefore remain unavailable.
 
 The August 2026 dots.tts.edit report is recorded as a partial-release audit of
 doteBench, a directly in-scope post-training evaluation for precisely
