@@ -3257,6 +3257,13 @@ ratings. The paper is CC BY 4.0, but that article license does not license the
 project assets or absent benchmark artifacts. Selected listening examples
 therefore do not support counting TORUS as a public benchmark family or adding
 a download helper yet.
+A focused August 9 recheck found that the official repository remains at head
+`c2ba66bc15b9b8396b48e375c79da05bd085abc5` from July 28, with the same complete
+96-path tree, 90 audio files, and 4,136,118 audio bytes. The project page also
+retains its July 28 Last-Modified timestamp. Exact-topic GitHub search found no
+separate TORUS audio-benchmark repository, while Hugging Face dataset and model
+searches found no release tied to the paper. The complete suite and evaluator
+therefore remain unreleased.
 
 The August 2026 *Vorch-Director* report is recorded as a partial-release audit
 of a directly in-scope long-horizon audio-video generation evaluation. Sections
