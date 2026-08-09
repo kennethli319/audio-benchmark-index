@@ -9,6 +9,108 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  bayling_duplex_post_training_evaluation_audit:
+    paper: https://arxiv.org/abs/2606.14528
+    title: "BayLing-Duplex: Native Full-Duplex Speech Dialogue with a Single Autoregressive LLM"
+    sections: 3_and_4.1-4.4
+    status: audited_released_model_with_existing_and_unreleased_derived_evaluations
+    last_verified: 2026-08-08
+    post_training_relevance: >-
+      BayLing-Duplex converts the pretrained GLM-4-Voice speech language model
+      into a native full-duplex agent with 400,000 synthetic SFT dialogues,
+      then applies timing-focused DPO pairs whose rejected responses delay
+      turn-taking or interruption handling. Its evaluation directly tests
+      whether speech post-training improves when to speak, when to stop, and
+      spoken response quality without sacrificing question answering.
+    evaluation_inventory:
+      - cited_as: InstructS2S-Eval_turn_taking
+        status: paper_specific_199_item_selection_not_released
+        source_family: Alpaca-Eval_helpful_base_and_vicuna_subsets
+        protocol: >-
+          Feed 199 synthesized spoken instructions to each model in real time
+          without external VAD, then measure whether speech begins within
+          three seconds and grade Whisper-large-v3 transcripts from one to
+          five with GPT-4o for helpfulness, relevance, fluency, and suitability
+          for spoken interaction.
+        metrics:
+          - turn_taking_success_rate_at_3_seconds
+          - GPT-4o_speech_response_score
+      - cited_as: InstructS2S-Eval_interruption
+        status: paper_specific_199_pair_derived_protocol_not_released
+        protocol: >-
+          Pair adjacent InstructS2S-Eval items into 199 two-utterance audio
+          cases, start the second question during the first response, and use
+          Silero VAD on generated audio to measure stop delay and interruption
+          success while GPT-4o grades the reply to the new question.
+        metrics:
+          - interruption_overlap_seconds
+          - interruption_success_rate_at_2_seconds
+          - second_question_GPT-4o_speech_response_score
+      - cited_as: Llama_Questions_spoken_QA
+        status: external_family_with_paper_specific_audio_and_manifest_unreleased
+        samples: 300
+        protocol: >-
+          Feed spoken questions without external VAD, transcribe generated
+          speech with Whisper-large-v3, and use case-insensitive reference-
+          answer substring accuracy.
+      - cited_as: Web_Questions_spoken_QA
+        status: existing_text_family_with_paper_synthesized_audio_unreleased
+        samples: 2032
+        protocol: >-
+          Synthesize WebQuestions with CosyVoice, feed the audio without
+          external VAD, transcribe responses with Whisper-large-v3, and use
+          case-insensitive reference-answer substring accuracy.
+      - cited_as: Alpaca-Eval_response_quality_check
+        status: existing_text_family_paper_specific_outputs_unreleased
+        protocol: >-
+          Compare the duplex SFT model with a matched turn-based SFT baseline
+          to check whether timing-oriented post-training degrades response
+          quality.
+    release_audit:
+      github_code_and_runtime: public_ungated
+      github_tree_revision: main_checked_2026-08-08_81_paths
+      hugging_face_model: public_ungated
+      hugging_face_model_revision: b314288d7fc545cdac3b2fe0c4caeb9084c5526b
+      training_data_and_DPO_pairs: not_released
+      InstructS2S_Eval_item_and_pair_manifests: not_released
+      synthesized_QA_audio: not_released
+      evaluation_runner_prompts_and_judge_configuration: not_released
+      baseline_outputs_generated_audio_and_per_item_scores: not_released
+      download_helper: none_model_repository_not_benchmark_asset
+    access: public_paper_code_and_model_unreleased_paper_specific_evaluation_artifacts
+    license:
+      paper: arXiv_nonexclusive_distribution_license
+      repository_and_model: custom_glm_4_voice_license
+      evaluation_artifacts: not_stated
+      upstream_families_and_components: separate_terms_apply
+      note: >-
+        The repository license permits academic research and requires
+        registration for commercial use, with attribution and use
+        restrictions. It covers GLM-4-Voice model parameters and does not
+        establish reuse rights for absent InstructS2S-Eval selections,
+        synthesized speech, model outputs, GPT-4o judgments, or upstream
+        Alpaca-Eval, Llama Questions, WebQuestions, and CosyVoice materials.
+    sources:
+      - https://arxiv.org/abs/2606.14528
+      - https://arxiv.org/html/2606.14528v1#S3
+      - https://arxiv.org/html/2606.14528v1#S4.SS2
+      - https://arxiv.org/html/2606.14528v1#S4.SS3
+      - https://arxiv.org/html/2606.14528v1#S4.SS4
+      - https://github.com/BayLing-Models/BayLing-Duplex
+      - https://raw.githubusercontent.com/BayLing-Models/BayLing-Duplex/main/README.md
+      - https://raw.githubusercontent.com/BayLing-Models/BayLing-Duplex/main/MODEL_CARD.md
+      - https://raw.githubusercontent.com/BayLing-Models/BayLing-Duplex/main/LICENSE
+      - https://api.github.com/repos/BayLing-Models/BayLing-Duplex
+      - https://api.github.com/repos/BayLing-Models/BayLing-Duplex/git/trees/main?recursive=1
+      - https://huggingface.co/BayLing-Models/BayLing-Duplex
+      - https://huggingface.co/api/models/BayLing-Models/BayLing-Duplex
+    note: >-
+      This audit preserves BayLing-Duplex's evaluation provenance without
+      mistaking its public model repository for a benchmark release. The
+      paper-specific spoken inputs, pair construction, evaluator, outputs,
+      and scores required to reproduce its post-training claims are absent,
+      so no benchmark family, count increase, or download helper is added.
+
   lychee_fd_hierarchical_acoustic_semantic_modeling_evaluation_audit:
     paper: https://arxiv.org/abs/2607.06540
     title: "Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs"

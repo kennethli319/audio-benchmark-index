@@ -4,6 +4,26 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The June 2026 *BayLing-Duplex* paper is recorded as an existing-family and
+unreleased-derived-protocol audit of native full-duplex speech-LLM
+post-training after reviewing Sections 3 and 4.1-4.4. The model adapts
+GLM-4-Voice with 400,000 synthetic turn-taking and interruption SFT dialogues,
+then uses timing-perturbed DPO negatives to improve when the assistant starts
+and stops speaking. Evaluation uses 300 Llama Questions, 2,032 CosyVoice-
+synthesized WebQuestions, a 199-item InstructS2S-Eval selection from
+Alpaca-Eval, and 199 derived two-question interruption cases. It reports
+spoken-QA substring accuracy after Whisper transcription, turn-taking success
+within three seconds, interruption success within two seconds, stop delay, and
+GPT-4o speech-response scores. The owner GitHub repository and ungated Hugging
+Face checkpoint release the model and inference runtime, but their complete
+trees contain no training dialogues or DPO pairs, frozen evaluation manifests,
+synthesized QA inputs, pairing/timing files, evaluator and judge prompts,
+generated outputs, baseline predictions, or per-item scores. The custom
+GLM-4-Voice license permits academic research and requires commercial
+registration; it does not license absent evaluation artifacts or override
+Alpaca-Eval, Llama Questions, WebQuestions, CosyVoice, or vendor terms. No
+benchmark family, count increase, or helper is added.
+
 The July 2026 *Hierarchical Acoustic-Semantic Modeling* paper is recorded as a
 pretraining-transfer and full-duplex post-training evaluation audit after
 reviewing Sections 3.1 and 4.1-4.6 and Appendices 7-11. Lychee-FD analyzes
