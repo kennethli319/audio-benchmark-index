@@ -2995,6 +2995,13 @@ user-supplied JSONL paths; it does not release the exact synthesized audio,
 selected items, or evaluation manifests. The parent repository is Apache-2.0,
 but that code license does not license the absent evaluation data or its
 upstream datasets.
+A focused August 9 recheck found only arXiv version 1. The owner repository now
+resolves to August 3 commit `a3708fd41d5dd2a2665c5f281cbfc9242b7642e1`,
+but its two post-audit commits only revise the README and project page and add a
+pipeline image. The complete ECoM tree still provides a placeholder math-test
+JSONL path and selected demonstration WAVs, not the paper's benchmark JSONL,
+frozen audio manifest, or evaluation scorer. The spoken evaluation package
+therefore remains unreleased, with no family, count, or helper change.
 
 Version 2 of the July 2026 full-song generation report is also recorded as an audited
 protocol rather than a downloadable family. Section 3.2 reports a 500-case

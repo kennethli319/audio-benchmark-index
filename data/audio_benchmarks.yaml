@@ -15389,6 +15389,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.19932
     sections: 4.1 and appendix C
     status: audited_not_indexed
+    last_verified: 2026-08-09
     public_interfaces:
       - https://funaudiollm.github.io/FunResearch/ECoM-Reasoning/
       - https://github.com/FunAudioLLM/FunResearch/tree/main/ECoM-Reasoning
@@ -15406,6 +15407,13 @@ paper_audits:
       code: Apache-2.0 at the parent FunResearch repository
       evaluation_data: not_specified_unreleased
       upstream: AddSub, SingleEq, MultiArith, SVAMP, STITCH, Llama Questions, and UltraEval-Audio terms require separate review
+    release_checks:
+      arxiv_version: v1
+      funresearch_main_head: a3708fd41d5dd2a2665c5f281cbfc9242b7642e1
+      funresearch_main_head_date_utc: "2026-08-03T08:57:32Z"
+      complete_ecom_tree_benchmark_jsonl_or_audio_manifest: no_results
+      complete_ecom_tree_evaluation_scorer: no_results
+      paper_benchmark_audio_and_item_release: not_released
     sources:
       - https://arxiv.org/html/2607.19932v1#S4.SS1
       - https://arxiv.org/html/2607.19932v1#A3
@@ -15415,9 +15423,13 @@ paper_audits:
       - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/ECoM-Reasoning/data/README.md
       - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/ECoM-Reasoning/data/test_math_dataset.yaml
       - https://raw.githubusercontent.com/FunAudioLLM/FunResearch/main/LICENSE
+      - https://api.github.com/repos/FunAudioLLM/FunResearch/commits/main
+      - https://api.github.com/repos/FunAudioLLM/FunResearch/commits?path=ECoM-Reasoning
+      - https://api.github.com/repos/FunAudioLLM/FunResearch/git/trees/main?recursive=1
+      - https://export.arxiv.org/api/query?id_list=2607.19932
       - https://d223302.github.io/STITCH/
       - https://github.com/OpenBMB/UltraEval-Audio
-    note: The public ECoM Reasoning release contains training and inference code, data-construction utilities, and placeholder dataset registries, not the paper's spoken benchmark package. Its data README explicitly requires users to supply their own JSONL paths. Because the exact STITCH-derived synthesized audio, selected items, and ECoM evaluation manifests cannot be verified through an official release, this protocol is audited but not indexed as a downloadable benchmark family.
+    note: The public ECoM Reasoning release contains training and inference code, data-construction utilities, and placeholder dataset registries, not the paper's spoken benchmark package. Its data README explicitly requires users to supply their own JSONL paths. Because the exact STITCH-derived synthesized audio, selected items, and ECoM evaluation manifests cannot be verified through an official release, this protocol is audited but not indexed as a downloadable benchmark family. A focused August 9 recheck found only arXiv version 1. The owner repository has two newer August 3 commits, but they change the README, project-page HTML, and one pipeline image; its complete tree still contains only a placeholder math-test JSONL path and selected demonstration WAVs, with no benchmark JSONL, frozen audio manifest, or evaluation scorer. The spoken evaluation package therefore remains unreleased.
 
   hifi_full_song_generation:
     paper: https://arxiv.org/abs/2607.20253
