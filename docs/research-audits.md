@@ -442,10 +442,20 @@ item selection, individual ratings, or agreement statistics. The owner project
 page provides selected demos. A public, ungated SASLM-3B checkpoint is about
 11.55 GB and declares Apache-2.0, while public expressive-SFT archives have no
 dataset cards or license metadata and the two self-reward dataset repositories
-contain only LFS attributes. The GitHub repository remains a one-file TODO and
+contain only `.gitattributes` configuration files, not preference rows or LFS
+pointers. The GitHub repository remains a one-file TODO and
 has no LICENSE despite displaying an MIT badge. These model and training-data
 releases do not make the absent evaluation records public and are not new
 benchmarks. No counted family or helper is added.
+A focused August 9 recheck found the GitHub tree unchanged at
+`2988c23bbde51ef77d81821a6e6de6c004af7ae4`, with only its 1,495-byte README.
+The official Hugging Face collection remains at its June 2 update, and both
+self-reward repositories still expose exactly one 2,504-byte `.gitattributes`
+file. This corrects the earlier description of those files as LFS attributes:
+they configure filename patterns but are not LFS pointers and do not establish
+that any preference archive was uploaded. Evaluation code, frozen rows,
+generated outputs, judge records, and human-rating records therefore remain
+unreleased.
 
 The June 2026 *ParaBridge* paper is recorded as an existing-coverage and
 unreleased-artifact audit of paralinguistic speech-LLM post-training. Sections

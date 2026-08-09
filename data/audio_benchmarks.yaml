@@ -1885,7 +1885,7 @@ paper_audits:
     title: "Bridging What the Model Thinks and How It Speaks: Expressive Speech Generation via Self-Aware Intent-Realization Alignment"
     sections: 4.1-4.3_5.1-5.3_appendices_A_C.3_D.1-D.2
     status: audited_existing_public_benchmarks_with_unreleased_evaluation_records_and_partial_model_training_release
-    last_verified: 2026-08-07
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: EchoMind
         index_id: echomind
@@ -1943,7 +1943,8 @@ paper_audits:
           About 200,000 samples and 263 hours support closed-loop self-reward
           alignment. Owner Hugging Face repositories expose expressive SFT
           archives, but have no dataset cards or declared licenses; the two
-          self-reward repositories currently contain only LFS attributes.
+          self-reward repositories currently contain only `.gitattributes`
+          configuration files and no preference data or LFS pointers.
     release_audit:
       upstream_echomind_and_mmau_benchmarks: public_with_upstream_terms
       exact_evaluation_split_and_row_manifest: not_released
@@ -1952,9 +1953,11 @@ paper_audits:
       gemini_judge_outputs_and_configuration_beyond_prompts: not_released
       human_evaluation_items_randomization_and_individual_ratings: not_released
       evaluation_and_inference_code: github_todo_only_not_released
+      github_tree_revision: 2988c23bbde51ef77d81821a6e6de6c004af7ae4_checked_2026-08-09_one_README_only
       saslm_3b_checkpoint: public_ungated_hugging_face_approximately_11.55_GB
       expressive_sft_archives: public_ungated_without_dataset_cards_or_license_metadata
-      self_reward_dataset_repositories: public_but_empty_except_lfs_attributes
+      self_reward_dataset_repositories: public_but_empty_except_gitattributes_no_preference_rows_or_lfs_pointers
+      hugging_face_collection_last_updated: 2026-06-02_checked_2026-08-09
     license:
       paper: arXiv_perpetual_non_exclusive_license
       github_repository: no_license_file_or_detected_license
