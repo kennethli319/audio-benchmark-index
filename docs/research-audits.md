@@ -1932,12 +1932,21 @@ assembled MelodyNet corpus. RPPNet's Apache-2.0 repository also omits the
 paper's generated MIDI comparison set, selected human references, and listener
 ratings, so the index does not invent an aggregate download or data license.
 
-The June 2026 STEB expressive speech-to-speech translation benchmark is
-release-audited but not counted as a public family. Its evaluation code and
-prompts are public, while the official Hugging Face dataset repository still
-contains only a placeholder README. The paper's 32.6-hour Chinese-English
-normal/NV evaluation data therefore remains announced but unreleased; no
-download helper or invented data link is provided.
+The June 2026 STEB expressive speech-to-speech translation benchmark has a
+focused release-completeness audit after reviewing Sections 3-4, Appendices
+C-E, and the complete owner repository tree. Its reference-free
+caption-then-summarize protocol measures translation fidelity, speaker and
+duration preservation, emotion, scenario style, and non-verbal vocalizations
+for cascaded, end-to-end, and speech-LLM systems. The public repository now
+contains a 65-file evaluator (86 tree entries) with an end-to-end runner, judge prompts, and
+metric implementations, but no top-level license. It requires a user-supplied
+benchmark JSONL and reference audio. The official ungated Hugging Face dataset
+still has zero stored data and exposes only `.gitattributes` plus a 96-byte
+README promising a future preview. Thus the 20,370-item normal set, overlapping
+901-item NV set, annotations, system outputs, per-item scores, and human
+validation ratings remain unreleased. The paper uses arXiv's non-exclusive
+license rather than CC BY 4.0, and source-media rights remain controlling. STEB
+is not counted as a public family, and no helper or invented data link is added.
 
 The July 2026 Sound Scene Story Benchmark (S3Bench) for narrative
 text-to-audio instruction following is also release-audited but not counted as

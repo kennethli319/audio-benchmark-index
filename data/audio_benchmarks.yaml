@@ -14034,8 +14034,15 @@ paper_audits:
 
   steb_expressive_s2st:
     paper: https://arxiv.org/abs/2606.25529
-    sections: 3 and 5, plus Ethics Statement
-    status: audited_not_indexed
+    title: "STEB: A Speech-to-Speech Translation Expressiveness Benchmark for Evaluating Beyond Translation Fidelity"
+    sections: 3-4, Appendices C-E, and Ethics Statement
+    status: audited_public_evaluator_with_announced_unreleased_benchmark_data
+    last_verified: 2026-08-08
+    post_training_relevance: >-
+      STEB evaluates whether cascaded, end-to-end, and speech-LLM translation
+      systems preserve emotion, scenario style, non-verbal vocalizations,
+      speaker identity, timing, and meaning. It therefore measures expressive
+      alignment outcomes that translation-only post-training can obscure.
     evaluated_sets:
       - cited_as: STEB normal subset
         index_id: null
@@ -14049,17 +14056,35 @@ paper_audits:
       STEB evaluates speech-to-speech translation fidelity, speaker similarity,
       duration alignment, emotion, scenario style, and non-verbal-vocalization
       preservation in both Chinese-to-English and English-to-Chinese directions.
-      The official GitHub repository publicly releases evaluation code, prompts,
-      and metric implementations, but its README says the dataset is still under
-      review. The paper promises a future release and states that audio without
-      clear redistribution permission will be represented by metadata and
-      annotations only. This audit does not count STEB as a public benchmark
-      family until actual evaluation items are released.
-    license_note: >-
-      The paper is CC BY 4.0, but neither the GitHub repository nor the empty
-      Hugging Face dataset repository states a license for future benchmark data
-      or code. Source recordings come from publicly accessible web sources and
-      may have separate redistribution restrictions.
+      Its reference-free caption-then-summarize pipeline uses audio-language
+      and instruction models to extract attributes and applies separate 1-5
+      emotion, style, and NV rubrics. Section 4.3 validates the judges against
+      human ratings; the repository also implements BLEU, duration ratio, SLC,
+      and optional COMET/XCOMET and UniSpeech speaker similarity.
+    release_audit:
+      paper_protocol_prompts_and_aggregate_results: public
+      github_evaluator: public_65_file_86_entry_tree_with_end_to_end_runner
+      github_benchmark_rows_or_audio: absent
+      hugging_face_snapshot: public_ungated_placeholder_only
+      hugging_face_visible_files: [.gitattributes, README.md]
+      hugging_face_used_storage_bytes: 0
+      normal_and_NV_manifests_audio_and_annotations: announced_unreleased
+      evaluated_system_outputs_and_per_item_scores: not_released
+      human_validation_assignments_and_ratings: not_released
+      download_helper: none_manual_required_unreleased_data
+    access: public_ungated_evaluation_code_benchmark_data_announced_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      evaluation_repository: no_detected_top_level_license
+      benchmark_data: not_stated_unreleased
+      bundled_PretrainedSED_component: separate_upstream_license_file
+      note: >-
+        The article license covers the paper, not the absent benchmark assets.
+        The owner repository has no detected top-level license, so public source
+        visibility does not establish reuse terms for the evaluator. Source
+        recordings come from publicly accessible web sources; the paper says
+        future audio lacking clear redistribution permission will be represented
+        by metadata and annotations, and all upstream rights remain controlling.
     sources:
       - https://arxiv.org/abs/2606.25529
       - https://arxiv.org/html/2606.25529v1#S3
@@ -14069,8 +14094,17 @@ paper_audits:
       - https://github.com/cmots/STEB
       - https://raw.githubusercontent.com/cmots/STEB/main/README.md
       - https://api.github.com/repos/cmots/STEB
+      - https://api.github.com/repos/cmots/STEB/git/trees/main?recursive=1
       - https://huggingface.co/datasets/cmots/STEB
+      - https://huggingface.co/datasets/cmots/STEB/raw/main/README.md
       - https://huggingface.co/api/datasets/cmots/STEB
+      - https://huggingface.co/api/datasets/cmots/STEB/tree/main?recursive=true&expand=false
+    note: >-
+      The official evaluator is now substantial and runnable, but it requires a
+      user-supplied benchmark JSONL and reference audio. The owner dataset card
+      still promises a future preview and contains no evaluation rows or media.
+      STEB therefore remains an unreleased benchmark family rather than a
+      counted public dataset, and no helper is added.
 
   rw_voice_eq_bench:
     paper: https://arxiv.org/abs/2607.14846
