@@ -4806,7 +4806,7 @@ paper_audits:
     title: "HyPASE: Hyperbolic Geometry for Parameter-Efficient Speech Emotion Fine-Tuning Framework for Large Audio-Language Models"
     sections: 4.1-4.6 and 6
     status: audited_existing_public_families_with_placeholder_reproduction_repository
-    last_verified: 2026-08-08
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: IEMOCAP
         index_id: iemocap
@@ -4874,6 +4874,7 @@ paper_audits:
       - https://github.com/LilSicko/HyPase
       - https://api.github.com/repos/LilSicko/HyPase
       - https://api.github.com/repos/LilSicko/HyPase/git/trees/main?recursive=1
+      - https://api.github.com/repos/LilSicko/HyPase/commits?path=README.md
       - https://raw.githubusercontent.com/LilSicko/HyPase/main/README.md
     note: >-
       Section 6 says code, pretrained weights, and training logs are publicly
@@ -4885,7 +4886,9 @@ paper_audits:
       prediction, score file, or license. This audit maps all evaluations to
       four already indexed benchmark families, adds no duplicate family or
       download helper, and does not treat the placeholder as a reproducible
-      release. Revisit the owner repository when substantive files appear.
+      release. A focused 2026-08-09 recheck found the same complete,
+      non-truncated one-file tree revision and no repository push after
+      2026-08-01. Revisit the owner repository when substantive files appear.
 
   hiu_bench_skill_calling_audio_agent:
     paper: https://arxiv.org/abs/2608.01881
