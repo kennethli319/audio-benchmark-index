@@ -13922,28 +13922,115 @@ paper_audits:
 
   qwen_music_technical_report:
     paper: https://arxiv.org/abs/2607.11699
+    title: "Qwen-Music Technical Report"
     sections: 4.1-4.2
+    status: audited_existing_public_family_with_internal_generation_sets_and_unreleased_evaluation_artifacts
+    last_verified: 2026-08-08
+    pretraining_and_post_training_relevance: >-
+      Qwen-Music evaluates a music-token language model pretrained with a
+      quality-graded curriculum over more than five million hours and aligned
+      through supervised learning, iterative offline DPO, and online GSPO.
+      Its tables test whether that training transfers to long-form bilingual
+      generation, lyric and tag instruction following, reference-melody
+      control, and high-fidelity stereo rendering from semantic tokens.
     evaluated_sets:
       - cited_as: bilingual text-to-music test set
         index_id: null
         status: internal_unreleased
-        note: Section 4.1.1 describes 300 Chinese and 300 English prompts with AI-generated lyrics and tags, but provides no item manifest or download.
+        role: post_training_generation_quality_instruction_following_and_controllability
+        samples: 600
+        languages: [Chinese, English]
+        note: Section 4.1.1 describes 300 Chinese and 300 English prompts with AI-generated lyrics and genre-balanced musical tags, but provides no item manifest or download.
       - cited_as: AI-generated reference-melody set
         index_id: null
         status: internal_unreleased
+        role: post_training_reference_melody_and_style_control
+        samples: 200
+        languages: [Chinese, English]
         note: Section 4.1.2 describes 100 Chinese and 100 English examples derived from Suno V5.5 and Mureka V8, but does not release the references, lyrics, tags, or outputs.
       - cited_as: real-world popular-song reference-melody set
         index_id: null
         status: internal_unreleased
-        note: Section 4.1.2 describes 100 Chinese and 100 English examples without identifying or releasing the songs; music rights would also require review.
+        role: post_training_reference_melody_and_style_control
+        samples: 200
+        languages: [Chinese, English]
+        note: Section 4.1.2 describes 100 Chinese and 100 English examples without identifying or releasing the songs; music and recording rights would also require review.
       - cited_as: bilingual EN/ZH rendering set
         index_id: null
         status: internal_unreleased
-        note: Section 4.2.1 reports 100 samples per language but provides no public set or row mapping.
+        role: semantic_token_to_waveform_renderer_ablation
+        samples: 200
+        languages: [Chinese, English]
+        note: Section 4.2.1 reports 100 samples per language but provides no public set, semantic-token inputs, text conditions, or row mapping.
       - cited_as: Song Describer Dataset
         index_id: song_describer
-        status: public
+        status: existing_public_family
+        role: music_codec_interface_reconstruction
+        samples: 546
         note: Section 4.2.2 evaluates acoustic reconstruction on all 546 tracks in the validated subset of the official public release.
+    evaluation_protocol:
+      text_to_music_objective: >-
+        Table 5 applies SongBench, SongEval, AudioBox-Aesthetic, Qwen3-ASR
+        phoneme error rate, and Gemini 3.1 Pro tag ratings across genre, mood,
+        instrument, vocal-gender, and vocal-timbre control.
+      text_to_music_subjective: >-
+        Fifty professional music raters judge blind randomized A/B pairs made
+        from the same 600 prompts, with three independent judgments per pair;
+        Figure 2 reports aggregate preferences and Table 4 reports per-genre
+        Bradley-Terry ratings.
+      cover_song: >-
+        Tables 6-7 compare section-level and unique-section-level melody
+        conditioning using the objective panel plus dynamic-time-warped
+        relative-MIDI Melody MAE. Suno baselines are evaluated only on the
+        AI-generated-reference set because they do not accept real songs.
+      renderer_ablation: >-
+        Table 8 compares VAE targets, rewritten text conditions, and CFG null
+        branches on the unreleased bilingual set. Table 9 reconstructs all
+        546 Song Describer validation tracks and reports SI-SDR, STFT and mel
+        distances, CCPC, and Spectral Pan Error with per-file 95 percent
+        confidence intervals.
+    release_audit:
+      paper_protocol_and_aggregate_tables: public
+      official_artifact_link_in_paper_or_source: none
+      qwenlm_github_repository: not_found
+      qwen_hugging_face_public_model_or_dataset: not_found
+      qwen_modelscope_model_api: record_not_found
+      four_internal_sets_and_frozen_manifests: not_released
+      generated_baseline_and_ablation_audio: not_released
+      professional_rater_assignments_and_votes: not_released
+      judge_prompts_predictions_and_per_item_scores: not_released
+      renderer_and_metric_configuration: not_released
+      download_helper: none_existing_Song_Describer_helper_only
+    access: public_paper_and_upstream_Song_Describer_internal_unreleased_Qwen_evaluation_assets
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      Song_Describer_dataset: CC-BY-SA-4.0_with_per_track_upstream_terms
+      Qwen_internal_sets_outputs_and_ratings: not_stated
+      proprietary_reference_and_baseline_audio: service_and_music_rights_require_review
+      note: >-
+        The article license covers the paper, not the absent prompts,
+        reference songs, generated audio, semantic tokens, model outputs,
+        automated judgments, or human-rating rows. The public Song Describer
+        family retains its dataset license and each track's source license.
+    sources:
+      - https://arxiv.org/abs/2607.11699
+      - https://arxiv.org/html/2607.11699v1#S4.SS1
+      - https://arxiv.org/html/2607.11699v1#S4.SS1.SSS1
+      - https://arxiv.org/html/2607.11699v1#S4.SS1.SSS2
+      - https://arxiv.org/html/2607.11699v1#S4.SS2.SSS1
+      - https://arxiv.org/html/2607.11699v1#S4.SS2.SSS2
+      - https://github.com/QwenLM
+      - https://api.github.com/search/repositories?q=%22Qwen-Music%22
+      - https://huggingface.co/api/models?search=Qwen-Music
+      - https://huggingface.co/api/datasets?search=Qwen-Music
+      - https://www.modelscope.cn/api/v1/models/Qwen/Qwen-Music
+      - https://zenodo.org/records/10072001
+    note: >-
+      The only reproducible source family in the report is already indexed as
+      Song Describer. None of Qwen-Music's four paper-specific evaluation sets
+      or case-level evaluation artifacts is public, and no official model,
+      benchmark, or evaluator release was identified. This audit therefore
+      adds no counted family and no new helper.
 
   steb_expressive_s2st:
     paper: https://arxiv.org/abs/2606.25529

@@ -1965,12 +1965,25 @@ download link. The paper's arXiv license does not establish reuse terms for
 the absent benchmark or redistribution rights for its generated Sora-2 and
 CosyVoice outputs.
 
-Qwen-Music sections 4.1-4.2 are also inventoried in the source YAML. Its
-bilingual text-to-music, two cover-song reference, and bilingual rendering
-sets are internal and unreleased. The public exception is the
-[Song Describer Dataset](https://zenodo.org/records/10072001): section 4.2.2
-uses all 546 tracks in its validated subset for codec-reconstruction
-evaluation. The index does not infer download links for Qwen's internal sets.
+The July 2026 *Qwen-Music* technical report now has a focused pretraining and
+post-training evaluation audit after reviewing Sections 4.1-4.2 and Tables
+4-9. Its quality-graded, five-million-hour pretraining curriculum and
+SFT/offline-DPO/online-GSPO alignment are evaluated on an internal 600-item
+bilingual text-to-music set, two internal 200-item cover-song sets, and an
+internal 200-item bilingual semantic-token rendering set. The protocols cover
+objective quality, lyric and tag following, melody control, professional blind
+A/B preferences, renderer ablations, and stereo reconstruction. The public
+exception is the [Song Describer Dataset](https://zenodo.org/records/10072001):
+Section 4.2.2 uses all 546 tracks in its validated subset for codec-interface
+reconstruction with seven spectral, mel, and stereo metrics. The paper and
+source provide no artifact link; a focused August 8 check found no official
+QwenLM repository, public Qwen Hugging Face model or dataset, or live Qwen
+ModelScope model record. The four internal manifests, reference songs,
+generated comparison audio, professional-rating rows, judge prompts, outputs,
+and per-item scores remain unreleased. The arXiv license does not cover those
+absent assets, while Song Describer retains CC BY-SA 4.0 plus per-track source
+terms. No new family or helper is added; the existing Song Describer helper is
+the only reproducible data path.
 
 The January 2026 SYAUDIO paper is recorded as an audited protocol rather than
 a downloadable family. It describes 4,319 audio questions for testing
