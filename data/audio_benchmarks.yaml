@@ -18032,6 +18032,9 @@ paper_audits:
       worker_trajectories_interventions_and_final_task_records: not_released
       exact_title_GitHub_repository_search: no_results
       exact_name_Hugging_Face_dataset_and_model_searches: no_results
+      arxiv_version: v1_only
+      project_benchmark_page_last_modified: "2026-07-30T03:11:30Z"
+      focused_release_recheck: "2026-08-09T17:05Z"
       download_helper: none_project_site_contains_descriptions_and_aggregate_results_only
     license:
       paper: CC_BY_4.0
@@ -18066,6 +18069,11 @@ paper_audits:
       Hugging Face searches found no matching release on the verification date.
       This is therefore an announced protocol rather than a reproducible public
       benchmark family, so no count increase or helper is added.
+      A focused August 9 recheck found only arXiv version 1, zero exact-name
+      GitHub repository results, and no Hugging Face dataset or model results.
+      The benchmark page still links only its local pages and upstream
+      WildClawBench; its July 30 Last-Modified state exposes no JarvisBench
+      repository, archive, license, or evaluator.
 
 benchmarks:
   - id: svhalluc

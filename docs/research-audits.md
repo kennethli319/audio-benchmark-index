@@ -3750,6 +3750,11 @@ is CC BY 4.0, but that article license does not cover absent evaluation
 artifacts; the project site states no separate artifact license, and upstream
 WildClawBench and vendor-service terms remain applicable. No counted family or
 download helper is added.
+A focused August 9 recheck found only arXiv version 1, zero exact-name GitHub
+repository results, and no Hugging Face dataset or model results. The benchmark
+page remains at its July 30 Last-Modified state and still links only local site
+pages plus upstream WildClawBench, with no JarvisBench repository, archive,
+license, or evaluator.
 
 The July 2026 *Q-TriM* paper's official implementation repository has a
 focused release-status recheck. Section 4.1 evaluates the already indexed
