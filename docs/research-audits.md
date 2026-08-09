@@ -3230,6 +3230,15 @@ license cannot be extended to absent benchmark artifacts. Seed-TTS-Eval
 retention results map to the existing indexed family. Selected listening
 examples therefore do not support counting doteBench as a downloadable family
 or adding a helper yet.
+A focused August 9 recheck found that the interactive playground runtime still
+responds publicly, while its Hugging Face repository page and API now require
+authentication. The separate public static demo advanced to revision
+`3b45321043325be66c0e5507dd61e3b7c0581d8d`, but its refreshed inventory keeps
+the same selection hash, 29 cases, and 136 audio files (72,926,078 bytes).
+Exact-name Hugging Face dataset and model searches found no doteBench release,
+and the only GitHub repository result was an unaffiliated paper list. The full
+manifests, evaluator, outputs, and benchmark-specific license therefore remain
+unreleased; the live playground is not treated as a reproducible release.
 
 The July 2026 TORUS report is recorded as a partial-release audit of a directly
 in-scope evaluation for unified audio language models. TORUS tests whether a
