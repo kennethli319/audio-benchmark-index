@@ -3445,7 +3445,12 @@ released after acceptance and provides no artifact link. An ungated
 [14.51 GB candidate snapshot](https://huggingface.co/datasets/ak0255/StyleBench)
 reproduces the paper's semantic and emotion-annotation instructions, but
 neither source links the `ak0255` account to the authors or identifies it as
-the promised official release; an exact-name GitHub search found no matching
+the promised official release. A focused August 8 recheck found that the Hub
+card still names no paper, author, or arXiv identifier, while the uploader
+profile identifies itself only as `hak`. The 14,514,667,441-byte snapshot
+exposes only a README and one `eval.tar.gz`; it publishes no lightweight file
+inventory, schema, frozen ten-percent split manifest, or executable evaluator
+outside that large archive. An exact-name GitHub search found no matching
 repository. Its card declares CC BY 4.0, which does not establish provenance or
 override terms for CosyVoice2 outputs, RAVDESS-derived conditioning, responder
 timbres, or other incorporated material. No family, count increase, or helper

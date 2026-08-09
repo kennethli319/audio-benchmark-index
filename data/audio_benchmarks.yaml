@@ -433,7 +433,7 @@ paper_audits:
     candidate_dataset: https://huggingface.co/datasets/ak0255/StyleBench
     title: "StyleBench: Evaluating Speech Language Models on Conversational Speaking Style Control"
     sections: 2-3
-    status: audited_public_candidate_snapshot_with_unverified_owner_provenance
+    status: audited_public_candidate_snapshot_with_unverified_owner_provenance_and_incomplete_release_metadata
     last_verified: 2026-08-08
     benchmark:
       cited_as: StyleBench
@@ -477,14 +477,18 @@ paper_audits:
       paper_release_statement: dataset_will_be_released_after_acceptance
       paper_link_to_dataset_repository_or_project: none
       exact_name_github_repository_search: no_matching_repository
-      candidate_hugging_face_snapshot: public_ungated_approximately_14_51_GB
+      candidate_hugging_face_snapshot: public_ungated_14514667441_bytes
       candidate_visible_files:
         - README.md
         - eval.tar.gz
       candidate_card_protocol_match: >-
         The card reproduces the paper's semantic-relevance, semantic-
         consistency, VSP, and manual emotion-annotation instructions.
-      candidate_owner_relationship_to_paper: not_stated_or_verifiable
+      candidate_card_paper_title_or_arxiv_identifier: absent
+      candidate_profile_display_name: hak
+      candidate_profile_relationship_to_paper_authors: not_stated_or_verifiable
+      candidate_archive_inventory_or_schema: not_published_outside_large_archive
+      candidate_evaluation_code_or_executable_runner: not_identified
       frozen_paper_split_manifest: not_independently_verified
       paper_model_outputs_predictions_and_per_item_scores: not_identified
       download_helper: none_pending_primary_owner_provenance
@@ -513,6 +517,7 @@ paper_audits:
       - https://huggingface.co/datasets/ak0255/StyleBench
       - https://huggingface.co/datasets/ak0255/StyleBench/raw/main/README.md
       - https://huggingface.co/api/datasets/ak0255/StyleBench
+      - https://huggingface.co/api/users/ak0255/overview
       - https://api.github.com/search/repositories?q=%22StyleBench%22%20%22Conversational%20Speaking%20Style%22
       - https://huggingface.co/api/datasets?search=StyleBench
     note: >-
@@ -521,10 +526,12 @@ paper_audits:
       speed, volume, and pitch, and the paper analyzes how training mixtures
       and speech tokenizers affect those capabilities. A public Hub snapshot
       strongly matches the described protocol, but primary owner provenance
-      is unresolved and the paper still promises a future post-acceptance
-      release without linking it. This audit therefore adds no counted
-      benchmark family or helper; revisit when the paper or authors publish an
-      official link or the Hub card states its ownership and paper provenance.
+      is unresolved: the card names no paper, author, or arXiv identifier, and
+      the uploader profile identifies itself only as `hak`. The paper still
+      promises a future post-acceptance release without linking it. This audit
+      therefore adds no counted benchmark family or helper; revisit when the
+      paper or authors publish an official link or the Hub card states its
+      ownership and paper provenance.
 
   vamos_bench_release_audit:
     paper: https://arxiv.org/abs/2607.27453
