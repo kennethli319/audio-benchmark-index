@@ -15482,7 +15482,8 @@ paper_audits:
   auemochat_ncssd_emcap:
     paper: https://arxiv.org/abs/2607.15755
     sections: abstract and 5.1
-    status: audited_not_indexed
+    status: audited_claimed_open_source_but_unreleased_rechecked
+    last_verified: 2026-08-08
     public_interfaces:
       - https://github.com/AI-S2-Lab/Chain-Talker
     evaluated_domains:
@@ -15490,6 +15491,16 @@ paper_audits:
         protocol: NCSSD-EmCap train, validation, and test split at an 8:1:1 ratio, with naturalness, emotion-consistency, intelligibility, acoustic-fidelity, speaker-similarity, and emotion-classification evaluation
         data_status: derived_dataset_not_released
         note: AuEmoChat describes NCSSD-EmCap as approximately 384 hours, 18,580 dialogues, 245,984 utterances, and 25 speakers aggregated from DailyTalk, NCSSD, and MultiDialog. Neither the exact derived rows, emotion captions, split manifests, nor evaluation audio are exposed by the cited public repository.
+    release_audit:
+      anonymous_AuEmoChat_repository: HTTP_404
+      Chain_Talker_tree_revision: 197b096f2d547bbc99a8c42a6d51df2be5940299
+      Chain_Talker_tree_truncated: false
+      Chain_Talker_visible_files: 2
+      Chain_Talker_last_push: 2025-05-20
+      hugging_face_NCSSD_EmCap_dataset_search: no_results
+      hugging_face_AuEmoChat_dataset_search: no_results
+      exact_audio_annotations_and_splits: not_released
+      download_helper: none_unreleased_derived_evaluation_data
     license:
       paper: arXiv perpetual non-exclusive license
       benchmark_data: not_specified_unreleased
@@ -15503,7 +15514,22 @@ paper_audits:
       - https://raw.githubusercontent.com/AI-S2-Lab/Chain-Talker/main/LICENSE
       - https://api.github.com/repos/AI-S2-Lab/Chain-Talker
       - https://api.github.com/repos/AI-S2-Lab/Chain-Talker/git/trees/main?recursive=1
-    note: Section 5.1 calls NCSSD-EmCap open-source and cites Chain-Talker, but the official Chain-Talker repository contains only README.md and LICENSE and publishes no code, release assets, dataset card, audio, annotations, captions, or split manifests. The AuEmoChat abstract announces https://github.com/anonymous-css/AuEmoChat, which returned HTTP 404 on 2026-07-23. Apache-2.0 covers the two-file Chain-Talker repository, not absent derived speech data or its upstream corpora. NCSSD-EmCap is therefore recorded as an audited unreleased evaluation dataset rather than an indexed benchmark family; recheck both repositories after a public release.
+      - https://api.github.com/repos/anonymous-css/AuEmoChat
+      - https://huggingface.co/api/datasets?search=NCSSD-EmCap
+      - https://huggingface.co/api/datasets?search=AuEmoChat
+    note: >-
+      Section 5.1 calls NCSSD-EmCap open-source and cites Chain-Talker, but an
+      August 8 recheck found that the official repository still has the same
+      complete, non-truncated two-file tree (README.md and LICENSE) at revision
+      197b096f2d547bbc99a8c42a6d51df2be5940299, last pushed May 20, 2025. It
+      publishes no code, release assets, dataset card, audio, annotations,
+      captions, or split manifests. The AuEmoChat abstract's announced
+      `anonymous-css/AuEmoChat` repository still returns HTTP 404, and exact-name
+      Hugging Face dataset searches return no results. Apache-2.0 covers the
+      two-file Chain-Talker repository, not absent derived speech data or its
+      upstream corpora. NCSSD-EmCap therefore remains an audited unreleased
+      evaluation dataset rather than an indexed benchmark family; no download
+      helper or count change is made.
 
   syaudio:
     paper: https://arxiv.org/abs/2601.23149

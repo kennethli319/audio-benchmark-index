@@ -4,6 +4,22 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *AuEmoChat* paper's NCSSD-EmCap evaluation release was rechecked
+on August 8. Section 5.1 describes an approximately 384-hour expressive
+conversational speech set with 18,580 dialogues, 245,984 utterances, 25
+speakers, an 8:1:1 split, and objective naturalness, emotion, intelligibility,
+fidelity, speaker-similarity, and classification measures. This is relevant to
+post-training evaluation of emotional dialogue speech generation. However, the
+paper-announced `anonymous-css/AuEmoChat` repository still returns HTTP 404,
+and the cited Chain-Talker repository still has only README.md and LICENSE in
+its complete two-file tree at revision
+`197b096f2d547bbc99a8c42a6d51df2be5940299`, last pushed May 20, 2025.
+Exact-name Hugging Face dataset searches found no NCSSD-EmCap or AuEmoChat
+release. The derived audio, emotion captions, fixed splits, evaluation outputs,
+and code remain unavailable. Chain-Talker's Apache-2.0 license does not license
+those absent artifacts or override DailyTalk, NCSSD, and MultiDialog terms. No
+benchmark family, count increase, or helper is added.
+
 The June 2026 *BayLing-Duplex* paper is recorded as an existing-family and
 unreleased-derived-protocol audit of native full-duplex speech-LLM
 post-training after reviewing Sections 3 and 4.1-4.4. The model adapts
