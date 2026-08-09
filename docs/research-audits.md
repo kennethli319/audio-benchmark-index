@@ -963,6 +963,9 @@ rubrics, splits, provenance, evaluator code, outputs, ratings, predictions,
 and per-item scores remain unavailable. The paper is CC BY-NC-ND 4.0, which
 does not license any absent benchmark artifact or underlying production
 audio. No public family or download helper is added.
+A focused August 9 recheck found arXiv version 1 unchanged and zero matching
+GitHub repositories or Hugging Face datasets under either the exact benchmark
+name or paper identifier. The claimed release therefore remains unlocatable.
 
 The August 2026 *AudioRubrics* paper is recorded as a post-training,
 reward-modeling, and existing-coverage audit. Sections 3-4 and appendices A,
