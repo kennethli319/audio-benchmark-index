@@ -3175,6 +3175,12 @@ release rather than a counted public family. Its LibriSpeech, LibriMix,
 AISHELL-3, WHAM!, MUSAN, and AMI inputs retain their separate upstream terms,
 and no license can be inferred for the absent derived mixtures, manifests,
 labels, code, or result records. No download helper is added.
+A focused August 9 recheck confirmed that arXiv version 2 remains current and
+that exact-title, exact-benchmark-name, and broader AGSC speech searches still
+return no GitHub repository or Hugging Face dataset/model release. The primary
+paper's Section 1 release sentence remains the only artifact claim and contains
+no link, so the benchmark manifests, recipes, evidence, and evaluator remain
+unlocatable.
 
 The August 2026 SwanTale report is recorded as a partial-release audit of
 three post-training evaluations for a GRPO-tuned unified speech/audio

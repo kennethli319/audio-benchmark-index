@@ -7689,7 +7689,7 @@ paper_audits:
     title: "Listen, Do Not Copy: Internalizing Audio-Grounded Scaffold Context for Robust Omni-Model Speech Understanding"
     sections: version_2_sections_1_3_4_and_supplement
     status: audited_claimed_release_without_public_artifact_location
-    last_verified: 2026-08-07
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: Context-Speech Bench (CSB)
         index_id: null
@@ -7738,6 +7738,10 @@ paper_audits:
       result_evidence: claimed_released_but_no_public_location_found
       public_corpus_audio_recipes: claimed_released_but_no_public_location_found
       arxiv_source_bundle: public_manuscript_sources_and_figures_only
+      arxiv_version_recheck: version_2_still_current
+      exact_title_github_repository_search: no_results
+      broader_agsc_speech_github_repository_search: no_results
+      exact_title_hugging_face_dataset_and_model_searches: no_results
       source_corpora: public_under_separate_upstream_terms
     license:
       context_speech_bench: not_specified
@@ -7752,8 +7756,12 @@ paper_audits:
       - https://export.arxiv.org/e-print/2607.21943v2
       - https://api.github.com/search/repositories?q=%22Context-Speech%20Bench%22
       - https://api.github.com/search/repositories?q=%22Audio-Grounded%20Scaffold%20Context%22
+      - https://api.github.com/search/repositories?q=%22Listen%2C%20Do%20Not%20Copy%22
+      - https://api.github.com/search/repositories?q=AGSC+speech
       - https://huggingface.co/api/datasets?search=Context-Speech%20Bench
       - https://huggingface.co/api/models?search=Context-Speech%20Bench
+      - https://huggingface.co/api/datasets?search=Listen%20Do%20Not%20Copy
+      - https://huggingface.co/api/models?search=Listen%20Do%20Not%20Copy
       - https://www.openslr.org/12
       - https://github.com/JorisCos/LibriMix
       - https://www.openslr.org/93
@@ -7767,7 +7775,10 @@ paper_audits:
       released with the paper, but it contains no artifact link; its arXiv
       source bundle contains only manuscript sources and figures, and exact-name
       GitHub repository and Hugging Face dataset/model searches found no owner
-      release on the verification date. Public access to the component corpora
+      release on the verification date. A focused August 9 recheck found that
+      version 2 remains current and that exact-title plus broader AGSC speech
+      searches still return no GitHub repository or Hugging Face dataset/model
+      release. Public access to the component corpora
       does not reproduce the paper's synthesized mixtures, gold answers,
       predicted clues, split assignments, or streaming protocols, and does not
       supply a license for the derived benchmark.
