@@ -3470,3 +3470,24 @@ also calls the full set approximately 6,000 items in Appendix D despite Table
 2's exact 5,306. With no frozen manifest, evaluation package, model outputs,
 human-response rows, or verifiable benchmark license, RAIL remains an
 unreleased/unlocatable protocol and adds no counted family or helper.
+
+The July 2026 SPEARBench family now has a focused release-completeness audit
+after reviewing Sections 3-5 and the complete public repository tree. Its
+5,419 English question-answer dialogues (37.33 hours including context,
+question, and human answer audio) derive from the Seamless Interaction dev and
+test sets and directly evaluate streaming speech-LLM post-training outcomes:
+latency, interruptions, turn-taking, intelligibility, speech quality, language
+and dialect consistency, emotional naturalness, interpersonal stance, and
+temporal and spectral behavior. The official project links a public SharePoint
+`SPEARBench_inputs.zip`, but retrieval is browser mediated and a direct
+non-browser request returns SharePoint access denied, so the existing safe
+helper continues to fetch only lightweight owner metadata and instructions.
+The MIT owner repository releases inference wrappers, leaderboard summaries,
+per-subset metric CSVs, reports, and plots for seven models and the human
+condition. Contrary to the paper's Sections 1 and 5 claim of complete
+evaluation code, its public tree contains no metric implementation or
+end-to-end evaluation runner. MIT covers the released repository files, not
+the missing evaluator or the Seamless Interaction-derived audio; neither the
+paper nor project states a separate benchmark-audio license. The counted
+family and helper remain, with no count change, while access and reproducibility
+are now described conservatively.
