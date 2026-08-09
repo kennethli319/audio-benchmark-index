@@ -1880,6 +1880,12 @@ labels, score records, or evaluation code, so the index does not imply that
 its model-dependent item categories form a downloadable dataset. The paper's
 CC BY 4.0 license applies to the article, not absent evaluation artifacts or
 the three benchmarks' upstream data.
+A focused August 9 recheck found that arXiv still exposes only version 1;
+exact-title and arXiv-identifier GitHub searches return no repository, and
+identifier searches return no Hugging Face dataset or model. The segmented
+fragment assignments, model-dependent item categories, evaluator
+configuration, prompts, outputs, and per-item scores therefore remain
+unreleased. No family, count increase, or helper is added.
 
 The July 2026 Qwen-Audio-VAE report is inventoried across sections 4.1-4.5.
 Its three public reconstruction benchmarks—LibriSpeech for speech, AudioCaps

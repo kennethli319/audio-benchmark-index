@@ -13122,6 +13122,7 @@ paper_audits:
     title: "All That Glitters Is Not Audio: Rethinking Text Priors and Audio Reliance in Audio-Language Evaluation"
     sections: 2-4
     status: audited_existing_coverage_protocol
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: MMAU
         index_id: mmau
@@ -13145,11 +13146,33 @@ paper_audits:
       protocol is recorded as existing coverage rather than a downloadable
       benchmark family. The paper's CC BY 4.0 license does not release absent
       evaluation artifacts or change the upstream benchmark terms.
+    release_audit:
+      article_version: v1_only
+      official_project_or_repository: not_specified
+      exact_title_GitHub_repository_search: no_results_2026_08_09
+      arXiv_identifier_GitHub_repository_search: no_results_2026_08_09
+      arXiv_identifier_Hugging_Face_dataset_search: no_results_2026_08_09
+      arXiv_identifier_Hugging_Face_model_search: no_results_2026_08_09
+      derived_item_categories_and_fragment_manifests: not_released
+      evaluation_code_prompts_outputs_and_score_records: not_released
+      download_helper: none_no_paper_specific_public_artifacts
     sources:
       - https://arxiv.org/abs/2604.24401
       - https://arxiv.org/html/2604.24401v1#S2
       - https://arxiv.org/html/2604.24401v1#S3.SS1
       - https://arxiv.org/html/2604.24401v1#S4
+      - https://api.github.com/search/repositories?q=%22All+That+Glitters+Is+Not+Audio%22
+      - https://api.github.com/search/repositories?q=%222604.24401%22
+      - https://huggingface.co/api/datasets?search=2604.24401
+      - https://huggingface.co/api/models?search=2604.24401
+    note: >-
+      A focused August 9 recheck found that arXiv still exposes only version 1
+      and that neither exact-title nor arXiv-identifier GitHub searches locate
+      a repository. Identifier searches on Hugging Face likewise locate no
+      dataset or model release. The paper-specific fragment assignments,
+      model-dependent item categories, evaluator configuration, prompts,
+      outputs, and score records therefore remain unreleased. This adds no
+      benchmark family, count increase, or download helper.
 
   lalm_judge_protocol_shortcuts:
     paper: https://arxiv.org/abs/2607.13477
