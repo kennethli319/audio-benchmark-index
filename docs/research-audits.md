@@ -1674,13 +1674,21 @@ preserves the original copyright of the television conversations with their
 source owners; the approximately 12.66 GB audiovisual archive remains a
 manual Google Drive download.
 
-The July 2026 LALM audio-judge reliability paper is recorded as a
-claimed-public-supplement audit. It evaluates 152 production full-duplex
-conversations and 57 defect-injected clips, but says the production audio will
-not be released and the adversarial WAVs await a later clearance review. Its
-cited Hugging Face supplement is currently authentication-required and exposes
-no public card or file inventory, so the index does not add a benchmark family
-or infer a download helper from the paper's release claim.
+The July 2026 LALM audio-judge reliability paper now has a focused
+release-status audit of its claimed-public supplement. Sections 3-4 and
+Appendix E evaluate 152 production full-duplex conversations and 57
+successfully rendered defect-injected clips, comparing three calibrated human
+raters with Gemini audio judges across eight production dimensions. The paper
+says anonymized ratings, prompts, schemas, analysis scripts, and figures are
+public under CC BY 4.0 and Apache-2.0 declarations, but a focused August 8
+recheck found that the cited Hugging Face page still redirects to sign-in and
+that its API and raw README endpoints return HTTP 401. No public card, file
+inventory, revision, or repository-side license can therefore be verified.
+Appendix E separately says the production audio will not be released and that
+the nominal 60 adversarial WAVs await a later v0.2 clearance review; only 57
+enter the analysis. The paper license and stated supplement terms do not
+license those absent recordings, so the index adds no benchmark family or
+download helper until the tabular release is publicly verifiable.
 
 The July 2026 L2 auto-marker shortcut-reliance paper adds the official
 Speak & Improve Corpus 2025 family. Its four open-speaking task types provide
