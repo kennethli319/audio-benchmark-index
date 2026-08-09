@@ -2435,7 +2435,12 @@ Version 1 says the augmented dataset will be released but provides no project,
 repository, dataset card, selected-item manifest, computed targets,
 perturbation artifacts, evaluation code, or standalone data license. The
 official arXiv source package and GitHub/Hugging Face release searches were
-rechecked on July 26 and still expose no matching artifact. The
+rechecked on August 9 and still expose no matching artifact. A focused
+owner-provenance check also found no matching release among coauthor Sripathi
+Sridhar's 14 public GitHub repositories or public project-site repository.
+The upstream Zenodo record remains a single AudioCards CSV and does not add
+the paper's selected-item manifest, computed acoustic targets, perturbations,
+or evaluator. The
 public AudioCards family remains indexed separately and must not be treated as
 the unreleased augmented subset.
 
