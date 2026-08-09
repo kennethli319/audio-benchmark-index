@@ -13564,17 +13564,26 @@ paper_audits:
     title: "Safeguards for Speech2Speech LLM-Assistants: A Case Study in Automotive Applications"
     sections: Evaluation Setup and Evaluation Results
     status: audited_protocol_unreleased
+    last_verified: 2026-08-09
     evaluated_sets: []
     protocol_note: >-
       The paper compares no guardrail, tool-based guardrails, and
       transcript-based guardrails across Gemini Flash, Nova Sonic, and GPT
       Realtime. It crosses those systems with malicious and non-malicious
       speech inputs to form 18 setups, repeats each setup 300 times, and
-      reports response-latency distributions and whether guardrails execute
-      before each answer. The malicious condition is synthetic input
-      containing the benign trigger word "whale"; detection accuracy is
-      explicitly outside the study. This is a reproducibility protocol, not a
-      named public benchmark dataset.
+      reports response-latency distributions over 5,400 total runs and whether
+      guardrails execute before each answer. The malicious condition is
+      synthetic input containing the benign trigger word "whale"; detection
+      accuracy is explicitly outside the study. This is a reproducibility
+      protocol, not a named public benchmark dataset.
+    release_checks:
+      arxiv_version: v1
+      arxiv_version_date: 2026-07-23
+      source_package_contents: article_source_and_rendered_figures_only
+      official_project_repository_or_dataset_search: no_results
+      prompt_or_audio_manifest: not_released
+      per_run_latency_records_and_outputs: not_released
+      evaluation_implementation: not_released
     release_note: >-
       Version 1 and its official arXiv source package provide no project page,
       repository, dataset card, audio or prompt manifest, per-run latency
@@ -13586,6 +13595,11 @@ paper_audits:
       - https://arxiv.org/abs/2607.21180
       - https://arxiv.org/pdf/2607.21180
       - https://export.arxiv.org/e-print/2607.21180v1
+      - https://export.arxiv.org/api/query?id_list=2607.21180
+      - https://doi.org/10.1007/978-3-032-32335-4_18
+      - https://api.github.com/search/repositories?q=%222607.21180%22%20OR%20%22Safeguards%20for%20Speech2Speech%22
+      - https://huggingface.co/api/datasets?search=2607.21180
+      - https://huggingface.co/api/models?search=2607.21180
 
   vibevoice_asr_bitnet_technical_report:
     paper: https://arxiv.org/abs/2607.21075

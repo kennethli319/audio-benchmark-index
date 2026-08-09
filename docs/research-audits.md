@@ -4,6 +4,17 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 *Safeguards for Speech2Speech LLM-Assistants* release was
+rechecked on August 9 after reviewing its Evaluation Setup and Evaluation
+Results. Its 5,400-run protocol crosses three realtime speech models, three
+guardrail modes, and benign or trigger-word inputs to measure answer latency
+and whether safeguards execute before speech output. ArXiv still exposes only
+version 1 and a source package containing the article and rendered figures;
+official-release searches found no prompt/audio manifest, per-run records,
+outputs, or implementation. The article's CC BY-NC-ND 4.0 terms do not license
+absent evaluation artifacts or vendor API outputs. The protocol remains an
+unreleased audit with no counted benchmark family or helper.
+
 The August 2026 *InteracVid* paper is recorded as a public-metadata but
 unreleased-evaluation audit of interactive audio-video post-training. Sections
 3-5 define interaction-structured supervision pairing preceding audio-visual
