@@ -510,6 +510,13 @@ HybridCodec Hugging Face searches found no release on August 7. The paper's
 arXiv license and LibriTTS terms do not license the absent recipes, weights, or
 outputs. No duplicate family or helper is added; the existing LibriTTS helper
 remains the public source-data path.
+A focused August 9 recheck found that arXiv still exposes only version 1 and
+that SpeechBrain's develop branch remains at its June 15 head
+`e5cb1f65b940634215650aa1171e0440d0808123`; its complete tree still contains
+no HybridCodec- or HybridLM-named path. Exact arXiv-ID and broader HybridCodec
+speech GitHub repository searches, together with Hugging Face model and dataset
+searches, still return no matching release. The promised recipe, weights,
+sampled manifest, and evaluation outputs therefore remain unavailable.
 
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
