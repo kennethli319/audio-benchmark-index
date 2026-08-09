@@ -4306,6 +4306,81 @@ paper_audits:
       protocol and its ten-seed methodological warning without counting a new
       benchmark family or adding a download helper.
 
+  japanese_dialect_speech_llm_robustness_evaluation:
+    paper: https://arxiv.org/abs/2606.25436
+    title: "Evaluating Japanese Dialect Robustness Across Speech and Text-based Large Language Models"
+    sections: III-A_and_III-C_through_IV-D
+    status: audited_unreleased_derived_evaluation_over_existing_and_external_corpora
+    last_verified: 2026-08-08
+    post_training_relevance: >-
+      The study tests whether dialect knowledge in four instruction-tuned LLMs
+      survives conversion into speech LLMs, and whether CPJD adapter training
+      or Whisper encoder fine-tuning improves robustness. It therefore audits
+      speech-LLM post-training transfer and robustness to regional variation,
+      rather than generic ASR accuracy.
+    evaluation_inventory:
+      - cited_as: CPJD1-eval-dial and CPJD2-eval-dial
+        index_id: null
+        status: upstream_corpus_with_paper_specific_evaluation_selection_and_references_unreleased
+        protocol: >-
+          Translate Japanese dialect speech or its transcript into English.
+          CPJD1-eval-dial contains 2,640 human-spoken utterances and
+          CPJD2-eval-dial contains 2,401; together they cover 20 regional
+          dialects. Score BLEU and BLEURT against GPT-4o translations of the
+          corresponding standard-Japanese text.
+      - cited_as: CPJD1-eval-std and CPJD2-eval-std
+        index_id: null
+        status: paper_specific_synthetic_audio_and_references_unreleased
+        protocol: >-
+          Evaluate 1,250 standard-Japanese items per split in text and audio
+          form. The paper synthesizes the otherwise absent standard-speech
+          recordings with an unnamed TTS system and generates English
+          references with GPT-4o, then defines dialectal robustness as the
+          dialect score divided by the paired standard score.
+    training_data_not_benchmark_additions:
+      - ReazonSpeech_v2_approximately_5000_hour_3_million_utterance_subset
+      - Speech_BSD
+      - CoVoST_2
+      - opposite_CPJD_sentence_set_for_each_cross_set_experiment
+    release_audit:
+      paper_source_and_aggregate_results: public
+      CPJD_source_corpus: cited_upstream_corpus_without_an_official_access_link_in_the_paper
+      exact_CPJD1_and_CPJD2_item_manifests: not_released
+      GPT_4o_evaluation_references: not_released
+      standard_Japanese_TTS_audio_and_synthesis_configuration: not_released
+      training_data_manifests_and_Qwen2_5_32B_translations: not_released
+      training_and_evaluation_code: not_linked_or_released
+      trained_adapters_LoRA_weights_encoders_and_checkpoints: not_linked_or_released
+      prompts_predictions_and_item_level_scores: not_released
+      official_project_repository_or_dataset_card: not_identified
+      download_helper: none_paper_specific_artifacts_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      upstream_corpora: separate_terms_apply
+      paper_specific_translations_audio_manifests_and_outputs: not_specified_unreleased
+      note: >-
+        The arXiv license covers the article, not CPJD, ReazonSpeech, Speech
+        BSD, CoVoST 2, model-generated translations, synthesized standard
+        speech, manifests, code, checkpoints, or score records. No license for
+        the absent paper-specific evaluation artifacts is stated.
+    sources:
+      - https://arxiv.org/abs/2606.25436
+      - https://arxiv.org/html/2606.25436v1#S3.SS1
+      - https://arxiv.org/html/2606.25436v1#S3.SS3
+      - https://arxiv.org/html/2606.25436v1#S4.SS1
+      - https://arxiv.org/html/2606.25436v1#S4.SS2
+      - https://arxiv.org/html/2606.25436v1#S4.SS3
+      - https://arxiv.org/html/2606.25436v1#S4.SS4
+      - https://export.arxiv.org/api/query?id_list=2606.25436
+    note: >-
+      The paper contains no project, repository, dataset-card, or artifact URL,
+      and its arXiv source bundle adds none. Exact-title and arXiv-ID GitHub
+      repository searches and a CPJD Hugging Face dataset search found no
+      owner release on August 8. Because the evaluation depends on unreleased
+      GPT-4o references, synthesized standard speech, and frozen selections,
+      this audit does not count CPJD or the derived protocol as a new public
+      benchmark family and adds no helper.
+
   translation_enhanced_speech_encoder_pretraining_evaluation:
     paper: https://arxiv.org/abs/2606.25444
     title: "Does Translation-Enhanced Speech Encoder Pre-training Affect Speech LLMs?"

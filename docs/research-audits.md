@@ -3542,3 +3542,19 @@ the missing evaluator or the Seamless Interaction-derived audio; neither the
 paper nor project states a separate benchmark-audio license. The counted
 family and helper remain, with no count change, while access and reproducibility
 are now described conservatively.
+
+The June 2026 Japanese-dialect robustness paper is recorded as an unreleased
+derived evaluation audit of speech-LLM post-training rather than as a new
+benchmark family. Sections III-A and III-C through IV-D compare four base LLMs
+and their Whisper-connected speech variants on Japanese-to-English translation.
+The dialect side uses 2,640 CPJD1 and 2,401 CPJD2 human-spoken utterances across
+20 dialects; the paired standard side has 1,250 items per split whose otherwise
+absent audio was synthesized with an unnamed TTS system. BLEU and BLEURT are
+reported both directly and as a dialect-to-standard score ratio, while crossed
+CPJD-set adapter training and Whisper encoder fine-tuning test whether
+post-training improves regional robustness. The paper releases aggregate
+tables but no frozen item manifests, GPT-4o English references, standard-speech
+audio, synthesis configuration, prompts, code, checkpoints, predictions, or
+item scores, and it links no project or artifact repository. The article's
+arXiv perpetual non-exclusive license does not cover CPJD or the absent derived
+materials. No counted family or helper is added.
