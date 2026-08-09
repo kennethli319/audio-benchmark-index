@@ -1675,7 +1675,12 @@ that code and evaluation scripts are available at the cited
 [BoN-TTS repository](https://github.com/yu1012/BoN-TTS), GitHub currently
 reports an empty, zero-size repository with no commits or license. The index
 therefore adds no duplicate benchmark family or download helper and marks the
-derived protocol for a later release recheck.
+derived protocol for a later release recheck. A focused August 9 recheck found
+the placeholder unchanged: GitHub reports size zero, no license, and no push
+after its June 29 creation, while the default-branch tree endpoint returns 409
+because the repository has no commits. The 1,127-item manifest, generated
+candidates, decoding configuration, evaluator outputs, and per-item scores
+therefore remain unreleased.
 
 The July 2026 diffusion-augmentation AAD paper is recorded as an existing
 private-corpus and unreleased-output audit. It evaluates locus-of-attention

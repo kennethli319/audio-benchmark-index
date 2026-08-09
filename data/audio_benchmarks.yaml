@@ -10776,6 +10776,7 @@ paper_audits:
     title: "Best-of-N TTS Evaluation is Confounded by ASR Family Alignment"
     sections: 3, 4.1-4.4, and 5
     status: audited_existing_public_family_unreleased_derived_evaluation
+    last_verified: 2026-08-09
     public_interfaces:
       - https://github.com/yu1012/BoN-TTS
     evaluated_sets:
@@ -10797,6 +10798,10 @@ paper_audits:
     release_audit:
       paper_and_aggregate_results: public_ungated
       cited_github_repository: public_empty_placeholder
+      cited_repository_default_branch: master
+      cited_repository_size: 0
+      cited_repository_created_and_last_pushed: "2026-06-29T11:37:39Z"
+      cited_repository_commit_and_tree_status: no_commits_tree_api_returns_409
       evaluation_code_and_decoding_configuration: not_released
       derived_1127_item_manifest_and_prompt_pairs: not_released
       generated_best_of_n_candidates: not_released
@@ -10824,6 +10829,10 @@ paper_audits:
       repository with no commits or tree. The audit therefore leaves the
       family count unchanged, adds no helper, and records the paper-specific
       evaluation as unreleased pending a substantive repository publication.
+      A focused August 9 recheck found the repository unchanged: GitHub still
+      reports size zero, no detected license, no push after its June 29
+      creation, and a 409 response for the default-branch tree because there
+      are no commits.
 
   zipl_dialog_long_form_synthesis:
     paper: https://arxiv.org/abs/2607.12496
