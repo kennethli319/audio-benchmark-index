@@ -9,6 +9,100 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  interacvid_interactive_audio_visual_response_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.01157
+    title: "InteracVid: Building a Real Interactive Audio-Visual Response Dataset from Live-Chat Videos"
+    sections: 3-5_with_appendix_evaluation_protocols
+    status: audited_public_metadata_with_unreleased_held_out_benchmark_and_evaluation_outputs
+    last_verified: 2026-08-08
+    post_training_relevance: >-
+      InteracVid supplies interaction-structured supervision for a multimodal
+      planner and audio-video generator: each example pairs preceding audio-
+      visual context and a live-chat or reconstructed user query with the real
+      spoken and visual response that follows. The paper's held-out protocol
+      directly tests whether post-training improves context-grounded response
+      planning, spoken-response relevance and expressiveness, audio quality,
+      and audio-video synchronization rather than descriptive generation alone.
+    evaluation_inventory:
+      - cited_as: InteracVid_genuine_query_held_out_benchmark
+        status: paper_specific_100_item_channel_disjoint_split_not_released
+        samples: 100
+        protocol: >-
+          Hold out genuine live-chat interactions by source channel, condition
+          an interaction planner on the preceding audio-visual context and user
+          query, render its planned caption with an audio-video generator, and
+          compare pretrained and InteracVid-fine-tuned planner and generator
+          configurations.
+        automatic_metrics:
+          - fixed_VLM_judge_relevance_1_to_5
+          - fixed_VLM_judge_appropriateness_1_to_5
+          - fixed_VLM_judge_expressiveness_1_to_5
+          - semantic_overall_mean
+          - video_generation_quality_metrics
+          - audio_generation_quality_metrics
+          - audio_video_synchronization_metrics
+          - speech_character_error_rate
+        human_protocol: >-
+          Ten blinded raters each score ten randomly sampled generations across
+          eight configurations on relevance, appropriateness, expressiveness,
+          video quality, and audio quality using one-to-five scales.
+        note: >-
+          The public metadata table has no split, channel, or benchmark-membership
+          field, so the paper's 100 held-out genuine-query cases cannot be
+          reconstructed from the release.
+      - cited_as: InteracVid_full_training_corpus
+        status: public_ungated_metadata_only_media_remains_at_upstream_youtube
+        samples: over_454000
+        source_videos: over_59000
+        protocol: >-
+          The Hugging Face release provides query, caption, source type, YouTube
+          video identifier, start time, and duration in nine Parquet shards.
+          Users must retrieve any still-available source media separately and
+          remain subject to YouTube and uploader terms.
+        role: post_training_dataset_not_a_frozen_public_test_set
+    release_audit:
+      project_page: public_ungated
+      dataset_metadata: public_ungated_nine_parquet_shards
+      dataset_revision: ec108f1ca0ebfea1f923733af4b2bdf96a256d5d
+      audio_video_media: not_redistributed_upstream_youtube_only
+      curation_code: public_ungated_MIT
+      repository_tree_revision: main_checked_2026-08-08_72_paths
+      held_out_100_item_manifest_and_channel_partition: not_released
+      automatic_evaluation_runner_and_frozen_judge_configuration: not_released
+      generated_outputs_human_rating_rows_and_per_item_scores: not_released
+      download_helper: none_metadata_release_is_training_or_provenance_not_reproducible_benchmark
+    access: public_metadata_and_curation_code_unreleased_frozen_evaluation_artifacts
+    license:
+      paper: CC_BY_4.0
+      curation_code: MIT
+      dataset_metadata: not_stated
+      upstream_media: YouTube_and_uploader_terms_apply
+      evaluation_artifacts: not_stated
+      note: >-
+        CC BY 4.0 on the article covers the paper, and MIT covers the released
+        curation repository. Neither notice establishes reuse rights for the
+        metadata table, upstream YouTube audio-video, or absent benchmark cases,
+        model outputs, judgments, and human ratings.
+    sources:
+      - https://arxiv.org/abs/2608.01157
+      - https://arxiv.org/html/2608.01157v1#S3
+      - https://arxiv.org/html/2608.01157v1#S4
+      - https://arxiv.org/html/2608.01157v1#S5
+      - https://interacvid.github.io
+      - https://github.com/InteracVid/InteracVid
+      - https://raw.githubusercontent.com/InteracVid/InteracVid/main/README.md
+      - https://raw.githubusercontent.com/InteracVid/InteracVid/main/LICENSE
+      - https://api.github.com/repos/InteracVid/InteracVid/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Holomorphica/InteracVid-Parquet
+      - https://huggingface.co/datasets/Holomorphica/InteracVid-Parquet/raw/main/README.md
+      - https://huggingface.co/api/datasets/Holomorphica/InteracVid-Parquet
+      - https://huggingface.co/api/datasets/Holomorphica/InteracVid-Parquet/tree/main?recursive=false&expand=true
+    note: >-
+      This audit distinguishes a useful released post-training metadata corpus
+      from the paper's unreleased evaluation split. InteracVid is not counted as
+      a new public benchmark family until the frozen held-out manifest and
+      evaluation artifacts can be verified.
+
   bayling_duplex_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2606.14528
     title: "BayLing-Duplex: Native Full-Duplex Speech Dialogue with a Single Autoregressive LLM"

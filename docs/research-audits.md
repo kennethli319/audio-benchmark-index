@@ -4,6 +4,26 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 *InteracVid* paper is recorded as a public-metadata but
+unreleased-evaluation audit of interactive audio-video post-training. Sections
+3-5 define interaction-structured supervision pairing preceding audio-visual
+context and a live-chat or reconstructed query with the real spoken and visual
+response. The central benchmark holds out 100 genuine live-chat interactions
+by source channel and compares pretrained and fine-tuned planners and audio-
+video generators using a fixed VLM judge for relevance, appropriateness, and
+expressiveness; speech CER; audio, video, and synchronization metrics; and a
+blinded ten-rater study. This directly tests whether multimodal post-training
+improves context-grounded spoken interaction rather than descriptive generation
+alone. The official ungated Hugging Face release contains nine Parquet shards
+with more than 454,000 rows of query, caption, source type, YouTube ID, start
+time, and duration metadata, but it redistributes no audio-video and exposes no
+split, channel, or held-out-membership field. The official MIT repository
+releases the curation pipeline, not the frozen 100-case manifest, evaluation
+runner, generated outputs, judgments, human-rating rows, or per-item scores.
+The article's CC BY 4.0 and repository's MIT license do not establish rights for
+the metadata, upstream YouTube media, or absent evaluation artifacts. No counted
+family or download helper is added.
+
 The July 2026 *AuEmoChat* paper's NCSSD-EmCap evaluation release was rechecked
 on August 8. Section 5.1 describes an approximately 384-hour expressive
 conversational speech set with 18,580 dialogues, 245,984 utterances, 25
