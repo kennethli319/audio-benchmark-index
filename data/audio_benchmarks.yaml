@@ -687,6 +687,7 @@ paper_audits:
       candidate_hugging_face_snapshot: public_ungated_10151760917_byte_archive
       candidate_hugging_face_revision: 73bb23289347c970157386f7b3fb0d8fd93a3d58
       candidate_hugging_face_last_modified: "2026-01-26T06:33:08Z"
+      candidate_archive_lfs_sha256: f7ebbbe8052d05a991f7ab096f1593cf40fb3566171e1120eede7beeb6b2fa15
       candidate_visible_files:
         - README.md
         - eval.tar.gz
@@ -726,6 +727,7 @@ paper_audits:
       - https://huggingface.co/datasets/ak0255/StyleBench
       - https://huggingface.co/datasets/ak0255/StyleBench/raw/main/README.md
       - https://huggingface.co/api/datasets/ak0255/StyleBench
+      - https://huggingface.co/api/datasets/ak0255/StyleBench/tree/main?recursive=true&expand=true
       - https://huggingface.co/api/users/ak0255/overview
       - https://api.github.com/search/repositories?q=%22StyleBench%22%20%22Conversational%20Speaking%20Style%22
       - https://huggingface.co/api/datasets?search=StyleBench

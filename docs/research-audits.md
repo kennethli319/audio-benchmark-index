@@ -3602,13 +3602,16 @@ intensity judgments. It directly evaluates multi-turn instruction following
 and controllability, while the paper also relates results to post-training data
 mixtures and speech-tokenizer design. The paper says the dataset will be
 released after acceptance and provides no artifact link. An ungated
-[14.51 GB candidate snapshot](https://huggingface.co/datasets/ak0255/StyleBench)
+[10.15 GB candidate snapshot](https://huggingface.co/datasets/ak0255/StyleBench)
 reproduces the paper's semantic and emotion-annotation instructions, but
 neither source links the `ak0255` account to the authors or identifies it as
-the promised official release. A focused August 8 recheck found that the Hub
-card still names no paper, author, or arXiv identifier, while the uploader
-profile identifies itself only as `hak`. The 14,514,667,441-byte snapshot
-exposes only a README and one `eval.tar.gz`; it publishes no lightweight file
+the promised official release. A focused August 9 metadata recheck resolves an
+earlier size overstatement: the unchanged Hub revision
+`73bb23289347c970157386f7b3fb0d8fd93a3d58` exposes only a README and one
+10,151,760,917-byte `eval.tar.gz`, whose LFS SHA-256 is
+`f7ebbbe8052d05a991f7ab096f1593cf40fb3566171e1120eede7beeb6b2fa15`.
+The card still names no paper, author, or arXiv identifier, while the uploader
+profile identifies itself only as `hak`. It publishes no lightweight file
 inventory, schema, frozen ten-percent split manifest, or executable evaluator
 outside that large archive. An exact-name GitHub search found no matching
 repository. Its card declares CC BY 4.0, which does not establish provenance or
