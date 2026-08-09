@@ -272,6 +272,12 @@ definitions, gold workflows, rubrics, predictions, and per-item scores remain
 unreleased with no stated artifact license. The article's arXiv license does
 not license those absent materials, so HIU-Bench is not counted as a public
 family and receives no download helper.
+A focused August 9 recheck found arXiv version 1 unchanged. Exact-title and
+benchmark-name GitHub searches returned only paper-list mirrors or the
+unrelated `hiua-bench` project, and exact-name Hugging Face dataset and model
+searches remained empty. The paper conclusion still promises release only
+upon publication and supplies no owner-controlled artifact URL, so the full
+HIU-Bench evaluation package remains unreleased.
 
 The June 2026 *AudioProcessBench* paper is recorded as an announced-but-
 unreleased derived benchmark for audio reasoning critics and process reward
