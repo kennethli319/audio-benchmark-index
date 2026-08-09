@@ -3717,3 +3717,19 @@ is CC BY 4.0, but that article license does not cover absent evaluation
 artifacts; the project site states no separate artifact license, and upstream
 WildClawBench and vendor-service terms remain applicable. No counted family or
 download helper is added.
+
+The July 2026 *Q-TriM* paper's official implementation repository has a
+focused release-status recheck. Section 4.1 evaluates the already indexed
+MUSIC-AVQA, MUSIC-AVQA-R, and MUSIC-AVQA-v2.0 families using their official
+splits; Section 4.3 reports standard, long-tail robustness, and bias-balanced
+audio-visual question-answering accuracy. This is directly relevant to
+post-training evaluation because the derived families test whether an
+audio-visual language model generalizes beyond answer-frequency shortcuts and
+spurious modality correlations. As of August 9, the official Q-TriM repository
+still resolves to its June 22 head commit and its complete four-file tree
+contains only a README, `.gitignore`, one figure, and an image-directory
+placeholder. The README still promises code later, with no implementation,
+configuration, checkpoint, predictions, or per-item scores, and the repository
+has no license. This leaves Q-TriM's model-specific artifacts unreleased while
+preserving the public status and separate provenance of MUSIC-AVQA-R and
+MUSIC-AVQA-v2.0. No benchmark count or helper changes.

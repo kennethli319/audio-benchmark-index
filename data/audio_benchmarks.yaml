@@ -10562,6 +10562,7 @@ paper_audits:
     title: "Q-TriM: Question-Guided Tri-Modal Attention for Audio-Visual Question Answering"
     sections: 4.1-4.5
     status: audited_two_new_public_derived_families_one_existing_public_family
+    last_verified: 2026-08-09
     public_interfaces:
       - https://github.com/Sunghun95/Q-TriM
       - https://github.com/mira-ai-lab/MUSIC-AVQA-R
@@ -10587,6 +10588,10 @@ paper_audits:
     release_audit:
       paper: public_ungated
       q_trim_repository: public_placeholder_readme_code_announced
+      q_trim_repository_head: 604f17f9b93e99ffbb920295ac33542a444a3082
+      q_trim_repository_tree: four_files_readme_gitignore_figure_and_gitkeep
+      q_trim_repository_last_commit: "2026-06-22T12:24:31Z"
+      q_trim_implementation_checkpoint_configs_and_outputs: not_released
       music_avqa_r_annotations_and_evaluation_code: public_ungated_github_repository
       music_avqa_r_source_media: inherited_from_music_avqa_not_redistributed
       music_avqa_v2_annotations_and_video_manifest: public_ungated_github_repository
@@ -10604,6 +10609,8 @@ paper_audits:
       - https://github.com/Sunghun95/Q-TriM
       - https://raw.githubusercontent.com/Sunghun95/Q-TriM/main/README.md
       - https://api.github.com/repos/Sunghun95/Q-TriM
+      - https://api.github.com/repos/Sunghun95/Q-TriM/git/trees/main?recursive=1
+      - https://api.github.com/repos/Sunghun95/Q-TriM/commits?per_page=5
       - https://github.com/mira-ai-lab/MUSIC-AVQA-R
       - https://raw.githubusercontent.com/mira-ai-lab/MUSIC-AVQA-R/main/README.md
       - https://api.github.com/repos/mira-ai-lab/MUSIC-AVQA-R
@@ -10618,6 +10625,14 @@ paper_audits:
       and says code will be released soon. Its paper's HTML has unresolved
       citation keys for both derived datasets, so this audit traces each one
       independently to its owner-controlled release.
+      Rechecked on 2026-08-09, the official repository still resolves to the
+      same June 22 head commit and its complete four-file tree contains only a
+      README, .gitignore, one figure, and an images directory placeholder. The
+      README still says code will be released soon and provides no
+      implementation, configuration, checkpoint, predictions, or per-item
+      scores. The Q-TriM repository therefore remains documentation-only; this
+      does not change the public status of the separately owner-released
+      MUSIC-AVQA-R and MUSIC-AVQA-v2.0 benchmark families.
 
   ibr_power_waveform_scope_audit:
     paper: https://arxiv.org/abs/2607.20817
