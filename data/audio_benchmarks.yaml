@@ -876,6 +876,42 @@ paper_audits:
         Table 4 reports GSRM Pearson correlations of 0.401 on the ConvTTS
         validation set and 0.465 on FDX-Conv, against human split-half
         inter-rater correlations of 0.533 and 0.532 respectively.
+    semantic_reward_evaluation:
+      role: internal_speech_semantic_quality_reward_model_benchmark
+      status: internal_unreleased
+      training_samples: 11000
+      training_source: >-
+        Transcripts of responses generated in house by an ensemble of audio
+        foundation models from emotional audio prompts.
+      labels: >-
+        GPT-OSS-120B produces ten independent binary judgments per dialogue
+        and dimension; majority-vote dimension labels condition a 0-3 overall
+        semantic-naturalness score and synthesized chain-of-thought trace.
+      dimensions:
+        - language_complexity
+        - contextual_awareness
+        - spontaneity
+      evaluation_sets:
+        in_domain:
+          samples: 100
+          source: same_distribution_as_internal_training_set
+        out_of_domain:
+          samples: 130
+          source: FDX_Conv_subset
+      inference:
+        samples_per_dialogue: 10
+        temperature: 1.0
+        top_p: 0.6
+        aggregation:
+          - mean
+          - median
+          - rounded_mean
+      metric: pearson_correlation_against_internal_ground_truth_score
+      headline_result: >-
+        Appendix Table 2 reports that the chain-of-thought semantic judge
+        reaches Pearson correlations of 0.886 in domain and 0.834 out of
+        domain with mean aggregation, versus 0.803 and 0.706 without
+        chain-of-thought reasoning; rounded-mean OOD correlation is 0.837.
     post_training_evaluation:
       base_model: in_house_full_duplex_speech_llm_after_sft
       algorithm: online_grpo
@@ -908,6 +944,9 @@ paper_audits:
       model_and_checkpoint: not_released
       ConvTTS_audio_splits_annotations_and_manifests: not_released
       FDX_Conv_audio_annotations_and_manifests: not_released
+      semantic_reward_training_transcripts_labels_and_reasoning: not_released
+      semantic_reward_ID_and_FDX_Conv_OOD_evaluation_manifests: not_released
+      semantic_reward_predictions_and_per_item_scores: not_released
       online_RLHF_prompts_outputs_pairings_and_ratings: not_released
       training_code_and_frozen_environment: not_released
       download_helper: none_manual_required

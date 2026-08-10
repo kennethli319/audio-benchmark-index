@@ -265,6 +265,18 @@ release on August 8. The arXiv non-exclusive article license does not cover
 those internal assets or human recordings, so no counted family or helper is
 added.
 
+An August 10 primary-source correction also records the paper's previously
+omitted semantic-reward evaluation. It trains on 11,000 internally generated
+response transcripts labeled by ten-sample GPT-OSS-120B majority votes for
+language complexity, contextual awareness, and spontaneity, then evaluates
+100 in-domain and 130 FDX-Conv out-of-domain samples. Appendix Table 2 reports
+Pearson correlation after ten stochastic predictions with mean, median, and
+rounded-mean aggregation. These training transcripts, labels, reasoning
+traces, frozen evaluation subsets, predictions, and per-item scores are also
+unreleased. ArXiv remains at version 1, and fresh exact-title GitHub and
+Hugging Face model/dataset searches return no matching release. This expands
+the internal protocol audit without adding a public benchmark or helper.
+
 The June 2026 *AudioDER* paper is recorded as a post-training-data and
 existing-benchmark coverage audit after reviewing Sections 3-4 and Table 3.
 It constructs approximately 191,000 sound, speech, and music examples with
