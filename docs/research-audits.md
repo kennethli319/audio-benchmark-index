@@ -3661,6 +3661,15 @@ per-item scores. Apache-2.0 on the model cards covers those released model
 repositories, not absent evaluation artifacts or third-party benchmark data.
 The audit therefore adds no duplicate family, count increase, or download
 helper.
+A focused August 10 release recheck pins the complete official GitHub tree at
+revision `5cbb1d823937cd5b5de3d8fa4d3a7253ebd3b883` (66 nodes) and the four
+owner Hugging Face model snapshots. The repository releases inference and
+fine-tuning code, three small test clips, and aggregate result tables, but no
+machine-readable evaluation runner, speech-captioning set or references, ASR
+manifests, derived timestamp alignments, predictions, or per-item scores. The
+four model cards declare Apache-2.0, while the separate GitHub repository has
+no detected root license; neither condition changes the absent evaluation
+artifacts' unreleased status.
 
 The January 2026 Qwen3-ASR technical report is recorded as an existing-family
 and internal-protocol inventory of speech-foundation-model transfer and

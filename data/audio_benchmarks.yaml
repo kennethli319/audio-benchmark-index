@@ -17742,7 +17742,7 @@ paper_audits:
     title: "MOSS-Audio Technical Report"
     sections: 6.1-6.4_and_appendix_A.3-A.4
     status: audited_existing_public_families_and_unreleased_derived_protocols
-    last_verified: 2026-08-07
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: general_audio_understanding_suite
         status: existing_public_benchmark_families
@@ -17799,8 +17799,18 @@ paper_audits:
           test family.
     release_audit:
       official_project_page: public_ungated
+      official_github_repository: public_ungated_66_file_and_directory_nodes
+      official_github_revision: 5cbb1d823937cd5b5de3d8fa4d3a7253ebd3b883
+      official_github_root_license: not_present
       official_model_collection: public_ungated
+      official_model_snapshot_revisions:
+        MOSS-Audio-4B-Instruct: 6907a499dc0e87cc77c8ae0fe23fd0eb5476a02d
+        MOSS-Audio-4B-Thinking: 0099773e141bd410bc698c03c9a029e7c2ec8169
+        MOSS-Audio-8B-Instruct: 6521a39181b47a18f2d9f4b3acfb5bca7b76b57f
+        MOSS-Audio-8B-Thinking: 3d09aad8d7803dd131c8f42d2c09364d1f9367db
       model_weights_and_inference_implementation: released
+      fine_tuning_code: released
+      machine_readable_evaluation_runner_or_manifests_in_github: not_released
       complete_speech_captioning_audio_manifest: not_released
       human_reference_captions_and_quality_control_records: not_released
       speech_captioning_judge_identity_prompt_parser_and_scores: not_released
@@ -17829,6 +17839,10 @@ paper_audits:
       - https://arxiv.org/html/2606.01802v3#A1.SS3
       - https://arxiv.org/html/2606.01802v3#A1.SS4
       - https://openmoss.ai/MOSS-Audio/
+      - https://github.com/OpenMOSS/MOSS-Audio
+      - https://raw.githubusercontent.com/OpenMOSS/MOSS-Audio/main/README.md
+      - https://api.github.com/repos/OpenMOSS/MOSS-Audio
+      - https://api.github.com/repos/OpenMOSS/MOSS-Audio/git/trees/main?recursive=1
       - https://huggingface.co/collections/OpenMOSS-Team/moss-audio
       - https://huggingface.co/api/collections/OpenMOSS-Team/moss-audio
       - https://huggingface.co/OpenMOSS-Team/MOSS-Audio-4B-Instruct
@@ -17839,9 +17853,13 @@ paper_audits:
       pretraining and post-training: Tables 1-4 compare instruction and
       reasoning variants, while Appendix Tables 6-8 probe encoder pretraining,
       controlled transfer into an LLM, and DeepStack fine-tuning. The only new
-      report-defined evaluation artifacts are internal or unreleased, so this
-      audit maps public rows to existing families and does not add a benchmark,
-      helper, or count increase.
+      report-defined evaluation artifacts are internal or unreleased. An
+      August 10 release recheck pins the complete 66-node GitHub tree and all
+      four owner model snapshots; the repository adds inference and fine-
+      tuning code but no evaluation runner, frozen manifests, references,
+      predictions, or item scores. This audit therefore maps public rows to
+      existing families and does not add a benchmark, helper, or count
+      increase.
 
   audio2tool_release_audit:
     paper: https://arxiv.org/abs/2604.22821
