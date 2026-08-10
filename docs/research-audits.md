@@ -299,6 +299,14 @@ custom terms; the article license does not license the curated facts,
 counterfactuals, timings, or generated audio. The helper therefore fetches
 lightweight official metadata by default and keeps the Parquet behind an
 explicit opt-in.
+A focused August 10 recheck found arXiv still at version 1 and the owner Hub
+dataset still fixed at revision
+`f0038948b4053b8c83e6b67133112742f72890bb` from June 25. The project page,
+last modified June 23, still renders its GitHub control as a non-linking “Code
+coming soon” placeholder. The Hub tree remains limited to the card,
+`.gitattributes`, and the single Parquet file, so no evaluation runner,
+checkpoints, predictions, per-item scores, or explanation of the 281-versus-282
+row discrepancy has appeared.
 
 SpeechJBB is now indexed as a public, ungated multilingual spoken-safety
 benchmark after reviewing Sections 3-6 and Appendices A-E of the June 2026

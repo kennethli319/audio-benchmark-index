@@ -1313,7 +1313,7 @@ paper_audits:
     title: "Interleaved Speech Language Models Latently Work In Text"
     sections: 3-4_and_appendix_A
     status: audited_public_ungated_pretraining_probe_with_incomplete_reproduction_release
-    last_verified: 2026-08-07
+    last_verified: 2026-08-10
     benchmark:
       index_id: common_sense_facts_audio
       role: spoken_fact_completion_and_cross_modal_pretraining_transfer_probe
@@ -1345,6 +1345,10 @@ paper_audits:
           - interleaved_fraction_5_6
     release_audit:
       hugging_face_dataset: public_ungated
+      hugging_face_revision: f0038948b4053b8c83e6b67133112742f72890bb
+      hugging_face_last_modified: 2026-06-25
+      arxiv_versions: v1_only
+      project_page_last_modified: 2026-06-23
       released_split: data
       released_rows: 281
       paper_reported_rows: 282
@@ -1383,7 +1387,10 @@ paper_audits:
       accessible from speech. The release is sufficient for likelihood and
       representation probes, but it has one fewer row than the paper's table
       and does not include the promised evaluation code, evaluated model
-      outputs, or score records.
+      outputs, or score records. An August 10 recheck found the paper still at
+      arXiv v1, the project page still presenting a non-linking "Code coming
+      soon" control, and the Hub dataset unchanged since June 25 at revision
+      f0038948b4053b8c83e6b67133112742f72890bb.
 
   speechjbb_release_audit:
     paper: https://arxiv.org/abs/2606.06037
