@@ -1055,6 +1055,13 @@ paper releases no derived QA rows, exact cleaning manifest, adapters,
 diagnostic implementation, 100-item probe/erasure selection, predictions, or
 per-item scores. The absent derived artifacts have no specified license, so no
 duplicate family or helper is added.
+A focused August 9 release recheck found only arXiv version 1, zero exact-title
+or AudioGrounding-QA GitHub repository results, and no matching Hugging Face
+dataset or model. The complete 98-path upstream TextToAudioGrounding tree at
+`40c2280139a9bd077a6c823319d6244f5aa7512d` still contains only the original
+grounding implementation—not the derived QA rows, LoRA adapters, probe code,
+predictions, or score records. The public-family count and helper inventory
+therefore remain unchanged.
 
 The June 2026 AfriSpeech Semantics paper is recorded as an unreleased derived
 benchmark over four mixed-access owner-hosted speech corpora. Sections 3-6 and

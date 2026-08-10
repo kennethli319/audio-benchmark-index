@@ -4211,7 +4211,7 @@ paper_audits:
     title: "From Semantics to Readout: Mechanistic Understanding of Audio Tokens after Fine-Tuning for Temporal Audio Grounding"
     sections: 3-4 and appendices A and C-G
     status: audited_existing_public_family_with_unreleased_derived_qa_and_diagnostics
-    last_verified: 2026-08-06
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: AudioGrounding-QA
         index_id: audiogrounding
@@ -4233,6 +4233,14 @@ paper_audits:
           output-facing probe and erasure analyses use 100 test instances;
           their exact selection is not released.
     release_audit:
+      paper_arxiv_version: v1_only
+      focused_release_recheck: "2026-08-10T01:34Z"
+      exact_title_github_repository_search: no_repository_found
+      audio_grounding_qa_github_repository_search: no_repository_found
+      audio_grounding_qa_hugging_face_dataset_search: no_dataset_found
+      audio_grounding_qa_hugging_face_model_search: no_model_found
+      upstream_repository_head: 40c2280139a9bd077a6c823319d6244f5aa7512d
+      upstream_repository_tree_paths: 98
       upstream_audio_and_temporal_annotations: public_in_existing_AudioGrounding_release
       derived_question_answer_rows: not_released
       exact_qa_cleaning_and_split_manifests: not_released
@@ -4266,15 +4274,25 @@ paper_audits:
       - https://arxiv.org/html/2607.25355v1#A5
       - https://zenodo.org/records/7269161
       - https://github.com/wsntxxn/TextToAudioGrounding
+      - https://api.github.com/repos/wsntxxn/TextToAudioGrounding/git/trees/master?recursive=1
+      - https://api.github.com/repos/wsntxxn/TextToAudioGrounding/commits?per_page=3
       - https://api.github.com/search/repositories?q=%22AudioGrounding-QA%22
+      - https://api.github.com/search/repositories?q=%22From%20Semantics%20to%20Readout%22
       - https://huggingface.co/api/datasets?search=AudioGrounding-QA
+      - https://huggingface.co/api/models?search=AudioGrounding-QA
     note: >-
       This evaluation directly studies how temporal-grounding post-training
       changes the interface between pretrained audio representations and an
       LLM decoder. Because its source audio and temporal labels map to the
       already indexed AudioGrounding family and the paper-derived QA and
       diagnostic artifacts are absent, this audit adds no duplicate benchmark
-      family or download helper. Recheck for an author-controlled release.
+      family or download helper. A focused August 9 recheck found only arXiv
+      version 1, zero exact-title or AudioGrounding-QA GitHub repository
+      results, and no matching Hugging Face dataset or model. The complete
+      98-path upstream TextToAudioGrounding tree at
+      `40c2280139a9bd077a6c823319d6244f5aa7512d` contains the original grounding
+      implementation but no QA rows, LoRA adapters, probe code, predictions,
+      or score records. Recheck for an author-controlled release.
 
   afrispeech_semantics:
     paper: https://arxiv.org/abs/2606.11219
