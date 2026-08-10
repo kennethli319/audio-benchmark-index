@@ -4114,3 +4114,23 @@ generated responses, per-item predictions, and individual MTurk annotations
 therefore remain unavailable. CC BY 4.0 covers the article, not absent derived
 artifacts or the separately governed upstream dialogue corpora. No counted
 benchmark family or download helper is added.
+
+The July 2026 *M3-DuplexBench* release received a focused August 10 provenance
+correction after re-reading Sections III-V and inspecting the complete public
+demo repository. The paper's four tracks and SHIFT, PAUSE, backchannel, and
+barge-in protocol directly evaluate multilingual full-duplex speech-LLM
+post-training for timing, contextual consistency, and multi-turn QA. A broader
+search found a previously missed
+[demo repository](https://github.com/fury00812/m3-duplexbench-demo) owned by an
+account naming first author Ryo Fukuda; its commit metadata uses an NTT
+laboratory email address. At revision
+`0a81af772525a950bc3c5db7a7d2e25ab3d558a8`, the complete tree contains 54 MP4
+files (49,938,966 bytes) across eight numbered asset groups, while the page
+renders six qualitative reference/model-output examples. It releases no event
+manifest, derived English/Japanese QA set, translations, scoring or inference
+code, judge prompts, predictions, or per-item scores. ArXiv remains at version
+1, and Hugging Face still has no matching dataset or model release. The demo
+repository has no license; neither its media nor the absent benchmark assets
+inherit the article's arXiv license. M3-DuplexBench therefore remains an
+uncounted, non-reproducible derived protocol with no helper, now documented as
+a partial qualitative-demo release rather than wholly unlocated.

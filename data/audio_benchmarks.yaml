@@ -1842,11 +1842,11 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.29125
     title: "M3-DuplexBench: A Multi-Turn, Multilingual, Multidomain Benchmark for Full-Duplex Spoken Dialogue Models"
     sections: III-V
-    status: audited_unreleased_derived_benchmark_protocol
-    last_verified: 2026-08-07
+    status: audited_partial_demo_release_unreleased_derived_benchmark_protocol
+    last_verified: 2026-08-10
     benchmark:
       name: M3-DuplexBench
-      status: paper_defined_not_publicly_released
+      status: paper_defined_with_public_author_demo_only
       languages:
         - English
         - Japanese
@@ -1896,8 +1896,21 @@ paper_audits:
         timing sampled from Candor or Magic Data references. The paper tests
         Moshi, PersonaPlex, J-Moshi, and LLM-jp-Moshi.
     release_audit:
+      arxiv_versions: v1_only
       paper_artifact_url: not_provided
-      exact_name_github_repository_search: no_matching_repository_found
+      author_demo_repository: https://github.com/fury00812/m3-duplexbench-demo
+      author_demo_repository_revision: 0a81af772525a950bc3c5db7a7d2e25ab3d558a8
+      author_demo_repository_provenance: >-
+        The repository owner profile names first author Ryo Fukuda, and the
+        commit metadata uses an NTT laboratory email address.
+      public_demo_assets:
+        repository_mp4_files: 54
+        repository_mp4_bytes: 49938966
+        numbered_asset_groups: 8
+        examples_rendered_by_demo_page: 6
+        status: qualitative_reference_and_model_output_examples_only
+      exact_name_github_repository_search: matching_author_demo_repository_found
+      arxiv_id_github_repository_search: no_matching_repository_found
       exact_name_hugging_face_dataset_search: no_matching_dataset_found
       exact_name_hugging_face_model_search: no_matching_model_found
       event_manifests_and_split_definitions: not_released
@@ -1915,7 +1928,9 @@ paper_audits:
         The article does not state a benchmark-data or code license. No license
         can be inferred for absent event manifests, translations, synthesized
         speech, outputs, or judge records. Candor, Magic Data, TopiOCQA,
-        CosyVoice2, and model-generated components retain their own terms.
+        CosyVoice2, and model-generated components retain their own terms. The
+        author demo repository also has no license, so its example media should
+        be treated as view-only rather than a redistributable benchmark release.
     sources:
       - https://arxiv.org/abs/2607.29125
       - https://arxiv.org/html/2607.29125v1#S3
@@ -1923,6 +1938,8 @@ paper_audits:
       - https://arxiv.org/html/2607.29125v1#S5
       - https://export.arxiv.org/api/query?id_list=2607.29125
       - https://api.github.com/search/repositories?q=%22M3-DuplexBench%22
+      - https://github.com/fury00812/m3-duplexbench-demo
+      - https://api.github.com/repos/fury00812/m3-duplexbench-demo/git/trees/main?recursive=1
       - https://huggingface.co/api/datasets?search=M3-DuplexBench&limit=20
       - https://huggingface.co/api/models?search=M3-DuplexBench&limit=20
     note: >-
@@ -1930,8 +1947,11 @@ paper_audits:
       LLMs: it tests turn taking, pause/backchannel/barge-in handling, contextual
       consistency, and multi-turn QA across language and domain shifts. It is
       recorded as an unreleased derived protocol rather than a public benchmark
-      family because the paper supplies neither artifacts nor an official
-      release location.
+      family. An August 10 recheck found a first-author-owned demo repository
+      with 54 MP4 reference/model-output examples, but no event manifests,
+      derived evaluation sets, evaluator, judge records, scores, or license.
+      The qualitative demo does not make the benchmark reproducible and does
+      not justify a counted family or download helper.
 
   speechcombine_pretraining_transfer_evaluation_audit:
     paper: https://arxiv.org/abs/2607.02214
