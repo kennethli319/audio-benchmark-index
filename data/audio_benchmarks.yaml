@@ -15563,6 +15563,7 @@ paper_audits:
     title: "Hearing Like Humans? Sound Symbolism and Perceptual Alignment in Speech Language Models"
     sections: 3 and appendices B-D
     status: audited_not_indexed
+    last_verified: 2026-08-10
     public_interfaces:
       - https://anonymous.4open.science/r/Sound-Symbolism-SLM
     evaluated_domains:
@@ -15574,6 +15575,16 @@ paper_audits:
       paper: CC BY-SA 4.0
       evaluation_artifacts: not_specified_unverified
       upstream: Previously published audio and human perceptual data retain their source-study terms; the paper says Lacey et al. shape stimuli and dissimilarity matrices are available from the corresponding author for academic research
+    release_audit:
+      cited_4open_route: redirects_to_api_and_returns_HTTP_401_not_connected
+      github_exact_name_repository_search: no_matching_release_found
+      hugging_face_exact_name_dataset_search: no_matching_release_found
+      hugging_face_exact_name_model_search: no_matching_release_found
+      selected_stimulus_manifest: not_released
+      translated_prompt_bank: promised_but_not_publicly_verifiable
+      evaluator_and_logit_lens_code: promised_but_not_publicly_verifiable
+      repeated_model_outputs_and_scores: not_released
+      download_helper: not_added_manual_required_until_owner_release_is_publicly_inspectable
     sources:
       - https://arxiv.org/abs/2607.10162
       - https://arxiv.org/html/2607.10162v1#S3
@@ -15582,7 +15593,7 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.10162
       - https://anonymous.4open.science/r/Sound-Symbolism-SLM
     note: The paper describes a useful speech-perception evaluation and cites an anonymous code interface, but that interface currently returns HTTP 401 to an unauthenticated request. Without a publicly inspectable repository, dataset card, archive, commit snapshot, standalone license, or exact evaluation artifacts, the protocol cannot be verified as a public benchmark release and no download helper is added. Public availability of some source-study data does not itself release this paper's selected inputs, translated prompts, repeated trials, outputs, or scoring package.
-      A focused August 9 recheck found that arXiv still exposes only version 1,
+      A focused August 10 recheck found that arXiv still exposes only version 1,
       the 4open.science route still redirects to an API endpoint returning HTTP
       401 with `not_connected`, and exact-name GitHub plus Hugging Face dataset
       and model searches return no matching release. The paper-promised full

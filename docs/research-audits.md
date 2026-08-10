@@ -4096,7 +4096,7 @@ now also recorded in the YAML source of truth; the count remains unchanged.
 
 The July 2026 [*Hearing Like Humans? Sound Symbolism and Perceptual Alignment
 in Speech Language Models*](https://arxiv.org/abs/2607.10162) paper remains an
-unverified-release protocol audit after a focused August 9 recheck of Section
+unverified-release protocol audit after a focused August 10 recheck of Section
 3 and Appendices B-C. Its four experiments test forced-choice and graded
 rounded-versus-pointed judgments for human-recorded pseudowords, audio-to-shape
 matching, and a visual-only control. The protocol compares model decisions with
