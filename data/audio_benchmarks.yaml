@@ -15033,6 +15033,12 @@ paper_audits:
       - https://export.arxiv.org/api/query?id_list=2607.10162
       - https://anonymous.4open.science/r/Sound-Symbolism-SLM
     note: The paper describes a useful speech-perception evaluation and cites an anonymous code interface, but that interface currently returns HTTP 401 to an unauthenticated request. Without a publicly inspectable repository, dataset card, archive, commit snapshot, standalone license, or exact evaluation artifacts, the protocol cannot be verified as a public benchmark release and no download helper is added. Public availability of some source-study data does not itself release this paper's selected inputs, translated prompts, repeated trials, outputs, or scoring package.
+      A focused August 9 recheck found that arXiv still exposes only version 1,
+      the 4open.science route still redirects to an API endpoint returning HTTP
+      401 with `not_connected`, and exact-name GitHub plus Hugging Face dataset
+      and model searches return no matching release. The paper-promised full
+      prompt translations, evaluator code, selected-item manifests, repeated
+      model outputs, and score records therefore remain unverifiable.
 
   production_oriented_sfx_evaluation:
     paper: https://arxiv.org/abs/2607.09973

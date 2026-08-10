@@ -3948,3 +3948,23 @@ pairs, intervention and correction code, predictions, and per-item scores
 therefore remain unavailable. CC BY 4.0 covers the article, not these absent
 derived artifacts or the separately governed CREMA-D and VESUS source audio.
 No counted benchmark family or download helper is added.
+
+The July 2026 [*Hearing Like Humans? Sound Symbolism and Perceptual Alignment
+in Speech Language Models*](https://arxiv.org/abs/2607.10162) paper remains an
+unverified-release protocol audit after a focused August 9 recheck of Section
+3 and Appendices B-C. Its four experiments test forced-choice and graded
+rounded-versus-pointed judgments for human-recorded pseudowords, audio-to-shape
+matching, and a visual-only control. The protocol compares model decisions with
+human ratings and dissimilarity structures, acoustic-cue correlations, and
+deep-layer logit-lens readouts across eight speech/omni models. This is directly
+relevant to speech-LLM pretraining evaluation because it tests whether learned
+speech representations capture human perceptual cues and support crossmodal
+transfer. The paper's sole code link still redirects to a 4open.science API
+endpoint returning HTTP 401 with `not_connected`; arXiv still exposes only
+version 1, and exact-name GitHub and Hugging Face searches return no matching
+release. The full translated prompts, selected-item manifests, evaluator code,
+repeated outputs, and score records therefore remain unavailable. The paper is
+CC BY-SA 4.0, but its McCormick pseudoword recordings and Lacey shapes and
+human data are restricted to academic-research sharing described in Appendix
+C; the article license does not release those inputs or the absent derived
+artifacts. No counted family or download helper is added.
