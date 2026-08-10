@@ -4190,7 +4190,7 @@ paper_audits:
     title: "C3PO: Evaluating Cross-Modal Composition and Counterfactual Performance in Omnimodal Models"
     sections: 3-4_and_appendices_A-F
     status: audited_unreleased_omnimodal_audio_reasoning_benchmark
-    last_verified: 2026-08-06
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: C3PO
         index_id: null
@@ -4220,6 +4220,8 @@ paper_audits:
           each item receives one human response and is graded by the same
           model-judge protocol.
     release_audit:
+      arxiv_version: v1_unchanged_since_2026_08_05
+      owner_project_or_artifact_link_in_paper: not_present
       benchmark_media_and_questions: not_specified_unreleased
       ground_truth_answers_and_template_labels: not_specified_unreleased
       split_and_item_manifest: not_specified_unreleased
@@ -4227,6 +4229,11 @@ paper_audits:
       model_outputs_and_per_item_scores: not_specified_unreleased
       human_subset_assignments_and_responses: not_specified_unreleased
       mechanistic_probe_code_and_records: not_specified_unreleased
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      exact_title_hugging_face_dataset_search: no_matching_owner_release
+      arxiv_id_hugging_face_dataset_and_model_search: no_results
+      download_helper: none_no_public_evaluation_artifact
     license:
       paper: arXiv_perpetual_non_exclusive_license
       benchmark_data: not_specified_unreleased
@@ -4250,15 +4257,19 @@ paper_audits:
       - https://arxiv.org/html/2608.05381v1#A6
       - https://export.arxiv.org/api/query?id_list=2608.05381
       - https://api.github.com/search/repositories?q=%22C3PO%22%20%22Cross-Modal%20Composition%22
+      - https://api.github.com/search/repositories?q=%222608.05381%22
       - https://huggingface.co/api/datasets?search=C3PO%20cross-modal
+      - https://huggingface.co/api/datasets?search=2608.05381
+      - https://huggingface.co/api/models?search=2608.05381
     note: >-
       Version 1 gives no project page, repository, dataset card, artifact URL,
-      or release commitment. Exact-title GitHub repository search and Hugging
-      Face dataset search found no matching release on the verification date.
-      Because no official media, questions, answers, manifests, or executable
-      scorer are available, this audit does not count C3PO as a public
-      benchmark family and adds no download helper. Revisit owner-controlled
-      sources if a release is announced.
+      or release commitment. An August 10 recheck confirms that arXiv still
+      exposes only the August 5 version; exact-title and arXiv-ID GitHub
+      repository searches and Hugging Face dataset/model searches found no
+      matching owner release. Because no official media, questions, answers,
+      manifests, or executable scorer are available, this audit does not count
+      C3PO as a public benchmark family and adds no download helper. Revisit
+      owner-controlled sources if a release is announced.
 
   vorch_streamer_long_form_t2av_audit:
     paper: https://arxiv.org/abs/2608.05663

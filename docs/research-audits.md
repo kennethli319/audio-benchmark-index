@@ -986,6 +986,12 @@ benchmark media, questions, answers, code, outputs, probe records, and
 single-rating 250-item human subset therefore remain unreleased. The arXiv
 license covers only the paper; upstream dataset and generation-model terms
 require separate review. No public family or download helper is added.
+A focused August 10 release recheck confirms that arXiv still exposes only
+version 1, submitted August 5, and that the paper contains no owner artifact
+link or release commitment. Exact-title and arXiv-ID GitHub repository
+searches and Hugging Face dataset and model searches return no matching owner
+release. The contradictory 3,342/3,404 totals therefore still cannot be
+resolved against a frozen manifest, and C3PO remains uncounted.
 
 The August 2026 *Vorch-Streamer* paper is recorded as a partially released
 long-form speech-generation and post-training protocol. Sections 3-4 adapt a
