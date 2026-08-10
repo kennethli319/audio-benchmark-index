@@ -4114,7 +4114,7 @@ paper_audits:
     title: "Cocktail-Talker: Multi-Speaker Dialog Modeling in Noisy Social Environments with Turn Action GRPO"
     sections: 3-5
     status: audited_public_generator_with_unreleased_fixed_evaluation_and_claimed_but_absent_adapter
-    last_verified: 2026-08-06
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: Cocktail-DialogGen seen-environment evaluation
         index_id: null
@@ -4154,6 +4154,8 @@ paper_audits:
       processor_configuration: released
       claimed_cocktail_talker_lora_adapter: absent_from_current_repository_tree
     release_audit:
+      repository_head: 9d5eb0feb6228d778e372744c091fed09dbe9047
+      repository_tree_paths: 276
       fixed_training_dialogs_and_mixtures: not_released
       fixed_seen_and_unseen_evaluation_dialogs_and_mixtures: not_released
       exact_split_and_condition_manifests: not_released
@@ -4182,6 +4184,7 @@ paper_audits:
       - https://github.com/xi-j/Cocktail-Talker/tree/main/Cocktail-DialogGen
       - https://github.com/xi-j/Cocktail-Talker/blob/main/Cocktail-DialogGen/backgrounds/README.md
       - https://api.github.com/repos/xi-j/Cocktail-Talker/git/trees/main?recursive=1
+      - https://api.github.com/repos/xi-j/Cocktail-Talker/commits?per_page=3
     note: >-
       This is directly relevant to spoken-LLM post-training, tool-like turn
       control, robustness, and multi-party interaction: it evaluates SFT and
@@ -4194,6 +4197,14 @@ paper_audits:
       the current repository tree. This audit therefore does not count a
       public benchmark family or add a download helper; recheck the owner
       repository for the promised fixed data, evaluator, adapter, and terms.
+      A focused August 9 recheck records the unchanged 276-path tree at
+      `9d5eb0feb6228d778e372744c091fed09dbe9047`. The July 31 head deletes a
+      LoRA test file immediately after a commit titled `Add Cocktail-Talker
+      (no ckpt yet)`; the live tree still has no `adapters/` path, LICENSE,
+      fixed evaluation manifest, evaluator, predictions, or score records.
+      The released background manifest identifies Freesound IDs, URLs,
+      original names, and durations for 180 previews but still omits author
+      and license fields, so it does not resolve the reuse caveat.
 
   audio_token_semantics_to_readout:
     paper: https://arxiv.org/abs/2607.25355

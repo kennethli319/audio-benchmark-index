@@ -1030,6 +1030,15 @@ LoRA adapter, but its stated repository path is currently absent. The fixed
 benchmark therefore remains unreleased, so no public family or download helper
 is added; the generator and examples are documented only as public protocol
 components.
+A focused August 9 recheck records the unchanged 276-path repository tree at
+`9d5eb0feb6228d778e372744c091fed09dbe9047`. The July 31 head deletes a LoRA
+test file immediately after a commit titled `Add Cocktail-Talker (no ckpt
+yet)`, and the live tree still contains no `adapters/` path, LICENSE, fixed
+evaluation manifest, evaluator, predictions, or score records. The public
+background manifest does identify Freesound IDs, URLs, original names, and
+durations for all 180 previews, but it still omits author and license fields.
+Thus neither the claimed adapter nor reusable fixed evaluation package is now
+public, and the family count and helper inventory remain unchanged.
 
 The July 2026 *From Semantics to Readout* paper is recorded as post-training
 and representation-evaluation provenance for the existing public
