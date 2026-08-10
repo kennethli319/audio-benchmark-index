@@ -3749,6 +3749,12 @@ selection or client manifests, seeds, checkpoints, outputs, or per-item scores.
 MIT therefore covers only the released repository files, while LibriSpeech and
 MLS retain their upstream terms. No duplicate family, count increase, or helper
 is added.
+A focused August 10 recheck found arXiv still at version 1 and the complete
+owner-repository tree still fixed at commit
+`1ffa95ddf30f5ed911a1d9395093a56d17e41e56` from January 30. Its only two
+files remain the 110-byte README and MIT license, so the paper's claim that
+training hyperparameters are publicly available there is still not fulfilled;
+no implementation, configuration, or frozen evaluation artifact has appeared.
 
 The May 2026 *jina-embeddings-v5-omni* paper is recorded as an existing-family
 and released-model audit of frozen audio-encoder transfer into a language

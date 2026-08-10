@@ -18257,6 +18257,7 @@ paper_audits:
     title: "SpeechLLM Meets Federated Learning for End-to-End ASR: English and Italian Case Studies"
     sections: 3-5 and Tables 1-2
     status: audited_existing_families_incomplete_protocol_release
+    last_verified: 2026-08-10
     relevance:
       area: pretrained_audio_encoder_transfer_and_parameter_efficient_post_training
       note: >-
@@ -18288,6 +18289,9 @@ paper_audits:
     release_audit:
       paper_repository: public_ungated
       repository_contents: README_and_MIT_license_only
+      repository_head: 1ffa95ddf30f5ed911a1d9395093a56d17e41e56
+      repository_head_date: 2026-01-30
+      arxiv_versions: v1_only
       implementation: not_released
       exact_MLS_selection_and_client_manifests: not_released
       random_client_samples_and_seeds: not_released
@@ -18312,6 +18316,7 @@ paper_audits:
       - https://github.com/mnabihali/Fed-SpeechLLM
       - https://api.github.com/repos/mnabihali/Fed-SpeechLLM
       - https://api.github.com/repos/mnabihali/Fed-SpeechLLM/git/trees/main?recursive=1
+      - https://api.github.com/repos/mnabihali/Fed-SpeechLLM/commits?per_page=1
       - https://raw.githubusercontent.com/mnabihali/Fed-SpeechLLM/main/LICENSE
     note: >-
       This is evaluation provenance over the existing LibriSpeech and MLS
