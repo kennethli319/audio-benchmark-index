@@ -9,6 +9,88 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  composable_emotion_steering_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.00946
+    title: "A Geometric Perspective on Composable Emotion Steering in Text-to-Speech Models"
+    sections: 2-4
+    status: audited_unreleased_derived_speech_llm_controllability_evaluation
+    last_verified: 2026-08-09
+    post_training_relevance: >-
+      The paper evaluates activation steering at the speech-language-model and
+      conditional-flow-matching stages of CosyVoice2. Its probes and synthesis
+      comparisons directly test whether a speech LLM's learned representations
+      support mixed-emotion controllability without sacrificing speaker
+      identity or intelligibility, a relevant post-training and inference-time
+      alignment outcome.
+    evaluation_inventory:
+      - cited_as: representation_geometry_protocol
+        status: paper_defined_unreleased_derived_protocol
+        source_data:
+          - ESD
+          - CREMA-D
+          - RAVDESS
+        protocol: >-
+          Across five emotions, train per-layer linear probes with 11,311
+          utterances, evaluate on 4,850 within-speaker and 4,530 held-out-speaker
+          utterances, and estimate per-emotion and pooled local intrinsic
+          dimensionality from 4,000 samples over ten resampling trials.
+        metrics:
+          - within_and_cross_speaker_linear_probe_accuracy
+          - pooled_and_per_emotion_local_intrinsic_dimensionality
+          - pooled_minus_mean_per_emotion_LID
+      - cited_as: mixed_emotion_steering_protocol
+        status: paper_defined_unreleased_derived_protocol
+        source_data:
+          - CREMA-D
+          - IEMOCAP
+        protocol: >-
+          Extract emotion directions from half of the speakers, compose them by
+          annotation-derived target proportions, and compare SLM-only,
+          flow-matching-only, and joint steering on CREMA-D in-distribution and
+          IEMOCAP out-of-distribution. Select steering strengths while keeping
+          speaker similarity within ten percent of baseline and WER increase
+          below 0.5.
+        metrics:
+          - Emotion2Vec_embedding_similarity
+          - target_emotion_probability
+          - Spearman_target_proportion_ranking_correlation
+          - dominant_emotion_hit_rate
+          - WavLM_speaker_similarity
+          - Whisper_large_v3_word_error_rate
+    release_audit:
+      frozen_source_selections_and_speaker_splits: not_released
+      mixed_emotion_targets_and_annotation_mapping: not_released
+      probe_and_LID_implementation: not_released
+      steering_vectors_and_configuration: not_released
+      generated_audio_predictions_and_item_scores: not_released
+      exact_title_github_repository_search: no_results
+      exact_title_hugging_face_model_search: no_results
+      exact_title_hugging_face_dataset_search: no_results
+      download_helper: none_no_reproducible_public_evaluation_artifact
+    access: internal_unreleased_paper_defined_derived_evaluation
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      evaluation_artifacts: not_stated
+      source_data: upstream_family_terms_apply
+      note: >-
+        The arXiv distribution license covers the article, not absent derived
+        splits, targets, activations, generated speech, or score records. ESD,
+        CREMA-D, RAVDESS, and IEMOCAP retain their own access and reuse terms.
+    sources:
+      - https://arxiv.org/abs/2607.00946
+      - https://arxiv.org/html/2607.00946v1#S2
+      - https://arxiv.org/html/2607.00946v1#S3
+      - https://arxiv.org/html/2607.00946v1#S4
+      - https://export.arxiv.org/api/query?id_list=2607.00946
+      - https://api.github.com/search/repositories?q=%22A%20Geometric%20Perspective%20on%20Composable%20Emotion%20Steering%22
+      - https://huggingface.co/api/models?search=A%20Geometric%20Perspective%20Composable%20Emotion%20Steering
+      - https://huggingface.co/api/datasets?search=A%20Geometric%20Perspective%20Composable%20Emotion%20Steering
+    note: >-
+      No benchmark family is counted. The protocol is directly relevant to
+      speech-LLM controllability, but the paper does not release a frozen
+      evaluation package or executable evaluator. Reassess if the authors
+      publish code, derived manifests, targets, generated outputs, or scores.
+
   paralinguistic_counterfactual_audio_judge_audit:
     paper: https://arxiv.org/abs/2608.06718
     title: "Do Audio Language Models Use Paralinguistic Evidence? Counterfactual Audits for Response Evaluation"

@@ -4,6 +4,25 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The July 2026 [*A Geometric Perspective on Composable Emotion Steering in
+Text-to-Speech Models*](https://arxiv.org/abs/2607.00946) paper is recorded as
+an unreleased derived evaluation audit after reviewing Sections 2-4. It probes
+CosyVoice2's speech-language-model and conditional-flow-matching stages on ESD,
+CREMA-D, and RAVDESS with within- and held-out-speaker linear classification and
+local intrinsic dimensionality, then compares SLM-only, flow-matching-only, and
+joint mixed-emotion steering on CREMA-D and IEMOCAP. Emotion2Vec similarity and
+target probabilities, proportional-ranking correlation, dominant-emotion hit
+rate, WavLM speaker similarity, and Whisper-large-v3 WER directly evaluate
+post-training and inference-time controllability while checking speaker and
+content preservation. The paper releases only aggregate figures and tables: it
+links no project or artifact repository, and exact-title GitHub plus Hugging
+Face model and dataset searches found no owner release on August 9. Frozen
+source selections and speaker splits, mixed-emotion annotation targets, probe
+and LID code, steering vectors and settings, generated audio, predictions, and
+item scores remain unavailable. The arXiv perpetual non-exclusive license
+covers the article, not these absent derived artifacts; ESD, CREMA-D, RAVDESS,
+and IEMOCAP retain their own terms. No counted family or helper is added.
+
 The August 2026 [*Do Audio Language Models Use Paralinguistic
 Evidence?*](https://arxiv.org/abs/2608.06718) paper is recorded as an
 unreleased post-training judge audit after reviewing Sections 3-5 and
