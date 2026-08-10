@@ -4,6 +4,26 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 [*HyPASE*](https://arxiv.org/abs/2608.04351) paper is
+recorded as an existing-family post-training and cross-dataset transfer audit
+after reviewing Sections 4.1-4.6. It adapts Qwen2-Audio-7B-Instruct for speech
+emotion recognition, evaluates MELD's standard seven-class split and
+IEMOCAP's four-class leave-one-session-out protocol with weighted accuracy,
+unweighted accuracy, and macro F1, then transfers the MELD-trained model to
+RAVDESS, SAVEE, and IEMOCAP without target-domain fine-tuning. This directly
+tests how parameter-efficient speech-LLM post-training changes acoustic-emotion
+recognition and cross-corpus robustness. All four evaluation datasets are
+already indexed families. The paper links an owner repository at revision
+`419c7b0f8203c54fa36ecaf7c0ec8dab21dc5cfb`, but its complete tree contains
+only an eight-byte README heading. It releases no implementation,
+configuration, checkpoint, frozen IEMOCAP folds or preprocessing manifests,
+predictions, confusion rows, or item scores; exact-name and arXiv-ID Hugging
+Face searches also find no model or dataset release. The arXiv perpetual
+non-exclusive license covers the article, while the placeholder repository has
+no license and the four source datasets retain separate terms. No benchmark
+family or helper is added; reassess when reproducibility artifacts are
+published.
+
 The August 2026 [*MoCA: Implicit Social Context
 Analysis*](https://arxiv.org/abs/2608.05825) release is recorded as a public
 but out-of-scope audio false-positive after reviewing Sections 3-6 and

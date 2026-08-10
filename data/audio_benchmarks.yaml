@@ -9,6 +9,87 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  hypase_lalm_ser_post_training_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.04351
+    title: "HyPASE: Hyperbolic Geometry for Parameter-Efficient Speech Emotion Fine-Tuning Framework for Large Audio-Language Models"
+    sections: 4.1-4.6
+    status: audited_existing_family_post_training_and_cross_dataset_transfer_evaluation_with_unreleased_implementation
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      HyPASE adapts the frozen Qwen2-Audio-7B-Instruct audio encoder and language
+      interface with parameter-efficient modules, then evaluates in-domain
+      emotion recognition and zero-shot cross-corpus transfer. The protocol is
+      therefore direct evidence about how speech-LLM post-training changes
+      acoustic-emotion recognition and preserves transfer under domain shift.
+    evaluation_inventory:
+      - cited_as: MELD_and_IEMOCAP_in_domain_SER
+        status: existing_public_or_gated_benchmark_families
+        datasets:
+          - MELD_7_class_standard_train_dev_test
+          - IEMOCAP_4_class_leave_one_session_out_cross_validation
+        backbone: Qwen2_Audio_7B_Instruct
+        protocol: >-
+          Compare direct and chain-of-thought zero-shot inference, LoRA,
+          Adapter, and HyPASE adaptation. Train for up to 30 epochs, select by
+          validation weighted accuracy with patience five, and report weighted
+          accuracy, unweighted accuracy, and macro F1. The paper also reports
+          MELD ablations, per-class F1, confusion analysis, and geometric
+          diagnostics of adapted encoder representations.
+      - cited_as: MELD_trained_zero_shot_cross_dataset_SER
+        status: paper_defined_transfer_protocol_over_existing_families
+        source_training_family: MELD
+        target_evaluation_families:
+          - RAVDESS
+          - SAVEE
+          - IEMOCAP
+        protocol: >-
+          Freeze the MELD-trained weights, change the evaluation instruction
+          so it lists each target corpus's emotion categories, and report
+          weighted accuracy without target-domain fine-tuning.
+    release_audit:
+      source_benchmark_families: already_indexed_with_separate_upstream_terms
+      owner_linked_repository: public_ungated_placeholder
+      owner_linked_repository_revision: 419c7b0f8203c54fa36ecaf7c0ec8dab21dc5cfb
+      owner_linked_repository_complete_tree: README_md_only_8_bytes
+      implementation_configs_and_checkpoints: not_released
+      frozen_IEMOCAP_fold_and_preprocessing_manifests: not_released
+      predictions_confusion_rows_and_item_scores: not_released
+      hugging_face_model_and_dataset_searches: no_HyPASE_or_arxiv_id_results
+      download_helper: none_no_independent_public_evaluation_artifact
+    access: mixed_public_and_gated_existing_families_with_unreleased_paper_specific_artifacts
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      owner_linked_repository: no_license_detected
+      paper_specific_artifacts: not_released_no_terms
+      source_data: upstream_family_terms_apply
+      note: >-
+        The arXiv distribution license covers the article, not code,
+        checkpoints, predictions, or derived evaluation artifacts. The
+        owner-linked one-file repository has no license. MELD, IEMOCAP,
+        RAVDESS, and SAVEE retain their separate upstream access and use terms.
+    sources:
+      - https://arxiv.org/abs/2608.04351
+      - https://arxiv.org/html/2608.04351v1#S4.SS1
+      - https://arxiv.org/html/2608.04351v1#S4.SS2
+      - https://arxiv.org/html/2608.04351v1#S4.SS4
+      - https://arxiv.org/html/2608.04351v1#S4.SS5
+      - https://arxiv.org/html/2608.04351v1#S4.SS6
+      - https://github.com/LilSicko/HyPase
+      - https://api.github.com/repos/LilSicko/HyPase
+      - https://api.github.com/repos/LilSicko/HyPase/contents
+      - https://api.github.com/repos/LilSicko/HyPase/commits
+      - https://raw.githubusercontent.com/LilSicko/HyPase/main/README.md
+      - https://huggingface.co/api/models?search=HyPASE
+      - https://huggingface.co/api/datasets?search=HyPASE
+      - https://huggingface.co/api/models?search=2608.04351
+      - https://huggingface.co/api/datasets?search=2608.04351
+    note: >-
+      No benchmark family is counted and no helper is added. All four source
+      families are already indexed, while the paper-specific adaptation and
+      transfer results cannot be independently reproduced from the placeholder
+      repository. Reassess if the authors publish code, frozen folds and
+      preprocessing, checkpoints, or evaluation outputs.
+
   moca_implicit_social_context_audio_scope_audit:
     paper: https://arxiv.org/abs/2608.05825
     title: "MoCA: Implicit Social Context Analysis"
