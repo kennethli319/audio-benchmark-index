@@ -9,6 +9,78 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  step_audio_r1_5_post_training_evaluation_audit:
+    paper: https://arxiv.org/abs/2604.25719
+    title: "Step-Audio-R1.5 Technical Report"
+    sections: 3.2-3.3_and_4.1-4.2
+    status: audited_public_three_track_suite_and_existing_public_families
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      Step-Audio-R1.5 combines interaction-focused SFT with PPO-style RLHF
+      driven by rubric-conditioned and ordinary relative preferences. Its
+      evaluation tests whether that alignment preserves audio reasoning while
+      improving instruction retention, multi-turn dialogue, and fine-grained
+      paralinguistic understanding.
+    evaluation_inventory:
+      - cited_as: Step-Audio-R1.5_open_benchmarks
+        status: public_ungated_three_track_benchmark_family
+        index_id: step_audio_r1_5_benchmarks
+        tracks:
+          - Step-Caption_905_samples
+          - Step-Dialogue-Understanding_87_samples
+          - Step-SPQA_AQTA_550_samples
+        protocol: >-
+          Step-Caption uses an LLM judge to compare free-form descriptions
+          against expert speaker-structure and 15 per-speaker attribute labels.
+          Step-DU uses an LLM judge for targeted acoustic-trait questions.
+          Step-SPQA first applies normalized exact match and then task-specific
+          binary semantic judges across eleven 50-item paralinguistic tasks.
+      - cited_as: AudioMultiChallenge
+        status: existing_public_family
+        index_id: multichallenge_audio
+      - cited_as: additional_public_reasoning_benchmarks
+        status: existing_public_families
+        index_ids:
+          - big_bench_audio
+          - mmsu
+          - mmau
+          - spoken_mqa
+    release_audit:
+      owner_repository: public_ungated
+      owner_repository_revision: c73a43cd1f64f07b5d68ef4a41a0b2e4125ae6f8
+      complete_tree_entries: 1623
+      released_audio_files: 1542
+      released_tracks: 3
+      metadata_and_answer_references: released
+      model_and_judge_prompts: released
+      paper_reported_aggregate_results: released
+      baseline_predictions_and_per_item_scores: not_released
+      step_audio_r1_5_model_code_and_weights: not_released
+      helper: metadata_annotations_and_prompts_default_full_repository_opt_in
+    license:
+      paper: CC-BY-4.0
+      repository: Apache-2.0
+      source_media_and_recorded_voices: upstream_rights_privacy_and_platform_terms_require_review
+      note: >-
+        Apache 2.0 is declared at the repository root, but it does not by
+        itself resolve copyright, platform, privacy, consent, biometric, or
+        publicity rights in YouTube/Bilibili-derived clips and recorded voices.
+    sources:
+      - https://arxiv.org/abs/2604.25719
+      - https://arxiv.org/html/2604.25719v2#S3.SS2
+      - https://arxiv.org/html/2604.25719v2#S3.SS3
+      - https://arxiv.org/html/2604.25719v2#S4.SS1
+      - https://arxiv.org/html/2604.25719v2#S4.SS2
+      - https://github.com/stepfun-ai/Step-Audio-R1
+      - https://api.github.com/repos/stepfun-ai/Step-Audio-R1
+      - https://api.github.com/repos/stepfun-ai/Step-Audio-R1/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/stepfun-ai/Step-Audio-R1/main/benchmarks/Step-Audio-R1.5/README.md
+    note: >-
+      The three new Step tracks count together as one released suite family.
+      The other five Table 1 columns map to existing index families and are not
+      duplicated. Version 2 corrects Step-Caption from 907 to 905 examples,
+      matching the released metadata and audio inventory.
+
   hypase_lalm_ser_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2608.04351
     title: "HyPASE: Hyperbolic Geometry for Parameter-Efficient Speech Emotion Fine-Tuning Framework for Large Audio-Language Models"
@@ -19985,6 +20057,64 @@ benchmarks:
       - https://raw.githubusercontent.com/XiaomiMiMo/MiMo-Audio-Eval/main/slm_eval/datasets/bigbench_audio.py
       - https://arxiv.org/abs/2210.09261
       - https://arxiv.org/abs/2206.04615
+
+  - id: step_audio_r1_5_benchmarks
+    name: Step-Audio-R1.5 Benchmarks
+    full_name: Step-Audio-R1.5 Open Paralinguistic Evaluation Benchmarks
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - speech_dialogue
+    tasks:
+      - audio_captioning
+      - paralinguistic_speech_understanding
+      - spoken_question_answering
+      - speech_dialogue
+      - speech_reasoning
+    official:
+      repo: https://github.com/stepfun-ai/Step-Audio-R1
+      paper: https://arxiv.org/abs/2604.25719
+      benchmark_docs: https://github.com/stepfun-ai/Step-Audio-R1/tree/main/benchmarks/Step-Audio-R1.5
+    download:
+      primary:
+        - https://github.com/stepfun-ai/Step-Audio-R1/tree/main/benchmarks/Step-Audio-R1.5
+      examples:
+        - 'scripts/download/step_audio_r1_5_benchmarks.sh'
+        - 'STEP_AUDIO_R1_5_DOWNLOAD_REPO=1 scripts/download/step_audio_r1_5_benchmarks.sh'
+      notes: >-
+        The official package releases 905 Step-Caption, 87 Step-DU, and 550
+        Step-SPQA audio examples with JSONL metadata and prompts. The helper
+        fetches pinned documentation, annotations, prompts, and repository-tree metadata
+        by default. Set STEP_AUDIO_R1_5_DOWNLOAD_REPO=1 to clone the complete
+        approximately 1.06 GB object snapshot, including 1,542 audio files.
+    access:
+      status: public_ungated
+      requirements:
+        - Full repository clone is explicit opt-in because it includes approximately 1.04 GB of released benchmark audio and other objects.
+      notes: >-
+        Step-Caption scores free-form descriptions of speaker count and 15
+        labeled vocal attributes. Step-DU scores answers to targeted acoustic-
+        trait questions. Step-SPQA is the released audio-query/text-answer
+        conversion of StepAudio 2 AQAA, with eleven balanced 50-item tracks.
+    license:
+      data: Apache-2.0_repository_declaration_with_upstream_media_voice_and_privacy_caveats
+      code: Apache-2.0
+      notes: >-
+        The root repository declares Apache 2.0. Step-Caption includes curated
+        YouTube and Bilibili clips, while Step-DU and Step-SPQA contain recorded
+        or synthesized voices and sensitive inferred traits such as age and
+        gender. Review source-platform terms, media rights, consent, privacy,
+        biometric, and publicity restrictions separately; do not assume the
+        repository license clears third-party content or voice rights.
+    sources:
+      - https://arxiv.org/abs/2604.25719
+      - https://arxiv.org/html/2604.25719v2#S4.SS1
+      - https://arxiv.org/html/2604.25719v2#S4.SS2
+      - https://github.com/stepfun-ai/Step-Audio-R1
+      - https://github.com/stepfun-ai/Step-Audio-R1/tree/main/benchmarks/Step-Audio-R1.5
+      - https://raw.githubusercontent.com/stepfun-ai/Step-Audio-R1/main/benchmarks/Step-Audio-R1.5/README.md
+      - https://api.github.com/repos/stepfun-ai/Step-Audio-R1
+      - https://api.github.com/repos/stepfun-ai/Step-Audio-R1/git/trees/main?recursive=1
 
   - id: multichallenge_audio
     name: MultiChallenge Audio

@@ -30,6 +30,7 @@ scripts/download/mmag.sh
 scripts/download/avcap_bench.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh
+scripts/download/step_audio_r1_5_benchmarks.sh
 scripts/download/multichallenge_audio.sh
 scripts/download/ihbench.sh
 scripts/download/nyra_verbatim_speech_benchmark.sh

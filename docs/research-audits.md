@@ -4449,3 +4449,24 @@ requires unpublished converted manifests, model outputs, and per-item scores.
 The benchmark repository and all four Hub cards state no data or code license;
 public access does not relicense AudioCaps/YouTube, ESC-50, VocalSound, CompA,
 or source media. MIT in the adaptive-decoding repository covers its code only.
+
+The April 2026 [*Step-Audio-R1.5 Technical Report*](https://arxiv.org/abs/2604.25719)
+now contributes one public three-track evaluation family after a primary-source
+review of version 2 Sections 3.2-3.3 and 4.1-4.2 and the complete official
+repository tree. Step-Caption releases 905 clips with speaker-count and 15
+per-speaker attribute labels for judged free-form description; Step-DU releases
+87 recorded dialogue-style acoustic-trait questions; and Step-SPQA releases 550
+audio-query/text-answer cases balanced across eleven paralinguistic tasks. All
+three include frozen audio, JSONL metadata, model prompts, and judge prompts.
+This directly evaluates audio-LLM post-training because the report combines
+interaction SFT with rubric-conditioned and preference-based PPO-style RLHF,
+then tests whether alignment preserves acoustic reasoning and paralinguistic
+perception. AudioMultiChallenge, Big Bench Audio, MMSU, MMAU, and Spoken MQA
+map to existing families and are not duplicated. Version 2's 905 Step-Caption
+count corrects version 1's 907 and matches the release. Baseline predictions,
+per-item scores, and the R1.5 model implementation remain unavailable. The
+repository declares Apache 2.0, but YouTube/Bilibili media and recorded or
+synthesized voices still require separate copyright, platform, consent,
+privacy, biometric, and publicity review. The helper fetches pinned lightweight
+documentation, annotations, and prompts by default; the approximately 1.04 GB audio
+snapshot requires explicit opt-in.
