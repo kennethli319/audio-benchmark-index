@@ -40305,3 +40305,68 @@ benchmarks:
       - https://api.github.com/repos/Limax666/AudioAgentSecurity/git/trees/main?recursive=1
       - https://huggingface.co/datasets/Limax11/AudioAgentSecurity
       - https://huggingface.co/api/datasets/Limax11/AudioAgentSecurity
+
+  - id: globeaudio
+    name: GlobeAudio
+    full_name: "GlobeAudio: A Multilingual Multicultural Benchmark for Naturalistic Evaluation of Large Audio-Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - multilingual_spoken_reasoning
+    tasks:
+      - multilingual_audio_question_answering
+      - culturally_grounded_audio_understanding
+      - naturalistic_speech_reasoning
+      - prosodic_and_paralinguistic_understanding
+      - compound_auditory_reasoning
+      - cross_lingual_robustness
+    official:
+      dataset: https://huggingface.co/datasets/iNLP-Lab/GlobeAudio
+      paper: https://arxiv.org/abs/2606.08194
+    download:
+      access: public_ungated_hugging_face_large_snapshot
+      primary:
+        - https://huggingface.co/datasets/iNLP-Lab/GlobeAudio
+      examples:
+        - 'scripts/download/globeaudio.sh'
+        - 'GLOBEAUDIO_DOWNLOAD_HF=1 scripts/download/globeaudio.sh'
+      notes: >-
+        The owner-linked release provides 5,637 four-option MCQs with embedded
+        44.1 kHz audio across English, Russian, Chinese, Thai, Bengali, and
+        Singlish configurations. Questions and distractors were written by
+        native speakers from naturally occurring online audio; the paper
+        reports 20-40 second clips, a 25.35 second mean, two-stage review, and
+        95.5% agreement on checked items. Evaluation uses exact option-label
+        accuracy, with audio, transcript-only, blind, and translated-question
+        ablations testing whether models use acoustic, prosodic, linguistic,
+        and cultural evidence. The live Hub tree at revision
+        `31015d8f0bbf746fb8f5f62a252b7c9ef04d22d7` contains 29 Parquet shards
+        totaling 12,542,951,445 bytes. The card's aggregate 1,554,418,131-byte
+        download-size field reflects only the Bengali configuration and
+        understates the full snapshot. The helper therefore fetches only the
+        official card and live API metadata by default and requires an
+        explicit opt-in for the full dataset.
+    license:
+      data: CC-BY-NC-4.0_declared_on_dataset_card
+      code: not_applicable_no_evaluation_repository_linked
+      notes: >-
+        The dataset card declares CC BY-NC 4.0. The audio was clipped from
+        publicly accessible YouTube media, however, and neither the card nor
+        paper enumerates source-video URLs or demonstrates that every upstream
+        rights holder authorized redistribution under that license. Treat the
+        card declaration as the uploader's terms, not proof of cleared rights
+        in third-party recordings; review provenance, privacy, platform terms,
+        and intended non-commercial use before downloading or redistributing.
+        The article itself uses arXiv's perpetual non-exclusive license.
+    sources:
+      - https://arxiv.org/abs/2606.08194
+      - https://arxiv.org/html/2606.08194v1#S2.SS3
+      - https://arxiv.org/html/2606.08194v1#S2.SS4
+      - https://arxiv.org/html/2606.08194v1#S2.SS5
+      - https://arxiv.org/html/2606.08194v1#S3.SS2.SSS0.Px3
+      - https://arxiv.org/html/2606.08194v1#S4.SS2
+      - https://arxiv.org/html/2606.08194v1#S4.SS3
+      - https://huggingface.co/datasets/iNLP-Lab/GlobeAudio
+      - https://huggingface.co/datasets/iNLP-Lab/GlobeAudio/raw/main/README.md
+      - https://huggingface.co/api/datasets/iNLP-Lab/GlobeAudio
+      - https://huggingface.co/api/datasets/iNLP-Lab/GlobeAudio/tree/main?recursive=true&expand=true&limit=100

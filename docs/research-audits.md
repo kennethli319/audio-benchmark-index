@@ -4,6 +4,22 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+GlobeAudio is now indexed as a released multilingual, multicultural LALM
+evaluation after reviewing Sections 2.3-2.5, 3.2, and 4.2-4.3 of the June 2026
+paper and the owner-linked Hugging Face release. Its 5,637 native-speaker-
+authored four-option questions cover English, Russian, Chinese, Thai, Bengali,
+and Singlish clips sampled from naturally occurring online speech. Exact-label
+accuracy is complemented by transcript-only, blind, and translated-question
+ablations, directly testing whether pretrained and instruction-tuned audio
+models use acoustic, prosodic, linguistic, and cultural evidence rather than
+question-side shortcuts. The ungated Hub snapshot contains 29 Parquet shards
+totaling 12,542,951,445 bytes; its card-level 1,554,418,131-byte statistic
+reflects only the Bengali configuration and should not be read as the full
+download size. The card declares CC BY-NC 4.0, but its embedded audio is clipped
+from YouTube and the release does not enumerate source-video URLs or establish
+that all upstream media rights were relicensed. A safe helper fetches the card
+and live metadata by default and requires explicit opt-in for the large files.
+
 The June 2026 [*Constraining to Generalize: Subspace Tuning for Few-shot
 Generalization of Audio-Language Models*](https://arxiv.org/abs/2606.18560)
 paper is recorded as an existing-family pretraining-transfer audit after
