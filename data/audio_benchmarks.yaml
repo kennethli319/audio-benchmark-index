@@ -1139,8 +1139,8 @@ paper_audits:
     paper: https://arxiv.org/abs/2606.06037
     title: "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech"
     sections: 3-6_and_appendices_A-E
-    status: audited_public_ungated_benchmark_with_partial_evaluation_release
-    last_verified: 2026-08-07
+    status: audited_public_ungated_benchmark_with_substantial_evaluation_release
+    last_verified: 2026-08-09
     benchmark:
       index_id: speechjbb
       role: multilingual_code_switched_spoken_jailbreak_and_safety_evaluation
@@ -1188,9 +1188,16 @@ paper_audits:
       comprehension_control_audio_files: 4118
       github_repository: public
       github_evaluation_code: public
-      github_selected_model_outputs_and_judgments: public_for_Qwen2.5_Omni_Qwen3_Omni_and_Voxtral
-      complete_nine_model_outputs_and_judgments: not_released
-      prompt_text_and_audio_metadata_manifest: not_released_as_structured_file
+      github_head_revision: 421e189c9f4f7469a05b94c1c7cec71659e81b06_checked_2026-08-09
+      github_recursive_tree_entries: 2193
+      github_clean_benign_outputs_and_judgments: public_for_Qwen2.5_Omni_Qwen3_Omni_and_Voxtral
+      github_clean_malicious_outputs_and_judgments: public_for_all_nine_evaluated_models
+      github_obfuscated_outputs_and_judgments: public_for_all_nine_evaluated_models_at_all_three_ratios
+      github_defense_outputs: public_for_all_nine_evaluated_models_for_benign_and_malicious_inputs
+      github_comprehension_outputs: public_for_all_nine_evaluated_models_on_MGSM_FLEURS_ASR_and_FLEURS_SLU_SIB
+      complete_nine_model_clean_benign_outputs_and_judgments: not_released
+      prompt_tables: public_CSVs_for_clean_benign_clean_malicious_and_obfuscated_conditions
+      unified_audio_metadata_manifest: not_released_filename_row_indices_must_be_joined_to_prompt_tables
       paper_prompts: figures_only
       download_helper: scripts/download/speechjbb.sh
     access: public_ungated_large_audio_download_requires_opt_in
@@ -1226,12 +1233,16 @@ paper_audits:
       This directly evaluates audio-LLM post-training safety alignment under
       multilingual and code-switched spoken inputs, including localized
       pseudo-word obfuscation and a prompt-only defense. The public audio is
-      sufficient to count a benchmark family, but users must reconstruct
-      prompt identity from filenames/audio because no structured text manifest
-      is present in the Hub release. The card's loading examples also retain a
-      stale virginiaceccatelli/SpeechJBB namespace and "train" split even
-      though the published repository is McGill-NLP/SpeechJBB and declares
-      test splits.
+      sufficient to count a benchmark family. The official GitHub repository
+      supplies condition-specific prompt CSVs, responses, judgments, summaries,
+      and comprehension outputs; its 2,193-entry tree includes nine-model
+      results for malicious, obfuscated, defense, and comprehension conditions.
+      Clean benign outputs and judgments cover only Qwen2.5-Omni, Qwen3-Omni,
+      and Voxtral, and no unified manifest directly joins the Hub audio paths to
+      prompt text beyond filename row indices. The Hub card's loading examples
+      also retain a stale virginiaceccatelli/SpeechJBB namespace and "train"
+      split even though the published repository is McGill-NLP/SpeechJBB and
+      declares test splits.
 
   audio_process_bench_release_audit:
     paper: https://arxiv.org/abs/2606.09925

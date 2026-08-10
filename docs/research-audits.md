@@ -241,16 +241,21 @@ normalization and intent-verification defense. This directly evaluates
 post-training safety alignment and over-refusal under multilingual spoken
 inputs. The ungated Hub publishes all 7,500 core WAVs plus 4,118 Speech-MGSM,
 FLEURS ASR, and FLEURS-SLU control WAVs, reporting 6.82 GB total. The GitHub
-repository publishes evaluation code and selected Qwen2.5-Omni, Qwen3-Omni,
-and Voxtral outputs and judgments, but not all nine models' records. No
-structured prompt/label manifest is released, and the Hub card's loader
-examples retain a stale namespace and train split. Most importantly, the card
-labels the aggregate dataset only as “other” and publishes no custom terms;
-the repository has no license file. The paper's CC BY 4.0 and its Appendix E
-source-license inventory do not by themselves license the derived prompts,
-synthetic audio, or code. The helper therefore fetches only lightweight
-official metadata by default and keeps the audio snapshot and repository clone
-behind separate opt-ins.
+repository publishes evaluation code, condition-specific prompt CSVs, and
+nine-model outputs for clean malicious, all three obfuscation, defense, MGSM,
+FLEURS ASR, and FLEURS-SLU conditions. A focused August 9 audit of its
+2,193-entry tree at revision `421e189c9f4f7469a05b94c1c7cec71659e81b06`
+corrects the earlier description of these artifacts as only selected-model
+records. Clean benign outputs and judgments remain limited to Qwen2.5-Omni,
+Qwen3-Omni, and Voxtral, and there is no unified manifest joining Hub audio
+paths to prompt text beyond filename row indices. The Hub card's loader
+examples also retain a stale namespace and train split. Most importantly, the
+card labels the aggregate dataset only as “other” and publishes no custom
+terms; the repository has no license file. The paper's CC BY 4.0 and its
+Appendix E source-license inventory do not by themselves license the derived
+prompts, synthetic audio, or code. The helper therefore fetches only
+lightweight official metadata by default and keeps the audio snapshot and
+repository clone behind separate opt-ins.
 
 The August 2026 *Hear, Invoke, and Understand* paper is recorded as an
 announced-but-unreleased HIU-Bench audit after reviewing Sections 5.1-5.2 and
