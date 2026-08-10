@@ -19028,6 +19028,66 @@ benchmarks:
       - https://arxiv.org/abs/2607.06179
       - https://arxiv.org/html/2607.06179v1#S4.SS1.SSS2
 
+  - id: sakura
+    name: SAKURA
+    full_name: "SAKURA: On the Multi-hop Reasoning of Large Audio-Language Models Based on Speech and Audio Information"
+    qwen_cited_as: null
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_language_model_benchmark
+      - audio_question_answering
+      - audio_reasoning
+      - paralinguistic_reasoning
+      - robustness_evaluation
+    official:
+      repo: https://github.com/ckyang1124/SAKURA
+      dataset: https://huggingface.co/SLLM-multi-hop
+      paper: https://arxiv.org/abs/2505.13237
+      recent_evaluation: https://arxiv.org/abs/2607.06014
+    download:
+      primary:
+        - https://huggingface.co/SLLM-multi-hop
+        - https://github.com/ckyang1124/SAKURA
+      examples:
+        - 'scripts/download/sakura.sh'
+        - 'SAKURA_DOWNLOAD_TRACK=GenderQA scripts/download/sakura.sh'
+        - 'SAKURA_CLONE_REPO=1 scripts/download/sakura.sh'
+      notes: >-
+        The public, ungated release provides four 500-audio tracks: Gender,
+        Language, Emotion, and Animal. Each audio item has paired single-hop
+        perception and multi-hop reasoning questions, yielding 4,000 question
+        instances across eight sub-tracks. The repository includes WAV files,
+        CSV/JSON annotations, golden answers, GPT-4o judge prompts, and accuracy
+        code. The helper fetches official documentation and repository/Hugging
+        Face metadata by default; set SAKURA_DOWNLOAD_TRACK to GenderQA,
+        LanguageQA, EmotionQA, AnimalQA, or all to explicitly download audio,
+        or set SAKURA_CLONE_REPO=1 to clone the roughly 220 MiB repository.
+    license:
+      data: not_specified_with_mixed_upstream_terms
+      code: not_specified
+      notes: >-
+        Neither the GitHub repository nor the four Hugging Face dataset cards
+        publishes an explicit license. The release derives audio from Common
+        Voice 17.0, CREMA-D, MELD, ESC-50, and the animal-sound dataset of
+        Sasmaz and Tek; their separate terms and source-media constraints
+        remain applicable. Public access is not permission for unrestricted
+        redistribution or commercial use.
+    sources:
+      - https://arxiv.org/abs/2505.13237
+      - https://arxiv.org/html/2505.13237v1#S2
+      - https://arxiv.org/html/2505.13237v1#S3
+      - https://github.com/ckyang1124/SAKURA
+      - https://raw.githubusercontent.com/ckyang1124/SAKURA/main/data/README.md
+      - https://raw.githubusercontent.com/ckyang1124/SAKURA/main/evaluation/README.md
+      - https://api.github.com/repos/ckyang1124/SAKURA/git/trees/main?recursive=1
+      - https://huggingface.co/SLLM-multi-hop/GenderQA
+      - https://huggingface.co/SLLM-multi-hop/LanguageQA
+      - https://huggingface.co/SLLM-multi-hop/EmotionQA
+      - https://huggingface.co/SLLM-multi-hop/AnimalQA
+      - https://arxiv.org/abs/2607.06014
+      - https://arxiv.org/html/2607.06014v1#S5.SS2
+      - https://arxiv.org/html/2607.06014v1#S5.SS3
+
   - id: mmau
     name: MMAU
     full_name: "MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark"

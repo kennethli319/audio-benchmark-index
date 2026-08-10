@@ -24,6 +24,7 @@ huggingface-cli login
 
 ```bash
 scripts/download/mmau.sh
+scripts/download/sakura.sh
 scripts/download/mmar.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh

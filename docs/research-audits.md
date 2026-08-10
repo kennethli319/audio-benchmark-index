@@ -4,6 +4,25 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+SAKURA is now indexed as a released audio-LLM reasoning benchmark after a
+primary-source review of Sections 2-4 of its Interspeech 2025 paper and the
+official repository. Its Gender, Language, Emotion, and Animal tracks each pair
+500 audio clips with one single-hop perception question and one multi-hop
+reasoning question, for 4,000 questions across eight sub-tracks. This paired
+design tests whether a model can reason from an acoustic attribute it can
+already perceive, making it directly relevant to audio-language pretraining
+and reasoning post-training. The public repository releases WAVs, CSV/JSON
+annotations, answers, GPT-4o judge prompts, and accuracy code; four owner-linked
+Hugging Face repositories provide the tracks separately. The July 2026 ORCA
+connector paper reuses SAKURA and adds a paper-specific 10 dB white-Gaussian-
+noise evaluation, but releases no separate noisy manifest or outputs, so that
+derived robustness run is provenance rather than a new family. Neither SAKURA's
+repository nor its Hugging Face cards states a license. Common Voice 17.0,
+CREMA-D, MELD, ESC-50, and the Sasmaz/Tek animal-sound sources retain separate
+terms. A safe helper retrieves documentation and metadata by default, while
+each audio track and the roughly 220 MiB repository clone require explicit
+opt-in.
+
 The July 2026 [*A Geometric Perspective on Composable Emotion Steering in
 Text-to-Speech Models*](https://arxiv.org/abs/2607.00946) paper is recorded as
 an unreleased derived evaluation audit after reviewing Sections 2-4. It probes
