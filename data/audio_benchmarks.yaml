@@ -13931,7 +13931,7 @@ paper_audits:
     title: "GigaChat Audio: Time-aware Large Audio Language Model"
     sections: 3.6 and 4.1
     status: audited_mixed_public_families_and_unreleased_sample_selections
-    last_verified: 2026-07-24
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: AudioGrounding
         index_id: audiogrounding
@@ -13974,6 +13974,14 @@ paper_audits:
       summaries. Public source families do not make the paper-specific AMI
       questions or DCASE 144-item selection reproducible without their missing
       manifests.
+    release_audit:
+      official_model_snapshot: public_ungated
+      official_model_revision: bf73d03a43bdf5118f5a4dbdc24ba6f56ac31cfb
+      timeground_1m_snapshot: public_ungated_existing_index_family
+      timeground_1m_revision: 55c0ac8f2b8615b3740227aeb231c68796931b65
+      ami_150_question_manifest_and_generation_code: not_released
+      dcase_audioqa_144_item_ids_and_filtering_code: not_released
+      predictions_judge_prompts_and_per_item_scores: not_released
     license:
       paper: arXiv_perpetual_non_exclusive
       benchmark_data: mixed_see_indexed_families
@@ -13984,15 +13992,25 @@ paper_audits:
       - https://arxiv.org/html/2607.10387v1#S3.SS6
       - https://arxiv.org/html/2607.10387v1#S4.SS1
       - https://huggingface.co/ai-sage/GigaChat3.1-Audio-10B-A1.8B
+      - https://huggingface.co/api/models/ai-sage/GigaChat3.1-Audio-10B-A1.8B
+      - https://huggingface.co/api/models/ai-sage/GigaChat3.1-Audio-10B-A1.8B/tree/main?recursive=true&expand=true
       - https://huggingface.co/datasets/ai-sage/TimeGround-1M
+      - https://huggingface.co/api/datasets/ai-sage/TimeGround-1M
+      - https://huggingface.co/api/datasets?author=ai-sage&limit=100
       - https://zenodo.org/records/7269161
       - https://groups.inf.ed.ac.uk/ami/corpus/
       - https://dcase.community/challenge2025/task-audio-question-answering
     note: >-
       This audit adds no benchmark family. AudioGrounding and TimeGround-1M
       were already indexed as public releases; AMI and DCASE 2025 AudioQA were
-      already indexed with their access terms. The two paper-specific derived
-      selections remain unreleased.
+      already indexed with their access terms. A focused August 10 recheck of
+      the complete official model tree found model and inference files but no
+      evaluation manifests, predictions, judge prompts, or score records. The
+      owner dataset inventory still contains only TimeGround-1M, whose snapshot
+      is unchanged since July 29. The paper-specific AMI and DCASE selections
+      therefore remain unreleased. MIT on the model card covers that model
+      repository, and CC BY 3.0 on the TimeGround-1M card does not license the
+      absent derived selections or override AMI, DCASE, and source-media terms.
 
   wansong_v1_evaluation:
     paper: https://arxiv.org/abs/2607.14749

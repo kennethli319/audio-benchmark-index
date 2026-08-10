@@ -2106,8 +2106,15 @@ families. The AMI source corpus is public, but the paper's 150 automatically
 generated phrase-localization questions are not released. Likewise, the
 public but gated DCASE 2025 AudioQA family does not identify the paper's
 144 selected start-time questions without a row manifest or filtering script.
-The audit records those as unreleased paper-specific protocols rather than
-new downloadable benchmarks.
+An August 10 recheck pins the public model snapshot at revision
+`bf73d03a43bdf5118f5a4dbdc24ba6f56ac31cfb` and TimeGround-1M at revision
+`55c0ac8f2b8615b3740227aeb231c68796931b65`. The complete model tree contains
+model and inference files but no evaluation manifests, predictions, judge
+prompts, or per-item scores, and the owner dataset inventory still contains
+only TimeGround-1M. The audit therefore records the two derived selections as
+unreleased paper-specific protocols rather than new downloadable benchmarks.
+MIT on the model card and CC BY 3.0 on the TimeGround-1M card do not cover the
+absent selections or supersede AMI, DCASE, and source-media terms.
 
 The July 2026 ECHOv2 paper's ASD Benchmark is public and reproducible at the
 protocol layer. Its MIT evaluation repository unifies DCASE 2020-2025 Task 2
