@@ -9,6 +9,103 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  paralinguistic_counterfactual_audio_judge_audit:
+    paper: https://arxiv.org/abs/2608.06718
+    title: "Do Audio Language Models Use Paralinguistic Evidence? Counterfactual Audits for Response Evaluation"
+    sections: 3-5_and_appendices_B-E
+    status: audited_unreleased_post_training_judge_evaluation
+    last_verified: 2026-08-09
+    post_training_relevance: >-
+      The paper audits audio-language models used as automatic judges for
+      speech-to-speech response quality. Its transcript-controlled
+      counterfactuals test whether a prospective evaluator or reward signal
+      actually uses affect, prosody, and the timing of an affective shift
+      rather than lexical or response-style shortcuts.
+    evaluation_inventory:
+      - cited_as: single-turn-emotions
+        status: paper_defined_unreleased_audit_set
+        composition: 189_counterfactual_pairs_and_378_pointwise_instances
+        provenance: filtered_CAVA_EmoCF_tone_awareness_inputs
+        protocol: >-
+          Hold each user transcript fixed, render it in two contrasting
+          emotions, and choose the emotion-appropriate assistant response.
+          Pointwise judgment receives one audio context and two responses;
+          pairwise recoverability receives both counterfactual audio contexts
+          and both responses.
+      - cited_as: positional-emotion
+        status: paper_defined_unreleased_audit_set
+        composition: 500_counterfactual_conversation_pairs_and_1000_pointwise_instances
+        provenance: >-
+          Sampled from the OD3 training split, whose source conversations
+          aggregate KVRET, MultiWOZ, DSTC11 Track 5, NOESIS-II, and SIMMC-2.1.
+        protocol: >-
+          Keep the conversation transcript controlled while moving the onset
+          and cause of negative affect between branches. Judges must select the
+          response appropriate to when and why the user's affect changed.
+      - cited_as: emotional-conversations
+        status: paper_defined_unreleased_prototype
+        composition: 500_pointwise_instances
+        protocol: >-
+          Earlier multi-turn prototype retained in Appendix D.2; the authors
+          report that its final user turn alone is sufficient to solve it.
+    diagnostic_protocol:
+      native_judgment: pointwise_one_audio_context_two_candidate_responses
+      contrastive_recoverability: pairwise_two_audio_contexts_two_responses
+      component_probes:
+        - perception_of_task_relevant_paralinguistic_state
+        - oracle_text_state_to_response_mapping
+        - integrated_native_audio_judgment
+      item_state: binary_P_O_J_tuple
+      reported_metrics:
+        - pointwise_and_pairwise_accuracy
+        - eight_state_P_O_J_distribution
+        - pairwise_minus_pointwise_protocol_gap_with_paired_bootstrap_intervals
+        - prompt_cue_dependence
+        - conditional_Potemkin_failure_rate
+      human_validation: >-
+        Five annotators per task evaluated sampled pointwise items; Appendix E
+        says ten graduate students participated across the two tasks and
+        consented to public release of their ratings.
+    release_audit:
+      audit_audio_and_item_manifests: not_released
+      labels_candidate_responses_and_source_mappings: not_released
+      judge_and_scoring_code: not_released
+      model_outputs_and_item_level_scores: not_released
+      human_validation_ratings: not_released
+      generation_code: promised_when_paper_is_accepted
+      exact_title_github_repository_search: no_results
+      exact_title_hugging_face_dataset_search: no_results
+      download_helper: none_no_reproducible_public_artifact
+    access: internal_unreleased_paper_defined_evaluation
+    license:
+      paper: CC_BY_4_0
+      benchmark_assets: not_stated
+      generated_audio_and_responses: not_stated
+      source_data: upstream_family_terms_apply
+      human_ratings: consent_for_public_release_stated_but_files_unavailable
+      note: >-
+        The article's CC BY 4.0 license covers the paper, not absent audit
+        audio, generated responses, annotations, human ratings, or source
+        conversations. CAVA, OD3, and each OD3 component retain their own
+        terms; API-generated speech may also carry provider-specific terms.
+    sources:
+      - https://arxiv.org/abs/2608.06718
+      - https://arxiv.org/html/2608.06718v1#S3
+      - https://arxiv.org/html/2608.06718v1#S4
+      - https://arxiv.org/html/2608.06718v1#S5
+      - https://arxiv.org/html/2608.06718v1#A2
+      - https://arxiv.org/html/2608.06718v1#A3
+      - https://arxiv.org/html/2608.06718v1#A4
+      - https://arxiv.org/html/2608.06718v1#A5
+      - https://export.arxiv.org/api/query?id_list=2608.06718
+      - https://api.github.com/search/repositories?q=%22Do%20Audio%20Language%20Models%20Use%20Paralinguistic%20Evidence%22
+      - https://huggingface.co/api/datasets?search=Do%20Audio%20Language%20Models%20Use%20Paralinguistic%20Evidence
+    note: >-
+      No benchmark family is counted. The protocol is directly relevant to
+      reward modeling and post-training evaluation, but the paper's audit
+      items and implementation are not public. Reassess after acceptance or
+      when the authors publish a repository, dataset, evaluator, or ratings.
+
   sembridge_pretraining_evaluation_audit:
     paper: https://arxiv.org/abs/2608.07462
     title: "SemBridge: Semantic Token Anchoring for Continuous-Latent Autoregressive Speech Generation"

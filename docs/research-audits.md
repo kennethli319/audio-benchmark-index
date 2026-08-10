@@ -4,6 +4,24 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 [*Do Audio Language Models Use Paralinguistic
+Evidence?*](https://arxiv.org/abs/2608.06718) paper is recorded as an
+unreleased post-training judge audit after reviewing Sections 3-5 and
+Appendices B-E. Its `single-turn-emotions` task contains 189 transcript-fixed
+counterfactual emotion pairs (378 pointwise instances), while
+`positional-emotion` contains 500 conversation pairs (1,000 pointwise
+instances) whose negative-affect onset and cause differ despite controlled
+transcripts. Pointwise and pairwise judgments are decomposed into perception,
+oracle response mapping, and integrated audio judgment, producing an eight-
+state diagnostic and a bootstrapped protocol-gap measure. This directly tests
+whether audio-LLM evaluators and potential reward signals use affect, prosody,
+and temporal-causal cues instead of lexical shortcuts. The paper releases no
+audio, item manifests, labels, evaluator, outputs, item scores, or human-rating
+files; exact-title GitHub and Hugging Face searches found no owner release, and
+generation code is only promised after acceptance. The article's CC BY 4.0
+license does not cover absent audit assets, generated speech, or CAVA, OD3,
+and OD3-component source data. No counted family or download helper is added.
+
 The August 2026 [*SemBridge*](https://arxiv.org/abs/2608.07462) paper is
 recorded as an existing-family and incomplete-release audit of pretraining a
 continuous-latent autoregressive speech model through a discrete semantic-token
