@@ -3509,6 +3509,10 @@ GitHub searches and an arXiv-ID Hugging Face dataset search found no matching
 release on August 7. The article's arXiv license does not license the absent
 benchmark, and TACOS/Freesound item terms require separate review. No public
 family or download helper is added pending an author-controlled release.
+A focused August 10 recheck found only arXiv version 1 and no artifact link;
+exact-title and arXiv-ID GitHub repository searches still return zero results,
+and the Hugging Face dataset API still returns no arXiv-ID match. The protocol
+therefore remains unreleased, with no count or helper change.
 
 The April 2026 Audio2Tool paper now has a focused release-completeness audit of
 the claimed-public but partial speech-language-model tool-use release. Version

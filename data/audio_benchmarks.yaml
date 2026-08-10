@@ -16983,7 +16983,7 @@ paper_audits:
     title: "A Closer Look at Failure Modes in Temporal Understanding of Large Audio-Language Models"
     sections: 3-5
     status: audited_benchmark_described_without_public_artifacts
-    last_verified: 2026-08-07
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: unnamed_TACOS_derived_temporal_reasoning_benchmark
         index_id: null
@@ -17020,6 +17020,11 @@ paper_audits:
       model_outputs_and_per_item_scores: not_released
       exact_title_and_arxiv_id_github_repository_searches: no_results
       hugging_face_arxiv_id_dataset_search: no_results
+      release_recheck_2026_08_10: >-
+        ArXiv still exposes only version 1 and no artifact URL. GitHub repository
+        searches for the exact paper title and arXiv identifier both return zero
+        results, while the Hugging Face dataset API returns no match for the
+        arXiv identifier.
     license:
       paper: arXiv_perpetual_non_exclusive_license
       derived_benchmark: not_specified_unreleased
