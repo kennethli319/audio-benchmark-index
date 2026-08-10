@@ -175,6 +175,23 @@ distribution license covers only the article; the unlicensed demo repository
 and all upstream benchmark families retain separate terms. No benchmark count
 or download helper changes.
 
+A focused August 10 follow-up traces SemBridge's singing-transfer row to the
+public [SoulX-Singer-Eval](https://github.com/Soul-AILab/SoulX-Singer-Eval)
+family after closely reviewing SoulX-Singer Sections 3.1-3.3. GMO-SVS fixes
+802 evaluation samples from GTSinger and the official M4Singer and Opencpop
+test splits; the companion zero-shot set supplies 100 prompt segments from 50
+unseen Mandarin and English singers. The owner release includes eight word-
+and phone-level prompt/target manifests, approximately 888 MiB of source and
+prompt audio, and an evaluator for WER or CER, similarity, F0 errors, MCD,
+SingMOS-Pro, and Sheet-SSQA. This now counts as one public family because it is
+a frozen, reusable protocol used to test transfer from SemBridge's pretrained
+speech-token interface into score-conditioned singing. The Hub card declares
+CC BY-NC 4.0 and the evaluator is Apache-2.0, but GTSinger, M4Singer, Opencpop,
+Mixing Secrets, composition and recording rights, and the recruited singers'
+academic-use consent remain independently controlling. The helper downloads
+only documentation, API metadata, and small annotations by default; repository
+cloning and audio are explicit opt-ins.
+
 The July 2026 *Safeguards for Speech2Speech LLM-Assistants* release was
 rechecked on August 9 after reviewing its Evaluation Setup and Evaluation
 Results. Its 5,400-run protocol crosses three realtime speech models, three

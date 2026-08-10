@@ -331,6 +331,7 @@ scripts/download/msmd.sh
 # underlying commercial recordings are unavailable from the official release.
 CROSS_ERA_DOWNLOAD_CHROMA=1 scripts/download/cross_era.sh
 scripts/download/singmos_pro.sh
+scripts/download/soulx_singer_eval.sh
 scripts/download/nsynth.sh
 scripts/download/surge_pitch.sh
 scripts/download/maestro.sh
@@ -1482,6 +1483,11 @@ MULTTIPOP_DOWNLOAD_HF=1 scripts/download/multtipop.sh
 # Rating/sample annotations are about 11.6 MB; the full snapshot is about 2.83 GB.
 SINGMOS_PRO_DOWNLOAD_ANNOTATIONS=1 scripts/download/singmos_pro.sh
 SINGMOS_PRO_DOWNLOAD_HF=1 scripts/download/singmos_pro.sh
+
+# SoulX-Singer-Eval downloads docs and eight lightweight annotation JSONLs by default.
+# The approximately 888 MiB audio snapshot and evaluation-suite clone are separate opt-ins.
+SOULX_SINGER_EVAL_DOWNLOAD_AUDIO=1 scripts/download/soulx_singer_eval.sh
+SOULX_SINGER_EVAL_CLONE_REPO=1 scripts/download/soulx_singer_eval.sh
 
 # AI-Generated Cover Song Diagnostics downloads its public score, manifest,
 # feature tables, README, and MIT license. Raw cover audio is not released.

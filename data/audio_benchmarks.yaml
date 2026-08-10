@@ -536,7 +536,8 @@ paper_audits:
           English-hard prompt-target partitions with CER or WER and speaker
           similarity.
       - cited_as: GMO-SVS_and_SoulX-Singer-Eval
-        status: upstream_protocol_not_added_in_this_focused_audit
+        index_id: soulx_singer_eval
+        status: public_family_added_after_focused_primary_source_audit
         protocol: >-
           Follow the SoulX-Singer score-conditioned synthesis protocol on 802
           GMO-SVS samples and 100 prompt segments from 50 unseen singers,
@@ -26237,6 +26238,76 @@ benchmarks:
       - https://arxiv.org/abs/2201.07429
       - https://arxiv.org/abs/2604.15804
       - https://arxiv.org/html/2604.15804v1#S5.SS1
+
+  - id: soulx_singer_eval
+    name: SoulX-Singer-Eval / GMO-SVS
+    full_name: "SoulX-Singer-Eval: A Benchmark and Evaluation Suite for Zero-Shot Singing Voice Synthesis"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_synthesis
+      - music_generation
+      - singing_voice
+      - pretraining_transfer
+    tasks:
+      - zero_shot_singing_voice_synthesis
+      - score_conditioned_singing_voice_synthesis
+      - singing_voice_editing
+      - cross_lingual_singing_voice_synthesis
+      - timbre_cloning
+      - singing_quality_assessment
+    official:
+      paper: https://arxiv.org/abs/2602.07803
+      repo: https://github.com/Soul-AILab/SoulX-Singer-Eval
+      dataset: https://huggingface.co/datasets/Soul-AILab/SoulX-Singer-Eval-Dataset
+      sembridge_evaluation: https://arxiv.org/html/2608.07462v1#S4
+    download:
+      primary:
+        - https://huggingface.co/datasets/Soul-AILab/SoulX-Singer-Eval-Dataset
+        - https://github.com/Soul-AILab/SoulX-Singer-Eval
+      examples:
+        - 'scripts/download/soulx_singer_eval.sh'
+        - 'SOULX_SINGER_EVAL_DOWNLOAD_AUDIO=1 scripts/download/soulx_singer_eval.sh'
+        - 'SOULX_SINGER_EVAL_CLONE_REPO=1 scripts/download/soulx_singer_eval.sh'
+      notes: >-
+        The public, ungated release combines GMO-SVS, an 802-sample evaluation
+        selection derived from the official Opencpop and M4Singer test splits
+        plus GTSinger, with 100 prompt segments from 50 unseen Mandarin and
+        English singers in SoulX-Singer-Eval. It releases word- and phone-level
+        prompt and target manifests, source and prompt WAV files, and an
+        Apache-2.0 evaluation suite for WER or CER, speaker similarity, F0
+        errors, MCD, SingMOS-Pro, and Sheet-SSQA. The helper downloads the card,
+        API metadata, eight lightweight annotation JSONLs, and evaluation-suite
+        documentation by default. Repository cloning is optional, and the
+        approximately 888 MiB Hugging Face snapshot is a separate audio opt-in.
+        SemBridge Section 4 uses this protocol to evaluate transfer from its
+        pretrained speech-token interface into score-conditioned singing.
+    license:
+      data: CC-BY-NC-4.0_with_upstream_and_consent_caveats
+      code: Apache-2.0
+      notes: >-
+        The Hugging Face card declares CC BY-NC 4.0, while the evaluation code
+        is Apache-2.0. GMO-SVS incorporates GTSinger, M4Singer, and Opencpop,
+        whose corpus, performer, composition, recording, and redistribution
+        terms still apply. The paper says recruited Mandarin singers consented
+        to academic open-source use and English prompts were sliced from
+        Mixing Secrets; those narrower provenance and consent conditions must
+        not be broadened by the aggregate card license. Review upstream terms
+        before redistribution, derivatives, voice cloning, or commercial use.
+    sources:
+      - https://arxiv.org/abs/2602.07803
+      - https://arxiv.org/html/2602.07803v2#S3.SS1
+      - https://arxiv.org/html/2602.07803v2#S3.SS2
+      - https://arxiv.org/html/2602.07803v2#S3.SS3
+      - https://github.com/Soul-AILab/SoulX-Singer-Eval
+      - https://raw.githubusercontent.com/Soul-AILab/SoulX-Singer-Eval/main/README.md
+      - https://raw.githubusercontent.com/Soul-AILab/SoulX-Singer-Eval/main/LICENSE
+      - https://api.github.com/repos/Soul-AILab/SoulX-Singer-Eval
+      - https://api.github.com/repos/Soul-AILab/SoulX-Singer-Eval/git/trees/main?recursive=1
+      - https://huggingface.co/datasets/Soul-AILab/SoulX-Singer-Eval-Dataset
+      - https://huggingface.co/datasets/Soul-AILab/SoulX-Singer-Eval-Dataset/raw/main/README.md
+      - https://huggingface.co/api/datasets/Soul-AILab/SoulX-Singer-Eval-Dataset
+      - https://arxiv.org/abs/2608.07462
+      - https://arxiv.org/html/2608.07462v1#S4
 
   - id: mmgenre
     name: MMGenre
