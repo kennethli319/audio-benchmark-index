@@ -4306,3 +4306,19 @@ calls its own wording a draft awaiting upstream confirmation; live
 recorded-participant privacy, consent, biometric, and responsible-use terms
 still require review. This is a provenance and reproducibility correction to
 an existing family, so the benchmark count remains unchanged.
+
+The July 2026 *SpeechCombine* release received a focused August 10 snapshot
+recheck after re-reading Sections 4.2-4.4 and Appendix B. Its speech-input QA,
+reasoning, emotion, and emphasis protocols directly evaluate whether
+prosody-aware continuous pretraining transfers text-LLM instruction following
+into speech. The unchanged official GitHub tree has 119 nodes at revision
+`4add53248222f98c3e585fa41ebfc57ee0a6e565`, and the ungated 28-file Hub
+snapshot is pinned at revision
+`0840f86cdafc82d1649e2dc7c64509291928d0ef`. The release still includes the
+paper's MMSU and OpenBookQA selections, URO-Bench and EmphAssess archives,
+evaluation code, checkpoints, and a large training sample, but no packaged
+SDQA selection, model outputs, predictions, or per-item scores. All evaluation
+rows map to already indexed benchmark families, so no count or helper changes.
+The Hub card declares CC BY-NC 4.0 for its aggregate release, but this does not
+override upstream benchmark terms; the separate GitHub repository still has
+no root license, and the article's CC BY 4.0 does not license those artifacts.

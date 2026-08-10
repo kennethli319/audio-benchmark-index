@@ -2429,11 +2429,14 @@ paper_audits:
           merely because they support the pretraining ablation.
     release_audit:
       owner_github_repository: public_ungated_with_119_file_and_directory_nodes
+      owner_github_revision: 4add53248222f98c3e585fa41ebfc57ee0a6e565
       evaluation_code: public_for_voicebench_uro_bench_and_emphassess
       voicebench_paper_selection: public_ungated_mmsu_and_openbookqa_only
       uro_bench_paper_snapshot: public_ungated_archive
       emphassess_paper_derivatives: public_ungated_archive
       model_checkpoint_and_training_sample: public_ungated_large_model_repository
+      hugging_face_snapshot_revision: 0840f86cdafc82d1649e2dc7c64509291928d0ef
+      release_snapshot_last_modified: 2026-05-21
       model_outputs_predictions_and_per_item_scores: not_released
       github_root_license: not_present
     license:
@@ -2475,9 +2478,14 @@ paper_audits:
       probe combination weight, long thinking, pretraining-data structure,
       format forcing, and transfer across Qwen, OLMo, and Llama bases. Public
       paper-specific evaluation assets improve reproducibility, but all rows
-      map to existing families. The separately indexed EmphAssess family now
-      supplies primary provenance for that adaptation, so this paper audit does
-      not create another counted family.
+      map to existing families. An August 10 release recheck pins the unchanged
+      119-node GitHub tree and 28-file Hugging Face snapshot revisions. The
+      snapshot still contains only the MMSU and OpenBookQA VoiceBench
+      selections, the URO-Bench and EmphAssess archives, code, checkpoints, and
+      a large training sample; it contains no SDQA package, frozen model
+      outputs, predictions, or per-item scores. The separately indexed
+      EmphAssess family now supplies primary provenance for that adaptation, so
+      this paper audit does not create another counted family.
 
   parabridge_paralinguistic_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2606.10581
