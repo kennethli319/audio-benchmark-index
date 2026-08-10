@@ -1102,15 +1102,20 @@ audited announced protocol with no download helper.
 
 The August 2026 Macer paper is recorded as an existing-family protocol audit of
 decoder-side audio/video token compression in pretrained OmniLLMs. Sections
-5.1-5.2 and Appendix A run the full AVUTBench, Daily-Omni, WorldSense, and
-no-subtitle Video-MME evaluations through LMMs-Eval with fixed greedy decoding
+5.1-5.2, Appendix A, and Appendix D.4 run the full AVUTBench, Daily-Omni,
+WorldSense, and no-subtitle Video-MME evaluations through LMMs-Eval with fixed greedy decoding
 at 25%, 35%, and 45% multimodal-token retention. This is relevant to pretrained
 audio-language-model interfaces because it tests whether audio-grounded and
 cross-modal reasoning survives aggressive token pruning. All four benchmark
-families and their access helpers are already indexed. The paper promises Macer
-code and calibrated configurations upon publication, but version 1 supplies no
-artifact URL, exact LMMs-Eval task revisions, calibration-split rows, published
-random-baseline seed, predictions, runtime logs, or per-item scores. The arXiv
+families and their access helpers are already indexed. A focused August 10
+correction records Appendix A.4's approximately 100-clip development split,
+balanced across four modality-demand categories and disjoint from the reported
+evaluations, separately from Appendix D.4's 200-example, four-family robustness
+split. The paper promises Macer code and calibrated configurations upon
+publication, but version 1 supplies no artifact URL, either split manifest,
+exact LMMs-Eval task revisions, published random-baseline seed, predictions,
+runtime logs, or per-item scores. Exact paper-ID/title GitHub and paper-ID
+Hugging Face searches still return no release. The arXiv
 license covers only the article; AVUT has no stated data license, Daily-Omni is
 CC BY-NC-SA 4.0, WorldSense has conflicting CC BY and CC BY-NC-SA statements,
 and Video-MME retains custom academic-use and redistribution restrictions. No

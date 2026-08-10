@@ -3436,9 +3436,9 @@ paper_audits:
   macer_omnillm_token_compression_evaluation_audit:
     paper: https://arxiv.org/abs/2608.01665
     title: "Allocation Before Ranking: Decoupled Token Compression for OmniLLMs"
-    sections: 5.1-5.2_and_appendix_A.1-A.5
+    sections: 5.1-5.2_and_appendices_A.1-A.5_and_D.4
     status: audited_existing_public_families_with_unreleased_compression_protocol_artifacts
-    last_verified: 2026-08-07
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: AVUTBench
         index_id: avut
@@ -3480,11 +3480,16 @@ paper_audits:
       tables compare full tokens, random retention, FastV, OmniZip, and Macer
       at matched retention ratios on Qwen2.5-Omni-7B and 3B; Appendix F adds
       AVUTBench, DailyOmni, and WorldSense transfer results on OmniVinci-9B.
-      The Qwen configurations are selected once on an unspecified held-out
-      split disjoint from all evaluation sets, then frozen across benchmarks.
-      Main accuracy runs are deterministic; the random-retention baseline uses
-      a fixed seed. Appendix A.5 says code and calibrated configurations will
-      be released upon publication.
+      Appendix A.4 says the Qwen configurations are selected once on an
+      approximately 100-clip development split disjoint from all reported
+      evaluation sets and balanced across audio-grounded, audio-video joint,
+      visual-dominant, and video-centric modality-demand categories, then
+      frozen across benchmarks. Appendix D.4 separately sweeps the 7B retained-
+      audio share on a 200-example held-out robustness split spanning the four
+      benchmark families; neither split manifest is released. Main accuracy
+      runs are deterministic; the random-retention baseline uses a fixed seed.
+      Appendix A.5 says code and calibrated configurations will be released
+      upon publication.
     release_audit:
       upstream_benchmark_families: public_with_existing_family_specific_terms
       paper_and_aggregate_tables: public
@@ -3511,7 +3516,13 @@ paper_audits:
       - https://arxiv.org/html/2608.01665v1#S5.SS1
       - https://arxiv.org/html/2608.01665v1#S5.SS2
       - https://arxiv.org/html/2608.01665v1#A1.SS1
+      - https://arxiv.org/html/2608.01665v1#A1.SS4
       - https://arxiv.org/html/2608.01665v1#A1.SS5
+      - https://arxiv.org/html/2608.01665v1#A4.SS4
+      - https://export.arxiv.org/api/query?id_list=2608.01665
+      - https://api.github.com/search/repositories?q=%222608.01665%22%20OR%20%22Allocation%20Before%20Ranking%22
+      - https://huggingface.co/api/models?search=2608.01665
+      - https://huggingface.co/api/datasets?search=2608.01665
       - https://github.com/lark-png/AVUT
       - https://github.com/Lliar-liar/Daily-Omni
       - https://github.com/JaaackHongggg/WorldSense
@@ -3523,8 +3534,11 @@ paper_audits:
       four evaluation families and their download helpers already exist in the
       index, so this audit adds no duplicate benchmark family. The paper
       releases aggregate protocol details but not the promised implementation,
-      calibration split, task revisions, predictions, or score records; no new
-      download helper is added.
+      approximately 100-clip calibration manifest, separate 200-example
+      robustness manifest, task revisions, predictions, or score records.
+      Version 1 remains current, and exact paper-ID/title GitHub plus paper-ID
+      Hugging Face searches returned no release on 2026-08-10; no new download
+      helper is added.
 
   omnipack_unified_token_compression_evaluation_audit:
     paper: https://arxiv.org/abs/2608.03812
