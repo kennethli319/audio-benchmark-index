@@ -2921,6 +2921,13 @@ currently contains only a README promising code and pretrained models; it does
 not release the custom speaker splits, trial lists, anonymized derivatives, or
 evaluation implementation. Licensed access to Fisher English therefore does
 not reproduce the paper's protocol.
+A focused August 10 release recheck found that the repository's complete
+main-branch tree remains at commit
+`9384c1b610a1261bdf5d7346c63d227095ab411f` from July 10 and still consists of
+one README promising code and pretrained models. It has no license, speaker-
+split or trial manifests, anonymized audio, preprocessing configuration,
+implementation, checkpoints, predictions, or scores. The derived evaluation
+therefore remains unreleased and no counted family or helper is added.
 
 The July 2026 *Do Speech Tokens Leak Voiceprints?* paper is recorded as a
 coverage audit over the already indexed VoxCeleb family. It trains and tests

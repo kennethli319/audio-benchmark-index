@@ -15330,6 +15330,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.19636
     sections: 4.1-4.3
     status: audited_not_indexed
+    last_verified: 2026-08-10
     public_interfaces:
       - https://github.com/Ashigarg123/multimodal-speaker-verification
     evaluated_domains:
@@ -15348,9 +15349,10 @@ paper_audits:
       - https://raw.githubusercontent.com/Ashigarg123/multimodal-speaker-verification/main/README.md
       - https://api.github.com/repos/Ashigarg123/multimodal-speaker-verification
       - https://api.github.com/repos/Ashigarg123/multimodal-speaker-verification/git/trees/main?recursive=1
+      - https://api.github.com/repos/Ashigarg123/multimodal-speaker-verification/commits/main
       - https://catalog.ldc.upenn.edu/LDC2004S13
       - https://catalog.ldc.upenn.edu/LDC2005S13
-    note: The official repository currently contains only a README promising code and pretrained models; it does not release the custom Fisher speaker partitions, validation or evaluation trials, anonymized derivatives, or evaluation implementation. The licensed Fisher source corpus is indexed separately, but access to it does not reproduce this paper's benchmark protocol. This evaluation is therefore recorded as an audited protocol rather than a downloadable benchmark family.
+    note: The official repository currently contains only a README promising code and pretrained models; it does not release the custom Fisher speaker partitions, validation or evaluation trials, anonymized derivatives, or evaluation implementation. An August 10 recheck found the complete main-branch tree still fixed at commit 9384c1b610a1261bdf5d7346c63d227095ab411f from July 10, with one README file and no repository license. The licensed Fisher source corpus is indexed separately, but access to it does not reproduce this paper's benchmark protocol. This evaluation is therefore recorded as an audited protocol rather than a downloadable benchmark family.
 
   speech_token_speaker_inversion:
     paper: https://arxiv.org/abs/2607.16870
