@@ -1810,24 +1810,31 @@ scores. The cited HyenaSET bioRxiv identifier also returned HTTP 404 through
 its DOI resolver on 2026-07-25, so the index does not invent a dataset link or
 license and will recheck for an owner-controlled release.
 
-The ICASSP 2026 LongSpeech paper now has a public but provenance-qualified
-release candidate rather than a wholly unreleased record. The ungated
+The ICASSP 2026 LongSpeech paper now has a public but provenance- and
+integrity-qualified release candidate rather than a wholly unreleased record.
+The ungated
 [Marco-LongSpeech snapshot](https://huggingface.co/datasets/ATH-MaaS/Marco_Longspeech)
-cites the exact paper and exposes 101,822 WAV files plus train, validation, and
-test JSONL manifests for all eight long-context speech tasks. Hugging Face
-reports about 1.94 TB at revision `bb50d8c11fe9aa9fc5e899a0d941e3b40acbc740`.
+cites the exact paper and publishes train, validation, and test JSONL manifests
+for all eight long-context speech tasks. Hugging Face reports about 1.94 TB at
+revision `bb50d8c11fe9aa9fc5e899a0d941e3b40acbc740`. A focused August 10 tree
+audit counts 99,941 live WAV files—29,538, 22,107, and 48,296 across its three
+parts—rather than the card's claimed 101,822. Its history records eleven batch
+deletion commits plus individual deletions, followed by cleanup of named ASR
+and language-detection manifests and audio-path fixes, without a complete
+card-to-live reconciliation.
+
 It is not yet counted as a benchmark family: arXiv v1 names no artifact host,
 and the card's linked [AIDC-AI repository](https://github.com/AIDC-AI/Marco-Longspeech)
 returns 404. A same-name [ATH-MaaS repository](https://github.com/ATH-MaaS/Marco-Longspeech)
 now establishes a same-organization release path, but its complete public tree
-contains only an Apache-2.0 license and no README, code, manifests, or provenance
-ledger. The card's 204,881 task rows also differ from Section 2.3's 202,400
-without a release-version reconciliation. Apache-2.0 covers the repository's
-released file and is the card's declaration, but does not establish relicensing
-authority over every incorporated public, restricted, and custom speech source.
-No bulk helper is added for this approximately 1.94 TB candidate; revisit after
-a substantive owner repository confirms provenance, versions, and source-level
-terms.
+contains only an Apache-2.0 license and no README, code, manifests, or
+provenance ledger. The card's 204,881 task rows also differ from Section 2.3's
+202,400 without a release-version reconciliation. Apache-2.0 covers the
+repository's released file and is the card's declaration, but does not
+establish relicensing authority over every incorporated public, restricted,
+and custom speech source. No bulk helper is added for this approximately 1.94
+TB candidate; revisit after a substantive owner repository confirms
+provenance, versions, a reconciled complete manifest, and source-level terms.
 
 The July 2026 Local Information Disclosure paper adds coverage of the
 [VoicePrivacy Challenge 2024](https://www.voiceprivacychallenge.org/vp2024/)

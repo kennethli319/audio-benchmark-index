@@ -11028,8 +11028,8 @@ paper_audits:
     paper: https://arxiv.org/abs/2601.13539
     title: "LongSpeech: A Scalable Benchmark for Transcription, Translation and Understanding in Long Speech"
     sections: 2-3
-    status: audited_public_paper_linked_candidate_with_relocated_placeholder_repository_and_unresolved_upstream_terms
-    last_verified: 2026-08-08
+    status: audited_public_paper_linked_candidate_with_internally_inconsistent_snapshot_relocated_placeholder_repository_and_unresolved_upstream_terms
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: LongSpeech
         index_id: null
@@ -11039,9 +11039,10 @@ paper_audits:
           segments and eight task families: ASR, speech translation,
           summarization, language detection, speaker counting, content
           separation, spoken question answering, and temporal issue
-          localization. It reports aggregate train/dev/test example totals,
-          but does not publish item manifests, audio, annotations, construction
-          code, or fixed evaluation files.
+          localization. The paper itself reports aggregate train/dev/test
+          example totals but identifies no artifact host; a later paper-linked
+          Hub snapshot publishes task manifests, annotations, and audio with
+          the release-integrity qualifications recorded below.
     release_audit:
       paper_source: public_ungated_arxiv
       source_corpora: mixed_public_and_restricted
@@ -11050,15 +11051,32 @@ paper_audits:
       snapshot_access: public_ungated
       snapshot_used_storage_bytes: 1942232458253
       snapshot_contents: >-
-        101,822 WAV files split across three audio parts plus train, validation,
-        and test JSONL files for all eight task families
+        99,941 live WAV files split across three audio parts, 27 JSONL files,
+        and train, validation, and test task manifests for all eight task
+        families; the card still claims 101,822 WAV files
+      snapshot_live_file_counts:
+        total_siblings: 99972
+        wav_total: 99941
+        wav_part_1: 29538
+        wav_part_2: 22107
+        wav_part_3: 48296
+        jsonl_total: 27
+        card_claimed_wav_total: 101822
+        card_to_live_wav_shortfall: 1881
+      snapshot_deletion_history: >-
+        Hub history records eleven batch WAV-deletion commits plus individual
+        deletions, followed by cleanup of only named ASR and language-detection
+        manifests and several audio-path fixes. The card's part 1 and part 3
+        counts remain 1 and 1,880 files above the live tree, respectively.
       snapshot_card_total_task_rows: 204881
       paper_total_task_rows: 202400
       count_difference_note: >-
         The live card reports 143,412 train, 30,728 validation, and 30,741 test
         rows, whereas paper Section 2.3 reports 142,200, 30,100, and 30,100.
-        The snapshot history includes later audio deletions and path fixes, but
-        does not publish a version-to-paper reconciliation.
+        Independently, the card reports 101,822 WAV files while the pinned live
+        tree contains 99,941. The snapshot history includes later audio
+        deletions, partial manifest cleanup, and path fixes, but does not
+        publish a version-to-paper or card-to-live reconciliation.
       construction_and_evaluation_code: not_released
       dataset_card_linked_github_repository: https://github.com/AIDC-AI/Marco-Longspeech
       dataset_card_linked_github_repository_status: HTTP_404_on_verification_date
@@ -11104,10 +11122,13 @@ paper_audits:
       paper. It is not counted yet because the paper does not identify this
       host, the card's linked AIDC-AI repository returns 404, and the relocated
       same-organization ATH-MaaS repository contains only Apache-2.0 text.
-      Live row totals also differ from Section 2.3, and no source-level rights
-      ledger or construction and evaluation code was identified. Revisit family
-      promotion after an author-controlled page or substantive repository
-      confirms provenance and versions.
+      Live row totals also differ from Section 2.3. A focused August 10 tree
+      audit additionally finds only 99,941 live WAV files versus 101,822 on the
+      card, with batch deletions and only partial named manifest cleanup in the
+      commit history. No source-level rights ledger or construction and
+      evaluation code was identified. Revisit family promotion after an
+      author-controlled page or substantive repository confirms provenance,
+      versions, and a reconciled complete manifest.
 
   local_information_disclosure_voiceprivacy_evaluation:
     paper: https://arxiv.org/abs/2607.06259
