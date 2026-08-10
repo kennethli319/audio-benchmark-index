@@ -4350,3 +4350,26 @@ rows map to already indexed benchmark families, so no count or helper changes.
 The Hub card declares CC BY-NC 4.0 for its aggregate release, but this does not
 override upstream benchmark terms; the separate GitHub repository still has
 no root license, and the article's CC BY 4.0 does not license those artifacts.
+
+The 2025 [*Can Large Audio-Language Models Truly Hear?*](https://arxiv.org/abs/2410.16130)
+paper adds the Audio Hallucination family after a primary-source review of
+Sections II-IV and its official repository and Hub releases. Its paired binary
+tracks test sound-event existence, temporal order, and sound-source attributes
+with 10,800, 3,116, and 1,614 released rows. Accuracy, precision, recall, F1,
+yes-response rate, instruction-following rate, and paired-answer consistency
+separate acoustic grounding failures from affirmative response bias. This is
+directly relevant to audio-LLM post-training because the paper evaluates
+prompt variants and MATCH multi-turn chain-of-hearings, while the July 2026
+[*Adaptive Perturbation Selection for Contrastive Audio Decoding*](https://arxiv.org/abs/2607.00247)
+paper reuses its yes/no subsets to evaluate hallucination-resistant decoding
+and a trained negative-branch selector.
+
+The three small annotation Parquets, benchmark documentation, and evaluation
+code are public and ungated. Object-existence audio is a separate approximately
+2.29 GB BEAF-Audio archive; temporal-order and attribute rows require upstream
+CompA audio. The helper fetches annotations and metadata by default and keeps
+BEAF-Audio opt-in. Exact reproduction of the adaptive-decoding results still
+requires unpublished converted manifests, model outputs, and per-item scores.
+The benchmark repository and all four Hub cards state no data or code license;
+public access does not relicense AudioCaps/YouTube, ESC-50, VocalSound, CompA,
+or source media. MIT in the adaptive-decoding repository covers its code only.

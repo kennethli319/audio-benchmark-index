@@ -30522,6 +30522,105 @@ benchmarks:
       - https://zenodo.org/records/6473207/files/LICENSE.txt?download=1
       - https://arxiv.org/abs/2204.09634
 
+  - id: audio_hallucination
+    name: Audio Hallucination
+    full_name: "Can Large Audio-Language Models Truly Hear? Tackling Hallucinations with Multi-Task Assessment and Stepwise Audio Reasoning"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_understanding
+      - audio_language_model_benchmark
+      - audio_language_model_post_training
+    category: audio_language_model_hallucination_and_grounding
+    tasks:
+      - audio_hallucination_evaluation
+      - sound_event_existence_reasoning
+      - temporal_order_reasoning
+      - sound_source_attribute_reasoning
+      - instruction_following
+    tracks:
+      - name: Object Existence
+        examples: 10800
+        source: derived_from_AudioCaps_ESC_50_and_VocalSound
+        protocol: paired_present_vs_removed_sound_event_yes_no_questions
+      - name: Temporal Order
+        examples: 3116
+        source: derived_from_CompA_Order
+        protocol: paired_opposite_event_order_yes_no_questions
+      - name: Object Attribute
+        examples: 1614
+        source: derived_from_CompA_Attribute
+        protocol: paired_sound_source_assignment_yes_no_questions
+    metrics:
+      - accuracy
+      - precision
+      - recall
+      - F1
+      - yes_response_rate
+      - instruction_following_rate
+      - paired_answer_consistency
+    official:
+      paper: https://arxiv.org/abs/2410.16130
+      repo: https://github.com/kuan2jiu99/audio-hallucination
+      object_existence_annotations: https://huggingface.co/datasets/kuanhuggingface/Audio-Hallucination_Object-Existence_AudioCaps-ESC50-VocalSound
+      temporal_order_annotations: https://huggingface.co/datasets/kuanhuggingface/Audio-Hallucination_Temporal-Order_CompA-Order
+      object_attribute_annotations: https://huggingface.co/datasets/kuanhuggingface/Audio-Hallucination_Object-Attribute_CompA-Attribute
+      object_existence_audio: https://huggingface.co/datasets/kuanhuggingface/BEAF-Audio
+      recent_post_training_evaluation: https://arxiv.org/abs/2607.00247
+      recent_post_training_code: https://github.com/aarongrace/adaptive-lalm-cd
+    download:
+      access: public_ungated_partial_upstream_assets_required
+      primary:
+        - https://huggingface.co/datasets/kuanhuggingface/Audio-Hallucination_Object-Existence_AudioCaps-ESC50-VocalSound
+        - https://huggingface.co/datasets/kuanhuggingface/Audio-Hallucination_Temporal-Order_CompA-Order
+        - https://huggingface.co/datasets/kuanhuggingface/Audio-Hallucination_Object-Attribute_CompA-Attribute
+        - https://huggingface.co/datasets/kuanhuggingface/BEAF-Audio
+      examples:
+        - 'scripts/download/audio_hallucination.sh'
+        - 'AUDIO_HALLUCINATION_DOWNLOAD_EXISTENCE_AUDIO=1 scripts/download/audio_hallucination.sh'
+      notes: >-
+        The helper downloads the three small, pinned annotation Parquet files,
+        official documentation, evaluation code, and live Hub metadata by
+        default. The approximately 2.29 GB BEAF_Audio.tar object-existence
+        archive is an explicit opt-in. Temporal-order and object-attribute
+        audio must be obtained separately from the upstream CompA release.
+    access:
+      status: public_ungated_partial_release
+      registration_required: false
+      notes: >-
+        The owner releases all three test annotation tables and evaluation
+        code. Object-existence audio is public in a separate Hub repository;
+        the other two tracks reference CompA audio rather than redistributing
+        it. The released Hub rows contain 10,800, 3,116, and 1,614 examples,
+        matching paper version 2. The July 2026 Adaptive Perturbation Selection
+        paper reuses yes/no subsets for hallucination-resistant contrastive
+        decoding, but releases no converted manifests, model outputs, or
+        per-item scores.
+    license:
+      data: not_specified_with_mixed_upstream_terms
+      code: no_detected_license
+      notes: >-
+        The three annotation cards and BEAF-Audio card state no license, and
+        the official benchmark repository has no license file. Public access
+        does not relicense AudioCaps/YouTube, ESC-50, VocalSound, CompA, or
+        their source media. MIT in the separate adaptive-lalm-cd repository
+        covers that paper's code only, not Audio Hallucination data or audio.
+    sources:
+      - https://arxiv.org/abs/2410.16130
+      - https://arxiv.org/html/2410.16130v2#S2.SS1
+      - https://arxiv.org/html/2410.16130v2#S2.SS2
+      - https://arxiv.org/html/2410.16130v2#S2.SS3
+      - https://arxiv.org/html/2410.16130v2#S3
+      - https://github.com/kuan2jiu99/audio-hallucination
+      - https://github.com/kuan2jiu99/audio-hallucination/tree/main/icassp2025
+      - https://api.github.com/repos/kuan2jiu99/audio-hallucination/git/trees/main?recursive=1
+      - https://huggingface.co/api/datasets/kuanhuggingface/Audio-Hallucination_Object-Existence_AudioCaps-ESC50-VocalSound
+      - https://huggingface.co/api/datasets/kuanhuggingface/Audio-Hallucination_Temporal-Order_CompA-Order
+      - https://huggingface.co/api/datasets/kuanhuggingface/Audio-Hallucination_Object-Attribute_CompA-Attribute
+      - https://huggingface.co/api/datasets/kuanhuggingface/BEAF-Audio
+      - https://arxiv.org/abs/2607.00247
+      - https://arxiv.org/html/2607.00247v2#S4
+      - https://github.com/aarongrace/adaptive-lalm-cd
+
   - id: audiocaps
     name: AudioCaps
     full_name: "AudioCaps: Generating Captions for Audios in The Wild"
