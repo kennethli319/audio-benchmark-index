@@ -351,7 +351,11 @@ unrelated ACL 2026 cultural-grounding benchmark and is explicitly recorded as
 an alias collision, not a release of this audio-captioning MMAC. The article's
 arXiv distribution license does not cover absent benchmark artifacts or
 third-party source audio. No benchmark family, count increase, or helper is
-added.
+added. A focused August 10 recheck found arXiv version 2 unchanged
+since July 30 and still using future-tense release language. Exact-name GitHub
+search returned zero repositories; Hugging Face dataset search returned only
+unrelated name matches, including the known alias collision, and model search
+found no owner release. MMAC therefore remains uncounted with no helper.
 
 The May 2026 *VoxParadox* paper now contributes a public adversarial
 paralinguistic speech-QA family. Section 3 defines 2,000 verified English MCQs,
