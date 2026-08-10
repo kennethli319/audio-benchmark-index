@@ -4,6 +4,22 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 [*SemBridge*](https://arxiv.org/abs/2608.07462) paper is
+recorded as an existing-family and incomplete-release audit of pretraining a
+continuous-latent autoregressive speech model through a discrete semantic-token
+interface. Sections 3-4 and Supplementary Sections 1-5 evaluate target-space
+alignment and intermediate-LM-state anchoring on the already indexed public
+Seed-TTS Eval and CV3-Eval families, using CER or WER, WavLM speaker similarity,
+UTMOS, and reconstruction metrics. The singing-transfer experiment follows
+the GMO-SVS and SoulX-Singer-Eval protocol with CER or WER, similarity, F0
+frame error, SingMOS-Pro, and Sheet-SSQA. The official demo page publicly hosts
+selected speech and singing samples, but the paper-promised ASLP-lab model
+repository returns HTTP 404. No SemBridge evaluation runner, frozen
+configurations, complete generated outputs, predictions, or item-level scores
+are released. The arXiv non-exclusive distribution license covers only the
+article; the unlicensed demo repository and all upstream benchmark families
+retain separate terms. No benchmark count or download helper changes.
+
 The July 2026 *Safeguards for Speech2Speech LLM-Assistants* release was
 rechecked on August 9 after reviewing its Evaluation Setup and Evaluation
 Results. Its 5,400-run protocol crosses three realtime speech models, three

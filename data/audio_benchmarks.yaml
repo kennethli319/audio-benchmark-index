@@ -9,6 +9,77 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  sembridge_pretraining_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.07462
+    title: "SemBridge: Semantic Token Anchoring for Continuous-Latent Autoregressive Speech Generation"
+    sections: 3-4_and_supplementary_sections_1-5
+    status: audited_existing_public_families_with_unreleased_model_evaluation_artifacts
+    last_verified: 2026-08-09
+    pretraining_relevance: >-
+      SemBridge uses a frozen GLM-4 speech tokenizer to align continuous
+      acoustic latents and directly supervise intermediate autoregressive LM
+      states during training. Its evaluations test whether this shared
+      semantic-token interface improves content fidelity, reconstruction, and
+      transfer from speech generation to score-conditioned singing synthesis.
+    evaluation_inventory:
+      - cited_as: Seed-TTS-Eval
+        index_id: seed_tts_eval
+        status: existing_public_family
+        protocol: >-
+          Evaluate the 2,020-item Mandarin and 1,088-item English objective
+          sets plus Mandarin hard cases with Paraformer CER, Whisper-large-v3
+          WER, WavLM speaker similarity, and UTMOS.
+      - cited_as: CV3-EVAL
+        index_id: cv3_eval
+        status: existing_public_family
+        protocol: >-
+          Evaluate the official Mandarin, English, Mandarin-hard, and
+          English-hard prompt-target partitions with CER or WER and speaker
+          similarity.
+      - cited_as: GMO-SVS_and_SoulX-Singer-Eval
+        status: upstream_protocol_not_added_in_this_focused_audit
+        protocol: >-
+          Follow the SoulX-Singer score-conditioned synthesis protocol on 802
+          GMO-SVS samples and 100 prompt segments from 50 unseen singers,
+          reporting CER or WER, speaker similarity, F0 frame error, SingMOS-Pro,
+          and Sheet-SSQA scores.
+    release_audit:
+      speech_sample_site: public_ungated_selected_demonstrations
+      sample_repository: public_ungated_without_license
+      sample_repository_revision: 5852c480cdb0a3ae392f2f0c6d86300adff5e2bd
+      promised_model_code_and_checkpoint_repository: returns_404
+      frozen_evaluation_manifests: upstream_public_families_only
+      sembridge_evaluation_runner_and_configurations: not_released
+      generated_evaluation_outputs_predictions_and_item_scores: not_released
+      download_helper: none_no_new_reproducible_benchmark_family
+    access: public_existing_benchmarks_and_selected_demos_with_unreleased_model_specific_artifacts
+    license:
+      paper: arXiv_nonexclusive_distribution_license
+      demo_repository: not_stated
+      benchmark_data: upstream_family_terms_apply
+      evaluation_artifacts: not_stated
+      note: >-
+        The arXiv license covers the article, not benchmark inputs or absent
+        evaluation artifacts. The public demo repository has no detected
+        license. Seed-TTS Eval, CV3-Eval, GMO-SVS, SoulX-Singer-Eval, and their
+        component corpora retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2608.07462
+      - https://arxiv.org/html/2608.07462v1#S3
+      - https://arxiv.org/html/2608.07462v1#S4
+      - https://arxiv.org/html/2608.07462v1#A1
+      - https://tiamojames.github.io/SemBridge_Demo/
+      - https://github.com/tiamojames/SemBridge_Demo
+      - https://api.github.com/repos/tiamojames/SemBridge_Demo
+      - https://github.com/ASLP-lab/SemBridge
+      - https://github.com/BytedanceSpeech/seed-tts-eval
+      - https://github.com/FunAudioLLM/CV3-Eval
+    note: >-
+      No new benchmark family is counted. The paper reuses the indexed public
+      Seed-TTS Eval and CV3-Eval families; selected qualitative samples are
+      public, but the promised model repository and the model-specific
+      evaluation implementation, outputs, and per-item scores are unavailable.
+
   interacvid_interactive_audio_visual_response_evaluation_audit:
     paper: https://arxiv.org/abs/2608.01157
     title: "InteracVid: Building a Real Interactive Audio-Visual Response Dataset from Live-Chat Videos"
