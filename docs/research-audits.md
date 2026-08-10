@@ -682,6 +682,11 @@ withheld because it exposes laboratory interiors and team voices and is only
 described as potentially available on reasonable request. CC BY 4.0 covers the
 paper, not the absent manifest, outputs, prompts, code, or request-only media.
 The benchmark is therefore not counted as a public family and has no helper.
+A focused August 9 release recheck found only arXiv version 1 and no matching
+GitHub repository or Hugging Face dataset/model under the benchmark name,
+exact paper title, or arXiv identifier. The ACM DOI printed in the paper also
+returned HTTP 404, so it does not yet expose a publisher supplement or artifact
+pointer. The public-family count and helper inventory remain unchanged.
 
 SongBench is now indexed as a partially released full-song evaluator family
 after a primary-source audit of paper sections 2-4 and Tencent's official
