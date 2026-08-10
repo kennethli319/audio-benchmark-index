@@ -4286,3 +4286,23 @@ The paper is CC BY 4.0, while the code/benchmark card declares no license.
 Apache 2.0 labels on the separate training-data and model cards must not be
 extended to the benchmark, and upstream video and platform terms continue to
 apply.
+
+The July 2026 [*FriendBench*](https://arxiv.org/abs/2607.29602) paper now
+supplies primary provenance for the already indexed FriendBench release after
+reviewing Sections 3-5. Its 96 participant-disjoint, balanced dyads support
+matched text, audio, and audiovisual familiarity judgments by 26 zero-shot
+models and roughly 90 human raters per modality. Accuracy over answered trials,
+coverage, per-class recall, signal-detection sensitivity and response
+criterion distinguish acoustic social discrimination from one-sided answer
+bias, making the benchmark directly relevant to post-training evaluation of
+audio-capable language models. The public Hub snapshot releases the frozen
+validation stimuli and answer key, de-identified human ratings, model
+predictions, baseline results, and evaluator; the paper and card explicitly
+limit paper provenance to that validation config. The prior helper paths
+pointed to obsolete JSONL names and are corrected to the released CSV and code
+paths. The card and TERMS.md declare CC BY-NC 4.0 inherited from Seamless
+Interaction, including for original evaluation artifacts, but the terms file
+calls its own wording a draft awaiting upstream confirmation; live
+recorded-participant privacy, consent, biometric, and responsible-use terms
+still require review. This is a provenance and reproducibility correction to
+an existing family, so the benchmark count remains unchanged.

@@ -21386,8 +21386,8 @@ benchmarks:
       - https://huggingface.co/api/datasets/facebook/seamless-interaction
 
   - id: friend_bench
-    name: Friend Bench
-    full_name: "Friend Bench: Social relationship recognition from thin-slice dyadic interactions"
+    name: FriendBench
+    full_name: "FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models"
     qwen_cited_as: null
     qwen_bucket: audio_visual_social_understanding
     tasks:
@@ -21396,8 +21396,11 @@ benchmarks:
       - familiar_stranger_classification
       - multimodal_human_behavior_understanding
       - paralinguistic_understanding
+      - modality_ablation
+      - response_bias_and_signal_detection_analysis
     official:
       dataset: https://huggingface.co/datasets/fluid-concepts/friend-bench
+      paper: https://arxiv.org/abs/2607.29602
       source_dataset: https://huggingface.co/datasets/facebook/seamless-interaction
     download:
       primary:
@@ -21407,31 +21410,45 @@ benchmarks:
         - 'FRIEND_BENCH_DOWNLOAD_METADATA=1 scripts/download/friend_bench.sh'
         - 'FRIEND_BENCH_DOWNLOAD_HF=1 scripts/download/friend_bench.sh'
       notes: >-
-        The public, ungated validation release contains 96 approximately
-        20-second dyadic clips, balanced across familiar/stranger and
-        early/late conditions. Every item provides mixed audio, side-by-side
-        video, a turn-level transcript, and labels for binary familiarity and
-        six-way relationship type. It also releases anonymized human judgments
-        under audio-, video-, and text-only conditions. The helper downloads
-        the official card and API metadata by default. Set
-        FRIEND_BENCH_DOWNLOAD_METADATA=1 for the two lightweight JSONL tables,
+        The public, ungated validation release contains 96 participant-disjoint
+        approximately 20-second dyadic clips, balanced across familiar versus
+        stranger, early versus late, mixed versus same estimated-gender, and
+        three recording-site conditions. Every item provides a 16 kHz mono
+        audio mix, side-by-side audiovisual video, turn-level transcript, and
+        binary familiarity answer key. The MINT 2026 paper evaluates 26
+        zero-shot models and roughly 90 human raters per modality with accuracy
+        over answered trials, coverage, per-class recall, signal-detection
+        sensitivity and response criterion, plus matched text, audio, and
+        audiovisual comparisons. The release includes its evaluation script,
+        model predictions, de-identified human ratings, and baseline table.
+        The helper downloads the official card and API metadata by default.
+        Set FRIEND_BENCH_DOWNLOAD_METADATA=1 for the lightweight manifest,
+        ratings, predictions, baseline results, evaluator, terms, and citation,
         or FRIEND_BENCH_DOWNLOAD_HF=1 for the complete approximately 433 MB
-        snapshot. The card says a label-held-out test split is planned but not
-        yet released, and currently provides no paper or citation.
+        snapshot. The paper and card cover only the released `validation`
+        config; possible future configs are not part of this benchmark version.
     license:
       data: cc-by-nc-4.0
-      code: not_applicable
+      code: cc-by-nc-4.0_declared_in_terms
       notes: >-
         The dataset card declares CC BY-NC 4.0 and says the benchmark inherits
-        that license from Seamless Interaction. The release includes recorded
-        human interactions, transcripts, relationship labels, and anonymized
-        rater responses with bucketed demographic fields; users should retain
-        attribution, limit use to non-commercial purposes, and review the
-        source corpus's privacy, consent, biometric, and responsible-use terms.
+        that license from Seamless Interaction. TERMS.md also applies CC BY-NC
+        4.0 to the original manifest, ratings, predictions, and evaluation
+        code, but labels its own wording a draft awaiting confirmation against
+        upstream terms. The release includes recorded human interactions,
+        transcripts, relationship labels, and anonymized rater responses with
+        bucketed demographic fields; users should retain attribution, limit
+        use to non-commercial purposes, and review the live source corpus's
+        privacy, consent, biometric, and responsible-use terms.
     sources:
       - https://huggingface.co/datasets/fluid-concepts/friend-bench
       - https://huggingface.co/datasets/fluid-concepts/friend-bench/raw/main/README.md
+      - https://huggingface.co/datasets/fluid-concepts/friend-bench/raw/main/TERMS.md
       - https://huggingface.co/api/datasets/fluid-concepts/friend-bench
+      - https://arxiv.org/abs/2607.29602
+      - https://arxiv.org/html/2607.29602v1#S3
+      - https://arxiv.org/html/2607.29602v1#S4
+      - https://arxiv.org/html/2607.29602v1#S5
       - https://huggingface.co/datasets/facebook/seamless-interaction
       - https://huggingface.co/datasets/facebook/seamless-interaction/raw/main/README.md
 

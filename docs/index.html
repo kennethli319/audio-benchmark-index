@@ -10195,17 +10195,17 @@
 </article>
 
 <article class="benchmark-card" id="benchmark-friend_bench"
-  data-name="friend bench"
+  data-name="friendbench"
   data-families="audiovisual"
   data-access="helper"
   data-host="hugging-face"
   data-terms="noncommercial"
-  data-search="friend bench friend bench friend bench social relationship recognition from thin slice dyadic interactions audio visual social understanding audio visual social reasoning social relationship recognition familiar stranger classification multimodal human behavior understanding paralinguistic understanding cc by nc 4 0 not applicable the dataset card declares cc by nc 4 0 and says the benchmark inherits that license from seamless interaction the release includes recorded human interactions transcripts relationship labels and anonymized rater responses with bucketed demographic fields users should retain attribution limit use to non commercial purposes and review the source corpus s privacy consent biometric and responsible use terms the public ungated validation release contains 96 approximately 20 second dyadic clips balanced across familiar stranger and early late conditions every item provides mixed audio side by side video a turn level transcript and labels for binary familiarity and six way relationship type it also releases anonymized human judgments under audio video and text only conditions the helper downloads the official card and api metadata by default set friend bench download metadata 1 for the two lightweight jsonl tables or friend bench download hf 1 for the complete approximately 433 mb snapshot the card says a label held out test split is planned but not yet released and currently provides no paper or citation dataset https huggingface co datasets fluid concepts friend bench source dataset https huggingface co datasets facebook seamless interaction https huggingface co datasets fluid concepts friend bench https huggingface co datasets fluid concepts friend bench raw main readme md https huggingface co api datasets fluid concepts friend bench https huggingface co datasets facebook seamless interaction https huggingface co datasets facebook seamless interaction raw main readme md">
+  data-search="friend bench friendbench friendbench benchmarking dyadic familiarity inference in humans and multimodal large language models audio visual social understanding audio visual social reasoning social relationship recognition familiar stranger classification multimodal human behavior understanding paralinguistic understanding modality ablation response bias and signal detection analysis cc by nc 4 0 cc by nc 4 0 declared in terms the dataset card declares cc by nc 4 0 and says the benchmark inherits that license from seamless interaction terms md also applies cc by nc 4 0 to the original manifest ratings predictions and evaluation code but labels its own wording a draft awaiting confirmation against upstream terms the release includes recorded human interactions transcripts relationship labels and anonymized rater responses with bucketed demographic fields users should retain attribution limit use to non commercial purposes and review the live source corpus s privacy consent biometric and responsible use terms the public ungated validation release contains 96 participant disjoint approximately 20 second dyadic clips balanced across familiar versus stranger early versus late mixed versus same estimated gender and three recording site conditions every item provides a 16 khz mono audio mix side by side audiovisual video turn level transcript and binary familiarity answer key the mint 2026 paper evaluates 26 zero shot models and roughly 90 human raters per modality with accuracy over answered trials coverage per class recall signal detection sensitivity and response criterion plus matched text audio and audiovisual comparisons the release includes its evaluation script model predictions de identified human ratings and baseline table the helper downloads the official card and api metadata by default set friend bench download metadata 1 for the lightweight manifest ratings predictions baseline results evaluator terms and citation or friend bench download hf 1 for the complete approximately 433 mb snapshot the paper and card cover only the released validation config possible future configs are not part of this benchmark version dataset https huggingface co datasets fluid concepts friend bench paper https arxiv org abs 2607 29602 source dataset https huggingface co datasets facebook seamless interaction https huggingface co datasets fluid concepts friend bench https huggingface co datasets fluid concepts friend bench raw main readme md https huggingface co datasets fluid concepts friend bench raw main terms md https huggingface co api datasets fluid concepts friend bench https arxiv org abs 2607 29602 https arxiv org html 2607 29602v1 s3 https arxiv org html 2607 29602v1 s4 https arxiv org html 2607 29602v1 s5 https huggingface co datasets facebook seamless interaction https huggingface co datasets facebook seamless interaction raw main readme md">
   <div class="card-heading">
     <div>
       <span class="eyebrow">Audiovisual &amp; cross-modal</span>
-      <h3>Friend Bench</h3>
-      <p class="benchmark-full-name">Friend Bench: Social relationship recognition from thin-slice dyadic interactions</p>
+      <h3>FriendBench</h3>
+      <p class="benchmark-full-name">FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models</p>
     </div>
     <span class="access-badge helper">Safe-first helper</span>
   </div>
@@ -10214,7 +10214,7 @@
         <span class="tag">Social Relationship Recognition</span>
         <span class="tag">Familiar Stranger Classification</span>
         <span class="tag">Multimodal Human Behavior Understanding</span>
-        <span class="tag tag-more">+1 more</span>
+        <span class="tag tag-more">+3 more</span>
   </div>
   <div class="card-facts">
     <div><span>Access path</span><strong>Hugging Face</strong></div>
@@ -10223,30 +10223,37 @@
   <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
   <div class="card-actions">
     <a class="card-action primary" href="https://huggingface.co/datasets/fluid-concepts/friend-bench">Get data</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2607.29602">Read the paper</a>
   </div>
   <details class="benchmark-details">
     <summary>Access, terms &amp; download helper</summary>
     <div class="details-body">
       <dl class="terms-list">
         <div><dt>Data license / terms</dt><dd>cc-by-nc-4.0</dd></div>
-        <div><dt>Code license</dt><dd>not_applicable</dd></div>
-        <div><dt>License caution</dt><dd>The dataset card declares CC BY-NC 4.0 and says the benchmark inherits that license from Seamless Interaction. The release includes recorded human interactions, transcripts, relationship labels, and anonymized rater responses with bucketed demographic fields; users should retain attribution, limit use to non-commercial purposes, and review the source corpus&#39;s privacy, consent, biometric, and responsible-use terms.</dd></div>
-        <div><dt>Download notes</dt><dd>The public, ungated validation release contains 96 approximately 20-second dyadic clips, balanced across familiar/stranger and early/late conditions. Every item provides mixed audio, side-by-side video, a turn-level transcript, and labels for binary familiarity and six-way relationship type. It also releases anonymized human judgments under audio-, video-, and text-only conditions. The helper downloads the official card and API metadata by default. Set FRIEND_BENCH_DOWNLOAD_METADATA=1 for the two lightweight JSONL tables, or FRIEND_BENCH_DOWNLOAD_HF=1 for the complete approximately 433 MB snapshot. The card says a label-held-out test split is planned but not yet released, and currently provides no paper or citation.</dd></div>
+        <div><dt>Code license</dt><dd>cc-by-nc-4.0_declared_in_terms</dd></div>
+        <div><dt>License caution</dt><dd>The dataset card declares CC BY-NC 4.0 and says the benchmark inherits that license from Seamless Interaction. TERMS.md also applies CC BY-NC 4.0 to the original manifest, ratings, predictions, and evaluation code, but labels its own wording a draft awaiting confirmation against upstream terms. The release includes recorded human interactions, transcripts, relationship labels, and anonymized rater responses with bucketed demographic fields; users should retain attribution, limit use to non-commercial purposes, and review the live source corpus&#39;s privacy, consent, biometric, and responsible-use terms.</dd></div>
+        <div><dt>Download notes</dt><dd>The public, ungated validation release contains 96 participant-disjoint approximately 20-second dyadic clips, balanced across familiar versus stranger, early versus late, mixed versus same estimated-gender, and three recording-site conditions. Every item provides a 16 kHz mono audio mix, side-by-side audiovisual video, turn-level transcript, and binary familiarity answer key. The MINT 2026 paper evaluates 26 zero-shot models and roughly 90 human raters per modality with accuracy over answered trials, coverage, per-class recall, signal-detection sensitivity and response criterion, plus matched text, audio, and audiovisual comparisons. The release includes its evaluation script, model predictions, de-identified human ratings, and baseline table. The helper downloads the official card and API metadata by default. Set FRIEND_BENCH_DOWNLOAD_METADATA=1 for the lightweight manifest, ratings, predictions, baseline results, evaluator, terms, and citation, or FRIEND_BENCH_DOWNLOAD_HF=1 for the complete approximately 433 MB snapshot. The paper and card cover only the released `validation` config; possible future configs are not part of this benchmark version.</dd></div>
       </dl>
       <div class="command-block">
         <div><span>Safe-first helper</span><code>scripts/download/friend_bench.sh</code></div>
         <div class="helper-actions">
           <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/friend_bench.sh">View helper</a>
-          <button type="button" data-copy="scripts/download/friend_bench.sh" aria-label="Copy Friend Bench helper path">Copy path</button>
+          <button type="button" data-copy="scripts/download/friend_bench.sh" aria-label="Copy FriendBench helper path">Copy path</button>
         </div>
       </div>
       <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://huggingface.co/datasets/fluid-concepts/friend-bench">Dataset</a></li>
+                    <li><a href="https://arxiv.org/abs/2607.29602">Paper</a></li>
                     <li><a href="https://huggingface.co/datasets/facebook/seamless-interaction">Source Dataset</a></li></ul></div>
       <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://huggingface.co/datasets/fluid-concepts/friend-bench">Source 1 · huggingface.co</a></li>
                     <li><a href="https://huggingface.co/datasets/fluid-concepts/friend-bench/raw/main/README.md">Source 2 · huggingface.co</a></li>
-                    <li><a href="https://huggingface.co/api/datasets/fluid-concepts/friend-bench">Source 3 · huggingface.co</a></li>
-                    <li><a href="https://huggingface.co/datasets/facebook/seamless-interaction">Source 4 · huggingface.co</a></li>
-                    <li><a href="https://huggingface.co/datasets/facebook/seamless-interaction/raw/main/README.md">Source 5 · huggingface.co</a></li></ul></div>
+                    <li><a href="https://huggingface.co/datasets/fluid-concepts/friend-bench/raw/main/TERMS.md">Source 3 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/fluid-concepts/friend-bench">Source 4 · huggingface.co</a></li>
+                    <li><a href="https://arxiv.org/abs/2607.29602">Source 5 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.29602v1#S3">Source 6 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.29602v1#S4">Source 7 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2607.29602v1#S5">Source 8 · arxiv.org</a></li>
+                    <li><a href="https://huggingface.co/datasets/facebook/seamless-interaction">Source 9 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/facebook/seamless-interaction/raw/main/README.md">Source 10 · huggingface.co</a></li></ul></div>
     </div>
   </details>
 </article>
