@@ -4069,6 +4069,11 @@ pairs, intervention and correction code, predictions, and per-item scores
 therefore remain unavailable. CC BY 4.0 covers the article, not these absent
 derived artifacts or the separately governed CREMA-D and VESUS source audio.
 No counted benchmark family or download helper is added.
+A focused August 10 recheck confirms that arXiv still exposes only version 1,
+updated August 3, and that the paper contains no owner artifact link or release
+statement. Exact-title and arXiv-ID GitHub repository searches and Hugging Face
+dataset and model searches return no matching release. The structured audit is
+now also recorded in the YAML source of truth; the count remains unchanged.
 
 The July 2026 [*Hearing Like Humans? Sound Symbolism and Perceptual Alignment
 in Speech Language Models*](https://arxiv.org/abs/2607.10162) paper remains an

@@ -188,6 +188,82 @@ paper_audits:
       items and implementation are not public. Reassess after acceptance or
       when the authors publish a repository, dataset, evaluator, or ratings.
 
+  speech_llm_decision_rule_readout_coverage_audit:
+    paper: https://arxiv.org/abs/2608.06409
+    title: "Separating Decision-Rule Misalignment from Readout-Coverage Limitations in Speech Language Models"
+    sections: III-V_and_supplementary_sections_S1-S8
+    status: audited_unreleased_derived_speech_llm_diagnostic_protocol
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      The paper tests whether poor emotion answers from speech language models
+      reflect endpoint formatting, a misaligned decision rule, or acoustic
+      evidence that remains decodable in hidden states but is underused by the
+      native answer readout. This directly informs post-training evaluation and
+      alignment interventions rather than treating answer accuracy as a single
+      undifferentiated failure signal.
+    evaluation_inventory:
+      - cited_as: CREMA-D_four_emotion_diagnostic_split
+        index_id: crema_d
+        status: paper_defined_unreleased_derived_split
+        composition: 4900_clips_from_91_speakers
+        protocol: speaker_disjoint_outer_folds_with_prompt_and_option_order_variants
+      - cited_as: VESUS_four_emotion_diagnostic_split
+        index_id: vesus
+        status: paper_defined_unreleased_derived_split
+        composition: 10073_clips_from_10_speakers
+        protocol: speaker_disjoint_outer_folds_with_prompt_and_option_order_variants
+    diagnostic_protocol:
+      generation_aligned_readouts:
+        - emitted_first_answer_token_accuracy
+        - option_only_logit_accuracy
+        - affine_option_contrast_readout_accuracy
+        - full_hidden_state_readout_accuracy
+      derived_gaps:
+        - endpoint_gap
+        - decision_rule_gap
+        - readout_coverage_gap
+      additional_tests:
+        - label_free_transductive_logit_correction
+        - held_out_readout_external_subspace_decoding
+        - matched_minimal_pair_activation_replacement
+        - acoustic_descriptor_and_loudness_controls
+    release_audit:
+      frozen_corpus_selections_and_speaker_folds: not_released
+      prompt_bank_and_answer_parsers: not_released
+      readout_intervention_and_control_code: not_released
+      extracted_logits_states_predictions_and_item_scores: not_released
+      arxiv_version: v1_updated_2026-08-03
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      exact_title_hugging_face_dataset_search: no_results
+      exact_title_hugging_face_model_search: no_results
+      download_helper: none_no_reproducible_public_evaluation_artifact
+    access: internal_unreleased_paper_defined_derived_evaluation
+    license:
+      paper: CC_BY_4_0
+      evaluation_artifacts: not_stated
+      source_data: upstream_family_terms_apply
+      note: >-
+        The article's CC BY 4.0 license covers the paper, not absent derived
+        splits, prompts, activations, predictions, or score records. CREMA-D
+        and VESUS retain their own access and reuse terms.
+    sources:
+      - https://arxiv.org/abs/2608.06409
+      - https://arxiv.org/html/2608.06409v1#S3
+      - https://arxiv.org/html/2608.06409v1#S4
+      - https://arxiv.org/html/2608.06409v1#S5
+      - https://arxiv.org/html/2608.06409v1#Sx1
+      - https://export.arxiv.org/api/query?id_list=2608.06409
+      - https://api.github.com/search/repositories?q=%22Separating%20Decision-Rule%20Misalignment%20from%20Readout-Coverage%20Limitations%22
+      - https://api.github.com/search/repositories?q=2608.06409
+      - https://huggingface.co/api/datasets?search=Separating%20Decision-Rule%20Misalignment
+      - https://huggingface.co/api/models?search=Separating%20Decision-Rule%20Misalignment
+    note: >-
+      No benchmark family is counted. The two source corpora are already
+      indexed, while the paper-specific diagnostic splits, evaluator, and
+      outputs remain unavailable. Reassess if an owner-controlled repository
+      or evaluation package is published.
+
   sembridge_pretraining_evaluation_audit:
     paper: https://arxiv.org/abs/2608.07462
     title: "SemBridge: Semantic Token Anchoring for Continuous-Latent Autoregressive Speech Generation"
