@@ -1004,6 +1004,14 @@ media and all three evaluation families retain upstream terms. The code
 repository has no detected license, and exact benchmark revisions, frozen
 manifests, predictions, and per-item scores are not released. No duplicate
 benchmark family or download helper is added.
+A focused August 9 release recheck records the official repository's complete
+47-path tree at `1c3dbdec5568f7366e76a992349b65e556903a18`. Its August 8 update
+is an empty commit titled `Update README.md` and adds no license, frozen
+evaluation manifest, predictions, or score records. The Hub remains a
+three-file release at revision
+`3472622d1791d5d2ddc7ad0a03bcd55d55b0f83c`: `.gitattributes`, the dataset
+card, and one 73,543,963-byte training JSONL. This confirms that public rubric
+training annotations should not be mistaken for a newly released benchmark.
 
 The July 2026 *Cocktail-Talker* paper is recorded as a spoken-LLM
 post-training and release-status audit. Sections 3-5 use Cocktail-DialogGen to

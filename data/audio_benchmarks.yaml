@@ -4010,7 +4010,7 @@ paper_audits:
     title: "Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning"
     sections: 3-4 and appendices A, C, and D
     status: audited_existing_public_families_with_public_training_rubrics
-    last_verified: 2026-08-06
+    last_verified: 2026-08-09
     evaluated_sets:
       - cited_as: MMAU Test-mini
         index_id: mmau
@@ -4053,6 +4053,11 @@ paper_audits:
       trained_model: released
       evaluation_benchmark_assets: available_from_existing_upstream_families
     release_audit:
+      repository_revision: 1c3dbdec5568f7366e76a992349b65e556903a18
+      repository_tree_paths: 47
+      hugging_face_dataset_revision: 3472622d1791d5d2ddc7ad0a03bcd55d55b0f83c
+      hugging_face_release_files: 3
+      rubric_jsonl_bytes: 73543963
       exact_upstream_benchmark_revisions_and_manifests: not_frozen_separately
       benchmark_audio_and_annotations: not_republished
       model_predictions_and_per_item_scores: not_released
@@ -4080,9 +4085,11 @@ paper_audits:
       - https://arxiv.org/html/2608.02831v1#A4
       - https://audiorubrics.github.io/
       - https://github.com/tianyi-lab/AudioRubrics
+      - https://raw.githubusercontent.com/tianyi-lab/AudioRubrics/main/README.md
       - https://api.github.com/repos/tianyi-lab/AudioRubrics/git/trees/main?recursive=1
       - https://huggingface.co/datasets/umd-zhou-lab/AVQA-Audio-Rubrics
       - https://huggingface.co/api/datasets/umd-zhou-lab/AVQA-Audio-Rubrics
+      - https://huggingface.co/api/datasets/umd-zhou-lab/AVQA-Audio-Rubrics/tree/main?recursive=true&expand=true
       - https://huggingface.co/umd-zhou-lab/AudioRubrics
     note: >-
       This is directly relevant to audio-LLM post-training, reward modeling,
@@ -4094,6 +4101,13 @@ paper_audits:
       indexed and remain obtainable from their owners. The released AVQA
       rubrics are training annotations rather than a benchmark, so this audit
       adds neither a duplicate family nor a download helper.
+      A focused August 9 release recheck records the complete 47-path code tree
+      at `1c3dbdec5568f7366e76a992349b65e556903a18` and the three-file Hub tree
+      at `3472622d1791d5d2ddc7ad0a03bcd55d55b0f83c`. The August 8 repository
+      head is an empty commit titled `Update README.md`; it adds no license,
+      frozen evaluation manifest, predictions, or score records. The Hub still
+      contains only `.gitattributes`, its card, and the 73,543,963-byte training
+      JSONL.
 
   cocktail_talker_turn_action_grpo:
     paper: https://arxiv.org/abs/2607.27756
