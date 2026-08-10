@@ -3896,3 +3896,29 @@ still the literal `YOUR_PAPER_LINK` placeholder and arXiv exposes only version
 1. The repository head remains `604f17f9b93e99ffbb920295ac33542a444a3082`
 from June 22, so neither channel supplies a newer implementation or evaluation
 artifact.
+
+The August 2026 [*Do Audio Language Models Use Paralinguistic
+Evidence?*](https://arxiv.org/abs/2608.06718) paper is recorded as an
+announced-but-unreleased counterfactual audit of
+audio-language-model judges after reviewing Sections 3-5 and Appendices B-E.
+Its main `single-turn-emotions` task derives 189 controlled pairs (378
+pointwise instances) from CAVA's EmoCF subset, holding the transcript fixed
+while changing the synthesized emotion and the appropriate assistant response.
+Its `positional-emotion` task derives 500 paired conversations (1,000
+pointwise instances) from OD3, moving the onset and cause of an affective shift
+while preserving lexical content. Pointwise response choice, pairwise
+contrastive recoverability, perception and oracle response-mapping probes,
+eight-state `(P,O,J)` diagnostics, and a bootstrapped pairwise-minus-pointwise
+protocol gap directly evaluate whether audio-LLM judges and reward evaluators
+actually use paralinguistic evidence during spoken-system post-training and
+evaluation. The paper also reports an earlier 500-instance
+`emotional-conversations` prototype and small human-validation samples, but
+these do not constitute separate released families. The only release statement
+says that the construction pipeline "will be released"; the paper contains no
+project, repository, or dataset URL, and its external links expose no owner
+artifact. The frozen pairs, synthesized audio, annotations, construction and
+quality-control code, prompts, judge outputs, human ratings, and per-item scores
+therefore remain unavailable. CC BY 4.0 covers the article, not those absent
+artifacts or the upstream CAVA, NormBank, OD3, and component dialogue sources.
+No counted benchmark family or download helper is added pending an official
+release.
