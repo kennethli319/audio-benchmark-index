@@ -26,6 +26,7 @@ huggingface-cli login
 scripts/download/mmau.sh
 scripts/download/sakura.sh
 scripts/download/mmar.sh
+scripts/download/mmag.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh
 scripts/download/multichallenge_audio.sh
@@ -1633,6 +1634,11 @@ KIMI_AUDIO_GENTEST_CLONE_TOOLKIT=1 scripts/download/kimi_audio_gentest.sh
 SPEECHPARALING_BENCH_DOWNLOAD_MANIFESTS=1 scripts/download/speechparaling_bench.sh
 SPEECHPARALING_BENCH_DOWNLOAD_HF=1 scripts/download/speechparaling_bench.sh
 SPEECHPARALING_BENCH_CLONE_REPO=1 scripts/download/speechparaling_bench.sh
+
+# MMAG downloads owner documentation, live repository/Hub metadata, and its
+# three released test manifests by default. The approximately 1.06 GB audio
+# snapshot is a separate opt-in; the evaluation pipeline is not yet released.
+MMAG_DOWNLOAD_AUDIO=1 scripts/download/mmag.sh
 
 # Speech-MASSIVE downloads cards, live metadata, and the code license by
 # default. Its roughly 23.7 GB main and 35.8 GB auto-gated test Hub snapshots

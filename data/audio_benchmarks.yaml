@@ -39717,6 +39717,89 @@ benchmarks:
       - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphAssess_Dataset.tar.gz
       - https://dl.fbaipublicfiles.com/speech_expressivity_evaluation/EmphAssess/EmphaClass/EmphaClass-en.tar.gz
 
+  - id: mmag
+    name: MMAG
+    full_name: "MMAG: A Multi-Control Mixed Audio Generation Benchmark"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - audio_generation
+      - audio_language_model_benchmark
+    category: mixed_audio_generation_and_controllability
+    tasks:
+      - text_to_mixed_audio_generation
+      - speech_music_sound_effect_composition
+      - voice_prompt_conditioned_generation
+      - speaker_identity_control
+      - timestamp_conditioned_audio_generation
+      - temporal_event_control
+      - semantic_instruction_following
+      - audio_language_model_judging
+    official:
+      paper: https://arxiv.org/abs/2608.06900
+      project_page: https://hirookie9.github.io/MMAG-Page/
+      repository: https://github.com/HiRookie9/MMAG
+      dataset: https://huggingface.co/datasets/rookie9/MMAG
+    download:
+      access: public_ungated_audio_and_annotations
+      primary:
+        - https://huggingface.co/datasets/rookie9/MMAG
+        - https://github.com/HiRookie9/MMAG
+      examples:
+        - 'scripts/download/mmag.sh'
+        - 'MMAG_DOWNLOAD_AUDIO=1 scripts/download/mmag.sh'
+        - 'from datasets import load_dataset; ds = load_dataset("rookie9/MMAG", "main_set", split="test")'
+      notes: >-
+        The owner release contains three test configurations: 3,974 main-set
+        clips with detailed overall captions; 691 voice-cloning cases with
+        2-5-second speaker prompts; and 1,828 timestamp-control cases with
+        precise speech and foreground-event boundaries. The timestamp set is
+        selected from the main set, and the voice-cloning set is a dedicated
+        capability subset, so these are tracks of one benchmark family rather
+        than separate family counts. The helper downloads owner documentation,
+        live metadata, and all three manifests (about 3.2 MB total) by default.
+        The approximately 1.06 GB audio and prompt snapshot is opt-in.
+    access:
+      status: public_ungated_partial_protocol_release
+      registration_required: false
+      notes: >-
+        Target audio, voice prompts, captions, and exact track manifests are
+        public and ungated. Sections 4-5 evaluate the main set with PANNs-CNN14
+        FD, KL, IS, Audiobox PQ/PC, Whisper WER, UTMOS-v2, CLAP, and
+        AnyAudio-Judge; the voice track adds WeSpeaker SPK-SIM, and the
+        timestamp track adds separate speech and foreground-sound segment F1.
+        The public repository currently contains documentation only and marks
+        the evaluation pipeline as a TODO. Metric code and configurations,
+        generated baseline audio, atomic judge rubrics, extracted timestamps,
+        predictions, and per-item scores were not identified in the release.
+    license:
+      data: CC-BY-4.0_with_noncommercial_card_wording_conflict
+      code: no_detected_license
+      evaluation_artifacts: not_released
+      notes: >-
+        The Hugging Face metadata and card label the dataset CC BY 4.0, but
+        the card's license paragraph also limits it to non-commercial research
+        use; treat that inconsistency conservatively and seek clarification
+        for commercial use. The repository README repeats CC BY 4.0 but has no
+        detected license file. Source clips are selected from AudioCaps,
+        VGGSound, and MECAT test sets, whose dataset, platform-media, and
+        recording terms continue to apply; the aggregate label should not be
+        assumed to override those upstream rights.
+    sources:
+      - https://arxiv.org/abs/2608.06900
+      - https://arxiv.org/html/2608.06900v1#S3
+      - https://arxiv.org/html/2608.06900v1#S4
+      - https://arxiv.org/html/2608.06900v1#S5
+      - https://arxiv.org/html/2608.06900v1#A1
+      - https://arxiv.org/html/2608.06900v1#A4
+      - https://hirookie9.github.io/MMAG-Page/
+      - https://github.com/HiRookie9/MMAG
+      - https://raw.githubusercontent.com/HiRookie9/MMAG/main/README.md
+      - https://api.github.com/repos/HiRookie9/MMAG
+      - https://huggingface.co/datasets/rookie9/MMAG
+      - https://huggingface.co/datasets/rookie9/MMAG/raw/main/README.md
+      - https://huggingface.co/api/datasets/rookie9/MMAG
+
   - id: speechparaling_bench
     name: SpeechParaling-Bench
     full_name: "SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation"

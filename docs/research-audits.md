@@ -4,6 +4,25 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+MMAG is now indexed as a released mixed-audio generation and controllability
+benchmark after reviewing Sections 3-5 and Appendices A-D of the August 2026
+paper and the owner-linked Hugging Face release. Its 3,974-item main set tests
+text-conditioned generation of scenes combining speech, music, and sound;
+691 items additionally supply 2-5-second voice prompts, and 1,828 items supply
+timestamped captions for speech and foreground events. The protocol combines
+distributional and perceptual audio metrics, WER, speaker similarity, UTMOS,
+CLAP, AnyAudio-Judge rubric scores, and separate speech/event segment F1. This
+directly evaluates fine-grained control and audio-language judging for
+post-trained mixed-audio generators and agentic audio systems. The public,
+ungated Hub snapshot releases the three exact manifests, target audio, and
+voice prompts, but the paper's metric pipeline, generated baseline outputs,
+rubrics, predictions, and item scores remain unreleased; the GitHub repository
+still lists the evaluation pipeline as a TODO. The dataset card labels the
+snapshot CC BY 4.0 while also saying it is for non-commercial research, and
+the AudioCaps, VGGSound, and MECAT-derived source media retain their own terms.
+A safe helper downloads only documentation, live metadata, and the three small
+manifests by default; the approximately 1.06 GB audio snapshot is opt-in.
+
 SAKURA is now indexed as a released audio-LLM reasoning benchmark after a
 primary-source review of Sections 2-4 of its Interspeech 2025 paper and the
 official repository. Its Gender, Language, Emotion, and Animal tracks each pair
