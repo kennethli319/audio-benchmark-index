@@ -4183,3 +4183,26 @@ the arXiv perpetual non-exclusive license. HeySQuAD's Hub card declares CC BY
 their own terms; neither licenses absent AuRA artifacts. No benchmark count or
 download helper changes because the paper contributes no independent public
 evaluation family.
+
+The July 2026 *Text-Prompted CLAP: Learning Query-Conditioned Audio
+Representations via Contrastive Learning* paper is recorded as an
+existing-family and unreleased-derived-protocol audit after reviewing Sections
+3.1-3.2 and 4.1-4.4. TP-CLAP tests whether audio-caption contrastive pretraining
+followed by AudioMCQ supervision transfers to AudioCaps and Clotho retrieval;
+zero-shot classification on ESC-50, FSD50K, UrbanSound8K, VocalSound, CREMA-D,
+GTZAN, Beijing Opera, and NSynth; and sound/music question answering on MMAU
+and MMAR. Its distinct evaluation fine-tunes query-conditioned retrieval on
+NSynth instrument, pitch, and source attributes and MagnaTagATune genre,
+instrument, and tempo tags, reporting Precision@K and mAP or multi-label
+SoftPrecision@K and SoftmAP. This directly audits audio-language pretraining
+transfer and whether post-training exposes the acoustic attribute requested by
+a text query. All counted evaluation sources map to existing public families;
+Beijing Opera is only a conventional classification row and is not added in
+this focused increment. The paper links no project or artifact repository, and
+exact-title and arXiv-ID GitHub searches plus TP-CLAP Hugging Face dataset and
+model searches found no owner release. Code, checkpoints, prompt templates,
+class mappings, paper-specific audio-attribute pairs and splits, retrieval
+rankings, predictions, and per-item scores therefore remain unavailable. CC BY
+4.0 covers the article, not those absent artifacts; all upstream datasets and
+source media retain their own terms. No benchmark count or download helper
+changes.

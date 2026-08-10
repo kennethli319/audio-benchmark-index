@@ -2106,6 +2106,100 @@ paper_audits:
       benchmark. Its model-specific selection, predictions, efficiency
       records, implementation, and weights remain unavailable.
 
+  text_prompted_clap_pretraining_transfer_evaluation_audit:
+    paper: https://arxiv.org/abs/2607.25085
+    title: "Text-Prompted CLAP: Learning Query-Conditioned Audio Representations via Contrastive Learning"
+    sections: 3.1-3.2_and_4.1-4.4
+    status: audited_existing_public_families_and_unreleased_paper_specific_protocol
+    last_verified: 2026-08-10
+    pretraining_relevance: >-
+      TP-CLAP tests whether audio-caption contrastive pretraining followed by
+      AudioMCQ supervision produces transferable audio-language
+      representations and whether text-conditioned fusion can expose the
+      acoustic attribute requested by a query. Its retrieval, zero-shot
+      classification, question answering, and prompted audio-to-audio
+      retrieval evaluations directly probe audio-language pretraining and
+      post-training transfer.
+    evaluated_sets:
+      - cited_as: AudioCaps and Clotho test sets
+        index_ids: [audiocaps, clotho]
+        status: existing_public_families
+        protocol: >-
+          Evaluate text-to-audio and audio-to-text retrieval with Recall@1
+          using the underlying CLAP encoders rather than the fusion module.
+      - cited_as: ESC-50, FSD50K, UrbanSound8K, VocalSound, CREMA-D, GTZAN, Beijing Opera, and NSynth
+        index_ids: [esc_50, fsd50k, urbansound8k, vocalsound, crema_d, gtzan, nsynth]
+        status: existing_public_families_except_beijing_opera_not_separately_indexed
+        protocol: >-
+          Evaluate the frozen CLAP encoders in zero-shot classification;
+          FSD50K uses mean average precision and the other seven datasets use
+          accuracy. The paper does not release prompt templates, class-name
+          mappings, or prediction files.
+      - cited_as: MMAU and MMAR sound and music subsets
+        index_ids: [mmau, mmar]
+        status: existing_public_families_with_unreleased_paper_outputs
+        protocol: >-
+          Score each multiple-choice answer by interpolating the similarity of
+          the query-conditioned audio embedding to the choice with the base
+          audio embedding's similarity to the concatenated question and
+          choice, then report accuracy.
+      - cited_as: NSynth and MagnaTagATune attribute-focused retrieval
+        index_ids: [nsynth, magnatagatune]
+        status: existing_public_source_families_unreleased_derived_protocol
+        protocol: >-
+          Fine-tune on instrument-family, pitch, and source attributes for
+          NSynth and genre, instrument, and tempo tags for MagnaTagATune, then
+          compare prompted and unprompted audio-to-audio retrieval using
+          Precision@K and mAP or multi-label SoftPrecision@K and SoftmAP. The
+          paper-specific audio-attribute pairs, query templates, splits, and
+          retrieval rankings are not released.
+    training_data:
+      - cited_as: TP-CLAP pretraining and AudioMCQ supervision
+        status: training_mixture_not_a_benchmark_addition
+        note: >-
+          AudioCaps-v2, Clotho, WavCaps, MACS, and LP-MusicCaps supply 601,000
+          audio-caption pairs, followed by 310,000 sound and music AudioMCQ
+          question-choice pairs. These are training inputs, not new evaluation
+          families merely because this model uses them.
+    release_audit:
+      owner_project_repository_or_dataset: not_released
+      model_code_configuration_and_checkpoints: not_released
+      evaluation_prompts_and_class_mappings: not_released
+      paper_specific_splits_audio_attribute_pairs_and_rankings: not_released
+      predictions_and_per_item_scores: not_released
+      exact_title_and_arxiv_id_github_searches: no_results
+      TP_CLAP_hugging_face_dataset_and_model_searches: no_results
+      download_helper: none_no_paper_specific_public_artifact
+    access: public_upstream_families_paper_specific_artifacts_unreleased
+    license:
+      paper: CC-BY-4.0
+      paper_specific_artifacts: not_stated_and_not_released
+      upstream_data: upstream_family_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not absent code, weights, prompts,
+        derived pairs, rankings, or predictions. The evaluated and training
+        datasets retain their own licenses and source-media terms.
+    sources:
+      - https://arxiv.org/abs/2607.25085
+      - https://arxiv.org/html/2607.25085v1#S3.SS1
+      - https://arxiv.org/html/2607.25085v1#S3.SS2
+      - https://arxiv.org/html/2607.25085v1#S4.SS1
+      - https://arxiv.org/html/2607.25085v1#S4.SS2
+      - https://arxiv.org/html/2607.25085v1#S4.SS3
+      - https://arxiv.org/html/2607.25085v1#S4.SS4
+      - https://export.arxiv.org/api/query?id_list=2607.25085
+      - https://api.github.com/search/repositories?q=%22Text-Prompted%20CLAP%22
+      - https://api.github.com/search/repositories?q=2607.25085
+      - https://huggingface.co/api/datasets?search=TP-CLAP&limit=20
+      - https://huggingface.co/api/models?search=TP-CLAP&limit=20
+    note: >-
+      This audit adds no counted family or helper. The paper evaluates public
+      upstream benchmarks and defines a useful prompted retrieval protocol,
+      but it exposes no official implementation or frozen paper-specific
+      evaluation package. Beijing Opera remains outside this focused increment
+      because the paper only uses it as a conventional zero-shot music
+      classification row and supplies no new release or protocol for it.
+
   speechcombine_pretraining_transfer_evaluation_audit:
     paper: https://arxiv.org/abs/2607.02214
     title: "Unlocking Speech-Text Compositional Powers: Instruction-Following Speech Language Models without Instruction Tuning"
