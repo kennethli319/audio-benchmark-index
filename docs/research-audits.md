@@ -3025,13 +3025,14 @@ VoxCeleb's surviving public metadata and trial lists therefore cover the
 source family but not the new attack implementation, so no duplicate family
 or download helper is added. The original YouTube media is no longer available
 from the owner pages and retains separate rights, privacy, and platform terms.
-A focused August 9 release recheck found only arXiv version 1. Exact-title and
-SpInv-plus-speech GitHub repository searches produced no matching owner
-implementation, while Hugging Face SpInv dataset and model searches returned
-only unrelated, pre-existing assets. The custom attack models, exposed speech-
-LM representations, trial outputs, predictions, and score files therefore
-remain unreleased; this does not change the separately indexed status of the
-upstream VoxCeleb family.
+A focused August 10 release recheck found that arXiv still exposes only version
+1, submitted July 18. Exact-title GitHub results are automated paper listings,
+SpInv-plus-speech results are unrelated, and Hugging Face SpInv dataset and
+model results are unrelated pre-existing assets. The custom attack models,
+exposed speech-LM representations, trial outputs, predictions, and score files
+therefore remain unreleased; this does not change the separately indexed
+status of the upstream VoxCeleb family. CC BY-NC-SA 4.0 covers the article,
+not the absent attack artifacts or separately governed VoxCeleb media.
 
 The July 2026 *From Read Speech to Spoken Digits* paper is recorded as a
 coverage audit over the already indexed AudioMNIST, Speech Commands, and
