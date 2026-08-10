@@ -831,6 +831,11 @@ code, predictions, and scores therefore remain unavailable. Apache 2.0 covers
 the parent repository code, not absent SFC-Bench data or IndexTTS-2-generated
 audio, and the paper's arXiv license grants no data reuse rights. No public
 family or download helper is added.
+A focused August 10 recheck again found HTTP 404 at the claimed path, an empty
+path-specific commit history, and the same complete owner-repository tree at
+`a3708fd41d5dd2a2665c5f281cbfc9242b7642e1`; the repository's latest push
+remains August 3. ArXiv still exposes only version 1, and exact-name Hugging
+Face dataset and model searches remain empty.
 
 MuChin is now indexed as a released music-language benchmark family after a
 primary-source audit of the IJCAI 2024 paper, official repositories, and Hugging

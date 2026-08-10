@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-08-09
+  last_checked: 2026-08-10
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -5356,7 +5356,7 @@ paper_audits:
     title: "Spoken Function Calling: A New Perspective on Spoken Language Understanding for Large Audio Language Models"
     sections: 4-5
     status: audited_claimed_release_missing_from_official_repository
-    last_verified: 2026-08-09
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: SFC-Bench
         index_id: null
@@ -5418,11 +5418,12 @@ paper_audits:
       FunResearch `SpokenFC` path, but that path returns HTTP 404 and the
       repository's complete, non-truncated main-branch tree at commit
       `a3708fd41d5dd2a2665c5f281cbfc9242b7642e1` contains no SpokenFC or
-      SFC-Bench files as of 2026-08-09. An August 9 recheck found the same tree
-      revision and HTTP 404. GitHub's path-specific commit endpoint returns an
-      empty list, and exact-name Hugging Face dataset and model searches return
-      no results. An unrelated 2014 GitHub repository named
-      `sfc-benchmark`
+      SFC-Bench files as of 2026-08-10. An August 10 recheck found the same
+      tree revision and HTTP 404; the repository's latest push remains August
+      3. GitHub's path-specific commit endpoint returns an empty list, arXiv
+      still exposes only version 1, and exact-name Hugging Face dataset and
+      model searches return no results. An unrelated 2014 GitHub repository
+      named `sfc-benchmark`
       concerns space-filling curves and is not an alternative release. This
       audit therefore does not count SFC-Bench as a public benchmark family or
       add a download helper. Revisit the owner repository if the announced
