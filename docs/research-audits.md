@@ -4083,3 +4083,19 @@ CC BY-SA 4.0, but its McCormick pseudoword recordings and Lacey shapes and
 human data are restricted to academic-research sharing described in Appendix
 C; the article license does not release those inputs or the absent derived
 artifacts. No counted family or download helper is added.
+
+The April 2026 *Audio-Cogito* release received a focused August 10 provenance
+recheck after reviewing Sections 2-3, especially Section 3.1.2's MMAR
+evaluation protocol. The paper trains with a public 545,000-sample annotation
+file and evaluates answer accuracy plus five-item, GPT-4o-judged reasoning
+rubrics under the Interspeech 2026 Audio Reasoning Challenge protocol. This is
+directly relevant to audio-LLM post-training, but Audio-Cogito remains training
+data rather than an independent benchmark and its evaluation uses the already
+indexed MMAR family. The complete official GitHub tree remains three entries—a
+README and two pipeline figures—at revision
+`c340904787dfdb7f660071e8c8b2f2a4c281a11e`; the ungated Hub repository remains
+three files at revision `7a13c646a5bd39d82d045bf86e251e215a8dc568`,
+last modified July 3. No Cogito-Pipe code, model checkpoint, MMAR predictions,
+or item-level scores are released. The Hub card's CC BY-NC 4.0 declaration
+covers the annotation release, not upstream audio or absent artifacts. No
+benchmark count or download helper changes.

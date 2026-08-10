@@ -1621,7 +1621,7 @@ paper_audits:
     title: "Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models"
     sections: 2-3
     status: audited_public_training_annotations_existing_benchmark_evaluation
-    last_verified: 2026-08-07
+    last_verified: 2026-08-10
     training_release:
       name: Audio-Cogito
       role: supervised_finetuning_data_not_benchmark
@@ -1677,10 +1677,16 @@ paper_audits:
       repeated_judging: five_runs_report_mean_of_middle_three
       evaluated_model: Audio-Cogito_30B-A3B
     release_audit:
+      arxiv_versions: v3_latest
       github_repository_contents:
         - README
         - pipeline_figure_PNG
         - pipeline_figure_SVG
+      github_head_revision: c340904787dfdb7f660071e8c8b2f2a4c281a11e
+      github_last_pushed: 2026-07-03
+      github_recursive_tree_entries: 3
+      hugging_face_revision: 7a13c646a5bd39d82d045bf86e251e215a8dc568
+      hugging_face_last_modified: 2026-07-03
       cogito_pipe_code: not_released
       seed_question_pool: not_released
       qa_and_cot_generation_prompts: not_released
@@ -1716,7 +1722,11 @@ paper_audits:
       self-distilled chain-of-thought SFT and evaluates the resulting model on
       MMAR. Audio-Cogito is training data without an independent evaluation
       split or protocol, so it is not counted as a benchmark family and no
-      download helper is added.
+      download helper is added. An August 10 recheck found arXiv v3 unchanged,
+      the complete three-entry GitHub tree still limited to a README and two
+      pipeline figures, and the Hub dataset unchanged since July 3. No
+      Cogito-Pipe implementation, model checkpoint, MMAR predictions, or
+      item-level evaluation scores have been released.
 
   latent_im_interaction_management_evaluation_audit:
     paper: https://arxiv.org/abs/2607.26928
