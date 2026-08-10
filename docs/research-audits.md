@@ -2800,6 +2800,17 @@ sampling and filtering 2,000 Audio-Alpaca contrast pairs but provides no
 selected-row manifest, filtering thresholds, checksums, code link, or derived
 archive. The public Audio-Alpaca parent family therefore remains the only
 downloadable source and must not be presented as reproducing that subset.
+A focused August 10 recheck of Sections 3.1-3.2 and Appendices A.1-A.5 confirms
+that version 1 prints the four-player, two-round self-play configuration, GRPO
+hyperparameters, prompt templates, and greedy multiple-choice evaluation
+protocol. It does not specify the duration and near-duplicate thresholds,
+fixed clip duration, or random-seed value, and it releases no executable
+rule-based reward or answer-extraction code, checkpoints, generated clues,
+predictions, or item scores. Exact-title and arXiv-ID GitHub repository
+searches and arXiv-ID Hugging Face dataset/model searches found no owner
+artifact. CC BY 4.0 covers the article, not the absent derived selection or
+artifacts; Audio-Alpaca and its source audio retain their separate terms. No
+count or helper changes.
 
 The July 2026 spectrogram-front-end comparison adds the public
 PhysioNet/CinC 2016 Heart Sound benchmark for normal-versus-abnormal

@@ -17506,9 +17506,9 @@ paper_audits:
   audio_zero_evaluation:
     paper: https://arxiv.org/abs/2607.20166
     title: "Audio-Zero: Label-Free Self-Evolution for Fine-Grained Audio Reasoning"
-    sections: 3.1 and Appendix A.1/B
+    sections: 3.1-3.2 and Appendix A.1-A.5
     status: audited_three_existing_public_benchmarks_unreleased_training_subset
-    last_verified: 2026-07-25
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: TREA
         index_id: trea
@@ -17543,8 +17543,14 @@ paper_audits:
     release_audit:
       evaluation_data: existing_public_families
       paper_specific_training_subset: not_released
-      paper_specific_code: not_linked
-      checkpoints_and_predictions: not_linked
+      selected_pair_manifest_and_checksums: not_released
+      duration_and_near_duplicate_filter_thresholds: not_specified_unreleased
+      fixed_duration_and_random_seed_value: not_specified_unreleased
+      training_and_rule_based_reward_code: not_linked_unreleased
+      evaluation_and_answer_extraction_code: not_linked_unreleased
+      checkpoints_generated_clues_predictions_and_item_scores: not_linked_unreleased
+      exact_title_and_arxiv_id_github_repository_search: zero_matches_on_2026_08_10
+      arxiv_id_hugging_face_dataset_and_model_search: zero_matches_on_2026_08_10
     license:
       paper: CC BY 4.0
       evaluation_data: family_specific_terms_apply
@@ -17553,16 +17559,31 @@ paper_audits:
     sources:
       - https://arxiv.org/abs/2607.20166
       - https://arxiv.org/html/2607.20166v1#S3.SS1
+      - https://arxiv.org/html/2607.20166v1#S3.SS2
       - https://arxiv.org/html/2607.20166v1#A1.SS1.SSS1
+      - https://arxiv.org/html/2607.20166v1#A1.SS4
+      - https://arxiv.org/html/2607.20166v1#A1.SS5
       - https://arxiv.org/html/2607.20166v1#A2
+      - https://export.arxiv.org/api/query?id_list=2607.20166
       - https://github.com/iiscleap/Audio-LLM-benchmarking-uncertainty
       - https://huggingface.co/datasets/declare-lab/audio-alpaca
+      - https://api.github.com/search/repositories?q=%222607.20166%22
+      - https://api.github.com/search/repositories?q=%22Audio-Zero%3A%20Label-Free%20Self-Evolution%22
+      - https://huggingface.co/api/datasets?search=2607.20166
+      - https://huggingface.co/api/models?search=2607.20166
     note: >-
       Audio-Zero introduces a post-training method rather than a new evaluation
       family. Its three reported benchmarks are already indexed with their
       official data paths and license caveats. The paper-specific 2,000-pair
-      Audio-Alpaca selection remains unreleased and is not represented as a
-      downloadable benchmark or given an invented helper.
+      Audio-Alpaca selection remains unreleased. Version 1 prints the self-play
+      configuration, GRPO hyperparameters, prompt templates, and greedy
+      multiple-choice evaluation protocol, but it does not identify a project
+      repository or release the selected-pair manifest, executable reward and
+      evaluation implementations, checkpoints, generated clues, predictions,
+      or item scores. Exact-title and arXiv-ID GitHub searches and arXiv-ID Hub
+      dataset/model searches found no owner artifact on August 10. The derived
+      selection is not represented as a downloadable benchmark or given an
+      invented helper.
 
   hybridcodec_speech_language_model_evaluation:
     paper: https://arxiv.org/abs/2606.27627
