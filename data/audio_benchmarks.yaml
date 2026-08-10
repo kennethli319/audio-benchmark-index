@@ -15357,6 +15357,7 @@ paper_audits:
     title: "Do Speech Tokens Leak Voiceprints? Speaker Inversion Attacks Against End-to-End Speech Language Models"
     sections: 4.1-4.4 and 6
     status: audited_existing_public_family_unreleased_attack_implementation
+    last_verified: 2026-08-09
     public_interfaces: []
     evaluated_sets:
       - cited_as: VoxCeleb1 development and verification test partitions
@@ -15388,11 +15389,15 @@ paper_audits:
       - https://arxiv.org/html/2607.16870v1#S4.SS4
       - https://arxiv.org/html/2607.16870v1#S6
       - https://export.arxiv.org/api/query?id_list=2607.16870
+      - https://api.github.com/search/repositories?q=%22Do%20Speech%20Tokens%20Leak%20Voiceprints%22%20in:name,description,readme
+      - https://api.github.com/search/repositories?q=SpInv%20speech%20in:name,description,readme
+      - https://huggingface.co/api/datasets?search=SpInv&limit=20
+      - https://huggingface.co/api/models?search=SpInv&limit=20
       - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/
       - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
       - https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html
       - https://www.openslr.org/49/
-    note: VoxCeleb is already indexed with its surviving public metadata and trial-list helper. This paper applies standard speaker-disjoint VoxCeleb partitions but introduces a model-frontend attack rather than a separately released benchmark dataset. Because version 1 exposes no official implementation or paper-specific evaluation artifacts, the protocol is recorded as existing-family coverage and no duplicate family or download helper is added.
+    note: VoxCeleb is already indexed with its surviving public metadata and trial-list helper. This paper applies standard speaker-disjoint VoxCeleb partitions but introduces a model-frontend attack rather than a separately released benchmark dataset. An August 9 recheck found only arXiv version 1; exact-title and SpInv-plus-speech GitHub searches returned no matching owner repository, and Hugging Face SpInv searches returned only unrelated pre-existing assets. Because no official implementation or paper-specific evaluation artifacts are exposed, the protocol is recorded as existing-family coverage and no duplicate family or download helper is added.
 
   privacy_preserving_dementia_detection:
     paper: https://arxiv.org/abs/2607.17098
