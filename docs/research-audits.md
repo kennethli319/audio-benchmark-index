@@ -4,6 +4,23 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 [*MoCA: Implicit Social Context
+Analysis*](https://arxiv.org/abs/2608.05825) release is recorded as a public
+but out-of-scope audio false-positive after reviewing Sections 3-6 and
+Appendices B-D. MoCA has 3,108 cases, including 878 video-text instances whose
+owner-hosted Hugging Face release includes matching audio files. However, the
+reported evaluation uniformly samples video frames and converts speech to
+captions; Section 6.1 and Appendix B explicitly say the results are transcript-
+conditioned and do not evaluate direct acoustic perception. The released code
+likewise describes its CoDAR implementation as an intentionally minimal
+reference scaffold rather than the full model-backed pipeline used for the
+paper. The public repository is MIT-licensed and its repository and dataset
+card declare CC BY-NC 4.0 for data, but underlying cases come from existing
+datasets and supplementary real-world sources, so upstream media rights still
+require review. MoCA is therefore not counted as an audio/speech-LLM benchmark
+and receives no download helper; reassess only if a direct-waveform evaluation
+protocol is released.
+
 GlobeAudio is now indexed as a released multilingual, multicultural LALM
 evaluation after reviewing Sections 2.3-2.5, 3.2, and 4.2-4.3 of the June 2026
 paper and the owner-linked Hugging Face release. Its 5,637 native-speaker-

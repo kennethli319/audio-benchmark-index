@@ -9,6 +9,76 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  moca_implicit_social_context_audio_scope_audit:
+    paper: https://arxiv.org/abs/2608.05825
+    title: "MoCA: Implicit Social Context Analysis"
+    sections: 3-6_and_appendices_B-D
+    status: audited_public_release_excluded_transcript_conditioned_not_direct_audio_evaluation
+    last_verified: 2026-08-10
+    scope_finding: >-
+      MoCA contains 878 video-text instances with separately distributed audio,
+      but the reported evaluation uniformly samples video frames and converts
+      speech into captions before inference. Sections 6.1 and Appendix B
+      explicitly state that the audio-related results measure transcript-
+      conditioned multimodal reasoning rather than direct acoustic perception.
+      It therefore does not evaluate an audio or speech LLM interface and is
+      outside this index's focused benchmark count despite the public audio
+      files and audio modality tag.
+    evaluation_inventory:
+      - cited_as: MoCA
+        status: public_released_visual_text_and_transcript_conditioned_protocol
+        instances: 3108
+        modality_split:
+          image_text: 2230
+          video_text: 878
+        scenarios:
+          - affection
+          - intent
+          - stance
+        protocol: >-
+          Predict subject, target, mechanism, and label from image-text pairs
+          or temporally ordered sampled video frames combined with text and
+          speech captions. Report atomic-field accuracy, dyadic alignment,
+          mechanism faithfulness, and holistic alignment. The released media
+          includes an audio file for each video case, but raw audio is not an
+          evaluated-system input in the paper's experiments.
+    release_audit:
+      annotation_json: public_ungated_in_owner_repository
+      image_video_and_audio_media: public_ungated_hugging_face
+      repository_revision: 2bf3a6f99fdff5b86ecb4798d22f30294cf87e60
+      dataset_revision: 65cac9938101e64bd27a4ad8f053209f7ae466ec
+      full_model_backed_CoDAR_reproduction: not_released
+      reference_pipeline: public_but_intentionally_minimal_scaffold
+      download_helper: none_out_of_scope_no_direct_audio_evaluation
+    access: public_ungated_but_out_of_scope_for_direct_audio_evaluation
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      code: MIT
+      dataset: CC_BY_NC_4_0_declared_by_repository_and_dataset_card
+      source_media: upstream_rights_require_separate_review
+      note: >-
+        MIT applies to the repository code, not the benchmark media. The owner
+        repository and Hub card declare CC BY-NC 4.0 for the dataset, but MoCA
+        derives cases from existing datasets and supplementary real-world
+        sources; the declaration should not be treated as proof that all
+        upstream media rights were relicensed.
+    sources:
+      - https://arxiv.org/abs/2608.05825
+      - https://arxiv.org/html/2608.05825v2#S3
+      - https://arxiv.org/html/2608.05825v2#S4
+      - https://arxiv.org/html/2608.05825v2#S6.SS1
+      - https://arxiv.org/html/2608.05825v2#A2
+      - https://github.com/Coder12188/MoCA
+      - https://api.github.com/repos/Coder12188/MoCA
+      - https://api.github.com/repos/Coder12188/MoCA/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/Coder12188/MoCA/main/README.md
+      - https://huggingface.co/datasets/z4722/Implicit_dataset
+      - https://huggingface.co/api/datasets/z4722/Implicit_dataset
+    note: >-
+      No benchmark family is counted and no helper is added. Reassess only if
+      the owners publish a protocol that feeds the released waveforms directly
+      to audio-capable models and reports acoustic or paralinguistic results.
+
   subt_audio_language_few_shot_generalization_audit:
     paper: https://arxiv.org/abs/2606.18560
     title: "Constraining to Generalize: Subspace Tuning for Few-shot Generalization of Audio-Language Models"
