@@ -4037,6 +4037,12 @@ therefore remain unavailable. CC BY 4.0 covers the article, not those absent
 artifacts or the upstream CAVA, NormBank, OD3, and component dialogue sources.
 No counted benchmark family or download helper is added pending an official
 release.
+A focused August 10 recheck confirms that arXiv still exposes only version 1,
+dated August 7, and that the paper's only non-bibliographic artifact statement
+remains Appendix B.2.3's promise to release the full construction pipeline.
+Exact-title and arXiv-ID GitHub repository searches and Hugging Face dataset and
+model searches return no matching release, so the two frozen task families and
+their evaluator remain unavailable rather than public-but-undocumented.
 
 The August 2026 [*Separating Decision-Rule Misalignment from Readout-Coverage
 Limitations in Speech Language Models*](https://arxiv.org/abs/2608.06409)
