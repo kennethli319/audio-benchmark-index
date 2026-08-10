@@ -27,6 +27,7 @@ scripts/download/mmau.sh
 scripts/download/sakura.sh
 scripts/download/mmar.sh
 scripts/download/mmag.sh
+scripts/download/avcap_bench.sh
 scripts/download/mmsu.sh
 scripts/download/big_bench_audio.sh
 scripts/download/multichallenge_audio.sh
@@ -1639,6 +1640,11 @@ SPEECHPARALING_BENCH_CLONE_REPO=1 scripts/download/speechparaling_bench.sh
 # three released test manifests by default. The approximately 1.06 GB audio
 # snapshot is a separate opt-in; the evaluation pipeline is not yet released.
 MMAG_DOWNLOAD_AUDIO=1 scripts/download/mmag.sh
+
+# AVCap-Bench downloads only public paper, collection, and repository metadata.
+# Its 1,000-video benchmark, frozen test JSON, prompts, and evaluator are in a
+# manually gated Hub repository; request access from the owner in a browser.
+scripts/download/avcap_bench.sh
 
 # Speech-MASSIVE downloads cards, live metadata, and the code license by
 # default. Its roughly 23.7 GB main and 35.8 GB auto-gated test Hub snapshots

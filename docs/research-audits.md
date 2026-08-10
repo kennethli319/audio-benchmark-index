@@ -4261,3 +4261,28 @@ rankings, predictions, and per-item scores therefore remain unavailable. CC BY
 4.0 covers the article, not those absent artifacts; all upstream datasets and
 source media retain their own terms. No benchmark count or download helper
 changes.
+
+The August 2026 [*AVCap*](https://arxiv.org/abs/2608.06930) paper adds
+AVCap-Bench as a gated audio-video captioning and factuality benchmark after a
+primary-source review of Sections 3-4 and Appendices A.5 and B.4. The 1,000
+held-out videos were fixed before training, and five annotators checked visual
+facts, audio facts, and audio-visual temporal alignment in every detailed
+reference caption. AVCap-Score generates 20 atomic questions per reference,
+answers them from a candidate caption, grades answer equivalence from 1 to 5,
+and reports visual, audio, joint, and overall scores. This directly evaluates
+multimodal post-training: the paper compares SFT with Detail-Aware GRPO and
+uses the same atomic factuality structure as its dense reward.
+
+The owner Hub collection points to a manually gated `AVCap-Codes` repository.
+Its public API exposes a 2,580-file tree at revision
+`c57d273802944cec717902f26c9d041947960da3`, including exactly 1,000 benchmark
+videos, `testset.json`, fixed prompts, and a resumable three-stage evaluator;
+anonymous file fetches return HTTP 401. The separately gated, approximately
+842.5 GB `AVCap-Dataset` is the 100K-example SFT/GRPO training release, not a
+second benchmark, and the gated 70.5 GB model is likewise kept distinct.
+AVCap-Bench therefore counts as one released but manual-approval family. The
+metadata-only helper does not request access or fetch gated or large assets.
+The paper is CC BY 4.0, while the code/benchmark card declares no license.
+Apache 2.0 labels on the separate training-data and model cards must not be
+extended to the benchmark, and upstream video and platform terms continue to
+apply.

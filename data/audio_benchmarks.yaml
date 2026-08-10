@@ -40440,3 +40440,82 @@ benchmarks:
       - https://huggingface.co/datasets/iNLP-Lab/GlobeAudio/raw/main/README.md
       - https://huggingface.co/api/datasets/iNLP-Lab/GlobeAudio
       - https://huggingface.co/api/datasets/iNLP-Lab/GlobeAudio/tree/main?recursive=true&expand=true&limit=100
+
+  - id: avcap_bench
+    name: AVCap-Bench
+    full_name: AVCap-Bench
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_captioning
+      - audio_language_model_benchmark
+      - multimodal_post_training
+    category: audio_visual_captioning_and_factuality
+    tasks:
+      - detailed_audio_visual_captioning
+      - atomic_audio_fact_coverage
+      - atomic_visual_fact_coverage
+      - audio_visual_alignment
+      - caption_hallucination_evaluation
+      - judge_based_caption_evaluation
+      - reinforcement_learning_reward_evaluation
+    official:
+      paper: https://arxiv.org/abs/2608.06930
+      collection: https://huggingface.co/collections/Apryle/avcap
+      benchmark_and_code: https://huggingface.co/Apryle/AVCap-Codes
+      training_dataset: https://huggingface.co/datasets/Apryle/AVCap-Dataset
+    download:
+      access: manual_approval_required_hugging_face
+      primary:
+        - https://huggingface.co/Apryle/AVCap-Codes
+      examples:
+        - 'scripts/download/avcap_bench.sh'
+      notes: >-
+        AVCap-Bench is a 1,000-video held-out evaluation split fixed before
+        training. Five annotators checked and corrected each detailed caption
+        against visual facts, audio facts, and audio-visual temporal
+        alignment. AVCap-Score creates 20 atomic questions per reference,
+        answers them from a candidate caption, and uses a text judge to assign
+        1-5 semantic-equivalence scores before averaging by visual, audio, and
+        joint dimensions. The owner code repository exposes a 2,580-file tree
+        at revision `c57d273802944cec717902f26c9d041947960da3`, including the
+        1,000 videos, frozen test JSON, prompts, and three-stage evaluation
+        runner, but requires manual Hugging Face approval. The separate
+        approximately 842.5 GB AVCap-Dataset is the SFT/GRPO training release,
+        not an additional benchmark. The helper downloads only public paper,
+        collection, and repository metadata and does not attempt gated files.
+    access:
+      status: released_gated_manual_approval
+      registration_required: true
+      manual_required: true
+      notes: >-
+        The Hub collection, metadata, file names, and revision are public, but
+        both AVCap-Codes and AVCap-Dataset require owner approval. Benchmark
+        videos, captions, atomic questions and answers, prompts, and evaluator
+        code cannot be fetched anonymously. The 70.5 GB model release is also
+        gated and is not benchmark data.
+    license:
+      benchmark_and_code: not_declared_in_repository_card_metadata
+      training_dataset: Apache-2.0_declared_on_dataset_card
+      model: Apache-2.0_declared_on_model_card
+      paper: CC-BY-4.0
+      notes: >-
+        CC BY 4.0 covers the article, not gated benchmark media or code. The
+        AVCap-Codes card exposes no license field, so no benchmark or code
+        license should be inferred. Apache 2.0 is declared separately for the
+        training dataset and model; it does not automatically cover AVCap-Bench
+        or override rights in source videos drawn from AVE, VGGSound,
+        Condensed Movies, AVQA, Trailer30K, MPII-MVAD, and YouTube.
+    sources:
+      - https://arxiv.org/abs/2608.06930
+      - https://arxiv.org/html/2608.06930v1#S3.SS1
+      - https://arxiv.org/html/2608.06930v1#S3.SS2
+      - https://arxiv.org/html/2608.06930v1#S3.SS3
+      - https://arxiv.org/html/2608.06930v1#S4
+      - https://arxiv.org/html/2608.06930v1#A1.SS5
+      - https://arxiv.org/html/2608.06930v1#A2.SS4
+      - https://huggingface.co/collections/Apryle/avcap
+      - https://huggingface.co/api/collections/Apryle/avcap
+      - https://huggingface.co/Apryle/AVCap-Codes
+      - https://huggingface.co/api/models/Apryle/AVCap-Codes
+      - https://huggingface.co/datasets/Apryle/AVCap-Dataset
+      - https://huggingface.co/api/datasets/Apryle/AVCap-Dataset
