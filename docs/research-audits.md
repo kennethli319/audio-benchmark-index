@@ -4099,3 +4099,18 @@ last modified July 3. No Cogito-Pipe code, model checkpoint, MMAR predictions,
 or item-level scores are released. The Hub card's CC BY-NC 4.0 declaration
 covers the annotation release, not upstream audio or absent artifacts. No
 benchmark count or download helper changes.
+
+The July 2026 *Latent-IM* release received a focused August 10 provenance
+recheck after reviewing Sections 3-7 and Appendices A, C, and G. Its directly
+post-training-relevant protocol evaluates whether frozen speech LLMs select
+and realize five conversational moves and predict when to yield the floor,
+using dialogue-grouped derived splits of MapTask, FindTask, and CReST. The
+paper prints generation and Qwen2.5-72B move-classifier prompts and reports a
+500-response, three-annotator validation, but it provides no artifact URL.
+ArXiv remains at version 1; exact-title, arXiv-ID, and author GitHub searches
+and Hugging Face dataset/model searches found no owner release. The frozen
+turn manifests, label mappings, preprocessing and steering implementation,
+generated responses, per-item predictions, and individual MTurk annotations
+therefore remain unavailable. CC BY 4.0 covers the article, not absent derived
+artifacts or the separately governed upstream dialogue corpora. No counted
+benchmark family or download helper is added.

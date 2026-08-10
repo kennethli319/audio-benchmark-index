@@ -1733,7 +1733,7 @@ paper_audits:
     title: "Latent-IM: Latent Interaction Management for Speech LLMs"
     sections: 3-7 and appendices A-C,G
     status: audited_existing_corpora_unreleased_derived_protocol
-    last_verified: 2026-08-07
+    last_verified: 2026-08-10
     evaluation:
       focus: conversational_move_selection_realization_and_turn_completion
       target_moves:
@@ -1792,8 +1792,11 @@ paper_audits:
         blinded MTurk annotations per response; overall classifier-majority
         agreement is 73.9% and human Fleiss' kappa is 0.682.
     release_audit:
+      arxiv_versions: v1_only
       paper_artifact_url: not_provided
       exact_name_github_repository_search: no_matching_owner_repository_found
+      exact_title_github_repository_search: no_matching_repository_found
+      arxiv_id_github_repository_search: no_matching_repository_found
       exact_name_hugging_face_dataset_search: no_matching_release_found
       exact_name_hugging_face_model_search: no_matching_release_found
       frozen_dialogue_and_turn_manifest: not_released
@@ -1829,7 +1832,11 @@ paper_audits:
       and realizes interaction moves and predicts when to yield the floor.
       Because all evaluated rows derive from existing corpora and the paper
       releases no paper-specific artifacts, it is not counted as a new public
-      benchmark family.
+      benchmark family. An August 10 recheck found arXiv v1 unchanged and no
+      artifact URL in the paper; exact-title, arXiv-ID, and author GitHub
+      searches plus Hub dataset and model searches still found no owner
+      release. The frozen derived splits, controller, generations, human
+      annotations, and executable evaluator therefore remain unavailable.
 
   m3_duplexbench_multiturn_spoken_dialogue_release_audit:
     paper: https://arxiv.org/abs/2607.29125
