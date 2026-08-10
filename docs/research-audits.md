@@ -142,12 +142,18 @@ Seed-TTS Eval and CV3-Eval families, using CER or WER, WavLM speaker similarity,
 UTMOS, and reconstruction metrics. The singing-transfer experiment follows
 the GMO-SVS and SoulX-Singer-Eval protocol with CER or WER, similarity, F0
 frame error, SingMOS-Pro, and Sheet-SSQA. The official demo page publicly hosts
-selected speech and singing samples, but the paper-promised ASLP-lab model
-repository returns HTTP 404. No SemBridge evaluation runner, frozen
-configurations, complete generated outputs, predictions, or item-level scores
-are released. The arXiv non-exclusive distribution license covers only the
-article; the unlicensed demo repository and all upstream benchmark families
-retain separate terms. No benchmark count or download helper changes.
+selected speech and singing samples. A focused August 10 recheck found that
+the paper-promised ASLP-lab repository is now public at revision
+`28100677d14ef05851d68074983a01d656dd6467`, correcting the earlier HTTP 404
+finding, but its complete tree contains only a README and model-overview image.
+The README announces only the paper release; no SemBridge model code, weights,
+evaluation runner, frozen configurations, complete generated outputs,
+predictions, or item-level scores are released. It claims Apache 2.0 for code
+and links a `LICENSE` path that is absent from the two-file tree, so the badge
+and prose are not treated as a complete license grant. The arXiv non-exclusive
+distribution license covers only the article; the unlicensed demo repository
+and all upstream benchmark families retain separate terms. No benchmark count
+or download helper changes.
 
 The July 2026 *Safeguards for Speech2Speech LLM-Assistants* release was
 rechecked on August 9 after reviewing its Evaluation Setup and Evaluation
