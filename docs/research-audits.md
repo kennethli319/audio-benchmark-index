@@ -523,6 +523,12 @@ the license only as `other`, while README and dataset-info content return HTTP
 paper's CC BY 4.0 does not license recordings or override MUSAN terms. The
 paper-linked code repository still returns HTTP 404, so no public evaluator or
 Apache-2.0 code release is claimed.
+A focused August 9 release recheck found the paper-linked GitHub API endpoint
+still returning HTTP 404. The manually gated Hugging Face repository remains
+at revision `74e32447ca6bee2d88ab7f3be3532eb5273648be`, last modified August 5,
+with its license tagged only as `other`. Thus the benchmark inputs remain
+manual-access assets, while the promised Apache-2.0 evaluator, prompts, model
+outputs, judgments, and per-item scores are still not publicly verifiable.
 
 The June 2026 *HybridCodec* paper is recorded as an existing-family and
 announced-release audit of a codec used directly as a speech-language-model

@@ -6383,7 +6383,7 @@ paper_audits:
     title: "RedVox: Safety and Fairness Gaps in Speech Models Across Languages"
     sections: 3-4, ethical considerations, and appendix B
     status: audited_manually_gated_public_subset_with_code_still_unreleased
-    last_verified: 2026-08-08
+    last_verified: 2026-08-09
     evaluated_material:
       - cited_as: RedVox released subset
         index_id: redvox
@@ -6409,6 +6409,7 @@ paper_audits:
       hugging_face_reported_storage_bytes: 414474464
       hugging_face_revision: 74e32447ca6bee2d88ab7f3be3532eb5273648be
       code_repository: linked_by_paper_but_currently_returns_404
+      focused_code_and_data_recheck: 2026-08-09_code_still_404_and_hub_revision_unchanged
       full_6118_entry_collection: private_not_for_release
       planned_3414_entry_subset: released_with_manual_gating
     license:
@@ -6443,7 +6444,13 @@ paper_audits:
       the paper's 3,414 evaluation entries. RedVox is therefore indexed with a
       metadata-only safe helper and manual access instructions. The paper-
       linked code repository still returns HTTP 404, so no evaluator or
-      Apache-2.0 code release is claimed.
+      Apache-2.0 code release is claimed. A focused August 9 recheck found the
+      paper-linked GitHub API endpoint still returning HTTP 404, while the
+      manually gated Hub remained at revision
+      `74e32447ca6bee2d88ab7f3be3532eb5273648be` last modified August 5. The
+      benchmark audio and metadata therefore remain manually gated, and the
+      promised evaluator, prompts, model outputs, judgments, and per-item
+      scores remain unavailable as a verifiable Apache-2.0 release.
 
   output_based_multi_microphone_speech_enhancement:
     paper: https://arxiv.org/abs/2607.12529
