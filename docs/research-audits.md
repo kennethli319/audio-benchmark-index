@@ -3922,3 +3922,29 @@ therefore remain unavailable. CC BY 4.0 covers the article, not those absent
 artifacts or the upstream CAVA, NormBank, OD3, and component dialogue sources.
 No counted benchmark family or download helper is added pending an official
 release.
+
+The August 2026 [*Separating Decision-Rule Misalignment from Readout-Coverage
+Limitations in Speech Language Models*](https://arxiv.org/abs/2608.06409)
+paper is recorded as an unreleased derived-protocol audit after reviewing
+Sections III-V and Supplementary Sections S1-S8. It evaluates five speech
+language models on filtered four-emotion subsets of the already indexed
+CREMA-D family (4,900 clips, 91 speakers) and VESUS (10,073 clips, 10
+speakers). Its generation-aligned diagnostic ladder measures the same first
+answer-token event as emitted-answer accuracy, option-only logit accuracy,
+affine option-contrast readout accuracy, and full hidden-state readout
+accuracy; their successive differences isolate endpoint, decision-rule, and
+readout-coverage gaps. Speaker-disjoint outer folds, label-free transductive
+logit correction, held-out subspace decoding, matched minimal-pair activation
+replacement, and acoustic-descriptor and loudness controls further distinguish
+paralinguistic information availability from its behavioral use. This directly
+audits speech-LLM post-training and evaluation because an apparently weak
+emotion answer can reflect a misaligned decision rule or unused internal
+evidence rather than failed acoustic representation. The paper supplies
+aggregate and supplementary tables but links no project, repository, or
+dataset artifact; exact-name GitHub and Hugging Face searches on August 9 found
+no owner release. Frozen corpus selections and speaker folds, prompt bank,
+parsers, extracted logits and states, subspace-selection seeds, receiver-donor
+pairs, intervention and correction code, predictions, and per-item scores
+therefore remain unavailable. CC BY 4.0 covers the article, not these absent
+derived artifacts or the separately governed CREMA-D and VESUS source audio.
+No counted benchmark family or download helper is added.
