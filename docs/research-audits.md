@@ -4164,3 +4164,22 @@ repository has no license; neither its media nor the absent benchmark assets
 inherit the article's arXiv license. M3-DuplexBench therefore remains an
 uncounted, non-reproducible derived protocol with no helper, now documented as
 a partial qualitative-demo release rather than wholly unlocated.
+
+The June 2026 *AuRA: Internalizing Audio Understanding into LLMs as LoRA*
+paper is recorded as an existing-family evaluation audit after reviewing
+Sections 3-4 and Appendix A. AuRA distills a frozen Whisper-large-v3 encoder
+into early LoRA-adapted LLM layers and removes the teacher at inference, making
+its results directly relevant to transfer from pretrained speech encoders into
+LLMs. It evaluates the public HeySQuAD human validation data with PEDANTS and
+the public 494-question SD-QA release with CFM across eleven dialect groups,
+then reports mean end-to-end latency and peak H20 inference memory. The paper
+describes an approximately 1,000-pair HeySQuAD selection but does not release
+its frozen manifest. It links no project or artifact repository; exact-title
+and arXiv-ID GitHub searches and arXiv-ID Hugging Face dataset/model searches
+found no owner release. Code, configuration, LoRA weights, predictions,
+per-item scores, and timing records remain unavailable. The article has only
+the arXiv perpetual non-exclusive license. HeySQuAD's Hub card declares CC BY
+4.0 for its owner-hosted data, while SD-QA and all underlying sources retain
+their own terms; neither licenses absent AuRA artifacts. No benchmark count or
+download helper changes because the paper contributes no independent public
+evaluation family.

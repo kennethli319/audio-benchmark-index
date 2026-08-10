@@ -2029,6 +2029,83 @@ paper_audits:
       The qualitative demo does not make the benchmark reproducible and does
       not justify a counted family or download helper.
 
+  aura_speech_encoder_transfer_evaluation_audit:
+    paper: https://arxiv.org/abs/2606.11033
+    title: "AuRA: Internalizing Audio Understanding into LLMs as LoRA"
+    sections: 3-4_and_appendix_A
+    status: audited_existing_public_evaluation_families_with_unreleased_model_artifacts
+    last_verified: 2026-08-10
+    pretraining_transfer_relevance: >-
+      AuRA distills representations from a frozen Whisper-large-v3 encoder into
+      early LoRA-adapted LLM layers, then removes the teacher at inference.
+      Its evaluation directly tests transfer from a pretrained speech encoder
+      into an LLM through spoken question answering, dialect robustness, and
+      accuracy-efficiency trade-offs.
+    evaluation_inventory:
+      - cited_as: HeySquad
+        official_dataset: https://huggingface.co/datasets/yijingwu/HeySQuAD_human
+        status: public_ungated_upstream_validation_split
+        composition: approximately_1000_validation_QA_pairs_as_reported_by_AuRA
+        protocol: >-
+          Evaluate spoken answers with PEDANTS. AuRA reports answer quality,
+          mean end-to-end wall-clock latency per sample, and peak inference GPU
+          memory on one NVIDIA H20. The broader owner-hosted HeySQuAD release
+          contains 71,990 train and 4,158 validation examples; the paper does
+          not release its exact approximately-1,000-item selection.
+      - cited_as: Spoken_Dialect_Question_Answering_SDQA
+        official_dataset: https://huggingface.co/datasets/WillHeld/SD-QA
+        status: public_ungated_upstream_494_question_evaluation
+        protocol: >-
+          Evaluate 494 questions across eleven regional English dialect groups
+          with CFM, plus mean latency and peak inference GPU memory. SDQA is
+          also a VoiceBench track elsewhere in this index, so this paper does
+          not create a distinct benchmark family.
+    training_data_not_benchmarks:
+      - 10000_English_CommonVoice_speech_transcription_pairs
+      - 10000_VoRA_TextQA_Mixed_text_examples
+    release_audit:
+      arxiv_version: v1_only
+      paper_artifact_url: not_provided
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      arxiv_id_hugging_face_dataset_search: no_results
+      arxiv_id_hugging_face_model_search: no_results
+      exact_HeySquad_subset_manifest: not_released
+      model_code_configuration_and_LoRA_weights: not_released
+      predictions_per_item_scores_and_latency_records: not_released
+      download_helper: not_added_no_new_evaluation_artifact
+    access: public_upstream_benchmarks_unreleased_AuRA_artifacts
+    license:
+      paper: arxiv_perpetual_nonexclusive_license
+      AuRA_artifacts: not_stated_and_not_released
+      HeySquad_card: CC_BY_4_0
+      SDQA_and_source_data: upstream_terms_apply
+      note: >-
+        The arXiv distribution license covers the article, not absent model or
+        evaluation artifacts. The HeySQuAD Hub card's CC BY 4.0 declaration
+        applies to that owner-hosted dataset; it does not license AuRA outputs
+        or override SQuAD and recording-source rights. Verify SDQA and all
+        upstream terms independently before redistribution.
+    sources:
+      - https://arxiv.org/abs/2606.11033
+      - https://arxiv.org/html/2606.11033v1#S3
+      - https://arxiv.org/html/2606.11033v1#S4
+      - https://arxiv.org/html/2606.11033v1#A1
+      - https://export.arxiv.org/api/query?id_list=2606.11033
+      - https://huggingface.co/datasets/yijingwu/HeySQuAD_human
+      - https://huggingface.co/datasets/yijingwu/HeySQuAD_human/raw/main/README.md
+      - https://huggingface.co/api/datasets/yijingwu/HeySQuAD_human
+      - https://huggingface.co/datasets/WillHeld/SD-QA
+      - https://api.github.com/search/repositories?q=%22AuRA%3A%20Internalizing%20Audio%20Understanding%22
+      - https://api.github.com/search/repositories?q=2606.11033
+      - https://huggingface.co/api/datasets?search=2606.11033&limit=20
+      - https://huggingface.co/api/models?search=2606.11033&limit=20
+    note: >-
+      No benchmark family or helper is added. AuRA evaluates two public
+      upstream spoken-QA resources and contributes no independently released
+      benchmark. Its model-specific selection, predictions, efficiency
+      records, implementation, and weights remain unavailable.
+
   speechcombine_pretraining_transfer_evaluation_audit:
     paper: https://arxiv.org/abs/2607.02214
     title: "Unlocking Speech-Text Compositional Powers: Instruction-Following Speech Language Models without Instruction Tuning"
