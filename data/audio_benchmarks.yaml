@@ -9,6 +9,99 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  subt_audio_language_few_shot_generalization_audit:
+    paper: https://arxiv.org/abs/2606.18560
+    title: "Constraining to Generalize: Subspace Tuning for Few-shot Generalization of Audio-Language Models"
+    sections: 4_and_appendices_A-C_and_E
+    status: audited_existing_family_pretraining_transfer_protocol_unreleased_implementation
+    last_verified: 2026-08-10
+    pretraining_relevance: >-
+      The protocol measures whether few-shot adaptation of pretrained
+      audio-language embedding spaces preserves zero-shot transfer to unseen
+      classes and datasets. It directly evaluates retention and exposure of
+      knowledge learned during audio-text contrastive pretraining rather than
+      treating downstream base-class accuracy as sufficient.
+    evaluation_inventory:
+      - cited_as: base_to_new_audio_language_model_generalization
+        status: paper_defined_protocol_over_existing_dataset_families
+        backbone_models:
+          - Pengi
+          - MS_CLAP_appendix_replication
+        datasets:
+          - Beijing_Opera
+          - NS_Instruments
+          - ESC_50
+          - ESC50_Actions
+          - UrbanSound8K
+          - CREMA_D
+          - RAVDESS
+          - SESA
+          - GT_Music_Genre
+          - VocalSound
+          - TUT_Acoustic_Scenes_2017
+        protocol: >-
+          Split every dataset's class vocabulary into disjoint base and new
+          halves, train with 16 labeled examples per base class for 50 epochs,
+          and evaluate base and unseen-class accuracy plus their harmonic mean.
+          Report means over three random seeds. Appendix A gives total and base
+          class counts plus one prompt template per task type, but not the
+          actual class assignments or seed values.
+        metrics:
+          - base_class_accuracy
+          - new_class_accuracy
+          - base_new_harmonic_mean
+          - class_embedding_Gram_drift
+          - class_embedding_magnitude_drift
+      - cited_as: cross_dataset_audio_language_model_generalization
+        status: paper_defined_protocol_over_existing_dataset_families
+        transfer_pairs:
+          - NS_Instruments_to_Beijing_Opera
+          - RAVDESS_to_CREMA_D
+          - ESC50_Actions_to_UrbanSound8K
+        protocol: >-
+          Adapt on every class of the source dataset, then evaluate the unseen
+          target dataset without further adaptation. Report source and target
+          accuracy averaged over three random seeds.
+    release_audit:
+      source_dataset_assets: separately_governed_existing_families
+      frozen_base_new_class_assignments: not_released
+      support_example_manifests: not_released
+      random_seed_values: not_released
+      SubT_implementation_and_configs: not_released
+      checkpoints_predictions_and_item_scores: not_released
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      arxiv_id_hugging_face_model_search: no_results
+      arxiv_id_hugging_face_dataset_search: no_results
+      download_helper: none_no_independent_public_evaluation_artifact
+    access: mixed_public_source_families_unreleased_derived_protocol_artifacts
+    license:
+      paper: CC_BY_4_0
+      protocol_artifacts: not_released_no_terms
+      source_data: upstream_family_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not absent code, split manifests,
+        checkpoints, predictions, or scores. Appendix E lists heterogeneous
+        upstream terms, including non-commercial restrictions; its summary
+        does not relicense any source dataset or derivative.
+    sources:
+      - https://arxiv.org/abs/2606.18560
+      - https://arxiv.org/html/2606.18560v1#S4
+      - https://arxiv.org/html/2606.18560v1#A1
+      - https://arxiv.org/html/2606.18560v1#A2
+      - https://arxiv.org/html/2606.18560v1#A3
+      - https://arxiv.org/html/2606.18560v1#A5
+      - https://export.arxiv.org/api/query?id_list=2606.18560
+      - https://api.github.com/search/repositories?q=%22Constraining%20to%20Generalize%22
+      - https://api.github.com/search/repositories?q=2606.18560
+      - https://huggingface.co/api/models?search=2606.18560
+      - https://huggingface.co/api/datasets?search=2606.18560
+    note: >-
+      No benchmark family is counted. The evaluation sources are existing
+      classification families, and the paper-specific derived protocol cannot
+      be independently reproduced without its class splits, support manifests,
+      seeds, and implementation. Reassess if the authors release these assets.
+
   composable_emotion_steering_evaluation_audit:
     paper: https://arxiv.org/abs/2607.00946
     title: "A Geometric Perspective on Composable Emotion Steering in Text-to-Speech Models"

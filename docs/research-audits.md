@@ -4,6 +4,27 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The June 2026 [*Constraining to Generalize: Subspace Tuning for Few-shot
+Generalization of Audio-Language Models*](https://arxiv.org/abs/2606.18560)
+paper is recorded as an existing-family pretraining-transfer audit after
+reviewing Section 4 and Appendices A-C and E. Its base-to-new protocol splits
+the class vocabulary of eleven audio classification datasets into disjoint
+halves, adapts pretrained Pengi embeddings with 16 shots per base class, and
+reports base accuracy, unseen-class accuracy, their harmonic mean, and two
+forms of zero-shot embedding drift over three seeds. A second protocol trains
+on NS-Instruments, RAVDESS, or ESC50-Actions and transfers without further
+adaptation to Beijing Opera, CREMA-D, or UrbanSound8K; Appendix C repeats most
+of the suite with MS-CLAP. This directly tests whether few-shot post-training
+preserves representations learned during audio-text pretraining. The paper
+provides total/base class counts and prompt templates, but not the frozen
+class assignments, support-example manifests, seed values, SubT code or
+configuration, checkpoints, predictions, or item scores. Exact-title and
+arXiv-ID GitHub searches and arXiv-ID Hugging Face model and dataset searches
+found no owner release on August 10. CC BY 4.0 covers the article, not those
+absent artifacts; Appendix E lists heterogeneous upstream terms, including
+non-commercial restrictions, without relicensing them. No counted family or
+download helper is added.
+
 MMAG is now indexed as a released mixed-audio generation and controllability
 benchmark after reviewing Sections 3-5 and Appendices A-D of the August 2026
 paper and the owner-linked Hugging Face release. Its 3,974-item main set tests
