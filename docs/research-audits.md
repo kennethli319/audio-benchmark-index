@@ -4737,3 +4737,27 @@ license covers only the article; it does not license those absent artifacts,
 and generated-voice and model-output rights require separate review. ZBB is
 therefore not counted and receives no download helper until an owner-controlled
 benchmark package is released.
+
+The March 2026 [*CMI-RewardBench*](https://arxiv.org/abs/2603.00610) family now
+has a focused release-completeness audit after re-reading Sections 3.1-3.2 and
+4.1. The public composite test manifest contains 2,753 held-out rows: 500
+CMI-Pref human votes balanced across four conditioning modalities, 500 PAM
+music clips, 413 MusicEval test clips, and 1,340 filtered Music Arena pairs.
+Scalar PAM and MusicEval labels use LCC, SRCC, and Kendall tau; pairwise
+CMI-Pref and Music Arena labels use preference accuracy. This directly audits
+post-training reward models and audio-language-model judges for musicality,
+text and lyrics alignment, and reference-audio-conditioned instruction
+following.
+
+The August 11 owner snapshot at revision
+`9235ef5c34106b63669958adfaa2eab61bd0e2cd` releases the frozen manifest,
+configuration, end-to-end inference and metric code, and a baseline adapter.
+Its separate `all_train.jsonl` is correctly identified as baseline-tuning data,
+not a fifth benchmark track. CMI-Pref is public and ungated at revision
+`5282fbe784e326014894b299cb22645cd7d56057`; its roughly 15 GB of audio remains
+opt-in in the existing helper. The repository does not release model
+prediction files or per-item baseline scores. Apache 2.0 covers the evaluation
+code, while CMI-Pref declares CC BY-NC-SA 4.0 and PAM, MusicEval, Music Arena,
+commercially generated music, and reference audio retain their own terms. This
+is a provenance and dataset/protocol separation improvement to an existing
+family, so the benchmark count and helper behavior remain unchanged.

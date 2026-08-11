@@ -35994,11 +35994,29 @@ benchmarks:
         MusicEval, and Music Arena for music reward-model evaluation. The helper
         downloads the official cards, repository docs/configuration, the
         approximately 620 KB CMI-Pref test JSONL, and the approximately 4.8 MB
-        composite test manifest by default. The Hugging Face API reports
+        composite test manifest by default. At repository revision
+        9235ef5c34106b63669958adfaa2eab61bd0e2cd, that manifest has 2,753
+        held-out rows: 500 CMI-Pref votes, 500 PAM clips, 413 MusicEval clips,
+        and 1,340 filtered Music Arena pairs. The repository's separate
+        8.1 MB `all_train.jsonl` is baseline-tuning data, not another benchmark
+        split, and the helper intentionally does not fetch it. The Hugging
+        Face CMI-Pref snapshot is pinned by provenance at revision
+        5282fbe784e326014894b299cb22645cd7d56057. Its API reports
         approximately 15.0 GB of repository storage, so all MP3 assets require
         explicit opt-in. A July 2026 full-song generation report uses
         CMI-Reward as one evaluator on its separate 500-example multilingual
         test set; that paper does not release those 500 evaluation inputs.
+    access:
+      status: public_ungated_released_benchmark_and_evaluator
+      registration_required: false
+      notes: >-
+        The frozen JSONL manifests, evaluation configuration, inference runner,
+        metric implementation, and baseline adapter are public. Reproduction
+        of all four tracks also downloads their audio from CMI-Pref, PAM,
+        MusicEval, and Music Arena through the owner script; those upstream
+        releases retain their own availability and terms. Published aggregate
+        tables are available, but model prediction files and per-item baseline
+        scores are not included in the repository tree.
     license:
       data: CC-BY-NC-SA-4.0
       code: Apache-2.0
@@ -36019,6 +36037,8 @@ benchmarks:
       - https://raw.githubusercontent.com/Haiwen-Xia/CMI-RewardBench/main/LICENSE
       - https://raw.githubusercontent.com/Haiwen-Xia/CMI-RewardBench/main/config/eval_benchmark.yaml
       - https://api.github.com/repos/Haiwen-Xia/CMI-RewardBench
+      - https://api.github.com/repos/Haiwen-Xia/CMI-RewardBench/commits/main
+      - https://api.github.com/repos/Haiwen-Xia/CMI-RewardBench/git/trees/main?recursive=1
       - https://huggingface.co/datasets/HaiwenXia/cmi-pref
       - https://huggingface.co/datasets/HaiwenXia/cmi-pref/raw/main/README.md
       - https://huggingface.co/api/datasets/HaiwenXia/cmi-pref
