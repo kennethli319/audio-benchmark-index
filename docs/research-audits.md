@@ -2412,7 +2412,15 @@ four context-aware reasoning tasks, but version 1 provides no project,
 repository, dataset card, item manifest, archive, code, or download link. Its
 promised Appendix A.1 statistics and appendix examples are also absent from the
 arXiv HTML and source package, so the index does not infer a benchmark size or
-license absent evaluation assets.
+license absent evaluation assets. A focused August 10 recheck found arXiv
+version 1 unchanged and no external artifact link in the complete paper HTML.
+Exact-title and arXiv-ID GitHub repository searches returned zero results, and
+CASU-audio Hugging Face dataset and model searches were empty. The scenes,
+four-option questions and answers, frozen selection, generation and filtering
+pipeline, evaluator, predictions, and item scores remain unreleased. CASU is
+directly relevant to audio-LLM post-training because its layer ablations and
+text-hint condition test acoustic reliance and reasoning robustness across
+interacting speech, events, and ambience; it remains uncounted with no helper.
 
 The June 2026 AOR-Bench paper is also recorded as an unreleased audio-safety
 protocol rather than a public benchmark family. It reports 3,000

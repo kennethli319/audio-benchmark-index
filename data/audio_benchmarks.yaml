@@ -15371,8 +15371,16 @@ paper_audits:
 
   casu_context_aware_auditory_scene_understanding:
     paper: https://arxiv.org/abs/2606.25391
+    title: "From Sounds to Scenes: A Benchmark for Evaluating Context-Aware Auditory Scene Understanding in Large Audio Language Models"
     sections: 2.1-2.2, 3, and 7
     status: audited_not_indexed_no_public_release
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      CASU tests whether instruction-following audio-language models reason
+      jointly over speech, discrete events, and background ambience rather
+      than answering from transcripts or question priors. Its layer ablations,
+      four-option questions, and text-hint condition directly probe acoustic
+      reliance and reasoning robustness after post-training.
     evaluated_sets:
       - cited_as: CASU
         index_id: null
@@ -15388,11 +15396,24 @@ paper_audits:
     protocol_note: >-
       CASU tests whether audio-language models integrate speech, discrete
       events, and background ambience rather than treating those layers
-      independently. The paper says candidate questions are filtered by
-      multiple LLM critics and then by humans, but its promised Appendix A.1
-      dataset statistics and appendix examples are absent from the v1 HTML
-      and source package. This audit therefore does not infer a benchmark size
-      or count CASU as a downloadable family.
+      independently. Scene description uses BLEU-4, BERTScore, event-recall
+      judging, and WER; the four reasoning tracks use accuracy over four-option
+      questions. The paper says candidate questions are filtered by multiple
+      LLM critics and then by humans, but its promised Appendix A.1 dataset
+      statistics and appendix examples are absent from the v1 HTML and source
+      package. This audit therefore does not infer a benchmark size or count
+      CASU as a downloadable family.
+    release_audit:
+      arxiv_version: v1_unchanged_since_2026-06-24
+      paper_external_artifact_links: none
+      exact_title_github_repository_search: no_matching_repository
+      arxiv_id_github_repository_search: no_matching_repository
+      casu_audio_hugging_face_dataset_search: no_matching_dataset
+      casu_audio_hugging_face_model_search: no_matching_model
+      audio_questions_answers_and_frozen_manifest: not_released
+      generation_and_filtering_pipeline: not_released
+      evaluator_predictions_and_per_item_scores: not_released
+      download_helper: none_manual_required_unreleased
     license_note: >-
       The paper is CC BY 4.0, but that license does not release absent CASU
       audio, questions, annotations, scripts, or evaluation code. The derived
@@ -15406,6 +15427,17 @@ paper_audits:
       - https://arxiv.org/html/2606.25391v1#S3
       - https://arxiv.org/html/2606.25391v1#S7
       - https://export.arxiv.org/e-print/2606.25391v1
+      - https://api.github.com/search/repositories?q=%22Context-Aware%20Auditory%20Scene%20Understanding%22
+      - https://api.github.com/search/repositories?q=%222606.25391%22
+      - https://huggingface.co/api/datasets?search=CASU%20audio&limit=50
+      - https://huggingface.co/api/models?search=CASU%20audio&limit=50
+    note: >-
+      A focused August 10 release recheck found arXiv version 1 unchanged and
+      no external artifact link in the complete paper HTML. Exact-title and
+      arXiv-ID GitHub repository searches returned zero results, and CASU-audio
+      Hugging Face dataset and model searches were empty. The paper-specific
+      scenes, questions, answers, frozen selection, pipeline, evaluator, and
+      score records therefore remain unreleased; no family or helper is added.
 
   aor_bench_audio_over_refusal:
     paper: https://arxiv.org/abs/2606.21147
