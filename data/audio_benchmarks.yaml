@@ -330,7 +330,7 @@ paper_audits:
     title: "A Geometric Perspective on Composable Emotion Steering in Text-to-Speech Models"
     sections: 2-4
     status: audited_unreleased_derived_speech_llm_controllability_evaluation
-    last_verified: 2026-08-09
+    last_verified: 2026-08-10
     post_training_relevance: >-
       The paper evaluates activation steering at the speech-language-model and
       conditional-flow-matching stages of CosyVoice2. Its probes and synthesis

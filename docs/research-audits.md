@@ -128,7 +128,7 @@ rate, WavLM speaker similarity, and Whisper-large-v3 WER directly evaluate
 post-training and inference-time controllability while checking speaker and
 content preservation. The paper releases only aggregate figures and tables: it
 links no project or artifact repository, and exact-title GitHub plus Hugging
-Face model and dataset searches found no owner release on August 9. Frozen
+Face model and dataset searches found no owner release on August 10. Frozen
 source selections and speaker splits, mixed-emotion annotation targets, probe
 and LID code, steering vectors and settings, generated audio, predictions, and
 item scores remain unavailable. The arXiv perpetual non-exclusive license
