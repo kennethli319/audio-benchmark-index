@@ -9,6 +9,102 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  madbench_audio_deepfake_release_audit:
+    paper: https://arxiv.org/abs/2608.09593
+    title: "MADBench: A Benchmark for Modality-Aware Audio Deepfake Detection"
+    sections: 3-5
+    status: audited_unreleased_audio_visual_omni_model_safety_benchmark
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      MADBench tests whether zero-shot omni models can detect and attribute
+      independently manipulated speech and environmental audio over authentic
+      video, including whether they use audio-visual scene consistency. This is
+      directly relevant to audio-LLM safety and robustness: the protocol
+      exposes failures that a single real-or-fake audio label hides and
+      separates acoustic artifact detection from multimodal reasoning.
+    evaluation_inventory:
+      - cited_as: MADBench
+        status: paper_defined_but_no_owner_artifact_release_located
+        source_corpus: AVSpeech
+        generation_eligible_source_clips: 1892
+        final_source_clips:
+          total: 1378
+          train: 986
+          validation: 143
+          test: 249
+        samples_per_protocol:
+          total: 5512
+          train: 3944
+          validation: 572
+          test: 996
+        protocols:
+          - balanced_scene_matched_and_mismatched
+          - scene_matched
+          - scene_mismatched
+        final_audio_visual_samples_across_three_protocols: 16536
+        sample_labels:
+          - real_speech_and_real_environment
+          - fake_speech_and_real_environment
+          - real_speech_and_fake_environment
+          - fake_speech_and_fake_environment
+        tasks:
+          - binary_any_fake_detection
+          - four_way_manipulation_classification
+          - multilabel_speech_and_environment_attribution
+        controlled_analyses:
+          - scene_consistency
+          - generator_generalization
+          - audio_only_versus_audio_visual_input
+        metrics:
+          - ROC_AUC
+          - EER
+          - accuracy
+          - macro_F1
+        zero_shot_omni_models:
+          - Qwen2.5-Omni-7B
+          - MiniCPM-o_4.5
+          - Gemma-4-E4B-it
+          - Baichuan-Omni-1.5
+        note: >-
+          The paper also fits logistic-regression heads to frozen forensic,
+          audio, and audio-visual encoders. These are benchmark baselines, not
+          additional dataset tracks.
+    release_audit:
+      paper_and_aggregate_tables: public
+      owner_project_dataset_or_code_link_in_paper: none
+      exact_arxiv_id_github_repository_search: no_results
+      exact_title_and_audio_deepfake_github_repository_search: no_results
+      exact_name_hugging_face_dataset_search: unrelated_name_collisions_only
+      source_split_and_derived_sample_manifests: not_released
+      benchmark_audio_video_labels_and_scene_taxonomy: not_released
+      generation_prompts_pairing_tables_and_quality_control_records: not_released
+      evaluation_code_fixed_omni_prompts_and_model_outputs: not_released
+      baseline_predictions_and_per_item_scores: not_released
+      download_helper: none_no_owner_controlled_public_artifact_located
+    access: paper_public_benchmark_assets_unreleased
+    license:
+      paper: CC_BY_4_0
+      benchmark_data_and_code: not_released_no_terms
+      upstream: AVSpeech_YouTube_and_generation_model_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not the absent benchmark package.
+        Authentic source video, separated stems, synthesized speech and
+        environmental audio, annotations, and service or model outputs retain
+        their applicable upstream rights and terms.
+    sources:
+      - https://arxiv.org/abs/2608.09593
+      - https://arxiv.org/html/2608.09593v1#S3
+      - https://arxiv.org/html/2608.09593v1#S4
+      - https://arxiv.org/html/2608.09593v1#S5
+      - https://export.arxiv.org/api/query?id_list=2608.09593
+      - https://api.github.com/search/repositories?q=%222608.09593%22
+      - https://api.github.com/search/repositories?q=%22MADBench%22%20audio%20deepfake
+      - https://huggingface.co/api/datasets?search=MADBench
+    note: >-
+      No benchmark family is counted and no helper is added. Reassess when the
+      owners publish frozen splits, benchmark media or reproducible source
+      manifests, evaluator code, and explicit artifact terms.
+
   reframed_audio_description_generation_release_audit:
     paper: https://arxiv.org/abs/2608.09765
     title: "REFRAMED: Towards Realistic Audio Description Generation for Movies"

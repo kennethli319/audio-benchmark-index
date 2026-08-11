@@ -1,5 +1,30 @@
 # Research and release audits
 
+The August 2026 [*MADBench*](https://arxiv.org/abs/2608.09593) paper is
+recorded as an unreleased audio-visual safety benchmark audit after reviewing
+Sections 3-5. It derives 1,378 final AVSpeech source clips and constructs four
+matched variants per source: real, speech-only fake, environment-only fake,
+and joint fake. Balanced, scene-matched, and scene-mismatched protocols each
+contain 5,512 samples, for 16,536 audio-visual samples across the three
+protocols. Binary any-fake detection, four-way classification, multilabel
+component attribution, scene-consistency, generator-generalization, and
+audio-only ablations use ROC-AUC, EER, accuracy, and macro-F1. Zero-shot tests
+of Qwen2.5-Omni, MiniCPM-o, Gemma, and Baichuan-Omni directly audit audio-LLM
+safety and robustness by separating manipulation-artifact detection from
+audio-visual consistency reasoning.
+
+The paper links no project, dataset, or code release. Exact arXiv-ID and
+title-plus-audio-deepfake GitHub searches found no owner repository on August
+11, while exact-name Hugging Face results are unrelated name collisions. The
+source and derived split manifests, benchmark media and labels, scene
+taxonomy, prompts, component-pairing tables, quality-control records, fixed
+omni-model prompts, evaluation code, predictions, and per-item scores remain
+unreleased. CC BY 4.0 covers the article, not those absent artifacts;
+AVSpeech, YouTube media, separated stems, generated audio, model outputs, and
+generation-model terms remain separate. No benchmark family, count increase,
+or helper is added until an owner-controlled release with explicit artifact
+terms makes the evaluation reproducible.
+
 The August 2026 [*MusicLayout*](https://arxiv.org/abs/2608.09035) paper is
 recorded as an existing-source and unreleased-derived-protocol audit after
 reviewing Sections 3-4 and Appendices B-G. Its unified autoregressive audio LM
