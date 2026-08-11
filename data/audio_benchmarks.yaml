@@ -9,6 +9,80 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  comparative_reasoning_ordinal_ser_evaluation_audit:
+    paper: https://arxiv.org/abs/2606.24082
+    title: "Comparative Reasoning: Making an Audio Language Model Better at Comparing Emotions"
+    sections: 3.1-3.3_and_4.1-4.4
+    status: audited_existing_corpora_with_unreleased_pairwise_post_training_evaluations
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      The paper compares zero-shot Qwen2.5-Omni-3B with label-only and
+      reasoning-trace SFT and DPO for pairwise arousal, valence, and dominance
+      judgments. Its held-out and transfer protocols directly test whether
+      preference optimization improves comparative emotional reasoning,
+      explanation quality, and robustness across language, domain, and target
+      emotion after audio-language-model post-training.
+    evaluation_inventory:
+      - cited_as: MSP-Podcast_v2.0_development_pairs
+        index_id: msp_podcast
+        status: unreleased_paper_specific_selection_from_existing_gated_family
+        role: development_evaluation
+        pairs_per_emotional_attribute: 3000
+      - cited_as: MSP-Podcast_v2.0_test_pairs
+        index_id: msp_podcast
+        status: unreleased_paper_specific_selection_from_existing_gated_family
+        role: primary_in_domain_evaluation
+        pairs_per_emotional_attribute: 3000
+      - cited_as: BIIC-Podcast_test_pairs
+        status: unreleased_paper_specific_selection_from_upstream_corpus
+        role: cross_language_and_cross_domain_evaluation
+        pairs_per_emotional_attribute: 3000
+      - cited_as: WHiSER_test_pairs
+        status: unreleased_paper_specific_selection_from_upstream_corpus
+        role: cross_domain_evaluation
+        pairs_per_emotional_attribute: 3000
+    protocol_note: >-
+      A pair is retained when its consensus 1-to-7 attribute scores differ by
+      more than one point. Models choose which of two clips has the higher
+      arousal, valence, or dominance, and are scored by attribute preference
+      accuracy and the three-attribute average. Cross-domain models are
+      trained on MSP-Podcast and evaluated without further training on BIIC
+      and WHiSER. Cross-emotion models train only on arousal pairs and are
+      evaluated on valence and dominance. The separate 10,000-pair-per-
+      attribute MSP-Podcast selection is SFT/DPO training data, not a benchmark
+      track.
+    release_audit:
+      upstream_MSP_Podcast_family: existing_form_gated_index_entry
+      frozen_pair_manifests_and_split_mappings: not_released
+      training_preference_pairs_and_correct_or_incorrect_reasoning_traces: not_released
+      prompts_feature_normalization_and_GeMAPS_descriptions: not_released
+      code_model_adapters_predictions_explanations_and_per_item_scores: not_released
+      owner_project_or_artifact_repository: not_found
+      exact_title_and_arxiv_id_GitHub_repository_searches: no_results
+      arxiv_id_Hugging_Face_dataset_and_model_searches: no_results
+      download_helper: none
+    access: paper_public_upstream_corpora_retain_their_terms_derived_evaluations_unreleased
+    license:
+      article: CC-BY-NC-ND-4.0
+      derived_evaluation_artifacts: not_released_no_terms
+      note: >-
+        The article license does not cover absent pair manifests, reasoning
+        traces, generated descriptions, predictions, or scores. MSP-Podcast,
+        BIIC-Podcast, WHiSER, model, service-output, and identifiable-voice
+        terms remain separate and must be reviewed at their primary sources.
+    sources:
+      - https://arxiv.org/abs/2606.24082
+      - https://arxiv.org/html/2606.24082v1#S3.SS1
+      - https://arxiv.org/html/2606.24082v1#S3.SS2
+      - https://arxiv.org/html/2606.24082v1#S3.SS3
+      - https://arxiv.org/html/2606.24082v1#S4.SS1
+      - https://arxiv.org/html/2606.24082v1#S4.SS2
+      - https://arxiv.org/html/2606.24082v1#S4.SS3
+      - https://arxiv.org/html/2606.24082v1#S4.SS4
+      - https://api.github.com/search/repositories?q=2606.24082
+      - https://huggingface.co/api/datasets?search=2606.24082
+      - https://huggingface.co/api/models?search=2606.24082
+
   dialects2s_multilingual_dialect_evaluation_audit:
     paper: https://arxiv.org/abs/2608.08067
     title: "DialectS2S: End-to-End Speech Dialogue Modeling for Low-Resource Chinese Dialects"

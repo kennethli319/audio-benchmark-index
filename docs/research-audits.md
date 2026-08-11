@@ -1,5 +1,30 @@
 # Research and release audits
 
+The June 2026 [*Comparative Reasoning: Making an Audio Language Model Better
+at Comparing Emotions*](https://arxiv.org/abs/2606.24082) paper is recorded as
+an existing-corpus and unreleased-derived-protocol audit after reviewing
+Sections 3.1-3.3 and 4.1-4.4. It constructs pairwise arousal, valence, and
+dominance tests from MSP-Podcast v2.0, BIIC-Podcast, and WHiSER, retaining pairs
+whose consensus 1-to-7 scores differ by more than one point. Qwen2.5-Omni-3B
+is evaluated zero-shot and after label-only or reasoning-trace SFT and DPO by
+attribute preference accuracy. Cross-domain transfer trains on MSP-Podcast and
+tests on BIIC and WHiSER without adaptation; cross-emotion transfer trains only
+on arousal and tests valence and dominance. This directly audits whether
+audio-language-model post-training improves comparative emotional reasoning,
+interpretable decisions, and robustness across language, domain, and emotion.
+
+MSP-Podcast maps to the existing form-gated index family, while every 3,000-
+pair-per-attribute evaluation selection is paper-specific and unreleased. The
+separate 10,000-pair-per-attribute MSP-Podcast set is SFT/DPO training data, not
+a benchmark track. The paper links no project or artifact repository;
+exact-title and arXiv-ID GitHub searches found no release, and arXiv-ID Hugging
+Face dataset and model searches were empty. Frozen pair manifests, split
+mappings, prompts, GeMAPS-derived descriptions, generated reasoning traces,
+code, adapters, predictions, explanations, and per-item scores remain absent.
+CC BY-NC-ND 4.0 covers the article, not these artifacts, and each upstream
+corpus plus model, service-output, and identifiable-voice terms remain
+separate. No family, count increase, or download helper is added.
+
 The August 2026 [*DialectS2S*](https://arxiv.org/abs/2608.08067) paper is
 recorded as an unreleased-evaluation audit after reviewing Sections 4.1 and
 5.1-5.4. Its 250-case multilingual dialect speech-dialogue benchmark covers
