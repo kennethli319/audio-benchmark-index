@@ -4,6 +4,34 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The June 2025 [*Audio-Aware Large Language Models as Judges for Speaking
+Styles*](https://arxiv.org/abs/2506.05984) paper adds the public StyleSet
+family after a focused review of Sections 3-4 and Appendices A-C. Its voice
+style instruction-following track contains 20 sentence-and-style cases across
+emotion, volume, pace, emphasis, pitch, within-utterance changes, and
+non-verbal cues. Its role-playing track contains 20 IEMOCAP-derived contexts
+with paired prompts for the two roles. The protocol generates 20 turns,
+concatenates them with two-second silences, crops at one minute, and scores
+dialogue style on a five-point scale and realism as a binary decision; the
+voice track has its own five-point adherence rubric. Five sampled verdicts
+from each audio-language-model judge are ensembled and compared with four
+human evaluators using Pearson correlation. This directly evaluates
+post-training controllability, role adherence, and audio-LLM judge reliability
+for speech generation.
+
+The owner Hugging Face release is public and ungated and declares exactly 20
+test rows in each configuration, with 16 kHz prompt audio and about 184 MB of
+compressed test Parquet data. The card declares MIT and says the authors had
+IEMOCAP-author consent to redistribute adapted role-playing contexts while
+excluding original IEMOCAP recordings. GPT-4o-audio synthesized prompt speech,
+so applicable service-output and upstream dialogue rights still require
+review. The release does not include an executable evaluator, evaluated model
+outputs, judge responses, individual human ratings, or per-item scores. Extra
+train-named files are visible in the Hub tree but are not declared as dataset
+configurations; the helper therefore fetches only documentation and live
+metadata by default and limits explicit opt-in downloads to the two declared
+test tracks.
+
 The August 2026 [*Beyond Naturalness*](https://arxiv.org/abs/2608.09930)
 paper is recorded as a claimed-public but currently unlocatable meta-evaluation
 after reviewing Sections 3-4 and Appendices 6-7. It constructs 860 English

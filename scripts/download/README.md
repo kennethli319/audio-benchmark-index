@@ -1655,6 +1655,12 @@ MMAG_DOWNLOAD_AUDIO=1 scripts/download/mmag.sh
 # manually gated Hub repository; request access from the owner in a browser.
 scripts/download/avcap_bench.sh
 
+# StyleSet downloads its card and live Hub metadata by default. Its two
+# declared test tracks total about 184 MB compressed and require explicit
+# selection; undeclared train-named files are intentionally excluded.
+STYLESET_DOWNLOAD_DATA=1 STYLESET_TRACKS="voice_instruction_following" scripts/download/styleset.sh
+STYLESET_DOWNLOAD_DATA=1 STYLESET_TRACKS="role_playing voice_instruction_following" scripts/download/styleset.sh
+
 # Speech-MASSIVE downloads cards, live metadata, and the code license by
 # default. Its roughly 23.7 GB main and 35.8 GB auto-gated test Hub snapshots
 # are opt-in; the evaluation-code clone is a separate opt-in.

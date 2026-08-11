@@ -41928,3 +41928,92 @@ benchmarks:
       - https://huggingface.co/api/models/Apryle/AVCap-Codes
       - https://huggingface.co/datasets/Apryle/AVCap-Dataset
       - https://huggingface.co/api/datasets/Apryle/AVCap-Dataset
+
+  - id: styleset
+    name: StyleSet
+    full_name: "StyleSet: A Spoken Language Benchmark for Speaking-Style-Related Speech Generation"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_generation
+      - end_to_end_speech_dialogue
+      - paralinguistic_speech_evaluation
+    category: speaking_style_controllability_and_role_playing
+    tasks:
+      - voice_style_instruction_following
+      - fine_grained_prosody_control
+      - intra_utterance_style_control
+      - non_verbal_vocalization_control
+      - spoken_role_playing
+      - dialogue_style_evaluation
+      - dialogue_realism_evaluation
+      - audio_language_model_judging
+    official:
+      paper: https://arxiv.org/abs/2506.05984
+      dataset: https://huggingface.co/datasets/dcml0714/StyleSet
+    download:
+      access: public_ungated_released_inputs
+      primary:
+        - https://huggingface.co/datasets/dcml0714/StyleSet
+      examples:
+        - 'scripts/download/styleset.sh'
+        - 'STYLESET_DOWNLOAD_DATA=1 STYLESET_TRACKS="voice_instruction_following" scripts/download/styleset.sh'
+        - 'STYLESET_DOWNLOAD_DATA=1 STYLESET_TRACKS="role_playing voice_instruction_following" scripts/download/styleset.sh'
+      notes: >-
+        The owner release contains two 20-item test configurations. Voice
+        style instruction following pairs a base repetition prompt with a
+        fine-grained instruction spanning emotion, volume, pace, emphasis,
+        pitch, within-utterance change, and non-verbal cues. Role playing
+        supplies paired audio prompts and contexts adapted from IEMOCAP for
+        two sides of a dialogue; it does not redistribute the original
+        IEMOCAP recordings. The paper generates a 20-turn dialogue, inserts
+        two-second inter-turn silences, crops at one minute, and evaluates
+        style on a five-point scale plus realism as a binary decision. The
+        voice track uses a separate five-point text-and-style-adherence
+        rubric. Audio-language-model judges sample five verdicts per item and
+        are compared with four human evaluators using Pearson correlation.
+        The live card declares 148,908,359 compressed bytes for role playing
+        and 35,109,899 bytes for voice instruction following. The helper saves
+        the card and live release metadata by default; either released test
+        configuration is an explicit opt-in.
+    access:
+      status: public_ungated_partial_protocol_release
+      registration_required: false
+      notes: >-
+        The 40 benchmark input rows and their 16 kHz prompt audio are public.
+        Judge rubrics and generation instructions are printed in the paper,
+        but no executable evaluation pipeline is linked. Generated outputs
+        from GPT-4o-audio, GPT-4o-mini-audio, Step-Audio, and Qwen2.5-Omni,
+        judge responses, individual human ratings, and per-item scores were
+        not identified in the owner release. Extra train-named Parquet files
+        exist in the Hub tree but are not declared by the dataset card as
+        benchmark configurations, so the helper does not infer or fetch them.
+    license:
+      data: MIT_declared_by_dataset_card_with_IEMOCAP_and_generated_audio_caveats
+      code: not_applicable_no_code_release_linked
+      evaluation_outputs_and_ratings: not_released
+      notes: >-
+        The dataset card says NTU Speech Lab releases StyleSet under MIT, and
+        the paper says the authors obtained IEMOCAP-author consent to
+        redistribute the adapted role-playing contexts. The release excludes
+        original IEMOCAP recordings, whose access and use terms remain
+        separate. Prompt speech was synthesized with GPT-4o-audio, so the
+        aggregate declaration should not be assumed to override applicable
+        service-output, voice, privacy, or source-dialogue rights. No terms
+        can be inferred for absent model generations, judge records, or human
+        ratings.
+    sources:
+      - https://arxiv.org/abs/2506.05984
+      - https://arxiv.org/html/2506.05984v1#S3
+      - https://arxiv.org/html/2506.05984v1#S3.SS1
+      - https://arxiv.org/html/2506.05984v1#S3.SS2
+      - https://arxiv.org/html/2506.05984v1#S4.SS1
+      - https://arxiv.org/html/2506.05984v1#S4.SS2
+      - https://arxiv.org/html/2506.05984v1#S4.SS3
+      - https://arxiv.org/html/2506.05984v1#A1
+      - https://arxiv.org/html/2506.05984v1#A2
+      - https://arxiv.org/html/2506.05984v1#A3
+      - https://export.arxiv.org/api/query?id_list=2506.05984
+      - https://huggingface.co/datasets/dcml0714/StyleSet
+      - https://huggingface.co/datasets/dcml0714/StyleSet/raw/main/README.md
+      - https://huggingface.co/api/datasets/dcml0714/StyleSet
+      - https://huggingface.co/api/datasets/dcml0714/StyleSet/tree/main?recursive=true&expand=true
