@@ -14584,33 +14584,87 @@ paper_audits:
 
   qwen_audio_vae_technical_report:
     paper: https://arxiv.org/abs/2607.11738
+    title: Qwen-Audio-VAE Technical Report
     sections: 4.1-4.5
-    status: audited_existing_coverage
+    status: audited_existing_public_families_unreleased_evaluation_artifacts
+    last_verified: 2026-08-10
+    pretraining_relevance: >-
+      The report evaluates a 12.5 Hz continuous audio representation as the
+      latent interface for large-scale text-to-audio pretraining, testing
+      reconstruction across speech, general sound, and music as well as the
+      effect of encoder throughput and latent regularization on downstream
+      diffusion-transformer training.
     evaluated_sets:
       - cited_as: LibriSpeech
         index_id: librispeech
         status: public
-        note: Sections 4.1-4.3 use LibriSpeech for speech reconstruction and ablation evaluation with Mel distance, MR-STFT distance, PESQ, and STOI.
+        note: >-
+          Sections 4.1-4.3 use LibriSpeech for speech reconstruction and
+          ablation evaluation with Mel distance, MR-STFT distance, PESQ, and
+          STOI, but do not name a split or publish evaluated row IDs.
       - cited_as: AudioCaps
         index_id: audiocaps
         status: public_restricted_source_media
-        note: Sections 4.1-4.2 use AudioCaps for general-audio reconstruction; section 4.5 uses its test set for CLAP, FD, and Inception Score evaluation of downstream text-to-audio generation.
+        note: >-
+          Sections 4.1-4.2 use an unspecified AudioCaps selection for
+          general-audio reconstruction. Section 4.5 explicitly uses the test
+          set for CLAP, FD, and Inception Score evaluation of downstream
+          text-to-audio generation.
       - cited_as: SongDescriber
         index_id: song_describer
         status: public
-        note: Sections 4.1-4.2 use Song Describer for music reconstruction with Mel distance, MR-STFT distance, and SI-SDR.
+        note: >-
+          Sections 4.1-4.2 use Song Describer for music reconstruction with
+          Mel distance, MR-STFT distance, PESQ, and STOI, but do not identify
+          whether the complete public human-validated subset or another
+          selection was evaluated.
     protocol_note: >-
       The report names exactly three public reconstruction benchmarks spanning
       speech, general sound, and music. All three were already indexed, so this
       audit adds provenance without creating duplicate families. Section 4.5
       additionally trains text-to-audio models on LAION-Audio-630K, but that
       training corpus is not presented as a separate benchmark.
+    release_audit:
+      article_version: v1_only
+      owner_project_or_artifact_link_in_paper: none
+      official_qwen_github_repository_inventory: no_qwen_audio_vae_release
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      exact_title_hugging_face_model_and_dataset_searches: no_results
+      arxiv_id_hugging_face_model_and_dataset_searches: no_results
+      frozen_reconstruction_selections_and_row_manifests: not_released
+      model_checkpoints_and_inference_code: not_released
+      metric_implementations_and_evaluation_configuration: not_released
+      generated_outputs_predictions_and_per_item_scores: not_released
+      download_helper: none_no_paper_specific_public_artifact
+    access: public_source_families_unreleased_paper_specific_evaluation_package
+    license:
+      paper: CC_BY_4_0
+      paper_specific_evaluation_artifacts: not_released_no_terms
+      source_data: upstream_family_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not absent model files, evaluated-row
+        manifests, outputs, or scores. LibriSpeech, AudioCaps, Song Describer,
+        and their source media retain their own terms.
     sources:
       - https://arxiv.org/abs/2607.11738
       - https://arxiv.org/html/2607.11738v1#S4.SS1
       - https://arxiv.org/html/2607.11738v1#S4.SS2
       - https://arxiv.org/html/2607.11738v1#S4.SS3
       - https://arxiv.org/html/2607.11738v1#S4.SS5
+      - https://api.github.com/orgs/QwenLM/repos?per_page=100
+      - https://api.github.com/search/repositories?q=%22Qwen-Audio-VAE%22
+      - https://api.github.com/search/repositories?q=%222607.11738%22
+      - https://huggingface.co/api/models?search=Qwen-Audio-VAE
+      - https://huggingface.co/api/datasets?search=Qwen-Audio-VAE
+      - https://huggingface.co/api/models?search=2607.11738
+      - https://huggingface.co/api/datasets?search=2607.11738
+    note: >-
+      A focused August 10 release recheck found no owner-controlled repository,
+      model or dataset card, or frozen evaluation package. Because the public
+      source families do not make the report's unspecified reconstruction
+      selections or implementation reproducible, this adds no benchmark
+      family, count increase, or download helper.
 
   dondo_asr_base_models:
     paper: https://arxiv.org/abs/2607.21540

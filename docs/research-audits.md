@@ -2236,7 +2236,18 @@ Its three public reconstruction benchmarks—LibriSpeech for speech, AudioCaps
 for general sound, and Song Describer for music—were already indexed. The
 audit also records AudioCaps test-set use for downstream text-to-audio
 evaluation and does not misclassify the report's LAION-Audio-630K training
-corpus as a new benchmark.
+corpus as a new benchmark. This protocol directly evaluates a continuous
+audio-tokenizer interface for large-scale text-to-audio pretraining, including
+reconstruction fidelity, encoder throughput, and latent learnability. A
+focused August 10 release recheck found that the paper still provides no
+owner project or artifact link; the official Qwen GitHub inventory has no
+Qwen-Audio-VAE repository, and exact-title or arXiv-ID searches find no GitHub
+repository or Hugging Face model or dataset. The report does not identify its
+LibriSpeech or Song Describer evaluation selections, nor release frozen row
+manifests, model checkpoints, metric code and configurations, generated
+outputs, predictions, or item scores. CC BY 4.0 covers the article rather than
+those absent artifacts, and the three source families retain their own terms.
+No family, count increase, or helper is added.
 
 The July 2026 DONDO report is recorded as a model-release audit, not a new
 benchmark family. It reports WER for 21 monolingual and five regional
