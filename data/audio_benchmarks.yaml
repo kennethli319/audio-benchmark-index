@@ -9,6 +9,84 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  dialects2s_multilingual_dialect_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.08067
+    title: "DialectS2S: End-to-End Speech Dialogue Modeling for Low-Resource Chinese Dialects"
+    sections: 4.1_and_5.1-5.4
+    status: audited_unreleased_evaluation_with_public_training_archives
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      DialectS2S evaluates mixed-data SFT and self-aligned speech supervision
+      on zero-shot language matching, dialect-aware response quality, and
+      generated-speech intelligibility. The 250-case protocol directly tests
+      whether speech-dialogue post-training preserves English and Mandarin
+      while adding Sichuanese, Cantonese, and Tianjin-dialect interaction.
+    evaluation_inventory:
+      - cited_as: multilingual_dialect_speech_dialogue_benchmark
+        status: paper_described_unreleased_evaluation
+        role: five_language_and_dialect_speech_dialogue_test
+        test_samples: 250
+        languages_and_dialects:
+          - English
+          - Mandarin
+          - Sichuanese
+          - Cantonese
+          - Tianjin_dialect
+        metrics:
+          - FireRedLID_language_matching_accuracy_on_valid_responses
+          - Qwen3-Plus_response_quality_score_1_to_5
+          - FRASR2-AED_character_error_rate
+      - cited_as: DialectS2S_Datasets
+        status: public_ungated_training_archives_not_a_benchmark_release
+        role: approximately_18000_pair_225_hour_SFT_mixture
+        note: >-
+          The five owner-hosted archives correspond to English, Mandarin,
+          Sichuanese/Chengdu, Cantonese, and Tianjin training data. The paper
+          does not identify the 250 evaluation cases as a released split.
+    protocol_note: >-
+      Each system receives speech without a text prompt or explicit language
+      control. FireRedLID measures whether valid speech responses match the
+      input variety. Qwen3-Plus scores the synchronously generated text for
+      naturalness, semantic accuracy, and dialect usage. FRASR2-AED
+      transcribes DialectS2S speech for CER against its generated text; the
+      dialect CER comparison uses the separately reported FRASR2-AED benchmark
+      average rather than outputs from the six speech-dialogue baselines.
+    release_audit:
+      paper_and_aggregate_tables: public
+      model_checkpoint: public_ungated
+      training_archives: public_ungated_five_archives_150080092739_bytes
+      training_dataset_revision: d83e010631a3481b56414ded3e57ae207a7ca15f
+      frozen_250_case_test_manifest_and_split_mapping: not_released
+      evaluation_queries_reference_audio_and_query_text: not_released
+      FireRedLID_Qwen3-Plus_and_CER_runner_configuration: not_released
+      baseline_predictions_generated_audio_judgments_and_per_item_scores: not_released
+      owner_benchmark_repository: not_found
+      download_helper: none_training_archives_are_large_and_not_a_reproducible_benchmark_release
+    access: evaluation_unreleased_training_archives_public_ungated
+    license:
+      evaluation_artifacts: not_released_no_terms
+      training_archives: not_specified
+      model_checkpoint: MIT
+      note: >-
+        The dataset repository has no license metadata or license file in its
+        published tree. MIT on the separate model card does not license the
+        training audio, absent evaluation cases, reference voices, generated
+        speech, prompts, judgments, predictions, or score records. Upstream
+        OpenS2S, TTS, ASR, service, source-audio, and voice terms still apply.
+    sources:
+      - https://arxiv.org/abs/2608.08067
+      - https://arxiv.org/html/2608.08067v1#S4.SS1
+      - https://arxiv.org/html/2608.08067v1#S5.SS1
+      - https://arxiv.org/html/2608.08067v1#S5.SS2
+      - https://arxiv.org/html/2608.08067v1#S5.SS3
+      - https://arxiv.org/html/2608.08067v1#S5.SS4
+      - https://huggingface.co/CASIA-LM/DialectS2S
+      - https://huggingface.co/datasets/CASIA-LM/DialectS2S_Datasets
+      - https://huggingface.co/api/datasets/CASIA-LM/DialectS2S_Datasets
+      - https://huggingface.co/api/datasets/CASIA-LM/DialectS2S_Datasets/tree/main?recursive=true&expand=true
+      - https://huggingface.co/datasets/CASIA-LM/DialectS2S_Datasets/raw/main/README.md
+      - https://api.github.com/search/repositories?q=%22DialectS2S%22%20OR%202608.08067
+
   gcm_bench_release_audit:
     paper: https://arxiv.org/abs/2608.07631
     title: "PACE: A Playback-Aligned Context Engine for LLM-Based Full-Duplex Voice Dialogue"

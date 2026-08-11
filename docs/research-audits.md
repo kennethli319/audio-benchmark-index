@@ -1,5 +1,29 @@
 # Research and release audits
 
+The August 2026 [*DialectS2S*](https://arxiv.org/abs/2608.08067) paper is
+recorded as an unreleased-evaluation audit after reviewing Sections 4.1 and
+5.1-5.4. Its 250-case multilingual dialect speech-dialogue benchmark covers
+English, Mandarin, Sichuanese, Cantonese, and the Tianjin dialect. Zero-shot
+language matching uses FireRedLID on valid speech responses; Qwen3-Plus scores
+the synchronously generated text from 1 to 5 for naturalness, semantic
+accuracy, and dialect use; and FRASR2-AED computes CER against generated text.
+The CER table compares DialectS2S with the separately reported FRASR2-AED
+dialect-benchmark average, not generated outputs from the six dialogue-model
+baselines. This directly audits whether mixed-data SFT and self-aligned speech
+supervision add low-resource dialect interaction without losing English or
+Mandarin behavior.
+
+The owner releases an MIT-labeled model checkpoint and five public, ungated
+training archives totaling 150,080,092,739 bytes at dataset revision
+`d83e010631a3481b56414ded3e57ae207a7ca15f`. Those archives represent the
+paper's approximately 18,000-pair, 225-hour SFT mixture; their 131-byte README
+only explains archive extraction and does not identify a test split. The
+frozen 250-case manifest, reference audio, queries, split mapping, evaluation
+configuration, baseline predictions and audio, judgments, and per-item scores
+remain unavailable. The dataset repository declares no license, and MIT on
+the separate model card does not license its audio or the absent evaluation
+assets. No benchmark family, count increase, or download helper is added.
+
 The August 2026 [*PACE*](https://arxiv.org/abs/2608.07631) paper now
 contributes the public GCM-Bench family after reviewing Sections 5-6.
 GCM-Bench crosses 12 list-style scenarios, interruption delays of 12, 16, and
