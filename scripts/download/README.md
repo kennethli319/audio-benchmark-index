@@ -51,6 +51,7 @@ scripts/download/air_bench.sh
 scripts/download/audiobench.sh
 scripts/download/af_reasoning_eval.sh
 scripts/download/audio_hallucination.sh
+scripts/download/avhbench.sh
 scripts/download/music_avqa.sh
 scripts/download/omnibench.sh
 scripts/download/llp.sh

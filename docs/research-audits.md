@@ -4801,8 +4801,8 @@ pretrained OmniLLM's audio interface transfers under aggressive inference-time
 compression.
 
 AVHBench appears only in a separate balanced-binary hallucination scorer
-ablation and is retained as a candidate for its own primary-source release
-audit, not treated as an A-PACK release. The paper links no project or
+ablation and maps to the separately released family documented below; it is
+not treated as an A-PACK release. The paper links no project or
 repository. Exact-title and arXiv-ID GitHub repository searches found no owner
 release, and arXiv-ID Hugging Face model and dataset searches were empty. The
 A-PACK implementation, configurations, unified evaluation pipeline, exact
@@ -4811,3 +4811,27 @@ masks, runtime logs, and per-item scores remain unavailable. The article's
 arXiv non-exclusive license does not cover those absent artifacts; each
 upstream benchmark retains its own terms, including Video-MME's custom
 academic-use restrictions. No benchmark count or download helper changes.
+
+The October 2024/ICLR 2025 [*AVHBench*](https://arxiv.org/abs/2410.18325)
+paper now contributes one public four-track post-training evaluation family
+after reviewing Sections 3-4 and Appendices D-F. Audio-driven Video
+Hallucination asks whether sounds induce nonexistent visual evidence;
+Video-driven Audio Hallucination reverses that direction; Audio-visual Matching
+tests real versus audio-swapped correspondence; and Audio-visual Captioning
+tests grounded joint description. Judgment tracks use accuracy, precision,
+recall, F1, and Yes rate, while captioning uses METEOR, CIDEr, and the paper's
+GPT-4-based GAVIE-A prompt. These protocols directly measure cross-modal
+hallucination, grounding, and robustness after audio-visual LLM alignment.
+
+The owner release is public and ungated. Its 1,107,911-byte `QA.json` contains
+6,408 rows over 2,136 videos: 1,136 audio-driven video judgments, 2,290
+video-driven audio judgments, 1,876 matching judgments, and 1,106 captions.
+Thus the artifact matches the paper body's 5,302 judgment and 1,106 caption
+figures; the abstract's older 5,816/1,238 counts are not used. A Google Drive
+video archive and evaluation/alignment code are public, but baseline
+predictions and per-item scores are absent. The helper fetches documentation,
+repository metadata, and annotations by default and keeps the large video ZIP
+opt-in. The repository has no top-level license and GitHub detects none;
+AudioCaps, VALOR, YouTube-derived media, annotations, swapped videos, and voice
+rights retain their own terms. This audit also resolves AVHBench from A-PACK
+as an existing separately released family.

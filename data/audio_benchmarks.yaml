@@ -9,6 +9,74 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  avhbench_release_audit:
+    paper: https://arxiv.org/abs/2410.18325
+    title: "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models"
+    sections: 3-4_and_appendices_D-F
+    status: audited_public_ungated_complete_annotations_with_owner_hosted_video_archive
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      AVHBench directly evaluates whether audio-visual LLMs hallucinate visual
+      evidence from audio, hallucinate sounds from visible evidence, detect
+      audio-video mismatches, and generate grounded joint captions. The paper
+      also uses an AVHBench training split for LoRA alignment experiments, so
+      its held-out protocol measures whether post-training improves robustness
+      without collapsing into modality or answer-label shortcuts.
+    evaluation_inventory:
+      - cited_as: AVHBench
+        index_id: avhbench
+        status: public_ungated_owner_release
+        role: four_track_cross_modal_hallucination_and_grounding_benchmark
+        released_rows: 6408
+        released_unique_videos: 2136
+        tracks:
+          - {name: Audio-driven Video Hallucination, rows: 1136, format: balanced_yes_no}
+          - {name: Video-driven Audio Hallucination, rows: 2290, format: balanced_yes_no}
+          - {name: Audio-visual Matching, rows: 1876, format: balanced_yes_no}
+          - {name: Audio-visual Captioning, rows: 1106, format: open_caption}
+    protocol_note: >-
+      The three judgment tracks use accuracy, precision, recall, F1, and Yes
+      response rate; captioning uses METEOR, CIDEr, and the paper's GPT-4-based
+      GAVIE-A prompt. Models use temperature zero, with up to five retries when
+      a binary response cannot be parsed. The sources are AudioCaps and VALOR
+      test videos plus audio-swapped synthetic mismatches. The current paper
+      body and released JSON agree on 5,302 judgments and 1,106 captions across
+      2,136 videos; the abstract's older 5,816/1,238 figures are not used.
+    release_audit:
+      official_project_repository_and_paper: public
+      frozen_qa_and_caption_annotations: public_ungated_google_drive
+      released_annotation_bytes: 1107911
+      released_annotation_sha256: f62a0a334a6f2280c8f2b288222594f03f2a85f242f9d78e34ce8259ab0d6ab3
+      owner_hosted_video_archive: public_ungated_google_drive_large_size_not_stated
+      evaluation_and_alignment_finetuning_code: public
+      baseline_predictions_and_per_item_scores: not_released
+      repository_revision: d44bcb08e81fa5cc88b93472acf4997bb529beaf
+      download_helper: safe_metadata_and_annotations_default_video_archive_opt_in
+    access: public_ungated_owner_release_with_large_video_archive_opt_in
+    license:
+      data: not_specified
+      code: not_specified
+      upstream: AudioCaps_and_VALOR_terms_apply
+      note: >-
+        GitHub reports no detected license and the repository contains no
+        top-level license file. Public access does not grant reuse rights or
+        relicense AudioCaps, VALOR, YouTube-derived media, annotations, or
+        swapped videos. The arXiv license covers the article only.
+    sources:
+      - https://arxiv.org/abs/2410.18325
+      - https://arxiv.org/html/2410.18325v4#S3
+      - https://arxiv.org/html/2410.18325v4#S4
+      - https://arxiv.org/html/2410.18325v4#A4
+      - https://arxiv.org/html/2410.18325v4#A5
+      - https://openreview.net/forum?id=jTEKTdI3K9
+      - https://avhbench.github.io/
+      - https://github.com/kaist-ami/AVHBench
+      - https://api.github.com/repos/kaist-ami/AVHBench
+      - https://api.github.com/repos/kaist-ami/AVHBench/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/kaist-ami/AVHBench/main/README.md
+      - https://drive.google.com/file/d/1KcYDAv9lLy3hsx5rWdfRqMFV2NYcZ94W/view
+      - https://drive.google.com/file/d/10-Qp8zxA3ITT-ileEnCgJkf5Nzx1wry7/view
+
   a_pack_omnillm_audio_pruning_evaluation_audit:
     paper: https://arxiv.org/abs/2608.08794
     title: "Deferred Audio Pruning with Local Audio-Visual Dynamics for Omni-LLMs"
@@ -40,13 +108,13 @@ paper_audits:
         status: existing_public_restricted_family
         role: primary_video_centric_preservation_control
       - cited_as: AVHBench
-        status: separately_published_family_not_released_or_defined_by_A-PACK
+        index_id: avhbench
+        status: existing_public_family
         role: secondary_balanced_binary_audio_visual_hallucination_ablation
         note: >-
           A-PACK pools AVHBench's three Yes/No tasks for Table 4 and reports a
-          per-task scorer ablation in Table S6. This citation is retained for
-          provenance and requires its own primary-source release audit before
-          any separate index addition.
+          per-task scorer ablation in Table S6. AVHBench is separately released
+          by its owners and is not an A-PACK artifact.
     protocol_note: >-
       Main Table 1 evaluates Qwen2.5-Omni-7B and 3B at matched 35% and 25%
       prefill-FLOPs tiers. A-PACK preserves audio during pre-LLM video
@@ -79,8 +147,8 @@ paper_audits:
         predictions, pruning masks, logs, or score records. AVUT states no data
         license; Daily-Omni is CC BY-NC-SA 4.0; WorldSense has conflicting CC
         BY 4.0 and CC BY-NC-SA 4.0 statements; Video-MME uses custom academic-
-        use and redistribution restrictions. AVHBench terms require a separate
-        primary-source audit.
+        use and redistribution restrictions. AVHBench states no data or code
+        license and inherits AudioCaps, VALOR, and source-media terms.
     sources:
       - https://arxiv.org/abs/2608.08794
       - https://arxiv.org/html/2608.08794v1#S4.SS1
@@ -22327,6 +22395,95 @@ benchmarks:
       - https://huggingface.co/api/datasets/plnguyen2908/AV-SpeakerBench
       - https://arxiv.org/abs/2512.02231
       - https://arxiv.org/html/2604.15804v1#S5.SS1.SSS4
+
+  - id: avhbench
+    name: AVHBench
+    full_name: "A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_visual_understanding
+      - audio_language_model_post_training
+    category: audio_visual_llm_hallucination_and_grounding
+    tasks:
+      - audio_driven_video_hallucination
+      - video_driven_audio_hallucination
+      - audio_visual_matching
+      - grounded_audio_visual_captioning
+    tracks:
+      - name: Audio-driven Video Hallucination
+        examples: 1136
+        protocol: balanced_yes_no_visual_presence_judgments_conditioned_on_audio_visual_input
+      - name: Video-driven Audio Hallucination
+        examples: 2290
+        protocol: balanced_yes_no_sound_presence_judgments_conditioned_on_audio_visual_input
+      - name: Audio-visual Matching
+        examples: 1876
+        protocol: balanced_yes_no_real_vs_audio_swapped_correspondence_judgments
+      - name: Audio-visual Captioning
+        examples: 1106
+        protocol: open_ended_joint_audio_visual_description
+    metrics:
+      - accuracy
+      - precision
+      - recall
+      - F1
+      - yes_response_rate
+      - METEOR
+      - CIDEr
+      - GAVIE_A
+    official:
+      project: https://avhbench.github.io/
+      paper: https://arxiv.org/abs/2410.18325
+      openreview: https://openreview.net/forum?id=jTEKTdI3K9
+      repo: https://github.com/kaist-ami/AVHBench
+      annotations: https://drive.google.com/file/d/1KcYDAv9lLy3hsx5rWdfRqMFV2NYcZ94W/view
+      videos: https://drive.google.com/file/d/10-Qp8zxA3ITT-ileEnCgJkf5Nzx1wry7/view
+    download:
+      access: public_ungated_owner_hosted
+      primary:
+        - https://drive.google.com/file/d/1KcYDAv9lLy3hsx5rWdfRqMFV2NYcZ94W/view
+        - https://drive.google.com/file/d/10-Qp8zxA3ITT-ileEnCgJkf5Nzx1wry7/view
+      examples:
+        - 'scripts/download/avhbench.sh'
+        - 'AVHBENCH_DOWNLOAD_VIDEOS=1 scripts/download/avhbench.sh'
+      notes: >-
+        The helper downloads the owner documentation, live repository metadata,
+        and the 1,107,911-byte QA.json by default. That frozen annotation file
+        contains 6,408 rows over 2,136 videos: 5,302 binary judgments and 1,106
+        captions. The owner-hosted video ZIP is a large explicit opt-in.
+    access:
+      status: public_ungated_release
+      registration_required: false
+      notes: >-
+        The repository calls the release a subset, but its current QA.json has
+        exactly the 5,302 judgment rows and 1,106 captions reported in the
+        paper body across all four tracks. Baseline predictions and per-item
+        scores are not released. The abstract's older 5,816/1,238 counts do not
+        match the current paper body or artifact and are retained only as
+        version history.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The official repository has no top-level license and GitHub detects no
+        license. Public Google Drive access does not itself grant reuse or
+        redistribution rights. AudioCaps, VALOR, YouTube-derived media,
+        annotations, synthetic swapped videos, and voices retain their own
+        copyright, platform, consent, privacy, and publicity constraints.
+    sources:
+      - https://arxiv.org/abs/2410.18325
+      - https://arxiv.org/html/2410.18325v4#S3
+      - https://arxiv.org/html/2410.18325v4#S4
+      - https://arxiv.org/html/2410.18325v4#A4
+      - https://arxiv.org/html/2410.18325v4#A5
+      - https://openreview.net/forum?id=jTEKTdI3K9
+      - https://avhbench.github.io/
+      - https://github.com/kaist-ami/AVHBench
+      - https://raw.githubusercontent.com/kaist-ami/AVHBench/main/README.md
+      - https://api.github.com/repos/kaist-ami/AVHBench
+      - https://api.github.com/repos/kaist-ami/AVHBench/git/trees/main?recursive=1
+      - https://drive.google.com/file/d/1KcYDAv9lLy3hsx5rWdfRqMFV2NYcZ94W/view
+      - https://drive.google.com/file/d/10-Qp8zxA3ITT-ileEnCgJkf5Nzx1wry7/view
 
   - id: avut
     name: AVUT
