@@ -467,8 +467,102 @@ paper_audits:
       No benchmark family is counted and no helper is added. VoxZip contributes
       public reproducibility code for a directly relevant pretrained audio-LLM
       interface evaluation, but it defines no new held-out dataset. Vox-
-      Infinity and SPIRAL should receive separate primary-source release audits
-      before any future index additions.
+      Infinity is audited separately below; SPIRAL should receive a primary-
+      source release audit before any future index addition.
+
+  vox_infinity_release_audit:
+    paper: https://openreview.net/forum?id=6dKwqnT7bu
+    title: "Vox-Infinity: Benchmarking the Limits of Long-Context Spoken Language Models"
+    sections: primary_project_overview_and_VoxZip_section_4.1
+    status: audited_public_ungated_large_snapshots_with_incomplete_documentation_and_no_artifact_license
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      Vox-Infinity probes whether pretrained spoken-language-model audio
+      representations preserve information across histories that grow in both
+      turn count and duration. Its four tracks separate conversational,
+      ultra-multi-turn, beyond-semantic acoustic, and personal-monologue
+      contexts, while answer provenance and history-duration fields support
+      length-aware evaluation. VoxZip Section 4.1 uses all four tracks to test
+      semantic and acoustic retention under audio-interface KV-cache
+      compression, including three semantic tracks and a long personal-
+      monologue track averaging more than twenty minutes.
+    evaluation_inventory:
+      - cited_as: Vox-Infinity
+        status: public_ungated_owner_hosted_dialogue_and_QA_snapshots
+        role: long_context_spoken_language_understanding_retrieval_and_reasoning
+        tracks:
+          - Beyond-Semantic-Dialogues
+          - Conversational
+          - Personal-MonoLogues
+          - Ultra-Multi-Turn-Dialogues
+        dialogue_schema:
+          - turn_id
+          - speaker
+          - audio_16_kHz
+          - text
+          - session_id
+          - subset
+        qa_schema_common:
+          - question_id
+          - session_id
+          - question
+          - answer
+          - HistoryDuration
+          - Question_wav_16_kHz
+          - subset
+        schema_variants:
+          Conversational: adds_Options
+          Ultra-Multi-Turn-Dialogues: adds_CorrectedAnswer
+        evaluation_note: >-
+          The owner project describes explicit answer provenance and grouping
+          by the context length required to resolve a query. The released QA
+          schemas expose session linkage and HistoryDuration; evaluation
+          implementations must preserve the paper's track-specific answer and
+          provenance handling rather than flattening the release into ASR.
+    release_audit:
+      owner_project: public_ungated
+      project_repository_revision: 7edaba0e0e8cba0339052edf2ff6315a81f88afe
+      dialogue_snapshot_revision: 99d1ab2baeb0670192936cf199d5350119401e9b
+      qa_snapshot_revision: 9ac619b8cf414a1a161c9a1345a36fa9d58b1f6e
+      dialogue_snapshot_reported_storage_bytes: 29539246280
+      qa_snapshot_reported_storage_bytes: 14659358577
+      complete_audio_and_saved_dataset_shards: public_on_Hugging_Face
+      repository_demo_audio: public_selected_examples_only
+      dataset_cards_README_files: absent
+      citation_homepage_description_and_license_metadata: empty
+      standalone_owner_evaluation_code: not_located
+      third_party_evaluation_path: public_in_VoxZip_repository
+      baseline_predictions_and_per_item_scores: not_located
+      download_helper: none_snapshots_total_about_44_GB_and_release_metadata_is_incomplete
+    access: public_ungated_large_Hugging_Face_saved_dataset_snapshots
+    license:
+      paper: OpenReview_submission_terms_apply
+      project_repository_and_demo_media: not_declared_no_license_file_or_detected_license
+      dialogue_and_QA_snapshots: not_declared_empty_Hugging_Face_license_metadata
+      upstream_audio_and_transcripts: source_specific_terms_not_documented_in_release
+      note: >-
+        Public access does not establish reuse, redistribution, model-training,
+        or commercial-use rights. The two dataset repositories contain no
+        README dataset cards and their saved dataset_info files leave citation,
+        homepage, description, and license fields empty. Users must identify
+        and review upstream dialogue, podcast, voice, and transcript rights
+        before downloading or evaluating.
+    sources:
+      - https://openreview.net/forum?id=6dKwqnT7bu
+      - https://vox-infinity.github.io/
+      - https://github.com/vox-infinity/vox-infinity.github.io
+      - https://api.github.com/repos/vox-infinity/vox-infinity.github.io/commits/main
+      - https://huggingface.co/datasets/vox-infinity/Vox-Infinity
+      - https://huggingface.co/api/datasets/vox-infinity/Vox-Infinity
+      - https://huggingface.co/datasets/vox-infinity/Vox-Infinity-QA
+      - https://huggingface.co/api/datasets/vox-infinity/Vox-Infinity-QA
+      - https://arxiv.org/html/2608.08569v1#S4.SS1.SSS1
+      - https://github.com/MM-Speech/VoxZip/blob/8a022160744d64d01cc70da6b3ad019fa4f23ac5/scripts/run_vox_infinity.sh
+    note: >-
+      This audit resolves the unfinished VoxZip candidate without counting a
+      benchmark family or adding a bulk helper. Reassess after the primary
+      paper is openly retrievable and the owners publish dataset cards,
+      explicit artifact terms, frozen counts, and a standalone scorer.
 
   emosbench_release_audit:
     paper: https://arxiv.org/abs/2608.09189

@@ -4856,6 +4856,35 @@ supply upstream benchmark copies plus Qwen3-Omni and Whisper weights. The
 repository has no license file and GitHub detects no license, so public access
 does not establish code-reuse rights or alter family-specific dataset and
 model terms. AudioMarathon, MMAR, MMSU, and MMAU map to existing index entries;
-Vox-Infinity and SPIRAL remain candidates for separate primary-source audits.
+Vox-Infinity is audited separately below, while SPIRAL remains a candidate for
+a separate primary-source audit.
 No benchmark count or download helper changes because VoxZip releases an
 evaluation implementation, not a new benchmark family.
+
+The 2026 [*Vox-Infinity*](https://openreview.net/forum?id=6dKwqnT7bu)
+benchmark now has a focused release audit after reviewing its owner project,
+saved-dataset metadata, and VoxZip Section 4.1. It evaluates long-context
+spoken-language understanding along two axes—turn count and duration—through
+Beyond-Semantic Dialogues, Conversational, Personal Monologues, and Ultra-
+Multi-Turn Dialogues. Dialogue rows contain 16 kHz audio, transcripts,
+speakers, turns, sessions, and subsets; linked QA rows contain questions,
+answers, spoken questions, sessions, history duration, and subset-specific
+fields. Explicit answer provenance and length-aware grouping make this
+directly relevant to pretrained speech-LLM representation transfer and to
+post-training robustness under long histories. VoxZip additionally uses all
+four tracks to test whether audio-side cache compression preserves semantics
+and paralinguistic information; its paper reports Personal Monologues average
+more than twenty minutes.
+
+The owner project and two Hugging Face snapshots are public and ungated. At
+the audited revisions, the dialogue snapshot reports 29,539,246,280 bytes and
+the QA snapshot 14,659,358,577 bytes, about 44 GB combined. Both repositories
+are saved-dataset shards without README dataset cards; citation, homepage,
+description, and license fields are empty. No standalone owner scorer,
+baseline predictions, or per-item scores were located, although VoxZip
+provides a third-party runner and judge path. The project repository likewise
+has no detected license. Public access therefore does not establish audio,
+transcript, annotation, voice, redistribution, training, or commercial-use
+rights. The audit adds no counted family or bulk helper until the primary
+paper is openly retrievable and the owners publish explicit artifact terms,
+frozen counts, and a standalone evaluation package.
