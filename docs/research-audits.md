@@ -2979,12 +2979,23 @@ does not change the underlying LDC WSJ0 access and redistribution constraints.
 
 The July 2026 audit of protocol-level shortcuts in audio-language-model judges
 uses four established speech corpora. RAVDESS, FLEURS, and VoxCeleb were
-already indexed; this sweep adds the missing public
+already indexed; the initial sweep added the missing public
 [BVCC](https://zenodo.org/records/6572573) family used for its naturalness
-probe. The paper's balanced RAVDESS selection, four-language FLEURS selection,
-60 BVCC test pairs, and 100 VoxCeleb1 triplets remain unreleased derived
-protocols, so the index does not imply that their item manifests or evaluation
-code are public.
+probe. A focused August 10 release recheck after re-reading Sections 3-5 found
+that the balanced RAVDESS selection, four-language FLEURS selection, 60 BVCC
+test pairs, and 100 VoxCeleb1 triplets remain unreleased derived protocols.
+The wrong-specialist-label, wrong-reference-placement, cue-conflict, and
+order-swapped A/B probes directly audit whether audio-LLM reward-model and
+automatic-judge verdicts remain grounded in audio during post-training
+evaluation.
+
+The paper links no project or artifact repository. Exact-title and arXiv-ID
+GitHub searches and arXiv-ID Hugging Face dataset/model searches locate no
+owner release. Frozen manifests, derived clean/noisy and cue-conflict audio,
+specialist predictions, prompts, parsers, outputs, and item scores therefore
+remain unavailable. CC BY-SA 4.0 covers the article, not absent evaluation
+artifacts; every source corpus retains its own terms. No additional benchmark
+family or helper is added by this recheck.
 
 The July 2026 codec-internal latent-watermarking paper is likewise recorded as
 an audited model protocol, not a downloadable benchmark family. Sections

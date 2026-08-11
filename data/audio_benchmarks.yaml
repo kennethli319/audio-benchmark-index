@@ -14510,7 +14510,14 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.13477
     title: Auditing Protocol-Level Shortcuts in Large Audio Language Model Judges for Speech Evaluation
     sections: 3-5
-    status: audited_existing_and_new_public_coverage
+    status: audited_existing_public_families_unreleased_derived_judge_protocol
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      The paper tests whether six audio-language models used as speech judges
+      ground their verdicts in audio rather than copying a specialist label,
+      anchoring on a supplied reference, or following an A/B input slot. These
+      are direct reward-model and automatic-judge reliability diagnostics for
+      audio-LLM post-training and evaluation.
     evaluated_sets:
       - cited_as: RAVDESS
         index_id: ravdess
@@ -14536,6 +14543,27 @@ paper_audits:
       official repository, item manifests for its derived subsets, prompts,
       model outputs, or evaluation code, so those derived protocol artifacts
       are not represented as a separate downloadable benchmark.
+    release_audit:
+      source_benchmark_families: public_or_registration_required_under_separate_upstream_terms
+      frozen_paper_specific_item_manifests: not_released
+      clean_noisy_and_cue_conflict_audio_derivatives: not_released
+      blueprint_fields_specialist_predictions_and_reference_assignments: not_released
+      prompts_parsers_and_evaluation_code: not_released
+      model_outputs_and_per_item_scores: not_released
+      owner_project_or_artifact_link_in_paper: none
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      arxiv_id_hugging_face_dataset_and_model_searches: no_results
+      download_helper: none_no_independent_public_evaluation_artifact
+    access: unreleased_paper_defined_derivatives_over_existing_families
+    license:
+      paper: CC_BY_SA_4_0
+      derived_protocol_artifacts: not_released_no_terms
+      source_data: upstream_family_terms_apply
+      note: >-
+        CC BY-SA 4.0 covers the article, not absent selections, derived audio,
+        prompts, predictions, or score records. RAVDESS, FLEURS, BVCC, and
+        VoxCeleb1 retain their own access and license conditions.
     sources:
       - https://arxiv.org/abs/2607.13477
       - https://arxiv.org/html/2607.13477v1#S3
@@ -14543,6 +14571,16 @@ paper_audits:
       - https://arxiv.org/html/2607.13477v1#S5
       - https://voicemos-challenge-2022.github.io/
       - https://zenodo.org/records/6572573
+      - https://api.github.com/search/repositories?q=%22Auditing%20Protocol-Level%20Shortcuts%22
+      - https://api.github.com/search/repositories?q=2607.13477
+      - https://huggingface.co/api/datasets?search=2607.13477
+      - https://huggingface.co/api/models?search=2607.13477
+    note: >-
+      The four source families are already counted. The August 10 release
+      recheck found no owner-controlled repository or frozen evaluation
+      package, so no additional benchmark family or helper is added. Reassess
+      if the authors release the selections, counter-conditions, prompts, and
+      scoring implementation.
 
   qwen_audio_vae_technical_report:
     paper: https://arxiv.org/abs/2607.11738
