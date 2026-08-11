@@ -1,5 +1,34 @@
 # Research and release audits
 
+The August 2026 [*REFRAMED*](https://arxiv.org/abs/2608.09765) paper is
+recorded as an announced but not yet accessible audio-aware multimodal
+generation benchmark after reviewing Sections 3-5, the appendix, and the
+ethics statement. Its validation and test evaluations cover ten movies each,
+with 96 and 91 professionally annotated scenes respectively. A separate
+full-movie challenge has ten manually annotated movies, two or three American
+and British professional audio-description references per movie, exact scene
+boundaries, per-element scene labels, screenplay alignment, and professional
+dialogue and SDH subtitles. Systems must decide what visual narrative content
+to describe and when to place it without interrupting dialogue or salient
+audio. Dialogue-gap CIDEr/METEOR, SODA-M/T temporal alignment, and QEval/T
+semantic and temporal QA directly evaluate audio-aware multimodal instruction
+following, long-context grounding, and post-training robustness; the reported
+safety-filter refusals are also retained as protocol provenance.
+
+The broader 206-movie, 2,023-excerpt, 3,302-scene collection primarily supplies
+training data and is not a separate benchmark track. The paper says excerpt
+videos will remain source-linked, scene text and evaluation code will be
+released, and full-movie-derived transcripts, subtitles, and challenge assets
+will require agreement to terms. On August 11, however, the owner project is
+only a placeholder promising an update one week before COLM 2026; no split
+manifests, annotations, QA items, scorer, baseline outputs, terms, or artifact
+license are linked. Exact arXiv-ID GitHub and Hugging Face dataset searches are
+empty. Public movie URLs do not grant redistribution rights, and Fandango,
+Rotten Tomatoes, AudioVault, OpenSubtitles, MovieSum, screenplay, subtitle,
+voice, and model-output terms remain separate. No family, count increase, or
+helper is added until the announced mixed public/terms-gated release becomes
+reproducible.
+
 The June 2026 [*Comparative Reasoning: Making an Audio Language Model Better
 at Comparing Emotions*](https://arxiv.org/abs/2606.24082) paper is recorded as
 an existing-corpus and unreleased-derived-protocol audit after reviewing
