@@ -1,5 +1,33 @@
 # Research and release audits
 
+The August 2026 [*MusicLayout*](https://arxiv.org/abs/2608.09035) paper is
+recorded as an existing-source and unreleased-derived-protocol audit after
+reviewing Sections 3-4 and Appendices B-G. Its unified autoregressive audio LM
+first emits a time-aligned plan of sections, textures, repetitions, variations,
+and instrument roles, then predicts 5 Hz audio tokens. Evaluation uses a
+disjoint 2,719-item FreeMIDI development split, a deduplicated 1,040-item
+MidiCaps selection, and a fixed 1,000-item MuChin selection. FAD, PaSST-KL,
+SSIM, CLAPScore, structural-complexity energy distance, fine- and coarse-
+boundary F-scores, layout-shuffling ablations, and recurrence plots test
+whether explicit planning improves long-range organization and controllability.
+A 27-person study additionally rates 20 sampled FreeMIDI and MidiCaps items for
+fidelity, musical impression, and text consistency. This directly audits
+post-training control at an audio-language-model interface rather than treating
+the paper's 24,474-item FreeMIDI training split as a benchmark.
+
+MuChin maps to the existing index family, while FreeMIDI and MidiCaps are
+upstream sources from which the paper derives private evaluation selections.
+The article links no project or artifact repository. Exact arXiv-ID GitHub and
+exact-name Hugging Face dataset searches found no owner release on August 11;
+the similarly named GitHub results predate the paper and are unrelated. The
+frozen manifests, synthesized MIDI audio, translated MuChin prompts, separated
+accompaniments, MusicLayout annotations, inference and metric code, generated
+outputs, listener assignments and ratings, and per-item scores remain
+unreleased. The article's arXiv non-exclusive distribution license does not
+cover those absent artifacts, and FreeMIDI, MidiCaps, MuChin, MOSS-Music,
+DeepSeek, source-separation, generated-audio, and model-output terms remain
+separate. No benchmark family, count increase, or download helper is added.
+
 The August 2026 [*From Inaudible Inputs to Model Failures: Low-Frequency
 Safety Risks in LALMs*](https://arxiv.org/abs/2608.09158) paper is recorded as
 an existing-family and unreleased-derived-protocol audit after reviewing the
