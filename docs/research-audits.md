@@ -4661,3 +4661,26 @@ per-item scores, or license. CC BY 4.0 covers the article but not the demo
 repository or absent artifacts; source video and synthesized-voice rights also
 require separate review. EmoSBench therefore remains an audit with no counted
 family or helper until the promised release becomes reproducible.
+
+The June 2026 [*Overcoming State Inertia in Full-Duplex Spoken Language
+Models*](https://arxiv.org/abs/2606.11386) paper is recorded as an unreleased
+Zero-Buffer Benchmark (ZBB) audit after reviewing Sections 4 and 6 and
+Appendix A. ZBB pairs 100 synthetic zero-buffer queries across 50 common
+subjects, with one correct and one incorrect description per subject. The
+subject is deliberately the first spoken word. Each query is evaluated alone,
+while interrupting model speech after five seconds, and with a training-free
+activation-steering intervention. Parakeet transcribes responses and
+GPT-4.1-mini assigns binary correctness and Initial Word Occurrence Rate
+(IWOR), directly testing immediate-interruption comprehension and robustness
+in PersonaPlex, Moshi, and Raon-SpeechChat.
+
+The paper links no project or artifact release. Exact-title and arXiv-ID
+GitHub repository searches returned no result, and exact-name and arXiv-ID
+Hugging Face dataset searches were empty. The exact query list, synthesized
+Dia2-2B audio, speech-inducing prompts, condition and timing manifests, runner,
+judge implementation, activation vectors, model outputs, transcripts, and
+per-item scores remain unavailable. The arXiv non-exclusive distribution
+license covers only the article; it does not license those absent artifacts,
+and generated-voice and model-output rights require separate review. ZBB is
+therefore not counted and receives no download helper until an owner-controlled
+benchmark package is released.

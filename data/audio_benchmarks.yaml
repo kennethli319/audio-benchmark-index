@@ -390,6 +390,89 @@ paper_audits:
       from public files. Reassess if the authors publish an owner-controlled
       repository or frozen evaluation package.
 
+  zero_buffer_benchmark_release_audit:
+    paper: https://arxiv.org/abs/2606.11386
+    title: Overcoming State Inertia in Full-Duplex Spoken Language Models via Activation Steering
+    sections: 4_and_6_and_appendix_A
+    status: audited_paper_defined_unreleased_full_duplex_interruption_benchmark
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      Zero-Buffer Benchmark directly evaluates whether post-trained full-duplex
+      spoken language models comprehend the first semantic word when a user
+      interrupts ongoing model speech. The paired protocol isolates immediate
+      interruption robustness and also measures a training-free activation-
+      steering intervention intended to restore listening behavior.
+    evaluation_inventory:
+      - cited_as: Zero-Buffer_Benchmark_ZBB
+        status: paper_defined_unreleased_synthetic_evaluation
+        zero_buffer_queries: 100
+        subjects: 50_common_entities_objects_and_animals
+        balance: one_factually_correct_and_one_factually_incorrect_description_per_subject
+        query_template: subject_then_description_then_short_confirmation_request
+        audio_generation: Dia2-2B_text_to_speech
+        conditions:
+          - no_interruption_same_query_without_prior_model_speech
+          - interruption_after_five_seconds_of_response_to_a_speech_inducing_prompt
+          - interruption_with_activation_steering
+        evaluated_models:
+          - PersonaPlex
+          - Moshi
+          - Raon-SpeechChat
+        response_transcription: nvidia_parakeet_tdt_0_6b_v2
+        evaluator: GPT-4_1-mini_binary_rubrics
+        metrics:
+          - response_correctness
+          - initial_word_occurrence_rate_IWOR
+        note: >-
+          IWOR checks whether the response explicitly mentions the subject at
+          the interruption onset or a direct synonym. Correctness checks for a
+          factually correct direct answer and treats topic bleed, hallucination,
+          evasion, or vague approximation as failure.
+      - cited_as: turn_by_turn_state_analysis_dataset
+        status: paper_defined_unreleased_analysis_data_not_a_separate_benchmark
+        size: 100_synthetic_user_queries
+        construction: Claude_Opus_4_5_text_and_Dia2-2B_speech
+        use: logit_lens_analysis_and_perception_vector_construction
+        split_relation: disjoint_from_ZBB_evaluation_set
+    release_audit:
+      benchmark_audio_and_query_rows: not_released
+      speech_inducing_prompts_and_pairing_manifest: not_released
+      frozen_evaluation_conditions_and_timing_runner: not_released
+      ASR_and_GPT_evaluation_implementation: not_released
+      activation_steering_code_and_vectors: not_released
+      model_outputs_transcripts_and_per_item_scores: not_released
+      owner_project_or_artifact_link_in_paper: none
+      exact_title_and_arxiv_id_github_repository_searches: no_results
+      exact_name_and_arxiv_id_hugging_face_dataset_searches: no_results
+      download_helper: none_no_reproducible_public_evaluation_artifact
+    access: internal_unreleased_paper_defined_evaluation
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      benchmark_and_analysis_artifacts: not_released_no_terms
+      generated_speech: no_paper_specific_release_terms
+      note: >-
+        The arXiv distribution license covers the article, not absent queries,
+        generated audio, prompts, manifests, code, model outputs, or scores.
+        Dia2-2B and the evaluated models retain their own terms; generated-
+        voice and model-output reuse requires separate review.
+    sources:
+      - https://arxiv.org/abs/2606.11386
+      - https://arxiv.org/html/2606.11386v1#S4
+      - https://arxiv.org/html/2606.11386v1#S6
+      - https://arxiv.org/html/2606.11386v1#A1.SS3
+      - https://arxiv.org/html/2606.11386v1#A1.SS4
+      - https://export.arxiv.org/api/query?id_list=2606.11386
+      - https://api.github.com/search/repositories?q=%22Overcoming%20State%20Inertia%20in%20Full-Duplex%20Spoken%20Language%20Models%22
+      - https://api.github.com/search/repositories?q=%222606.11386%22
+      - https://huggingface.co/api/datasets?search=Zero-Buffer%20Benchmark
+      - https://huggingface.co/api/datasets?search=2606.11386
+    note: >-
+      No benchmark family is counted and no helper is added. The paper fully
+      describes the 100-query paired diagnostic, but does not release the
+      exact query list, audio, timing harness, judge implementation, or outputs
+      needed to reproduce it. Reassess if the MIT authors publish an owner-
+      controlled benchmark package.
+
   step_audio_r1_5_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2604.25719
     title: "Step-Audio-R1.5 Technical Report"
