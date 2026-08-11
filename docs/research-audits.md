@@ -2329,7 +2329,14 @@ acoustic QA, multi-event reasoning, temporal grounding, and paralinguistic
 inference but provides no item count, split, repository, dataset card, or
 download. That description does not match the four spoken BIG-Bench Hard tasks
 in the separately indexed public Artificial Analysis Big Bench Audio release,
-so the index does not conflate the two names.
+so the index does not conflate the two names. A focused August 10 recheck found
+arXiv version 1 unchanged and no owner artifact through exact-name or arXiv-ID
+GitHub repository searches or exact-name Hugging Face dataset and model
+searches. Section 5.1 and the appendix still provide no constituent-family
+list, frozen rows, prompts, scoring code, predictions, or per-item scores.
+The article's CC BY-NC-ND 4.0 license does not cover those absent assets or
+relicense the public upstream families. The aggregate remains uncounted with
+no helper.
 
 The July 2026 ZipL-Dialog paper adds the public CoVoMix2 Dialogue test-set
 family. Its official repository releases 1,000 DailyDialog-derived transcript

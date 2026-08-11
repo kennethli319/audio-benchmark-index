@@ -15106,6 +15106,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2607.21550
     sections: 5.1-5.4
     status: audited_existing_coverage_one_unmapped_aggregate
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: MMSU
         index_id: mmsu
@@ -15147,12 +15148,35 @@ paper_audits:
       The article is CC BY-NC-ND 4.0, which does not release or license the
       absent BIG Bench Audio aggregate, evaluation records, or three-tier
       training corpus. Each mapped public benchmark retains its own terms.
+    release_audit:
+      arxiv_version: v1_unchanged_since_2026-07-23
+      paper_project_repository_or_dataset_link: none
+      exact_name_github_repository_search: no_matching_repository
+      arxiv_id_github_repository_search: no_matching_repository
+      exact_name_hugging_face_dataset_and_model_search: no_matching_release
+      big_bench_audio_manifest_prompts_code_predictions_and_scores: not_released
+      download_helper: none_manual_required_unreleased
     sources:
       - https://arxiv.org/abs/2607.21550
       - https://arxiv.org/html/2607.21550v1#S5.SS1.SSS0.Px4
       - https://arxiv.org/html/2607.21550v1#S5.SS3
       - https://arxiv.org/html/2607.21550v1#S5.SS4
       - https://export.arxiv.org/e-print/2607.21550v1
+      - https://api.github.com/search/repositories?q=%22X3-OPD%22
+      - https://api.github.com/search/repositories?q=%222607.21550%22
+      - https://huggingface.co/api/datasets?search=X3-OPD&limit=50
+      - https://huggingface.co/api/models?search=X3-OPD&limit=50
+    note: >-
+      A focused August 10 release recheck found arXiv version 1 unchanged and
+      no owner artifact through exact-name and arXiv-ID GitHub repository
+      searches or exact-name Hugging Face dataset/model searches. Section
+      5.1 still gives no citation, item count, constituent-family list, row
+      manifest, prompts, or scoring implementation for its BIG Bench Audio
+      aggregate. The paper's 93.6 BAB result and appendix ablations therefore
+      cannot establish that this is the independently released Artificial
+      Analysis benchmark. The ambiguous aggregate remains uncounted and has
+      no helper; the five identifiable public benchmark families remain
+      mapped to their existing entries.
 
   sidewalk_moments_citywalk:
     paper: https://arxiv.org/abs/2607.20903
