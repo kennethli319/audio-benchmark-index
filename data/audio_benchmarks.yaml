@@ -9,6 +9,77 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  chime9_mcorec_scope_and_alias_audit:
+    paper: https://arxiv.org/abs/2608.08510
+    title: "From Speech to Interaction: Analyzing Multimodal Systems in Cocktail-Party Scenarios"
+    sections: 3-5
+    status: audited_existing_chime9_mcorec_family_deprioritized_classic_av_asr
+    last_verified: 2026-08-11
+    scope_finding: >-
+      This report does not introduce a new audio- or speech-LLM benchmark. It
+      analyzes submissions to the existing CHiME-9 Multi-Modal Context-aware
+      Recognition task, whose primary objectives are target-speaker AV-ASR and
+      conversation clustering. Qwen3 appears only after speech recognition as
+      a text-semantic clustering component in one submitted pipeline; no
+      audio-language model consumes the benchmark audio end to end and no
+      pretraining, instruction-tuning, preference-optimization, reward-model,
+      or spoken-agent protocol is defined.
+    evaluation_inventory:
+      - cited_as: CHiME_9_MCoRec
+        aliases:
+          - MCoRec
+          - Multi_Modal_Context_Aware_Recognition
+          - cocktail_party_benchmark
+        primary_benchmark_paper: https://arxiv.org/abs/2510.23276
+        owner_repository: https://github.com/MCoRec/mcorec_baseline
+        status: existing_research_only_challenge_family_not_counted_in_this_focused_increment
+        tasks:
+          - target_speaker_audio_visual_speech_recognition
+          - conversation_clustering
+        metrics:
+          - speaker_dependent_WER
+          - conversation_clustering_F1
+          - joint_ASR_clustering_error
+        corpus_summary: >-
+          The primary paper describes 150 speaker-disjoint sessions recorded
+          with central 360-degree video and single-channel audio plus
+          participant reference devices, with up to eight speakers and four
+          simultaneous conversations.
+    release_audit:
+      baseline_repository: public
+      dataset: manual_approval_gated_hugging_face_release
+      dataset_snapshot_reported_bytes: 236796097208
+      commercial_access: contact_authors
+      analyzed_submission_systems: described_in_chime9_system_papers
+      new_benchmark_artifact_in_analysis_report: none
+      download_helper: none_outside_current_audio_llm_pretraining_post_training_scope
+    access: public_code_manual_approval_gated_noncommercial_dataset
+    license:
+      analysis_article: CC_BY_NC_SA_4_0
+      primary_benchmark_article: CC_BY_4_0
+      dataset: research_purposes_commercial_use_requires_contact
+      code: CC_BY_NC_4_0
+      note: >-
+        Article licenses do not override the owner dataset's research-purpose
+        condition or participant audio, video, voice, and privacy terms.
+    sources:
+      - https://arxiv.org/abs/2608.08510
+      - https://arxiv.org/html/2608.08510v1#S3
+      - https://arxiv.org/html/2608.08510v1#S4
+      - https://arxiv.org/html/2608.08510v1#S5
+      - https://arxiv.org/abs/2510.23276
+      - https://arxiv.org/html/2510.23276v2#S2
+      - https://arxiv.org/html/2510.23276v2#S3
+      - https://github.com/MCoRec/mcorec_baseline
+      - https://www.chimechallenge.org/current/task1/index
+      - https://huggingface.co/datasets/MCoRecChallenge/MCoRec
+    note: >-
+      No benchmark family, count increase, or helper is added. This alias and
+      scope audit prevents the August analysis paper from being mistaken for a
+      new speech-LLM evaluation; revisit only if a future protocol evaluates
+      an audio-native language model on interaction or reasoning beyond the
+      existing AV-ASR and clustering objectives.
+
   madbench_audio_deepfake_release_audit:
     paper: https://arxiv.org/abs/2608.09593
     title: "MADBench: A Benchmark for Modality-Aware Audio Deepfake Detection"

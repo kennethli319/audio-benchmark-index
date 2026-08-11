@@ -1,5 +1,31 @@
 # Research and release audits
 
+The August 2026 [*From Speech to Interaction: Analyzing Multimodal Systems in
+Cocktail-Party Scenarios*](https://arxiv.org/abs/2608.08510) report is recorded
+as an alias and scope audit after reviewing Sections 3-5 and the primary
+[CHiME-9 MCoRec paper](https://arxiv.org/abs/2510.23276). The report analyzes
+submissions to the existing Multi-Modal Context-aware Recognition task:
+target-speaker audio-visual ASR, conversation clustering, and their joint error
+metric. Although one submitted pipeline uses Qwen3 for semantic clustering, it
+does so only after speech has been transcribed. No audio-language model consumes
+the benchmark audio end to end, and the report defines no audio-LLM pretraining,
+instruction-tuning, preference-optimization, reward-model, or spoken-agent
+evaluation. It is therefore not a new benchmark within this focused increment.
+
+MCoRec, Multi-Modal Context-aware Recognition, and “cocktail-party benchmark”
+all refer to the same CHiME-9 family. The primary paper describes 150
+speaker-disjoint sessions with up to eight speakers and four simultaneous
+conversations. The baseline repository is public under CC BY-NC 4.0, while the
+Hugging Face dataset is manual-approval gated, reports roughly 236.8 GB of
+artifacts, forbids redistribution, and limits use to non-commercial academic,
+educational, algorithm-development, and benchmarking purposes; commercial use
+requires owner contact. The August analysis paper contributes system
+comparisons, not a new artifact release. Its CC BY-NC-SA 4.0 article license and
+the primary paper's CC BY 4.0 license do not override dataset, participant-media,
+voice, or privacy terms. No family, count increase, or helper is added; this
+audit prevents an LLM component operating on ASR text from being mistaken for
+an audio-native LLM benchmark.
+
 The August 2026 [*MADBench*](https://arxiv.org/abs/2608.09593) paper is
 recorded as an unreleased audio-visual safety benchmark audit after reviewing
 Sections 3-5. It derives 1,378 final AVSpeech source clips and constructs four
