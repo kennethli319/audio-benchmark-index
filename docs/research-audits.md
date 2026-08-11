@@ -476,6 +476,35 @@ Emilia-Yodas, LJSpeech, VocalSound, ESD, VCTK, CosyVoice3, Gemini, generated
 voice, and model-output terms remain separate. No counted family or download
 helper is added.
 
+The June 2026 [*CAAD: Contrastive Audio-Aware Distillation for Efficient
+Speech Language Models*](https://arxiv.org/abs/2606.23052) paper is recorded as
+an existing-family post-training evaluation audit after reviewing Sections
+3-5. CAAD distills an 8B DeSTA2 teacher into a 3B student by contrasting
+audio-conditioned and text-only teacher logits. It evaluates unseen-task
+transfer on the indexed Dynamic-SUPERB family, grouping selected tasks into
+content, semantic, paralinguistic, degradation, and speaker dimensions. It
+also uses only MCR-Bench's MELD speech-emotion track under neutral, faithful,
+adversarial, and irrelevant text conditions. Category and overall accuracy,
+condition accuracy, and modality shift directly test whether post-training
+preserves acoustic grounding instead of inheriting the teacher's language
+prior. The AccentDB, DailyTalk, IEMOCAP, PromptTTS, VCTK, and VoxCeleb mixture
+and pseudo-ground-truth descriptions are training data, not new evaluation
+tracks.
+
+The owner repository is public at revision
+`74da475edf1b00f496284edf5f531e1d1f768efa` and releases method, training,
+inference, task-inventory, accuracy-aggregation, and MCR neutral-to-adversarial
+flip diagnostic code. It also bundles large pseudo-ground-truth JSONL training
+outputs, which are not benchmark data. Its README still promises full usage
+instructions later; no paper checkpoints, clearly identified frozen evaluation
+manifests, baseline
+predictions, or per-item scores are released. The repository has no license
+file and GitHub detects none. The paper's CC BY 4.0 license therefore does not
+license the code or bundled outputs, while Dynamic-SUPERB's mixed component
+terms and MCR-Bench's ClothoAQA, MELD, VocalSound, and source-media terms still
+apply. No benchmark count or helper changes because both evaluation families
+already have index entries and download guidance.
+
 The August 2026 [*Do Audio Language Models Use Paralinguistic
 Evidence?*](https://arxiv.org/abs/2608.06718) paper is recorded as an
 unreleased post-training judge audit after reviewing Sections 3-5 and

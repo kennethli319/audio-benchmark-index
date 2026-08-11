@@ -9,6 +9,99 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  caad_audio_aware_distillation_evaluation_audit:
+    paper: https://arxiv.org/abs/2606.23052
+    title: "CAAD: Contrastive Audio-Aware Distillation for Efficient Speech Language Models"
+    sections: 3-5
+    status: audited_existing_public_benchmark_families_with_public_method_code_and_incomplete_paper_reproduction_artifacts
+    last_verified: 2026-08-11
+    pretraining_post_training_relevance: >-
+      CAAD distills an 8B DeSTA2 speech-language teacher into a 3B student while
+      explicitly contrasting audio-conditioned and text-only teacher logits.
+      Its evaluation tests whether post-training preserves acoustic grounding,
+      unseen-task transfer, and resistance to conflicting linguistic prompts
+      rather than merely transferring the teacher's language prior.
+    evaluation_inventory:
+      - cited_as: Dynamic_SUPERB
+        status: existing_public_family
+        index_id: dynamic_superb
+        paper_selection: >-
+          The paper groups selected test tasks into content, semantic,
+          paralinguistic, degradation, and speaker dimensions and reports
+          per-dimension and overall accuracy. The public repository's task
+          inventory additionally lists environmental-sound and music tasks,
+          but the paper's ALL score excludes that AUDIO group.
+        metrics:
+          - category_accuracy
+          - overall_accuracy
+      - cited_as: MCR_BENCH_SER
+        status: existing_public_family_paper_uses_one_task_track
+        index_id: mcr_bench
+        source_track: MELD_speech_emotion_recognition
+        conditions:
+          - neutral
+          - faithful
+          - adversarial
+          - irrelevant
+        metrics:
+          - condition_accuracy
+          - modality_shift_score
+        note: >-
+          This is MCR-Bench's existing speech-emotion track, not a new CAAD
+          benchmark or a separately released derivative family.
+      - cited_as: DeSTA2_expressive_speech_instruction_data
+        status: training_data_not_benchmark
+        sources:
+          - AccentDB
+          - DailyTalk
+          - IEMOCAP
+          - PromptTTS
+          - VCTK
+          - VoxCeleb
+        attributes: 12_speaker_prosody_and_acoustic_environment_attributes
+        note: >-
+          These corpora and pseudo-ground-truth descriptions train the teacher
+          and student; they are not additional CAAD evaluation tracks.
+    release_audit:
+      owner_repository: public_ungated
+      owner_repository_revision: 74da475edf1b00f496284edf5f531e1d1f768efa
+      repository_tree_entries: 97
+      method_training_and_inference_code: released
+      dynamic_superb_task_inventory_and_accuracy_aggregation_code: released
+      mcr_bench_neutral_to_adversarial_flip_diagnostic_code: released
+      pseudo_ground_truth_training_outputs: released_not_evaluation_data
+      readme_status: placeholder_full_usage_promised_later
+      paper_specific_frozen_evaluation_manifests: not_clearly_identified
+      paper_model_checkpoints: not_released
+      paper_predictions_and_per_item_scores: not_released
+      download_helper: none_existing_benchmark_helpers_already_cover_the_two_families
+    access: public_method_code_existing_benchmark_access_paths_apply
+    license:
+      paper: CC_BY_4_0
+      owner_repository: no_license_file_or_detected_license
+      benchmarks: mixed_upstream_terms
+      note: >-
+        CC BY 4.0 covers the article, not the unlicensed code repository or
+        bundled pseudo-ground-truth outputs. Dynamic-SUPERB aggregates many
+        separately licensed corpora, and MCR-Bench retains ClothoAQA, MELD,
+        VocalSound, and source-media terms.
+    sources:
+      - https://arxiv.org/abs/2606.23052
+      - https://arxiv.org/html/2606.23052v1#S3
+      - https://arxiv.org/html/2606.23052v1#S4
+      - https://arxiv.org/html/2606.23052v1#S5
+      - https://github.com/ChenWils/Contrastive_Audio-Aware_Distillation
+      - https://api.github.com/repos/ChenWils/Contrastive_Audio-Aware_Distillation
+      - https://api.github.com/repos/ChenWils/Contrastive_Audio-Aware_Distillation/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/ChenWils/Contrastive_Audio-Aware_Distillation/main/examples/train/scripts/assets/ds_tasks.txt
+      - https://raw.githubusercontent.com/ChenWils/Contrastive_Audio-Aware_Distillation/main/cat_avg.py
+      - https://raw.githubusercontent.com/ChenWils/Contrastive_Audio-Aware_Distillation/main/compute_tir_adv.py
+    note: >-
+      No benchmark family, count increase, or helper is added. This audit
+      records CAAD as a post-training method evaluated on two existing public
+      families, separates its released pseudo-GT training outputs from test
+      data, and avoids treating a method-code release as a new benchmark.
+
   chime9_mcorec_scope_and_alias_audit:
     paper: https://arxiv.org/abs/2608.08510
     title: "From Speech to Interaction: Analyzing Multimodal Systems in Cocktail-Party Scenarios"
