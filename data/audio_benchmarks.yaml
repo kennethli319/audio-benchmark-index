@@ -5973,7 +5973,7 @@ paper_audits:
     title: "Hear, Invoke, and Understand: A Skill-Calling Multimodal Agent for Large Audio Language Models"
     sections: 5.1-5.2 and 6.1-6.3
     status: audited_benchmark_announced_for_future_release
-    last_verified: 2026-08-09
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: HIU-Bench
         index_id: null
@@ -6012,7 +6012,7 @@ paper_audits:
       training_corpus_and_trajectories: not_released
       models_and_agent_code: not_released
       arxiv_current_version: v1_submitted_2026-08-03
-      focused_release_recheck: 2026-08-09_no_matching_owner_artifact_found
+      focused_release_recheck: 2026-08-10_no_matching_owner_artifact_found
     license:
       paper: arXiv_perpetual_non_exclusive_license
       benchmark_data: not_specified_unreleased
@@ -6050,7 +6050,10 @@ paper_audits:
       GitHub searches returned only paper-list mirrors or the unrelated
       `hiua-bench` project, while exact-name Hugging Face dataset/model searches
       remained empty. The conclusion still promises release only upon
-      publication and supplies no owner-controlled artifact URL.
+      publication and supplies no owner-controlled artifact URL. A focused
+      August 10 recheck again found version 1 unchanged, the same two paper-list
+      mirrors and unrelated repository, and no matching Hub dataset or model;
+      the promised evaluation package therefore remains unavailable.
 
   spoken_function_calling_sfc_bench:
     paper: https://arxiv.org/abs/2608.05126

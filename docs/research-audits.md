@@ -494,7 +494,10 @@ benchmark-name GitHub searches returned only paper-list mirrors or the
 unrelated `hiua-bench` project, and exact-name Hugging Face dataset and model
 searches remained empty. The paper conclusion still promises release only
 upon publication and supplies no owner-controlled artifact URL, so the full
-HIU-Bench evaluation package remains unreleased.
+HIU-Bench evaluation package remains unreleased. A focused August 10 recheck
+again found version 1 unchanged, the same two paper-list mirrors and unrelated
+repository, and no matching Hub dataset or model; the promised evaluation
+package therefore remains unavailable.
 
 The June 2026 *AudioProcessBench* paper is recorded as an announced-but-
 unreleased derived benchmark for audio reasoning critics and process reward
