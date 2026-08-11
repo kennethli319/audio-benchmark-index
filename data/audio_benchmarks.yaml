@@ -9,6 +9,116 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  multilingual_emotion_neurons_release_audit:
+    paper: https://arxiv.org/abs/2608.08772
+    title: Multilingual Emotion Neurons in Large Audio-Language Models
+    sections: 3-6_and_appendices_A-B_and_D
+    status: audited_existing_corpora_and_unreleased_derived_audio_llm_intervention_protocol
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      The paper probes whether affective units learned by four pretrained
+      large audio-language models encode a language-invariant component, and
+      measures how corpus and language choice affect transfer of the selected
+      representation.
+    post_training_relevance: >-
+      Deactivation and activation steering test whether identified neurons
+      causally control speech-emotion recognition in identification,
+      low-resource, and held-out languages. This directly evaluates
+      controllability, multilingual robustness, and behavior at the
+      post-trained audio-language interface.
+    evaluation_inventory:
+      - cited_as: multilingual_emotion_neuron_identification_and_intervention
+        status: paper_defined_unreleased_protocol_over_upstream_emotional_speech_corpora
+        identification_languages_and_corpora:
+          - Amharic_ASED
+          - Moroccan_Arabic_MDER
+          - Bengali_SUBESCO
+          - English_MSP_Podcast
+          - Italian_Emozionalmente
+          - Mandarin_BIIC
+          - Polish_nEMO
+          - Urdu_UrduSER
+        held_out_languages_and_corpora:
+          - French_CaFE
+          - German_EmoDB
+          - Persian_ShEMO
+          - Russian_RESD
+        source_family_already_indexed:
+          - index_id: msp_podcast
+        evaluation_partition: up_to_150_utterances_per_emotion_per_corpus
+        identification_budget: up_to_50_correctly_recognized_instances_per_emotion_and_language
+        emotions:
+          - anger
+          - fear
+          - happiness
+          - neutral
+          - sadness
+        evaluated_models:
+          - Audio_Flamingo_3
+          - Qwen2_5_Omni_7B
+          - MiniCPM_o_4_5
+          - Kimi_Audio
+        protocol: >-
+          Log activations only for correctly recognized utterances, select the
+          top 0.5 percent of emotion-sensitive decoder neurons, compare
+          monolingual selection with overlap, joint, mean, and
+          consistency-regularized fusion, then apply matched deactivation or
+          alpha-0.5 steering. The paper also performs leave-one-language-out,
+          identification-budget, and consistency-penalty ablations.
+        decoding: greedy_temperature_0_with_20_token_limit_and_randomized_option_mapping
+        metrics:
+          - unweighted_average_recall
+          - self_effect_accuracy_change
+          - average_cross_effect
+          - emotion_selectivity_score
+          - neuron_set_jaccard_similarity
+          - cross_language_rank_correlation
+          - invariant_variance_share
+    release_audit:
+      upstream_emotional_speech_corpora: separately_sourced_with_independent_access_and_terms
+      paper_specific_evaluation_manifests: not_released
+      fixed_random_seeds_claimed_in_released_code: release_not_located
+      neuron_selection_and_intervention_code: not_released
+      prompts_and_post_processing: described_but_not_packaged
+      activation_logs_selected_neuron_masks_and_checkpoints: not_released
+      predictions_and_per_item_scores: not_released
+      owner_project_or_artifact_link_in_paper: none
+      exact_title_and_method_github_repository_searches: no_owner_release
+      arxiv_id_github_repository_search: no_results
+      arxiv_id_hugging_face_dataset_and_model_searches: no_results
+      download_helper: none_no_independent_public_evaluation_artifact
+    access: paper_defined_derived_evaluation_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      evaluation_artifacts: not_released_no_terms
+      source_data: each_upstream_corpus_retains_its_own_terms
+      note: >-
+        The arXiv distribution license covers the article, not absent split
+        manifests, code, activations, neuron masks, outputs, or score records.
+        The twelve emotional-speech corpora have separate access, consent,
+        privacy, biometric, and reuse conditions and are not relicensed by
+        this paper or this audit.
+    sources:
+      - https://arxiv.org/abs/2608.08772
+      - https://arxiv.org/html/2608.08772v1#S3
+      - https://arxiv.org/html/2608.08772v1#S4
+      - https://arxiv.org/html/2608.08772v1#S5
+      - https://arxiv.org/html/2608.08772v1#S6
+      - https://arxiv.org/html/2608.08772v1#A1
+      - https://arxiv.org/html/2608.08772v1#A2
+      - https://arxiv.org/html/2608.08772v1#A4
+      - https://export.arxiv.org/api/query?id_list=2608.08772
+      - https://api.github.com/search/repositories?q=%22Multilingual%20Emotion%20Neurons%22
+      - https://api.github.com/search/repositories?q=2608.08772
+      - https://huggingface.co/api/datasets?search=2608.08772
+      - https://huggingface.co/api/models?search=2608.08772
+    note: >-
+      No benchmark family is counted and no helper is added. This is an
+      evaluation-protocol and release-status audit: the upstream corpora are
+      not a new unified release, and the exact fixed selections and
+      intervention artifacts needed to reproduce the paper are unavailable.
+      Reassess if the authors publish the code referenced in Appendix A.4.
+
   st_omniqa_release_audit:
     paper: https://arxiv.org/abs/2608.09435
     title: "Listen, See and Track: Spatio-Temporal Audio-Visual Sound Event Reasoning for Omni-Modal Language Models"

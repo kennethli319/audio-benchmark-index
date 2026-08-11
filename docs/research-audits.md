@@ -4609,3 +4609,32 @@ map to existing public families; the paper-specific fixed subsets are also
 unreleased. CC BY 4.0 covers the article, not absent benchmark artifacts, and
 Matterport3D and SoundSpaces retain their own terms. No counted benchmark
 family or download helper is added.
+
+The August 2026 [*Multilingual Emotion Neurons in Large Audio-Language
+Models*](https://arxiv.org/abs/2608.08772) paper is recorded as an
+existing-corpus and unreleased-derived-protocol audit after reviewing Sections
+3-6 and Appendices A-B and D. It samples up to 150 utterances per emotion from
+twelve monolingual emotional-speech corpora, using eight languages for neuron
+identification and four strictly held out for zero-shot transfer. Four large
+audio-language models are tested with randomized multiple-choice mappings and
+deterministic decoding. The protocol selects the top 0.5 percent of
+emotion-sensitive neurons, compares monolingual selection with four
+cross-lingual fusion strategies, and measures unweighted recall plus causal
+self-effects, cross-effects, and emotion-selectivity scores under deactivation
+and steering. Leave-one-language-out and data-budget ablations test which
+corpora supply transferable affective evidence. This directly audits whether
+pretrained audio-language representations transfer across languages and
+whether post-training behavior is robust and controllable through causal
+intervention.
+
+MSP-Podcast maps to an existing index family; the other named corpora remain
+separate upstream sources rather than a newly released multilingual benchmark.
+The paper links no project or artifact repository. Although Appendix A.4 says
+fixed split seeds are specified in “released code,” exact-title, arXiv-ID, and
+method-name GitHub searches found no owner release, and arXiv-ID Hugging Face
+dataset and model searches returned no results. Frozen selections, code,
+activation logs, neuron masks, prompts, predictions, and per-item scores are
+therefore unavailable. The arXiv perpetual non-exclusive license covers the
+article, not those absent artifacts; each source corpus retains its own access,
+consent, privacy, biometric, and reuse terms. No counted family or download
+helper is added; reassess if the referenced code appears.
