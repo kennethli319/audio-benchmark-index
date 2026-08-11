@@ -2464,7 +2464,16 @@ ethics, including 1,319 GSM8K and 1,000 MMLU moral questions converted to
 speech. The paper provides no official project, repository, dataset card,
 archive, item manifest, generated audio, evaluation code, or data-license
 statement. Public upstream MMAU, MMAR, GSM8K, and MMLU resources do not release
-SYAUDIO's selected rows, speech, prompts, or acoustic perturbations.
+SYAUDIO's selected rows, speech, prompts, or acoustic perturbations. A focused
+August 10 recheck found arXiv version 1 unchanged and no matching owner release
+in exact-title or arXiv-ID GitHub searches or exact-name Hugging Face dataset
+and model searches. The sole broader Hub result,
+`janbatzner/sycophancy-audio-omni`, is an independent 800-file GPT audio/text
+response comparison with no dataset card, paper citation, or SYAUDIO manifest;
+it is not an alias or release path. The benchmark audio, prompts, frozen
+selections, perturbations, evaluator, model outputs, and per-item scores remain
+unreleased. The article's arXiv license does not cover those absent artifacts,
+so SYAUDIO remains uncounted with no helper.
 
 The June 2026 OpenMIC instrument-grounding paper is likewise recorded as an
 announced but unreleased protocol sequence. It defines five evaluations:

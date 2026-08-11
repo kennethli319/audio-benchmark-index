@@ -17078,6 +17078,7 @@ paper_audits:
     paper: https://arxiv.org/abs/2601.23149
     sections: 3.1-3.3 and appendix F
     status: audited_not_indexed
+    last_verified: 2026-08-10
     public_interfaces: []
     evaluated_domains:
       - domain: audio_language_model_sycophancy
@@ -17088,13 +17089,39 @@ paper_audits:
       paper: arXiv perpetual non-exclusive license
       benchmark_data: not_specified_unreleased
       upstream: MMAU and MMAR retain their own mixed terms; GSM8K and MMLU source terms do not establish redistribution rights for the paper's generated speech or derived annotations
+    release_audit:
+      arxiv_version: v1_unchanged_since_2026-01-30
+      paper_project_repository_or_dataset_link: none
+      exact_title_github_repository_search: no_matching_repository
+      arxiv_id_github_repository_search: no_matching_repository
+      exact_name_hugging_face_dataset_and_model_search: no_matching_release
+      broader_hugging_face_audio_sycophancy_search: unrelated_non_owner_dataset_only
+      audio_prompts_manifests_code_and_scores: not_released
+      download_helper: none_manual_required_unreleased
     sources:
       - https://arxiv.org/abs/2601.23149
       - https://arxiv.org/html/2601.23149v1#S3.SS1
       - https://arxiv.org/html/2601.23149v1#S3.SS2
       - https://arxiv.org/html/2601.23149v1#S3.SS3
       - https://arxiv.org/html/2601.23149v1#A6
-    note: The paper introduces SYAUDIO as a 4,319-question benchmark but supplies no official project, repository, dataset card, archive, download URL, data-license statement, or code link. Public MMAU, MMAR, GSM8K, and MMLU sources do not make the paper's selected rows, generated speech, sycophancy prompts, acoustic perturbations, or evaluation manifests public. SYAUDIO is therefore recorded as an audited protocol rather than a downloadable benchmark family; do not confuse unrelated repositories with similar names for an official release.
+      - https://api.github.com/search/repositories?q=%22Hearing%20is%20Believing%22%20SYAUDIO
+      - https://api.github.com/search/repositories?q=%222601.23149%22
+      - https://huggingface.co/api/datasets?search=SYAUDIO&limit=50
+      - https://huggingface.co/api/models?search=SYAUDIO&limit=50
+      - https://huggingface.co/api/datasets?search=audio%20sycophancy&limit=50
+    note: >-
+      The paper introduces SYAUDIO as a 4,319-question benchmark but supplies
+      no official project, repository, dataset card, archive, download URL,
+      data-license statement, or code link. A focused August 10 recheck found
+      arXiv version 1 unchanged; exact-title and arXiv-ID GitHub searches and
+      exact-name Hugging Face dataset/model searches found no matching owner
+      release. The broader Hub result `janbatzner/sycophancy-audio-omni` is an
+      independent 800-file GPT audio/text response comparison with no card,
+      paper citation, or SYAUDIO manifest, so it is not treated as an alias.
+      Public MMAU, MMAR, GSM8K, and MMLU sources do not make the paper's
+      selected rows, generated speech, sycophancy prompts, acoustic
+      perturbations, evaluator outputs, or item scores public. SYAUDIO remains
+      an uncounted protocol with no helper.
 
   diverse_speech_human_asr_comparison:
     paper: https://arxiv.org/abs/2607.19049
