@@ -4470,3 +4470,25 @@ synthesized voices still require separate copyright, platform, consent,
 privacy, biometric, and publicity review. The helper fetches pinned lightweight
 documentation, annotations, and prompts by default; the approximately 1.04 GB audio
 snapshot requires explicit opt-in.
+
+The June 2026 [*Beyond Binary Instrument QA*](https://arxiv.org/abs/2606.31338)
+paper received a focused August 10 release-status audit after re-reading
+Section 2 and Appendices A.1-A.7. Its five OpenMIC-derived tracks progress
+from 9,332 binary instrument-presence questions to a 590-item genre-prior-hard
+set, 1,051 related-instrument discrimination cases, 1,028 long-context
+multi-label mixtures, and 3,579 temporal-localization cases. The protocols
+directly evaluate post-training robustness and acoustic grounding in general
+and music-specialized audio-language models by exposing genre shortcuts,
+candidate-position bias, label preferences, and temporal-response bias.
+
+ArXiv remains at version 1 and the paper still only promises future release of
+metadata, prompt templates, and evaluation code. It links no project or
+artifact page; exact-title, arXiv-ID, and instrument-grounding-plus-OpenMIC
+GitHub repository searches returned no match, while corresponding Hugging
+Face dataset and model searches were empty. The frozen selections,
+concatenation assignments, manually defined candidates, prompts, code,
+predictions, and per-item scores therefore remain unavailable. OpenMIC-2018
+is public under CC BY 4.0 with per-recording license metadata, but that does
+not reproduce or license the paper-specific derivatives. The article is CC
+BY-NC-ND 4.0 and does not release those absent artifacts or relicense source
+audio. No counted family or download helper is added.

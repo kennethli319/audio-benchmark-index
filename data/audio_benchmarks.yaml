@@ -13597,6 +13597,13 @@ paper_audits:
     title: "Beyond Binary Instrument QA: Probing Instrument Grounding in Music Audio-Language Models"
     sections: 2 and appendix A.1-A.7
     status: audited_announced_unreleased_protocols
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      The five diagnostics test whether instruction-tuned general and
+      music-specialized audio-language models ground instrument answers in the
+      waveform rather than genre priors, answer format, candidate order, or
+      temporal-position bias. This directly evaluates post-training robustness
+      and acoustic grounding beyond aggregate binary-QA accuracy.
     evaluated_sets:
       - cited_as: Binary Instrument-Presence QA
         index_id: null
@@ -13631,24 +13638,50 @@ paper_audits:
       related-instrument groups, exact-set/F1 scoring for multi-label
       recognition, and three balanced temporal answer ranges. These details
       make the protocols auditable but do not constitute a public release.
-    release_note: >-
-      The v1 paper says the authors "will release" benchmark metadata, prompt
-      templates, and evaluation code. It provides no official project page,
-      repository, dataset card, archive, DOI, item manifest, or derived audio
-      release. The public OpenMIC-2018 source family remains indexed, but its
-      availability does not reproduce the paper's sampled rows, genre-hard
-      split, manually defined candidates, concatenation assignments, prompts,
-      or evaluation metadata. Recheck after an official release appears.
+    release_audit:
+      arxiv_version: v1_unchanged_since_2026-06-30
+      promised_benchmark_metadata_prompts_and_code: not_released
+      paper_project_repository_or_dataset_link: none
+      exact_title_github_repository_search: no_matching_repository
+      arxiv_id_github_repository_search: no_matching_repository
+      instrument_grounding_openmic_github_repository_search: no_matching_repository
+      exact_concept_hugging_face_dataset_search: no_matching_dataset
+      exact_concept_hugging_face_model_search: no_matching_model
+      frozen_sample_and_concatenation_manifests: not_released
+      prompts_evaluation_code_predictions_and_item_scores: not_released
+      download_helper: none_manual_required_unreleased
+      note: >-
+        The public OpenMIC-2018 source family remains indexed, but its
+        availability does not reproduce the paper's sampled rows, genre-hard
+        split, manually defined candidates, concatenation assignments, prompts,
+        or evaluation metadata.
     license_note: >-
       OpenMIC-2018 is distributed through Zenodo under CC BY 4.0 and includes
       per-recording license metadata. No separate license is stated for the
-      paper's unreleased annotations, prompts, or derived 30-second inputs.
+      paper's unreleased annotations, prompts, or derived 30-second inputs. The
+      article's CC BY-NC-ND 4.0 license does not release or relicense those
+      absent benchmark artifacts or the underlying audio.
     sources:
       - https://arxiv.org/abs/2606.31338
+      - https://arxiv.org/html/2606.31338v1#S2
+      - https://arxiv.org/html/2606.31338v1#A1
       - https://export.arxiv.org/e-print/2606.31338v1
+      - https://export.arxiv.org/api/query?id_list=2606.31338
+      - https://api.github.com/search/repositories?q=%22Beyond%20Binary%20Instrument%20QA%22
+      - https://api.github.com/search/repositories?q=%222606.31338%22
+      - https://api.github.com/search/repositories?q=%22instrument%20grounding%22%20OpenMIC
+      - https://huggingface.co/api/datasets?search=instrument%20grounding&limit=50
+      - https://huggingface.co/api/models?search=instrument%20grounding&limit=50
       - https://zenodo.org/records/1432913
       - https://github.com/cosmir/openmic-2018
       - https://brianmcfee.net/papers/ismir2018_openmic.pdf
+    note: >-
+      A focused August 10 release recheck found arXiv version 1 unchanged and
+      no paper-linked artifact URL. Exact-title, arXiv-ID, and
+      instrument-grounding-plus-OpenMIC GitHub repository searches returned no
+      match, and corresponding Hugging Face dataset and model searches were
+      empty. The five promised derived protocols therefore remain uncounted and
+      receive no download helper.
 
   qwen3_tts_technical_report:
     paper: https://arxiv.org/abs/2601.15621
