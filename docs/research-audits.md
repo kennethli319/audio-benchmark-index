@@ -131,6 +131,34 @@ software licenses but does not license an absent benchmark package. The audit
 therefore adds no counted family or helper and should be revisited when an
 owner-controlled artifact URL and explicit terms appear.
 
+The August 2026 [*ReLMCodec*](https://arxiv.org/abs/2608.08286) paper is
+recorded as an existing-family protocol and placeholder-release audit after
+reviewing its pre-quantization analysis, method, experiments, and Appendices
+A-E. Its controlled diagnostic freezes 24 codec, tokenizer, and SSL
+representations, applies a shared 8,192-codeword probe quantizer, and trains a
+separate Qwen2-1.5B token model for each representation. KNN phoneme accuracy
+and three cluster measures are compared with next-token accuracy and
+perplexity. End-to-end tests separately measure LibriSpeech reconstruction,
+native-token predictability, transfer through a shared EmoVoice TTS
+architecture on the F5-TTS selection, and a reconstruction H-MOS whose sample
+and rater counts are not stated.
+This directly audits pretraining interfaces: it asks whether a low-bitrate
+speech representation remains predictable to an autoregressive LLM while
+preserving intelligibility, speaker identity, and waveform quality.
+
+The owner repository is public at revision
+`523123467ceef69dffcd6ffbcbb597c66b34657d`, but contains only a 49-byte README
+announcing the official implementation and an MIT license. The paper says
+checkpoints, probing scripts, representation statistics, and evaluation
+configuration will be released upon acceptance. Frozen probe samples and
+alignments, evaluation manifests, reconstructed and generated outputs,
+human-listening assignments and ratings, predictions, and per-item scores are
+also absent. MIT therefore applies only to the current two-file placeholder;
+it does not license absent artifacts or alter upstream LibriSpeech, model,
+metric, or generated-audio terms. The public evaluations map to the existing
+LibriSpeech family, while the derived F5-TTS and listening selections are
+unreleased paper-specific protocols, so no family or helper is added.
+
 The August 2026 [*HyPASE*](https://arxiv.org/abs/2608.04351) paper is
 recorded as an existing-family post-training and cross-dataset transfer audit
 after reviewing Sections 4.1-4.6. It adapts Qwen2-Audio-7B-Instruct for speech

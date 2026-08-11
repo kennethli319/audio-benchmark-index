@@ -514,6 +514,112 @@ paper_audits:
       artifact. Reassess when the authors add a stable dataset or repository
       URL with explicit artifact terms.
 
+  relmcodec_speech_token_predictability_release_audit:
+    paper: https://arxiv.org/abs/2608.08286
+    title: "ReLMCodec: Designing Predictable Speech Tokens from Pre-Quantization Phoneme Structure"
+    sections: pre_quantization_analysis_method_experiments_and_appendices_A-E
+    status: audited_existing_family_protocol_with_placeholder_code_release
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      ReLMCodec evaluates a speech codec specifically as the discrete interface
+      to an autoregressive language model. Its matched 24-representation probe,
+      native-token predictability tests, reconstruction evaluation, and
+      downstream TTS transfer directly test whether pre-quantization phoneme
+      structure produces tokens that are easier for speech LLMs to model
+      without discarding reconstruction or speaker information.
+    evaluation_inventory:
+      - cited_as: matched_pre_quantization_predictability_probe
+        status: paper_described_unreleased_protocol
+        role: compare_24_frozen_codec_tokenizer_and_SSL_representations
+        data: LibriSpeech_train_960_and_test_splits
+        phoneme_analysis_sample: fixed_seed_500_train_and_100_test_utterances
+        shared_quantizer: 8192_codeword_8_dimension_P_VQ_at_50_Hz
+        shared_language_model: separately_trained_Qwen2_1_5B_per_representation
+        metrics:
+          - KNN_phoneme_accuracy
+          - Silhouette
+          - Davies_Bouldin
+          - V_measure
+          - probe_top_1_next_token_accuracy
+          - probe_perplexity
+          - Spearman_correlation_with_bootstrap_intervals_and_permutation_tests
+      - cited_as: end_to_end_codec_reconstruction
+        status: existing_public_LibriSpeech_family_with_unreleased_outputs
+        data:
+          - LibriSpeech_test_clean
+          - LibriSpeech_test_other
+        metrics:
+          - Whisper_Large_v3_WER
+          - multi_scale_log_mel_loss
+          - STOI
+          - PESQ
+          - WavLM_speaker_similarity
+          - UTMOS
+          - native_next_token_accuracy
+          - native_next_token_perplexity
+          - codebook_perplexity
+      - cited_as: downstream_TTS_transfer
+        status: existing_public_LibriSpeech_derived_F5_TTS_protocol_with_unreleased_outputs
+        role: shared_EmoVoice_architecture_trained_once_per_codec_tokenization
+        metrics:
+          - WER
+          - speaker_similarity
+          - UTMOS
+      - cited_as: human_reconstruction_MOS
+        status: paper_described_unreleased_evaluation
+        role: reconstructed_speech_overall_quality_rating
+        metric: H_MOS_rating_distributions_means_and_medians
+        sample_and_rater_counts: not_stated
+    protocol_note: >-
+      The controlled probe bypasses each representation's native quantizer and
+      fixes discrete capacity and language-model optimization, while the
+      end-to-end tables retain released baseline checkpoints and native codec
+      behavior. These are distinct analyses and their probe and native
+      predictability metrics are not directly interchangeable. LibriSpeech is
+      an existing indexed dataset family; the fixed F5-TTS subset and human
+      listening selection are paper-specific protocols, not new public
+      benchmark releases.
+    release_audit:
+      owner_repository_revision: 523123467ceef69dffcd6ffbcbb597c66b34657d
+      repository_contents: README_and_MIT_license_only
+      repository_readme: official_implementation_announcement_only
+      paper_release_statement: checkpoints_probing_scripts_representation_statistics_and_evaluation_configuration_promised_upon_acceptance
+      checkpoints_and_model_code: not_released
+      probe_quantizer_and_token_LM_scripts: not_released
+      frozen_probe_samples_alignments_and_representation_statistics: not_released
+      reconstruction_and_F5_TTS_evaluation_manifests: not_released
+      human_MOS_audio_assignment_ratings_and_scores: not_released
+      predictions_reconstructions_and_per_item_metrics: not_released
+      download_helper: none_placeholder_repository_has_no_reproducible_artifacts
+    access: paper_public_owner_repository_public_but_artifacts_unreleased
+    license:
+      paper: arXiv_nonexclusive_distribution_license
+      placeholder_repository: MIT
+      evaluation_artifacts: not_released_no_terms
+      upstream_data_models_and_metrics: retain_their_own_terms
+      note: >-
+        MIT currently covers only the two-file placeholder repository. It does
+        not license absent checkpoints, scripts, statistics, reconstructed or
+        generated audio, listening-test records, or upstream LibriSpeech and
+        model assets.
+    sources:
+      - https://arxiv.org/abs/2608.08286
+      - https://arxiv.org/html/2608.08286v1#Sx3.SSx1
+      - https://arxiv.org/html/2608.08286v1#Sx5.SSx1
+      - https://arxiv.org/html/2608.08286v1#Sx5.SSx2
+      - https://arxiv.org/html/2608.08286v1#A1
+      - https://arxiv.org/html/2608.08286v1#A5
+      - https://github.com/ggiggit/ReLMCodec
+      - https://api.github.com/repos/ggiggit/ReLMCodec
+      - https://api.github.com/repos/ggiggit/ReLMCodec/git/trees/523123467ceef69dffcd6ffbcbb597c66b34657d?recursive=1
+      - https://raw.githubusercontent.com/ggiggit/ReLMCodec/523123467ceef69dffcd6ffbcbb597c66b34657d/README.md
+      - https://huggingface.co/api/models?search=ReLMCodec
+      - https://huggingface.co/api/datasets?search=ReLMCodec
+    note: >-
+      No benchmark family, count increase, or helper is added. Reassess after
+      the promised owner artifacts expose the frozen probing and transfer
+      protocols, checkpoints, outputs, and explicit terms.
+
   voxzip_pretrained_audio_interface_compression_audit:
     paper: https://arxiv.org/abs/2608.08569
     title: "VoxZip: Semantic-Anchored Temporal KV Cache Compression for Long-Context Audio Inference"
