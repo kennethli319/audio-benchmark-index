@@ -15468,7 +15468,7 @@ paper_audits:
     title: "AOR-Bench: Do Large Audio Language Models Over-Refuse Pseudo-Harmful Queries?"
     sections: 4-5, 8, and appendix F
     status: audited_announced_unreleased_audio_llm_over_refusal_benchmark
-    last_verified: 2026-08-09
+    last_verified: 2026-08-10
     evaluated_sets:
       - cited_as: AOR-Bench
         index_id: null
