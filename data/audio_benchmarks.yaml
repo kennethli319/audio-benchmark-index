@@ -1428,7 +1428,7 @@ paper_audits:
     title: "StyleBench: Evaluating Speech Language Models on Conversational Speaking Style Control"
     sections: 2-3
     status: audited_public_candidate_snapshot_with_unverified_owner_provenance_and_incomplete_release_metadata
-    last_verified: 2026-08-09
+    last_verified: 2026-08-11
     benchmark:
       cited_as: StyleBench
       role: multi_turn_speech_llm_style_intensity_control_evaluation
@@ -1476,6 +1476,7 @@ paper_audits:
       candidate_hugging_face_last_modified: "2026-01-26T06:33:08Z"
       candidate_archive_lfs_sha256: f7ebbbe8052d05a991f7ab096f1593cf40fb3566171e1120eede7beeb6b2fa15
       candidate_visible_files:
+        - .gitattributes
         - README.md
         - eval.tar.gz
       candidate_card_protocol_match: >-
@@ -1524,14 +1525,16 @@ paper_audits:
       speed, volume, and pitch, and the paper analyzes how training mixtures
       and speech tokenizers affect those capabilities. A public Hub snapshot
       strongly matches the described protocol, but primary owner provenance
-      is unresolved. A focused 2026-08-09 recheck found the same January 26 Hub
-      revision, a live 10,151,760,917-byte `eval.tar.gz`, and no matching exact-
-      title GitHub repository. The card still names no paper, author, or arXiv
-      identifier, and the uploader profile identifies itself only as `hak`.
-      The paper still promises a future post-acceptance release without linking
-      it. This audit therefore adds no counted benchmark family or helper;
-      revisit when the paper or authors publish an official link or the Hub
-      card states its ownership and paper provenance.
+      is unresolved. A focused 2026-08-11 recheck after re-reading Sections 2-3
+      found arXiv still at version 1 and the same January 26 Hub revision, with
+      only `.gitattributes`, a README, and a live 10,151,760,917-byte
+      `eval.tar.gz`; an exact-title GitHub repository search still returned no
+      match. The card still names no paper, author, or arXiv identifier, and the
+      uploader profile identifies itself only as `hak`. The paper still
+      promises a future post-acceptance release without linking it. This audit
+      therefore adds no counted benchmark family or helper; revisit when the
+      paper or authors publish an official link or the Hub card states its
+      ownership and paper provenance.
 
   vamos_bench_release_audit:
     paper: https://arxiv.org/abs/2607.27453

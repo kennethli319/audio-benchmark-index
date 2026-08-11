@@ -4139,9 +4139,11 @@ released after acceptance and provides no artifact link. An ungated
 [10.15 GB candidate snapshot](https://huggingface.co/datasets/ak0255/StyleBench)
 reproduces the paper's semantic and emotion-annotation instructions, but
 neither source links the `ak0255` account to the authors or identifies it as
-the promised official release. A focused August 9 metadata recheck resolves an
-earlier size overstatement: the unchanged Hub revision
-`73bb23289347c970157386f7b3fb0d8fd93a3d58` exposes only a README and one
+the promised official release. A focused August 11 metadata recheck after
+re-reading Sections 2-3 confirms arXiv remains at version 1 and preserves the
+earlier corrected size. The unchanged Hub revision
+`73bb23289347c970157386f7b3fb0d8fd93a3d58` exposes only `.gitattributes`, a
+README, and one
 10,151,760,917-byte `eval.tar.gz`, whose LFS SHA-256 is
 `f7ebbbe8052d05a991f7ab096f1593cf40fb3566171e1120eede7beeb6b2fa15`.
 The card still names no paper, author, or arXiv identifier, while the uploader
