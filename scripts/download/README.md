@@ -174,6 +174,7 @@ scripts/download/ksc2.sh
 scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
 scripts/download/full_duplex_bench.sh
+scripts/download/gcm_bench.sh
 scripts/download/duplexchat.sh
 scripts/download/biotalk_3d.sh
 scripts/download/av_gc_aad.sh

@@ -9,6 +9,65 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  gcm_bench_release_audit:
+    paper: https://arxiv.org/abs/2608.07631
+    title: "PACE: A Playback-Aligned Context Engine for LLM-Based Full-Duplex Voice Dialogue"
+    sections: 5-6
+    status: audited_public_ungated_complete_owner_release
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      GCM-Bench evaluates whether a full-duplex spoken LLM anchors a follow-up
+      response to the list item that actually reached client playback before
+      an interruption, rather than to generated but unheard assistant speech.
+      It directly tests interaction robustness and state consistency after
+      spoken-dialogue post-training.
+    evaluation_inventory:
+      - cited_as: GCM-Bench
+        index_id: gcm_bench
+        status: public_ungated_owner_release
+        role: playback_relative_referent_anchoring_benchmark
+        released_cases: 108
+        factorial_design: 12_scenarios_x_3_delays_x_3_referential_operations
+      - cited_as: Full-Duplex-Bench v1
+        index_id: full_duplex_bench
+        status: existing_public_family
+        role: separate_200_sample_compatibility_evaluation
+    protocol_note: >-
+      Each case supplies a spoken list request, interruption time, and one of
+      elaborate, next, or confirm follow-ups. The system runs the initial turn
+      until the interruption, then an automated LLM judge checks whether the
+      follow-up answer refers to the item implied by actual playback. Referent
+      Anchoring Accuracy is the primary metric; response effectiveness is a
+      guard against improving the score through refusal or silence.
+    release_audit:
+      synthetic_audio_and_interrupt_metadata: public_ungated_complete_108_cases
+      scenarios_and_frozen_sample_manifest: public
+      construction_inference_asr_judge_and_validation_code: public
+      baseline_predictions_and_per_item_scores: not_released
+      repository_revision: b8485036e21bc65d7cadc1537a5356c32fce3c56
+      samples_manifest_sha256: 3f963d9d70ee337e69c50e79e283b9f59a89af1a85706720498794fb59ca0f5e
+      download_helper: safe_metadata_and_manifests_default_full_repository_opt_in
+    access: public_ungated_owner_release
+    license:
+      data: Apache-2.0
+      code: Apache-2.0
+      upstream: DashScope_Qwen_service_terms_apply_to_reproduction
+      note: >-
+        The repository states that code and data are Apache 2.0 and includes
+        third-party notices. Reproducing TTS, ASR, model inference, or judging
+        requires user-supplied DashScope credentials and remains subject to
+        the applicable service, generated-audio, voice, and model-output terms.
+    sources:
+      - https://arxiv.org/abs/2608.07631
+      - https://arxiv.org/html/2608.07631v1#S5
+      - https://arxiv.org/html/2608.07631v1#S6
+      - https://github.com/CodeForZzc/GCM-Bench
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/README.md
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/README.md
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/data/README.md
+      - https://api.github.com/repos/CodeForZzc/GCM-Bench
+      - https://api.github.com/repos/CodeForZzc/GCM-Bench/git/trees/main?recursive=1
+
   avhbench_release_audit:
     paper: https://arxiv.org/abs/2410.18325
     title: "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models"
@@ -40329,6 +40388,82 @@ benchmarks:
       - https://api.github.com/repos/DanielLin94144/Full-Duplex-Bench
       - https://arxiv.org/abs/2608.01119
       - https://arxiv.org/html/2608.01119v1#S6.SS4
+
+  - id: gcm_bench
+    name: GCM-Bench
+    full_name: "GCM-Bench: A Dataset for Generative Context Mis-anchoring"
+    qwen_cited_as: null
+    qwen_bucket: end_to_end_speech_dialogue
+    category: full_duplex_spoken_llm_interaction_robustness
+    tasks:
+      - playback_relative_referent_anchoring
+      - interruption_context_consistency
+      - full_duplex_spoken_dialogue_evaluation
+    tracks:
+      - name: Elaborate
+        examples: 36
+        protocol: follow_up_about_the_last_item_heard_before_interruption
+      - name: Next
+        examples: 36
+        protocol: request_the_item_after_the_last_item_heard_before_interruption
+      - name: Confirm
+        examples: 36
+        protocol: yes_no_confirmation_about_the_last_item_heard_before_interruption
+    metrics:
+      - referent_anchoring_accuracy
+      - effective_response_rate
+    official:
+      paper: https://arxiv.org/abs/2608.07631
+      repo: https://github.com/CodeForZzc/GCM-Bench
+      manifest: https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/data/samples.json
+      scenarios: https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/data/scenarios.json
+    download:
+      access: public_ungated_owner_release
+      primary:
+        - https://github.com/CodeForZzc/GCM-Bench
+        - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/data/samples.json
+        - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/data/scenarios.json
+      examples:
+        - 'scripts/download/gcm_bench.sh'
+        - 'GCM_BENCH_CLONE_REPO=1 scripts/download/gcm_bench.sh'
+      notes: >-
+        The release contains all 108 16 kHz mono synthetic speech inputs,
+        interruption metadata, frozen scenario and sample manifests, offline
+        validation, construction, inference, ASR, and judging code. The helper
+        downloads documentation, repository metadata, and the two lightweight
+        JSON manifests by default; cloning the repository with roughly 130 MB
+        of WAV files requires GCM_BENCH_CLONE_REPO=1. End-to-end evaluation
+        also requires user-supplied DashScope/Qwen service credentials.
+    access:
+      status: public_ungated_complete_release
+      registration_required: false
+      notes: >-
+        The 108 cases are the full Cartesian product of 12 list scenarios,
+        interruption delays of 12, 16, and 20 seconds, and elaborate, next,
+        and confirm operations. The separate 200-sample Full-Duplex-Bench v1
+        compatibility experiment is not part of GCM-Bench. Baseline aggregate
+        results are published, but predictions and per-item scores are not.
+    license:
+      data: Apache-2.0
+      code: Apache-2.0
+      notes: >-
+        The owner README states that both code and data are Apache 2.0, and the
+        repository includes LICENSE, NOTICE, and third-party notices. This does
+        not supersede DashScope/Qwen service terms or resolve all generated-
+        speech, voice, model-output, privacy, or commercial-use questions for
+        newly reproduced artifacts.
+    sources:
+      - https://arxiv.org/abs/2608.07631
+      - https://arxiv.org/html/2608.07631v1#S5
+      - https://arxiv.org/html/2608.07631v1#S6
+      - https://github.com/CodeForZzc/GCM-Bench
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/README.md
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/LICENSE
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/THIRD_PARTY_NOTICES.md
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/README.md
+      - https://raw.githubusercontent.com/CodeForZzc/GCM-Bench/main/raa_bench/data/README.md
+      - https://api.github.com/repos/CodeForZzc/GCM-Bench
+      - https://api.github.com/repos/CodeForZzc/GCM-Bench/git/trees/main?recursive=1
 
   - id: duplexchat
     name: DuplexChat

@@ -1,5 +1,29 @@
 # Research and release audits
 
+The August 2026 [*PACE*](https://arxiv.org/abs/2608.07631) paper now
+contributes the public GCM-Bench family after reviewing Sections 5-6.
+GCM-Bench crosses 12 list-style scenarios, interruption delays of 12, 16, and
+20 seconds, and elaborate, next, and confirm follow-ups to form 108 controlled
+spoken cases. Referent Anchoring Accuracy tests whether a full-duplex voice
+agent answers about the item that actually reached client playback, rather
+than generated but unheard assistant speech; an effective-response check
+guards against silence or refusal. This directly evaluates post-training
+robustness and interaction-state consistency in spoken LLMs. The separate 200-
+sample Full-Duplex-Bench v1 experiment is compatibility evidence, not part of
+the new family.
+
+The owner repository at revision
+`b8485036e21bc65d7cadc1537a5356c32fce3c56` publicly releases all 108 16 kHz
+mono synthetic WAV files and interruption records, frozen sample and scenario
+manifests, offline validation, and construction, inference, ASR, and judging
+code. It does not release baseline predictions or per-item scores. The README
+states that both code and data are Apache 2.0, with LICENSE, NOTICE, and third-
+party notices present; reproducing TTS, inference, ASR, or judging still
+requires user-supplied DashScope/Qwen access and review of service, generated-
+audio, voice, and model-output terms. The helper fetches lightweight official
+metadata and manifests by default, while the roughly 130 MB audio repository
+is opt-in.
+
 Detailed provenance and release-status notes collected while maintaining the Audio Benchmark Index.
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
