@@ -9,6 +9,105 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  audiomap_evaluation_release_audit:
+    paper: https://arxiv.org/abs/2608.09559
+    title: "AudioMap: Cloze-and-Choice Reinforcement Learning for Time-Aware Dense Audio Captioning"
+    sections: 3-4_and_appendices_A-B
+    status: audited_existing_benchmark_coverage_and_unreleased_post_training_artifacts
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      AudioMap uses SFT followed by two-stage GRPO with evidence-sufficiency,
+      event-conditioned temporal-IoU, and length rewards. Its ablations directly
+      evaluate whether reward design, examiner choice, and curriculum improve
+      fine-grained acoustic faithfulness and event-time grounding at an
+      audio-language-model interface.
+    evaluation_inventory:
+      - cited_as: direct_and_caption_conditioned_benchmark_suite
+        status: existing_public_families_and_upstream_protocols_not_new_AudioMap_releases
+        tracks:
+          - index_id: omni_cloze
+            role: direct_caption_evaluation_with_audio_only_and_audio_visual_inputs
+          - index_id: mmsu
+            role: text_only_Qwen3_6_27B_answers_from_generated_caption
+          - index_id: mmar
+            role: text_only_Qwen3_6_27B_answers_from_generated_caption
+          - index_id: mmau
+            role: text_only_Qwen3_6_27B_answers_from_generated_caption
+          - cited_as: TACOS
+            role: temporal_caption_metric
+        note: >-
+          The paper reports only aggregate tables. It does not release the
+          evaluated model captions, text-judge answers, per-item scores, or a
+          frozen manifest that binds every run to exact upstream revisions.
+      - cited_as: AudioMapCap-44K
+        status: training_dataset_announced_but_unreleased_not_a_benchmark_family
+        source: selected_ASID-1M_audio_and_video
+        size: 43870_caption_pairs
+        duration: 769.70_hours
+        duration_range_seconds: 5.132_to_180.256
+        annotation: three_stage_Gemini_3_1_Pro_dense_time_aware_caption_pipeline
+        filtering: rule_filters_then_GPT_4_1_completeness_4_or_5_and_manual_subset_review
+        training_roles:
+          SFT: all_43870_with_80_percent_audio_only_and_20_percent_audio_visual
+          GRPO: 12500_audio_only_samples
+        note: >-
+          AudioMapCap-44K supplies post-training supervision. The paper does
+          not define a held-out AudioMapCap benchmark split, so it is not added
+          to the public benchmark count.
+      - cited_as: caption_quality_user_study
+        status: paper_defined_unreleased_human_evaluation
+        participants: 23
+        scale: five_point_MOS
+        dimensions:
+          - event_coverage
+          - fine_grained_detail
+          - correctness
+          - temporal_grounding
+    release_audit:
+      owner_repository: public_ungated_showcase_only
+      pinned_revision: db700bec7ecca8d94c93c3f97e76b63555fcdd74
+      repository_tree: README_project_site_and_demo_media_only
+      repository_license: none
+      dataset_and_model_badges: coming_soon_without_targets
+      AudioMapCap_rows_and_source_manifest: not_released
+      SFT_GRPO_and_reward_code: not_released
+      evaluation_runner_prompts_and_parsers: not_released
+      evaluated_captions_judge_answers_and_per_item_scores: not_released
+      user_study_stimuli_assignments_and_ratings: not_released
+      exact_name_hugging_face_dataset_search: no_results
+      download_helper: none_no_reproducible_owner_released_evaluation_artifact
+    access: existing_benchmarks_separately_public_AudioMap_specific_artifacts_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      owner_repository: no_license_declared
+      AudioMapCap_and_evaluation_artifacts: not_released_no_terms
+      source_assets: ASID-1M_and_component_media_terms_apply
+      note: >-
+        The article license does not cover absent training or evaluation
+        artifacts. Public showcase media and a public repository do not establish
+        reuse, redistribution, or model-training rights; ASID-1M and its source
+        media retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2608.09559
+      - https://arxiv.org/html/2608.09559v1#S3
+      - https://arxiv.org/html/2608.09559v1#S4
+      - https://arxiv.org/html/2608.09559v1#A1
+      - https://arxiv.org/html/2608.09559v1#A2
+      - https://export.arxiv.org/api/query?id_list=2608.09559
+      - https://github.com/ryysayhi/AudioMap
+      - https://ryysayhi.github.io/AudioMap/
+      - https://raw.githubusercontent.com/ryysayhi/AudioMap/db700bec7ecca8d94c93c3f97e76b63555fcdd74/README.md
+      - https://api.github.com/repos/ryysayhi/AudioMap
+      - https://api.github.com/repos/ryysayhi/AudioMap/commits/main
+      - https://api.github.com/repos/ryysayhi/AudioMap/git/trees/db700bec7ecca8d94c93c3f97e76b63555fcdd74?recursive=1
+      - https://huggingface.co/api/datasets?search=AudioMapCap
+    note: >-
+      No benchmark family is counted and no helper is added. The evaluation
+      tables cover existing families or an upstream temporal protocol, while
+      AudioMapCap-44K is training data without a released held-out benchmark.
+      Reassess when the owner publishes the promised code, dataset, and model
+      with frozen evaluation manifests and explicit artifact terms.
+
   beyond_naturalness_release_audit:
     paper: https://arxiv.org/abs/2608.09930
     title: "Beyond Naturalness: Probing Automated Text-To-Speech Evaluators on Linguistically Grounded Dimensions"

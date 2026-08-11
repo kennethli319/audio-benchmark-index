@@ -4,6 +4,32 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 [*AudioMap*](https://arxiv.org/abs/2608.09559) paper is
+recorded as an existing-benchmark and unreleased-artifact audit after reviewing
+Sections 3-4 and Appendices A-B. AudioMap post-trains Qwen2.5-Omni with SFT and
+a two-stage GRPO curriculum whose evidence-sufficiency, event-conditioned
+temporal-IoU, and length rewards target fine-grained acoustic faithfulness and
+event-time grounding. Its evaluation uses Omni-Cloze directly, asks a
+text-only Qwen3.6-27B to answer MMSU, MMAR, and MMAU questions from generated
+captions, reports TACOS temporal scores, and runs a 23-participant five-point
+MOS study covering event coverage, fine-grained detail, correctness, and
+temporal grounding. These are post-training reward, judge, curriculum, and
+robustness evaluations, but the named machine-evaluation families are existing
+or upstream protocols rather than new AudioMap benchmarks.
+
+AudioMapCap-44K contains 43,870 ASID-1M-derived caption pairs spanning 769.70
+hours. All rows supervise SFT and a 12,500-row selection supervises GRPO; the
+paper defines no held-out AudioMapCap benchmark split, so the corpus is training
+data rather than a counted evaluation family. The owner repository at revision
+`db700bec7ecca8d94c93c3f97e76b63555fcdd74` is a public showcase containing a
+README, project site, and two demo videos. Its dataset and model badges still
+say “coming soon,” and it has no license or training/evaluation implementation.
+AudioMapCap rows and provenance, reward and runner code, frozen evaluation
+manifests, captions, judge answers, per-item scores, and user-study records are
+unreleased. The article's arXiv license does not cover those absent artifacts,
+and ASID-1M and component-media terms continue to apply. No family, count
+increase, or download helper is added; reassess after the promised release.
+
 The June 2025 [*Audio-Aware Large Language Models as Judges for Speaking
 Styles*](https://arxiv.org/abs/2506.05984) paper adds the public StyleSet
 family after a focused review of Sections 3-4 and Appendices A-C. Its voice
