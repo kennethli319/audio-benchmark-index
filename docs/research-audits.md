@@ -4584,3 +4584,28 @@ requery implementation, prompts, predictions, item scores, human stimuli, and
 response records remain unavailable. CC BY 4.0 covers the article, not these
 absent artifacts; upstream dataset and 115 Noise terms continue to apply. No
 benchmark count or download helper changes.
+
+The August 2026 [*Listen, See and Track*](https://arxiv.org/abs/2608.09435)
+paper is recorded as an announced-but-unreleased ST-OmniQA evaluation after
+reviewing Sections 3-5. The full synthetic corpus contains 40,000 synchronized
+ten-second panoramic videos with first-order Ambisonics audio and 400,000
+questions, but the reported evaluation uses a 4,000-question test split
+disjoint from training by scene identity and temporal interval. Its four
+levels test single-source acoustic perception, multi-source localization,
+spatio-temporal trajectory relations, and audio-visual binding through
+landmarks, occlusion, and visibility changes. Greedy-decoded answers are
+scored for semantic accuracy with DeepSeek-v4-flash. This directly evaluates
+omni-modal post-training because ST-Omni-R1 combines a progressive curriculum
+with reasoning-tree GRPO and is tested on whether it can bind moving sound
+sources to visible instances rather than rely on clip-level semantics.
+
+The paper provides no project or artifact link. Exact-name and arXiv-ID GitHub
+repository searches found no owner release, and exact-name Hugging Face
+dataset and model searches returned no results. Rendered media, the frozen
+test manifest, QA rows, executable reasoning graphs, question templates,
+judge configuration, code, checkpoints, predictions, and item scores therefore
+remain unavailable. Its TAU-NIGENS 2021, L3DAS22, and STARSS23 transfer rows
+map to existing public families; the paper-specific fixed subsets are also
+unreleased. CC BY 4.0 covers the article, not absent benchmark artifacts, and
+Matterport3D and SoundSpaces retain their own terms. No counted benchmark
+family or download helper is added.

@@ -4,11 +4,96 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-08-10
+  last_checked: 2026-08-11
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  st_omniqa_release_audit:
+    paper: https://arxiv.org/abs/2608.09435
+    title: "Listen, See and Track: Spatio-Temporal Audio-Visual Sound Event Reasoning for Omni-Modal Language Models"
+    sections: 3-5
+    status: audited_announced_but_unreleased_spatio_temporal_audio_visual_reasoning_benchmark
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      The paper trains ST-Omni-R1 with progressive curriculum learning and
+      reasoning-tree GRPO, then evaluates whether the post-trained omni-modal
+      model can bind sound events to visible sources and reason about their
+      direction, distance, motion, occlusion, and trajectories over time.
+    evaluation_inventory:
+      - cited_as: ST-OmniQA
+        status: paper_defined_unreleased_benchmark_and_training_corpus
+        corpus: 40000_synchronized_ten_second_panoramic_FOA_videos_and_400000_QA_pairs
+        evaluation_split: 4000_questions
+        split_integrity: test_disjoint_from_training_by_scene_identity_and_temporal_interval
+        construction: >-
+          Render one- and two-source static and dynamic indoor scenes from
+          Matterport3D meshes with SoundSpaces 2.0 room acoustics. Record 50
+          synchronized states per clip and derive deterministic questions from
+          event, activity, direction, distance, motion, visibility, object,
+          landmark, occlusion, room, and trajectory annotations.
+        capability_levels:
+          - A_single_source_acoustic_perception
+          - B_multi_source_spatial_perception
+          - C_spatio_temporal_relational_reasoning
+          - D_scene_grounded_audio_visual_reasoning
+        evaluation_protocol: >-
+          Use greedy decoding and report semantic accuracy for each capability
+          level and their macro-average. General-purpose baselines use a
+          unified answer format, BAT retains its free-form prompting, and
+          DeepSeek-v4-flash judges semantic equivalence.
+      - cited_as: real_world_transfer_evaluation
+        status: paper_defined_unreleased_fixed_subsets_over_existing_public_families
+        source_families:
+          - index_id: tau_nigens_sse_2021
+          - index_id: l3das22
+          - index_id: starss23
+        capabilities:
+          - azimuth
+          - elevation
+          - distance
+          - motion_state
+          - motion_direction
+        metric: semantic_accuracy
+    release_audit:
+      benchmark_audio_video_and_QA_rows: not_released
+      train_test_manifests_and_reasoning_graphs: not_released
+      question_templates_and_answer_format: not_released
+      judge_prompt_and_configuration: not_released
+      training_and_evaluation_code: not_released
+      checkpoints_predictions_and_item_scores: not_released
+      owner_project_or_artifact_link_in_paper: none
+      exact_name_github_repository_search: no_owner_release
+      arxiv_id_github_repository_search: no_owner_release
+      exact_name_hugging_face_dataset_search: no_results
+      exact_name_hugging_face_model_search: no_results
+      download_helper: none_no_reproducible_public_evaluation_artifact
+    access: announced_but_unreleased_paper_defined_evaluation
+    license:
+      paper: CC_BY_4_0
+      benchmark_assets: not_released_no_terms
+      source_assets: upstream_Matterport3D_and_SoundSpaces_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not absent rendered media, annotations,
+        derived questions, reasoning graphs, code, or score records. The paper
+        does not state terms for ST-OmniQA, and the source environments and
+        simulation software retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2608.09435
+      - https://arxiv.org/html/2608.09435v1#S3
+      - https://arxiv.org/html/2608.09435v1#S4
+      - https://arxiv.org/html/2608.09435v1#S5
+      - https://export.arxiv.org/api/query?id_list=2608.09435
+      - https://api.github.com/search/repositories?q=%22ST-OmniQA%22
+      - https://api.github.com/search/repositories?q=2608.09435
+      - https://huggingface.co/api/datasets?search=ST-OmniQA
+      - https://huggingface.co/api/models?search=ST-OmniQA
+    note: >-
+      No benchmark family is counted and no helper is added. The paper defines
+      a directly relevant evaluation, but its 4,000-question test split cannot
+      be separated or reproduced from any public artifact. Reassess if the
+      authors publish an owner-controlled project or frozen benchmark package.
+
   low_frequency_lalm_safety_audit:
     paper: https://arxiv.org/abs/2608.09158
     title: "From Inaudible Inputs to Model Failures: Low-Frequency Safety Risks in LALMs"
