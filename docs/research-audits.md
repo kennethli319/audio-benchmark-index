@@ -2391,6 +2391,14 @@ VGGSound. The audit preserves the paper's under-one-minute filtering of
 long-video question-answer pairs and its 50-seed VGGSound retrieval analysis
 rather than presenting those derived selections as separately released
 benchmarks.
+A focused August 11 release recheck after re-reading Sections 5.1-5.3 and
+Appendix D found arXiv version 1 unchanged and no official project, repository,
+or artifact link in the paper. Exact-title and arXiv-ID GitHub searches and
+matching Hugging Face dataset/model searches returned no release. The filtered
+QA manifest, 5,000-pair VGGSound projection manifest, 50-seed retrieval pools,
+implementation, predictions, and item scores remain unavailable. The paper's
+arXiv distribution license does not license those absent derivatives. No
+family, count increase, or helper is added.
 
 The July 2026 RPPNet symbolic-melody paper is recorded as a partial-source
 coverage audit rather than a new downloadable family. Its 274,300-item

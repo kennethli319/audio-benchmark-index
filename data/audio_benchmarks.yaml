@@ -15423,8 +15423,10 @@ paper_audits:
 
   remo_omni_llm_token_compression:
     paper: https://arxiv.org/abs/2607.21179
+    title: "Out of Sight, Still in Mind: Token Compression for Omni-LLMs"
     sections: 5.1-5.3 and Appendix D
     status: audited_existing_coverage
+    last_verified: 2026-08-11
     evaluated_sets:
       - cited_as: WorldSense
         index_id: worldsense
@@ -15457,11 +15459,31 @@ paper_audits:
       nor the sampled retrieval pools. This audit maps every name to an
       existing family instead of treating derived selections as new
       benchmarks.
+    release_audit:
+      arxiv_version: version_1_2026_07_23
+      official_project_repository_or_artifact_link: not_provided
+      under_one_minute_question_answer_manifest: not_released
+      vggsound_projection_training_manifest: not_released
+      fifty_seed_retrieval_pool_assignments: not_released
+      implementation_predictions_and_per_item_scores: not_released
+      exact_title_and_arxiv_id_github_repository_search: zero_matches_on_2026_08_11
+      exact_title_and_arxiv_id_hugging_face_dataset_and_model_search: zero_matches_on_2026_08_11
+    license_note: >-
+      The paper uses arXiv's perpetual non-exclusive distribution license and
+      states no license for the absent ReMo implementation, derived benchmark
+      selections, projection data, predictions, or scores. Public availability
+      and licenses of the six upstream families do not license or reproduce
+      those paper-specific derivatives.
     sources:
       - https://arxiv.org/abs/2607.21179
       - https://arxiv.org/html/2607.21179v1#S5.SS1
       - https://arxiv.org/html/2607.21179v1#S5.SS3
       - https://arxiv.org/html/2607.21179v1#A4
+      - https://export.arxiv.org/api/query?id_list=2607.21179
+      - https://api.github.com/search/repositories?q=%222607.21179%22
+      - https://api.github.com/search/repositories?q=%22Out%20of%20Sight%2C%20Still%20in%20Mind%22
+      - https://huggingface.co/api/datasets?search=2607.21179
+      - https://huggingface.co/api/models?search=2607.21179
       - https://www.robots.ox.ac.uk/~vgg/data/vggsound/
       - https://github.com/hche11/VGGSound
 
