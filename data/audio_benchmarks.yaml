@@ -377,6 +377,99 @@ paper_audits:
       artifact. Reassess when the authors add a stable dataset or repository
       URL with explicit artifact terms.
 
+  voxzip_pretrained_audio_interface_compression_audit:
+    paper: https://arxiv.org/abs/2608.08569
+    title: "VoxZip: Semantic-Anchored Temporal KV Cache Compression for Long-Context Audio Inference"
+    sections: 4.1-4.5
+    status: audited_existing_benchmark_evaluation_with_public_method_and_runner_code
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      VoxZip tests whether Qwen3-Omni's pretrained audio interface preserves
+      long-range semantics, fine-grained acoustics, and paralinguistic cues
+      when its audio-side KV cache is compressed. The controlled cache-budget,
+      text-only, audio-only, fusion, temporal-decay, and noise ablations
+      separate transfer of the frozen audio representation from gains caused
+      by ASR semantic anchors; VoxZip itself is train-free.
+    evaluation_inventory:
+      - cited_as: Vox-Infinity
+        status: upstream_long_context_family_not_added_by_this_audit
+        role: long_context_multi_turn_retrieval_and_reasoning
+        subsets:
+          - Beyond-Semantics_Dialogue
+          - Conversational_Dialogues
+          - Ultra_Multi-Turn_Dialogue
+          - Personal_Monologue
+      - cited_as: AudioMarathon
+        index_id: audio_marathon
+        status: existing_public_family
+        role: long_context_speech_content_audio_classification_and_speaker_recognition
+      - cited_as: SPIRAL_Hard
+        status: upstream_protocol_not_added_by_this_audit
+        role: long_context_single_turn_retrieval
+      - cited_as: MMAR
+        index_id: mmar
+        status: existing_public_family
+        role: short_context_semantic_cultural_perception_and_signal_preservation
+      - cited_as: MMSU
+        index_id: mmsu
+        status: existing_public_family
+        role: short_context_semantics_phonology_style_and_speaker_trait_preservation
+      - cited_as: MMAU
+        index_id: mmau
+        status: existing_public_family
+        role: short_context_sound_speech_and_music_preservation
+    protocol_note: >-
+      Sections 4.1-4.3 compare Full KV, StreamingLLM, SnapKV, PyramidKV,
+      ChunkKV, and VoxZip on Qwen3-Omni-30B Instruct, with the Thinking variant
+      added for the long-context table. Long-context budgets are 25, 10, and 5
+      percent; general-audio budgets are 25, 15, and 10 percent. Results use
+      accuracy and performance-retention ratio, while Section 4.5 reports
+      end-to-end memory, prefill latency, and throughput including Whisper-
+      Turbo overhead. Section 4.4 ablates semantic anchors, acoustic retention,
+      fusion, and temporal decay. The paper reports 91.41 percent retention at
+      a 5 percent long-context budget and a 3.34-fold peak-memory reduction at
+      64K context under a 25 percent budget.
+    release_audit:
+      paper_and_aggregate_tables: public
+      owner_repository: public_ungated
+      repository_revision: 8a022160744d64d01cc70da6b3ad019fa4f23ac5
+      method_baseline_per_benchmark_runner_and_noise_driver_code: public
+      evaluation_scripts: public_including_benchmark_specific_and_GPT_judge_paths
+      benchmark_data: not_bundled_upstream_copies_required
+      frozen_evaluation_manifests: not_bundled
+      paper_predictions_and_per_item_scores: not_bundled
+      model_weights: not_bundled_uses_upstream_Qwen3-Omni_and_Whisper
+      download_helper: none_method_repository_is_not_a_new_benchmark_release
+    access: public_method_and_evaluation_code_existing_or_upstream_benchmark_access_applies
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      repository_code: not_declared_no_license_file_or_detected_license
+      benchmark_data: family_specific_terms_apply
+      model_and_ASR_weights: upstream_terms_apply
+      note: >-
+        Public repository access does not grant reuse or redistribution rights.
+        The paper license covers the article only, and each benchmark, Qwen3-
+        Omni, Whisper, generated model output, and any judge service retains
+        separate terms. The released runners do not relicense upstream data.
+    sources:
+      - https://arxiv.org/abs/2608.08569
+      - https://arxiv.org/html/2608.08569v1#S4.SS1
+      - https://arxiv.org/html/2608.08569v1#S4.SS2
+      - https://arxiv.org/html/2608.08569v1#S4.SS3
+      - https://arxiv.org/html/2608.08569v1#S4.SS4
+      - https://arxiv.org/html/2608.08569v1#S4.SS5
+      - https://github.com/MM-Speech/VoxZip
+      - https://raw.githubusercontent.com/MM-Speech/VoxZip/8a022160744d64d01cc70da6b3ad019fa4f23ac5/README.md
+      - https://api.github.com/repos/MM-Speech/VoxZip
+      - https://api.github.com/repos/MM-Speech/VoxZip/commits/main
+      - https://api.github.com/repos/MM-Speech/VoxZip/git/trees/8a022160744d64d01cc70da6b3ad019fa4f23ac5?recursive=1
+    note: >-
+      No benchmark family is counted and no helper is added. VoxZip contributes
+      public reproducibility code for a directly relevant pretrained audio-LLM
+      interface evaluation, but it defines no new held-out dataset. Vox-
+      Infinity and SPIRAL should receive separate primary-source release audits
+      before any future index additions.
+
   emosbench_release_audit:
     paper: https://arxiv.org/abs/2608.09189
     title: "EmoS: A Theory-Grounded Framework for Evaluating and Aligning Emotional Intelligence in Spoken Language Models"

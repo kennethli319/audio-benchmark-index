@@ -4835,3 +4835,27 @@ opt-in. The repository has no top-level license and GitHub detects none;
 AudioCaps, VALOR, YouTube-derived media, annotations, swapped videos, and voice
 rights retain their own terms. This audit also resolves AVHBench from A-PACK
 as an existing separately released family.
+
+The August 2026 [*VoxZip*](https://arxiv.org/abs/2608.08569) paper is recorded
+as an existing-benchmark and public-code audit of pretrained speech-LLM audio-
+interface compression after reviewing Sections 4.1-4.5. It evaluates frozen
+Qwen3-Omni-30B Instruct, plus the Thinking variant on the long-context table,
+across Vox-Infinity, AudioMarathon, SPIRAL Hard, MMAR, MMSU, and MMAU. Cache-
+budget sweeps, semantic-anchor and audio-retention ablations, and end-to-end
+memory, latency, and throughput measurements directly probe whether
+long-range semantics and non-linguistic acoustic cues survive aggressive
+compression. The method is train-free and reports 91.41 percent performance
+retention at a 5 percent long-context budget and a 3.34-fold peak-memory
+reduction at 64K context under a 25 percent budget.
+
+The owner repository is public at revision
+`8a022160744d64d01cc70da6b3ad019fa4f23ac5` and contains method, baseline,
+per-benchmark runner, noise, and scoring code. It bundles no benchmark data,
+frozen evaluation manifests, paper predictions, or per-item scores; users must
+supply upstream benchmark copies plus Qwen3-Omni and Whisper weights. The
+repository has no license file and GitHub detects no license, so public access
+does not establish code-reuse rights or alter family-specific dataset and
+model terms. AudioMarathon, MMAR, MMSU, and MMAU map to existing index entries;
+Vox-Infinity and SPIRAL remain candidates for separate primary-source audits.
+No benchmark count or download helper changes because VoxZip releases an
+evaluation implementation, not a new benchmark family.
