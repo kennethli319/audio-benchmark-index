@@ -4,6 +4,31 @@ Detailed provenance and release-status notes collected while maintaining the Aud
 These notes explain why a paper, protocol, or dataset was added, mapped to an existing family,
 recorded as unreleased, or excluded from the downloadable index.
 
+The August 2026 [*Beyond Naturalness*](https://arxiv.org/abs/2608.09930)
+paper is recorded as a claimed-public but currently unlocatable meta-evaluation
+after reviewing Sections 3-4 and Appendices 6-7. It constructs 860 English
+synthetic or acoustically manipulated utterances, balanced per dimension after
+majority voting by three professional linguists. Ten binary dimensions separate
+phonetic accuracy and lexical stress from utterance-level prosody, emotional
+appropriateness, expressiveness, speaker consistency, and human plausibility.
+Four MOS predictors and four Audio-LLM judges are evaluated with and without a
+transcript under generic-naturalness, schema-guided, per-dimension, and isolated
+prompting. Kendall's tau-b, AUROC, Mann-Whitney U, and McNemar tests measure
+agreement with human labels. This directly audits post-training reward and
+judge reliability because the results show that generic naturalness judgments
+do not provide a stable proxy for distinct linguistically meaningful failures.
+
+Although the abstract says the dataset, annotation schema, and evaluation code
+are publicly released, the paper contains no project, dataset, or code URL.
+Exact-title and arXiv-ID GitHub searches and corresponding Hugging Face dataset
+searches found no release on August 11. The source supplement provides tables,
+prompts, and generation details but not audio, annotations, frozen balancing
+manifests, executable evaluation code, predictions, or per-item scores. CC BY
+4.0 covers the article; Appendix 7.6 inventories upstream source, API, and
+software licenses but does not license an absent benchmark package. The audit
+therefore adds no counted family or helper and should be revisited when an
+owner-controlled artifact URL and explicit terms appear.
+
 The August 2026 [*HyPASE*](https://arxiv.org/abs/2608.04351) paper is
 recorded as an existing-family post-training and cross-dataset transfer audit
 after reviewing Sections 4.1-4.6. It adapts Qwen2-Audio-7B-Instruct for speech

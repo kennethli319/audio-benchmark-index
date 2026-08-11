@@ -9,6 +9,120 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  beyond_naturalness_release_audit:
+    paper: https://arxiv.org/abs/2608.09930
+    title: "Beyond Naturalness: Probing Automated Text-To-Speech Evaluators on Linguistically Grounded Dimensions"
+    sections: 3-4_and_appendices_6-7
+    status: audited_claimed_public_but_unlocatable_audio_llm_judge_meta_evaluation
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      The benchmark tests whether Audio-LLMs used as speech-generation judges
+      track trained-linguist judgments across ten separable word-level,
+      prosodic, and paralinguistic dimensions. Its prompt ablations directly
+      audit reward-model and evaluator reliability for speech-LLM
+      post-training instead of treating a generic naturalness score as an
+      interchangeable alignment signal.
+    evaluation_inventory:
+      - cited_as: dimension_level_TTS_meta_evaluation_benchmark
+        status: paper_defined_claimed_public_but_release_not_located
+        language: English
+        final_audio_samples: 860
+        balance: per_dimension_majority_labels_downsampled_to_equal_positive_and_negative_classes
+        raters: three_professional_linguists
+        annotation: binary_error_absent_or_present_with_majority_vote
+        source_text:
+          - Harvard_Sentences
+          - EmergentTTS-Eval
+          - synthetically_generated_targeted_sentences
+        synthesis: Cartesia_Sonic-3
+        dimensions:
+          word_level:
+            - phonetic_accuracy
+            - lexical_stress
+          prosodic:
+            - intonation
+            - prosodic_stress
+            - prosodic_boundary_appropriateness
+            - speech_rate_appropriateness
+          paralinguistic:
+            - emotional_appropriateness
+            - expressiveness
+            - speaker_identity_consistency
+            - human_plausibility
+        controlled_error_paths:
+          - GPT-5_altered_IPA_then_synthesis
+          - GPT-5_altered_plain_text_then_synthesis
+          - mismatched_Cartesia_emotion_tag
+          - Praat_and_Parselmouth_acoustic_manipulation
+        automated_evaluators:
+          MOS_predictors:
+            - UTMOSv2
+            - DNSMOS-Pro
+            - NISQA
+            - Audiobox-Aesthetics
+          audio_LLM_judges:
+            - Gemini_3_Flash
+            - Gemini_3_5_Flash
+            - Qwen3-Omni-30B-A3B
+            - Step-Audio-R2-Mini
+        audio_LLM_prompt_conditions:
+          - underspecified_naturalness_single_score
+          - full_schema_single_score
+          - full_schema_per_dimension_scores
+          - isolated_single_dimension_prompts
+        transcript_conditions:
+          - with_reference_transcript
+          - without_reference_transcript
+        repetitions: three_queries_per_sample_condition_with_majority_prediction
+        metrics:
+          - Kendall_tau_b
+          - Mann_Whitney_U_for_continuous_MOS_scores
+          - McNemar_test_for_binary_audio_LLM_predictions
+          - AUROC_for_MOS_predictors
+        agreement: per_dimension_Krippendorff_alpha_with_95_percent_bootstrap_intervals
+    release_audit:
+      abstract_release_claim: dataset_annotation_schema_and_evaluation_code_are_publicly_released
+      owner_project_dataset_or_code_link_in_paper: none
+      paper_source_supplement: tables_and_generation_details_only_no_benchmark_rows_or_audio
+      exact_title_and_arxiv_id_github_repository_searches: no_results
+      exact_title_and_arxiv_id_hugging_face_dataset_searches: no_results
+      audio_and_majority_labels: not_located
+      per_rater_annotations_and_balancing_manifest: not_located
+      generation_and_acoustic_manipulation_code: not_located
+      evaluator_prompts_and_runner: appendix_text_only_not_packaged
+      predictions_and_per_item_scores: not_located
+      download_helper: none_no_owner_controlled_public_artifact_located
+    access: claimed_public_in_abstract_but_current_release_unlocatable
+    license:
+      paper: CC_BY_4_0
+      benchmark_audio_annotations_and_code: no_located_release_or_artifact_terms
+      source_material_and_services: Harvard_Sentences_EmergentTTS-Eval_Cartesia_and_other_upstream_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not an absent benchmark package. Appendix
+        7.6 inventories licenses for source texts, APIs, and software, but does
+        not state a license for the claimed released audio, annotations, or
+        evaluation code. Synthetic speech and service-output reuse also
+        require review under the applicable upstream terms.
+    sources:
+      - https://arxiv.org/abs/2608.09930
+      - https://arxiv.org/html/2608.09930v1#S3
+      - https://arxiv.org/html/2608.09930v1#S4
+      - https://arxiv.org/html/2608.09930v1#S6.SS1
+      - https://arxiv.org/html/2608.09930v1#S6.SS7
+      - https://arxiv.org/html/2608.09930v1#S7
+      - https://arxiv.org/html/2608.09930v1#S7.SS6
+      - https://export.arxiv.org/api/query?id_list=2608.09930
+      - https://api.github.com/search/repositories?q=%222608.09930%22
+      - https://api.github.com/search/repositories?q=%22Beyond%20Naturalness%22
+      - https://huggingface.co/api/datasets?search=2608.09930
+      - https://huggingface.co/api/datasets?search=Beyond%20Naturalness
+    note: >-
+      No benchmark family is counted and no helper is added. The paper defines
+      a relevant and unusually well-specified Audio-LLM judge evaluation, but
+      its public-release claim cannot yet be reproduced from an owner-linked
+      artifact. Reassess when the authors add a stable dataset or repository
+      URL with explicit artifact terms.
+
   emosbench_release_audit:
     paper: https://arxiv.org/abs/2608.09189
     title: "EmoS: A Theory-Grounded Framework for Evaluating and Aligning Emotional Intelligence in Spoken Language Models"
