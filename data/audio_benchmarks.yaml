@@ -20034,7 +20034,7 @@ paper_audits:
     title: "Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use"
     sections: version_2_sections_3_5
     status: audited_claimed_public_benchmark_with_demo_subset_only
-    last_verified: 2026-08-08
+    last_verified: 2026-08-11
     evaluated_sets:
       - cited_as: Audio2Tool
         index_id: null
@@ -20125,6 +20125,11 @@ paper_audits:
       A focused August 9 recheck found that the owner repository still resolves
       to its March 5 head commit, with the same 96-entry demo tree, no GitHub
       license declaration, and no complete benchmark or evaluator release.
+      An August 11 primary-source recheck confirms the same immutable head and
+      complete, untruncated 96-entry tree. The repository metadata still reports
+      no detected license, and the README explicitly describes the site as a
+      benchmark demo; no full release, scoring implementation, or public
+      benchmark bucket has appeared.
       Revisit if the owners publish a complete, licensed release.
 
   stepaudio_2_5_evaluation_release_audit:

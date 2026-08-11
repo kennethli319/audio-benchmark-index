@@ -4085,6 +4085,11 @@ A focused August 9 recheck found that the owner repository still resolves to
 March 5 commit `9348131db97eea1e8cfedab4c034f61116cda17d`; its 96-entry tree,
 missing GitHub license declaration, demo-only contents, and absent evaluator
 are unchanged.
+An August 11 primary-source recheck confirms the same immutable head and
+complete, untruncated 96-entry tree. Repository metadata still reports no
+detected license, the README explicitly calls the site a benchmark demo, and
+no full release, scoring implementation, or public benchmark bucket has
+appeared.
 
 The May 2026 *Do Factual Recall Mechanisms Carry over from Text to Speech in
 Multimodal Language Models?* paper is recorded as an unreleased derived
