@@ -15494,7 +15494,9 @@ paper_audits:
       arxiv_version: v1_unchanged_since_2026-06-19
       paper_project_repository_or_dataset_link: none
       exact_name_github_repository_search: no_matching_repository
+      arxiv_id_github_repository_search: no_matching_repository
       exact_name_hugging_face_dataset_search: no_matching_dataset
+      exact_name_hugging_face_model_search: no_matching_model
       broader_hugging_face_dataset_search: no_matching_audio_over_refusal_release
       audio_and_item_manifest: not_released
       moderation_labels_prompts_and_scripts: not_released
@@ -15513,17 +15515,21 @@ paper_audits:
       - https://arxiv.org/html/2606.21147v1#A6
       - https://export.arxiv.org/api/query?id_list=2606.21147
       - https://api.github.com/search/repositories?q=%22AOR-Bench%22+audio
+      - https://api.github.com/search/repositories?q=%222606.21147%22
       - https://huggingface.co/api/datasets?search=AOR-Bench
+      - https://huggingface.co/api/models?search=AOR-Bench
       - https://huggingface.co/api/datasets?search=audio%20over-refusal
     note: >-
-      A focused August 9 release recheck found that arXiv still exposes only
-      version 1, the article still links no project or artifact repository,
-      and exact-name GitHub and Hugging Face searches return no matching
-      release. AOR-Bench remains directly relevant to audio-LLM post-training
-      safety and refusal calibration, but its generated audio, annotations,
-      moderation records, evaluator, outputs, and item-level scores remain
-      unavailable. It is therefore not counted as a public family and has no
-      download helper.
+      A focused August 10 release recheck found that arXiv still exposes only
+      version 1 and the complete article still links no project or artifact
+      repository. Exact-name and arXiv-ID GitHub repository searches returned
+      zero results, while exact-name Hugging Face dataset and model searches
+      and a broader audio-over-refusal dataset search found no owner release.
+      AOR-Bench remains directly relevant to audio-LLM post-training safety and
+      refusal calibration, but its generated audio, annotations, moderation
+      records, evaluator, outputs, and item-level scores remain unavailable.
+      It is therefore not counted as a public family and has no download
+      helper.
 
   ddpo_vc_speaker_deidentification:
     paper: https://arxiv.org/abs/2606.15313

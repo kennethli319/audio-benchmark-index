@@ -2437,12 +2437,13 @@ repository, dataset card, item manifest, audio archive, evaluation code, or
 download link. The paper's arXiv license does not establish reuse terms for
 the absent benchmark or redistribution rights for its generated Sora-2 and
 CosyVoice outputs.
-A focused August 9 recheck found that arXiv still exposes only version 1 and
-that the article still links no project or artifact repository. Exact-name
-GitHub and Hugging Face searches, plus a broader Hugging Face search for audio
-over-refusal, returned no matching release. The generated audio, item
-manifest, moderation records, evaluator, outputs, and per-item scores therefore
-remain unavailable; no counted family or helper is added.
+A focused August 10 recheck found that arXiv still exposes only version 1 and
+that the complete article still links no project or artifact repository.
+Exact-name and arXiv-ID GitHub repository searches returned zero results;
+exact-name Hugging Face dataset and model searches plus a broader dataset
+search for audio over-refusal returned no owner release. The generated audio,
+item manifest, moderation records, evaluator, outputs, and per-item scores
+therefore remain unavailable; no counted family or helper is added.
 
 The July 2026 *Qwen-Music* technical report now has a focused pretraining and
 post-training evaluation audit after reviewing Sections 4.1-4.2 and Tables
