@@ -1,5 +1,32 @@
 # Research and release audits
 
+The August 2026 [*From Inaudible Inputs to Model Failures: Low-Frequency
+Safety Risks in LALMs*](https://arxiv.org/abs/2608.09158) paper is recorded as
+an existing-family and unreleased-derived-protocol audit after reviewing the
+experimental setup, attack and defense evaluations, limitations, and
+Appendices C-G. Its Intermittent Low-Frequency Lockout (ILL) protocol digitally
+mixes one fixed 5-20 Hz waveform into disjoint 100-example selections from
+MMAU speech, sound, and music, LibriSpeech, English-to-Chinese CoVoST 2, and
+RAVDESS. It transfers that waveform from Qwen2.5-Omni to five other open or
+closed audio-language models and measures accuracy, WER, BLEU, audible-noise
+ratio, and seven-point audibility ratings. Distributional Requery Guard (DRG)
+then tests low-frequency-shift detection and recovery from a second clean or
+noisy recording. This directly audits audio-LLM safety and post-training
+robustness to a model-visible but nearly inaudible input channel; the paper
+also clearly limits its claim to simulated microphone reception rather than a
+complete over-the-air physical attack.
+
+All four source datasets map to existing index families. The sampled test and
+attack-construction rows, PNL interference selections, fixed ILL waveform,
+DRG detector data and centroids, prompts, baseline outputs, participant-level
+audibility judgments, and per-item scores are not released. The paper links no
+project or artifact repository; exact arXiv-ID, title, and method-name GitHub
+and Hugging Face searches found no owner release on August 11. CC BY 4.0
+covers the article, not the absent derived evaluation assets, while MMAU,
+LibriSpeech, CoVoST 2, RAVDESS, PNL, model, API-output, and recorded-voice terms
+remain separate. No benchmark family, count increase, or download helper is
+added.
+
 The August 2026 [*REFRAMED*](https://arxiv.org/abs/2608.09765) paper is
 recorded as an announced but not yet accessible audio-aware multimodal
 generation benchmark after reviewing Sections 3-5, the appendix, and the
