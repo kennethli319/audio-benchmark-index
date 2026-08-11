@@ -231,7 +231,9 @@ Face searches also find no model or dataset release. The arXiv perpetual
 non-exclusive license covers the article, while the placeholder repository has
 no license and the four source datasets retain separate terms. No benchmark
 family or helper is added; reassess when reproducibility artifacts are
-published.
+published. A focused August 11 integrity audit removed a second stale HyPASE
+record, consolidated its access and license details here, and confirmed that
+the owner tree and August 1 last-push timestamp remain unchanged.
 
 The August 2026 [*MoCA: Implicit Social Context
 Analysis*](https://arxiv.org/abs/2608.05825) release is recorded as a public
@@ -1666,24 +1668,6 @@ helper. The paper's in-house 560k-hour pretrained backbone, exact 50k-item
 post-training manifest, training code, checkpoints, predictions, and scores
 remain unreleased; Apache-2.0 on the official GitHub repository applies to
 code and does not replace the benchmark's noncommercial data terms.
-
-The August 2026 HyPASE paper is recorded as LALM post-training evaluation
-provenance for the existing IEMOCAP, MELD, RAVDESS, and SAVEE families rather
-than as a new benchmark. Section 4.1 compares Qwen2-Audio-7B-Instruct PEFT on
-four-class IEMOCAP leave-one-session-out validation and the standard seven-class
-MELD split; section 4.4 transfers the MELD-trained model to IEMOCAP, RAVDESS,
-and SAVEE without target-domain adaptation. Although section 6 says code,
-pretrained weights, and training logs are publicly available, the linked
-[owner repository](https://github.com/LilSicko/HyPase) still contains only an
-eight-byte, one-line README and no license, implementation, weights, logs,
-manifests, prompts, predictions, or scores. A focused August 9 recheck found
-the same complete, non-truncated one-file tree at
-`419c7b0f8203c54fa36ecaf7c0ec8dab21dc5cfb`, and GitHub still reports no push
-after August 1. Existing access terms therefore remain
-authoritative: IEMOCAP is form-gated, RAVDESS is CC BY-NC-SA 4.0, MELD's
-GPL-3.0 release contains Friends-derived media, and SAVEE is registration-gated
-for research use without a standard public data license. No duplicate family or
-helper is added.
 
 The July 2026 context-aware-preface paper is recorded as an audio-inclusive
 field-evaluation audit rather than a benchmark family. Its Japanese
