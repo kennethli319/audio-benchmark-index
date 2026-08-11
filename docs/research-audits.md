@@ -452,6 +452,30 @@ item scores remain unavailable. The arXiv perpetual non-exclusive license
 covers the article, not these absent derived artifacts; ESD, CREMA-D, RAVDESS,
 and IEMOCAP retain their own terms. No counted family or helper is added.
 
+The June 2026 [*Interpreting and Steering a Text-to-Speech Language Model with
+Sparse Autoencoders*](https://arxiv.org/abs/2606.10029) paper is recorded as an
+unreleased representation and controllability audit after reviewing Sections
+3-4 and Appendices B-G. Its modality-aware auto-interpretation protocol labels
+CosyVoice3 SAE features from text-prefix, one-second speech, or mixed activation
+evidence, then scores held-out positives and cross-feature negatives with AUROC
+and balanced accuracy. A second protocol probes laughter, four emotions, and
+eleven accents across Emilia-Yodas, LJSpeech, VocalSound, ESD, and VCTK; a
+third steers three layer-20 features over a 40-voice by 10-text grid to measure
+laughter probability, perceived speaker-gender cues, and voiced duration while
+checking content preservation. These protocols directly audit how a pretrained
+Qwen2.5 backbone transfers into CosyVoice3's speech-token interface and whether
+its learned features support causal inference-time control.
+
+The article publishes aggregate results and its labeler/scorer prompts, but no
+project or artifact repository. Exact-title and arXiv-ID GitHub and Hugging Face
+searches found no owner release on August 11. SAE code and checkpoints, frozen
+source selections, activation evidence and labels, probe splits and outputs,
+the steering grid, generated speech, and item scores remain unavailable. CC BY
+4.0 covers the article and printed prompts, not those absent artifacts;
+Emilia-Yodas, LJSpeech, VocalSound, ESD, VCTK, CosyVoice3, Gemini, generated
+voice, and model-output terms remain separate. No counted family or download
+helper is added.
+
 The August 2026 [*Do Audio Language Models Use Paralinguistic
 Evidence?*](https://arxiv.org/abs/2608.06718) paper is recorded as an
 unreleased post-training judge audit after reviewing Sections 3-5 and

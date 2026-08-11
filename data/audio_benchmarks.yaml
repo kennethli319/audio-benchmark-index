@@ -2103,6 +2103,98 @@ paper_audits:
       evaluation package or executable evaluator. Reassess if the authors
       publish code, derived manifests, targets, generated outputs, or scores.
 
+  cosyvoice3_sae_interpretability_and_steering_audit:
+    paper: https://arxiv.org/abs/2606.10029
+    title: "Interpreting and Steering a Text-to-Speech Language Model with Sparse Autoencoders"
+    sections: 3-4_and_appendices_B-G
+    status: audited_unreleased_speech_llm_representation_and_controllability_protocol
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      Layer-wise sparse-autoencoder reconstruction, modality tagging, and
+      concept probes test how CosyVoice3's pretrained Qwen2.5 language-model
+      backbone represents text-prefix and generated 25 Hz speech tokens. The
+      protocol directly examines transfer from a pretrained language backbone
+      into a speech-generation interface.
+    post_training_relevance: >-
+      Detection-style feature interpretation and latent feature steering test
+      whether learned speech representations support causal control of
+      laughter, perceived speaker-gender cues, and speech rate while preserving
+      spoken content. These are directly relevant inference-time
+      controllability and alignment evaluations for a speech language model.
+    evaluation_inventory:
+      - cited_as: modality_aware_SAE_auto_interpretation
+        status: paper_defined_unreleased_derived_protocol
+        protocol: >-
+          Label features from their five highest-ranked text, one-second audio,
+          or mixed activation examples, then use lower-ranked positives and
+          negatives from other features for detection-style scoring. The
+          balanced layer-20 comparison contains all 668 mixed features and 668
+          matched text-modal and audio-modal features.
+        metrics:
+          - AUROC
+          - balanced_accuracy_at_score_5
+      - cited_as: speech_style_concept_probes
+        status: paper_defined_unreleased_derived_protocol
+        source_data:
+          - Emilia-Yodas
+          - LJSpeech
+          - VocalSound
+          - ESD
+          - VCTK_0.92
+        protocol: >-
+          Fit five-fold cross-validated logistic probes to raw residuals and
+          SAE latents for laughter, four emotions, and eleven accent labels,
+          then repeat with the top 1, 5, 10, 25, 50, and 100 SAE coordinates.
+        metrics:
+          - ROC_AUC
+      - cited_as: SAE_feature_steering
+        status: paper_defined_unreleased_derived_protocol
+        protocol: >-
+          Sweep signed layer-20 latent interventions for three selected
+          features over a 40-voice by 10-text prompt grid and measure laughter,
+          perceived speaker-gender cues, speech rate, and content preservation.
+        metrics:
+          - laughter_probability
+          - wav2vec2_perceived_male_probability
+          - voiced_duration_seconds
+    release_audit:
+      paper_aggregate_tables_and_prompts: public
+      SAE_training_and_evaluation_code: not_released
+      trained_SAE_checkpoints: not_released
+      frozen_source_selections_and_random_seeds: not_released
+      activation_evidence_and_feature_labels: not_released
+      probe_splits_weights_and_predictions: not_released
+      steering_prompt_grid_generated_audio_and_item_scores: not_released
+      exact_title_and_arxiv_id_GitHub_repository_search: no_results
+      exact_title_and_arxiv_id_Hugging_Face_searches: no_results
+      download_helper: none_no_reproducible_public_evaluation_artifact
+    access: internal_unreleased_paper_defined_derived_evaluation
+    license:
+      paper: CC_BY_4_0
+      evaluation_artifacts: not_released_no_terms
+      source_data: upstream_family_terms_apply
+      service_model_and_generated_outputs: CosyVoice3_Gemini_and_output_terms_apply
+      note: >-
+        CC BY 4.0 covers the article and its printed prompts, not absent code,
+        checkpoints, activation evidence, derived splits, generated speech, or
+        score records. Emilia-Yodas, LJSpeech, VocalSound, ESD, and VCTK retain
+        their own access, voice, privacy, and reuse terms.
+    sources:
+      - https://arxiv.org/abs/2606.10029
+      - https://arxiv.org/html/2606.10029v1#S3
+      - https://arxiv.org/html/2606.10029v1#S4
+      - https://arxiv.org/html/2606.10029v1#A2
+      - https://arxiv.org/html/2606.10029v1#A7
+      - https://export.arxiv.org/api/query?id_list=2606.10029
+      - https://api.github.com/search/repositories?q=%222606.10029%22%20OR%20%22Interpreting%20and%20Steering%20a%20Text-to-Speech%20Language%20Model%22
+      - https://huggingface.co/api/models?search=2606.10029
+      - https://huggingface.co/api/datasets?search=2606.10029
+    note: >-
+      No benchmark family is counted. The evaluation is directly relevant to
+      speech-LLM representation transfer and controllability, but cannot be
+      independently reproduced without the SAE artifacts, frozen evidence and
+      probe splits, steering prompt grid, generated outputs, and scorer records.
+
   paralinguistic_counterfactual_audio_judge_audit:
     paper: https://arxiv.org/abs/2608.06718
     title: "Do Audio Language Models Use Paralinguistic Evidence? Counterfactual Audits for Response Evaluation"
