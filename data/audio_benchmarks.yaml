@@ -404,7 +404,7 @@ paper_audits:
         status: existing_public_family
         role: long_context_speech_content_audio_classification_and_speaker_recognition
       - cited_as: SPIRAL_Hard
-        status: upstream_protocol_not_added_by_this_audit
+        status: upstream_family_audited_separately_with_only_three_public_demo_rows
         role: long_context_single_turn_retrieval
       - cited_as: MMAR
         index_id: mmar
@@ -467,8 +467,103 @@ paper_audits:
       No benchmark family is counted and no helper is added. VoxZip contributes
       public reproducibility code for a directly relevant pretrained audio-LLM
       interface evaluation, but it defines no new held-out dataset. Vox-
-      Infinity is audited separately below; SPIRAL should receive a primary-
-      source release audit before any future index addition.
+      Infinity and SPIRAL are audited separately below.
+
+  spiral_speech_information_retrieval_release_audit:
+    paper: https://arxiv.org/abs/2412.12009
+    title: "SpeechPrune: Context-aware Token Pruning for Speech Information Retrieval"
+    sections: 2.1-2.3_and_4.1-4.4
+    status: audited_claimed_open_source_family_with_three_public_demo_rows_only
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      SPIRAL directly tests whether a pretrained speech LLM can preserve and
+      retrieve one critical detail from approximately ninety seconds of
+      distractor-rich speech. Its pruning-rate, memory, latency, and
+      cross-model experiments probe transfer and robustness of speech-token
+      representations used as an LLM interface, rather than ordinary ASR.
+    evaluation_inventory:
+      - cited_as: SPIRAL
+        expanded_name: Speech_Information_Retrieval_And_Lookup
+        status: complete_1012_row_family_claimed_open_source_but_not_located
+        samples: 1012
+        average_duration_seconds: 87.89
+        scenarios:
+          - lecture
+          - meeting
+          - conversation
+        format: four_choice_question_about_one_embedded_critical_detail
+        metric: accuracy
+        construction: GPT-4o_transcripts_then_StyleTTS2_speech
+        reference_voices: LibriTTS_train-clean-100
+        quality_checks:
+          Whisper_v3_large_WER: 0.0389
+          UTMOS_22_predicted_MOS: 3.91_out_of_5
+      - cited_as: SPIRAL-H
+        aliases:
+          - SPIRAL_Hard
+        status: unreleased_derived_hard_subset
+        samples: 401
+        selection: rows_where_original_Qwen2-Audio_scored_zero_percent_accuracy
+        metric: accuracy
+        note: >-
+          This is a baseline-conditioned subset of SPIRAL, not an independent
+          benchmark family. Reproduction requires the frozen Qwen2-Audio
+          prompts, decoding configuration, predictions, and selection manifest.
+    protocol_note: >-
+      Section 4 evaluates original Qwen2-Audio, random audio pruning, random
+      audio chunk pruning, and SpeechPrune at 0.2, 0.4, 0.6, and 0.8 pruning
+      rates, reporting accuracy, token FLOPs, processing time, peak memory, and
+      stored activations. Section 4.4 additionally evaluates duration-over-60-
+      second selections of DREAM-TTS and CN-College-Listen and transfers the
+      method to DiVA; those upstream selections are not additional SPIRAL rows.
+    release_audit:
+      paper_release_claim: dataset_is_open_source_via_owner_project_website
+      owner_project_and_repository: public_ungated
+      repository_revision: edda900d8b0298d51b8930d869df2c12c9837bf9
+      public_full_length_demo_audio_transcripts_and_QA_rows: 3
+      complete_1012_row_audio_transcripts_and_QA: not_located
+      SPIRAL_H_401_row_selection_manifest: not_located
+      construction_and_evaluation_code: not_located
+      frozen_prompts_predictions_and_per_item_scores: not_located
+      third_party_VoxZip_runner: public_but_requires_an_unpublished_local_data_h_jsonl_and_wavs_layout
+      exact_name_and_arxiv_id_GitHub_repository_searches: owner_project_only
+      exact_name_Hugging_Face_dataset_searches: no_owner_release_located
+      download_helper: none_three_demo_rows_do_not_constitute_the_claimed_benchmark_release
+    access: public_project_with_three_demo_rows_complete_family_and_hard_subset_unreleased
+    license:
+      paper: CC_BY_4_0
+      owner_project_code_and_site: MIT
+      three_demo_audio_files: no_separate_media_terms_stated
+      absent_complete_benchmark: no_located_artifact_terms
+      source_material_and_services: LibriTTS_StyleTTS2_GPT-4o_and_generated_output_terms_apply
+      note: >-
+        The repository declares MIT for its project, but does not separately
+        state terms for the three demo WAV files; a software license must not
+        be assumed to clear their voice or source rights. It also does not
+        license the absent full benchmark or override LibriTTS, StyleTTS2,
+        service-output, generated-voice, or model-output terms. CC BY 4.0
+        covers the article.
+    sources:
+      - https://arxiv.org/abs/2412.12009
+      - https://arxiv.org/html/2412.12009v2#S2.SS1
+      - https://arxiv.org/html/2412.12009v2#S2.SS2
+      - https://arxiv.org/html/2412.12009v2#S2.SS3
+      - https://arxiv.org/html/2412.12009v2#S4.SS1
+      - https://arxiv.org/html/2412.12009v2#S4.SS4
+      - https://speechprune.github.io/
+      - https://github.com/SpeechPrune/SpeechPrune.github.io
+      - https://api.github.com/repos/SpeechPrune/SpeechPrune.github.io
+      - https://api.github.com/repos/SpeechPrune/SpeechPrune.github.io/git/trees/edda900d8b0298d51b8930d869df2c12c9837bf9?recursive=1
+      - https://raw.githubusercontent.com/MM-Speech/VoxZip/8a022160744d64d01cc70da6b3ad019fa4f23ac5/audio2text_seg_spiral.py
+      - https://api.github.com/search/repositories?q=speechprune
+      - https://api.github.com/search/repositories?q=2412.12009
+      - https://huggingface.co/api/datasets?search=SpeechPrune
+      - https://huggingface.co/api/datasets?search=SPIRAL-H
+    note: >-
+      This resolves the unfinished VoxZip candidate without counting a family
+      or adding a helper. Reassess when the owners publish the complete 1,012-
+      row package, frozen SPIRAL-H membership, evaluation code, and explicit
+      benchmark-level rights and provenance.
 
   vox_infinity_release_audit:
     paper: https://openreview.net/forum?id=6dKwqnT7bu

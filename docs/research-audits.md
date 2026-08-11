@@ -4856,10 +4856,39 @@ supply upstream benchmark copies plus Qwen3-Omni and Whisper weights. The
 repository has no license file and GitHub detects no license, so public access
 does not establish code-reuse rights or alter family-specific dataset and
 model terms. AudioMarathon, MMAR, MMSU, and MMAU map to existing index entries;
-Vox-Infinity is audited separately below, while SPIRAL remains a candidate for
-a separate primary-source audit.
+Vox-Infinity and SPIRAL are audited separately below.
 No benchmark count or download helper changes because VoxZip releases an
 evaluation implementation, not a new benchmark family.
+
+The December 2024/ICME 2025 [*SpeechPrune*](https://arxiv.org/abs/2412.12009)
+paper now has a focused SPIRAL release audit after reviewing Sections 2.1-2.3
+and 4.1-4.4. SPIRAL defines 1,012 four-choice Speech Information Retrieval and
+Lookup cases averaging 87.89 seconds across lectures, meetings, and daily
+conversations. Each GPT-4o-generated transcript embeds one critical detail
+among distractors, then StyleTTS2 synthesizes speech from LibriTTS train-clean-
+100 reference voices. SPIRAL-H, also called SPIRAL Hard, is a 401-row derived
+subset on which the paper's original Qwen2-Audio baseline scores zero percent;
+it is not a second family. Accuracy, token FLOPs, processing time, peak memory,
+stored activations, and pruning-rate sweeps directly test whether pretrained
+speech-token representations retain long-context information at the LLM
+interface. Whisper-v3-large WER of 0.0389 and UTMOS-22 predicted MOS of 3.91
+are construction-quality checks, not the primary benchmark metric.
+
+The paper calls the dataset open source and points only to the owner project.
+At revision `edda900d8b0298d51b8930d869df2c12c9837bf9`, that repository contains
+three full-length demonstration WAV files with displayed transcripts and
+questions, but no complete 1,012-row package, frozen SPIRAL-H manifest,
+construction or evaluation code, baseline predictions, or per-item scores.
+Exact-name and arXiv-ID GitHub searches locate only the project repository, and
+exact-name Hugging Face searches locate no owner dataset. VoxZip's public
+third-party runner expects an unpublished local `data_h.jsonl` plus WAV layout,
+so it does not make the benchmark reproducible. The repository declares MIT
+but gives no separate media terms for the three demo WAV files; that software
+license must not be assumed to clear voice or source rights. CC BY 4.0 covers
+the article, not the absent benchmark, and LibriTTS, StyleTTS2, service-output,
+generated-voice, and model-output terms still apply. SPIRAL is therefore not
+counted and receives no helper until the complete family, hard-subset
+membership, and benchmark-level terms are released.
 
 The 2026 [*Vox-Infinity*](https://openreview.net/forum?id=6dKwqnT7bu)
 benchmark now has a focused release audit after reviewing its owner project,
