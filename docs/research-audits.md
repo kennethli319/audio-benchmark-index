@@ -4787,3 +4787,27 @@ code, while CMI-Pref declares CC BY-NC-SA 4.0 and PAM, MusicEval, Music Arena,
 commercially generated music, and reference audio retain their own terms. This
 is a provenance and dataset/protocol separation improvement to an existing
 family, so the benchmark count and helper behavior remain unchanged.
+
+The August 2026 [*Deferred Audio Pruning with Local Audio-Visual Dynamics for
+Omni-LLMs*](https://arxiv.org/abs/2608.08794) paper is recorded as an existing-
+coverage and unreleased-artifact audit after reviewing Sections 4.1-4.7 and
+Appendices A-G. A-PACK evaluates Qwen2.5-Omni-7B and 3B on the indexed AVUT,
+WorldSense, Daily-Omni, and no-subtitle Video-MME families at matched 35 and 25
+percent prefill-FLOPs tiers. It preserves audio during pre-LLM video
+compression, then progressively prunes audio and visual tokens and KV-cache
+entries inside the decoder. Accuracy, normalized retention, FLOPs, latency,
+throughput, memory, and modality-retention ablations directly test whether a
+pretrained OmniLLM's audio interface transfers under aggressive inference-time
+compression.
+
+AVHBench appears only in a separate balanced-binary hallucination scorer
+ablation and is retained as a candidate for its own primary-source release
+audit, not treated as an A-PACK release. The paper links no project or
+repository. Exact-title and arXiv-ID GitHub repository searches found no owner
+release, and arXiv-ID Hugging Face model and dataset searches were empty. The
+A-PACK implementation, configurations, unified evaluation pipeline, exact
+LMMs-Eval revision, frozen manifests, adapter patches, predictions, pruning
+masks, runtime logs, and per-item scores remain unavailable. The article's
+arXiv non-exclusive license does not cover those absent artifacts; each
+upstream benchmark retains its own terms, including Video-MME's custom
+academic-use restrictions. No benchmark count or download helper changes.

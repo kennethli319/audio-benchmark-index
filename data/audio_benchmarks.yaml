@@ -9,6 +9,93 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  a_pack_omnillm_audio_pruning_evaluation_audit:
+    paper: https://arxiv.org/abs/2608.08794
+    title: "Deferred Audio Pruning with Local Audio-Visual Dynamics for Omni-LLMs"
+    sections: 4.1-4.7_and_appendices_A-G
+    status: audited_existing_benchmark_coverage_with_unreleased_compression_artifacts
+    last_verified: 2026-08-11
+    pretraining_relevance: >-
+      A-PACK directly evaluates whether pretrained Qwen2.5-Omni-7B and 3B can
+      defer audio-token pruning until query-conditioned decoder interactions
+      emerge while preserving audio-grounded and audio-visual reasoning. Its
+      matched-cost comparisons and audio-retention ablations measure transfer
+      from the pretrained audio interface under aggressive inference-time
+      compression rather than defining a new training corpus.
+    evaluation_inventory:
+      - cited_as: AVUT
+        index_id: avut
+        status: existing_public_family
+        role: primary_audio_centric_accuracy_and_efficiency_evaluation
+      - cited_as: WorldSense
+        index_id: worldsense
+        status: existing_public_family
+        role: primary_joint_audio_visual_understanding_and_local_alignment_evaluation
+      - cited_as: DailyOmni
+        index_id: daily_omni
+        status: existing_public_family
+        role: primary_everyday_audio_visual_temporal_alignment_evaluation
+      - cited_as: Video-MME_without_subtitles
+        index_id: video_mme
+        status: existing_public_restricted_family
+        role: primary_video_centric_preservation_control
+      - cited_as: AVHBench
+        status: separately_published_family_not_released_or_defined_by_A-PACK
+        role: secondary_balanced_binary_audio_visual_hallucination_ablation
+        note: >-
+          A-PACK pools AVHBench's three Yes/No tasks for Table 4 and reports a
+          per-task scorer ablation in Table S6. This citation is retained for
+          provenance and requires its own primary-source release audit before
+          any separate index addition.
+    protocol_note: >-
+      Main Table 1 evaluates Qwen2.5-Omni-7B and 3B at matched 35% and 25%
+      prefill-FLOPs tiers. A-PACK preserves audio during pre-LLM video
+      compression, then progressively prunes audio and visual tokens and KV
+      entries from decoder layers 14/18 for the 7B/3B backbones. Video-MME is
+      run through LMMs-Eval and the other primary families through a unified
+      pipeline; accuracy is aggregated after normalizing each full-token
+      baseline to 100%. Runtime uses bfloat16, FlashAttention-2, greedy
+      decoding, seed 0, and an NVIDIA A6000. The paper reports aggregate
+      accuracy, FLOPs, token retention, latency, throughput, and peak memory,
+      plus AVUT, DailyOmni, WorldSense, and AVHBench ablations.
+    release_audit:
+      paper_and_aggregate_tables: public
+      upstream_benchmark_families: separately_released_with_family_specific_terms
+      official_project_or_repository_link: none_in_paper
+      a_pack_implementation_and_configuration_files: not_released
+      unified_evaluation_pipeline_and_exact_lmms_eval_revision: not_released
+      frozen_benchmark_manifests_and_adapter_patches: not_released
+      predictions_pruning_masks_runtime_logs_and_per_item_scores: not_released
+      exact_title_and_arxiv_id_github_repository_search: no_owner_release_found
+      arxiv_id_hugging_face_model_and_dataset_searches: no_results
+      download_helper: none_no_new_owner_released_evaluation_artifact
+    access: existing_families_retain_separate_public_or_restricted_access_A-PACK_artifacts_unreleased
+    license:
+      paper: arXiv_perpetual_non_exclusive_license
+      a_pack_code_and_derived_evaluation_artifacts: not_released_no_terms
+      upstream: family_specific_terms_apply
+      note: >-
+        The article license does not cover absent code, configurations,
+        predictions, pruning masks, logs, or score records. AVUT states no data
+        license; Daily-Omni is CC BY-NC-SA 4.0; WorldSense has conflicting CC
+        BY 4.0 and CC BY-NC-SA 4.0 statements; Video-MME uses custom academic-
+        use and redistribution restrictions. AVHBench terms require a separate
+        primary-source audit.
+    sources:
+      - https://arxiv.org/abs/2608.08794
+      - https://arxiv.org/html/2608.08794v1#S4.SS1
+      - https://arxiv.org/html/2608.08794v1#S4.SS2
+      - https://arxiv.org/html/2608.08794v1#S4.SS7
+      - https://arxiv.org/html/2608.08794v1#A1.SS1
+      - https://arxiv.org/html/2608.08794v1#A1.SS3
+      - https://arxiv.org/html/2608.08794v1#A5.SS1
+      - https://arxiv.org/html/2608.08794v1#A7
+      - https://export.arxiv.org/api/query?id_list=2608.08794
+      - https://api.github.com/search/repositories?q=%222608.08794%22
+      - https://api.github.com/search/repositories?q=%22Deferred%20Audio%20Pruning%20with%20Local%20Audio-Visual%20Dynamics%22
+      - https://huggingface.co/api/models?search=2608.08794
+      - https://huggingface.co/api/datasets?search=2608.08794
+
   audiomap_evaluation_release_audit:
     paper: https://arxiv.org/abs/2608.09559
     title: "AudioMap: Cloze-and-Choice Reinforcement Learning for Time-Aware Dense Audio Captioning"
