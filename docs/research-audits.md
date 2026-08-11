@@ -4520,3 +4520,23 @@ is public under CC BY 4.0 with per-recording license metadata, but that does
 not reproduce or license the paper-specific derivatives. The article is CC
 BY-NC-ND 4.0 and does not release those absent artifacts or relicense source
 audio. No counted family or download helper is added.
+
+The August 2026 [*From Inaudible Inputs to Model Failures*](https://arxiv.org/abs/2608.09158)
+paper is recorded as an unreleased derived audio-LLM safety and robustness
+protocol after reviewing Sections 3-5 and Appendices A-G. It samples 100 test
+examples apiece from MMAU, LibriSpeech, English-to-Chinese CoVoST 2, and
+RAVDESS, with separate 100-example construction selections, then transfers one
+Qwen2.5-Omni-derived 5-20 Hz ILL waveform across six audio-language models.
+Accuracy, WER, BLEU, spectral leakage, a 112-participant audibility study, DRG
+detection, conditional requery recovery, benign utility, and cross-attack
+controls directly evaluate post-training alignment, red-teaming, and
+robustness at an audio-LLM interface.
+
+All four source datasets map to existing index families. The paper links no
+project or artifact repository, and exact-title and arXiv-ID GitHub searches
+plus arXiv-ID Hugging Face dataset and model searches found no owner release.
+Frozen selections, the perturbation waveform and generator, detector and
+requery implementation, prompts, predictions, item scores, human stimuli, and
+response records remain unavailable. CC BY 4.0 covers the article, not these
+absent artifacts; upstream dataset and 115 Noise terms continue to apply. No
+benchmark count or download helper changes.

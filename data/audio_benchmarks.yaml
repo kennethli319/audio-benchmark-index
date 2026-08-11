@@ -9,6 +9,101 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  low_frequency_lalm_safety_audit:
+    paper: https://arxiv.org/abs/2608.09158
+    title: "From Inaudible Inputs to Model Failures: Low-Frequency Safety Risks in LALMs"
+    sections: 3-5_and_appendices_A-G
+    status: audited_unreleased_derived_audio_llm_safety_and_robustness_protocol
+    last_verified: 2026-08-10
+    post_training_relevance: >-
+      The paper evaluates whether six audio-language models remain aligned with
+      user-perceptible acoustic evidence under a fixed 5-20 Hz interference
+      waveform, and whether a detection-triggered second recording restores
+      their task behavior. This is a direct red-teaming, robustness, and
+      mitigation evaluation for post-trained audio-LLM interfaces.
+    evaluation_inventory:
+      - cited_as: ILL_attack_and_DRG_requery_evaluation
+        status: paper_defined_unreleased_protocol_over_existing_families
+        source_families:
+          - index_id: mmau
+            selection: 100_test_examples_each_from_speech_sound_and_music
+          - index_id: librispeech
+            selection: 100_test_examples
+          - index_id: covost2
+            selection: 100_English_to_Chinese_test_examples
+          - index_id: ravdess
+            selection: 100_test_examples
+        construction_data: another_disjoint_100_examples_per_dataset
+        target_models:
+          - MiniCPM_o_4_5
+          - StepAudio2_Mini
+          - Qwen2_5_Omni
+          - Qwen3_Omni
+          - GPT_audio_mini
+          - Gemini_3_5_flash
+        protocol: >-
+          Construct one universal intermittent low-frequency waveform with
+          Qwen2.5-Omni, transfer it without target-specific optimization, and
+          compare clean, Gaussian, three 115 Noise PNL categories, Audio-Adv,
+          Whisper, and ILL conditions. Evaluate the DRG spectral detector and
+          conditional requery recovery with clean and persistently noisy
+          second recordings, plus benign and cross-attack controls.
+        metrics:
+          - MMAU_and_RAVDESS_accuracy
+          - LibriSpeech_word_error_rate
+          - CoVoST_2_BLEU
+          - audible_noise_ratio
+          - detector_precision_recall_and_F1
+          - recovered_end_task_performance
+      - cited_as: human_audibility_evaluation
+        status: internal_unreleased_human_evaluation
+        participants: 112_complete_response_sets
+        protocol: >-
+          Student volunteers rate digitally mixed clean and interference
+          stimuli from one to seven through fixed-volume consumer headphones or
+          loudspeakers. Only aggregate ratings are reported.
+    release_audit:
+      source_benchmark_families: already_indexed_with_separate_upstream_terms
+      frozen_test_and_construction_manifests: not_released
+      ILL_waveform_and_generation_implementation: not_released
+      DRG_detector_and_requery_implementation: not_released
+      prompts_model_outputs_and_per_item_scores: not_released
+      human_stimuli_and_response_records: not_released
+      owner_project_or_artifact_link_in_paper: none
+      exact_title_github_repository_search: no_results
+      arxiv_id_github_repository_search: no_results
+      arxiv_id_hugging_face_dataset_and_model_searches: no_results
+      download_helper: none_no_independent_public_evaluation_artifact
+    access: internal_unreleased_paper_defined_derived_evaluation
+    license:
+      paper: CC_BY_4_0
+      evaluation_artifacts: not_released_no_terms
+      source_data: upstream_family_terms_apply
+      note: >-
+        CC BY 4.0 covers the article, not absent selections, perturbation
+        waveforms, implementation, model outputs, or human-study records. MMAU,
+        LibriSpeech, CoVoST 2, RAVDESS, and 115 Noise retain their own terms.
+    sources:
+      - https://arxiv.org/abs/2608.09158
+      - https://arxiv.org/html/2608.09158v1#S3
+      - https://arxiv.org/html/2608.09158v1#S4
+      - https://arxiv.org/html/2608.09158v1#S5
+      - https://arxiv.org/html/2608.09158v1#A1
+      - https://arxiv.org/html/2608.09158v1#A3
+      - https://arxiv.org/html/2608.09158v1#A6
+      - https://arxiv.org/html/2608.09158v1#A7
+      - https://export.arxiv.org/api/query?id_list=2608.09158
+      - https://api.github.com/search/repositories?q=%22Low-Frequency%20Safety%20Risks%20in%20LALMs%22
+      - https://api.github.com/search/repositories?q=2608.09158
+      - https://huggingface.co/api/datasets?search=2608.09158
+      - https://huggingface.co/api/models?search=2608.09158
+    note: >-
+      No benchmark family is counted and no helper is added. The four source
+      datasets already have index entries, while the paper-specific sampling,
+      attack, defense, and human-evaluation artifacts cannot be reproduced
+      from public files. Reassess if the authors publish an owner-controlled
+      repository or frozen evaluation package.
+
   step_audio_r1_5_post_training_evaluation_audit:
     paper: https://arxiv.org/abs/2604.25719
     title: "Step-Audio-R1.5 Technical Report"
