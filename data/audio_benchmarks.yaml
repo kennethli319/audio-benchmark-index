@@ -9,6 +9,97 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  emosbench_release_audit:
+    paper: https://arxiv.org/abs/2608.09189
+    title: "EmoS: A Theory-Grounded Framework for Evaluating and Aligning Emotional Intelligence in Spoken Language Models"
+    sections: 3-4_and_appendices_A-C
+    status: audited_announced_benchmark_with_demo_only_partial_artifacts
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      EmoSBench evaluates whether spoken language models perceive, understand,
+      use, and manage emotion across ten tasks, including acoustic-semantic
+      conflict, de-escalation, and value-aligned safety responses. The paper
+      also uses the same four-level rubric to train a specialized evaluator
+      with SFT and GRPO, making the protocol directly relevant to reward
+      modeling and post-training alignment.
+    evaluation_inventory:
+      - cited_as: EmoSBench
+        status: paper_defined_benchmark_unreleased_except_for_ten_selected_demo_cases
+        synthetic_test_size: approximately_4000_audio_dialogue_samples
+        languages:
+          - English
+          - Chinese
+        annotators: five_experts_select_high_agreement_discriminative_and_topic_diverse_samples
+        dimensions_and_tasks:
+          perceiving:
+            - basic_acoustic_information_perception
+            - implicit_attitude_analysis
+          understanding:
+            - emotional_state_tracking
+            - emotional_causation_analysis
+          using:
+            - emotion_cognition_matching
+            - emotion_driven_plan_adjustment
+          managing:
+            - social_strategy_execution
+            - proactive_mitigation_and_emotional_buffering
+            - conflict_resolution_and_de_escalation
+            - value_alignment_and_safety_response
+        candidate_response_labels: ordinal_scores_1_to_4
+        metric: exact_match_accuracy_of_predicted_ordinal_label
+        human_baseline: six_graduate_students
+      - cited_as: real_world_YouTube_evaluation_set
+        status: paper_defined_unreleased_test_set
+        size: 531_evaluation_pairs
+        annotation: four_experts_with_at_least_three_of_four_score_consensus
+      - cited_as: EmoDialogue
+        status: training_dataset_not_a_separate_benchmark
+        size: 72588_bilingual_dialogue_evaluation_pairs
+        duration: 383.27_hours
+        construction: DeepSeek_R1_generated_dialogues_and_responses_with_Doubao_TTS_audio
+        quality_control: Whisper_Large_V3_WER_or_CER_at_most_5_percent_then_manual_review
+    release_audit:
+      owner_demo_repository: public_ungated
+      pinned_demo_revision: 7385a22144cd523528a22a7c305f2499e685046e
+      selected_demo_coverage: one_case_for_each_of_ten_subtasks
+      complete_benchmark_audio_and_labels: not_released
+      frozen_train_test_manifests_and_annotation_records: not_released
+      real_world_YouTube_set_and_source_manifest: not_released
+      evaluator_code_and_checkpoint: not_released
+      predictions_and_per_item_scores: not_released
+      project_paper_and_dataset_buttons: placeholders_without_download_targets
+      download_helper: none_demo_page_is_not_a_reproducible_benchmark_release
+    access: announced_benchmark_with_public_selected_demos_only
+    license:
+      paper: CC-BY-4.0
+      demo_repository_and_audio: no_license_declared
+      benchmark_and_training_artifacts: not_released_no_terms
+      source_media_and_synthesized_voices: separate_platform_copyright_privacy_biometric_and_publicity_review_required
+      note: >-
+        CC BY 4.0 covers the article, not the demo repository or absent
+        benchmark, training, evaluator, and score artifacts. Public demo
+        access does not establish redistribution or model-training rights.
+    sources:
+      - https://arxiv.org/abs/2608.09189
+      - https://arxiv.org/html/2608.09189v1#S3.SS1
+      - https://arxiv.org/html/2608.09189v1#S3.SS2
+      - https://arxiv.org/html/2608.09189v1#S4
+      - https://arxiv.org/html/2608.09189v1#A1
+      - https://arxiv.org/html/2608.09189v1#A2
+      - https://arxiv.org/html/2608.09189v1#A3
+      - https://emosbench.github.io/
+      - https://github.com/emosbench/emosbench.github.io
+      - https://api.github.com/repos/emosbench/emosbench.github.io
+      - https://api.github.com/repos/emosbench/emosbench.github.io/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/emosbench/emosbench.github.io/main/README.md
+      - https://huggingface.co/api/datasets?search=EmoSBench
+      - https://huggingface.co/api/models?search=EmoSBench
+    note: >-
+      No benchmark family is counted and no helper is added. The owner page
+      releases ten illustrative audio cases, but its paper, code, and dataset
+      buttons are placeholders and the repository contains no frozen split,
+      complete labels, evaluator, or license. Reassess when the promised code
+      and dataset links become functional.
   multilingual_emotion_neurons_release_audit:
     paper: https://arxiv.org/abs/2608.08772
     title: Multilingual Emotion Neurons in Large Audio-Language Models

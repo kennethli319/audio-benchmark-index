@@ -4638,3 +4638,26 @@ therefore unavailable. The arXiv perpetual non-exclusive license covers the
 article, not those absent artifacts; each source corpus retains its own access,
 consent, privacy, biometric, and reuse terms. No counted family or download
 helper is added; reassess if the referenced code appears.
+
+The August 2026 [*EmoS*](https://arxiv.org/abs/2608.09189) paper is recorded as
+an announced-but-unreleased EmoSBench audit after reviewing Sections 3-4 and
+Appendices A-C. Its approximately 4,000 bilingual synthetic test cases cover
+ten tasks across perceiving, understanding, using, and managing emotion,
+including acoustic-semantic conflict, de-escalation, and value-aligned safety
+responses. Models predict one of four ordinal response-quality scores and are
+measured by exact-match accuracy; a separate 531-pair YouTube-derived set uses
+at least three-of-four expert score consensus. This directly evaluates spoken-
+LLM post-training, and the same rubrics supervise the paper's SFT-then-GRPO
+EmoS evaluator, connecting the benchmark to reward modeling and emotional
+alignment. The 72,588-pair, 383.27-hour EmoDialogue corpus is training data,
+not a second benchmark.
+
+The owner project repository at revision
+`7385a22144cd523528a22a7c305f2499e685046e` publicly hosts only ten selected
+demo cases, one per subtask. Its paper, code, and dataset buttons remain
+placeholders, and the repository supplies no complete audio or labels, frozen
+manifests, real-world selection, evaluator code or checkpoint, predictions,
+per-item scores, or license. CC BY 4.0 covers the article but not the demo
+repository or absent artifacts; source video and synthesized-voice rights also
+require separate review. EmoSBench therefore remains an audit with no counted
+family or helper until the promised release becomes reproducible.
