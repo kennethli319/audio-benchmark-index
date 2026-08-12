@@ -13,6 +13,7 @@ enhancement and separation, speaker and emotion tasks, music, spatial audio, and
 
 - A searchable GitHub Pages catalog generated from structured YAML.
 - Official project, paper, repository, dataset, and archive links.
+- Primary-paper citation counts sourced from OpenAlex, with a reproducible refresh script.
 - Access labels for public, gated, form-based, password-protected, metadata-only, and unreleased artifacts.
 - Separate dataset and code license notes, including upstream-media caveats.
 - Safe-first helper scripts that keep large or restricted downloads behind explicit opt-ins.
@@ -46,6 +47,7 @@ restricted access require benchmark-specific environment variables or manual ste
 | Path | Purpose |
 | --- | --- |
 | [`data/audio_benchmarks.yaml`](data/audio_benchmarks.yaml) | Editable source of truth |
+| [`data/citation_counts.json`](data/citation_counts.json) | OpenAlex citation-count snapshot |
 | [`scripts/download/`](scripts/download/) | Per-benchmark safe download helpers |
 | [`scripts/download/README.md`](scripts/download/README.md) | Complete helper and access reference |
 | [`site/index.template.html`](site/index.template.html) | Searchable website template |
@@ -64,6 +66,12 @@ restricted access require benchmark-specific environment variables or manual ste
 ```bash
 ruby scripts/build_site.rb
 ruby scripts/build_site.rb --check
+```
+
+Refresh the citation snapshot before rebuilding when current counts are needed:
+
+```bash
+ruby scripts/update_citations.rb
 ```
 
 Edit the YAML or site template, then regenerate the checked-in files under `docs/`.

@@ -12,6 +12,7 @@ require "yaml"
 
 ROOT = File.expand_path("..", __dir__)
 DATA_PATH = File.join(ROOT, "data", "audio_benchmarks.yaml")
+CITATIONS_PATH = File.join(ROOT, "data", "citation_counts.json")
 DOWNLOAD_README_PATH = File.join(ROOT, "scripts", "download", "README.md")
 TEMPLATE_PATH = File.join(ROOT, "site", "index.template.html")
 OUTPUT_PATH = File.join(ROOT, "docs", "index.html")
@@ -180,7 +181,7 @@ rescue URI::InvalidURIError
   url
 end
 
-def render_card(benchmark, manual_ids)
+def render_card(benchmark, manual_ids, citations)
   id = benchmark.fetch("id")
   name = benchmark.fetch("name")
   full_name = benchmark["full_name"].to_s.strip
@@ -202,6 +203,10 @@ def render_card(benchmark, manual_ids)
   actions = action_links(benchmark)
   official = official_links(benchmark)
   sources = Array(benchmark["sources"]).map(&:to_s).select { |url| url.start_with?("http") }.uniq
+  citation = citations.fetch("benchmarks").fetch(id)
+  citation_count = citation["citation_count"]
+  citation_label = citation_count.nil? ? "Unavailable" : citation_count.to_i.to_s.reverse.scan(/.{1,3}/).join(",").reverse
+  citation_url = citation["openalex_url"]
   task_tags = tasks.first(4).map { |task| %(<span class="tag">#{escape(humanize(task))}</span>) }
   if tasks.length > 4
     task_tags << %(<span class="tag tag-more">+#{tasks.length - 4} more</span>)
@@ -252,6 +257,7 @@ def render_card(benchmark, manual_ids)
       data-access="#{access_slug}"
       data-host="#{host_slug}"
       data-terms="#{terms_slug}"
+      data-citations="#{citation_count.nil? ? -1 : citation_count.to_i}"
       data-search="#{escape(searchable)}">
       <div class="card-heading">
         <div>
@@ -267,6 +273,7 @@ def render_card(benchmark, manual_ids)
       <div class="card-facts">
         <div><span>Access path</span><strong>#{escape(host_label)}</strong></div>
         <div><span>Upstream terms</span><strong>#{escape(terms_label)}</strong></div>
+        <div><span>Paper citations</span><strong>#{citation_url ? %(<a href="#{escape(citation_url)}">#{escape(citation_label)}</a>) : escape(citation_label)}</strong></div>
       </div>
       <p class="access-copy">#{escape(access_copy)}</p>
       <div class="card-actions">
@@ -363,7 +370,11 @@ def render_site(catalog, manual)
     %(<option value="#{family[:slug]}">#{escape(family[:label])}</option>)
   end.join("\n              ")
 
-  cards = benchmarks.map { |benchmark| render_card(benchmark, manual) }.join("\n")
+  citations = JSON.parse(File.read(CITATIONS_PATH, encoding: "UTF-8"))
+  citation_ids = citations.fetch("benchmarks").keys.to_set
+  benchmark_ids = benchmarks.map { |benchmark| benchmark.fetch("id") }.to_set
+  raise "Citation records do not match benchmark ids" unless citation_ids == benchmark_ids
+  cards = benchmarks.map { |benchmark| render_card(benchmark, manual, citations) }.join("\n")
   last_checked = metadata.fetch("last_checked")
   last_checked_date = last_checked.is_a?(Date) ? last_checked : Date.parse(last_checked.to_s)
 
@@ -373,6 +384,7 @@ def render_site(catalog, manual)
     "{{MANUAL_COUNT}}" => manual.length.to_s,
     "{{LAST_CHECKED}}" => last_checked_date.strftime("%B %-d, %Y"),
     "{{LAST_CHECKED_ISO}}" => last_checked_date.iso8601,
+    "{{CITATIONS_UPDATED}}" => Date.parse(citations.fetch("updated_at")).strftime("%B %-d, %Y"),
     "{{FAMILY_TILES}}" => family_tiles,
     "{{FAMILY_OPTIONS}}" => family_options,
     "{{BENCHMARK_CARDS}}" => cards,

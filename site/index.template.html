@@ -297,7 +297,7 @@
     .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 15px 0; }
     .tag { border: 1px solid #cbdff1; border-radius: 999px; background: var(--accent-soft); color: #2d5f8f; font-size: 10px; font-weight: 700; padding: 4px 7px; }
     .tag-more { background: #eef1f4; color: var(--muted); }
-    .card-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
+    .card-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
     .card-facts div { min-width: 0; background: var(--panel-muted); padding: 10px 11px; }
     .card-facts span { display: block; color: var(--muted); font-size: 11px; }
     .card-facts strong { display: block; margin-top: 2px; font-size: 13px; }
@@ -453,7 +453,7 @@
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
         <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all {{BENCHMARK_COUNT}} benchmarks</h2></div>
-        <p>Search names, tasks, source notes, or license terms. Filters change discovery only—the list is alphabetical, not ranked.</p>
+        <p>Search names, tasks, source notes, or license terms. Paper citation counts come from OpenAlex and were refreshed {{CITATIONS_UPDATED}}.</p>
       </div>
 
       <div class="browse-layout">
@@ -512,6 +512,7 @@
                 <select id="sort-filter" name="sort">
                   <option value="az">Name A–Z</option>
                   <option value="za">Name Z–A</option>
+                  <option value="citations">Citations high–low</option>
                 </select>
               </div>
             </div>
@@ -610,6 +611,10 @@
 
       function applyFilters() {
         const ordered = [...cards].sort((a, b) => {
+          if (sort.value === "citations") {
+            const citationDifference = Number(b.dataset.citations) - Number(a.dataset.citations);
+            return citationDifference || a.dataset.name.localeCompare(b.dataset.name);
+          }
           const direction = sort.value === "za" ? -1 : 1;
           return direction * a.dataset.name.localeCompare(b.dataset.name);
         });

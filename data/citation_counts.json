@@ -1,0 +1,2540 @@
+{
+  "source": "OpenAlex",
+  "source_url": "https://openalex.org/",
+  "updated_at": "2026-08-11",
+  "definition": "Citation count for the benchmark's primary paper; unavailable when no primary paper or OpenAlex work can be matched reliably.",
+  "benchmarks": {
+    "svhalluc": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.02642",
+      "openalex_url": "https://openalex.org/W7163333871",
+      "paper_title": "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"
+    },
+    "av_syncbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.00726",
+      "openalex_url": "https://openalex.org/W7167024464",
+      "paper_title": "AV-SyncBench: Decoupled Benchmarking of Temporal and Semantic Audio-Visual Synchronization"
+    },
+    "voxparadox": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.27772",
+      "openalex_url": "https://openalex.org/W7162671385",
+      "paper_title": "Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox"
+    },
+    "common_sense_facts_audio": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.22473",
+      "openalex_url": "https://openalex.org/W7165640412",
+      "paper_title": "Interleaved Speech Language Models Latently Work In Text"
+    },
+    "speechjbb": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.06037",
+      "openalex_url": "https://openalex.org/W7163670483",
+      "paper_title": "SpeechJBB: Probing Safety Alignment and Comprehension in Large Audio Language Models under Code-Switched Speech"
+    },
+    "preference_asr": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.29534",
+      "openalex_url": "https://openalex.org/W7166667195",
+      "paper_title": "Preference-ASR: A Preference-Aware Test Set for Benchmarking ASR in the Era of Speech LLMs"
+    },
+    "kitchen20": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "nonspeech7k": {
+      "citation_count": 19,
+      "paper_url": "https://doi.org/10.1049/sil2.12233",
+      "openalex_url": "https://openalex.org/W4381249885",
+      "paper_title": "Nonspeech7k dataset: Classification and analysis of human non‐speech sound"
+    },
+    "sakura": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2505.13237",
+      "openalex_url": "https://openalex.org/W4417287262",
+      "paper_title": "SAKURA: On the Multi-hop Reasoning of Large Audio-Language Models Based on Speech and Audio Information"
+    },
+    "mmau": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2410.19168",
+      "openalex_url": "https://openalex.org/W4404311027",
+      "paper_title": "MMAU: A Massive Multi-Task Audio Understanding and Reasoning Benchmark"
+    },
+    "mmar": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2505.13032",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mmsu": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2506.04779",
+      "openalex_url": "https://openalex.org/W4416132773",
+      "paper_title": "MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark"
+    },
+    "big_bench_audio": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "step_audio_r1_5_benchmarks": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.25719",
+      "openalex_url": "https://openalex.org/W7157671730",
+      "paper_title": "Step-Audio-R1.5 Technical Report"
+    },
+    "multichallenge_audio": {
+      "citation_count": null,
+      "paper_url": "https://github.com/XiaomiMiMo/MiMo-Audio/blob/main/MiMo-Audio-Technical-Report.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ihbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.19595",
+      "openalex_url": "https://openalex.org/W7165373555",
+      "paper_title": "IHBench: Evaluating Post-Interruption Recovery in Voice Agents with Structured Workflows"
+    },
+    "mmau_pro": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2508.13992",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mugen": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.09714",
+      "openalex_url": "https://openalex.org/W7134977886",
+      "paper_title": "MUGEN: Evaluating and Improving Multi-audio Understanding of Large Audio-Language Models"
+    },
+    "trea": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2505.13115",
+      "openalex_url": "https://openalex.org/W4417287130",
+      "paper_title": "Benchmarking and Confidence Evaluation of LALMs For Temporal Reasoning"
+    },
+    "lat_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.22245",
+      "openalex_url": "https://openalex.org/W7155814039",
+      "paper_title": "Listening with Time: Precise Temporal Awareness for Long-Form Audio Understanding"
+    },
+    "audio_marathon": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2510.07293",
+      "openalex_url": "https://openalex.org/W4415318248",
+      "paper_title": "AudioMarathon: A Comprehensive Benchmark for Long-Context Audio Understanding and Efficiency in Audio LLMs"
+    },
+    "escucha": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.17812",
+      "openalex_url": "https://openalex.org/W7169877215",
+      "paper_title": "ESCUCHA: A Spanish Speech Benchmark for Heterogeneous Acoustic Conditions"
+    },
+    "ghana_speech_eval": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "msu_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.22868",
+      "openalex_url": "https://openalex.org/W7165650609",
+      "paper_title": "MSU-Bench: Towards Speaker-Centric Understanding in Conversational Multi-Speaker Scenarios"
+    },
+    "air_bench": {
+      "citation_count": 35,
+      "paper_url": "https://aclanthology.org/2024.acl-long.109/",
+      "openalex_url": "https://openalex.org/W4402684170",
+      "paper_title": "AIR-Bench: Benchmarking Large Audio-Language Models via Generative Comprehension"
+    },
+    "audiobench": {
+      "citation_count": 1,
+      "paper_url": "https://aclanthology.org/2025.naacl-long.350/",
+      "openalex_url": "https://openalex.org/W4411119442",
+      "paper_title": "Self-Pluralising Culture Alignment for Large Language Models"
+    },
+    "af_reasoning_eval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2508.11818",
+      "openalex_url": "https://openalex.org/W4414458571",
+      "paper_title": "Audio Flamingo Sound-CoT Technical Report: Improving Chain-of-Thought Reasoning in Sound Understanding"
+    },
+    "music_avqa": {
+      "citation_count": null,
+      "paper_url": "https://gewu-lab.github.io/MUSIC-AVQA/static/files/MUSIC-AVQA.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "music_avqa_r": {
+      "citation_count": 3,
+      "paper_url": "https://arxiv.org/abs/2404.12020",
+      "openalex_url": "https://openalex.org/W4394973731",
+      "paper_title": "Look, Listen, and Answer: Overcoming Biases for Audio-Visual Question Answering"
+    },
+    "music_avqa_v2": {
+      "citation_count": 4,
+      "paper_url": "https://arxiv.org/abs/2310.06238",
+      "openalex_url": "https://openalex.org/W4387560806",
+      "paper_title": "Tackling Data Bias in MUSIC-AVQA: Crafting a Balanced Dataset for Unbiased Question-Answering"
+    },
+    "avqa": {
+      "citation_count": null,
+      "paper_url": "https://dl.acm.org/doi/10.1145/3503161.3548291",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "omnibench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2409.15272",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "llp": {
+      "citation_count": 9,
+      "paper_url": "https://arxiv.org/abs/2007.10558",
+      "openalex_url": "https://openalex.org/W3044087851",
+      "paper_title": "Unified Multisensory Perception: Weakly-Supervised Audio-Visual Video Parsing"
+    },
+    "avsd": {
+      "citation_count": null,
+      "paper_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Alamri_Audio_Visual_Scene-Aware_Dialog_CVPR_2019_paper.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "interpet4d": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.10287",
+      "openalex_url": "https://openalex.org/W7168250120",
+      "paper_title": "InterPet4D: A Multimodal 4D Human-Pet Interaction Dataset for Pet Motion Generation"
+    },
+    "ava_active_speaker": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1901.01342",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dave": {
+      "citation_count": null,
+      "paper_url": "https://openreview.net/forum?id=4ZAX1NT0ms",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "daily_omni": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2505.17862",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "worldsense": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2502.04326",
+      "openalex_url": "https://openalex.org/W4407248386",
+      "paper_title": "WorldSense: Evaluating Real-world Omnimodal Understanding for Multimodal LLMs"
+    },
+    "mmou": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.14145",
+      "openalex_url": "https://openalex.org/W7137920515",
+      "paper_title": "MMOU: A Massive Multi-Task Omni Understanding and Reasoning Benchmark for Long and Complex Real-World Videos"
+    },
+    "av_speakerbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2512.02231",
+      "openalex_url": "https://openalex.org/W4417002355",
+      "paper_title": "See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models"
+    },
+    "avhbench": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2410.18325",
+      "openalex_url": "https://openalex.org/W4404306423",
+      "paper_title": "AVHBench: A Cross-Modal Hallucination Benchmark for Audio-Visual Large Language Models"
+    },
+    "avut": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2503.19951",
+      "openalex_url": "https://openalex.org/W4409013521",
+      "paper_title": "Audio-centric Video Understanding Benchmark without Text Shortcut"
+    },
+    "qivd": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2503.19356",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "streamarena": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2608.05703",
+      "openalex_url": "https://openalex.org/W7201864904",
+      "paper_title": "StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic Streaming Video Understanding"
+    },
+    "omnigaia": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2602.22897",
+      "openalex_url": "https://openalex.org/W7131816660",
+      "paper_title": "OmniGAIA: Towards Native Omni-Modal AI Agents"
+    },
+    "omni_cloze": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2510.12720",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "avscapbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.12820",
+      "openalex_url": "https://openalex.org/W7168362114",
+      "paper_title": "AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning"
+    },
+    "syncbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.09091",
+      "openalex_url": "https://openalex.org/W7168158055",
+      "paper_title": "Beyond Time Shifts: Adapting Omni-LLM as a Reference-Free Evaluator for Generative Audio-Visual Models"
+    },
+    "ave_compass": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "seamless_interaction": {
+      "citation_count": null,
+      "paper_url": "https://ai.meta.com/research/publications/seamless-interaction-dyadic-audiovisual-motion-modeling-and-large-scale-dataset/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "friend_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.29602",
+      "openalex_url": "https://openalex.org/W7172334126",
+      "paper_title": "FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models"
+    },
+    "k9_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.02680",
+      "openalex_url": "https://openalex.org/W7167585218",
+      "paper_title": "K9-Bench: Evaluating Multimodal LLMs on Canine-Centric Videos"
+    },
+    "video_mme": {
+      "citation_count": 11,
+      "paper_url": "https://arxiv.org/abs/2405.21075",
+      "openalex_url": "https://openalex.org/W4399318000",
+      "paper_title": "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis"
+    },
+    "omniretriever_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.26641",
+      "openalex_url": "https://openalex.org/W7162580256",
+      "paper_title": "OmniRetriever: Any-to-Any Audio-Video-Text Retrieval via Fusion-as-Teacher Distillation"
+    },
+    "avsbench": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2207.05042",
+      "openalex_url": "https://openalex.org/W4285077836",
+      "paper_title": "Audio-Visual Segmentation"
+    },
+    "lrs2": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1809.02108",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "lrs3": {
+      "citation_count": 281,
+      "paper_url": "https://arxiv.org/abs/1809.00496",
+      "openalex_url": "https://openalex.org/W2891205112",
+      "paper_title": "LRS3-TED: a large-scale dataset for visual speech recognition"
+    },
+    "vsro_200": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.08112",
+      "openalex_url": "https://openalex.org/W7167900425",
+      "paper_title": "VSRo-200: A Romanian Visual Speech Recognition Dataset for Studying Supervision and Multimodal Robustness"
+    },
+    "lrro": {
+      "citation_count": 5,
+      "paper_url": "https://doi.org/10.1145/3339825.3394932",
+      "openalex_url": "https://openalex.org/W3030132439",
+      "paper_title": "LRRo"
+    },
+    "superb": {
+      "citation_count": 51,
+      "paper_url": "https://arxiv.org/abs/2105.01051",
+      "openalex_url": "https://openalex.org/W3157923770",
+      "paper_title": "SUPERB: Speech processing Universal PERformance Benchmark"
+    },
+    "codec_superb": {
+      "citation_count": 21,
+      "paper_url": "https://aclanthology.org/2024.findings-acl.616/",
+      "openalex_url": "https://openalex.org/W4402670057",
+      "paper_title": "Codec-SUPERB: An In-Depth Analysis of Sound Codec Models"
+    },
+    "emo_superb": {
+      "citation_count": 2,
+      "paper_url": "https://arxiv.org/abs/2402.13018",
+      "openalex_url": "https://openalex.org/W4392019371",
+      "paper_title": "EMO-SUPERB: An In-depth Look at Speech Emotion Recognition"
+    },
+    "slurp": {
+      "citation_count": 134,
+      "paper_url": "https://aclanthology.org/2020.emnlp-main.588/",
+      "openalex_url": "https://openalex.org/W3100460087",
+      "paper_title": "SLURP: A Spoken Language Understanding Resource Package"
+    },
+    "speech_massive": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2408.03900",
+      "openalex_url": "https://openalex.org/W4403965730",
+      "paper_title": "Speech-MASSIVE: A Multilingual Speech Dataset for SLU and Beyond"
+    },
+    "slue": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2111.10367",
+      "openalex_url": "https://openalex.org/W4289434921",
+      "paper_title": "SLUE: New Benchmark Tasks for Spoken Language Understanding Evaluation\\n on Natural Speech"
+    },
+    "minds14": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2104.08524",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "fluent_speech_commands": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1904.03670",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "hear": {
+      "citation_count": 36,
+      "paper_url": "https://arxiv.org/abs/2203.03022",
+      "openalex_url": "https://openalex.org/W4221150524",
+      "paper_title": "HEAR: Holistic Evaluation of Audio Representations"
+    },
+    "xares": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2505.16369",
+      "openalex_url": "https://openalex.org/W4415035393",
+      "paper_title": "X-ARES: A Comprehensive Framework for Assessing Audio Encoder Performance"
+    },
+    "xares_llm": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.22728",
+      "openalex_url": "https://openalex.org/W7140320553",
+      "paper_title": "The Interspeech 2026 Audio Encoder Capability Challenge for Large Audio Language Models"
+    },
+    "dynamic_superb": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "maeb": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2602.16008",
+      "openalex_url": "https://openalex.org/W7130536787",
+      "paper_title": "MAEB: Massive Audio Embedding Benchmark"
+    },
+    "rul_muchomusic": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2504.00369",
+      "openalex_url": "https://openalex.org/W4417226591",
+      "paper_title": "Are you really listening? Boosting Perceptual Awareness in Music-QA Benchmarks"
+    },
+    "songformbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2510.02797",
+      "openalex_url": "https://openalex.org/W4416369583",
+      "paper_title": "SongFormer: Scaling Music Structure Analysis with Heterogeneous Supervision"
+    },
+    "rubato": {
+      "citation_count": 0,
+      "paper_url": "https://doi.org/10.5281/zenodo.21407831",
+      "openalex_url": "https://openalex.org/W7169536652",
+      "paper_title": "RUBATO: A Multi-Version Benchmark for Robust Music Transcription and Analysis"
+    },
+    "multtipop": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.08756",
+      "openalex_url": "https://openalex.org/W7167922275",
+      "paper_title": "MulTTiPop: A Multitrack Transcription Dataset for Pop Music"
+    },
+    "ai_cover_song_diagnostics": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.19688",
+      "openalex_url": "https://openalex.org/W7170143895",
+      "paper_title": "A Diagnostic Evaluation Framework for AI-Generated Cover Songs Using Music-Theoretic and Acoustic Features"
+    },
+    "muchin": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2402.09871",
+      "openalex_url": "https://openalex.org/W4391899937",
+      "paper_title": "MuChin: A Chinese Colloquial Description Benchmark for Evaluating Language Models in the Field of Music"
+    },
+    "madb": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.06929",
+      "openalex_url": "https://openalex.org/W7167787706",
+      "paper_title": "MADB: A Large-Scale Music Aesthetics Dataset with Professional and Multi-Dimensional Annotations"
+    },
+    "nsynth": {
+      "citation_count": 298,
+      "paper_url": "https://arxiv.org/abs/1704.01279",
+      "openalex_url": "https://openalex.org/W2606176153",
+      "paper_title": "Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders"
+    },
+    "surge_pitch": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2104.12922",
+      "openalex_url": "https://openalex.org/W4287199918",
+      "paper_title": "One Billion Audio Sounds from GPU-enabled Modular Synthesis"
+    },
+    "maestro": {
+      "citation_count": 139,
+      "paper_url": "https://arxiv.org/abs/1810.12247",
+      "openalex_url": "https://openalex.org/W2950547518",
+      "paper_title": "Enabling Factorized Piano Music Modeling and Generation with the MAESTRO\\n Dataset"
+    },
+    "asap": {
+      "citation_count": 24,
+      "paper_url": "https://doi.org/10.5281/zenodo.4245489",
+      "openalex_url": "https://openalex.org/W3111868559",
+      "paper_title": "ASAP: A dataset of aligned scores and performances for piano transcription"
+    },
+    "musdb18": {
+      "citation_count": 47,
+      "paper_url": "https://arxiv.org/abs/1804.06267",
+      "openalex_url": "https://openalex.org/W2018735295",
+      "paper_title": "The 2018 Signal Separation Evaluation Campaign"
+    },
+    "dsd100": {
+      "citation_count": 184,
+      "paper_url": "https://doi.org/10.1007/978-3-319-53547-0_31",
+      "openalex_url": "https://openalex.org/W2916985722",
+      "paper_title": "The 2016 Signal Separation Evaluation Campaign"
+    },
+    "medleydb": {
+      "citation_count": null,
+      "paper_url": "https://rachelbittner.weebly.com/uploads/3/2/1/8/32182799/bittner_ismir_2014.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "slakh2100": {
+      "citation_count": null,
+      "paper_url": "https://ieeexplore.ieee.org/document/8937164",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "moisesdb": {
+      "citation_count": 8,
+      "paper_url": "https://arxiv.org/abs/2307.15913",
+      "openalex_url": "https://openalex.org/W4385473570",
+      "paper_title": "Moisesdb: A dataset for source separation beyond 4-stems"
+    },
+    "voicebench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2410.17196",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "voxsafebench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.14548",
+      "openalex_url": "https://openalex.org/W7154742601",
+      "paper_title": "VoxSafeBench: Not Just What Is Said, but Who, How, and Where"
+    },
+    "redvox": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.26968",
+      "openalex_url": "https://openalex.org/W7166200578",
+      "paper_title": "RedVox: Safety and Fairness Gaps in Speech Models Across Languages"
+    },
+    "echomind": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2510.22758",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "uro_bench_pro": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2502.17810",
+      "openalex_url": "https://openalex.org/W4416172878",
+      "paper_title": "URO-Bench: Towards Comprehensive Evaluation for End-to-End Spoken Dialogue Models"
+    },
+    "speechrole": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2508.02013",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "wildspeech_bench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2506.21875",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "spearbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.05365",
+      "openalex_url": "https://openalex.org/W7167601746",
+      "paper_title": "SPEARBench: A Benchmark for Naturalness Evaluation in Streaming Speech-to-Speech Language Models"
+    },
+    "zerospeech_2021_slm": {
+      "citation_count": 42,
+      "paper_url": "https://arxiv.org/abs/2011.11588",
+      "openalex_url": "https://openalex.org/W4287591426",
+      "paper_title": "The Zero Resource Speech Benchmark 2021: Metrics and baselines for unsupervised spoken language modeling"
+    },
+    "zerospeech_2019": {
+      "citation_count": 93,
+      "paper_url": "https://doi.org/10.21437/Interspeech.2019-2904",
+      "openalex_url": "https://openalex.org/W2940544976",
+      "paper_title": "The Zero Resource Speech Challenge 2019: TTS Without T"
+    },
+    "fleurs": {
+      "citation_count": 15,
+      "paper_url": "https://arxiv.org/abs/2205.12446",
+      "openalex_url": "https://openalex.org/W4281621399",
+      "paper_title": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech"
+    },
+    "omnilingual_asr_corpus": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2511.09690",
+      "openalex_url": "https://openalex.org/W4416240515",
+      "paper_title": "Omnilingual ASR: Open-Source Multilingual Speech Recognition for 1600+ Languages"
+    },
+    "voicecodebench": {
+      "citation_count": null,
+      "paper_url": "https://huggingface.co/datasets/besimple-ai/voice-code-bench/blob/main/paper/voice-code-bench.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "s_diverse": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.03207",
+      "openalex_url": "https://openalex.org/W7167617536",
+      "paper_title": "S-DiverSe: Spanish Diverse Speech"
+    },
+    "adress_challenges": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dementiabank_pitt": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "voxpopuli": {
+      "citation_count": 324,
+      "paper_url": "https://aclanthology.org/2021.acl-long.80/",
+      "openalex_url": "https://openalex.org/W3119308075",
+      "paper_title": "VoxPopuli: A Large-Scale Multilingual Speech Corpus for Representation Learning, Semi-Supervised Learning and Interpretation"
+    },
+    "mtedx": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2102.01757",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "tedx_spanish": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "pansori_tedxkr": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "europarl_st": {
+      "citation_count": null,
+      "paper_url": "https://ieeexplore.ieee.org/document/9054626",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "covost2": {
+      "citation_count": 44,
+      "paper_url": "https://arxiv.org/abs/2007.10310",
+      "openalex_url": "https://openalex.org/W3054645415",
+      "paper_title": "CoVoST 2 and Massively Multilingual Speech-to-Text Translation"
+    },
+    "gigaspeech": {
+      "citation_count": 20,
+      "paper_url": "https://arxiv.org/abs/2106.06909",
+      "openalex_url": "https://openalex.org/W3169688220",
+      "paper_title": "GigaSpeech: An Evolving, Multi-domain ASR Corpus with 10,000 Hours of Transcribed Audio"
+    },
+    "spgispeech": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2104.02014",
+      "openalex_url": "https://openalex.org/W4287240313",
+      "paper_title": "SPGISpeech: 5,000 hours of transcribed financial audio for fully\\n formatted end-to-end speech recognition"
+    },
+    "earnings_22": {
+      "citation_count": 4,
+      "paper_url": "https://arxiv.org/abs/2203.15591",
+      "openalex_url": "https://openalex.org/W4221146809",
+      "paper_title": "Earnings-22: A Practical Benchmark for Accents in the Wild"
+    },
+    "earnings_21": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2104.11348",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "childes_aligned": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.03670",
+      "openalex_url": "https://openalex.org/W7167632018",
+      "paper_title": "CHILDES-Aligned: A Curated Children's Speech Dataset via Multi-Model Timestamp Ensembling"
+    },
+    "tadabur": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.18932",
+      "openalex_url": "https://openalex.org/W7155163204",
+      "paper_title": "Tadabur: A Large-Scale Quran Audio Dataset"
+    },
+    "l2_arctic": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2018/zhao18b_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "speak_and_improve_2025": {
+      "citation_count": null,
+      "paper_url": "https://doi.org/10.17863/CAM.114333",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "gigaspeechbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.28884",
+      "openalex_url": "https://openalex.org/W7166700973",
+      "paper_title": "GigaSpeechBench: A Real-World Multilingual Speech-to-Text Benchmark"
+    },
+    "common_voice": {
+      "citation_count": 209,
+      "paper_url": "https://arxiv.org/abs/1912.06670",
+      "openalex_url": "https://openalex.org/W2995929068",
+      "paper_title": "Common Voice: A Massively-Multilingual Speech Corpus"
+    },
+    "jvs": {
+      "citation_count": 41,
+      "paper_url": "https://arxiv.org/abs/1908.06248",
+      "openalex_url": "https://openalex.org/W2969049672",
+      "paper_title": "JVS corpus: free Japanese multi-speaker voice corpus"
+    },
+    "librispeech": {
+      "citation_count": null,
+      "paper_url": "https://ieeexplore.ieee.org/document/7178964",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "whisper_rirmega": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.02252",
+      "openalex_url": "https://openalex.org/W7133493313",
+      "paper_title": "Whisper-RIR-Mega: A Paired Clean-Reverberant Speech Benchmark for ASR Robustness to Room Acoustics"
+    },
+    "libri_light": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1912.07875",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "libriheavy": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2309.08105",
+      "openalex_url": "https://openalex.org/W4386840154",
+      "paper_title": "Libriheavy: a 50,000 hours ASR corpus with punctuation casing and context"
+    },
+    "timit": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "switchboard": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/H92-1045/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "fisher_english": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "jasmin_cgn": {
+      "citation_count": null,
+      "paper_url": "https://repository.ubn.ru.nl/bitstream/handle/2066/42432/42432.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mls": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2012.03411",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "seed_tts_eval": {
+      "citation_count": 6,
+      "paper_url": "https://arxiv.org/abs/2406.02430",
+      "openalex_url": "https://openalex.org/W4399425629",
+      "paper_title": "Seed-TTS: A Family of High-Quality Versatile Speech Generation Models"
+    },
+    "instruct_tts_eval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2506.16381",
+      "openalex_url": "https://openalex.org/W4417538286",
+      "paper_title": "InstructTTSEval: Benchmarking Complex Natural-Language Instruction Following in Text-to-Speech Systems"
+    },
+    "capspeech": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2506.02863",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "cv3_eval": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2505.17589",
+      "openalex_url": "https://openalex.org/W4415035377",
+      "paper_title": "CosyVoice 3: Towards In-the-wild Speech Generation via Scaling-up and Post-training"
+    },
+    "tts_multilingual_test_set": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2505.07916",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "cn_news_tts_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.24714",
+      "openalex_url": "https://openalex.org/W7165738273",
+      "paper_title": "CN-NewsTTS Bench: a target-level automatic benchmark for raw-input Chinese news TTS pronunciation"
+    },
+    "podeval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2510.00485",
+      "openalex_url": "https://openalex.org/W4414807505",
+      "paper_title": "PodEval: A Multimodal Evaluation Framework for Podcast Audio Generation"
+    },
+    "rapidata_tts_preference": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "audio_alpaca": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2404.09956",
+      "openalex_url": "https://openalex.org/W4394906954",
+      "paper_title": "Tango 2: Aligning Diffusion-based Text-to-Audio Generations through Direct Preference Optimization"
+    },
+    "libritts": {
+      "citation_count": 23,
+      "paper_url": "https://arxiv.org/abs/1904.02882",
+      "openalex_url": "https://openalex.org/W2940703732",
+      "paper_title": "LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech"
+    },
+    "ljspeech": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "vctk": {
+      "citation_count": 372,
+      "paper_url": "https://doi.org/10.7488/ds/2645",
+      "openalex_url": "https://openalex.org/W2998572311",
+      "paper_title": "CSTR VCTK Corpus: English Multi-speaker Corpus for CSTR Voice Cloning Toolkit (version 0.92)"
+    },
+    "aishell_3": {
+      "citation_count": 83,
+      "paper_url": "https://arxiv.org/abs/2010.11567",
+      "openalex_url": "https://openalex.org/W3094002217",
+      "paper_title": "AISHELL-3: A Multi-speaker Mandarin TTS Corpus and the Baselines"
+    },
+    "hifitts": {
+      "citation_count": 7,
+      "paper_url": "https://arxiv.org/abs/2104.01497",
+      "openalex_url": "https://openalex.org/W3148333649",
+      "paper_title": "Hi-Fi Multi-Speaker English TTS Dataset"
+    },
+    "wenetspeech": {
+      "citation_count": 32,
+      "paper_url": "https://arxiv.org/abs/2110.03370",
+      "openalex_url": "https://openalex.org/W4291566970",
+      "paper_title": "WenetSpeech: A 10000+ Hours Multi-domain Mandarin Corpus for Speech Recognition"
+    },
+    "wsyue_asr_eval": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2509.03959",
+      "openalex_url": "https://openalex.org/W4414757786",
+      "paper_title": "WenetSpeech-Yue: A Large-scale Cantonese Speech Corpus with Multi-dimensional Annotation"
+    },
+    "aishell_1": {
+      "citation_count": 50,
+      "paper_url": "https://arxiv.org/abs/1709.05522",
+      "openalex_url": "https://openalex.org/W2755682845",
+      "paper_title": "AISHELL-1: An Open-Source Mandarin Speech Corpus and A Speech Recognition Baseline"
+    },
+    "magicdata_mandarin": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "st_cmds": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "thchs_30": {
+      "citation_count": 192,
+      "paper_url": "https://arxiv.org/abs/1512.01882",
+      "openalex_url": "https://openalex.org/W2284628133",
+      "paper_title": "THCHS-30 : A Free Chinese Speech Corpus"
+    },
+    "golos": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2106.10161",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ksc2": {
+      "citation_count": 35,
+      "paper_url": "https://doi.org/10.21437/Interspeech.2022-421",
+      "openalex_url": "https://openalex.org/W4296068757",
+      "paper_title": "KSC2: An Industrial-Scale Open-Source Kazakh Speech Corpus"
+    },
+    "primewords_chinese": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "kespeech": {
+      "citation_count": null,
+      "paper_url": "https://openreview.net/forum?id=b3Zoeq2sCLq",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "opencpop_test": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2201.07429",
+      "openalex_url": "https://openalex.org/W4221157602",
+      "paper_title": "Opencpop: A High-Quality Open Source Chinese Popular Song Corpus for Singing Voice Synthesis"
+    },
+    "soulx_singer_eval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2602.07803",
+      "openalex_url": "https://openalex.org/W7128479529",
+      "paper_title": "SoulX-Singer: Towards High-Quality Zero-Shot Singing Voice Synthesis"
+    },
+    "mmgenre": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.06986",
+      "openalex_url": "https://openalex.org/W7167830726",
+      "paper_title": "MMGenre: Benchmarking Singing Voice Synthesis across Multiple Musical Genres"
+    },
+    "mir_1k_vocal": {
+      "citation_count": null,
+      "paper_url": "https://doi.org/10.1109/TASL.2009.2038816",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "esc_50": {
+      "citation_count": 1377,
+      "paper_url": "https://doi.org/10.1145/2733373.2806390",
+      "openalex_url": "https://openalex.org/W2052666245",
+      "paper_title": "ESC"
+    },
+    "dcase2024_task5": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2024_sound_scene_synthesis": {
+      "citation_count": null,
+      "paper_url": "https://doi.org/10.5281/zenodo.15630417",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2021_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2022_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2023_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2024_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2025_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2026_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2026_task1_hac": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2024_lass": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dcase2025_audioqa": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2505.07365",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "adqa_bench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2509.21060",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "audiogrounding": {
+      "citation_count": 22,
+      "paper_url": "https://doi.org/10.1109/ICASSP39728.2021.9414834",
+      "openalex_url": "https://openalex.org/W3163843406",
+      "paper_title": "Text-to-Audio Grounding: Building Correspondence Between Captions and Sound Events"
+    },
+    "timeground_1m": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.10387",
+      "openalex_url": "https://openalex.org/W7168235853",
+      "paper_title": "GigaChat Audio: Time-aware Large Audio Language Model"
+    },
+    "clotho_moment": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2409.15672",
+      "openalex_url": "https://openalex.org/W4403786560",
+      "paper_title": "Language-based Audio Moment Retrieval"
+    },
+    "castella": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2511.15131",
+      "openalex_url": "https://openalex.org/W7106303426",
+      "paper_title": "CASTELLA: Long Audio Dataset with Captions and Temporal Boundaries"
+    },
+    "dhauds": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2511.18421",
+      "openalex_url": "https://openalex.org/W7106715686",
+      "paper_title": "DHAuDS: A Dynamic and Heterogeneous Audio Benchmark for Test-Time Adaptation"
+    },
+    "spuraudio": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.13672",
+      "openalex_url": "https://openalex.org/W7161157886",
+      "paper_title": "SpurAudio: A Benchmark for Studying Shortcut Learning in Few-Shot Audio Classification"
+    },
+    "geo_atbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.10623",
+      "openalex_url": "https://openalex.org/W7135085431",
+      "paper_title": "Geo-ATBench: A Benchmark for Geospatial Audio Tagging with Geospatial Semantic Context"
+    },
+    "urbansound8k": {
+      "citation_count": 1,
+      "paper_url": "https://doi.org/10.5281/zenodo.1203745",
+      "openalex_url": "https://openalex.org/W4393882320",
+      "paper_title": "Urbansound8K"
+    },
+    "soroll_ia": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.26195",
+      "openalex_url": "https://openalex.org/W7166189977",
+      "paper_title": "Soroll-IA: A Weakly Labeled Audio Dataset for Real-World Industrial Port Monitoring"
+    },
+    "tau_asc_2019": {
+      "citation_count": 181,
+      "paper_url": "https://arxiv.org/abs/1807.09840",
+      "openalex_url": "https://openalex.org/W2883935097",
+      "paper_title": "A multi-device dataset for urban acoustic scene classification"
+    },
+    "tau_asc_2020_mobile": {
+      "citation_count": 40,
+      "paper_url": "https://arxiv.org/abs/2005.14623",
+      "openalex_url": "https://openalex.org/W3032502780",
+      "paper_title": "Acoustic scene classification in DCASE 2020 Challenge: generalization across devices and low complexity solutions"
+    },
+    "tau_asc_2022_mobile": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "audioset": {
+      "citation_count": null,
+      "paper_url": "https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "vggsound": {
+      "citation_count": 6,
+      "paper_url": "https://arxiv.org/abs/2004.14368",
+      "openalex_url": "https://openalex.org/W3023271457",
+      "paper_title": "VGGSound: A Large-scale Audio-Visual Dataset"
+    },
+    "ave": {
+      "citation_count": 28,
+      "paper_url": "https://arxiv.org/abs/1803.08842",
+      "openalex_url": "https://openalex.org/W2793262076",
+      "paper_title": "Audio-Visual Event Localization in Unconstrained Videos"
+    },
+    "epic_sounds": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "fsd50k": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2010.00475",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "doppelganger": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.04337",
+      "openalex_url": "https://openalex.org/W7167630155",
+      "paper_title": "Doppelganger: Sound Effects and Their Synthetic Twins"
+    },
+    "foleyset": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.25980",
+      "openalex_url": "https://openalex.org/W7165955216",
+      "paper_title": "FoleySet: A Multi-Level Human-Annotated Foley Sound Dataset"
+    },
+    "fsdkaggle2018": {
+      "citation_count": 100,
+      "paper_url": "https://arxiv.org/abs/1807.09902",
+      "openalex_url": "https://openalex.org/W2884535146",
+      "paper_title": "General-purpose Tagging of Freesound Audio with AudioSet Labels: Task Description, Dataset, and Baseline"
+    },
+    "fsdkaggle2019": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1906.02975",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "desed": {
+      "citation_count": null,
+      "paper_url": "https://hal.inria.fr/hal-02160855",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "datased": {
+      "citation_count": 4,
+      "paper_url": "https://doi.org/10.1038/s41597-025-05991-w",
+      "openalex_url": "https://openalex.org/W4415664000",
+      "paper_title": "Environmental Noise Dataset for Sound Event Classification and Detection"
+    },
+    "tut_sound_events_2017": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "maestro_real": {
+      "citation_count": 34,
+      "paper_url": "https://doi.org/10.1109/TASLP.2022.3233468",
+      "openalex_url": "https://openalex.org/W4315926819",
+      "paper_title": "Strong Labeling of Sound Events Using Crowdsourced Weak Labels and Annotator Competence Estimation"
+    },
+    "realdesed": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.16736",
+      "openalex_url": "https://openalex.org/W7169867077",
+      "paper_title": "RealDESED: A Real-World Domestic Sound Event Detection Benchmark"
+    },
+    "wabad": {
+      "citation_count": null,
+      "paper_url": "https://doi.org/10.5281/zenodo.15629388",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "sonyc_ust_v2": {
+      "citation_count": 31,
+      "paper_url": "https://arxiv.org/abs/2009.05188",
+      "openalex_url": "https://openalex.org/W3085893206",
+      "paper_title": "SONYC-UST-V2: An Urban Sound Tagging Dataset with Spatiotemporal Context"
+    },
+    "voxceleb": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "polysim_2026": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "voxblink2": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2407.11510",
+      "openalex_url": "https://openalex.org/W4401661962",
+      "paper_title": "VoxBlink2: A 100K+ Speaker Recognition Corpus and the Open-Set Speaker-Identification Benchmark"
+    },
+    "tidyvoice": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2601.16358",
+      "openalex_url": "https://openalex.org/W7125674413",
+      "paper_title": "TidyVoice: A Curated Multilingual Dataset for Speaker Verification Derived from Common Voice"
+    },
+    "hi_mia": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/1912.01231",
+      "openalex_url": "https://openalex.org/W2993443210",
+      "paper_title": "HI-MIA : A Far-field Text-Dependent Speaker Verification Database and the Baselines"
+    },
+    "voxconverse": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2007.01216",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dihard_iii": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2012.01477",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "voxlingua107": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2011.12998",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "speech_commands": {
+      "citation_count": 1076,
+      "paper_url": "https://arxiv.org/abs/1804.03209",
+      "openalex_url": "https://openalex.org/W2797583228",
+      "paper_title": "Google Speech Commands-Musan test set"
+    },
+    "mswc": {
+      "citation_count": null,
+      "paper_url": "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/fe131d7f5a6b38b23cc967316c13dae2-Abstract-round2.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "audio_mnist": {
+      "citation_count": null,
+      "paper_url": "https://www.sciencedirect.com/science/article/pii/S0016003223007536",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ume_erj": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ume_jrf": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "korean_speechlm_benchmarks": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.27984",
+      "openalex_url": "https://openalex.org/W7162654538",
+      "paper_title": "KVoiceBench, KOpenAudioBench, and KMMAU: Agent-Driven Korean Speech Benchmarks for Evaluating SpeechLMs"
+    },
+    "salmon": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2409.07437",
+      "openalex_url": "https://openalex.org/W4403622210",
+      "paper_title": "Salmon: A Suite for Acoustic Language Model Evaluation"
+    },
+    "parapair_audio_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.24648",
+      "openalex_url": "https://openalex.org/W7165794617",
+      "paper_title": "ParaPairAudioBench: Paralinguistic Pairwise Audio Benchmark for LALM-as-a-Judge"
+    },
+    "speech_edit_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.01804",
+      "openalex_url": "https://openalex.org/W7163204385",
+      "paper_title": "SpeechEditBench: A Bilingual Multi-Attribute Benchmark for Instruction-Guided Speech Editing"
+    },
+    "ifeval_audio": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2505.16774",
+      "openalex_url": "https://openalex.org/W4416222918",
+      "paper_title": "IFEval-Audio: Benchmarking Instruction-Following Capability in Audio-based Large Language Models"
+    },
+    "ming_freeform_audio_edit": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2511.05516",
+      "openalex_url": "https://openalex.org/W4416156439",
+      "paper_title": "Ming-UniAudio: Speech LLM for Joint Understanding, Generation and Editing with Unified Representation"
+    },
+    "mcr_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2508.15407",
+      "openalex_url": "https://openalex.org/W4416051092",
+      "paper_title": "When Audio and Text Disagree: Revealing Text Bias in Large Audio-Language Models"
+    },
+    "vocalsound": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2205.03433",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "vocalset": {
+      "citation_count": null,
+      "paper_url": "https://archives.ismir.net/ismir2018/paper/000105.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "emov_db": {
+      "citation_count": 51,
+      "paper_url": "https://arxiv.org/abs/1806.09514",
+      "openalex_url": "https://openalex.org/W2810914326",
+      "paper_title": "The Emotional Voices Database: Towards Controlling the Emotion Dimension in Voice Generation Systems"
+    },
+    "daic_woz": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/L14-1422/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "androids_corpus": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2023/tao23_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ravdess": {
+      "citation_count": 1852,
+      "paper_url": "https://doi.org/10.1371/journal.pone.0196391",
+      "openalex_url": "https://openalex.org/W2803193013",
+      "paper_title": "The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS): A dynamic, multimodal set of facial and vocal expressions in North American English"
+    },
+    "tess": {
+      "citation_count": 211,
+      "paper_url": "https://doi.org/10.5683/SP2/E8H2MF",
+      "openalex_url": "https://openalex.org/W3109943296",
+      "paper_title": "Toronto emotional speech set (TESS)"
+    },
+    "crema_d": {
+      "citation_count": 873,
+      "paper_url": "https://doi.org/10.1109/TAFFC.2014.2336244",
+      "openalex_url": "https://openalex.org/W2030931454",
+      "paper_title": "CREMA-D: Crowd-Sourced Emotional Multimodal Actors Dataset"
+    },
+    "cmma": {
+      "citation_count": null,
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3be60b4a739b95a07a944a1a2c41e05e-Abstract-Datasets_and_Benchmarks.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mustard": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/P19-1455/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "meld": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/P19-1050/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "bah": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2505.19328",
+      "openalex_url": "https://openalex.org/W4417306435",
+      "paper_title": "BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behavioural Change"
+    },
+    "mer2023": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2304.08981",
+      "openalex_url": "https://openalex.org/W4366459742",
+      "paper_title": "MER 2023: Multi-label Learning, Modality Robustness, and Semi-Supervised Learning"
+    },
+    "mer2024": {
+      "citation_count": 2,
+      "paper_url": "https://arxiv.org/abs/2404.17113",
+      "openalex_url": "https://openalex.org/W4396570329",
+      "paper_title": "MER 2024: Semi-Supervised Learning, Noise Robustness, and Open-Vocabulary Multimodal Emotion Recognition"
+    },
+    "ch_sims": {
+      "citation_count": 404,
+      "paper_url": "https://aclanthology.org/2020.acl-main.343/",
+      "openalex_url": "https://openalex.org/W3034849760",
+      "paper_title": "CH-SIMS: A Chinese Multimodal Sentiment Analysis Dataset with Fine-grained Annotation of Modality"
+    },
+    "ch_sims_v2": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2209.02604",
+      "openalex_url": "https://openalex.org/W4297648461",
+      "paper_title": "Make Acoustic and Visual Cues Matter: CH-SIMS v2.0 Dataset and AV-Mixup Consistent Module"
+    },
+    "cmu_mosi": {
+      "citation_count": 344,
+      "paper_url": "https://arxiv.org/abs/1606.06259",
+      "openalex_url": "https://openalex.org/W2465534249",
+      "paper_title": "MOSI: Multimodal Corpus of Sentiment Intensity and Subjectivity Analysis in Online Opinion Videos"
+    },
+    "cmu_mosei": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/P18-1208/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "spemoc": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.18109",
+      "openalex_url": "https://openalex.org/W7169869100",
+      "paper_title": "SpEmoC: A Balanced Speaker-Segment Multimodal Emotion Benchmark"
+    },
+    "incaremo": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.14683",
+      "openalex_url": "https://openalex.org/W7169545399",
+      "paper_title": "InCarEmo: A Multimodal Dataset for In-Cabin Emotion Recognition and Driver State Monitoring"
+    },
+    "emoprefer": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2507.04278",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ov_merd": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2410.01495",
+      "openalex_url": "https://openalex.org/W4403851702",
+      "paper_title": "OV-MER: Towards Open-Vocabulary Multimodal Emotion Recognition"
+    },
+    "aff_wild2": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "iemocap": {
+      "citation_count": null,
+      "paper_url": "https://sail.usc.edu/iemocap/Busso_2008_iemocap.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "msp_podcast": {
+      "citation_count": null,
+      "paper_url": "https://lab-msp.com/MSP/publications/Busso_202x.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "musan": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1510.08484",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "ami": {
+      "citation_count": null,
+      "paper_url": "https://link.springer.com/article/10.1007/s10579-007-9042-3",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "clotho": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/1910.09387",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "clotho_aqa": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2204.09634",
+      "openalex_url": "https://openalex.org/W4224282636",
+      "paper_title": "Clotho-AQA: A Crowdsourced Dataset for Audio Question Answering"
+    },
+    "audio_hallucination": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2410.16130",
+      "openalex_url": "https://openalex.org/W4404258816",
+      "paper_title": "Can Large Audio-Language Models Truly Hear? Tackling Hallucinations with Multi-Task Assessment and Stepwise Audio Reasoning"
+    },
+    "audiocaps": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/N19-1011/",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mecat": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2507.23511",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "uiq": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.18360",
+      "openalex_url": "https://openalex.org/W7155076811",
+      "paper_title": "Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval"
+    },
+    "audiocards": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2602.13835",
+      "openalex_url": "https://openalex.org/W7129602481",
+      "paper_title": "Audiocards: Structured Metadata Improves Audio Language Models For Sound Design"
+    },
+    "musiccaps": {
+      "citation_count": 187,
+      "paper_url": "https://arxiv.org/abs/2301.11325",
+      "openalex_url": "https://openalex.org/W4318351475",
+      "paper_title": "MuChoMusic dataset"
+    },
+    "wavcaps": {
+      "citation_count": 6,
+      "paper_url": "https://arxiv.org/abs/2303.17395",
+      "openalex_url": "https://openalex.org/W4361864998",
+      "paper_title": "WavCaps: A ChatGPT-Assisted Weakly-Labelled Audio Captioning Dataset for Audio-Language Multimodal Research"
+    },
+    "audiosetcaps": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2411.18953",
+      "openalex_url": "https://openalex.org/W4405030093",
+      "paper_title": "AudioSetCaps: An Enriched Audio-Caption Dataset using Automated Generation Pipeline with Large Audio and Language Models"
+    },
+    "macs": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2104.04214",
+      "openalex_url": "https://openalex.org/W4287235427",
+      "paper_title": "What is the ground truth? Reliability of multi-annotator data for audio tagging"
+    },
+    "magnatagatune": {
+      "citation_count": null,
+      "paper_url": "http://ismir2009.ismir.net/proceedings/OS5-5.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mtg_jamendo": {
+      "citation_count": 3,
+      "paper_url": "https://doi.org/10.5281/zenodo.3826813",
+      "openalex_url": "https://openalex.org/W3213223027",
+      "paper_title": "MTG-Jamendo Dataset"
+    },
+    "fma": {
+      "citation_count": 162,
+      "paper_url": "https://arxiv.org/abs/1612.01840",
+      "openalex_url": "https://openalex.org/W2580221632",
+      "paper_title": "FMA: A Dataset For Music Analysis"
+    },
+    "million_song_dataset": {
+      "citation_count": null,
+      "paper_url": "http://www.columbia.edu/~tb2332/Papers/ismir11.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "gtzan": {
+      "citation_count": null,
+      "paper_url": "https://ismir2001.ismir.net/pdf/tzanetakis.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "openmic_2018": {
+      "citation_count": 0,
+      "paper_url": "https://doi.org/10.5281/zenodo.1432913",
+      "openalex_url": "https://openalex.org/W4393728019",
+      "paper_title": "OpenMIC-2018"
+    },
+    "musicnet": {
+      "citation_count": 0,
+      "paper_url": "https://doi.org/10.5281/zenodo.5120004",
+      "openalex_url": "https://openalex.org/W4393779866",
+      "paper_title": "MusicNet"
+    },
+    "chime_4": {
+      "citation_count": 373,
+      "paper_url": "https://doi.org/10.1016/j.csl.2016.11.005",
+      "openalex_url": "https://openalex.org/W2559260703",
+      "paper_title": "An analysis of environment, microphone and data simulation mismatches in robust speech recognition"
+    },
+    "chime_6": {
+      "citation_count": 97,
+      "paper_url": "https://arxiv.org/abs/2004.09249",
+      "openalex_url": "https://openalex.org/W3016400019",
+      "paper_title": "CHiME-6 Challenge:Tackling Multispeaker Speech Recognition for Unsegmented Recordings"
+    },
+    "chime_7_dasr": {
+      "citation_count": 9,
+      "paper_url": "https://arxiv.org/abs/2306.13734",
+      "openalex_url": "https://openalex.org/W4382319414",
+      "paper_title": "The CHiME-7 DASR Challenge: Distant Meeting Transcription with Multiple Devices in Diverse Scenarios"
+    },
+    "notsofar_1": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "alimeeting": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "aishell_4": {
+      "citation_count": 8,
+      "paper_url": "https://arxiv.org/abs/2104.03603",
+      "openalex_url": "https://openalex.org/W4287235989",
+      "paper_title": "AISHELL-4: An Open Source Dataset for Speech Enhancement, Separation,\\n Recognition and Speaker Diarization in Conference Scenario"
+    },
+    "libriwasn": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2308.10682",
+      "openalex_url": "https://openalex.org/W4386081667",
+      "paper_title": "LibriWASN: A Data Set for Meeting Separation, Diarization, and Recognition with Asynchronous Recording Devices"
+    },
+    "libricss": {
+      "citation_count": 11,
+      "paper_url": "https://arxiv.org/abs/2001.11482",
+      "openalex_url": "https://openalex.org/W3003231992",
+      "paper_title": "Continuous speech separation: dataset and analysis"
+    },
+    "librimix": {
+      "citation_count": 183,
+      "paper_url": "https://arxiv.org/abs/2005.11262",
+      "openalex_url": "https://openalex.org/W3027008958",
+      "paper_title": "LibriMix: An Open-Source Dataset for Generalizable Speech Separation"
+    },
+    "real_tse": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.15198",
+      "openalex_url": "https://openalex.org/W7169546621",
+      "paper_title": "SLT 2026 REAL-TSE Challenge: Real-world Target Speaker Extraction from Conversational Recordings"
+    },
+    "fuss": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2011.00803",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "wsj0_2mix": {
+      "citation_count": null,
+      "paper_url": "https://www.merl.com/publications/TR2016-003",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "wham_whamr": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "voicebank_demand": {
+      "citation_count": 141,
+      "paper_url": "https://doi.org/10.7488/ds/2117",
+      "openalex_url": "https://openalex.org/W2757519008",
+      "paper_title": "Noisy speech database for training speech enhancement algorithms and TTS models"
+    },
+    "diamond_benchmark": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dns_challenge": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "realman": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2406.19959",
+      "openalex_url": "https://openalex.org/W4400222343",
+      "paper_title": "RealMAN: A Real-Recorded and Annotated Microphone Array Dataset for Dynamic Speech Enhancement and Localization"
+    },
+    "ms_snsd": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2019/reddy19_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "nisqa": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2104.09494",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "somos": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2022/maniati22_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "qualispeech": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2503.20290",
+      "openalex_url": "https://openalex.org/W4409091524",
+      "paper_title": "QualiSpeech: A Speech Quality Assessment Dataset with Natural Language Reasoning and Descriptions"
+    },
+    "voicemos_challenge_2026": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "bvcc": {
+      "citation_count": 1,
+      "paper_url": "https://doi.org/10.5281/zenodo.6572573",
+      "openalex_url": "https://openalex.org/W4393681395",
+      "paper_title": "Data for the VoiceMOS Challenge 2022"
+    },
+    "asvspoof_2015": {
+      "citation_count": 32,
+      "paper_url": "https://doi.org/10.7488/ds/298",
+      "openalex_url": "https://openalex.org/W2186111442",
+      "paper_title": "Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2015) Database"
+    },
+    "asvspoof_2017": {
+      "citation_count": 6,
+      "paper_url": "https://doi.org/10.7488/ds/2332",
+      "openalex_url": "https://openalex.org/W2796388641",
+      "paper_title": "The 2nd Automatic Speaker Verification Spoofing and Countermeasures Challenge (ASVspoof 2017) Database, Version 2"
+    },
+    "asvspoof_2019": {
+      "citation_count": 44,
+      "paper_url": "https://doi.org/10.7488/ds/2555",
+      "openalex_url": "https://openalex.org/W2955054437",
+      "paper_title": "ASVspoof 2019: The 3rd Automatic Speaker Verification Spoofing and Countermeasures Challenge database"
+    },
+    "add_2022": {
+      "citation_count": 159,
+      "paper_url": "https://doi.org/10.1109/ICASSP43922.2022.9746939",
+      "openalex_url": "https://openalex.org/W4221138880",
+      "paper_title": "ADD 2022: the first Audio Deep Synthesis Detection Challenge"
+    },
+    "add_2023": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "in_the_wild_audio_deepfake": {
+      "citation_count": 7,
+      "paper_url": "https://arxiv.org/abs/2203.16263",
+      "openalex_url": "https://openalex.org/W4225649083",
+      "paper_title": "Does Audio Deepfake Detection Generalize?"
+    },
+    "tfcl_afe": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.17761",
+      "openalex_url": "https://openalex.org/W7169888730",
+      "paper_title": "Time-Frequency Consistency Learning for Robust Speech Deepfake Detection"
+    },
+    "mixfake": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.23201",
+      "openalex_url": "https://openalex.org/W7162337519",
+      "paper_title": "MixFake: Benchmarking and Enhancing Audio Deepfake Detection in Diverse Real-world Mixed Audio"
+    },
+    "asvspoof_2021": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "affectdf": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2608.05507",
+      "openalex_url": "https://openalex.org/W7201887137",
+      "paper_title": "AffectDF: The Most Comprehensive Benchmark for Speech Deepfake Detection against Emotionally Expressive Attacks"
+    },
+    "codecfake": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2405.04880",
+      "openalex_url": "https://openalex.org/W4396816534",
+      "paper_title": "The Codecfake Dataset and Countermeasures for the Universally Detection of Deepfake Audio"
+    },
+    "diffssd": {
+      "citation_count": 4,
+      "paper_url": "https://doi.org/10.1109/ICASSP49660.2025.10889450",
+      "openalex_url": "https://openalex.org/W4408355254",
+      "paper_title": "DiffSSD: A Diffusion-Based Dataset For Speech Forensics"
+    },
+    "fake_or_real": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "asvspoof_5": {
+      "citation_count": null,
+      "paper_url": "https://doi.org/10.5281/zenodo.14498691",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "fakeavceleb": {
+      "citation_count": 23,
+      "paper_url": "https://arxiv.org/abs/2108.05080",
+      "openalex_url": "https://openalex.org/W3190486916",
+      "paper_title": "FakeAVCeleb: A Novel Audio-Video Multimodal Deepfake Dataset"
+    },
+    "spoofceleb": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2409.17285",
+      "openalex_url": "https://openalex.org/W4403795527",
+      "paper_title": "SpoofCeleb: Speech Deepfake Detection and SASV In The Wild"
+    },
+    "partialedit": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2506.02958",
+      "openalex_url": "https://openalex.org/W4415135129",
+      "paper_title": "PartialEdit: Identifying Partial Deepfakes in the Era of Neural Speech Editing"
+    },
+    "compspoof_v2": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "voxenes_2026": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.11706",
+      "openalex_url": "https://openalex.org/W7168285406",
+      "paper_title": "VoxENES 2026: Benchmarking Generalization of Speech Spoofing Detectors Against LLM-Era TTS and Voice Conversion"
+    },
+    "starss22": {
+      "citation_count": null,
+      "paper_url": "https://dcase.community/documents/workshop2022/proceedings/DCASE2022Workshop_Politis_51.pdf",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "starss23": {
+      "citation_count": 7,
+      "paper_url": "https://arxiv.org/abs/2306.09126",
+      "openalex_url": "https://openalex.org/W4380994299",
+      "paper_title": "STARSS23: An Audio-Visual Dataset of Spatial Recordings of Real Scenes with Spatiotemporal Annotations of Sound Events"
+    },
+    "audiblelight_eigenmike32": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.24463",
+      "openalex_url": "https://openalex.org/W7171589686",
+      "paper_title": "Mind the Microphone Gap: Benchmarking Array Upsampling Strategies for Latent Acoustic Mapping"
+    },
+    "dcase2025_stereo_seld": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2507.12042",
+      "openalex_url": "https://openalex.org/W4415141402",
+      "paper_title": "Stereo Sound Event Localization and Detection with Onscreen/offscreen Classification"
+    },
+    "locata": {
+      "citation_count": 144,
+      "paper_url": "https://doi.org/10.1109/TASLP.2020.2990485",
+      "openalex_url": "https://openalex.org/W3021261768",
+      "paper_title": "The LOCATA Challenge: Acoustic Source Localization and Tracking"
+    },
+    "spatial_librispeech": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2308.09514",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "star_bench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2510.24693",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "l3das21": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2104.05499",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "l3das22": {
+      "citation_count": 4,
+      "paper_url": "https://arxiv.org/abs/2202.10372",
+      "openalex_url": "https://openalex.org/W4221152722",
+      "paper_title": "L3DAS22 Challenge: Learning 3D Audio Sources in a Real Office Environment"
+    },
+    "tau_spatial_sound_events_2019": {
+      "citation_count": 3,
+      "paper_url": "https://arxiv.org/abs/1905.08546",
+      "openalex_url": "https://openalex.org/W4288349316",
+      "paper_title": "A multi-room reverberant dataset for sound event localization and\\n detection"
+    },
+    "tau_nigens_sse_2020": {
+      "citation_count": 43,
+      "paper_url": "https://arxiv.org/abs/2006.01919",
+      "openalex_url": "https://openalex.org/W3033731578",
+      "paper_title": "A Dataset of Reverberant Spatial Sound Scenes with Moving Sources for Sound Event Localization and Detection"
+    },
+    "tau_nigens_sse_2021": {
+      "citation_count": 20,
+      "paper_url": "https://arxiv.org/abs/2106.06999",
+      "openalex_url": "https://openalex.org/W3171659463",
+      "paper_title": "A Dataset of Dynamic Reverberant Sound Scenes with Directional Interferers for Sound Event Localization and Detection"
+    },
+    "live_gurbani_captioning_v1": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.13457",
+      "openalex_url": "https://openalex.org/W7169229527",
+      "paper_title": "Live Gurbani Tracking: A Benchmark and Reference System for Captioning Sikh Kirtan"
+    },
+    "audio_agent_bench_suite": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "silma_open_source_arabic_tts": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "urban_beehive": {
+      "citation_count": 7,
+      "paper_url": "https://doi.org/10.1038/s41597-025-04869-1",
+      "openalex_url": "https://openalex.org/W4409000241",
+      "paper_title": "UrBAN: Urban Beehive Acoustics and PheNotyping Dataset"
+    },
+    "codett": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.25434",
+      "openalex_url": "https://openalex.org/W7140972194",
+      "paper_title": "CoDeTT: A Context-Aware Decision Benchmark for Turn-Taking Evaluation"
+    },
+    "songeval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2505.10793",
+      "openalex_url": "https://openalex.org/W4417093031",
+      "paper_title": "SongEval: A Benchmark Dataset for Song Aesthetics Evaluation"
+    },
+    "songbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.25937",
+      "openalex_url": "https://openalex.org/W7158606069",
+      "paper_title": "SongBench: A Fine-Grained Multi-Aspect Benchmark for Song Quality Assessment"
+    },
+    "m6_music_detection": {
+      "citation_count": 0,
+      "paper_url": "https://doi.org/10.1038/s41598-026-36044-w",
+      "openalex_url": "https://openalex.org/W7128767287",
+      "paper_title": "M6: multi-generator, multi-domain, multi-lingual and cultural, multi-genres, multi-instrument machine-generated music detection databases"
+    },
+    "singmos_pro": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2510.01812",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "song_describer": {
+      "citation_count": 7,
+      "paper_url": "https://arxiv.org/abs/2311.10057",
+      "openalex_url": "https://openalex.org/W4388788961",
+      "paper_title": "The Song Describer Dataset: a Corpus of Audio Captions for Music-and-Language Evaluation"
+    },
+    "cmi_rewardbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.00610",
+      "openalex_url": "https://openalex.org/W7133331960",
+      "paper_title": "CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction"
+    },
+    "musica_metabench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.06015",
+      "openalex_url": "https://openalex.org/W7167678751",
+      "paper_title": "Music I Care About: Automated Multimodal Benchmarking of LLM Music Perception Skills on (Almost) Any Music"
+    },
+    "sonic_seasoning": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.03296",
+      "openalex_url": "https://openalex.org/W7167596712",
+      "paper_title": "Taste-aware music retrieval from audio embeddings"
+    },
+    "audiobook_narration_appeal": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.02473",
+      "openalex_url": "https://openalex.org/W7167220526",
+      "paper_title": "Audio-Based Understanding of Audiobook Narration Appeal"
+    },
+    "single_item_kawaii_measure": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.19352",
+      "openalex_url": "https://openalex.org/W7170140779",
+      "paper_title": "Validating the Single Item Kawaii Measure"
+    },
+    "lyra_sa": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "omnivideobench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2510.10689",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "lvomnibench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2603.19217",
+      "openalex_url": "https://openalex.org/W7139915495",
+      "paper_title": "LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs"
+    },
+    "chartgeneval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.12857",
+      "openalex_url": "https://openalex.org/W7168348524",
+      "paper_title": "ChartGenEval: Corruption-Tested Multi-Dimensional Feedback for Rhythm-Game Chart Generation"
+    },
+    "openstbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.30792",
+      "openalex_url": "https://openalex.org/W7162993264",
+      "paper_title": "OpenSTBench: Beyond Semantic Evaluation for Speech Translation"
+    },
+    "realsi": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2407.21646",
+      "openalex_url": "https://openalex.org/W4401306756",
+      "paper_title": "Towards Achieving Human Parity on End-to-end Simultaneous Speech Translation via LLM Agent"
+    },
+    "halas": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.23048",
+      "openalex_url": "https://openalex.org/W7165630025",
+      "paper_title": "HALAS: A Human-Annotated Dataset of Hallucinations of Modern ASR Systems"
+    },
+    "audiomarkbench": {
+      "citation_count": 3,
+      "paper_url": "https://arxiv.org/abs/2406.06979",
+      "openalex_url": "https://openalex.org/W4399598141",
+      "paper_title": "AudioMarkBench: Benchmarking Robustness of Audio Watermarking"
+    },
+    "speecheq": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.25990",
+      "openalex_url": "https://openalex.org/W7165961612",
+      "paper_title": "SpeechEQ: Benchmarking Emotional Intelligence Quotient in Socially Aware Voice Conversational Models"
+    },
+    "designed_vocalizations": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.20951",
+      "openalex_url": "https://openalex.org/W7170761114",
+      "paper_title": "Designed Vocalizations Dataset: Sound-Designed Human and Animal Voices for Non-human Voice Conversion"
+    },
+    "movie_gen_audio_bench": {
+      "citation_count": 8,
+      "paper_url": "https://arxiv.org/abs/2410.13720",
+      "openalex_url": "https://openalex.org/W4403580037",
+      "paper_title": "Movie Gen: A Cast of Media Foundation Models"
+    },
+    "backgroundmellow_cinematic_trailer_eval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.11364",
+      "openalex_url": "https://openalex.org/W7168242167",
+      "paper_title": "BackgroundMellow: A Multi-Modal Cohesive Framework for Narrative-Driven Rich Cinematic Soundscape Generation"
+    },
+    "avdc": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.10299",
+      "openalex_url": "https://openalex.org/W7168252378",
+      "paper_title": "Empowering Long-form Omni-modal Understanding with Robust Audio Perception"
+    },
+    "synsfx": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.04848",
+      "openalex_url": "https://openalex.org/W7167638658",
+      "paper_title": "SynSFX: Multi-Model Sound Effects Synthesis Dataset for Deepfake Detection and Evaluation"
+    },
+    "dialogs_ru": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.14310",
+      "openalex_url": "https://openalex.org/W7169622507",
+      "paper_title": "Dialogs: a studio-quality expressive conversational Russian speech corpus for dialog assistants"
+    },
+    "pazabench": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "indic_context_eval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.19157",
+      "openalex_url": "https://openalex.org/W7165181591",
+      "paper_title": "IndicContextEval: A Benchmark for Evaluating Context Utilisation in Audio Large Language Models Across 8 Indic Languages"
+    },
+    "smartglasses_challenge_2026": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.17867",
+      "openalex_url": "https://openalex.org/W7169854546",
+      "paper_title": "The tttAI System for the TSA-ASR Task of the SmartGlasses Challenge 2026"
+    },
+    "mmae": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.07229",
+      "openalex_url": "https://openalex.org/W7163903257",
+      "paper_title": "MMAE: A Massive Multitask Audio Editing Benchmark"
+    },
+    "video_salmonn2_caption": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2506.15220",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mlc_slm_eval": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2509.13785",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mlc_slm_2nd_challenge": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "forestir": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.06299",
+      "openalex_url": "https://openalex.org/W7167706724",
+      "paper_title": "ForestIR: Physics-Informed Forest Sound Simulation for Array-Based Bioacoustic Remote Sensing"
+    },
+    "comind": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.06691",
+      "openalex_url": "https://openalex.org/W7167813353",
+      "paper_title": "CoMind: Understanding Collaborative Human Activity from Multiple Minds and Views"
+    },
+    "spint": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.10619",
+      "openalex_url": "https://openalex.org/W7168269960",
+      "paper_title": "An Objective Intelligibility Metric Evaluation on Spanish Speech"
+    },
+    "concerto_accompaniment_benchmark": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2607.18189",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "storyad_qa": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.11798",
+      "openalex_url": "https://openalex.org/W7168250719",
+      "paper_title": "StoryTeller: Training-Free Narrative Grounding for Long-Form Audio Description"
+    },
+    "pvqd": {
+      "citation_count": 43,
+      "paper_url": "https://doi.org/10.1016/j.jvoice.2020.10.001",
+      "openalex_url": "https://openalex.org/W3093575194",
+      "paper_title": "Perceptual Voice Qualities Database (PVQD): Database Characteristics"
+    },
+    "torgo": {
+      "citation_count": null,
+      "paper_url": "https://link.springer.com/article/10.1007/s10579-011-9145-0",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "cdsd": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2024/wan24b_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "seabad": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.20853",
+      "openalex_url": "https://openalex.org/W7161938093",
+      "paper_title": "SEABAD: A Tropical Bird Activity Detection Dataset for Passive Acoustic Monitoring"
+    },
+    "synth_dopaco": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "mcif": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2507.19634",
+      "openalex_url": "https://openalex.org/W4417270386",
+      "paper_title": "MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks"
+    },
+    "multiref_compass": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.14189",
+      "openalex_url": "https://openalex.org/W7169584414",
+      "paper_title": "MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation"
+    },
+    "nonverbal_tts": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2507.13155",
+      "openalex_url": "https://openalex.org/W4415310375",
+      "paper_title": "NonverbalTTS: A Public English Corpus of Text-Aligned Nonverbal Vocalizations with Emotion Annotations for Text-to-Speech"
+    },
+    "asd_benchmark": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.10596",
+      "openalex_url": "https://openalex.org/W7168259873",
+      "paper_title": "ECHOv2: Two-Level Band-Splitting Representation Learning for Anomalous Sound Detection"
+    },
+    "silent_speech_emg": {
+      "citation_count": 56,
+      "paper_url": "https://aclanthology.org/2020.emnlp-main.445/",
+      "openalex_url": "https://openalex.org/W3105229878",
+      "paper_title": "Digital Voicing of Silent Speech"
+    },
+    "birdclef_2026": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "physionet_cinc_2016_heart_sound": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "savee": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "covomix2_dialogue": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2506.00885",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "nyra_verbatim_speech_benchmark": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.18934",
+      "openalex_url": "https://openalex.org/W7170069578",
+      "paper_title": "Transcription Policy as a Latent Variable: Activating Controllable Verbatim ASR with Word-Level Timing"
+    },
+    "thorsten_voice": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "daps": {
+      "citation_count": null,
+      "paper_url": "https://doi.org/10.1109/LSP.2014.2381264",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "fluencybank": {
+      "citation_count": 119,
+      "paper_url": "https://doi.org/10.1016/j.jfludis.2018.03.002",
+      "openalex_url": "https://openalex.org/W2794511405",
+      "paper_title": "Fluency Bank: A new resource for fluency research and practice"
+    },
+    "voiceprivacy_challenge": {
+      "citation_count": null,
+      "paper_url": "https://www.isca-archive.org/interspeech_2024/tomashenko24_interspeech.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "process_2": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2605.14888",
+      "openalex_url": "https://openalex.org/W7161253930",
+      "paper_title": "PROCESS-2: A Benchmark Speech Corpus for Early Cognitive Impairment Detection"
+    },
+    "japaneeg": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.01264",
+      "openalex_url": "https://openalex.org/W7163137601",
+      "paper_title": "A 1000-hour EEG-EMG-audio dataset of Japanese speech production"
+    },
+    "eating_sound_collection": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2607.15724",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dilemmadata": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.13587",
+      "openalex_url": "https://openalex.org/W7168602608",
+      "paper_title": "From Prediction to Collaboration: Interactive Symbolic Music Analysis"
+    },
+    "emopia": {
+      "citation_count": 30,
+      "paper_url": "https://arxiv.org/abs/2108.01374",
+      "openalex_url": "https://openalex.org/W4286859154",
+      "paper_title": "EMOPIA: A Multi-Modal Pop Piano Dataset For Emotion Recognition and Emotion-based Music Generation"
+    },
+    "pop909": {
+      "citation_count": 51,
+      "paper_url": "https://arxiv.org/abs/2008.07142",
+      "openalex_url": "https://openalex.org/W3049247973",
+      "paper_title": "POP909: A Pop-song Dataset for Music Arrangement Generation"
+    },
+    "melobottleneck_eval": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.10233",
+      "openalex_url": "https://openalex.org/W7168241571",
+      "paper_title": "MeloBottleneck: Self-Supervised Melody Skeleton Extraction with a Latent Subsequence Bottleneck"
+    },
+    "earnings25": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.23813",
+      "openalex_url": "https://openalex.org/W7171485952",
+      "paper_title": "Earnings25: A Comprehensive 500-Hour Speech Benchmark for Finance"
+    },
+    "indic_diarbench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.23808",
+      "openalex_url": "https://openalex.org/W7171559464",
+      "paper_title": "Indic DiarBench: A Multilingual Joint Diarization and ASR Benchmark for Indian Languages"
+    },
+    "full_duplex_bench": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "gcm_bench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2608.07631",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "duplexchat": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.04941",
+      "openalex_url": "https://openalex.org/W7167617358",
+      "paper_title": "DuplexChat: Constructing Speaker-Separated Full-Duplex Dialogue Speech at Scale for Spoken Dialogue Language Modeling"
+    },
+    "biotalk_3d": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "imda_nsc": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.23027",
+      "openalex_url": "https://openalex.org/W7171566083",
+      "paper_title": "Singlish, Can or Not? Fine-Tuning and Evaluating Zero-Shot TTS for Singapore English"
+    },
+    "blab": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2505.03054",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "dfadd": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2409.08731",
+      "openalex_url": "https://openalex.org/W4403662026",
+      "paper_title": "DFADD: The Diffusion and Flow-Matching Based Audio Deepfake Dataset"
+    },
+    "librisevoc": {
+      "citation_count": null,
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2023W/WMF/html/Sun_AI-Synthesized_Voice_Detection_Using_Neural_Vocoder_Artifacts_CVPRW_2023_paper.html",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "speech_df_arena": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2509.02859",
+      "openalex_url": "https://openalex.org/W4416712456",
+      "paper_title": "Speech DF Arena: A Leaderboard for Speech DeepFake Detection Models"
+    },
+    "wavefake": {
+      "citation_count": 45,
+      "paper_url": "https://arxiv.org/abs/2111.02813",
+      "openalex_url": "https://openalex.org/W4226246616",
+      "paper_title": "WaveFake: A Data Set to Facilitate Audio Deepfake Detection"
+    },
+    "av_gc_aad": {
+      "citation_count": 38,
+      "paper_url": "https://doi.org/10.1088/1741-2552/ad2214",
+      "openalex_url": "https://openalex.org/W4391160633",
+      "paper_title": "What are we <i>really</i> decoding? Unveiling biases in EEG-based decoding of the spatial focus of auditory attention"
+    },
+    "vabench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2512.09299",
+      "openalex_url": "https://openalex.org/W4417290295",
+      "paper_title": "VABench: A Comprehensive Benchmark for Audio-Video Generation"
+    },
+    "stancebench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.22658",
+      "openalex_url": "https://openalex.org/W7171518499",
+      "paper_title": "StanceBench: A Benchmark for Audio LLM-Based Interpersonal Stance Evaluation from Speech"
+    },
+    "lfr_benchmarking_factory": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.03201",
+      "openalex_url": "https://openalex.org/W7167629670",
+      "paper_title": "Deriving Benchmarking Datasets from Long-Form Recordings: Challenges and Opportunities"
+    },
+    "ears": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2406.06185",
+      "openalex_url": "https://openalex.org/W4399554166",
+      "paper_title": "EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation"
+    },
+    "demand": {
+      "citation_count": 356,
+      "paper_url": "https://doi.org/10.1121/1.4806631",
+      "openalex_url": "https://openalex.org/W1983108229",
+      "paper_title": "The diverse environments multi-channel acoustic noise database: A database of multichannel environmental noise recordings"
+    },
+    "fleurs_slu": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2501.06117",
+      "openalex_url": "https://openalex.org/W4406319011",
+      "paper_title": "Fleurs-SLU: A Massively Multilingual Benchmark for Spoken Language Understanding"
+    },
+    "msrbench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2510.10995",
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "singfox": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.18985",
+      "openalex_url": "https://openalex.org/W7165149781",
+      "paper_title": "SingFox: A Multi-Lingual Singfake Detection Corpus"
+    },
+    "dcase2020_task2_asd": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "msmd": {
+      "citation_count": 52,
+      "paper_url": "https://doi.org/10.5334/tismir.12",
+      "openalex_url": "https://openalex.org/W2890559714",
+      "paper_title": "Learning Audio–Sheet Music Correspondences for Cross-Modal Retrieval and Piece Identification"
+    },
+    "cross_era": {
+      "citation_count": 63,
+      "paper_url": "https://doi.org/10.1177/1029864918757595",
+      "openalex_url": "https://openalex.org/W2793193862",
+      "paper_title": "Investigating style evolution of Western classical music: A computational approach"
+    },
+    "corefl": {
+      "citation_count": null,
+      "paper_url": null,
+      "openalex_url": null,
+      "paper_title": null
+    },
+    "drone_audio_dataset": {
+      "citation_count": 139,
+      "paper_url": "https://doi.org/10.1109/IWCMC.2019.8766732",
+      "openalex_url": "https://openalex.org/W2962680212",
+      "paper_title": "Audio Based Drone Detection and Identification using Deep Learning"
+    },
+    "hyporadise": {
+      "citation_count": 7,
+      "paper_url": "https://arxiv.org/abs/2309.15701",
+      "openalex_url": "https://openalex.org/W4387158707",
+      "paper_title": "HyPoradise: An Open Baseline for Generative Speech Recognition with Large Language Models"
+    },
+    "emphassess": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2312.14069",
+      "openalex_url": "https://openalex.org/W4390137165",
+      "paper_title": "EmphAssess : a Prosodic Benchmark on Assessing Emphasis Transfer in Speech-to-Speech Models"
+    },
+    "mmag": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2608.06900",
+      "openalex_url": "https://openalex.org/W7202150180",
+      "paper_title": "MMAG: A Multi-Control Mixed Audio Generation Benchmark"
+    },
+    "speechparaling_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2604.20842",
+      "openalex_url": "https://openalex.org/W7155373618",
+      "paper_title": "SpeechParaling-Bench: A Comprehensive Benchmark for Paralinguistic-Aware Speech Generation"
+    },
+    "kimi_audio_gentest": {
+      "citation_count": 1,
+      "paper_url": "https://arxiv.org/abs/2504.18425",
+      "openalex_url": "https://openalex.org/W4416381162",
+      "paper_title": "Kimi-Audio Technical Report"
+    },
+    "audioagentsecurity": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2607.28165",
+      "openalex_url": "https://openalex.org/W7171997195",
+      "paper_title": "Piggybacking on Perception: Stealthy Concurrent Audio Prompt Injections against Multimodal LLM Agents"
+    },
+    "globeaudio": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2606.08194",
+      "openalex_url": "https://openalex.org/W7164066912",
+      "paper_title": "GlobeAudio: A Multilingual Multicultural Benchmark for Naturalistic Evaluation of Large Audio-Language Models"
+    },
+    "avcap_bench": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2608.06930",
+      "openalex_url": "https://openalex.org/W7202122696",
+      "paper_title": "AVCap: Reinforcing Audio-Video Joint Caption with Detail-Aware Reward"
+    },
+    "styleset": {
+      "citation_count": 0,
+      "paper_url": "https://arxiv.org/abs/2506.05984",
+      "openalex_url": "https://openalex.org/W4417097564",
+      "paper_title": "Audio-Aware Large Language Models as Judges for Speaking Styles"
+    }
+  }
+}
