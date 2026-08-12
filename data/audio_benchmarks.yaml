@@ -1286,6 +1286,7 @@ paper_audits:
       paper_release_claim: dataset_is_open_source_via_owner_project_website
       owner_project_and_repository: public_ungated
       repository_revision: edda900d8b0298d51b8930d869df2c12c9837bf9
+      focused_recheck_2026_08_11: repository_unchanged_at_30_file_non_truncated_tree_last_commit_2025_03_29
       public_full_length_demo_audio_transcripts_and_QA_rows: 3
       complete_1012_row_audio_transcripts_and_QA: not_located
       SPIRAL_H_401_row_selection_manifest: not_located
@@ -1327,9 +1328,13 @@ paper_audits:
       - https://huggingface.co/api/datasets?search=SPIRAL-H
     note: >-
       This resolves the unfinished VoxZip candidate without counting a family
-      or adding a helper. Reassess when the owners publish the complete 1,012-
-      row package, frozen SPIRAL-H membership, evaluation code, and explicit
-      benchmark-level rights and provenance.
+      or adding a helper. A focused August 11 recheck found the complete,
+      non-truncated 30-file owner tree unchanged at its March 29, 2025
+      revision; fresh exact-name and arXiv-ID GitHub searches and exact-name
+      Hugging Face searches still locate no full owner release. Reassess when
+      the owners publish the complete 1,012-row package, frozen SPIRAL-H
+      membership, evaluation code, and explicit benchmark-level rights and
+      provenance.
 
   vox_infinity_release_audit:
     paper: https://openreview.net/forum?id=6dKwqnT7bu

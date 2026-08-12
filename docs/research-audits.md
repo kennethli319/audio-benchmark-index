@@ -5201,7 +5201,12 @@ license must not be assumed to clear voice or source rights. CC BY 4.0 covers
 the article, not the absent benchmark, and LibriTTS, StyleTTS2, service-output,
 generated-voice, and model-output terms still apply. SPIRAL is therefore not
 counted and receives no helper until the complete family, hard-subset
-membership, and benchmark-level terms are released.
+membership, and benchmark-level terms are released. A focused August 11
+recheck found the complete, non-truncated owner tree unchanged at revision
+`edda900d8b0298d51b8930d869df2c12c9837bf9`: 30 files, last committed March
+29, 2025, with only the same three full-length demonstrations. Fresh exact-name
+and arXiv-ID GitHub searches and exact-name Hugging Face searches still locate
+no complete owner release.
 
 The 2026 [*Vox-Infinity*](https://openreview.net/forum?id=6dKwqnT7bu)
 benchmark now has a focused release audit after reviewing its owner project,
