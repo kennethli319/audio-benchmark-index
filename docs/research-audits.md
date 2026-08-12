@@ -3197,7 +3197,11 @@ the static site and supplementary assets, including 103 selected audio clips
 and 103 selected images, but no benchmark archive, item or split manifest,
 dataset card, license, evaluation code, or training-set release. Those examples
 are not treated as the reported benchmarks, despite the paper describing its
-training split as released.
+training split as released. A focused August 11 recheck found the complete,
+non-truncated repository tree unchanged at revision
+`c6ce9a5873d5069433b7f857931c75961c95474b`: 338 files, last pushed July 17,
+with no benchmark package or reproducible evaluator. No benchmark family,
+count increase, or download helper is added.
 
 The July 2026 structured-audio-caption evaluation paper is also recorded as an
 announced protocol rather than a downloadable family. It selects 499 public
