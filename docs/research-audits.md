@@ -1,5 +1,36 @@
 # Research and release audits
 
+The May 2026 [*O-MARC*](https://arxiv.org/abs/2605.26584) paper is recorded as
+an incomplete UGC-AVQA release audit after reviewing Section 3, Section 6, and
+Appendix A. UGC-AVQA begins with 1,000 public short-form UGC video URLs and
+4,816 multiple-choice questions. Its hard benchmark split retains 206 videos
+and 1,648 questions only when Gemini-3.1-Flash fails on the muted video, with
+trained annotators reviewing and correcting 30 percent of retained candidates.
+The four tracks cover audio-visual event progression, scene or temporal
+transition, cross-scene audio-visual alignment, and fine-grained audio-visual
+contrast, scored by category and overall accuracy. The remaining 794 videos
+and 3,168 questions are training data used for compression-aware post-training.
+
+The August 2026 [*Omni2LoRA*](https://arxiv.org/abs/2608.09227) report reuses
+the same hard split to evaluate a GRPO-trained parametric-memory allocation
+policy at a 30-percent adapter-rank budget across three omni-model backbones;
+this is evaluation provenance, not a second family. Omni2LoRA calls the split
+public and points to the older UGC-VideoCaptioner repository, but that 91-entry
+tree contains predecessor UGC-VideoCap QA files, training URL lists, inference
+outputs, and caption-evaluation artifacts without identifying the 206-video
+difficulty-filtered UGC-AVQA manifest. The O-MARC repository at revision
+`5fd54121c709eecdc65eb5fbc5eddcc02d321eb7` provides method code while its
+README still says the UGC-AVQA benchmark and training data are coming soon.
+
+The exact video-URL manifest, train/test annotations, audio-removal filter
+outputs, and human-review records are therefore not reproducibly identified.
+The O-MARC article is CC BY 4.0, the Omni2LoRA article is CC BY-NC-SA 4.0, and
+MIT files in the code repositories do not license source videos or establish
+terms for an absent annotation release. Original platform and creator rights
+remain applicable; Omni2LoRA additionally describes UGC-AVQA as research-only.
+No family, count increase, or helper is added until the owners expose the exact
+split and its artifact terms.
+
 The August 2026 [*From Speech to Interaction: Analyzing Multimodal Systems in
 Cocktail-Party Scenarios*](https://arxiv.org/abs/2608.08510) report is recorded
 as an alias and scope audit after reviewing Sections 3-5 and the primary

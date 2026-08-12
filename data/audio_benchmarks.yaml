@@ -9,6 +9,104 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  ugc_avqa_release_and_reuse_audit:
+    paper: https://arxiv.org/abs/2605.26584
+    title: "O-MARC: Omni Memory-Augmented Compression Distillation for Efficient Video Understanding"
+    sections: 3_and_6_and_appendix_A
+    status: audited_paper_defined_audio_visual_benchmark_with_mismatched_placeholder_release
+    last_verified: 2026-08-11
+    post_training_relevance: >-
+      UGC-AVQA evaluates whether omni language models preserve jointly necessary
+      acoustic and visual evidence under token compression. O-MARC uses its
+      training split for compression-aware SFT and reinforcement learning, and
+      the August 2026 Omni2LoRA report reuses the hard test split to evaluate a
+      GRPO-trained audio-visual memory-allocation policy.
+    evaluation_inventory:
+      - cited_as: UGC-AVQA
+        status: paper_defined_benchmark_exact_release_not_identified
+        source_videos: 1000_public_short_form_UGC_video_URLs
+        total_qa_pairs: 4816
+        training_split:
+          videos: 794
+          qa_pairs: 3168
+          role: compression_aware_post_training
+        benchmark_split:
+          videos: 206
+          qa_pairs: 1648
+          selection: >-
+            Retain a candidate only when Gemini-3.1-Flash fails on the muted
+            video, then have trained annotators review and correct 30 percent
+            of retained candidates.
+        categories:
+          - audio_visual_event_progression
+          - scene_or_temporal_transition
+          - cross_scene_audio_visual_alignment
+          - fine_grained_audio_visual_contrast
+        format: multiple_choice
+        metrics:
+          - overall_accuracy
+          - category_accuracy
+      - cited_as: Omni2LoRA_UGC_AVQA_reuse
+        paper: https://arxiv.org/abs/2608.09227
+        status: same_unreleased_hard_split_not_a_new_benchmark
+        role: >-
+          Table 1 reports the four category accuracies and overall accuracy at
+          a 30-percent adapter-rank budget across three omni-model backbones.
+        note: >-
+          Omni2LoRA Appendix F calls the 206-video, 1,648-question split public
+          and points to the older UGC-VideoCaptioner repository, but that tree
+          does not identify the difficulty-filtered UGC-AVQA split.
+    release_audit:
+      omarc_repository: public_ungated_method_code
+      omarc_repository_revision: 5fd54121c709eecdc65eb5fbc5eddcc02d321eb7
+      omarc_readme_status: says_UGC_AVQA_benchmark_and_training_data_coming_soon
+      ugc_videocaptioner_repository: public_ungated_predecessor_project
+      ugc_videocaptioner_repository_revision: d7faf2f03567eff3fe94de680c59eec08aa10415
+      predecessor_repository_contents: >-
+        UGC-VideoCap QA JSON, training URL lists, inference outputs, and caption
+        evaluation artifacts; no file or manifest is labeled as the 206-video
+        difficulty-filtered UGC-AVQA test split.
+      exact_ugc_avqa_video_URL_manifest: not_identified
+      exact_train_and_test_QA_annotations: not_identified
+      audio_removal_filter_outputs_and_human_review_records: not_released
+      omni2lora_code_checkpoints_configurations_and_predictions: not_released
+      download_helper: none_exact_benchmark_release_not_reproducibly_identified
+    access: paper_announced_public_links_and_annotations_but_exact_split_unavailable
+    license:
+      omarc_paper: CC_BY_4_0
+      omni2lora_paper: CC_BY_NC_SA_4_0
+      ugc_videocaptioner_repository: MIT_code_license
+      omarc_method_subdirectory: MIT_code_license
+      ugc_avqa_annotations: not_separately_licensed_in_an_identified_release
+      source_videos: original_platform_terms_and_creator_rights_apply
+      note: >-
+        Article and code licenses do not license source videos or establish
+        terms for an absent UGC-AVQA annotation release. The O-MARC paper says
+        only URLs and metadata should be released and use must follow original
+        platform conditions; Omni2LoRA describes the benchmark as research-only.
+    sources:
+      - https://arxiv.org/abs/2605.26584
+      - https://arxiv.org/html/2605.26584v1#S3
+      - https://arxiv.org/html/2605.26584v1#S3.SS1
+      - https://arxiv.org/html/2605.26584v1#S3.SS2
+      - https://arxiv.org/html/2605.26584v1#S3.SS3
+      - https://arxiv.org/html/2605.26584v1#S6.SS2
+      - https://github.com/WPR001/Omni_marc
+      - https://api.github.com/repos/WPR001/Omni_marc/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/WPR001/Omni_marc/main/README.md
+      - https://github.com/WPR001/UGC_VideoCaptioner
+      - https://api.github.com/repos/WPR001/UGC_VideoCaptioner/git/trees/main?recursive=1
+      - https://raw.githubusercontent.com/WPR001/UGC_VideoCaptioner/main/README.md
+      - https://arxiv.org/abs/2608.09227
+      - https://arxiv.org/html/2608.09227v1#Sx4.SSx3.SSSx2.Px2
+      - https://arxiv.org/html/2608.09227v1#A7.SSx2
+      - https://arxiv.org/html/2608.09227v1#A8.SSx1
+    note: >-
+      No benchmark family, count increase, or helper is added. The primary
+      paper defines a focused audio-visual post-training benchmark, but the
+      owner repository still promises its data later and the linked predecessor
+      tree does not expose the exact hard split claimed by the two papers.
+
   caad_audio_aware_distillation_evaluation_audit:
     paper: https://arxiv.org/abs/2606.23052
     title: "CAAD: Contrastive Audio-Aware Distillation for Efficient Speech Language Models"
