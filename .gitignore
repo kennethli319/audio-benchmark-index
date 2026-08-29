@@ -1,5 +1,6 @@
 .DS_Store
 data/raw/
+data/.citation_counts.scholar-cache.json
 *.rar
 *.tar.gz
 *.zip

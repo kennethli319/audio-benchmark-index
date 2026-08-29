@@ -206,7 +206,7 @@ def render_card(benchmark, manual_ids, citations)
   citation = citations.fetch("benchmarks").fetch(id)
   citation_count = citation["citation_count"]
   citation_label = citation_count.nil? ? "Unavailable" : citation_count.to_i.to_s.reverse.scan(/.{1,3}/).join(",").reverse
-  citation_url = citation["openalex_url"]
+  citation_url = citation["scholar_url"]
   task_tags = tasks.first(4).map { |task| %(<span class="tag">#{escape(humanize(task))}</span>) }
   if tasks.length > 4
     task_tags << %(<span class="tag tag-more">+#{tasks.length - 4} more</span>)
