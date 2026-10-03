@@ -21534,6 +21534,74 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: wildsongbench
+    name: WildSongBench
+    full_name: WildSongBench (WSB) full-song music generation benchmark
+    qwen_cited_as: null
+    qwen_bucket: music_generation
+    tasks:
+      - text_to_song_generation_evaluation
+      - full_song_quality_assessment
+      - music_prompt_alignment
+      - lyric_intelligibility_evaluation
+    official:
+      paper: https://arxiv.org/abs/2609.33757
+      project: https://map-yue2.github.io/
+      dataset: https://huggingface.co/datasets/m-a-p/WildSongBench
+      results: https://huggingface.co/datasets/m-a-p/WildSongBench/blob/main/benchmark/results.md
+    download:
+      access: public_ungated_prompts_and_evaluation_artifacts_no_audio
+      primary:
+        - https://huggingface.co/datasets/m-a-p/WildSongBench
+      examples:
+        - 'scripts/download/wildsongbench.sh'
+      notes: >-
+        Introduced with the September 27, 2026 YuE2 report. The released test
+        set has 192 song-generation prompts (94 Chinese, 98 English), with
+        style, lyrics, exact inputs, and eight candidate seed pairs in a
+        matching reproduction manifest. No generated audio is included.
+        The public minimal evaluator supports SongBench quality, Qwen3-Omni
+        prompt control (Q3O), MuQ-MuLan and AllMusicCaps audio-text alignment,
+        and Qwen3-ASR phoneme error rate (PER). Standard YuE2 generates two
+        candidates and selects by lowest PER, each estimated with four ASR
+        passes; use all 192 selected songs and retain capped outputs.
+        Best-of-eight selects by SongBench Musicality, then prompt control,
+        then PER, and is a separate protocol. Published system comparisons
+        retain different candidate budgets and are not compute-matched.
+        YuE2 score reproduction uses YuE2-Vae-legacy, not the default
+        listening decoder. The owner reports unresolved Q3O reproduction
+        differences and has not fully rerun best-of-eight. This is a distinct
+        prompt/protocol family, not an alias of the SongBench evaluator or
+        a second entry for YuE2, MERT2, or SheetSage2 models. The helper pins
+        a reviewed Hub revision and fetches only cards, metadata, prompts,
+        manifests, checksums, and reference results (about 1.2 MB). The
+        separately hosted evaluator archive is about 506 MB; all evaluator
+        weights require about 83 GB and Q3O requires an 80 GB GPU. The helper
+        neither downloads that archive/weights nor installs or runs code.
+        The pinned README has a stale upstream SHA256SUMS entry, although
+        its Git blob matches the pinned tree; the five downloaded benchmark
+        payloads match their supplied SHA-256 checksums. See the release audit.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        The public dataset card has no license declaration and the reviewed
+        repository tree has no standalone LICENSE. Terms inside the large
+        evaluator archive were not audited. Do not transfer a YuE model,
+        paper, or project-page license to benchmark prompts or bundled
+        evaluators. Component software and weights retain their own terms;
+        in particular SongBench has academic-only, noncommercial terms.
+        Confirm prompt/lyric and generated-output rights before reuse.
+    sources:
+      - https://arxiv.org/abs/2609.33757
+      - https://arxiv.org/html/2609.33757v1
+      - https://map-yue2.github.io/
+      - https://huggingface.co/datasets/m-a-p/WildSongBench
+      - https://huggingface.co/datasets/m-a-p/WildSongBench/blob/e361b85a8d7365d3079fa9647641a87ce3c8c5b5/README.md
+      - https://huggingface.co/datasets/m-a-p/WildSongBench/blob/e361b85a8d7365d3079fa9647641a87ce3c8c5b5/benchmark/results.md
+      - https://huggingface.co/api/datasets/m-a-p/WildSongBench
+      - https://raw.githubusercontent.com/Tencent/SongBench/main/LICENSE.txt
+
   - id: turnbench
     name: TurnBench
     full_name: "TurnBench: A Multi-Domain Benchmark for Turn-Taking Dynamics in Spoken Dialogue"

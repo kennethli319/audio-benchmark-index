@@ -23,6 +23,7 @@ huggingface-cli login
 ## CLI Supported
 
 ```bash
+scripts/download/wildsongbench.sh
 scripts/download/mmau.sh
 scripts/download/sakura.sh
 scripts/download/mmar.sh

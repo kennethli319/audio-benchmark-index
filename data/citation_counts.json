@@ -2547,6 +2547,12 @@
       "paper_url": "https://arxiv.org/abs/2608.25218",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22TurnBench%3A+A+Multi-Domain+Benchmark+for+Turn-Taking+Dynamics+in+Spoken+Dialogue%22+2608.25218",
       "paper_title": null
+    },
+    "wildsongbench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2609.33757",
+      "scholar_url": null,
+      "paper_title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality"
     }
   }
 }

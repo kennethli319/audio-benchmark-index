@@ -1,5 +1,56 @@
 # Research and release audits
 
+## October 3, 2026: WildSongBench release and protocol audit
+
+[WildSongBench (WSB)](https://huggingface.co/datasets/m-a-p/WildSongBench)
+is prioritized as a recent reusable music-generation release accompanying the
+[September 27 YuE2 report](https://arxiv.org/abs/2609.33757). The
+[owner project](https://map-yue2.github.io/) links the same release. Community
+mentions helped discovery but do not establish independent adoption or validate
+model rankings. Canonical-name, WSB, paper-ID, dataset-URL, YuE2, and task searches
+found no existing WSB entry. SongBench is already indexed as a quality evaluator
+with its own 100 prompts; using that evaluator does not make WSB's separate
+192-prompt test/protocol an alias. YuE2, MERT2, and SheetSage2 remain models,
+not additional benchmark families.
+
+The public, ungated Hub revision
+`e361b85a8d7365d3079fa9647641a87ce3c8c5b5` contains 192 unique prompts and
+192 matching reproduction records with contiguous indices 0–191. Every record's
+style and lyrics occur in its corresponding prompt. Each supplies eight paired
+AR/NAR seeds; the first two are `831001 + i` and `831019 + i`. The card reports
+94 Chinese and 98 English prompts. No generated audio is included. The helper
+pins this revision and fetched 1,174,256 bytes of cards/API metadata, prompts,
+manifest, reference results, and checksums; no code execution, media, evaluator
+archive, model weights, authentication, or terms acceptance was involved.
+
+The [release protocol](https://huggingface.co/datasets/m-a-p/WildSongBench/blob/e361b85a8d7365d3079fa9647641a87ce3c8c5b5/benchmark/results.md)
+separates standard two-candidate lower-PER selection from best-of-eight selection
+by SongBench Musicality, then prompt control, then PER. Four ASR passes determine
+each candidate's minimum PER. All metrics use the same 192 selected outputs;
+earlier proprietary systems retain their delivered-candidate protocols, so the
+comparison is not compute-matched. The minimal evaluator covers SongBench, Q3O,
+MuQ-MuLan, AllMusicCaps, and PER; the larger results table also includes metrics
+outside that minimal bundle. YuE2 reproduction requires the legacy evaluation
+decoder. The card reports unresolved Q3O differences and no full best-of-eight
+rerun; do not claim complete numerical reproduction.
+
+The tree advertises a 505,834,965-byte evaluator archive, while its card estimates
+83 GB of evaluator weights and an 80 GB GPU for Q3O. These were not downloaded or
+inspected. The card and tree provide no explicit benchmark license; bundled code
+terms remain unaudited. Model/project/paper terms cannot establish permission for
+benchmark prompts or lyrics. Component terms apply separately, including
+[SongBench's academic-only/noncommercial license](https://raw.githubusercontent.com/Tencent/SongBench/main/LICENSE.txt).
+
+Five downloaded payloads match the owner's SHA256SUMS: prompts, reproduction
+manifest, results Markdown, results CSV, and results JSON. The README checksum
+is stale: the manifest lists `2fb2a42c2db7b6300e2f04e6711d86308da79863853e5ad12fa20b0b030488e5`,
+but the pinned README hashes to
+`f9595f297c88f5c5423d5b76748aa46c96db4a5dd3d0093f510f78f6e38f2fe4`.
+Raw and resolve endpoints return identical bytes, and the Git blob SHA-1 matches
+the pinned tree's `36465e848096f448dc5358be2cc251c187f70528`. Preserve this
+upstream discrepancy rather than changing the supplied checksum or claiming all
+artifacts pass its checksum list. The benchmark payloads themselves agree.
+
 ## October 3, 2026: TurnBench release and MISHAP-Bench deferral
 
 [TurnBench](https://www.sesame.com/blog/turnbench), released August 28, is
