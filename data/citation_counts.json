@@ -2535,6 +2535,12 @@
       "paper_url": "https://arxiv.org/abs/2506.05984",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22Audio-Aware+Large+Language+Models+as+Judges+for+Speaking+Styles%22+2506.05984",
       "paper_title": null
+    },
+    "multitalkbench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2609.36903",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22MultiTalk%3A+Scaling+Full-Duplex+Speech+Models+to+Long%2C+Multi-Party%2C+Bilingual+Conversation%22+2609.36903",
+      "paper_title": null
     }
   }
 }

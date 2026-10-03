@@ -1187,6 +1187,29 @@ added.
 The structured source of truth remains [`data/audio_benchmarks.yaml`](../data/audio_benchmarks.yaml).
 For the current browsable catalog, use the [public index](https://kennethli319.github.io/audio-benchmark-index/).
 
+The September 29, 2026 [MultiTalk paper](https://arxiv.org/abs/2609.36903)
+adds MultiTalkBench as one family, prioritized for its recent announcement and
+released long-form dialogue test. It is distinct from the indexed AMI,
+AliMeeting, AISHELL-4, and Full-Duplex-Bench families: it supplies a frozen
+meeting/target-speaker manifest and persona-conditioned evaluation task.
+MultiTalkPT and MultiTalkFT are training corpora, not additional benchmarks.
+
+On October 3, the public [Hub release](https://huggingface.co/datasets/MultiTalk/MultiTalkBench)
+at revision `d360eb6d6c7db4c41a62cd0b9f7d61fb8bc946b5` has 104 unique
+samples over 27 meetings (60 English, 44 Chinese). Metadata inspection found
+every referenced file, 104 FLACs, one audio-bearing Parquet file, and
+5,191,617,442 total bytes. Summed sample durations are 56.52 hours; repeated
+participant views must not be counted as independent meeting hours.
+
+The card declares CC BY-SA 4.0. The paper claims Apache-2.0 for the scorer,
+but the card's [GitHub link](https://github.com/multitalk-ai/MultiTalk) returns
+404 and its [anonymous code link](https://anonymous.4open.science/r/MultiTalk/)
+returns 403 from this environment. Executable scorer availability remains
+unverified. The paper's source-corpus inventory is broader than the manifest's
+explicit provenance; upstream restrictions are retained without asserting
+that every named source appears in this release. The helper defaults to
+documentation and the manifest; audio requires explicit opt-in.
+
 The May 2026 *The WER Trap* paper is recorded as an existing-family and
 unreleased-artifact audit of speech tokenizers as LLM interfaces. Sections
 5-6 and Appendices B-C define a dual-probing protocol: WenetSpeech Test_Net

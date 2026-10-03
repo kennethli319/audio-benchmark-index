@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-08-11
+  last_checked: 2026-10-03
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -21509,6 +21509,69 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: multitalkbench
+    name: MultiTalkBench
+    full_name: MultiTalkBench long-form multi-party bilingual full-duplex dialogue benchmark
+    qwen_cited_as: null
+    qwen_bucket:
+      - end_to_end_speech_dialogue
+      - speech_understanding
+    tasks:
+      - multi_party_spoken_dialogue
+      - long_context_speech_understanding
+      - addressee_selection
+      - turn_taking
+      - role_conditioned_dialogue_evaluation
+    official:
+      paper: https://arxiv.org/abs/2609.36903
+      dataset: https://huggingface.co/datasets/MultiTalk/MultiTalkBench
+      repo: https://github.com/multitalk-ai/MultiTalk
+      paper_code_link: https://anonymous.4open.science/r/MultiTalk/
+    download:
+      access: public_ungated_data_evaluation_code_unverified
+      primary:
+        - https://huggingface.co/datasets/MultiTalk/MultiTalkBench
+      examples:
+        - 'scripts/download/multitalkbench.sh'
+        - 'MULTITALKBENCH_DOWNLOAD_HF=1 scripts/download/multitalkbench.sh'
+      notes: >-
+        The public test manifest has 104 unique meeting/target-speaker samples
+        across 27 meetings: 60 English and 44 Chinese, totaling 56.52
+        sample-hours with a mean duration of 32.61 minutes. These are
+        participant views, not 104 independent meetings. All referenced
+        audio, alignments, personas, meeting profiles, and transcript-context
+        files are present. The approximately 5.19 GB snapshot includes 104
+        FLAC files and an audio-bearing Parquet copy. The helper downloads
+        only the dataset card, Hub metadata, and 56 KB manifest by default;
+        the complete snapshot requires explicit opt-in. The September 29,
+        2026 paper describes LLM-judged general, multi-party, and role scores
+        plus a separate participation measure. As checked October 3, the
+        card's GitHub evaluator link returns 404 and the paper's anonymous
+        code link returns 403 from this environment; scorer availability
+        and exact executable reproduction remain unverified.
+    license:
+      data: cc-by-sa-4.0_with_upstream_terms
+      code: not_verified
+      notes: >-
+        The dataset card declares CC BY-SA 4.0. Appendix D claims Apache-2.0
+        for scoring scripts and related annotations, but no reachable code
+        license was verified. Retain upstream recording terms: the paper
+        names several source corpora, including MagicData-RAMC with
+        non-commercial/no-derivatives terms. Its broad source list is not a
+        verified per-file provenance map for the current 104-row release.
+        Do not treat the dataset card or article license as clearing all
+        source audio, speaker, or downstream reuse rights.
+    sources:
+      - https://arxiv.org/abs/2609.36903
+      - https://arxiv.org/html/2609.36903v1
+      - https://huggingface.co/datasets/MultiTalk/MultiTalkBench
+      - https://huggingface.co/datasets/MultiTalk/MultiTalkBench/raw/main/README.md
+      - https://huggingface.co/datasets/MultiTalk/MultiTalkBench/resolve/main/metadata.jsonl
+      - https://huggingface.co/api/datasets/MultiTalk/MultiTalkBench
+      - https://huggingface.co/api/datasets/MultiTalk/MultiTalkBench/tree/main?recursive=true&limit=1000
+      - https://github.com/multitalk-ai/MultiTalk
+      - https://anonymous.4open.science/r/MultiTalk/
+
   - id: svhalluc
     name: SVHalluc
     full_name: "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"

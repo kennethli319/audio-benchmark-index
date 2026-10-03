@@ -174,6 +174,7 @@ scripts/download/ksc2.sh
 scripts/download/gigaspeechbench.sh
 scripts/download/indic_context_eval.sh
 scripts/download/full_duplex_bench.sh
+scripts/download/multitalkbench.sh
 scripts/download/gcm_bench.sh
 scripts/download/duplexchat.sh
 scripts/download/biotalk_3d.sh
@@ -1613,6 +1614,11 @@ VCTK_ARCHIVE_URL=https://datashare.ed.ac.uk/bitstreams/535f4286-e54c-4038-838c-a
 # by default. The code clone is opt-in; v1/v1.5 and v3 audio remain manual
 # Google Drive downloads because their version-specific terms differ.
 FULL_DUPLEX_BENCH_CLONE_REPO=1 scripts/download/full_duplex_bench.sh
+
+# MultiTalkBench saves its card, Hub metadata, and test manifest by default.
+# The approximately 5.19 GB snapshot includes FLAC and Parquet audio copies;
+# upstream recording terms apply and the linked scorer remains unverified.
+MULTITALKBENCH_DOWNLOAD_HF=1 scripts/download/multitalkbench.sh
 
 # DuplexChat downloads documentation and manifest counts by default. The
 # approximately 791.5 MB metadata snapshot and toolkit clone are separate
