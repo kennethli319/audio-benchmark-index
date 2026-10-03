@@ -397,6 +397,7 @@ These scripts are included as helpers, but they need an upstream password,
 generated URL, or manual form step first:
 
 ```bash
+scripts/download/turnbench.sh
 COMMON_VOICE_DOWNLOAD_URL='https://...' scripts/download/common_voice.sh
 scripts/download/jvs.sh
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
@@ -1688,4 +1689,14 @@ VOXPARADOX_CLONE_REPO=1 scripts/download/voxparadox.sh
 # and must be obtained manually after reviewing and accepting its agreement.
 ZEROSPEECH2019_DOWNLOAD_ENGLISH_SMALL=1 scripts/download/zerospeech_2019.sh
 ZEROSPEECH2019_DOWNLOAD_ENGLISH=1 scripts/download/zerospeech_2019.sh
+```
+
+TurnBench saves public scorer documentation and Hub metadata by default. Its
+custom dataset license prohibits commercial use and voice cloning. Review and
+accept the terms on each official dataset page and authenticate separately
+before explicitly requesting one split:
+
+```bash
+TURNBENCH_ACK_ACCESS=1 TURNBENCH_DOWNLOAD_SPLIT=dev scripts/download/turnbench.sh
+# Use TURNBENCH_DOWNLOAD_SPLIT=test for test audio; test labels remain withheld.
 ```

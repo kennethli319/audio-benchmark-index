@@ -9,6 +9,31 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  mishap_bench_release_audit:
+    paper: https://arxiv.org/abs/2609.33893
+    title: "MISHAP-Bench: A Hallucination Benchmark for Large Audio-Language Models"
+    status: partial_question_subset_full_audio_benchmark_not_released
+    last_verified: 2026-10-03
+    release_audit:
+      paper_inventory: 12000_open_ended_questions_over_3000_audio_clips
+      project_inventory: 1000_question_subset_without_corresponding_audio
+      full_benchmark: announced_for_future_release
+      download_helper: none_complete_reusable_release_not_verified
+    note: >-
+      The September 27 paper separates context and knowledge hallucinations
+      across speech, sound, and music. Its official anonymous project page
+      explicitly says the full benchmark is coming soon and the question
+      subset omits audio because of anonymous-repository storage limits.
+      Do not count the paper inventory as a released dataset or conflate it
+      with existing AHa-Bench and HalluAudio families. Recheck the owner
+      release before adding a family or helper; the article license does not
+      establish terms for unreleased benchmark artifacts.
+    sources:
+      - https://arxiv.org/abs/2609.33893
+      - https://arxiv.org/html/2609.33893v1
+      - https://anonymous.4open.science/w/MISHAP-Bench/
+      - https://anonymous.4open.science/r/MISHAP-Bench/
+
   ugc_avqa_release_and_reuse_audit:
     paper: https://arxiv.org/abs/2605.26584
     title: "O-MARC: Omni Memory-Augmented Compression Distillation for Efficient Video Understanding"
@@ -21509,6 +21534,72 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: turnbench
+    name: TurnBench
+    full_name: "TurnBench: A Multi-Domain Benchmark for Turn-Taking Dynamics in Spoken Dialogue"
+    qwen_cited_as: null
+    qwen_bucket: speech_dialogue
+    tasks:
+      - turn_taking
+      - end_of_turn_detection
+      - interruption_detection
+      - causal_speech_event_detection
+    official:
+      paper: https://arxiv.org/abs/2608.25218
+      project: https://turnbench.sesame.com/
+      repo: https://github.com/SesameAILabs/turnbench
+      announcement: https://www.sesame.com/blog/turnbench
+      dev_dataset: https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev
+      test_dataset: https://huggingface.co/datasets/mundo-ai/turn-benchmark-test
+    download:
+      access: gated_terms_acceptance_test_labels_withheld
+      primary:
+        - https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev
+        - https://huggingface.co/datasets/mundo-ai/turn-benchmark-test
+      examples:
+        - 'scripts/download/turnbench.sh'
+        - 'TURNBENCH_ACK_ACCESS=1 TURNBENCH_DOWNLOAD_SPLIT=dev scripts/download/turnbench.sh'
+      notes: >-
+        Released August 28, 2026. The English studio-recorded corpus has 154
+        dual-channel conversations, 106 speakers, and six conversation types:
+        38 development conversations (7.3 hours) and 116 test conversations
+        (22.9 hours). Three annotators label each dialogue; the versioned
+        scorer constructs majority-consensus gold. Development audio and
+        annotations are gated; test audio is gated and test annotation
+        columns are intentionally empty. Use the full-quality FLAC speaker
+        channels, not Opus previews, for predictions. Causal event timestamps
+        include any lookahead delay. Report recall, false-positive rate, and
+        latency separately for end-of-turn and interruption detection; test
+        qualification requires FPR at most 0.15, distinct from the 0.1 dev
+        budget used for baseline selection. Local scoring is available on
+        dev; official test scoring requires submission to the maintainers.
+        The separate 104-hour otoSpeech corpus is training data, not another
+        evaluation family. The helper saves public docs and metadata only
+        by default; fetching one explicitly selected split requires prior
+        terms acceptance and an existing authenticated Hugging Face session.
+    license:
+      data: custom_dataset_public_license_v1.0_noncommercial_no_voice_cloning
+      code: MIT
+      notes: >-
+        Dataset cards name Dataset Public License v1.0 and summarize required
+        attribution, no commercial use, no voice cloning, and inclusion of
+        the full license on redistribution. The full LICENSE files are gated
+        and returned 401 without authentication on October 3, 2026; review
+        their complete terms through the official access flow before use.
+        GitHub's MIT software license does not license the recordings.
+    sources:
+      - https://arxiv.org/abs/2608.25218
+      - https://www.sesame.com/blog/turnbench
+      - https://turnbench.sesame.com/
+      - https://github.com/SesameAILabs/turnbench
+      - https://raw.githubusercontent.com/SesameAILabs/turnbench/main/LICENSE
+      - https://raw.githubusercontent.com/SesameAILabs/turnbench/main/docs/SUBMISSION_FORMAT.md
+      - https://raw.githubusercontent.com/SesameAILabs/turnbench/main/turnbench/README.md
+      - https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev
+      - https://huggingface.co/datasets/mundo-ai/turn-benchmark-test
+      - https://huggingface.co/api/datasets/mundo-ai/turn-benchmark-dev
+      - https://huggingface.co/api/datasets/mundo-ai/turn-benchmark-test
+
   - id: multitalkbench
     name: MultiTalkBench
     full_name: MultiTalkBench long-form multi-party bilingual full-duplex dialogue benchmark

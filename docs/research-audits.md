@@ -1,5 +1,45 @@
 # Research and release audits
 
+## October 3, 2026: TurnBench release and MISHAP-Bench deferral
+
+[TurnBench](https://www.sesame.com/blog/turnbench), released August 28, is
+prioritized within the last 90 days because it supplies a reusable scorer and
+frozen conversation splits; its [official leaderboard](https://turnbench.sesame.com/)
+also accepts external systems. The owner repository at
+`38a6f874322430cb3ca71d8a52aa1e636e88bad8` includes MIT-licensed scoring,
+baselines, submission rules, and dev/test ID lists. The 38/116 split is
+consistent with the public dataset cards. This is distinct from CoDeTT's
+turn-action classification, Full-Duplex-Bench's interaction evaluation, and
+MultiTalkBench's long multi-party dialogue: TurnBench detects two timestamped
+events in recorded English dyadic speech. The 104-hour otoSpeech training
+corpus is not a second benchmark family.
+
+The public Hub APIs report automatic access gates for both
+[dev](https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev) (revision
+`c29aa4e6422122a8dccbe23598016a089bea2121`) and
+[test](https://huggingface.co/datasets/mundo-ai/turn-benchmark-test) (revision
+`0c12a77a0134449757e4fd4144913bfcff0c376d`). Their cards describe Dataset Public
+License v1.0, non-commercial use, no voice cloning, attribution, and carrying
+the license on redistribution. Raw LICENSE requests returned 401; full terms
+were not accepted or retrieved. Test labels are intentionally withheld even
+after access. The safe-default helper fetches only public software docs and
+API metadata. Split downloads require explicit selection and prior access.
+
+The [submission protocol](https://github.com/SesameAILabs/turnbench/blob/main/docs/SUBMISSION_FORMAT.md)
+requires causal timestamps including lookahead latency and ranks EOT and INT
+separately by recall, with test FPR at most 0.15 for qualification. This is not
+the 0.1 dev FPR budget used to choose baseline operating points. Predictions
+must use full-quality FLAC, not the lossy preview channels. Record the scorer
+revision when comparing results because it constructs consensus gold from
+raw annotator tracks.
+
+The newer September 27 [MISHAP-Bench paper](https://arxiv.org/abs/2609.33893)
+was considered first but is deferred: its
+[official project page](https://anonymous.4open.science/w/MISHAP-Bench/)
+explicitly advertises only 1,000 questions without the corresponding audio
+and promises the full 12,000-question benchmark later. The YAML release audit
+records this distinction; no family or helper is added for MISHAP-Bench.
+
 The May 2026 [*O-MARC*](https://arxiv.org/abs/2605.26584) paper is recorded as
 an incomplete UGC-AVQA release audit after reviewing Section 3, Section 6, and
 Appendix A. UGC-AVQA begins with 1,000 public short-form UGC video URLs and

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 423 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 424 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231859a9'/%3E%3Cpath d='M10 32h7l4-12 7 25 7-31 7 36 6-27 5 9h2' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="423 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="424 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -416,16 +416,16 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 423 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 424 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>423</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>423</strong></div>
-        <div class="hero-stat"><span>Manual or gated</span><strong>58</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>424</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>424</strong></div>
+        <div class="hero-stat"><span>Manual or gated</span><strong>59</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-10-03">October 3, 2026</time></strong></div>
       </div>
     </div>
@@ -458,7 +458,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-understanding" aria-pressed="false">
   <span>Speech understanding &amp; dialogue</span>
-  <strong>52</strong>
+  <strong>53</strong>
   <small>Translation, instructions, dialogue, and spoken intent</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audiovisual" aria-pressed="false">
@@ -496,7 +496,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 423 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 424 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Paper citation counts come from Google Scholar and were refreshed August 29, 2026.</p>
       </div>
 
@@ -573,7 +573,7 @@
 
         <div class="browse-content">
           <div class="results-bar">
-            <p id="result-status" role="status" aria-live="polite">Showing 423 of 423 benchmarks.</p>
+            <p id="result-status" role="status" aria-live="polite">Showing 424 of 424 benchmarks.</p>
             <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
           </div>
 
@@ -25683,6 +25683,77 @@
                     <li><a href="https://arxiv.org/abs/2601.15621">Source 7 · arxiv.org</a></li>
                     <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS2.SSS2">Source 8 · arxiv.org</a></li>
                     <li><a href="https://arxiv.org/html/2601.15621v1#S4.SS2.SSS5">Source 9 · arxiv.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-turnbench"
+  data-name="turnbench"
+  data-families="speech-understanding"
+  data-access="manual"
+  data-host="hugging-face"
+  data-terms="mixed"
+  data-citations="-1"
+  data-search="turnbench turnbench turnbench a multi domain benchmark for turn taking dynamics in spoken dialogue speech dialogue turn taking end of turn detection interruption detection causal speech event detection custom dataset public license v1 0 noncommercial no voice cloning mit dataset cards name dataset public license v1 0 and summarize required attribution no commercial use no voice cloning and inclusion of the full license on redistribution the full license files are gated and returned 401 without authentication on october 3 2026 review their complete terms through the official access flow before use github s mit software license does not license the recordings released august 28 2026 the english studio recorded corpus has 154 dual channel conversations 106 speakers and six conversation types 38 development conversations 7 3 hours and 116 test conversations 22 9 hours three annotators label each dialogue the versioned scorer constructs majority consensus gold development audio and annotations are gated test audio is gated and test annotation columns are intentionally empty use the full quality flac speaker channels not opus previews for predictions causal event timestamps include any lookahead delay report recall false positive rate and latency separately for end of turn and interruption detection test qualification requires fpr at most 0 15 distinct from the 0 1 dev budget used for baseline selection local scoring is available on dev official test scoring requires submission to the maintainers the separate 104 hour otospeech corpus is training data not another evaluation family the helper saves public docs and metadata only by default fetching one explicitly selected split requires prior terms acceptance and an existing authenticated hugging face session paper https arxiv org abs 2608 25218 project page https turnbench sesame com repository https github com sesameailabs turnbench announcement https www sesame com blog turnbench dev dataset https huggingface co datasets mundo ai turn benchmark dev test dataset https huggingface co datasets mundo ai turn benchmark test https arxiv org abs 2608 25218 https www sesame com blog turnbench https turnbench sesame com https github com sesameailabs turnbench https raw githubusercontent com sesameailabs turnbench main license https raw githubusercontent com sesameailabs turnbench main docs submission format md https raw githubusercontent com sesameailabs turnbench main turnbench readme md https huggingface co datasets mundo ai turn benchmark dev https huggingface co datasets mundo ai turn benchmark test https huggingface co api datasets mundo ai turn benchmark dev https huggingface co api datasets mundo ai turn benchmark test">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speech understanding &amp; dialogue</span>
+      <h3>TurnBench</h3>
+      <p class="benchmark-full-name">TurnBench: A Multi-Domain Benchmark for Turn-Taking Dynamics in Spoken Dialogue</p>
+    </div>
+    <span class="access-badge manual">Manual or gated</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Turn Taking</span>
+        <span class="tag">End Of Turn Detection</span>
+        <span class="tag">Interruption Detection</span>
+        <span class="tag">Causal Speech Event Detection</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Hugging Face</strong></div>
+    <div><span>Upstream terms</span><strong>Mixed / custom — review</strong></div>
+    <div><span>Paper citations</span><strong><a href="https://scholar.google.com/scholar?hl=en&amp;q=%22TurnBench%3A+A+Multi-Domain+Benchmark+for+Turn-Taking+Dynamics+in+Spoken+Dialogue%22+2608.25218">Unavailable</a></strong></div>
+  </div>
+  <p class="access-copy">Start with the helper: it prints the required form, password, license, or access-acknowledgement steps.</p>
+  <div class="card-actions">
+    <a class="card-action primary" href="https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev">Get data</a>
+          <a class="card-action secondary" href="https://turnbench.sesame.com/">Official source</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2608.25218">Read the paper</a>
+          <a class="card-action secondary" href="https://github.com/SesameAILabs/turnbench">View code</a>
+  </div>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>custom_dataset_public_license_v1.0_noncommercial_no_voice_cloning</dd></div>
+        <div><dt>Code license</dt><dd>MIT</dd></div>
+        <div><dt>License caution</dt><dd>Dataset cards name Dataset Public License v1.0 and summarize required attribution, no commercial use, no voice cloning, and inclusion of the full license on redistribution. The full LICENSE files are gated and returned 401 without authentication on October 3, 2026; review their complete terms through the official access flow before use. GitHub&#39;s MIT software license does not license the recordings.</dd></div>
+        <div><dt>Download notes</dt><dd>Released August 28, 2026. The English studio-recorded corpus has 154 dual-channel conversations, 106 speakers, and six conversation types: 38 development conversations (7.3 hours) and 116 test conversations (22.9 hours). Three annotators label each dialogue; the versioned scorer constructs majority-consensus gold. Development audio and annotations are gated; test audio is gated and test annotation columns are intentionally empty. Use the full-quality FLAC speaker channels, not Opus previews, for predictions. Causal event timestamps include any lookahead delay. Report recall, false-positive rate, and latency separately for end-of-turn and interruption detection; test qualification requires FPR at most 0.15, distinct from the 0.1 dev budget used for baseline selection. Local scoring is available on dev; official test scoring requires submission to the maintainers. The separate 104-hour otoSpeech corpus is training data, not another evaluation family. The helper saves public docs and metadata only by default; fetching one explicitly selected split requires prior terms acceptance and an existing authenticated Hugging Face session.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/turnbench.sh</code></div>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/turnbench.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/turnbench.sh" aria-label="Copy TurnBench helper path">Copy path</button>
+        </div>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://arxiv.org/abs/2608.25218">Paper</a></li>
+                    <li><a href="https://turnbench.sesame.com/">Project page</a></li>
+                    <li><a href="https://github.com/SesameAILabs/turnbench">Repository</a></li>
+                    <li><a href="https://www.sesame.com/blog/turnbench">Announcement</a></li>
+                    <li><a href="https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev">Dev Dataset</a></li>
+                    <li><a href="https://huggingface.co/datasets/mundo-ai/turn-benchmark-test">Test Dataset</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://arxiv.org/abs/2608.25218">Source 1 · arxiv.org</a></li>
+                    <li><a href="https://www.sesame.com/blog/turnbench">Source 2 · sesame.com</a></li>
+                    <li><a href="https://turnbench.sesame.com/">Source 3 · turnbench.sesame.com</a></li>
+                    <li><a href="https://github.com/SesameAILabs/turnbench">Source 4 · github.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/SesameAILabs/turnbench/main/LICENSE">Source 5 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/SesameAILabs/turnbench/main/docs/SUBMISSION_FORMAT.md">Source 6 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://raw.githubusercontent.com/SesameAILabs/turnbench/main/turnbench/README.md">Source 7 · raw.githubusercontent.com</a></li>
+                    <li><a href="https://huggingface.co/datasets/mundo-ai/turn-benchmark-dev">Source 8 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/datasets/mundo-ai/turn-benchmark-test">Source 9 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/mundo-ai/turn-benchmark-dev">Source 10 · huggingface.co</a></li>
+                    <li><a href="https://huggingface.co/api/datasets/mundo-ai/turn-benchmark-test">Source 11 · huggingface.co</a></li></ul></div>
     </div>
   </details>
 </article>

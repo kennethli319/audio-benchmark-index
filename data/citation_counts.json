@@ -2541,6 +2541,12 @@
       "paper_url": "https://arxiv.org/abs/2609.36903",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22MultiTalk%3A+Scaling+Full-Duplex+Speech+Models+to+Long%2C+Multi-Party%2C+Bilingual+Conversation%22+2609.36903",
       "paper_title": null
+    },
+    "turnbench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2608.25218",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22TurnBench%3A+A+Multi-Domain+Benchmark+for+Turn-Taking+Dynamics+in+Spoken+Dialogue%22+2608.25218",
+      "paper_title": null
     }
   }
 }
