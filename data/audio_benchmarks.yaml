@@ -21579,6 +21579,80 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: nsv_shift
+    name: NSV-Shift
+    full_name: "NSV-Shift: A Contrastive Benchmark for Non-Speech Vocalization Understanding and Response Adaptation in Speech-to-Speech Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - speech_dialogue
+      - paralinguistic_speech_evaluation
+    tasks:
+      - non_speech_vocalization_recognition
+      - contextual_emotion_recognition
+      - emotion_polarity_classification
+      - counterfactual_spoken_response_adaptation
+    official:
+      paper: https://arxiv.org/abs/2609.33899
+      repo: https://github.com/ChenzwNina/nsv-construction
+      dataset: https://github.com/ChenzwNina/nsv-construction/tree/main/eval_set
+    download:
+      access: public_ungated_github
+      primary:
+        - https://github.com/ChenzwNina/nsv-construction/tree/main/eval_set
+      examples:
+        - 'scripts/download/nsv_shift.sh'
+      notes: >-
+        September 27, 2026 pilot: 22 human-verified counterfactual pairs,
+        44 four-turn English conversations, and 15 topics. Each pair holds
+        lexical content constant while changing the final-turn non-speech
+        vocalization. Q1 uses seven vocalization choices, Q2 negative versus
+        non-negative emotion, and Q3 27 GoEmotions labels plus Neutral and
+        unclear; the gold JSON lists only 27 options, so use the runner's
+        29-choice inventory. Score parsed Q1-Q3 answers against gold in
+        separate sessions. Q4 jointly matches two generated replies to two
+        transcript/NSV contexts using a text judge with randomized context
+        and reply order; ties count as incorrect. Generated reference replies
+        are not Q4 gold, and optional tone scoring is a separate experiment.
+        Preserve the full 44-condition and 22-pair denominators and report
+        failures; the runner can omit incomplete pairs from Q4 output.
+        Confirm every conversation.wav exists before running: the owner loader
+        silently supplies placeholder silence for missing audio. The pinned
+        tree contains 132 WAVs totaling 70086012 bytes, including 44 complete
+        conversations totaling 53112452 bytes. The helper fetches only pinned
+        documentation, catalog, gold labels, pair IDs, and tree metadata;
+        audio acquisition and any paid model/judge execution remain manual.
+    access:
+      status: public_ungated_pilot_data_and_evaluation_code
+      registration_required: false
+      notes: >-
+        Public owner package includes construction code and a Q1-Q4 test
+        harness. Past model-run logs, intermediate filtering outputs, and
+        the Opus writer experiment are explicitly excluded. The pilot has
+        six observed vocalization classes; yawning is only an answer option.
+        Its small, laughter-heavy sample is not broad evidence of robustness.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        No LICENSE, COPYING, or NOTICE file or explicit data/code license
+        was identified in the pinned owner tree; GitHub detects no license.
+        The paper's CC BY-NC-ND 4.0 license covers the article, not this
+        release. Public access does not grant redistribution, training, or
+        commercial-use rights. Clarify terms with the owner before reuse;
+        ElevenLabs synthesis, Dia voice cloning, generated voices, and other
+        service/model terms remain separate.
+    sources:
+      - https://arxiv.org/abs/2609.33899
+      - https://arxiv.org/html/2609.33899v1
+      - https://github.com/ChenzwNina/nsv-construction/tree/f5ae07067659e654e66612ce8b66c1e7e73858d0
+      - https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/docs/data_construction.md
+      - https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/eval_set/catalog.json
+      - https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/items.py
+      - https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/config.py
+      - https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/evaluate.py
+      - https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/run_test.py
+      - https://api.github.com/repos/ChenzwNina/nsv-construction/git/trees/f5ae07067659e654e66612ce8b66c1e7e73858d0?recursive=1
+
   - id: voxmem
     name: VoxMem
     full_name: "VoxMem: Benchmarking Multimodal Memory in Large Audio Language Models"

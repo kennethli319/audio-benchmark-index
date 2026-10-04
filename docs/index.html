@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Audio Benchmark Index — Speech, Audio &amp; Music Benchmarks</title>
-  <meta name="description" content="Search 427 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
+  <meta name="description" content="Search 428 speech, audio, and music benchmark families by task, access path, and upstream terms, with official sources and safe-first download helpers.">
   <link rel="canonical" href="https://kennethli319.github.io/audio-benchmark-index/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231859a9'/%3E%3Cpath d='M10 32h7l4-12 7 25 7-31 7 36 6-27 5 9h2' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio Benchmark Index">
-  <meta name="twitter:description" content="427 benchmark families, official sources, access guidance, and safe-first helpers.">
+  <meta name="twitter:description" content="428 benchmark families, official sources, access guidance, and safe-first helpers.">
   <meta name="twitter:image" content="https://kennethli319.github.io/audio-benchmark-index/og.png">
   <style>
     :root {
@@ -416,15 +416,15 @@
       <div>
         <span class="eyebrow">Living benchmark directory</span>
         <h1>Find the right benchmark for speech, audio, and music</h1>
-        <p class="lede">Search 427 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
+        <p class="lede">Search 428 benchmark families by task, access path, and upstream terms. Start from official sources, use the safe-first helpers, and adapt the evaluation workflow to your model.</p>
         <div class="hero-actions">
           <a class="button primary" href="#browse">Browse all benchmarks</a>
           <a class="button" href="https://github.com/kennethli319/audio-benchmark-index">View source on GitHub</a>
         </div>
       </div>
       <div class="hero-stats" aria-label="Index summary">
-        <div class="hero-stat"><span>Benchmarks</span><strong>427</strong></div>
-        <div class="hero-stat"><span>Download helpers</span><strong>427</strong></div>
+        <div class="hero-stat"><span>Benchmarks</span><strong>428</strong></div>
+        <div class="hero-stat"><span>Download helpers</span><strong>428</strong></div>
         <div class="hero-stat"><span>Manual or gated</span><strong>59</strong></div>
         <div class="hero-stat"><span>Last checked</span><strong><time datetime="2026-10-03">October 3, 2026</time></strong></div>
       </div>
@@ -458,7 +458,7 @@
 </button>
 <button class="family-tile" type="button" data-family-choice="speech-understanding" aria-pressed="false">
   <span>Speech understanding &amp; dialogue</span>
-  <strong>55</strong>
+  <strong>56</strong>
   <small>Translation, instructions, dialogue, and spoken intent</small>
 </button>
 <button class="family-tile" type="button" data-family-choice="audiovisual" aria-pressed="false">
@@ -496,7 +496,7 @@
 
     <section id="browse" aria-labelledby="browse-heading">
       <div class="section-heading">
-        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 427 benchmarks</h2></div>
+        <div><span class="eyebrow">Benchmark catalog</span><h2 id="browse-heading">Browse all 428 benchmarks</h2></div>
         <p>Search names, tasks, source notes, or license terms. Paper citation counts come from Google Scholar and were refreshed August 29, 2026.</p>
       </div>
 
@@ -573,7 +573,7 @@
 
         <div class="browse-content">
           <div class="results-bar">
-            <p id="result-status" role="status" aria-live="polite">Showing 427 of 427 benchmarks.</p>
+            <p id="result-status" role="status" aria-live="polite">Showing 428 of 428 benchmarks.</p>
             <button class="clear-button" id="clear-filters" type="button">Clear filters</button>
           </div>
 
@@ -18539,6 +18539,72 @@
                     <li><a href="https://huggingface.co/datasets/microsoft/NOTSOFAR">Source 6 · huggingface.co</a></li>
                     <li><a href="https://www.isca-archive.org/interspeech_2024/vinnikov24_interspeech.html">Source 7 · isca-archive.org</a></li>
                     <li><a href="https://doi.org/10.21437/Interspeech.2024-1788">Source 8 · doi.org</a></li></ul></div>
+    </div>
+  </details>
+</article>
+
+<article class="benchmark-card" id="benchmark-nsv_shift"
+  data-name="nsv-shift"
+  data-families="speech-understanding"
+  data-access="helper"
+  data-host="official"
+  data-terms="unspecified"
+  data-citations="-1"
+  data-search="nsv shift nsv shift nsv shift a contrastive benchmark for non speech vocalization understanding and response adaptation in speech to speech models speech dialogue paralinguistic speech evaluation non speech vocalization recognition contextual emotion recognition emotion polarity classification counterfactual spoken response adaptation not specified not specified no license copying or notice file or explicit data code license was identified in the pinned owner tree github detects no license the paper s cc by nc nd 4 0 license covers the article not this release public access does not grant redistribution training or commercial use rights clarify terms with the owner before reuse elevenlabs synthesis dia voice cloning generated voices and other service model terms remain separate september 27 2026 pilot 22 human verified counterfactual pairs 44 four turn english conversations and 15 topics each pair holds lexical content constant while changing the final turn non speech vocalization q1 uses seven vocalization choices q2 negative versus non negative emotion and q3 27 goemotions labels plus neutral and unclear the gold json lists only 27 options so use the runner s 29 choice inventory score parsed q1 q3 answers against gold in separate sessions q4 jointly matches two generated replies to two transcript nsv contexts using a text judge with randomized context and reply order ties count as incorrect generated reference replies are not q4 gold and optional tone scoring is a separate experiment preserve the full 44 condition and 22 pair denominators and report failures the runner can omit incomplete pairs from q4 output confirm every conversation wav exists before running the owner loader silently supplies placeholder silence for missing audio the pinned tree contains 132 wavs totaling 70086012 bytes including 44 complete conversations totaling 53112452 bytes the helper fetches only pinned documentation catalog gold labels pair ids and tree metadata audio acquisition and any paid model judge execution remain manual paper https arxiv org abs 2609 33899 repository https github com chenzwnina nsv construction dataset https github com chenzwnina nsv construction tree main eval set https arxiv org abs 2609 33899 https arxiv org html 2609 33899v1 https github com chenzwnina nsv construction tree f5ae07067659e654e66612ce8b66c1e7e73858d0 https github com chenzwnina nsv construction blob f5ae07067659e654e66612ce8b66c1e7e73858d0 docs data construction md https github com chenzwnina nsv construction blob f5ae07067659e654e66612ce8b66c1e7e73858d0 eval set catalog json https github com chenzwnina nsv construction blob f5ae07067659e654e66612ce8b66c1e7e73858d0 model testing items py https github com chenzwnina nsv construction blob f5ae07067659e654e66612ce8b66c1e7e73858d0 model testing config py https github com chenzwnina nsv construction blob f5ae07067659e654e66612ce8b66c1e7e73858d0 model testing evaluate py https github com chenzwnina nsv construction blob f5ae07067659e654e66612ce8b66c1e7e73858d0 model testing run test py https api github com repos chenzwnina nsv construction git trees f5ae07067659e654e66612ce8b66c1e7e73858d0 recursive 1">
+  <div class="card-heading">
+    <div>
+      <span class="eyebrow">Speech understanding &amp; dialogue</span>
+      <h3>NSV-Shift</h3>
+      <p class="benchmark-full-name">NSV-Shift: A Contrastive Benchmark for Non-Speech Vocalization Understanding and Response Adaptation in Speech-to-Speech Models</p>
+    </div>
+    <span class="access-badge helper">Safe-first helper</span>
+  </div>
+  <div class="tag-list" aria-label="Tasks">
+    <span class="tag">Non Speech Vocalization Recognition</span>
+        <span class="tag">Contextual Emotion Recognition</span>
+        <span class="tag">Emotion Polarity Classification</span>
+        <span class="tag">Counterfactual Spoken Response Adaptation</span>
+  </div>
+  <div class="card-facts">
+    <div><span>Access path</span><strong>Official / other</strong></div>
+    <div><span>Upstream terms</span><strong>Not specified</strong></div>
+    <div><span>Paper citations</span><strong><a href="https://scholar.google.com/scholar?hl=en&amp;q=%22NSV-Shift%3A+A+Contrastive+Benchmark+for+Non-Speech+Vocalization+Understanding+and+Response+Adaptation+in+Speech-to-Speech+Models%22">Unavailable</a></strong></div>
+  </div>
+  <p class="access-copy">The helper starts with public documentation or metadata and keeps large or restricted downloads opt-in.</p>
+  <div class="card-actions">
+    <a class="card-action primary" href="https://github.com/ChenzwNina/nsv-construction/tree/main/eval_set">Get data</a>
+          <a class="card-action secondary" href="https://arxiv.org/abs/2609.33899">Read the paper</a>
+          <a class="card-action secondary" href="https://github.com/ChenzwNina/nsv-construction">View code</a>
+  </div>
+  <details class="benchmark-details">
+    <summary>Access, terms &amp; download helper</summary>
+    <div class="details-body">
+      <dl class="terms-list">
+        <div><dt>Data license / terms</dt><dd>not_specified</dd></div>
+        <div><dt>Code license</dt><dd>not_specified</dd></div>
+        <div><dt>License caution</dt><dd>No LICENSE, COPYING, or NOTICE file or explicit data/code license was identified in the pinned owner tree; GitHub detects no license. The paper&#39;s CC BY-NC-ND 4.0 license covers the article, not this release. Public access does not grant redistribution, training, or commercial-use rights. Clarify terms with the owner before reuse; ElevenLabs synthesis, Dia voice cloning, generated voices, and other service/model terms remain separate.</dd></div>
+        <div><dt>Download notes</dt><dd>September 27, 2026 pilot: 22 human-verified counterfactual pairs, 44 four-turn English conversations, and 15 topics. Each pair holds lexical content constant while changing the final-turn non-speech vocalization. Q1 uses seven vocalization choices, Q2 negative versus non-negative emotion, and Q3 27 GoEmotions labels plus Neutral and unclear; the gold JSON lists only 27 options, so use the runner&#39;s 29-choice inventory. Score parsed Q1-Q3 answers against gold in separate sessions. Q4 jointly matches two generated replies to two transcript/NSV contexts using a text judge with randomized context and reply order; ties count as incorrect. Generated reference replies are not Q4 gold, and optional tone scoring is a separate experiment. Preserve the full 44-condition and 22-pair denominators and report failures; the runner can omit incomplete pairs from Q4 output. Confirm every conversation.wav exists before running: the owner loader silently supplies placeholder silence for missing audio. The pinned tree contains 132 WAVs totaling 70086012 bytes, including 44 complete conversations totaling 53112452 bytes. The helper fetches only pinned documentation, catalog, gold labels, pair IDs, and tree metadata; audio acquisition and any paid model/judge execution remain manual.</dd></div>
+      </dl>
+      <div class="command-block">
+        <div><span>Safe-first helper</span><code>scripts/download/nsv_shift.sh</code></div>
+        <div class="helper-actions">
+          <a href="https://github.com/kennethli319/audio-benchmark-index/blob/main/scripts/download/nsv_shift.sh">View helper</a>
+          <button type="button" data-copy="scripts/download/nsv_shift.sh" aria-label="Copy NSV-Shift helper path">Copy path</button>
+        </div>
+      </div>
+      <div class="detail-links"><h4>Official links</h4><ul><li><a href="https://arxiv.org/abs/2609.33899">Paper</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction">Repository</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/tree/main/eval_set">Dataset</a></li></ul></div>
+      <div class="detail-links"><h4>Reviewed sources</h4><ul><li><a href="https://arxiv.org/abs/2609.33899">Source 1 · arxiv.org</a></li>
+                    <li><a href="https://arxiv.org/html/2609.33899v1">Source 2 · arxiv.org</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/tree/f5ae07067659e654e66612ce8b66c1e7e73858d0">Source 3 · github.com</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/docs/data_construction.md">Source 4 · github.com</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/eval_set/catalog.json">Source 5 · github.com</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/items.py">Source 6 · github.com</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/config.py">Source 7 · github.com</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/evaluate.py">Source 8 · github.com</a></li>
+                    <li><a href="https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/model_testing/run_test.py">Source 9 · github.com</a></li>
+                    <li><a href="https://api.github.com/repos/ChenzwNina/nsv-construction/git/trees/f5ae07067659e654e66612ce8b66c1e7e73858d0?recursive=1">Source 10 · api.github.com</a></li></ul></div>
     </div>
   </details>
 </article>

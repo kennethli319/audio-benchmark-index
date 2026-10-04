@@ -1,5 +1,58 @@
 # Research and release audits
 
+## October 3, 2026: NSV-Shift pilot release and scoring audit
+
+[NSV-Shift](https://arxiv.org/abs/2609.33899) is prioritized for its September
+27 release and inspectable contrastive speech-dialogue protocol. Name, full
+title, arXiv ID, repository, dataset path, vocalization, and counterfactual-task
+searches found no existing family. VocalSound classifies vocal sounds;
+SpeechEQ selects emotionally appropriate acoustic responses; neither is an
+alias for this controlled final-turn NSV intervention. The owner repository's
+“NSV counterfactual eval set” is this family, not another benchmark. Independent
+multi-group adoption has not been established; recency and the released
+inputs, gold labels, and harness justify the addition.
+
+The [owner snapshot](https://github.com/ChenzwNina/nsv-construction/tree/f5ae07067659e654e66612ce8b66c1e7e73858d0)
+contains 22 pairs across two construction rounds (13 and 9), 44 conditions,
+and 15 topics. Catalog and gold records agree on every shared field; pair IDs
+are unique, rounds disjoint, and text matches within pairs after removing the
+NSV tag. All 132 referenced WAV paths exist in the complete tree and total
+70,086,012 bytes; the 44 `conversation.wav` inputs total 53,112,452 bytes.
+Observed NSVs are laughter (17), gasp (12), sighing (7), groan (5), screaming
+(2), and crying (1). Yawning is an option with no observed condition. This is
+a small, imbalanced pilot; media contents and acoustic equivalence were not
+independently verified.
+
+The [paper](https://arxiv.org/html/2609.33899v1) and
+[construction documentation](https://github.com/ChenzwNina/nsv-construction/blob/f5ae07067659e654e66612ce8b66c1e7e73858d0/docs/data_construction.md)
+describe four separate-session tasks. Q1 has seven choices; Q2 is binary
+negative/non-negative. Q3's released gold JSON lists 27 emotions, but the
+runner correctly adds Neutral and unclear for 29 choices. Preserve the
+runner's seeded option shuffles and parsed-answer scoring. Q4 uses a text
+judge over transcript/NSV contexts and response text, with independently
+shuffled contexts and replies. Ties are wrong; generated GPT-4o reference
+replies are not gold. Optional tone evaluation is separate from this metric.
+The loader substitutes one second of silence when a conversation is absent,
+and Q4 aggregation skips pairs lacking either variant. Verify all audio and
+report failures against the intended 44-condition / 22-pair scope, rather
+than silently comparing smaller successful subsets. Historical model-run
+logs, filtering intermediates, and the Opus writer experiment are absent.
+
+No license file or explicit data/code grant appears in the audited tree;
+GitHub reports no detected license. The article's CC BY-NC-ND 4.0 terms do
+not license audio, annotations, or software. ElevenLabs synthesis, Dia voice
+cloning, generated-voice rights, and service/model conditions remain separate.
+The entry therefore records both licenses as `not_specified` and leaves
+media acquisition manual pending the user's review of owner terms.
+
+The safe-default helper fetched six documentation/metadata files totaling
+355,501 bytes. All five raw files match their pinned Git blob hashes; the
+complete tree supports the inventory checks above. Runner, loader, scoring,
+judge, and configuration source were inspected as text with blob verification,
+not executed. No audio, model weights, credentials, license acceptance, or
+paid API calls were involved. The August 29 citation snapshot is retained;
+only an unavailable-count record was added for catalog parity.
+
 ## October 3, 2026: VoxMem release and controlled-context audit
 
 [VoxMem](https://arxiv.org/abs/2609.32607) is prioritized for its September 26
