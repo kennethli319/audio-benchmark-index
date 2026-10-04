@@ -1,5 +1,78 @@
 # Research and release audits
 
+## October 3, 2026: Duplex Cue public subset and recent release deferrals
+
+[Duplex Cue](https://huggingface.co/datasets/besimple-ai/duplex-cue) is
+prioritized for its September release and
+[October 2 manuscript update](https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/paper/README.md),
+with reusable source/generated responses, annotations, research code, and scoped
+provenance. The update expands the paper's analysis, not the public data.
+Canonical-name, title, arXiv ID `2609.13117`, dataset URL, and task searches
+found no existing family. Its explicit in-turn uptake task differs from
+TurnBench's event detection, CoDeTT's turn-action classification, and
+Full-Duplex-Bench's interaction tests. PersonaPlex is the evaluated model,
+not a second benchmark. Independent multi-group adoption was not established;
+recency and the inspectable release justify this small addition.
+
+The public, ungated revision `a9c305ca39a89dd84b7ce9dda88f868a58eb8d56`
+contains only eight conversations and 15 canonical trials: 11 backchannels,
+one collaboration, and three interruptions. This intentionally selected subset
+is severely unbalanced. The [manifest](https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/sample_manifest.json)
+and selection IDs agree, all trials refer to released conversations, and every
+expected conversation track, source/model output, and result path exists in the
+paginated file inventory. That inventory totals 2,830,254,582 file bytes.
+No media was downloaded, so these checks do not establish audio quality.
+
+The [paper](https://arxiv.org/abs/2609.13117) describes a larger study with
+80 conversations, 300 trials, and 208 paired active/scorable responses. Those
+numbers are not the public release inventory. Scoped provenance retains nine
+primary active/scorable pairs: seven backchannels, one collaboration, and one
+interruption. Report intent-by-response
+distributions with activity and scorability exclusions; do not interpret one
+intended response per cue as the complete evaluation. The release's
+[scoring documentation](https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/scripts/README.md)
+requires individual timed-evidence review before final aggregation. Automatic
+ASR, an LLM review workflow, stock-voice conversion, and recorded listener
+replay constrain reproducibility and interpretation. The current manuscript
+adds onset-limited reannotation and an author audio audit, but the public
+subset cannot reproduce all full-study results. This is conditional dialogue
+continuation rather than an interactive listener that reacts to generated speech.
+
+The [launch page](https://besimple.ai/blogs/duplex-cue/) still describes custom
+research terms without a standalone open-data license. The pinned current
+[data license](https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/LICENSE_DATA.md)
+explicitly grants CC BY-NC 4.0 for data and research materials; the separate
+[software license](https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/LICENSE_CODE.md)
+covers `app/` and `scripts/` under MIT. The index follows these current artifact
+terms and records the launch-page discrepancy. Preserve participant safeguards
+and [provider notices](https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/THIRD_PARTY_NOTICES.md);
+public voices are pseudonymized rather than anonymous, and the data grant does
+not grant rights to third-party service software or model weights.
+
+The pinned helper fetched 212,792 bytes of documentation, manuscript source,
+manifest, selection, results, and API metadata. All 14 repository files match
+the pinned tree's Git blob IDs. Four cohort-audit source SHA-256 values and the
+current manuscript-source hash also match. Older manuscript hashes in historical
+provenance are intentionally retained upstream; use `camera-ready-release.json`
+for the October 2 source. No upstream code was executed and no audio, model, credentials,
+terms acceptance, or paid service was involved. August 29 citation counts remain
+unchanged; the new family has an unavailable count rather than an invented zero.
+
+Two newer paper candidates remain uncounted:
+
+- [SES-Bench](https://arxiv.org/abs/2609.32504), announced September 26:
+  [owner revision](https://github.com/danielqwer/Speech-Emotion-Similarity/tree/ca4c9bd6b7e91133158cf38b554d65397a720a59)
+  contains SES-Judge training/inference code under MIT but explicitly defers the
+  data and trained checkpoint. The complete tree confirms no benchmark release.
+  The paper's 2,974/848 training/test comparisons are announced inventories;
+  code licensing does not license the missing data or upstream speech corpora.
+- [OmniEchoBench](https://arxiv.org/abs/2609.23407), announced September 20:
+  [owner revision](https://github.com/PKU-VaLuE-Lab/OmniEcho/tree/fc657f4493390039435e6a5cf81874d2b99a5650)
+  contains only a README. Both QA/navigation tracks, media links, and evaluators
+  are marked for future release. The README's directory example is not an
+  actual manifest; its CC BY-NC 4.0 declaration does not establish availability.
+  OmniEcho is the model, and QA/Nav should remain tracks of one future family.
+
 ## October 3, 2026: WildSongBench release and protocol audit
 
 [WildSongBench (WSB)](https://huggingface.co/datasets/m-a-p/WildSongBench)

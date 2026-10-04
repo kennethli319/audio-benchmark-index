@@ -9,6 +9,51 @@ metadata:
   note: This index does not mirror datasets or grant rights to upstream data.
 
 paper_audits:
+  ses_bench_release_audit:
+    paper: https://arxiv.org/abs/2609.32504
+    title: Toward Human-Aligned Judgement of Speech Emotion Similarity
+    status: benchmark_data_announced_not_released
+    last_verified: 2026-10-03
+    release_audit:
+      repository_revision: ca4c9bd6b7e91133158cf38b554d65397a720a59
+      available: MIT_licensed_SES_Judge_training_and_inference_code
+      missing: SES_Bench_data_and_trained_checkpoint
+      download_helper: none_benchmark_release_pending
+    note: >-
+      The September 26 paper describes 2974 training and 848 test comparisons
+      of human-perceived speech emotion similarity. The owner README explicitly
+      defers the dataset until preparation is complete; the complete repository
+      tree contains code but no benchmark artifacts. SES-Judge is the model,
+      not a separately countable benchmark. MIT code terms do not license the
+      absent data or its MSP-Podcast and CREMA-D source recordings.
+    sources:
+      - https://arxiv.org/abs/2609.32504
+      - https://github.com/danielqwer/Speech-Emotion-Similarity
+      - https://api.github.com/repos/danielqwer/Speech-Emotion-Similarity/git/trees/ca4c9bd6b7e91133158cf38b554d65397a720a59?recursive=1
+
+  omniechobench_release_audit:
+    paper: https://arxiv.org/abs/2609.23407
+    title: "OmniEcho: Audio-Visual Spatial Understanding for Omni-Modal Embodied Agents"
+    status: benchmark_data_and_evaluation_code_announced_not_released
+    last_verified: 2026-10-03
+    release_audit:
+      repository_revision: fc657f4493390039435e6a5cf81874d2b99a5650
+      available: README_only
+      missing: QA_and_navigation_data_media_and_evaluation_code
+      download_helper: none_benchmark_release_pending
+    note: >-
+      The September 20 paper defines OmniEchoBench-QA and OmniEchoBench-Nav
+      as tracks of one spatial audio-visual benchmark, distinct from the
+      OmniEcho model. The complete owner tree contains only a README, whose
+      release table marks both tracks and evaluators as coming soon. Its
+      example file layout is not a released manifest. The README declares
+      CC BY-NC 4.0 for benchmark data but defers code/model licensing; no
+      family or helper is added until reusable artifacts are available.
+    sources:
+      - https://arxiv.org/abs/2609.23407
+      - https://github.com/PKU-VaLuE-Lab/OmniEcho
+      - https://api.github.com/repos/PKU-VaLuE-Lab/OmniEcho/git/trees/fc657f4493390039435e6a5cf81874d2b99a5650?recursive=1
+
   mishap_bench_release_audit:
     paper: https://arxiv.org/abs/2609.33893
     title: "MISHAP-Bench: A Hallucination Benchmark for Large Audio-Language Models"
@@ -21534,6 +21579,78 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: duplex_cue
+    name: Duplex Cue
+    full_name: "Continue, Adapt, or Yield: In-Turn Adaptation to Overlapping Speech in Full-Duplex Agents"
+    qwen_cited_as: null
+    qwen_bucket: speech_dialogue
+    tasks:
+      - full_duplex_spoken_dialogue
+      - in_turn_adaptation
+      - overlapping_speech_response_evaluation
+      - turn_taking
+    official:
+      paper: https://arxiv.org/abs/2609.13117
+      project: https://besimple.ai/blogs/duplex-cue/
+      dataset: https://huggingface.co/datasets/besimple-ai/duplex-cue
+      code: https://huggingface.co/datasets/besimple-ai/duplex-cue/tree/main/scripts
+      release_notes: https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/main/paper/README.md
+    download:
+      access: public_ungated_complete_artifacts_for_small_selected_subset
+      primary:
+        - https://huggingface.co/datasets/besimple-ai/duplex-cue
+      examples:
+        - 'scripts/download/duplex_cue.sh'
+      notes: >-
+        September 2026 release; October 2 camera-ready manuscript update
+        leaves public data membership unchanged. Only 8 English conversations
+        (about 2 hours, 12 speaker aliases) and 15 canonical trials are public:
+        11 backchannels, 1 collaboration, and 3 interruptions. The paper's
+        80-conversation, 300-trial study is not fully released, and its 208
+        active/scorable pairs cannot be reconstructed from this subset.
+        Public scoped provenance retains only 9 primary active/scorable pairs.
+        The public release includes source and generated responses, transcripts,
+        cue annotations, runner/scorer code, and scoped provenance. Separate
+        listener intent from observed continued/adapted/yielded behavior;
+        report the cue-response matrix and activity/scorability exclusions.
+        Scoring requires individual evidence-based response review, not just
+        deterministic matching. Acknowledgment can qualify as adaptation.
+        The runner conditions on a stock-voice-converted speaker prefix while
+        replaying the recorded listener, so this is conditional continuation,
+        not fully interactive dialogue. Retain these limitations and the
+        voice-conversion asymmetry in comparisons. The nested JSON/JSONL/WAV
+        layout is not a standard load_dataset configuration. The helper pins
+        the reviewed revision and fetches only lightweight documentation,
+        manifest, public results, and manuscript source. The approximately
+        2.83 GB full snapshot remains manual; no media, models, installation,
+        generation, paid services, or scoring are invoked by the helper.
+    license:
+      data: CC-BY-NC-4.0
+      code: MIT
+      notes: >-
+        LICENSE_DATA.md covers dataset and research materials; LICENSE_CODE.md
+        separately covers app/ and scripts/. The launch page still says no
+        standalone data license is included; this entry follows the explicit
+        license files in the pinned current release. Attribution, noncommercial use, provider notices, and
+        participant rights remain applicable. Voices are pseudonymized, not
+        anonymous; follow the owner's safeguards against identification,
+        biometric profiling, voice cloning, impersonation, and contacting
+        participants. ElevenLabs and PersonaPlex artifacts retain provider
+        provenance; their service/model software is not licensed by this data
+        grant. The helper does not accept any terms or obtain credentials.
+    sources:
+      - https://arxiv.org/abs/2609.13117
+      - https://besimple.ai/research/
+      - https://besimple.ai/blogs/duplex-cue/
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/sample_manifest.json
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/paper/README.md
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/LICENSE_DATA.md
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/LICENSE_CODE.md
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/THIRD_PARTY_NOTICES.md
+      - https://huggingface.co/datasets/besimple-ai/duplex-cue/blob/a9c305ca39a89dd84b7ce9dda88f868a58eb8d56/scripts/README.md
+      - https://huggingface.co/api/datasets/besimple-ai/duplex-cue
+
   - id: wildsongbench
     name: WildSongBench
     full_name: WildSongBench (WSB) full-song music generation benchmark
