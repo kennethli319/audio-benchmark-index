@@ -21579,6 +21579,100 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: musicai_background_music
+    name: MusicAI Background Music × Audio LLM Benchmark
+    full_name: "Does Background Music Matter to Speech in Pre-trained Language Models"
+    qwen_cited_as: null
+    qwen_bucket:
+      - spoken_language_understanding
+      - audio_language_model_benchmark
+    category: background_music_robustness_of_spoken_reasoning
+    tasks:
+      - spoken_question_answering
+      - spoken_instruction_following
+      - background_music_robustness
+      - paired_response_stability
+    official:
+      homepage: https://mingzhe.space/blog/2026/does-background-music-matter/
+      dataset: https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark
+      release: https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/blob/main/releases/2026-09-18/README.md
+      paper: https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/resolve/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18/paper/technical_report.pdf
+    download:
+      access: public_ungated_release_with_mixed_source_rights
+      primary:
+        - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/tree/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18
+      examples:
+        - 'scripts/download/musicai_background_music.sh'
+      notes: >-
+        The September 18 completed release evaluates background-music effects
+        on spoken reasoning across eight model families. One benchmark family
+        covers ten settings: 500 items each from GSM8K, BBH, MMLU, IFEval and
+        GSM-Symbolic base/P1/P2, plus 300 paired bAbI short and BABILong-adapted
+        near/far problems per setting. These speech adaptations are not canonical
+        text or long-context leaderboard scores. The locked stimulus catalog
+        lists 55 instrumental recordings, five per genre across 11 genres.
+        At +10 dB speech-to-background SNR, each item has 57 distinct waveforms
+        but 77 records in eleven genre-local batches containing clean, white
+        noise and five tracks. Preserve paired batching and repeated clean
+        controls; greedy outputs can vary even with matching recorded hashes.
+        Report matched clean-to-music accuracy or IFEval strict-compliance
+        changes and score-flip rates; string disagreement is a separate measure.
+        Empty/truncated outputs remain failures in the full denominator.
+        Use scores-ifeval-symbols-v2 for expanded original-task results and
+        voxtral_small_24b_closed1024 for the final Voxtral Small configuration;
+        earlier scores and the 64-token run are historical/diagnostic.
+        The two regenerated audio cohorts contain 250 and 300 batch TARs,
+        totaling 59919022080 and 89651312640 bytes. Owner completion manifests
+        enumerate 2000/2400 spoken items and 114000/136800 condition FLACs.
+        Original historical-cohort speech is unavailable; regenerated hashes
+        must not be substituted for historical waveform identities. All eight
+        models share extension audio, while original-task cohort provenance,
+        budgets and scoring versions differ. Source/evaluation code is bundled
+        in a 98224279-byte archive; its execution and full result replay were
+        not verified. The linked GitHub report repository returned HTTP 404.
+        The helper fetches only pinned documentation, attribution, selection
+        summaries and archive receipts, never media, result/code archives,
+        weights, or executable scripts. Review source rights before manual
+        retrieval; verify archive/member hashes, extract into an empty directory
+        with traversal protection and preserve immutable manifests separately
+        from any local resolved-path index.
+    access:
+      status: released_public_artifacts_with_historical_audio_gap
+      registration_required: false
+      notes: >-
+        The complete pinned Hub tree has 3332 files totaling 160910176907 bytes;
+        the September 18 directory alone has 1290 files and 151917824833 bytes.
+        These are metadata-declared sizes, not a full download verification.
+        Archive receipt sizes and SHA-256 identities match Hub LFS metadata and
+        the release manifest for all 550 audio batches; audio contents, acoustic
+        identity, archived code, extension rows and predictions were not fetched.
+        Public access does not resolve the explicitly pending redistribution
+        scope of three ChMusic stimuli or license all derived mixtures.
+    license:
+      data: not_specified_as_an_aggregate_license_mixed_upstream_terms
+      code: not_specified_for_project_code_archive
+      notes: >-
+        The current card has no license field, and the release explicitly
+        declines a blanket license. The 55-track configuration records mixed
+        public-domain and CC BY/BY-SA/BY-NC/BY-NC-SA terms, including three
+        ChMusic recordings whose audio redistribution scope remains pending
+        author confirmation. MUSIC_ATTRIBUTION.md also includes historical
+        pilot tracks; use the locked full-screen configuration for this release.
+        The extension provenance references a CC BY-NC-ND 4.0 license for
+        GSM-Symbolic generated data; inspect original task/adaptation terms
+        before reuse. Vendored Apache licenses do not establish a license for
+        the project's code, benchmark annotations, or mixed audio. TTS/model
+        terms and source-recording rights remain separate.
+    sources:
+      - https://mingzhe.space/blog/2026/does-background-music-matter/
+      - https://huggingface.co/api/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/revision/b197f0db8f618674bc32ac0b6b970f57048b50e9
+      - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/raw/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18/README.md
+      - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/raw/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18/MANIFEST.sha256
+      - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/raw/b197f0db8f618674bc32ac0b6b970f57048b50e9/data/benchmarks/selection_summary_2000.json
+      - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/raw/b197f0db8f618674bc32ac0b6b970f57048b50e9/data/full_instrumental_sources.yaml
+      - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/raw/b197f0db8f618674bc32ac0b6b970f57048b50e9/MUSIC_ATTRIBUTION.md
+      - https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/raw/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18/analysis/data/audit/extension_selection.json
+
   - id: krisp_voice_isolation
     name: Krisp Voice Isolation Benchmark
     full_name: "Krisp Voice Isolation Benchmark Suite"

@@ -1,5 +1,82 @@
 # Research and release audits
 
+## October 3, 2026: MusicAI background-music release and provenance audit
+
+[MusicAI Background Music × Audio LLM Benchmark](https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark)
+is prioritized for the September 18 completed release, following its September 13
+Hub creation. The [author explanation](https://mingzhe.space/blog/2026/does-background-music-matter/)
+and [release guide](https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/blob/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18/README.md)
+establish a reusable controlled speech-robustness protocol with prompts, audio,
+results and source-code archives. Independent multi-group adoption and citation
+momentum were not established. Canonical/report titles, MusicAI/ambient-music
+aliases, owner/repository/dataset identities and task overlap were searched in
+the catalog. Existing general spoken-QA and music-generation families do not
+provide this frozen paired-background protocol. Ten settings, pilot/expanded
+cohorts and eight evaluated model families are one family, not extra entries.
+
+The ungated revision `b197f0db8f618674bc32ac0b6b970f57048b50e9` has 3,332
+files totaling 160,910,176,907 bytes; the September 18 directory has 1,290 files
+and 151,917,824,833 bytes. The complete paginated tree matches API siblings.
+Its completion record counts 1,289 files before adding its own 299 bytes, so
+that apparent count/size difference is expected. The 1,288-path checksum
+manifest excludes itself and the completion record. No large archive was fetched.
+
+- The original-task prompt manifest has 2,000 unique IDs, exactly 500 each for
+  GSM8K, BBH, MMLU and IFEval. These are selected speech adaptations.
+- Extension selection metadata describes 500 each for GSM-Symbolic base/P1/P2
+  and 300 each for bAbI short/BABILong-adapted near/far. The latter use short
+  inserted context, not standard long-context scores. Extension rows were not
+  fetched, so their uniqueness/pairing remains an owner-reported property.
+- Completion inventories enumerate 250/300 audio batches, 2,000/2,400 items
+  and 114,000/136,800 condition FLACs. For every batch, archive size and SHA-256
+  agree across completion receipts, Hub LFS metadata and release checksums;
+  every neighboring READY receipt is present. TAR totals are 59,919,022,080
+  and 89,651,312,640 bytes. This validates metadata consistency, not audio
+  contents, internal member hashes, SNR or acoustic identity.
+- The stimulus configuration lists 55 unique instrumental IDs, five per each of
+  11 genres. Ruby 2.6 Psych rejected unquoted URLs in its flow mappings; a
+  field-level text inventory established these counts without rewriting the
+  upstream file or claiming full YAML-parser compatibility.
+
+The release requires genre-local paired batches: 77 condition records per item
+represent 57 distinct waveforms. Preserve repeated clean controls and score
+failures in the full denominator. Expanded original-task results use
+`scores-ifeval-symbols-v2/`; final Voxtral Small uses
+`voxtral_small_24b_closed1024`, not the incomplete 64-token diagnostic. Compare
+accuracy/strict-compliance changes and paired score flips separately from raw
+string disagreement. Original historical speech is unavailable; regenerated
+audio must not inherit its waveform identities. The original cohorts differ
+in provenance, budgets and scoring versions, while all eight models share the
+extension audio. The author also reports clean-output variability and a
+historical identical-response IFEval grading inconsistency. These limitations
+preclude attributing every output difference solely to music.
+
+The card has no aggregate license. The locked source configuration contains
+mixed CC/public-domain notices and explicitly pending redistribution scope for
+three ChMusic recordings. Historical `MUSIC_ATTRIBUTION.md` alone does not
+cover the full 55-track selection. Extension provenance references
+GSM-Symbolic generated-data CC BY-NC-ND 4.0 terms; task text, adaptations, TTS
+and derived mixes require separate review. The visible vendored Apache license
+files do not license project code or audio. The 98,224,279-byte code archive was
+not downloaded or executed; archive-internal licenses and scorer behavior were
+not audited. The linked `Elfsong/backgroundmusic` GitHub API returned HTTP 404;
+the Hub retains the report and source archive. No inference, result replay,
+model download, archive extraction, credential use or terms acceptance occurred.
+
+The helper uses an explicit pinned metadata/document allowlist. Downloaded
+repository text is checked against Git blob identities; downloaded files covered
+by the release manifest also match SHA-256. The catalog retains unavailable
+citations for this report; the August 29 snapshot is not materially stale enough
+to justify a bulk refresh during this focused addition.
+
+The newer [L-HET/L-HESS announcement](https://semo.one/news/l-het) was deferred:
+September 24 describes Phase 1 in progress, 50 recorded/annotated dialogues and
+150 planned, with samples available only through a reviewed password-preview
+request. The public announcement lacks a fixed reusable evaluation release,
+scorer and license. L-HET is the corpus and L-HESS its benchmark, not two
+families. No access request, helper or benchmark entry was created; reconsider
+when release evidence changes.
+
 ## October 3, 2026: Krisp Voice Isolation release and reproducibility audit
 
 The [Krisp Voice Isolation Benchmark](https://krisp.ai/benchmarks/voice-isolation-benchmark/)

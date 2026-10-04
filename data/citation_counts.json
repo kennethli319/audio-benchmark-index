@@ -2601,6 +2601,12 @@
       "paper_url": null,
       "scholar_url": null,
       "paper_title": null
+    },
+    "musicai_background_music": {
+      "citation_count": null,
+      "paper_url": "https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark/resolve/b197f0db8f618674bc32ac0b6b970f57048b50e9/releases/2026-09-18/paper/technical_report.pdf",
+      "scholar_url": null,
+      "paper_title": null
     }
   }
 }
