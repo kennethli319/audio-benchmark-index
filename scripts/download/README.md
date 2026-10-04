@@ -440,6 +440,9 @@ scripts/download/chime_7_dasr.sh
 # audio has no public download path.
 scripts/download/real_tse.sh
 scripts/download/smartglasses_challenge_2026.sh
+# VoiceMOS 2026 saves public docs and pinned Track 1 metadata only; Track 1
+# data is public, but Track 2/Track 3 SYN release is pending after the expired
+# September 30 license-request window. Exit 2 describes partial access.
 scripts/download/voicemos_challenge_2026.sh
 SYNSFX_ACK_RESEARCH_ONLY=1 SYNSFX_DOWNLOAD_ARCHIVE=1 scripts/download/synsfx.sh
 scripts/download/timit.sh

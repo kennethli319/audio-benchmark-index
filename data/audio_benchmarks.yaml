@@ -11032,12 +11032,12 @@ paper_audits:
     paper: https://arxiv.org/abs/2603.14328
     title: "CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents"
     sections: 2 and 3
-    status: audited_registered_challenge_data_not_independently_released
-    last_verified: 2026-07-28
+    status: partial_natural_audio_public_synthesized_release_pending
+    last_verified: 2026-10-03
     evaluated_sets:
       - cited_as: CodecMOS-Accent
         index_id: voicemos_challenge_2026
-        status: registration_required_as_voicemos_2026_track_3
+        status: voicemos_2026_track_3_SYN_release_pending
         protocol: >-
           The paper evaluates 4,000 samples from nine neural-codec resynthesis
           systems, 15 voice-cloning systems, and ground truth. The source
@@ -11048,15 +11048,17 @@ paper_audits:
         note: >-
           The paper says the dataset will be made public in the near future
           but provides no dataset repository, archive, DOI, or access form.
-          The same 4,000-sample corpus is currently used as VoiceMOS Challenge
-          2026 Track 3 training data, available only to registered participants
-          through a CodaBench page sent by email. It therefore remains part of
-          the existing VoiceMOS 2026 family rather than a second counted entry.
+          VoiceMOS Challenge 2026 Track 3 splits the 4,000 samples into
+          2,800 train, 600 development and 600 test cases; 4,000 is not the
+          training split size. Natural VCTK distributions have public links,
+          while SYN public release remains pending and its former signed-license
+          request window ended September 30. Keep this alias within the existing
+          VoiceMOS 2026 family rather than adding a second counted entry.
     release_audit:
-      standalone_audio_and_ratings: not_released
-      voicemos_2026_track_3_training_data: registration_required
-      voicemos_2026_evaluation_data: scheduled_for_2026_07_31
-      source_vctk_audio: public_with_registration_and_upstream_terms
+      standalone_audio_and_ratings: full_public_release_not_verified
+      voicemos_2026_track_3_training_data: natural_audio_links_public_SYN_release_pending
+      voicemos_2026_evaluation_data: released_to_participants_2026_07_31
+      source_vctk_audio: public_natural_distribution_links_with_upstream_terms
       objective_metric_models: public_third_party_models
     license:
       codecmos_accent_data: not_specified
@@ -11064,6 +11066,9 @@ paper_audits:
       voicemos_baseline_code: apache-2.0
       source_vctk: cc-by-4.0
     sources:
+      - https://sites.google.com/view/voicemos-challenge/resources
+      - https://www.codabench.org/api/competitions/16419/
+      - https://arxiv.org/abs/2609.13792
       - https://arxiv.org/abs/2603.14328
       - https://arxiv.org/html/2603.14328v1#S2
       - https://arxiv.org/html/2603.14328v1#S3
@@ -35976,26 +35981,76 @@ benchmarks:
       - speaker_similarity_assessment
       - accent_similarity_assessment
     official:
+      paper: https://arxiv.org/abs/2609.13792
+      resources: https://sites.google.com/view/voicemos-challenge/resources
+      challenge: https://www.codabench.org/competitions/16419/
+      track_1_dev: https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-dev
+      track_1_test: https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-test
       homepage: https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
       baseline_repo: https://github.com/voicemos-challenge/vmc2026-baselines
-      registration_form: https://forms.gle/L6YdkUf1PJdSSwLU7
       track_1_source_paper: https://arxiv.org/abs/2601.13531
       track_3_source_paper: https://arxiv.org/abs/2603.14328
       track_3_source_paper_html: https://arxiv.org/html/2603.14328v1#S2
     download:
-      access: registration_and_codabench_email_required
+      access: public_track_1_and_partial_track_3_remaining_release_pending
       primary:
         - https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
         - https://github.com/voicemos-challenge/vmc2026-baselines
-        - https://forms.gle/L6YdkUf1PJdSSwLU7
+        - https://www.codabench.org/competitions/16419/
+        - https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-dev
+        - https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-test
       examples:
         - 'scripts/download/voicemos_challenge_2026.sh'
-      notes: The official site says training data were released to registered participants through a CodaBench page sent by email, with evaluation data scheduled for July 31, 2026. Track 1 covers 840 multilingual utterances in nine languages from six URGENT speech-enhancement systems; Track 2 covers emotional TTS and human speech; Track 3 uses 4,000 CodecMOS-Accent samples from 24 codec-resynthesis and TTS systems, 32 speakers, and ten accents. The helper saves public challenge and baseline documentation, then prints the registration path; it does not guess or expose the emailed CodaBench URL.
+      notes: >-
+        Evaluation data were released July 31 and results August 31, 2026;
+        the official site now publishes the CodaBench link. Track 1 development
+        and test audio and ratings are public and ungated on Hugging Face.
+        Their cards report 1008/4032 ACR samples and 2520/10080 CCR pairs,
+        respectively; the four Parquets total about 3.41 GB. Track 2 and Track 3
+        synthesized (SYN) data still await a public release: the resources page
+        and CodaBench instructions limit the signed-license/email process to
+        September 30, 2026, now past. Do not assume new requests remain open.
+        Track 3 natural VCTK distributions have separate official Drive links;
+        these alone do not reproduce CodecMOS-Accent. The helper saves public
+        documentation and pinned Track 1 cards/metadata only, never audio,
+        Parquets, license forms, credentials, or model weights.
+    release_audit:
+      last_verified: 2026-10-03
+      state: completed_challenge_with_track_specific_public_access
+      track_1_dev_revision: 2595bb3cc0e4456acd7516c060da6df3e64c0f3b
+      track_1_test_revision: f2eb5ca14f56343dfc2430ad9d244ddc881698bd
+      track_1_dev_snapshot_bytes: 655160656
+      track_1_test_snapshot_bytes: 2757666573
+      track_2: public_release_pending_previous_license_request_window_expired
+      track_3: natural_VCTK_links_public_SYN_release_pending_request_window_expired
+      baseline_revision: f9482fbb81d0429e090b491dd7aa7870a4b040f0
+    evaluation:
+      protocol: >-
+        Score utterance-level Spearman correlations separately for Track 1
+        ACR/CCR, Track 2 QMOS/EMOS, and Track 3 speaker/accent similarity.
+        Track 1 has no official training split; preserve the official dev/test
+        partition and namespaced sample IDs. ACR ranges from 1 to 5 and CCR
+        from -3 to 3, positive when audio_a is preferred. Track 2 optional
+        emotion-category error compares probabilities with listener fractions;
+        valence/arousal/dominance use separate correlations. Track 3 training
+        scores are listener-wise, so repeated sample pairs are expected.
     license:
-      data: not_publicly_specified
+      data: mixed_track_specific_terms
       code: Apache-2.0
-      notes: The public challenge page and baseline README do not state dataset reuse or redistribution terms. Apache-2.0 covers the baseline repository only, not challenge audio, listener ratings, URGENT material, CodecMOS-Accent, or emotional-speech source data.
+      notes: >-
+        Track 1 Hub cards declare CC BY 4.0. This does not cover Track 2 or
+        Track 3 SYN distributions, which have separate signed-license workflows
+        whose forms were not audited or accepted. VCTK retains its upstream
+        terms. Apache-2.0 covers baseline code only; the summary article's
+        arXiv distribution license does not license audio or listener ratings.
     sources:
+      - https://arxiv.org/abs/2609.13792
+      - https://arxiv.org/html/2609.13792v1
+      - https://sites.google.com/view/voicemos-challenge/resources
+      - https://www.codabench.org/competitions/16419/
+      - https://www.codabench.org/api/competitions/16419/
+      - https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-dev/blob/2595bb3cc0e4456acd7516c060da6df3e64c0f3b/README.md
+      - https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-test/blob/f2eb5ca14f56343dfc2430ad9d244ddc881698bd/README.md
       - https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026
       - https://github.com/voicemos-challenge/vmc2026-baselines
       - https://raw.githubusercontent.com/voicemos-challenge/vmc2026-baselines/main/README.md

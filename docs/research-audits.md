@@ -1,5 +1,72 @@
 # Research and release audits
 
+## October 3, 2026: VoiceMOS 2026 completed release and track-specific access
+
+The [September 12 summary paper](https://arxiv.org/abs/2609.13792) and
+[official resources](https://sites.google.com/view/voicemos-challenge/resources)
+justify a focused correction to VoiceMOS Challenge 2026. Results and evaluation
+release dates are past, and the [challenge page](https://sites.google.com/view/voicemos-challenge/voicemos-challenge-2026)
+now publishes its [CodaBench destination](https://www.codabench.org/competitions/16419/).
+The older baseline README still describes an emailed link. The paper reports
+18 participating teams; this is evidence of multi-group challenge use, not an
+independent audit of every result. Canonical names, VMC2026, CodecMOS-Accent,
+papers, repository and dataset identities map to the existing family. No new
+family is counted, and CodecMOS-Accent remains its Track 3 alias.
+
+The public [competition API](https://www.codabench.org/api/competitions/16419/)
+and resources page provide track-specific paths:
+
+- Track 1 development and test audio/ratings are public and ungated at
+  [the development dataset](https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-dev)
+  and [test dataset](https://huggingface.co/datasets/urgent-challenge/vmc2026-track1-test).
+  Revisions `2595bb3cc0e4456acd7516c060da6df3e64c0f3b` and
+  `f2eb5ca14f56343dfc2430ad9d244ddc881698bd` each have four files.
+  Complete trees total 655,160,656 and 2,757,666,573 bytes; their four Parquets
+  total 3,412,805,470 bytes. Hub `usedStorage` includes a different storage
+  scope and is not the current snapshot download size. Both card Git blob
+  hashes were verified. Cards declare CC BY 4.0 and released numeric labels,
+  with 1,008/4,032 ACR rows and 2,520/10,080 CCR pairs. Metadata counts agree
+  with the challenge; Parquets, audio, row uniqueness and split identities were
+  not inspected. Old development-label withholding text is historical.
+- Track 2 still describes a signed-license/email request process ending
+  September 30, 2026, while a public release is being prepared. That date is
+  past. The index does not present the old workflow as an open request window.
+- Track 3 separates natural VCTK distributions with public Drive links from
+  synthesized SYN distributions with the same expired request window. Natural
+  files alone do not reproduce the full benchmark. Official split sizes are
+  2,800/600/600, correcting the old audit's claim that all 4,000 samples were
+  training data. Listener-wise training rows may repeat a sample pair.
+
+The post-evaluation phase began August 31. The API marks the linked reference
+and scoring-program records non-public; no private files or temporary signed
+URLs were followed or retained. Competition terms concern organizer reuse of
+submitted scores and do not supply a blanket dataset license. Track 2/SYN
+license forms were not fetched, signed or accepted. Track 1's CC BY 4.0 must
+not be generalized to the other tracks. Baseline code remains Apache-2.0 at
+`f9482fbb81d0429e090b491dd7aa7870a4b040f0`; model and source-data terms remain
+separate.
+
+Preserve each track's utterance-level correlation targets and official splits.
+For Track 1, positive CCR prefers the first audio; pair order matters. The
+cards call the submission space-delimited but show comma-separated examples,
+and the dev card uses test IDs in that example. Follow the current competition
+format and exact IDs rather than copying those example strings. No submission,
+inference, paid judge invocation or score replay was performed.
+
+The existing helper now saves only public documentation and pinned Track 1
+cards/API metadata and explains partial access with its existing manual-action
+exit status. It never fetches the 3.41 GB Parquets, Drive archives or forms.
+The summary paper replaces the citation record's missing paper URL; its count
+remains unavailable and the August 29 count snapshot is unchanged.
+
+The newer [TTM-Bench paper](https://arxiv.org/abs/2609.18585) was also checked.
+It promises code, descriptors, prompts and analysis on Zenodo but supplies no
+record link. Exact-name Zenodo web discovery, GitHub name/paper-ID searches and
+Hugging Face dataset search did not establish an owner release. Its reference
+music is explicitly excluded from redistribution. Defer an entry/helper until
+the promised reusable artifacts and their terms can be verified; the article
+license does not license the absent benchmark package.
+
 ## October 3, 2026: MusicAI background-music release and provenance audit
 
 [MusicAI Background Music × Audio LLM Benchmark](https://huggingface.co/datasets/Elfsong/musicai-background-music-audio-llm-benchmark)
