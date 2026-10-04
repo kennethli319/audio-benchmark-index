@@ -1,5 +1,61 @@
 # Research and release audits
 
+## October 3, 2026: RMS-AQA gated release and two-stage scoring audit
+
+[RMS-AQA](https://arxiv.org/abs/2610.00935) is prioritized for its October 1
+paper, September train/development releases, and inclusion in the official
+[ICASSP 2027 Grand Challenges](https://2027.ieeeicassp.org/sp-grand-challenges/).
+Independent multi-group adoption is not yet established. Canonical name,
+Real-World Multi-Hop Spatial Audio Question Answering alias, paper ID,
+repository, dataset ID, and spatial-task searches found no existing entry.
+STAR-Bench and SpatialSceneQA cover related capabilities; RMS-AQA's domestic
+FOA data and coupled grounding/reasoning protocol are a distinct family.
+Its train/dev/test splits, six categories, and SpatialAug baseline are not
+additional benchmark families.
+
+The [owner project](https://rmsaqachallenge.github.io/) links the
+[dataset](https://huggingface.co/datasets/PeacefulData/RMS-AQA) and
+[baseline repository](https://github.com/rmsaqachallenge/rmsaqa-code).
+Dataset revision `4aa667fe3b516823328d3312638b4b6221344c14` is auto-gated:
+users must disclose contact/affiliation details and review owner conditions.
+The raw README returns HTTP 401 without access; the rendered card and API
+inventory are public. No gate was accepted or bypassed. The complete,
+unpaginated tree agrees with all 89 file names in the metadata. Eight dev
+audio shards and one QA archive total 11,815,285,805 bytes; 77 train audio
+shards and one QA archive total 163,246,085,992 bytes. The full repository
+inventory is 175,061,380,414 bytes. Test files are absent; the announced test
+release is November 24, 2026. The card's 170K training clips/QA pairs and
+5K dev clips/6K QA pairs are owner-reported; gated archive contents, record
+uniqueness, and audio alignment were not inspected.
+
+The [public code snapshot](https://github.com/rmsaqachallenge/rmsaqa-code/tree/0dc3819590274976cf35caf95adab0c715d72bb4)
+provides training, inference, option extraction, and scoring. Static inspection
+confirms that inference feeds the generated Stage-1 response into Stage 2;
+reference Stage-1 answers belong only to training. The metric denominator
+counts paired QA records, and grounded accuracy requires both answers to
+match. Failed option extraction is incorrect. Preserve the scorer's strict
+category names and IDs, including spatial relations at 4 and temporal
+relations at 5; prose lists must not be used to infer numbering. Report all
+three accuracy measures and category results. The supplied evaluator requires
+external AF3 backbone assets and a trained checkpoint. No checkpoints or
+historical per-item predictions are bundled, so public source availability
+does not establish complete reproduction of the paper's model results.
+
+Neither public dataset metadata/card nor the listed files declares a data
+license; unseen gated conditions are not inferred. The code tree has no
+license file and GitHub detects none. Sound-source, room-impulse-response,
+voice, and backbone rights remain separate from access approval. The entry
+therefore records both licenses as `not_specified`.
+
+The safe-default helper fetched four public files totaling 52,693 bytes;
+the README matches its pinned Git blob. Six additional source files were
+inspected as text and matched to Git blobs, without execution. Hub split
+sizes, file-name parity, missing test, and gate metadata were checked.
+No audio, QA archives, weights, credentials, paid services, or license
+acceptance were involved. Bulk retrieval is pinned, split-specific, and
+requires a separate access acknowledgment. The August 29 citation snapshot
+is retained; only an unavailable-count record is added for catalog parity.
+
 ## October 3, 2026: NSV-Shift pilot release and scoring audit
 
 [NSV-Shift](https://arxiv.org/abs/2609.33899) is prioritized for its September

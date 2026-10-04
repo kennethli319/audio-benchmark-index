@@ -21579,6 +21579,91 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: rms_aqa
+    name: RMS-AQA
+    full_name: "RMS-AQA: A Two-Stage Spatial Audio Question Answering Benchmark for Real-World Domestic Environments"
+    qwen_cited_as: null
+    qwen_bucket:
+      - audio_language_model_benchmark
+      - spatial_audio
+    tasks:
+      - sound_event_grounding
+      - spatial_audio_question_answering
+      - temporal_audio_reasoning
+      - grounded_action_prediction
+    official:
+      paper: https://arxiv.org/abs/2610.00935
+      project: https://rmsaqachallenge.github.io/
+      repo: https://github.com/rmsaqachallenge/rmsaqa-code
+      dataset: https://huggingface.co/datasets/PeacefulData/RMS-AQA
+      challenge: https://2027.ieeeicassp.org/sp-grand-challenges/
+    download:
+      access: gated_hugging_face_auto_approval
+      primary:
+        - https://huggingface.co/datasets/PeacefulData/RMS-AQA
+      examples:
+        - 'scripts/download/rms_aqa.sh'
+        - 'RMS_AQA_ACK_ACCESS=1 RMS_AQA_DOWNLOAD_SPLIT=dev scripts/download/rms_aqa.sh'
+      notes: >-
+        October 1, 2026 paper following September train/dev releases; an
+        ICASSP 2027 Grand Challenge. Owner documentation reports 170000
+        synthetic training clips/QA pairs and 5000 development clips with
+        6000 paired questions, mixing simulated and recorded domestic scenes.
+        Train/dev access requires Hub approval and contact disclosure. The
+        hidden 2000-clip/3000-QA test release is planned for November 24, 2026;
+        no test files are present in this snapshot.
+        Four-channel, 24 kHz, ten-second FOA inputs support event grounding
+        followed by six categories of spatial, temporal, counting, and action
+        reasoning. Grounded Stage-2 accuracy credits a QA record only when
+        both stages are correct; also report Stage-1, raw Stage-2, and category
+        scores. During inference, condition Stage 2 on the model's generated
+        Stage-1 response, never the reference answer used during training.
+        Preserve scorer category IDs and names (4 spatial relations, 5 temporal
+        relations) and count extraction failures as incorrect. The pinned
+        release lists 8 dev audio shards plus QA totaling 11815285805 bytes,
+        and 77 train audio shards plus QA totaling 163246085992 bytes.
+        Counts are owner-reported, not independently verified inside gated
+        archives. The helper fetches public metadata and code documentation
+        only by default; a selected split is opt-in after separate approval
+        and authentication. It never accepts terms or extracts archives.
+    access:
+      status: gated_train_and_dev_data_public_baseline_code_test_pending
+      registration_required: true
+      notes: >-
+        Hugging Face requires contact/affiliation disclosure and acceptance
+        of owner conditions for automatic approval. Raw dataset files return
+        HTTP 401 without access; public API inventory remains readable.
+        The hidden 2000-clip/3000-QA test set is scheduled for November 24,
+        2026 and is absent from the audited tree. Public AF3 spatial plug-in
+        training/inference/scoring code requires separately obtained backbone
+        assets and a trained checkpoint; no checkpoint or historical per-item
+        predictions are bundled. Challenge team registration is a separate step.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        No dataset license is declared in public card metadata or the visible
+        card, and no standalone license appears in the listed dataset files.
+        Gated conditions were not accepted or inspected. The public baseline
+        repository has no license file or detected license. Clarify reuse
+        terms with the owners; access approval is not a redistribution or
+        commercial-use grant. Source sound, room-impulse-response, voice,
+        and backbone/model terms remain separate, including the paper's
+        AudioSet, FSD50K, ESC-50, CHiME-Home, FOA-MEIR, METU-SPARG,
+        TAU-SRIR, and ARNI-SRIR sources.
+    sources:
+      - https://arxiv.org/abs/2610.00935
+      - https://arxiv.org/html/2610.00935v1
+      - https://rmsaqachallenge.github.io/
+      - https://2027.ieeeicassp.org/sp-grand-challenges/
+      - https://huggingface.co/datasets/PeacefulData/RMS-AQA
+      - https://huggingface.co/api/datasets/PeacefulData/RMS-AQA/revision/4aa667fe3b516823328d3312638b4b6221344c14
+      - https://huggingface.co/api/datasets/PeacefulData/RMS-AQA/tree/4aa667fe3b516823328d3312638b4b6221344c14?recursive=true&limit=1000
+      - https://github.com/rmsaqachallenge/rmsaqa-code/tree/0dc3819590274976cf35caf95adab0c715d72bb4
+      - https://github.com/rmsaqachallenge/rmsaqa-code/blob/0dc3819590274976cf35caf95adab0c715d72bb4/spatial_af3/metrics.py
+      - https://github.com/rmsaqachallenge/rmsaqa-code/blob/0dc3819590274976cf35caf95adab0c715d72bb4/spatial_af3/evaluation.py
+      - https://github.com/rmsaqachallenge/rmsaqa-code/blob/0dc3819590274976cf35caf95adab0c715d72bb4/spatial_af3/models/spatial_generative.py
+
   - id: nsv_shift
     name: NSV-Shift
     full_name: "NSV-Shift: A Contrastive Benchmark for Non-Speech Vocalization Understanding and Response Adaptation in Speech-to-Speech Models"

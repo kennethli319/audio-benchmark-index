@@ -401,6 +401,7 @@ These scripts are included as helpers, but they need an upstream password,
 generated URL, or manual form step first:
 
 ```bash
+scripts/download/rms_aqa.sh
 scripts/download/turnbench.sh
 COMMON_VOICE_DOWNLOAD_URL='https://...' scripts/download/common_voice.sh
 scripts/download/jvs.sh

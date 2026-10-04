@@ -2571,6 +2571,12 @@
       "paper_url": "https://arxiv.org/abs/2609.33899",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22NSV-Shift%3A+A+Contrastive+Benchmark+for+Non-Speech+Vocalization+Understanding+and+Response+Adaptation+in+Speech-to-Speech+Models%22",
       "paper_title": null
+    },
+    "rms_aqa": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2610.00935",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22RMS-AQA%3A+A+Two-Stage+Spatial+Audio+Question+Answering+Benchmark+for+Real-World+Domestic+Environments%22",
+      "paper_title": null
     }
   }
 }
