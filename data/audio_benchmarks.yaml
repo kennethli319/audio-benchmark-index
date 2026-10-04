@@ -39886,6 +39886,9 @@ benchmarks:
       repo: https://github.com/ddlBoJack/MMAE
       dataset: https://huggingface.co/datasets/BoJack/MMAE
       paper: https://arxiv.org/abs/2606.07229
+      challenge: https://audio-editing-challenge.github.io/
+      leaderboard: https://audio-editing-challenge.github.io/leaderboard/
+      baselines: https://github.com/Audio-Editing-Challenge/Audio-Editing-Challenge-Baseline
     download:
       primary:
         - https://github.com/ddlBoJack/MMAE
@@ -39895,15 +39898,42 @@ benchmarks:
         - 'MMAE_DOWNLOAD_HF=1 scripts/download/mmae.sh'
         - 'MMAE_CLONE_REPO=1 scripts/download/mmae.sh'
       notes: >-
-        The public, ungated release contains 2,000 high-fidelity input samples
-        across sound, speech, music, and mixtures, organized by six complexity
-        levels, two granularities, and eight operation types. Its 17,741
-        rubric criteria evaluate instruction following and context
-        consistency. The helper downloads official documentation and
-        repository metadata by default; cloning the evaluation repository is
-        opt-in, and the Hugging Face API reports approximately 4.43 GB of
-        repository storage, so the audio snapshot requires
-        MMAE_DOWNLOAD_HF=1.
+        The public, ungated June release contains 2,000 samples, 17,741
+        rubrics and 2,185 input WAVs across seven modalities and six complexity
+        levels. The complete Hub tree at 9c5de09799dcabe124f62bc8dd4e5f936709608f
+        totals 5,547,121,285 bytes; Hub usedStorage is not the snapshot size.
+        The helper saves pinned documentation and API metadata by default;
+        full audio and the evaluation-repository clone remain separate opt-ins.
+        The ICASSP 2027 Audio Editing Challenge began October 1, 2026 and is
+        a protocol extension of this family. Its announced November 10 test/SDK
+        release and leaderboard opening are still pending: 500 examples per
+        track, with private rubrics until results are finalized. The public
+        2,000-example set is development material for that challenge, not its
+        hidden test. October 3 rules extend registration to October 8 and the
+        Agent Track component-release cutoff to before November 1. Dates are
+        tentative; consult the official challenge before participating.
+    evaluation:
+      public_release: 2000_samples_17741_rubrics_1003_single_complexity_samples
+      challenge_status: announced_test_and_submission_SDK_not_yet_released
+      track_1: single_end_to_end_model_single_complexity_no_external_models_tools_or_APIs
+      track_2: autonomous_agent_all_complexities_public_research_permissive_components
+      notes: >-
+        Challenge ranking is Overall EMR, then IFR, then CR, separately per
+        track. Qwen3-Omni judges rubrics with three responses and majority
+        voting. The June public scorer averages rubric scores within each
+        sample/category, then averages samples for IFR/CR; this differs from
+        pooling all rubrics. EMR requires every rubric to pass. Keep the
+        default three valid responses, ten-attempt cap and failure records;
+        the implementation passes a rubric with at least two correct replies,
+        even when fewer than three valid replies were obtained. Missing
+        predictions receive zero rubric scores. Preserve the complete chosen
+        cohort and report judge failures; no private challenge scorer or exact
+        frozen judge revision has been verified. September baseline results
+        use different cohorts (1,003 single-model versus 2,000 agent examples)
+        and are not directly comparable. Agent LLM APIs are permitted only
+        for versions with public weights; other models/tools must run locally.
+        The announced common resource limits are not quantified on the track
+        page. Do not infer eligibility from a runnable baseline alone.
     license:
       data: not_specified
       code: MIT
@@ -39911,8 +39941,11 @@ benchmarks:
         The Hugging Face card does not declare a dataset license or identify
         licenses for the source audio. The official GitHub repository has an
         MIT LICENSE for its code, but that must not be assumed to license the
-        benchmark audio. Review source-media rights and obtain clarification
-        before redistribution or commercial use.
+        benchmark audio or the separate challenge baseline. The baseline tree
+        at dd8ab692edf5725fee4de5758d00a57c7d4b26ef has no license file or
+        pyproject license declaration; its software terms remain unspecified.
+        Challenge participation rules do not grant dataset rights. Review
+        source-media, model and service terms before reuse or redistribution.
     sources:
       - https://arxiv.org/abs/2606.07229
       - https://github.com/ddlBoJack/MMAE
@@ -39922,6 +39955,18 @@ benchmarks:
       - https://huggingface.co/datasets/BoJack/MMAE
       - https://huggingface.co/datasets/BoJack/MMAE/raw/main/README.md
       - https://huggingface.co/api/datasets/BoJack/MMAE
+      - https://audio-editing-challenge.github.io/
+      - https://audio-editing-challenge.github.io/leaderboard/
+      - https://audio-editing-challenge.github.io/track1/
+      - https://audio-editing-challenge.github.io/track2/
+      - https://audio-editing-challenge.github.io/faqs/
+      - https://github.com/Audio-Editing-Challenge/audio-editing-challenge.github.io/tree/ed28e4637e26cd309f294355c77b06c124408918
+      - https://github.com/Audio-Editing-Challenge/Audio-Editing-Challenge-Baseline/tree/dd8ab692edf5725fee4de5758d00a57c7d4b26ef
+      - https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/eval/core/report.py
+      - https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/eval/core/rubric.py
+      - https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/eval/score.py
+      - https://huggingface.co/api/datasets/BoJack/MMAE/tree/9c5de09799dcabe124f62bc8dd4e5f936709608f?recursive=true&expand=false
+      - https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/MMAE-meta.json
 
   - id: video_salmonn2_caption
     name: video-SALMONN 2 Caption Benchmark

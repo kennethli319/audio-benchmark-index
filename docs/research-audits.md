@@ -1,5 +1,79 @@
 # Research and release audits
 
+## October 3, 2026: MMAE challenge protocol and download-size correction
+
+The [ICASSP 2027 Audio Editing Challenge](https://audio-editing-challenge.github.io/)
+began October 1 and published an October 3 rules update. Its September 11
+[baseline release](https://github.com/Audio-Editing-Challenge/Audio-Editing-Challenge-Baseline)
+and new evaluation protocol make this a timely correction to MMAE. Canonical
+name, challenge title, June paper `2606.07229`, owner repositories, dataset and
+audio-editing tasks all map to the existing family. Both tracks and AuK/SAM-Audio
+baselines are not additional benchmark families. Independent multi-group adoption
+or new citation momentum was not established; prioritization rests on the recent
+official announcement and materially changed access/protocol guidance.
+
+The [challenge site snapshot](https://github.com/Audio-Editing-Challenge/audio-editing-challenge.github.io/tree/ed28e4637e26cd309f294355c77b06c124408918)
+separates the June public development resource from the future challenge tests.
+November 10 is the announced release of inputs/instructions, submission SDK and
+leaderboard, with 500 examples per track. Rubrics stay private until results are
+finalized. No hidden tests or SDK were verified as released. Registration is
+extended to October 8 at 11:59 PM U.S. Pacific Time; Agent Track model versions
+and weights must be public before November 1. Dates remain tentative. No form,
+registration, submission or access request was sent.
+
+[Track 1](https://audio-editing-challenge.github.io/track1/) permits a single
+end-to-end model on the single-complexity subset, with no external inference
+models/tools/APIs. [Track 2](https://audio-editing-challenge.github.io/track2/)
+covers all complexities and requires public research-permissive components.
+Its LLM-only API exception requires public corresponding weights; other models
+and tools run locally. Resource-envelope limits are promised but not quantified
+on that page. The [September baseline README](https://github.com/Audio-Editing-Challenge/Audio-Editing-Challenge-Baseline/blob/dd8ab692edf5725fee4de5758d00a57c7d4b26ef/README.md)
+reports local results on 1,003 versus 2,000 examples, so the two rows are not a
+matched-cohort comparison or hidden-test leaderboard results. The complete
+baseline tree has no license file, and its pyproject has no license declaration.
+The original evaluator's MIT license does not cover that separate repository.
+
+The ungated [Hub snapshot](https://huggingface.co/datasets/BoJack/MMAE/tree/9c5de09799dcabe124f62bc8dd4e5f936709608f)
+contains 2,194 files totaling 5,547,121,285 bytes, including 2,185 WAVs totaling
+5,534,594,824 bytes. The complete paginated tree matches all API siblings.
+The old approximately 4.43 GB estimate used Hub `usedStorage`, a different
+storage scope, rather than current file sizes. The dataset card still has no
+data license; source-media terms remain unresolved. Challenge eligibility rules
+do not grant rights to the recordings or license an absent future test set.
+
+The [public JSON metadata](https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/MMAE-meta.json)
+has 2,000 unique IDs, 17,741 rubrics (7,158 instruction-following and 10,583
+consistency), seven modalities and six complexity classes: 1,003 single,
+226 multi-instruction, 200 multi-part, 200 multi-hop, 193 multi-round and
+178 multi-audio. Its 2,377 audio references resolve to all 2,185 unique Hub WAV
+paths. These checks establish metadata/path consistency, not audio contents,
+acoustic correctness, provenance rights or private-test disjointness.
+
+The challenge ranks EMR, then IFR, then CR independently by track. Source review
+of the pinned [public reporter](https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/eval/core/report.py)
+establishes that IFR/CR are means of within-sample category means, not pooled
+rubric accuracy; EMR requires every rubric in the sample to pass. The
+[rubric scorer](https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/eval/core/rubric.py)
+collects three valid replies with at most ten attempts by default, deterministically
+shuffles choices while keeping the final option fixed, and passes with at least
+two correct replies even if fewer than three valid replies arrive. The
+[runner](https://github.com/ddlBoJack/MMAE/blob/65c06372aa3f4bfd5a6131be0078de10377200a0/eval/score.py)
+gives missing predictions zero rubric scores. Keep complete cohort accounting
+and publish judge errors/coverage alongside scores. No model or upstream code
+was executed, and the private challenge scorer/exact frozen judge revision
+remain unverified; do not assume every June implementation detail is final.
+
+The helper now saves pinned benchmark/challenge documentation in a dated
+metadata directory to avoid reusing older cached cards, while preserving the
+existing explicit audio/clone opt-ins. Its default fetches no media, model,
+executable source, private test or submission SDK. The opt-in audio fetch still
+uses current Hub main, so the audited size is a snapshot, not a future guarantee.
+Fourteen research text/metadata files matched pinned Git blob identities. A live
+default-helper run saved 11 files totaling 179,639 bytes, with all nine downloaded
+repository text files matching their pinned Git blobs. The
+August 29 citation snapshot is retained: this focused protocol correction does
+not justify a bulk citation refresh or a new family/count record.
+
 ## October 3, 2026: VoiceMOS 2026 completed release and track-specific access
 
 The [September 12 summary paper](https://arxiv.org/abs/2609.13792) and

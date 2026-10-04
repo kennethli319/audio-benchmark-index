@@ -822,8 +822,9 @@ REALMAN_DOWNLOAD_HF=1 scripts/download/realman.sh
 # by default. Clone the approximately 31 MB simulator/input repository explicitly.
 FORESTIR_CLONE_REPO=1 scripts/download/forestir.sh
 
-# MMAE downloads official docs/metadata by default; the approximately 4.43 GB
-# Hugging Face audio snapshot and the evaluation-repo clone are separate opt-ins.
+# MMAE downloads pinned benchmark/challenge docs and metadata by default.
+# The audited Hub snapshot is about 5.55 GB; audio and the evaluator clone are
+# separate opt-ins. The November 10 challenge test/SDK release is still pending.
 MMAE_DOWNLOAD_HF=1 scripts/download/mmae.sh
 MMAE_CLONE_REPO=1 scripts/download/mmae.sh
 
