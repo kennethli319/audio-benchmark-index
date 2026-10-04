@@ -21579,6 +21579,95 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: artifactbench
+    name: ArtifactBench
+    full_name: "ArtifactBench: Lineage-Aware Evaluation of AI-Generated Music Detectors under Distribution Shift"
+    qwen_cited_as: null
+    qwen_bucket:
+      - music_understanding
+      - audio_deepfake_detection
+    tasks:
+      - machine_generated_music_detection
+      - cross_generator_robustness
+      - inference_coverage_evaluation
+      - lineage_aware_detector_comparison
+    official:
+      paper: https://arxiv.org/abs/2609.23550
+      repo: https://github.com/Intrect-io/artifactbench
+      dataset: https://huggingface.co/datasets/intrect/artifactbench
+    download:
+      access: public_metadata_and_results_upstream_audio_separate
+      primary:
+        - https://huggingface.co/datasets/intrect/artifactbench/tree/main/v2
+        - https://github.com/Intrect-io/artifactbench
+      examples:
+        - 'scripts/download/artifactbench.sh'
+      notes: >-
+        September 20, 2026 paper and released v2 protocol; the pinned Hub
+        snapshot was last modified September 23. The 1645409-byte v2 package
+        contains metadata and results only: 828 unique tracks (605 AI, 223
+        real) across 15 source strata, partitioned into 166 calibration,
+        83 validation, and 579 test entries. All 828 released lineage IDs
+        are unique and split-disjoint. No new audio bundle is supplied.
+        Acquire upstream recordings separately and bind exact file SHA-256
+        digests with the owner script; hashes alone do not establish access.
+        Retrieval fields give 310 AIME digest matches, 150 FMA archive IDs,
+        295 Suno/Udio digest-only references, and 73 web-source references.
+        Full audio availability and fresh inference were not verified.
+        The helper fetches pinned documentation, manifest, per-track license
+        notices, probabilities, failures, metrics, and checksums only; it
+        neither downloads legacy audio shards or weights nor runs owner code.
+        Choose thresholds on calibration only under a 5-percent FPR ceiling;
+        validation cannot retune them. Keep all 579 test attempts in coverage
+        reporting and distinguish the 562 common-success paired test IDs.
+        Preserve source-level metrics, chunk-failure policy, and sensitivity
+        analyses rather than comparing historical v1/v1.1 tables with v2.
+    access:
+      status: public_metadata_results_and_runner_audio_reconstruction_limited
+      registration_required: false
+      notes: >-
+        Select thresholds on calibration only by maximizing TPR under FPR
+        <= 5 percent, choosing the lowest threshold on ties; validation is
+        diagnostic. Preserve the frozen test IDs, source strata, coverage,
+        and 2000 lineage-bootstrap intervals. Paired comparisons use the
+        562 test IDs successfully scored by all four published baselines,
+        not the full 579 attempted test entries. ArtifactNet has 17 test
+        failures; keep failures separate and report the failure-as-error
+        sensitivity. Its primary policy needs at least four finite scores
+        from seven fixed chunks; the strict any-non-finite policy is separate.
+        CLAM's calibrated threshold is above 1.0; report AUROC and native
+        0.5-threshold results alongside the degenerate operating point.
+        v1/v1.1 audio, counts, splits, and result tables are historical
+        versions of this family, not interchangeable with v2. ArtifactNet
+        is a detector, not another benchmark; full training-overlap exclusion
+        and hybrid human-AI production are not established by this protocol.
+    license:
+      data: CC-BY-NC-4.0_metadata_and_results_only_with_mixed_upstream_audio_terms
+      code: MIT
+      audio: mixed_upstream_terms_independent_acquisition_required
+      notes: >-
+        v2/LICENSES.md explicitly covers benchmark-authored metadata and
+        results only. The runner's MIT license grants no rights to audio,
+        weights, platform content, or third-party metadata. The released
+        FMA map covers 150 tracks with mixed notices, including noncommercial,
+        share-alike, no-derivatives, and one blank license string; clarify
+        unresolved rights with the original source. Suno, Udio, YouTube,
+        AIME, and model/encoder terms remain separate. Public metadata does
+        not authorize scraping, bypassing access gates, or redistribution.
+    sources:
+      - https://arxiv.org/abs/2609.23550
+      - https://arxiv.org/html/2609.23550v1
+      - https://github.com/Intrect-io/artifactbench
+      - https://raw.githubusercontent.com/Intrect-io/artifactbench/cebde51aa1cf713401930136c7095cb313acb2ac/LICENSE
+      - https://raw.githubusercontent.com/Intrect-io/artifactbench/cebde51aa1cf713401930136c7095cb313acb2ac/NOTICE.md
+      - https://raw.githubusercontent.com/Intrect-io/artifactbench/cebde51aa1cf713401930136c7095cb313acb2ac/scripts/analyze_frozen_protocol.py
+      - https://raw.githubusercontent.com/Intrect-io/artifactbench/cebde51aa1cf713401930136c7095cb313acb2ac/scripts/bind_audio_root.py
+      - https://huggingface.co/datasets/intrect/artifactbench/blob/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2/README.md
+      - https://huggingface.co/datasets/intrect/artifactbench/blob/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2/LICENSES.md
+      - https://huggingface.co/datasets/intrect/artifactbench/resolve/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2/artifactbench_v2_primary_manifest.json
+      - https://huggingface.co/datasets/intrect/artifactbench/resolve/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2/results/frozen_protocol_metrics.json
+      - https://huggingface.co/api/datasets/intrect/artifactbench/tree/73f0f61d4ecf68ccb141c941a958a56f14677ba5?recursive=true&limit=1000
+
   - id: cose_e
     name: CoSE-E
     full_name: "CoSE-E: A Benchmark for Code-switched Speech Evaluation in Enterprise Settings"

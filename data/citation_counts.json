@@ -2583,6 +2583,12 @@
       "paper_url": "https://arxiv.org/abs/2609.35645",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22CoSE-E%3A+A+Benchmark+for+Code-switched+Speech+Evaluation+in+Enterprise+Settings%22",
       "paper_title": null
+    },
+    "artifactbench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2609.23550",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22ArtifactBench%3A+Lineage-Aware+Evaluation+of+AI-Generated+Music+Detectors+under+Distribution+Shift%22",
+      "paper_title": null
     }
   }
 }

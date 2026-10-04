@@ -1,5 +1,72 @@
 # Research and release audits
 
+## October 3, 2026: ArtifactBench v2 metadata, access, and protocol audit
+
+[ArtifactBench](https://arxiv.org/abs/2609.23550) is prioritized for its
+September 20 paper and inspectable frozen music-detector evaluation protocol.
+Independent multi-group adoption is not established. Canonical name, v1/v1.1/v2
+aliases, full title, paper ID, owner repository/dataset, and music-detection
+searches found no existing family. M6 and MixFake use different cohorts/tasks;
+FMA is an upstream source, not an alias. ArtifactNet is a detector. Historical
+ArtifactBench releases remain one family and must not be pooled with v2.
+
+The [ungated Hub snapshot](https://huggingface.co/datasets/intrect/artifactbench/tree/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2)
+was last modified September 23. Its complete file tree agrees with API metadata.
+The 20 v2 files total 1,645,409 bytes, all metadata or results. All 19 checksums
+in `CHECKSUMS.sha256` and all 20 Git blob IDs match downloaded bytes. The
+manifest SHA-256 is `db04f24efb1d00ef20d12fc329d8d018ceb130401386e0afe334830fc98f7f14`.
+It contains 828 unique track IDs, audio hashes, and lineage IDs, with 605 AI
+and 223 real entries in 15 source strata. The 166 calibration, 83 validation,
+and 579 test assignments are lineage-disjoint; label counts are respectively
+121/45, 61/22, and 423/156. These checks verify released metadata, not audio
+identity, perceptual duplication, or independence from every model's training.
+
+No new audio is released. Retrieval fields contain 310 AIME digest matches,
+150 FMA archive IDs, 295 Suno/Udio digest-only references, and 73 web-source
+references. The latter 368 entries do not provide independently sufficient
+retrieval paths. The [owner binding script](https://github.com/Intrect-io/artifactbench/blob/cebde51aa1cf713401930136c7095cb313acb2ac/scripts/bind_audio_root.py)
+requires exact file SHA-256 matches in separately acquired local audio and exits
+with status 2 if any are missing. A released protocol and replayable results do
+not establish full fresh-inference reproducibility. The Hub's legacy audio
+shards, train-named viewer, and differing v1 counts must not be mistaken for the
+v2 cohort. No audio, legacy shards, checkpoints, or source archives were fetched.
+
+The [released raw results and metrics](https://huggingface.co/datasets/intrect/artifactbench/tree/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2/results)
+account for all 828 IDs in each baseline with disjoint successes/failures.
+ArtifactNet has 804 scores and 24 failures overall, including 562 successes
+and 17 failures on test; the other three baselines score all 579 test entries.
+Their common-success test intersection matches the 562 published IDs. An
+independent standard-library check reproduces each calibration-selected
+threshold and paired confusion matrix from raw probabilities; full inference,
+AUROC/AUPRC, and bootstrap intervals were not independently recomputed.
+
+The [analysis source](https://github.com/Intrect-io/artifactbench/blob/cebde51aa1cf713401930136c7095cb313acb2ac/scripts/analyze_frozen_protocol.py)
+maximizes calibration TPR subject to FPR <= 5%, choosing the lowest threshold
+on ties. Validation does not retune it. Report coverage on all attempted test
+items alongside metrics on common successful IDs, source strata, 2,000
+lineage-bootstrap intervals, and the failure-as-error sensitivity. ArtifactNet
+uses the median of finite scores from seven fixed chunks only when at least
+four are valid; its strict any-non-finite policy is separate. CLAM's selected
+threshold is above 1.0, so its degenerate operating point needs native-threshold
+and ranking metrics. These results do not address hybrid human-AI production
+or establish universal detector rankings.
+
+The [v2 license](https://huggingface.co/datasets/intrect/artifactbench/blob/73f0f61d4ecf68ccb141c941a958a56f14677ba5/v2/LICENSES.md)
+is explicitly CC BY-NC 4.0 for benchmark-authored metadata/results. Code at
+revision `cebde51aa1cf713401930136c7095cb313acb2ac` is MIT; neither covers
+upstream recordings, platform content, third-party metadata, or weights.
+The FMA notice map covers exactly the manifest's 150 FMA IDs and includes
+noncommercial, share-alike, no-derivatives, and one blank license string.
+Owner notices are provenance, not an independent upstream-rights audit.
+Review each original source and model's terms separately. The code README's
+pending-arXiv citation text is stale; the published benchmark paper and Hub
+card supply the correct identifier, distinct from the ArtifactNet model paper.
+
+The helper uses an explicit pinned allowlist for the 20 v2 files and three
+runner documents, checks every published v2 SHA-256, and never executes owner
+code. Metadata and result inspection is the scope of this audit; credentials,
+license acceptance, gated access, and paid inference are unnecessary.
+
 ## October 3, 2026: CoSE-E public data and protocol-scope audit
 
 [CoSE-E](https://arxiv.org/abs/2609.35645) is prioritized for its September 28
