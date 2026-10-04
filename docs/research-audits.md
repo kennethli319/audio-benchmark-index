@@ -1,5 +1,51 @@
 # Research and release audits
 
+## October 3, 2026: VoxMem release and controlled-context audit
+
+[VoxMem](https://arxiv.org/abs/2609.32607) is prioritized for its September 26
+announcement and reusable multi-session audio-memory protocol. The
+[owner project](https://swagshaw.github.io/voxmem/) links both the
+[dataset](https://huggingface.co/datasets/AudioMemory/voxmembench) and
+[runner/scorer](https://github.com/swagshaw/voxmem). Canonical name, VoxMemBench
+alias, paper ID, dataset ID, repository, and task checks found no duplicate.
+Vox-Infinity, AudioMarathon, ContextDialog, and MultiChallenge Audio are distinct
+families; the four lengths and sixteen evidence-specific configurations are
+views of one VoxMem family, not twenty benchmarks.
+
+The ungated data revision `b1345132ca4d10988b0bd2c9e0afc5c0a9efa3a6` declares
+version 1.0.0. Its cohort manifest independently verifies 669 distinct question
+families, 669 answerable and 130 refusal questions, and 799 unique question IDs.
+Published statistics repeat those questions at four lengths for 3,196 items.
+The complete paginated Hub tree verifies 90 Parquet shards, matching the
+per-configuration counts and 64,394,412,457 audio-bearing bytes in statistics;
+all files total 64,394,554,149 bytes. The card labels binary-size figures as GB;
+this index uses decimal bytes (about 64.4 GB). Shards and audio were not fetched,
+so row-level audio, nesting, and semantic correctness were not independently
+verified. The train-named split is evaluation data with public gold annotations.
+
+The card documents four non-nesting latest-state questions: `q_00154`,
+`q_00158`, `q_00365`, and `q_00645`; exclude them from strict paired length
+sweeps. It also identifies sixteen answerable questions without same-key
+haystacks as controls. These caveats qualify the paper's general nesting claim.
+The MIT owner code at `9adc4e4d357e7640332bb7693b86d33c63a27872` supplies
+inference, adapter, judge, and metric implementations. Code inspection confirms
+that candidates receive user audio, assistant text, and timestamps, not user
+transcripts. Report answerable and refusal accuracy separately, enable the
+abstention prompt for refusal, and retain native/folded prompt delivery and
+ungraded counts. The text judge has no audio/history access. Exact-match
+fallback covers only selected answer types and is not the paper metric.
+Historical per-item predictions were not found in either audited tree.
+
+The dataset LICENSE declares CC BY-NC 4.0, separate from the code's MIT license.
+Source metadata verifies 30 VCTK reference-speaker records and 45 ESC-50 clips:
+23 CC BY, 14 CC0, five CC BY-NC, and three CC Sampling Plus. Preserve source
+attribution and restrictions, generated-voice rights, and synthesis-model terms.
+The helper downloads pinned cards/licenses, cohort/source metadata, and prompts;
+it never retrieves shards, executes upstream code, installs dependencies,
+accepts terms, or calls paid services. Git blob hashes of audited text artifacts
+match their pinned trees. Citation counts remain on the existing August 29
+snapshot; only an unavailable record is added for ID parity.
+
 ## October 3, 2026: Duplex Cue public subset and recent release deferrals
 
 [Duplex Cue](https://huggingface.co/datasets/besimple-ai/duplex-cue) is

@@ -23,6 +23,7 @@ huggingface-cli login
 ## CLI Supported
 
 ```bash
+scripts/download/voxmem.sh
 scripts/download/duplex_cue.sh
 scripts/download/wildsongbench.sh
 scripts/download/mmau.sh

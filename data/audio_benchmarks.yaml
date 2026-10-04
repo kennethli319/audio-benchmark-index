@@ -21579,6 +21579,83 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: voxmem
+    name: VoxMem
+    full_name: "VoxMem: Benchmarking Multimodal Memory in Large Audio Language Models"
+    qwen_cited_as: null
+    qwen_bucket: speech_dialogue
+    tasks:
+      - multi_session_spoken_memory
+      - speaker_identity_reasoning
+      - paralinguistic_memory
+      - environmental_sound_memory
+      - temporal_evolution_tracking
+      - evidence_based_answer_refusal
+    official:
+      paper: https://arxiv.org/abs/2609.32607
+      project: https://swagshaw.github.io/voxmem/
+      repo: https://github.com/swagshaw/voxmem
+      dataset: https://huggingface.co/datasets/AudioMemory/voxmembench
+    download:
+      access: public_ungated_hugging_face
+      primary:
+        - https://huggingface.co/datasets/AudioMemory/voxmembench
+      examples:
+        - 'scripts/download/voxmem.sh'
+      notes: >-
+        September 26, 2026 paper; public version 1.0.0 contains 799 English
+        questions at four reference context budgets (8K, 16K, 32K, 64K), for
+        3196 items. Speech semantics, speaker identity, vocal delivery, and
+        environmental sound cross four memory operations in 15 occupied cells.
+        User history turns and the final question are audio; assistant turns
+        and session timestamps are text. Do not expose user transcripts or
+        gold/evidence annotations to the candidate model. The train-named Hub
+        split is the public evaluation set, not a separate training corpus.
+        Score 2676 answerable and 520 refusal items separately, with breakdowns
+        by context length and evidence/operation cell. Enable the abstention
+        prompt for refusal scoring and record native versus folded system
+        prompt delivery. Open-answer equivalence uses a text-only LLM judge;
+        the exact-match fallback is only a smoke check. Report ungraded counts.
+        Exclude q_00154, q_00158, q_00365, and q_00645 from strict nested-history
+        comparisons, as the card documents exceptions. Sixteen answerable
+        questions lack same-key distractors and should be identified as controls.
+        The pinned release has 90 Parquet shards totaling 64394412457 bytes;
+        context/evidence configurations overlap and are not extra families.
+        The helper fetches only pinned documentation, licensing, cohort/source
+        metadata, and judge prompts. Audio, model weights, code execution,
+        installation, and paid evaluation remain outside the helper.
+    access:
+      status: public_ungated_data_and_evaluation_code
+      registration_required: false
+      notes: >-
+        All annotations are public; no hidden split or submission server.
+        Public owner code supplies runners, adapters, and scoring; historical
+        per-item model predictions were not found in the audited release.
+        Streaming still transfers audio; it is not a metadata-only preview.
+    license:
+      data: CC-BY-NC-4.0
+      code: MIT
+      notes: >-
+        Dataset LICENSE declares noncommercial use and attribution to VCTK
+        0.92 (CC BY 4.0) and ESC-50 (CC BY-NC 3.0). Source metadata lists 30
+        voice-cloned reference speakers and 45 environmental clips, including
+        five CC BY-NC and three CC Sampling Plus clips. Preserve individual
+        source terms, attribution, generated-voice rights, and synthesis-model
+        conditions; the dataset grant does not replace them. The separate
+        GitHub MIT license covers software, not audio or source recordings.
+    sources:
+      - https://arxiv.org/abs/2609.32607
+      - https://arxiv.org/html/2609.32607v1
+      - https://swagshaw.github.io/voxmem/
+      - https://github.com/swagshaw/voxmem/tree/9adc4e4d357e7640332bb7693b86d33c63a27872
+      - https://github.com/swagshaw/voxmem/blob/9adc4e4d357e7640332bb7693b86d33c63a27872/LICENSE
+      - https://huggingface.co/datasets/AudioMemory/voxmembench/blob/b1345132ca4d10988b0bd2c9e0afc5c0a9efa3a6/README.md
+      - https://huggingface.co/datasets/AudioMemory/voxmembench/blob/b1345132ca4d10988b0bd2c9e0afc5c0a9efa3a6/LICENSE
+      - https://huggingface.co/datasets/AudioMemory/voxmembench/blob/b1345132ca4d10988b0bd2c9e0afc5c0a9efa3a6/metadata/cohort_manifest.json
+      - https://huggingface.co/datasets/AudioMemory/voxmembench/blob/b1345132ca4d10988b0bd2c9e0afc5c0a9efa3a6/metadata/statistics.json
+      - https://huggingface.co/datasets/AudioMemory/voxmembench/blob/b1345132ca4d10988b0bd2c9e0afc5c0a9efa3a6/metadata/environmental_sources.json
+      - https://huggingface.co/api/datasets/AudioMemory/voxmembench
+
   - id: duplex_cue
     name: Duplex Cue
     full_name: "Continue, Adapt, or Yield: In-Turn Adaptation to Overlapping Speech in Full-Duplex Agents"
