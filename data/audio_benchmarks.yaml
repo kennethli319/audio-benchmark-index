@@ -21579,6 +21579,80 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: cose_e
+    name: CoSE-E
+    full_name: "CoSE-E: A Benchmark for Code-switched Speech Evaluation in Enterprise Settings"
+    qwen_cited_as: null
+    qwen_bucket: automatic_speech_recognition
+    tasks:
+      - automatic_speech_recognition
+      - code_switched_speech_recognition
+      - enterprise_transcription_semantic_fidelity
+      - answer_error_rate_evaluation
+    official:
+      paper: https://arxiv.org/abs/2609.35645
+      dataset: https://huggingface.co/datasets/ServiceNow-AI/asr_codeswitched
+    download:
+      access: public_ungated_hugging_face
+      primary:
+        - https://huggingface.co/datasets/ServiceNow-AI/asr_codeswitched
+      examples:
+        - 'scripts/download/cose_e.sh'
+      notes: >-
+        September 28, 2026 paper describing a public dataset snapshot last
+        modified July 21; do not label September as a new data release.
+        Card metadata reports 1212 test records: English paired with German
+        (173), Spanish (259), French (298), Canadian French (188), and
+        Mandarin (294). Five Parquet files total 713847034 bytes. Released
+        schemas include mixed and parallel transcripts, voice, audio, token
+        language labels, questions, expected answers, and source IDs. Only
+        the Mandarin configuration additionally declares monolingual audio
+        fields and gpt_41_answers; do not infer equivalent audio baselines
+        for the other four configurations. Counts are owner-reported;
+        record uniqueness, QA alignment, and audio were not inspected.
+        The helper fetches only the pinned card and public API metadata/tree.
+        Review unspecified reuse terms before separately obtaining media.
+        No standalone scorer was located. Follow the paper's fixed QA/judge
+        protocol for AER, a proxy rather than agent task completion. Preserve
+        per-utterance WER averaging, Mandarin segmentation/normalization,
+        and judge-failure denominators when comparing results.
+    access:
+      status: public_test_data_paper_protocol_no_standalone_scorer_located
+      registration_required: false
+      notes: >-
+        Synthetic HR/IT-service-management speech uses ten ElevenLabs voices.
+        Answer Error Rate compares answers from reference and ASR transcripts
+        over three fixed questions per utterance; it is a task-success proxy,
+        not end-to-end agent completion. The paper uses Gemma-4-31B-IT for
+        question generation/alignment and GPT-4.1 for answering. Preserve
+        released questions, reference-answer provenance, and judge settings.
+        Report AER, semantic WER, and mean per-utterance WER by language pair;
+        Mandarin also needs CER, jieba segmentation, and OpenCC
+        Traditional-to-Simplified normalization. Account for failed judges
+        and differing valid denominators. ASR uses automatic language
+        detection without explicit language IDs. Paper prompts are public,
+        but no benchmark-specific executable scorer or full historical
+        predictions were located. Single-vendor synthetic speech does not
+        establish noisy, spontaneous, or telephony performance.
+    license:
+      data: not_specified
+      code: not_applicable_no_standalone_code_release_located
+      notes: >-
+        The pinned card contains schema/configuration metadata only, with no
+        license declaration; the complete seven-file tree has no license file.
+        Public access and the article's CC BY 4.0 license do not establish
+        benchmark reuse rights. Clarify transcript, annotation, generated-voice,
+        and redistribution terms with the owner; ElevenLabs output/voice and
+        model or judge service terms remain separate. Pipecat's cited SWER
+        implementation is a component reference, not a CoSE-E code license.
+    sources:
+      - https://arxiv.org/abs/2609.35645
+      - https://arxiv.org/html/2609.35645v1
+      - https://huggingface.co/datasets/ServiceNow-AI/asr_codeswitched
+      - https://huggingface.co/datasets/ServiceNow-AI/asr_codeswitched/raw/82bf4b49499bcaa6f4cf6a67bebfab3ee2affcbb/README.md
+      - https://huggingface.co/api/datasets/ServiceNow-AI/asr_codeswitched/revision/82bf4b49499bcaa6f4cf6a67bebfab3ee2affcbb
+      - https://huggingface.co/api/datasets/ServiceNow-AI/asr_codeswitched/tree/82bf4b49499bcaa6f4cf6a67bebfab3ee2affcbb?recursive=true&limit=1000
+
   - id: rms_aqa
     name: RMS-AQA
     full_name: "RMS-AQA: A Two-Stage Spatial Audio Question Answering Benchmark for Real-World Domestic Environments"

@@ -23,6 +23,7 @@ huggingface-cli login
 ## CLI Supported
 
 ```bash
+scripts/download/cose_e.sh
 scripts/download/nsv_shift.sh
 scripts/download/voxmem.sh
 scripts/download/duplex_cue.sh

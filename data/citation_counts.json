@@ -2577,6 +2577,12 @@
       "paper_url": "https://arxiv.org/abs/2610.00935",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22RMS-AQA%3A+A+Two-Stage+Spatial+Audio+Question+Answering+Benchmark+for+Real-World+Domestic+Environments%22",
       "paper_title": null
+    },
+    "cose_e": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2609.35645",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22CoSE-E%3A+A+Benchmark+for+Code-switched+Speech+Evaluation+in+Enterprise+Settings%22",
+      "paper_title": null
     }
   }
 }

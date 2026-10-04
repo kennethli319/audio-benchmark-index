@@ -1,5 +1,52 @@
 # Research and release audits
 
+## October 3, 2026: CoSE-E public data and protocol-scope audit
+
+[CoSE-E](https://arxiv.org/abs/2609.35645) is prioritized for its September 28
+paper and reusable enterprise code-switching evaluation data. Independent
+multi-group adoption is not established. The
+[owner dataset](https://huggingface.co/datasets/ServiceNow-AI/asr_codeswitched)
+at revision `82bf4b49499bcaa6f4cf6a67bebfab3ee2affcbb` was last modified
+July 21, 2026; the paper date is not a new dataset release date. Searches for
+CoSE-E/COSE-E, the full title, paper ID, dataset ID, and code-switching task
+found no duplicate. WSYue-ASR-eval and Kazakh-Russian KSC2 cover different
+speech sources; SpeechJBB's code-switched jailbreaks test safety. The five
+CoSE-E language configurations are one family. The cited Pipecat SWER
+component and EVA-bench paper do not establish aliases or a released CoSE-E
+evaluation harness.
+
+The ungated Hub metadata and complete unpaginated tree agree on seven files:
+the card, Git attributes, and five test Parquets totaling 713,847,034 bytes
+(713,853,077 bytes for the full snapshot). The card reports 173 German,
+259 Spanish, 298 French, 188 Canadian French, and 294 Mandarin records,
+each paired with English, totaling 1,212. All configurations declare audio,
+parallel/mixed transcripts, token-language labels, questions, expected
+answers, voices, and IDs. Only Mandarin declares `gpt_41_answers` and two
+monolingual-audio fields. Consequently, the paper's cross-language
+monolingual-audio comparisons are not fully established by the released
+schemas. Row contents, ID uniqueness, QA alignment, and audio correctness
+were not inspected. Card bytes match Git blob
+`48fd7d9552cb300121fe4ec74d9ce5830aadbb19`.
+
+The [paper protocol](https://arxiv.org/html/2609.35645v1) provides generation,
+answering, and judging prompts. AER measures answer divergence after ASR,
+not actual agent task completion. Reproduction requires the frozen questions,
+reference-answer provenance, exact judge configuration, language-specific
+normalization, and reporting of judge failures. Mean per-utterance WER
+must not silently become corpus WER. The catalog records the Mandarin
+segmentation/CER distinction and single-vendor synthetic-audio limitation.
+No standalone owner scorer or full historical predictions were located in
+the paper links, dataset tree, or targeted GitHub searches; the dataset-ID
+search's unrelated Indic ASR repository is not an official implementation.
+
+No dataset license is declared in the card/API or listed files. Article
+CC BY 4.0 and component-code terms do not license these artifacts. Owner
+clarification is needed for reuse; internal source transcripts and generated
+voice/output rights remain separate. The metadata-only helper retrieves
+three files totaling 10,160 bytes without media, weights, code execution, credentials,
+paid services, or license acceptance. The August 29 citation snapshot is
+retained, with only an unavailable-count entry added for catalog parity.
+
 ## October 3, 2026: RMS-AQA gated release and two-stage scoring audit
 
 [RMS-AQA](https://arxiv.org/abs/2610.00935) is prioritized for its October 1
