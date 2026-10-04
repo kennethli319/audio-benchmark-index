@@ -406,6 +406,8 @@ These scripts are included as helpers, but they need an upstream password,
 generated URL, or manual form step first:
 
 ```bash
+# Candor-LR: pinned metadata only; obtain corpus license and aligned transcripts separately.
+scripts/download/candor_lr.sh
 scripts/download/vaani_noise_event.sh
 scripts/download/rms_aqa.sh
 scripts/download/turnbench.sh

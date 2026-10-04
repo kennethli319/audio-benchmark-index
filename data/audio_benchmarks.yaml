@@ -21584,6 +21584,69 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: candor_lr
+    name: Candor-LR
+    full_name: "Candor-LR: A Dyadic Conversational Dataset for Audio-Visual Speech Recognition"
+    qwen_bucket: audio_visual_speech
+    tasks:
+      - audio_visual_speech_recognition
+      - visual_speech_recognition
+      - conversational_asr
+      - noise_robust_speech_recognition
+    official:
+      paper: https://arxiv.org/abs/2609.10394
+      repo: https://github.com/rishabhjain16/lipreading-data-guide/tree/main/Candor
+      dataset: https://www.betterup.com/research/candor-research
+    download:
+      access: public_preparation_and_split_ids_manual_source_corpus_license
+      primary:
+        - https://github.com/rishabhjain16/lipreading-data-guide/tree/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor
+        - https://www.betterup.com/research/candor-research
+      examples:
+        - 'scripts/download/candor_lr.sh'
+      notes: >-
+        September 9, 2026 paper; reusable preparation protocol and fixed
+        session lists, not a redistributed audiovisual dataset. The paper
+        reports 718648/10304/58718 train/validation/test utterances and
+        713.5/10.1/60.1 hours. The pinned lists independently contain
+        1552/22/82 unique, mutually disjoint session IDs. Obtain licensed
+        CANDOR media and the matching Speechmatics word-aligned transcripts
+        separately; their availability and exact processed counts were not
+        verified. The helper fetches only pinned documentation, tree and ID
+        lists, then exits with manual-access status 2. It does not request
+        access, accept terms, fetch media, or run preprocessing.
+        Use step2_split_unseen.py with --use-existing-splits; the separate
+        create_official_splits.py defaults to a different random 70/15/15
+        partition. Preserve preprocessing and skipped-file logs, transcript
+        normalization, frame rate, modality, model/training configuration,
+        and clean versus noise/SNR conditions when comparing WER.
+        Session disjointness does not establish speaker disjointness:
+        the generator selects whole sessions having at least one
+        single-session speaker and materializes all their records. Without
+        the licensed speaker mapping, the paper's unseen-test-speaker claim
+        is unverified. Do not regenerate splits and assume that guarantee.
+    license:
+      data: not_specified_source_CANDOR_license_required
+      code: not_specified
+      notes: >-
+        The paper requires a separate license from the CANDOR authors and
+        does not distribute the corpus. No top-level or Candor-specific
+        license was found in the complete pinned repository tree; GitHub
+        reports no repository license. The vendored Muavic license does
+        not establish terms for this pipeline, split lists, or recordings.
+        Article access does not grant artifact rights. Clarify source-media,
+        transcript and code reuse terms with their owners before use or
+        redistribution; no agreement was accepted in this audit.
+    sources:
+      - https://arxiv.org/abs/2609.10394
+      - https://arxiv.org/html/2609.10394v1
+      - https://www.betterup.com/research/candor-research
+      - https://github.com/rishabhjain16/lipreading-data-guide/tree/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor
+      - https://raw.githubusercontent.com/rishabhjain16/lipreading-data-guide/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor/README.md
+      - https://raw.githubusercontent.com/rishabhjain16/lipreading-data-guide/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor/preparation/step2_split_unseen.py
+      - https://raw.githubusercontent.com/rishabhjain16/lipreading-data-guide/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor/preparation/create_official_splits.py
+      - https://api.github.com/repos/rishabhjain16/lipreading-data-guide/git/trees/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa?recursive=1
+
   - id: audioicl_bench
     name: AudioICL-Bench
     full_name: "AudioICL-Bench: A Benchmark for Large Audio Language Model In-Context Learning"

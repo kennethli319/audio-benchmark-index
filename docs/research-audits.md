@@ -1,5 +1,69 @@
 # Research and release audits
 
+## October 3, 2026: Candor-LR preparation release and split limitations
+
+[Candor-LR](https://arxiv.org/abs/2609.10394) is prioritized for its September 9
+paper and public fixed-split preparation protocol for conversational audiovisual
+speech recognition. Name, paper ID, repository, task and source-corpus searches
+found no existing Candor-LR family. Existing Candor references describe source
+material for dialogue benchmarks, not this AVSR protocol. Audio-only, visual-only,
+audiovisual and noise conditions remain one family. Independent multi-group
+adoption and citation momentum were not established.
+
+The [complete owner tree at da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa](https://api.github.com/repos/rishabhjain16/lipreading-data-guide/git/trees/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa?recursive=1)
+has 387 entries, 277 files, and 27 files under `Candor/`. Eight inspected text
+files match their Git blob hashes. The three canonical lists contain 1,552
+training, 22 validation and 82 test session IDs, unique within each list and
+mutually disjoint, totaling 1,656. These are session counts, not speaker or
+utterance counts. The repository contains preparation code and tokenizer text;
+the inspected tree does not provide the required source recordings, matching
+Speechmatics JSONs, or final evaluation TSV/WRD manifests. No full reconstruction,
+acoustic inspection, model execution or WER reproduction was attempted.
+
+The [current recommended splitter](https://github.com/rishabhjain16/lipreading-data-guide/blob/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor/preparation/step2_split_unseen.py)
+accepts `--use-existing-splits`. Its generation path selects sessions containing
+at least one user who appears in only one session, then materializes all records
+from those sessions. Its docstring says all speakers are single-session users,
+but the code does not enforce that condition for the other participant. This is
+a limitation of the public generator, not proof that the published fixed test
+list contains leakage. The licensed user-to-session mapping is needed to test
+the paper's unseen-test-speaker claim. The separate
+[create_official_splits.py](https://github.com/rishabhjain16/lipreading-data-guide/blob/da6f6bfc56cd9c688dfb0eb8db6a83c970e9b6fa/Candor/preparation/create_official_splits.py)
+instead defaults to random 70/15/15 session splitting; it is not an equivalent
+way to reproduce the released lists. Do not silently replace either protocol.
+
+Manifest generation skips missing media and invalid frame metadata and writes
+`skip.log`; report the resulting coverage and freeze the final manifests.
+The README also retains links to absent `splits/README.md`, `WORKFLOW.md` and
+`docs/PREPROCESSING_METHODOLOGY.md`. Its 30 fps preparation stage requires the
+separately documented conversion for the paper's 25 fps evaluation. These
+documentation and preprocessing details prevent claiming a complete verified
+paper replay from the split lists alone.
+
+The [paper](https://arxiv.org/html/2609.10394v1) requires users to obtain their own
+CANDOR license and does not redistribute the recordings. The
+[corpus owner's page](https://www.betterup.com/research/candor-research) is the
+manual starting point; no agreement, request or credential was submitted.
+No top-level or Candor-specific license appears in the pinned tree, and the
+GitHub repository metadata reports no detected license. A nested Muavic license
+does not cover this pipeline. Data, aligned transcripts, split lists and code
+therefore retain separate, unresolved reuse conditions.
+
+The safe-default helper fetches only the pinned tree, two documentation files
+and three ID lists and exits with manual-access status 2. It has no media or
+code download mode. The August 29 citation snapshot remains unchanged; only an
+unavailable citation record is added for the new family.
+
+### Deferred: Duplex-MPE release link
+
+The newer [September 25 Duplex-MPE paper](https://arxiv.org/abs/2609.31948)
+was checked before selecting Candor-LR. Its
+[official project page](https://step-out.github.io/Duplex-MPE-Page/) has selected
+audio demonstrations and aggregate results, but the Dataset button points to
+the page's own `#dataset` construction section. No complete benchmark package,
+fixed manifest or evaluator download is linked there. The paper's inventory
+is not evidence of a released reusable corpus; no family or helper is added.
+
 ## October 3, 2026: Common Voice September releases and access conditions
 
 Mozilla's [September 18 release announcement](https://discourse.mozilla.org/t/common-voice-scripted-speech-v27-0-and-spontaneous-speech-v5-0-released/149490)
