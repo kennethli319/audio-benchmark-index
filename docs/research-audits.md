@@ -1,5 +1,74 @@
 # Research and release audits
 
+## October 3, 2026: AudioICL-Bench partial release and evaluation coverage
+
+[AudioICL-Bench](https://arxiv.org/abs/2609.11252) is prioritized for its
+September 10 announcement and diagnostic evaluation of rules learned from
+audio demonstrations. Exact name, task aliases, paper ID, owner repository
+and dataset searches found no existing family. Its nine tasks and five shot
+settings are one family; upstream ESC-50 and spoken-digit corpora are not
+new entries. Independent multi-group adoption or citation momentum was not
+established. The recent paper, rather than older popularity, motivates inclusion.
+
+The [owner GitHub tree](https://github.com/robert0518/AudioICL-Bench/tree/37876ef717d0931a8c4e9389be445aea7cd3c4bc)
+contains five manifests, three Qwen inference adapters, a deterministic scorer
+and some construction scripts. Each manifest has 2,700 unique episode IDs,
+300 per task, with exactly k demonstration slots. All five manifest Git blob
+hashes were checked. There are no frozen model predictions or per-item paper
+scores in that complete, non-truncated tree. The paper evaluates five models;
+the public repository does not supply every model adapter or paper ablation.
+
+The [ungated Hub snapshot](https://huggingface.co/datasets/hongzz-18/AudioICL-Bench/tree/f0bbe5af154068aa450d089eb57942755ebc114e)
+contains 12,728 files totaling 2,189,474,899 bytes: 12,726 WAVs totaling
+2,189,003,906 bytes, a CSV and `.gitattributes`. The complete paginated tree
+matches the API siblings. No README dataset card or license is present.
+The May dataset and June code snapshots predate the September paper; this is
+not a claim that those artifacts were newly uploaded in September.
+
+Across all five manifests, every referenced waveform for AudioCount,
+AudioCountHard, AudioLength, AudioLengthHard, AudioOperator,
+AudioOperatorHard and MorseCode exists after resolving the `data/` prefix.
+All 26 Morse alphabet files are present. AudioRemap includes composites but
+omits `one_shot/one_shot_percussive_sounds` anchors; AnomalyDetect omits every
+referenced `anomalous` recording. At k=1 there are 575 distinct missing anchor
+paths and 772 distinct missing anomaly paths. These are seven reusable tasks
+with two incomplete tracks, not a fully released nine-task benchmark. Audio
+bytes, acoustic correctness and underlying source rights were not inspected.
+
+The seven complete tasks preserve the same queries across k=1..5. All 300
+AudioRemap and all 300 AnomalyDetect query records differ between k=1 and
+each larger k despite reused IDs; avoid interpreting those rows as matched
+query pairs. The [Qwen2.5 adapter](https://github.com/robert0518/AudioICL-Bench/blob/37876ef717d0931a8c4e9389be445aea7cd3c4bc/code/inference/eval_qwen25_omni.py)
+resolves paths under `base_dir`, resamples mono audio, pads clips, and catches
+preparation exceptions by printing `skip`. Its default output budget is 16
+rather than the paper's 64 tokens; the Morse bank is an explicit option.
+Prompt configurations need separate verification against the paper.
+
+The [scorer](https://github.com/robert0518/AudioICL-Bench/blob/37876ef717d0931a8c4e9389be445aea7cd3c4bc/code/evaluation/eval_str.py)
+uses the final integer for numeric tasks, normalized keyword matching for
+anomaly labels, length-checked letters for remapping and normalized strings
+for Morse. It divides correct predictions by rows found in result files,
+without checking completeness or duplicate IDs against the source manifests.
+Its `--prompt-style` labels output; it does not change inference prompts.
+Publish expected/returned counts, errors and the selected task cohort, and
+set output directories explicitly because source defaults use author-local
+paths. No upstream code, model or external inference service was executed.
+
+Neither dataset nor code has a verified artifact license. The article's
+CC BY-SA 4.0 terms do not clear OSPS, ESC-50, FSDD, Wikimedia or anomalous-sound
+recordings. The new helper downloads only pinned documentation, two metadata
+responses and the k=1 manifest. Audio, code execution and additional manifests
+remain manual. Existing August 29 citation counts are retained; the new
+paper's count is unavailable, not zero.
+
+The newer September 28 [Sounding Actions paper](https://arxiv.org/abs/2609.35345)
+was considered first. Its [companion site](https://alm-sounding-actions.onrender.com/)
+uses the SALT / Sounding-Action Benchmark alias and exposes aggregate results,
+taxonomy and prompt displays, but the inspected page links no audio package,
+clip manifest or evaluation repository. The paper's public-artifact claim
+therefore remains unverified. No family/helper is added from that page alone;
+recheck an owner release before inclusion.
+
 ## October 3, 2026: MMAE challenge protocol and download-size correction
 
 The [ICASSP 2027 Audio Editing Challenge](https://audio-editing-challenge.github.io/)

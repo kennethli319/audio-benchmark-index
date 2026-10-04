@@ -21584,6 +21584,67 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: audioicl_bench
+    name: AudioICL-Bench
+    full_name: "AudioICL-Bench: A Benchmark for Large Audio Language Model In-Context Learning"
+    qwen_cited_as: null
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_language_model_benchmark
+      - few_shot_in_context_learning
+      - audio_rule_induction
+      - temporal_audio_reasoning
+    official:
+      paper: https://arxiv.org/abs/2609.11252
+      repo: https://github.com/robert0518/AudioICL-Bench
+      dataset: https://huggingface.co/datasets/hongzz-18/AudioICL-Bench
+    download:
+      access: public_ungated_partial_audio_release
+      primary:
+        - https://github.com/robert0518/AudioICL-Bench/tree/37876ef717d0931a8c4e9389be445aea7cd3c4bc/meta
+        - https://huggingface.co/datasets/hongzz-18/AudioICL-Bench/tree/f0bbe5af154068aa450d089eb57942755ebc114e
+      examples:
+        - 'scripts/download/audioicl_bench.sh'
+      notes: >-
+        September 10, 2026 paper announcement; one family with nine tasks.
+        The five public k=1..5 manifests each contain 2700 unique episode IDs,
+        300 per task. Seven tasks have every referenced waveform present;
+        AudioRemap lacks its one-shot anchor recordings and AnomalyDetect
+        lacks its source recordings. Do not report the package as a complete
+        nine-task release. The ungated Hub snapshot contains 12726 WAVs
+        totaling 2189003906 bytes, approximately 2.19 GB, plus two small
+        non-audio files; it has no dataset card. Manifests use data/ prefixes,
+        so preserve that layout relative to the runner's base_dir. The helper
+        fetches only pinned repository documentation/tree, Hub metadata and
+        the k=1 manifest; all audio and remaining manifests stay manual.
+        Source review finds temperature 0 decoding, but the Qwen2.5 runner
+        defaults to 16 output tokens versus the paper's 64; supply the Morse
+        alphabet bank explicitly and verify the chosen prompt configuration.
+        That runner skips audio-loading failures, and the scorer counts
+        prediction rows without reconciling manifest IDs. Report coverage,
+        failures and duplicates alongside task accuracy. AudioRemap and
+        AnomalyDetect queries change across k despite reusing episode IDs;
+        do not assume a paired shot-scaling experiment for those tasks.
+    license:
+      data: not_specified
+      code: not_specified
+      notes: >-
+        No dataset card, data license, repository license file or detected
+        GitHub license was found at the audited revisions. The article's
+        CC BY-SA 4.0 license does not establish artifact reuse rights.
+        OSPS, ESC-50, Free Spoken Digit Dataset, Wikimedia Morse recordings
+        and anomalous-sound sources retain their own terms. Public access
+        does not grant training, redistribution or commercial-use rights.
+    sources:
+      - https://arxiv.org/abs/2609.11252
+      - https://arxiv.org/html/2609.11252v1
+      - https://github.com/robert0518/AudioICL-Bench/tree/37876ef717d0931a8c4e9389be445aea7cd3c4bc
+      - https://raw.githubusercontent.com/robert0518/AudioICL-Bench/37876ef717d0931a8c4e9389be445aea7cd3c4bc/README.md
+      - https://raw.githubusercontent.com/robert0518/AudioICL-Bench/37876ef717d0931a8c4e9389be445aea7cd3c4bc/code/evaluation/eval_str.py
+      - https://raw.githubusercontent.com/robert0518/AudioICL-Bench/37876ef717d0931a8c4e9389be445aea7cd3c4bc/code/inference/eval_qwen25_omni.py
+      - https://huggingface.co/api/datasets/hongzz-18/AudioICL-Bench/revision/f0bbe5af154068aa450d089eb57942755ebc114e
+      - https://huggingface.co/api/datasets/hongzz-18/AudioICL-Bench/tree/f0bbe5af154068aa450d089eb57942755ebc114e?recursive=true&limit=1000
+
   - id: musicai_background_music
     name: MusicAI Background Music × Audio LLM Benchmark
     full_name: "Does Background Music Matter to Speech in Pre-trained Language Models"
