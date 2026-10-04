@@ -1,5 +1,71 @@
 # Research and release audits
 
+## October 3, 2026: Common Voice September releases and access conditions
+
+Mozilla's [September 18 release announcement](https://discourse.mozilla.org/t/common-voice-scripted-speech-v27-0-and-spontaneous-speech-v5-0-released/149490)
+makes Scripted Speech 27.0 and Spontaneous Speech 5.0 a timely correction to
+Common Voice. The [September 24 LRAC 2.0 notice](https://crowdsourcing.cisco.com/lrac-challenge/2026/notices)
+independently confirms adoption of v27.0 in its default training-data pipeline,
+while permitting v26.0. This is challenge training use, not evidence of a new
+Common Voice evaluation score or independently reproduced results. Canonical
+name, SCS/SPS aliases, corpus identifiers, paper `1912.06670`, metadata repository,
+ASR task and download organization all resolve to the existing family. Versions
+and modalities do not create new families; the Qwen CV15 reproduction note stays.
+No new citation record or bulk refresh is needed for this release correction.
+
+At [metadata revision 65ca2460d5e686ea03902a932bbca09b322dc4b0](https://github.com/common-voice/cv-dataset/tree/65ca2460d5e686ea03902a932bbca09b322dc4b0),
+eight inspected documentation/statistics files match their Git blob hashes and
+the recursive tree is complete. Scripted metadata has 295 locale keys and sums
+to 32,349,999 clips, with published rounded totals of 42,593 recorded and 29,295
+validated hours. Spontaneous metadata has 80 locales and 89,754 clips, with 541
+recorded and 302 validated hours. These are full-corpus counts, not test sizes.
+Only 287 scripted and 31 spontaneous locales have a nonzero test bucket.
+No archive, audio, row-level split identity or checksum of a media package was
+inspected; metadata availability does not establish an accessible test for every
+locale. September 11 in each corpus identifier is the collection cutoff. Owner
+changelogs date release September 16, the inspected Slovak package September 17,
+and the announcement September 18; these dates describe different stages.
+
+The [scripted documentation](https://github.com/common-voice/cv-dataset/blob/65ca2460d5e686ea03902a932bbca09b322dc4b0/datasets/scripted-speech/README.md)
+uses train/dev/test TSVs. The [spontaneous documentation](https://github.com/common-voice/cv-dataset/blob/65ca2460d5e686ea03902a932bbca09b322dc4b0/datasets/spontaneous-speech/README.md)
+uses a split column and assigns only validated transcriptions to those splits;
+other recordings are unassigned. Freeze modality, release, locale, split, text
+normalization and metric before comparing ASR results. The spontaneous changelog
+also corrects repeated counting in v1.0-v4.0 for Bukusu, Kabardian and Papantla
+Totonac when a contributor changed demographics. Pin statistics revisions for
+historical comparisons. The announcement lists six newly added spontaneous
+languages while the changelog lists two; this audit does not reconcile that
+wording into a stronger claim. Current totals were independently summed.
+
+The [Slovak 27.0 package](https://mozilladatacollective.com/datasets/cmu62gcol00ohnq0758656ndx)
+labels audio CC0-1.0 but separately prohibits identifying speakers and re-hosting
+or re-sharing. The catalog retains the license label and records those access
+conditions distinctly, without claiming that one cancels the other or that one
+package establishes every locale's conditions. The metadata repository is
+MPL-2.0. Review the current terms of each selected package before obtaining an
+archive through the browser or documented API. No login, terms acceptance,
+generated URL, credential, archive download or API access request was performed.
+
+The helper still exits with manual-access status 2 and no download when no URL
+is supplied. Its guidance now identifies both releases and the historical CV15
+exception. An explicit authorized URL retains the existing resume/skip behavior,
+but no longer passes through the shared downloader that prints the URL. A local
+mock validates URL-log suppression, destination, resume/fail flags and skipping
+an existing nonempty output without contacting a dataset endpoint. Users should
+still keep signed URLs out of shell history, debug tracing and shared logs.
+
+### Deferred: audio-centric PRISM-Bench
+
+The [September 4 paper](https://arxiv.org/html/2609.04867v1) describes 900
+reference samples for audio-centric text-to-audio-video evaluation, but explicitly
+restricts underlying audiovisual data for licensing/redistribution reasons.
+The [owner Space](https://huggingface.co/spaces/prismbench/prismbench-leaderboard)
+public tree contains judge scripts, aggregate results and six demo videos; this
+does not establish a reusable full reference corpus or an authorized access path.
+No media or upstream code was run. Do not confuse this work with the unrelated
+visual-puzzle PRISM-Bench (`2510.23594`, JornyWan/PRISM-Bench). No family or helper
+is added pending a verifiable reusable release/access protocol.
+
 ## October 3, 2026: AudioICL-Bench partial release and evaluation coverage
 
 [AudioICL-Bench](https://arxiv.org/abs/2609.11252) is prioritized for its

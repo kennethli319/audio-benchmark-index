@@ -409,6 +409,7 @@ generated URL, or manual form step first:
 scripts/download/vaani_noise_event.sh
 scripts/download/rms_aqa.sh
 scripts/download/turnbench.sh
+# Common Voice: select SCS 27.0 / SPS 5.0 (or CV15 for Qwen), review package terms first.
 COMMON_VOICE_DOWNLOAD_URL='https://...' scripts/download/common_voice.sh
 scripts/download/jvs.sh
 GIGASPEECH_ACK_ACCESS=1 GIGASPEECH_CONFIG=dev scripts/download/gigaspeech.sh
