@@ -21584,6 +21584,73 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: vocal_affect_bench
+    name: VocalAffectBench
+    full_name: "VocalAffectBench: Evaluating Vocal Emotion Recognition in AI Audio Models"
+    qwen_bucket: paralinguistic_speech_evaluation
+    tasks:
+      - speech_emotion_recognition
+      - expressed_vocal_affect_classification
+      - raw_audio_model_evaluation
+    official:
+      paper: https://arxiv.org/abs/2608.28932
+      dataset: https://huggingface.co/datasets/besimple-ai/vocal-affect-bench
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/tree/8d4165f514befc282dc20360b2d28522d9523413
+      examples:
+        - 'scripts/download/vocal_affect_bench.sh'
+      notes: >-
+        August 28, 2026 paper, revised September 1; the inspected public
+        snapshot was last modified September 23. The pinned release has
+        280 unique human-recorded English test clips, 40 per emotion across
+        angry, disgusted, fearful, happy, neutral, sad and surprised.
+        Metadata totals 8335.711 seconds and declares 16 kHz mono audio.
+        All 280 referenced WAV paths exist, totaling 266764456 bytes; media
+        content was not inspected. The arXiv abstract page instead says
+        273 clips, 39 per class and 1.95 hours, whereas the v2 HTML body and
+        released manuscript describe 280 clips. Do not mix these cohorts
+        or infer a migration manifest. Public metadata omits transcripts,
+        scripts, speaker IDs and demographics; the manuscript's 52 speaker
+        accounts cannot be independently reconstructed from those fields.
+        Models receive raw audio only, using a fixed seven-label prompt or
+        provider-native affect outputs with declared deterministic mappings.
+        The nine-model release has 2520 unique model/clip prediction rows.
+        Keep its post-publication baselines separate from the six-model
+        paper snapshot. The scorer excludes rows with errors or empty
+        mapped labels and trusts stored correct flags; it does not enforce
+        a complete model cohort and keeps the last duplicate model/clip row.
+        Hume has one recorded HTTP 403 error: published 38.0 percent is
+        106/279, while counting that failure over all 280 gives 37.9 percent.
+        Report coverage, failures, mappings and denominators; balanced
+        source labels do not ensure a balanced scored subset. The helper
+        saves pinned documentation, license, manifest and predictions only;
+        audio and executable code remain manual, with no API calls.
+    license:
+      data: custom_Audio_Data_License_no_voice_cloning
+      code: MIT
+      notes: >-
+        LICENSE separates MIT software/documentation from audio. The Audio
+        Data License permits use, copying, modification and distribution
+        with the copyright/license notice, prohibits direct or indirect
+        voice cloning, and terminates permission upon breach. Do not label
+        the recordings MIT. The dataset card additionally describes
+        evaluation-only intended use and excludes training, identification,
+        demographic profiling and high-stakes applications. Contributor
+        consent is owner-reported; public access does not independently
+        establish consent or override voice and provider rights.
+    sources:
+      - https://arxiv.org/abs/2608.28932
+      - https://arxiv.org/html/2608.28932v2
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/README.md
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/DATASET_CARD.md
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/LICENSE
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/data/metadata.jsonl
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/data/predictions.csv
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/scripts/lib.cjs
+      - https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/scripts/score.cjs
+
   - id: msi_bench
     name: MSI-Bench
     full_name: "MSI-Bench: Evaluating Multi-Speaker Voice Interaction for Collaborative AI Agents"

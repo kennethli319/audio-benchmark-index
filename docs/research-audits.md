@@ -1,5 +1,87 @@
 # Research and release audits
 
+## October 4, 2026: VocalAffectBench release and scoring audit
+
+[VocalAffectBench](https://arxiv.org/abs/2608.28932) is prioritized for its
+August 28 paper, September 1 revision and September public-release updates,
+within the last 90 days. It supplies a reusable raw-audio emotion test set,
+saved predictions and a scorer. Independent multi-group adoption or citation
+momentum was not established. Searches for its canonical/spaced name, paper,
+owner dataset and task found no indexed duplicate. Besimple's Duplex Cue and
+Voice Code Bench are different tasks; CREMA-D, RAVDESS and other emotion
+corpora are not aliases. The seven classes and later baseline additions remain
+one family. The August 29 citation snapshot is retained with a null new record.
+
+The [ungated snapshot](https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/tree/8d4165f514befc282dc20360b2d28522d9523413)
+was last modified September 23. Its complete tree has 328 files totaling
+268,291,720 bytes, agreeing with the revision API inventory. The manifest has
+280 unique IDs, exactly 40 per label, and 8,335.711 seconds (2.315 hours).
+All rows declare 16 kHz mono audio and all referenced paths match the 280 WAV
+files, totaling 266,764,456 bytes. No media bytes were downloaded or inspected.
+Fifteen inspected text artifacts match their pinned Git blob identities.
+
+The [arXiv abstract page](https://arxiv.org/abs/2608.28932) reports 273 clips,
+39 per label, 51 speaker accounts and 1.95 hours, while its [v2 HTML body](https://arxiv.org/html/2608.28932v2)
+and the released manuscript say 280 clips, 40 per label, 52 accounts and 2.32
+hours. The public manifest supports 280 clips but contains no speaker mapping,
+transcripts, scripts or demographic fields. Do not silently replace one
+cohort with the other or claim to reproduce the 273-clip result; an explicit
+migration manifest was not identified. The card's statement about anonymous
+speaker identifiers is not supported by the inspected manifest schema.
+The paper describes prompted performances from generated scripts, checked by
+one reviewer; these are expressed-emotion labels, not internal-state labels.
+
+The [prediction artifact](https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/data/predictions.csv)
+has 2,520 unique model/clip pairs: all 280 clips for each of nine models.
+Reference labels agree with the manifest, and stored correctness on scored
+rows agrees with mapped-label equality. Independently recomputing all nine
+published accuracies from those rows matches the release; the two aggregate
+CSV files are byte-identical. This checks saved arithmetic, not model inference,
+audio forwarding or original provider responses. The release tracks three
+post-publication baselines separately from the six-model manuscript snapshot.
+
+The [scoring library](https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/scripts/lib.cjs)
+excludes errors and empty mapped labels and trusts the stored `correct` flag.
+The [score entrypoint](https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/scripts/score.cjs)
+rejects unknown IDs but keeps the last duplicate model/clip row and does not
+enforce full cohort coverage. Hume's `zFP5lOkP2Gm4Ndnkkva5` disgusted clip
+contains a recorded HTTP 403 provider error and is excluded: its published
+38.0 percent is 106/279, compared with 37.9 percent on all 280 clips. Therefore
+the paper table's all-clips caption and card's failure-as-incorrect language
+do not describe this released denominator. Balanced input labels also do not
+ensure equal macro and micro accuracy after exclusions. Reconcile completeness,
+labels, mappings, errors and correctness before scoring new predictions;
+report scored and full-cohort figures separately. The model runner's publish
+path rejects incomplete/failed new runs, but the scorer itself is less strict.
+No upstream code or model/API calls were executed during this audit.
+
+The [explicit license](https://huggingface.co/datasets/besimple-ai/vocal-affect-bench/blob/8d4165f514befc282dc20360b2d28522d9523413/LICENSE)
+separates MIT software/documentation from the custom Audio Data License.
+Audio copying, modification and distribution require retained notices and
+prohibit direct or indirect voice cloning, with termination upon breach.
+The card's evaluation-only intended use, identification/profiling exclusions
+and contributor-consent statements remain distinct from those express license
+conditions. No blanket MIT audio permission or independent consent verification
+is implied. The helper downloads six pinned documentation/metadata/prediction
+files only; audio, executable code and API execution remain manual.
+
+Recent release candidates checked before this addition remain deferred:
+
+- [SteerBench / SteerDuplex](https://arxiv.org/abs/2609.12623): the [owner repository](https://github.com/Utkarsh4430/SteerDuplex/tree/e7c3bfaea315e6df86ed909b9eeb519ab4b82710)
+  has only README and an overview image in its complete tree; benchmark,
+  inference, checkpoint and training checkboxes explicitly remain coming soon.
+  The existing `tchang97/steerbench` dataset is an unrelated text-rewriting
+  benchmark, not the spoken 390-prompt/1,067-rubric release.
+- [DuplexAct-Bench](https://arxiv.org/abs/2609.39446), announced September 30:
+  the [project page](https://alitaxky.icu/DuplexAct-Bench/) links its paper,
+  examples and aggregate results but exposes no full trial manifest, dataset
+  package or evaluator link. Its 1,290-trial study is not a verified release.
+- [MP-Bench](https://arxiv.org/abs/2609.13076): the paper-linked
+  [atosystem repository](https://github.com/atosystem/MP-Bench) returns 404.
+  Public Hub name matches include unrelated process-reward and multi-agent
+  failure-attribution benchmarks; no owner multiparty-audio release was
+  verified. Do not treat those matches as aliases or replacement downloads.
+
 ## October 4, 2026: MSI-Bench public bilingual interaction release
 
 [MSI-Bench](https://arxiv.org/abs/2609.24812) is prioritized for its September 21

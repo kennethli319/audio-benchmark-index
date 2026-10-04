@@ -23,6 +23,7 @@ huggingface-cli login
 ## CLI Supported
 
 ```bash
+scripts/download/vocal_affect_bench.sh
 scripts/download/msi_bench.sh
 scripts/download/audioicl_bench.sh
 scripts/download/musicai_background_music.sh
