@@ -1,5 +1,90 @@
 # Research and release audits
 
+## October 3, 2026: Krisp Voice Isolation release and reproducibility audit
+
+The [Krisp Voice Isolation Benchmark](https://krisp.ai/benchmarks/voice-isolation-benchmark/)
+is prioritized for its September 2026 release, September 18 processed snapshot,
+September 23 results Space update, and September 30 raw card update. Owner
+announcements and community posts supplied discovery signals; independent
+multi-group adoption or citation momentum was not established. Canonical name,
+VoiceIsolation/Voice Isolation Benchmark Suite aliases, owner/dataset URLs,
+paper search, and target-speaker/ASR/enhancement overlap checks found no existing
+entry. No benchmark paper was located. This is a reusable family with released
+recordings and annotations, not just a product leaderboard. Its raw/processed
+repositories, four VI 2.5 variants and results Space are one family; the SDK and
+unrelated larger product evaluations are not additional benchmark releases.
+
+Pinned public releases:
+
+- [Raw dataset](https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset/tree/626bac8ca07fb9b4846d4f62d27c321753160b36):
+  270 files, 1,296,449,302 total bytes, including 265 WAVs totaling
+  1,295,922,642 bytes. Three metadata files have 106 call-center, 63 phone-call,
+  and 96 work records with 265 unique, scenario-disjoint IDs. All raw paths
+  exist. There are 47 unique speaker IDs; call-center/phone overlap is two,
+  phone/work overlap is 13, and call-center/work overlap is zero. Scenarios
+  therefore do not constitute speaker-disjoint partitions. The card describes
+  65 scripts, real-environment recordings, and 32 kHz mono PCM-16 raw audio;
+  audio headers/content and script identity were not checked.
+- [Processed dataset](https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed/tree/8759715197e39e0356125e3f3197a9854c38fa60):
+  1,069 files, 3,238,687,085 total bytes, including 1,060 WAVs totaling
+  3,238,459,068 bytes. Metadata has exactly one unique pair for every source
+  ID and each Default/Balanced/Lite/HD variant. Four records for work ID 228
+  incorrectly name `standard/vi_2_5_<variant>/228.wav`; the files are present
+  at `work/vi_2_5_<variant>/228.wav`. The other 1,056 paths resolve. This is a
+  metadata-path inconsistency, not four absent audio files. Preserve original
+  annotations and document any local repair; do not silently exclude sample
+  228. The card describes 16 kHz Default/Balanced/Lite and 32 kHz HD output.
+- [Static results Space](https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark/tree/faab89e2654b7fbe0d2a4a706f46477f7a5f7d14):
+  34 files, including six examples with five audio variants each, HTML, CSS,
+  attributes and a card. It contains normalization and scoring snippets,
+  aggregate tables and selected example WERs, but no packaged runner,
+  per-engine hypotheses, complete count-level results or provider adapters.
+  All three complete recursive trees match their API sibling inventories;
+  ten downloaded cards/annotation/HTML files match their Git blob hashes.
+
+The raw card describes phone calls as a preservation condition without a
+*deliberate* second speaker. Actual phone annotations include five `mix` and
+13 `secondary` intervals alongside 65 `primary` intervals. Those annotations
+must not be erased based on the prose. Across the release all secondary/noise
+segment texts are empty or null, while primary/mix texts are populated; all
+inspected intervals have nonnegative starts and positive duration. These checks
+do not establish acoustic correctness or timestamp bounds within the WAVs.
+
+The [published methodology](https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark/raw/faab89e2654b7fbe0d2a4a706f46477f7a5f7d14/index.html)
+uses corpus-pooled WER with `jiwer` 4.0.0. Both sides pass through four ordered
+structural regex rules, NeMo text processing 1.2.0 English/cased WFST, then
+lowercase, contraction expansion, punctuation removal, eight filler removals,
+and whitespace/token normalization. Rules are explicitly fitted to this corpus.
+Sum error counts and reference words over the matched cohort; do not average
+per-file or per-scenario percentages. Keep engine version, streaming/batch mode,
+coverage and failures visible. The illustrative per-file function returns zero
+when its normalized reference has no words, so it cannot measure secondary-only
+insertion errors. The page does not release the full corpus aggregation runner.
+
+DNSMOS-C uses the NISQA checkpoint on `primary` and `mix` segments at least one
+second long. Its snippets use 16 kHz, ten-second windows with five-second hop,
+repeat-and-crop for short segments, an end-aligned final window when necessary,
+and a mean of window MOS values per segment. Cross-segment weighting, resampling
+implementation and exact full-run replication are not established. This is a
+reference-free model prediction, not a listening-test MOS. No upstream snippet,
+model, audio processing or paid recognizer was executed.
+
+The [announcement](https://krisp.ai/blog/voice-isolation-benchmark/) claims a
+public harness and private holdout. The linked collection contains only the two
+datasets and static Space; no hidden-cohort manifest or complete harness was
+located. Record the discrepancy without treating the public 265 files as hidden
+evaluation or claiming reproduction of the headline reduction. Released inputs
+and labels remain useful for fresh, independently documented evaluations.
+
+Both dataset cards declare CC BY-NC 4.0; the Space card declares CC BY-NC-ND 4.0.
+The latter is not a separate permissive software license for snippets. Keep
+noncommercial data terms, the Space declaration, source/participant rights,
+model weights and SDK/API service terms distinct. No licenses were accepted.
+The helper has an explicit small-file allowlist for pinned cards, public API
+metadata, six annotation JSONLs and methodology HTML; it does not fetch media,
+weights, execute HTML or use provider credentials. The August 29 citation
+snapshot is retained, with a null no-paper record for the new family.
+
 ## October 3, 2026: VAANI Noise Event / IndoML release, terms, and scoring audit
 
 [VAANI Noise Event Dataset](https://arxiv.org/abs/2609.02474) is prioritized

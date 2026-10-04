@@ -2595,6 +2595,12 @@
       "paper_url": "https://arxiv.org/abs/2609.02474",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22VAANI%20Noise%20Event%20Dataset%3A%20A%20curated%20spontaneous%20speech%20dataset%20annotated%20with%20timestamps%20for%20noise%20events%22",
       "paper_title": null
+    },
+    "krisp_voice_isolation": {
+      "citation_count": null,
+      "paper_url": null,
+      "scholar_url": null,
+      "paper_title": null
     }
   }
 }

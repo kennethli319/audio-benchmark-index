@@ -21579,6 +21579,103 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: krisp_voice_isolation
+    name: Krisp Voice Isolation Benchmark
+    full_name: "Krisp Voice Isolation Benchmark Suite"
+    qwen_cited_as: null
+    qwen_bucket:
+      - automatic_speech_recognition
+      - speech_enhancement
+      - speech_quality_assessment
+    category: real_recorded_target_speaker_isolation_and_asr
+    tasks:
+      - noise_robust_asr
+      - target_speaker_extraction
+      - speech_enhancement
+      - speech_quality_assessment
+    official:
+      homepage: https://krisp.ai/benchmarks/voice-isolation-benchmark/
+      announcement: https://krisp.ai/blog/voice-isolation-benchmark/
+      dataset: https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset
+      processed_audio: https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed
+      results_and_methodology: https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark
+    download:
+      access: public_ungated_audio_annotations_and_processed_outputs
+      primary:
+        - https://huggingface.co/collections/Krisp-AI/krisp-voice-isolation-benchmark-suite
+        - https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset
+        - https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed
+      examples:
+        - 'scripts/download/krisp_voice_isolation.sh'
+      notes: >-
+        September 2026 release with a September 30 raw-data card update.
+        One family includes 265 English recordings, 47 distinct speaker IDs,
+        target-speaker transcripts, timed primary/mix/secondary/noise labels,
+        device/environment metadata, and four VI 2.5 processed variants.
+        The 106 call-center, 63 phone-call, and 96 work IDs are disjoint;
+        speakers overlap across scenarios. These are real-environment scripted
+        recordings, not a spontaneous-dialogue or turn-taking test. The card
+        describes phone calls as a preservation condition without deliberate
+        competing speech, although their annotations include mix/secondary
+        intervals. Do not describe all 265 as intentionally overlapping speech.
+        Raw WAVs total 1295922642 bytes; 1060 processed WAVs total 3238459068
+        bytes. Cards describe raw/HD as mono 32 kHz PCM-16, other variants
+        as 16 kHz. Four processed metadata paths for sample 228 contain an
+        extra standard/ prefix absent from the tree; record any local path
+        repair explicitly rather than dropping this sample or rewriting IDs.
+        The helper retrieves pinned public cards, metadata, annotations, and
+        static methodology HTML only; audio retrieval remains manual.
+        WER uses jiwer 4.0.0 with corpus-level error/reference-word pooling
+        across files, not a mean of file or scenario WERs. Apply the published
+        four structural regex rules, NeMo text processing 1.2.0 English WFST,
+        then lowercase/contraction/punctuation/filler normalization to both
+        reference and hypothesis. Keep all raw/processed IDs paired and
+        preserve recognizer version, streaming/batch configuration and failures.
+        The example per-file function returns zero for empty references;
+        it is not a valid secondary-only insertion metric. DNSMOS-C uses the
+        NISQA checkpoint on primary/mix segments at least one second long,
+        16 kHz ten-second windows with five-second hop, looped short segments,
+        an end-aligned tail window and mean window scores per segment.
+        Final cross-segment MOS aggregation is not specified in the snippets.
+        The Space is a static results page with scoring snippets; full engine
+        hypotheses, provider adapters and a packaged evaluator were not located.
+        Announcement claims of a public harness and private holdout are not
+        sufficient to establish exact headline-score replay or hidden-test access.
+    access:
+      status: released_public_data_with_partial_evaluation_implementation
+      registration_required: false
+      notes: >-
+        Both datasets are ungated. The owner Space is a static results page
+        with normalization/scoring snippets and six audio examples, not a
+        packaged end-to-end evaluator. Full per-engine hypotheses, count-level
+        scores, provider adapters and a hidden-test manifest were not located
+        in the linked release, despite announcement claims of a public harness
+        and private holdout. Public recordings and annotations support new
+        evaluations, but exact headline-score replay is not established.
+        Published processed audio does not provide the isolation model weights
+        or authorize paid ASR/SDK calls. No audio or inference was run here.
+    license:
+      data: CC-BY-NC-4.0
+      processed_audio: CC-BY-NC-4.0
+      code: not_specified_as_a_separate_software_license
+      space: CC-BY-NC-ND-4.0_declared_by_Space_card
+      notes: >-
+        Both dataset cards declare CC BY-NC 4.0; the static Space card declares
+        CC BY-NC-ND 4.0. Keep the noncommercial dataset terms separate from
+        the Space's no-derivatives declaration; do not infer a permissive
+        software license for embedded snippets or extend either declaration
+        to model weights, commercial SDKs, ASR services, or participant rights.
+    sources:
+      - https://krisp.ai/benchmarks/voice-isolation-benchmark/
+      - https://krisp.ai/blog/voice-isolation-benchmark/
+      - https://huggingface.co/api/collections/Krisp-AI/krisp-voice-isolation-benchmark-suite
+      - https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset/tree/626bac8ca07fb9b4846d4f62d27c321753160b36
+      - https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset/raw/626bac8ca07fb9b4846d4f62d27c321753160b36/README.md
+      - https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed/tree/8759715197e39e0356125e3f3197a9854c38fa60
+      - https://huggingface.co/datasets/Krisp-AI/VoiceIsolation-Benchmark-Dataset-Processed/raw/8759715197e39e0356125e3f3197a9854c38fa60/work/metadata.jsonl
+      - https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark/tree/faab89e2654b7fbe0d2a4a706f46477f7a5f7d14
+      - https://huggingface.co/spaces/Krisp-AI/VoiceIsolation-Benchmark/raw/faab89e2654b7fbe0d2a4a706f46477f7a5f7d14/index.html
+
   - id: vaani_noise_event
     name: VAANI Noise Event Dataset / IndoML 2026
     full_name: "VAANI Noise Event Dataset: A curated spontaneous speech dataset annotated with timestamps for noise events"

@@ -23,6 +23,7 @@ huggingface-cli login
 ## CLI Supported
 
 ```bash
+scripts/download/krisp_voice_isolation.sh
 scripts/download/artifactbench.sh
 scripts/download/cose_e.sh
 scripts/download/nsv_shift.sh
