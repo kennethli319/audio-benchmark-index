@@ -2619,6 +2619,12 @@
       "paper_url": "https://arxiv.org/abs/2609.10394",
       "scholar_url": null,
       "paper_title": null
+    },
+    "msi_bench": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2609.24812",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22MSI-Bench%3A+Evaluating+Multi-Speaker+Voice+Interaction+for+Collaborative+AI+Agents%22",
+      "paper_title": null
     }
   }
 }

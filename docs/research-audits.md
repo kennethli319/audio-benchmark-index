@@ -1,5 +1,65 @@
 # Research and release audits
 
+## October 4, 2026: MSI-Bench public bilingual interaction release
+
+[MSI-Bench](https://arxiv.org/abs/2609.24812) is prioritized for its September 21
+paper and reusable speaker-scoped interaction package. The public data snapshot
+was last modified September 8 and the code repository September 14; the paper
+announcement is not a new data-release date. Independent multi-group adoption
+and citation momentum were not established. Canonical name, expanded name,
+paper ID, owner repository, dataset and task searches found no existing family.
+MSU-Bench's speaker-centric QA and MultiTalkBench's long meeting dialogue do not
+reproduce this fixed next-action/tool-use protocol. Languages, patterns and
+bystander probes remain one family. The August 29 citation snapshot is retained
+with only an unavailable record for this addition.
+
+The [ungated dataset at a98fb641d085846733f1d519de942cd534a991cb](https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/tree/a98fb641d085846733f1d519de942cd534a991cb)
+has 11,165 files totaling 4,285,820,906 bytes in the complete paginated tree,
+which agrees with the API file inventory. Its 1,152 unique case IDs divide
+into 576 English and 576 Mandarin cases, six patterns and eight scenes, with
+12 cases in each of the 96 language/pattern/scene strata. Half have two human
+participants and half three. Case/rubric IDs align; 1,152 rubric rows contain
+3,648 criteria, with 1,152 speak probes and 384 hear probes. Every case JSON
+path and all 10,001 referenced WAV paths exist. The WAV inventory totals
+4,267,556,790 bytes, with all LFS SHA-256 identities matching the public checksum
+manifest. This is metadata-level integrity evidence, not verification of media
+bytes, acoustic content, original source permissions or model performance.
+Ten inspected data text files match their Git blob identities; all nine covered
+by CHECKSUMS.sha256 match it. That manifest covers 11,163 paths, excluding itself
+and `.gitattributes`.
+
+The [explicit data license](https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/blob/a98fb641d085846733f1d519de942cd534a991cb/LICENSE)
+is CC BY 4.0 for benchmark-authored definitions, rubrics, probes and synthetic
+speech. Its attribution file lists 74 Freesound assets: 49 CC0 1.0, 21 CC BY 4.0
+and four CC BY 3.0. Retain those per-source notices; the README's narrower
+summary of ambience terms is incomplete. The card reports Common Voice 17.0
+CC0 voice references. That statement does not independently establish the
+rights for every voice or synthesis service. The separate
+[code revision d98a61473f7401c170b69ad5e73a674537e07acf](https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf)
+contains 183 files and an explicit MIT license. Five inspected code/document
+files match their Git blob hashes; no upstream code was executed.
+
+Two documentation/protocol caveats matter for reuse. The schema says there are
+576 distinct rubric IDs and cross-entry collisions, but this pinned rubric
+index has 1,152 unique IDs, each matching its case's reference. Keep the adapter's
+case-ID join and entry grouping; do not introduce deduplication based on stale
+prose. The
+[table aggregator](https://github.com/boson-ai/MSI-Bench/blob/d98a61473f7401c170b69ad5e73a674537e07acf/tools/paper_table_rows.py)
+uses all-atom APR, micro-averaged ARS and Tool over required-call cases. It
+excludes invalid predictions from PRR and uses executed probes for BIR. For
+non-format-error rows without an answer-judge report, it continues without
+counting the case; missing target directories are also outside its scan.
+Reconcile the expected cohort and report omissions, errors and unjudged rows.
+Do not merge repeated runs of the same model into a single score without
+controlling case identity and language. Preserve native full-duplex versus
+turn-based probe approximation and the documented judge/decoding settings.
+A complete paper replay, provider behavior and audio quality remain untested.
+
+The safe helper fetches only eight pinned documentation/license/checksum files.
+Full case/rubric/probe manifests and approximately 4.27 GB of audio stay manual.
+Research inspected manifests as text but downloaded no media, models or
+archives, accepted no terms, and made no paid evaluation calls.
+
 ## October 3, 2026: Candor-LR preparation release and split limitations
 
 [Candor-LR](https://arxiv.org/abs/2609.10394) is prioritized for its September 9

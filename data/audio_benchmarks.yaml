@@ -4,7 +4,7 @@ metadata:
   seed_source:
     name: Qwen3.5-Omni Technical Report, section 5.1 Audio -> Text
     url: https://arxiv.org/html/2604.15804v1#S5
-  last_checked: 2026-10-03
+  last_checked: 2026-10-04
   scope: Audio -> Text benchmarks cited by Qwen3.5-Omni section 5.1, plus broader speech/audio/music benchmarks added from primary sources.
   note: This index does not mirror datasets or grant rights to upstream data.
 
@@ -21584,6 +21584,75 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: msi_bench
+    name: MSI-Bench
+    full_name: "MSI-Bench: Evaluating Multi-Speaker Voice Interaction for Collaborative AI Agents"
+    qwen_bucket: speech_dialogue
+    tasks:
+      - speech_dialogue
+      - speech_instruction_benchmark
+      - speaker_scoped_memory
+      - multi_speaker_reasoning
+      - spoken_tool_use
+      - bystander_speech_handling
+    official:
+      paper: https://arxiv.org/abs/2609.24812
+      repo: https://github.com/boson-ai/MSI-Bench
+      dataset: https://huggingface.co/datasets/M2cha4l1124/MSI-Bench
+    download:
+      access: public_ungated
+      primary:
+        - https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/tree/a98fb641d085846733f1d519de942cd534a991cb
+        - https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf
+      examples:
+        - 'scripts/download/msi_bench.sh'
+      notes: >-
+        September 21, 2026 paper announcement; the inspected data and code
+        snapshots predate it. One family with 1152 unique synthetic dialogue
+        cases, 576 each in English and Mandarin, six interaction patterns
+        and eight scenes, with 12 cases per language/pattern/scene stratum.
+        Released metadata includes 1152 rubric rows with 3648 criteria,
+        1152 speak-time and 384 hear-time probes. All referenced WAV paths
+        exist in the pinned tree: 10001 files totaling 4267556790 bytes,
+        approximately 4.27 GB. No media content or model results were replayed.
+        The helper retrieves pinned documentation, licenses and checksums
+        only; obtain manifests, audio and MIT evaluation code manually.
+        Preserve the line-by-line audio/text turn structure and use the
+        release-to-suite adapter with --probes for bystander evaluation.
+        APR requires all scored atoms to pass; ARS is an atom micro-average;
+        Tool covers cases requiring a call. PRR excludes invalid predictions,
+        while BIR covers executed probes. Report each denominator, provider
+        and format failures, and unjudged cases; the aggregator can omit
+        unfinished batches without a judge report. Keep English/Mandarin,
+        audio/transcript, native full-duplex/turn-based probe approximation,
+        model revisions, decoding and judge settings separate. The documented
+        judge is DeepSeek V4 Pro via OpenRouter and can incur API costs.
+        The schema claims 576 distinct rubric IDs, but the pinned index has
+        1152 unique IDs aligned to cases; join by case_id and retain the
+        official adapter rather than relying on stale schema counts.
+    license:
+      data: CC-BY-4.0
+      code: MIT
+      notes: >-
+        The explicit dataset license covers case definitions, rubrics,
+        probes and synthesized dialogue audio. Third-party ambience retains
+        its own terms: ATTRIBUTION.md lists 74 Freesound assets, comprising
+        49 CC0 1.0, 21 CC BY 4.0 and 4 CC BY 3.0 notices. Preserve that file
+        on redistribution. The card reports cloned reference voices from
+        CC0 Common Voice 17.0 clips; this audit did not independently verify
+        source recordings, voice permissions or synthesis-provider terms.
+        Code licensing does not override source-media or provider conditions.
+    sources:
+      - https://arxiv.org/abs/2609.24812
+      - https://arxiv.org/html/2609.24812v1
+      - https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/blob/a98fb641d085846733f1d519de942cd534a991cb/README.md
+      - https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/blob/a98fb641d085846733f1d519de942cd534a991cb/LICENSE
+      - https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/blob/a98fb641d085846733f1d519de942cd534a991cb/ATTRIBUTION.md
+      - https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/blob/a98fb641d085846733f1d519de942cd534a991cb/docs/SCHEMA.md
+      - https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/blob/a98fb641d085846733f1d519de942cd534a991cb/index/cases.jsonl
+      - https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf
+      - https://github.com/boson-ai/MSI-Bench/blob/d98a61473f7401c170b69ad5e73a674537e07acf/tools/paper_table_rows.py
+
   - id: candor_lr
     name: Candor-LR
     full_name: "Candor-LR: A Dyadic Conversational Dataset for Audio-Visual Speech Recognition"
