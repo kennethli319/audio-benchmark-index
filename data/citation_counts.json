@@ -2589,6 +2589,12 @@
       "paper_url": "https://arxiv.org/abs/2609.23550",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22ArtifactBench%3A+Lineage-Aware+Evaluation+of+AI-Generated+Music+Detectors+under+Distribution+Shift%22",
       "paper_title": null
+    },
+    "vaani_noise_event": {
+      "citation_count": null,
+      "paper_url": "https://arxiv.org/abs/2609.02474",
+      "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22VAANI%20Noise%20Event%20Dataset%3A%20A%20curated%20spontaneous%20speech%20dataset%20annotated%20with%20timestamps%20for%20noise%20events%22",
+      "paper_title": null
     }
   }
 }

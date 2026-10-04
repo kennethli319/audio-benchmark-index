@@ -1,5 +1,103 @@
 # Research and release audits
 
+## October 3, 2026: VAANI Noise Event / IndoML release, terms, and scoring audit
+
+[VAANI Noise Event Dataset](https://arxiv.org/abs/2609.02474) is prioritized
+for its September 2 paper, September 4 validation package, September 10 baseline
+source update, and September 22 Track 2 evaluation update. The official
+[IndoML challenge](https://indoml.in/datathon/) names multiple participating
+teams and publishes Phase-1 results; this establishes challenge participation,
+not independent research replication or sustained citation momentum. Searches
+for VAANI/Vaani Noise Event Timestamps, IndoML, the full paper title/ID, dataset,
+repository, and detection/enhancement tasks found no existing family. Project
+VAANI is the parent speech corpus; SraVaani is the required ASR model, not a
+second benchmark. The two challenge tracks and their phases belong to one
+family, distinct from DESED, WHAM!, MUSAN, and Kathbath-based noisy ASR.
+
+The [Hub revision](https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset/tree/be488e2ac12fd62bef46b9f83e3a5feded575333)
+was last modified August 7, so the September paper is not the training release
+date. The public API reports automatic gating; the rendered card requires
+contact disclosure and acceptance of access conditions. The unauthenticated
+raw card returns HTTP 401. No acceptance or authenticated request was made.
+The complete, unpaginated tree agrees with all 184 metadata file paths:
+182 training Parquets total 17,731,911,261 bytes, and all files total
+17,731,921,635 bytes. Card/API report 90,637 rows, about 154.6 hours, with
+11,111 Gold, 61,642 Silver, and 17,884 Bronze rows. These tier counts sum
+correctly; row contents, audio, timestamp quality, and speaker disjointness
+were not inspected. Bronze has clip tags rather than timestamp supervision.
+
+The [paper](https://arxiv.org/html/2609.02474v1) describes a filtered,
+timestamped 72,756-segment/122.17-hour subset across 58 languages: 11,111
+Gold and 61,645 Silver. Removing the hosted Bronze tier instead gives 72,753;
+the remaining three-row difference cannot be reconciled from public metadata.
+The parent corpus's 105 languages must not be attributed to this subset.
+Likewise, the card and landing page describe a 10-hour holdout, while both
+Codabench evaluation pages describe 11 hours: seven natural and four synthetic.
+No private evaluation manifest was obtained to reconcile these descriptions.
+
+Direct public API reads for [Track 1](https://www.codabench.org/api/competitions/17825/)
+and [Track 2](https://www.codabench.org/api/competitions/17835/) expose the
+actual official page text; the search renderer returned unrelated text for
+these URLs and was not used as evidence. API metadata lists a shared
+445,335,228-byte validation package created September 4. Track 1 retains its
+1,086,912,345-byte input package and one continuous leaderboard. Track 2 has
+separate Phase-1 and Phase-2 input packages, 1,086,912,917 and 1,073,072,070
+bytes respectively; Phase 2 began September 22. All input, reference, scorer,
+and validation artifact records are marked `is_public=false`. Metadata
+visibility does not authorize retrieving them. No archive, reference label,
+media, or hidden scorer was requested. Registration closed September 9;
+existing approved teams can continue, but general new participation is not
+established. Use the official Files workflow and confirm current access.
+
+The [baseline revision](https://github.com/nagshubhadip/noise-event-detection-and-removal/tree/32cff11da797b966f74ab4ee21f9b7b38fba85de)
+has a complete, non-truncated tree and public modular scorers. Nine downloaded
+README/config/data/evaluation text files match their Git blob hashes. Source
+inspection, cross-checked with the public Codabench Evaluation pages, establishes:
+
+- Track 1 is class-agnostic event localization over both natural and synthetic
+  clips. Its score is micro Event F1 plus macro clip Dice, maximum two; onset
+  and offset must each match within `max(0.20 * reference_duration, 0.05)`
+  seconds, using global closest-first greedy matching. Dice uses 10 ms frames
+  with inclusive offset rasterization; empty reference/prediction clips score
+  one. Unexpected prediction IDs count as F1 false positives. Require every
+  evaluation clip exactly once, even though metric functions can accept gaps.
+- Track 2 uses mean SI-SDR only where synthetic clean references exist, plus
+  100 times pooled delta-WER over eligible natural and synthetic clips. The
+  fraction is noisy WER minus enhanced WER; the displayed percentage should
+  not be scaled again. Normalization removes inline tags and punctuation,
+  lowercases, and collapses whitespace. Empty normalized references are skipped;
+  absent hypotheses become an error token. This is pooled word-count scoring,
+  not a mean of per-clip WERs, despite per-clip wording elsewhere on the page.
+- Enhanced audio must retain duration and use 16 kHz mono PCM-16. Transcripts
+  must come from unchanged SraVaani-1.0; private ASR checks and reference data
+  mean the small public metric module cannot replay the entire server audit.
+  Missing-audio penalties and coverage must remain visible. Prize-stage
+  novelty/PESQ assessment is separate from the automated ranking.
+
+The landing page's equal-weight-average descriptions conflict with its own FAQ,
+Codabench's explicit sum formulas, and public scorer. The latter agree and are
+used in the index. Baseline random Gold validation splits are development
+choices, not the official held-out cohort. No upstream Python was executed,
+model inference performed, metric results reproduced, or server equivalence
+claimed; private scorer versions may differ from the public September 10 code.
+
+Licensing is scoped conservatively. The [training card](https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset)
+declares CC BY 4.0, but both Codabench Terms restrict their provided curated
+dataset to competition use and prohibit redistribution/commercial use without
+permission. Do not silently generalize the card declaration across challenge
+artifacts or resolve overlapping scope in favor of permissive reuse. Review
+the actual access agreement and ask the owners to clarify applicability.
+The baseline tree has no license file and GitHub reports no license; a promise
+that winning teams will release permissively licensed code is not a license
+for the existing baseline. Article, source-recording, participant, and model
+terms remain separate.
+
+The helper fetches only pinned public Hub metadata/tree, the pinned baseline
+README, and live public Codabench metadata/terms. It neither authenticates nor
+accepts terms and provides no bulk-download mode. Use a fresh output directory
+for future live metadata checks. Existing citation counts and their August 29
+snapshot date remain unchanged; only an unavailable new-paper record is added.
+
 ## October 3, 2026: ArtifactBench v2 metadata, access, and protocol audit
 
 [ArtifactBench](https://arxiv.org/abs/2609.23550) is prioritized for its

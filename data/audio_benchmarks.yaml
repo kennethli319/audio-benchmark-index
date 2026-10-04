@@ -21579,6 +21579,99 @@ paper_audits:
       repository, archive, license, or evaluator.
 
 benchmarks:
+  - id: vaani_noise_event
+    name: VAANI Noise Event Dataset / IndoML 2026
+    full_name: "VAANI Noise Event Dataset: A curated spontaneous speech dataset annotated with timestamps for noise events"
+    qwen_cited_as: null
+    qwen_bucket:
+      - sound_event_detection
+      - speech_enhancement
+    tasks:
+      - noise_event_localization
+      - speech_enhancement
+      - noise_robust_asr
+    official:
+      paper: https://arxiv.org/abs/2609.02474
+      project: https://indoml.in/datathon/
+      repo: https://github.com/nagshubhadip/noise-event-detection-and-removal
+      dataset: https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset
+      detection_challenge: https://www.codabench.org/competitions/17825/
+      removal_challenge: https://www.codabench.org/competitions/17835/
+    download:
+      access: gated_training_and_registration_restricted_challenge_data
+      primary:
+        - https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset
+        - https://indoml.in/datathon/
+      examples:
+        - 'scripts/download/vaani_noise_event.sh'
+      notes: >-
+        September 2, 2026 paper; August training release, September 4
+        validation package, and September 22 Track 2 Phase-2 input update.
+        Also called Vaani Noise Event Timestamps. Hub access requires
+        reviewing conditions and sharing contact details. Competition
+        registration closed September 9; existing approved teams may continue.
+        The gated Hub snapshot reports 90637 training segments, about 154.6
+        hours: 11111 verified-timestamp Gold, 61642 unverified-timestamp
+        Silver, and 17884 clip-tag-only Bronze examples. Its 182 Parquets
+        total 17731911261 bytes. The paper instead describes a filtered
+        72756-segment, 122.17-hour subset across 58 languages, including
+        61645 Silver examples; the three-example discrepancy is unresolved.
+        The parent VAANI corpus's 105 languages are not this subset's scope.
+        Codabench describes an 11-hour test cohort (7 natural, 4 synthetic),
+        whereas the Hub card and landing page describe a 10-hour holdout.
+        Exact evaluation membership is not verified. Track 1 retains its
+        Phase-1 test and leaderboard; Track 2 Phase 2 changes input data,
+        so do not pool its phase scores. Validation/test files require the
+        official Codabench access workflow; ground truth remains private.
+        The helper saves public metadata and baseline documentation only.
+        Track 1 uses class-agnostic micro Event F1 plus macro clip Dice
+        over the full test (maximum 2), with closest-first boundary matches
+        within max(20 percent of reference duration, 50 ms) and 10 ms Dice
+        frames. Track 2 combines mean SI-SDR on synthetic clips with 100
+        times pooled delta-WER on eligible natural and synthetic clips.
+        Delta-WER is noisy minus enhanced WER as a fraction, not the
+        displayed percentage. Use unchanged SraVaani-1.0 transcripts and
+        same-duration 16 kHz mono PCM-16 audio. Preserve every clip and
+        report failures; normalization skips empty references. Private
+        references and ASR audits limit local replay. Codabench formulas
+        and public scorer agree; landing-page average descriptions conflict.
+    access:
+      status: gated_training_and_restricted_evaluation
+      registration_required: true
+      notes: >-
+        Hub access requires accepting conditions and sharing contact details;
+        the raw card returns HTTP 401 without approval, although the rendered
+        card and metadata are public. Competition registration closed
+        September 9, 2026; existing approved teams may continue. Codabench
+        lists input, reference, scorer archives, and validation with
+        is_public=false. No gated artifacts, media, or weights were fetched.
+        Public owner baseline/scoring source exists, but a complete local
+        rerun of the private leaderboard is not established.
+    license:
+      data: CC_BY_4.0_Hub_card_declaration_with_separate_restrictive_competition_terms
+      code: not_specified
+      notes: >-
+        The training card declares CC BY 4.0. Both Codabench terms restrict
+        the provided curated dataset to competition use and prohibit
+        redistribution or commercial use without organizer permission.
+        Do not extend the Hub declaration to challenge files or assume it
+        resolves the scope of those additional terms; review the applicable
+        access agreement and obtain clarification for reuse. The baseline
+        repository has no license file or detected code license. Article,
+        source-recording, participant, and SraVaani/model rights are separate.
+    sources:
+      - https://arxiv.org/abs/2609.02474
+      - https://arxiv.org/html/2609.02474v1
+      - https://indoml.in/datathon/
+      - https://huggingface.co/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset
+      - https://huggingface.co/api/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset/revision/be488e2ac12fd62bef46b9f83e3a5feded575333
+      - https://huggingface.co/api/datasets/ARTPARK-IISc/Vaani-Noise-Event-Dataset/tree/be488e2ac12fd62bef46b9f83e3a5feded575333?recursive=true&expand=false
+      - https://www.codabench.org/api/competitions/17825/
+      - https://www.codabench.org/api/competitions/17835/
+      - https://github.com/nagshubhadip/noise-event-detection-and-removal/tree/32cff11da797b966f74ab4ee21f9b7b38fba85de
+      - https://raw.githubusercontent.com/nagshubhadip/noise-event-detection-and-removal/32cff11da797b966f74ab4ee21f9b7b38fba85de/track1_detection/versions/v-3_indoml2026_track1/modular/evaluate.py
+      - https://raw.githubusercontent.com/nagshubhadip/noise-event-detection-and-removal/32cff11da797b966f74ab4ee21f9b7b38fba85de/track2_removal/versions/v-1_indoml2026_track2/modular/evaluate.py
+
   - id: artifactbench
     name: ArtifactBench
     full_name: "ArtifactBench: Lineage-Aware Evaluation of AI-Generated Music Detectors under Distribution Shift"
