@@ -2631,6 +2631,12 @@
       "paper_url": "https://arxiv.org/abs/2608.28932",
       "scholar_url": "https://scholar.google.com/scholar?hl=en&q=%22VocalAffectBench%3A%20Evaluating%20Vocal%20Emotion%20Recognition%20in%20AI%20Audio%20Models%22",
       "paper_title": null
+    },
+    "art": {
+      "citation_count": null,
+      "paper_url": "https://aclanthology.org/2026.eacl-long.42",
+      "scholar_url": null,
+      "paper_title": null
     }
   }
 }

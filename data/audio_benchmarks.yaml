@@ -44980,3 +44980,34 @@ benchmarks:
       - https://huggingface.co/datasets/dcml0714/StyleSet/raw/main/README.md
       - https://huggingface.co/api/datasets/dcml0714/StyleSet
       - https://huggingface.co/api/datasets/dcml0714/StyleSet/tree/main?recursive=true&expand=true
+
+  - id: art
+    name: ART
+    full_name: Audio Reasoning Tasks
+    qwen_cited_as: A Benchmark for Audio Reasoning Capabilities of Multimodal Large Language Models
+    qwen_bucket: audio_understanding
+    tasks:
+      - audio_arithmetics
+      - audio_transformation_detection
+      - cross_recording_language_identification
+      - cross_recording_speaker_identification
+      - selective_text_inference
+      - sound_reasoning
+      - speech_features_comparison
+      - text_and_sound_reasoning
+      - text_and_temporal_localization_reasoning
+    official:
+      repo: https://github.com/SamsungLabs/ART
+      paper: https://aclanthology.org/2026.eacl-long.42
+    download:
+      primary:
+        - https://huggingface.co/datasets/amu-cai/ART
+      examples:
+        - 'from datasets import load_dataset; ds = load_dataset("amu-cai/ART")'
+    license:
+      data: cc-by-4.0
+      code: cc-by-4.0
+    sources:
+      - https://aclanthology.org/2026.eacl-long.42
+      - https://github.com/SamsungLabs/ART
+      - https://huggingface.co/datasets/amu-cai/ART

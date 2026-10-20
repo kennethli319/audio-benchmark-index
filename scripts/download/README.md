@@ -29,6 +29,7 @@ scripts/download/audioicl_bench.sh
 scripts/download/musicai_background_music.sh
 scripts/download/krisp_voice_isolation.sh
 scripts/download/artifactbench.sh
+scripts/download/art.sh
 scripts/download/cose_e.sh
 scripts/download/nsv_shift.sh
 scripts/download/voxmem.sh
